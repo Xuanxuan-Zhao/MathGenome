@@ -1,0 +1,1183 @@
+\documentclass[11pt,oneside,openany]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{hyperref}
+
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome ALG-03 core supplement}
+\fi
+
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\definecolor{palegreen}{HTML}{F0F4EF}
+\hypersetup{
+  colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Rings, Modules, and Associative Algebras},
+  pdfsubject={Jacobson density, central simple algebras, full corners, and quiver representations},
+  pdfauthor={MathGenome},bookmarksnumbered=true
+}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{9pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{4pt}{24pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries\color{ink}}{\thesubsection}{0.7em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\fancypagestyle{plain}{%
+  \fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \thispdfpagelabel{Cover}
+  \begin{flushleft}
+    \vspace*{0.65in}
+    {\large\scshape\color{deepgreen}MathGenome\par}
+    \vspace{0.32in}
+    {\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+    \vspace{0.45in}
+    {\color{ink}\fontsize{34}{39}\selectfont\bfseries
+       Rings, Modules, and\par Associative Algebras\par}
+    \vspace{0.30in}
+    {\color{deepgreen}\Large
+       Density, Brauer Groups, Full Corners,\\[3pt]
+       and Quiver Representations\par}
+    \vfill
+    {\large Supplementary lecture notes\par}
+    \vspace{0.12in}
+    {\normalsize ALG-03 \enspace\textperiodcentered\enspace MathGenome v0.22.0 reference baseline\par}
+    \vspace*{0.48in}
+  \end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+{\small\tableofcontents}
+\chapter*{Scope and reading guide}
+\addcontentsline{toc}{chapter}{Scope and reading guide}
+\markboth{Scope and reading guide}{}
+
+These notes supplement \emph{Algebra Core} and \emph{Abstract Algebra}
+\cite{p103,d07} with Jacobson density, the basic theory of central simple
+algebras, Morita equivalence for full idempotents, and representations
+of quivers with relations.
+
+Rings and algebra maps are unital. Modules are left modules in the
+density and quiver chapters and right modules in the full-corner chapter.
+A \(k\)-algebra has a central structure map. Endomorphisms multiply by
+composition and the rightmost path in a product acts first.
+
+{\setlength{\fboxsep}{0.8em}\setlength{\fboxrule}{0.35pt}%
+\noindent\fcolorbox{rulegreen}{palegreen}{%
+\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+\textbf{Result keys.} \texttt{RM03-C03.01} belongs to module
+\texttt{ALG-03-C03}. The source map records each result's PDF and TeX
+location and its proof dependencies. Keys beginning with \texttt{p103:}
+refer to \emph{Algebra Core}.
+\end{minipage}}\par}
+
+\section*{The six core modules}
+
+\paragraph{C01: Rings, modules, and exact sequences.}
+\emph{Algebra Core}, Chapter~1, proves the quotient, exactness, change
+of scalars, splitting, and diagram results. \emph{Abstract Algebra},
+Chapters~9--11 and~16, treats factorization, Smith form, and PID modules.
+
+\paragraph{C02: Tensor, Hom, projective, injective, and flat modules.}
+See \emph{Algebra Core}, Chapters~1--2, for balanced tensor, tensor--Hom,
+exactness, dual bases, and the projective, injective, and flat criteria.
+The right progenerator result is \texttt{p103:ALG-03-C02-S05}.
+
+\paragraph{C03: Chain conditions, radicals, and semisimplicity.}
+\emph{Algebra Core}, Chapters~2--3, covers finite length, Schur,
+semisimplicity, the radical, Nakayama, and Artin--Wedderburn.
+Chapter~\ref{ch:rm03-density} adds density and its finite-dimensional quotient.
+
+\paragraph{C04: Central simple algebras.}
+\emph{Abstract Algebra}, Chapter~23, provides the division ring inputs.
+Chapter~\ref{ch:rm03-central-simple} proves the splitting, conjugacy,
+centralizer, and Brauer group results. See also the descent comparison
+in \emph{Linear Algebraic Groups}, Result~F05.
+
+\paragraph{C05: Morita equivalence and idempotents.}
+\emph{Algebra Core}, Chapter~3, proves the progenerator theorem and
+the matrix case. Chapter~\ref{ch:rm03-morita} gives the full-corner criterion
+and functors. See \emph{Algebraic K-Theory}, Result~A10 \cite{ktheory}.
+
+\paragraph{C06: Representations of associative algebras.}
+For group algebras, Schur, and Maschke, see \emph{Algebra Core},
+Chapter~8 (\texttt{p103:ALG-07-C01-R01--R03}).
+Chapter~\ref{ch:rm03-quivers} proves the quiver comparisons and examples.
+
+\mainmatter
+\chapter{Jacobson density}
+\label{ch:rm03-density}
+
+A faithful simple module makes its ring act by linear maps over a
+division ring. The density theorem describes exactly what this action
+can do on any finite list of vectors. The inputs from \emph{Algebra Core}
+are Schur's lemma and the splitting of submodules of a semisimple module
+\cite[Ch.~3, ALG-03-C03-R03]{p103}. A version over a field appears in
+\cite[Thm.~3.3]{mitdensity}.
+
+\section{Finite interpolation on a simple module}
+
+\begin{theorem}[RM03-C03.01. Jacobson density]
+\label{thm:rm03-density}
+Let \(R\) be a unital ring and \(M\) a nonzero simple left \(R\)-module.
+Put \(D=\operatorname{End}_R(M)^{\mathrm{op}}\), and make \(M\) a right
+\(D\)-space by \(m\cdot f^{\mathrm{op}}=f(m)\). For every finite
+right \(D\)-linearly independent list \(x_1,\ldots,x_n\) in \(M\) and
+every \(y_1,\ldots,y_n\in M\), there is \(r\in R\) such that
+\[
+   rx_i=y_i\qquad (1\leq i\leq n).
+\]
+\end{theorem}
+\begin{proof}
+Schur's lemma makes \(D\) a division ring. Multiplication in the
+opposite ring reverses composition, so the displayed evaluation is a
+right action. Every \(f\in\operatorname{End}_R(M)\) commutes with left
+multiplication by elements of \(R\). Thus the \(R\)-action induces a
+ring map \(R\to\operatorname{End}_D(M)\) with composition as product.
+
+For an empty list take \(r=0\). Otherwise give \(M^n\) the diagonal
+left \(R\)-action and write \(x=(x_1,\ldots,x_n)\). Suppose \(Rx\) is
+proper. The module \(M^n\) is semisimple, so \(Rx\) has a nonzero
+complement \(U\) and there is an \(R\)-linear projection \(p:M^n\to U\).
+Some coordinate projection \(\pi_j:M^n\to M\) has nonzero restriction
+to \(U\), since a nonzero vector has a nonzero coordinate. Composing
+\(p\) with that restriction gives a nonzero map \(h:M^n\to M\) which
+vanishes on \(Rx\). For the coordinate inclusions \(\iota_i:M\to M^n\),
+write \(f_i=h\iota_i\in\operatorname{End}_R(M)\). The identity
+\(h(z_1,\ldots,z_n)=\sum_i f_i(z_i)\) gives
+\[
+      0=h(x)=\sum_i x_i\cdot f_i^{\mathrm{op}}.
+\]
+Right \(D\)-linear independence forces each \(f_i=0\), contrary to
+\(h\ne 0\). Consequently \(Rx=M^n\), so a single \(r\) sends \(x\)
+to \((y_1,\ldots,y_n)\).
+\end{proof}
+
+\begin{corollary}[RM03-C03.02. Density in the finite topology and the finite-dimensional quotient]
+\label{cor:rm03-density-finite}
+In the setting of Theorem~\ref{thm:rm03-density}, the image of
+\(R\to\operatorname{End}_D(M)\) is dense for the topology of agreement
+on finite subsets of \(M\). If \(\dim_D M\) is finite, the induced map
+\[
+      R/\operatorname{Ann}_R(M)\longrightarrow\operatorname{End}_D(M)
+\]
+is an isomorphism of rings.
+\end{corollary}
+\begin{proof}
+For \(T\in\operatorname{End}_D(M)\) and a finite subset \(S\subseteq M\),
+choose a right \(D\)-basis of its span. Apply the theorem to that basis
+and its images under \(T\). Both \(T\) and the action of the resulting
+\(r\) are right \(D\)-linear, so they agree on the span and hence on
+\(S\). The sets of maps agreeing with \(T\) on such finite subsets
+form a neighbourhood basis at \(T\). If \(M\) is finite-dimensional,
+agreement on a full basis gives \(T\) itself. The kernel of the action
+is precisely the two-sided ideal of elements annihilating \(M\).
+\end{proof}
+
+\begin{example}[RM03-C03.03. A proper dense image]
+\label{ex:rm03-density-proper}
+Let \(V\) have countably infinite basis \(v_0,v_1,\ldots\) over a
+field \(k\), and let \(R=k\,1+F(V)\subseteq\operatorname{End}_k(V)\),
+where \(F(V)\) is the ideal of finite-rank maps. Then \(V\) is a
+faithful simple left \(R\)-module with commutant \(k\,1\), and the
+action of \(R\) on \(V\) has proper dense image.
+\end{example}
+\begin{proof}
+The action is faithful by construction. For \(v\ne0\) and any \(w\),
+choose a linear functional \(\ell\) with \(\ell(v)=1\). The rank-at-most-one
+map \(u\mapsto\ell(u)w\) sends \(v\) to \(w\), proving simplicity.
+An \(R\)-endomorphism \(T\) of \(V\) is \(k\)-linear because the scalar
+maps lie in \(R\). Commuting with all coordinate projections forces
+\(T(v_i)=c_i v_i\) for \(c_i\in k\). Commuting with the matrix unit
+sending \(v_i\) to \(v_j\) gives \(c_i=c_j\). Thus the commutant is
+exactly the scalars. Density now follows from
+Corollary~\ref{cor:rm03-density-finite}. The shift \(S(v_i)=v_{i+1}\)
+lies outside \(R\), since the vectors \(v_{i+1}-c v_i\) are linearly
+independent for every \(c\in k\). Indeed, the coefficient of the
+highest indexed \(v_{i+1}\) in any finite relation is the coefficient
+of the corresponding summand. Hence \(S-c\,1\) has infinite rank for
+every \(c\).
+\end{proof}
+\chapter{Central simple algebras and the Brauer group}
+\label{ch:rm03-central-simple}
+
+Throughout this chapter \(k\) is a field. Algebras and algebra maps are
+unital, and a simple algebra is nonzero and has no nonzero proper
+two-sided ideal. For a field extension \(L/k\), write \(A_L=A\otimes_k L\).
+We use the Artin--Wedderburn theorem from
+\cite[ALG-03-C03-R04]{p103} and the finite-dimensional case of density
+from Corollary~\ref{cor:rm03-density-finite}. For comparison with the
+classical development, see \cite[Sections~11.3--11.8]{stackscsa}.
+The finite and real division-ring inputs are the established results in
+\cite[K07.23.finite\_division\_ring and K07.23.frobenius]{d07}.
+
+\section{Structure and extension of scalars}
+
+\begin{definition}[RM03-C04.01. Central simple algebras]
+\label{def:rm03-csa}
+A \emph{central simple \(k\)-algebra} is a finite-dimensional simple
+\(k\)-algebra \(A\) whose center is \(k1_A\). A \emph{central division
+algebra} over \(k\) is a finite-dimensional division algebra with this
+same center condition. A central simple \(k\)-algebra is \emph{split}
+if it is isomorphic to \(M_n(k)\) for some \(n\geq 1\). An extension
+\(L/k\) \emph{splits} \(A\) if \(A_L\) is split over \(L\).
+\end{definition}
+
+\begin{proposition}[RM03-C04.02. Matrix and division presentations]
+\label{prop:rm03-csa-matrix}
+Every central simple \(k\)-algebra \(A\) admits a presentation
+\(A\simeq M_r(D)\), where \(r\geq 1\) and \(D\) is a central division
+algebra over \(k\). Both \(r\) and the \(k\)-algebra isomorphism class
+of \(D\) are uniquely determined by \(A\).
+\end{proposition}
+\begin{proof}
+A finite-dimensional simple algebra is left Artinian, so the simple
+case of Artin--Wedderburn gives \(A\simeq M_r(D)\). Commuting with
+the matrix units forces any central matrix to have the form \(dI_r\),
+and commuting with coefficient matrices forces \(d\in Z(D)\).
+Thus \(Z(D)=k\), with the identification induced by the original
+\(k\)-action on \(A\). For a simple left \(A\)-module \(S\) the matrix
+presentation gives \(S\simeq D^r\), with endomorphism ring \(D^{\mathrm{op}}\)
+via right multiplication by \(D\). This identifies \(D\) as a
+\(k\)-algebra since every module endomorphism commutes with the
+given scalars. Finally \(r^2\dim_k D=\dim_k A\) determines \(r\).
+\end{proof}
+
+The same simple-Artinian structure will be used for a finite-dimensional
+simple \(k\)-algebra \(T\) with arbitrary center. Write \(T=M_s(E)\)
+for its Artin--Wedderburn presentation. A finite nonzero left
+\(T\)-module \(V\) is a direct sum of \(m\geq 1\) copies of the
+unique simple column module \(E^s\). In particular the
+\(k\)-dimension of \(V\) determines this multiplicity. Its
+endomorphism ring is \(M_m(E^{\mathrm{op}})\), by writing an
+endomorphism in blocks between the \(m\) copies of \(E^s\).
+Consequently \(\operatorname{End}_T(V)\) is simple, and
+\begin{equation}
+\label{eq:rm03-simple-end-dimension}
+\dim_k T\;\dim_k\operatorname{End}_T(V)=(\dim_k V)^2.
+\end{equation}
+Indeed the two factors on the left are \(s^2\dim_k E\) and
+\(m^2\dim_k E\), and \(\dim_k V=sm\dim_k E\).
+
+\begin{proposition}[RM03-C04.03. The enveloping algebra of a central simple algebra]
+\label{prop:rm03-enveloping}
+If \(A\) is central simple over \(k\), its left and right multiplication
+map is an isomorphism of \(k\)-algebras
+\[
+ A\otimes_k A^{\mathrm{op}}\longrightarrow \operatorname{End}_k(A),
+ \qquad a\otimes b^{\mathrm{op}}\longmapsto (x\mapsto axb).
+\]
+\end{proposition}
+\begin{proof}
+The displayed map is an algebra homomorphism because composition
+reverses the order of the right multipliers. Under this action the
+left \(A\otimes A^{\mathrm{op}}\)-submodules of \(A\) are exactly its
+two-sided ideals, so \(A\) is a simple module. Its endomorphisms as
+such a module are determined by the image \(c\) of \(1\). Compatibility
+with left and right multiplication gives \(ac=ca\) for every \(a\),
+and each such \(c\) defines an endomorphism. The resulting endomorphism
+division algebra is \(k\). Corollary~\ref{cor:rm03-density-finite} therefore
+gives surjectivity onto \(\operatorname{End}_k(A)\). Both \(k\)-dimensions
+are \((\dim_k A)^2\), which gives injectivity.
+\end{proof}
+
+\begin{proposition}[RM03-C04.04. Tensor product and base change]
+\label{prop:rm03-csa-tensor}
+Let \(A\) be central simple over \(k\) and \(B\) any simple
+\(k\)-algebra. Then \(A\otimes_k B\) is simple, with center
+\(1\otimes Z(B)\). In particular the tensor product of two central
+simple \(k\)-algebras is central simple. Also \(A_L\) is central
+simple over \(L\) for every field extension \(L/k\).
+\end{proposition}
+\begin{proof}
+Let \(I\) be a nonzero two-sided ideal in \(A\otimes_k B\). Express
+a nonzero \(u\in I\) as \(\sum_i a_i\otimes b_i\) in a basis
+\((a_i)\) of \(A\), and choose \(j\) with \(b_j\ne 0\).
+The ideal is preserved by left and right multiplication from
+\(A\otimes 1\), hence is preserved by \(T\otimes\operatorname{id}_B\)
+for every \(k\)-linear \(T:A\to A\) by
+Proposition~\ref{prop:rm03-enveloping}. Take \(T(a_j)=1\) and
+\(T(a_i)=0\) for \(i\ne j\). This gives \(1\otimes b_j\in I\).
+Because \(Bb_jB\) generates the unit ideal of \(B\), left and
+right multiplication by \(1\otimes B\) then gives \(1\otimes 1\in I\).
+
+An element commuting with \(A\otimes 1\) can be written
+\(\sum_j x_j\otimes y_j\) for \(k\)-linearly independent
+\(y_j\in B\). Each \(x_j\) commutes with \(A\), so the element
+belongs to \(1\otimes B\). An element of that subalgebra is central
+exactly when it commutes with \(1\otimes B\), giving the center formula.
+Applying it to \(B=L\), and noting
+\(\dim_L A_L=\dim_k A\), gives the base change statement.
+\end{proof}
+
+\section{Separable splitting fields}
+
+\begin{theorem}[RM03-C04.05. Degree and finite Galois splitting]
+\label{thm:rm03-csa-galois-split}
+For \(A\) central simple over \(k\), \(\dim_k A\) is a square.
+Write \(\deg A=\sqrt{\dim_k A}\). There is a finite Galois extension
+\(K/k\) with \(A_K\simeq M_{\deg A}(K)\).
+More precisely, if \(A\simeq M_r(D)\) and \(d=\deg D\), then \(D\)
+contains a separable field extension \(E/k\) of degree \(d\) which
+splits \(D\). Thus \(\deg A=rd\).
+\end{theorem}
+\begin{proof}
+Over an algebraic closure \(\overline{k}\), base change and
+Proposition~\ref{prop:rm03-csa-matrix} give
+\(A_{\overline{k}}\simeq M_n(D')\).
+Every element \(x\) of \(D'\) satisfies a polynomial over
+\(\overline{k}\) by finite dimensionality. Factoring the polynomial
+into linear factors and using absence of zero divisors shows
+\(x\in\overline{k}\). This proves \(A_{\overline{k}}\simeq
+M_n(\overline{k})\) and \(\dim_k A=n^2\). The same argument for \(D\)
+gives \(D_{\overline{k}}\simeq M_d(\overline{k})\) and
+\(n=rd\).
+
+It suffices to split \(D\), since matrix algebras commute with
+extension of scalars. If \(k\) is finite, then \(D\) is a finite
+division ring and is commutative by
+\cite[K07.23.finite\_division\_ring]{d07}. Its center condition forces
+\(D=k\), so \(E=k\) works.
+
+Assume \(k\) is infinite. Fix a \(k\)-basis \(u_1,\ldots,u_{d^2}\)
+of \(D\). Through the splitting over \(\overline{k}\), the matrix
+corresponding to \(\sum_i X_i u_i\) has a characteristic polynomial
+whose discriminant is a polynomial in the \(X_i\) over
+\(\overline{k}\). This discriminant is nonzero as a polynomial:
+the basis spans \(M_d(\overline{k})\) after extension, so choose
+coefficients giving a diagonal matrix with \(d\) distinct entries.
+Any nonzero polynomial over \(\overline{k}\) in finitely many
+variables has a nonzero value at some tuple in \(k\). To see this,
+view it as a polynomial in its last variable, choose the other
+variables by induction so that at least one coefficient survives,
+and then avoid the finitely many roots of the remaining polynomial.
+Thus some \(x\in D\) corresponds to a matrix with \(d\) distinct
+eigenvalues over \(\overline{k}\).
+
+The minimal polynomial of \(x\) has the same degree after extension:
+linear independence of the initial powers \(1,x,\ldots,x^{j-1}\)
+is preserved, and a monic relation over \(k\) remains a relation
+over \(\overline{k}\). Uniqueness of the monic relation of smallest
+degree then identifies the two minimal polynomials. For the chosen
+matrix this polynomial is the product of the \(d\) distinct linear
+factors. Hence \(E=k[x]\) has dimension \(d\) and is separable over \(k\).
+The algebra \(E\) is a field since it is a finite-dimensional
+commutative domain inside \(D\).
+
+Regard \(D\) as a right \(E\)-space of dimension \(d\). The map
+\[
+ D\otimes_k E\longrightarrow \operatorname{End}_E(D),\qquad
+ a\otimes e\longmapsto (z\mapsto aze)
+\]
+is an \(E\)-algebra homomorphism: the right multipliers belong to
+the commutative field \(E\). It is unital and its domain is simple
+by Proposition~\ref{prop:rm03-csa-tensor}, so it is injective.
+Both sides have \(E\)-dimension \(d^2\), giving a splitting over
+\(E\). A finite Galois closure \(K\) of \(E/k\) then splits both \(D\)
+and \(A\).
+\end{proof}
+
+\begin{corollary}[RM03-C04.06. Index and degrees of splitting extensions]
+\label{cor:rm03-csa-index}
+Let \(A\simeq M_r(D)\) be central simple and set
+\(\operatorname{ind}(A)=\deg D\). Every finite splitting field
+\(L/k\) of \(A\) has \(\operatorname{ind}(A)\mid [L:k]\).
+A separable splitting field of degree \(\operatorname{ind}(A)\)
+exists.
+\end{corollary}
+\begin{proof}
+Write \(d=\deg D\). Since \(A_L=M_r(D_L)\) and \(D_L\) is central
+simple by Proposition~\ref{prop:rm03-csa-tensor}, the uniqueness
+of the division presentation implies that \(D_L\) is split
+whenever \(A_L\) is split. Then \(D_L\simeq M_d(L)\), and
+restricting its natural left action on \(L^d\) to \(D\) gives a
+finite left \(D\)-space. Its \(k\)-dimension \(d[L:k]\) must be a
+multiple of \(\dim_k D=d^2\). The last assertion is the field \(E\)
+of Theorem~\ref{thm:rm03-csa-galois-split}.
+\end{proof}
+
+\section{Conjugacy and commutants}
+
+\begin{theorem}[RM03-C04.07. Skolem--Noether]
+\label{thm:rm03-skolem-noether}
+Let \(A\) be central simple over \(k\), and let \(B\) be a
+simple \(k\)-algebra. Two unital \(k\)-algebra embeddings
+\(f,g:B\hookrightarrow A\) are conjugate by an element of \(A^\times\).
+In particular every \(k\)-algebra automorphism of \(A\) is inner.
+\end{theorem}
+\begin{proof}
+The embedding makes \(B\) finite-dimensional over \(k\), and
+\(T=A\otimes_k B^{\mathrm{op}}\) is a finite-dimensional simple
+\(k\)-algebra by Proposition~\ref{prop:rm03-csa-tensor}.
+Give the \(k\)-space \(A\) two left \(T\)-module structures by
+\[
+ (a\otimes b^{\mathrm{op}})\cdot_f x=axf(b),\qquad
+ (a\otimes b^{\mathrm{op}})\cdot_g x=axg(b).
+\]
+The use of \(B^{\mathrm{op}}\) compensates for the order of right
+multiplication. The two modules have equal \(k\)-dimension, so the
+simple-Artinian module description preceding
+Proposition~\ref{prop:rm03-enveloping} gives a \(T\)-module
+isomorphism \(F:(A,\cdot_f)\to(A,\cdot_g)\).
+Because \(F\) is left \(A\)-linear, \(F(x)=xu\) for \(u=F(1)\).
+Its inverse is also right multiplication, which shows that
+\(u\in A^\times\). Intertwining the two actions of \(b^{\mathrm{op}}\)
+on \(1\) gives \(f(b)u=ug(b)\). The case \(B=A\) and \(g\) the
+identity gives the automorphism assertion.
+\end{proof}
+
+\begin{theorem}[RM03-C04.08. Centralizer and double centralizer]
+\label{thm:rm03-centralizer}
+Let \(B\) be a unital simple \(k\)-subalgebra of a central simple
+\(k\)-algebra \(A\). Its centralizer
+\[
+ C_A(B)=\{\,x\in A:xb=bx\ \text{for every }b\in B\,\}=C
+\]
+is simple, \(\dim_k B\cdot\dim_k C=\dim_k A\), and \(C_A(C)=B\).
+Moreover \(Z(C)=Z(B)\) as subalgebras of \(A\).
+If \(B\) is central over \(k\), so is \(C\), and multiplication
+induces an isomorphism \(B\otimes_k C\simeq A\).
+\end{theorem}
+\begin{proof}
+Act on \(A\) by \(T=A\otimes B^{\mathrm{op}}\) using left and right
+multiplication, where \(T\) is simple by
+Proposition~\ref{prop:rm03-csa-tensor}. An endomorphism of this
+\(T\)-module is left \(A\)-linear, hence is right multiplication
+by some \(x\in A\). Right multiplication by \(x\) commutes with
+right multiplication by every \(b\in B\) exactly when \(x\in C\).
+Thus \(\operatorname{End}_T(A)\simeq C^{\mathrm{op}}\).
+By \eqref{eq:rm03-simple-end-dimension}, \(C\) is simple and
+\[
+ (\dim_k A)(\dim_k B)(\dim_k C)=(\dim_k A)^2.
+\]
+The same dimension formula applied to the simple subalgebra
+\(C\) gives \(\dim_k C_A(C)=\dim_k B\). The inclusion
+\(B\subseteq C_A(C)\) therefore is an equality. Also
+\(Z(C)=C\cap C_A(C)=C\cap B=Z(B)\).
+
+If \(Z(B)=k\), multiplication is a unital homomorphism from
+\(B\otimes_k C\) because the subalgebras commute. The tensor
+product is simple by Proposition~\ref{prop:rm03-csa-tensor},
+so the homomorphism is injective. The dimension formula gives
+surjectivity.
+\end{proof}
+
+\begin{corollary}[RM03-C04.09. Maximal subfields of a central division algebra]
+\label{cor:rm03-maximal-subfield}
+Every maximal subfield \(E\) of a central division \(k\)-algebra
+\(D\) has \([E:k]=\deg D\) and splits \(D\). The separable \(E\)
+in Theorem~\ref{thm:rm03-csa-galois-split} is a maximal subfield.
+\end{corollary}
+\begin{proof}
+For \(x\in C_D(E)\), the algebra \(E[x]\) is a commutative
+finite-dimensional domain over \(E\), hence a field. Maximality
+gives \(x\in E\), so \(C_D(E)=E\). Theorem~\ref{thm:rm03-centralizer}
+now gives \([E:k]^2=\dim_k D\). The map using left multiplication
+by \(D\) and right multiplication by \(E\) in the proof of
+Theorem~\ref{thm:rm03-csa-galois-split} works for any \(E\) of
+this degree. Conversely the same dimension formula forces
+\(C_D(E)=E\) for every degree-\(\deg D\) subfield, which is
+sufficient for maximality.
+\end{proof}
+
+\section{Reduced characteristic polynomial and norm}
+
+\begin{proposition}[RM03-C04.10. Reduced characteristic polynomial]
+\label{prop:rm03-reduced-norm}
+Let \(A\) be central simple of degree \(n\) over \(k\).
+For \(a\in A\), the characteristic polynomial of the image of
+\(a\otimes 1\) in a matrix algebra over a splitting field belongs
+to \(k[t]\) and is independent of the field and of the splitting
+isomorphism. Denote it by \(\chi_a^{\mathrm{red}}(t)\) and set
+\(\operatorname{Nrd}(a)=(-1)^n\chi_a^{\mathrm{red}}(0)\).
+The reduced norm is a homogeneous polynomial of degree \(n\)
+on \(A\), commutes with base change, is multiplicative, and
+is nonzero exactly on \(A^\times\).
+\end{proposition}
+\begin{proof}
+Choose a finite Galois splitting \(K/k\), an isomorphism
+\(\phi:A_K\to M_n(K)\), and a \(k\)-basis \(u_1,\ldots,u_{n^2}\)
+of \(A\). On the generic element put
+\[
+ P(t,\mathbf X)=
+ \det\left(tI_n-\sum_i X_i\phi(u_i\otimes 1)\right).
+\]
+For \(\sigma\in\operatorname{Gal}(K/k)\), write \(\sigma_A\)
+for the action on the coefficients of \(A_K\) and \(\sigma_M\)
+for entrywise application to matrices. Then
+\(\sigma_M\phi\sigma_A^{-1}\) is another \(K\)-algebra
+isomorphism. By Theorem~\ref{thm:rm03-skolem-noether} the
+two differ by a single conjugation on \(M_n(K)\). Hence
+applying \(\sigma\) to the coefficients leaves \(P\) unchanged.
+Consequently \(P\in k[t,\mathbf X]\). If \(L/k\) is another
+splitting field, an algebraic closure of \(L\) contains a
+\(k\)-copy of \(K\). Extending the two splitting isomorphisms
+to this common field and using the same conjugacy argument
+identifies their generic characteristic polynomials. These
+identities also verify base change for a field extension
+that does not itself split \(A\), by using a splitting field
+over it and comparing there.
+
+The constant term with sign \((-1)^n\) is the determinant
+of the matrix of the generic element. Homogeneity and
+multiplicativity follow from the determinant formulas after
+extension to \(K\), and hence over \(k\). If \(a\) is invertible
+then its matrix image is invertible. Conversely if its
+matrix image is invertible, left multiplication \(x\mapsto ax\)
+on \(A\) becomes invertible over \(K\). It is therefore
+invertible over \(k\), giving some \(b\) with \(ab=1\).
+Injectivity of left multiplication also gives \(ba=1\)
+from \(a(ba-1)=0\).
+\end{proof}
+
+Over \(K\), the norm-one equation is the determinant-one
+equation defining \(\operatorname{SL}_n\). Its descent is
+\(\operatorname{SL}_1(A)\) in \cite[Result F05]{lag}, which
+also gives the corresponding inner form \(\operatorname{PGL}_1(A)\).
+
+\section{Brauer classes and examples}
+
+\begin{theorem}[RM03-C04.11. Brauer equivalence and the group law]
+\label{thm:rm03-brauer-group}
+Two central simple \(k\)-algebras \(A,B\) are \emph{Brauer
+equivalent} if \(M_p(A)\simeq M_q(B)\) for some \(p,q\geq 1\).
+This is an equivalence relation, and each class has a unique
+central division representative up to \(k\)-algebra isomorphism.
+The classes form an abelian group \(\operatorname{Br}(k)\)
+with laws
+\[
+ [A]+[B]=[A\otimes_k B],\qquad 0=[k],\qquad -[A]=[A^{\mathrm{op}}].
+\]
+The class \([A]\) is zero exactly when \(A\) is split. A field
+extension \(L/k\) gives a homomorphism
+\(\operatorname{Br}(k)\to\operatorname{Br}(L)\) by \([A]\mapsto[A_L]\).
+\end{theorem}
+\begin{proof}
+Write \(A=M_r(D)\) and \(B=M_s(E)\) with division factors.
+If they become isomorphic after passing to matrices, then
+\(D\simeq E\) by Proposition~\ref{prop:rm03-csa-matrix}.
+If \(D\simeq E\), both \(M_s(A)\) and \(M_r(B)\) are
+isomorphic to \(M_{rs}(D)\). Thus equivalence means equality
+of the division factors up to \(k\)-algebra isomorphism. The
+class of \(k\) therefore consists exactly of split algebras.
+
+The tensor product is central simple by
+Proposition~\ref{prop:rm03-csa-tensor}. The identity
+\(M_p(A)\otimes_k B\simeq M_p(A\otimes_k B)\), induced by
+tensoring coefficients, makes the product independent of
+the representative of \(A\). Commutativity via the tensor
+flip handles the representative of \(B\). Associativity and
+the identity class come from the tensor associator and unit.
+The opposite algebra is central simple and
+Proposition~\ref{prop:rm03-enveloping} identifies its product
+with \(A\) as the split algebra \(\operatorname{End}_k(A)\).
+Finally, extension of scalars commutes with the matrix and
+tensor constructions and sends \(k\) to \(L\). These
+identifications also give compatibility in towers of fields.
+\end{proof}
+
+\begin{example}[RM03-C04.12. The real and quaternion classes]
+\label{ex:rm03-brauer-real}
+There are exactly two real Brauer classes, represented by
+\(\mathbb R\) and \(\mathbb H\). To see this, apply
+Frobenius's real algebraic division-ring theorem
+\cite[K07.23.frobenius]{d07} to the central division
+representative. Finite-dimensionality guarantees
+algebraicity, and \(\mathbb C\) is excluded because its
+center is larger than \(\mathbb R\). The quaternion class
+is nonzero by uniqueness of the division representative.
+Quaternion conjugation \(q\mapsto\bar q\) reverses products,
+so \(\mathbb H^{\mathrm{op}}\simeq\mathbb H\) and
+\(2[\mathbb H]=0\). Thus
+\(\operatorname{Br}(\mathbb R)\simeq\mathbb Z/2\mathbb Z\).
+
+More explicitly \(\mathbb C=\mathbb R[i]\) is the degree-two
+splitting subfield of \(\mathbb H\) from
+Corollary~\ref{cor:rm03-maximal-subfield}, so
+\(\mathbb H_{\mathbb C}\simeq M_2(\mathbb C)\).
+Write \(q=a+bi+cj+dk\) in Hamilton's basis, with
+\(i^2=j^2=-1\) and \(k=ij=-ji\). In a complex splitting one
+can take
+\[
+ i\longmapsto \begin{pmatrix}\mathrm i&0\\0&-\mathrm i\end{pmatrix},
+ \qquad j\longmapsto \begin{pmatrix}0&1\\-1&0\end{pmatrix},
+ \quad \mathrm i^2=-1\ \text{in }\mathbb C .
+\]
+These matrices satisfy the quaternion relations, giving a
+unital homomorphism out of \(\mathbb H_{\mathbb C}\).
+It is an isomorphism by simplicity and equal dimension.
+Its determinant on \(q\) is \(a^2+b^2+c^2+d^2\), recovering
+the quaternion norm of \cite[K07.23.quaternion\_algebra]{d07}.
+\end{example}
+
+\begin{remark}[RM03-C04.13. Relative classes and descent]
+\label{rem:rm03-relative-brauer}
+For \(K/k\) finite Galois, let
+\(\operatorname{Br}(K/k)=\ker(\operatorname{Br}(k)\to\operatorname{Br}(K))\).
+It consists of the classes split by \(K\), by
+Theorem~\ref{thm:rm03-brauer-group}. Put \(G=\operatorname{Gal}(K/k)\).
+In fixed degree \(n\), the algebras split by \(K\) up to
+isomorphism correspond to \(H^1(G,\operatorname{PGL}_n(K))\)
+with its coefficientwise action. We first give the descent argument.
+
+For a finite-dimensional \(K\)-space \(V\) with a semilinear
+\(G\)-action \(T_\sigma\), the fixed vectors span \(V\) over \(K\).
+Otherwise a nonzero \(K\)-linear functional \(\ell\) annihilates
+their \(K\)-span. The vector
+\(\sum_{\sigma\in G} T_\sigma(\lambda v)\) is fixed for each
+\(v\in V\), \(\lambda\in K\). Applying \(\ell\) gives
+\(\sum_\sigma\ell(T_\sigma v)\sigma(\lambda)=0\) for all \(\lambda\).
+Distinct field automorphisms are linearly independent as
+\(K\)-valued functions: in a nonzero relation with the fewest
+terms, evaluate at \(a\lambda\) and subtract a multiple of the
+relation at \(\lambda\), choosing \(a\) on which two of the
+automorphisms differ. This eliminates one term without
+eliminating the other. A one-term relation is impossible by
+evaluation at \(1\). Thus \(\ell(v)=0\) for all \(v\), a
+contradiction. A \(K\)-basis of fixed vectors is a \(k\)-basis of
+\(V^G\), since the coefficients of a fixed vector in this basis
+are fixed by \(G\). Consequently \(K\otimes_k V^G\to V\) is an
+isomorphism. If \(V\) is a \(K\)-algebra and the action respects
+multiplication, this is an algebra isomorphism. A \(G\)-equivariant
+\(K\)-algebra map descends by restriction to the fixed subalgebras.
+
+Given a splitting of an algebra of degree \(n\), transport its
+coefficient action to \(M_n(K)\). Composing each transported
+action with inverse entrywise \(\sigma\) gives a \(K\)-algebra
+automorphism, inner by Theorem~\ref{thm:rm03-skolem-noether}.
+Two implementing invertible matrices differ by a scalar, since
+the matrices commuting with all the matrix units are the scalar
+ones. Thus the semilinear action gives a projective cocycle.
+Conversely a projective cocycle acts on \(M_n(K)\) by semilinear
+conjugation; the scalar defects disappear in conjugation. Its
+fixed algebra is central simple of degree \(n\). Its scalar
+extension is the matrix algebra, so any nonzero proper ideal
+would give a nonzero proper ideal there by extending a vector-space
+basis. A central element extends to a scalar matrix, and its
+scalar is fixed by \(G\), hence lies in \(k\). Changing the
+splitting conjugates the action by a \(K\)-algebra isomorphism,
+which gives just the projective coboundary relation.
+Conversely that relation gives an equivariant conjugation, which
+restricts to an isomorphism on fixed algebras. This proves the
+fixed-degree classification. Brauer equivalence allows
+enlargement by matrices.
+
+For the descent convention where the transported semilinear
+action is \(x\mapsto g_\sigma \sigma(x)g_\sigma^{-1}\),
+choose lifts \(G_\sigma\in\operatorname{GL}_n(K)\) of the
+projective matrices \(g_\sigma\). Then
+\(c_{\sigma,\tau}=G_\sigma\sigma(G_\tau)G_{\sigma\tau}^{-1}\)
+is scalar by the projective cocycle identity. Associating the
+product of three lifted maps in two ways gives
+\[
+ c_{\sigma,\tau}c_{\sigma\tau,\nu}
+ =\sigma(c_{\tau,\nu})c_{\sigma,\tau\nu}.
+\]
+Changing each \(G_\sigma\) by a scalar changes \(c\) by a
+coboundary. Changing the splitting conjugates the projective
+datum by a coboundary, which one can lift as
+\(G_\sigma\mapsto H^{-1}G_\sigma\sigma(H)\); this leaves the
+scalar \(c_{\sigma,\tau}\) unchanged. Enlargement by a
+split matrix algebra replaces \(G_\sigma\) by \(I_m\otimes G_\sigma\)
+and preserves \(c\). Thus the scalar class depends only
+on the relative Brauer class. Tensoring lifts multiplies
+the scalar cocycles. We have constructed the group homomorphism
+\[
+ \operatorname{Br}(K/k)\longrightarrow
+ H^2(\operatorname{Gal}(K/k),K^\times),\qquad [A]\longmapsto[c].
+\]
+With the same lifts, the cocycle in
+\cite[Equation~(59.61.5.1)]{stacksdescent} is \(c^{-1}\).
+The homomorphism is injective. If the scalar class is zero,
+rescale the \(G_\sigma\) so that \(c_{\sigma,\tau}=1\).
+The operators \(v\mapsto G_\sigma\sigma(v)\) on \(K^n\) then
+form a semilinear action. In a basis of invariant vectors the
+action becomes entrywise \(\sigma\). The fixed endomorphisms
+are the endomorphisms over \(k\) of the fixed vector space,
+so the descended algebra is split.
+
+For surjectivity take a normalized scalar \(2\)-cocycle \(c\).
+On the \(K\)-space with basis \(e_\tau\), \(\tau\in G\), define
+the invertible \(\sigma\)-semilinear operators
+\[
+ T_\sigma(e_\tau)=c_{\sigma,\tau}e_{\sigma\tau}.
+\]
+On \(e_\nu\), the cocycle identity gives
+\(T_\sigma T_\tau=c_{\sigma,\tau}T_{\sigma\tau}\).
+The operators therefore act genuinely on the full endomorphism
+algebra by conjugation. The fixed algebra descends as above.
+Relative to the displayed basis the \(T_\sigma\)'s are lifts
+of its projective cocycle and the scalar defect is exactly \(c\).
+This proves the relative isomorphism with the indicated sign.
+Compare Colliot-Th\'el\`ene and Skorobogatov,
+\href{https://www.imo.universite-paris-saclay.fr/~jean-louis.colliot-thelene/BGgroup_book.pdf}{Theorem~1.3.5}.
+
+For the separable-closure statement, put \(G_k=\operatorname{Gal}(k^s/k)\)
+and give \((k^s)^\times\) the discrete topology. A continuous cochain
+on \(G_k^r\) has finite image and factors through a finite quotient:
+choose product neighborhoods on which it is constant, cover the
+compact domain by finitely many of these neighborhoods, and take a
+common open normal subgroup refining all their factors. Enlarge the
+finite Galois field fixed by that subgroup to contain the finitely
+many cochain values. The cocycle equation, and any equality with a
+coboundary, can then be checked on the finite quotient associated to
+that enlarged field. This identifies continuous second cohomology
+with the filtered colimit of the finite Galois groups'
+second cohomology under inflation and coefficient inclusion.
+The relative class maps agree with these transitions: extend the
+splitting and use the same lifts inflated along restriction of
+automorphisms. Every class of \(\operatorname{Br}(k)\) is split
+at a finite Galois stage by Theorem~\ref{thm:rm03-csa-galois-split}.
+Taking the union of relative classes therefore gives
+\(\operatorname{Br}(k)\cong H^2_{\mathrm{cts}}(G_k,(k^s)^\times)\)
+for this convention. Compare \cite[Theorem~59.61.6]{stacksdescent}.
+\end{remark}
+\chapter{Morita equivalence for full corners}
+\label{ch:rm03-morita}
+
+We use the right-module convention in this chapter. The progenerator
+form of Morita equivalence and its converse are proved in
+\cite[Ch.~3, ALG-03-C02-S05]{p103}. In that theorem a finitely generated
+projective generator \(P_R\) gives inverse equivalences by tensoring
+with \(\operatorname{Hom}_R(P,R)\) and with \(P\) on the indicated
+sides. Here we identify the generator condition and the two functors
+for a corner
+\cite[Lec.~7]{mitmorita}.
+
+\section{The full-idempotent criterion}
+
+\begin{corollary}[RM03-C05.01. Morita equivalence from a full idempotent]
+\label{cor:rm03-full-corner}
+Let \(R\) be a unital ring and \(e\in R\) satisfy \(e^2=e\). The
+right module \(eR\) is finitely generated projective, and the map
+\[
+   eRe\longrightarrow\operatorname{End}_R(eR),\qquad
+   a\longmapsto (x\longmapsto ax)
+\]
+is an isomorphism of unital rings when \(eRe\) has identity \(e\).
+The module \(eR\) is a generator of right \(R\)-modules if and only if
+\(e\) is full, meaning that \(ReR=R\). In this case there are inverse
+equivalences of right-module categories
+\[
+   \mathrm{Mod}\text{-}R \longrightarrow \mathrm{Mod}\text{-}eRe,
+   \quad M\longmapsto Me,
+   \qquad
+   N\longmapsto N\otimes_{eRe}eR
+\]
+with the second functor directed back to \(\mathrm{Mod}\text{-}R\).
+\end{corollary}
+\begin{proof}
+The decomposition \(R_R=eR\oplus(1-e)R\) follows by multiplying on
+the left by \(e\) and \(1-e\). Therefore \(eR\) is projective and is
+generated by \(e\). Every \(R\)-endomorphism \(f\) of \(eR\) has
+\(f(e)=f(e)e\in eRe\) and satisfies \(f(er)=f(e)r\). Evaluation at
+\(e\) is inverse to the displayed left multiplication map. Products
+correspond to composition and the identity endomorphism to \(e\).
+
+If \(e\) is full, a finite expression
+\(1=\sum_{i=1}^m r_i e s_i\) gives an \(R\)-linear surjection
+\[
+    (eR)^m\longrightarrow R_R,\qquad
+    (x_i)_{i=1}^m\longmapsto\sum_i r_i x_i,
+\]
+since \((e s_i)_i\) maps to \(1\). Every right module is a quotient
+of a direct sum of copies of \(R_R\), so every right module is a
+quotient of a direct sum of copies of \(eR\). Conversely, if \(eR\)
+is a generator, take a surjection from a direct sum of copies of
+\(eR\) onto \(R_R\) and a finite-support preimage of \(1\). Each
+component \(g_i:eR\to R\) has \(g_i(e)=g_i(e)e\) and takes \(e s\)
+to \(g_i(e)e s\in ReR\). Thus \(1\in ReR\), which proves fullness.
+
+Evaluation at \(e\) identifies \(\operatorname{Hom}_R(eR,R)\)
+with \(Re\). The inverse of evaluation sends \(b\in Re\) to
+\(x\mapsto bx\) on \(eR\). Multiplication on the left by \(R\)
+and precomposition by \(a\in eRe\) become the usual left \(R\)- and
+right \(eRe\)-actions on \(Re\), respectively. Thus the first
+functor of the progenerator theorem is \(M\otimes_R Re\).
+The natural right \(eRe\)-linear map \(m\otimes b\mapsto mb\)
+identifies this tensor product with \(Me\). Its inverse sends
+\(u\in Me\) to \(u\otimes e\). One composite is \(ue=u\), and
+the other is \(mb\otimes e=m\otimes be=m\otimes b\).
+The inverse functor in the theorem is \(N\mapsto N\otimes_{eRe}eR\).
+\end{proof}
+
+Under these identifications the counit is the multiplication map
+\(Me\otimes_{eRe}eR\to M\). One can read off its inverse from a full
+expression \(1=\sum_i r_i e s_i\). It sends \(m\) to
+\(\sum_i (m r_i e)\otimes(e s_i)\). Multiplying gives \(m\) back.
+For \(m'\in Me\) and \(x\in eR\), the element \(x r_i e\) belongs to
+\(eRe\). Balancing moves this element across the tensor sign and
+gives the other composition
+\(\sum_i m'\otimes x r_i e s_i=m'\otimes x\).
+
+\begin{example}[RM03-C05.02. A matrix corner and a non-full corner]
+\label{ex:rm03-corners}
+For \(n\geq 1\), \(e_{11}\) is full in \(M_n(R)\), with corner
+isomorphic to \(R\). In the product of two nonzero rings \(A\times B\),
+the corner of \(e=(1,0)\) is isomorphic to \(A\), and the corner
+functor \(M\mapsto Me\) kills the nonzero right module \(B\).
+\end{example}
+\begin{proof}
+The matrix units satisfy \(\sum_i e_{i1}e_{11}e_{1i}=1_{M_n(R)}\).
+The corner is the position \((1,1)\), and its product is the product
+of \(R\). Thus Corollary~\ref{cor:rm03-full-corner} gives the matrix
+equivalence. For the product ring the ideal generated by \((1,0)\)
+is \(A\times 0\), and right multiplication by \((1,0)\) on the
+module \(B\) obtained from projection to \(B\) is zero.
+\end{proof}
+\chapter{Representations and Path Algebras}
+\label{ch:rm03-quivers}
+
+Let \(k\) be a field. Algebras and module actions are unital, and
+\(\operatorname{End}_k(V)\) is multiplied by composition. We use left
+modules throughout. In particular, an arrow from \(i\) to \(j\) will
+act from the vertex summand at \(i\) to the vertex summand at \(j\).
+
+\section{Representations of an algebra}
+
+\begin{proposition}[RM03-C06.01. Algebra representations and modules]
+\label{prop:rm03-algebra-representations}
+For a \(k\)-algebra \(A\) and a \(k\)-vector space \(V\), unital
+\(k\)-algebra homomorphisms
+\(\rho\colon A\to\operatorname{End}_k(V)\) correspond bijectively to
+left \(A\)-module structures on \(V\) extending its given
+\(k\)-vector-space structure. A linear map intertwines two such
+representations precisely when it is \(A\)-linear.
+
+If \(I\) is a two-sided ideal of \(A\), restriction along
+\(A\to A/I\) identifies left \(A/I\)-modules with left \(A\)-modules
+annihilated by \(I\), with all module maps preserved.
+\end{proposition}
+
+\begin{proof}
+Set \(av=\rho(a)(v)\). The linearity of \(\rho\) and of the operators
+gives the distributive laws and the given scalar action.
+Multiplicativity gives \((ab)v=a(bv)\), and \(\rho(1_A)=1_V\) gives
+the unit law. In the other direction \(a\) acts by a linear map
+because \(a(\lambda v)=(a(\lambda 1_A))v=\lambda(av)\), and the
+action laws give the required \(k\)-algebra homomorphism. The two
+constructions recover the same operator at every \(a\). The
+intertwining condition says exactly that \(f(av)=af(v)\).
+
+An action obtained by restriction is zero on \(I\). Conversely, if
+\(IV=0\), the formula \((a+I)v=av\) is independent of the
+representative and satisfies the module laws. A map commutes with the
+action of \(A/I\) exactly when it commutes with the action of all
+representatives in \(A\).
+\end{proof}
+
+The group case starts with \(G\to\operatorname{GL}_k(V)\), and the
+linear extension to \(k[G]\) gives the action in
+Proposition~\ref{prop:rm03-algebra-representations}. The group algebra
+correspondence, Schur's lemma, and Maschke's theorem with its
+characteristic hypothesis are established in
+\cite[Ch.~8]{p103}. In the quiver case, the generators act between
+specified summands, and the multiplication of paths controls which
+composites are defined.
+
+\section{Paths, idempotents, and vertex spaces}
+
+\begin{definition}[RM03-C06.02. Quivers and path algebras]
+\label{def:rm03-path-algebra}
+A finite quiver \(Q=(Q_0,Q_1,s,t)\) has a finite nonempty set
+\(Q_0\) of vertices, a finite set \(Q_1\) of arrows, and source and
+target maps \(s,t\colon Q_1\to Q_0\). Parallel arrows and loops are
+allowed. For each vertex \(i\) there is a path \(e_i\) of length zero
+with source and target \(i\). A positive-length path is written
+\(p=a_\ell\cdots a_1\), where \(a_1\) is traversed first and
+\(t(a_b)=s(a_{b+1})\) for \(1\leq b<\ell\).
+
+The path algebra \(kQ\) is the vector space with basis the paths.
+For basis paths \(p,q\), the product \(pq\) is their concatenation
+with \(q\) traversed first when \(s(p)=t(q)\), and is zero
+otherwise. Concatenation with a length-zero path at a matching
+vertex leaves the other path unchanged. Multiplication extends
+bilinearly to finite linear combinations.
+\end{definition}
+
+\begin{lemma}[RM03-C06.03. Multiplication and the path basis]
+\label{lem:rm03-path-basis}
+The multiplication makes \(kQ\) an associative unital \(k\)-algebra.
+The vertices give pairwise orthogonal idempotents with sum \(1\).
+The space \(e_j(kQ)e_i\) has basis the paths from \(i\) to \(j\).
+The algebra \(kQ\) is finite-dimensional exactly when \(Q\) has no
+oriented cycle.
+\end{lemma}
+
+\begin{proof}
+For paths \(p,q,r\), both \((pq)r\) and \(p(qr)\) vanish unless
+\(s(p)=t(q)\) and \(s(q)=t(r)\). When both equalities hold, each
+parenthesization yields the same ordered list of arrows, starting
+with \(r\). Thus multiplication is associative on the basis and
+hence on \(kQ\).
+
+The length-zero paths satisfy \(e_j e_i=0\) for \(i\ne j\) and
+\(e_i^2=e_i\). For a basis path \(p\), the product
+\(e_j p e_i\) is \(p\) if \(s(p)=i\) and \(t(p)=j\), and is zero
+otherwise. This proves the corner basis claim. Summing the left or
+the right vertex action gives the identity on every path, so
+\(\sum_i e_i=1\).
+
+The powers of an oriented cycle have distinct lengths and are
+linearly independent basis elements. If there is no oriented cycle,
+no path visits a vertex twice. A repeated vertex would give a
+positive-length closed path, and a shortest closed subpath would
+give an oriented cycle. All lengths are then at most
+\(\lvert Q_0\rvert-1\). Finiteness of the arrow set gives finitely
+many paths of these lengths.
+\end{proof}
+
+\begin{definition}[RM03-C06.04. Quiver representations]
+\label{def:rm03-quiver-representations}
+A representation \(V\) of \(Q\) consists of vector spaces \(V_i\)
+at the vertices and linear maps \(V_a\colon V_{s(a)}\to V_{t(a)}\)
+on the arrows. For a path \(p=a_\ell\cdots a_1\) put
+\(V_p=V_{a_\ell}\circ\cdots\circ V_{a_1}\), and set
+\(V_{e_i}=1_{V_i}\). A morphism \(f\colon V\to W\) is a family of
+linear maps \(f_i\colon V_i\to W_i\) satisfying
+\(f_{t(a)}V_a=W_a f_{s(a)}\) for each \(a\). Composition is taken
+at each vertex.
+\end{definition}
+
+\begin{theorem}[RM03-C06.05. Quiver representations and path algebra modules]
+\label{thm:rm03-quiver-equivalence}
+The category of left \(kQ\)-modules is \(k\)-linearly equivalent to
+the category of representations of \(Q\). The equivalence sends a
+module \(M\) to the spaces \(e_iM\) with \(a\colon i\to j\) acting
+by \(m\mapsto am\) from \(e_iM\) to \(e_jM\). Its inverse sends
+\(V\) to \(\bigoplus_i V_i\). The equivalence restricts to
+finite-dimensional objects and identifies module exactness with
+exactness at every vertex.
+\end{theorem}
+
+\begin{proof}
+Since the idempotents sum to \(1\), every \(m\in M\) is a sum of
+the \(e_i m\). Applying \(e_j\) to any relation among these
+summands isolates the summand at \(j\), proving that the sum is
+direct. By Lemma~\ref{lem:rm03-path-basis}, \(e_j a e_i=a\) for
+an arrow \(a\colon i\to j\), which gives the indicated arrow map.
+A module map restricts to the summands and commutes with these
+arrow maps.
+
+Conversely, on \(\bigoplus_i V_i\) let \(p\colon i\to j\) act by
+projecting to \(V_i\), applying \(V_p\), and including into
+\(V_j\). The operators for composable paths multiply as the
+operator of their concatenation. For noncomposable paths the
+intermediate inclusion followed by projection is zero. The sum of
+the vertex operators is the identity. Extending the operators
+linearly therefore gives a unital \(k\)-algebra homomorphism, so
+Proposition~\ref{prop:rm03-algebra-representations} gives the
+module. The direct sum of the components of a morphism commutes
+with the path operators, by induction on path length using the
+arrow condition, and hence is a module map.
+
+For a module, the canonical sum map \(\bigoplus_i e_iM\to M\)
+commutes with the vertices and the arrows. Every basis path is a
+product of these generators, so the sum map is a module
+isomorphism. Starting with \(V\), each \(e_i\) becomes the
+projection onto \(V_i\). Recovering those summands identifies
+their arrow maps with the original \(V_a\). Both identifications
+commute with morphisms by their formulas.
+
+Each module map is block diagonal on the vertex summands, and its
+kernel and image are direct sums of the component kernels and
+images. Thus equality of image and kernel in a sequence is
+equivalent to equality at each vertex. For arbitrary quiver
+morphisms the vertex kernels are preserved by the arrow maps and
+the arrows descend to the vertex quotients by the images, by the
+same commutation law. This gives kernels and cokernels with the
+universal properties at each vertex. Finally, the vertex set is
+finite, so \(\bigoplus_i V_i\) is finite-dimensional if and only if
+each \(V_i\) is finite-dimensional.
+\end{proof}
+
+\section{Relations and finite-dimensional quotients}
+
+\begin{definition}[RM03-C06.06. Relations and admissible ideals]
+\label{def:rm03-quiver-relations}
+A relation from \(i\) to \(j\) is a finite linear combination
+\(r=\sum_p c_p p\) of paths from \(i\) to \(j\). A representation
+satisfies \(r=0\) if \(\sum_p c_p V_p\colon V_i\to V_j\) is zero.
+Relations generate a two-sided ideal in \(kQ\). Every two-sided
+ideal \(I\) can be described this way, since \(r\in I\) is the sum
+of the components \(e_j r e_i\in I\).
+
+Let \(J\) be the two-sided ideal generated by all the arrows.
+An ideal \(I\) is admissible if there is an integer \(m\geq 2\)
+such that \(J^m\subseteq I\subseteq J^2\).
+\end{definition}
+
+\begin{theorem}[RM03-C06.07. The module category with relations]
+\label{thm:rm03-bound-quiver-equivalence}
+Let \(I\) be generated as a two-sided ideal by a set of relations.
+The equivalence in Theorem~\ref{thm:rm03-quiver-equivalence}
+identifies left \(kQ/I\)-modules with quiver representations
+satisfying those relations, with the same morphisms. Exactness in
+this category is checked at each vertex.
+\end{theorem}
+
+\begin{proof}
+Under the action on \(\bigoplus_i V_i\), the operator of a
+relation \(r=\sum_p c_p p\) from \(i\) to \(j\) is the projection
+to \(V_i\) followed by \(\sum_p c_p V_p\), followed by inclusion
+of \(V_j\). Hence the relation acts by zero exactly when its
+required component is zero. If the generating relations act by
+zero, each term \(arb\), for \(a,b\in kQ\) and a generating
+relation \(r\), also acts by zero. This is equivalent to
+annihilation by \(I\). Proposition~\ref{prop:rm03-algebra-representations}
+now gives the quotient action and all its module maps. Kernels,
+images, and quotients of modules annihilated by \(I\) remain
+annihilated by \(I\), so the exactness criterion follows from
+Theorem~\ref{thm:rm03-quiver-equivalence}.
+\end{proof}
+
+\begin{proposition}[RM03-C06.08. Finiteness from admissibility]
+\label{prop:rm03-admissible-finiteness}
+For \(m\geq 1\), \(J^m\) is the span of all paths of length at
+least \(m\). If \(J^m\subseteq I\), the quotient \(kQ/I\) is
+finite-dimensional and is spanned by the images of the paths of
+length below \(m\). If also \(I\subseteq J^2\), the images of all
+length-zero and length-one paths are linearly independent.
+\end{proposition}
+
+\begin{proof}
+The span of the positive-length paths is a two-sided ideal, and
+every such path is a product of arrows, so it equals \(J\).
+Every product of \(m\) positive-length paths vanishes or has
+length at least \(m\). Conversely, a path of length at least \(m\)
+can be cut into \(m\) composable positive-length paths. These two
+observations identify the span with \(J^m\). There are finitely
+many paths of length below \(m\), since \(Q_0\) and \(Q_1\) are
+finite. The additional inclusion \(I\subseteq J^2\) says that a
+linear combination of paths of length zero and one lying in \(I\)
+lies in the span of paths of length two and above. Independence
+of the path basis makes that combination zero.
+\end{proof}
+
+For the path convention, the module equivalence, and admissible
+ideals, see \cite[Secs.~1.3--1.4]{quiver}. The two smallest
+examples below also test which vertex idempotents occur on
+either side of an arrow and how a relation changes its operator.
+
+\begin{example}[RM03-C06.09. One arrow and a triangular matrix algebra]
+\label{ex:rm03-one-arrow}
+Take \(Q\) with vertices \(1,2\) and one arrow \(a\colon 1\to 2\).
+The path basis is \((e_1,e_2,a)\), and the assignments
+\[
+ e_1\longmapsto E_{11},\qquad
+ e_2\longmapsto E_{22},\qquad
+ a\longmapsto E_{21}
+\]
+give an isomorphism to the \(2\times 2\) lower triangular
+matrix algebra over \(k\), with \(E_{ij}\) the usual matrix
+units. Indeed, \(E_{22}E_{21}E_{11}=E_{21}\),
+\(E_{21}^2=0\), the other vertex multiplications on \(E_{21}\)
+are zero, and the diagonal matrix units are orthogonal and
+sum to the identity. These are the products of the path basis.
+The three matrix units span the triangular algebra and are linearly
+independent. Here \(J^2=0\), so \(I=0\) is admissible.
+Explicitly, a single map \(T\colon V_1\to V_2\) gives the action
+\[
+ \begin{pmatrix}x&0\\ u&y\end{pmatrix}(v_1,v_2)
+   =\bigl(xv_1,\;uT(v_1)+yv_2\bigr).
+\]
+Indeed the displayed actions of \(E_{11},E_{22},E_{21}\) are the
+two projections and the operator of \(a\) from \(V_1\) to \(V_2\).
+\end{example}
+
+\begin{example}[RM03-C06.10. One loop with a square-zero relation]
+\label{ex:rm03-square-zero-loop}
+For one vertex and one loop \(a\), the paths are \(a^n\)
+for \(n\geq 0\), with \(a^0=e\) the vertex. The map
+\(x^n\mapsto a^n\) is multiplicative on a basis and hence gives
+\(k[x]\simeq kQ\). The relation \(a^2=0\) generates \(I=J^2\),
+so it is admissible and \(kQ/I\simeq k[x]/(x^2)\) has basis
+the classes of \(1,x\). A module is a vector space \(V\) with a
+linear operator \(T=V_a\) satisfying \(T^2=0\). A morphism to
+another such module with operator \(U\) is precisely a linear
+map \(f\) with \(fT=Uf\). These claims follow from
+Theorem~\ref{thm:rm03-bound-quiver-equivalence}, and the explicit
+action is \((\lambda+\mu x)v=\lambda v+\mu T(v)\).
+\end{example}
+
+\backmatter
+\begin{thebibliography}{9}
+
+\bibitem{p103}
+MathGenome, \emph{Algebra Core} (P1-03), as archived in MathGenome
+v0.22.0, Chapters~1--3 and~8. Release source under
+\texttt{provenance/components/AlgebraCore/delivery/}.
+
+\bibitem{d07}
+MathGenome, \emph{Abstract Algebra} (D07), revised lecture notes,
+as archived in MathGenome v0.22.0, Chapters~9--11, 16, and~23.
+
+\bibitem{lag}
+MathGenome, \emph{Linear Algebraic Groups}, Chapter~6,
+Results F01--F05. Companion lecture notes.
+
+\bibitem{ktheory}
+MathGenome, \emph{Algebraic K-Theory}, Chapter~1, Result A10.
+Companion lecture notes.
+
+\bibitem{mitdensity}
+R. Bezrukavnikov, \emph{Noncommutative Algebra}, MIT 18.706, Spring 2023,
+\href{https://ocw.mit.edu/courses/18-706-noncommutative-algebra-spring-2023/resources/mit18_706_s23_lec03_pdf/}{Lecture~3 on the density theorem}.
+
+\bibitem{mitmorita}
+R. Bezrukavnikov, \emph{Noncommutative Algebra}, MIT 18.706, Spring 2023,
+\href{https://ocw.mit.edu/courses/18-706-noncommutative-algebra-spring-2023/resources/mit18_706_s23_lec07_pdf/}{Lecture~7 on Morita equivalence}.
+
+\bibitem{stackscsa}
+The Stacks Project Authors,
+\href{https://stacks.math.columbia.edu/tag/073W}{\emph{Brauer groups}},
+Chapter~11, Sections~11.3--11.8.
+
+\bibitem{stacksdescent}
+The Stacks Project Authors,
+\href{https://stacks.math.columbia.edu/tag/03R1}{\emph{Brauer groups}},
+Section~59.61, in \emph{\'Etale Cohomology}.
+
+\bibitem{quiver}
+W. Crawley-Boevey,
+\href{https://www.math.uni-bielefeld.de/~wcrawley/25RA/Representations_of_Algebras_final_version_2025-07.pdf}{\emph{Representations of Algebras}},
+July 2025, Sections~1.3--1.4.
+
+\end{thebibliography}
+\end{document}

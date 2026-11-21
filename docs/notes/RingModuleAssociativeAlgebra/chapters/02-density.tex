@@ -1,0 +1,93 @@
+\chapter{Jacobson density}
+\label{ch:rm03-density}
+
+A faithful simple module makes its ring act by linear maps over a
+division ring. The density theorem describes exactly what this action
+can do on any finite list of vectors. The inputs from \emph{Algebra Core}
+are Schur's lemma and the splitting of submodules of a semisimple module
+\cite[Ch.~3, ALG-03-C03-R03]{p103}. A version over a field appears in
+\cite[Thm.~3.3]{mitdensity}.
+
+\section{Finite interpolation on a simple module}
+
+\begin{theorem}[RM03-C03.01. Jacobson density]
+\label{thm:rm03-density}
+Let \(R\) be a unital ring and \(M\) a nonzero simple left \(R\)-module.
+Put \(D=\operatorname{End}_R(M)^{\mathrm{op}}\), and make \(M\) a right
+\(D\)-space by \(m\cdot f^{\mathrm{op}}=f(m)\). For every finite
+right \(D\)-linearly independent list \(x_1,\ldots,x_n\) in \(M\) and
+every \(y_1,\ldots,y_n\in M\), there is \(r\in R\) such that
+\[
+   rx_i=y_i\qquad (1\leq i\leq n).
+\]
+\end{theorem}
+\begin{proof}
+Schur's lemma makes \(D\) a division ring. Multiplication in the
+opposite ring reverses composition, so the displayed evaluation is a
+right action. Every \(f\in\operatorname{End}_R(M)\) commutes with left
+multiplication by elements of \(R\). Thus the \(R\)-action induces a
+ring map \(R\to\operatorname{End}_D(M)\) with composition as product.
+
+For an empty list take \(r=0\). Otherwise give \(M^n\) the diagonal
+left \(R\)-action and write \(x=(x_1,\ldots,x_n)\). Suppose \(Rx\) is
+proper. The module \(M^n\) is semisimple, so \(Rx\) has a nonzero
+complement \(U\) and there is an \(R\)-linear projection \(p:M^n\to U\).
+Some coordinate projection \(\pi_j:M^n\to M\) has nonzero restriction
+to \(U\), since a nonzero vector has a nonzero coordinate. Composing
+\(p\) with that restriction gives a nonzero map \(h:M^n\to M\) which
+vanishes on \(Rx\). For the coordinate inclusions \(\iota_i:M\to M^n\),
+write \(f_i=h\iota_i\in\operatorname{End}_R(M)\). The identity
+\(h(z_1,\ldots,z_n)=\sum_i f_i(z_i)\) gives
+\[
+      0=h(x)=\sum_i x_i\cdot f_i^{\mathrm{op}}.
+\]
+Right \(D\)-linear independence forces each \(f_i=0\), contrary to
+\(h\ne 0\). Consequently \(Rx=M^n\), so a single \(r\) sends \(x\)
+to \((y_1,\ldots,y_n)\).
+\end{proof}
+
+\begin{corollary}[RM03-C03.02. Density in the finite topology and the finite-dimensional quotient]
+\label{cor:rm03-density-finite}
+In the setting of Theorem~\ref{thm:rm03-density}, the image of
+\(R\to\operatorname{End}_D(M)\) is dense for the topology of agreement
+on finite subsets of \(M\). If \(\dim_D M\) is finite, the induced map
+\[
+      R/\operatorname{Ann}_R(M)\longrightarrow\operatorname{End}_D(M)
+\]
+is an isomorphism of rings.
+\end{corollary}
+\begin{proof}
+For \(T\in\operatorname{End}_D(M)\) and a finite subset \(S\subseteq M\),
+choose a right \(D\)-basis of its span. Apply the theorem to that basis
+and its images under \(T\). Both \(T\) and the action of the resulting
+\(r\) are right \(D\)-linear, so they agree on the span and hence on
+\(S\). The sets of maps agreeing with \(T\) on such finite subsets
+form a neighbourhood basis at \(T\). If \(M\) is finite-dimensional,
+agreement on a full basis gives \(T\) itself. The kernel of the action
+is precisely the two-sided ideal of elements annihilating \(M\).
+\end{proof}
+
+\begin{example}[RM03-C03.03. A proper dense image]
+\label{ex:rm03-density-proper}
+Let \(V\) have countably infinite basis \(v_0,v_1,\ldots\) over a
+field \(k\), and let \(R=k\,1+F(V)\subseteq\operatorname{End}_k(V)\),
+where \(F(V)\) is the ideal of finite-rank maps. Then \(V\) is a
+faithful simple left \(R\)-module with commutant \(k\,1\), and the
+action of \(R\) on \(V\) has proper dense image.
+\end{example}
+\begin{proof}
+The action is faithful by construction. For \(v\ne0\) and any \(w\),
+choose a linear functional \(\ell\) with \(\ell(v)=1\). The rank-at-most-one
+map \(u\mapsto\ell(u)w\) sends \(v\) to \(w\), proving simplicity.
+An \(R\)-endomorphism \(T\) of \(V\) is \(k\)-linear because the scalar
+maps lie in \(R\). Commuting with all coordinate projections forces
+\(T(v_i)=c_i v_i\) for \(c_i\in k\). Commuting with the matrix unit
+sending \(v_i\) to \(v_j\) gives \(c_i=c_j\). Thus the commutant is
+exactly the scalars. Density now follows from
+Corollary~\ref{cor:rm03-density-finite}. The shift \(S(v_i)=v_{i+1}\)
+lies outside \(R\), since the vectors \(v_{i+1}-c v_i\) are linearly
+independent for every \(c\in k\). Indeed, the coefficient of the
+highest indexed \(v_{i+1}\) in any finite relation is the coefficient
+of the corresponding summand. Hence \(S-c\,1\) has infinite rank for
+every \(c\).
+\end{proof}

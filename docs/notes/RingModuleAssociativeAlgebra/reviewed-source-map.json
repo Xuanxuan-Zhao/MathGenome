@@ -1,0 +1,3607 @@
+{
+  "component": "RingModuleAssociativeAlgebra",
+  "paper": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+  "pdf": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+  "physical_pages": 19,
+  "private_auxiliary_declarations": {
+    "_private.MathGenome.Internal.RingModuleAssociativeAlgebra.RM03.CSA.Enveloping.0.RM03.CSA.envelopingSubmoduleOrderIso": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Enveloping.lean",
+    "_private.MathGenome.Internal.RingModuleAssociativeAlgebra.RM03.CSA.Enveloping.0.RM03.CSA.enveloping_end_scalars_surjective": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Enveloping.lean"
+  },
+  "public_declarations_checked": 475,
+  "results": [
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.evaluationModule"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Interpolation.lean",
+              "name": "RM03.Density.interpolate"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.rightSMul_mul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.rightSMul_op"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C03.01",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 156,
+            "line_end": 166
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.RightEnd"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.RightScalars"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.action"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.action_apply"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.evaluationModule"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.rightSMul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.rightSMul_mul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.rightSMul_op"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.rightScalarsDivisionRing"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.rightScalarsDivisionRing_toRing"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C03.01-action",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Density",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 158,
+            "line_end": 172
+          }
+        }
+      ],
+      "id": "RM03-C03.01",
+      "kind": "theorem",
+      "number": "1.1",
+      "paper_line": 157,
+      "pdf_destination": "theorem.1.1",
+      "pdf_page": 4,
+      "title": "Jacobson density"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteQuotient.lean",
+              "name": "RM03.Density.action_agrees_on_finite"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteQuotient.lean",
+              "name": "RM03.Density.action_dense"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteQuotient.lean",
+              "name": "RM03.Density.finiteTopology_nhds_basis"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C03.02-density",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Density",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 192,
+            "line_end": 196
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.action_apply"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/Action.lean",
+              "name": "RM03.Density.action_ker"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteQuotient.lean",
+              "name": "RM03.Density.action_surjective_of_finite"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteQuotient.lean",
+              "name": "RM03.Density.quotient_action_isomorphism"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C03.02-quotient",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 192,
+            "line_end": 210
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteQuotient.lean",
+              "name": "RM03.Density.finiteTopology"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteQuotient.lean",
+              "name": "RM03.Density.finiteTopology_nhds_basis"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C03.02-topology",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Density",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 194,
+            "line_end": 208
+          }
+        }
+      ],
+      "id": "RM03-C03.02",
+      "kind": "corollary",
+      "number": "1.2",
+      "paper_line": 193,
+      "pdf_destination": "corollary.1.2",
+      "pdf_page": 4,
+      "title": "Density in the finite topology and the finite-dimensional quotient"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteRankModule.lean",
+              "name": "RM03.Density.FiniteRankModule.commutant"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteRankModule.lean",
+              "name": "RM03.Density.FiniteRankModule.commutantEquiv_exists"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteRankModule.lean",
+              "name": "RM03.Density.FiniteRankModule.evaluationModule"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteRankModule.lean",
+              "name": "RM03.Density.FiniteRankModule.evaluation_smul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteRankModule.lean",
+              "name": "RM03.Density.FiniteRankModule.faithful"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteRankModule.lean",
+              "name": "RM03.Density.FiniteRankModule.finiteRankIdeal"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteRankModule.lean",
+              "name": "RM03.Density.FiniteRankModule.mem_finiteRankIdeal"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteRankModule.lean",
+              "name": "RM03.Density.FiniteRankModule.mem_scalarPlusFiniteRank"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteRankModule.lean",
+              "name": "RM03.Density.FiniteRankModule.rightEndEquiv_exists"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteRankModule.lean",
+              "name": "RM03.Density.FiniteRankModule.scalarPlusFiniteRank"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/FiniteRankModule.lean",
+              "name": "RM03.Density.FiniteRankModule.simple"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/ProperExample.lean",
+              "name": "RM03.Density.ProperExample.action_image_dense"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/ProperExample.lean",
+              "name": "RM03.Density.ProperExample.finiteTopology"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/ProperExample.lean",
+              "name": "RM03.Density.ProperExample.scalarPlusFiniteRank_lt_top"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/ProperExample.lean",
+              "name": "RM03.Density.ProperExample.shift"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/ProperExample.lean",
+              "name": "RM03.Density.ProperExample.shift_apply"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/ProperExample.lean",
+              "name": "RM03.Density.ProperExample.shift_not_mem"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Density/ProperExample.lean",
+              "name": "RM03.Density.ProperExample.shift_sub_scalar_infinite_rank"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C03.03",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 213,
+            "line_end": 220
+          }
+        }
+      ],
+      "id": "RM03-C03.03",
+      "kind": "example",
+      "number": "1.3",
+      "paper_line": 214,
+      "pdf_destination": "example.1.3",
+      "pdf_page": 5,
+      "title": "A proper dense image"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.BaseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.IsCentralDivision"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.IsCentralSimple"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.IsSplit"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.Splits"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.baseChangeEquivTensor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.isCentralDivision_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.isCentralSimple_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.isCentralSimple_iff_exists_csa"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.isCentralSimple_of_isCentralDivision"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.toCSA"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.01",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 252,
+            "line_end": 260
+          }
+        }
+      ],
+      "id": "RM03-C04.01",
+      "kind": "definition",
+      "number": "2.1",
+      "paper_line": 253,
+      "pdf_destination": "definition.2.1",
+      "pdf_page": 6,
+      "title": "Central simple algebras"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/MatrixDivision.lean",
+              "name": "RM03.CSA.MatrixDivision.center_eq_scalar_map"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/MatrixDivision.lean",
+              "name": "RM03.CSA.MatrixDivision.exists_presentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/MatrixDivision.lean",
+              "name": "RM03.CSA.MatrixDivision.presentation_unique"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SimpleArtinianModules.lean",
+              "name": "RM03.CSA.SimpleArtinianModules.columnEnd"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.02",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 262,
+            "line_end": 268
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/MatrixDivision.lean",
+              "name": "RM03.CSA.MatrixDivision.center_eq_scalar_map"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SimpleArtinianModules.lean",
+              "name": "RM03.CSA.SimpleArtinianModules.columnEnd"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SimpleArtinianModules.lean",
+              "name": "RM03.CSA.SimpleArtinianModules.columnSimple"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.02-matrix-center-and-column",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 269,
+            "line_end": 279
+          }
+        }
+      ],
+      "id": "RM03-C04.02",
+      "kind": "proposition",
+      "number": "2.2",
+      "paper_line": 263,
+      "pdf_destination": "proposition.2.2",
+      "pdf_page": 6,
+      "title": "Matrix and division presentations"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Enveloping.lean",
+              "name": "RM03.CSA.enveloping_isomorphism"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Enveloping.lean",
+              "name": "RM03.CSA.mulLeftRight_bijective"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.03",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 298,
+            "line_end": 306
+          }
+        }
+      ],
+      "id": "RM03-C04.03",
+      "kind": "proposition",
+      "number": "2.3",
+      "paper_line": 299,
+      "pdf_destination": "proposition.2.3",
+      "pdf_page": 7,
+      "title": "The enveloping algebra of a central simple algebra"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Tensor.lean",
+              "name": "RM03.CSA.center_tensor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Tensor.lean",
+              "name": "RM03.CSA.isCentralSimple_tensor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Tensor.lean",
+              "name": "RM03.CSA.isSimpleRing_tensor"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.04-tensor",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 320,
+            "line_end": 325
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.BaseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.baseChangeEquivTensor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Tensor.lean",
+              "name": "RM03.CSA.center_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Tensor.lean",
+              "name": "RM03.CSA.finrank_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Tensor.lean",
+              "name": "RM03.CSA.isCentralSimple_baseChange"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.04-base-change",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 325,
+            "line_end": 327
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.baseChangeEquivTensor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Tensor.lean",
+              "name": "RM03.CSA.finrank_baseChange"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.04-base-change-dimension",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 345,
+            "line_end": 346
+          }
+        }
+      ],
+      "id": "RM03-C04.04",
+      "kind": "proposition",
+      "number": "2.4",
+      "paper_line": 321,
+      "pdf_destination": "proposition.2.4",
+      "pdf_page": 7,
+      "title": "Tensor product and base change"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.algEquiv_matrix_algebraicClosure"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.centralDivision_degree"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.degree"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.degree_eq_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.degree_eq_matrix_size"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.degree_pos"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.finrank_eq_degree_sq"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/GaloisSplitting.lean",
+              "name": "RM03.CSA.galois_splitting"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.05-degree-and-Galois-splitting",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 351,
+            "line_end": 359
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.centralDivision_degree"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.degree_matrix_division"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SeparableSubfield.lean",
+              "name": "RM03.CSA.exists_separable_subfield"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/GaloisSplitting.lean",
+              "name": "RM03.CSA.galois_splitting_of_presentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.rightSubfieldModule"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.rightSubfield_dimension"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.rightSubfield_smul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.subfieldTensorAction_isomorphism"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.subfieldTensorAction_tmul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.subfield_splits"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.05-separable-subfield",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 356,
+            "line_end": 359
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.algEquiv_matrix_algebraicClosure"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.centralDivision_degree"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.degree_pos"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.finrank_eq_degree_sq"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.05-algebraic-closure-splitting",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 361,
+            "line_end": 370
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.rightSubfieldModule"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.rightSubfield_dimension"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.rightSubfield_smul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.subfieldTensorAction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.subfieldTensorAction_isomorphism"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.subfieldTensorAction_tmul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.subfield_splits"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.05-subfield-splitting-action",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 403,
+            "line_end": 411
+          }
+        }
+      ],
+      "id": "RM03-C04.05",
+      "kind": "theorem",
+      "number": "2.5",
+      "paper_line": 352,
+      "pdf_destination": "theorem.2.5",
+      "pdf_page": 7,
+      "title": "Degree and finite Galois splitting"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Index.lean",
+              "name": "RM03.CSA.exists_separable_splitting_field_of_finrank_index"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Index.lean",
+              "name": "RM03.CSA.index"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Index.lean",
+              "name": "RM03.CSA.index_dvd_finrank_of_splits"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Index.lean",
+              "name": "RM03.CSA.index_eq_degree"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.06",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 416,
+            "line_end": 423
+          }
+        }
+      ],
+      "id": "RM03-C04.06",
+      "kind": "corollary",
+      "number": "2.6",
+      "paper_line": 417,
+      "pdf_destination": "corollary.2.6",
+      "pdf_page": 8,
+      "title": "Index and degrees of splitting extensions"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SkolemNoether.lean",
+              "name": "RM03.CSA.algEquiv_isInner"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SkolemNoether.lean",
+              "name": "RM03.CSA.skolem_noether"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SkolemNoether.lean",
+              "name": "RM03.CSA.skolem_noether_conj"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.07",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 437,
+            "line_end": 443
+          }
+        }
+      ],
+      "id": "RM03-C04.07",
+      "kind": "theorem",
+      "number": "2.7",
+      "paper_line": 438,
+      "pdf_destination": "theorem.2.7",
+      "pdf_page": 8,
+      "title": "Skolem–Noether"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/CentralizerDimension.lean",
+              "name": "RM03.CSA.centralizerEnd"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Centralizer.lean",
+              "name": "RM03.CSA.centralizer_and_double_centralizer"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/CentralizerDimension.lean",
+              "name": "RM03.CSA.centralizer_simple_and_finrank"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.08-centralizer",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 465,
+            "line_end": 473
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Centralizer.lean",
+              "name": "RM03.CSA.centralizer_and_double_centralizer"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Centralizer.lean",
+              "name": "RM03.CSA.centralizer_central_and_tensor_equiv"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.08-central-tensor-decomposition",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 467,
+            "line_end": 476
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/CentralizerDimension.lean",
+              "name": "RM03.CSA.centralizerEnd"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/CSA/CentralizerDimension.lean",
+              "name": "Specs.RM03.CSA.centralizerTensorAction"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.08-centralizer-endomorphism-algebra",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 478,
+            "line_end": 484
+          }
+        }
+      ],
+      "id": "RM03-C04.08",
+      "kind": "theorem",
+      "number": "2.8",
+      "paper_line": 466,
+      "pdf_destination": "theorem.2.8",
+      "pdf_page": 9,
+      "title": "Centralizer and double centralizer"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/MaximalSubfield.lean",
+              "name": "RM03.CSA.IsMaximalSubfield"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/MaximalSubfield.lean",
+              "name": "RM03.CSA.exists_separable_maximal_subfield"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SeparableSubfield.lean",
+              "name": "RM03.CSA.exists_separable_subfield"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/GaloisSplitting.lean",
+              "name": "RM03.CSA.galois_splitting_of_presentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/MaximalSubfield.lean",
+              "name": "RM03.CSA.maximal_subfield_iff_centralizer_eq"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/MaximalSubfield.lean",
+              "name": "RM03.CSA.maximal_subfield_iff_degree"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/MaximalSubfield.lean",
+              "name": "RM03.CSA.maximal_subfield_splits"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.rightSubfieldModule"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.rightSubfield_dimension"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.subfieldTensorAction_isomorphism"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.subfieldTensorAction_tmul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/SubfieldSplitting.lean",
+              "name": "RM03.CSA.subfield_splits"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.09",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 501,
+            "line_end": 506
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/MaximalSubfield.lean",
+              "name": "RM03.CSA.maximal_subfield_iff_centralizer_eq"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/MaximalSubfield.lean",
+              "name": "RM03.CSA.maximal_subfield_iff_degree"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:4:RM03-C04.09-degree-converse",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 514,
+            "line_end": 516
+          }
+        }
+      ],
+      "id": "RM03-C04.09",
+      "kind": "corollary",
+      "number": "2.9",
+      "paper_line": 502,
+      "pdf_destination": "corollary.2.9",
+      "pdf_page": 9,
+      "title": "Maximal subfields of a central division algebra"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Degree.lean",
+              "name": "RM03.CSA.degree_eq_matrix_size"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedCharpoly.lean",
+              "name": "RM03.CSA.genericReducedCharpoly"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedCharpoly.lean",
+              "name": "RM03.CSA.genericReducedCharpoly_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedCharpoly.lean",
+              "name": "RM03.CSA.genericReducedCharpoly_map"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedCharpoly.lean",
+              "name": "RM03.CSA.reducedCharpoly"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedCharpoly.lean",
+              "name": "RM03.CSA.reducedCharpoly_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedCharpoly.lean",
+              "name": "RM03.CSA.reducedCharpoly_map"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedCharpoly.lean",
+              "name": "RM03.CSA.reducedCharpoly_map_iff"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.10-reduced-characteristic-polynomial",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 521,
+            "line_end": 528
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.genericReducedNorm"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.genericReducedNorm_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.genericReducedNorm_eval₂"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.genericReducedNorm_homogeneous"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.genericReducedNorm_map"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Tensor.lean",
+              "name": "RM03.CSA.isCentralSimple_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.reducedNorm"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.reducedNorm_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.reducedNorm_basis_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.reducedNorm_basis_eval"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.reducedNorm_basis_totalDegree"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.reducedNorm_eq_det"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.reducedNorm_map"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.reducedNorm_mul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.reducedNorm_ne_zero_iff_isUnit"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedNorm.lean",
+              "name": "RM03.CSA.reducedNorm_one"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.10-reduced-norm",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 523,
+            "line_end": 532
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedCharpoly.lean",
+              "name": "RM03.CSA.genericReducedCharpoly_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Tensor.lean",
+              "name": "RM03.CSA.isCentralSimple_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedCharpoly.lean",
+              "name": "RM03.CSA.reducedCharpoly_baseChange"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.10-reduced-characteristic-polynomial-base-change",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 549,
+            "line_end": 555
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedCharpoly.lean",
+              "name": "RM03.CSA.genericReducedCharpoly_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Tensor.lean",
+              "name": "RM03.CSA.isCentralSimple_baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/ReducedCharpoly.lean",
+              "name": "RM03.CSA.reducedCharpoly_baseChange"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:4:RM03-C04.10-reduced-characteristic-polynomial-base-change",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 548,
+            "line_end": 555
+          }
+        }
+      ],
+      "id": "RM03-C04.10",
+      "kind": "proposition",
+      "number": "2.10",
+      "paper_line": 522,
+      "pdf_destination": "proposition.2.10",
+      "pdf_page": 9,
+      "title": "Reduced characteristic polynomial"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.Equivalent"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.classOf"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.classOf_division_eq_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.classOf_eq_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.divisionCSA"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.equivalence_on_csa"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.equivalent_iff_division_factors"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.equivalent_iff_isBrauerEquivalent"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.exists_division_representative"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.11-Brauer-equivalence",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 576,
+            "line_end": 581
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Group.lean",
+              "name": "RM03.Brauer.classOf_add"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Group.lean",
+              "name": "RM03.Brauer.classOf_eq_zero_iff_split"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Group.lean",
+              "name": "RM03.Brauer.classOf_neg"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.equivalent_iff_split"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Group.lean",
+              "name": "RM03.Brauer.group_law"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Group.lean",
+              "name": "RM03.Brauer.instAddCommGroup"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Group.lean",
+              "name": "RM03.Brauer.oppositeCSA"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Group.lean",
+              "name": "RM03.Brauer.opposite_respects_equivalence"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.scalarCSA"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Group.lean",
+              "name": "RM03.Brauer.tensorCSA"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Group.lean",
+              "name": "RM03.Brauer.tensor_opposite_split"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Group.lean",
+              "name": "RM03.Brauer.tensor_respects_equivalence"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Group.lean",
+              "name": "RM03.Brauer.zero_eq_classOf_scalar"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.11-group-law",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 582,
+            "line_end": 587
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.baseChangeCSA"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.baseChangeMatrix_tmul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.baseChangeTensor_tmul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.baseChangeTower_tmul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.baseChange_classOf"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.baseChange_comp"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.baseChange_respects_equivalence"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.baseChange_self"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.coe_relativeBrauerInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.relativeBrauerInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.scalarExtensionGroupLaw"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.scalarExtensionMatrix"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.scalarExtensionTensor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.scalarExtensionTower"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.scalarExtensionTowerEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.baseChangeEquivTensor"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.11-base-change",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 587,
+            "line_end": 612
+          }
+        }
+      ],
+      "id": "RM03-C04.11",
+      "kind": "theorem",
+      "number": "2.11",
+      "paper_line": 577,
+      "pdf_destination": "theorem.2.11",
+      "pdf_page": 10,
+      "title": "Brauer equivalence and the group law"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.classOf_division_eq_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/Equivalence.lean",
+              "name": "RM03.Brauer.exists_division_representative"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/RealClasses.lean",
+              "name": "RM03.Brauer.quaternion_conjugation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/RealClasses.lean",
+              "name": "RM03.Brauer.quaternion_isCentralDivision"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/RealClasses.lean",
+              "name": "RM03.Brauer.real_classes"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/RealClasses.lean",
+              "name": "RM03.Brauer.real_classification"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.12-real-classes",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 615,
+            "line_end": 628
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/QuaternionSplitting.lean",
+              "name": "RM03.Brauer.QuaternionSplitting.complex_splitting"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/QuaternionSplitting.lean",
+              "name": "RM03.Brauer.QuaternionSplitting.complex_subfield"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/QuaternionSplitting.lean",
+              "name": "RM03.Brauer.QuaternionSplitting.hamilton_central_division"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/QuaternionSplitting.lean",
+              "name": "RM03.Brauer.QuaternionSplitting.reduced_norm"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/CSA/Defs.lean",
+              "name": "RM03.CSA.baseChangeEquivTensor"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.12-quaternion-splitting-and-norm",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 630,
+            "line_end": 647
+          }
+        }
+      ],
+      "id": "RM03-C04.12",
+      "kind": "example",
+      "number": "2.12",
+      "paper_line": 616,
+      "pdf_destination": "example.2.12",
+      "pdf_page": 11,
+      "title": "The real and quaternion classes"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.baseChange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.classOf_mem_relativeBrauerGroup_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.coe_relativeBrauerInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.relativeBrauerGroup"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.relativeBrauerGroup_le"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.relativeBrauerInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.relativeSubgroup"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/BaseChange.lean",
+              "name": "RM03.Brauer.scalarExtensionGroupLaw"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.13-relative-classes",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 649,
+            "line_end": 654
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.Cocycle"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.Cohomologous"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.Form"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.H1"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.SplitClasses"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.action_correspondence"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.change_splitting"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.classification"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.descended_form"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.form_iff_degree_splits"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.h1_eq_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.projectiveAction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.projectiveAction_mul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.projectiveAction_one"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.recover_form"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.splitClasses_eq_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.transported_cocycle"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ProjectiveClassification.lean",
+              "name": "RM03.Brauer.ProjectiveClassification.trivial"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.13-fixed-degree-classification",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 651,
+            "line_end": 699
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/SemilinearDescent.lean",
+              "name": "RM03.Brauer.SemilinearDescent.AlgebraAction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/SemilinearDescent.lean",
+              "name": "RM03.Brauer.SemilinearDescent.AlgebraAction.descentEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/SemilinearDescent.lean",
+              "name": "RM03.Brauer.SemilinearDescent.AlgebraAction.descentMap"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/SemilinearDescent.lean",
+              "name": "RM03.Brauer.SemilinearDescent.AlgebraAction.fixedSubalgebra"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/SemilinearDescent.lean",
+              "name": "RM03.Brauer.SemilinearDescent.AlgebraAction.restrictHom"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/SemilinearDescent.lean",
+              "name": "RM03.Brauer.SemilinearDescent.algebra_descent"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/SemilinearDescent.lean",
+              "name": "RM03.Brauer.SemilinearDescent.equivariant_restriction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/SemilinearDescent.lean",
+              "name": "RM03.Brauer.SemilinearDescent.fixed_basis"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/SemilinearDescent.lean",
+              "name": "RM03.Brauer.SemilinearDescent.fixed_span"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/SemilinearDescent.lean",
+              "name": "RM03.Brauer.SemilinearDescent.linear_descent"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.13-semi-linear-descent",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 659,
+            "line_end": 678
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/RelativeIsomorphism.lean",
+              "name": "RM03.Brauer.RelativeIsomorphism.normalized_representative"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/RelativeIsomorphism.lean",
+              "name": "RM03.Brauer.RelativeIsomorphism.obstruction_surjective"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/RelativeIsomorphism.lean",
+              "name": "RM03.Brauer.RelativeIsomorphism.regular_descent"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/RelativeIsomorphism.lean",
+              "name": "RM03.Brauer.RelativeIsomorphism.relativeBrauerEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/RelativeIsomorphism.lean",
+              "name": "RM03.Brauer.RelativeIsomorphism.relativeBrauerEquiv_toAddMonoidHom"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/RelativeIsomorphism.lean",
+              "name": "RM03.Brauer.RelativeIsomorphism.scalar_obstruction_isomorphism"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarInjective.lean",
+              "name": "RM03.Brauer.ScalarInjective.canonical_obstruction_injective"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarInjective.lean",
+              "name": "RM03.Brauer.ScalarInjective.obstruction_injective"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.H2"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.coboundary"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.cocycleClass"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.cocycleClass_eq_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.cocycles"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.coefficientAction_formula"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.cohomologous_lift_classes"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.enlargement_lift_defect"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.equivalent_lift_classes"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.exists_presentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.exists_recorded_defect"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.lift_cocycle_law"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.lift_defect"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.obstruction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.obstruction_formula"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.obstruction_hom"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.splitting_lift_classes"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.stacks_inverse"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ScalarObstruction.lean",
+              "name": "RM03.Brauer.ScalarObstruction.tensor_lift_defect"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.13-finite-relative-H2",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 701,
+            "line_end": 747
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/AbsoluteIsomorphism.lean",
+              "name": "RM03.Brauer.AbsoluteIsomorphism.absoluteBrauerEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/AbsoluteIsomorphism.lean",
+              "name": "RM03.Brauer.AbsoluteIsomorphism.absoluteBrauerEquiv_apply"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/AbsoluteIsomorphism.lean",
+              "name": "RM03.Brauer.AbsoluteIsomorphism.absolute_brauer_isomorphism"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/AbsoluteIsomorphism.lean",
+              "name": "RM03.Brauer.AbsoluteIsomorphism.exists_relative_stage"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/AbsoluteIsomorphism.lean",
+              "name": "RM03.Brauer.AbsoluteIsomorphism.finite_stage_cover"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/AbsoluteIsomorphism.lean",
+              "name": "RM03.Brauer.AbsoluteIsomorphism.relativeBrauerEquiv_compatible"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/AbsoluteIsomorphism.lean",
+              "name": "RM03.Brauer.AbsoluteIsomorphism.relative_inflation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.H2Continuous"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.Stage"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.coboundary_continuous"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.continuousCoboundaries"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.continuousCocycles"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.continuousOneCochains"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.equal_at_finite_stage"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.finite_class_representative"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.finite_cocycle_representative"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.finite_limit_comparison"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.inflate_formula"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.inflation_directedSystem"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.limitEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.limitEquiv_of"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.toContinuous_compatible"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/ContinuousCohomology.lean",
+              "name": "RM03.Brauer.ContinuousCohomology.toContinuous_formula"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.commonCochainFactorization"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.continuousUnitAction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.finiteCochainFactorization"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.finiteCochainRange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.openUnitStabilizers"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.restrictionQuotient"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C04.13-continuous-absolute-H2",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 751,
+            "line_end": 769
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.commonCochainFactorization"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.continuousUnitAction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.finiteCochainFactorization"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.finiteCochainRange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.openUnitStabilizers"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.restrictionQuotient"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.13-finite-cochain-factorization",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 751,
+            "line_end": 760
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.commonCochainFactorization"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.continuousUnitAction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.finiteCochainFactorization"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.finiteCochainRange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.openUnitStabilizers"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.restrictionQuotient"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:3:RM03-C04.13-finite-cochain-factorization",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 751,
+            "line_end": 760
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.commonCochainFactorization"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.continuousUnitAction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.finiteCochainFactorization"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.finiteCochainRange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.openUnitStabilizers"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.restrictionQuotient"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:4:RM03-C04.13-finite-cochain-factorization",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 751,
+            "line_end": 760
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.commonCochainFactorization"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.continuousUnitAction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.finiteCochainFactorization"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.finiteCochainRange"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.openUnitStabilizers"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Brauer/FiniteCochains.lean",
+              "name": "RM03.Brauer.restrictionQuotient"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:5:RM03-C04.13-finite-cochain-factorization",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 751,
+            "line_end": 758
+          }
+        }
+      ],
+      "id": "RM03-C04.13",
+      "kind": "remark",
+      "number": "2.13",
+      "paper_line": 650,
+      "pdf_destination": "remark.2.13",
+      "pdf_page": 11,
+      "title": "Relative classes and descent"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.carriers"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.finite_projective"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.rightIdeal"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.rightIdealInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.rightIdealProjection"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.rightIdeal_projection_inclusion"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C05.01-projective",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 785,
+            "line_end": 789
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/FullEquivalence.lean",
+              "name": "RM03.Morita.cornerExtensionIso"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.cornerFunctor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.cornerFunctor_map_val"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/FullEquivalence.lean",
+              "name": "RM03.Morita.fromCornerFunctor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/FullEquivalence.lean",
+              "name": "RM03.Morita.fullCornerEquivalence"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/FullEquivalence.lean",
+              "name": "RM03.Morita.full_corner_equivalence"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.moduleCorner_image"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.moduleCorner_smul_val"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.rightIdeal_corner_smul_val"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.rightIdeal_op_smul_val"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.tensorWithBimodule_map_tmul"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C05.01-equivalence",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 785,
+            "line_end": 804
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.cornerEndEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.cornerEndEquiv_apply_val"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.cornerEndEquiv_symm_val"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.cornerToEnd"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.corner_endomorphisms"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.corner_mul_val"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.corner_one_val"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C05.01-endomorphisms",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 787,
+            "line_end": 793
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.Corner"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.Idempotent"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/FullGenerator.lean",
+              "name": "RM03.Morita.IsFull"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.carriers"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.cornerRing"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.cornerSubring"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.corner_mul_val"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.corner_one_val"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/FullGenerator.lean",
+              "name": "RM03.Morita.full_iff_sum"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.leftIdeal"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.rightIdeal"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.rightIdealBimodule"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.rightIdeal_corner_smul_val"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/Corner.lean",
+              "name": "RM03.Morita.rightIdeal_op_smul_val"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C05.01-corner",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 787,
+            "line_end": 795
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/FullGenerator.lean",
+              "name": "RM03.Morita.full_iff_sum"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/FullGenerator.lean",
+              "name": "RM03.Morita.full_quotients"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/FullGenerator.lean",
+              "name": "RM03.Morita.generator_iff_full"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C05.01-generator",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 787,
+            "line_end": 795
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_dual"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_dual_tensor_natural"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_tensor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_tensor_natural"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C05.01-corner-dual-and-tensor",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 827,
+            "line_end": 838
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_dual"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_dual_tensor_natural"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_tensor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_tensor_natural"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:2:RM03-C05.01-dual-and-corner-tensor",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 827,
+            "line_end": 837
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_dual"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_dual_tensor_natural"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_tensor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_tensor_natural"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:4:RM03-C05.01-dual-and-tensor-identifications",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 827,
+            "line_end": 837
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_dual"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_dual_tensor_natural"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_tensor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/CornerTensor.lean",
+              "name": "RM03.Morita.corner_tensor_natural"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:5:RM03-C05.01-dual-tensor-comparison",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 827,
+            "line_end": 837
+          }
+        }
+      ],
+      "id": "RM03-C05.01",
+      "kind": "corollary",
+      "number": "3.1",
+      "paper_line": 786,
+      "pdf_destination": "corollary.3.1",
+      "pdf_page": 13,
+      "title": "Morita equivalence from a full idempotent"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/MatrixCorner.lean",
+              "name": "RM03.Morita.matrixCornerEquivalence"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/MatrixCorner.lean",
+              "name": "RM03.Morita.matrixCornerRingEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/MatrixCorner.lean",
+              "name": "RM03.Morita.matrixIdempotent"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/MatrixCorner.lean",
+              "name": "RM03.Morita.matrix_corner_equivalence"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/MatrixCorner.lean",
+              "name": "RM03.Morita.matrix_corner_full"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/MatrixCorner.lean",
+              "name": "RM03.Morita.matrix_unit_sum"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C05.02-matrix",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 849,
+            "line_end": 859
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/ProductCorner.lean",
+              "name": "RM03.Morita.productIdempotent"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Morita/ProductCorner.lean",
+              "name": "RM03.Morita.productRightModule"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/ProductCorner.lean",
+              "name": "RM03.Morita.product_corner_equiv"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/ProductCorner.lean",
+              "name": "RM03.Morita.product_corner_functor"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Morita/ProductCorner.lean",
+              "name": "RM03.Morita.product_corner_ideal"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C05.02-product",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 849,
+            "line_end": 863
+          }
+        }
+      ],
+      "id": "RM03-C05.02",
+      "kind": "example",
+      "number": "3.2",
+      "paper_line": 850,
+      "pdf_destination": "example.3.2",
+      "pdf_page": 14,
+      "title": "A matrix corner and a non-full corner"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/AlgebraRepresentations.lean",
+              "name": "RM03.Quivers.AlgebraRepresentations.CompatibleModule"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/AlgebraRepresentations.lean",
+              "name": "RM03.Quivers.AlgebraRepresentations.correspondence"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/AlgebraRepresentations.lean",
+              "name": "RM03.Quivers.AlgebraRepresentations.intertwinesIffModuleLinear"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/AlgebraRepresentations.lean",
+              "name": "RM03.Quivers.AlgebraRepresentations.representationEquiv"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.01-representations",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 874,
+            "line_end": 881
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/QuotientModules.lean",
+              "name": "RM03.Quivers.QuotientModules.annihilated"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/QuotientModules.lean",
+              "name": "RM03.Quivers.QuotientModules.descendObj_mk_smul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/QuotientModules.lean",
+              "name": "RM03.Quivers.QuotientModules.linearityAfterRestriction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/QuotientModules.lean",
+              "name": "RM03.Quivers.QuotientModules.quotientEquivalence"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.01-quotient-modules",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 883,
+            "line_end": 886
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/AlgebraRepresentations.lean",
+              "name": "RM03.Quivers.AlgebraRepresentations.groupAlgebraExtension"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:5:RM03-C06.01-group-algebra-extension",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 905,
+            "line_end": 908
+          }
+        }
+      ],
+      "id": "RM03-C06.01",
+      "kind": "proposition",
+      "number": "4.1",
+      "paper_line": 875,
+      "pdf_destination": "proposition.4.1",
+      "pdf_page": 15,
+      "title": "Algebra representations and modules"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Arrow"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.arrow"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.concat"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.length"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.length_arrow"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.length_concat"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.length_vertex"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.source"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.source_concat"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.target"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.target_concat"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.vertex"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.arrows_equiv_endpoints"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.finite_arrowsOfMaps"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.quiverOfArrows"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.02-quivers-paths",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 916,
+            "line_end": 924
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.concat"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.concat_ofPath"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.concat_vertex"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.Path.vertex_concat"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.basis"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.basis_apply"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.mulBilinear"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.ofPath"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.ofPath_mul_ofPath"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.ofPath_mul_vertex"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.vertex_mul_ofPath"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.02-path-algebra",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 926,
+            "line_end": 932
+          }
+        }
+      ],
+      "id": "RM03-C06.02",
+      "kind": "definition",
+      "number": "4.2",
+      "paper_line": 917,
+      "pdf_destination": "definition.4.2",
+      "pdf_page": 15,
+      "title": "Quivers and path algebras"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.has_algebra_structure"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.mul_assoc"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.sum_vertices"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.unit_laws"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.vertex_idempotent"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.vertex_orthogonal"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.03-algebra-and-vertices",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 934,
+            "line_end": 937
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.corner"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.corner_has_basis"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.mem_corner"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.vertex_mul_ofPath_mul_vertex"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.03-corner-basis",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 938,
+            "line_end": 938
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/AcyclicFiniteness.lean",
+              "name": "RM03.HasOrientedCycle"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundedPaths.lean",
+              "name": "RM03.Path.finite_length_lt"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/AcyclicFiniteness.lean",
+              "name": "RM03.PathAlgebra.finiteDimensional_iff_no_orientedCycle"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/AcyclicFiniteness.lean",
+              "name": "RM03.hasOrientedCycle_iff_exists_closed_path"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.03-acyclic",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 939,
+            "line_end": 941
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundedPaths.lean",
+              "name": "RM03.Path.finite_length_lt"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:2:RM03-C06.03-bounded-length-paths",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 957,
+            "line_end": 963
+          }
+        }
+      ],
+      "id": "RM03-C06.03",
+      "kind": "lemma",
+      "number": "4.3",
+      "paper_line": 935,
+      "pdf_destination": "lemma.4.3",
+      "pdf_page": 16,
+      "title": "Multiplication and the path basis"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.commutes_on_paths_iff_arrows"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.component_add"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.component_comp"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.component_id"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.component_smul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.data_ofArrows"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.mapPath_comp"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.mapPath_cons"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.mapPath_nil"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.morphism_data"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.ofArrows"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Representations.lean",
+              "name": "RM03.QuiverRepresentation.ofArrows_data"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.04-representations",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 966,
+            "line_end": 976
+          }
+        }
+      ],
+      "id": "RM03-C06.04",
+      "kind": "definition",
+      "number": "4.4",
+      "paper_line": 967,
+      "pdf_destination": "definition.4.4",
+      "pdf_page": 16,
+      "title": "Quiver representations"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleVertices.lean",
+              "name": "RM03.ModuleVertices.coe_arrowMap"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleVertices.lean",
+              "name": "RM03.ModuleVertices.coe_restrictMap"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleVertices.lean",
+              "name": "RM03.ModuleVertices.construction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleVertices.lean",
+              "name": "RM03.ModuleVertices.sumEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleVertices.lean",
+              "name": "RM03.ModuleVertices.sumEquiv_natural"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathOperators.lean",
+              "name": "RM03.PathOperators.construction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathOperators.lean",
+              "name": "RM03.PathOperators.linearExtension_apply"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathOperators.lean",
+              "name": "RM03.PathOperators.operator_apply"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathOperators.lean",
+              "name": "RM03.PathOperators.operator_mul"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathOperators.lean",
+              "name": "RM03.PathOperators.sum_vertex_operators"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleEquivalence.lean",
+              "name": "RM03.QuiverModuleEquivalence.construction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleEquivalence.lean",
+              "name": "RM03.QuiverModuleEquivalence.coordinates"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleEquivalence.lean",
+              "name": "RM03.QuiverModuleEquivalence.coordinates_map"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleEquivalence.lean",
+              "name": "RM03.QuiverModuleEquivalence.coordinates_smul_ofPath"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleEquivalence.lean",
+              "name": "RM03.QuiverModuleEquivalence.equivalence"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.05-equivalence",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 978,
+            "line_end": 1017
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleEquivalence.lean",
+              "name": "RM03.QuiverModuleEquivalence.construction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleEquivalence.lean",
+              "name": "RM03.QuiverModuleEquivalence.finiteEquivalence"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleEquivalence.lean",
+              "name": "RM03.QuiverModuleEquivalence.finite_forward"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleEquivalence.lean",
+              "name": "RM03.QuiverModuleEquivalence.finite_inverse"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.05-finite-dimensional",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 984,
+            "line_end": 986
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleEquivalence.lean",
+              "name": "RM03.QuiverModuleEquivalence.construction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ModuleEquivalence.lean",
+              "name": "RM03.QuiverModuleEquivalence.exact_iff_vertexwise"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernel_isColimit"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.exact_iff_vertexwise"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.exact_pair_iff_vertexwise"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.image_isImage"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernel_isLimit"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.05-exactness",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 985,
+            "line_end": 986
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernelProjection"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernelRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernel_isColimit"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.imageInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.imageRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.image_isImage"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernelInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernelRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernel_isLimit"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.toImage"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C06.05-vertex-kernels-images-cokernels",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1018,
+            "line_end": 1025
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernelProjection"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernelRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernel_isColimit"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.imageInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.imageRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.image_isImage"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernelInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernelRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernel_isLimit"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.toImage"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:2:RM03-C06.05-vertexwise-kernels-cokernels-images",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1018,
+            "line_end": 1025
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernelProjection"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernelRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernel_isColimit"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.imageInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.imageRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.image_isImage"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernelInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernelRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernel_isLimit"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.toImage"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:4:RM03-C06.05-vertexwise-kernels-cokernels-images",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1018,
+            "line_end": 1025
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernelProjection"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernelRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.cokernel_isColimit"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernelInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernelRepresentation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/VertexwiseExactness.lean",
+              "name": "RM03.QuiverRepresentation.kernel_isLimit"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:5:RM03-C06.05-vertex-kernels-cokernels",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1021,
+            "line_end": 1025
+          }
+        }
+      ],
+      "id": "RM03-C06.05",
+      "kind": "theorem",
+      "number": "4.5",
+      "paper_line": 979,
+      "pdf_destination": "theorem.4.5",
+      "pdf_page": 16,
+      "title": "Quiver representations and path algebra modules"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.QuiverRelation"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.QuiverRelation.Bundled"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.QuiverRelation.Satisfies"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.QuiverRelation.evaluate"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.QuiverRelation.generatedIdeal"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.QuiverRelation.generatedIdeal_le_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.QuiverRelation.toElement"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.QuiverRelation.toPathAlgebra"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.06-relations",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1032,
+            "line_end": 1037
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.PathAlgebra.generated_by_relations"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/PathAlgebra.lean",
+              "name": "RM03.PathAlgebra.mem_corner"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.PathAlgebra.sum_vertex_mul_mul_vertex"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.QuiverRelation.generatedIdeal_le_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.QuiverRelation.range_toPathAlgebra"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.06-ideal-components",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1037,
+            "line_end": 1039
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.PathAlgebra.IsAdmissible"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.PathAlgebra.arrowIdeal"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.PathAlgebra.idealPower"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.PathAlgebra.idealPower_asIdeal"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.PathAlgebra.isAdmissible_iff"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.PathAlgebra.spanProductPowers_asIdeal"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.06-admissible",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1041,
+            "line_end": 1044
+          }
+        }
+      ],
+      "id": "RM03-C06.06",
+      "kind": "definition",
+      "number": "4.6",
+      "paper_line": 1033,
+      "pdf_destination": "definition.4.6",
+      "pdf_page": 17,
+      "title": "Relations and admissible ideals"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundModuleEquivalence.lean",
+              "name": "RM03.QuiverBoundModuleEquivalence.construction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundModuleEquivalence.lean",
+              "name": "RM03.QuiverBoundModuleEquivalence.equivalence"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundModuleEquivalence.lean",
+              "name": "RM03.QuiverBoundModuleEquivalence.functor_comp_inclusion"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundModuleEquivalence.lean",
+              "name": "RM03.QuiverBoundModuleEquivalence.inverse_comp_restriction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundModuleEquivalence.lean",
+              "name": "RM03.QuiverBoundModuleEquivalence.relation_operator"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundModuleEquivalence.lean",
+              "name": "RM03.QuiverBoundModuleEquivalence.satisfies_iff_annihilated"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.07-equivalence",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1046,
+            "line_end": 1053
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundModuleEquivalence.lean",
+              "name": "RM03.QuiverBoundModuleEquivalence.construction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundModuleEquivalence.lean",
+              "name": "RM03.QuiverBoundModuleEquivalence.exact_pair_iff_vertexwise"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundModuleEquivalence.lean",
+              "name": "RM03.QuiverBoundModuleEquivalence.full_exact_pair_iff_vertexwise"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.07-exactness",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1051,
+            "line_end": 1053
+          }
+        }
+      ],
+      "id": "RM03-C06.07",
+      "kind": "theorem",
+      "number": "4.7",
+      "paper_line": 1047,
+      "pdf_destination": "theorem.4.7",
+      "pdf_page": 17,
+      "title": "The module category with relations"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ArrowIdealPowers.lean",
+              "name": "RM03.PathAlgebra.arrowIdeal_power_eq_span"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.PathAlgebra.idealPower_asIdeal"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.08-ideal-powers",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1070,
+            "line_end": 1073
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundedPaths.lean",
+              "name": "RM03.Path.finite_length_lt"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.PathAlgebra.idealPower_asIdeal"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/AdmissibleFiniteness.lean",
+              "name": "RM03.PathAlgebra.quotient_finite_and_spanned"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.08-finite-spanning",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1072,
+            "line_end": 1075
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/ArrowIdealPowers.lean",
+              "name": "RM03.PathAlgebra.arrowIdeal_power_eq_span"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/Relations.lean",
+              "name": "RM03.PathAlgebra.idealPower_asIdeal"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/AdmissibleFiniteness.lean",
+              "name": "RM03.PathAlgebra.quotient_short_paths_independent"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.08-independent-vertices-arrows",
+          "import": "MathGenome.RingModuleAssociativeAlgebra",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1072,
+            "line_end": 1077
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/BoundedPaths.lean",
+              "name": "RM03.Path.finite_length_lt"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:additional:5:RM03-C06.08-bounded-paths",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1085,
+            "line_end": 1087
+          }
+        }
+      ],
+      "id": "RM03-C06.08",
+      "kind": "proposition",
+      "number": "4.8",
+      "paper_line": 1071,
+      "pdf_destination": "proposition.4.8",
+      "pdf_page": 17,
+      "title": "Finiteness from admissibility"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/OneArrow.lean",
+              "name": "RM03.OneArrow.matrixAndAction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/OneArrow.lean",
+              "name": "RM03.OneArrow.matrixEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/OneArrow.lean",
+              "name": "RM03.OneArrow.orderedPathBasis"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/OneArrow.lean",
+              "name": "RM03.OneArrow.squareZeroAndAdmissible"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/OneArrow.lean",
+              "name": "RM03.OneArrowSpec.edge"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/OneArrow.lean",
+              "name": "RM03.OneArrowSpec.lowerTriangular"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.09-triangular-algebra",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1098,
+            "line_end": 1114
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/OneArrow.lean",
+              "name": "RM03.OneArrow.matrixAndAction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/OneArrow.lean",
+              "name": "RM03.OneArrowSpec.pair"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/OneArrow.lean",
+              "name": "RM03.OneArrowSpec.representation"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.09-triangular-action",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1115,
+            "line_end": 1122
+          }
+        }
+      ],
+      "id": "RM03-C06.09",
+      "kind": "example",
+      "number": "4.9",
+      "paper_line": 1099,
+      "pdf_destination": "example.4.9",
+      "pdf_page": 18,
+      "title": "One arrow and a triangular matrix algebra"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/OneLoop.lean",
+              "name": "RM03.OneLoop.construction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/OneLoop.lean",
+              "name": "RM03.OneLoop.idealEqualsSquare"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/OneLoop.lean",
+              "name": "RM03.OneLoop.pathEnumeration"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/OneLoop.lean",
+              "name": "RM03.OneLoopSpec.quiver"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/OneLoop.lean",
+              "name": "RM03.OneLoopSpec.squareRelation"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.10-loop-algebra",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1124,
+            "line_end": 1131
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/RM03/Quivers/OneLoop.lean",
+              "name": "RM03.OneLoop.construction"
+            },
+            {
+              "file": "MathGenome/Internal/RingModuleAssociativeAlgebra/Specs/RM03/Quivers/OneLoop.lean",
+              "name": "RM03.OneLoopSpec.ModuleDescription"
+            }
+          ],
+          "id": "RingModuleAssociativeAlgebra:RM03-C06.10-square-zero-operators",
+          "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+          "source": {
+            "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+            "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+            "line": 1131,
+            "line_end": 1137
+          }
+        }
+      ],
+      "id": "RM03-C06.10",
+      "kind": "example",
+      "number": "4.10",
+      "paper_line": 1125,
+      "pdf_destination": "example.4.10",
+      "pdf_page": 18,
+      "title": "One loop with a square-zero relation"
+    }
+  ],
+  "reviewed_catalog_entries": 110,
+  "public_pdf_sha256": "29a881547ee34402ead935474d4b0caca05e124dab0585cc5dbd8b15e5940577"
+}

@@ -3,8 +3,8 @@
   "counts": {
     "D05_entries": 249,
     "D07_entries": 408,
-    "declarations": 339845,
-    "entries": 6262,
+    "declarations": 342542,
+    "entries": 6367,
     "project_goals": 1710,
     "registered_bindings": 42901,
     "searchable_project_declarations": 10053,
@@ -269885,6 +269885,3866 @@
         "ALG02GroupTheory.StableElementaryK2.k₂_homology_identification"
       ],
       "title": "For each associative unital ring R, the classical K₂(R) of the stable elementary group E(R) is isomorphic to H₂(E(R);ℤ)."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "RingModuleAssociativeAlgebra:paper-front-matter",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "paper-front-matter",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1,
+        "line_end": 86
+      },
+      "source_declarations": [],
+      "title": "LaTeX setup, title, publication information and table of contents."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "RingModuleAssociativeAlgebra:paper-reading-guide",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "paper-reading-guide",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 87,
+        "line_end": 108
+      },
+      "source_declarations": [],
+      "title": "Scope and notation for the supplement. Rings and algebra maps are unital, the algebra structure map is central, density and quivers use left modules, and full corners use right modules. Endomorphisms multiply by composition and the rightmost path acts first. The passage also explains the result keys."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "RingModuleAssociativeAlgebra:paper-core-module-coverage",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "paper-core-module-coverage",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 110,
+        "line_end": 141
+      },
+      "source_declarations": [],
+      "title": "Coverage and cross-references to companion work. The current mathematical scope is the supplement for C03 through C06. The C01 and C02 foundations and the foundations and companion results cited under C03 through C06 are existing work referred to for context and reuse."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "RingModuleAssociativeAlgebra:RM03-C03-introduction",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C03-introduction",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 147,
+        "line_end": 152
+      },
+      "source_declarations": [],
+      "title": "Chapter orientation and references to Schur’s lemma, semisimple splitting and a field version of density. These references supply background for the chapter’s interpolation theorem."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Density.evaluationModule",
+        "RM03.Density.interpolate",
+        "RM03.Density.rightSMul_mul",
+        "RM03.Density.rightSMul_op"
+      ],
+      "goal_ids": [
+        "density_action",
+        "density_interpolation"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C03.01",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C03.01",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 156,
+        "line_end": 166,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "theorem.1.1"
+      },
+      "source_declarations": [
+        "RM03.Density.evaluationModule",
+        "RM03.Density.interpolate",
+        "RM03.Density.rightSMul_mul",
+        "RM03.Density.rightSMul_op"
+      ],
+      "title": "Let R be a unital ring and M a nonzero simple left R-module, with right D-vector-space structure m · f^op = f(m) for D = End_R(M)^op. For every finite right D-linearly independent list x₁,…,xₙ in M, including the empty list, and every list y₁,…,yₙ of the same length in M, there is a single r ∈ R such that rxᵢ = yᵢ for all 1 ≤ i ≤ n."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Density.RightEnd",
+        "RM03.Density.RightScalars",
+        "RM03.Density.action",
+        "RM03.Density.action_apply",
+        "RM03.Density.evaluationModule",
+        "RM03.Density.rightSMul",
+        "RM03.Density.rightSMul_mul",
+        "RM03.Density.rightSMul_op",
+        "RM03.Density.rightScalarsDivisionRing",
+        "RM03.Density.rightScalarsDivisionRing_toRing"
+      ],
+      "goal_ids": [
+        "density_action"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C03.01-action",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Density",
+      "key": "RM03-C03.01-action",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 158,
+        "line_end": 172,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "theorem.1.1"
+      },
+      "source_declarations": [
+        "RM03.Density.RightEnd",
+        "RM03.Density.RightScalars",
+        "RM03.Density.action",
+        "RM03.Density.action_apply",
+        "RM03.Density.evaluationModule",
+        "RM03.Density.rightSMul",
+        "RM03.Density.rightSMul_mul",
+        "RM03.Density.rightSMul_op",
+        "RM03.Density.rightScalarsDivisionRing",
+        "RM03.Density.rightScalarsDivisionRing_toRing"
+      ],
+      "title": "For a unital ring R and nonzero simple left R-module M, set D = End_R(M)^op, with the endomorphism ring multiplied by composition. D is a division ring, and m · f^op = f(m) gives the right D-vector-space structure on M. Left multiplication by R on M gives the unital ring homomorphism ρ: R → End_D(M), where End_D(M) consists of right D-linear endomorphisms."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Density.action_agrees_on_finite",
+        "RM03.Density.action_dense",
+        "RM03.Density.finiteTopology_nhds_basis"
+      ],
+      "goal_ids": [
+        "density_finite_quotient"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C03.02-density",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Density",
+      "key": "RM03-C03.02-density",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 192,
+        "line_end": 196,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "corollary.1.2"
+      },
+      "source_declarations": [
+        "RM03.Density.action_agrees_on_finite",
+        "RM03.Density.action_dense",
+        "RM03.Density.finiteTopology_nhds_basis"
+      ],
+      "title": "For every unital ring R and nonzero simple left R-module M with D = End_R(M)^op acting by evaluation on the right, the image of ρ: R → End_D(M) is dense in the topology of agreement on finite subsets. Equivalently, for each T ∈ End_D(M) and each finite subset S of M, there exists r ∈ R such that rs = T(s) for all s ∈ S."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Density.action_apply",
+        "RM03.Density.action_ker",
+        "RM03.Density.action_surjective_of_finite",
+        "RM03.Density.quotient_action_isomorphism"
+      ],
+      "goal_ids": [
+        "density_action",
+        "density_finite_quotient"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C03.02-quotient",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C03.02-quotient",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 192,
+        "line_end": 210,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "corollary.1.2"
+      },
+      "source_declarations": [
+        "RM03.Density.action_apply",
+        "RM03.Density.action_ker",
+        "RM03.Density.action_surjective_of_finite",
+        "RM03.Density.quotient_action_isomorphism"
+      ],
+      "title": "For a unital ring R and a nonzero simple left R-module M, put D = End_R(M)^op with its right evaluation action. If M is finite-dimensional over D on the right, the action ρ: R → End_D(M) induces an isomorphism of unital rings R/Ann_R(M) → End_D(M), sending r + Ann_R(M) to the operator m ↦ rm. Here Ann_R(M) is the two-sided ideal {r ∈ R | rm = 0 for every m ∈ M}."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Density.finiteTopology",
+        "RM03.Density.finiteTopology_nhds_basis"
+      ],
+      "goal_ids": [
+        "density_finite_quotient"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C03.02-topology",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Density",
+      "key": "RM03-C03.02-topology",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 194,
+        "line_end": 208,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "corollary.1.2"
+      },
+      "source_declarations": [
+        "RM03.Density.finiteTopology",
+        "RM03.Density.finiteTopology_nhds_basis"
+      ],
+      "title": "On End_D(M) for the density setting, the finite topology has a neighborhood basis at each T consisting of {U ∈ End_D(M) : U(s) = T(s) for all s ∈ S}, for finite subsets S of M."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Density.FiniteRankModule.commutant",
+        "RM03.Density.FiniteRankModule.commutantEquiv_exists",
+        "RM03.Density.FiniteRankModule.evaluationModule",
+        "RM03.Density.FiniteRankModule.evaluation_smul",
+        "RM03.Density.FiniteRankModule.faithful",
+        "RM03.Density.FiniteRankModule.finiteRankIdeal",
+        "RM03.Density.FiniteRankModule.mem_finiteRankIdeal",
+        "RM03.Density.FiniteRankModule.mem_scalarPlusFiniteRank",
+        "RM03.Density.FiniteRankModule.rightEndEquiv_exists",
+        "RM03.Density.FiniteRankModule.scalarPlusFiniteRank",
+        "RM03.Density.FiniteRankModule.simple",
+        "RM03.Density.ProperExample.action_image_dense",
+        "RM03.Density.ProperExample.finiteTopology",
+        "RM03.Density.ProperExample.scalarPlusFiniteRank_lt_top",
+        "RM03.Density.ProperExample.shift",
+        "RM03.Density.ProperExample.shift_apply",
+        "RM03.Density.ProperExample.shift_not_mem",
+        "RM03.Density.ProperExample.shift_sub_scalar_infinite_rank"
+      ],
+      "goal_ids": [
+        "density_finite_rank_module",
+        "density_proper_example"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C03.03",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C03.03",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 213,
+        "line_end": 220,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 5,
+        "pdf_destination": "example.1.3"
+      },
+      "source_declarations": [
+        "RM03.Density.FiniteRankModule.commutant",
+        "RM03.Density.FiniteRankModule.commutantEquiv_exists",
+        "RM03.Density.FiniteRankModule.evaluationModule",
+        "RM03.Density.FiniteRankModule.evaluation_smul",
+        "RM03.Density.FiniteRankModule.faithful",
+        "RM03.Density.FiniteRankModule.finiteRankIdeal",
+        "RM03.Density.FiniteRankModule.mem_finiteRankIdeal",
+        "RM03.Density.FiniteRankModule.mem_scalarPlusFiniteRank",
+        "RM03.Density.FiniteRankModule.rightEndEquiv_exists",
+        "RM03.Density.FiniteRankModule.scalarPlusFiniteRank",
+        "RM03.Density.FiniteRankModule.simple",
+        "RM03.Density.ProperExample.action_image_dense",
+        "RM03.Density.ProperExample.finiteTopology",
+        "RM03.Density.ProperExample.scalarPlusFiniteRank_lt_top",
+        "RM03.Density.ProperExample.shift",
+        "RM03.Density.ProperExample.shift_apply",
+        "RM03.Density.ProperExample.shift_not_mem",
+        "RM03.Density.ProperExample.shift_sub_scalar_infinite_rank"
+      ],
+      "title": "Let k be a field and V a k-vector space with countably infinite basis v₀,v₁,…. Let F(V) be the ideal of finite-rank k-linear endomorphisms of V and R = k·1_V + F(V) ⊆ End_k(V). Under the natural evaluation action V is a faithful simple left R-module, and its commutant End_R(V) is exactly the scalar endomorphisms k·1_V. The action image in End_k(V), identified with the density theorem’s target through the scalar commutant, is proper and dense for agreement on finite subsets."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.BaseChange",
+        "RM03.CSA.IsCentralSimple",
+        "RM03.CSA.algebraMap_baseChange",
+        "RM03.CSA.baseChangeEquivTensor",
+        "RM03.CSA.isCentralSimple_iff"
+      ],
+      "goal_ids": [
+        "csa_def"
+      ],
+      "id": "RingModuleAssociativeAlgebra:C04-field-and-simplicity-conventions",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "C04-field-and-simplicity-conventions",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 240,
+        "line_end": 242
+      },
+      "source_declarations": [
+        "RM03.CSA.BaseChange",
+        "RM03.CSA.IsCentralSimple",
+        "RM03.CSA.algebraMap_baseChange",
+        "RM03.CSA.baseChangeEquivTensor",
+        "RM03.CSA.isCentralSimple_iff"
+      ],
+      "title": "Throughout the central simple algebra chapter, k is a field and algebras and algebra maps are unital, with the given scalar structure central. A simple algebra is nonzero and has no nonzero proper two-sided ideal. For a field extension L/k use A_L = A ⊗_k L as an L-algebra."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "RingModuleAssociativeAlgebra:C04-background-references",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "C04-background-references",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 243,
+        "line_end": 248
+      },
+      "source_declarations": [],
+      "title": "The cited Artin–Wedderburn theorem and finite and real division-ring results are established inputs. The text also points to its finite-dimensional density corollary and to the Stacks Project for comparison."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.BaseChange",
+        "RM03.CSA.IsCentralDivision",
+        "RM03.CSA.IsCentralSimple",
+        "RM03.CSA.IsSplit",
+        "RM03.CSA.Splits",
+        "RM03.CSA.baseChangeEquivTensor",
+        "RM03.CSA.isCentralDivision_iff",
+        "RM03.CSA.isCentralSimple_iff",
+        "RM03.CSA.isCentralSimple_iff_exists_csa",
+        "RM03.CSA.isCentralSimple_of_isCentralDivision",
+        "RM03.CSA.toCSA"
+      ],
+      "goal_ids": [
+        "csa_def"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.01",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "RM03-C04.01",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 252,
+        "line_end": 260,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 6,
+        "pdf_destination": "definition.2.1"
+      },
+      "source_declarations": [
+        "RM03.CSA.BaseChange",
+        "RM03.CSA.IsCentralDivision",
+        "RM03.CSA.IsCentralSimple",
+        "RM03.CSA.IsSplit",
+        "RM03.CSA.Splits",
+        "RM03.CSA.baseChangeEquivTensor",
+        "RM03.CSA.isCentralDivision_iff",
+        "RM03.CSA.isCentralSimple_iff",
+        "RM03.CSA.isCentralSimple_iff_exists_csa",
+        "RM03.CSA.isCentralSimple_of_isCentralDivision",
+        "RM03.CSA.toCSA"
+      ],
+      "title": "A central simple k-algebra is a finite-dimensional simple k-algebra A with Z(A) = k1_A. A central division k-algebra is a finite-dimensional division k-algebra with the same center condition. Such a central simple algebra is split if it is k-algebra isomorphic to M_n(k) for some integer n ≥ 1. A field extension L/k splits A if A_L is split over L."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.MatrixDivision.center_eq_scalar_map",
+        "RM03.CSA.MatrixDivision.exists_presentation",
+        "RM03.CSA.MatrixDivision.presentation_unique",
+        "RM03.CSA.SimpleArtinianModules.columnEnd"
+      ],
+      "goal_ids": [
+        "csa_matrix",
+        "csa_simple_artinian_modules"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.02",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.02",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 262,
+        "line_end": 268,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 6,
+        "pdf_destination": "proposition.2.2"
+      },
+      "source_declarations": [
+        "RM03.CSA.MatrixDivision.center_eq_scalar_map",
+        "RM03.CSA.MatrixDivision.exists_presentation",
+        "RM03.CSA.MatrixDivision.presentation_unique",
+        "RM03.CSA.SimpleArtinianModules.columnEnd"
+      ],
+      "title": "Every central simple k-algebra A has a k-algebra presentation A ≅ M_r(D) for r ≥ 1 and D a central division k-algebra. In any two such presentations, the matrix sizes are equal and the division factors are k-algebra isomorphic."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.SimpleArtinianModules.columnEnd",
+        "RM03.CSA.SimpleArtinianModules.columnSimple",
+        "RM03.CSA.SimpleArtinianModules.endSimpleAndDimension",
+        "RM03.CSA.SimpleArtinianModules.equivOfFinrankEq",
+        "RM03.CSA.SimpleArtinianModules.matrixPresentation",
+        "RM03.CSA.SimpleArtinianModules.moduleDecomposition",
+        "RM03.CSA.SimpleArtinianModules.simpleModuleEquivColumn",
+        "RM03.Specs.CSA.SimpleArtinianModules.columnModule"
+      ],
+      "goal_ids": [
+        "csa_simple_artinian_modules"
+      ],
+      "id": "RingModuleAssociativeAlgebra:C04-simple-Artinian-modules",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "C04-simple-Artinian-modules",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 282,
+        "line_end": 296
+      },
+      "source_declarations": [
+        "RM03.CSA.SimpleArtinianModules.columnEnd",
+        "RM03.CSA.SimpleArtinianModules.columnSimple",
+        "RM03.CSA.SimpleArtinianModules.endSimpleAndDimension",
+        "RM03.CSA.SimpleArtinianModules.equivOfFinrankEq",
+        "RM03.CSA.SimpleArtinianModules.matrixPresentation",
+        "RM03.CSA.SimpleArtinianModules.moduleDecomposition",
+        "RM03.CSA.SimpleArtinianModules.simpleModuleEquivColumn",
+        "RM03.Specs.CSA.SimpleArtinianModules.columnModule"
+      ],
+      "title": "Let T be a finite-dimensional simple k-algebra, with arbitrary center, and write its simple-Artinian presentation as T ≅ M_s(E) with E a division algebra. Every finite-dimensional nonzero left T-module V is a direct sum of m ≥ 1 copies of the unique simple column module E^s, with m determined by dim_k V. As a k-algebra End_T(V) ≅ M_m(E^op), so it is simple and (dim_k T)(dim_k End_T(V)) = (dim_k V)^2."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.enveloping_isomorphism",
+        "RM03.CSA.mulLeftRight_bijective"
+      ],
+      "goal_ids": [
+        "csa_enveloping"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.03",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "RM03-C04.03",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 298,
+        "line_end": 306,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "proposition.2.3"
+      },
+      "source_declarations": [
+        "RM03.CSA.enveloping_isomorphism",
+        "RM03.CSA.mulLeftRight_bijective",
+        "_private.RM03.CSA.Enveloping.0.RM03.CSA.envelopingSubmoduleOrderIso",
+        "_private.RM03.CSA.Enveloping.0.RM03.CSA.enveloping_end_scalars_surjective"
+      ],
+      "title": "For every central simple k-algebra A, the left/right multiplication map A ⊗_k A^op → End_k(A) is a k-algebra isomorphism, sending a ⊗ b^op to the endomorphism x ↦ axb."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.center_tensor",
+        "RM03.CSA.isCentralSimple_tensor",
+        "RM03.CSA.isSimpleRing_tensor"
+      ],
+      "goal_ids": [
+        "csa_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.04-tensor",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "RM03-C04.04-tensor",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 320,
+        "line_end": 325,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "proposition.2.4"
+      },
+      "source_declarations": [
+        "RM03.CSA.center_tensor",
+        "RM03.CSA.isCentralSimple_tensor",
+        "RM03.CSA.isSimpleRing_tensor"
+      ],
+      "title": "Over a field k, if A is central simple and B is any simple k-algebra, A ⊗_k B is simple and its center is exactly the image 1 ⊗ Z(B) under z ↦ 1 ⊗ z. In particular the tensor product of two central simple k-algebras is central simple."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.BaseChange",
+        "RM03.CSA.baseChangeEquivTensor",
+        "RM03.CSA.center_baseChange",
+        "RM03.CSA.finrank_baseChange",
+        "RM03.CSA.isCentralSimple_baseChange"
+      ],
+      "goal_ids": [
+        "csa_def",
+        "csa_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.04-base-change",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.04-base-change",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 325,
+        "line_end": 327,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "proposition.2.4"
+      },
+      "source_declarations": [
+        "RM03.CSA.BaseChange",
+        "RM03.CSA.baseChangeEquivTensor",
+        "RM03.CSA.center_baseChange",
+        "RM03.CSA.finrank_baseChange",
+        "RM03.CSA.isCentralSimple_baseChange"
+      ],
+      "title": "For every central simple k-algebra A and every field extension L/k, the L-algebra A_L is central simple."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.algEquiv_matrix_algebraicClosure",
+        "RM03.CSA.centralDivision_degree",
+        "RM03.CSA.degree",
+        "RM03.CSA.degree_eq_iff",
+        "RM03.CSA.degree_eq_matrix_size",
+        "RM03.CSA.degree_pos",
+        "RM03.CSA.finrank_eq_degree_sq",
+        "RM03.CSA.galois_splitting"
+      ],
+      "goal_ids": [
+        "csa_degree",
+        "csa_galois_split"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.05-degree-and-Galois-splitting",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.05-degree-and-Galois-splitting",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 351,
+        "line_end": 359,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "theorem.2.5"
+      },
+      "source_declarations": [
+        "RM03.CSA.algEquiv_matrix_algebraicClosure",
+        "RM03.CSA.centralDivision_degree",
+        "RM03.CSA.degree",
+        "RM03.CSA.degree_eq_iff",
+        "RM03.CSA.degree_eq_matrix_size",
+        "RM03.CSA.degree_pos",
+        "RM03.CSA.finrank_eq_degree_sq",
+        "RM03.CSA.galois_splitting"
+      ],
+      "title": "For every central simple k-algebra A the dimension dim_k A is a square. Define deg A as the positive integer n with n² = dim_k A. There exists a finite Galois extension K/k with a K-algebra isomorphism A_K ≅ M_n(K)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.centralDivision_degree",
+        "RM03.CSA.degree_matrix_division",
+        "RM03.CSA.exists_separable_subfield",
+        "RM03.CSA.galois_splitting_of_presentation",
+        "RM03.CSA.rightSubfieldModule",
+        "RM03.CSA.rightSubfield_dimension",
+        "RM03.CSA.rightSubfield_smul",
+        "RM03.CSA.subfieldTensorAction_isomorphism",
+        "RM03.CSA.subfieldTensorAction_tmul",
+        "RM03.CSA.subfield_splits"
+      ],
+      "goal_ids": [
+        "csa_degree",
+        "csa_degree_subfield_splits",
+        "csa_division_separable_subfield",
+        "csa_galois_split"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.05-separable-subfield",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.05-separable-subfield",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 356,
+        "line_end": 359,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "theorem.2.5"
+      },
+      "source_declarations": [
+        "RM03.CSA.centralDivision_degree",
+        "RM03.CSA.degree_matrix_division",
+        "RM03.CSA.exists_separable_subfield",
+        "RM03.CSA.galois_splitting_of_presentation",
+        "RM03.CSA.rightSubfieldModule",
+        "RM03.CSA.rightSubfield_dimension",
+        "RM03.CSA.rightSubfield_smul",
+        "RM03.CSA.subfieldTensorAction_isomorphism",
+        "RM03.CSA.subfieldTensorAction_tmul",
+        "RM03.CSA.subfield_splits"
+      ],
+      "title": "If a central simple k-algebra A has division presentation A ≅ M_r(D) and d = deg D, then D contains a separable k-subfield E of degree [E:k] = d for which D_E is split. The degree of A is rd."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.exists_separable_splitting_field_of_finrank_index",
+        "RM03.CSA.index",
+        "RM03.CSA.index_dvd_finrank_of_splits",
+        "RM03.CSA.index_eq_degree"
+      ],
+      "goal_ids": [
+        "csa_index"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.06",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "RM03-C04.06",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 416,
+        "line_end": 423,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 8,
+        "pdf_destination": "corollary.2.6"
+      },
+      "source_declarations": [
+        "RM03.CSA.exists_separable_splitting_field_of_finrank_index",
+        "RM03.CSA.index",
+        "RM03.CSA.index_dvd_finrank_of_splits",
+        "RM03.CSA.index_eq_degree"
+      ],
+      "title": "For a central simple k-algebra A with division presentation A ≅ M_r(D), define its index ind(A) = deg D. For every finite field extension L/k splitting A, ind(A) divides [L:k]. There exists a separable splitting field of A of degree exactly ind(A)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.algEquiv_isInner",
+        "RM03.CSA.skolem_noether",
+        "RM03.CSA.skolem_noether_conj"
+      ],
+      "goal_ids": [
+        "csa_skolem_noether"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.07",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "RM03-C04.07",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 437,
+        "line_end": 443,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 8,
+        "pdf_destination": "theorem.2.7"
+      },
+      "source_declarations": [
+        "RM03.CSA.algEquiv_isInner",
+        "RM03.CSA.skolem_noether",
+        "RM03.CSA.skolem_noether_conj"
+      ],
+      "title": "For a central simple k-algebra A and a simple k-algebra B, any two unital k-algebra embeddings f,g:B ↪ A are conjugate by a single unit of A. Equivalently, there exists u ∈ A^× such that f(b)u = ug(b) for every b ∈ B. In particular every k-algebra automorphism of A is inner."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.centralizerEnd",
+        "RM03.CSA.centralizer_and_double_centralizer",
+        "RM03.CSA.centralizer_simple_and_finrank"
+      ],
+      "goal_ids": [
+        "csa_centralizer",
+        "csa_centralizer_dimension"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.08-centralizer",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.08-centralizer",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 465,
+        "line_end": 473,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "theorem.2.8"
+      },
+      "source_declarations": [
+        "RM03.CSA.centralizerEnd",
+        "RM03.CSA.centralizer_and_double_centralizer",
+        "RM03.CSA.centralizer_simple_and_finrank"
+      ],
+      "title": "For a unital simple k-subalgebra B of a central simple k-algebra A, put C = C_A(B) = {x ∈ A | ∀ b ∈ B, xb = bx}. Then C is simple, (dim_k B)(dim_k C) = dim_k A, C_A(C) = B, and Z(C) = Z(B) as subalgebras of A."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.centralizer_and_double_centralizer",
+        "RM03.CSA.centralizer_central_and_tensor_equiv"
+      ],
+      "goal_ids": [
+        "csa_centralizer"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.08-central-tensor-decomposition",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "RM03-C04.08-central-tensor-decomposition",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 467,
+        "line_end": 476,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "theorem.2.8"
+      },
+      "source_declarations": [
+        "RM03.CSA.centralizer_and_double_centralizer",
+        "RM03.CSA.centralizer_central_and_tensor_equiv"
+      ],
+      "title": "If B is a unital central simple k-subalgebra of the central simple k-algebra A and C is its centralizer in A, C is central over k and multiplication B ⊗_k C → A, b ⊗ c ↦ bc, is a k-algebra isomorphism."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.IsMaximalSubfield",
+        "RM03.CSA.exists_separable_maximal_subfield",
+        "RM03.CSA.exists_separable_subfield",
+        "RM03.CSA.galois_splitting_of_presentation",
+        "RM03.CSA.maximal_subfield_iff_centralizer_eq",
+        "RM03.CSA.maximal_subfield_iff_degree",
+        "RM03.CSA.maximal_subfield_splits",
+        "RM03.CSA.rightSubfieldModule",
+        "RM03.CSA.rightSubfield_dimension",
+        "RM03.CSA.subfieldTensorAction_isomorphism",
+        "RM03.CSA.subfieldTensorAction_tmul",
+        "RM03.CSA.subfield_splits"
+      ],
+      "goal_ids": [
+        "csa_degree_subfield_splits",
+        "csa_division_separable_subfield",
+        "csa_galois_split",
+        "csa_maximal_subfield"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.09",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.09",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 501,
+        "line_end": 506,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "corollary.2.9"
+      },
+      "source_declarations": [
+        "RM03.CSA.IsMaximalSubfield",
+        "RM03.CSA.exists_separable_maximal_subfield",
+        "RM03.CSA.exists_separable_subfield",
+        "RM03.CSA.galois_splitting_of_presentation",
+        "RM03.CSA.maximal_subfield_iff_centralizer_eq",
+        "RM03.CSA.maximal_subfield_iff_degree",
+        "RM03.CSA.maximal_subfield_splits",
+        "RM03.CSA.rightSubfieldModule",
+        "RM03.CSA.rightSubfield_dimension",
+        "RM03.CSA.subfieldTensorAction_isomorphism",
+        "RM03.CSA.subfieldTensorAction_tmul",
+        "RM03.CSA.subfield_splits"
+      ],
+      "title": "For a central division k-algebra D, every maximal k-subfield E has [E:k] = deg D and splits D, including when E/k is inseparable. The separable subfield of degree deg D that splits D in RM03-C04.05 is a maximal subfield."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.degree_eq_matrix_size",
+        "RM03.CSA.genericReducedCharpoly",
+        "RM03.CSA.genericReducedCharpoly_baseChange",
+        "RM03.CSA.genericReducedCharpoly_map",
+        "RM03.CSA.reducedCharpoly",
+        "RM03.CSA.reducedCharpoly_baseChange",
+        "RM03.CSA.reducedCharpoly_map",
+        "RM03.CSA.reducedCharpoly_map_iff"
+      ],
+      "goal_ids": [
+        "csa_degree",
+        "csa_reduced_charpoly"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.10-reduced-characteristic-polynomial",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.10-reduced-characteristic-polynomial",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 521,
+        "line_end": 528,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "proposition.2.10"
+      },
+      "source_declarations": [
+        "RM03.CSA.degree_eq_matrix_size",
+        "RM03.CSA.genericReducedCharpoly",
+        "RM03.CSA.genericReducedCharpoly_baseChange",
+        "RM03.CSA.genericReducedCharpoly_map",
+        "RM03.CSA.reducedCharpoly",
+        "RM03.CSA.reducedCharpoly_baseChange",
+        "RM03.CSA.reducedCharpoly_map",
+        "RM03.CSA.reducedCharpoly_map_iff"
+      ],
+      "title": "For a central simple k-algebra A of degree n and any a ∈ A, there is a unique reduced characteristic polynomial χ_a^red(t) ∈ k[t] whose coefficientwise image over every splitting field L/k is the matrix characteristic polynomial of φ(a ⊗ 1) for every L-algebra isomorphism φ:A_L ≅ M_n(L). This specifies descent to k and independence of the splitting field and splitting isomorphism."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.genericReducedNorm",
+        "RM03.CSA.genericReducedNorm_baseChange",
+        "RM03.CSA.genericReducedNorm_eval₂",
+        "RM03.CSA.genericReducedNorm_homogeneous",
+        "RM03.CSA.genericReducedNorm_map",
+        "RM03.CSA.isCentralSimple_baseChange",
+        "RM03.CSA.reducedNorm",
+        "RM03.CSA.reducedNorm_baseChange",
+        "RM03.CSA.reducedNorm_basis_baseChange",
+        "RM03.CSA.reducedNorm_basis_eval",
+        "RM03.CSA.reducedNorm_basis_totalDegree",
+        "RM03.CSA.reducedNorm_eq_det",
+        "RM03.CSA.reducedNorm_map",
+        "RM03.CSA.reducedNorm_mul",
+        "RM03.CSA.reducedNorm_ne_zero_iff_isUnit",
+        "RM03.CSA.reducedNorm_one"
+      ],
+      "goal_ids": [
+        "csa_reduced_norm",
+        "csa_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.10-reduced-norm",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.10-reduced-norm",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 523,
+        "line_end": 532,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "proposition.2.10"
+      },
+      "source_declarations": [
+        "RM03.CSA.genericReducedNorm",
+        "RM03.CSA.genericReducedNorm_baseChange",
+        "RM03.CSA.genericReducedNorm_eval₂",
+        "RM03.CSA.genericReducedNorm_homogeneous",
+        "RM03.CSA.genericReducedNorm_map",
+        "RM03.CSA.isCentralSimple_baseChange",
+        "RM03.CSA.reducedNorm",
+        "RM03.CSA.reducedNorm_baseChange",
+        "RM03.CSA.reducedNorm_basis_baseChange",
+        "RM03.CSA.reducedNorm_basis_eval",
+        "RM03.CSA.reducedNorm_basis_totalDegree",
+        "RM03.CSA.reducedNorm_eq_det",
+        "RM03.CSA.reducedNorm_map",
+        "RM03.CSA.reducedNorm_mul",
+        "RM03.CSA.reducedNorm_ne_zero_iff_isUnit",
+        "RM03.CSA.reducedNorm_one"
+      ],
+      "title": "For a central simple k-algebra A of degree n, define Nrd(a) = (−1)^n χ_a^red(0). The reduced norm is a homogeneous polynomial of degree n on the k-vector space A, commutes as a polynomial with scalar extension along any field extension of k, is multiplicative, and satisfies Nrd(a) ≠ 0 exactly when a is a unit of A."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.NormOneGroup.extendSplitting_tmul",
+        "RM03.CSA.NormOneGroup.isUnit_of_normAt_eq_one",
+        "RM03.CSA.NormOneGroup.normAt",
+        "RM03.CSA.NormOneGroup.normAt_basis_independent",
+        "RM03.CSA.NormOneGroup.normAt_eq_det",
+        "RM03.CSA.NormOneGroup.normOne",
+        "RM03.CSA.NormOneGroup.normOneFunctor_spec",
+        "RM03.CSA.NormOneGroup.normOneSplit",
+        "RM03.CSA.NormOneGroup.normOneSplit_natural",
+        "RM03.CSA.NormOneGroup.splittingExtends",
+        "RM03.CSA.reducedNorm_map"
+      ],
+      "goal_ids": [
+        "csa_inner_forms",
+        "csa_reduced_norm"
+      ],
+      "id": "RingModuleAssociativeAlgebra:C04-norm-one-over-splitting-field",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "C04-norm-one-over-splitting-field",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 569,
+        "line_end": 570
+      },
+      "source_declarations": [
+        "RM03.CSA.NormOneGroup.extendSplitting_tmul",
+        "RM03.CSA.NormOneGroup.isUnit_of_normAt_eq_one",
+        "RM03.CSA.NormOneGroup.normAt",
+        "RM03.CSA.NormOneGroup.normAt_basis_independent",
+        "RM03.CSA.NormOneGroup.normAt_eq_det",
+        "RM03.CSA.NormOneGroup.normOne",
+        "RM03.CSA.NormOneGroup.normOneFunctor_spec",
+        "RM03.CSA.NormOneGroup.normOneSplit",
+        "RM03.CSA.NormOneGroup.normOneSplit_natural",
+        "RM03.CSA.NormOneGroup.splittingExtends",
+        "RM03.CSA.reducedNorm_map"
+      ],
+      "title": "Over a splitting field K of a central simple k-algebra A of degree n, the reduced norm-one equation is identified by a K-algebra splitting with the determinant-one equation defining SL_n over K."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.NormOneGroup.groupDescent",
+        "RM03.CSA.NormOneGroup.groupDescent_natural",
+        "RM03.CSA.NormOneGroup.groupDescent_natural_spec",
+        "RM03.CSA.NormOneGroup.groupDescent_spec",
+        "RM03.CSA.NormOneGroup.isUnit_of_normAt_eq_one",
+        "RM03.CSA.NormOneGroup.normAt_basis_independent",
+        "RM03.CSA.NormOneGroup.normAt_natural",
+        "RM03.CSA.NormOneGroup.normOneFunctor",
+        "RM03.CSA.NormOneGroup.normOneFunctor_spec",
+        "RM03.CSA.NormOneGroup.projectiveField_apply",
+        "RM03.CSA.NormOneGroup.projectiveField_spec",
+        "RM03.CSA.NormOneGroup.projectiveFunctor",
+        "RM03.CSA.NormOneGroup.projectiveFunctor_spec",
+        "RM03.CSA.NormOneGroup.projectivePoints",
+        "RM03.CSA.NormOneGroup.projectiveSplit_spec",
+        "RM03.CSA.NormOneGroup.transportedCoefficient_inner"
+      ],
+      "goal_ids": [
+        "csa_inner_forms"
+      ],
+      "id": "RingModuleAssociativeAlgebra:C04-norm-one-descent-reference",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "C04-norm-one-descent-reference",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 570,
+        "line_end": 572
+      },
+      "source_declarations": [
+        "RM03.CSA.NormOneGroup.groupDescent",
+        "RM03.CSA.NormOneGroup.groupDescent_natural",
+        "RM03.CSA.NormOneGroup.groupDescent_natural_spec",
+        "RM03.CSA.NormOneGroup.groupDescent_spec",
+        "RM03.CSA.NormOneGroup.isUnit_of_normAt_eq_one",
+        "RM03.CSA.NormOneGroup.normAt_basis_independent",
+        "RM03.CSA.NormOneGroup.normAt_natural",
+        "RM03.CSA.NormOneGroup.normOneFunctor",
+        "RM03.CSA.NormOneGroup.normOneFunctor_spec",
+        "RM03.CSA.NormOneGroup.projectiveField_apply",
+        "RM03.CSA.NormOneGroup.projectiveField_spec",
+        "RM03.CSA.NormOneGroup.projectiveFunctor",
+        "RM03.CSA.NormOneGroup.projectiveFunctor_spec",
+        "RM03.CSA.NormOneGroup.projectivePoints",
+        "RM03.CSA.NormOneGroup.projectiveSplit_spec",
+        "RM03.CSA.NormOneGroup.transportedCoefficient_inner"
+      ],
+      "title": "The text identifies the descended norm-one group as SL_1(A) and refers to companion Result F05 for that descent and the corresponding PGL_1(A) inner form."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.Equivalent",
+        "RM03.Brauer.classOf",
+        "RM03.Brauer.classOf_division_eq_iff",
+        "RM03.Brauer.classOf_eq_iff",
+        "RM03.Brauer.divisionCSA",
+        "RM03.Brauer.equivalence_on_csa",
+        "RM03.Brauer.equivalent_iff_division_factors",
+        "RM03.Brauer.equivalent_iff_isBrauerEquivalent",
+        "RM03.Brauer.exists_division_representative"
+      ],
+      "goal_ids": [
+        "brauer_equivalence"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.11-Brauer-equivalence",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+      "key": "RM03-C04.11-Brauer-equivalence",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 576,
+        "line_end": 581,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 10,
+        "pdf_destination": "theorem.2.11"
+      },
+      "source_declarations": [
+        "RM03.Brauer.Equivalent",
+        "RM03.Brauer.classOf",
+        "RM03.Brauer.classOf_division_eq_iff",
+        "RM03.Brauer.classOf_eq_iff",
+        "RM03.Brauer.divisionCSA",
+        "RM03.Brauer.equivalence_on_csa",
+        "RM03.Brauer.equivalent_iff_division_factors",
+        "RM03.Brauer.equivalent_iff_isBrauerEquivalent",
+        "RM03.Brauer.exists_division_representative"
+      ],
+      "title": "For central simple k-algebras A and B define Brauer equivalence by the existence of p,q ≥ 1 with a k-algebra isomorphism M_p(A) ≅ M_q(B). This is an equivalence relation and each class has a unique central division k-algebra representative up to k-algebra isomorphism."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.classOf_add",
+        "RM03.Brauer.classOf_eq_zero_iff_split",
+        "RM03.Brauer.classOf_neg",
+        "RM03.Brauer.equivalent_iff_split",
+        "RM03.Brauer.group_law",
+        "RM03.Brauer.instAddCommGroup",
+        "RM03.Brauer.oppositeCSA",
+        "RM03.Brauer.opposite_respects_equivalence",
+        "RM03.Brauer.scalarCSA",
+        "RM03.Brauer.tensorCSA",
+        "RM03.Brauer.tensor_opposite_split",
+        "RM03.Brauer.tensor_respects_equivalence",
+        "RM03.Brauer.zero_eq_classOf_scalar"
+      ],
+      "goal_ids": [
+        "brauer_equivalence",
+        "brauer_group"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.11-group-law",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.11-group-law",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 582,
+        "line_end": 587,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 10,
+        "pdf_destination": "theorem.2.11"
+      },
+      "source_declarations": [
+        "RM03.Brauer.classOf_add",
+        "RM03.Brauer.classOf_eq_zero_iff_split",
+        "RM03.Brauer.classOf_neg",
+        "RM03.Brauer.equivalent_iff_split",
+        "RM03.Brauer.group_law",
+        "RM03.Brauer.instAddCommGroup",
+        "RM03.Brauer.oppositeCSA",
+        "RM03.Brauer.opposite_respects_equivalence",
+        "RM03.Brauer.scalarCSA",
+        "RM03.Brauer.tensorCSA",
+        "RM03.Brauer.tensor_opposite_split",
+        "RM03.Brauer.tensor_respects_equivalence",
+        "RM03.Brauer.zero_eq_classOf_scalar"
+      ],
+      "title": "The Brauer-equivalence classes of central simple k-algebras form an abelian group Br(k) with well-defined sum [A]+[B] = [A ⊗_k B], identity 0 = [k], and additive inverse −[A] = [A^op]. The class [A] equals zero exactly when A is split."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.baseChange",
+        "RM03.Brauer.baseChangeCSA",
+        "RM03.Brauer.baseChangeMatrix_tmul",
+        "RM03.Brauer.baseChangeTensor_tmul",
+        "RM03.Brauer.baseChangeTower_tmul",
+        "RM03.Brauer.baseChange_classOf",
+        "RM03.Brauer.baseChange_comp",
+        "RM03.Brauer.baseChange_respects_equivalence",
+        "RM03.Brauer.baseChange_self",
+        "RM03.Brauer.coe_relativeBrauerInclusion",
+        "RM03.Brauer.relativeBrauerInclusion",
+        "RM03.Brauer.scalarExtensionGroupLaw",
+        "RM03.Brauer.scalarExtensionMatrix",
+        "RM03.Brauer.scalarExtensionTensor",
+        "RM03.Brauer.scalarExtensionTower",
+        "RM03.Brauer.scalarExtensionTowerEquiv",
+        "RM03.CSA.baseChangeEquivTensor"
+      ],
+      "goal_ids": [
+        "brauer_base_change",
+        "csa_def"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.11-base-change",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.11-base-change",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 587,
+        "line_end": 612,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 10,
+        "pdf_destination": "theorem.2.11"
+      },
+      "source_declarations": [
+        "RM03.Brauer.baseChange",
+        "RM03.Brauer.baseChangeCSA",
+        "RM03.Brauer.baseChangeMatrix_tmul",
+        "RM03.Brauer.baseChangeTensor_tmul",
+        "RM03.Brauer.baseChangeTower_tmul",
+        "RM03.Brauer.baseChange_classOf",
+        "RM03.Brauer.baseChange_comp",
+        "RM03.Brauer.baseChange_respects_equivalence",
+        "RM03.Brauer.baseChange_self",
+        "RM03.Brauer.coe_relativeBrauerInclusion",
+        "RM03.Brauer.relativeBrauerInclusion",
+        "RM03.Brauer.scalarExtensionGroupLaw",
+        "RM03.Brauer.scalarExtensionMatrix",
+        "RM03.Brauer.scalarExtensionTensor",
+        "RM03.Brauer.scalarExtensionTower",
+        "RM03.Brauer.scalarExtensionTowerEquiv",
+        "RM03.CSA.baseChangeEquivTensor"
+      ],
+      "title": "Every field extension L/k induces a group homomorphism Br(k) → Br(L), [A] ↦ [A_L]. For a tower k ⊆ L ⊆ F of fields the composite Br(k) → Br(L) → Br(F) is the homomorphism for F/k."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.classOf_division_eq_iff",
+        "RM03.Brauer.exists_division_representative",
+        "RM03.Brauer.quaternion_conjugation",
+        "RM03.Brauer.quaternion_isCentralDivision",
+        "RM03.Brauer.real_classes",
+        "RM03.Brauer.real_classification"
+      ],
+      "goal_ids": [
+        "brauer_equivalence",
+        "brauer_real"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.12-real-classes",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.12-real-classes",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 615,
+        "line_end": 628,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "example.2.12"
+      },
+      "source_declarations": [
+        "RM03.Brauer.classOf_division_eq_iff",
+        "RM03.Brauer.exists_division_representative",
+        "RM03.Brauer.quaternion_conjugation",
+        "RM03.Brauer.quaternion_isCentralDivision",
+        "RM03.Brauer.real_classes",
+        "RM03.Brauer.real_classification"
+      ],
+      "title": "There are exactly two real Brauer classes, represented by ℝ and Hamilton's quaternion algebra ℍ. The class [ℍ] is nonzero and has order two, with quaternion conjugation giving an ℝ-algebra isomorphism ℍ^op ≅ ℍ. Thus Br(ℝ) ≅ ℤ/2ℤ."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.QuaternionSplitting.complex_splitting",
+        "RM03.Brauer.QuaternionSplitting.complex_subfield",
+        "RM03.Brauer.QuaternionSplitting.hamilton_central_division",
+        "RM03.Brauer.QuaternionSplitting.reduced_norm",
+        "RM03.CSA.baseChangeEquivTensor"
+      ],
+      "goal_ids": [
+        "brauer_quaternion_splitting",
+        "csa_def"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.12-quaternion-splitting-and-norm",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.12-quaternion-splitting-and-norm",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 630,
+        "line_end": 647,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "example.2.12"
+      },
+      "source_declarations": [
+        "RM03.Brauer.QuaternionSplitting.complex_splitting",
+        "RM03.Brauer.QuaternionSplitting.complex_subfield",
+        "RM03.Brauer.QuaternionSplitting.hamilton_central_division",
+        "RM03.Brauer.QuaternionSplitting.reduced_norm",
+        "RM03.CSA.baseChangeEquivTensor"
+      ],
+      "title": "In Hamilton's quaternion algebra ℍ, the subfield ℝ[i] ≅ ℂ has degree two over ℝ and splits ℍ. In the Hamilton basis 1,i,j,k with i²=j²=−1 and k=ij=−ji, there is a complex-algebra splitting ℍ_ℂ ≅ M_2(ℂ) sending i to diag(𝑖,−𝑖), where 𝑖 is the complex imaginary unit, and j to the matrix with rows (0,1) and (−1,0). For all a,b,c,d ∈ ℝ, the determinant of the image of a+bi+cj+dk is a²+b²+c²+d², which is the reduced norm of the quaternion."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.baseChange",
+        "RM03.Brauer.classOf_mem_relativeBrauerGroup_iff",
+        "RM03.Brauer.coe_relativeBrauerInclusion",
+        "RM03.Brauer.relativeBrauerGroup",
+        "RM03.Brauer.relativeBrauerGroup_le",
+        "RM03.Brauer.relativeBrauerInclusion",
+        "RM03.Brauer.relativeSubgroup",
+        "RM03.Brauer.scalarExtensionGroupLaw"
+      ],
+      "goal_ids": [
+        "brauer_base_change"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.13-relative-classes",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+      "key": "RM03-C04.13-relative-classes",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 649,
+        "line_end": 654,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "remark.2.13"
+      },
+      "source_declarations": [
+        "RM03.Brauer.baseChange",
+        "RM03.Brauer.classOf_mem_relativeBrauerGroup_iff",
+        "RM03.Brauer.coe_relativeBrauerInclusion",
+        "RM03.Brauer.relativeBrauerGroup",
+        "RM03.Brauer.relativeBrauerGroup_le",
+        "RM03.Brauer.relativeBrauerInclusion",
+        "RM03.Brauer.relativeSubgroup",
+        "RM03.Brauer.scalarExtensionGroupLaw"
+      ],
+      "title": "For every finite Galois extension K/k, define the relative Brauer group Br(K/k) as the kernel of Br(k) → Br(K). It consists exactly of the Brauer classes represented by central simple k-algebras split by K."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.ProjectiveClassification.Cocycle",
+        "RM03.Brauer.ProjectiveClassification.Cohomologous",
+        "RM03.Brauer.ProjectiveClassification.Form",
+        "RM03.Brauer.ProjectiveClassification.H1",
+        "RM03.Brauer.ProjectiveClassification.SplitClasses",
+        "RM03.Brauer.ProjectiveClassification.action_correspondence",
+        "RM03.Brauer.ProjectiveClassification.change_splitting",
+        "RM03.Brauer.ProjectiveClassification.classification",
+        "RM03.Brauer.ProjectiveClassification.descended_form",
+        "RM03.Brauer.ProjectiveClassification.form_iff_degree_splits",
+        "RM03.Brauer.ProjectiveClassification.h1_eq_iff",
+        "RM03.Brauer.ProjectiveClassification.projectiveAction",
+        "RM03.Brauer.ProjectiveClassification.projectiveAction_mul",
+        "RM03.Brauer.ProjectiveClassification.projectiveAction_one",
+        "RM03.Brauer.ProjectiveClassification.recover_form",
+        "RM03.Brauer.ProjectiveClassification.splitClasses_eq_iff",
+        "RM03.Brauer.ProjectiveClassification.transported_cocycle",
+        "RM03.Brauer.ProjectiveClassification.trivial"
+      ],
+      "goal_ids": [
+        "brauer_projective_classification"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.13-fixed-degree-classification",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+      "key": "RM03-C04.13-fixed-degree-classification",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 651,
+        "line_end": 699,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "remark.2.13"
+      },
+      "source_declarations": [
+        "RM03.Brauer.ProjectiveClassification.Cocycle",
+        "RM03.Brauer.ProjectiveClassification.Cohomologous",
+        "RM03.Brauer.ProjectiveClassification.Form",
+        "RM03.Brauer.ProjectiveClassification.H1",
+        "RM03.Brauer.ProjectiveClassification.SplitClasses",
+        "RM03.Brauer.ProjectiveClassification.action_correspondence",
+        "RM03.Brauer.ProjectiveClassification.change_splitting",
+        "RM03.Brauer.ProjectiveClassification.classification",
+        "RM03.Brauer.ProjectiveClassification.descended_form",
+        "RM03.Brauer.ProjectiveClassification.form_iff_degree_splits",
+        "RM03.Brauer.ProjectiveClassification.h1_eq_iff",
+        "RM03.Brauer.ProjectiveClassification.projectiveAction",
+        "RM03.Brauer.ProjectiveClassification.projectiveAction_mul",
+        "RM03.Brauer.ProjectiveClassification.projectiveAction_one",
+        "RM03.Brauer.ProjectiveClassification.recover_form",
+        "RM03.Brauer.ProjectiveClassification.splitClasses_eq_iff",
+        "RM03.Brauer.ProjectiveClassification.transported_cocycle",
+        "RM03.Brauer.ProjectiveClassification.trivial"
+      ],
+      "title": "Let K/k be finite Galois, let G = Gal(K/k), and fix n ≥ 1. Degree-n central simple k-algebras split by K up to k-algebra isomorphism correspond bijectively to the pointed nonabelian cohomology set H¹(G,PGL_n(K)) for the coefficientwise G-action. A splitting transports the coefficient action to a semilinear action on M_n(K) of the form X ↦ g_σ σ(X) g_σ⁻¹ with projective cocycle (g_σ). Conversely a projective cocycle acts by that semilinear conjugation and its fixed algebra is the corresponding split-by-K central simple k-algebra of degree n. Changes of splitting correspond to projective coboundary equivalence. Here a projective cocycle satisfies g_(στ) = g_σ σ(g_τ) in PGL_n(K), and the equivalence on cocycles identifies g with g′ when g′_σ = h⁻¹g_σ σ(h) for a single h ∈ PGL_n(K) and all σ."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.SemilinearDescent.AlgebraAction",
+        "RM03.Brauer.SemilinearDescent.AlgebraAction.descentEquiv",
+        "RM03.Brauer.SemilinearDescent.AlgebraAction.descentMap",
+        "RM03.Brauer.SemilinearDescent.AlgebraAction.fixedSubalgebra",
+        "RM03.Brauer.SemilinearDescent.AlgebraAction.restrictHom",
+        "RM03.Brauer.SemilinearDescent.algebra_descent",
+        "RM03.Brauer.SemilinearDescent.equivariant_restriction",
+        "RM03.Brauer.SemilinearDescent.fixed_basis",
+        "RM03.Brauer.SemilinearDescent.fixed_span",
+        "RM03.Brauer.SemilinearDescent.linear_descent"
+      ],
+      "goal_ids": [
+        "brauer_semilinear_descent"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.13-semi-linear-descent",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+      "key": "RM03-C04.13-semi-linear-descent",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 659,
+        "line_end": 678,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "remark.2.13"
+      },
+      "source_declarations": [
+        "RM03.Brauer.SemilinearDescent.AlgebraAction",
+        "RM03.Brauer.SemilinearDescent.AlgebraAction.descentEquiv",
+        "RM03.Brauer.SemilinearDescent.AlgebraAction.descentMap",
+        "RM03.Brauer.SemilinearDescent.AlgebraAction.fixedSubalgebra",
+        "RM03.Brauer.SemilinearDescent.AlgebraAction.restrictHom",
+        "RM03.Brauer.SemilinearDescent.algebra_descent",
+        "RM03.Brauer.SemilinearDescent.equivariant_restriction",
+        "RM03.Brauer.SemilinearDescent.fixed_basis",
+        "RM03.Brauer.SemilinearDescent.fixed_span",
+        "RM03.Brauer.SemilinearDescent.linear_descent"
+      ],
+      "title": "Let K/k be finite Galois with group G and let V be a finite-dimensional K-vector space with a semilinear G-action for the given action on K. The fixed vectors span V over K, and the canonical map K ⊗_k V^G → V, λ⊗v ↦ λv, is a K-linear isomorphism. If V is a K-algebra and the action respects multiplication, this is a K-algebra isomorphism. G-equivariant K-algebra maps descend by restriction to the fixed k-subalgebras."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.RelativeIsomorphism.normalized_representative",
+        "RM03.Brauer.RelativeIsomorphism.obstruction_surjective",
+        "RM03.Brauer.RelativeIsomorphism.regular_descent",
+        "RM03.Brauer.RelativeIsomorphism.relativeBrauerEquiv",
+        "RM03.Brauer.RelativeIsomorphism.relativeBrauerEquiv_toAddMonoidHom",
+        "RM03.Brauer.RelativeIsomorphism.scalar_obstruction_isomorphism",
+        "RM03.Brauer.ScalarInjective.canonical_obstruction_injective",
+        "RM03.Brauer.ScalarInjective.obstruction_injective",
+        "RM03.Brauer.ScalarObstruction.H2",
+        "RM03.Brauer.ScalarObstruction.coboundary",
+        "RM03.Brauer.ScalarObstruction.cocycleClass",
+        "RM03.Brauer.ScalarObstruction.cocycleClass_eq_iff",
+        "RM03.Brauer.ScalarObstruction.cocycles",
+        "RM03.Brauer.ScalarObstruction.coefficientAction_formula",
+        "RM03.Brauer.ScalarObstruction.cohomologous_lift_classes",
+        "RM03.Brauer.ScalarObstruction.enlargement_lift_defect",
+        "RM03.Brauer.ScalarObstruction.equivalent_lift_classes",
+        "RM03.Brauer.ScalarObstruction.exists_presentation",
+        "RM03.Brauer.ScalarObstruction.exists_recorded_defect",
+        "RM03.Brauer.ScalarObstruction.lift_cocycle_law",
+        "RM03.Brauer.ScalarObstruction.lift_defect",
+        "RM03.Brauer.ScalarObstruction.obstruction",
+        "RM03.Brauer.ScalarObstruction.obstruction_formula",
+        "RM03.Brauer.ScalarObstruction.obstruction_hom",
+        "RM03.Brauer.ScalarObstruction.splitting_lift_classes",
+        "RM03.Brauer.ScalarObstruction.stacks_inverse",
+        "RM03.Brauer.ScalarObstruction.tensor_lift_defect"
+      ],
+      "goal_ids": [
+        "brauer_relative_isomorphism",
+        "brauer_scalar_injective",
+        "brauer_scalar_obstruction"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.13-finite-relative-H2",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.13-finite-relative-H2",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 701,
+        "line_end": 747,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "remark.2.13"
+      },
+      "source_declarations": [
+        "RM03.Brauer.RelativeIsomorphism.normalized_representative",
+        "RM03.Brauer.RelativeIsomorphism.obstruction_surjective",
+        "RM03.Brauer.RelativeIsomorphism.regular_descent",
+        "RM03.Brauer.RelativeIsomorphism.relativeBrauerEquiv",
+        "RM03.Brauer.RelativeIsomorphism.relativeBrauerEquiv_toAddMonoidHom",
+        "RM03.Brauer.RelativeIsomorphism.scalar_obstruction_isomorphism",
+        "RM03.Brauer.ScalarInjective.canonical_obstruction_injective",
+        "RM03.Brauer.ScalarInjective.obstruction_injective",
+        "RM03.Brauer.ScalarObstruction.H2",
+        "RM03.Brauer.ScalarObstruction.coboundary",
+        "RM03.Brauer.ScalarObstruction.cocycleClass",
+        "RM03.Brauer.ScalarObstruction.cocycleClass_eq_iff",
+        "RM03.Brauer.ScalarObstruction.cocycles",
+        "RM03.Brauer.ScalarObstruction.coefficientAction_formula",
+        "RM03.Brauer.ScalarObstruction.cohomologous_lift_classes",
+        "RM03.Brauer.ScalarObstruction.enlargement_lift_defect",
+        "RM03.Brauer.ScalarObstruction.equivalent_lift_classes",
+        "RM03.Brauer.ScalarObstruction.exists_presentation",
+        "RM03.Brauer.ScalarObstruction.exists_recorded_defect",
+        "RM03.Brauer.ScalarObstruction.lift_cocycle_law",
+        "RM03.Brauer.ScalarObstruction.lift_defect",
+        "RM03.Brauer.ScalarObstruction.obstruction",
+        "RM03.Brauer.ScalarObstruction.obstruction_formula",
+        "RM03.Brauer.ScalarObstruction.obstruction_hom",
+        "RM03.Brauer.ScalarObstruction.splitting_lift_classes",
+        "RM03.Brauer.ScalarObstruction.stacks_inverse",
+        "RM03.Brauer.ScalarObstruction.tensor_lift_defect"
+      ],
+      "title": "For each finite Galois K/k with group G, the relative Brauer group is isomorphic to H²(G,K^×) with the usual Galois action on K^×. For the transported semilinear action X ↦ g_σ σ(X) g_σ⁻¹ and invertible lifts G_σ of the projective cocycle g_σ, the map sends [A] to the class of the scalar 2-cocycle c_(σ,τ) = G_σ σ(G_τ) G_(στ)⁻¹. Its scalar class is independent of lifts, splitting, and matrix enlargement, and it multiplies under tensor products. This is the convention inverse to Stacks Equation (59.61.5.1) with the same lifts."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.AbsoluteIsomorphism.absoluteBrauerEquiv",
+        "RM03.Brauer.AbsoluteIsomorphism.absoluteBrauerEquiv_apply",
+        "RM03.Brauer.AbsoluteIsomorphism.absolute_brauer_isomorphism",
+        "RM03.Brauer.AbsoluteIsomorphism.exists_relative_stage",
+        "RM03.Brauer.AbsoluteIsomorphism.finite_stage_cover",
+        "RM03.Brauer.AbsoluteIsomorphism.relativeBrauerEquiv_compatible",
+        "RM03.Brauer.AbsoluteIsomorphism.relative_inflation",
+        "RM03.Brauer.ContinuousCohomology.H2Continuous",
+        "RM03.Brauer.ContinuousCohomology.Stage",
+        "RM03.Brauer.ContinuousCohomology.coboundary_continuous",
+        "RM03.Brauer.ContinuousCohomology.continuousCoboundaries",
+        "RM03.Brauer.ContinuousCohomology.continuousCocycles",
+        "RM03.Brauer.ContinuousCohomology.continuousOneCochains",
+        "RM03.Brauer.ContinuousCohomology.equal_at_finite_stage",
+        "RM03.Brauer.ContinuousCohomology.finite_class_representative",
+        "RM03.Brauer.ContinuousCohomology.finite_cocycle_representative",
+        "RM03.Brauer.ContinuousCohomology.finite_limit_comparison",
+        "RM03.Brauer.ContinuousCohomology.inflate_formula",
+        "RM03.Brauer.ContinuousCohomology.inflation_directedSystem",
+        "RM03.Brauer.ContinuousCohomology.limitEquiv",
+        "RM03.Brauer.ContinuousCohomology.limitEquiv_of",
+        "RM03.Brauer.ContinuousCohomology.toContinuous_compatible",
+        "RM03.Brauer.ContinuousCohomology.toContinuous_formula",
+        "RM03.Brauer.commonCochainFactorization",
+        "RM03.Brauer.continuousUnitAction",
+        "RM03.Brauer.finiteCochainFactorization",
+        "RM03.Brauer.finiteCochainRange",
+        "RM03.Brauer.openUnitStabilizers",
+        "RM03.Brauer.restrictionQuotient"
+      ],
+      "goal_ids": [
+        "brauer_absolute_isomorphism",
+        "brauer_continuous_cohomology",
+        "brauer_finite_cochains"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C04.13-continuous-absolute-H2",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C04.13-continuous-absolute-H2",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 751,
+        "line_end": 769,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "remark.2.13"
+      },
+      "source_declarations": [
+        "RM03.Brauer.AbsoluteIsomorphism.absoluteBrauerEquiv",
+        "RM03.Brauer.AbsoluteIsomorphism.absoluteBrauerEquiv_apply",
+        "RM03.Brauer.AbsoluteIsomorphism.absolute_brauer_isomorphism",
+        "RM03.Brauer.AbsoluteIsomorphism.exists_relative_stage",
+        "RM03.Brauer.AbsoluteIsomorphism.finite_stage_cover",
+        "RM03.Brauer.AbsoluteIsomorphism.relativeBrauerEquiv_compatible",
+        "RM03.Brauer.AbsoluteIsomorphism.relative_inflation",
+        "RM03.Brauer.ContinuousCohomology.H2Continuous",
+        "RM03.Brauer.ContinuousCohomology.Stage",
+        "RM03.Brauer.ContinuousCohomology.coboundary_continuous",
+        "RM03.Brauer.ContinuousCohomology.continuousCoboundaries",
+        "RM03.Brauer.ContinuousCohomology.continuousCocycles",
+        "RM03.Brauer.ContinuousCohomology.continuousOneCochains",
+        "RM03.Brauer.ContinuousCohomology.equal_at_finite_stage",
+        "RM03.Brauer.ContinuousCohomology.finite_class_representative",
+        "RM03.Brauer.ContinuousCohomology.finite_cocycle_representative",
+        "RM03.Brauer.ContinuousCohomology.finite_limit_comparison",
+        "RM03.Brauer.ContinuousCohomology.inflate_formula",
+        "RM03.Brauer.ContinuousCohomology.inflation_directedSystem",
+        "RM03.Brauer.ContinuousCohomology.limitEquiv",
+        "RM03.Brauer.ContinuousCohomology.limitEquiv_of",
+        "RM03.Brauer.ContinuousCohomology.toContinuous_compatible",
+        "RM03.Brauer.ContinuousCohomology.toContinuous_formula",
+        "RM03.Brauer.commonCochainFactorization",
+        "RM03.Brauer.continuousUnitAction",
+        "RM03.Brauer.finiteCochainFactorization",
+        "RM03.Brauer.finiteCochainRange",
+        "RM03.Brauer.openUnitStabilizers",
+        "RM03.Brauer.restrictionQuotient"
+      ],
+      "title": "For any field k and separable closure k^s, the Brauer group Br(k) is isomorphic to H²_cts(G_k,(k^s)^×), where G_k = Gal(k^s/k) has its profinite topology and the coefficient group (k^s)^× is discrete with its natural Galois action. The isomorphism uses the same scalar cocycle convention as the relative isomorphism and restricts at each finite Galois splitting stage to the relative class map followed by inflation and coefficient inclusion, compatibly with extension between finite Galois stages. The target continuous cohomology is canonically the filtered colimit of H²(Gal(K/k),K^×) over finite Galois subextensions K/k of k^s, with the same inflation and coefficient-inclusion transitions."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "RingModuleAssociativeAlgebra:RM03-C05-introduction",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C05-introduction",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 774,
+        "line_end": 781
+      },
+      "source_declarations": [],
+      "title": "The full-corner chapter uses right modules and cites the existing right-progenerator theorem and its converse as background for identifying the corner functors."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.carriers",
+        "RM03.Morita.finite_projective",
+        "RM03.Morita.rightIdeal",
+        "RM03.Morita.rightIdealInclusion",
+        "RM03.Morita.rightIdealProjection",
+        "RM03.Morita.rightIdeal_projection_inclusion"
+      ],
+      "goal_ids": [
+        "morita_corner"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C05.01-projective",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+      "key": "RM03-C05.01-projective",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 785,
+        "line_end": 789,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "corollary.3.1"
+      },
+      "source_declarations": [
+        "RM03.Morita.carriers",
+        "RM03.Morita.finite_projective",
+        "RM03.Morita.rightIdeal",
+        "RM03.Morita.rightIdealInclusion",
+        "RM03.Morita.rightIdealProjection",
+        "RM03.Morita.rightIdeal_projection_inclusion"
+      ],
+      "title": "For every unital ring R and e ∈ R with e² = e, the right R-module eR is finitely generated and projective."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.cornerExtensionIso",
+        "RM03.Morita.cornerFunctor",
+        "RM03.Morita.cornerFunctor_map_val",
+        "RM03.Morita.fromCornerFunctor",
+        "RM03.Morita.fullCornerEquivalence",
+        "RM03.Morita.full_corner_equivalence",
+        "RM03.Morita.moduleCorner_image",
+        "RM03.Morita.moduleCorner_smul_val",
+        "RM03.Morita.rightIdeal_corner_smul_val",
+        "RM03.Morita.rightIdeal_op_smul_val",
+        "RM03.Morita.tensorWithBimodule_map_tmul"
+      ],
+      "goal_ids": [
+        "morita_corner",
+        "morita_full_equivalence"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C05.01-equivalence",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C05.01-equivalence",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 785,
+        "line_end": 804,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "corollary.3.1"
+      },
+      "source_declarations": [
+        "RM03.Morita.cornerExtensionIso",
+        "RM03.Morita.cornerFunctor",
+        "RM03.Morita.cornerFunctor_map_val",
+        "RM03.Morita.fromCornerFunctor",
+        "RM03.Morita.fullCornerEquivalence",
+        "RM03.Morita.full_corner_equivalence",
+        "RM03.Morita.moduleCorner_image",
+        "RM03.Morita.moduleCorner_smul_val",
+        "RM03.Morita.rightIdeal_corner_smul_val",
+        "RM03.Morita.rightIdeal_op_smul_val",
+        "RM03.Morita.tensorWithBimodule_map_tmul"
+      ],
+      "title": "For every unital ring R and full idempotent e ∈ R, the category of right R-modules and the category of right eRe-modules are equivalent by the specified inverse functors. The forward functor sends M to Me with its induced right eRe-action and restricts morphisms. The inverse sends N to N ⊗_{eRe} eR with its right R-action, using the usual (eRe,R)-bimodule eR and tensoring morphisms with its identity."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.cornerEndEquiv",
+        "RM03.Morita.cornerEndEquiv_apply_val",
+        "RM03.Morita.cornerEndEquiv_symm_val",
+        "RM03.Morita.cornerToEnd",
+        "RM03.Morita.corner_endomorphisms",
+        "RM03.Morita.corner_mul_val",
+        "RM03.Morita.corner_one_val"
+      ],
+      "goal_ids": [
+        "morita_corner"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C05.01-endomorphisms",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+      "key": "RM03-C05.01-endomorphisms",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 787,
+        "line_end": 793,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "corollary.3.1"
+      },
+      "source_declarations": [
+        "RM03.Morita.cornerEndEquiv",
+        "RM03.Morita.cornerEndEquiv_apply_val",
+        "RM03.Morita.cornerEndEquiv_symm_val",
+        "RM03.Morita.cornerToEnd",
+        "RM03.Morita.corner_endomorphisms",
+        "RM03.Morita.corner_mul_val",
+        "RM03.Morita.corner_one_val"
+      ],
+      "title": "For every unital ring R and e ∈ R with e² = e, the map eRe → End_R(eR) given by a ↦ (x ↦ ax) is an isomorphism of unital rings, with identity e in eRe and composition in the right-module endomorphism ring."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.Corner",
+        "RM03.Morita.Idempotent",
+        "RM03.Morita.IsFull",
+        "RM03.Morita.carriers",
+        "RM03.Morita.cornerRing",
+        "RM03.Morita.cornerSubring",
+        "RM03.Morita.corner_mul_val",
+        "RM03.Morita.corner_one_val",
+        "RM03.Morita.full_iff_sum",
+        "RM03.Morita.leftIdeal",
+        "RM03.Morita.rightIdeal",
+        "RM03.Morita.rightIdealBimodule",
+        "RM03.Morita.rightIdeal_corner_smul_val",
+        "RM03.Morita.rightIdeal_op_smul_val"
+      ],
+      "goal_ids": [
+        "morita_corner",
+        "morita_generator"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C05.01-corner",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C05.01-corner",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 787,
+        "line_end": 795,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "corollary.3.1"
+      },
+      "source_declarations": [
+        "RM03.Morita.Corner",
+        "RM03.Morita.Idempotent",
+        "RM03.Morita.IsFull",
+        "RM03.Morita.carriers",
+        "RM03.Morita.cornerRing",
+        "RM03.Morita.cornerSubring",
+        "RM03.Morita.corner_mul_val",
+        "RM03.Morita.corner_one_val",
+        "RM03.Morita.full_iff_sum",
+        "RM03.Morita.leftIdeal",
+        "RM03.Morita.rightIdeal",
+        "RM03.Morita.rightIdealBimodule",
+        "RM03.Morita.rightIdeal_corner_smul_val",
+        "RM03.Morita.rightIdeal_op_smul_val"
+      ],
+      "title": "For a unital ring R and an idempotent e ∈ R, use the right ideal eR, the corner ring eRe with multiplication inherited from R and identity e, and fullness ReR = R, where ReR denotes the two-sided ideal of finite sums of products res with r,s ∈ R."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.full_iff_sum",
+        "RM03.Morita.full_quotients",
+        "RM03.Morita.generator_iff_full"
+      ],
+      "goal_ids": [
+        "morita_generator"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C05.01-generator",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+      "key": "RM03-C05.01-generator",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 787,
+        "line_end": 795,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "corollary.3.1"
+      },
+      "source_declarations": [
+        "RM03.Morita.full_iff_sum",
+        "RM03.Morita.full_quotients",
+        "RM03.Morita.generator_iff_full"
+      ],
+      "title": "For every unital ring R and e ∈ R with e² = e, the right R-module eR generates the category of right R-modules, so that every right R-module is a quotient of a direct sum of copies of eR, if and only if e is full, i.e. ReR = R."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.fullCornerMultiplicationIso",
+        "RM03.Morita.fullCornerMultiplicationIso_hom_tmul",
+        "RM03.Morita.fullCornerMultiplicationIso_inv_apply",
+        "RM03.Morita.full_corner_equivalence",
+        "RM03.Morita.full_corner_multiplication"
+      ],
+      "goal_ids": [
+        "morita_full_equivalence"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C05-counit",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+      "key": "RM03-C05-counit",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 840,
+        "line_end": 847
+      },
+      "source_declarations": [
+        "RM03.Morita.fullCornerMultiplicationIso",
+        "RM03.Morita.fullCornerMultiplicationIso_hom_tmul",
+        "RM03.Morita.fullCornerMultiplicationIso_inv_apply",
+        "RM03.Morita.full_corner_equivalence",
+        "RM03.Morita.full_corner_multiplication"
+      ],
+      "title": "For the stated full-corner equivalence of right-module categories, the counit at each right R-module M is the multiplication isomorphism Me ⊗_{eRe} eR → M, m' ⊗ x ↦ m'x. For any finite expression 1 = Σᵢ rᵢ e sᵢ witnessing fullness, its inverse is m ↦ Σᵢ (m rᵢ e) ⊗ (e sᵢ)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.matrixCornerEquivalence",
+        "RM03.Morita.matrixCornerRingEquiv",
+        "RM03.Morita.matrixIdempotent",
+        "RM03.Morita.matrix_corner_equivalence",
+        "RM03.Morita.matrix_corner_full",
+        "RM03.Morita.matrix_unit_sum"
+      ],
+      "goal_ids": [
+        "morita_matrix_corner"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C05.02-matrix",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+      "key": "RM03-C05.02-matrix",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 849,
+        "line_end": 859,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 14,
+        "pdf_destination": "example.3.2"
+      },
+      "source_declarations": [
+        "RM03.Morita.matrixCornerEquivalence",
+        "RM03.Morita.matrixCornerRingEquiv",
+        "RM03.Morita.matrixIdempotent",
+        "RM03.Morita.matrix_corner_equivalence",
+        "RM03.Morita.matrix_corner_full",
+        "RM03.Morita.matrix_unit_sum"
+      ],
+      "title": "For each unital ring R and n ≥ 1, the diagonal matrix unit e₁₁ is a full idempotent in Mₙ(R). Its corner e₁₁Mₙ(R)e₁₁ is isomorphic as a unital ring to R by taking the (1,1) entry. Thus the stated full-corner functors give the equivalence of right-module categories for Mₙ(R) and R."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.productIdempotent",
+        "RM03.Morita.productRightModule",
+        "RM03.Morita.product_corner_equiv",
+        "RM03.Morita.product_corner_functor",
+        "RM03.Morita.product_corner_ideal"
+      ],
+      "goal_ids": [
+        "morita_product_corner"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C05.02-product",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+      "key": "RM03-C05.02-product",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 849,
+        "line_end": 863,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 14,
+        "pdf_destination": "example.3.2"
+      },
+      "source_declarations": [
+        "RM03.Morita.productIdempotent",
+        "RM03.Morita.productRightModule",
+        "RM03.Morita.product_corner_equiv",
+        "RM03.Morita.product_corner_functor",
+        "RM03.Morita.product_corner_ideal"
+      ],
+      "title": "For two nonzero unital rings A and B, e = (1,0) is an idempotent in A × B. Its corner is isomorphic as a unital ring to A, and e is non-full. The corner functor M ↦ Me sends the nonzero right (A × B)-module B, obtained by restriction along the second projection A × B → B, to the zero module."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.PathAlgebra.ofPath_mul_ofPath",
+        "RM03.PathOperators.operator",
+        "RM03.PathOperators.operator_mul",
+        "RM03.QuiverRepresentation.arrow",
+        "RM03.Quivers.AlgebraRepresentations.CompatibleModule",
+        "RM03.Quivers.AlgebraRepresentations.correspondence"
+      ],
+      "goal_ids": [
+        "quiver_algebra_representations",
+        "quiver_path_algebra",
+        "quiver_path_operators",
+        "quiver_representations"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06-context-conventions",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C06-context-conventions",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 864,
+        "line_end": 870
+      },
+      "source_declarations": [
+        "RM03.PathAlgebra.ofPath_mul_ofPath",
+        "RM03.PathOperators.operator",
+        "RM03.PathOperators.operator_mul",
+        "RM03.QuiverRepresentation.arrow",
+        "RM03.Quivers.AlgebraRepresentations.CompatibleModule",
+        "RM03.Quivers.AlgebraRepresentations.correspondence"
+      ],
+      "title": "The chapter works over a field k with unital k-algebras and left module actions. End_k(V) uses composition, and an arrow acts from its source summand to its target summand. These conventions govern the chapter's obligations."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Quivers.AlgebraRepresentations.CompatibleModule",
+        "RM03.Quivers.AlgebraRepresentations.correspondence",
+        "RM03.Quivers.AlgebraRepresentations.intertwinesIffModuleLinear",
+        "RM03.Quivers.AlgebraRepresentations.representationEquiv"
+      ],
+      "goal_ids": [
+        "quiver_algebra_representations"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.01-representations",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.01-representations",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 874,
+        "line_end": 881,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 15,
+        "pdf_destination": "proposition.4.1"
+      },
+      "source_declarations": [
+        "RM03.Quivers.AlgebraRepresentations.CompatibleModule",
+        "RM03.Quivers.AlgebraRepresentations.correspondence",
+        "RM03.Quivers.AlgebraRepresentations.intertwinesIffModuleLinear",
+        "RM03.Quivers.AlgebraRepresentations.representationEquiv"
+      ],
+      "title": "For every k-algebra A and k-vector space V, unital k-algebra homomorphisms ρ:A→End_k(V) correspond bijectively to left A-module structures on V extending its given k-vector-space structure. In the correspondence a acts by ρ(a). For any two such representations on k-vector spaces, a k-linear map is an intertwiner if and only if it is A-linear for the corresponding actions."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Quivers.QuotientModules.annihilated",
+        "RM03.Quivers.QuotientModules.descendObj_mk_smul",
+        "RM03.Quivers.QuotientModules.linearityAfterRestriction",
+        "RM03.Quivers.QuotientModules.quotientEquivalence"
+      ],
+      "goal_ids": [
+        "quiver_quotient_modules"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.01-quotient-modules",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.01-quotient-modules",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 883,
+        "line_end": 886,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 15,
+        "pdf_destination": "proposition.4.1"
+      },
+      "source_declarations": [
+        "RM03.Quivers.QuotientModules.annihilated",
+        "RM03.Quivers.QuotientModules.descendObj_mk_smul",
+        "RM03.Quivers.QuotientModules.linearityAfterRestriction",
+        "RM03.Quivers.QuotientModules.quotientEquivalence"
+      ],
+      "title": "For every two-sided ideal I of a k-algebra A, restricting along A→A/I identifies the category of unital left A/I-modules with the full subcategory of left A-modules V for which IV=0, preserving all module maps. The inverse action is (a+I)v=av."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Quivers.AlgebraRepresentations.groupAlgebraExtension"
+      ],
+      "goal_ids": [
+        "quiver_algebra_representations"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06-context-group-algebras",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06-context-group-algebras",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 905,
+        "line_end": 912
+      },
+      "source_declarations": [
+        "RM03.Quivers.AlgebraRepresentations.groupAlgebraExtension"
+      ],
+      "title": "The group representation G→GL_k(V) and its linear extension to k[G] illustrate the algebra representation setup. The text refers the group-algebra correspondence, Schur's lemma and Maschke's theorem with its characteristic hypothesis to Algebra Core, and introduces the quiver case."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Arrow",
+        "RM03.Path",
+        "RM03.Path.arrow",
+        "RM03.Path.concat",
+        "RM03.Path.length",
+        "RM03.Path.length_arrow",
+        "RM03.Path.length_concat",
+        "RM03.Path.length_vertex",
+        "RM03.Path.source",
+        "RM03.Path.source_concat",
+        "RM03.Path.target",
+        "RM03.Path.target_concat",
+        "RM03.Path.vertex",
+        "RM03.arrows_equiv_endpoints",
+        "RM03.finite_arrowsOfMaps",
+        "RM03.quiverOfArrows"
+      ],
+      "goal_ids": [
+        "quiver_path_algebra"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.02-quivers-paths",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.02-quivers-paths",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 916,
+        "line_end": 924,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 15,
+        "pdf_destination": "definition.4.2"
+      },
+      "source_declarations": [
+        "RM03.Arrow",
+        "RM03.Path",
+        "RM03.Path.arrow",
+        "RM03.Path.concat",
+        "RM03.Path.length",
+        "RM03.Path.length_arrow",
+        "RM03.Path.length_concat",
+        "RM03.Path.length_vertex",
+        "RM03.Path.source",
+        "RM03.Path.source_concat",
+        "RM03.Path.target",
+        "RM03.Path.target_concat",
+        "RM03.Path.vertex",
+        "RM03.arrows_equiv_endpoints",
+        "RM03.finite_arrowsOfMaps",
+        "RM03.quiverOfArrows"
+      ],
+      "title": "A finite quiver Q=(Q₀,Q₁,s,t) has a finite nonempty vertex set Q₀, a finite arrow set Q₁, and source and target maps s,t:Q₁→Q₀. Loops and parallel arrows are allowed. There is a length-zero path eᵢ:i→i at each vertex. A positive-length path p=a_ℓ⋯a₁ traverses a₁ first with t(a_b)=s(a_{b+1}) for 1≤b<ℓ, has length ℓ, source s(a₁) and target t(a_ℓ)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Path.concat",
+        "RM03.Path.concat_ofPath",
+        "RM03.Path.concat_vertex",
+        "RM03.Path.vertex_concat",
+        "RM03.PathAlgebra",
+        "RM03.PathAlgebra.basis",
+        "RM03.PathAlgebra.basis_apply",
+        "RM03.PathAlgebra.mulBilinear",
+        "RM03.PathAlgebra.ofPath",
+        "RM03.PathAlgebra.ofPath_mul_ofPath",
+        "RM03.PathAlgebra.ofPath_mul_vertex",
+        "RM03.PathAlgebra.vertex_mul_ofPath"
+      ],
+      "goal_ids": [
+        "quiver_path_algebra"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.02-path-algebra",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.02-path-algebra",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 926,
+        "line_end": 932,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 15,
+        "pdf_destination": "definition.4.2"
+      },
+      "source_declarations": [
+        "RM03.Path.concat",
+        "RM03.Path.concat_ofPath",
+        "RM03.Path.concat_vertex",
+        "RM03.Path.vertex_concat",
+        "RM03.PathAlgebra",
+        "RM03.PathAlgebra.basis",
+        "RM03.PathAlgebra.basis_apply",
+        "RM03.PathAlgebra.mulBilinear",
+        "RM03.PathAlgebra.ofPath",
+        "RM03.PathAlgebra.ofPath_mul_ofPath",
+        "RM03.PathAlgebra.ofPath_mul_vertex",
+        "RM03.PathAlgebra.vertex_mul_ofPath"
+      ],
+      "title": "For a finite quiver Q as defined above, kQ is the k-vector space freely based on all its paths, allowing finite linear combinations. For basis paths p,q define pq by concatenating with q first when s(p)=t(q), and by zero otherwise. Concatenating with a matching length-zero path leaves the other path unchanged. Extend multiplication k-bilinearly."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.PathAlgebra.has_algebra_structure",
+        "RM03.PathAlgebra.mul_assoc",
+        "RM03.PathAlgebra.sum_vertices",
+        "RM03.PathAlgebra.unit_laws",
+        "RM03.PathAlgebra.vertex_idempotent",
+        "RM03.PathAlgebra.vertex_orthogonal"
+      ],
+      "goal_ids": [
+        "quiver_path_algebra"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.03-algebra-and-vertices",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.03-algebra-and-vertices",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 934,
+        "line_end": 937,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "lemma.4.3"
+      },
+      "source_declarations": [
+        "RM03.PathAlgebra.has_algebra_structure",
+        "RM03.PathAlgebra.mul_assoc",
+        "RM03.PathAlgebra.sum_vertices",
+        "RM03.PathAlgebra.unit_laws",
+        "RM03.PathAlgebra.vertex_idempotent",
+        "RM03.PathAlgebra.vertex_orthogonal"
+      ],
+      "title": "For every finite quiver Q, the stated multiplication makes kQ an associative unital k-algebra. The length-zero paths eᵢ are pairwise orthogonal idempotents and their sum over the vertices equals 1."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.PathAlgebra.corner",
+        "RM03.PathAlgebra.corner_has_basis",
+        "RM03.PathAlgebra.mem_corner",
+        "RM03.PathAlgebra.vertex_mul_ofPath_mul_vertex"
+      ],
+      "goal_ids": [
+        "quiver_path_algebra"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.03-corner-basis",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.03-corner-basis",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 938,
+        "line_end": 938,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "lemma.4.3"
+      },
+      "source_declarations": [
+        "RM03.PathAlgebra.corner",
+        "RM03.PathAlgebra.corner_has_basis",
+        "RM03.PathAlgebra.mem_corner",
+        "RM03.PathAlgebra.vertex_mul_ofPath_mul_vertex"
+      ],
+      "title": "For every pair of vertices i,j of a finite quiver Q, the paths from i to j form a k-basis of the corner eⱼ(kQ)eᵢ."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.HasOrientedCycle",
+        "RM03.Path.finite_length_lt",
+        "RM03.PathAlgebra.finiteDimensional_iff_no_orientedCycle",
+        "RM03.hasOrientedCycle_iff_exists_closed_path"
+      ],
+      "goal_ids": [
+        "quiver_acyclic_finiteness",
+        "quiver_bounded_paths"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.03-acyclic",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C06.03-acyclic",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 939,
+        "line_end": 941,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "lemma.4.3"
+      },
+      "source_declarations": [
+        "RM03.HasOrientedCycle",
+        "RM03.Path.finite_length_lt",
+        "RM03.PathAlgebra.finiteDimensional_iff_no_orientedCycle",
+        "RM03.hasOrientedCycle_iff_exists_closed_path"
+      ],
+      "title": "For every finite quiver Q, kQ is finite-dimensional over k if and only if Q has no oriented cycle."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.QuiverRepresentation",
+        "RM03.QuiverRepresentation.commutes_on_paths_iff_arrows",
+        "RM03.QuiverRepresentation.component_add",
+        "RM03.QuiverRepresentation.component_comp",
+        "RM03.QuiverRepresentation.component_id",
+        "RM03.QuiverRepresentation.component_smul",
+        "RM03.QuiverRepresentation.data_ofArrows",
+        "RM03.QuiverRepresentation.mapPath_comp",
+        "RM03.QuiverRepresentation.mapPath_cons",
+        "RM03.QuiverRepresentation.mapPath_nil",
+        "RM03.QuiverRepresentation.morphism_data",
+        "RM03.QuiverRepresentation.ofArrows",
+        "RM03.QuiverRepresentation.ofArrows_data"
+      ],
+      "goal_ids": [
+        "quiver_representations"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.04-representations",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.04-representations",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 966,
+        "line_end": 976,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "definition.4.4"
+      },
+      "source_declarations": [
+        "RM03.QuiverRepresentation",
+        "RM03.QuiverRepresentation.commutes_on_paths_iff_arrows",
+        "RM03.QuiverRepresentation.component_add",
+        "RM03.QuiverRepresentation.component_comp",
+        "RM03.QuiverRepresentation.component_id",
+        "RM03.QuiverRepresentation.component_smul",
+        "RM03.QuiverRepresentation.data_ofArrows",
+        "RM03.QuiverRepresentation.mapPath_comp",
+        "RM03.QuiverRepresentation.mapPath_cons",
+        "RM03.QuiverRepresentation.mapPath_nil",
+        "RM03.QuiverRepresentation.morphism_data",
+        "RM03.QuiverRepresentation.ofArrows",
+        "RM03.QuiverRepresentation.ofArrows_data"
+      ],
+      "title": "A representation V of Q assigns a k-vector space Vᵢ to each vertex and a k-linear map Vₐ:V_{s(a)}→V_{t(a)} to each arrow. Its path map on p=a_ℓ⋯a₁ is V_{a_ℓ}∘⋯∘V_{a₁}, with V_{eᵢ}=id_{Vᵢ}. A morphism f:V→W is a family of k-linear maps fᵢ:Vᵢ→Wᵢ with f_{t(a)}∘Vₐ=Wₐ∘f_{s(a)} for every arrow. Identities and composition are at each vertex."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.ModuleVertices.coe_arrowMap",
+        "RM03.ModuleVertices.coe_restrictMap",
+        "RM03.ModuleVertices.construction",
+        "RM03.ModuleVertices.sumEquiv",
+        "RM03.ModuleVertices.sumEquiv_natural",
+        "RM03.PathOperators.construction",
+        "RM03.PathOperators.linearExtension_apply",
+        "RM03.PathOperators.operator_apply",
+        "RM03.PathOperators.operator_mul",
+        "RM03.PathOperators.sum_vertex_operators",
+        "RM03.QuiverModuleEquivalence.construction",
+        "RM03.QuiverModuleEquivalence.coordinates",
+        "RM03.QuiverModuleEquivalence.coordinates_map",
+        "RM03.QuiverModuleEquivalence.coordinates_smul_ofPath",
+        "RM03.QuiverModuleEquivalence.equivalence"
+      ],
+      "goal_ids": [
+        "quiver_equivalence",
+        "quiver_module_vertices",
+        "quiver_path_operators"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.05-equivalence",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C06.05-equivalence",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 978,
+        "line_end": 1017,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "theorem.4.5"
+      },
+      "source_declarations": [
+        "RM03.ModuleVertices.coe_arrowMap",
+        "RM03.ModuleVertices.coe_restrictMap",
+        "RM03.ModuleVertices.construction",
+        "RM03.ModuleVertices.sumEquiv",
+        "RM03.ModuleVertices.sumEquiv_natural",
+        "RM03.PathOperators.construction",
+        "RM03.PathOperators.linearExtension_apply",
+        "RM03.PathOperators.operator_apply",
+        "RM03.PathOperators.operator_mul",
+        "RM03.PathOperators.sum_vertex_operators",
+        "RM03.QuiverModuleEquivalence.construction",
+        "RM03.QuiverModuleEquivalence.coordinates",
+        "RM03.QuiverModuleEquivalence.coordinates_map",
+        "RM03.QuiverModuleEquivalence.coordinates_smul_ofPath",
+        "RM03.QuiverModuleEquivalence.equivalence"
+      ],
+      "title": "For every finite quiver Q there is a k-linear equivalence between all unital left kQ-modules and representations of Q. It takes M to vertex spaces eᵢM and to arrow maps m↦am:eᵢM→eⱼM for a:i→j, and restricts module maps to the vertex spaces. Its inverse takes V to ⊕ᵢVᵢ, with p:i→j acting by projection to Vᵢ, V_p, then inclusion of Vⱼ, extended k-linearly, and takes morphisms to the direct sums of component maps. The natural identifications on recovery of the original object give the inverse equivalence."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.QuiverModuleEquivalence.construction",
+        "RM03.QuiverModuleEquivalence.finiteEquivalence",
+        "RM03.QuiverModuleEquivalence.finite_forward",
+        "RM03.QuiverModuleEquivalence.finite_inverse"
+      ],
+      "goal_ids": [
+        "quiver_equivalence"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.05-finite-dimensional",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.05-finite-dimensional",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 984,
+        "line_end": 986,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "theorem.4.5"
+      },
+      "source_declarations": [
+        "RM03.QuiverModuleEquivalence.construction",
+        "RM03.QuiverModuleEquivalence.finiteEquivalence",
+        "RM03.QuiverModuleEquivalence.finite_forward",
+        "RM03.QuiverModuleEquivalence.finite_inverse"
+      ],
+      "title": "The stated k-linear module–representation equivalence for a finite Q restricts to an equivalence between kQ-modules finite-dimensional over k and representations with each vertex space finite-dimensional over k."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.QuiverModuleEquivalence.construction",
+        "RM03.QuiverModuleEquivalence.exact_iff_vertexwise",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.exact_iff_vertexwise",
+        "RM03.QuiverRepresentation.exact_pair_iff_vertexwise",
+        "RM03.QuiverRepresentation.image_isImage",
+        "RM03.QuiverRepresentation.kernel_isLimit"
+      ],
+      "goal_ids": [
+        "quiver_equivalence",
+        "quiver_vertexwise_exactness"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.05-exactness",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C06.05-exactness",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 985,
+        "line_end": 986,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "theorem.4.5"
+      },
+      "source_declarations": [
+        "RM03.QuiverModuleEquivalence.construction",
+        "RM03.QuiverModuleEquivalence.exact_iff_vertexwise",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.exact_iff_vertexwise",
+        "RM03.QuiverRepresentation.exact_pair_iff_vertexwise",
+        "RM03.QuiverRepresentation.image_isImage",
+        "RM03.QuiverRepresentation.kernel_isLimit"
+      ],
+      "title": "Under the stated module–representation equivalence for a finite Q, a sequence is exact as a sequence of kQ-modules if and only if its corresponding sequence of k-vector spaces and maps is exact at every vertex."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.QuiverRelation",
+        "RM03.QuiverRelation.Bundled",
+        "RM03.QuiverRelation.Satisfies",
+        "RM03.QuiverRelation.evaluate",
+        "RM03.QuiverRelation.generatedIdeal",
+        "RM03.QuiverRelation.generatedIdeal_le_iff",
+        "RM03.QuiverRelation.toElement",
+        "RM03.QuiverRelation.toPathAlgebra"
+      ],
+      "goal_ids": [
+        "quiver_relations"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.06-relations",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.06-relations",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1032,
+        "line_end": 1037,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "definition.4.6"
+      },
+      "source_declarations": [
+        "RM03.QuiverRelation",
+        "RM03.QuiverRelation.Bundled",
+        "RM03.QuiverRelation.Satisfies",
+        "RM03.QuiverRelation.evaluate",
+        "RM03.QuiverRelation.generatedIdeal",
+        "RM03.QuiverRelation.generatedIdeal_le_iff",
+        "RM03.QuiverRelation.toElement",
+        "RM03.QuiverRelation.toPathAlgebra"
+      ],
+      "title": "A relation from i to j is a finite k-linear combination r=∑ₚcₚp of paths from i to j. A representation satisfies r=0 when ∑ₚcₚV_p:Vᵢ→Vⱼ is the zero map. A set of relations defines the two-sided ideal of kQ that they generate."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.PathAlgebra.generated_by_relations",
+        "RM03.PathAlgebra.mem_corner",
+        "RM03.PathAlgebra.sum_vertex_mul_mul_vertex",
+        "RM03.QuiverRelation.generatedIdeal_le_iff",
+        "RM03.QuiverRelation.range_toPathAlgebra"
+      ],
+      "goal_ids": [
+        "quiver_path_algebra",
+        "quiver_relations"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.06-ideal-components",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C06.06-ideal-components",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1037,
+        "line_end": 1039,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "definition.4.6"
+      },
+      "source_declarations": [
+        "RM03.PathAlgebra.generated_by_relations",
+        "RM03.PathAlgebra.mem_corner",
+        "RM03.PathAlgebra.sum_vertex_mul_mul_vertex",
+        "RM03.QuiverRelation.generatedIdeal_le_iff",
+        "RM03.QuiverRelation.range_toPathAlgebra"
+      ],
+      "title": "Every two-sided ideal I of kQ is generated by relations with common source and target within each relation. Specifically the elements eⱼ r eᵢ with r∈I and vertices i,j are such relations in I and generate it, using r=∑_{i,j} eⱼ r eᵢ."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.PathAlgebra.IsAdmissible",
+        "RM03.PathAlgebra.arrowIdeal",
+        "RM03.PathAlgebra.idealPower",
+        "RM03.PathAlgebra.idealPower_asIdeal",
+        "RM03.PathAlgebra.isAdmissible_iff",
+        "RM03.PathAlgebra.spanProductPowers_asIdeal"
+      ],
+      "goal_ids": [
+        "quiver_relations"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.06-admissible",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.06-admissible",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1041,
+        "line_end": 1044,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "definition.4.6"
+      },
+      "source_declarations": [
+        "RM03.PathAlgebra.IsAdmissible",
+        "RM03.PathAlgebra.arrowIdeal",
+        "RM03.PathAlgebra.idealPower",
+        "RM03.PathAlgebra.idealPower_asIdeal",
+        "RM03.PathAlgebra.isAdmissible_iff",
+        "RM03.PathAlgebra.spanProductPowers_asIdeal"
+      ],
+      "title": "The arrow ideal J of kQ is the two-sided ideal generated by all arrows. A two-sided ideal I of kQ is admissible when some integer m≥2 satisfies J^m⊆I⊆J²."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.QuiverBoundModuleEquivalence.construction",
+        "RM03.QuiverBoundModuleEquivalence.equivalence",
+        "RM03.QuiverBoundModuleEquivalence.functor_comp_inclusion",
+        "RM03.QuiverBoundModuleEquivalence.inverse_comp_restriction",
+        "RM03.QuiverBoundModuleEquivalence.relation_operator",
+        "RM03.QuiverBoundModuleEquivalence.satisfies_iff_annihilated"
+      ],
+      "goal_ids": [
+        "quiver_bound_equivalence"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.07-equivalence",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.07-equivalence",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1046,
+        "line_end": 1053,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "theorem.4.7"
+      },
+      "source_declarations": [
+        "RM03.QuiverBoundModuleEquivalence.construction",
+        "RM03.QuiverBoundModuleEquivalence.equivalence",
+        "RM03.QuiverBoundModuleEquivalence.functor_comp_inclusion",
+        "RM03.QuiverBoundModuleEquivalence.inverse_comp_restriction",
+        "RM03.QuiverBoundModuleEquivalence.relation_operator",
+        "RM03.QuiverBoundModuleEquivalence.satisfies_iff_annihilated"
+      ],
+      "title": "For any two-sided ideal I of kQ generated by a set of relations, the stated path-algebra equivalence via restriction along kQ→kQ/I identifies the category of unital left kQ/I-modules with the full subcategory of quiver representations satisfying every generating relation. On that subcategory the morphisms are the original quiver morphisms, and the direct-sum path action factors through kQ/I."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.QuiverBoundModuleEquivalence.construction",
+        "RM03.QuiverBoundModuleEquivalence.exact_pair_iff_vertexwise",
+        "RM03.QuiverBoundModuleEquivalence.full_exact_pair_iff_vertexwise"
+      ],
+      "goal_ids": [
+        "quiver_bound_equivalence"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.07-exactness",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.07-exactness",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1051,
+        "line_end": 1053,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "theorem.4.7"
+      },
+      "source_declarations": [
+        "RM03.QuiverBoundModuleEquivalence.construction",
+        "RM03.QuiverBoundModuleEquivalence.exact_pair_iff_vertexwise",
+        "RM03.QuiverBoundModuleEquivalence.full_exact_pair_iff_vertexwise"
+      ],
+      "title": "For any two-sided ideal I of kQ generated by a set of relations, exactness for the corresponding category of left kQ/I-modules, equivalently of representations satisfying those relations, is equivalent to exactness of the induced sequence at every vertex."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.PathAlgebra.arrowIdeal_power_eq_span",
+        "RM03.PathAlgebra.idealPower_asIdeal"
+      ],
+      "goal_ids": [
+        "quiver_arrow_ideal_powers"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.08-ideal-powers",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.08-ideal-powers",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1070,
+        "line_end": 1073,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "proposition.4.8"
+      },
+      "source_declarations": [
+        "RM03.PathAlgebra.arrowIdeal_power_eq_span",
+        "RM03.PathAlgebra.idealPower_asIdeal"
+      ],
+      "title": "For every integer m≥1, the power J^m of the arrow ideal is the k-linear span of all paths of length at least m."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Path.finite_length_lt",
+        "RM03.PathAlgebra.idealPower_asIdeal",
+        "RM03.PathAlgebra.quotient_finite_and_spanned"
+      ],
+      "goal_ids": [
+        "quiver_admissible_finiteness",
+        "quiver_bounded_paths"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.08-finite-spanning",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C06.08-finite-spanning",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1072,
+        "line_end": 1075,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "proposition.4.8"
+      },
+      "source_declarations": [
+        "RM03.Path.finite_length_lt",
+        "RM03.PathAlgebra.idealPower_asIdeal",
+        "RM03.PathAlgebra.quotient_finite_and_spanned"
+      ],
+      "title": "For every integer m≥1 and every two-sided ideal I of kQ with J^m⊆I, kQ/I is finite-dimensional over k and is spanned by the images of the paths of length strictly less than m."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.PathAlgebra.arrowIdeal_power_eq_span",
+        "RM03.PathAlgebra.idealPower_asIdeal",
+        "RM03.PathAlgebra.quotient_short_paths_independent"
+      ],
+      "goal_ids": [
+        "quiver_admissible_finiteness",
+        "quiver_arrow_ideal_powers"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.08-independent-vertices-arrows",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C06.08-independent-vertices-arrows",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1072,
+        "line_end": 1077,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "proposition.4.8"
+      },
+      "source_declarations": [
+        "RM03.PathAlgebra.arrowIdeal_power_eq_span",
+        "RM03.PathAlgebra.idealPower_asIdeal",
+        "RM03.PathAlgebra.quotient_short_paths_independent"
+      ],
+      "title": "If m≥1 and J^m⊆I⊆J², the images in kQ/I of the entire family of length-zero and length-one paths are k-linearly independent."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06-context-references",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "RM03-C06-context-references",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1093,
+        "line_end": 1096
+      },
+      "source_declarations": [],
+      "title": "Reference to Crawley-Boevey for the path convention, module equivalence and admissible ideals, followed by a lead-in to the two examples."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.OneArrow.matrixAndAction",
+        "RM03.OneArrow.matrixEquiv",
+        "RM03.OneArrow.orderedPathBasis",
+        "RM03.OneArrow.squareZeroAndAdmissible",
+        "RM03.OneArrowSpec.edge",
+        "RM03.OneArrowSpec.lowerTriangular"
+      ],
+      "goal_ids": [
+        "quiver_one_arrow"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.09-triangular-algebra",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.09-triangular-algebra",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1098,
+        "line_end": 1114,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 18,
+        "pdf_destination": "example.4.9"
+      },
+      "source_declarations": [
+        "RM03.OneArrow.matrixAndAction",
+        "RM03.OneArrow.matrixEquiv",
+        "RM03.OneArrow.orderedPathBasis",
+        "RM03.OneArrow.squareZeroAndAdmissible",
+        "RM03.OneArrowSpec.edge",
+        "RM03.OneArrowSpec.lowerTriangular"
+      ],
+      "title": "Let Q have exactly vertices 1,2 and one arrow a:1→2. The path basis is (e₁,e₂,a). The assignments e₁↦E₁₁, e₂↦E₂₂, a↦E₂₁ give a unital k-algebra isomorphism from kQ to the 2×2 lower triangular matrices. Its arrow ideal satisfies J²=0, so the zero ideal is admissible."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.OneArrow.matrixAndAction",
+        "RM03.OneArrowSpec.pair",
+        "RM03.OneArrowSpec.representation"
+      ],
+      "goal_ids": [
+        "quiver_one_arrow"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.09-triangular-action",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.09-triangular-action",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1115,
+        "line_end": 1122,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 18,
+        "pdf_destination": "example.4.9"
+      },
+      "source_declarations": [
+        "RM03.OneArrow.matrixAndAction",
+        "RM03.OneArrowSpec.pair",
+        "RM03.OneArrowSpec.representation"
+      ],
+      "title": "For the same one-arrow quiver, the representation given by any k-linear T:V₁→V₂ yields the left lower triangular matrix action on V₁⊕V₂ through the specified isomorphism: the matrix with rows (x,0) and (u,y) sends (v₁,v₂) to (xv₁,uT(v₁)+yv₂)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.OneLoop.construction",
+        "RM03.OneLoop.idealEqualsSquare",
+        "RM03.OneLoop.pathEnumeration",
+        "RM03.OneLoopSpec.quiver",
+        "RM03.OneLoopSpec.squareRelation"
+      ],
+      "goal_ids": [
+        "quiver_one_loop"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.10-loop-algebra",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.10-loop-algebra",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1124,
+        "line_end": 1131,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 18,
+        "pdf_destination": "example.4.10"
+      },
+      "source_declarations": [
+        "RM03.OneLoop.construction",
+        "RM03.OneLoop.idealEqualsSquare",
+        "RM03.OneLoop.pathEnumeration",
+        "RM03.OneLoopSpec.quiver",
+        "RM03.OneLoopSpec.squareRelation"
+      ],
+      "title": "For the quiver with exactly one vertex and one loop a, the paths are aⁿ for n≥0, with a⁰=e the vertex. The assignment xⁿ↦aⁿ induces k[x]≅kQ as k-algebras. The relation a²=0 generates I=J², which is admissible, and the induced isomorphism k[x]/(x²)≅kQ/I gives the basis of classes of 1 and x."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.OneLoop.construction",
+        "RM03.OneLoopSpec.ModuleDescription"
+      ],
+      "goal_ids": [
+        "quiver_one_loop"
+      ],
+      "id": "RingModuleAssociativeAlgebra:RM03-C06.10-square-zero-operators",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "RM03-C06.10-square-zero-operators",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1131,
+        "line_end": 1137,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 18,
+        "pdf_destination": "example.4.10"
+      },
+      "source_declarations": [
+        "RM03.OneLoop.construction",
+        "RM03.OneLoopSpec.ModuleDescription"
+      ],
+      "title": "A left module for the one-loop algebra kQ/I with I generated by a² is a k-vector space V with a k-linear endomorphism T=Vₐ satisfying T²=0. A morphism to another such pair (W,U) is precisely a k-linear f:V→W with fT=Uf. In the polynomial quotient the explicit action is (λ+μx)v=λv+μT(v)."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "RingModuleAssociativeAlgebra:paper-bibliography",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "paper-bibliography",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1139,
+        "line_end": 1183
+      },
+      "source_declarations": [],
+      "title": "Bibliography and source locators for Algebra Core, Abstract Algebra, Linear Algebraic Groups, Algebraic K-Theory, the MIT lecture notes, the Stacks Project and Crawley-Boevey."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.MatrixDivision.center_eq_scalar_map",
+        "RM03.CSA.SimpleArtinianModules.columnEnd",
+        "RM03.CSA.SimpleArtinianModules.columnSimple"
+      ],
+      "goal_ids": [
+        "csa_matrix",
+        "csa_simple_artinian_modules"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.02-matrix-center-and-column",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "additional:1:RM03-C04.02-matrix-center-and-column",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 269,
+        "line_end": 279,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 6,
+        "pdf_destination": "proposition.2.2"
+      },
+      "source_declarations": [
+        "RM03.CSA.MatrixDivision.center_eq_scalar_map",
+        "RM03.CSA.SimpleArtinianModules.columnEnd",
+        "RM03.CSA.SimpleArtinianModules.columnSimple"
+      ],
+      "title": "The center of the positive-size matrix algebra over a division algebra consists of the scalar matrices with entries in that division algebra’s center, and the commuting endomorphisms of its simple left column are right multiplication by division coefficients."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.baseChangeEquivTensor",
+        "RM03.CSA.finrank_baseChange"
+      ],
+      "goal_ids": [
+        "csa_def",
+        "csa_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.04-base-change-dimension",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "additional:1:RM03-C04.04-base-change-dimension",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 345,
+        "line_end": 346,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "proposition.2.4"
+      },
+      "source_declarations": [
+        "RM03.CSA.baseChangeEquivTensor",
+        "RM03.CSA.finrank_baseChange"
+      ],
+      "title": "For any central simple k-algebra A and field extension L/k, dim_L A_L = dim_k A."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.algEquiv_matrix_algebraicClosure",
+        "RM03.CSA.centralDivision_degree",
+        "RM03.CSA.degree_pos",
+        "RM03.CSA.finrank_eq_degree_sq"
+      ],
+      "goal_ids": [
+        "csa_degree"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.05-algebraic-closure-splitting",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "additional:1:RM03-C04.05-algebraic-closure-splitting",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 361,
+        "line_end": 370,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "theorem.2.5"
+      },
+      "source_declarations": [
+        "RM03.CSA.algEquiv_matrix_algebraicClosure",
+        "RM03.CSA.centralDivision_degree",
+        "RM03.CSA.degree_pos",
+        "RM03.CSA.finrank_eq_degree_sq"
+      ],
+      "title": "Over an algebraic closure the scalar extension of every central simple k-algebra A is a matrix algebra of size deg A. The same holds for the central division factor."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.rightSubfieldModule",
+        "RM03.CSA.rightSubfield_dimension",
+        "RM03.CSA.rightSubfield_smul",
+        "RM03.CSA.subfieldTensorAction",
+        "RM03.CSA.subfieldTensorAction_isomorphism",
+        "RM03.CSA.subfieldTensorAction_tmul",
+        "RM03.CSA.subfield_splits"
+      ],
+      "goal_ids": [
+        "csa_degree_subfield_splits"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.05-subfield-splitting-action",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "additional:1:RM03-C04.05-subfield-splitting-action",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 403,
+        "line_end": 411,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "theorem.2.5"
+      },
+      "source_declarations": [
+        "RM03.CSA.rightSubfieldModule",
+        "RM03.CSA.rightSubfield_dimension",
+        "RM03.CSA.rightSubfield_smul",
+        "RM03.CSA.subfieldTensorAction",
+        "RM03.CSA.subfieldTensorAction_isomorphism",
+        "RM03.CSA.subfieldTensorAction_tmul",
+        "RM03.CSA.subfield_splits"
+      ],
+      "title": "For any subfield E of degree deg D in a central division algebra D, D has right E-dimension deg D and the map a ⊗ e ↦ (z ↦ aze) is an E-algebra equivalence D ⊗ E ≃ End_E(D)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.centralizerEnd",
+        "Specs.RM03.CSA.centralizerTensorAction"
+      ],
+      "goal_ids": [
+        "csa_centralizer_dimension"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.08-centralizer-endomorphism-algebra",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "additional:1:RM03-C04.08-centralizer-endomorphism-algebra",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 478,
+        "line_end": 484,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "theorem.2.8"
+      },
+      "source_declarations": [
+        "RM03.CSA.centralizerEnd",
+        "Specs.RM03.CSA.centralizerTensorAction"
+      ],
+      "title": "For a unital simple k-subalgebra B of a central simple k-algebra A, the A ⊗_k B^op-linear endomorphism algebra of A is k-algebra isomorphic to C_A(B)^op by right multiplication."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.genericReducedCharpoly_baseChange",
+        "RM03.CSA.isCentralSimple_baseChange",
+        "RM03.CSA.reducedCharpoly_baseChange"
+      ],
+      "goal_ids": [
+        "csa_reduced_charpoly",
+        "csa_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.10-reduced-characteristic-polynomial-base-change",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "additional:1:RM03-C04.10-reduced-characteristic-polynomial-base-change",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 549,
+        "line_end": 555,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "proposition.2.10"
+      },
+      "source_declarations": [
+        "RM03.CSA.genericReducedCharpoly_baseChange",
+        "RM03.CSA.isCentralSimple_baseChange",
+        "RM03.CSA.reducedCharpoly_baseChange"
+      ],
+      "title": "Reduced characteristic polynomials commute with any field extension, also when the extension does not split the algebra."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.commonCochainFactorization",
+        "RM03.Brauer.continuousUnitAction",
+        "RM03.Brauer.finiteCochainFactorization",
+        "RM03.Brauer.finiteCochainRange",
+        "RM03.Brauer.openUnitStabilizers",
+        "RM03.Brauer.restrictionQuotient"
+      ],
+      "goal_ids": [
+        "brauer_finite_cochains"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C04.13-finite-cochain-factorization",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+      "key": "additional:1:RM03-C04.13-finite-cochain-factorization",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 751,
+        "line_end": 760,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "remark.2.13"
+      },
+      "source_declarations": [
+        "RM03.Brauer.commonCochainFactorization",
+        "RM03.Brauer.continuousUnitAction",
+        "RM03.Brauer.finiteCochainFactorization",
+        "RM03.Brauer.finiteCochainRange",
+        "RM03.Brauer.openUnitStabilizers",
+        "RM03.Brauer.restrictionQuotient"
+      ],
+      "title": "For every finite arity, a continuous scalar cochain on the absolute Galois group of a separable closure, with discrete unit coefficients, has finite range and factors through restriction to a finite Galois subextension with values in the units of that subextension. A finite family admits a common stage above any given finite Galois stage."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.corner_dual",
+        "RM03.Morita.corner_dual_tensor_natural",
+        "RM03.Morita.corner_tensor",
+        "RM03.Morita.corner_tensor_natural"
+      ],
+      "goal_ids": [
+        "morita_corner_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C05.01-corner-dual-and-tensor",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+      "key": "additional:1:RM03-C05.01-corner-dual-and-tensor",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 827,
+        "line_end": 838,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "corollary.3.1"
+      },
+      "source_declarations": [
+        "RM03.Morita.corner_dual",
+        "RM03.Morita.corner_dual_tensor_natural",
+        "RM03.Morita.corner_tensor",
+        "RM03.Morita.corner_tensor_natural"
+      ],
+      "title": "For an idempotent e of a unital ring R, evaluation at e identifies Hom_R(eR,R) with Re as (R,eRe)-bimodules, and multiplication gives the natural right eRe-linear isomorphism M ⊗_R Re ≅ Me with inverse u ↦ u ⊗ e."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.QuiverRepresentation.cokernelProjection",
+        "RM03.QuiverRepresentation.cokernelRepresentation",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.imageInclusion",
+        "RM03.QuiverRepresentation.imageRepresentation",
+        "RM03.QuiverRepresentation.image_isImage",
+        "RM03.QuiverRepresentation.kernelInclusion",
+        "RM03.QuiverRepresentation.kernelRepresentation",
+        "RM03.QuiverRepresentation.kernel_isLimit",
+        "RM03.QuiverRepresentation.toImage"
+      ],
+      "goal_ids": [
+        "quiver_vertexwise_exactness"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C06.05-vertex-kernels-images-cokernels",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "additional:1:RM03-C06.05-vertex-kernels-images-cokernels",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1018,
+        "line_end": 1025,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "theorem.4.5"
+      },
+      "source_declarations": [
+        "RM03.QuiverRepresentation.cokernelProjection",
+        "RM03.QuiverRepresentation.cokernelRepresentation",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.imageInclusion",
+        "RM03.QuiverRepresentation.imageRepresentation",
+        "RM03.QuiverRepresentation.image_isImage",
+        "RM03.QuiverRepresentation.kernelInclusion",
+        "RM03.QuiverRepresentation.kernelRepresentation",
+        "RM03.QuiverRepresentation.kernel_isLimit",
+        "RM03.QuiverRepresentation.toImage"
+      ],
+      "title": "Representation kernels, images and cokernels are computed at the vertices with the induced arrow maps and canonical inclusions, corestrictions and quotient projections."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Path.finite_length_lt"
+      ],
+      "goal_ids": [
+        "quiver_bounded_paths"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:1:RM03-C06-bounded-path-finiteness",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "additional:1:RM03-C06-bounded-path-finiteness",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1085,
+        "line_end": 1087
+      },
+      "source_declarations": [
+        "RM03.Path.finite_length_lt"
+      ],
+      "title": "For each natural bound m and finite vertex and arrow sets, the subtype of paths of length less than m is finite."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.maximal_subfield_iff_degree"
+      ],
+      "goal_ids": [
+        "csa_maximal_subfield"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:2:C04-degree-sized-subfields-maximal",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "additional:2:C04-degree-sized-subfields-maximal",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 514,
+        "line_end": 516
+      },
+      "source_declarations": [
+        "RM03.CSA.maximal_subfield_iff_degree"
+      ],
+      "title": "Every k-subfield E of a central division k-algebra D with [E:k] = deg D is maximal."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.corner_dual",
+        "RM03.Morita.corner_dual_tensor_natural",
+        "RM03.Morita.corner_tensor",
+        "RM03.Morita.corner_tensor_natural"
+      ],
+      "goal_ids": [
+        "morita_corner_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:2:RM03-C05.01-dual-and-corner-tensor",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+      "key": "additional:2:RM03-C05.01-dual-and-corner-tensor",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 827,
+        "line_end": 837,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "corollary.3.1"
+      },
+      "source_declarations": [
+        "RM03.Morita.corner_dual",
+        "RM03.Morita.corner_dual_tensor_natural",
+        "RM03.Morita.corner_tensor",
+        "RM03.Morita.corner_tensor_natural"
+      ],
+      "title": "Evaluation at e identifies Hom_R(eR,R) with Re as an (R,eRe)-bimodule, with inverse b ↦ (x ↦ bx). Balanced multiplication gives the natural right eRe-linear isomorphism M ⊗_R Re ≃ Me with inverse u ↦ u ⊗ e."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Path.finite_length_lt"
+      ],
+      "goal_ids": [
+        "quiver_bounded_paths"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:2:RM03-C06.03-bounded-length-paths",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "additional:2:RM03-C06.03-bounded-length-paths",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 957,
+        "line_end": 963,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "lemma.4.3"
+      },
+      "source_declarations": [
+        "RM03.Path.finite_length_lt"
+      ],
+      "title": "For a quiver with finitely many vertices and arrows, there are finitely many paths of length strictly below any natural bound."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.QuiverRepresentation.cokernelProjection",
+        "RM03.QuiverRepresentation.cokernelRepresentation",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.imageInclusion",
+        "RM03.QuiverRepresentation.imageRepresentation",
+        "RM03.QuiverRepresentation.image_isImage",
+        "RM03.QuiverRepresentation.kernelInclusion",
+        "RM03.QuiverRepresentation.kernelRepresentation",
+        "RM03.QuiverRepresentation.kernel_isLimit",
+        "RM03.QuiverRepresentation.toImage"
+      ],
+      "goal_ids": [
+        "quiver_vertexwise_exactness"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:2:RM03-C06.05-vertexwise-kernels-cokernels-images",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "additional:2:RM03-C06.05-vertexwise-kernels-cokernels-images",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1018,
+        "line_end": 1025,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "theorem.4.5"
+      },
+      "source_declarations": [
+        "RM03.QuiverRepresentation.cokernelProjection",
+        "RM03.QuiverRepresentation.cokernelRepresentation",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.imageInclusion",
+        "RM03.QuiverRepresentation.imageRepresentation",
+        "RM03.QuiverRepresentation.image_isImage",
+        "RM03.QuiverRepresentation.kernelInclusion",
+        "RM03.QuiverRepresentation.kernelRepresentation",
+        "RM03.QuiverRepresentation.kernel_isLimit",
+        "RM03.QuiverRepresentation.toImage"
+      ],
+      "title": "Kernels, cokernels and images of representation morphisms are computed at vertices, with induced arrow maps and canonical inclusions or projections satisfying the corresponding universal properties."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.maximal_subfield_iff_centralizer_eq",
+        "RM03.CSA.maximal_subfield_iff_degree"
+      ],
+      "goal_ids": [
+        "csa_maximal_subfield"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:3:C04-maximal-subfield-degree-converse",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "additional:3:C04-maximal-subfield-degree-converse",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 514,
+        "line_end": 516
+      },
+      "source_declarations": [
+        "RM03.CSA.maximal_subfield_iff_centralizer_eq",
+        "RM03.CSA.maximal_subfield_iff_degree"
+      ],
+      "title": "Every k-subfield of a central division algebra D whose degree over k equals deg D is maximal."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.genericReducedCharpoly_baseChange",
+        "RM03.CSA.isCentralSimple_baseChange",
+        "RM03.CSA.reducedCharpoly_baseChange"
+      ],
+      "goal_ids": [
+        "csa_reduced_charpoly",
+        "csa_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:3:C04-reduced-characteristic-polynomial-base-change",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "additional:3:C04-reduced-characteristic-polynomial-base-change",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 553,
+        "line_end": 555
+      },
+      "source_declarations": [
+        "RM03.CSA.genericReducedCharpoly_baseChange",
+        "RM03.CSA.isCentralSimple_baseChange",
+        "RM03.CSA.reducedCharpoly_baseChange"
+      ],
+      "title": "The reduced characteristic polynomial commutes with every field extension, including an extension that does not split the algebra."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.commonCochainFactorization",
+        "RM03.Brauer.continuousUnitAction",
+        "RM03.Brauer.finiteCochainFactorization",
+        "RM03.Brauer.finiteCochainRange",
+        "RM03.Brauer.openUnitStabilizers",
+        "RM03.Brauer.restrictionQuotient"
+      ],
+      "goal_ids": [
+        "brauer_finite_cochains"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:3:RM03-C04.13-finite-cochain-factorization",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+      "key": "additional:3:RM03-C04.13-finite-cochain-factorization",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 751,
+        "line_end": 760,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "remark.2.13"
+      },
+      "source_declarations": [
+        "RM03.Brauer.commonCochainFactorization",
+        "RM03.Brauer.continuousUnitAction",
+        "RM03.Brauer.finiteCochainFactorization",
+        "RM03.Brauer.finiteCochainRange",
+        "RM03.Brauer.openUnitStabilizers",
+        "RM03.Brauer.restrictionQuotient"
+      ],
+      "title": "For any field k and separable closure S and each nonnegative integer r, a continuous cochain Gal(S/k)^r → Sˣ, with the Krull topology on the Galois group and discrete coefficients, has finite image. It factors through restriction to a finite Galois intermediate field E with coefficients in Eˣ."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.CornerDual",
+        "RM03.Morita.cornerDual_left_apply",
+        "RM03.Morita.cornerDual_right_apply",
+        "RM03.Morita.corner_dual",
+        "RM03.Morita.corner_dual_tensor_natural",
+        "RM03.Morita.corner_tensor",
+        "RM03.Morita.corner_tensor_natural"
+      ],
+      "goal_ids": [
+        "morita_corner_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:3:RM03-C05-corner-dual-and-tensor",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+      "key": "additional:3:RM03-C05-corner-dual-and-tensor",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 827,
+        "line_end": 837
+      },
+      "source_declarations": [
+        "RM03.Morita.CornerDual",
+        "RM03.Morita.cornerDual_left_apply",
+        "RM03.Morita.cornerDual_right_apply",
+        "RM03.Morita.corner_dual",
+        "RM03.Morita.corner_dual_tensor_natural",
+        "RM03.Morita.corner_tensor",
+        "RM03.Morita.corner_tensor_natural"
+      ],
+      "title": "For an idempotent e in a unital ring R, evaluation at e identifies Hom_R(eR,R) with Re as an (R,eRe)-bimodule, with inverse b ↦ (x ↦ bx) and with the corner action on Hom by precomposition. The natural right eRe-linear isomorphism M ⊗_R Re ≃ Me sends m⊗b to mb, with inverse u ↦ u⊗e."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Path.finite_length_lt"
+      ],
+      "goal_ids": [
+        "quiver_bounded_paths"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:3:RM03-C06-bounded-length-paths",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "additional:3:RM03-C06-bounded-length-paths",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 957,
+        "line_end": 963
+      },
+      "source_declarations": [
+        "RM03.Path.finite_length_lt"
+      ],
+      "title": "For each natural bound, the paths of length strictly below that bound in a quiver with finite vertex and arrow sets form a finite type. The same fact is used in the truncation argument on lines 1085–1087."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.QuiverRepresentation.cokernelRepresentation",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.imageRepresentation",
+        "RM03.QuiverRepresentation.image_isImage",
+        "RM03.QuiverRepresentation.kernelRepresentation",
+        "RM03.QuiverRepresentation.kernel_isLimit"
+      ],
+      "goal_ids": [
+        "quiver_vertexwise_exactness"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:3:RM03-C06-kernels-cokernels-images",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "additional:3:RM03-C06-kernels-cokernels-images",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1018,
+        "line_end": 1025
+      },
+      "source_declarations": [
+        "RM03.QuiverRepresentation.cokernelRepresentation",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.imageRepresentation",
+        "RM03.QuiverRepresentation.image_isImage",
+        "RM03.QuiverRepresentation.kernelRepresentation",
+        "RM03.QuiverRepresentation.kernel_isLimit"
+      ],
+      "title": "The kernel and image of a quiver morphism are given by the vertexwise kernels and ranges with induced restrictions, and the cokernel by the vertexwise quotients by the ranges with descended arrow maps, with their universal properties."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.maximal_subfield_iff_centralizer_eq",
+        "RM03.CSA.maximal_subfield_iff_degree"
+      ],
+      "goal_ids": [
+        "csa_maximal_subfield"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:4:RM03-C04.09-degree-converse",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.CSA",
+      "key": "additional:4:RM03-C04.09-degree-converse",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 514,
+        "line_end": 516,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "corollary.2.9"
+      },
+      "source_declarations": [
+        "RM03.CSA.maximal_subfield_iff_centralizer_eq",
+        "RM03.CSA.maximal_subfield_iff_degree"
+      ],
+      "title": "Conversely, every k-subfield E of a central division algebra D with [E:k] = deg D is maximal."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.CSA.genericReducedCharpoly_baseChange",
+        "RM03.CSA.isCentralSimple_baseChange",
+        "RM03.CSA.reducedCharpoly_baseChange"
+      ],
+      "goal_ids": [
+        "csa_reduced_charpoly",
+        "csa_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:4:RM03-C04.10-reduced-characteristic-polynomial-base-change",
+      "import": "MathGenome.RingModuleAssociativeAlgebra",
+      "key": "additional:4:RM03-C04.10-reduced-characteristic-polynomial-base-change",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 548,
+        "line_end": 555,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "proposition.2.10"
+      },
+      "source_declarations": [
+        "RM03.CSA.genericReducedCharpoly_baseChange",
+        "RM03.CSA.isCentralSimple_baseChange",
+        "RM03.CSA.reducedCharpoly_baseChange"
+      ],
+      "title": "The reduced characteristic polynomial and its generic polynomial commute coefficientwise with arbitrary extension of the base field, including a field that does not split A."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.commonCochainFactorization",
+        "RM03.Brauer.continuousUnitAction",
+        "RM03.Brauer.finiteCochainFactorization",
+        "RM03.Brauer.finiteCochainRange",
+        "RM03.Brauer.openUnitStabilizers",
+        "RM03.Brauer.restrictionQuotient"
+      ],
+      "goal_ids": [
+        "brauer_finite_cochains"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:4:RM03-C04.13-finite-cochain-factorization",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+      "key": "additional:4:RM03-C04.13-finite-cochain-factorization",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 751,
+        "line_end": 760,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "remark.2.13"
+      },
+      "source_declarations": [
+        "RM03.Brauer.commonCochainFactorization",
+        "RM03.Brauer.continuousUnitAction",
+        "RM03.Brauer.finiteCochainFactorization",
+        "RM03.Brauer.finiteCochainRange",
+        "RM03.Brauer.openUnitStabilizers",
+        "RM03.Brauer.restrictionQuotient"
+      ],
+      "title": "For every separable closure S/k and every nonnegative arity r, a continuous cochain on Gal(S/k)^r with values in discrete Sˣ has finite image and is induced from a cochain on a finite Galois quotient with coefficients in that finite Galois field."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.corner_dual",
+        "RM03.Morita.corner_dual_tensor_natural",
+        "RM03.Morita.corner_tensor",
+        "RM03.Morita.corner_tensor_natural"
+      ],
+      "goal_ids": [
+        "morita_corner_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:4:RM03-C05.01-dual-and-tensor-identifications",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+      "key": "additional:4:RM03-C05.01-dual-and-tensor-identifications",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 827,
+        "line_end": 837,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "corollary.3.1"
+      },
+      "source_declarations": [
+        "RM03.Morita.corner_dual",
+        "RM03.Morita.corner_dual_tensor_natural",
+        "RM03.Morita.corner_tensor",
+        "RM03.Morita.corner_tensor_natural"
+      ],
+      "title": "Evaluation at e identifies Hom_R(eR,R) with Re as an (R,eRe)-bimodule. Multiplication M ⊗_R Re → Me is natural in right R-modules with inverse u ↦ u ⊗ e, giving the stated identification of the first corner functor."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.QuiverRepresentation.cokernelProjection",
+        "RM03.QuiverRepresentation.cokernelRepresentation",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.imageInclusion",
+        "RM03.QuiverRepresentation.imageRepresentation",
+        "RM03.QuiverRepresentation.image_isImage",
+        "RM03.QuiverRepresentation.kernelInclusion",
+        "RM03.QuiverRepresentation.kernelRepresentation",
+        "RM03.QuiverRepresentation.kernel_isLimit",
+        "RM03.QuiverRepresentation.toImage"
+      ],
+      "goal_ids": [
+        "quiver_vertexwise_exactness"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:4:RM03-C06.05-vertexwise-kernels-cokernels-images",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "additional:4:RM03-C06.05-vertexwise-kernels-cokernels-images",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1018,
+        "line_end": 1025,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "theorem.4.5"
+      },
+      "source_declarations": [
+        "RM03.QuiverRepresentation.cokernelProjection",
+        "RM03.QuiverRepresentation.cokernelRepresentation",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.imageInclusion",
+        "RM03.QuiverRepresentation.imageRepresentation",
+        "RM03.QuiverRepresentation.image_isImage",
+        "RM03.QuiverRepresentation.kernelInclusion",
+        "RM03.QuiverRepresentation.kernelRepresentation",
+        "RM03.QuiverRepresentation.kernel_isLimit",
+        "RM03.QuiverRepresentation.toImage"
+      ],
+      "title": "For a morphism of quiver representations, the kernel and image are computed on the vertex kernels and ranges, and the cokernel on the vertex quotients by the ranges, with the induced arrow maps and canonical inclusions or quotient maps. The kernel, cokernel and image have their categorical universal properties."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Brauer.commonCochainFactorization",
+        "RM03.Brauer.continuousUnitAction",
+        "RM03.Brauer.finiteCochainFactorization",
+        "RM03.Brauer.finiteCochainRange",
+        "RM03.Brauer.openUnitStabilizers",
+        "RM03.Brauer.restrictionQuotient"
+      ],
+      "goal_ids": [
+        "brauer_finite_cochains"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:5:RM03-C04.13-finite-cochain-factorization",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Brauer",
+      "key": "additional:5:RM03-C04.13-finite-cochain-factorization",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 751,
+        "line_end": 758,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "remark.2.13"
+      },
+      "source_declarations": [
+        "RM03.Brauer.commonCochainFactorization",
+        "RM03.Brauer.continuousUnitAction",
+        "RM03.Brauer.finiteCochainFactorization",
+        "RM03.Brauer.finiteCochainRange",
+        "RM03.Brauer.openUnitStabilizers",
+        "RM03.Brauer.restrictionQuotient"
+      ],
+      "title": "For any field k and separable closure S/k, each continuous cochain Gal(S/k)^r → S^× for any r ≥ 0, with the Krull topology on the Galois group and discrete coefficients, has finite image and factors through the restriction to Gal(E/k)^r and the coefficient inclusion E^× → S^× for a finite Galois intermediate field E/k."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Morita.corner_dual",
+        "RM03.Morita.corner_dual_tensor_natural",
+        "RM03.Morita.corner_tensor",
+        "RM03.Morita.corner_tensor_natural"
+      ],
+      "goal_ids": [
+        "morita_corner_tensor"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:5:RM03-C05.01-dual-tensor-comparison",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Morita",
+      "key": "additional:5:RM03-C05.01-dual-tensor-comparison",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 827,
+        "line_end": 837,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "corollary.3.1"
+      },
+      "source_declarations": [
+        "RM03.Morita.corner_dual",
+        "RM03.Morita.corner_dual_tensor_natural",
+        "RM03.Morita.corner_tensor",
+        "RM03.Morita.corner_tensor_natural"
+      ],
+      "title": "For every idempotent e, evaluation at e identifies Hom_R(eR,R) with Re as an (R,eRe)-bimodule. Balanced multiplication gives the natural right eRe-linear isomorphism M ⊗_R Re ≃ Me, with inverse u ↦ u ⊗ e, and thus identifies the dual tensor functor with the corner functor."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Quivers.AlgebraRepresentations.groupAlgebraExtension"
+      ],
+      "goal_ids": [
+        "quiver_algebra_representations"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:5:RM03-C06.01-group-algebra-extension",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "additional:5:RM03-C06.01-group-algebra-extension",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 905,
+        "line_end": 908,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 15,
+        "pdf_destination": "proposition.4.1"
+      },
+      "source_declarations": [
+        "RM03.Quivers.AlgebraRepresentations.groupAlgebraExtension"
+      ],
+      "title": "The linear extension of a group representation to the group algebra gives the action in the algebra-representation correspondence."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.QuiverRepresentation.cokernelProjection",
+        "RM03.QuiverRepresentation.cokernelRepresentation",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.kernelInclusion",
+        "RM03.QuiverRepresentation.kernelRepresentation",
+        "RM03.QuiverRepresentation.kernel_isLimit"
+      ],
+      "goal_ids": [
+        "quiver_vertexwise_exactness"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:5:RM03-C06.05-vertex-kernels-cokernels",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "additional:5:RM03-C06.05-vertex-kernels-cokernels",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1021,
+        "line_end": 1025,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "theorem.4.5"
+      },
+      "source_declarations": [
+        "RM03.QuiverRepresentation.cokernelProjection",
+        "RM03.QuiverRepresentation.cokernelRepresentation",
+        "RM03.QuiverRepresentation.cokernel_isColimit",
+        "RM03.QuiverRepresentation.kernelInclusion",
+        "RM03.QuiverRepresentation.kernelRepresentation",
+        "RM03.QuiverRepresentation.kernel_isLimit"
+      ],
+      "title": "Vertex kernels and cokernels of maps of quiver representations give the corresponding categorical kernels and cokernels with the induced arrow maps."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "RM03.Path.finite_length_lt"
+      ],
+      "goal_ids": [
+        "quiver_bounded_paths"
+      ],
+      "id": "RingModuleAssociativeAlgebra:additional:5:RM03-C06.08-bounded-paths",
+      "import": "MathGenome.RingModuleAssociativeAlgebra.Topics.RM03.Quivers",
+      "key": "additional:5:RM03-C06.08-bounded-paths",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "delivery": "provenance/components/RingModuleAssociativeAlgebra/delivery",
+        "file": "docs/sources/RingModuleAssociativeAlgebra/paper.tex",
+        "line": 1085,
+        "line_end": 1087,
+        "pdf_file": "docs/notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "proposition.4.8"
+      },
+      "source_declarations": [
+        "RM03.Path.finite_length_lt"
+      ],
+      "title": "For each natural m, a quiver with finite vertex and arrow sets has finitely many paths of length strictly less than m."
     }
   ],
   "environment": {
@@ -269949,7 +273809,7 @@
       "verified_bridge"
     ]
   },
-  "release": "0.25.0",
+  "release": "0.26.0",
   "scope": "Fixed Mathlib plus audited D05 linear algebra, corrected D07 abstract algebra and D03 single-variable analysis. Public entries describe stable result families; all source-coverage records and proof-route scope dispositions remain separately archived. Added source-audited component MultivariableAnalysis. Added source-audited component PointSetTopology. Added source-audited component RealAnalysis. Added source-audited component ComplexAnalysis. Added source-audited component ODEDynamics. Added source-audited component FunctionalAnalysis. Added source-audited component FourierSobolev. Added source-audited component AlgebraCore. Added source-audited component SmoothManifolds. Added source-audited component ProbabilityFoundations. Added source-audited component VariationalMethods. Added source-audited component LinearPDE. Added source-audited component TopologyRiemannianGeometry. Added source-audited component ElementaryNumberTheory. Added source-audited component FiniteCombinatorics. Added source-audited component ExtremalOptimization. Added source-audited component NumericalAnalysis. Added source-audited component DiscreteMarkovMartingales. Added source-audited component AdvancedCommutativeAlgebra. Added four source-audited algebra components with independent public imports. Added source-audited component LinearAlgebraSupplement. Added source-audited component GroupTheorySupplement.",
   "supplemental_entries": [
     {
@@ -271287,10 +275147,11 @@
     "declarations/014.json",
     "declarations/015.json",
     "declarations/016.json",
-    "declarations/017.json"
+    "declarations/017.json",
+    "declarations/018.json"
   ],
   "distribution": {
-    "release": "v0.25.0",
-    "archived_context_entries_omitted": 62
+    "release": "v0.26.0",
+    "archived_context_entries_omitted": 67
   }
 }

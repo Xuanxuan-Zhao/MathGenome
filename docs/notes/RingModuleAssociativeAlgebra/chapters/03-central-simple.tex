@@ -1,0 +1,534 @@
+\chapter{Central simple algebras and the Brauer group}
+\label{ch:rm03-central-simple}
+
+Throughout this chapter \(k\) is a field. Algebras and algebra maps are
+unital, and a simple algebra is nonzero and has no nonzero proper
+two-sided ideal. For a field extension \(L/k\), write \(A_L=A\otimes_k L\).
+We use the Artin--Wedderburn theorem from
+\cite[ALG-03-C03-R04]{p103} and the finite-dimensional case of density
+from Corollary~\ref{cor:rm03-density-finite}. For comparison with the
+classical development, see \cite[Sections~11.3--11.8]{stackscsa}.
+The finite and real division-ring inputs are the established results in
+\cite[K07.23.finite\_division\_ring and K07.23.frobenius]{d07}.
+
+\section{Structure and extension of scalars}
+
+\begin{definition}[RM03-C04.01. Central simple algebras]
+\label{def:rm03-csa}
+A \emph{central simple \(k\)-algebra} is a finite-dimensional simple
+\(k\)-algebra \(A\) whose center is \(k1_A\). A \emph{central division
+algebra} over \(k\) is a finite-dimensional division algebra with this
+same center condition. A central simple \(k\)-algebra is \emph{split}
+if it is isomorphic to \(M_n(k)\) for some \(n\geq 1\). An extension
+\(L/k\) \emph{splits} \(A\) if \(A_L\) is split over \(L\).
+\end{definition}
+
+\begin{proposition}[RM03-C04.02. Matrix and division presentations]
+\label{prop:rm03-csa-matrix}
+Every central simple \(k\)-algebra \(A\) admits a presentation
+\(A\simeq M_r(D)\), where \(r\geq 1\) and \(D\) is a central division
+algebra over \(k\). Both \(r\) and the \(k\)-algebra isomorphism class
+of \(D\) are uniquely determined by \(A\).
+\end{proposition}
+\begin{proof}
+A finite-dimensional simple algebra is left Artinian, so the simple
+case of Artin--Wedderburn gives \(A\simeq M_r(D)\). Commuting with
+the matrix units forces any central matrix to have the form \(dI_r\),
+and commuting with coefficient matrices forces \(d\in Z(D)\).
+Thus \(Z(D)=k\), with the identification induced by the original
+\(k\)-action on \(A\). For a simple left \(A\)-module \(S\) the matrix
+presentation gives \(S\simeq D^r\), with endomorphism ring \(D^{\mathrm{op}}\)
+via right multiplication by \(D\). This identifies \(D\) as a
+\(k\)-algebra since every module endomorphism commutes with the
+given scalars. Finally \(r^2\dim_k D=\dim_k A\) determines \(r\).
+\end{proof}
+
+The same simple-Artinian structure will be used for a finite-dimensional
+simple \(k\)-algebra \(T\) with arbitrary center. Write \(T=M_s(E)\)
+for its Artin--Wedderburn presentation. A finite nonzero left
+\(T\)-module \(V\) is a direct sum of \(m\geq 1\) copies of the
+unique simple column module \(E^s\). In particular the
+\(k\)-dimension of \(V\) determines this multiplicity. Its
+endomorphism ring is \(M_m(E^{\mathrm{op}})\), by writing an
+endomorphism in blocks between the \(m\) copies of \(E^s\).
+Consequently \(\operatorname{End}_T(V)\) is simple, and
+\begin{equation}
+\label{eq:rm03-simple-end-dimension}
+\dim_k T\;\dim_k\operatorname{End}_T(V)=(\dim_k V)^2.
+\end{equation}
+Indeed the two factors on the left are \(s^2\dim_k E\) and
+\(m^2\dim_k E\), and \(\dim_k V=sm\dim_k E\).
+
+\begin{proposition}[RM03-C04.03. The enveloping algebra of a central simple algebra]
+\label{prop:rm03-enveloping}
+If \(A\) is central simple over \(k\), its left and right multiplication
+map is an isomorphism of \(k\)-algebras
+\[
+ A\otimes_k A^{\mathrm{op}}\longrightarrow \operatorname{End}_k(A),
+ \qquad a\otimes b^{\mathrm{op}}\longmapsto (x\mapsto axb).
+\]
+\end{proposition}
+\begin{proof}
+The displayed map is an algebra homomorphism because composition
+reverses the order of the right multipliers. Under this action the
+left \(A\otimes A^{\mathrm{op}}\)-submodules of \(A\) are exactly its
+two-sided ideals, so \(A\) is a simple module. Its endomorphisms as
+such a module are determined by the image \(c\) of \(1\). Compatibility
+with left and right multiplication gives \(ac=ca\) for every \(a\),
+and each such \(c\) defines an endomorphism. The resulting endomorphism
+division algebra is \(k\). Corollary~\ref{cor:rm03-density-finite} therefore
+gives surjectivity onto \(\operatorname{End}_k(A)\). Both \(k\)-dimensions
+are \((\dim_k A)^2\), which gives injectivity.
+\end{proof}
+
+\begin{proposition}[RM03-C04.04. Tensor product and base change]
+\label{prop:rm03-csa-tensor}
+Let \(A\) be central simple over \(k\) and \(B\) any simple
+\(k\)-algebra. Then \(A\otimes_k B\) is simple, with center
+\(1\otimes Z(B)\). In particular the tensor product of two central
+simple \(k\)-algebras is central simple. Also \(A_L\) is central
+simple over \(L\) for every field extension \(L/k\).
+\end{proposition}
+\begin{proof}
+Let \(I\) be a nonzero two-sided ideal in \(A\otimes_k B\). Express
+a nonzero \(u\in I\) as \(\sum_i a_i\otimes b_i\) in a basis
+\((a_i)\) of \(A\), and choose \(j\) with \(b_j\ne 0\).
+The ideal is preserved by left and right multiplication from
+\(A\otimes 1\), hence is preserved by \(T\otimes\operatorname{id}_B\)
+for every \(k\)-linear \(T:A\to A\) by
+Proposition~\ref{prop:rm03-enveloping}. Take \(T(a_j)=1\) and
+\(T(a_i)=0\) for \(i\ne j\). This gives \(1\otimes b_j\in I\).
+Because \(Bb_jB\) generates the unit ideal of \(B\), left and
+right multiplication by \(1\otimes B\) then gives \(1\otimes 1\in I\).
+
+An element commuting with \(A\otimes 1\) can be written
+\(\sum_j x_j\otimes y_j\) for \(k\)-linearly independent
+\(y_j\in B\). Each \(x_j\) commutes with \(A\), so the element
+belongs to \(1\otimes B\). An element of that subalgebra is central
+exactly when it commutes with \(1\otimes B\), giving the center formula.
+Applying it to \(B=L\), and noting
+\(\dim_L A_L=\dim_k A\), gives the base change statement.
+\end{proof}
+
+\section{Separable splitting fields}
+
+\begin{theorem}[RM03-C04.05. Degree and finite Galois splitting]
+\label{thm:rm03-csa-galois-split}
+For \(A\) central simple over \(k\), \(\dim_k A\) is a square.
+Write \(\deg A=\sqrt{\dim_k A}\). There is a finite Galois extension
+\(K/k\) with \(A_K\simeq M_{\deg A}(K)\).
+More precisely, if \(A\simeq M_r(D)\) and \(d=\deg D\), then \(D\)
+contains a separable field extension \(E/k\) of degree \(d\) which
+splits \(D\). Thus \(\deg A=rd\).
+\end{theorem}
+\begin{proof}
+Over an algebraic closure \(\overline{k}\), base change and
+Proposition~\ref{prop:rm03-csa-matrix} give
+\(A_{\overline{k}}\simeq M_n(D')\).
+Every element \(x\) of \(D'\) satisfies a polynomial over
+\(\overline{k}\) by finite dimensionality. Factoring the polynomial
+into linear factors and using absence of zero divisors shows
+\(x\in\overline{k}\). This proves \(A_{\overline{k}}\simeq
+M_n(\overline{k})\) and \(\dim_k A=n^2\). The same argument for \(D\)
+gives \(D_{\overline{k}}\simeq M_d(\overline{k})\) and
+\(n=rd\).
+
+It suffices to split \(D\), since matrix algebras commute with
+extension of scalars. If \(k\) is finite, then \(D\) is a finite
+division ring and is commutative by
+\cite[K07.23.finite\_division\_ring]{d07}. Its center condition forces
+\(D=k\), so \(E=k\) works.
+
+Assume \(k\) is infinite. Fix a \(k\)-basis \(u_1,\ldots,u_{d^2}\)
+of \(D\). Through the splitting over \(\overline{k}\), the matrix
+corresponding to \(\sum_i X_i u_i\) has a characteristic polynomial
+whose discriminant is a polynomial in the \(X_i\) over
+\(\overline{k}\). This discriminant is nonzero as a polynomial:
+the basis spans \(M_d(\overline{k})\) after extension, so choose
+coefficients giving a diagonal matrix with \(d\) distinct entries.
+Any nonzero polynomial over \(\overline{k}\) in finitely many
+variables has a nonzero value at some tuple in \(k\). To see this,
+view it as a polynomial in its last variable, choose the other
+variables by induction so that at least one coefficient survives,
+and then avoid the finitely many roots of the remaining polynomial.
+Thus some \(x\in D\) corresponds to a matrix with \(d\) distinct
+eigenvalues over \(\overline{k}\).
+
+The minimal polynomial of \(x\) has the same degree after extension:
+linear independence of the initial powers \(1,x,\ldots,x^{j-1}\)
+is preserved, and a monic relation over \(k\) remains a relation
+over \(\overline{k}\). Uniqueness of the monic relation of smallest
+degree then identifies the two minimal polynomials. For the chosen
+matrix this polynomial is the product of the \(d\) distinct linear
+factors. Hence \(E=k[x]\) has dimension \(d\) and is separable over \(k\).
+The algebra \(E\) is a field since it is a finite-dimensional
+commutative domain inside \(D\).
+
+Regard \(D\) as a right \(E\)-space of dimension \(d\). The map
+\[
+ D\otimes_k E\longrightarrow \operatorname{End}_E(D),\qquad
+ a\otimes e\longmapsto (z\mapsto aze)
+\]
+is an \(E\)-algebra homomorphism: the right multipliers belong to
+the commutative field \(E\). It is unital and its domain is simple
+by Proposition~\ref{prop:rm03-csa-tensor}, so it is injective.
+Both sides have \(E\)-dimension \(d^2\), giving a splitting over
+\(E\). A finite Galois closure \(K\) of \(E/k\) then splits both \(D\)
+and \(A\).
+\end{proof}
+
+\begin{corollary}[RM03-C04.06. Index and degrees of splitting extensions]
+\label{cor:rm03-csa-index}
+Let \(A\simeq M_r(D)\) be central simple and set
+\(\operatorname{ind}(A)=\deg D\). Every finite splitting field
+\(L/k\) of \(A\) has \(\operatorname{ind}(A)\mid [L:k]\).
+A separable splitting field of degree \(\operatorname{ind}(A)\)
+exists.
+\end{corollary}
+\begin{proof}
+Write \(d=\deg D\). Since \(A_L=M_r(D_L)\) and \(D_L\) is central
+simple by Proposition~\ref{prop:rm03-csa-tensor}, the uniqueness
+of the division presentation implies that \(D_L\) is split
+whenever \(A_L\) is split. Then \(D_L\simeq M_d(L)\), and
+restricting its natural left action on \(L^d\) to \(D\) gives a
+finite left \(D\)-space. Its \(k\)-dimension \(d[L:k]\) must be a
+multiple of \(\dim_k D=d^2\). The last assertion is the field \(E\)
+of Theorem~\ref{thm:rm03-csa-galois-split}.
+\end{proof}
+
+\section{Conjugacy and commutants}
+
+\begin{theorem}[RM03-C04.07. Skolem--Noether]
+\label{thm:rm03-skolem-noether}
+Let \(A\) be central simple over \(k\), and let \(B\) be a
+simple \(k\)-algebra. Two unital \(k\)-algebra embeddings
+\(f,g:B\hookrightarrow A\) are conjugate by an element of \(A^\times\).
+In particular every \(k\)-algebra automorphism of \(A\) is inner.
+\end{theorem}
+\begin{proof}
+The embedding makes \(B\) finite-dimensional over \(k\), and
+\(T=A\otimes_k B^{\mathrm{op}}\) is a finite-dimensional simple
+\(k\)-algebra by Proposition~\ref{prop:rm03-csa-tensor}.
+Give the \(k\)-space \(A\) two left \(T\)-module structures by
+\[
+ (a\otimes b^{\mathrm{op}})\cdot_f x=axf(b),\qquad
+ (a\otimes b^{\mathrm{op}})\cdot_g x=axg(b).
+\]
+The use of \(B^{\mathrm{op}}\) compensates for the order of right
+multiplication. The two modules have equal \(k\)-dimension, so the
+simple-Artinian module description preceding
+Proposition~\ref{prop:rm03-enveloping} gives a \(T\)-module
+isomorphism \(F:(A,\cdot_f)\to(A,\cdot_g)\).
+Because \(F\) is left \(A\)-linear, \(F(x)=xu\) for \(u=F(1)\).
+Its inverse is also right multiplication, which shows that
+\(u\in A^\times\). Intertwining the two actions of \(b^{\mathrm{op}}\)
+on \(1\) gives \(f(b)u=ug(b)\). The case \(B=A\) and \(g\) the
+identity gives the automorphism assertion.
+\end{proof}
+
+\begin{theorem}[RM03-C04.08. Centralizer and double centralizer]
+\label{thm:rm03-centralizer}
+Let \(B\) be a unital simple \(k\)-subalgebra of a central simple
+\(k\)-algebra \(A\). Its centralizer
+\[
+ C_A(B)=\{\,x\in A:xb=bx\ \text{for every }b\in B\,\}=C
+\]
+is simple, \(\dim_k B\cdot\dim_k C=\dim_k A\), and \(C_A(C)=B\).
+Moreover \(Z(C)=Z(B)\) as subalgebras of \(A\).
+If \(B\) is central over \(k\), so is \(C\), and multiplication
+induces an isomorphism \(B\otimes_k C\simeq A\).
+\end{theorem}
+\begin{proof}
+Act on \(A\) by \(T=A\otimes B^{\mathrm{op}}\) using left and right
+multiplication, where \(T\) is simple by
+Proposition~\ref{prop:rm03-csa-tensor}. An endomorphism of this
+\(T\)-module is left \(A\)-linear, hence is right multiplication
+by some \(x\in A\). Right multiplication by \(x\) commutes with
+right multiplication by every \(b\in B\) exactly when \(x\in C\).
+Thus \(\operatorname{End}_T(A)\simeq C^{\mathrm{op}}\).
+By \eqref{eq:rm03-simple-end-dimension}, \(C\) is simple and
+\[
+ (\dim_k A)(\dim_k B)(\dim_k C)=(\dim_k A)^2.
+\]
+The same dimension formula applied to the simple subalgebra
+\(C\) gives \(\dim_k C_A(C)=\dim_k B\). The inclusion
+\(B\subseteq C_A(C)\) therefore is an equality. Also
+\(Z(C)=C\cap C_A(C)=C\cap B=Z(B)\).
+
+If \(Z(B)=k\), multiplication is a unital homomorphism from
+\(B\otimes_k C\) because the subalgebras commute. The tensor
+product is simple by Proposition~\ref{prop:rm03-csa-tensor},
+so the homomorphism is injective. The dimension formula gives
+surjectivity.
+\end{proof}
+
+\begin{corollary}[RM03-C04.09. Maximal subfields of a central division algebra]
+\label{cor:rm03-maximal-subfield}
+Every maximal subfield \(E\) of a central division \(k\)-algebra
+\(D\) has \([E:k]=\deg D\) and splits \(D\). The separable \(E\)
+in Theorem~\ref{thm:rm03-csa-galois-split} is a maximal subfield.
+\end{corollary}
+\begin{proof}
+For \(x\in C_D(E)\), the algebra \(E[x]\) is a commutative
+finite-dimensional domain over \(E\), hence a field. Maximality
+gives \(x\in E\), so \(C_D(E)=E\). Theorem~\ref{thm:rm03-centralizer}
+now gives \([E:k]^2=\dim_k D\). The map using left multiplication
+by \(D\) and right multiplication by \(E\) in the proof of
+Theorem~\ref{thm:rm03-csa-galois-split} works for any \(E\) of
+this degree. Conversely the same dimension formula forces
+\(C_D(E)=E\) for every degree-\(\deg D\) subfield, which is
+sufficient for maximality.
+\end{proof}
+
+\section{Reduced characteristic polynomial and norm}
+
+\begin{proposition}[RM03-C04.10. Reduced characteristic polynomial]
+\label{prop:rm03-reduced-norm}
+Let \(A\) be central simple of degree \(n\) over \(k\).
+For \(a\in A\), the characteristic polynomial of the image of
+\(a\otimes 1\) in a matrix algebra over a splitting field belongs
+to \(k[t]\) and is independent of the field and of the splitting
+isomorphism. Denote it by \(\chi_a^{\mathrm{red}}(t)\) and set
+\(\operatorname{Nrd}(a)=(-1)^n\chi_a^{\mathrm{red}}(0)\).
+The reduced norm is a homogeneous polynomial of degree \(n\)
+on \(A\), commutes with base change, is multiplicative, and
+is nonzero exactly on \(A^\times\).
+\end{proposition}
+\begin{proof}
+Choose a finite Galois splitting \(K/k\), an isomorphism
+\(\phi:A_K\to M_n(K)\), and a \(k\)-basis \(u_1,\ldots,u_{n^2}\)
+of \(A\). On the generic element put
+\[
+ P(t,\mathbf X)=
+ \det\left(tI_n-\sum_i X_i\phi(u_i\otimes 1)\right).
+\]
+For \(\sigma\in\operatorname{Gal}(K/k)\), write \(\sigma_A\)
+for the action on the coefficients of \(A_K\) and \(\sigma_M\)
+for entrywise application to matrices. Then
+\(\sigma_M\phi\sigma_A^{-1}\) is another \(K\)-algebra
+isomorphism. By Theorem~\ref{thm:rm03-skolem-noether} the
+two differ by a single conjugation on \(M_n(K)\). Hence
+applying \(\sigma\) to the coefficients leaves \(P\) unchanged.
+Consequently \(P\in k[t,\mathbf X]\). If \(L/k\) is another
+splitting field, an algebraic closure of \(L\) contains a
+\(k\)-copy of \(K\). Extending the two splitting isomorphisms
+to this common field and using the same conjugacy argument
+identifies their generic characteristic polynomials. These
+identities also verify base change for a field extension
+that does not itself split \(A\), by using a splitting field
+over it and comparing there.
+
+The constant term with sign \((-1)^n\) is the determinant
+of the matrix of the generic element. Homogeneity and
+multiplicativity follow from the determinant formulas after
+extension to \(K\), and hence over \(k\). If \(a\) is invertible
+then its matrix image is invertible. Conversely if its
+matrix image is invertible, left multiplication \(x\mapsto ax\)
+on \(A\) becomes invertible over \(K\). It is therefore
+invertible over \(k\), giving some \(b\) with \(ab=1\).
+Injectivity of left multiplication also gives \(ba=1\)
+from \(a(ba-1)=0\).
+\end{proof}
+
+Over \(K\), the norm-one equation is the determinant-one
+equation defining \(\operatorname{SL}_n\). Its descent is
+\(\operatorname{SL}_1(A)\) in \cite[Result F05]{lag}, which
+also gives the corresponding inner form \(\operatorname{PGL}_1(A)\).
+
+\section{Brauer classes and examples}
+
+\begin{theorem}[RM03-C04.11. Brauer equivalence and the group law]
+\label{thm:rm03-brauer-group}
+Two central simple \(k\)-algebras \(A,B\) are \emph{Brauer
+equivalent} if \(M_p(A)\simeq M_q(B)\) for some \(p,q\geq 1\).
+This is an equivalence relation, and each class has a unique
+central division representative up to \(k\)-algebra isomorphism.
+The classes form an abelian group \(\operatorname{Br}(k)\)
+with laws
+\[
+ [A]+[B]=[A\otimes_k B],\qquad 0=[k],\qquad -[A]=[A^{\mathrm{op}}].
+\]
+The class \([A]\) is zero exactly when \(A\) is split. A field
+extension \(L/k\) gives a homomorphism
+\(\operatorname{Br}(k)\to\operatorname{Br}(L)\) by \([A]\mapsto[A_L]\).
+\end{theorem}
+\begin{proof}
+Write \(A=M_r(D)\) and \(B=M_s(E)\) with division factors.
+If they become isomorphic after passing to matrices, then
+\(D\simeq E\) by Proposition~\ref{prop:rm03-csa-matrix}.
+If \(D\simeq E\), both \(M_s(A)\) and \(M_r(B)\) are
+isomorphic to \(M_{rs}(D)\). Thus equivalence means equality
+of the division factors up to \(k\)-algebra isomorphism. The
+class of \(k\) therefore consists exactly of split algebras.
+
+The tensor product is central simple by
+Proposition~\ref{prop:rm03-csa-tensor}. The identity
+\(M_p(A)\otimes_k B\simeq M_p(A\otimes_k B)\), induced by
+tensoring coefficients, makes the product independent of
+the representative of \(A\). Commutativity via the tensor
+flip handles the representative of \(B\). Associativity and
+the identity class come from the tensor associator and unit.
+The opposite algebra is central simple and
+Proposition~\ref{prop:rm03-enveloping} identifies its product
+with \(A\) as the split algebra \(\operatorname{End}_k(A)\).
+Finally, extension of scalars commutes with the matrix and
+tensor constructions and sends \(k\) to \(L\). These
+identifications also give compatibility in towers of fields.
+\end{proof}
+
+\begin{example}[RM03-C04.12. The real and quaternion classes]
+\label{ex:rm03-brauer-real}
+There are exactly two real Brauer classes, represented by
+\(\mathbb R\) and \(\mathbb H\). To see this, apply
+Frobenius's real algebraic division-ring theorem
+\cite[K07.23.frobenius]{d07} to the central division
+representative. Finite-dimensionality guarantees
+algebraicity, and \(\mathbb C\) is excluded because its
+center is larger than \(\mathbb R\). The quaternion class
+is nonzero by uniqueness of the division representative.
+Quaternion conjugation \(q\mapsto\bar q\) reverses products,
+so \(\mathbb H^{\mathrm{op}}\simeq\mathbb H\) and
+\(2[\mathbb H]=0\). Thus
+\(\operatorname{Br}(\mathbb R)\simeq\mathbb Z/2\mathbb Z\).
+
+More explicitly \(\mathbb C=\mathbb R[i]\) is the degree-two
+splitting subfield of \(\mathbb H\) from
+Corollary~\ref{cor:rm03-maximal-subfield}, so
+\(\mathbb H_{\mathbb C}\simeq M_2(\mathbb C)\).
+Write \(q=a+bi+cj+dk\) in Hamilton's basis, with
+\(i^2=j^2=-1\) and \(k=ij=-ji\). In a complex splitting one
+can take
+\[
+ i\longmapsto \begin{pmatrix}\mathrm i&0\\0&-\mathrm i\end{pmatrix},
+ \qquad j\longmapsto \begin{pmatrix}0&1\\-1&0\end{pmatrix},
+ \quad \mathrm i^2=-1\ \text{in }\mathbb C .
+\]
+These matrices satisfy the quaternion relations, giving a
+unital homomorphism out of \(\mathbb H_{\mathbb C}\).
+It is an isomorphism by simplicity and equal dimension.
+Its determinant on \(q\) is \(a^2+b^2+c^2+d^2\), recovering
+the quaternion norm of \cite[K07.23.quaternion\_algebra]{d07}.
+\end{example}
+
+\begin{remark}[RM03-C04.13. Relative classes and descent]
+\label{rem:rm03-relative-brauer}
+For \(K/k\) finite Galois, let
+\(\operatorname{Br}(K/k)=\ker(\operatorname{Br}(k)\to\operatorname{Br}(K))\).
+It consists of the classes split by \(K\), by
+Theorem~\ref{thm:rm03-brauer-group}. Put \(G=\operatorname{Gal}(K/k)\).
+In fixed degree \(n\), the algebras split by \(K\) up to
+isomorphism correspond to \(H^1(G,\operatorname{PGL}_n(K))\)
+with its coefficientwise action. We first give the descent argument.
+
+For a finite-dimensional \(K\)-space \(V\) with a semilinear
+\(G\)-action \(T_\sigma\), the fixed vectors span \(V\) over \(K\).
+Otherwise a nonzero \(K\)-linear functional \(\ell\) annihilates
+their \(K\)-span. The vector
+\(\sum_{\sigma\in G} T_\sigma(\lambda v)\) is fixed for each
+\(v\in V\), \(\lambda\in K\). Applying \(\ell\) gives
+\(\sum_\sigma\ell(T_\sigma v)\sigma(\lambda)=0\) for all \(\lambda\).
+Distinct field automorphisms are linearly independent as
+\(K\)-valued functions: in a nonzero relation with the fewest
+terms, evaluate at \(a\lambda\) and subtract a multiple of the
+relation at \(\lambda\), choosing \(a\) on which two of the
+automorphisms differ. This eliminates one term without
+eliminating the other. A one-term relation is impossible by
+evaluation at \(1\). Thus \(\ell(v)=0\) for all \(v\), a
+contradiction. A \(K\)-basis of fixed vectors is a \(k\)-basis of
+\(V^G\), since the coefficients of a fixed vector in this basis
+are fixed by \(G\). Consequently \(K\otimes_k V^G\to V\) is an
+isomorphism. If \(V\) is a \(K\)-algebra and the action respects
+multiplication, this is an algebra isomorphism. A \(G\)-equivariant
+\(K\)-algebra map descends by restriction to the fixed subalgebras.
+
+Given a splitting of an algebra of degree \(n\), transport its
+coefficient action to \(M_n(K)\). Composing each transported
+action with inverse entrywise \(\sigma\) gives a \(K\)-algebra
+automorphism, inner by Theorem~\ref{thm:rm03-skolem-noether}.
+Two implementing invertible matrices differ by a scalar, since
+the matrices commuting with all the matrix units are the scalar
+ones. Thus the semilinear action gives a projective cocycle.
+Conversely a projective cocycle acts on \(M_n(K)\) by semilinear
+conjugation; the scalar defects disappear in conjugation. Its
+fixed algebra is central simple of degree \(n\). Its scalar
+extension is the matrix algebra, so any nonzero proper ideal
+would give a nonzero proper ideal there by extending a vector-space
+basis. A central element extends to a scalar matrix, and its
+scalar is fixed by \(G\), hence lies in \(k\). Changing the
+splitting conjugates the action by a \(K\)-algebra isomorphism,
+which gives just the projective coboundary relation.
+Conversely that relation gives an equivariant conjugation, which
+restricts to an isomorphism on fixed algebras. This proves the
+fixed-degree classification. Brauer equivalence allows
+enlargement by matrices.
+
+For the descent convention where the transported semilinear
+action is \(x\mapsto g_\sigma \sigma(x)g_\sigma^{-1}\),
+choose lifts \(G_\sigma\in\operatorname{GL}_n(K)\) of the
+projective matrices \(g_\sigma\). Then
+\(c_{\sigma,\tau}=G_\sigma\sigma(G_\tau)G_{\sigma\tau}^{-1}\)
+is scalar by the projective cocycle identity. Associating the
+product of three lifted maps in two ways gives
+\[
+ c_{\sigma,\tau}c_{\sigma\tau,\nu}
+ =\sigma(c_{\tau,\nu})c_{\sigma,\tau\nu}.
+\]
+Changing each \(G_\sigma\) by a scalar changes \(c\) by a
+coboundary. Changing the splitting conjugates the projective
+datum by a coboundary, which one can lift as
+\(G_\sigma\mapsto H^{-1}G_\sigma\sigma(H)\); this leaves the
+scalar \(c_{\sigma,\tau}\) unchanged. Enlargement by a
+split matrix algebra replaces \(G_\sigma\) by \(I_m\otimes G_\sigma\)
+and preserves \(c\). Thus the scalar class depends only
+on the relative Brauer class. Tensoring lifts multiplies
+the scalar cocycles. We have constructed the group homomorphism
+\[
+ \operatorname{Br}(K/k)\longrightarrow
+ H^2(\operatorname{Gal}(K/k),K^\times),\qquad [A]\longmapsto[c].
+\]
+With the same lifts, the cocycle in
+\cite[Equation~(59.61.5.1)]{stacksdescent} is \(c^{-1}\).
+The homomorphism is injective. If the scalar class is zero,
+rescale the \(G_\sigma\) so that \(c_{\sigma,\tau}=1\).
+The operators \(v\mapsto G_\sigma\sigma(v)\) on \(K^n\) then
+form a semilinear action. In a basis of invariant vectors the
+action becomes entrywise \(\sigma\). The fixed endomorphisms
+are the endomorphisms over \(k\) of the fixed vector space,
+so the descended algebra is split.
+
+For surjectivity take a normalized scalar \(2\)-cocycle \(c\).
+On the \(K\)-space with basis \(e_\tau\), \(\tau\in G\), define
+the invertible \(\sigma\)-semilinear operators
+\[
+ T_\sigma(e_\tau)=c_{\sigma,\tau}e_{\sigma\tau}.
+\]
+On \(e_\nu\), the cocycle identity gives
+\(T_\sigma T_\tau=c_{\sigma,\tau}T_{\sigma\tau}\).
+The operators therefore act genuinely on the full endomorphism
+algebra by conjugation. The fixed algebra descends as above.
+Relative to the displayed basis the \(T_\sigma\)'s are lifts
+of its projective cocycle and the scalar defect is exactly \(c\).
+This proves the relative isomorphism with the indicated sign.
+Compare Colliot-Th\'el\`ene and Skorobogatov,
+\href{https://www.imo.universite-paris-saclay.fr/~jean-louis.colliot-thelene/BGgroup_book.pdf}{Theorem~1.3.5}.
+
+For the separable-closure statement, put \(G_k=\operatorname{Gal}(k^s/k)\)
+and give \((k^s)^\times\) the discrete topology. A continuous cochain
+on \(G_k^r\) has finite image and factors through a finite quotient:
+choose product neighborhoods on which it is constant, cover the
+compact domain by finitely many of these neighborhoods, and take a
+common open normal subgroup refining all their factors. Enlarge the
+finite Galois field fixed by that subgroup to contain the finitely
+many cochain values. The cocycle equation, and any equality with a
+coboundary, can then be checked on the finite quotient associated to
+that enlarged field. This identifies continuous second cohomology
+with the filtered colimit of the finite Galois groups'
+second cohomology under inflation and coefficient inclusion.
+The relative class maps agree with these transitions: extend the
+splitting and use the same lifts inflated along restriction of
+automorphisms. Every class of \(\operatorname{Br}(k)\) is split
+at a finite Galois stage by Theorem~\ref{thm:rm03-csa-galois-split}.
+Taking the union of relative classes therefore gives
+\(\operatorname{Br}(k)\cong H^2_{\mathrm{cts}}(G_k,(k^s)^\times)\)
+for this convention. Compare \cite[Theorem~59.61.6]{stacksdescent}.
+\end{remark}

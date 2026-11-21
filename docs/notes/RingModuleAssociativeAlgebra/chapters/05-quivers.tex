@@ -1,0 +1,274 @@
+\chapter{Representations and Path Algebras}
+\label{ch:rm03-quivers}
+
+Let \(k\) be a field. Algebras and module actions are unital, and
+\(\operatorname{End}_k(V)\) is multiplied by composition. We use left
+modules throughout. In particular, an arrow from \(i\) to \(j\) will
+act from the vertex summand at \(i\) to the vertex summand at \(j\).
+
+\section{Representations of an algebra}
+
+\begin{proposition}[RM03-C06.01. Algebra representations and modules]
+\label{prop:rm03-algebra-representations}
+For a \(k\)-algebra \(A\) and a \(k\)-vector space \(V\), unital
+\(k\)-algebra homomorphisms
+\(\rho\colon A\to\operatorname{End}_k(V)\) correspond bijectively to
+left \(A\)-module structures on \(V\) extending its given
+\(k\)-vector-space structure. A linear map intertwines two such
+representations precisely when it is \(A\)-linear.
+
+If \(I\) is a two-sided ideal of \(A\), restriction along
+\(A\to A/I\) identifies left \(A/I\)-modules with left \(A\)-modules
+annihilated by \(I\), with all module maps preserved.
+\end{proposition}
+
+\begin{proof}
+Set \(av=\rho(a)(v)\). The linearity of \(\rho\) and of the operators
+gives the distributive laws and the given scalar action.
+Multiplicativity gives \((ab)v=a(bv)\), and \(\rho(1_A)=1_V\) gives
+the unit law. In the other direction \(a\) acts by a linear map
+because \(a(\lambda v)=(a(\lambda 1_A))v=\lambda(av)\), and the
+action laws give the required \(k\)-algebra homomorphism. The two
+constructions recover the same operator at every \(a\). The
+intertwining condition says exactly that \(f(av)=af(v)\).
+
+An action obtained by restriction is zero on \(I\). Conversely, if
+\(IV=0\), the formula \((a+I)v=av\) is independent of the
+representative and satisfies the module laws. A map commutes with the
+action of \(A/I\) exactly when it commutes with the action of all
+representatives in \(A\).
+\end{proof}
+
+The group case starts with \(G\to\operatorname{GL}_k(V)\), and the
+linear extension to \(k[G]\) gives the action in
+Proposition~\ref{prop:rm03-algebra-representations}. The group algebra
+correspondence, Schur's lemma, and Maschke's theorem with its
+characteristic hypothesis are established in
+\cite[Ch.~8]{p103}. In the quiver case, the generators act between
+specified summands, and the multiplication of paths controls which
+composites are defined.
+
+\section{Paths, idempotents, and vertex spaces}
+
+\begin{definition}[RM03-C06.02. Quivers and path algebras]
+\label{def:rm03-path-algebra}
+A finite quiver \(Q=(Q_0,Q_1,s,t)\) has a finite nonempty set
+\(Q_0\) of vertices, a finite set \(Q_1\) of arrows, and source and
+target maps \(s,t\colon Q_1\to Q_0\). Parallel arrows and loops are
+allowed. For each vertex \(i\) there is a path \(e_i\) of length zero
+with source and target \(i\). A positive-length path is written
+\(p=a_\ell\cdots a_1\), where \(a_1\) is traversed first and
+\(t(a_b)=s(a_{b+1})\) for \(1\leq b<\ell\).
+
+The path algebra \(kQ\) is the vector space with basis the paths.
+For basis paths \(p,q\), the product \(pq\) is their concatenation
+with \(q\) traversed first when \(s(p)=t(q)\), and is zero
+otherwise. Concatenation with a length-zero path at a matching
+vertex leaves the other path unchanged. Multiplication extends
+bilinearly to finite linear combinations.
+\end{definition}
+
+\begin{lemma}[RM03-C06.03. Multiplication and the path basis]
+\label{lem:rm03-path-basis}
+The multiplication makes \(kQ\) an associative unital \(k\)-algebra.
+The vertices give pairwise orthogonal idempotents with sum \(1\).
+The space \(e_j(kQ)e_i\) has basis the paths from \(i\) to \(j\).
+The algebra \(kQ\) is finite-dimensional exactly when \(Q\) has no
+oriented cycle.
+\end{lemma}
+
+\begin{proof}
+For paths \(p,q,r\), both \((pq)r\) and \(p(qr)\) vanish unless
+\(s(p)=t(q)\) and \(s(q)=t(r)\). When both equalities hold, each
+parenthesization yields the same ordered list of arrows, starting
+with \(r\). Thus multiplication is associative on the basis and
+hence on \(kQ\).
+
+The length-zero paths satisfy \(e_j e_i=0\) for \(i\ne j\) and
+\(e_i^2=e_i\). For a basis path \(p\), the product
+\(e_j p e_i\) is \(p\) if \(s(p)=i\) and \(t(p)=j\), and is zero
+otherwise. This proves the corner basis claim. Summing the left or
+the right vertex action gives the identity on every path, so
+\(\sum_i e_i=1\).
+
+The powers of an oriented cycle have distinct lengths and are
+linearly independent basis elements. If there is no oriented cycle,
+no path visits a vertex twice. A repeated vertex would give a
+positive-length closed path, and a shortest closed subpath would
+give an oriented cycle. All lengths are then at most
+\(\lvert Q_0\rvert-1\). Finiteness of the arrow set gives finitely
+many paths of these lengths.
+\end{proof}
+
+\begin{definition}[RM03-C06.04. Quiver representations]
+\label{def:rm03-quiver-representations}
+A representation \(V\) of \(Q\) consists of vector spaces \(V_i\)
+at the vertices and linear maps \(V_a\colon V_{s(a)}\to V_{t(a)}\)
+on the arrows. For a path \(p=a_\ell\cdots a_1\) put
+\(V_p=V_{a_\ell}\circ\cdots\circ V_{a_1}\), and set
+\(V_{e_i}=1_{V_i}\). A morphism \(f\colon V\to W\) is a family of
+linear maps \(f_i\colon V_i\to W_i\) satisfying
+\(f_{t(a)}V_a=W_a f_{s(a)}\) for each \(a\). Composition is taken
+at each vertex.
+\end{definition}
+
+\begin{theorem}[RM03-C06.05. Quiver representations and path algebra modules]
+\label{thm:rm03-quiver-equivalence}
+The category of left \(kQ\)-modules is \(k\)-linearly equivalent to
+the category of representations of \(Q\). The equivalence sends a
+module \(M\) to the spaces \(e_iM\) with \(a\colon i\to j\) acting
+by \(m\mapsto am\) from \(e_iM\) to \(e_jM\). Its inverse sends
+\(V\) to \(\bigoplus_i V_i\). The equivalence restricts to
+finite-dimensional objects and identifies module exactness with
+exactness at every vertex.
+\end{theorem}
+
+\begin{proof}
+Since the idempotents sum to \(1\), every \(m\in M\) is a sum of
+the \(e_i m\). Applying \(e_j\) to any relation among these
+summands isolates the summand at \(j\), proving that the sum is
+direct. By Lemma~\ref{lem:rm03-path-basis}, \(e_j a e_i=a\) for
+an arrow \(a\colon i\to j\), which gives the indicated arrow map.
+A module map restricts to the summands and commutes with these
+arrow maps.
+
+Conversely, on \(\bigoplus_i V_i\) let \(p\colon i\to j\) act by
+projecting to \(V_i\), applying \(V_p\), and including into
+\(V_j\). The operators for composable paths multiply as the
+operator of their concatenation. For noncomposable paths the
+intermediate inclusion followed by projection is zero. The sum of
+the vertex operators is the identity. Extending the operators
+linearly therefore gives a unital \(k\)-algebra homomorphism, so
+Proposition~\ref{prop:rm03-algebra-representations} gives the
+module. The direct sum of the components of a morphism commutes
+with the path operators, by induction on path length using the
+arrow condition, and hence is a module map.
+
+For a module, the canonical sum map \(\bigoplus_i e_iM\to M\)
+commutes with the vertices and the arrows. Every basis path is a
+product of these generators, so the sum map is a module
+isomorphism. Starting with \(V\), each \(e_i\) becomes the
+projection onto \(V_i\). Recovering those summands identifies
+their arrow maps with the original \(V_a\). Both identifications
+commute with morphisms by their formulas.
+
+Each module map is block diagonal on the vertex summands, and its
+kernel and image are direct sums of the component kernels and
+images. Thus equality of image and kernel in a sequence is
+equivalent to equality at each vertex. For arbitrary quiver
+morphisms the vertex kernels are preserved by the arrow maps and
+the arrows descend to the vertex quotients by the images, by the
+same commutation law. This gives kernels and cokernels with the
+universal properties at each vertex. Finally, the vertex set is
+finite, so \(\bigoplus_i V_i\) is finite-dimensional if and only if
+each \(V_i\) is finite-dimensional.
+\end{proof}
+
+\section{Relations and finite-dimensional quotients}
+
+\begin{definition}[RM03-C06.06. Relations and admissible ideals]
+\label{def:rm03-quiver-relations}
+A relation from \(i\) to \(j\) is a finite linear combination
+\(r=\sum_p c_p p\) of paths from \(i\) to \(j\). A representation
+satisfies \(r=0\) if \(\sum_p c_p V_p\colon V_i\to V_j\) is zero.
+Relations generate a two-sided ideal in \(kQ\). Every two-sided
+ideal \(I\) can be described this way, since \(r\in I\) is the sum
+of the components \(e_j r e_i\in I\).
+
+Let \(J\) be the two-sided ideal generated by all the arrows.
+An ideal \(I\) is admissible if there is an integer \(m\geq 2\)
+such that \(J^m\subseteq I\subseteq J^2\).
+\end{definition}
+
+\begin{theorem}[RM03-C06.07. The module category with relations]
+\label{thm:rm03-bound-quiver-equivalence}
+Let \(I\) be generated as a two-sided ideal by a set of relations.
+The equivalence in Theorem~\ref{thm:rm03-quiver-equivalence}
+identifies left \(kQ/I\)-modules with quiver representations
+satisfying those relations, with the same morphisms. Exactness in
+this category is checked at each vertex.
+\end{theorem}
+
+\begin{proof}
+Under the action on \(\bigoplus_i V_i\), the operator of a
+relation \(r=\sum_p c_p p\) from \(i\) to \(j\) is the projection
+to \(V_i\) followed by \(\sum_p c_p V_p\), followed by inclusion
+of \(V_j\). Hence the relation acts by zero exactly when its
+required component is zero. If the generating relations act by
+zero, each term \(arb\), for \(a,b\in kQ\) and a generating
+relation \(r\), also acts by zero. This is equivalent to
+annihilation by \(I\). Proposition~\ref{prop:rm03-algebra-representations}
+now gives the quotient action and all its module maps. Kernels,
+images, and quotients of modules annihilated by \(I\) remain
+annihilated by \(I\), so the exactness criterion follows from
+Theorem~\ref{thm:rm03-quiver-equivalence}.
+\end{proof}
+
+\begin{proposition}[RM03-C06.08. Finiteness from admissibility]
+\label{prop:rm03-admissible-finiteness}
+For \(m\geq 1\), \(J^m\) is the span of all paths of length at
+least \(m\). If \(J^m\subseteq I\), the quotient \(kQ/I\) is
+finite-dimensional and is spanned by the images of the paths of
+length below \(m\). If also \(I\subseteq J^2\), the images of all
+length-zero and length-one paths are linearly independent.
+\end{proposition}
+
+\begin{proof}
+The span of the positive-length paths is a two-sided ideal, and
+every such path is a product of arrows, so it equals \(J\).
+Every product of \(m\) positive-length paths vanishes or has
+length at least \(m\). Conversely, a path of length at least \(m\)
+can be cut into \(m\) composable positive-length paths. These two
+observations identify the span with \(J^m\). There are finitely
+many paths of length below \(m\), since \(Q_0\) and \(Q_1\) are
+finite. The additional inclusion \(I\subseteq J^2\) says that a
+linear combination of paths of length zero and one lying in \(I\)
+lies in the span of paths of length two and above. Independence
+of the path basis makes that combination zero.
+\end{proof}
+
+For the path convention, the module equivalence, and admissible
+ideals, see \cite[Secs.~1.3--1.4]{quiver}. The two smallest
+examples below also test which vertex idempotents occur on
+either side of an arrow and how a relation changes its operator.
+
+\begin{example}[RM03-C06.09. One arrow and a triangular matrix algebra]
+\label{ex:rm03-one-arrow}
+Take \(Q\) with vertices \(1,2\) and one arrow \(a\colon 1\to 2\).
+The path basis is \((e_1,e_2,a)\), and the assignments
+\[
+ e_1\longmapsto E_{11},\qquad
+ e_2\longmapsto E_{22},\qquad
+ a\longmapsto E_{21}
+\]
+give an isomorphism to the \(2\times 2\) lower triangular
+matrix algebra over \(k\), with \(E_{ij}\) the usual matrix
+units. Indeed, \(E_{22}E_{21}E_{11}=E_{21}\),
+\(E_{21}^2=0\), the other vertex multiplications on \(E_{21}\)
+are zero, and the diagonal matrix units are orthogonal and
+sum to the identity. These are the products of the path basis.
+The three matrix units span the triangular algebra and are linearly
+independent. Here \(J^2=0\), so \(I=0\) is admissible.
+Explicitly, a single map \(T\colon V_1\to V_2\) gives the action
+\[
+ \begin{pmatrix}x&0\\ u&y\end{pmatrix}(v_1,v_2)
+   =\bigl(xv_1,\;uT(v_1)+yv_2\bigr).
+\]
+Indeed the displayed actions of \(E_{11},E_{22},E_{21}\) are the
+two projections and the operator of \(a\) from \(V_1\) to \(V_2\).
+\end{example}
+
+\begin{example}[RM03-C06.10. One loop with a square-zero relation]
+\label{ex:rm03-square-zero-loop}
+For one vertex and one loop \(a\), the paths are \(a^n\)
+for \(n\geq 0\), with \(a^0=e\) the vertex. The map
+\(x^n\mapsto a^n\) is multiplicative on a basis and hence gives
+\(k[x]\simeq kQ\). The relation \(a^2=0\) generates \(I=J^2\),
+so it is admissible and \(kQ/I\simeq k[x]/(x^2)\) has basis
+the classes of \(1,x\). A module is a vector space \(V\) with a
+linear operator \(T=V_a\) satisfying \(T^2=0\). A morphism to
+another such module with operator \(U\) is precisely a linear
+map \(f\) with \(fT=Uf\). These claims follow from
+Theorem~\ref{thm:rm03-bound-quiver-equivalence}, and the explicit
+action is \((\lambda+\mu x)v=\lambda v+\mu T(v)\).
+\end{example}

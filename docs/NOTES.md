@@ -1,6 +1,6 @@
 # Lecture notes
 
-The table lists the lecture notes accompanying MathGenome v0.25.0. The PDF and LaTeX files incorporate the checked lecture errata.
+The table lists the lecture notes accompanying MathGenome v0.26.0. The PDF and LaTeX files incorporate the checked lecture errata.
 
 | Area | Lecture notes | PDF pages | LaTeX entry point |
 | --- | --- | ---: | --- |
@@ -32,6 +32,7 @@ The table lists the lecture notes accompanying MathGenome v0.25.0. The PDF and L
 | ALG-08 | [Lie Algebras and Finite-Dimensional Representations](notes/LieAlgebrasAndRepresentations/lie-algebras-and-representations.pdf) | 75 | [`lie-algebras-and-representations.tex`](notes/LieAlgebrasAndRepresentations/lie-algebras-and-representations.tex) |
 | ALG-01 | [Symmetric powers and Witt theory](notes/LinearAlgebraSupplement/linear-multilinear-algebra-matrix-theory.pdf) | 10 | [`linear-multilinear-algebra-matrix-theory.tex`](notes/LinearAlgebraSupplement/linear-multilinear-algebra-matrix-theory.tex) |
 | ALG-02 | [Group theory supplement](notes/GroupTheorySupplement/group-theory.pdf) | 17 | [`group-theory.tex`](notes/GroupTheorySupplement/group-theory.tex) |
+| ALG-03 | [Rings, Modules, and Associative Algebras](notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf) | 19 | [`ring-module-associative-algebra.tex`](notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.tex) |
 
 Compile a LaTeX entry point from its own directory with `latexmk -pdf -interaction=nonstopmode -halt-on-error <entry-point>.tex`. The D03 and D07 sources use sibling files and chapter subdirectories.
 
@@ -62,6 +63,8 @@ The four advanced algebra source maps link each numbered result to its chapter s
 The [ALG-01 reviewed source map](notes/LinearAlgebraSupplement/reviewed-source-map.json) links each numbered item to its PDF destination, LaTeX source, and Lean declarations.
 
 The [ALG-02 reviewed source map](notes/GroupTheorySupplement/reviewed-source-map.json) links each numbered item to its PDF destination, LaTeX source, and Lean declarations.
+
+The [ALG-03 reviewed source map](notes/RingModuleAssociativeAlgebra/reviewed-source-map.json) links each numbered result to the lecture and verified Lean declarations.
 
 The original lecture notes are licensed under CC BY 4.0.
 The P1-05 table entry uses the corrected publication copy. Its [source map](notes/ProbabilityFoundations/SOURCE_MAP.json) locates the current TeX and PDF. The accepted delivery remains in [provenance](../provenance/components/ProbabilityFoundations/delivery/paper.tex).

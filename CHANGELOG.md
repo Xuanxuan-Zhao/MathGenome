@@ -1,3 +1,8 @@
+# 0.26.0 — Rings, Modules, and Associative Algebras
+
+- Add ALG-03 with 57 accepted goals and 28 numbered lecture results.
+- Expose `import MathGenome.RingModuleAssociativeAlgebra` and the PDF, LaTeX, and reviewed source map.
+
 # 0.23.0 — Four advanced algebra components
 
 Add advanced homological algebra, field theory, finite group representations, and Lie algebras and representations. Add 400 accepted goals, four independent public imports and the aligned PDF, LaTeX and source maps for 241 numbered results.
