@@ -1,0 +1,1160 @@
+{
+  "package": "P2-05",
+  "title": "Extremal Methods, Networks, and Matroid Optimization",
+  "notes_language": "en",
+  "group_count": 50,
+  "original_contract_count": 22,
+  "supplement_count": 28,
+  "numbered_environment_counts": {
+    "corollary": 2,
+    "definition": 2,
+    "example": 1,
+    "lemma": 5,
+    "proposition": 4,
+    "remark": 1,
+    "theorem": 43
+  },
+  "proof_environment_count": 54,
+  "pdf_physical_pages": 39,
+  "mathematical_body_pages": 35,
+  "bibliography_first_physical_page": 39,
+  "verified_internal_pdf_links": 128,
+  "pins": {
+    "lean": "4.35.0",
+    "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "mathgenome": "v0.8.0"
+  },
+  "inputs": [
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "6a0c8c370f188bab111920b8aadb1820bb2975de4537b0cd80b584f86e09fb23"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "a734b2f300546994aadcbbe2accc47787dacf576877e3db45de10634675877df"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "6a2019309f0081b24bb58ef781a21c85d2d83ee5840f22a1046ffdcadbab8c31"
+    },
+    {
+      "path": "P2-05_Extremal_Methods_and_Optimization_Notes.tex",
+      "sha256": "2216566cc94bd231a6fe0889fb6445dc1117bd0b4b3dbe212edd7844cc86b1ac"
+    },
+    {
+      "path": "parts/ch01.tex",
+      "sha256": "e3040165cd11e41ae961b20ba0a6de0280a3e893ee7e6f1e396e09acd8c49855"
+    },
+    {
+      "path": "parts/ch02.tex",
+      "sha256": "a649324fca43a3b3276278c16aa796b1fdf787cddec1a94c3bb088af9bccf833"
+    },
+    {
+      "path": "parts/ch03.tex",
+      "sha256": "43e73dd1a5566b33dabcf3caf406a8245ea2f181c392948f295a2cea2279e390"
+    },
+    {
+      "path": "parts/ch04.tex",
+      "sha256": "0ceff7ba97d37c31fff87ef3347f9495f936d1296a168c91b968974b85a4657a"
+    },
+    {
+      "path": "parts/ch05.tex",
+      "sha256": "b13dec0e499392d403368c3a291a65ac05be17fd5cb8a002d85e998ed26d16da"
+    },
+    {
+      "path": "parts/ch06.tex",
+      "sha256": "8fcf36104074923900fc2c8eedd11e23c1fe5b3d360844196f11a75a04f30006"
+    },
+    {
+      "path": "parts/ch07.tex",
+      "sha256": "de4cf9643c4d702f3bd81634f84ba8efe2db113e967a4ee777d9d0259444a492"
+    },
+    {
+      "path": "parts/ch08.tex",
+      "sha256": "0f6c9a9f08ad337d0957da27dd06acc1d2d8ef51456715e3442cfec84791fe9c"
+    },
+    {
+      "path": "parts/ch09.tex",
+      "sha256": "1cc8939f1acd4871880683d0bc89b297bcc3c3bde0387d1ef05d796dfaacbf87"
+    }
+  ],
+  "prior_proof_references": [
+    {
+      "published_notes": {
+        "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+        "historical_fragment": "parts/v01.tex"
+      },
+      "sha256": "e663c473dd14eae6af332e41f99c2662f07b52863d9ca4869b6b4236d077f7a9",
+      "anchors": {
+        "thm:geometric-separation": 260,
+        "thm:poly-image": 521,
+        "thm:farkas": 571,
+        "thm:poly-normal": 635
+      },
+      "role": "Separation background and the Farkas/attainment prerequisites for W31–W32."
+    },
+    {
+      "published_notes": {
+        "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+        "historical_fragment": "parts/v05.tex"
+      },
+      "sha256": "0baabad0701058f0db4ec95f12dbba00daa230cb946384efd6ec0bbba1c98cd0",
+      "anchors": {
+        "thm:linear-programming-duality": 6,
+        "cor:lp-alternatives": 47
+      },
+      "role": "Real linear programming in standard form, with exact signs and attainment."
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "c2ea410d464472db008c67a432329fd7b996aa03933615930b3334583ab11425",
+      "anchors": {
+        "p204:W44": 6,
+        "p204:W45": 34,
+        "p204:W46": 91,
+        "p204:W47": 121,
+        "p204:W48": 163
+      },
+      "role": "Comparison for real and integral flows and cycle decomposition in W36 and W39."
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "d93dc8ad039d1d2a769f287e1755ae326b16c11dfcc259bda65542e4d8fbe38d",
+      "anchors": {
+        "p204:W51": 89
+      },
+      "role": "Hall's theorem applied to the positive support in W42."
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "05eb877662cbe23a2f59e983d5796c5e52a685d7ef6056574941d331e5394908",
+      "anchors": {
+        "p204:W64": 19,
+        "p204:W69": 320
+      },
+      "role": "Finite matroid and contraction conventions in Chapter 9."
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "067a9f83dccac5ed8925533b138a5011a7772cf5db7a0dc7369aba42484d1302",
+      "anchors": {
+        "p204:W72": 94
+      },
+      "role": "Graphic matroid construction used in W46–W48."
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "32b241993d957572a597ce69acce124f1346defcc08ebc9e17cf1fc03dafcc9f",
+      "anchors": {
+        "p204:W78": 11,
+        "p204:W79": 43,
+        "p204:W80": 86
+      },
+      "role": "Comparison for greedy optimality and its broader characterization."
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "e1ad062335888a0e88780deeeffb60bd202c09ce500601e3441d321c3201a8ef",
+      "anchors": {
+        "d11:06:dominated-convergence": 1904
+      },
+      "role": "Dominated differentiation of bounded-variable moment generating functions in W25."
+    }
+  ],
+  "chapter_ranges": [
+    {
+      "chapter": 1,
+      "title_tex": "Extremal Graphs",
+      "first_group": "W01",
+      "last_group": "W04",
+      "first_physical_page": 4,
+      "last_physical_page": 6
+    },
+    {
+      "chapter": 2,
+      "title_tex": "Extremal Set Families",
+      "first_group": "W05",
+      "last_group": "W10",
+      "first_physical_page": 7,
+      "last_physical_page": 11
+    },
+    {
+      "chapter": 3,
+      "title_tex": "Finite and Infinite Ramsey Theory",
+      "first_group": "W11",
+      "last_group": "W13",
+      "first_physical_page": 12,
+      "last_physical_page": 13
+    },
+    {
+      "chapter": 4,
+      "title_tex": "The Elementary Probabilistic Method",
+      "first_group": "W14",
+      "last_group": "W19",
+      "first_physical_page": 14,
+      "last_physical_page": 16
+    },
+    {
+      "chapter": 5,
+      "title_tex": "Moments and Concentration",
+      "first_group": "W20",
+      "last_group": "W26",
+      "first_physical_page": 17,
+      "last_physical_page": 21
+    },
+    {
+      "chapter": 6,
+      "title_tex": "The Lov\\'asz Local Lemma",
+      "first_group": "W27",
+      "last_group": "W30",
+      "first_physical_page": 22,
+      "last_physical_page": 24
+    },
+    {
+      "chapter": 7,
+      "title_tex": "Linear Programming and Total Unimodularity",
+      "first_group": "W31",
+      "last_group": "W35",
+      "first_physical_page": 25,
+      "last_physical_page": 27
+    },
+    {
+      "chapter": 8,
+      "title_tex": "Network Flows and Assignment",
+      "first_group": "W36",
+      "last_group": "W43",
+      "first_physical_page": 28,
+      "last_physical_page": 32
+    },
+    {
+      "chapter": 9,
+      "title_tex": "Matroid Polytopes and Optimization",
+      "first_group": "W44",
+      "last_group": "W50",
+      "first_physical_page": 33,
+      "last_physical_page": 38
+    }
+  ],
+  "pdf": {
+    "path": "output/pdf/P2-05_Extremal_Methods_and_Optimization_Notes.pdf",
+    "sha256": "ac450f3c66f4af1a4e62b90458022274f3144fdc9ecaa8735c5a3dd4be2790fd"
+  },
+  "results": [
+    {
+      "id": "W01",
+      "source_contract": "DIS-03-C01.R01",
+      "supplement_id": null,
+      "working_title_zh": "Mantel 与 Turán 极值定理",
+      "sources_and_reuse": "Diestel §7.1，Jukna §4.4，M1",
+      "chapter": 1,
+      "file": "parts/ch01.tex",
+      "statement_label": "p205:W01",
+      "statement_line": 9,
+      "number": "1.1",
+      "printed_page": 1,
+      "physical_page": 4,
+      "proof_start_lines": [
+        21
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W02",
+      "source_contract": null,
+      "supplement_id": "S01",
+      "working_title_zh": "Kővári–Sós–Turán 禁二部图界",
+      "sources_and_reuse": "Kővári–Sós–Turán 原文",
+      "chapter": 1,
+      "file": "parts/ch01.tex",
+      "statement_label": "p205:W02",
+      "statement_line": 56,
+      "number": "1.2",
+      "printed_page": 2,
+      "physical_page": 5,
+      "proof_start_lines": [
+        64,
+        101
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W03",
+      "source_contract": null,
+      "supplement_id": "S02",
+      "working_title_zh": "稠密图的团与完全多部子图",
+      "sources_and_reuse": "Diestel §7.1，Zhao §§1.3、1.5",
+      "chapter": 1,
+      "file": "parts/ch01.tex",
+      "statement_label": "p205:W03",
+      "statement_line": 117,
+      "number": "1.4",
+      "printed_page": 2,
+      "physical_page": 5,
+      "proof_start_lines": [
+        125
+      ],
+      "supporting_labels": [
+        "p205:transversal-density"
+      ]
+    },
+    {
+      "id": "W04",
+      "source_contract": null,
+      "supplement_id": "S03",
+      "working_title_zh": "Erdős–Stone–Simonovits 极值密度",
+      "sources_and_reuse": "Diestel §7.1，Zhao §1.5",
+      "chapter": 1,
+      "file": "parts/ch01.tex",
+      "statement_label": "p205:W04",
+      "statement_line": 165,
+      "number": "1.5",
+      "printed_page": 3,
+      "physical_page": 6,
+      "proof_start_lines": [
+        175
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W05",
+      "source_contract": "DIS-03-C01.R02",
+      "supplement_id": null,
+      "working_title_zh": "LYM 不等式与 Sperner 定理",
+      "sources_and_reuse": "Jukna §8.3，M2",
+      "chapter": 2,
+      "file": "parts/ch02.tex",
+      "statement_label": "p205:W05",
+      "statement_line": 14,
+      "number": "2.1",
+      "printed_page": 4,
+      "physical_page": 7,
+      "proof_start_lines": [
+        24
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W06",
+      "source_contract": null,
+      "supplement_id": "S04",
+      "working_title_zh": "局部 LYM 与归一化影子",
+      "sources_and_reuse": "Jukna §8.3，M2",
+      "chapter": 2,
+      "file": "parts/ch02.tex",
+      "statement_label": "p205:W06",
+      "statement_line": 58,
+      "number": "2.2",
+      "printed_page": 4,
+      "physical_page": 8,
+      "proof_start_lines": [
+        71
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W07",
+      "source_contract": "DIS-03-C01.R03",
+      "supplement_id": null,
+      "working_title_zh": "Erdős–Ko–Rado 界",
+      "sources_and_reuse": "Jukna §7.2，M3",
+      "chapter": 2,
+      "file": "parts/ch02.tex",
+      "statement_label": "p205:W07",
+      "statement_line": 83,
+      "number": "2.3",
+      "printed_page": 5,
+      "physical_page": 8,
+      "proof_start_lines": [
+        93
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W08",
+      "source_contract": null,
+      "supplement_id": "S05",
+      "working_title_zh": "Erdős–Ko–Rado 星族唯一性",
+      "sources_and_reuse": "Jukna §7.2（上界），本章展开逆移位证明",
+      "chapter": 2,
+      "file": "parts/ch02.tex",
+      "statement_label": "p205:W08",
+      "statement_line": 117,
+      "number": "2.4",
+      "printed_page": 5,
+      "physical_page": 8,
+      "proof_start_lines": [
+        121,
+        203,
+        251
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W09",
+      "source_contract": null,
+      "supplement_id": "S06",
+      "working_title_zh": "Kruskal–Katona 影子定理",
+      "sources_and_reuse": "Jukna §10.4（陈述），M3（完整证明）",
+      "chapter": 2,
+      "file": "parts/ch02.tex",
+      "statement_label": "p205:W09",
+      "statement_line": 284,
+      "number": "2.7",
+      "printed_page": 7,
+      "physical_page": 10,
+      "proof_start_lines": [
+        292
+      ],
+      "supporting_labels": [
+        "p205:colex-shadow",
+        "p205:uv-shadow"
+      ]
+    },
+    {
+      "id": "W10",
+      "source_contract": null,
+      "supplement_id": "S07",
+      "working_title_zh": "Bollobás 集合对不等式",
+      "sources_and_reuse": "Jukna §8.4",
+      "chapter": 2,
+      "file": "parts/ch02.tex",
+      "statement_label": "p205:W10",
+      "statement_line": 341,
+      "number": "2.9",
+      "printed_page": 8,
+      "physical_page": 11,
+      "proof_start_lines": [
+        350
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W11",
+      "source_contract": "DIS-03-C02.R02",
+      "supplement_id": null,
+      "working_title_zh": "无限多色 Ramsey 定理",
+      "sources_and_reuse": "Diestel §9.1 定理 9.1.2，M4",
+      "chapter": 3,
+      "file": "parts/ch03.tex",
+      "statement_label": "p205:W11",
+      "statement_line": 11,
+      "number": "3.1",
+      "printed_page": 9,
+      "physical_page": 12,
+      "proof_start_lines": [
+        16
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W12",
+      "source_contract": "DIS-03-C02.R01",
+      "supplement_id": null,
+      "working_title_zh": "有限多色一致 Ramsey 定理",
+      "sources_and_reuse": "Diestel §9.1 定理 9.1.3，Jukna §4.10",
+      "chapter": 3,
+      "file": "parts/ch03.tex",
+      "statement_label": "p205:W12",
+      "statement_line": 39,
+      "number": "3.2",
+      "printed_page": 9,
+      "physical_page": 12,
+      "proof_start_lines": [
+        44
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W13",
+      "source_contract": null,
+      "supplement_id": "S08",
+      "working_title_zh": "二色图 Ramsey 递推与 \\(R(3,3)=6\\)",
+      "sources_and_reuse": "Jukna §4.9",
+      "chapter": 3,
+      "file": "parts/ch03.tex",
+      "statement_label": "p205:W13",
+      "statement_line": 70,
+      "number": "3.3",
+      "printed_page": 10,
+      "physical_page": 13,
+      "proof_start_lines": [
+        81
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W14",
+      "source_contract": "DIS-03-C03.R01",
+      "supplement_id": null,
+      "working_title_zh": "正概率存在性",
+      "sources_and_reuse": "Alon–Spencer §1.1",
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "statement_label": "p205:W14",
+      "statement_line": 25,
+      "number": "4.1",
+      "printed_page": 11,
+      "physical_page": 14,
+      "proof_start_lines": [
+        34
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W15",
+      "source_contract": "DIS-03-C03.R02",
+      "supplement_id": null,
+      "working_title_zh": "有限并集界与避免坏事件",
+      "sources_and_reuse": "Alon–Spencer 第 1 章",
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "statement_label": "p205:W15",
+      "statement_line": 40,
+      "number": "4.2",
+      "printed_page": 11,
+      "physical_page": 14,
+      "proof_start_lines": [
+        51
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W16",
+      "source_contract": null,
+      "supplement_id": "S09",
+      "working_title_zh": "对角图 Ramsey 的随机下界",
+      "sources_and_reuse": "Alon–Spencer §1.2，Jukna §4.9",
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "statement_label": "p205:W16",
+      "statement_line": 65,
+      "number": "4.3",
+      "printed_page": 12,
+      "physical_page": 15,
+      "proof_start_lines": [
+        74
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W17",
+      "source_contract": "DIS-03-C03.R03",
+      "supplement_id": null,
+      "working_title_zh": "删改法",
+      "sources_and_reuse": "Alon–Spencer §§3.1–3.2",
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "statement_label": "p205:W17",
+      "statement_line": 94,
+      "number": "4.4",
+      "printed_page": 12,
+      "physical_page": 15,
+      "proof_start_lines": [
+        105
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W18",
+      "source_contract": null,
+      "supplement_id": "S10",
+      "working_title_zh": "删改法的独立集界",
+      "sources_and_reuse": "Alon–Spencer §3.2",
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "statement_label": "p205:W18",
+      "statement_line": 118,
+      "number": "4.5",
+      "printed_page": 12,
+      "physical_page": 15,
+      "proof_start_lines": [
+        127
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W19",
+      "source_contract": null,
+      "supplement_id": "S11",
+      "working_title_zh": "条件期望去随机化",
+      "sources_and_reuse": "Alon–Spencer §§2.1、16.1",
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "statement_label": "p205:W19",
+      "statement_line": 139,
+      "number": "4.6",
+      "printed_page": 12,
+      "physical_page": 15,
+      "proof_start_lines": [
+        151
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W20",
+      "source_contract": null,
+      "supplement_id": "S12",
+      "working_title_zh": "有限指示变量、方差与独立集",
+      "sources_and_reuse": "Alon–Spencer §§2.1、4.1 与 p.100，M5",
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "statement_label": "p205:W20",
+      "statement_line": 26,
+      "number": "5.1",
+      "printed_page": 14,
+      "physical_page": 17,
+      "proof_start_lines": [
+        47
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W21",
+      "source_contract": "DIS-03-C04.R01",
+      "supplement_id": null,
+      "working_title_zh": "Markov 及零缺陷判据",
+      "sources_and_reuse": "Alon–Spencer §2.6，M5，D11",
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "statement_label": "p205:W21",
+      "statement_line": 68,
+      "number": "5.2",
+      "printed_page": 15,
+      "physical_page": 18,
+      "proof_start_lines": [
+        78
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W22",
+      "source_contract": "DIS-03-C04.R02",
+      "supplement_id": null,
+      "working_title_zh": "二阶矩存在性下界",
+      "sources_and_reuse": "Roch 第 6 讲，D11",
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "statement_label": "p205:W22",
+      "statement_line": 87,
+      "number": "5.3",
+      "printed_page": 15,
+      "physical_page": 18,
+      "proof_start_lines": [
+        97
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W23",
+      "source_contract": "DIS-03-C04.R03",
+      "supplement_id": null,
+      "working_title_zh": "Paley–Zygmund 与方差法",
+      "sources_and_reuse": "Tao 275A 习题 44，Alon–Spencer §4.3，M5，D11",
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "statement_label": "p205:W23",
+      "statement_line": 115,
+      "number": "5.4",
+      "printed_page": 15,
+      "physical_page": 18,
+      "proof_start_lines": [
+        133
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W24",
+      "source_contract": null,
+      "supplement_id": "S13",
+      "working_title_zh": "高围长、高色数同时存在",
+      "sources_and_reuse": "Alon–Spencer p.43",
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "statement_label": "p205:W24",
+      "statement_line": 158,
+      "number": "5.5",
+      "printed_page": 16,
+      "physical_page": 19,
+      "proof_start_lines": [
+        165
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W25",
+      "source_contract": null,
+      "supplement_id": "S14",
+      "working_title_zh": "独立有界变量的 Hoeffding 界",
+      "sources_and_reuse": "Alon–Spencer 附录 A.1，Hoeffding 原论文，M6",
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "statement_label": "p205:W25",
+      "statement_line": 232,
+      "number": "5.6",
+      "printed_page": 16,
+      "physical_page": 19,
+      "proof_start_lines": [
+        247
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W26",
+      "source_contract": null,
+      "supplement_id": "S15",
+      "working_title_zh": "独立 Bernoulli 和的 Chernoff 界",
+      "sources_and_reuse": "Alon–Spencer 附录 A.1，M6",
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "statement_label": "p205:W26",
+      "statement_line": 305,
+      "number": "5.7",
+      "printed_page": 18,
+      "physical_page": 21,
+      "proof_start_lines": [
+        325
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W27",
+      "source_contract": "DIS-03-C05.R01",
+      "supplement_id": null,
+      "working_title_zh": "有限事件依赖图",
+      "sources_and_reuse": "Alon–Spencer §5.1，Vondrák §§2.2–2.3，M5",
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "statement_label": "p205:W27",
+      "statement_line": 14,
+      "number": "6.1",
+      "printed_page": 19,
+      "physical_page": 22,
+      "proof_start_lines": [],
+      "supporting_labels": []
+    },
+    {
+      "id": "W28",
+      "source_contract": "DIS-03-C05.R02",
+      "supplement_id": null,
+      "working_title_zh": "非对称 Lovász 局部引理",
+      "sources_and_reuse": "Alon–Spencer 引理 5.1.1，Vondrák",
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "statement_label": "p205:W28",
+      "statement_line": 59,
+      "number": "6.2",
+      "printed_page": 20,
+      "physical_page": 23,
+      "proof_start_lines": [
+        74
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W29",
+      "source_contract": "DIS-03-C05.R03",
+      "supplement_id": null,
+      "working_title_zh": "对称 Lovász 局部引理",
+      "sources_and_reuse": "Alon–Spencer 推论 5.1.2",
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "statement_label": "p205:W29",
+      "statement_line": 133,
+      "number": "6.3",
+      "printed_page": 20,
+      "physical_page": 23,
+      "proof_start_lines": [
+        141
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W30",
+      "source_contract": null,
+      "supplement_id": "S16",
+      "working_title_zh": "超图二染色 Property B",
+      "sources_and_reuse": "Alon–Spencer 定理 5.2.1",
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "statement_label": "p205:W30",
+      "statement_line": 156,
+      "number": "6.4",
+      "printed_page": 21,
+      "physical_page": 24,
+      "proof_start_lines": [
+        164
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W31",
+      "source_contract": "OPT-03-C01.R01",
+      "supplement_id": null,
+      "working_title_zh": "LP 对偶与三类证书",
+      "sources_and_reuse": "Schrijver A §§5.4–5.5，P1-06",
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "statement_label": "p205:W31",
+      "statement_line": 12,
+      "number": "7.1",
+      "printed_page": 22,
+      "physical_page": 25,
+      "proof_start_lines": [
+        28
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W32",
+      "source_contract": null,
+      "supplement_id": "S17",
+      "working_title_zh": "极点与活跃约束",
+      "sources_and_reuse": "Schrijver A §5.6，P1-06",
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "statement_label": "p205:W32",
+      "statement_line": 72,
+      "number": "7.2",
+      "printed_page": 23,
+      "physical_page": 26,
+      "proof_start_lines": [
+        80
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W33",
+      "source_contract": "OPT-03-C01.R02",
+      "supplement_id": null,
+      "working_title_zh": "全幺模性与整顶点",
+      "sources_and_reuse": "Schrijver A §13.2",
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "statement_label": "p205:W33",
+      "statement_line": 118,
+      "number": "7.3",
+      "printed_page": 23,
+      "physical_page": 26,
+      "proof_start_lines": [
+        133
+      ],
+      "supporting_labels": [
+        "p205:integer-hull"
+      ]
+    },
+    {
+      "id": "W34",
+      "source_contract": null,
+      "supplement_id": "S18",
+      "working_title_zh": "Hoffman–Kruskal 反向判据",
+      "sources_and_reuse": "Schrijver A §13.2",
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "statement_label": "p205:W34",
+      "statement_line": 156,
+      "number": "7.5",
+      "printed_page": 24,
+      "physical_page": 27,
+      "proof_start_lines": [
+        162
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W35",
+      "source_contract": "OPT-03-C01.R03",
+      "supplement_id": null,
+      "working_title_zh": "有向网络与二部匹配的整性",
+      "sources_and_reuse": "Schrijver A §§13.2、18.1–18.2",
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "statement_label": "p205:W35",
+      "statement_line": 180,
+      "number": "7.6",
+      "printed_page": 24,
+      "physical_page": 27,
+      "proof_start_lines": [
+        201
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W36",
+      "source_contract": "OPT-03-C02.R01",
+      "supplement_id": null,
+      "working_title_zh": "最大流最小割证书",
+      "sources_and_reuse": "Schrijver A §10.2，P2-04 W44–W48",
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "statement_label": "p205:W36",
+      "statement_line": 26,
+      "number": "8.1",
+      "printed_page": 25,
+      "physical_page": 28,
+      "proof_start_lines": [
+        36
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W37",
+      "source_contract": null,
+      "supplement_id": "S19",
+      "working_title_zh": "最短增广路算法",
+      "sources_and_reuse": "Schrijver A §10.5",
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "statement_label": "p205:W37",
+      "statement_line": 62,
+      "number": "8.2",
+      "printed_page": 25,
+      "physical_page": 29,
+      "proof_start_lines": [
+        71
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W38",
+      "source_contract": null,
+      "supplement_id": "S20",
+      "working_title_zh": "Hoffman 循环与有界运输可行性",
+      "sources_and_reuse": "Schrijver A §§11.2–11.4",
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "statement_label": "p205:W38",
+      "statement_line": 108,
+      "number": "8.3",
+      "printed_page": 26,
+      "physical_page": 29,
+      "proof_start_lines": [
+        121
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W39",
+      "source_contract": null,
+      "supplement_id": "S21",
+      "working_title_zh": "最小费用流、负圈与顶点势证书",
+      "sources_and_reuse": "Schrijver A §§12.1–12.2，P2-04 W47",
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "statement_label": "p205:W39",
+      "statement_line": 150,
+      "number": "8.4",
+      "printed_page": 27,
+      "physical_page": 30,
+      "proof_start_lines": [
+        167
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W40",
+      "source_contract": "OPT-03-C02.R02",
+      "supplement_id": null,
+      "working_title_zh": "有权二部完美指派对偶",
+      "sources_and_reuse": "Schrijver A §§17.1–17.3、18.1–18.2，P1-06",
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "statement_label": "p205:W40",
+      "statement_line": 211,
+      "number": "8.5",
+      "printed_page": 27,
+      "physical_page": 30,
+      "proof_start_lines": [
+        223
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W41",
+      "source_contract": null,
+      "supplement_id": "S22",
+      "working_title_zh": "一般二部最大权匹配对偶",
+      "sources_and_reuse": "Schrijver A §§17.1、18.1",
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "statement_label": "p205:W41",
+      "statement_line": 234,
+      "number": "8.6",
+      "printed_page": 28,
+      "physical_page": 31,
+      "proof_start_lines": [
+        243
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W42",
+      "source_contract": null,
+      "supplement_id": "S23",
+      "working_title_zh": "Birkhoff–von Neumann 分解",
+      "sources_and_reuse": "Schrijver A §§17–18，P2-04 W51，M7",
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "statement_label": "p205:W42",
+      "statement_line": 255,
+      "number": "8.7",
+      "printed_page": 28,
+      "physical_page": 31,
+      "proof_start_lines": [
+        265
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W43",
+      "source_contract": null,
+      "supplement_id": "S24",
+      "working_title_zh": "匈牙利方法",
+      "sources_and_reuse": "Schrijver A §§17.2–17.3，Kuhn 原论文",
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "statement_label": "p205:W43",
+      "statement_line": 291,
+      "number": "8.8",
+      "printed_page": 28,
+      "physical_page": 31,
+      "proof_start_lines": [
+        299
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W44",
+      "source_contract": "OPT-03-C03.R01",
+      "supplement_id": null,
+      "working_title_zh": "拟阵最大权基",
+      "sources_and_reuse": "Oxley §1.8，Schrijver B §40.1，P2-04 W78–W80",
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "statement_label": "p205:W44",
+      "statement_line": 21,
+      "number": "9.1",
+      "printed_page": 30,
+      "physical_page": 33,
+      "proof_start_lines": [
+        29,
+        65
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W45",
+      "source_contract": "OPT-03-C01.R04",
+      "supplement_id": null,
+      "working_title_zh": "拟阵基多面体",
+      "sources_and_reuse": "Schrijver B §40.2 推论 40.2d，P1-06，P2-04",
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "statement_label": "p205:W45",
+      "statement_line": 82,
+      "number": "9.3",
+      "printed_page": 31,
+      "physical_page": 34,
+      "proof_start_lines": [
+        96
+      ],
+      "supporting_labels": [
+        "p205:matroid-support"
+      ]
+    },
+    {
+      "id": "W46",
+      "source_contract": null,
+      "supplement_id": "S25",
+      "working_title_zh": "拟阵独立集多面体",
+      "sources_and_reuse": "Schrijver B §§40.2、50.4，P2-04 W72",
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "statement_label": "p205:W46",
+      "statement_line": 120,
+      "number": "9.4",
+      "printed_page": 31,
+      "physical_page": 34,
+      "proof_start_lines": [
+        143
+      ],
+      "supporting_labels": [
+        "p205:forest-polytope"
+      ]
+    },
+    {
+      "id": "W47",
+      "source_contract": "OPT-03-C03.R02",
+      "supplement_id": null,
+      "working_title_zh": "Kruskal 最小生成树与森林",
+      "sources_and_reuse": "Schrijver B §§50.1–50.4，P2-04 W72",
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "statement_label": "p205:W47",
+      "statement_line": 187,
+      "number": "9.5",
+      "printed_page": 32,
+      "physical_page": 35,
+      "proof_start_lines": [
+        196
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W48",
+      "source_contract": null,
+      "supplement_id": "S26",
+      "working_title_zh": "生成树割、圈、Prim 与唯一性",
+      "sources_and_reuse": "Schrijver B §§50.1–50.4、50.6b,e，P2-04 W43、W72",
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "statement_label": "p205:W48",
+      "statement_line": 205,
+      "number": "9.6",
+      "printed_page": 32,
+      "physical_page": 35,
+      "proof_start_lines": [
+        228,
+        280
+      ],
+      "supporting_labels": []
+    },
+    {
+      "id": "W49",
+      "source_contract": null,
+      "supplement_id": "S27",
+      "working_title_zh": "Edmonds 无权拟阵交最小最大式",
+      "sources_and_reuse": "Schrijver B §41.1 定理 41.1，P2-04 W64、W69",
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "statement_label": "p205:W49",
+      "statement_line": 304,
+      "number": "9.8",
+      "printed_page": 33,
+      "physical_page": 36,
+      "proof_start_lines": [
+        314
+      ],
+      "supporting_labels": [
+        "p205:matroid-minors"
+      ]
+    },
+    {
+      "id": "W50",
+      "source_contract": null,
+      "supplement_id": "S28",
+      "working_title_zh": "拟阵并及其秩公式",
+      "sources_and_reuse": "Schrijver B §42.1，P2-04 W64",
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "statement_label": "p205:W50",
+      "statement_line": 362,
+      "number": "9.9",
+      "printed_page": 34,
+      "physical_page": 37,
+      "proof_start_lines": [
+        381
+      ],
+      "supporting_labels": []
+    }
+  ]
+}

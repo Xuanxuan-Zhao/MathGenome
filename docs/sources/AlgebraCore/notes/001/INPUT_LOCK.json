@@ -1,0 +1,74 @@
+{
+  "source_hashes": {
+    "P1-03_Algebra_Notes.tex": "8c9519faf143b02ccea2ea03e8af99b6a7f13dc367e24052dbb14c0ee25c262c",
+    "parts/ch01.tex": "ab7905dc70294b632b3ee896d3c674b97171953125376da5f004546866d9a47c",
+    "parts/ch02.tex": "5f9aa389eb5f980ea69ae90f53c346e7ec303511d7293a7259a41b5dfb6590e6",
+    "parts/ch03.tex": "d74f484d96f0ff7eae23e6170e364591b912ea573d39d98546cdcb566531cdfe",
+    "parts/ch04.tex": "80c2637a8a06de9117d12d960cb0016991de453804b5670eefc4d5776e9fc492",
+    "parts/ch05.tex": "90ec970f9c4c307660c60703631650aea2d13815db0e194cb10de69746d7bb7e",
+    "parts/ch06.tex": "fb9a6d6b15d1a94593e45e0b7f03fd2b3ce15c9fcbcfb9e3b6980b8e774c705e",
+    "parts/ch07.tex": "b7461bc39f8f18f068c8681d7d1b30c9b49334a737ba47b39e04ad0ef33d0e69",
+    "parts/ch08.tex": "4ff491719c2905efc5051e899a85389d743a36b3d8c1a958897f420752515e29",
+    "parts/ch09.tex": "be8bb09b6639f5f6a6fa5519db55c6e1750210eb93c45d1b05410d7778fbbdd4",
+    "parts/ch10.tex": "2b5966c7ae4cb3e19554280f9dd9b7ec998772dbc942107184f79b55475aa061",
+    "parts/ch11.tex": "5c2f5654fcd62f2db6f2ab4927713d60e0775e704f05ec3fa9b14a45a4312fb5",
+    "parts/ch12.tex": "332be28d0b199bc2ad30807f965156545cc584d2edea77512e63a036d5516764",
+    "output/pdf/P1-03_Algebra_Notes.pdf": "4251977ca04dfe9a645d2776fa329ccbd8168d8ee4bfcbd2ba4652cd2d8023e5"
+  },
+  "source_map_sha256": "abfee53e454f14f22096bfa8a83f888d9de042b085780e86e97673b1eab42320",
+  "paper_sha256": "26eb188345e6df3f5f8712373b17df906d1bef7c88f81a790be0c4780dd52d50",
+  "chapter_ranges_in_paper": {
+    "parts/ch01.tex": [
+      53,
+      277
+    ],
+    "parts/ch02.tex": [
+      278,
+      566
+    ],
+    "parts/ch03.tex": [
+      567,
+      820
+    ],
+    "parts/ch04.tex": [
+      821,
+      933
+    ],
+    "parts/ch05.tex": [
+      934,
+      1032
+    ],
+    "parts/ch06.tex": [
+      1033,
+      1165
+    ],
+    "parts/ch07.tex": [
+      1166,
+      1321
+    ],
+    "parts/ch08.tex": [
+      1322,
+      1839
+    ],
+    "parts/ch09.tex": [
+      1840,
+      2227
+    ],
+    "parts/ch10.tex": [
+      2228,
+      2573
+    ],
+    "parts/ch11.tex": [
+      2574,
+      3174
+    ],
+    "parts/ch12.tex": [
+      3175,
+      3317
+    ]
+  },
+  "source_map_entries": 87,
+  "pdf_pages": 65,
+  "mathematical_pages": 60,
+  "published_source_map_sha256": "080540caa45fd814e2dcde4fe76a84d7b013ab03c6c3fc47d173a7cd8c692084"
+}

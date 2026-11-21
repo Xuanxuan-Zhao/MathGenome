@@ -1,0 +1,13 @@
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.Counterexamples
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.ExponentialMoments
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.ExponentialTails
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.FiniteRepeated
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.ImproperDerivative
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.ImproperInterchange
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.MovingDomains
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.MovingEndpoints
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.PositiveJacobian
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.ProperContinuity
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.ProperDerivative
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.UniformC1Limit
+import MathGenome.Internal.MultivariableAnalysis.D04.C08.UniformTailsContinuity

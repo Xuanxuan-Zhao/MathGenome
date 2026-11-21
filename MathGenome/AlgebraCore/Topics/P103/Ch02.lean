@@ -1,0 +1,13 @@
+import MathGenome.Internal.AlgebraCore.P103.Ch02.ChainConditions
+import MathGenome.Internal.AlgebraCore.P103.Ch02.DualBasis
+import MathGenome.Internal.AlgebraCore.P103.Ch02.EnoughInjectives
+import MathGenome.Internal.AlgebraCore.P103.Ch02.FaithfullyFlat
+import MathGenome.Internal.AlgebraCore.P103.Ch02.FiniteLength
+import MathGenome.Internal.AlgebraCore.P103.Ch02.FinitePresentation
+import MathGenome.Internal.AlgebraCore.P103.Ch02.FlatnessTests
+import MathGenome.Internal.AlgebraCore.P103.Ch02.GovorovLazard
+import MathGenome.Internal.AlgebraCore.P103.Ch02.Injective
+import MathGenome.Internal.AlgebraCore.P103.Ch02.InjectiveEnvelope
+import MathGenome.Internal.AlgebraCore.P103.Ch02.Projective
+import MathGenome.Internal.AlgebraCore.P103.Ch02.Schanuel
+import MathGenome.Internal.D07.Ch16.FinitePresentation

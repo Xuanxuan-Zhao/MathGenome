@@ -1,0 +1,206 @@
+D11 MEASURE, INTEGRATION AND REAL ANALYSIS: CANONICAL CONVENTIONS
+Adopted for authoring on 2026-11-02; references to chapter numbers are mathematical
+dependencies, not prescribed Lean goals or a scheduler. All statements and proofs
+remain subject to independent checking. The 23-family working scope controls.
+
+FOUNDATIONS AND SCOPE
+F_SET: Classical logic, sets, functions, countable families, quotients, choice,
+well-ordering and Zorn. State where choice matters (Vitali sets, Hahn--Banach).
+F_SCALAR: The ordered complete real field, complex field, elementary sequences,
+series and finite sums; no measure construction or convergence theorem is assumed.
+F_LINEAR: Finite-dimensional algebra, determinants and Euclidean geometry, and
+the normed-space vocabulary. Hilbert projection and the particular representation
+theorems needed in this volume are proved in the volume, not silently assumed.
+F_CALCULUS: Established single-variable calculus and the C1 inverse-function/
+chain-rule machinery from D03/D04; the Lebesgue Jacobian formula is a D11 result,
+not a prerequisite disguised as background. State any Riemann bridge explicitly.
+F_TOPO: The published D10 general topology: compactness without implicit Hausdorff,
+normality without implicit T1, locally compact Hausdorff spaces, Urysohn/Tietze,
+partitions of unity under their stated hypotheses, Baire and metric completeness.
+Use exact published hypotheses. General functional analysis, Fourier/distribution
+theory, probability/ergodicity and advanced geometric measure theory remain routed.
+The notes are self-contained relative to these explicit prior foundations; they
+are not claimed to reconstruct the real numbers or all of set theory.
+
+SPACES, MEASURES AND GENERATION
+C01. A measurable space is (X,Sigma); a positive measure takes values in [0,infinity],
+is zero on the empty set and is countably additive. Infinite values are allowed.
+Empty spaces, zero measures and empty families remain allowed unless excluded.
+C02. Finite means mu(X)<infinity. Sigma-finite means a countable measurable cover
+by finite-measure sets. Semifinite and finite on compact sets are distinct notions.
+Never add sigma-finiteness to an otherwise valid arbitrary-measure theorem merely
+to simplify a later theorem; retain useful stronger source versions when proved.
+C03. A null set in Sigma has measure zero. On an incomplete space an arbitrary
+subset of a measurable null set need not belong to Sigma. The completion has its
+own sigma-algebra and extended measure; distinguish these structures explicitly.
+C04. For abstract spaces measures are defined on Sigma. A Borel measure is on the
+Borel sigma-algebra. Lebesgue measure on R^n means its completed Borel volume
+measure; write the Borel restriction when that smaller sigma-algebra is intended.
+C05. Premeasure extension exists on the generated sigma-algebra. Sigma-finiteness
+is a sufficient uniqueness hypothesis, not an automatic consequence of extension.
+Pi-lambda, set monotone-class and functional monotone-class tools have separate
+precise conclusions and are proved before uses in uniqueness or products.
+C06. Caratheodory measurability tests all subsets. A metric outer measure is
+additive on positively separated sets; prove Borel measurability from that fact.
+Do not use Lebesgue regularity before the Euclidean measure is constructed.
+
+FUNCTIONS, ALMOST EVERYWHERE AND INTEGRATION
+C07. A scalar measurable function is finite-valued unless the codomain [0,infinity]
+or the extended reals is displayed. For extended signed values exclude indeterminate
+infinity-infinity operations explicitly rather than treating them as field arithmetic.
+C08. f=g almost everywhere means equality outside a measurable null exceptional
+set (or its completed-measure equivalent). Distinguish representative-level
+statements from quotient-level statements, and a.e. from everywhere equality.
+C09. On incomplete spaces an a.e. modification need only be measurable relative
+to the completion. State measurable representatives where required. Scalar Borel
+measurability, a.e. measurability and general Banach strong measurability are not
+interchanged; only scalar integration is adopted as the primary integral here.
+C10. Nonnegative integration has values in [0,infinity], with 0*infinity=0 in
+simple-function sums. Establish monotone convergence and Fatou before subtracting
+integrals. A signed/complex scalar function is integrable iff integral |f|<infinity.
+C11. A Lebesgue integral of a signed or complex function in these notes is used
+as a linear functional on integrable functions. If a library assigns a totalized
+value to nonintegrable inputs, prove integrability before transporting a formula.
+C12. Complex integrals use real and imaginary parts, with integral absolute-value
+bounds. Absolute integrability justifies Fubini; conditionally convergent improper
+integrals are not automatically Lebesgue integrals on the whole unbounded domain.
+C13. Dominated convergence requires an integrable dominator and a.e. convergence;
+the exceptional set may be made common for a countable family. Parameter and
+limit interchanges have their measurability and domination hypotheses displayed.
+
+PRODUCTS, TRANSPORT AND EUCLIDEAN FORMULAS
+C14. The product sigma-algebra is generated by measurable rectangles. State
+sigma-finiteness in the canonical product/Tonelli/Fubini theorem. Completion of
+the product is a further operation; sections of a completed measurable set are
+asserted measurable a.e. with respect to the appropriate completed factors.
+C15. Pushforward u_*mu is defined for a measurable map and requires no finiteness.
+Nonnegative transport and integrable transport are different statements. Equality
+of densities requires an explicit RN/integrability justification.
+C16. The basic nonlinear Jacobian theorem is for a C1 diffeomorphism between open
+subsets of R^n, with absolute determinant and the corresponding measurable-set
+and nonnegative/integrable formulations. Prove its extension to completed measures.
+Keep injectivity and differentiability requirements of each more general variant.
+Do not silently replace a general Jacobian formula by a linear special case.
+C17. Use the Euclidean norm and the standard determinant normalization. Polar
+coordinates, one-dimensional monotone-AC substitution and rectifiable-curve
+integration require their own domains, endpoint and multiplicity hypotheses.
+
+Lp, DENSITY AND CONVERGENCE
+C18. 1<=p<infinity unless another exponent range is explicitly adopted. Lp(mu)
+is the normed space of a.e. classes of measurable scalar functions with finite
+p-integral. L-infinity is the ordinary a.e. quotient with essential-supremum norm.
+The zero-measure case is handled through the quotient, not pointwise norms.
+C19. Cohn's local-null L-infinity convention on arbitrary non-sigma-finite spaces
+is recorded separately. It is not identified with ordinary a.e. L-infinity by
+notation alone. Prove the specific bridge, in particular the sigma-finite case.
+C20. Preserve Holder/Minkowski endpoint hypotheses. Finite-measure inclusions and
+continuous/smooth density are not extended automatically to p=infinity. Local
+integrability means integrability on compact/relatively compact regions as stated.
+C21. Convergence in measure means mu{|f_n-f|>epsilon}->0 for every epsilon>0;
+local convergence in measure is a distinct notion on infinite spaces. Egorov's
+theorem requires a finite-measure domain; Lusin requires the actual regularity
+and finiteness hypotheses used in its proof.
+C22. Name uniform integral control explicitly: UI_small is uniform absolute
+continuity on small-measure measurable sets; UI_tail is the large-|f| integral
+tail criterion; L1 boundedness and finite-measure spatial tail control are
+separate predicates. State and prove each equivalence under exact hypotheses.
+C23. Folland's |integral_E f| formulation and Royden's integral_E |f| formulation
+are not identical definitions. Any scalar comparison must supply its decomposition
+argument, including real/imaginary parts for complex functions. On infinite
+domains small-set control alone does not prevent mass escaping to infinity.
+C24. Vitali's canonical finite-p Cauchy/convergence criterion states convergence
+in measure, UI of |f_n|^p and the required finite-measure spatial tail property.
+Preserve the distinct finite-measure and arbitrary-space Royden variants; do not
+drop a source's hypothesis that the proposed limiting function is integrable.
+
+BV, STIELTJES AND DIFFERENTIATION
+C25. On a compact interval AC implies BV, and BV implies a.e. differentiability;
+BV and everywhere differentiability are incomparable. BV does not imply AC.
+Use classical partition variation, allowing degenerate intervals with variation 0.
+C26. Normalize nondecreasing Stieltjes generators as right-continuous; the measure
+of (a,b] is F(b)-F(a). The point mass at x is F(x)-F(x-). Fix the additive constant
+when claiming uniqueness of the generator; account for endpoints on bounded
+intervals. Signed/complex BV correspondence uses the same interval convention.
+C27. AC on [a,b] is equivalent to recovery by an L1 derivative via the Lebesgue
+FTC, not via an assumed identity. Prove the differentiation theorem and required
+covering/maximal estimates before invoking them. The route may use later proved
+RN decomposition if the resulting dependency graph is explicitly acyclic.
+C28. Lebesgue differentiation uses centered Euclidean balls (or an explicitly
+proved equivalent averaging family), local integrability and the actual a.e.
+conclusion. Weak-(1,1) constants need not be sharp but must be correctly proved.
+
+SIGNED MEASURES, RN AND DUALITY
+C29. A general signed measure is allowed one infinite sign only. Develop finite
+signed/complex measures and finite total variation first. Complex measures here
+are countably additive finite complex-valued measures with finite variation.
+C30. Hahn decomposition, Jordan decomposition, variation, absolute continuity
+and mutual singularity are measure statements, not representative-level signs.
+State a common dominating positive measure before density identifications.
+C31. The canonical positive RN theorem is sigma-finite nu absolutely continuous
+with respect to sigma-finite mu; densities are nonnegative measurable and unique
+mu-a.e. Give the finite signed/complex target version and its exact reference-
+measure hypotheses separately. Do not promote existence to pointwise uniqueness.
+C32. Organize the positive RN proof by Hahn decomposition/supremal admissible
+densities, not by invoking Lp duality that later depends on RN. Finite complex
+Lebesgue decomposition relative to an arbitrary positive reference measure has
+a direct maximal-null-set proof; it does not imply an unrestricted RN density.
+A finite target does NOT supply a sigma-finite support for the reference measure
+(even a one-point infinite reference measure and a unit point mass refute that
+claim). Preserve Axler's useful arbitrary-reference decomposition exactly, and
+state separate hypotheses before representing its absolutely continuous part
+as a density. Do not discard stronger valid source ranges by convention.
+C33. Lp duality for 1<p<infinity is retained for arbitrary positive measure when
+the adopted proof establishes it. The p=1 identification with ordinary L-infinity
+uses sigma-finiteness in the canonical endpoint theorem. The dual of L-infinity
+is not generally L1. Complex dual pairings and the linear argument are explicit.
+C34. Minimal Hilbert material (L2 completeness, projection, Cauchy-Schwarz and
+Riesz representation) is proved as needed; no general Banach/Hilbert theorem is
+an undeclared foundation. General weak compactness and interpolation remain routed.
+
+TOPOLOGICAL MEASURES AND REPRESENTATION
+C35. Separate compact-finiteness, local finiteness, outer regularity on Borel
+sets, inner regularity on opens, inner regularity on all Borel sets, and tightness.
+No arbitrary metric-space finite Borel measure is declared tight without the
+actual separability/completeness or other hypotheses supplying compact approximation.
+C36. In this volume a Radon measure on LCH Hausdorff X is a Borel positive measure
+finite on compact sets, outer regular on Borel sets and inner regular on opens.
+Full regularity adds compact inner approximation on all Borel sets. State when
+sigma-compactness or finite-measure restrictions upgrade one form to another.
+Compare Folland/Royden/Cohn by these predicates rather than just the word regular.
+C37. C_c(X) consists of continuous functions of genuinely compact support; C_0(X)
+means continuous functions vanishing at infinity. A bounded closed ball need not
+be compact in a general metric space. Do not adopt Stein Ch6 Problem5's stronger
+bounded-support claim as a general theorem; its identified counterexample is noted.
+C38. Positive-functionals-on-C_c Riesz--Markov produces the exact Radon Borel
+measure. Bounded functionals on C_0 correspond to finite regular signed/complex
+measures with the proper total-variation norm. Establish cutoff/partition and
+extension steps needed by the actual proof rather than citing the conclusion.
+C39. Left Haar measure on an LCH Hausdorff group is nonzero, left invariant and
+Radon, unique up to a positive scalar. Right invariance is not assumed; finite
+total mass occurs in the compact case. Compact-group normalization requires
+nonzero total mass. Give the selected existence and uniqueness proof in full.
+C40. Hausdorff outer measure uses diameter covers with coefficient one, and
+H^s=lim_{delta down to0} H^s_delta. At s=0 each nonempty covering set costs one,
+including singletons. H^0 is counting measure; dim_H(empty) is defined explicitly
+(choose 0). Similarity/Lipschitz formulas include s=0 and zero-Lipschitz cases
+separately. No general local or sigma-finiteness is inferred from the construction.
+C41. Daniell--Stone uses a vector lattice of real functions satisfying the Stone
+truncation condition, a positive linear functional, and continuity from above at
+zero. Keep the generated sigma-ring uniqueness statement (Cohn7.7.4) distinct
+from a sigma-algebra uniqueness claim. State the exact extension/coverage needed
+before deriving a sigma-algebra or finite-mass specialization.
+
+AUTHORING AND FIDELITY
+C42. Every independently adopted definition, construction, theorem, lemma,
+proposition, corollary and substantive example receives an explicit stable label.
+Give original English exposition and actual arguments, not long copied textbook
+passages or a string of theorem names. Sources identify comparisons, not proof
+certificates. Auxiliary proof-route-only steps are not extra formalization quotas.
+C43. State relative foundations and cite precise earlier results for real uses.
+No circular cross-reference, unsupported 'standard theorem', undefined measure
+class or swallowed exceptional set is an acceptable substitute for a proof.
+Equivalent valid proof routes and reuse of correctly matched published results
+are allowed. A claim is not Lean-verified until its actual interface check passes.
+C44. The 23 modules and candidate result count are descriptive. Do not target a
+page/theorem/Lean-goal quota. Adopt all agreed content and preserve justified
+source variants, but route explicitly excluded advanced theories transparently.

@@ -1,0 +1,179 @@
+\chapter{Power series and analytic functions}
+\SourceRef{Apostol, Sections 9.14--9.19 (PDF 247--255); Rudin, Sections 3.38--3.40 and Chapter 8; Zorich II, Section 16.3 exercises on Abel and Tauber summation (PDF 410). General power-series arguments precede the elementary-function applications logically.}
+
+\KEntry{K03.13.power_series}{Power series and their values}
+\begin{definition}
+For coefficients $a_n\in\K$, $\K=\R$ or $\C$, and fixed real center $c$, a power series is the expression $\sum_{n\geq0}a_n(x-c)^n$. At each argument its sum is defined only by convergence of its numerical partial sums. The same expression may be evaluated at complex arguments for estimates. A formal sequence of coefficients is not itself a function on all arguments, and a finite polynomial is distinguished from an infinite convergent sum.
+\end{definition}
+
+\KEntry{K03.13.radius}{The radius of convergence}
+\begin{theorem}
+Let $L=\limsup_{n\to\infty}\abs{a_n}^{1/n}$ and set $R=1/L$, with $1/0=\infty$, $1/\infty=0$. The series converges absolutely for $\abs{x-c}<R$ and diverges for $\abs{x-c}>R$. This defines the unique radius $R\in[0,\infty]$; no assertion about the boundary follows.
+\end{theorem}
+\begin{proof}
+For $t=\abs{x-c}>0$, the limsup of the $n$th roots of the term magnitudes is $tL$. The root test \KRef{K03.11.root} gives the conclusion for $tL<1$ and $tL>1$, including $L=0$ or $\infty$. At $t=0$ only the constant term remains. The asserted interior and exterior determine $R$ uniquely: distinct radii would give both convergence and divergence at some intermediate distance. This proof uses only integer roots, not log, exp, or trigonometric functions.
+\end{proof}
+
+\KEntry{K03.13.ratio_radius}{The ratio formula when a ratio limit exists}
+\begin{theorem}
+If $a_n\ne0$ eventually and $\abs{a_{n+1}/a_n}\to\ell\in[0,\infty]$, then $R=1/\ell$. Equivalently a limit of $\abs{a_n/a_{n+1}}$ gives $R$ directly, with the same reciprocal conventions.
+\end{theorem}
+\begin{proof}
+At positive distance $t$, consecutive term magnitudes have ratio tending to $t\ell$. The numerical ratio test gives convergence when $t\ell<1$ and divergence when $t\ell>1$. Comparing with the unique radius proves the formula, also when $\ell=0$ or $\infty$. If ratios do not exist, the root-limsup formula remains valid and no ratio formula is claimed.
+\end{proof}
+
+\KEntry{K03.13.compact_uniform}{Uniform convergence of all derivative series inside the radius}
+\begin{theorem}
+For $0\leq r<R$, the original series and every formal derivative series converge absolutely and uniformly on $\abs{x-c}\leq r$. In particular, for fixed integer $k\geq0$, the series with terms $n(n-1)\cdots(n-k+1)a_n(x-c)^{n-k}$, $n\geq k$, has this property.
+\end{theorem}
+\begin{proof}
+Choose $r<\rho<R$ (if $r=0$ first replace it by any small positive radius). Absolute convergence at distance $\rho$ makes $\abs{a_n}\rho^n\leq M$. Put $q=r/\rho<1$. On the smaller disk the $k$th derivative term is bounded by $M\rho^{-k}n^kq^{n-k}$ for $n\geq k$. For fixed $k$, the ratio of consecutive bounds tends to $q$, since $(1+1/n)^k\to1$ by finite algebra. Thus these numerical bounds form a convergent series. The M-test proves both conclusions. No asymptotic estimate involving exponentials was needed.
+\end{proof}
+
+\KEntry{K03.13.endpoints}{Independent endpoint behavior}
+\begin{example}
+All three following real power series have radius $1$. The series $\sum_{n\geq0}x^n$ converges at neither endpoint, since its terms do not tend to zero at $\pm1$. The series $\sum_{n\geq1}x^n/n$ converges at $-1$ by the alternating test and diverges at $1$ by harmonic divergence. The series $\sum_{n\geq1}x^n/n^2$ converges absolutely at both endpoints by condensation. Their radius is $1$ by the root test and the elementary root estimates in \KRef{K03.11.root}. Replacing $x$ by $-x$ switches the one-endpoint example. Thus a radius never determines the endpoint verdicts.
+\end{example}
+
+\KEntry{K03.13.termwise}{Real-variable calculus of power series}
+\begin{theorem}
+Inside its radius a power series has derivatives of every order with respect to the real argument, given by formal termwise differentiation. Its primitive vanishing at $c$ is
+\[\int_c^x\sum_{n\geq0}a_n(t-c)^n\dd t=\sum_{n\geq0}\frac{a_n}{n+1}(x-c)^{n+1}.\]
+The derivative and primitive series have exactly the original radius (including radii $0$ and $\infty$).
+\end{theorem}
+\begin{proof}
+On any compact interval strictly inside the radius, the derivative series is uniformly convergent by \KRef{K03.13.compact_uniform}; the original series converges at $c$. Apply termwise differentiation, \KRef{K03.12.termwise_differentiation}, enlarging the compact interval to include $c$. Repeat for higher derivatives. Termwise integration follows from \KRef{K03.12.termwise_integration} and the elementary integral of a monomial.
+
+For exact equality of radii, the estimates just proved show that differentiation cannot reduce the radius. Conversely if the derivative series converges absolutely at distance $t>0$, then $\sum_{n\geq1}\abs{a_n}t^n\leq t\sum_{n\geq1}n\abs{a_n}t^{n-1}<\infty$; hence it cannot have a larger radius. The primitive series has at least the original radius by division by $n+1$, and its derivative is the original series, so the derivative result gives equality. These comparisons are statements about convergent sums even when the original radius is zero. Complex arguments were used for bounds only; complex differentiation belongs to D12.
+\end{proof}
+
+\KEntry{K03.13.uniqueness}{Coefficient uniqueness}
+\begin{theorem}
+If $f(x)=\sum a_n(x-c)^n$ in a real neighborhood of $c$, then $f^{(k)}(c)=k!a_k$ for every $k\geq0$. Consequently two such expansions of the same function at $c$ have identical coefficients.
+\end{theorem}
+\begin{proof}
+Differentiate $k$ times using \KRef{K03.13.termwise} and set $x=c$. Terms with index below $k$ have vanished, the index $k$ term is $k!a_k$, and all terms with larger index contain a positive power of $x-c$ and vanish. Dividing by the nonzero integer $k!$ proves uniqueness.
+\end{proof}
+
+\KEntry{K03.13.products}{Products of power series}
+\begin{theorem}
+If $f=\sum a_n(x-c)^n$ and $g=\sum b_n(x-c)^n$ have radii $R_f,R_g$, their product for $\abs{x-c}<\min(R_f,R_g)$ is
+\[fg=\sum_{n\geq0}\left(\sum_{k=0}^na_kb_{n-k}\right)(x-c)^n.\]
+The resulting radius is at least the minimum and may be larger.
+\end{theorem}
+\begin{proof}
+At every such argument both numerical series are absolutely convergent, so the absolute Cauchy product theorem \KRef{K03.11.cauchy_product} applies. Their Cauchy product terms are exactly the displayed monomials. For strict enlargement use $f(x)=\sum_{n\geq0}x^n$, $g(x)=1-x$: the coefficient products cancel to the constant $1$, whose radius is infinite although $R_f=1$.
+\end{proof}
+
+\KEntry{K03.13.composition}{Recentering, composition, and reciprocal series}
+\begin{theorem}
+A power-series sum with positive radius of convergence can be recentered at every interior point. Compositions are locally power-series sums whenever the inner value is inside the outer convergence disk. A power series of positive radius with $a_0\ne0$ has a reciprocal power series in a sufficiently small neighborhood of its center.
+\end{theorem}
+\begin{proof}
+For $F(z)=\sum a_n(z-d)^n$ and $\abs{b-d}<R$, choose $r>0$ with $\abs{b-d}+r<R$. The finite binomial theorem and absolute double summation give
+\[F(b+h)=\sum_{k\geq0}A_kh^k,\qquad A_k=\sum_{n\geq k}\binom nk a_n(b-d)^{n-k},\quad \abs h<r.\]
+The decisive absolute bound is
+\[\sum_n\sum_{k=0}^n\abs{a_n}\binom nk\abs{b-d}^{n-k}\abs h^k=\sum_n\abs{a_n}(\abs{b-d}+\abs h)^n<\infty.\]
+Thus all coefficient sums exist and reordering is justified.
+
+Let $g(c)=b$ lie inside that disk and write $g(c+h)=b+u(h)$ with $u(h)=\sum_{j\geq1}b_jh^j$. For sufficiently small $r>0$, the majorant $U(r)=\sum_{j\geq1}\abs{b_j}r^j$ is smaller than the convergence radius of the recentered outer series: indeed $U(r)\to0$, since for fixed $r_0$ with absolute convergence, $U(r)\leq(r/r_0)U(r_0)$. Expand each $u(h)^m$ by repeated absolutely convergent Cauchy products. Its degree-$k$ coefficient is
+\[c_{m,k}=\sum_{j_1+\cdots+j_m=k,\ j_i\geq1}b_{j_1}\cdots b_{j_m},\]
+with $c_{0,0}=1$, and it is zero for $k<m$. The total absolute sum is bounded by $\sum_m\abs{A_m}U(r)^m<\infty$. Hence
+\[F(g(c+h))=\sum_{k\geq0}\left(\sum_{m=0}^kA_mc_{m,k}\right)h^k.\]
+This proves the local claim from the value condition; a majorant bound on a whole preassigned disk is not inferred merely from a pointwise value bound.
+
+For $f(c+h)=a_0(1-v(h))$, $v(0)=0$, choose $r$ with the majorant of $v$ less than $1$. The just proved composition with $\sum_{m\geq0}v^m=(1-v)^{-1}$ constructs $1/f$. Its coefficients satisfy $q_0=1/a_0$ and $q_k=-a_0^{-1}\sum_{j=1}^ka_jq_{k-j}$, by multiplying the convergent series and equating coefficients. This supplies both construction and convergence, not merely a formal recurrence.
+\end{proof}
+
+\KEntry{K03.13.analyticity}{Real analyticity}
+\begin{definition}
+A scalar function on an open real interval is real analytic if near each point it equals a power series in the real argument with positive radius. Such a function is $C^\infty$: apply \KRef{K03.13.termwise} in each defining neighborhood. Recentering in \KRef{K03.13.composition} shows that every power-series sum is analytic throughout its open convergence interval. Smoothness alone does not assert equality to the Taylor series; a counterexample is supplied in the Taylor chapter.
+\end{definition}
+
+\KEntry{K03.13.identity}{The identity principle on an interval}
+\begin{theorem}
+Two real-analytic scalar functions on a connected open interval which agree on a nonempty open subinterval, or on a set with an interior accumulation point, agree everywhere.
+\end{theorem}
+\begin{proof}
+Subtract the functions. If an analytic expansion about $c$ has a first nonzero coefficient $a_m$, then near $c$ it factors as $(x-c)^m(a_m+\sum_{j>m}a_j(x-c)^{j-m})$. The parenthesis is continuous and nonzero near $c$, so $c$ is an isolated zero. Consequently an accumulation of zeros at $c$ forces every coefficient to vanish, and the function is zero in a neighborhood of $c$.
+
+Let $J$ be the set of points with a neighborhood on which the function vanishes. It is open. If $c$ belongs to its closure inside the interval, then either $c\in J$ already or distinct zeros from $J$ accumulate at $c$; the previous argument gives $c\in J$. Thus $J$ is also relatively closed. It is nonempty under either stated hypothesis. Connectedness of the interval makes $J$ the whole interval (otherwise a boundary between a point in $J$ and a point outside it contradicts relative openness and closedness). This proves the result.
+\end{proof}
+
+\KEntry{K03.13.binomial}{The generalized binomial series}
+\begin{theorem}
+For real $\alpha$, put $c_0=1$ and $c_n=\alpha(\alpha-1)\cdots(\alpha-n+1)/n!$. For $\abs x<1$,
+\[(1+x)^\alpha=\sum_{n\geq0}c_nx^n.\]
+For $\alpha$ a nonnegative integer this is a terminating polynomial identity, valid for all real $x$ in its algebraic meaning. Otherwise the radius is $1$. At $x=1$ convergence holds exactly when $\alpha>-1$ and the sum is $2^\alpha$. At $x=-1$ convergence holds exactly when $\alpha>0$, with sum $0$. The terminating cases are assessed separately, including $\alpha=0$.
+\end{theorem}
+\begin{proof}
+For a nonterminating series, $\abs{c_{n+1}/c_n}=\abs{\alpha-n}/(n+1)\to1$, so the radius is $1$. The coefficient relation $(n+1)c_{n+1}=(\alpha-n)c_n$ shows by termwise differentiation that its sum $y$ satisfies $(1+x)y'=\alpha y$, $y(0)=1$. Using the real powers already constructed in \KRef{K03.07.real_powers}, differentiate $(1+x)^{-\alpha}y(x)$: its derivative is zero on $(-1,1)$ and its value at zero is $1$. The zero-derivative theorem therefore identifies the sum with $(1+x)^\alpha$. This identification is a downstream application and is not used to construct real powers.
+
+For the endpoint tests choose $N>\max(\alpha,0)$ and put $t_n=\abs{c_n}$ for $n\geq N$. Then $t_{n+1}=\frac{n-\alpha}{n+1}t_n$, and $c_n$ alternates in sign eventually. If $\alpha>0$, the identity $nt_n-(n+1)t_{n+1}=\alpha t_n$ gives $\sum_{n=N}^Mt_n\leq Nt_N/\alpha$, so both endpoints converge absolutely. If $-1<\alpha<0$, $t_n$ decreases to zero: a positive limit $l$ would give $t_n-t_{n+1}=(\alpha+1)t_n/(n+1)\geq(\alpha+1)l/(n+1)$, contradicting harmonic divergence. Thus $x=1$ converges by alternation. If $\alpha\leq-1$, the $t_n$ do not tend to zero. Endpoint sums at $1$, and at $-1$ when $\alpha>0$, follow from Abel's theorem below and the respective limits of $(1+x)^\alpha$. If $\alpha<0$ and the series at $-1$ converged, the same Abel theorem would force a finite limit as $x\to-1+$, whereas $(1+x)^\alpha\to+\infty$. This proves all nonterminating endpoint assertions. The finite binomial theorem proves the terminating cases directly.
+\end{proof}
+
+\KEntry{K03.13.abel}{Abel's endpoint theorem}
+\begin{theorem}
+If $\sum_{n\geq0}a_n=S$ ordinarily, then $\sum a_nx^n$ converges for $0\leq x<1$ and tends to $S$ as $x\to1-$. By replacing $a_n$ by $(-1)^na_n$, the corresponding assertion holds at the endpoint $-1$.
+\end{theorem}
+\begin{proof}
+The partial sums $s_n$ are bounded, and hence $a_n$ are bounded; absolute convergence for $x<1$ follows by a geometric bound. Finite summation by parts, followed by the vanishing boundary $s_Nx^{N+1}\to0$, gives
+\[\sum_{n\geq0}a_nx^n=(1-x)\sum_{n\geq0}s_nx^n.\]
+The weights $(1-x)x^n$ are nonnegative and sum to one. Given $\eps>0$, choose $m$ with $\abs{s_n-S}<\eps$ for $n>m$. The weighted error from those indices is at most $\eps$; the finite prefix $(1-x)\sum_{n=0}^m(s_n-S)x^n$ tends to zero. This proves the limit, with no interchange of uncontrolled endpoint sums.
+\end{proof}
+
+\KEntry{K03.13.tauber}{Tauber's additional coefficient condition}
+\begin{theorem}
+Let $a_n\in\R$ or $\C$, suppose $na_n\to0$, and suppose $f(x)=\sum_{n\geq0}a_nx^n\to S$ as $x\to1-$, $0<x<1$. Then the ordinary series $\sum a_n$ converges to $S$.
+\end{theorem}
+\begin{proof}
+The coefficient condition implies bounded coefficients, so the series is absolutely convergent at each such $x$. Put $x_N=1-1/N$, $N\geq2$, and $s_N=\sum_{n=0}^Na_n$. For given $\eps>0$ choose $m$ with $\abs{a_n}\leq\eps/n$ for $n>m$. For $N>m$, use $1-x_N^n\leq n(1-x_N)=n/N$ to estimate
+\[\begin{split}
+\abs{s_N-f(x_N)}&\leq\sum_{n=0}^m\abs{a_n}(1-x_N^n)
++\eps\sum_{n=m+1}^N\frac{1-x_N^n}{n}
++\eps\sum_{n>N}\frac{x_N^n}{n}\\
+&\leq\sum_{n=0}^m\abs{a_n}(1-x_N^n)+\eps+\frac{\eps x_N^{N+1}}{N(1-x_N)}\leq o(1)+2\eps.
+\end{split}\]
+The finite prefix tends to zero. Letting $N\to\infty$ and then $\eps\downarrow0$ gives $s_N-f(x_N)\to0$. Since $x_N\to1-$, $f(x_N)\to S$; hence $s_N\to S$. This explicit coefficient estimate is the additional argument that Abel summability alone lacks.
+\end{proof}
+
+\begin{corollary}[The weaker averaged coefficient condition]
+The conclusion of the preceding theorem also holds if its hypothesis $na_n\to0$ is replaced by
+\[
+ \frac1n\sum_{k=1}^n k a_k\longrightarrow0.
+\]
+\end{corollary}
+\begin{proof}
+Put $T_n=\sum_{k=1}^nka_k$, $b_0=a_0$ and $b_n=T_n/[n(n+1)]$ for $n\geq1$. Finite summation by parts gives, for $s_n=\sum_{k=0}^na_k$ and $B_n=\sum_{k=0}^nb_k$,
+\[
+ s_n-B_n=\frac{T_n}{n+1}\longrightarrow0.
+\]
+Indeed $a_k=(T_k-T_{k-1})/k$, and telescoping its finite sum yields this identity. Also $nb_n=T_n/(n+1)\to0$, so $b_n=O(1/n)$, hence in particular $B_n=O(n)$ and $s_n=O(n)$. The identity for $a_k$ and $T_n=O(n)$ also gives $a_n=O(1)$. These elementary bounds avoid any logarithmic construction. For $0<r<1$ all ensuing series are absolutely convergent, since $\sum nr^n$ converges by the ratio test, and summing the partial-sum identities gives
+\[
+ \sum_{n\geq0}a_nr^n=(1-r)\sum_{n\geq0}s_nr^n,
+ \qquad \sum_{n\geq0}b_nr^n=(1-r)\sum_{n\geq0}B_nr^n.
+\]
+The difference tends to zero as $r\uparrow1$: for a given $\eps>0$, bound the finite prefix of $s_n-B_n$ after multiplication by $1-r$, and bound the remaining null-sequence tail by $\eps(1-r)\sum r^n\leq\eps$. Thus the $b$ series has Abel limit $S$. The already proved theorem applies to $b$, since $nb_n\to0$, and yields $B_n\to S$. The exact finite identity now gives $s_n\to S$. This proof does not impose an unstated bound on $na_n$.
+\end{proof}
+\SourceRef{Zorich II, section 16.3 exercises, exercise 8(b), PDF p.410; stronger source variant retained in addition to the selected catalog theorem}
+
+\KEntry{K03.13.abel_not_converse}{Abel summability alone has no converse}
+\begin{example}
+For $a_n=(-1)^n$, the geometric identity gives $\sum_{n\geq0}a_nx^n=1/(1+x)$ for $0\leq x<1$, so the Abel limit is $1/2$. The ordinary partial sums alternate between $1$ and $0$ and do not converge. Here $na_n$ does not tend to zero, so Tauber's hypothesis fails exactly where it is needed.
+\end{example}
+
+\KEntry{K03.13.standard_series}{Elementary series and their domains}
+\begin{theorem}
+With the elementary functions defined and identified in \KRef{K03.07.exp_construction}, \KRef{K03.07.sin_cos}, \KRef{K03.07.log_construction}, and \KRef{K03.07.trig_inverses},
+\[\begin{gathered}
+e^x=\sum_{n=0}^\infty x^n/n!,\quad
+\sin x=\sum_{n=0}^\infty(-1)^n x^{2n+1}/(2n+1)!,\quad
+\cos x=\sum_{n=0}^\infty(-1)^n x^{2n}/(2n)!,\qquad x\in\R,\\
+\log(1+x)=\sum_{n=1}^\infty(-1)^{n-1}x^n/n\quad(-1<x\leq1),\\
+\arctan x=\sum_{n=0}^\infty(-1)^nx^{2n+1}/(2n+1)\quad(-1\leq x\leq1).
+\end{gathered}\]
+The binomial expansion, including its endpoint cases, is \KRef{K03.13.binomial}. These are identifications with previously constructed functions, not independent conflicting definitions.
+\end{theorem}
+\begin{proof}
+The factorial-series convergence follows from the ratio bound on each bounded interval. The first three equalities are the series definitions in the cited entries; their derivative identities follow from the general termwise theorem. For the other two, integrate respectively $1/(1+t)=\sum_{n\geq0}(-t)^n$ and $1/(1+t^2)=\sum_{n\geq0}(-1)^nt^{2n}$ from $0$ to $x$ inside $(-1,1)$, where convergence is uniform on the integration segment. The derivatives and values at zero of log and arctan identify the primitives by \KRef{K03.05.zero_derivative}. At $x=1$ the log series converges by alternation and Abel identifies its sum with $\log2$; at $x=-1$ it is the negative harmonic series and diverges. At $x=\pm1$ the arctan series converges by alternation; Abel and continuity identify its sums with $\pm\pi/4$. For $\abs x>1$ the terms of the log and arctan series fail to tend to zero: the ratio of their magnitudes tends to $\abs x$ and $x^2$, respectively. Thus their indicated domains are exact real convergence domains.
+\end{proof}

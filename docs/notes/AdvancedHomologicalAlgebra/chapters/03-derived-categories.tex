@@ -1,0 +1,670 @@
+\chapter{Homotopy and Derived Categories}
+\label{ch:derived-categories}
+
+The category of complexes remembers all the differentials. Its homotopy
+category identifies maps differing by a cochain homotopy. Its derived
+category also makes every quasi-isomorphism invertible. We first keep track
+of the maps and signs in the homotopy category, so that the long exact
+sequence obtained after localization has the ordinary connecting maps.
+
+\section{Shifts, cones, and triangles}
+
+\begin{proposition}[Shifts and the homotopy category]\label{res:K01}
+Let \(\mathcal A\) be an additive category. For a complex \(K\) and
+\(m\in\mathbb Z\), put
+\[
+ (K[m])^n=K^{n+m},\qquad d_{K[m]}^n=(-1)^m d_K^{\,n+m}.
+\]
+The shifts act on the homotopy category \(\mathsf K(\mathcal A)\) and
+compose by addition. If \(\mathcal A\) is abelian, the cohomology functors
+on complexes factor through \(\mathsf K(\mathcal A)\), and the
+identifications \(H^n(K[m])=H^{n+m}(K)\) are natural.
+\end{proposition}
+\begin{proof}
+The shifted differential squares to zero. If \(f-g=d_L s+s d_K\), where
+\(s^n:K^n\to L^{n-1}\), the components \((-1)^m s^{n+m}\) give the
+corresponding homotopy on the shifts. Morphisms homotopic to zero form an
+additive ideal because precomposition or postcomposition of a
+null-homotopy by a cochain map gives a null-homotopy for the composite. Quotienting each
+Hom group by that ideal defines \(\mathsf K(\mathcal A)\). On cycles,
+the term \(s d_K\) is zero and \(d_L s\) factors through boundaries, so
+homotopic maps induce the same cohomology map. Multiplying a differential
+by \(-1\) leaves its kernel and image subobjects unchanged. This gives
+the cohomology identification and its naturality. See
+\cite[Tags 013H and 05RS]{stacks-derived} and
+\cite[Section 4.1]{yekutieli}.
+\end{proof}
+
+\begin{proposition}[The mapping cone and its maps]\label{res:K02}
+For a cochain map \(f:X\to Y\) in an additive category, define
+\[
+ C(f)^n=Y^n\oplus X^{n+1},\qquad
+ d_{C(f)}(y,x)=(d_Y y+f x,-d_X x).
+\]
+There are cochain maps \(i_f:Y\to C(f)\) and \(p_f:C(f)\to X[1]\),
+the inclusion and the projection. Given maps \(a:X\to X'\), \(b:Y\to
+Y'\), and a homotopy \(bf-f'a=d_{Y'}s+s d_X\), the formula
+\[
+ (y,x)\longmapsto (b y+s x,a x)
+\]
+defines a cone map \(C(f)\to C(f')\). It intertwines the inclusions and
+projections with \(b\) and \(a[1]\), respectively.
+\end{proposition}
+\begin{proof}
+In the square of the cone differential the only potentially nonzero
+off-diagonal entry is \(d_Y f-f d_X\), which vanishes. For the claimed
+cone map, equality of the two off-diagonal entries of the chain map
+equation is \(d_{Y'}s+f'a=bf-sd_X\). This is precisely the homotopy
+equation. The other entries are the equations for \(a\) and \(b\).
+The intertwining identities are immediate from the inclusion and
+projection matrices. In an exactly commuting square, take \(s=0\).
+For exactly commuting squares this construction preserves composition.
+For a square specified only up to homotopy, the formula uses the
+chosen homotopy. See \cite[Tags 014E, 014F, and 08RI]{stacks-derived}.
+\end{proof}
+
+\begin{proposition}[Contractibility and the cone criterion]\label{res:K03}
+The cone of the identity map is contractible. In an abelian category,
+\(f\) is a quasi-isomorphism if and only if \(C(f)\) is acyclic.
+There exist quasi-isomorphisms of module complexes which are not
+homotopy equivalences.
+\end{proposition}
+\begin{proof}
+On \(C(1_X)\) the homotopy \(h^n(y,x)=(0,y)\) satisfies
+\(d h+h d=1\). For any \(f\) there is a degreewise split short exact
+sequence
+\[
+ 0\longrightarrow Y\xrightarrow{i_f} C(f)
+       \xrightarrow{p_f} X[1]\longrightarrow 0.
+\]
+The connecting map \(H^n(X[1])\to H^{n+1}(Y)\) is \(H^{n+1}(f)\).
+Indeed, lifting a cycle of \(X[1]\) by the section of the projection
+leaves \(f x\) in the first component after applying the differential. The
+long exact sequence proves the criterion in both directions.
+
+For the last assertion, put \(\mathbb Z\xrightarrow{2}\mathbb Z\)
+in degrees \(-1,0\). The augmentation to \((\mathbb Z/2)[0]\) is a
+quasi-isomorphism. Every map back is zero because every homomorphism
+\(\mathbb Z/2\to\mathbb Z\) is zero. Its composite with the augmentation
+cannot be homotopic to the identity of the stalk since they have
+different \(H^0\). This is the module example from
+\cite[Chapter 10]{p103}. The cone criterion is also recorded in
+\cite[Tag 05RT]{stacks-derived}.
+\end{proof}
+
+\begin{proposition}[Degreewise split sequences]\label{res:K04}
+Suppose \(0\to A\xrightarrow{u}B\xrightarrow{v}C\to0\) is degreewise
+split. Choose graded identifications \(B^n=A^n\oplus C^n\) compatible
+with \(u,v\), and write
+\[
+ d_B(a,c)=(d_A a+\alpha c,d_C c).
+\]
+Then \(\alpha:C\to A[1]\) is a cochain map. Its homotopy class is
+independent of the splitting and natural in maps of short exact sequences.
+The cone row \((u,i_u,-p_u)\) is canonically isomorphic in
+\(\mathsf K(\mathcal A)\) to \((u,v,\alpha)\).
+\end{proposition}
+\begin{proof}
+The off-diagonal entry of \(d_B^2=0\) gives
+\(d_A\alpha+\alpha d_C=0\), with the sign required for \(A[1]\).
+If one graded section differs from another by \(u t\), their
+off-diagonal terms differ by \(d_A t-t d_C\), which is a
+null-homotopy for maps into \(A[1]\). For a map of short exact sequences
+\((a,b,c)\), the difference of the two graded lifts \(b s-s'c\) of \(c\)
+is \(u' t\). The equation
+\(a\alpha-\alpha'c=d_{A'}t-t d_C\) proves naturality in the homotopy
+category.
+
+The map \(q:C(u)\to C\) is \(v\) on \(B\) and zero on \(A[1]\).
+In the graded coordinates \((a,c,a')\) of \(C(u)\), a chain section
+is \(c\mapsto(0,c,-\alpha c)\). The kernel is \(C(1_A)\), which is
+contractible by Proposition~\ref{res:K03}, hence \(q\) is a homotopy
+equivalence. Under the chain section, \(-p_u\) is precisely \(\alpha\).
+The ensuing sign convention is that the third arrow of a cone triangle
+is \(-p_f\). It makes the boundary from a split sequence agree with
+the usual cocycle-lift boundary. See
+\cite[Tags 05SS and 014L]{stacks-derived}.
+\end{proof}
+
+\paragraph{Comparison of five exact terms.}
+In a commuting diagram of two exact rows \(A\to B\to C\to D\to E\),
+the middle vertical map is an isomorphism when the four others
+are. This comparison works in an abelian category using the epic
+pullbacks described in Chapter~\ref{ch:filtrations}. For injectivity,
+let an element of \(C\) map to zero in the bottom row. Its image in
+\(D\) is zero by the comparison at \(D\), so it lifts locally to
+\(B\). The image of this lift in the bottom row comes from the
+bottom \(A\) by exactness. Lift it to the top \(A\); injectivity
+at \(B\) shows that the original lift already comes from \(A\),
+so its image in \(C\) is zero. For surjectivity, take an element
+of the bottom \(C\) and lift its image in the bottom \(D\) to the
+top \(D\). That lift dies in the top \(E\) by injectivity at \(E\).
+It therefore lifts locally to the top \(C\). The difference from
+the desired bottom element comes from the bottom \(B\), and can
+be corrected by lifting through the isomorphism at \(B\).
+The zero and image conditions descend along the epic covers.
+
+\begin{theorem}[The triangulated structure on the homotopy category]
+\label{res:K05}
+The shift \([1]\) and the triangles isomorphic to
+\[
+ X\xrightarrow{f}Y\xrightarrow{i_f}C(f)
+     \xrightarrow{-p_f}X[1]
+\]
+make \(\mathsf K(\mathcal A)\) a triangulated category.
+\end{theorem}
+\begin{proof}
+Every map is the first arrow of its cone triangle. The identity has a
+contractible cone, so its row is isomorphic to \(X\to X\to0\to X[1]\).
+The class of triangles is defined up to isomorphism.
+
+\emph{Rotation.} The cone of \(i_f\) has coordinates
+\((y,x,y')\in Y^n\oplus X^{n+1}\oplus Y^{n+1}\) and differential
+\[
+ (d_Yy+fx+y',-d_Xx,-d_Yy').
+\]
+The map \((y,x,y')\mapsto-x\) to \(X[1]\) has chain section
+\(x\mapsto(0,-x,fx)\) and contractible kernel \(C(1_Y)\). After this
+identification, the last arrow of the cone triangle for \(i_f\) is
+\(-f[1]\). This proves rotation with the stated sign. For inverse
+rotation, take the cone of \(p_f[-1]:C(f)[-1]\to X\). Its coordinates
+are \((x,y,x')\in X^n\oplus Y^n\oplus X^{n+1}\) with differential
+\((d_Xx+x',d_Yy+fx',-d_Xx')\). The map to \(Y\) is
+\((x,y,x')\mapsto fx-y\), with chain section \(y\mapsto(0,-y,0)\)
+and kernel \(C(1_X)\). The inclusion of \(X\) corresponds to \(f\),
+and the last map on the section corresponds to \(i_f\). Thus inverse
+rotation also preserves the class.
+
+\emph{Morphisms of triangles.} A commutative square in the homotopy
+category can be represented by a square of cochain maps together with
+a homotopy between the two composites. Proposition~\ref{res:K02}
+supplies the third map of triangles.
+
+If the first two components of a morphism of cone triangles are
+isomorphisms in \(\mathsf K(\mathcal A)\), its third component is an
+isomorphism as well. To see this without using an octahedron, fix a
+complex \(T\). If a cochain map \(u:T\to Y\) has \(i_fu\) null-homotopic,
+write the homotopy into \(C(f)^{n-1}=Y^{n-1}\oplus X^n\) as \((s,t)\).
+Its second component says that \(t:T\to X\) is a cochain map. Its
+first component gives \(u-ft=d_Ys+s d_T\). Conversely, \(i_ff\)
+is null-homotopic by \(x\mapsto(0,x)\). This proves exactness at
+\(\operatorname{Hom}(T,Y)\). Applying the same calculation to the
+rotations gives exact rows of five abelian groups with middle group
+\(\operatorname{Hom}(T,C(f))\) and adjacent groups from \(X,Y\) and
+their shifts. The morphism of triangles induces a map of these rows,
+and the four outer vertical maps are isomorphisms. The preceding
+five-term comparison makes the middle map an isomorphism for each \(T\). If \(c:C\to C'\)
+is the third component, surjectivity for \(T=C'\) gives a right
+inverse to \(c\), and injectivity for \(T=C\) makes it a left
+inverse. In particular the morphism axiom, applied to identities
+on the first two terms, compares any two distinguished triangles
+on a fixed first arrow by an isomorphism fixing those terms.
+
+\emph{The octahedron.} For \(X\xrightarrow{f}Y\xrightarrow{g}Z\)
+the two maps
+\[
+ a:C(f)\to C(gf),\quad (y,x)\mapsto(gy,x),\qquad
+ b:C(gf)\to C(g),\quad (z,x)\mapsto(z,fx)
+\]
+extend the squares on the first two terms. They give the first two
+arrows of the fourth triangle. In fact, in the coordinates
+\((z,x,y',x')\) of \(C(a)\), its differential is
+\[
+ (d_Zz+gfx+gy',\,-d_Xx+x',\,-d_Yy'-fx',\,d_Xx').
+\]
+The chain map \(C(a)\to C(g)\), \((z,x,y',x')\mapsto(z,fx+y')\),
+has chain section \((z,y')\mapsto(z,0,y',0)\). Its kernel is
+\(C(1_{X[1]})\), with coordinates \((x,x')\) and differential
+\((-d_Xx+x',d_Xx')\). Consequently the cone triangle for \(a\) is
+isomorphic to
+\[
+ C(f)\xrightarrow{a}C(gf)\xrightarrow{b}C(g)
+   \xrightarrow{i_f[1](-p_g)}C(f)[1].
+\]
+The outer compatibilities are \(a i_f=i_{gf}g\),
+\(b i_{gf}=i_g\), \(p_{gf}a=p_f\), and \(p_g b=f[1]p_{gf}\),
+all read directly from the coordinate maps. The closing arrow of the
+fourth triangle is \((z,y')\mapsto(-y',0)\), so it agrees with the
+composite required by the same choice of cone sign. This gives the
+octahedron for composable representatives. For prescribed triangles
+on \(f,g,gf\), choose the three comparison isomorphisms just constructed
+and conjugate the maps between their third terms by those
+isomorphisms. These comparison maps fix \(X,Y,Z\) and their shifts,
+so all commuting faces remain commuting. The fourth triangle remains
+distinguished because it is isomorphic to the one for the explicit
+cone maps. Compare \cite[Tags 014C, 014Q, and 014S]{stacks-derived}.
+\end{proof}
+
+\begin{proposition}[Exact sequences from triangles]\label{res:K06}
+For a distinguished triangle, cohomology gives a natural long exact
+sequence if \(\mathcal A\) is abelian. Each of
+\(\operatorname{Hom}_{\mathsf K(\mathcal A)}(T,-)\) and
+\(\operatorname{Hom}_{\mathsf K(\mathcal A)}(-,T)\) gives an exact
+sequence extended by shifts, with arrows reversed in the second case.
+\end{proposition}
+\begin{proof}
+By isomorphism and rotation it suffices to check exactness at the
+middle term of a cone row. Cohomology has the asserted exactness by
+the split sequence in Proposition~\ref{res:K03}. Rotation appends the
+shifted terms. Use the arrows of the triangle, including its
+closing sign. They give natural maps under morphisms of triangles.
+
+For the covariant Hom sequence, suppose \(u:T\to Y\) has \(i_fu\)
+null-homotopic, with homotopy \((s,t)\) into
+\(Y^{n-1}\oplus X^n=C(f)^{n-1}\). Its second component equation says
+that \(t:T\to X\) is a cochain map. The first says
+\(u-ft=d_Ys+s d_T\), so \([u]\) is in the image of \([f]\).
+Conversely \(i_ff\) is null-homotopic by the homotopy \(x\mapsto(0,x)\).
+For the contravariant sequence let \(v:Y\to T\) satisfy
+\(vf=d_Ts+s d_X\). The map \(C(f)\to T\),
+\((y,x)\mapsto vy+sx\), is a cochain map and restricts to \(v\).
+The converse again follows from \(i_ff\simeq0\). Naturality follows
+from composition. The shifted long sequences follow by applying
+these computations to the rotated cone rows.
+Compare \cite[Tags 0149 and 05RS]{stacks-derived} and
+\cite[Propositions 5.2.6--5.2.7]{yekutieli}.
+\end{proof}
+
+\section{Quasi-isomorphisms and localization}
+
+For the remainder of the chapter \(\mathcal A\) is abelian. The
+localization is taken in a universe in which the roofs under
+consideration form sets. Bounds on complexes, when imposed, are bounds
+on their terms unless cohomology is explicitly specified.
+
+\begin{proposition}[The acyclic subcategory]\label{res:D01}
+The acyclic complexes form a thick triangulated subcategory of
+\(\mathsf K(\mathcal A)\). Its cone class, the maps whose cones belong
+to this subcategory, is the class of quasi-isomorphisms.
+\end{proposition}
+\begin{proof}
+Acyclicity means \(H^n=0\) for all \(n\). It is preserved under
+isomorphism in the homotopy category and under shifts by
+Proposition~\ref{res:K01}, under cones between acyclic objects by
+Proposition~\ref{res:K06}, and under retracts because the cohomology of
+a retract is a retract of the cohomology. These are the required
+closure properties. The assertion about cones is
+Proposition~\ref{res:K03}. In particular quasi-isomorphisms have
+two-out-of-three because their cohomology maps do.
+\end{proof}
+
+\begin{theorem}[Roofs and their refinements]\label{res:D02}
+The quasi-isomorphisms in \(\mathsf K(\mathcal A)\) admit calculi of
+right and left fractions. In particular a morphism in the localization
+can be written
+\[
+ X\xleftarrow{s}T\xrightarrow{f}Y,\qquad s\text{ a quasi-isomorphism}.
+\]
+Two roofs are equal precisely when they can be refined to a common
+roof, with both arrows agreeing in \(\mathsf K(\mathcal A)\). There is
+also the dual presentation \(X\to T\xleftarrow{s}Y\).
+\end{theorem}
+\begin{proof}
+Here are the two fraction conditions for roofs of the displayed
+orientation. Given \(f:X\to Z\) and a quasi-isomorphism \(s:Y\to Z\),
+set \(W=C(f,-s)[-1]\), where \((f,-s):X\oplus Y\to Z\).
+The cone projection, shifted back, gives maps \(W\to X\) and \(W\to Y\).
+Their composites with \(f\) and \(s\) agree in \(\mathsf K(\mathcal A)\)
+by the cone homotopy. The projection to \(X\) is a quasi-isomorphism
+because its kernel is \(C(-s)[-1]\) and the sequence is degreewise split.
+This gives the lifting square for a common denominator.
+
+For cancellation, suppose \(s:Y\to Z\) is a quasi-isomorphism and
+\(sf=sg\) in \(\mathsf K(\mathcal A)\) for \(f,g:X\to Y\).
+Exactness of Hom applied to the cone triangle for \(s\) factors \(f-g\)
+through a map \(u:X\to C(s)[-1]\). The projection
+\(C(u)[-1]\to X\) is a quasi-isomorphism since \(C(s)[-1]\)
+is acyclic, and precomposing with it kills \(f-g\). This is the
+cancellation condition. The left calculus follows from the same
+argument with cones in place of the shifted cones, equivalently by
+applying the right calculus to the opposite category with cochain
+degrees reversed.
+
+For clarity, these conditions give the roof description as follows.
+Identities and composites of denominators are denominators. For two
+successive roofs, apply the lifting square to the middle numerator and
+the next denominator. Precompose the first denominator and the last
+numerator with the two maps of that square. Any two choices of square
+can first be brought to a common denominator by a further lifting
+square, then made equal where necessary by cancellation. The same
+construction compares a composite after either input is refined.
+For transitivity of common refinement, the maps to the middle roof
+are quasi-isomorphisms by two-out-of-three. Refine those two maps by a
+lifting square. To check associativity, write the roofs as
+\(X_{i-1}\xleftarrow{s_i}T_i\xrightarrow{f_i}X_i\) for \(i=1,2,3\).
+Choose \(W\to T_1,T_2\) and \(P\to T_2,T_3\) to lift \(f_1\)
+against \(s_2\) and \(f_2\) against \(s_3\), respectively.
+The maps \(W\to T_1\) and \(P\to T_2\) are denominators.
+Next lift \(W\to T_2\) against \(P\to T_2\), obtaining a
+denominator \(Q\to W\) and a map \(Q\to P\).
+Then \(Q\to W\to T_1\to X_0\) and \(Q\to P\to T_3\to X_3\)
+give the same composite roof for both bracketings, by the three
+commuting lifting squares. The image of a
+roof under a functor \(F\) inverting quasi-isomorphisms has to be
+\(F(f)F(s)^{-1}\). That formula is unchanged under refinement and
+respects composition. This proves the localization property and
+the claimed equality criterion. See also
+\cite[Tags 05R2, 05R6, and 05RU]{stacks-derived} and
+\cite[Sections 6.1--6.2]{yekutieli}.
+\end{proof}
+
+\begin{theorem}[The derived category]\label{res:D03}
+Let \(\mathsf D(\mathcal A)\) be \(\mathsf K(\mathcal A)\) localized at
+quasi-isomorphisms. It is the Verdier quotient by the acyclic
+subcategory. The quotient \(Q\) preserves distinguished triangles,
+and the \(H^n\) factor through \(Q\). A morphism in \(\mathsf D(\mathcal A)\)
+is invertible exactly when all its cohomology maps are invertible.
+\end{theorem}
+\begin{proof}
+Write \(W\) for the quasi-isomorphisms. They are the maps whose cones
+are acyclic, by Proposition~\ref{res:D01}. Both fraction calculi
+hold by Theorem~\ref{res:D02}. This also gives an additive
+localization: for two roofs with the same ends take a common
+denominator and add the numerators. Any two such choices have a
+common further refinement, which proves independence and the
+abelian group identities. When precomposing two roofs written
+over the same denominator, use the same lifting square for both.
+When postcomposing, lift the two numerators against the next
+denominator over a common refinement. The sum of their lifts
+is a lift of the sum. This proves bilinearity and makes \(Q\)
+additive. The zero object stays zero: in a roof out of zero the
+denominator has acyclic source and is refined by the map from zero,
+and in a roof to zero the numerator is already zero. The biproduct
+equations therefore pass to the localization.
+
+For each integer \(m\), the shift \([m]\) preserves \(W\) by
+Proposition~\ref{res:K01}. Shifting both arrows of a roof thus
+gives the descended shifts, with the same addition law on
+shift indices and with the canonical commutation isomorphisms
+for \(Q\). Consider now a morphism between distinguished triangles
+in \(\mathsf K(\mathcal A)\) whose first two components belong to
+\(W\). In each degree the five consecutive groups or objects
+\[
+ H^n(X)\longrightarrow H^n(Y)\longrightarrow H^n(Z)
+       \longrightarrow H^{n+1}(X)\longrightarrow H^{n+1}(Y)
+\]
+form an exact row by Proposition~\ref{res:K06}, where \(X,Y,Z\)
+are the first three objects of the triangle. Naturality gives a
+map of exact rows. Both maps on the left and both maps on the
+right are isomorphisms, so the five-term comparison just proved
+makes the middle map an isomorphism. The third component therefore belongs to \(W\).
+In particular a commuting square on the first arrows with vertical
+maps in \(W\) extends by Theorem~\ref{res:K05} to a morphism of
+triangles all of whose components lie in \(W\).
+
+These give \texttt{IsCompatibleWithTriangulation} for \(W\) in the
+fixed Mathlib localization theorem. The required left calculus is
+Theorem~\ref{res:D02}. The zero objects and preadditive structures
+are those described above. Shifts are additive before localization
+by the termwise addition of maps, and afterward because shifting
+the sum of roofs over a common denominator gives the sum of their
+shifts over the shifted denominator. The commutation of \(Q\) with
+these shifts was constructed above. These are the inputs to
+\cite[\texttt{CategoryTheory.Triangulated.Localization}]{mathlib-triangulated}.
+Its declarations \texttt{pretriangulated},
+\texttt{isTriangulated\_functor}, and \texttt{isTriangulated}
+give the pretriangulated structure with distinguished triangles
+isomorphic to images of distinguished triangles, exactness of
+\(Q\), and the octahedral axiom, respectively. The starting
+category satisfies the triangulated axioms by Theorem~\ref{res:K05}.
+
+To verify the Verdier universal property, an exact functor
+inverting \(W\) kills each acyclic object, since \(0\to C\) lies
+in \(W\) for acyclic \(C\). Conversely let an exact functor \(F\)
+kill all acyclic objects. For \(s\in W\) it sends the cone
+triangle of \(s\) to a distinguished triangle whose third
+object is zero. The first arrow of such a triangle is an
+isomorphism. Indeed, representable Hom is exact by rotation and
+the morphism axiom. For the latter, if \(A\to B\to C\) is the start
+of a distinguished triangle and a map \(T\to B\) composes to zero
+in \(C\), extend the square from \(T\to0\) to \(B\to C\) to a
+map from \(T\to0\to T[1]\xrightarrow{-1}T[1]\) to the rotated
+triangle. The commuting last square, shifted back, gives the
+factorization through \(A\). Successive arrow composites vanish
+by comparing an identity triangle to the given triangle and then
+rotating. With third term zero, the resulting Hom sequence makes
+the first arrow an isomorphism on every representable Hom, hence
+an isomorphism. Consequently \(F\) inverts \(W\).
+
+By Theorem~\ref{res:D02}, \(F\) factors uniquely through \(Q\), by
+sending a roof \((s,f)\) to \(F(f)F(s)^{-1}\). The descended
+functor is additive by the common-denominator sum. The natural
+commutation with shifts of \(F\) is natural on roofs as well:
+the squares for \(F(s)\) may be inverted, then composed with the
+squares for \(F(f)\). It takes a triangle isomorphic to an image
+under \(Q\) to a triangle isomorphic to the corresponding image
+under \(F\). Thus the factorization is exact. Its shift data and
+the factorizations of natural transformations are determined by
+their restrictions to \(Q\): every object is represented in
+\(\mathsf K(\mathcal A)\) and naturality on inverses of denominators
+follows from naturality on denominators. This proves the exact
+universal property for the acyclic subcategory.
+
+Each \(H^n\) inverts quasi-isomorphisms by definition. The localization
+property in Theorem~\ref{res:D02} makes its factorization unique.
+If a roof represents a map \(w\) with all \(H^n(w)\) invertible, then
+the numerator has all \(H^n\) invertible because the denominator does.
+Both arrows of the roof therefore become isomorphisms, so \(w\) is an
+isomorphism. The converse is functorial. In particular an object of
+the derived category with all cohomology zero is zero.
+The long cohomology sequence from Proposition~\ref{res:K06} descends
+to derived triangles by their description as localized cone rows.
+\end{proof}
+
+\begin{theorem}[Triangles from short exact sequences]\label{res:D04}
+Every short exact sequence \(0\to A\xrightarrow{u}B\xrightarrow{v}C
+\to0\) of complexes induces a distinguished triangle
+\[
+ A\xrightarrow{u}B\xrightarrow{v}C
+   \xrightarrow{\delta}A[1]\quad\text{in }\mathsf D(\mathcal A).
+\]
+The construction is natural in maps of short exact sequences and its
+cohomology sequence has the usual connecting homomorphisms.
+\end{theorem}
+\begin{proof}
+The map \(q:C(u)\to C\), \(q(b,a)=v(b)\), is a chain epimorphism
+whose kernel is \(C(1_A)\). Thus \(Q(q)\) is invertible. Transporting
+the cone triangle defines
+\(\delta=Q(-p_u)Q(q)^{-1}\). A map of short exact sequences induces
+the strict cone map from Proposition~\ref{res:K02} with \(s=0\).
+It intertwines \(q\) and \(-p_u\). Inverting \(Q(q)\) proves
+naturality without any choice of a splitting. A cone cocycle
+\((b,a)\) projecting to the given cohomology class satisfies
+\(d_Bb=-u(a)\). The ordinary boundary is the class of \(-a\),
+which is induced by \(-p_u\). In an abelian category this is the
+same diagram chase in the pullback of \(Z^n(C)\) along \(B^n\to
+C^n\). The resulting boundary kills boundaries and is given by
+\(-p_u\) after the isomorphism on cohomology.
+See \cite[Tag 0152]{stacks-derived}.
+\end{proof}
+
+\section{Good truncation and bounded models}
+
+\begin{proposition}[Good truncation]\label{res:D05}
+For any cochain complex \(K\), the good truncations are
+\[
+\begin{aligned}
+ (\tau_{\le n}K)^i&=
+  \begin{cases}
+   K^i & i<n,\\
+   \ker(d_K^n) & i=n,\\
+   0 & i>n,
+  \end{cases}
+&
+ (\tau_{\ge n}K)^i&=
+  \begin{cases}
+   0 & i<n,\\
+   \operatorname{coker}(d_K^{n-1}) & i=n,\\
+   K^i & i>n.
+  \end{cases}
+\end{aligned}
+\]
+They preserve cohomology on the indicated side and give zero on
+the other side. They induce functors on the derived category and a
+natural triangle
+\[
+ \tau_{\le n}K\longrightarrow K\longrightarrow\tau_{\ge n+1}K
+       \longrightarrow(\tau_{\le n}K)[1].
+\]
+Shifts commute with these constructions, with the truncation indices
+translated by the shift.
+\end{proposition}
+\begin{proof}
+The incoming differential at the kernel factors through it by
+\(d^2=0\). The outgoing differential at the cokernel descends for
+the same reason. The edge cohomology groups are both the relevant
+cycle object modulo the preceding boundaries. The other cohomology
+degrees follow from the displayed complexes. Chain maps between
+the truncations inherit the induced kernel or cokernel map. For the
+upper truncation a homotopy restricts at \(n\) to the source cycles,
+where the discarded term \(s^{n+1}d^n\) vanishes. For the lower
+truncation the degree \(n+1\) homotopy component is followed by the
+projection onto the target cokernel in degree \(n\). This projection
+kills the discarded term \(d^{n-1}s^n\) in degree \(n\). These observations make truncation
+functorial on the homotopy category. The cohomology computation
+shows it preserves quasi-isomorphisms, so it descends to
+\(\mathsf D(\mathcal A)\).
+
+The quotient \(K/\tau_{\le n}K\) maps naturally to
+\(\tau_{\ge n+1}K\). Its kernel is the two-term identity complex on
+\(\operatorname{im}d_K^n\) in degrees \(n,n+1\), since
+\(K^n/\ker(d_K^n)=\operatorname{im}d_K^n\). Thus the quotient map
+is a quasi-isomorphism, and Theorem~\ref{res:D04} supplies the
+triangle. Naturality on complexes passes to the localization because
+the triangle maps commute with quasi-isomorphisms and therefore
+with their inverses. For example
+\((\tau_{\le n}K)[m]\cong\tau_{\le n-m}(K[m])\), since multiplying
+the differential by a sign does not change its kernel. The same
+calculation applies to the lower truncation.
+See \cite[Tags 05RV and 08J5]{stacks-derived} and
+\cite[Definition 7.3.6]{yekutieli}.
+\end{proof}
+
+\begin{proposition}[Strict models and bounded localizations]\label{res:D06}
+Write \(\mathsf K^+,\mathsf K^-,\mathsf K^b\) for the homotopy
+categories with the indicated bounds on terms, and
+\(\mathsf D^+,\mathsf D^-,\mathsf D^b\) for the full subcategories
+with the corresponding bounds on cohomology. Localization of each
+\(\mathsf K^\ast\) at its quasi-isomorphisms gives an equivalence
+with \(\mathsf D^\ast\), for \(\ast\in\{+,-,b\}\). These are
+triangulated subcategories of the corresponding unbounded
+categories.
+\end{proposition}
+\begin{proof}
+Upper and lower cohomological bounds are represented by strict ones
+by Proposition~\ref{res:D05}. If both bounds are imposed, the two
+truncations can be applied consecutively. Their bounds are preserved
+under shifts and any cone of a map between objects with the chosen
+type of bounds again has those bounds (for cohomological bounds,
+use the long exact sequence). Hence the full subcategories are
+triangulated. The fraction constructions of Theorem~\ref{res:D02}
+use only shifts, cones and finite sums, and thus give fraction
+calculi on the corresponding bounded homotopy categories.
+
+For fullness, take a right roof between strict bounded representatives
+\(X,Y\), with middle complex \(T\). If \(X,Y\) are zero below \(a\),
+then \(H^i(T)=0\) for \(i<a\) because the denominator is a
+quasi-isomorphism. Both maps from \(T\) factor through
+\(T\to\tau_{\ge a}T\), since their degree \(a\) maps kill
+\(\operatorname{im}d_T^{a-1}\). That quotient is a quasi-isomorphism.
+If \(X,Y\) are zero above \(b\), precompose both maps by
+\(\tau_{\le b}T\to T\), a quasi-isomorphism by the upper bound on
+\(H^i(T)\). With both bounds apply both operations. For faithfulness,
+an equality of two right roofs has a common refinement in
+\(\mathsf K\). The strict bounded complexes that occur in the two
+roofs admit a common bound of the relevant type. Truncating the
+refining complex exactly as above keeps the comparison maps and
+the quasi-isomorphisms. Equality of composites in the homotopy
+category is preserved for upper truncation by precomposition.
+For lower truncation a homotopy into a complex zero below \(a\)
+descends, because its degree \(a\) component has zero target and
+its degree \(a+1\) component has unchanged source. Thus the
+truncated refinement proves equality in the bounded localization.
+See \cite[Tags 05RQ, 05RV, and 05RW]{stacks-derived}.
+\end{proof}
+
+\begin{theorem}[The standard heart]\label{res:D07}
+The cohomological subcategories
+\[
+ \mathsf D^{\le0}=\{K:H^i(K)=0\text{ for }i>0\},\qquad
+ \mathsf D^{\ge0}=\{K:H^i(K)=0\text{ for }i<0\}
+\]
+form the standard \(t\)-structure. Its heart, their intersection, is
+equivalent to \(\mathcal A\) by the stalk embedding \(A\mapsto A[0]\)
+and the inverse \(H^0\).
+\end{theorem}
+\begin{proof}
+Proposition~\ref{res:K01} gives
+\(\mathsf D^{\le0}[1]\subseteq\mathsf D^{\le0}\) and
+\(\mathsf D^{\ge0}[-1]\subseteq\mathsf D^{\ge0}\). For
+orthogonality take \(X\in\mathsf D^{\le0}\), \(Y\in\mathsf D^{\ge1}\).
+Represent \(X,Y\) by complexes supported in degrees at most \(0\)
+and at least \(1\), respectively. In a right roof \(X\leftarrow T
+\to Y\), replace \(T\) by \(\tau_{\le0}T\) without changing the
+roof, since \(X\leftarrow T\) is a quasi-isomorphism. The map from
+this new middle term to \(Y\) is zero degree by degree. This proves
+\(\operatorname{Hom}(X,Y)=0\). The truncation triangle for \(n=0\)
+provides the remaining \(t\)-structure axiom.
+
+If an object has cohomology only in degree zero, apply the two good
+truncations at zero to obtain its stalk \(H^0(K)[0]\) with canonical
+quasi-isomorphisms in the truncation zigzag. Between two stalks
+the roof computation of Proposition~\ref{res:D06} can be made
+with both bounds zero. Its denominator is then an ordinary
+isomorphism in \(\mathcal A\). Thus the stalk embedding is fully
+faithful and \(H^0\) is its inverse on the heart. In particular for
+stalks \(A,B\) and \(m<0\) we have
+\(\operatorname{Hom}_{\mathsf D}(A[0],B[m])=0\) by orthogonality.
+See \cite[Tags 05RV and 06XS]{stacks-derived} and
+\cite[Proposition 7.5.1]{yekutieli}.
+\end{proof}
+
+\begin{proposition}[The bounded Postnikov tower and splitting]
+\label{res:D08}
+An object \(K\) with bounded cohomology is obtained from its cohomology
+stalks by the finite tower of triangles
+\[
+ \tau_{\le i-1}K\longrightarrow\tau_{\le i}K
+ \longrightarrow H^i(K)[-i]\xrightarrow{\epsilon_i}
+            (\tau_{\le i-1}K)[1].
+\]
+If
+\(\operatorname{Ext}^{\,i-j+1}_{\mathcal A}(H^i(K),H^j(K))=0\)
+for all \(j<i\), then \(K\) is isomorphic to
+\(\bigoplus_i H^i(K)[-i]\). Here Ext denotes the shifted Hom groups
+between stalks. The comparison with resolutions is given in
+Theorem~\ref{res:R11}. The splitting obtained from these
+vanishing conditions need not be canonical.
+\end{proposition}
+\begin{proof}
+Apply Proposition~\ref{res:D05} to \(\tau_{\le i}K\) and cut at
+\(i-1\). The upper and lower pieces are the stated truncation and
+the degree \(i\) cohomology stalk. The tower begins at zero and
+ends at \(K\) because of the cohomological bounds. The maps
+\(\epsilon_i\) record the attachments.
+
+Inductively suppose \(\tau_{\le i-1}K\cong
+\bigoplus_{j<i} H^j(K)[-j]\). The components of \(\epsilon_i\) then
+belong to the groups
+\[
+ \operatorname{Hom}_{\mathsf D(\mathcal A)}
+       \bigl(H^i(K)[0],H^j(K)[\,i-j+1\,]\bigr).
+\]
+The direct sum is finite and all these groups vanish by assumption.
+Thus \(\epsilon_i=0\). Applying
+\(\operatorname{Hom}_{\mathsf D}(H^i(K)[-i],-)\) to the triangle
+gives a section of the map to \(H^i(K)[-i]\). Indeed the Hom
+exactness in Proposition~\ref{res:K06} holds in any triangulated
+category by the triangle axioms. If \(g u=0\) for \(g\) the
+second arrow, the square from the zero triangle
+\(T\to 0\to T[1]\xrightarrow{-1}T[1]\) to the rotated target
+triangle lifts by the morphism axiom, and unshifting the lift
+expresses \(u\) through the first arrow. The contravariant case
+is dual. The section and the inclusion from the preceding
+truncation now give a map from their direct sum to
+\(\tau_{\le i}K\). It is an isomorphism on cohomology by the long
+exact sequence, so it is an isomorphism by
+Theorem~\ref{res:D03}. The section is a choice, which proves the
+claim without assigning a preferred splitting.
+Compare \cite[Tags 08J5, 0GM4, and 0EWX]{stacks-derived}.
+\end{proof}

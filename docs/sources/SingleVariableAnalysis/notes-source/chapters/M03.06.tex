@@ -1,0 +1,140 @@
+\chapter{Taylor formulas and controlled remainders}
+A Taylor polynomial is a finite object. Its approximation properties depend on local differentiability, and a conclusion about an infinite Taylor series needs additional information. We retain separately the Peano, real single-point, and integral versions of the remainder.
+\SourceRef{Zorich I, 5.3.3 and 6.3.3; Apostol, 5.12, PDF 126--127 (printed 113--114)}
+
+\KEntry{K03.06.taylor_polynomial}{The Taylor polynomial}
+\begin{definition}
+When the derivatives through order $n$ exist at $a$, define
+\[ T_n(f,a)(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k,\qquad R_n(f,a)(x)=f(x)-T_n(f,a)(x). \]
+Here $0!=1$ and $f^{(0)}=f$. This polynomial is the unique polynomial of degree at most $n$ whose derivatives of orders $0,\ldots,n$ agree with those of $f$ at $a$. A first nonzero coefficient describes a finite vanishing order; the definition makes no infinite-series assertion.
+\end{definition}
+\begin{proof}[Proof of uniqueness]
+For a polynomial expressed in powers of $x-a$, differentiating $k$ times and evaluating at $a$ gives $k!$ times its $k$th coefficient. Thus all coefficients are forced to be the displayed ones, which also proves existence of this matching polynomial.
+\end{proof}
+
+\KEntry{K03.06.peano}{Taylor's theorem with Peano remainder}
+\begin{theorem}
+Let $n\ge1$. Suppose $f:I\to\K$ has derivatives through order $n-1$ in a neighborhood of interior $a$, and $f^{(n-1)}$ is differentiable at $a$. Then
+\[ f(a+h)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}h^k+o(h^n). \]
+For $n=0$, the corresponding assertion $f(a+h)=f(a)+o(1)$ is exactly continuity at $a$.
+\end{theorem}
+\begin{proof}
+Subtract $T_n(f,a)$ and write the result as $r$. Then $r^{(j)}(a)=0$ for $0\le j\le n$, and differentiability of $r^{(n-1)}$ at $a$ gives $r^{(n-1)}(a+t)=o(t)$. Given $\eps>0$, choose $\delta>0$ with $|r^{(n-1)}(a+t)|\le\eps|t|$ for $|t|<\delta$. If $n=1$ this is the conclusion. For each lower order, apply the norm mean inequality on the segment from $a$ to $a+t$. If already $|r^{(j+1)}(a+s)|\le\eps|s|^{n-j-1}$ for all sufficiently small $s$, then on that segment its derivative is bounded by $\eps|t|^{n-j-1}$; since $r^{(j)}(a)=0$,
+\[ |r^{(j)}(a+t)|\le\eps|t|^{n-j}. \]
+The required endpoint continuity follows from the locally existing lower derivatives, and at the highest step from differentiability of $r^{(n-1)}$ at $a$. Descending to $j=0$ gives $|r(a+h)|\le\eps|h|^n$. Arbitrarily small $\eps$ proves the result for both scalar targets without assuming the nth derivative exists away from $a$.
+\end{proof}
+
+\KEntry{K03.06.lagrange}{The real Lagrange remainder}
+\begin{theorem}
+Let $a\ne x$, $n\ge0$, and let real $f$ belong to $C^n$ on the closed segment joining $a$ and $x$, with $f^{(n+1)}$ existing at every interior point. Endpoint derivatives in $T_n$ use their continuous one-sided values. Then some $\xi$ strictly between $a$ and $x$ satisfies
+\[ R_n(f,a)(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}. \]
+\end{theorem}
+\begin{proof}
+Define
+\[ F(t)=f(t)-T_n(f,a)(t)-\frac{R_n(f,a)(x)}{(x-a)^{n+1}}(t-a)^{n+1}. \]
+It has $F(a)=F(x)=0$ and $F^{(j)}(a)=0$ for $1\le j\le n$. Rolle gives a zero $c_1$ of $F'$ strictly between the endpoints. Apply Rolle to $F'$ between $a$ and $c_1$, using its zero value at $a$, to get a zero of $F''$; repeat. After $n+1$ applications there is an interior $\xi$ with $F^{(n+1)}(\xi)=0$. All intermediate functions are continuous on the relevant closed segments by $C^n$, and differentiable inside at the required orders. Substituting the derivative of $(t-a)^{n+1}$ gives the formula. The same nested-segment argument works when $x<a$ and retains the signed power $(x-a)^{n+1}$. For $n=0$ it is just the mean value theorem. As its $n=0$ case already fails for complex values by \KRef{K03.05.lagrange}, this single-point equality has no unrestricted complex version.
+\end{proof}
+
+\KEntry{K03.06.cauchy}{The real Cauchy remainder}
+\begin{theorem}
+Under the real hypotheses of \KRef{K03.06.lagrange}, an interior $\xi$ also gives
+\[ R_n(f,a)(x)=\frac{f^{(n+1)}(\xi)}{n!}(x-\xi)^n(x-a). \]
+The point $\xi$ may differ from the Lagrange point.
+\end{theorem}
+\begin{proof}
+With $x$ fixed define $F(t)=\sum_{k=0}^n f^{(k)}(t)(x-t)^k/k!$ on the joining segment. It is continuous there, differentiable inside, and the product rule makes all neighboring terms cancel:
+\[ F'(t)=\frac{f^{(n+1)}(t)}{n!}(x-t)^n. \]
+Since $F(x)=f(x)$ and $F(a)=T_n(f,a)(x)$, the real mean value theorem gives $F(x)-F(a)=F'(\xi)(x-a)$. This theorem on the unordered segment yields exactly the displayed signed formula also for $x<a$; no orientation sign has been omitted.
+\end{proof}
+
+\KEntry{K03.06.integral}{The integral remainder}
+\begin{theorem}
+If $f\in C^{n+1}([u,v];\K)$ and $a,x\in[u,v]$, then
+\[ R_n(f,a)(x)=\frac1{n!}\int_a^x(x-t)^n f^{(n+1)}(t)\dd t. \]
+The integral is oriented, so the formula includes $x<a$ and $x=a$.
+\end{theorem}
+\begin{proof}
+This result uses the later integral construction and the proved formulas \KRef{K03.09.ftc_second} and \KRef{K03.09.parts}; those results do not require Taylor's theorem. For $n=0$ it is the fundamental theorem, $\int_a^x f'=f(x)-f(a)$. For $n\ge1$ integration by parts gives
+\[ \frac1{n!}\int_a^x(x-t)^n f^{(n+1)}(t)\dd t
+=-\frac{(x-a)^n f^{(n)}(a)}{n!}+\frac1{(n-1)!}\int_a^x(x-t)^{n-1}f^{(n)}(t)\dd t. \]
+Induction subtracts precisely the remaining Taylor coefficients. All integrands are continuous, so their proper integrals exist. Both integration by parts and the fundamental theorem hold with oriented endpoints; for complex values they hold in each real component, giving the stated scalar identity.
+\end{proof}
+
+\KEntry{K03.06.uniform_bound}{Uniform error estimates}
+\begin{theorem}
+Let $f:[u,v]\to\K$ belong to $C^n$ and have an interior $(n+1)$st derivative satisfying $|f^{(n+1)}(t)|\le M_n$. Then for all $a,x\in[u,v]$,
+\[ |f(x)-T_n(f,a)(x)|\le\frac{M_n}{(n+1)!}|x-a|^{n+1}. \]
+The constant is uniform on this interval for the stated order $n$; it may depend on $n$.
+\end{theorem}
+\begin{proof}
+The real case follows from the Lagrange remainder. For complex values fix $a,x$ and let $z=R_n(f,a)(x)$. If $z=0$ there is nothing to prove. Otherwise put $w=z/|z|$ and apply the real remainder theorem to $F(t)=\RePart(\bar w f(t))$. Its Taylor remainder at $x$ is $|z|$, and $|F^{(n+1)}|\le|f^{(n+1)}|\le M_n$. This gives the same bound. In the stronger $C^{n+1}$ situation it also follows from the integral remainder and
+\[ \left|\int_a^x(x-t)^n f^{(n+1)}(t)\dd t\right|\le M_n\int_{\min(a,x)}^{\max(a,x)}|x-t|^n\dd t=\frac{M_n|x-a|^{n+1}}{n+1}. \]
+An assertion that remainders tend to zero as $n\to\infty$ needs control of the entire sequence $M_n$, not merely finiteness of each member.
+\end{proof}
+
+\KEntry{K03.06.leading_term}{The first nonzero derivative}
+\begin{proposition}
+Under the order-$n$ Peano hypotheses, $n\ge1$, suppose $f^{(j)}(a)=0$ for $1\le j<n$ and $c=f^{(n)}(a)/n!\ne0$. Then
+\[ f(a+h)-f(a)=ch^n+o(h^n)\sim ch^n\quad(h\to0,\ h\ne0). \]
+For real $f$, even $n$ and $c>0$ give a strict local minimum, even $n$ and $c<0$ a strict local maximum, and odd $n$ gives neither.
+\end{proposition}
+\begin{proof}
+All lower Taylor coefficients vanish, so the expansion is the Peano formula. Division by $ch^n\ne0$ gives a ratio tending to one, proving the equivalence. For real values the remainder is smaller than $|c||h|^n/2$ for sufficiently small nonzero $h$. The increment therefore has the sign of $ch^n$. For even $n$ this sign is fixed on both sides; for odd $n$ the two sides have opposite signs.
+\end{proof}
+
+\KEntry{K03.06.composition}{Finite composition and division}
+\begin{proposition}
+Let $n\ge1$. Suppose $u(h)=b+P(h)+o(h^n)$ with a polynomial $P$ having zero constant term, and $F(b+z)=Q(z)+o(z^n)$ for a polynomial $Q$ of degree at most $n$ on the relevant scalar domain, with $F(b)=Q(0)$. Then $F(u(h))$ is obtained by substituting $P(h)$ into $Q$, discarding powers of $h$ above $n$, and adding $o(h^n)$. Likewise finite expansions through order $n$ can be divided whenever the denominator has a nonzero constant term. If all supplied remainders have the stronger next-order big-O bounds, the resulting remainder is $O(h^{n+1})$.
+\end{proposition}
+\begin{proof}
+Put $z=u(h)-b=O(h)$. The outer remainder satisfies $|r(z)|\le\eps|z|^n$ for small $z$, with $r(0)=0$, hence is $o(h^n)$. For each fixed power, the factorization $z^j-P^j=(z-P)\sum_{\ell=0}^{j-1}z^\ell P^{j-1-\ell}$ shows that replacement by $P$ changes it by $o(h^n)$, since all factors are bounded near zero. Discarded polynomial terms of degrees at least $n+1$ are $O(h^{n+1})=o(h^n)$.
+For division write the denominator $q(h)=q_0(1+v(h))$ with $q_0\ne0$ and $v(h)=O(h)$. Eventually $|v|<1/2$, and the exact finite identity
+\[ \frac1{1+v}=\sum_{j=0}^n(-v)^j+\frac{(-v)^{n+1}}{1+v} \]
+has final term $O(h^{n+1})$. Substitute the known polynomial for $v$ by the first argument, then multiply by the numerator and truncate. For next-order big-O input errors, every factorization error above is $O(h^{n+1})$, and the outer error is bounded by a constant times $|z|^{n+1}=O(h^{n+1})$; the stronger conclusion follows. These are finite polynomial operations, requiring no convergence theorem for an infinite series.
+\end{proof}
+
+\KEntry{K03.06.reference_expansions}{Reference finite expansions}
+\begin{proposition}
+For each fixed $n\ge0$, as $x\to0$,
+\begin{align*}
+\exp x&=\sum_{k=0}^n\frac{x^k}{k!}+O(x^{n+1}),\\
+\log(1+x)&=\sum_{k=1}^n\frac{(-1)^{k+1}}k x^k+O(x^{n+1}),\\
+(1+x)^\alpha&=\sum_{k=0}^n\frac{\alpha(\alpha-1)\cdots(\alpha-k+1)}{k!}x^k+O(x^{n+1})\quad(\alpha\in\R).
+\end{align*}
+The empty product is one. The logarithm and power formulas use $x>-1$. For fixed $m\ge0$,
+\begin{align*}
+\sin x&=\sum_{j=0}^m\frac{(-1)^jx^{2j+1}}{(2j+1)!}+O(x^{2m+3}),\\
+\cos x&=\sum_{j=0}^m\frac{(-1)^jx^{2j}}{(2j)!}+O(x^{2m+2}).
+\end{align*}
+All constants can be chosen uniformly for $|x|\le r$ with a fixed $0<r<1$ for logarithms and powers, and any fixed $0<r<\infty$ for exponential and trigonometric functions.
+\end{proposition}
+\begin{proof}
+Use the established derivatives from \KRef{K03.07.elementary_derivatives} and \KRef{K03.04.elementary_rules}. Repeated differentiation gives $\exp^{(k)}(0)=1$; for $k\ge1$, $(\log(1+x))^{(k)}=(-1)^{k-1}(k-1)!/(1+x)^k$; and the kth derivative of $(1+x)^\alpha$ is the falling product $\alpha(\alpha-1)\cdots(\alpha-k+1)(1+x)^{\alpha-k}$, proved by induction. On $[-r,r]$, the corresponding $(n+1)$st derivatives are bounded by $e^r$, $n!/(1-r)^{n+1}$, and
+\[ |\alpha(\alpha-1)\cdots(\alpha-n)|\max\{(1-r)^{\alpha-n-1},(1+r)^{\alpha-n-1}\}, \]
+respectively. The uniform remainder theorem gives the displayed orders (for the logarithm, even the explicit bound $|x|^{n+1}/((n+1)(1-r)^{n+1})$). Derivatives of sine and cosine cycle, their values at zero alternate as shown, and their moduli are at most one. Apply Taylor to degree $2m+2$ for sine, whose even coefficients vanish, and to degree $2m+1$ for cosine, whose odd coefficients vanish. This gives their stated next nonzero orders and uniform bounds. These finite applications occur after construction of the elementary functions and do not construct them circularly from Taylor's theorem.
+\end{proof}
+
+\KEntry{K03.06.smooth_flat}{A smooth function with every derivative zero at the origin}
+\begin{construction}
+Define $f(0)=0$ and $f(x)=\exp(-1/x^2)$ for $x\ne0$. Then $f\in C^\infty(\R)$, $f^{(j)}(0)=0$ for every integer $j\ge0$, and $f(x)>0$ whenever $x\ne0$.
+\end{construction}
+\begin{proof}
+For any integer $N\ge0$,
+\[ |x|^{-N}\exp(-1/x^2)\longrightarrow0\quad(x\to0), \]
+because with $y=1/x^2\to\infty$ it is $y^{N/2}\exp(-y)$, which tends to zero by the proved growth estimate \KRef{K03.02.growth_scale}. Away from zero induction gives
+\[ f^{(j)}(x)=P_j(1/x)\exp(-1/x^2),\quad P_0(t)=1,\quad P_{j+1}(t)=-t^2P_j'(t)+2t^3P_j(t). \]
+The recurrence follows from the product and chain rules, since $(1/x)'=-1/x^2$ and $(-1/x^2)'=2/x^3$. Each $P_j$ is a polynomial. The decay estimate makes this expression tend to zero, so extending it by zero is continuous. Its difference quotient at zero is $P_j(1/h)\exp(-1/h^2)/h$, which also tends to zero by the same estimate. Inductively the extended jth expression is differentiable at zero with derivative zero, and its derivative away from zero is the next expression. Thus all derivatives exist and are continuous everywhere, with their stated values. Positivity away from zero is positivity of the exponential.
+\end{proof}
+
+\KEntry{K03.06.smooth_not_analytic}{Smoothness does not imply equality with the Taylor series}
+\begin{example}
+For the preceding function every Taylor coefficient at zero is zero. Its Taylor series is therefore the zero series, which converges for every real input; nevertheless it differs from $f$ at every nonzero input. Hence there is no neighborhood of zero on which $f$ equals its Taylor series. In the terminology of \KRef{K03.13.analyticity}, $f$ is smooth but not real analytic at zero. This example satisfies both existence of all derivatives and convergence of the Taylor series, while equality with the function still fails. A finite Peano estimate at every order therefore cannot, by itself, justify identifying a function with an infinite series: its neighborhood and constants may depend on the chosen order.
+\end{example}
+
+\KEntry{K03.06.error_notation}{Comparing error orders}
+\begin{proposition}
+As $h\to0$, $O(h^{n+1})\subset o(h^n)$ for every integer $n\ge0$, but the inclusion is strict.
+\end{proposition}
+\begin{proof}
+If $|r(h)|\le C|h|^{n+1}$ eventually, then $|r(h)|/|h|^n\le C|h|\to0$ for $h\ne0$. For $0<\alpha<1$, the function $r(h)=|h|^{n+\alpha}$ instead satisfies $|r(h)|/|h|^n=|h|^\alpha\to0$, but $|r(h)|/|h|^{n+1}=|h|^{\alpha-1}\to\infty$. It is little-o of the nth power and not big-O of the next integer power. These assertions retain absolute values for odd powers and two-sided approaches.
+\end{proof}

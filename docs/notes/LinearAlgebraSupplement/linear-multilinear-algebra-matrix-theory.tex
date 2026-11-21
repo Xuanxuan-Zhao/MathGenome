@@ -1,0 +1,144 @@
+\documentclass[11pt,oneside,openany]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{hyperref}
+
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome ALG-01 core supplement}
+\fi
+
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\definecolor{palegreen}{HTML}{F0F4EF}
+\hypersetup{
+  colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Linear and Multilinear Algebra and Matrix Theory},
+  pdfsubject={Symmetric powers over commutative rings and Witt theory over fields},
+  pdfauthor={MathGenome},bookmarksnumbered=true
+}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{9pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{4pt}{24pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries\color{ink}}{\thesubsection}{0.7em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\fancypagestyle{plain}{%
+  \fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \thispdfpagelabel{Cover}
+  \begin{flushleft}
+    \vspace*{0.65in}
+    {\large\scshape\color{deepgreen}MathGenome\par}
+    \vspace{0.32in}
+    {\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+    \vspace{0.45in}
+    {\color{ink}\fontsize{34}{39}\selectfont\bfseries
+       Linear and Multilinear\par Algebra and Matrix Theory\par}
+    \vspace{0.30in}
+    {\color{deepgreen}\Large
+       Symmetric Powers and Witt Theory\par}
+    \vfill
+    {\large Supplementary lecture notes\par}
+    \vspace{0.12in}
+    {\normalsize ALG-01 \enspace\textperiodcentered\enspace MathGenome v0.22.0 reference baseline\par}
+    \vspace*{0.48in}
+  \end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+{\small\tableofcontents}
+\input{chapters/01-coverage}
+
+\mainmatter
+\input{chapters/02-symmetric}
+\input{chapters/03-witt}
+
+\backmatter
+{\raggedright
+\begin{thebibliography}{9}
+
+\bibitem{d05}
+MathGenome, \emph{Linear Algebra and Foundational Higher Algebra}
+(D05), revised notes archived in MathGenome v0.22.0.
+Statement keys start with \texttt{K05}.
+
+\bibitem{p103}
+MathGenome, \emph{Algebra Core} (P1-03), Chapters~1--2, archived
+in MathGenome v0.22.0.
+
+\bibitem{d07}
+MathGenome, \emph{Abstract Algebra} (D07), revised notes,
+Chapter~16, archived in MathGenome v0.22.0.
+
+\bibitem{p206}
+MathGenome, \emph{Foundations of Numerical Analysis} (P2-06),
+Chapter~5, archived in MathGenome v0.22.0.
+
+\bibitem{d16}
+MathGenome, \emph{Functional Analysis} (D16), the Hilbert-space
+polar decomposition, archived in MathGenome v0.22.0.
+
+\bibitem{commalg}
+MathGenome, \emph{Advanced Commutative Algebra}, Results RK-03
+and RK-04, archived in MathGenome v0.22.0.
+
+\bibitem{stacks-sym}
+The Stacks Project Authors,
+\href{https://stacks.math.columbia.edu/tag/00DM}{\emph{Tensor algebra}},
+Section~10.13, and
+\href{https://stacks.math.columbia.edu/tag/01CI}{\emph{Symmetric and exterior powers}},
+Lemma~17.21.3.
+
+\bibitem{conrad-sym}
+B. Conrad, \href{https://math.stanford.edu/~conrad/210APage/handouts/symmwedgebasis.pdf}{\emph{Bases of Symmetric and Exterior Powers}},
+Math~210A, Stanford University, Theorem~1.2 and its proof.
+
+\bibitem{witt-source}
+R. Elman, N. Karpenko, and A. Merkurjev,
+\href{https://www.math.ucla.edu/~rse/book/Kniga.pdf}{\emph{The Algebraic and Geometric Theory of Quadratic Forms}},
+AMS Colloquium Publications 56, 2008, Chapter~II, Sections~7--8.
+
+\bibitem{lam-witt}
+T. Y. Lam,
+\href{https://doi.org/10.1090/gsm/067}{\emph{Introduction to Quadratic Forms over Fields}},
+Graduate Studies in Mathematics 67, AMS, 2005, Chapter~I, Section~4.
+
+\end{thebibliography}
+}
+\end{document}

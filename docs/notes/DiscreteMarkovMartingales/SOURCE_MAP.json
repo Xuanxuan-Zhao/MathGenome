@@ -1,0 +1,1099 @@
+{
+  "bibliography_first_physical_page": 37,
+  "cross_document_dependencies": {
+    "condexp": {
+      "locators": [
+        {
+          "anchor": "thm:prob-condexp-laws",
+          "line": 79
+        },
+        {
+          "anchor": "thm:prob-condexp-pullout",
+          "line": 111
+        },
+        {
+          "anchor": "thm:prob-cond-jensen",
+          "line": 151
+        },
+        {
+          "anchor": "thm:prob-condexp-contraction",
+          "line": 198
+        },
+        {
+          "anchor": "thm:prob-condexp-ui",
+          "line": 273
+        }
+      ],
+      "published_notes": {
+        "file": "provenance/components/ProbabilityFoundations/delivery/paper.tex",
+        "historical_fragment": "parts/p03.tex"
+      },
+      "sha256": "c8572524aa9cdd75e94ea8813299a9131f84eb88cb5712104d70cdd56feb25a6"
+    },
+    "extension": {
+      "locators": [
+        {
+          "anchor": "thm:ionescu-tulcea",
+          "line": 7
+        }
+      ],
+      "published_notes": {
+        "file": "provenance/components/ProbabilityFoundations/delivery/paper.tex",
+        "historical_fragment": "parts/p05.tex"
+      },
+      "sha256": "e2cb2bbf96625ebe5e16bd9d3e28b5bd87be096589f12f26c07bad3defafcd12"
+    },
+    "hoeffding": {
+      "locators": [
+        {
+          "anchor": "p205:W25",
+          "line": 233
+        }
+      ],
+      "published_notes": {
+        "file": "provenance/components/ExtremalOptimization/delivery/paper.tex",
+        "historical_fragment": "parts/ch05.tex"
+      },
+      "sha256": "b13dec0e499392d403368c3a291a65ac05be17fd5cb8a002d85e998ed26d16da"
+    },
+    "measure_integration": {
+      "locators": [
+        {
+          "anchor": "d11:02:extension-existence-uniqueness",
+          "line": 627
+        },
+        {
+          "anchor": "d11:17:vitali-lp-convergence",
+          "line": 5274
+        }
+      ],
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "e1ad062335888a0e88780deeeffb60bd202c09ce500601e3441d321c3201a8ef"
+    },
+    "slln": {
+      "locators": [
+        {
+          "anchor": "thm:etemadi",
+          "line": 70
+        }
+      ],
+      "published_notes": {
+        "file": "provenance/components/ProbabilityFoundations/delivery/paper.tex",
+        "historical_fragment": "parts/p08.tex"
+      },
+      "sha256": "0dfad79a11768ff39f70b7d9186b1fc4c686bdbc8ec925cc7c3a930d295ad7e4"
+    },
+    "spectrum": {
+      "locators": [
+        {
+          "anchor": "13.real_spectral",
+          "line": 2217
+        }
+      ],
+      "path": "docs/sources/d05-notes.tex",
+      "sha256": "81d4236233819191fe3c01375bf1199bf121789beb6fafc957955548e5396a1f"
+    },
+    "ui_comparison": {
+      "locators": [
+        {
+          "anchor": "thm:prob-ui",
+          "line": 238
+        },
+        {
+          "anchor": "thm:prob-vitali",
+          "line": 275
+        }
+      ],
+      "published_notes": {
+        "file": "provenance/components/ProbabilityFoundations/delivery/paper.tex",
+        "historical_fragment": "parts/p01.tex"
+      },
+      "sha256": "be6ac4140f50dce846b2a9a48bce01c4947b5c913d02323b2b13670b27dfe6d8"
+    }
+  },
+  "group_count": 43,
+  "groups": [
+    {
+      "canonical_latex_line": 90,
+      "contract": "PRO-04-C01.R01",
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W01",
+      "local_proof_count": 1,
+      "pdf_destination": "section.1.1",
+      "pdf_physical_page": 5,
+      "proof_route": "Conditional-expectation laws give the two-time formulation by induction and the centered-sum and terminal-variable examples.",
+      "reference_locators": "Williams §§10.1–10.6，Kallenberg 第 9 章，P1-05，M1",
+      "section": "1.1",
+      "section_title_latex": "Filtrations, adaptation, and martingales",
+      "source_file": "parts/ch01.tex",
+      "source_line": 3,
+      "supplement_number": null,
+      "uses_groups": []
+    },
+    {
+      "canonical_latex_line": 149,
+      "contract": "PRO-04-C01.R02",
+      "cross_document_dependencies": [],
+      "id": "W02",
+      "local_proof_count": 1,
+      "pdf_destination": "section.1.2",
+      "pdf_physical_page": 5,
+      "proof_route": "Test-event layers characterize the stopped sigma-algebra, inclusion and stopped-value measurability.",
+      "reference_locators": "Williams §10.9、附录 A14.1–A14.3，M1",
+      "section": "1.2",
+      "section_title_latex": "Stopping times and the past at a stopping time",
+      "source_file": "parts/ch01.tex",
+      "source_line": 62,
+      "supplement_number": null,
+      "uses_groups": [
+        "W01"
+      ]
+    },
+    {
+      "canonical_latex_line": 211,
+      "contract": null,
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W03",
+      "local_proof_count": 2,
+      "pdf_destination": "section.1.3",
+      "pdf_physical_page": 6,
+      "proof_route": "Conditional increments give the predictable transform and the unique finite-time Doob decomposition.",
+      "reference_locators": "Williams §§10.6–10.8、12.11，Kallenberg 引理 9.10",
+      "section": "1.3",
+      "section_title_latex": "Predictable transforms and the Doob decomposition",
+      "source_file": "parts/ch01.tex",
+      "source_line": 124,
+      "supplement_number": 1,
+      "uses_groups": [
+        "W01"
+      ]
+    },
+    {
+      "canonical_latex_line": 267,
+      "contract": "PRO-04-C01.R03",
+      "cross_document_dependencies": [],
+      "id": "W04",
+      "local_proof_count": 1,
+      "pdf_destination": "section.1.4",
+      "pdf_physical_page": 7,
+      "proof_route": "Stopping replaces each increment by a predictable indicator times the original increment.",
+      "reference_locators": "Williams §10.9，M1",
+      "section": "1.4",
+      "section_title_latex": "Stopping preserves martingales and submartingales",
+      "source_file": "parts/ch01.tex",
+      "source_line": 180,
+      "supplement_number": null,
+      "uses_groups": [
+        "W02",
+        "W03"
+      ]
+    },
+    {
+      "canonical_latex_line": 285,
+      "contract": "PRO-03-C01.R01",
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W05",
+      "local_proof_count": 1,
+      "pdf_destination": "section.2.1",
+      "pdf_physical_page": 8,
+      "proof_route": "Use nonnegative summation and conditioning to identify transition powers and marginal laws.",
+      "reference_locators": "Norris §§1.1–1.2，Durrett §5.2，M2",
+      "section": "2.1",
+      "section_title_latex": "Countable chains and transition powers",
+      "source_file": "parts/ch02.tex",
+      "source_line": 3,
+      "supplement_number": null,
+      "uses_groups": [
+        "W01"
+      ]
+    },
+    {
+      "canonical_latex_line": 346,
+      "contract": "PRO-03-C01.R02",
+      "cross_document_dependencies": [
+        "extension"
+      ],
+      "id": "W06",
+      "local_proof_count": 1,
+      "pdf_destination": "section.2.2",
+      "pdf_physical_page": 9,
+      "proof_route": "Specialize the path-measure extension to the last-coordinate kernel and verify cylinder masses, uniqueness and the semigroup law.",
+      "reference_locators": "Norris §1.1，P1-05，M2",
+      "section": "2.2",
+      "section_title_latex": "Path laws and Chapman--Kolmogorov",
+      "source_file": "parts/ch02.tex",
+      "source_line": 64,
+      "supplement_number": null,
+      "uses_groups": [
+        "W05"
+      ]
+    },
+    {
+      "canonical_latex_line": 400,
+      "contract": "PRO-03-C01.R03",
+      "cross_document_dependencies": [],
+      "id": "W07",
+      "local_proof_count": 1,
+      "pdf_destination": "section.2.3",
+      "pdf_physical_page": 9,
+      "proof_route": "Prove the deterministic-time future law on prefix cylinders, then sum over finite stopping-time layers.",
+      "reference_locators": "Norris §§1.4、6.5，Durrett §5.2，P1-05",
+      "section": "2.3",
+      "section_title_latex": "The strong Markov property",
+      "source_file": "parts/ch02.tex",
+      "source_line": 118,
+      "supplement_number": null,
+      "uses_groups": [
+        "W02",
+        "W05",
+        "W06"
+      ]
+    },
+    {
+      "canonical_latex_line": 457,
+      "contract": null,
+      "cross_document_dependencies": [],
+      "id": "W08",
+      "local_proof_count": 1,
+      "pdf_destination": "section.2.4",
+      "pdf_physical_page": 10,
+      "proof_route": "Iterate finite-horizon first-hit recursions and take monotone limits to obtain the minimal solutions.",
+      "reference_locators": "Norris §1.3",
+      "section": "2.4",
+      "section_title_latex": "First-hit equations and minimal solutions",
+      "source_file": "parts/ch02.tex",
+      "source_line": 175,
+      "supplement_number": 2,
+      "uses_groups": [
+        "W05",
+        "W06"
+      ]
+    },
+    {
+      "canonical_latex_line": 492,
+      "contract": "PRO-03-C02.R01",
+      "cross_document_dependencies": [],
+      "id": "W09",
+      "local_proof_count": 0,
+      "pdf_destination": "section.2.5",
+      "pdf_physical_page": 10,
+      "proof_route": "Fix communication, positive return, recurrence, transience and positive-recurrence conventions.",
+      "reference_locators": "Norris §1.5",
+      "section": "2.5",
+      "section_title_latex": "Communication, return, and recurrence",
+      "source_file": "parts/ch02.tex",
+      "source_line": 210,
+      "supplement_number": null,
+      "uses_groups": [
+        "W05",
+        "W07"
+      ]
+    },
+    {
+      "canonical_latex_line": 513,
+      "contract": "PRO-03-C02.R02",
+      "cross_document_dependencies": [],
+      "id": "W10",
+      "local_proof_count": 1,
+      "pdf_destination": "section.2.6",
+      "pdf_physical_page": 11,
+      "proof_route": "Successive returns give geometric visit tails. Tonelli identifies their sum with the Green series.",
+      "reference_locators": "Norris §1.5，Durrett §5.3",
+      "section": "2.6",
+      "section_title_latex": "The Green series and number of visits",
+      "source_file": "parts/ch02.tex",
+      "source_line": 231,
+      "supplement_number": null,
+      "uses_groups": [
+        "W07",
+        "W09"
+      ]
+    },
+    {
+      "canonical_latex_line": 551,
+      "contract": null,
+      "cross_document_dependencies": [],
+      "id": "W11",
+      "local_proof_count": 1,
+      "pdf_destination": "section.2.7",
+      "pdf_physical_page": 11,
+      "proof_route": "Partition by the first return and sum the renewal convolution at a discount factor.",
+      "reference_locators": "Norris §1.5、Durrett §5.3 的首次回返分解",
+      "section": "2.7",
+      "section_title_latex": "First-return convolution and generating functions",
+      "source_file": "parts/ch02.tex",
+      "source_line": 269,
+      "supplement_number": 3,
+      "uses_groups": [
+        "W07",
+        "W09",
+        "W10"
+      ]
+    },
+    {
+      "canonical_latex_line": 581,
+      "contract": "PRO-03-C02.R03",
+      "cross_document_dependencies": [],
+      "id": "W12",
+      "local_proof_count": 1,
+      "pdf_destination": "section.2.8",
+      "pdf_physical_page": 11,
+      "proof_route": "Compare Green series and return lengths along connecting paths. Repeated trials give hitting and finite-state recurrence bounds.",
+      "reference_locators": "Norris §§1.2、1.5、1.7–1.8",
+      "section": "2.8",
+      "section_title_latex": "Classes, periods, and recurrence",
+      "source_file": "parts/ch02.tex",
+      "source_line": 299,
+      "supplement_number": null,
+      "uses_groups": [
+        "W08",
+        "W09",
+        "W10"
+      ]
+    },
+    {
+      "canonical_latex_line": 654,
+      "contract": "PRO-03-C03.R01",
+      "cross_document_dependencies": [],
+      "id": "W13",
+      "local_proof_count": 1,
+      "pdf_destination": "section.3.1",
+      "pdf_physical_page": 13,
+      "proof_route": "Use detailed balance and path-product cancellation to compute the stationary reverse kernel.",
+      "reference_locators": "Norris §§1.7、1.9，Durrett §5.5",
+      "section": "3.1",
+      "section_title_latex": "Stationarity, detailed balance, and reversal",
+      "source_file": "parts/ch03.tex",
+      "source_line": 3,
+      "supplement_number": null,
+      "uses_groups": [
+        "W05",
+        "W06"
+      ]
+    },
+    {
+      "canonical_latex_line": 706,
+      "contract": "PRO-03-C03.R02",
+      "cross_document_dependencies": [],
+      "id": "W14",
+      "local_proof_count": 1,
+      "pdf_destination": "section.3.2",
+      "pdf_physical_page": 13,
+      "proof_route": "Construct the occupation measure of one excursion and prove minimality and uniqueness coordinatewise.",
+      "reference_locators": "Norris §1.7，Durrett §5.5",
+      "section": "3.2",
+      "section_title_latex": "Stationarity and mean return times",
+      "source_file": "parts/ch03.tex",
+      "source_line": 55,
+      "supplement_number": null,
+      "uses_groups": [
+        "W07",
+        "W10",
+        "W12",
+        "W13"
+      ]
+    },
+    {
+      "canonical_latex_line": 803,
+      "contract": null,
+      "cross_document_dependencies": [],
+      "id": "W15",
+      "local_proof_count": 1,
+      "pdf_destination": "section.3.3",
+      "pdf_physical_page": 15,
+      "proof_route": "Compute total variation from signed masses and common mass. Use couplings and finite truncation.",
+      "reference_locators": "Norris §1.8，Durrett §5.6",
+      "section": "3.3",
+      "section_title_latex": "Total variation and coupling",
+      "source_file": "parts/ch03.tex",
+      "source_line": 152,
+      "supplement_number": 4,
+      "uses_groups": []
+    },
+    {
+      "canonical_latex_line": 852,
+      "contract": "PRO-03-C03.R03",
+      "cross_document_dependencies": [],
+      "id": "W16",
+      "local_proof_count": 1,
+      "pdf_destination": "section.3.4",
+      "pdf_physical_page": 15,
+      "proof_route": "Use return-length residues, a recurrent independent product chain and a coalescing coupling.",
+      "reference_locators": "Norris §1.8，Durrett §5.6",
+      "section": "3.4",
+      "section_title_latex": "Aperiodic convergence in total variation",
+      "source_file": "parts/ch03.tex",
+      "source_line": 201,
+      "supplement_number": null,
+      "uses_groups": [
+        "W06",
+        "W12",
+        "W14",
+        "W15"
+      ]
+    },
+    {
+      "canonical_latex_line": 921,
+      "contract": "PRO-03-C03.R04",
+      "cross_document_dependencies": [],
+      "id": "W17",
+      "local_proof_count": 1,
+      "pdf_destination": "section.3.5",
+      "pdf_physical_page": 16,
+      "proof_route": "Apply aperiodic convergence on each cyclic class and average the residues.",
+      "reference_locators": "Norris §§1.7–1.8，Durrett §5.6 式 (5.6.1)",
+      "section": "3.5",
+      "section_title_latex": "Cyclic classes and Ces\\`aro convergence",
+      "source_file": "parts/ch03.tex",
+      "source_line": 270,
+      "supplement_number": null,
+      "uses_groups": [
+        "W12",
+        "W14",
+        "W15",
+        "W16"
+      ]
+    },
+    {
+      "canonical_latex_line": 988,
+      "contract": null,
+      "cross_document_dependencies": [],
+      "id": "W18",
+      "local_proof_count": 1,
+      "pdf_destination": "section.3.6",
+      "pdf_physical_page": 17,
+      "proof_route": "Minorize a positive transition power by its common row mass and contract block by block.",
+      "reference_locators": "Durrett §5.6 的耦合框架，本稿直接推导",
+      "section": "3.6",
+      "section_title_latex": "Geometric mixing for finite chains",
+      "source_file": "parts/ch03.tex",
+      "source_line": 337,
+      "supplement_number": 5,
+      "uses_groups": [
+        "W15",
+        "W16"
+      ]
+    },
+    {
+      "canonical_latex_line": 1029,
+      "contract": null,
+      "cross_document_dependencies": [
+        "slln"
+      ],
+      "id": "W19",
+      "local_proof_count": 1,
+      "pdf_destination": "section.3.7",
+      "pdf_physical_page": 17,
+      "proof_route": "Use iid return excursions and the strong law for lengths and rewards, including the unfinished excursion.",
+      "reference_locators": "Norris §1.10，Durrett §5.7，P1-05",
+      "section": "3.7",
+      "section_title_latex": "Excursions and the trajectory ergodic theorem",
+      "source_file": "parts/ch03.tex",
+      "source_line": 378,
+      "supplement_number": 6,
+      "uses_groups": [
+        "W07",
+        "W10",
+        "W12",
+        "W14"
+      ]
+    },
+    {
+      "canonical_latex_line": 1114,
+      "contract": "PRO-03-C04.R01",
+      "cross_document_dependencies": [],
+      "id": "W20",
+      "local_proof_count": 1,
+      "pdf_destination": "section.4.1",
+      "pdf_physical_page": 19,
+      "proof_route": "Solve the harmonic difference equation with absorbing endpoints and verify finiteness of absorption.",
+      "reference_locators": "Norris §§1.3、1.6，Durrett §4.8.1",
+      "section": "4.1",
+      "section_title_latex": "Gambler's ruin",
+      "source_file": "parts/ch04.tex",
+      "source_line": 10,
+      "supplement_number": null,
+      "uses_groups": [
+        "W05",
+        "W08"
+      ]
+    },
+    {
+      "canonical_latex_line": 1161,
+      "contract": null,
+      "cross_document_dependencies": [],
+      "id": "W21",
+      "local_proof_count": 1,
+      "pdf_destination": "section.4.2",
+      "pdf_physical_page": 20,
+      "proof_route": "Solve the mean-time Poisson equation and use expanding intervals to obtain line-hitting probabilities and the return-time distinction.",
+      "reference_locators": "Norris §§1.3、1.6，Durrett §4.8.1",
+      "section": "4.2",
+      "section_title_latex": "Absorption times and biased walks",
+      "source_file": "parts/ch04.tex",
+      "source_line": 57,
+      "supplement_number": 7,
+      "uses_groups": [
+        "W08",
+        "W20"
+      ]
+    },
+    {
+      "canonical_latex_line": 1225,
+      "contract": "PRO-03-C04.R02",
+      "cross_document_dependencies": [],
+      "id": "W22",
+      "local_proof_count": 2,
+      "pdf_destination": "section.4.3",
+      "pdf_physical_page": 20,
+      "proof_route": "Extract return probabilities by torus orthogonality and estimate the Green integral near its two singularities.",
+      "reference_locators": "Durrett 定理 5.4.4，Norris §1.6，Knill §3.8",
+      "section": "4.3",
+      "section_title_latex": "Pólya's lattice recurrence criterion",
+      "source_file": "parts/ch04.tex",
+      "source_line": 121,
+      "supplement_number": null,
+      "uses_groups": [
+        "W10"
+      ]
+    },
+    {
+      "canonical_latex_line": 1316,
+      "contract": null,
+      "cross_document_dependencies": [],
+      "id": "W23",
+      "local_proof_count": 1,
+      "pdf_destination": "section.4.4",
+      "pdf_physical_page": 21,
+      "proof_route": "Split the Fourier integral into two Gaussian neighborhoods and an exponentially small complement.",
+      "reference_locators": "Durrett §5.4 的回返估计，Knill §3.8，本稿补齐局部估计",
+      "section": "4.4",
+      "section_title_latex": "Even return probabilities",
+      "source_file": "parts/ch04.tex",
+      "source_line": 212,
+      "supplement_number": 8,
+      "uses_groups": [
+        "W22"
+      ]
+    },
+    {
+      "canonical_latex_line": 1361,
+      "contract": "PRO-03-C04.R03",
+      "cross_document_dependencies": [],
+      "id": "W24",
+      "local_proof_count": 1,
+      "pdf_destination": "section.4.5",
+      "pdf_physical_page": 22,
+      "proof_route": "Derive stationarity from edge balance and determine the period using closed walks.",
+      "reference_locators": "Norris §§1.8–1.9，Durrett §§5.5–5.6",
+      "section": "4.5",
+      "section_title_latex": "Walks on finite connected graphs",
+      "source_file": "parts/ch04.tex",
+      "source_line": 257,
+      "supplement_number": null,
+      "uses_groups": [
+        "W12",
+        "W13",
+        "W16",
+        "W17"
+      ]
+    },
+    {
+      "canonical_latex_line": 1423,
+      "contract": null,
+      "cross_document_dependencies": [
+        "spectrum"
+      ],
+      "id": "W25",
+      "local_proof_count": 3,
+      "pdf_destination": "section.4.6",
+      "pdf_physical_page": 23,
+      "proof_route": "Use reversible density evolution and the spectral theorem. The Dirichlet minimizer follows from the energy expansion and first hitting.",
+      "reference_locators": "Norris §§1.3、1.9，D05 谱定理，有限情形的本稿推导",
+      "section": "4.6",
+      "section_title_latex": "Dirichlet forms and spectral mixing",
+      "source_file": "parts/ch04.tex",
+      "source_line": 319,
+      "supplement_number": 9,
+      "uses_groups": [
+        "W08",
+        "W13",
+        "W15",
+        "W24"
+      ]
+    },
+    {
+      "canonical_latex_line": 1551,
+      "contract": "PRO-04-C02.R01",
+      "cross_document_dependencies": [],
+      "id": "W26",
+      "local_proof_count": 1,
+      "pdf_destination": "section.5.1",
+      "pdf_physical_page": 25,
+      "proof_route": "Partition the maximal event by the first threshold hit and test the submartingale relation.",
+      "reference_locators": "Williams §14.6，Kallenberg 定理 9.16，Durrett 定理 4.4.2，M3",
+      "section": "5.1",
+      "section_title_latex": "The finite-horizon weak maximal inequality",
+      "source_file": "parts/ch05.tex",
+      "source_line": 3,
+      "supplement_number": null,
+      "uses_groups": [
+        "W01"
+      ]
+    },
+    {
+      "canonical_latex_line": 1581,
+      "contract": "PRO-04-C02.R02",
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W27",
+      "local_proof_count": 1,
+      "pdf_destination": "section.5.2",
+      "pdf_physical_page": 25,
+      "proof_route": "Integrate the localized tail bound and use conditional Jensen and Hölder.",
+      "reference_locators": "Williams §14.11，Kallenberg 定理 9.17，Durrett 定理 4.4.4，P1-05",
+      "section": "5.2",
+      "section_title_latex": "The finite-horizon strong maximal inequality",
+      "source_file": "parts/ch05.tex",
+      "source_line": 33,
+      "supplement_number": null,
+      "uses_groups": [
+        "W01",
+        "W26"
+      ]
+    },
+    {
+      "canonical_latex_line": 1618,
+      "contract": "PRO-04-C02.R03",
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W28",
+      "local_proof_count": 2,
+      "pdf_destination": "section.5.3",
+      "pdf_physical_page": 26,
+      "proof_route": "Use the greedy count and nonnegative predictable trading gains on the shifted positive part.",
+      "reference_locators": "Williams §§11.2–11.5，Kallenberg 引理 9.18，M3",
+      "section": "5.3",
+      "section_title_latex": "The finite-horizon upcrossing inequality",
+      "source_file": "parts/ch05.tex",
+      "source_line": 70,
+      "supplement_number": null,
+      "uses_groups": [
+        "W01",
+        "W03"
+      ]
+    },
+    {
+      "canonical_latex_line": 1683,
+      "contract": null,
+      "cross_document_dependencies": [
+        "hoeffding",
+        "condexp"
+      ],
+      "id": "W29",
+      "local_proof_count": 1,
+      "pdf_destination": "section.5.4",
+      "pdf_physical_page": 26,
+      "proof_route": "Take the conditional chord bound, estimate the log MGF of the two-point law and iterate.",
+      "reference_locators": "P1-05 条件期望，P2-05 有界变量 log-MGF，单步条件桥接在本稿证明",
+      "section": "5.4",
+      "section_title_latex": "Azuma--Hoeffding for bounded increments",
+      "source_file": "parts/ch05.tex",
+      "source_line": 135,
+      "supplement_number": 10,
+      "uses_groups": [
+        "W01"
+      ]
+    },
+    {
+      "canonical_latex_line": 1741,
+      "contract": "PRO-04-C03.R01",
+      "cross_document_dependencies": [],
+      "id": "W30",
+      "local_proof_count": 1,
+      "pdf_destination": "section.6.1",
+      "pdf_physical_page": 28,
+      "proof_route": "Define uniform integrability by norm tails and use the doubling martingale to separate it from L1 boundedness.",
+      "reference_locators": "Williams §§13.1–13.7，Kallenberg 引理 5.10，P1-05，M4",
+      "section": "6.1",
+      "section_title_latex": "Uniform integrability and the doubling example",
+      "source_file": "parts/ch06.tex",
+      "source_line": 12,
+      "supplement_number": null,
+      "uses_groups": [
+        "W01"
+      ]
+    },
+    {
+      "canonical_latex_line": 1785,
+      "contract": "PRO-04-C03.R02",
+      "cross_document_dependencies": [],
+      "id": "W31",
+      "local_proof_count": 1,
+      "pdf_destination": "section.6.2",
+      "pdf_physical_page": 28,
+      "proof_route": "Use small-set control and construct a superlinear convex function from summable tail thresholds.",
+      "reference_locators": "Williams 第 13 章，Shorack 第 3 章第 5 节定理 5.6，P1-05，M4",
+      "section": "6.2",
+      "section_title_latex": "Small sets and the de la Vallée--Poussin criterion",
+      "source_file": "parts/ch06.tex",
+      "source_line": 56,
+      "supplement_number": null,
+      "uses_groups": [
+        "W30"
+      ]
+    },
+    {
+      "canonical_latex_line": 1852,
+      "contract": "PRO-04-C03.R03",
+      "cross_document_dependencies": [
+        "ui_comparison",
+        "measure_integration"
+      ],
+      "id": "W32",
+      "local_proof_count": 1,
+      "pdf_destination": "section.6.3",
+      "pdf_physical_page": 29,
+      "proof_route": "Construct a measurable Banach-valued limit, apply Fatou and split the norm error into small and large parts.",
+      "reference_locators": "Kallenberg 定理 5.12，P1-05，D11，M4",
+      "section": "6.3",
+      "section_title_latex": "Vitali convergence in mean",
+      "source_file": "parts/ch06.tex",
+      "source_line": 123,
+      "supplement_number": null,
+      "uses_groups": [
+        "W30",
+        "W31"
+      ]
+    },
+    {
+      "canonical_latex_line": 1916,
+      "contract": "PRO-04-C04.R01",
+      "cross_document_dependencies": [],
+      "id": "W33",
+      "local_proof_count": 1,
+      "pdf_destination": "section.6.4",
+      "pdf_physical_page": 30,
+      "proof_route": "Use countably many rational bands, finite expected upcrossing counts and Fatou for the finite limit.",
+      "reference_locators": "Williams §§11.2–11.5，Kallenberg 定理 9.19，M5",
+      "section": "6.4",
+      "section_title_latex": "Almost-sure convergence from a first-moment bound",
+      "source_file": "parts/ch06.tex",
+      "source_line": 187,
+      "supplement_number": null,
+      "uses_groups": [
+        "W28",
+        "W30"
+      ]
+    },
+    {
+      "canonical_latex_line": 1963,
+      "contract": "PRO-04-C04.R02",
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W34",
+      "local_proof_count": 1,
+      "pdf_destination": "section.6.5",
+      "pdf_physical_page": 30,
+      "proof_route": "Apply Vitali and take limits using conditional expectation. Test arbitrary sub-sigma-algebras for the converse.",
+      "reference_locators": "Williams §§13.1–14.2，Kallenberg 定理 9.22，P1-05，M5",
+      "section": "6.5",
+      "section_title_latex": "Uniform integrability and terminal closure",
+      "source_file": "parts/ch06.tex",
+      "source_line": 234,
+      "supplement_number": null,
+      "uses_groups": [
+        "W31",
+        "W32",
+        "W33"
+      ]
+    },
+    {
+      "canonical_latex_line": 2019,
+      "contract": "PRO-04-C04.R03",
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W35",
+      "local_proof_count": 1,
+      "pdf_destination": "section.6.6",
+      "pdf_physical_page": 31,
+      "proof_route": "Combine uniform integrability with the maximal Lp envelope and dominated convergence.",
+      "reference_locators": "Williams 第 14 章，Kallenberg 推论 9.23，M5",
+      "section": "6.6",
+      "section_title_latex": "Higher moments and norm convergence",
+      "source_file": "parts/ch06.tex",
+      "source_line": 290,
+      "supplement_number": null,
+      "uses_groups": [
+        "W27",
+        "W30",
+        "W34"
+      ]
+    },
+    {
+      "canonical_latex_line": 2051,
+      "contract": null,
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W36",
+      "local_proof_count": 1,
+      "pdf_destination": "section.6.7",
+      "pdf_physical_page": 31,
+      "proof_route": "Identify the limit by testing on the increasing union of the sigma-algebras and applying uniqueness.",
+      "reference_locators": "Williams §§14.1–14.2，P1-05，M5",
+      "section": "6.7",
+      "section_title_latex": "Lévy's upward theorem",
+      "source_file": "parts/ch06.tex",
+      "source_line": 322,
+      "supplement_number": 11,
+      "uses_groups": [
+        "W34",
+        "W35"
+      ]
+    },
+    {
+      "canonical_latex_line": 2085,
+      "contract": null,
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W37",
+      "local_proof_count": 1,
+      "pdf_destination": "section.6.8",
+      "pdf_physical_page": 32,
+      "proof_route": "Use finite reversed martingales and the crossing-pair bijection, then test on the intersection.",
+      "reference_locators": "Williams §14.4，Durrett §4.7，P1-05",
+      "section": "6.8",
+      "section_title_latex": "Lévy's downward theorem",
+      "source_file": "parts/ch06.tex",
+      "source_line": 356,
+      "supplement_number": 12,
+      "uses_groups": [
+        "W28",
+        "W32",
+        "W33",
+        "W34"
+      ]
+    },
+    {
+      "canonical_latex_line": 2139,
+      "contract": null,
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W38",
+      "local_proof_count": 1,
+      "pdf_destination": "section.6.9",
+      "pdf_physical_page": 32,
+      "proof_route": "Test the later increment against the earlier one to obtain orthogonality and sum the second moments.",
+      "reference_locators": "Williams §12.1，P1-05",
+      "section": "6.9",
+      "section_title_latex": "Orthogonal martingale increments",
+      "source_file": "parts/ch06.tex",
+      "source_line": 410,
+      "supplement_number": 13,
+      "uses_groups": [
+        "W01",
+        "W35"
+      ]
+    },
+    {
+      "canonical_latex_line": 2180,
+      "contract": "PRO-04-C05.R01",
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W39",
+      "local_proof_count": 1,
+      "pdf_destination": "section.7.1",
+      "pdf_physical_page": 34,
+      "proof_route": "Expand stopped increments and test the inequality on events in the earlier stopped sigma-algebra.",
+      "reference_locators": "Williams §10.10、附录 A14，Kallenberg 定理 9.12，Durrett 定理 4.4.1，M3",
+      "section": "7.1",
+      "section_title_latex": "The conditional inequality for bounded stopping times",
+      "source_file": "parts/ch07.tex",
+      "source_line": 3,
+      "supplement_number": null,
+      "uses_groups": [
+        "W01",
+        "W02"
+      ]
+    },
+    {
+      "canonical_latex_line": 2219,
+      "contract": "PRO-04-C05.R02",
+      "cross_document_dependencies": [],
+      "id": "W40",
+      "local_proof_count": 1,
+      "pdf_destination": "section.7.2",
+      "pdf_physical_page": 34,
+      "proof_route": "Apply the bounded inequality to both signs of a martingale.",
+      "reference_locators": "Williams 附录 A14，Durrett 定理 4.4.1，M3",
+      "section": "7.2",
+      "section_title_latex": "The conditional identity for bounded stopping times",
+      "source_file": "parts/ch07.tex",
+      "source_line": 42,
+      "supplement_number": null,
+      "uses_groups": [
+        "W39"
+      ]
+    },
+    {
+      "canonical_latex_line": 2238,
+      "contract": "PRO-04-C05.R03",
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W41",
+      "local_proof_count": 1,
+      "pdf_destination": "section.7.3",
+      "pdf_physical_page": 35,
+      "proof_route": "Identify stopped values as conditional expectations of the terminal variable by finite and infinite layers.",
+      "reference_locators": "Williams 附录 A14，Durrett §§4.4、4.8，P1-05",
+      "section": "7.3",
+      "section_title_latex": "Unbounded optional sampling for uniformly integrable martingales",
+      "source_file": "parts/ch07.tex",
+      "source_line": 61,
+      "supplement_number": null,
+      "uses_groups": [
+        "W02",
+        "W34"
+      ]
+    },
+    {
+      "canonical_latex_line": 2284,
+      "contract": "PRO-04-C05.R04",
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W42",
+      "local_proof_count": 1,
+      "pdf_destination": "section.7.4",
+      "pdf_physical_page": 35,
+      "proof_route": "Bound the absolute sum of stopped increments by the mean stopping time and take a dominated limit.",
+      "reference_locators": "Durrett §§4.4、4.8，P1-05",
+      "section": "7.4",
+      "section_title_latex": "Integrable stopping times and controlled increments",
+      "source_file": "parts/ch07.tex",
+      "source_line": 107,
+      "supplement_number": null,
+      "uses_groups": [
+        "W21",
+        "W30",
+        "W40"
+      ]
+    },
+    {
+      "canonical_latex_line": 2339,
+      "contract": null,
+      "cross_document_dependencies": [
+        "condexp"
+      ],
+      "id": "W43",
+      "local_proof_count": 1,
+      "pdf_destination": "section.7.5",
+      "pdf_physical_page": 36,
+      "proof_route": "Apply controlled-increment sampling to the centered sum and use orthogonality for the stopped second moment.",
+      "reference_locators": "Williams 的截停与 \\(L^2\\) 正交，Durrett §4.8，本稿推导",
+      "section": "7.5",
+      "section_title_latex": "Wald's first and second identities",
+      "source_file": "parts/ch07.tex",
+      "source_line": 162,
+      "supplement_number": 14,
+      "uses_groups": [
+        "W38",
+        "W42"
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "7dbea0c0f9d8345532ced2ff8644e2222a31f8f7ca1c61e3c924fc39aebd5994"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "7779c9e00c2ae1962d9c36c420cb920043e6b50c4a05965eb90a5d4266ffeef5"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "6dffcfc6a36e530575dfa20db3275003d1827810dd3b41dc11322349401aa4dc"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "0a60b27adc0a387664e0a93db4d87b816a5f499500aa1dae741f5411c4a8b6c5"
+    },
+    {
+      "path": "P2-07_Discrete_Markov_Chains_and_Martingales_Notes.tex",
+      "sha256": "423924752f45384fdbc3ba55e8fd0b328ba8ab04ab9b4c6ab0dd887f437591ea"
+    },
+    {
+      "path": "parts/ch01.tex",
+      "sha256": "481ba52cfe12f00977460ece581721e05e0420aa416be3eeadb2da34c7798aea"
+    },
+    {
+      "path": "parts/ch02.tex",
+      "sha256": "fd28c456b45a51e7ca23ecc04a033bacdc248004d2c39a586203a48189fd0d96"
+    },
+    {
+      "path": "parts/ch03.tex",
+      "sha256": "b1f5dd7f0844e49021020cbc9955bd7564ab2255e9c99d0458afc0b95d4aca05"
+    },
+    {
+      "path": "parts/ch04.tex",
+      "sha256": "c8e9aff5b42063cce08a6d9df1450ab7cd846b61ec09e41f9fb0ec7b3b2c21f4"
+    },
+    {
+      "path": "parts/ch05.tex",
+      "sha256": "2ee0fa6949c1592e4566f0808ff3c6130984d8c2b232fbf5306c9c2defa12fb8"
+    },
+    {
+      "path": "parts/ch06.tex",
+      "sha256": "08bc67c1a928522216c3ffe11563c02db54b1eee9ccbc6ae10d2c77558048e99"
+    },
+    {
+      "path": "parts/ch07.tex",
+      "sha256": "fa85f28adbf3c1420b8c02d06e02e2c2227ec6874cb4823ff8805eeed9d8d1d8"
+    }
+  ],
+  "latex": {
+    "path": "P2-07_Discrete_Markov_Chains_and_Martingales_Notes.tex",
+    "sha256": "4d32cf2bcc6276554e4d78c9beac68f56bb39729faf48aebdb1660d61402c0eb"
+  },
+  "mathematical_body_pages": 32,
+  "notes_language": "en",
+  "numbered_environment_counts": {
+    "definition": 4,
+    "example": 3,
+    "lemma": 2,
+    "proposition": 8,
+    "theorem": 37
+  },
+  "original_contract_count": 29,
+  "package": "P2-07",
+  "pdf": {
+    "path": "P2-07_Discrete_Markov_Chains_and_Martingales_Notes.pdf",
+    "sha256": "fd2d9889e0bfb56a2a3826acb6b5e71aaf5ff51039aa591316704836d00be933"
+  },
+  "pdf_physical_pages": 37,
+  "pins": {
+    "lean": "4.35.0",
+    "mathgenome": "v0.8.0",
+    "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+  },
+  "proof_environment_count": 47,
+  "supplement_count": 14,
+  "title": "Discrete Markov Chains and Martingales",
+  "verified_internal_pdf_links": 186
+}

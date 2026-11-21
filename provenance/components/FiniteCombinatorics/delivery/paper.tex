@@ -1,0 +1,3467 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks,bookmarksopen,bookmarksnumbered]{hyperref}
+\hypersetup{pdftitle={Finite Combinatorics: Enumeration, Graphs, and Matroids},
+  pdfauthor={MathGenome},pdfsubject={Unified mathematical notes, P2-04}}
+\allowdisplaybreaks[1]
+\setlength{\emergencystretch}{2em}
+\newcommand{\bracketbinom}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}}
+\newcommand{\bracebinom}[2]{\genfrac{\{}{\}}{0pt}{}{#1}{#2}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{27mm}
+{\large MathGenome \enspace / \enspace P2-04\par}
+\vspace{8mm}
+\hrule height 0.8pt
+\vspace{11mm}
+{\Huge\bfseries Finite Combinatorics\par}
+\vspace{4mm}
+{\LARGE Enumeration, Graphs, and Matroids\par}
+\vspace{12mm}
+{\large Unified mathematical notes\par}
+\vspace{6mm}
+{\normalsize Finite counting, formal series, and symmetry\\
+Graph structure, flows, matchings, and colorings\\
+Matroid axioms, representation, and greedy optimization\par}
+\vfill
+{\large 8 November 2026\par}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\tableofcontents
+
+\chapter*{Scope and conventions}
+\addcontentsline{toc}{chapter}{Scope and conventions}
+The first five chapters develop counting, incidence algebras, formal
+generating functions, partitions, and orbit enumeration. The graph
+chapters give structural, enumerative, and optimization results. The
+last three chapters develop finite matroids and connect their
+representations and rank functions to graphs, matchings, and greedy
+optimization. Stanley, Bondy--Murty, and Oxley guide the three strands
+\cite{Stanley,BM,Oxley}. The result map records the eighty writing groups,
+their source contracts, and the corresponding statement and proof locations.
+
+A sum or product over an empty family has its usual neutral value.
+A formal series is interpreted coefficientwise. Its coefficient ring
+and the conditions for division or composition are stated when used.
+The graph chapters use finite simple undirected graphs unless an
+edge-labelled multigraph or a directed network is specified. The
+terms source and sink in a network designate two distinct vertices.
+A matroid has a finite specified ground set. Bases maximize
+cardinality; weights are introduced separately in the last chapter.
+
+The common prerequisites are finite-dimensional linear algebra and
+elementary group theory. The linear-algebra interface is recorded in
+\cite{D05}, and the orbit--stabilizer count is also proved in
+\cite{D07}. The chapters give the determinant and representation
+arguments at the points where their precise forms are needed.
+The real-capacity flow proof establishes attainment by a
+coordinatewise subsequence argument. The plane graph
+chapter identifies the exact topology used from \cite{P202}. The divisor
+specialization of incidence inversion is compared with the independent
+arithmetic proof in \cite{P203}. Other textbook references give
+attribution or parallel treatments.
+
+\mainmatter
+\chapter[Counting and poset inversion]{Finite counting, partially ordered sets, and inversion}
+\label{p204:ch01}
+
+We use finite sets throughout this chapter. The notation \(0!=1\)
+corresponds to the unique ordering of the empty set. An empty sum is zero
+and an empty product is one. When a counting identity is used in a
+coefficient ring, its integer coefficients are mapped into that ring.
+
+\section{Bijections and counting in two ways}
+
+\begin{proposition}[Cardinality and maps]\label{p204:W01}
+For finite sets \(A,B\), a bijection implies \(|A|=|B|\), an
+injection \(A\to B\) implies \(|A|\le |B|\), and a surjection
+implies \(|B|\le |A|\). If \(|A|=|B|\), a given map \(A\to B\)
+is injective if and only if it is surjective, equivalently bijective.
+\end{proposition}
+\begin{proof}
+A bijection transports any enumeration of \(A\) to one of \(B\).
+An injection gives a bijection onto its image, and the image and its
+complement partition \(B\). For a surjection, its nonempty fibers
+partition \(A\); adding their sizes shows that \(|A|\ge |B|\).
+If the sizes are equal and the map is injective, the complement of
+the image has size zero. If the map is surjective, equality in the
+fiber count forces every fiber to have size one. The empty sets obey
+these same image and fiber conventions.
+\end{proof}
+
+\begin{theorem}[Finite inclusion--exclusion]\label{p204:W02}
+Let \((A_i)_{i\in I}\) be a family of finite sets with finite index set.
+Then
+\[
+ \left|\bigcup_{i\in I} A_i\right|
+ =\sum_{\varnothing\ne J\subseteq I}
+       (-1)^{|J|+1}\left|\bigcap_{j\in J} A_j\right|.
+\]
+The formula includes \(I=\varnothing\).
+\end{theorem}
+\begin{proof}
+Sum the right side by elements of the union. If an element occurs
+in the sets with indices in \(K\), it contributes the sum of
+\((-1)^{|J|+1}\) over nonempty subsets of \(K\). The alternating
+sum over all subsets of a nonempty \(K\) is zero, since toggling any
+fixed index reverses the sign. Thus the nonempty-subset sum with
+the displayed signs is one. For the empty family both sides are
+zero.
+\end{proof}
+
+\begin{proposition}[Double counting an incidence relation]\label{p204:W03}
+For \(R\subseteq A\times B\),
+\[
+ |R|=\sum_{a\in A}|\{b:(a,b)\in R\}|
+     =\sum_{b\in B}|\{a:(a,b)\in R\}|.
+\]
+\end{proposition}
+\begin{proof}
+Each sum is the cardinality of a disjoint union of fibers, with
+the fiber tagged by the relevant coordinate. The map to \(R\)
+inserts the tag as that coordinate. Its inverse takes the coordinate
+and the remaining entry from the pair.
+\end{proof}
+
+\begin{theorem}[Binomial and multinomial counting, and derangements]
+\label{p204:W04}
+The number of \(k\)-subsets of an \(n\)-element set is
+\(\binom nk\), with value zero for \(k>n\). If \(k_1+\cdots+k_r=n\),
+the number of ordered blocks of these sizes partitioning the set is
+\(n!/(k_1!\cdots k_r!)\). Consequently, for commuting \(x_i\),
+\[
+ (x_1+\cdots+x_r)^n
+ =\sum_{k_1+\cdots+k_r=n}
+       \frac{n!}{k_1!\cdots k_r!}x_1^{k_1}\cdots x_r^{k_r}.
+\]
+The case \(r=2\) is the binomial theorem, and the binomial coefficients
+satisfy Pascal's recurrence. The number \(d_n\) of permutations of
+\([n]=\{1,\ldots,n\}\) without fixed points is
+\[
+ d_n=\sum_{j=0}^n(-1)^j\binom nj(n-j)!
+     =n!\sum_{j=0}^n\frac{(-1)^j}{j!}.
+\]
+\end{theorem}
+\begin{proof}
+There are \(n!\) enumerations, since the numbers of choices at
+successive positions are \(n,n-1,\ldots,1\). To produce ordered blocks,
+cut an enumeration at the prescribed sizes and forget the order inside
+each block. Each ordered partition has \(k_1!\cdots k_r!\) preimages.
+In particular \(r=2\) gives \(k\)-subsets. For \(n\ge1\), distinguishing
+whether a fixed element belongs to the subset gives
+\(\binom nk=\binom{n-1}{k}+\binom{n-1}{k-1}\), with entries outside
+\(0\le k\le n-1\) understood as zero. Each term of the product of
+\(n\) copies of \(x_1+\cdots+x_r\) chooses a variable at each position.
+The positions assigned to each variable are precisely the ordered
+blocks. For the derangement count, let the forbidden event indexed by
+\(i\) be fixing \(i\). Fixing all of a \(j\)-element subset leaves
+\((n-j)!\) permutations. Subtract the union of the forbidden events
+from all permutations, using Theorem~\ref{p204:W02}. The formula at
+\(n=0\) counts the empty permutation.
+\end{proof}
+
+\begin{theorem}[The two Stirling arrays]\label{p204:W05}
+Write \(\bracketbinom{n}{k}\) for the number of permutations of \([n]\) with
+\(k\) cycles and \(\bracebinom{n}{k}\) for the number of partitions of \([n]\)
+into \(k\) nonempty blocks. The entry at \((0,0)\) is one in both
+arrays, and an out-of-range entry is zero. The recurrences are
+\[
+ \bracketbinom{n+1}{k}=\bracketbinom{n}{k-1}+n\bracketbinom{n}{k},
+ \qquad
+ \bracebinom{n+1}{k}=\bracebinom{n}{k-1}+k\bracebinom{n}{k}.
+\]
+For \(x^{\underline k}=x(x-1)\cdots(x-k+1)\), with
+\(x^{\underline0}=1\),
+\[
+ x^{\underline n}=\sum_{k=0}^n(-1)^{n-k}\bracketbinom{n}{k}x^k,
+ \qquad
+ x^n=\sum_{k=0}^n \bracebinom{n}{k}x^{\underline k}.
+\]
+Thus the corresponding two lower-triangular integer arrays are
+mutual inverses.
+\end{theorem}
+\begin{proof}
+In a permutation, \(n+1\) is a singleton cycle or it is inserted
+after one of the \(n\) existing elements in its cycle. Deletion of
+\(n+1\) recovers the old permutation and the chosen predecessor.
+In a set partition, it is a singleton block or lies in one of the
+\(k\) blocks of the old partition. These are the recurrences.
+
+For the first polynomial identity multiply the identity at \(n\) by
+\(x-n\). The coefficient of \(x^k\) becomes
+\[
+ (-1)^{n+1-k}\bigl(\bracketbinom{n}{k-1}+n\bracketbinom{n}{k}\bigr).
+\]
+The initial polynomial is one. For the second identity, specialize
+\(x\) to any nonnegative integer \(m\) and count maps
+\([n]\to[m]\). A map with \(k\) nonempty fibers first partitions its
+domain into \(k\) fibers, then assigns distinct values to those blocks
+in \(m^{\underline k}\) ways. This proves equality at infinitely
+many integers. The polynomial difference must be zero: over
+\(\mathbb Q\), a nonzero polynomial has at most its degree many
+roots, since each root gives a linear factor by polynomial division.
+For each finite degree the descending factorials are a basis,
+by their leading coefficients and distinct degrees. The two
+identities express inverse changes of basis.
+\end{proof}
+
+\section{Lattices and incidence functions}
+
+\begin{theorem}[Finite distributive lattices]\label{p204:W06}
+Let \(L\) be a finite distributive lattice with bottom element \(0\).
+Let \(J\) be the nonzero join-irreducible elements, ordered as in \(L\).
+Then \(L\) is isomorphic as a lattice to the lower sets of \(J\),
+by \(x\mapsto\{j\in J:j\le x\}\).
+\end{theorem}
+\begin{proof}
+An element \(j\ne0\) is join-irreducible if \(j=u\vee v\) forces
+\(j=u\) or \(j=v\). By induction on the size of its lower set, each
+\(x\) is a join of join-irreducibles below it. For \(x=0\) the
+join is empty. If \(x\ne0\) is reducible, express it as the join of
+two strictly smaller elements and use induction on them.
+If \(j\in J\) and \(j\le u\vee v\), distributivity gives
+\(j=(j\wedge u)\vee(j\wedge v)\), so \(j\le u\) or \(j\le v\).
+Induction extends this assertion to finite joins. The empty join
+contains no nonzero element below it. Therefore, for any lower set
+\(S\subseteq J\), the join of \(S\) has exactly the elements of \(S\)
+below it among \(J\). Indeed a \(j\) below the join is below a member
+of \(S\), and conversely every member of \(S\) lies below the join.
+Taking joins of all join-irreducibles below an element gives the
+other inverse. The maps preserve order, hence also joins and meets
+by their universal order characterizations.
+\end{proof}
+
+\begin{definition}[Incidence algebra]\label{p204:W07}
+For a finite poset \(P\) and a commutative ring \(R\), an incidence
+function assigns a value in \(R\) to every pair \(x\le z\).
+Set
+\begin{gather*}
+ (f*g)(x,z)=\sum_{x\le y\le z}f(x,y)g(y,z),
+ \\
+ \delta(x,z)=
+ \begin{cases}1 & x=z,\\0& x<z,\end{cases}
+ \qquad
+ \zeta(x,z)=1.
+\end{gather*}
+With pointwise addition and this product the incidence functions form
+an associative algebra with unit \(\delta\).
+\end{definition}
+\begin{proof}
+Both bracketings of \(f*g*h\) sum
+\(f(x,u)g(u,v)h(v,z)\) over \(x\le u\le v\le z\).
+Finiteness permits changing the order of summation. In a product
+with \(\delta\) the sole nonzero summand has \(y=x\) on the left or
+\(y=z\) on the right. Bilinearity follows by distributing within
+the finite sums.
+\end{proof}
+
+\begin{theorem}[Möbius inversion in both directions]\label{p204:W08}
+The function \(\zeta\) has a two-sided convolution inverse \(\mu\).
+It is specified recursively by
+\[
+ \mu(x,x)=1,\qquad
+ \mu(x,z)=-\sum_{x\le y<z}\mu(x,y)\quad(x<z).
+\]
+For functions \(f,g:P\to R\), the following are equivalences:
+\[
+\begin{aligned}
+ g(x)=\sum_{y\le x}f(y)
+ &\quad\Longleftrightarrow\quad
+ f(x)=\sum_{y\le x}\mu(y,x)g(y),\\
+ g(x)=\sum_{y\ge x}f(y)
+ &\quad\Longleftrightarrow\quad
+ f(x)=\sum_{y\ge x}\mu(x,y)g(y).
+\end{aligned}
+\]
+\end{theorem}
+\begin{proof}
+Write \(\zeta=\delta+h\). The \(k\)-fold convolution power \(h^{*k}\)
+vanishes unless there is a strict chain of \(k\) steps between the two
+endpoints, as follows by expanding the sum. In particular
+\(h^{*k}=0\) for \(k>|P|\). The finite geometric sum
+\(\sum_{k=0}^{|P|}(-1)^kh^{*k}\), with \(h^{*0}=\delta\), is a
+two-sided inverse by telescoping. Its product with \(\zeta\) on the
+right gives the displayed recurrence, which uniquely determines it
+by induction on interval size. The integer-coefficient inverse
+therefore specializes to any coefficient ring \(R\).
+
+For the lower formula, substitute the sum for \(g(y)\) into
+the proposed inverse sum for \(f(x)\). The coefficient of \(f(u)\) is
+\[
+ \sum_{u\le y\le x}\mu(y,x)=(\zeta*\mu)(u,x)=\delta(u,x).
+\]
+If instead one starts with the proposed formula for \(f\), summing
+it for all \(y\le x\) produces \(\mu*\zeta\) and recovers \(g(x)\).
+For the upper formula, substitution into
+\(\sum_{y\ge x}\mu(x,y)g(y)\) produces \(\mu*\zeta\), and summing the
+proposed formula for \(f\) upward produces \(\zeta*\mu\).
+\end{proof}
+
+\begin{proposition}[Products, Boolean intervals, and divisibility]
+\label{p204:W09}
+On a product of finite posets, the Möbius value is the product of
+the two Möbius values. On a subset interval \(S\subseteq T\) it is
+\((-1)^{|T\setminus S|}\). On the positive divisors of a positive
+integer \(N\), ordered by divisibility, it is
+\(\mu_{\mathrm{arith}}(b/a)\) at \(a\mid b\). Consequently the usual
+arithmetic divisor inversion follows from Theorem~\ref{p204:W08}.
+\end{proposition}
+\begin{proof}
+In a product interval the sum over intermediate points factors into
+two sums. The product of the two Möbius functions is therefore the
+inverse of the product zeta function, by the unit identities in the
+two factors. The subset interval is a product of \(|T\setminus S|\)
+two-element chains, each contributing \(-1\) between distinct
+endpoints. This includes the empty product when \(S=T\).
+For a finite chain, \(\mu(x,z)\) is one at equality, minus one across
+one step and zero across two or more steps, by the recurrence in
+Theorem~\ref{p204:W08}. By prime factorization, an interval
+\(a\mid b\) of divisors is a product of such chains of lengths equal
+to the exponents in \(b/a\). Thus the product is zero if one exponent
+exceeds one, and otherwise is the sign determined by the number of
+prime factors of \(b/a\). This is \(\mu_{\mathrm{arith}}(b/a)\).
+Unique factorization of positive integers and the arithmetic
+Möbius formula are proved in \cite[Chapters 1 and 3]{P203}.
+Applying the lower inversion at \(N\) yields
+\(f(N)=\sum_{d\mid N}\mu_{\mathrm{arith}}(N/d)g(d)\) from
+\(g(N)=\sum_{d\mid N}f(d)\).
+\end{proof}
+
+For comparison with the standard enumeration terminology, see
+\cite[Sections 1.1--1.3, 1.7--1.9, 2.1, and 3.3--3.8]{Stanley}.
+\chapter[Formal series and recurrences]{Formal power series and linear recurrences}
+\label{p204:ch02}
+
+\section{Coefficient algebra}
+
+\begin{definition}[Ordinary and exponential generating series]
+\label{p204:W10}
+Over a commutative ring \(R\) with identity, a formal power series
+is a sequence of coefficients, written \(\sum_{n\ge0}a_nz^n\).
+Write \([z^n]A=a_n\). The ordinary generating function of
+\((a_n)\) is this formal series. When \(R\) is a commutative
+\(\mathbb Q\)-algebra, in particular a field of characteristic zero,
+its exponential generating function is \(\sum_{n\ge0}a_nz^n/n!\).
+Equality means equality of coefficients.
+\end{definition}
+
+\begin{proposition}[Products and differentiation]\label{p204:W11}
+The Cauchy product and formal derivative satisfy
+\[
+ [z^n](AB)=\sum_{i=0}^n a_i b_{n-i},\qquad
+ [z^n]A'=(n+1)a_{n+1},\qquad (AB)'=A'B+AB'.
+\]
+Over a \(\mathbb Q\)-algebra the exponential series for two
+sequences multiply to give the exponential series for
+\(c_n=\sum_{i=0}^n\binom ni a_i b_{n-i}\).
+\end{proposition}
+\begin{proof}
+The coefficient of degree \(n\) in the distributive product uses
+exactly pairs of exponents totaling \(n\). Associativity follows
+because a triple product sums over all triples of nonnegative
+exponents totaling \(n\). Differentiation is defined on monomials
+by \((z^k)'=kz^{k-1}\), with derivative zero at \(k=0\).
+In the coefficient of degree \(n\) of the derivative of \(AB\),
+each pair of exponents totaling \(n+1\) receives the factor \(n+1\).
+In \(A'B+AB'\) the same pair receives the sum of its two exponents.
+For exponential series, multiply the Cauchy coefficient by \(n!\);
+the factor is \(n!/(i!(n-i)!)=\binom ni\).
+\end{proof}
+
+\begin{theorem}[Substitution and the two kinds of inverse]
+\label{p204:W12}
+If \(B(0)=0\), the composition \(A(B)=\sum_{j\ge0}a_jB^j\)
+is a formal series. A series \(A\) is multiplicatively invertible
+if and only if \(A(0)\) is a unit. Among zero-constant series,
+\(B\) is compositionally invertible if and only if \([z]B\)
+is a unit.
+\end{theorem}
+\begin{proof}
+Since \(B\in zR[[z]]\), its \(j\)-th power belongs to
+\(z^jR[[z]]\), so only \(j\le n\) contributes to degree \(n\).
+If \(C(0)=0\) as well, the identity
+\((A(B))(C)=A(B(C))\) follows by taking both sides modulo
+\(z^{n+1}\), where all substitutions reduce to polynomials
+and preserve the ideal \((z^{n+1})\). The same truncation
+argument proves distributivity and the formal chain rule.
+For the latter, to determine the derivative through degree \(n\)
+truncate the original series through degree \(n+1\), apply the
+polynomial chain rule, and compare coefficients.
+
+The constant coefficient of \(AA^{-1}\) must be one. If \(a_0\)
+is a unit, set \(c_0=a_0^{-1}\) and define
+\[
+ c_n=-a_0^{-1}\sum_{i=1}^n a_i c_{n-i}\quad(n\ge1).
+\]
+This gives \(AC=1\), and commutativity gives \(CA=1\).
+For the compositional assertion, write
+\(B=b_1z+b_2z^2+\cdots\). A compositional inverse with zero constant
+must have linear coefficient \(b_1^{-1}\).
+Assume \(b_1\) is a unit. In the equation \(B(C)=z\), the
+coefficient of \(z^n\) is \(b_1 c_n\) plus a polynomial in
+\(c_1,\ldots,c_{n-1}\). Thus there is a unique zero-constant
+right inverse \(C\). Its linear term is a unit, so the same
+construction gives \(C(D)=z\). Associativity yields
+\(D=(B(C))(D)=B(C(D))=B\), showing that \(C\) is a left
+inverse also.
+\end{proof}
+
+\section{Recurrences and rationality}
+
+\begin{proposition}[Existence and uniqueness from initial data]
+\label{p204:W13}
+Fix \(r\ge1\), \(c_0,\ldots,c_{r-1}\in R\), and \(r\) initial
+values \(a_0,\ldots,a_{r-1}\in R\). There is exactly one sequence
+satisfying
+\[
+ a_{n+r}=\sum_{j=0}^{r-1}c_j a_{n+j}\quad(n\ge0)
+\]
+with these initial values.
+\end{proposition}
+\begin{proof}
+At step \(n\), the right side uses only entries with index
+less than \(n+r\). It defines the new entry from previously
+defined ones. Two sequences with the same first \(r\) entries
+then agree at every subsequent index by induction.
+\end{proof}
+
+\begin{proposition}[The rational ordinary generating function]
+\label{p204:W14}
+For a sequence as in Proposition~\ref{p204:W13}, let
+\[
+ Q(z)=1-\sum_{j=0}^{r-1}c_jz^{r-j},\qquad A(z)=\sum_{n\ge0}a_nz^n.
+\]
+Then \(QA=P\) where \(P\in R[z]\) has degree less than \(r\)
+and is determined by the \(r\) initial values.
+In particular \(A=P/Q\), with \(Q(0)=1\).
+\end{proposition}
+\begin{proof}
+The coefficient of \(z^{n+r}\) in \(QA\) is the left side
+of the recurrence minus its right side. It is zero for \(n\ge0\).
+The coefficients of degrees \(0,\ldots,r-1\) in \(QA\) use only
+the initial entries, determining \(P\). Theorem~\ref{p204:W12}
+makes division by \(Q\) well defined.
+\end{proof}
+
+\begin{theorem}[Distinct characteristic roots]\label{p204:W15}
+Let \(R=K\) be a field and suppose that
+\[
+ \chi(t)=t^r-\sum_{j=0}^{r-1}c_jt^j
+\]
+has \(r\) distinct roots \(\lambda_1,\ldots,\lambda_r\) in \(K\).
+Every solution in Proposition~\ref{p204:W13} is a unique linear
+combination of \((\lambda_i^n)_{n\ge0}\), with \(\lambda_i^0=1\)
+also when \(\lambda_i=0\).
+\end{theorem}
+\begin{proof}
+For each root, multiplying \(\chi(\lambda_i)=0\) by
+\(\lambda_i^n\) verifies the recurrence, including \(n=0\)
+when the root is zero. On the first \(r\) entries the \(r\)
+sequences form the columns of the Vandermonde matrix with rows
+indexed by exponents \(0,\ldots,r-1\).
+Evaluation of polynomials of degree below \(r\) at the roots is
+the transpose map. It is onto, since for each \(i\) the polynomial
+\(\prod_{j\ne i}(t-\lambda_j)/(\lambda_i-\lambda_j)\) has
+values one at \(i\) and zero at all other roots. The matrix is
+square and hence invertible. Each set of initial values is matched
+uniquely, and Proposition~\ref{p204:W13} extends equality to the
+full sequence.
+\end{proof}
+
+\begin{theorem}[Eventual recurrence and roots of arbitrary multiplicity]
+\label{p204:W16}
+Over a field \(K\), an ordinary generating series is a quotient
+of polynomials with denominator of constant term one if and
+only if its sequence eventually satisfies a homogeneous
+constant-coefficient recurrence. If a recurrence starts at
+index \(0\) and its characteristic polynomial splits as
+\(\chi(t)=\prod_\lambda (t-\lambda)^{m_\lambda}\), a basis of
+the solution space is
+\[
+ b_{\lambda,j}(n)=[z^n]\frac{z^j}{(1-\lambda z)^{j+1}},
+ \qquad 0\le j<m_\lambda .
+\]
+For \(n\ge j\) this value is \(\binom nj\lambda^{n-j}\), with
+value zero for \(n<j\). Here the integer binomial coefficient
+is mapped into \(K\). When \(\lambda=0\), the series is \(z^j\).
+In characteristic zero and for \(\lambda\ne0\), the corresponding
+root space consists of sequences \(P(n)\lambda^n\) with
+\(\deg P<m_\lambda\).
+\end{theorem}
+\begin{proof}
+If \(QA=P\) with \(Q(0)=1\), let \(s=\deg Q\).
+For each index \(n\ge s\) above \(\deg P\), the coefficient
+identity reads \(a_n=-\sum_{i=1}^s [z^i]Q\,a_{n-i}\).
+If \(s=0\), the sequence is eventually zero and satisfies
+the order-one recurrence with zero coefficient there.
+Conversely an eventual recurrence gives a polynomial \(Q\)
+as in Proposition~\ref{p204:W14}, and \(QA\) has only finitely
+many potentially nonzero coefficients.
+
+For the root formula, expanding \((1-\lambda z)^{-(j+1)}\)
+as a product of geometric series gives the binomial coefficient.
+Indeed the coefficient of degree \(n-j\) counts decompositions
+of \(n-j\) into \(j+1\) ordered nonnegative parts, in bijection
+with placements of \(j\) separators among \(n\) positions.
+Let \(S\) denote the left shift \(Sa(n)=a(n+1)\).
+Pascal's identity gives
+\[
+ (S-\lambda)b_{\lambda,0}=0,\qquad
+ (S-\lambda)b_{\lambda,j}=b_{\lambda,j-1}\quad(j\ge1).
+\]
+This includes \(\lambda=0\), when a unit spike at \(j\) shifts
+to a spike at \(j-1\), or to zero when \(j=0\).
+It follows that \(\chi(S)\) kills each proposed solution.
+For fixed \(\lambda\) the sequences are independent because
+their first \(m_\lambda\) entries form a triangular matrix
+with diagonal entries one. On their span \(S=\lambda I+N\)
+where \(N\) is nilpotent. For another root \(\mu\ne\lambda\),
+\((S-\mu)\) on this span is invertible, by the finite geometric
+inverse of \((\lambda-\mu)I+N\).
+In a linear relation among the root spans, applying
+\(\prod_{\mu\ne\lambda}(S-\mu)^{m_\mu}\) kills all other
+spans and is invertible on the \(\lambda\)-span. Thus the spans
+are independent together. Their dimensions sum to \(r\),
+which is the solution dimension by the initial-value result.
+If the characteristic is zero and \(\lambda\ne0\), each
+\(\lambda^{-j}\binom nj\) is a polynomial of degree \(j\) with
+nonzero leading coefficient, and those polynomials form a
+basis of degrees below \(m_\lambda\).
+\end{proof}
+
+\begin{proposition}[Transfer matrices]\label{p204:W17}
+For a finite square matrix \(M\) over a commutative ring,
+\((I-zM)^{-1}=\sum_{n\ge0}M^n z^n\).
+Each entry is a rational series over a field. If \(M_{uv}\)
+is the total weight of arcs \(u\to v\) in a finite directed
+weighted graph, \((M^n)_{uv}\) is the sum of the products
+of weights of all \(n\)-step walks from \(u\) to \(v\).
+\end{proposition}
+\begin{proof}
+Multiplying the displayed series by \(I-zM\) on either side
+cancels every positive-degree coefficient and gives \(I\)
+in degree zero. The adjugate identity gives the same inverse
+as \(\operatorname{adj}(I-zM)/\det(I-zM)\), whose denominator
+has constant term one. The adjugate identity follows by
+cofactor expansion in the diagonal entries of the matrix
+product and expansion of a determinant with two equal rows
+or columns in the off-diagonal entries. The walk assertion
+follows from the matrix product by induction on \(n\),
+partitioning walks by their penultimate vertex and last arc.
+The power \(M^0=I\) represents the empty walks at the vertices.
+The empty matrix case has no entries to assert.
+\end{proof}
+
+\section{Lagrange inversion}
+
+\begin{theorem}[Lagrange--Bürmann inversion]\label{p204:W18}
+Let \(R\) be a commutative \(\mathbb Q\)-algebra, and let
+\(\phi,H\in R[[z]]\) with \(\phi(0)\) a unit.
+There is a unique \(F\in zR[[z]]\) such that \(F=z\phi(F)\).
+For \(n\ge1\),
+\[
+ [z^n]H(F(z))=\frac{1}{n}[u^{n-1}]H'(u)\phi(u)^n .
+\]
+\end{theorem}
+\begin{proof}
+Define \(g(u)=u/\phi(u)\). Its linear coefficient is the inverse
+of \(\phi(0)\). By Theorem~\ref{p204:W12} it has a unique
+compositional inverse \(F\), and \(g(F(z))=z\) is equivalent
+to \(F=z\phi(F)\).
+
+For a formal Laurent series, which has only finitely many negative
+exponents, write \(\operatorname{res}_u L=[u^{-1}]L\).
+For any \(g=uU(u)\) with \(U(0)\) a unit, we have
+\[
+ \operatorname{res}_u L(g(u))g'(u)=\operatorname{res}_z L(z).
+\]
+To prove this, it suffices to check monomials \(L(z)=z^k\):
+only finitely many terms can contribute to the residue because
+the least possible exponent of \(g^k g'\) is at least \(k\).
+If \(k\ne-1\), \(g^k g'=(g^{k+1})'/(k+1)\) and a derivative
+has residue zero. The power rule for negative exponents follows
+from differentiating \(g\,g^{-1}=1\) and the product rule;
+those rules extend to Laurent series by the same finite
+coefficient computations. If \(k=-1\), then
+\(g'/g=u^{-1}+U'/U\) and \(U'/U\) is an ordinary power series.
+This proves the substitution identity.
+
+Differentiate \(H(F(z))\), then express the coefficient as a residue.
+The substitution identity gives
+\[
+\begin{aligned}
+ n[z^n]H(F(z))
+ &=\operatorname{res}_z z^{-n}H'(F(z))F'(z)\\
+ &=\operatorname{res}_u g(u)^{-n}H'(u)F'(g(u))g'(u)\\
+ &=\operatorname{res}_u u^{-n}H'(u)\phi(u)^n .
+\end{aligned}
+\]
+The last step uses \(F'(g(u))g'(u)=1\) and \(g=u/\phi\).
+Reading the coefficient and dividing by \(n\) proves the assertion.
+\end{proof}
+
+For comparison, see \cite[Chapter 7]{GKP},
+\cite[Sections 4.1, 4.3, and 4.7]{Stanley}, and
+\cite[Appendix A.6]{FS}.
+\chapter[Combinatorial constructions]{Combinatorial constructions, Catalan numbers, and labelled sets}
+\label{p204:ch03}
+
+\section{The basic counting constructions}
+
+An unlabelled class is specified here by finite sets \(\mathcal A_n\)
+of objects of each size \(n\). A labelled class also specifies its
+objects on each finite label set \(S\), with consistent transports
+under bijections of label sets. We count on a fixed \(n\)-element
+label set, so the number \(a_n\) is independent of which labels are
+chosen. The product of two labelled classes uses a disjoint split
+of the label set. See \cite[Chapters I and II]{FS} for this notation.
+
+\begin{proposition}[Disjoint sum and product]\label{p204:W19}
+For locally finite classes, a disjoint sum adds the counting sequences.
+The product with additive size gives
+\(\sum_{i=0}^n a_i b_{n-i}\) in the unlabelled case.
+The labelled product gives
+\(\sum_{i=0}^n\binom ni a_i b_{n-i}\).
+Thus the ordinary series multiply for the unlabelled product, and
+the exponential series multiply for the labelled product.
+\end{proposition}
+\begin{proof}
+The two summands are tagged by their class. For an unlabelled
+product of total size \(n\), record the size \(i\) of the first
+object, and count the two choices independently. In the labelled
+case, the first object is given an \(i\)-subset of the \(n\) labels,
+and the second uses its complement. Consistent transport gives
+\(a_i\) and \(b_{n-i}\) choices on the two chosen sets, respectively.
+The stated series identities follow from
+Proposition~\ref{p204:W11}.
+\end{proof}
+
+\begin{theorem}[Ordered sequences and labelled sets]\label{p204:W20}
+Let \(\mathcal A\) be locally finite and have no size-zero objects.
+The ordinary series of finite ordered sequences of unlabelled
+\(\mathcal A\)-objects is \(1/(1-A(z))\), where \(A\) is their
+ordinary series. If \(\mathcal A\) is labelled and \(A\) denotes
+its exponential series, finite sets of \(\mathcal A\)-objects on
+disjoint label blocks covering the given labels have exponential
+series \(\exp(A(z))\).
+\end{theorem}
+\begin{proof}
+In the unlabelled case, a sequence of exactly \(k\) objects has
+series \(A^k\) by repeated application of
+Proposition~\ref{p204:W19}. The empty sequence contributes one.
+Each coefficient involves only \(k\le n\) because all sizes
+are positive. The resulting geometric sum has product one with
+\(1-A\).
+In the labelled case, the ordered \(k\)-tuples likewise have
+exponential series \(A^k\). For an unordered object with \(k\)
+components, the components have disjoint nonempty label sets,
+so the \(k!\) orders are all distinct and exhaust its preimages.
+The term \(A^k/k!\) counts exactly the objects with \(k\)
+components. Summing these coefficientwise gives the formal
+exponential, including the empty set.
+\end{proof}
+
+\begin{theorem}[Subset counts and the Catalan family]\label{p204:W21}
+The number of \(k\)-subsets is \(\binom nk\). A Dyck path of
+semilength \(n\) is a word of \(n\) up-steps and \(n\) down-steps
+whose partial height never goes below zero. These words are also
+balanced-parenthesis strings when up-steps open parentheses and
+down-steps close them. Their common
+number \(C_n\) satisfies
+\[
+ C_0=1,\qquad
+ C_{n+1}=\sum_{i=0}^n C_i C_{n-i},\qquad
+ C_n=\frac{1}{n+1}\binom{2n}{n}.
+\]
+\end{theorem}
+\begin{proof}
+The subset count is Theorem~\ref{p204:W04}, and the
+parenthesis condition is exactly the partial-height condition.
+A nonempty Dyck path begins with an up-step. At the first
+return to height zero, the down-step closes an interior
+Dyck path, read at height one. The suffix is a second Dyck path.
+This decomposition is unique and reversible, giving the
+recurrence by semilength.
+
+All balanced words without the nonnegativity restriction are
+counted by \(\binom{2n}{n}\). For \(n\ge1\), reflect the prefix of
+a bad word through its first visit to height \(-1\), by exchanging
+up- and down-steps in that prefix. The resulting word has \(n+1\)
+up-steps and \(n-1\) down-steps. Its first visit to height \(1\)
+ends the reflected prefix, so reflection there gives the inverse.
+Thus the bad count is \(\binom{2n}{n+1}\); subtracting and
+simplifying gives the closed formula. At \(n=0\) it holds for
+the unique empty word.
+\end{proof}
+
+\begin{proposition}[Labelled cycles, block counts, and Bell numbers]
+\label{p204:W22}
+For a locally finite labelled class with positive sizes, cycles
+of components on disjoint label blocks have exponential series
+\[
+ \sum_{k\ge1}\frac{A(z)^k}{k}=-\log(1-A(z)).
+\]
+For ordinary set partitions of an \(n\)-element labelled set,
+marking each block by \(u\) gives exponential series
+\[
+ \exp\bigl(u(e^z-1)\bigr)
+ =\sum_{n\ge0}\left(\sum_{k=0}^n \bracebinom{n}{k}u^k\right)\frac{z^n}{n!}.
+\]
+The Bell number \(B_n=\sum_{k=0}^n\bracebinom{n}{k}\) therefore has
+exponential series \(\exp(e^z-1)\).
+\end{proposition}
+\begin{proof}
+An ordered \(k\)-tuple of labelled components has exponential
+series \(A^k\). Passing to a cyclic order identifies precisely
+the \(k\) rotations of the tuple. A nontrivial rotation cannot
+fix it, since the label blocks are disjoint and nonempty.
+Thus division by \(k\) counts cyclic orders. Finiteness of each
+coefficient again follows from positive sizes; the logarithm
+is its formal series expansion. For set partitions, there is
+one nonempty unstructured block on each nonempty label set,
+so a single block contributes \(u\sum_{n\ge1}z^n/n!\).
+The labelled-set formula in Theorem~\ref{p204:W20} then
+gives the series, with the coefficient of \(u^kz^n/n!\)
+counting the \(k\)-block partitions. Setting \(u=1\) proves
+the last claim.
+\end{proof}
+
+\section{A determinant for disjoint paths}
+
+\begin{theorem}[Lindström--Gessel--Viennot]\label{p204:W23}
+Let a finite acyclic directed graph have commuting edge weights
+in a commutative ring. Choose vertices
+\(a_1,\ldots,a_r\) and \(b_1,\ldots,b_r\), distinct within
+each list, and let \(M_{ij}\) be the sum of path weights from
+\(a_i\) to \(b_j\), where a path weight is the product of its edge
+weights. Empty paths have weight one. Then
+\[
+ \det M
+ =\sum_{\substack{\sigma\in S_r,\ (P_1,\ldots,P_r)\\
+                  P_i:a_i\to b_{\sigma(i)}\\
+                  P_i\text{ pairwise vertex-disjoint}}}
+          \operatorname{sgn}(\sigma)\prod_{i=1}^r w(P_i).
+\]
+If every disjoint family must use \(\sigma=\operatorname{id}\),
+the formula is the unsigned weight sum for that matching.
+\end{theorem}
+\begin{proof}
+A finite acyclic digraph has an order of vertices in which every
+edge points forward. There is a vertex with no incoming edge,
+since otherwise following predecessors would eventually repeat
+a vertex and give a directed cycle. Repeated removal of such
+a vertex constructs the order. In particular each directed
+walk is a path and has finite length bounded by the number of
+vertices minus one.
+
+Expand the determinant, then each product of path sums. In a
+family with an intersection, choose the first vertex in the
+fixed order lying on at least two paths, and the lexicographically
+first pair of path indices through it. Switch the two tails
+after the chosen vertex, keeping the prefixes up to that vertex.
+Each new path is valid and has no repetition, since its prefix
+uses vertices no later than the chosen vertex and its tail
+uses only later vertices. The first intersection and chosen
+pair are unchanged: only the suffixes at strictly later vertices
+have moved. Applying the same operation again recovers the
+original family. The two target indices have been transposed,
+so the sign is reversed. The product of weights is preserved,
+as the multiset of edges in the whole family is unchanged.
+All intersecting families therefore cancel, leaving the stated
+formula. For \(r=0\), the empty family contributes the empty
+determinant \(1\).
+\end{proof}
+
+For the determinant construction and its enumerative use,
+see \cite{LGV}.
+\chapter[Partitions and Gaussian coefficients]{Integer partitions and Gaussian binomial coefficients}
+\label{p204:ch04}
+
+\section{Partitions and Euler's product}
+
+\begin{definition}[Partitions and multiplicities]\label{p204:W24}
+A partition of \(n\ge0\) is a weakly decreasing finite list
+\(\lambda=(\lambda_1,\ldots,\lambda_k)\) of positive integers
+with sum \(n\). Its multiplicities are
+\(m_i=|\{j:\lambda_j=i\}|\), a finitely supported sequence with
+\(\sum_{i\ge1} i m_i=n\).
+These two presentations are bijective. The empty list is the
+only partition of zero.
+\end{definition}
+\begin{proof}
+A list determines its multiplicities. From the multiplicities,
+write each positive \(i\) exactly \(m_i\) times, in decreasing
+order of \(i\). This is finite and reverses the first map.
+When \(n=0\), the equality \(\sum_i i m_i=0\) forces every
+multiplicity to vanish. For any fixed \(n\), only \(i\le n\)
+can occur and \(m_i\le n/i\), so there are finitely many partitions.
+\end{proof}
+
+\begin{theorem}[Euler's partition product]\label{p204:W25}
+Write \(p(n)\) for the number of partitions of \(n\). As formal
+series over \(\mathbb Z\), and hence over \(\mathbb Q\),
+\[
+ \sum_{n\ge0}p(n)z^n=\prod_{k\ge1}(1-z^k)^{-1}.
+\]
+The product is defined by stabilization of coefficients of its
+finite initial products.
+\end{theorem}
+\begin{proof}
+For the part \(k\), the factor is
+\(\sum_{m\ge0}z^{km}\), since multiplication by \(1-z^k\)
+gives one coefficientwise. A term of degree \(n\) in a product
+of the first \(N\) factors chooses a multiplicity for each
+\(k\le N\) whose total weight is \(n\). If \(N\ge n\), no
+further factor has a nonconstant term in degrees at most \(n\).
+The stabilized choices are exactly the multiplicity presentations
+of Definition~\ref{p204:W24}.
+\end{proof}
+
+\begin{theorem}[Odd parts and distinct parts]\label{p204:W26}
+For each \(n\ge0\), partitions of \(n\) into odd parts are
+equinumerous with partitions of \(n\) into distinct parts.
+\end{theorem}
+\begin{proof}
+For each odd part \(d\), expand the multiplicity \(m_d\)
+in binary:
+\[
+ m_d=\sum_{j\ge0}\varepsilon_{d,j}2^j,\qquad
+ \varepsilon_{d,j}\in\{0,1\}.
+\]
+Existence and uniqueness of the digits follow
+by repeated division by two, since the least digit is the
+remainder. Replace all copies of \(d\) by the parts \(2^jd\)
+for which the digit is one. This preserves total weight.
+Each positive integer has a unique decomposition as \(2^jd\)
+with \(d\) odd, so the resulting parts are distinct and the
+inverse groups them by their odd parts. The empty list is
+fixed.
+\end{proof}
+
+\begin{proposition}[Ferrers conjugation]\label{p204:W27}
+The Ferrers diagram of \(\lambda\) is the set of lattice cells
+\[
+ \{(i,j):1\le i\le k,\ 1\le j\le\lambda_i\}.
+\]
+Interchanging the two coordinates defines a weight-preserving
+involution on partitions. It exchanges the number of parts with
+the largest part, taking both statistics to be zero on the empty
+partition.
+\end{proposition}
+\begin{proof}
+The length of row \(j\) after transposition is the number of
+original rows of length at least \(j\). These lengths are positive
+for \(j\le\lambda_1\) and are weakly decreasing, so this is
+a partition. Transposition is its own inverse and preserves the
+number of cells. The nonempty transposed diagram has \(\lambda_1\)
+rows and its first row has length \(k\). The empty case follows
+directly.
+\end{proof}
+
+\section{The rectangular and signed refinements}
+
+\begin{theorem}[Rectangular partitions and the finite \(q\)-binomial identity]
+\label{p204:W28}
+Let \(F(a,b)\in\mathbb Z[q]\) be the weight polynomial
+\(\sum_\lambda q^{|\lambda|}\) for partitions with at most \(a\)
+parts and largest part at most \(b\). For \(a,b\ge1\),
+\[
+ F(a,b)=F(a,b-1)+q^b F(a-1,b),\qquad
+ F(a,0)=F(0,b)=1.
+\]
+For \(0\le k\le n\), put \(\bracketbinom{n}{k}_q=F(k,n-k)\), and set it
+to zero outside this range. Then
+\[
+ \bracketbinom{n}{k}_q=\prod_{j=1}^k\frac{1-q^{n-k+j}}{1-q^j},
+ \qquad
+ \prod_{i=0}^{n-1}(1+tq^i)=
+     \sum_{k=0}^n q^{k(k-1)/2}\bracketbinom{n}{k}_q t^k .
+\]
+The first equality identifies a quotient in \(\mathbb Q(q)\)
+with a polynomial.
+\end{theorem}
+\begin{proof}
+Either no part has size \(b\), or one may remove the first
+part of size \(b\). The latter operation is inverted by adding
+one such part at the start. This gives the recurrence and the
+boundary values. For \(G(n,k)=\bracketbinom{n}{k}_q\) the recurrence
+becomes
+\[
+ G(n,k)=G(n-1,k)+q^{n-k}G(n-1,k-1).
+\]
+To verify it for the product expression \(P(n,k)\), for
+\(0<k<n\) divide \(P(n-1,k)\) and \(P(n-1,k-1)\) by \(P(n,k)\).
+The ratios are respectively
+\((1-q^{n-k})/(1-q^n)\) and \((1-q^k)/(1-q^n)\).
+Their weighted sum in the recurrence is one. The boundary
+products at \(k=0,n\) are one, so induction proves \(P=G\).
+For the last formula, multiply the claimed identity at \(n-1\)
+by \(1+tq^{n-1}\). After factoring \(q^{k(k-1)/2}\) in
+the coefficient of \(t^k\), the second summand has factor
+\(q^{n-k}\), giving exactly the recurrence. At \(n=0\)
+the product and sum both equal one.
+\end{proof}
+
+\begin{theorem}[Euler's pentagonal theorem and partition recurrence]
+\label{p204:W29}
+In \(\mathbb Z[[z]]\),
+\[
+ \prod_{i\ge1}(1-z^i)
+    =\sum_{j\in\mathbb Z}(-1)^j z^{j(3j-1)/2}.
+\]
+With \(p(0)=1\) and \(p(m)=0\) for \(m<0\), this implies for \(n>0\)
+\[
+ p(n)=\sum_{k\ge1}(-1)^{k+1}
+ \left(p\bigl(n-k(3k-1)/2\bigr)+p\bigl(n-k(3k+1)/2\bigr)\right).
+\]
+\end{theorem}
+\begin{proof}
+Expand the finite initial products and stabilize each coefficient
+as in Theorem~\ref{p204:W25}. This yields the signed weight sum
+of distinct-part partitions, where the sign is \((-1)^k\)
+for \(k\) parts. For a nonempty decreasing list of distinct
+parts \(\lambda_1>\cdots>\lambda_k>0\), write \(s=\lambda_k\)
+and let \(t\) be the length of the initial consecutive run,
+so \(\lambda_i=\lambda_1-i+1\) for \(1\le i\le t\).
+The following two operations are inverse except in the cases
+described below.
+
+If \(s>t\), subtract one from each of the first \(t\) parts
+and append a part of size \(t\). When \(t<k\), maximality of
+the run makes the gap at \(t\) at least two before subtraction,
+and the new last part is strictly smaller than \(s\).
+When \(t=k\), the new list is strictly decreasing if and only
+if \(s-1>t\). Thus the only failure in this case is \(t=k\),
+\(s=k+1\). In every successful case, the new smallest part
+is \(t\) and the new initial run has length at least \(t\).
+
+If \(s\le t\), remove the last part and add one to each of
+the first \(s\) remaining parts. There are at least \(s\)
+remaining parts unless \(s=t=k\), the other failure. When
+successful, the initial run of the new list has length exactly
+\(s\). The first \(s\) parts remain consecutive. If there
+is a following part, the gap at that point increases by one,
+ending the run. The new smallest part exceeds \(s\). If all
+remaining parts were increased, the new smallest part is at
+least \(s+2\), so the inverse subtraction and appending
+operation is valid even at the end of the run.
+
+After the first operation, the new smallest part is at most
+the new run length, so the second operation removes precisely
+the appended part and restores the decreased entries. After
+the second, the new smallest part exceeds the new run length,
+so the first restores the removed part and the previous entries.
+The operations preserve total weight and change the number of
+parts by one. Their contributions therefore cancel in each
+coefficient.
+
+In the failure cases the whole list is consecutive. For \(s=k\)
+its weight is \(k+(k+1)+\cdots+(2k-1)=k(3k-1)/2\). For
+\(s=k+1\) the weight is \(k(3k+1)/2\). Each has sign
+\((-1)^k\), and the empty list contributes one. These are the
+terms indexed by \(j=k\), \(j=-k\), and \(j=0\) in the identity.
+Multiplying by the inverse product in Theorem~\ref{p204:W25}
+gives one. Equating coefficients for \(n>0\) and isolating
+the \(j=0\) term gives the recurrence, with only finitely many
+nonzero summands.
+\end{proof}
+
+See \cite[Sections 1.7--1.8]{Stanley} and \cite{Postnikov} for
+the historical forms of the partition and \(q\)-binomial identities.
+\chapter[Group actions and Pólya counting]{Finite group actions and Pólya enumeration}
+\label{p204:ch05}
+
+\section{From fixed points to orbits}
+
+Let \(G\) be a finite group acting on a finite set \(X\) on the left.
+Write \(\operatorname{Fix}_X(g)=\{x:gx=x\}\) and
+\(G_x=\{g:gx=x\}\). Orbits partition \(X\).
+
+\begin{theorem}[Burnside's fixed-point formula]\label{p204:W30}
+For any such action,
+\[
+ |G|\,|X/G|=\sum_{g\in G}|\operatorname{Fix}_X(g)|.
+\]
+There is no faithfulness requirement, and \(X\) may be empty.
+\end{theorem}
+\begin{proof}
+Count the pairs \((g,x)\) with \(gx=x\) by their two coordinates
+as in Proposition~\ref{p204:W03}. The count by \(x\) is
+\(\sum_x|G_x|\). Fix an orbit \(O\) and \(x\in O\).
+The map \(G\to O\), \(g\mapsto gx\), is onto. If \(gx=hx\),
+then \(h^{-1}g\in G_x\), so each fiber is a left coset of
+\(G_x\) and has \(|G_x|\) elements. Thus \(|O||G_x|=|G|\).
+Stabilizers along the orbit have the same size by conjugation,
+or by the same fiber count at each point. Summing over \(O\)
+therefore contributes \(|G|\). Summing over the orbits proves the
+identity. This also proves the orbit--stabilizer count used below.
+\end{proof}
+
+\begin{definition}[Cycle index, including fixed points]\label{p204:W31}
+For \(g\in G\), let \(c_k(g)\) be the number of length-\(k\)
+cycles of the permutation \(x\mapsto gx\) of \(X\).
+The cycle index is the polynomial
+\[
+ Z_{G,X}(s_1,\ldots,s_{|X|})
+  =\frac1{|G|}\sum_{g\in G}\prod_{k=1}^{|X|}s_k^{c_k(g)}
+  \ \in\ \mathbb Q[s_1,\ldots,s_{|X|}].
+\]
+A fixed point is a cycle of length one. For \(X=\varnothing\)
+the monomial for each \(g\) is one.
+\end{definition}
+
+\begin{proof}
+Iteration of a finite permutation returns each \(x\) to itself,
+because the iterates eventually repeat and the permutation is
+invertible. The least positive return time is the size of its
+cyclic orbit, and intersecting cyclic orbits are equal.
+This partitions \(X\) into the cycles counted by \(c_k(g)\),
+including length-one cycles. If \(H\) is the image of the action
+homomorphism in the permutation group, all fibers \(G\to H\)
+have size equal to the kernel size. Hence averaging over \(G\)
+or over \(H\) gives the same polynomial.
+\end{proof}
+
+\begin{theorem}[Unweighted Pólya enumeration]\label{p204:W32}
+For a finite color set \(C\), write \(q=|C|\).
+The induced left action on the colorings \(f:X\to C\) is
+\((g\cdot f)(x)=f(g^{-1}x)\). The number of coloring orbits is
+\[
+ Z_{G,X}(q,\ldots,q).
+\]
+In particular a fixed coloring for \(g\) has
+\(q^{\sum_k c_k(g)}\) possible values over all its cycles.
+\end{theorem}
+\begin{proof}
+The inverse in the definition ensures
+\(g\cdot(h\cdot f)=(gh)\cdot f\). A coloring is fixed by \(g\)
+if and only if it is constant on each cycle of \(g\).
+Restriction to one color on each cycle is a bijection from
+fixed colorings to functions from the cycle set to \(C\).
+Burnside's formula now gives the stated average. If \(C\) is
+empty and \(X\ne\varnothing\), each cycle set is nonempty and
+there are no colorings. If \(X=\varnothing\), there is one
+empty coloring even for \(C=\varnothing\), in agreement with
+the empty-product convention.
+\end{proof}
+
+\begin{theorem}[Weighted cycle-index substitution]\label{p204:W33}
+Introduce commuting indeterminates \(w_c\) for \(c\in C\).
+The weight of a coloring is
+\(W(f)=\prod_{x\in X}w_{f(x)}\), which is constant on its orbit.
+Writing \(W(O)\) for the weight of an orbit, one has
+\[
+ \sum_{O\in C^X/G}W(O)
+ =Z_{G,X}\left(\sum_{c\in C}w_c,\ \sum_{c\in C}w_c^2,\
+                         \ldots,\ \sum_{c\in C}w_c^{|X|}\right).
+\]
+The right side, initially written over \(\mathbb Q\), has
+nonnegative integer coefficients. It specializes to arbitrary
+commuting weights in a commutative semiring via that integral
+polynomial.
+\end{theorem}
+\begin{proof}
+A group element permutes positions, so \(W\) is invariant.
+Work first with the polynomial ring over \(\mathbb Z\).
+The orbit--stabilizer fiber computation gives
+\[
+ \sum_{g\in G}\sum_{f:\,g\cdot f=f} W(f)
+  =\sum_{f\in C^X}|G_f| W(f)
+  =|G|\sum_{O\in C^X/G} W(O).
+\]
+For fixed \(g\), a \(k\)-cycle has one independently chosen
+color and contributes \(w_c^k\). Distributivity yields
+\(\prod_k(\sum_{c\in C}w_c^k)^{c_k(g)}\) for the inner sum.
+Dividing the integer polynomial identity by \(|G|\) over
+\(\mathbb Q\) proves the displayed formula. Its coefficients
+are the numbers of orbits with each color multiplicity, so
+they are nonnegative integers. Evaluation of that polynomial
+uses only addition and multiplication of weights. In a semiring
+where \(|G|\) is not a unit, this last evaluation does not
+require any division. The argument also covers empty color
+sets and empty position sets.
+\end{proof}
+
+\section{Necklaces and bracelets}
+
+\begin{proposition}[The rotation and reflection cycle indices]
+\label{p204:W34}
+For \(n\ge1\), take the positions \(\mathbb Z/n\mathbb Z\).
+The rotations give the necklace cycle index
+\[
+ Z_{\mathrm{rot},n}
+ =\frac1n\sum_{d\mid n}\varphi(d)s_d^{\,n/d},
+\]
+where \(\varphi(d)\) counts residues modulo \(d\) coprime to \(d\).
+Allowing reflections as well gives the bracelet cycle index
+\[
+ Z_{\mathrm{dih},n}
+ =\frac12 Z_{\mathrm{rot},n}
+  +\begin{cases}
+     \frac12s_1s_2^{(n-1)/2},& n\ \text{odd},\\[2pt]
+     \frac14\left(s_1^2s_2^{(n-2)/2}+s_2^{n/2}\right),
+       & n\ \text{even}.
+   \end{cases}
+\]
+Factors with exponent zero are omitted, including in the \(n=1\)
+formula. Substitution as in Theorem~\ref{p204:W32} or
+Theorem~\ref{p204:W33} gives the unweighted counts or the weight
+polynomials for these orbits. At \(n=0\) we use the empty-position
+action and there is one empty object.
+\end{proposition}
+\begin{proof}
+Set \(d_0=\gcd(n,a)\) for the rotation \(x\mapsto x+a\).
+Its least positive return time is \(n/d_0\). Indeed the equation
+\(n\mid ma\) reduces to \(n/d_0\mid m\) after cancelling the
+coprime factor \(a/d_0\). This return time \(d\) is the same
+for every position, so the monomial is \(s_d^{n/d}\).
+There are \(\varphi(d)\) choices of \(a\) with return time \(d\),
+since \(a\) is \(n/d\) times a residue coprime to \(d\) modulo \(d\).
+This includes the identity at \(d=1\). The rotation formula follows.
+
+Use the abstract dihedral group of pairs
+\((a,\varepsilon)\), \(a\in\mathbb Z/n\mathbb Z\),
+\(\varepsilon\in\{1,-1\}\), with multiplication
+\((a,\varepsilon)(b,\eta)=(a+\varepsilon b,\varepsilon\eta)\).
+The action is \(x\mapsto a+\varepsilon x\). It is allowed to have
+a kernel for small \(n\); by Definition~\ref{p204:W31} this does
+not change its cycle index. The \(n\) elements with
+\(\varepsilon=-1\) act as involutions. Their fixed points solve
+\(2x=a\) modulo \(n\). If \(n\) is odd, multiplication by two
+is a bijection, so there is one fixed point and the rest form
+2-cycles. If \(n\) is even, this map has kernel of size two and
+image the even residues. Half the reflections have two fixed
+points, and half have none. In each case the nonfixed points
+are paired. Averaging these monomials with the rotation half of
+the group gives the formula. For \(n=1,2\) it still averages
+the abstract group, including repetitions of the same permutation.
+\end{proof}
+
+For the group-theoretic enumeration background and applications,
+see \cite{Polya}.
+\chapter{Finite graphs, connectivity, and spanning trees}
+\label{p204:ch06}
+
+Graphs in this chapter are finite and simple. Thus \(G=(V,E)\) consists of
+a finite vertex set \(V\) and a set \(E\) of two-element subsets of \(V\).
+Write \(uv\in E\) for \(\{u,v\}\in E\), and \(d_G(v)\) for the number of
+neighbors of \(v\). When a later chapter uses parallel directed arcs,
+those arcs are individually indexed.
+
+\section{Paths and trees}
+
+\begin{definition}[Subgraphs, paths, and components]\label{p204:W35}
+A subgraph has a subset of the vertices and a subset of the edges with
+both ends in that subset. The induced subgraph \(G[S]\) on \(S\subseteq V\)
+keeps every such edge. A walk of length \(k\geq 0\) is a sequence
+\(v_0,\ldots,v_k\) with \(v_{i-1}v_i\in E\) for \(1\leq i\leq k\).
+A path is a walk with all vertices distinct. A cycle is a closed walk
+\(v_0,\ldots,v_k=v_0\) with \(k\geq 3\) and \(v_0,\ldots,v_{k-1}\)
+distinct. A graph is acyclic if it has no cycle.
+
+The connected components are the classes of the relation of being joined
+by a walk. A graph is connected when it is nonempty and has one component.
+A forest is an acyclic graph, and a tree is a connected forest.
+The empty graph has no components.
+\end{definition}
+
+The walk relation is reflexive by the length-zero walk, symmetric by
+reversal, and transitive by concatenation. Any walk can be shortened to a
+path with the same endpoints: if \(v_i=v_j\) with \(i<j\), delete the
+segment after \(v_i\) through \(v_j\). Every edge after the deletion is
+still present, and the length strictly decreases. Thus a nonempty graph
+is connected precisely when every pair of vertices is joined by a path.
+
+\begin{theorem}[Trees and spanning forests]\label{p204:W36}
+For a nonempty graph on \(n\) vertices, the following conditions are
+equivalent:
+\begin{enumerate}
+\item the graph is a tree;
+\item it is connected and has \(n-1\) edges;
+\item every pair of vertices has exactly one path between them.
+\end{enumerate}
+A connected graph has a spanning tree. An arbitrary graph has a
+spanning forest that restricts to a spanning tree in each component.
+\end{theorem}
+
+\begin{proof}
+Two distinct paths with the same endpoints contain a cycle in their
+union. To see this, orient both paths from the same endpoint, take the
+first vertex where their outgoing edges differ, and follow the second
+path from this vertex to its first return to the first path. It cannot
+return to the common initial segment because it is a path. This segment
+of the second path and the corresponding segment of the first path
+form a cycle. Conversely, two arcs of a cycle between distinct vertices
+give different paths. Together with the walk reduction, this proves
+the equivalence of the first and third conditions.
+
+To construct a spanning tree in a connected graph, start with one
+vertex. While the current vertex set is proper, a path from it to an
+outside vertex contains an edge leaving it. Add one such edge and its
+outside endpoint. The new endpoint has degree one in the growing
+subgraph, so this step creates no cycle and preserves connectivity.
+There are \(n-1\) steps. A tree has no edge outside the spanning tree
+just constructed: any such edge together with the tree path between its
+ends forms a cycle. Consequently every tree has \(n-1\) edges, and a
+connected graph with \(n-1\) edges consists of its spanning tree.
+Apply the construction separately in the components for the last
+assertion.
+\end{proof}
+
+\begin{theorem}[Leaves and the degree sum]\label{p204:W37}
+A tree with at least two vertices has at least two leaves, where a leaf
+has degree one. In every finite graph,
+\[
+  \sum_{v\in V}d_G(v)=2|E|.
+\]
+In a tree on \(n\) vertices the sum is \(2(n-1)\). In any finite graph
+the number of odd-degree vertices is even.
+\end{theorem}
+
+\begin{proof}
+Choose a path of maximum length in the tree. It has two distinct ends.
+A neighbor of an end different from the next path vertex cannot lie
+outside the path by maximality, and cannot lie on the path because that
+would form a cycle. Each end is therefore a leaf. For the degree sum,
+count incident pairs \((v,e)\) first by \(v\) and then by \(e\). Each
+edge contributes exactly two. Reduction modulo two gives the parity
+claim, and Theorem~\ref{p204:W36} gives the tree specialization.
+\end{proof}
+
+\section{Bridges and blocks}
+
+Deleting an edge keeps all vertices. A bridge is an edge whose deletion
+increases the number of components. Deleting a vertex also deletes its
+incident edges. In a connected graph a cut vertex is a vertex whose
+deletion leaves at least two components. A graph is \emph{2-connected}
+when it has at least three vertices, is connected, and remains
+connected after deletion of any one vertex. A block is a maximal
+2-connected subgraph, a bridge with its two endpoints, or a singleton
+at an isolated vertex.
+
+\begin{theorem}[Forests and the block--cut tree]\label{p204:W38}
+A forest on \(n\) vertices with \(c\) components has \(n-c\) edges.
+An edge is a bridge exactly when it lies on no cycle. Every edge belongs
+to exactly one block, distinct blocks share at most one vertex, and
+a vertex lies in at least two blocks exactly when it is a cut vertex
+of its component. For each connected component, the bipartite incidence
+graph of its blocks and its cut vertices is a tree. An isolated vertex
+gives a single block node.
+\end{theorem}
+
+\begin{proof}
+Sum the edge counts of the component trees. For the bridge assertion,
+if the endpoints of an edge can still be joined after it is deleted,
+that path and the deleted edge form a cycle. Replacing each use of the
+edge in any old walk by the alternative path shows that no component
+splits. If there is no alternative path, the endpoints split.
+
+Two 2-connected subgraphs with two common vertices have 2-connected
+union. After one vertex is deleted, each piece remains connected and
+they still have a common vertex. Thus distinct maximal 2-connected
+subgraphs cannot share two vertices. Each cycle is itself 2-connected
+and can be extended to a maximal such subgraph. A 2-connected graph
+has no bridge: if a bridge splits it into sides \(A\) and \(B\), then
+at least one side has at least two vertices. Deleting the endpoint
+of the bridge on that side disconnects the rest of that side from the
+other side. These facts give unique membership for every edge, including
+the bridge edges. A bridge block cannot share both endpoints with a
+2-connected block, since the latter would supply an alternative path
+between them. Two different bridge blocks also share at most one
+vertex.
+
+For a connected component, temporarily include \emph{all} its vertices
+as nodes along with its blocks, joining a vertex node to each block
+that contains it. The incidence graph is connected, since each original
+edge can be traversed through its block. Suppose it has a cycle with
+distinct block nodes \(B_1,\ldots,B_k\) and distinct connecting vertex
+nodes. One has \(k\geq 3\), since two blocks cannot share two vertices.
+In the union of these blocks, deleting any vertex leaves each piece
+connected and nonempty, including the bridge pieces if any. At most
+one of the designated links around the cycle disappears. The remaining
+links still join all the pieces. The union has at least three vertices
+and is 2-connected. This contradicts maximality if there is a
+2-connected piece, and contradicts the bridge property if there is a
+bridge piece. An isolated-vertex block cannot occur on the cycle.
+The incidence graph is therefore a tree.
+
+If a vertex is incident with at least two block nodes, removing its
+node disconnects the incidence tree, with other original vertices on
+at least two sides. A walk avoiding that vertex in the original graph
+would give a walk through blocks avoiding the same node in the tree,
+which is impossible between those sides. If the vertex is incident with
+a single block, its incidence node is a leaf. For any two remaining
+vertices, follow their incidence-tree path and replace each visit
+through a block by a walk inside that block with the vertex deleted.
+Such walks exist since deleting one vertex in a 2-connected block or
+bridge block leaves it connected whenever it has remaining vertices.
+If there are fewer than two remaining vertices there is no cut.
+Thus exactly the shared vertices are cut vertices. Remove the
+non-cut vertex leaves of the incidence tree. The resulting block--cut
+graph is a tree, since paths between its retained nodes never used a
+deleted leaf.
+\end{proof}
+
+\section{Euler trails and Hamilton cycles}
+
+A trail is a walk with distinct edges. It is Eulerian if it uses every
+edge. The \emph{edge support} is the subgraph induced by all vertices
+of positive degree. A Hamilton cycle is a cycle containing every vertex.
+
+\begin{theorem}[Euler circuits and open trails]\label{p204:W39}
+Suppose \(G\) has at least one edge and connected edge support. Then
+it has a closed Euler trail if and only if every vertex has even degree.
+It has an open Euler trail if and only if it has exactly two vertices
+of odd degree, which must be its endpoints. If there are no edges and
+at least one vertex, any length-zero walk is a closed Euler trail.
+The empty vertex set has no walk under Definition~\ref{p204:W35}.
+\end{theorem}
+
+\begin{proof}
+In a trail each interior arrival is paired with a departure. Hence the
+used degree is even at all vertices for a closed trail and is odd
+exactly at the two ends for an open trail. An Euler trail also forces
+the edge support to be connected when there are edges.
+
+In the even case, start at a vertex incident with an edge and grow a
+trail by unused edges until it cannot be extended at its end. If the
+trail ended away from its start, the used degree at the end would be
+odd, while its total degree is even. An unused incident edge would
+then allow extension. The trail is therefore closed. The unused edges
+have even degree at every vertex. If some edge remains, connectivity
+of the edge support gives a vertex on the trail incident with an
+unused edge. Indeed, if no such vertex existed, all remaining edges
+would lie in a different part of the support with no joining edge.
+Grow a maximal trail in the unused edges from the shared vertex.
+It closes by the same degree argument, and can be inserted into the
+original trail at that vertex. Each insertion consumes an edge, so
+the process terminates with a closed Euler trail.
+
+In the odd case, start at one odd-degree vertex. A maximal trail
+cannot end at a different even-degree vertex by the unused-edge
+argument. It cannot close at the starting vertex, since the used degree
+there would be even and the total degree odd. It must therefore end at
+the other odd-degree vertex. All unused degrees are now even, and the
+same insertion of closed trails consumes the remaining edges without
+changing the endpoints.
+\end{proof}
+
+\begin{theorem}[Ore's and Dirac's conditions]\label{p204:W40}
+Let \(n=|V|\geq 3\). If \(d_G(u)+d_G(v)\geq n\) for every pair of
+distinct nonadjacent vertices, then \(G\) has a Hamilton cycle.
+In particular, this holds if \(d_G(v)\geq n/2\) at every vertex.
+\end{theorem}
+
+\begin{proof}
+The degree-sum hypothesis forces connectivity. For vertices in distinct
+components of sizes \(a\) and \(b\), their degree sum is at most
+\(a+b-2\leq n-2\). Choose a longest path \(v_1,\ldots,v_k\).
+Since the graph is connected and \(n\geq3\), there is a path on at
+least three vertices. All neighbors of either endpoint are on the path.
+If \(v_1v_k\) is an edge, the path closes to a cycle on the same vertices.
+Otherwise consider the index sets
+\[
+  I=\{i:1\leq i<k,\ v_1v_{i+1}\in E\},\qquad
+  J=\{i:1\leq i<k,\ v_iv_k\in E\}.
+\]
+They have sizes \(d_G(v_1)\) and \(d_G(v_k)\). Their sizes sum to at least
+\(n>k-1\), so they have a common index \(i\). Then
+\[
+  v_1,\ldots,v_i,v_k,v_{k-1},\ldots,v_{i+1},v_1
+\]
+is the desired cycle on the path vertices. If this cycle omitted
+a vertex, connectivity would give an outside vertex adjacent to
+one on the cycle. Starting at that outside vertex and then following
+the cycle without closing it gives a longer path. This contradiction
+shows that the cycle is Hamiltonian. The minimum-degree hypothesis
+implies the required degree sum.
+\end{proof}
+
+\section{Counting trees}
+
+\begin{theorem}[Pr\"ufer coding and Cayley's formula]\label{p204:W41}
+Let \(V\) be a linearly ordered set of \(n\geq 2\) labels. Trees on \(V\)
+are in bijection with sequences of length \(n-2\) over \(V\).
+In the corresponding sequence a vertex \(v\) occurs \(d_G(v)-1\) times.
+There are \(n^{\,n-2}\) trees on \(V\). On a one-element label set there
+is one tree.
+\end{theorem}
+
+\begin{proof}
+Encode a tree by removing its smallest leaf and recording that leaf's
+neighbor, stopping when two vertices remain. Removing a leaf leaves a
+tree, since a path between two other vertices cannot use the removed
+leaf. For each vertex \(v\), all but one of its incident edges are
+removed while \(v\) remains and a leaf neighbor is removed. Each such
+removal records \(v\). The last edge is removed when \(v\) is itself
+deleted, or is the unrecorded final edge. This proves the occurrence
+count. The same argument applies to the residual tree at each stage
+and the corresponding suffix of the code. Its leaves are therefore
+exactly the residual labels absent from that suffix.
+
+For a sequence \(a_1,\ldots,a_{n-2}\), start with \(V\) as the available
+labels. At stage \(i\), let \(b_i\) be the smallest available label
+not occurring in \(a_i,\ldots,a_{n-2}\). There are two more available
+labels than entries in this suffix, and all suffix entries remain
+available by the rule for deletions. Join \(b_i\) to \(a_i\) and remove
+\(b_i\) from the available labels. Join the last two labels. In reverse
+order this construction starts with one edge and adds one new leaf
+at each step, so it produces a tree. On the labels available at stage
+\(i\), the constructed residual tree has degree equal to one plus
+the number of occurrences in the suffix. This holds for the final
+edge. Reversing one step adds a new label of degree one, absent from
+the suffix, and increases the degree of the newly recorded label by
+one. This proves the formula by induction. It follows that encoding
+the constructed tree removes exactly \(b_i\) at stage \(i\) and records
+\(a_i\). Conversely, the leaf criterion in the residual tree forces
+the decoder to undo each step of any encoding. The bijection gives
+the count, including the empty code when \(n=2\).
+\end{proof}
+
+\begin{theorem}[Weighted matrix--tree formula]\label{p204:W42}
+Let \(G\) have \(n\geq1\) vertices and assign each edge a weight \(w_e\)
+in a field \(K\). Define the weighted Laplacian \(L\) by
+\[
+  L_{uv}=\begin{cases}
+    \sum_{e\ni u} w_e & (u=v),\\
+    -w_{\{u,v\}} & (u\ne v,\ uv\in E),\\
+    0 & (u\ne v,\ uv\notin E).
+  \end{cases}
+\]
+For every vertex \(r\), the determinant of the matrix obtained by
+deleting row and column \(r\) equals
+\[
+   \sum_{T} \prod_{e\in E(T)} w_e ,
+\]
+summed over the spanning trees. For \(K=\mathbb{Q}\) and all weights one
+this is the number of spanning trees. It is zero for a disconnected
+graph and is one for a single vertex.
+\end{theorem}
+
+\begin{proof}
+Orient each edge arbitrarily and form the incidence matrix \(D\), with
+\(+1\) at its head and \(-1\) at its tail in each column. Then
+\(L=D\operatorname{diag}(w_e)D^{\mathsf T}\), by reading a column's two
+nonzero entries. Let \(D_r\) omit row \(r\) and write \(D_{r,S}\) for
+its columns in a subset \(S\) of the edges, with the inherited ordering.
+Expanding by multilinearity in the columns yields
+\[
+ \det\bigl(D_r\operatorname{diag}(w_e)D_r^{\mathsf T}\bigr)
+   =\sum_{|S|=n-1}\det(D_{r,S})^2\prod_{e\in S} w_e .
+\]
+For clarity, in the determinant of a product \(AB\) of sizes \(p\times m\)
+and \(m\times p\), expand each output column as the corresponding linear
+combination of columns of \(A\). A repeated input column gives zero.
+For each \(p\)-element subset, group the terms over its permutations.
+The determinant sign is the permutation sign, and the sum of products
+of coefficients is exactly the determinant of the corresponding rows
+of \(B\). Taking \(A=D_r\) and \(B=\operatorname{diag}(w_e)D_r^{\mathsf T}\)
+gives the displayed expansion.
+
+If \(S\) is a spanning tree and \(n>1\), choose a leaf different from
+\(r\) by Theorem~\ref{p204:W37}. Its row in \(D_{r,S}\) has one nonzero
+entry \(\pm1\). Expanding in that row reduces to the same determinant
+for the tree with that leaf and edge removed. The empty determinant
+is one, so the determinant is \(\pm1\). If \(S\) is not a spanning
+tree, the graph \((V,S)\) is disconnected by Theorem~\ref{p204:W36}.
+Sum the rows in a component not containing \(r\). The sum is zero
+since every column with an endpoint in the component has both
+endpoints there. The row dependence is nontrivial. Thus only spanning
+trees contribute to the expansion. The sole empty tree on a single
+vertex has empty product one, and a disconnected graph has no spanning
+tree.
+\end{proof}
+
+\section{Fundamental cycles and cuts}
+
+Identify a set of edges with its indicator in the vector space
+\(\mathbb{F}_2^E\), with addition given by symmetric difference. For a
+vertex set \(S\), let \(\delta(S)\) be the edges with exactly one
+endpoint in \(S\). The cut space is the span of these vectors. The cycle
+space is the span of the edge sets of simple cycles.
+
+\begin{theorem}[Bases of the cycle and cut spaces]\label{p204:W43}
+Let \(G\) have \(n\) vertices, \(m\) edges, and \(c\) components.
+Fix a spanning forest \(F\) with one tree in each component.
+For an edge \(e\notin F\), adjoining \(e\) to its forest path gives
+its fundamental cycle. For \(e\in F\), deleting \(e\) splits its
+forest tree and one side determines its fundamental cut. These
+fundamental cycles and cuts are bases of the cycle and cut spaces
+respectively. The dimensions are \(m-n+c\) and \(n-c\), and the two
+spaces are orthogonal under the coordinate dot product over
+\(\mathbb{F}_2\). The cycle space consists of exactly the even-degree
+edge sets.
+\end{theorem}
+
+\begin{proof}
+The forest path exists because \(F\) spans each component. The
+fundamental cycle has only one nonforest edge, namely \(e\). Thus
+the cycles are independent by their nonforest coordinates. Every
+sum of cycles gives even degree at each vertex. Conversely, start
+with an even-degree edge set, and add the fundamental cycle for each
+nonforest edge present. The remainder is an even-degree subset of
+the forest, necessarily empty: a nonempty edge subset of a forest
+has a component with an edge and hence a leaf. Thus the fundamental
+cycles span all even-degree sets.
+
+The fundamental cut of a forest edge \(e\) has only that edge among
+its forest coordinates, because the two sides are components of
+the forest tree after deleting \(e\). Hence the fundamental cuts
+are independent. The identity
+\(\delta(S)+\delta(T)=\delta(S\mathbin{\triangle}T)\) follows by
+comparing the endpoint indicators modulo two. Thus every cut-space
+vector is itself \(\delta(S)\) for some \(S\). Adding the fundamental
+cuts at its nonzero forest coordinates leaves a cut with no forest
+edge. Membership in its defining vertex set is constant along
+each forest tree, hence constant on each component of \(G\).
+That cut is empty, so the fundamental cuts span. By
+Theorem~\ref{p204:W38} there are \(n-c\) forest edges and \(m-n+c\)
+nonforest edges. Finally, for an even-degree edge set \(H\),
+the number of its edges in \(\delta(S)\) is congruent modulo two to
+\(\sum_{v\in S}d_H(v)\): internal edges contribute twice. This is
+zero, proving orthogonality.
+\end{proof}
+
+The finite graph conventions and classical statements in this chapter
+may be compared with \cite[Chapters 3--5, 18, and 20]{BM}.
+The determinant expansion uses the same Cauchy--Binet interface as
+\cite{D05}.
+\chapter{Network flows, integrality, and Menger's theorem}
+\label{p204:ch07}
+
+\section{Finite networks and the cut inequality}
+
+\begin{definition}[Capacitated directed network]\label{p204:W44}
+A finite network consists of a finite vertex set \(V\), a finite arc
+set \(A\), tail and head maps \(\tau,\eta:A\to V\), finite capacities
+\(c_a\in[0,\infty)\), and distinct vertices \(s,t\in V\).
+Parallel and oppositely directed arcs are allowed. They retain their
+arc identities. A flow assigns numbers \(f_a\) with \(0\leq f_a\leq c_a\)
+and with divergence
+\[
+  \operatorname{div}_f(v)
+     = \sum_{\tau(a)=v} f_a-\sum_{\eta(a)=v}f_a
+     =0 \qquad (v\notin\{s,t\}).
+\]
+The value is \(|f|=\operatorname{div}_f(s)\). Here \(|f|\) denotes the
+signed value, rather than its absolute value. An \(s\)--\(t\) cut is a
+set \(S\subseteq V\) containing \(s\) and excluding \(t\). Write
+\[
+ A^+(S)=\{a:\tau(a)\in S,\ \eta(a)\notin S\},\qquad
+ A^-(S)=\{a:\tau(a)\notin S,\ \eta(a)\in S\}.
+\]
+Its capacity is \(c(S)=\sum_{a\in A^+(S)}c_a\).
+\end{definition}
+
+Every arc contributes zero to the sum of the divergences over \(V\),
+so \(\operatorname{div}_f(t)=-|f|\). A loop makes no contribution to any
+divergence or cut. One can remove loops for the optimization problem
+and extend flows back by zero on the removed arcs. We allow loops in
+circulation decompositions.
+
+\begin{proposition}[Weak flow--cut duality]\label{p204:W45}
+For every feasible flow \(f\) and \(s\)--\(t\) cut \(S\),
+\[
+ |f|=\sum_{a\in A^+(S)}f_a-\sum_{a\in A^-(S)}f_a\ \leq\ c(S).
+\]
+Equality holds exactly when every outgoing cut arc is saturated
+and every incoming cut arc has zero flow.
+\end{proposition}
+
+\begin{proof}
+Sum the divergence over vertices in \(S\). An arc with both endpoints
+in \(S\) contributes once with each sign, so it cancels. The only
+nonzero divergence in \(S\) can occur at \(s\). The difference
+\(c(S)-|f|\) is now a sum of outgoing slacks \(c_a-f_a\) and incoming
+flows \(f_a\), all nonnegative. It is zero precisely when each term
+is zero.
+\end{proof}
+
+\section{Residual paths and real capacities}
+
+For a feasible \(f\), give each original arc \(a:u\to v\) two possible
+residual arcs. Its forward copy is \(u\to v\) with residual capacity
+\(c_a-f_a\), and its backward copy is \(v\to u\) with residual capacity
+\(f_a\). Use only positive residual capacities when defining the
+residual digraph. The copies are tagged by \(a\) and by the direction
+of modification, so even when endpoints coincide they remain separate.
+
+\begin{lemma}[Augmentation and the reachable cut]
+\label{p204:residual-path}
+If there is a directed residual walk from \(s\) to \(t\), the value
+can be increased. Otherwise the vertices reachable from \(s\) in the
+residual digraph give a cut of capacity equal to the flow value.
+\end{lemma}
+
+\begin{proof}
+Shorten the walk to one with distinct vertices by removing segments
+between repeated vertices, retaining the direction of every remaining
+arc. Let \(\varepsilon>0\) be the minimum residual capacity on this
+path. Increase \(f_a\) by \(\varepsilon\) for each forward copy used
+and decrease it by \(\varepsilon\) for each backward copy used. A
+path with distinct vertices uses at most one copy of any original
+arc: use of both would revisit an endpoint, and a loop cannot occur.
+The bounds on every original arc are therefore preserved by the
+choice of \(\varepsilon\). Each residual arc increases divergence by
+\(\varepsilon\) at its tail and decreases it by \(\varepsilon\) at its
+head, even when it is a backward copy. The changes cancel at every
+interior vertex of the path and increase the value by \(\varepsilon\).
+
+If no such walk exists, the reachable set \(S\) contains \(s\) and
+excludes \(t\). A positive forward residual copy of an arc in \(A^+(S)\)
+would leave \(S\), so every such original arc is saturated. A positive
+backward copy of an arc in \(A^-(S)\) would also leave \(S\), so every
+such original arc has zero flow. Proposition~\ref{p204:W45} gives the
+claimed equality.
+\end{proof}
+
+\begin{theorem}[Maximum flow and minimum cut for real capacities]
+\label{p204:W46}
+Every finite network has a maximum-value real flow and a minimum
+\(s\)--\(t\) cut. Their values are equal.
+\end{theorem}
+
+\begin{proof}
+The feasible set is nonempty because it contains zero. Every flow
+value is bounded above by the sum of capacities of the arcs out of
+\(s\). Choose feasible flows whose values converge to the supremum.
+For each arc in turn, take a subsequence on which the flow coordinate
+converges in its closed bounded interval \([0,c_a]\). The needed
+one-dimensional fact follows by repeatedly bisecting a bounded
+interval, retaining a closed half with infinitely many terms, and
+choosing successively later terms in the nested retained halves.
+Their lengths tend to zero, giving a convergent subsequence by
+completeness of the reals. Since there are finitely many arcs, the
+last subsequence converges on all coordinates. The limit remains
+feasible by the closed bounds and the finite linear conservation
+equalities. Its value is the supremum by the finite value sum.
+The case of no arcs uses just the zero flow.
+
+The residual graph of a maximizing flow has no \(s\)-to-\(t\)
+walk by Lemma~\ref{p204:residual-path}. The reachable cut has capacity
+equal to its value, and Proposition~\ref{p204:W45} shows that this cut
+is minimum. This argument uses attainment in the finite-dimensional
+feasible set, without assuming termination of arbitrary real
+augmentations.
+\end{proof}
+
+\begin{theorem}[Residual optimality and path--cycle decomposition]
+\label{p204:W47}
+A feasible flow is maximum exactly when it has no \(s\)-to-\(t\)
+residual path. A nonnegative circulation on a finite directed
+multigraph is a nonnegative sum of directed simple cycles, allowing
+a loop as a one-arc cycle. A feasible flow of positive value is
+a sum of such cycles and simple directed \(s\)-to-\(t\) paths, with
+path weights summing to its value. At value zero only cycles are
+needed, and negative value gives paths in the opposite direction
+of total weight equal to the opposite of the value. Each decomposition
+preserves every original arc load. If the loads are integers, the
+summands can be taken with positive integer weights.
+\end{theorem}
+
+\begin{proof}
+A residual path strictly improves the value by
+Lemma~\ref{p204:residual-path}. In its absence the cut from the lemma
+and the weak dual bound certify optimality.
+
+A circulation is a nonnegative assignment with zero divergence at all
+vertices. If its positive support has any arc, follow positive arcs.
+At each head reached there is a positive outgoing arc by conservation.
+Since there are finitely many vertices, the first repetition gives
+a directed cycle with distinct vertices apart from its closure.
+Subtract the minimum load on its arcs along the cycle. This preserves
+nonnegativity and conservation, and removes at least one arc from the
+positive support. Iteration stops after finitely many subtractions.
+Adding them back gives the cycle decomposition. All subtractions
+are integral when the initial loads are.
+
+For a flow of positive value \(v\), add a new distinguished arc
+\(t\to s\) of load \(v\). The enlarged assignment is a circulation.
+Every cycle using the new arc gives, on deleting that arc, a simple
+directed \(s\)-to-\(t\) path. Other cycles are kept as they were.
+The sum of path weights is the total load \(v\) on the new arc.
+The original arc loads are unchanged in the resulting decomposition.
+For value zero the flow is already a circulation. For negative value
+interchange \(s\) and \(t\) and apply the positive case.
+\end{proof}
+
+\section{Integral flows and disjoint paths}
+
+\begin{theorem}[Integrality and both finite Menger equalities]
+\label{p204:W48}
+If all capacities are nonnegative integers, some maximum flow has
+integer arc loads. For distinct vertices \(s,t\) of a finite simple
+undirected graph \(G\), the maximum number of pairwise edge-disjoint
+\(s\)-to-\(t\) paths equals the minimum size of an edge set whose
+deletion separates \(s\) and \(t\). If \(s,t\) are also nonadjacent,
+the maximum number of pairwise internally vertex-disjoint
+\(s\)-to-\(t\) paths equals the minimum size of a set of vertices
+in \(V\setminus\{s,t\}\) whose deletion separates them.
+\end{theorem}
+
+\begin{proof}
+Begin with the zero flow. At each step use any residual path and
+augment by its minimum positive residual capacity. The flow remains
+integral, and its value grows by at least one. Since the sum of
+capacities out of \(s\) is a finite upper bound, after finitely many
+steps no residual path remains. Theorem~\ref{p204:W47} then gives
+an integral maximum.
+
+For the edge statement, replace each undirected edge by two opposite
+arcs of capacity one. For an \(s\)--\(t\) cut \(S\), its capacity is
+exactly the size of \(\delta(S)\) in the undirected graph. Such
+an edge cut separates \(s,t\). Conversely, if an edge set separates
+them, take \(S\) to be the vertices reachable from \(s\) after that
+deletion. Then \(\delta(S)\) is contained in the deleted set.
+Thus the minimum cut capacity equals the minimum separator size.
+
+Undirected edge-disjoint paths, oriented from \(s\) to \(t\), give
+an integral flow of their number. Conversely, take an integral
+maximum and, for each undirected edge, subtract the smaller of its
+two opposite loads from both. This preserves divergence and all
+capacity bounds and leaves at most one positive load on that edge.
+Decompose the result as in Theorem~\ref{p204:W47}. Every path uses at
+least one arc and all arc loads are at most one, so every path has
+weight one. No two paths can use the same undirected edge, since
+it now carries load at most one in total. At value zero the empty
+path family suffices. The real flow--cut equality therefore gives
+the edge statement with integer path counts.
+
+For the vertex statement, write \(n=|V|\). Split every internal vertex
+\(v\) into \(v^{\mathrm{in}},v^{\mathrm{out}}\), with an arc
+\(v^{\mathrm{in}}\to v^{\mathrm{out}}\) of capacity one. Do not split
+\(s,t\). For every undirected edge \(uv\) put a transit arc from
+\(u^{\mathrm{out}}\) to \(v^{\mathrm{in}}\) and one from
+\(v^{\mathrm{out}}\) to \(u^{\mathrm{in}}\), each of capacity \(n\),
+using the unsplit vertex at an endpoint. Every simple directed
+\(s\)-to-\(t\) path in this network projects to a simple undirected
+path: at an internal vertex the only way to pass from its input to
+its output is its split arc, and a repetition in the projection would
+repeat that arc's input and output. Conversely an undirected
+\(s\)-to-\(t\) path lifts to a directed one.
+
+Deleting the split arcs of a vertex separator prevents all directed
+\(s\)-to-\(t\) paths, so the resulting reachable cut in the original
+network has outgoing arcs among those split arcs. In particular,
+deleting all \(n-2\) split arcs prevents such a path, since \(s,t\)
+are nonadjacent. The minimum cut has capacity at most \(n-2\)
+and hence contains no outgoing transit arc of capacity \(n\).
+Its outgoing split arcs give a vertex separator, since every lifted
+path must cross the cut. This proves equality of the minimum cut
+capacity and the minimum vertex separator size.
+
+Internally disjoint undirected paths give a feasible lifted integral
+flow: the unit split arcs are not shared, and there are at most
+\(n-2\) paths because each contains an internal vertex. Conversely
+an integral maximum decomposes into paths and cycles. Every lifted
+path passes through at least one split arc, forcing its weight to
+be one. No two such paths share a split arc, so their projections
+have disjoint interiors. This proves the vertex equality.
+\end{proof}
+
+\begin{corollary}[The three connectivity bounds]
+\label{p204:whitney}
+Let \(G\) be a finite simple graph on \(n\geq2\) vertices. Let
+\(\kappa\) be the least number of vertices whose removal either
+disconnects the remaining graph or leaves one vertex, and let
+\(\lambda\) be the least number of edges whose removal disconnects
+the graph. Set both to zero for an initially disconnected graph.
+If \(\delta\) is the minimum degree, then
+\[
+  \kappa\leq\lambda\leq\delta.
+\]
+For a complete graph, \(\kappa=n-1\).
+\end{corollary}
+
+\begin{proof}
+Removing all edges at a minimum-degree vertex gives the upper
+bound on \(\lambda\). In a connected graph take a minimum edge
+cut and a partition \(S,V\setminus S\) induced by a component
+after the cut is removed. Both sides are nonempty and every edge
+between them was removed. By minimality these crossing edges
+form a cut of size \(\lambda\). If every cross-pair is adjacent,
+its size is \(|S|(n-|S|)\geq n-1\), since the two positive side
+sizes \(a,b\) satisfy \(ab-a-b+1=(a-1)(b-1)\geq0\). The bound
+\(\kappa\leq n-1\) follows by retaining just one vertex. Otherwise
+choose nonadjacent \(u,v\) on opposite sides. Choose one endpoint
+different from \(u,v\) of each crossing edge, possible because
+\(uv\) is absent. Deleting the chosen vertices removes all crossing
+edges and leaves both \(u\) and \(v\), so it disconnects the graph.
+At most \(\lambda\) vertices have been chosen. The conventions give
+the disconnected case and the asserted complete-graph value.
+\end{proof}
+
+For historical and textbook comparison, see \cite[Chapters 7 and 9]{BM}
+and \cite[Chapters 10 and 15]{Schrijver}.
+\chapter{Matchings, covers, and chain decompositions}
+\label{p204:ch08}
+
+\section{Matchings and augmenting paths}
+
+\begin{definition}[Matchings and vertex covers]\label{p204:W49}
+In a finite simple graph, a matching is a set of edges no two of
+which share an endpoint. A vertex is saturated if it is incident
+with a matching edge. A matching is perfect if it saturates all
+vertices. A vertex cover is a set meeting each edge. In particular,
+the empty matching is perfect on the empty graph.
+\end{definition}
+
+Every matching has size at most that of every vertex cover.
+For each matching edge choose a covered endpoint. Distinct
+matching edges give distinct chosen endpoints, so this is an
+injection into the cover.
+
+An augmenting path for a matching \(M\) has distinct vertices,
+starts and ends at unsaturated vertices, and alternates between
+edges outside and inside \(M\), starting and ending outside \(M\).
+
+\begin{theorem}[Berge's augmenting-path criterion]\label{p204:W50}
+A matching \(M\) in a finite graph has maximum cardinality if and
+only if it has no augmenting path.
+\end{theorem}
+
+\begin{proof}
+On an augmenting path, remove its \(M\)-edges and insert its other
+edges. At each interior vertex one matching edge is replaced by
+one, and at the two ends a new vertex is saturated. The result is
+a matching with one more edge.
+
+Conversely, suppose a matching \(N\) is larger than \(M\). In the
+graph with edges in \(M\mathbin{\triangle}N\), each vertex has
+degree at most two, and at a degree-two vertex one edge belongs
+to each matching. A finite connected graph of maximum degree at
+most two with edges is a path or a cycle: if it has a degree-one
+vertex, follow its edges starting there without retracing. The
+walk cannot enter a cycle, since the entry would require three
+incident edges or would return to the degree-one start. It
+ends at another degree-one vertex and exhausts the component.
+If every degree is two, following the edges instead closes a cycle
+and exhausts the component. Hence the nontrivial components of
+the symmetric difference are alternating paths and alternating
+even cycles. Some component has more \(N\)-edges than \(M\)-edges
+because the total difference of sizes is positive. It must be
+a path that begins and ends with an \(N\)-edge. Its endpoints
+are unsaturated in \(M\): an incident edge of \(M\setminus N\)
+would extend this component, and an incident common edge would
+give two \(N\)-edges at the endpoint. This path augments \(M\).
+\end{proof}
+
+\section{Bipartite matching and covering}
+
+In a bipartite graph let the vertex parts be the disjoint sets
+\(L\) and \(R\), and let \(N(S)\subseteq R\) denote the neighbors
+of a subset \(S\subseteq L\).
+
+\begin{lemma}[Alternating reachability from unmatched left vertices]
+\label{p204:alternating-reach}
+For a maximum matching \(M\), let \(U\subseteq L\) be the unmatched
+left vertices. Direct every nonmatching edge from left to right,
+and every matching edge from right to left. Let \(S\subseteq L\)
+and \(T\subseteq R\) be the vertices reachable in this digraph
+from \(U\), including \(U\) itself. Then
+\[
+ T=N(S),\qquad \text{matching partners give a bijection }T\simeq S\setminus U .
+\]
+\end{lemma}
+
+\begin{proof}
+A reached unmatched right vertex would give a directed path from
+\(U\) to it. Shorten a directed walk by removing repeated-vertex
+segments if necessary. Since the only directed right-to-left edges
+are matching edges, the path is augmenting, contrary to
+Theorem~\ref{p204:W50}. Thus every \(y\in T\) is matched, and its
+partner is in \(S\setminus U\) by the matching edge directed out
+of \(y\). Conversely a matched \(x\in S\) is not a root of the
+search. Any directed path to it has positive length and must end
+with the arc from its matching partner, so that partner lies in
+\(T\). This proves the bijection. Every \(y\in T\) was reached by
+an edge from some \(x\in S\), giving \(T\subseteq N(S)\).
+For \(x\in S\), each nonmatching edge leads directly to its right
+endpoint, and its matching edge, if present, leads in the undirected
+graph to the partner just proved to lie in \(T\). Thus \(N(S)\subseteq T\).
+\end{proof}
+
+\begin{theorem}[Hall's marriage theorem]\label{p204:W51}
+A finite bipartite graph has a matching saturating \(L\) if and only
+if \(|N(X)|\geq |X|\) for every \(X\subseteq L\).
+\end{theorem}
+
+\begin{proof}
+A matching saturating \(L\) sends distinct vertices of \(X\) to
+distinct vertices of \(N(X)\). For sufficiency choose a maximum
+matching, which exists because the graph is finite. If its unmatched
+left set \(U\) is nonempty, Lemma~\ref{p204:alternating-reach} gives
+\[
+ |N(S)|=|T|=|S|-|U|<|S|,
+\]
+contradicting the hypothesis. Thus the matching saturates \(L\).
+\end{proof}
+
+\begin{theorem}[K\H{o}nig's matching--cover equality]\label{p204:W52}
+In a finite bipartite graph the largest matching size equals the
+smallest vertex cover size.
+\end{theorem}
+
+\begin{proof}
+For a maximum matching use the sets \(S,T,U\) from
+Lemma~\ref{p204:alternating-reach}. The set
+\((L\setminus S)\cup T\) covers all edges: an edge whose left
+endpoint lies in \(S\) has right endpoint in \(N(S)=T\).
+Its size is
+\[
+ |L|-|S|+|T|=|L|-|U|=|M|.
+\]
+The matching-to-cover injection following Definition~\ref{p204:W49}
+gives the reverse bound. This argument includes empty parts.
+\end{proof}
+
+\section{Perfect and maximum matchings in general graphs}
+
+For \(S\subseteq V\), write \(G-S\) for the induced graph on
+\(V\setminus S\), and \(o(G-S)\) for the number of its odd-order
+components.
+
+\begin{theorem}[Tutte's perfect-matching criterion]\label{p204:W53}
+A finite graph has a perfect matching if and only if
+\(o(G-S)\leq |S|\) for every \(S\subseteq V\).
+\end{theorem}
+
+\begin{proof}
+In a perfect matching each odd component of \(G-S\) has some
+vertex matched outside that component. Such an edge meets \(S\),
+and the vertices of \(S\) used by different components are distinct.
+This proves necessity.
+
+For sufficiency suppose the inequalities hold and there is no perfect
+matching. Adding edges cannot increase the number of odd components
+after any prescribed deletion: each new edge either has no effect
+or merges two components, and the parity of the union is the sum
+of their parities modulo two. We can therefore enlarge the graph
+on its fixed finite vertex set until it is edge-maximal without a
+perfect matching. Every missing edge added alone now creates a
+perfect matching, and the inequalities still hold.
+
+Let \(U\) be the vertices adjacent to all other vertices of this
+enlarged graph. We claim that every component of \(G-U\) is complete.
+If one is not, take a shortest path between two nonadjacent
+vertices in it. Its first three vertices \(x,y,z\) satisfy
+\(xy,yz\in E\) and \(xz\notin E\). The middle vertex \(y\) lies
+outside \(U\), so it has a distinct nonneighbor \(w\). This \(w\)
+is different from \(x,z\). By maximality there is a perfect matching
+\(M_1\) of \(G+xz\) containing \(xz\), and a perfect matching \(M_2\)
+of \(G+yw\) containing \(yw\). Their symmetric difference consists
+of alternating cycles, since all vertices are saturated in both
+matchings. If the two added edges are on different cycles,
+switch from \(M_1\) to \(M_2\) on the cycle containing \(xz\).
+This removes \(xz\) without using \(yw\), giving a perfect matching
+of \(G\), a contradiction.
+
+If both added edges lie on one cycle, remove them from that cycle.
+The two resulting paths each join an endpoint of \(xz\) to an
+endpoint of \(yw\). Each has even length, since the first edge
+after the removed \(M_1\)-edge belongs to \(M_2\), and the last
+edge before the removed \(M_2\)-edge belongs to \(M_1\).
+If \(y\) is paired by these paths with \(x\), use the real edge
+\(yz\) to match \(y\) and \(z\). If \(y\) is paired with \(z\),
+use \(yx\). In either case one endpoint is thereby removed from
+each even-length path. Each remaining path has an even number
+of vertices, which can be matched in consecutive pairs along its
+edges. Together with the chosen real edge this matches the entire
+cycle in \(G\). Use \(M_1\) off that cycle, where all of its edges
+are real. Again there is a perfect matching of \(G\). These
+contradictions prove the claim.
+
+By the inequality for \(S=U\), assign to each odd component of
+\(G-U\) a different vertex of \(U\). Match it to one vertex of
+that component, using its universal adjacency. The remaining
+vertices in every component of \(G-U\) have even size and can
+be paired within their complete component. The inequality for
+\(S=\varnothing\) ensures that all components of \(G\) have even
+size and hence \(|V|\) is even. The unused vertices of \(U\)
+therefore also have even size, and can be paired in the complete
+subgraph on \(U\). This final perfect matching is a contradiction.
+The original graph must have had a perfect matching.
+\end{proof}
+
+\begin{theorem}[The Tutte--Berge formula]\label{p204:W54}
+The least number of unmatched vertices in a matching of a finite
+graph \(G\) is
+\[
+ d=\max_{S\subseteq V}\bigl(o(G-S)-|S|\bigr).
+\]
+Equivalently the maximum matching size is \((|V|-d)/2\).
+\end{theorem}
+
+\begin{proof}
+For a matching and a fixed \(S\), at most \(|S|\) odd components
+of \(G-S\) have a matching edge to \(S\). Each other odd component
+has an unmatched vertex. Thus at least \(d\) vertices must remain
+unmatched. The maximum defining \(d\) exists and \(d\geq0\) by the
+choice \(S=\varnothing\). Also \(o(G-S)\equiv |V|-|S|\pmod 2\),
+because even components contribute zero modulo two to the order.
+Every term in the maximum, and hence \(d\), has parity \(|V|\).
+
+Adjoin a set \(D\) of \(d\) new vertices, each adjacent to every
+other vertex, to form \(H\). For a deletion set \(X\subseteq V(H)\)
+that contains \(D\), the definition of \(d\) gives
+\[
+ o(H-X)=o\bigl(G-(X\cap V)\bigr)\leq |X\cap V|+d=|X|.
+\]
+If some new vertex remains, the remaining graph is connected and
+has at most one odd component. This gives the inequality for
+nonempty \(X\). For \(X=\varnothing\) its order \(|V|+d\) is even,
+so the inequality also holds. By Theorem~\ref{p204:W53}, \(H\)
+has a perfect matching. Delete its new vertices and the matching
+edges incident with them. At most \(d\) original vertices lose
+their partners. The lower bound already proved is therefore
+attained, and the size formula follows.
+\end{proof}
+
+\section{Chains and antichains}
+
+A chain in a poset is a subset whose elements are pairwise comparable,
+and an antichain is a subset with no two distinct comparable elements.
+The width is the maximum size of an antichain and the height is the
+maximum size of a chain. Both are zero for the empty poset.
+Decompositions below are partitions into nonempty parts.
+
+\begin{theorem}[Dilworth's and Mirsky's equalities]\label{p204:W55}
+For a finite poset \(P\), the minimum number of chains in a chain
+decomposition equals the width. The minimum number of antichains
+in an antichain decomposition equals the height.
+\end{theorem}
+
+\begin{proof}
+Put \(n=|P|\) and form the bipartite graph with left and right
+copies of \(P\), joining \(x_L\) to \(y_R\) if \(x<y\).
+Let \(m\) be its maximum matching size. Read a matching as
+arrows \(x\to y\) on \(P\). Each vertex has at most one incoming
+and one outgoing arrow. Every arrow is strictly increasing,
+so there is no directed cycle. The arrows therefore give
+vertex-disjoint directed paths, including isolated vertices.
+Indeed, following predecessors must stop at a vertex with no
+predecessor, after which following successors exhausts the path.
+Transitivity makes the vertices on each path a chain. A matching
+of size \(m\) thus gives \(n-m\) chains, since a path on \(k\)
+vertices has \(k-1\) arrows. Conversely a partition into \(b\)
+chains supplies a matching of size \(n-b\) by joining successive
+vertices in each chain from the left to the right copy. This
+proves that the minimum chain count is \(n-m\).
+
+By Theorem~\ref{p204:W52} this bipartite graph has a vertex cover
+of size \(m\). Take all elements of \(P\) neither of whose copies
+is in the cover. At most \(m\) elements are excluded, and no
+two retained elements satisfy \(x<y\), since that would leave
+\(x_Ly_R\) uncovered. Thus there is an antichain of size at least
+\(n-m\). Every antichain meets each part of any chain decomposition
+in at most one element, proving the opposite bound on width.
+
+For the second assertion let \(h\) be the height. A chain of
+size \(h\) meets each antichain in at most one element, giving
+a lower bound of \(h\) on the antichain count. For each \(x\),
+define \(\ell(x)\) to be the largest size of a chain with largest
+element \(x\). If \(x<y\), a longest such chain at \(x\) can be
+extended by \(y\), so \(\ell(y)>\ell(x)\). Hence each level of
+\(\ell\) is an antichain. The nonempty levels partition \(P\)
+into at most \(h\) antichains. The empty poset uses the empty
+partition in both statements.
+\end{proof}
+
+For the classical matching and decomposition statements, see
+\cite[Chapter 16]{BM} and \cite[Sections 14.2, 16.2, and 24.1]{Schrijver}.
+\chapter{Coloring and plane graphs}\label{p204:ch09}
+
+Throughout this chapter \(G=(V,E)\) is a finite simple undirected
+graph unless parallel edges are explicitly allowed. We write
+\([k]=\{1,\ldots,k\}\) and \([0]=\varnothing\).
+
+\section{Vertex colorings and the degree bounds}
+
+\begin{definition}[Proper coloring and chromatic number]\label{p204:W56}
+A proper \(k\)-coloring is a function \(c:V\to[k]\) satisfying
+\(c(u)\ne c(v)\) for every \(uv\in E\). The chromatic number
+\(\chi(G)\) is the least \(k\) for which such a function exists.
+\end{definition}
+
+Assigning a different color to each vertex gives a coloring, so the
+minimum exists. The empty graph has chromatic number zero. A nonempty
+edgeless graph has chromatic number one, since a constant color works
+and no function from a nonempty set to \([0]\) exists. Relabelling
+vertices by a graph isomorphism transports a coloring by composition
+with its inverse, and relabelling colors by a bijection preserves
+inequality of colors. Thus the definition depends only on the graph
+and the cardinality of the color set.
+
+\begin{theorem}[Greedy coloring and degeneracy]\label{p204:W57}
+A graph of maximum degree \(\Delta\) satisfies \(\chi(G)\le\Delta+1\),
+where \(\Delta=0\) for the empty graph. If every nonempty induced
+subgraph has a vertex of degree at most \(d\), then \(\chi(G)\le d+1\).
+The latter condition is equivalent to the existence of an order in
+which each vertex has at most \(d\) neighbors later in the order.
+\end{theorem}
+\begin{proof}
+For the first bound color the vertices in any order. At the time a
+vertex is considered, at most \(\Delta\) of its neighbors have already
+received colors. Some color among \(\Delta+1\) is therefore available,
+and assigning it preserves the condition on all edges already colored
+at both ends. For the second bound repeatedly remove a vertex of degree
+at most \(d\) in the current induced subgraph. Its later neighbors
+in the removal order are precisely its neighbors still present.
+Conversely, for any nonempty induced subgraph, the first vertex of
+that subgraph in the proposed order has at most \(d\) neighbors in
+the subgraph. Coloring in the reverse removal order gives the
+claimed bound. All assertions hold for the empty order.
+\end{proof}
+
+\begin{theorem}[Bipartiteness and odd cycles]\label{p204:W58}
+A finite simple graph is bipartite if and only if it contains no
+cycle of odd length. In particular a nonempty bipartite graph admits
+a proper two-coloring.
+\end{theorem}
+\begin{proof}
+In a bipartite graph every step of a walk switches parts, so a closed
+walk has even length. Conversely, in each connected component choose
+a root and color each vertex by the parity of its shortest-path
+distance to that root. If the endpoints of an edge had the same
+parity, the two root paths together with the edge would form a
+closed walk of odd length. Every odd closed walk contains an odd
+cycle. To see this, take a shortest odd closed walk in the graph
+traced by the original walk. If a vertex occurs twice apart from
+the required first and last occurrences, split the walk at that
+repetition into two shorter closed walks. Their lengths add to an
+odd integer, so one is odd, a contradiction. The shortest walk
+therefore has distinct internal vertices. Its length is at least
+three because the graph has no loops, and it is a cycle.
+Thus the distance parities give a proper bipartition.
+\end{proof}
+
+\begin{lemma}[Two initial vertices for a greedy order]
+\label{p204:brooks-order}
+Suppose \(G\) is a two-connected, noncomplete graph of minimum degree
+at least three. Some vertex \(v\) has two nonadjacent neighbors
+\(a,b\) such that \(G-\{a,b\}\) is connected.
+\end{lemma}
+\begin{proof}
+If deleting any two vertices leaves a connected graph, take a shortest
+path between two nonadjacent vertices and use its first three
+vertices. The endpoints of this three-vertex segment are nonadjacent:
+a chord would shorten the original path. Its middle vertex is \(v\).
+
+Otherwise choose a pair \(v,w\) such that \(H=G-v\) is connected
+and \(H-w\) is disconnected. The block-cut tree of \(H\) from
+Theorem~\ref{p204:W38} has at least two leaf blocks. Each meets
+the rest of \(H\) in exactly one cut vertex \(t\). Its interior is
+the nonempty set of its vertices other than \(t\). No edge of \(H\)
+joins that interior to a vertex outside the block: each interior
+vertex belongs to just that block, and every edge lies in a block.
+There must be a neighbor of \(v\) in each such interior. Otherwise
+deleting \(t\) from \(G\) would separate this interior from \(v\),
+contrary to two-connectivity. Choose \(a,b\) in the interiors of
+two different leaf blocks. They are nonadjacent by the same
+edge-in-a-block property. Deleting a vertex from the interior of a
+two-connected leaf block leaves a connected graph containing its
+cut vertex. For a leaf block consisting of a single bridge the
+cut vertex itself remains. Thus \(H-\{a,b\}\) stays connected:
+one may retain the whole block-cut tree after removing the two
+leaf interiors, and the remaining parts of those blocks still
+attach to their cut vertices. Since \(v\) has degree at least
+three it has a neighbor other than \(a,b\). Adding it back
+preserves connectivity.
+\end{proof}
+
+\begin{theorem}[Brooks' theorem]\label{p204:W59}
+If a finite connected simple graph is neither a complete graph nor
+an odd cycle, then \(\chi(G)\le\Delta(G)\).
+\end{theorem}
+\begin{proof}
+We use the following ordering observation. In a connected graph of
+maximum degree at most \(\Delta\), if a specified vertex has degree
+less than \(\Delta\), root a spanning tree at that vertex and color
+by decreasing tree distance. Every nonroot vertex has an uncolored
+parent at its turn, and the root sees fewer than \(\Delta\) neighbors.
+Consequently \(\Delta\) colors suffice.
+
+For \(\Delta\le2\), a connected graph is a single vertex, a path,
+or a cycle. Indeed a maximal simple path cannot miss an attached
+vertex without either extending at an endpoint or giving an
+internal vertex degree at least three. If the graph contains a
+cycle, its vertices already have degree two and connectivity
+excludes any other vertices. Under the stated exclusions the only
+possibilities are paths of maximum degree two and even cycles;
+alternating colors suffice. Now suppose \(\Delta\ge3\).
+If \(G\) is not regular, apply the ordering observation at a vertex
+of smaller degree. If \(G\) has a cut vertex \(v\), let \(H_i\)
+be the induced graph on \(v\) together with one component of \(G-v\).
+Each \(H_i\) is connected, and \(v\) has a neighbor in every such
+component. Its degree in each \(H_i\) is strictly less than \(\Delta\).
+Color each \(H_i\) using the observation, then permute its color
+labels so the colors at \(v\) agree. These colorings combine
+because there is no edge between distinct components of \(G-v\).
+
+The remaining graph is two-connected and \(\Delta\)-regular.
+Use Lemma~\ref{p204:brooks-order} to choose \(a,b,v\).
+Color \(a\) and \(b\) first with the same color. Root a spanning
+tree of \(G-\{a,b\}\) at \(v\) and color its other vertices by
+decreasing distance to \(v\). Each sees an uncolored parent at
+its turn and therefore has an available color. At \(v\), the two
+neighbors already assigned the same color guarantee that its
+\(\Delta\) neighbors use at most \(\Delta-1\) colors.
+This completes the coloring.
+\end{proof}
+
+These degree bounds concern the largest local degree or a removal
+order. They apply without any choice of a drawing of the graph
+\cite[Chapter 14]{BM}\cite[Chapter 5]{Diestel}.
+
+\section{The chromatic polynomial}
+
+For a set of edges \(A\subseteq E\), write \(c(A)\) for the number
+of connected components of \((V,A)\), including isolated vertices.
+For a simple edge \(e=uv\) we write \(G/e\) for the simple graph
+obtained by identifying \(u,v\), removing \(e\), and merging any
+parallel edges created by the identification.
+
+\begin{theorem}[Chromatic polynomial and deletion--contraction]
+\label{p204:W60}
+There is a unique polynomial \(P_G(q)\in\mathbb Z[q]\) whose value
+at each nonnegative integer \(k\) is the number of proper
+\(k\)-colorings. It satisfies
+\[
+ P_G(q)=\sum_{A\subseteq E}(-1)^{|A|}q^{c(A)},\qquad
+ P_G(q)=P_{G-e}(q)-P_{G/e}(q) \quad (e\in E).
+\]
+For the edgeless graph on \(n\) vertices it is \(q^n\).
+\end{theorem}
+\begin{proof}
+For each edge, declare its violation to be the event that its ends
+get the same color in a function \(V\to[k]\). A function violating
+all edges in \(A\) is precisely one constant on each component of
+\((V,A)\). Hence there are \(k^{c(A)}\) such functions, with the
+empty function counted as one. Inclusion--exclusion over the
+violations gives the displayed polynomial. Two polynomials over
+\(\mathbb Q\) agreeing at all nonnegative integers must be equal.
+Indeed division by \(q-k\) shows that a root removes one unit of
+degree, so a nonzero polynomial has at most its degree many
+distinct roots.
+
+Each proper coloring of \(G-e\) has either different colors at
+\(u,v\), in which case it is a coloring of \(G\), or the same
+color there. The latter colorings correspond bijectively to
+colorings of \(G/e\) by descent along the identification of the
+two vertices. Several copies of the same adjacency impose just
+one inequality. Counting and then using polynomial uniqueness
+gives deletion--contraction. If \(E\) is empty, the subset sum has
+one term and \(c(\varnothing)=n\).
+\end{proof}
+
+\section{Edge colorings}
+
+A proper edge coloring assigns different colors to distinct edges
+with a common endpoint. Its minimum number of colors is the
+\emph{edge chromatic number} \(\chi'(G)\). For a loopless multigraph,
+parallel edges are distinct edges, and the degree counts them with
+multiplicity. The edges at a vertex of maximum degree always give
+the lower bound \(\chi'(G)\ge\Delta\).
+
+\begin{theorem}[K\H{o}nig's line-coloring theorem and Vizing's bound]
+\label{p204:W61}
+For a finite bipartite multigraph \(\chi'(G)=\Delta(G)\).
+For a finite simple graph \(\chi'(G)\le\Delta(G)+1\).
+\end{theorem}
+\begin{proof}
+For the first claim the case \(\Delta=0\) is immediate. Pad the
+two vertex parts with isolated vertices to the same size. In each
+part the sum of the deficiencies \(\Delta-\deg(v)\) is then
+\(\Delta\) times that common size minus the total number of edges.
+While there is a deficiency on the left, there is one on the
+right. Join such a pair by an edge, permitting parallel edges.
+After finitely many steps the enlarged graph is \(\Delta\)-regular.
+In an \(r\)-regular bipartite multigraph with \(r>0\), the \(r|S|\)
+edges counted from a left subset \(S\) land in its neighborhood,
+which can receive at most \(r|N(S)|\) such edges. Thus \(S\)
+satisfies Hall's condition. Theorem~\ref{p204:W51}, applied to the
+simple adjacency relation, gives a matching saturating the left
+part. The parts have equal size, so the matching is perfect.
+Choose one labelled edge for each matched pair. Removing this
+perfect matching gives an \((r-1)\)-regular multigraph. Iterating
+decomposes the enlarged graph into \(\Delta\) matchings, which can
+be assigned separate colors. Restriction to the original graph
+proves the upper bound.
+
+For the second claim fix a palette of \(\Delta+1\) colors and
+induct on the number of edges. Deleting one edge \(xv_0\) gives
+a proper partial coloring with only \(xv_0\) uncolored. At
+every vertex at least one color is missing. A \emph{fan} is a
+list of distinct neighbors \(v_0,v_1,\ldots,v_k\) of \(x\)
+such that, for \(1\le j\le k\), the color \(a_j\) of \(xv_j\)
+is missing at \(v_{j-1}\). Choose a fan that cannot be extended,
+which exists because the neighbor set is finite.
+
+For a prefix through \(v_t\), rotate the colors by placing
+\(a_j\) on \(xv_{j-1}\) for \(1\le j\le t\), leaving \(xv_t\)
+uncolored. This is a proper partial coloring. At \(x\) the
+colors on the spokes have only moved to different spokes. At
+each other vertex the new color was missing there before the
+rotation, and no two spokes have that vertex as an endpoint.
+Here the graph being simple ensures that a chosen neighbor
+determines one spoke. If some color is missing at both \(x\)
+and \(v_t\) before rotating this prefix, we may color \(xv_t\)
+with it after the rotation.
+
+Choose \(\alpha\) missing at \(x\) and \(\beta\) missing at \(v_k\).
+If \(\beta\) is missing at \(x\), rotate the full fan and finish.
+Otherwise exactly one edge at \(x\) has color \(\beta\); its
+other end must belong to the fan, since a neighbor outside
+could be appended. Thus \(a_i=\beta\) for some \(1\le i\le k\).
+Both \(v_{i-1}\) and \(v_k\) miss \(\beta\), and these vertices
+are distinct. In the subgraph of edges with colors
+\(\alpha,\beta\) each vertex has degree at most two and any
+two incident edges have different colors. The component
+of \(x\) is a path because \(x\) has degree one in it.
+A vertex missing \(\beta\) cannot be internal to this path.
+Since one endpoint is \(x\), the component cannot contain
+both \(v_{i-1}\) and \(v_k\).
+
+If \(v_{i-1}\) is outside this component, swap \(\alpha\) and
+\(\beta\) on its own component, so that it misses \(\alpha\).
+No edge at \(x\) changes. All spoke colors of the prefix through
+\(v_{i-1}\) differ from \(\alpha\) and \(\beta\), so their
+missing-color conditions persist. Rotate that prefix and color
+the free edge with \(\alpha\).
+If \(v_{i-1}\) is in the component of \(x\), use the component
+of \(v_k\) instead. Now \(v_k\) misses \(\alpha\). The missing
+\(\beta\) at \(v_{i-1}\) has not changed, and all other spoke
+conditions use colors distinct from the two swapped colors.
+The full fan can therefore be rotated and its last edge
+colored with \(\alpha\). Swapping a whole two-color component
+always preserves properness, since any incident edge of those
+colors belongs to the same component. This proves the induction.
+\end{proof}
+
+For the bipartite result see \cite[Chapter 20]{Schrijver}.
+The second argument uses the fan construction of \cite{MG};
+the explicit choice of the component outside \(x\) keeps all
+spoke colors at \(x\) fixed.
+
+\section{Plane embeddings and five colors}
+
+A plane embedding here draws the vertices as distinct points and
+the edges as simple polygonal arcs meeting only at their prescribed
+endpoints. We may regard a planar drawing as a drawing in the
+sphere \(S^2\) by adjoining the point at infinity. A \emph{face}
+is a connected component of the complement of the embedded graph.
+In the plane the unbounded face corresponds to the component
+containing the point at infinity.
+
+\begin{theorem}[Euler's formula and planar edge bounds]\label{p204:W62}
+For a finite graph embedded as above, let \(v,e,c,f\) count vertices,
+edges, graph components, and faces in the sphere. Then
+\[
+ v-e+f=1+c.
+\]
+In particular, a simple planar graph with \(v\ge3\) has \(e\le3v-6\).
+If it is bipartite it has \(e\le2v-4\). Thus \(K_5\) and \(K_{3,3}\)
+are nonplanar.
+\end{theorem}
+\begin{proof}
+For the empty graph \(v=e=c=0\) and \(f=1\). Otherwise its
+image \(X\) is nonempty, compact, locally contractible, and proper
+in \(S^2\). The local models at interior edge points and vertices
+are an interval and a finite star, respectively. A finite union
+of polygonal arcs and points cannot fill a two-dimensional
+coordinate disk, which proves properness. Orient each edge
+arbitrarily. The cellular boundary \(B:\mathbb Q^e\to\mathbb Q^v\)
+sends each edge to its head minus its tail
+\cite[Theorem 4.2]{P202}. The kernel of its transpose consists of
+functions on vertices constant on each graph component and has
+dimension \(c\). Therefore \(B\) has rank \(v-c\). There are no
+two-cells, so \(H_1(X;\mathbb Q)=\ker B\) has dimension \(e-v+c\).
+The universal coefficient theorem \cite[Theorem 4.13]{P202}
+identifies \(H^1(X;\mathbb Q)\) with the dual of \(H_1(X;\mathbb Q)\),
+since every vector space over \(\mathbb Q\) is free and the
+\(\operatorname{Ext}^1_{\mathbb Q}\) term vanishes.
+Alexander duality over \(\mathbb Q\)
+\cite[Theorem 5.6]{P202} identifies this \(H^1\) with
+\(\widetilde H_0(S^2\setminus X;\mathbb Q)\).
+The complement is open and locally path connected; its path
+components are its connected components. Reduced degree-zero
+homology is free on the differences between those components
+and a fixed one. It follows that there are finitely many faces
+and \(f-1=e-v+c\).
+
+For the inequalities first take a connected simple graph with at
+least three vertices. Each edge has two sides, which may belong
+to the same face. They can be traced by directed edges in the
+two directions with the face kept on the same side, using the
+orientation of the sphere. At a vertex continue along the first
+edge in the corresponding cyclic order from the reversed
+direction. The intervening sector contains no edge, so the
+continuation stays on the same face. This rule is a permutation
+of the directed edges, as reversing the local choice gives its
+inverse. Its orbits are closed boundary walks. Every face has
+at least one edge side: its boundary is nonempty and lies in
+\(X\). At an interior edge point this supplies a side directly,
+and at a vertex the local punctured disk minus the incident
+rays has sectors bounded by edge sides. Since there are finitely
+many sectors, a face approaching the vertex contains at least
+one such sector. The connected graph with at least three
+vertices has no isolated vertices.
+
+A boundary walk cannot have length one in a simple graph.
+If it has length two, the two directed edges must be opposite
+directions of the same edge. The continuation must then reverse
+immediately at both endpoints, which is possible only if both
+endpoints have degree one. That would make the connected graph
+a single edge. Thus every face accounts for at least three
+directed sides, or at least four in a bipartite graph because
+closed walks there have even length. Counting the sides gives
+\(3f\le2e\) and, in the bipartite case, \(4f\le2e\).
+Euler's formula with \(c=1\) yields the two bounds.
+
+For a disconnected graph let \(a\) count isolated vertices,
+\(b\) count single-edge components, and \(h\) count components
+with at least three vertices. If \(h\ge1\), sum the connected
+bounds. They give
+\[
+ e\le 3v-3a-5b-6h\le3v-6,\qquad
+ e\le 2v-2a-3b-4h\le2v-4
+\]
+with the second estimate in the bipartite case. If \(h=0\), then
+\(e=b\le\lfloor v/2\rfloor\), which implies both bounds for
+\(v\ge3\). Finally \(K_5\) has ten edges on five vertices,
+exceeding nine, and \(K_{3,3}\) has nine edges on six vertices,
+exceeding the bipartite bound of eight.
+\end{proof}
+
+\begin{theorem}[Five-color theorem]\label{p204:W63}
+Every finite simple planar graph admits a proper five-coloring.
+\end{theorem}
+\begin{proof}
+Induct on the number of vertices, with the empty graph and the
+graphs on at most two vertices immediate. For \(v\ge3\),
+Theorem~\ref{p204:W62} and the degree sum show that the average
+degree is less than six. Pick a vertex \(x\) of degree at most
+five and color \(G-x\) by induction. If a color is unused on
+its neighbors, assign that color to \(x\). In the remaining
+case there are exactly five neighbors with distinct colors.
+In their cyclic order about \(x\), label them \(v_1,\ldots,v_5\)
+and rename the colors so that \(v_i\) has color \(i\).
+
+If \(v_1\) and \(v_3\) lie in different components of the subgraph
+induced by colors \(1,3\), interchange those two colors on the
+component of \(v_1\). This frees color \(1\) at \(x\). If they
+lie in the same component, take a simple path joining them
+in that subgraph. This path together with \(xv_1\) and \(xv_3\)
+is a simple closed polygonal curve in \(S^2\).
+By Jordan separation \cite[Theorem 5.11]{P202}, it has two
+complementary components with the curve as the boundary of each.
+Near \(x\) its two local sectors lie in distinct components:
+each sector is connected, and both global components meet
+every neighborhood of \(x\). By the cyclic order, the spokes
+toward \(v_2\) and \(v_4\) start in different sectors.
+They do not meet the closed curve again, since the drawing
+has no crossings and their other endpoints do not lie on the
+\(1,3\) path. Thus \(v_2\) and \(v_4\) lie on different sides.
+A path using only colors \(2,4\) in \(G-x\) would be disjoint
+from that curve, since it shares neither a vertex nor a crossing
+with the \(1,3\) path or its two closing edges. Such a path
+cannot join \(v_2\) to \(v_4\). Interchanging colors \(2,4\)
+on the component of \(v_2\) now frees color \(2\) at \(x\).
+
+In either swap no edge with an endpoint outside the chosen
+component becomes monochromatic: an endpoint outside using one
+of the swapped colors would itself be in that component.
+This completes the induction.
+\end{proof}
+
+For the plane graph conventions and related coloring results see
+\cite[Chapters 10--11]{BM}\cite[Chapters 4--5]{Diestel}.
+\chapter{Finite matroids, duality, and minors}
+\label{p204:ch10}
+
+All ground sets in these chapters are finite. We write \(A+e\) and
+\(A-e\) for \(A\cup\{e\}\) and \(A\setminus\{e\}\), respectively.
+All complements, unless a different ground set has been specified,
+are relative to the ground set \(E\). Our starting point is an
+independence system: a family \(\mathcal I\subseteq 2^E\) containing
+\(\varnothing\) and closed under taking subsets. It is a
+\emph{matroid} if it satisfies augmentation: for \(I,J\in\mathcal I\)
+with \(|I|<|J|\), some \(e\in J\setminus I\) has \(I+e\in\mathcal I\).
+A basis of a subset \(A\) means a maximal independent subset of
+\(A\); a basis of the matroid is a basis of \(E\). The empty ground
+set has one basis, namely \(\varnothing\).
+
+\section{Equivalent descriptions}
+
+\begin{theorem}[Independence, bases, rank, circuits, and closure]
+\label{p204:W64}
+Each of the following data on a finite \(E\) determines a matroid.
+The five descriptions yield one another by the rules below.
+\begin{enumerate}
+\item A family \(\mathcal I\) satisfying the independence and
+augmentation axioms above.
+\item A nonempty family \(\mathcal B\subseteq 2^E\) with basis
+exchange: for \(B,D\in\mathcal B\) and \(e\in B\setminus D\) there
+is \(f\in D\setminus B\) with \(B-e+f\in\mathcal B\).
+\item An integer-valued rank function \(r\) on \(2^E\) with
+\(r(\varnothing)=0\), with
+\(0\le r(A+e)-r(A)\le 1\), and with
+\[
+ r(A\cup B)+r(A\cap B)\le r(A)+r(B).
+\]
+\item A family \(\mathcal C\) of nonempty sets, none properly
+containing another member, with circuit elimination: if \(C,D\)
+are distinct members and \(e\in C\cap D\), then
+\((C\cup D)-e\) contains a member of \(\mathcal C\).
+\item A map \(\operatorname{cl}:2^E\to 2^E\) that is extensive,
+monotone, and idempotent, with the exchange implication
+\[
+ y\in\operatorname{cl}(A+x)\setminus\operatorname{cl}(A)
+ \quad\Longrightarrow\quad
+ x\in\operatorname{cl}(A+y).
+\]
+\end{enumerate}
+In (2) the independent sets are the subsets of members of
+\(\mathcal B\). In (3) they are the sets \(I\) with \(r(I)=|I|\).
+In (4) they are the sets containing no member of \(\mathcal C\).
+In (5) they are the sets \(I\) with
+\(e\notin\operatorname{cl}(I-e)\) for every \(e\in I\).
+\end{theorem}
+
+\begin{proof}
+\emph{From independence to the other descriptions.}
+Any independent subset of \(A\) extends to a basis of \(A\) by
+finiteness. Augmentation forces all bases of \(A\) to have the
+same size, denoted \(r(A)\). For bases \(B,D\) of \(E\) and
+\(e\in B\setminus D\), apply augmentation to \(B-e\) and \(D\)
+to get the required replacement from \(D\setminus B\).
+Adding one element can increase rank by at most one, since
+deleting it from an independent set leaves an independent set.
+For submodularity, extend a basis \(I\) of \(A\cap B\) to a
+basis \(J\) of \(A\), and extend \(J\) to a basis \(K\) of
+\(A\cup B\). All elements of \(K\setminus J\) lie in \(B\setminus
+A\), since \(J\) is already maximal in \(A\). Then
+\(I\cup(K\setminus J)\) is independent in \(B\), giving
+\[
+ r(A\cap B)+r(A\cup B)-r(A)\le r(B).
+\]
+The circuits are the minimal dependent sets. For distinct
+circuits \(C,D\), their intersection is independent and their
+ranks are \(|C|-1,|D|-1\). Submodularity implies
+\(r(C\cup D)\le |C\cup D|-2\). Thus deleting any common element
+leaves a dependent set, which contains a circuit by finiteness.
+
+Define \(\operatorname{cl}(A)=\{e\in E:r(A+e)=r(A)\}\).
+Extensivity is immediate, and monotonicity follows from
+submodularity, which gives, for \(A\subseteq B\),
+\[
+ r(B+e)-r(B)\le r(A+e)-r(A).
+\]
+For \(e\in B\) the left-hand side is already zero, so this
+inequality also covers that case. Adding the elements of
+\(\operatorname{cl}(A)\) one at a time leaves rank unchanged.
+If adding \(e\) to \(\operatorname{cl}(A)\) also leaves rank
+unchanged, then \(r(A+e)\le r(\operatorname{cl}(A))=r(A)\).
+This proves idempotence. In the hypothesis of closure exchange,
+\(r(A+y)=r(A)+1\), and \(r(A+x+y)=r(A+x)\le r(A)+1\).
+Consequently \(r(A+x+y)=r(A+y)\), as required.
+The stated recovery rules for \(\mathcal I\) now follow.
+For the closure rule, if \(I\) is independent every deletion
+drops rank by one. If \(I\) is dependent, it contains a
+circuit \(C\), and for any \(e\in C\),
+\(e\in\operatorname{cl}(C-e)\subseteq\operatorname{cl}(I-e)\).
+
+\smallskip
+\emph{From bases.}
+First the exchange axiom forces equal sizes. Starting from
+\(B\in\mathcal B\), exchange elements of \(B\setminus D\) for
+elements of \(D\) until the current member is contained in \(D\).
+A proper containment is impossible: exchange from \(D\) against
+the smaller member would require an element outside \(D\).
+Declare subsets of members independent. Suppose augmentation
+fails for \(I,J\), where \(|I|<|J|\). Choose \(D\in\mathcal B\)
+containing \(J\), and among members containing \(I\) choose
+\(B\) maximizing \(|B\cap D|\). Then \(B\setminus D\subseteq I\),
+since exchanging an element outside \(I\) improves the maximum.
+Also \(J\cap B=J\cap I\), by the failure of augmentation. Hence
+\[
+ |D\setminus B|\ \ge\ |J\setminus B|
+ > |I|-|I\cap J|\ \ge\ |I\setminus D|
+ \ \ge\ |B\setminus D|.
+\]
+This contradicts equal sizes of \(B,D\). The resulting maximal
+independent sets are exactly the original members.
+
+\smallskip
+\emph{From rank.}
+The increment bounds imply \(0\le r(A)\le |A|\). A subset
+\(J\subseteq I\) of an independent set is independent, since
+\(r(I)\le r(J)+|I\setminus J|\). If no element of \(J\setminus I\)
+increases \(r(I)\), then by the diminishing-increment inequality
+above none increases rank during the successive additions, so
+\(r(I\cup J)=r(I)\). This is impossible when \(r(J)=|J|>|I|\).
+Thus augmentation holds. If \(I\) is maximal independent in \(A\),
+no element of \(A\setminus I\) increases its rank; the same
+argument gives \(r(A)=|I|\), recovering the original rank.
+
+\smallskip
+\emph{From circuits.}
+Declare a set independent if it contains no designated circuit.
+Whenever \(I\) is independent and \(I+x\) is dependent, there
+is a unique circuit \(C_x\subseteq I+x\). Indeed, two different
+circuits would both contain \(x\), and elimination would give a
+circuit in \(I\). For \(y\in C_x-x\), the set \(I-y+x\) is
+independent, since its only possible circuit in \(I+x\) was \(C_x\).
+If \(I\) was maximal independent in \(A\) and \(x\in A\setminus I\),
+then \(K=I-y+x\) is still maximal in \(A\). Adding \(y\) to \(K\)
+restores \(C_x\). For \(z\in A\setminus(I+x)\), use the circuit
+\(C_z\subseteq I+z\): it lies in \(K+z\) unless it contains
+\(y\), and in that case elimination of \(y\) between \(C_z\)
+and \(C_x\) gives a circuit in \(K+z\).
+
+If augmentation fails for independent \(I,J\) with \(|I|<|J|\),
+then \(I\) is maximal in \(A=I\cup J\). Among the maximal
+independent subsets of \(A\) of size \(|I|\), choose \(I'\)
+maximizing its intersection with \(J\). For \(x\in J\setminus
+I'\), the circuit \(C_x\) contains a \(y\notin J\), since \(J\)
+is independent. Replacing \(y\) by \(x\) gives another such
+maximal independent set with larger intersection. This proves
+augmentation. The antichain condition ensures that the
+designated circuits are exactly the minimal dependent sets.
+
+\smallskip
+\emph{From closure.}
+Independence by the closure test is hereditary by monotonicity.
+If \(I\) passes the test and \(x\notin\operatorname{cl}(I)\),
+then \(I+x\) passes it. A possible violation at \(x\) is excluded
+by hypothesis. A violation at \(y\in I\) would put
+\(y\in\operatorname{cl}((I-y)+x)\setminus\operatorname{cl}(I-y)\),
+so exchange would put \(x\in\operatorname{cl}(I)\).
+
+For an independent \(J\subseteq\operatorname{cl}(A)\) we claim
+\(|J|\le |A|\). Start with the spanning set \(A\), and insert
+the elements of \(J\) in sequence. At a given step let \(S\)
+be the previously inserted elements and \(T\) the as yet
+unremoved elements of \(A\), maintaining
+\(\operatorname{cl}(S\cup T)=\operatorname{cl}(A)\). The next
+element \(x\) is not in \(\operatorname{cl}(S)\) by independence.
+In an enumeration of \(T\), there is a first element \(t\)
+whose addition puts \(x\) in the closure. Exchange, applied to
+\(S\) together with the preceding elements of the enumeration,
+puts \(t\) in \(\operatorname{cl}(S\cup(T-t)+x)\).
+By monotonicity and idempotence, replacing \(t\) by \(x\)
+therefore preserves the closure of the union. This spends one
+element of \(T\) per insertion and proves the claim.
+If augmentation fails, then \(J\subseteq\operatorname{cl}(I)\),
+so the claim precludes \(|J|>|I|\). Finally take a maximal
+independent \(I\subseteq A\). It satisfies
+\(\operatorname{cl}(I)=\operatorname{cl}(A)\), by the
+one-element extension test. For \(e\in\operatorname{cl}(A)\),
+the claim applied to \(I\) bounds the size of every independent
+subset of \(A+e\) by \(|I|\). For
+\(e\notin\operatorname{cl}(A)\), \(I+e\) is independent.
+Thus the closure recovered from rank is the original one.
+\end{proof}
+
+\begin{corollary}[Bases and diminishing increments]
+\label{p204:W65}
+For all subsets \(A\subseteq E\), the bases of \(A\) have the
+same size. The bases of \(E\) satisfy exchange. The rank is
+monotone with one-element increments at most one and is
+submodular. In particular an element that does not increase
+rank on \(A\) does not increase it on any larger subset.
+\end{corollary}
+
+\begin{proof}
+Extension and augmentation in \(A\) give equal cardinalities.
+Extending \(B-e\) using a basis \(D\) gives the stated exchange.
+The extension from \(A\cap B\) through \(A\) to \(A\cup B\) in
+Theorem~\ref{p204:W64} proves the rank assertions; its
+diminishing-increment inequality gives the last claim.
+\end{proof}
+
+\begin{corollary}[Circuit elimination and rank closure]
+\label{p204:W66}
+The circuits are precisely the inclusion-minimal dependent sets.
+Two distinct circuits sharing \(e\) have a circuit in their
+union with \(e\) removed. For \(e\in E\), \(e\) belongs to the
+closure of \(A\) exactly when adding it leaves the rank unchanged.
+\end{corollary}
+
+\begin{proof}
+These are the circuit and closure constructions in
+Theorem~\ref{p204:W64}. In particular, the rank of the circuit
+union is at most its size minus two, even when the circuits
+intersect in more than one element. Removing the specified
+element therefore gives a dependent set.
+\end{proof}
+
+\section{Duality and elementary structure}
+
+\begin{theorem}[Duality, deletion, and contraction]
+\label{p204:W67}
+The complements \(E\setminus B\) of the bases of \(M\) are the
+bases of a matroid \(M^*\) on \(E\). Duality is an involution and
+\[
+ r_{M^*}(A)=|A|+r_M(E\setminus A)-r_M(E)
+ \qquad (A\subseteq E).
+\]
+For \(C\subseteq E\), define deletion \(M\setminus C\) by
+retaining the independent sets contained in \(E\setminus C\),
+and contraction \(M/C=(M^*\setminus C)^*\) on \(E\setminus C\).
+Then
+\[
+ (M/C)^*=M^*\setminus C,\qquad
+ (M\setminus C)^*=M^*/C.
+\]
+\end{theorem}
+
+\begin{proof}
+For two primal bases \(B,D\), let \(e\in D\setminus B\).
+There is a unique circuit \(C_e\) in \(B+e\) by the elimination
+argument in Theorem~\ref{p204:W64}. It contains \(e\) and an
+\(f\in B\setminus D\), since \(D\) is independent. Then
+\(B-f+e\) is independent and has full rank, hence is a basis.
+Its complement is the result of exchanging \(e\) for \(f\)
+in \(E\setminus B\), proving the dual basis axiom. Taking
+complements twice gives the original bases.
+
+Every independent set extends to a basis, so
+\(r_M(A)=\max_B|B\cap A|\). Therefore
+\(\min_B|B\cap A|=r_M(E)-r_M(E\setminus A)\), and maximizing
+\(|(E\setminus B)\cap A|=|A|-|B\cap A|\) gives the rank formula.
+Deletion preserves the axioms because both the heredity test
+and augmentation use elements only from the retained sets.
+The two displayed duality identities now follow from the
+definition and involutivity on the smaller ground set.
+\end{proof}
+
+\begin{theorem}[Fundamental circuits, cocircuits, and simplification]
+\label{p204:W68}
+Let \(I\) be independent and \(e\in\operatorname{cl}(I)\setminus I\).
+There is exactly one circuit in \(I+e\), its \emph{fundamental
+circuit}. For \(f\in I\), the set \(I-f+e\) is independent
+exactly when \(f\) lies in that circuit.
+
+A loop is an element whose singleton is a circuit, and a
+coloop is an element belonging to every basis. A cocircuit,
+defined as a circuit of \(M^*\), is a minimal set meeting
+every basis of \(M\). In particular the coloops are the loops
+of \(M^*\). Among nonloops, define two distinct elements to
+be parallel if their pair has rank one. Equality or parallelism
+is an equivalence relation. Choosing one representative of
+each class and deleting all other elements gives a simple
+matroid, meaning that it has neither loops nor parallel
+distinct elements. If \(S\) is the representative set and
+\(q(A)\subseteq S\) is the set of representatives of the
+nonloops in \(A\), then
+\[
+ r_{M|S}(q(A))=r_M(A),\qquad
+ \operatorname{cl}_{M|S}(q(A))=\operatorname{cl}_M(A)\cap S .
+\]
+\end{theorem}
+
+\begin{proof}
+Here \(I+e\) is dependent by rank closure. Any circuit in it
+must contain \(e\). Elimination between two such circuits
+would give a circuit in \(I\). Deleting \(f\) removes the
+unique obstruction exactly when \(f\) lies in it.
+
+A subset is independent in \(M^*\) precisely when it lies in
+a complementary basis, that is, when it misses some primal
+basis. Minimal dual dependence is thus minimal intersection
+with every primal basis. The assertion about coloops is the
+singleton case. Equivalently, a cocircuit is the complement
+of a maximal nonspanning subset: meeting every basis says
+exactly that the complement contains no basis, and the two
+extremal conditions reverse under complementation.
+
+For nonloops, a pair has rank one exactly when both elements
+have the same singleton closure. One direction follows
+because each then belongs to the closure of the other, and
+the reverse follows from the rank test. This proves
+transitivity. Loops are already in the closure of
+\(\varnothing\). Thus every element of \(A\) lies in the
+closure of \(q(A)\), and every representative in \(q(A)\)
+lies in the closure of \(A\). Monotonicity and idempotence
+give equality of the two closures and of the ranks.
+Restriction to \(S\) preserves the rank of every subset of
+\(S\), directly by the independent-set definition. Testing
+the rank after adding one element of \(S\) yields the closure
+formula. A singleton in \(S\) has rank one and two distinct
+members cannot be parallel, proving simplicity.
+\end{proof}
+
+\section{Rank under minors}
+
+\begin{theorem}[Rank and operations on minors]
+\label{p204:W69}
+For \(A\subseteq E\setminus C\),
+\[
+ r_{M\setminus C}(A)=r_M(A),\qquad
+ r_{M/C}(A)=r_M(A\cup C)-r_M(C).
+\]
+If \(I\) is any basis of \(C\), then \(J\subseteq E\setminus C\)
+is independent in \(M/C\) exactly when \(I\cup J\) is independent
+in \(M\). Successive deletions combine, successive contractions
+combine, and deletion and contraction on disjoint sets commute.
+These assertions include empty deleted or contracted sets and
+the cases in which the remaining ground set is empty.
+\end{theorem}
+
+\begin{proof}
+Deletion gives the first formula by inspection of independent
+sets. To compute contraction rank, put \(E'=E\setminus C\).
+Applying dual rank on \(E'\), deletion rank, and then dual
+rank on \(E\), in that order, gives
+\begin{align*}
+ r_{M/C}(A)
+ &= |A|+r_{M^*}(E'\setminus A)-r_{M^*}(E')\\
+ &= |A|+|E'\setminus A|-|E'|
+       +r_M(C\cup A)-r_M(C)\\
+ &=r_M(C\cup A)-r_M(C).
+\end{align*}
+The set \(C\) lies in the closure of \(I\); adding \(J\) to
+both sets therefore leaves
+\(r_M(I\cup J)=r_M(C\cup J)\). Since \(I\) is disjoint from
+\(J\) and \(|I|=r_M(C)\), the rank test for \(I\cup J\) is
+exactly the contraction rank test for \(J\). This also
+explains the formula as extension of a basis of \(C\).
+
+Successive deletions give restriction to the final ground
+set. For disjoint sets \(C,D\), applying the contraction
+formula twice gives
+\[
+ r_{(M/C)/D}(A)=r_M(A\cup C\cup D)-r_M(C\cup D).
+\]
+With one deletion and one contraction on disjoint sets, the
+rank on the remaining ground set is
+\(r_M(A\cup C)-r_M(C)\) in either order, where \(C\) is
+contracted. Equality of rank functions on the same ground
+set gives equality of matroids by Theorem~\ref{p204:W64}.
+The formulas use the zero rank of the empty set and
+require no rank-positivity assumptions.
+\end{proof}
+
+For comparison of the standard presentations and conventions,
+see \cite[Sections 1.1--1.4 and Chapters 2--3]{Oxley}.
+\chapter{Representations, finite geometry, and enumeration}
+\label{p204:ch11}
+
+A representation records dependence among \emph{indexed} columns.
+A zero column, repeated columns, and distinct proportional columns
+can therefore carry different index information. In this chapter
+a field need not have characteristic zero.
+
+\section{Vector configurations and graphical representations}
+
+\begin{theorem}[The matroid of a vector family]
+\label{p204:W70}
+Let \(K\) be a field, \(V\) a \(K\)-vector space, and
+\((v_e)_{e\in E}\) a finitely indexed family in \(V\).
+The sets \(I\subseteq E\) on which the columns are linearly
+independent form a matroid. Its rank on \(A\subseteq E\) is
+\[
+ r(A)=\dim_K\operatorname{span}\{v_e:e\in A\}.
+\]
+\end{theorem}
+
+\begin{proof}
+Heredity is immediate. For independent \(I,J\) with \(|I|<|J|\),
+the span of the \(J\)-columns cannot be contained in the span
+of the \(I\)-columns, by the dimension inequality for nested
+finite-dimensional spaces. A \(J\)-column outside the latter
+span augments \(I\). A maximal independent subfamily of \(A\)
+spans all its columns, since any column outside its span could
+be added. Its cardinality is thus the displayed dimension.
+The argument applies to repeated and zero columns. In particular,
+zero columns are loops.
+\end{proof}
+
+\begin{theorem}[Deletion, contraction, and extension of scalars]
+\label{p204:W71}
+Let the matroid of \((v_e)_{e\in E}\) over \(K\) be \(M\).
+Deleting \(C\subseteq E\) is represented by omitting the
+\(C\)-columns. Contracting \(C\) is represented by the images
+of the remaining columns in
+\[
+ V/\operatorname{span}\{v_e:e\in C\}.
+\]
+For any field embedding \(K\hookrightarrow L\), extension
+of scalars from \(K\) to \(L\) preserves the rank of every
+subfamily, hence preserves the matroid.
+\end{theorem}
+
+\begin{proof}
+Deleting columns gives exactly the same independence tests
+on the smaller ground set. Set \(U=\operatorname{span}\{v_e:e\in
+C\}\) and \(W=\operatorname{span}\{v_e:e\in A\}\) for
+\(A\subseteq E\setminus C\). The images of the \(A\)-columns
+span \((U+W)/U\). A basis of \(U\) extends to a basis of
+\(U+W\); the newly added vectors project to a basis of this
+quotient, by lifting a linear relation and using the
+independence of the extended basis. Its dimension is
+\(\dim(U+W)-\dim U=r_M(A\cup C)-r_M(C)\).
+Theorem~\ref{p204:W69} identifies that rank as contraction rank.
+
+For scalar extension, use coordinates in a finite basis of the
+span of the entire family. This finite span has a linear
+retraction from \(V\), obtained by extending its basis to one of
+\(V\) and projecting. Thus its inclusion remains injective after
+extension of scalars, since the same retraction extends. In the
+chosen coordinates, ordinary elimination over \(K\) brings any
+column submatrix to a pivot form by invertible row and column
+operations. These operations remain invertible over \(L\),
+and the pivot form has the same rank there. This proves rank
+preservation, also when the number of pivots is zero.
+The corresponding finite-matrix scalar extension and quotient
+dimension statements are available in the D05 development
+\cite{D05}.
+\end{proof}
+
+For a finite undirected graph, its components include isolated
+vertices. A loop is regarded as a cycle of length one, and a pair
+of distinct parallel edges as a cycle of length two. This
+convention extends the simple graphs used in Chapter~\ref{p204:ch06}.
+A forest contains no cycle of any of these kinds. For a given
+orientation of each nonloop edge, the incidence column of
+\(u\longrightarrow v\) is \(\mathbf e_v-\mathbf e_u\) in the
+vertex coordinate space. Give each loop the zero column.
+
+A \emph{flat} of a matroid is a set \(F\) with
+\(\operatorname{cl}(F)=F\). In a lattice \(L\), write \(x\prec y\)
+when \(y\) covers \(x\), meaning \(x<y\) with no element
+strictly between. Call a finite lattice \emph{geometric} here
+if each element is a join of atoms (elements covering \(0\)),
+and it is upper semimodular in the following covering form:
+if \(x\) covers \(x\wedge y\), then \(x\vee y\) covers \(y\).
+The empty join is \(0\).
+
+\begin{theorem}[Cycle matroids and geometric lattices]
+\label{p204:W72}
+For a finite graph, over every field and every choice of
+orientation, the incidence columns represent the matroid
+whose independent sets are the forests. Its bases are the
+unions of spanning trees of the components, and its rank is
+\(v-c\), where \(v\) is the number of vertices and \(c\) the
+number of components.
+
+The flats of every finite matroid form a geometric lattice.
+Conversely, the atoms of a finite geometric lattice carry a
+simple matroid whose flat lattice is the given lattice.
+This construction of the simple matroid uses only the lattice.
+\end{theorem}
+
+\begin{proof}
+A cycle yields a linear dependence by following it and summing
+its oriented columns, giving each column coefficient \(1\) or
+\(-1\) according to the traversal direction. The sum telescopes
+to zero and every coefficient on the cycle is nonzero, even
+in characteristic two. For a loop the zero column gives the
+dependence directly. Conversely, a nonempty forest with at
+least one edge has a leaf in an edge-containing component:
+an endpoint of a longest simple path cannot have an additional
+neighbor, because that would extend the path or create a cycle.
+At the leaf, a linear relation forces the coefficient of its
+unique incident edge to vanish. Removing that edge and
+inducting proves independence.
+
+An edge joining two components of a forest may be added
+without creating a cycle. Thus a maximal forest must connect
+all vertices of each original connected component, or an edge
+of the graph between two of its forest components would still
+be available. Conversely, adding an edge within one tree
+creates a cycle. A tree on \(n\geq 1\) vertices has \(n-1\)
+edges, by deleting a leaf and inducting, with the singleton
+as the base case. Summing over all components gives \(v-c\).
+This includes the empty graph and the edgeless graph.
+
+For the flat lattice, intersections are meets and
+\(F\vee G=\operatorname{cl}(F\cup G)\) is the join. The bottom
+is \(\operatorname{cl}(\varnothing)\). If \(F\subsetneq G\)
+are flats and \(x\in G\setminus F\), then
+\(\operatorname{cl}(F+x)\) is between them, strictly above
+\(F\), with rank \(r(F)+1\). It follows that covers are
+exactly strict flat inclusions with rank difference one.
+The atoms are precisely the closures of nonloop singletons,
+and every flat is their join over the nonloops it contains.
+For the semimodular condition, if \(F\) covers \(F\cap G\),
+rank submodularity gives
+\[
+ r(F\vee G)\le r(F)+r(G)-r(F\cap G)=r(G)+1.
+\]
+The join is strictly above \(G\), since \(F\) is not contained
+in \(G\). Hence it covers \(G\).
+
+For the converse, first establish the rank of the lattice
+itself. If \(u\prec v\), then for any \(b\in L\) either
+\(u\vee b=v\vee b\) or \(u\vee b\prec v\vee b\). In the
+unequal case \(v\wedge(u\vee b)=u\): this meet lies between
+\(u,v\) and cannot equal \(v\). Upper semimodularity then
+gives the lifted cover. Every interval has maximal chains
+of equal length, by induction on its size. Indeed, for two
+chains starting at the same lower endpoint \(a\), if their
+first covers agree, use the shorter interval above the
+common cover. If the first covers \(p,q\) differ, then
+\(p\wedge q=a\) and \(p\vee q\) covers both. Extend a chain
+from \(p\vee q\) to the upper endpoint. Induction in the
+intervals starting at \(p\) and at \(q\) compares the two
+original chain lengths to the lengths of the chains through
+this common join, which agree. The one-element interval has
+length zero.
+
+Write \(h(x)\) for the length of such a chain from \(0\)
+to \(x\). For \(x\le y\) the length in \([x,y]\) is
+\(h(y)-h(x)\) by concatenation. Lift a saturated chain from
+\(x\wedge y\) to \(x\) by joining with \(y\) at each step.
+Each step collapses or is a cover. The resulting chain
+therefore gives
+\[
+ h(x\vee y)-h(y)\le h(x)-h(x\wedge y).
+\]
+On the set of atoms define \(r(A)=h(\bigvee A)\). The lifted
+cover property for \(0\prec a\) gives the one-atom increment
+bound. The lattice inequality gives submodularity, using
+\(\bigvee(A\cap B)\le(\bigvee A)\wedge(\bigvee B)\).
+Thus this is a matroid rank function by
+Theorem~\ref{p204:W64}. A single atom has rank one and
+distinct atoms have join of rank two, so the matroid is
+simple. For an atom \(a\), adjoining it preserves rank
+exactly when \(a\le\bigvee A\), since \(h\) strictly
+increases along proper inclusions. Hence the flats are the
+sets of atoms below lattice elements. Taking joins and
+taking atoms below give inverse order-preserving maps
+because the lattice is generated by its atoms.
+\end{proof}
+
+\section{Field restrictions and projective examples}
+
+\begin{theorem}[A rank-two obstruction]
+\label{p204:W73}
+The uniform rank-two matroid \(U_{2,4}\), with every set of
+size at most two independent, is representable over \(K\)
+exactly when \(K\) has at least three elements. More generally,
+a simple rank-two matroid represented over \(\mathbb F_q\)
+has at most \(q+1\) elements.
+\end{theorem}
+
+\begin{proof}
+Replace the ambient space by the two-dimensional column span.
+Simplicity requires every column to be nonzero and any two
+columns to generate distinct one-dimensional subspaces.
+Over \(\mathbb F_q\), the nonzero vectors are partitioned by
+these subspaces, each of which contributes \(q-1\) nonzero
+vectors. Thus there are
+\((q^2-1)/(q-1)=q+1\) possible subspaces. In particular
+\(\mathbb F_2\) has only three. Conversely, over any field
+with \(t\notin\{0,1\}\), the four columns
+\[
+ (1,0)^{\mathsf T},\quad(0,1)^{\mathsf T},\quad
+ (1,1)^{\mathsf T},\quad(1,t)^{\mathsf T}
+\]
+determine four distinct one-dimensional subspaces, which
+represent \(U_{2,4}\).
+\end{proof}
+
+\begin{theorem}[The Fano characteristic criterion]
+\label{p204:W74}
+The Fano matroid, represented by the seven nonzero vectors
+of \(\mathbb F_2^3\), is representable over a field \(K\)
+if and only if \(\operatorname{char}K=2\).
+\end{theorem}
+
+\begin{proof}
+When \(K\) has characteristic two, the copy of \(\mathbb F_2\)
+generated by \(1\) embeds in \(K\), and
+Theorem~\ref{p204:W71} proves sufficiency. Conversely label the
+Fano points
+\[
+ a_1=e_1,\quad a_2=e_2,\quad a_3=e_3,\quad
+ d=e_1+e_2,\quad f=e_1+e_3,\quad
+ g=e_2+e_3,\quad h=e_1+e_2+e_3.
+\]
+In any representation the \(a_i\) are a basis of the column
+span. Make them the coordinate axes. The triples
+\(\{a_1,a_2,d\}\), \(\{a_1,a_3,f\}\),
+and \(\{a_2,a_3,g\}\) are circuits, so each displayed
+two-axis column has both indicated coordinates nonzero.
+By scaling the second and third coordinates, then rescaling
+columns, arrange
+\[
+ d=(1,1,0)^{\mathsf T},\qquad f=(1,0,1)^{\mathsf T},
+ \qquad g=(0,1,t)^{\mathsf T},\quad t\ne0 .
+\]
+The basis columns may be rescaled to restore unit coordinates;
+all these operations preserve dependence. The circuits
+\(\{d,a_3,h\}\) and \(\{f,a_2,h\}\) force the first and
+second, and the first and third, coordinates of \(h\)
+to agree. Because \(h\) is nonzero it can be scaled to
+\((1,1,1)^{\mathsf T}\). The circuit \(\{g,a_1,h\}\) now
+forces \(t=1\). Finally \(\{d,f,g\}\) is a circuit in the
+Fano matroid, so the determinant of these three normalized
+columns must vanish. It is \(-2\), which forces
+\(\operatorname{char}K=2\).
+\end{proof}
+
+\begin{theorem}[Dual columns and finite geometries]
+\label{p204:W75}
+If a rank-\(r\) matroid is represented by a matrix
+\([I_r\ \ A]\) with \(n\) columns, its dual is represented,
+with the same column indexing, by
+\([-A^{\mathsf T}\ \ I_{n-r}]\).
+
+For \(r\geq 1\), the projective points over \(\mathbb F_q\) in
+dimension \(r-1\), represented by a nonzero vector from each
+one-dimensional subspace of \(\mathbb F_q^r\), form a simple
+rank-\(r\) matroid on \((q^r-1)/(q-1)\) points.
+A projective line, when \(r\ge2\), has \(q+1\) points.
+The affine points of \(\mathbb F_q^d\), represented by
+\((1,x)\in\mathbb F_q^{d+1}\), form a simple rank-\((d+1)\)
+matroid on \(q^d\) points. For \(d\ge1\), an affine line
+has \(q\) points.
+\end{theorem}
+
+\begin{proof}
+The kernel of the linear map with matrix \([I_r\ \ A]\)
+consists of vectors \((-Ay,y)\). Thus the rows of
+\([-A^{\mathsf T}\ \ I_{n-r}]\) form a basis of that kernel
+as coordinate vectors. If \(S\) is a set of \(r\) columns,
+the original columns on \(S\) are independent exactly when
+no nonzero kernel vector is supported on \(S\). This is
+equivalent to injectivity of projection of the kernel onto
+the complementary \(n-r\) coordinates, and hence to that
+projection being an isomorphism by equal dimensions. Its
+matrix in the indicated kernel basis is the transpose of
+the proposed dual submatrix on the complementary columns.
+Thus the bases of the proposed dual are exactly the
+complements of the original bases. This argument also
+works for \(r=0\) or \(r=n\).
+
+For projective points, the count partitions the \(q^r-1\)
+nonzero vectors into classes of size \(q-1\). Distinct
+classes give nonproportional columns and the coordinate
+axis classes already span the space. A projective line
+consists of the classes in a two-dimensional subspace,
+so the same count gives \(q+1\). For affine points,
+\((1,x)\) and \((1,y)\) are proportional only when
+\(x=y\). The columns for \(0\) and the \(d\) coordinate
+vectors span \(\mathbb F_q^{d+1}\), since subtracting the
+column for \(0\) gives the other coordinate directions.
+When \(d=0\) the single column already spans. An affine
+line is \(\{x+ta:t\in\mathbb F_q\}\) for \(a\ne0\), which
+has \(q\) distinct elements. The normalized columns on
+such a line lie in the span of \((1,x),(0,a)\) and are
+exactly its points with first coordinate normalized to one.
+\end{proof}
+
+\section{Matching and enumeration bridges}
+
+\begin{theorem}[Transversal matroids]
+\label{p204:W76}
+Let \(E\) and \(R\) be the sides of a finite bipartite
+relation. The sets \(I\subseteq E\) that can be saturated
+by a matching into \(R\) form a matroid on \(E\).
+\end{theorem}
+
+\begin{proof}
+The empty set is matchable and restriction of a matching
+gives heredity. For two matchable sets \(I,J\) with
+\(|I|<|J|\), choose matchings \(M_I,M_J\) whose left supports
+are exactly \(I,J\), discarding edges outside those
+supports if necessary. In the symmetric difference,
+each vertex has degree at most two, and successive edges
+alternate between the matchings. Consequently each
+nontrivial component is an alternating path or an even
+alternating cycle. The total number of \(M_J\)-edges is
+larger than the total number of \(M_I\)-edges, so some path
+has one more \(M_J\)-edge than \(M_I\)-edge. Both its end
+edges belong to \(M_J\). The path has odd length and hence
+one endpoint on each side. Its left endpoint \(x\) is
+in \(J\setminus I\), and its right endpoint is unmatched
+by \(M_I\). Replacing the \(M_I\)-edges of this path by
+the \(M_J\)-edges leaves every internally matched vertex
+matched and adds the two endpoints. The resulting matching
+saturates \(I+x\). This proves augmentation.
+\end{proof}
+
+\begin{theorem}[The Tutte polynomial]
+\label{p204:W77}
+For a finite matroid \(M\) on \(E\), let
+\[
+ T_M(x,y)=\sum_{A\subseteq E}
+  (x-1)^{r_M(E)-r_M(A)}(y-1)^{|A|-r_M(A)} .
+\]
+For \(e\in E\) the following identities hold:
+\[
+ T_M=
+ \begin{cases}
+   yT_{M\setminus e},& e\text{ is a loop},\\
+   xT_{M/e},& e\text{ is a coloop},\\
+   T_{M\setminus e}+T_{M/e},& e\text{ is neither}.
+ \end{cases}
+\]
+If \(M_1\oplus M_2\) is the direct sum on disjoint ground
+sets, then \(T_{M_1\oplus M_2}=T_{M_1}T_{M_2}\).
+The evaluation \(T_M(1,1)\) is the number of bases.
+
+For a finite simple graph \(G\), let \(M(G)\) be its cycle
+matroid, let \(c(G)\) count all components, and let
+\(\chi_G(t)\) be its chromatic polynomial. Then
+\[
+ \chi_G(t)
+   =(-1)^{r_{M(G)}(E)}\,t^{c(G)}T_{M(G)}(1-t,0).
+\]
+\end{theorem}
+
+\begin{proof}
+The exponents are nonnegative by monotonicity and
+\(r_M(A)\le|A|\). Write \(E'=E-e\), and group the summands
+for \(A\) and \(A+e\) with \(A\subseteq E'\). If \(e\) is
+neither a loop nor a coloop, \(r_M(\{e\})=1\) and
+\(r_M(E')=r_M(E)\). The absent-\(e\) terms are those of
+\(T_{M\setminus e}\). For a present-\(e\) term,
+Theorem~\ref{p204:W69} gives
+\[
+ \begin{split}
+ r_{M/e}(E')-r_{M/e}(A)&=r_M(E)-r_M(A+e),\\
+ |A|-r_{M/e}(A)&=|A|+1-r_M(A+e),
+ \end{split}
+\]
+so these terms give \(T_{M/e}\).
+
+If \(e\) is a loop, it never increases rank, by diminishing
+increments from the empty set. The two terms then differ by
+a factor \(y-1\), giving the factor \(1+(y-1)=y\).
+If \(e\) is a coloop, deleting it drops total rank by one:
+deleting it from a basis gives the lower bound, and a
+full-rank subset avoiding \(e\) would contain a basis
+avoiding it. Thus \(e\) is outside the closure of \(E'\),
+and outside the closure of every \(A\subseteq E'\).
+It always increases rank by one on these \(A\). Contraction
+and deletion have the same rank function on \(E'\).
+The absent and present terms then give respectively the
+factors \(x-1\) and \(1\) times the contraction term.
+This proves the coloop formula.
+
+In a direct sum, independence is tested separately on the
+two disjoint ground sets. The augmentation axiom follows
+by augmenting in a component in which the second
+independent set has larger size. Ranks add, so splitting
+\(A\) into its two components factors the defining sum.
+At \(x=y=1\), a term is one exactly when both exponents
+are zero. That means \(A\) is independent and has full
+rank, exactly the basis condition. The rank-zero case and
+the empty ground set use the constant monomial \(1\).
+
+For the graph specialization, put \(v=|V(G)|\),
+\(r=r_{M(G)}(E)=v-c(G)\), and write \(c(A)\) for the
+number of components of the spanning graph with edge set
+\(A\). By Theorem~\ref{p204:W72}, \(r_{M(G)}(A)=v-c(A)\).
+Substituting \(x=1-t,y=0\) in the subset sum, a term
+acquires sign \((-1)^{r-r(A)+|A|-r(A)}=(-1)^{r+|A|}\).
+After multiplying by \((-1)^r t^{c(G)}\) it becomes
+\((-1)^{|A|}t^{c(A)}\). This is the edge-subset
+inclusion--exclusion formula of Theorem~\ref{p204:W60}:
+requiring the endpoints of every edge in \(A\) to have
+equal colors allows one free color per component.
+Thus the polynomial identity follows, including for
+the empty graph.
+\end{proof}
+
+The representation and geometry conventions may be compared with
+\cite[Sections 1.5--1.7 and Chapters 5--6, 9]{Oxley}. The
+rank-polynomial bridge belongs to the framework of \cite{Tutte}.
+\chapter{Weighted greedy selection and its converse}
+\label{p204:ch12}
+
+For a weight function \(w:E\to\mathbb R\) put
+\(w(A)=\sum_{e\in A}w(e)\). In an independence system a
+\emph{maximal} independent set means one maximal by inclusion.
+Its cardinality need not be the maximum possible cardinality
+unless the augmentation axiom holds.
+
+\begin{definition}[Weighted greedy selection]
+\label{p204:W78}
+Fix a total tie order on \(E\), and list the elements as
+\(e_1,\dots,e_n\) in nonincreasing weight, using that order
+when the weights agree. Put \(I_0=\varnothing\). At step
+\(i\), let \(I_i=I_{i-1}+e_i\) if this set is independent,
+and \(I_i=I_{i-1}\) otherwise. Return \(I_n\).
+The \emph{basis objective} maximizes weight over maximal
+independent sets. The \emph{independent-set objective}
+maximizes weight over all independent sets.
+\end{definition}
+
+\begin{lemma}[The prefix invariant]
+At each step \(i\), the selected set \(I_i\) is maximal
+independent in the prefix \(P_i=\{e_1,\dots,e_i\}\).
+If the independence system is a matroid, then
+\[
+ |I_n\cap P_i|=|I_i|=r(P_i).
+\]
+\end{lemma}
+
+\begin{proof}
+Every selected set is independent by its construction.
+If \(e_j\in P_i\setminus I_i\), then \(e_j\) was rejected
+at step \(j\), so \(I_{j-1}+e_j\) was dependent.
+Since \(I_{j-1}\subseteq I_i\), heredity excludes
+independence of \(I_i+e_j\). Thus \(I_i\) is maximal in
+the prefix. Later steps do not add anything to that prefix.
+In a matroid every maximal independent set of \(P_i\)
+has size \(r(P_i)\) by Theorem~\ref{p204:W64}.
+\end{proof}
+
+\begin{theorem}[The matroid greedy theorem]
+\label{p204:W79}
+For every real weight function on a finite matroid, the
+algorithm of Definition~\ref{p204:W78} returns a
+maximum-weight basis, with any tie order.
+If all weights are nonnegative, its output also maximizes
+weight over independent sets. For arbitrary real weights,
+to maximize weight over independent sets, first delete all
+negative-weight elements and apply greedy to the restriction.
+\end{theorem}
+
+\begin{proof}
+If \(E\) is empty, its only basis and only independent
+set is the empty set. Otherwise write \(w_i=w(e_i)\).
+For any \(B\subseteq E\), summing the increments of
+\(|B\cap P_i|\) gives
+\[
+ w(B)
+ = w_n|B|+\sum_{i=1}^{n-1}
+     (w_i-w_{i+1})\,|B\cap P_i| .
+\]
+Indeed an element in position \(j\) contributes
+\(w_n+\sum_{i=j}^{n-1}(w_i-w_{i+1})=w_j\).
+All differences in the sum are nonnegative.
+For a basis \(B\), \(|B\cap P_i|\le r(P_i)\), and the
+prefix invariant attains equality for the greedy basis
+in every prefix. The last term \(w_n|B|\) is constant
+among bases since their sizes agree; its sign is
+irrelevant. Hence greedy attains at least the weight
+of every basis.
+
+For nonnegative weights an independent set may be
+extended to a basis without decreasing weight, so the
+same basis also optimizes over all independent sets.
+For arbitrary weights, deleting negative-weight elements
+from any independent set increases its weight and leaves
+it independent. Thus the optimum is achieved in the
+restriction to nonnegative elements, where the preceding
+argument applies. For example, a one-element coloop with
+weight \(-1\) is required in a basis but is omitted by the
+optimal independent set.
+\end{proof}
+
+\begin{theorem}[Greedy characterizes matroid augmentation]
+\label{p204:W80}
+Let \(\mathcal I\) be a nonempty hereditary family on a
+finite ground set. The following are equivalent.
+\begin{enumerate}
+\item \(\mathcal I\) satisfies augmentation.
+\item For every nonnegative weight function, weighted
+greedy maximizes weight over maximal independent sets.
+\item For every nonnegative weight function, weighted
+greedy maximizes weight over all independent sets.
+\end{enumerate}
+In (2) and (3), the equivalence holds whether one fixes a
+tie order in advance or requires optimality for every tie
+order.
+\end{theorem}
+
+\begin{proof}
+A nonempty hereditary family contains \(\varnothing\).
+For nonnegative weights any independent set extends to
+a maximal independent set without loss of weight.
+The greedy output is maximal by the prefix invariant, so
+the two optimality statements are equivalent.
+Augmentation implies both by Theorem~\ref{p204:W79}.
+
+For the converse suppose that \(I,J\in\mathcal I\) have
+\(|I|<|J|\) but no element of \(J\setminus I\) augments
+\(I\). Choose \(\varepsilon=1/(|I|+1)\) and put
+\[
+ w(e)=
+ \begin{cases}
+  1+\varepsilon,& e\in I,\\
+  1,& e\in J\setminus I,\\
+  0,& \text{otherwise}.
+ \end{cases}
+\]
+Greedy first selects every element of \(I\), because each
+prefix of \(I\) is independent. It then rejects every
+element of \(J\setminus I\) by the failed augmentation.
+Further selections have weight zero. The returned weight
+is \((1+\varepsilon)|I|<|I|+1\le |J|\le w(J)\),
+so greedy is suboptimal. The strict priority of the
+three weight levels makes this argument independent of
+tie order. Thus optimality forces augmentation.
+\end{proof}
+
+The finite exchange and prefix-rank arguments explain why
+the basis and independent-set formulations must specify
+different conventions for negative weights.
+See \cite[Section 1.8]{Oxley} and \cite[Chapter 40]{Schrijver}
+for related formulations.
+
+\backmatter
+\begin{thebibliography}{99}
+\bibitem{Stanley} R. P. Stanley, \emph{Enumerative Combinatorics},
+  vol.~1, 2nd ed., Cambridge University Press, 2012. The archive
+  contains the author preprint dated 21 February 2011.
+\bibitem{GKP} R. L. Graham, D. E. Knuth, and O. Patashnik,
+  \emph{Concrete Mathematics}, 2nd ed., Addison--Wesley, 1994.
+\bibitem{FS} P. Flajolet and R. Sedgewick, \emph{Analytic Combinatorics},
+  Cambridge University Press, 2009.
+\bibitem{Polya} G. P\'olya and R. C. Read,
+  \emph{Combinatorial Enumeration of Groups, Graphs, and Chemical Compounds},
+  Springer, 1987.
+\bibitem{LGV} B. Lindstr\"om, On the vector representations of induced
+  matroids, \emph{Bull. London Math. Soc.} 5 (1973), 85--90;
+  I. Gessel and G. Viennot, Binomial determinants, paths, and hook length
+  formulae, \emph{Adv. Math.} 58 (1985), 300--321.
+\bibitem{Postnikov} A. Postnikov, \emph{18.212 Algebraic Combinatorics},
+  MIT course materials, Spring 2025.
+\bibitem{BM} J. A. Bondy and U. S. R. Murty, \emph{Graph Theory},
+  Graduate Texts in Mathematics 244, Springer, 2008.
+\bibitem{Diestel} R. Diestel, \emph{Graph Theory}, 5th ed., Springer, 2017.
+\bibitem{Schrijver} A. Schrijver, \emph{Combinatorial Optimization:
+  Polyhedra and Efficiency}, Springer, 2003.
+\bibitem{MG} J. Misra and D. Gries, A constructive proof of Vizing's
+  theorem, \emph{Inform. Process. Lett.} 41 (1992), 131--133.
+\bibitem{Oxley} J. Oxley, \emph{Matroid Theory}, 2nd ed.,
+  Oxford University Press, 2011.
+\bibitem{Tutte} W. T. Tutte, A contribution to the theory of chromatic
+  polynomials, \emph{Canad. J. Math.} 6 (1954), 80--91.
+\bibitem{D05} MathGenome, \emph{Unified Linear Algebra Notes},
+  D05, released with MathGenome v0.8.0.
+\bibitem{D07} MathGenome, \emph{Unified Abstract Algebra Notes},
+  D07, released with MathGenome v0.8.0.
+\bibitem{P202} MathGenome, \emph{Foundations of Algebraic Topology
+  and Riemannian Geometry}, P2-02 unified notes, 8 November 2026.
+\bibitem{P203} MathGenome, \emph{Foundations of Elementary Number Theory},
+  P2-03 unified notes, 8 November 2026.
+\bibitem{Mathlib} The Mathlib Community, \emph{Mathlib}, pinned Lean library.
+  The precise source revision is recorded in the result map.
+\end{thebibliography}
+\end{document}

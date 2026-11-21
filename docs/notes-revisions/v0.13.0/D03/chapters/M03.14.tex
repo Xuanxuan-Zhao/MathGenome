@@ -1,0 +1,319 @@
+\chapter{Integrals depending on a parameter}
+\SourceRef{Zorich II, Sections 17.1--17.2, PDF pp. 421--442, especially the uniform difference-quotient proof and the base-point version of improper differentiation; Apostol, Section 7.23}
+The integration variable is real and the parameter is real. Scalar values may
+be real or complex, with all complex derivative estimates understood through
+the real-parameter norm inequality. The results here concern proper Riemann
+integrals and uniform improper tails; no Lebesgue dominated-convergence or
+general Fubini theorem is an implicit prerequisite.
+
+\KEntry{K03.14.proper_definition}{A proper integral family}
+\begin{definition}
+Let $T\subset\R$ and let $f:[a,b]\times T\to\K$. If each section
+$x\mapsto f(x,t)$ is Riemann integrable, define
+$F(t)=\int_a^bf(x,t)\dd x$. The formula defines $F$ only on the
+parameters where that section is integrable; the symbol alone supplies
+no existence or parameter regularity.
+\end{definition}
+
+\KEntry{K03.14.proper_continuity}{Continuity under a finite integral}
+\begin{theorem}
+Suppose the sections are integrable near $t_0$ and
+$\sup_{x\in[a,b]}|f(x,t)-f(x,t_0)|\to0$ as $t\to t_0$ in $T$.
+Then $F$ is continuous at $t_0$. In particular joint continuity on a
+compact rectangle $[a,b]\times[c,d]$ gives a continuous $F$ on $[c,d]$.
+\end{theorem}
+\begin{proof}
+The finite norm estimate gives
+\[|F(t)-F(t_0)|\le(b-a)\sup_x|f(x,t)-f(x,t_0)|\longrightarrow0.
+\]
+For joint continuity, compact uniform continuity gives the stated
+uniform-in-$x$ estimate whenever $|t-t_0|$ is sufficiently small.
+The same compactness gives continuous, hence integrable, $x$-sections.
+At parameter endpoints continuity is relative to the parameter interval.
+\end{proof}
+
+\KEntry{K03.14.proper_derivative}{Differentiation under a finite integral}
+\begin{theorem}
+Let $J$ be an open parameter interval. Suppose $f$ and its real partial
+derivative $f_t$ are jointly continuous on $[a,b]\times J$.
+Then $F\in C^1(J)$ and
+\[F'(t)=\int_a^bf_t(x,t)\dd x.
+\]
+It is enough to have these conditions on every compact parameter
+neighborhood on which the conclusion is used.
+\end{theorem}
+\begin{proof}
+Fix $t_0$ and a compact neighborhood $[c,d]\subset J$.
+Uniform continuity of $f_t$ there gives a modulus $\omega(\delta)\to0$
+for changes of parameter distance at most $\delta$, uniformly in $x$.
+For $h\ne0$ with $t_0+h\in[c,d]$, the norm mean-value inequality
+applied to $s\mapsto f(x,s)-s f_t(x,t_0)$ gives
+\[\left|\frac{f(x,t_0+h)-f(x,t_0)}h-f_t(x,t_0)\right|
+\le\sup_{s\text{ between }t_0,t_0+h}|f_t(x,s)-f_t(x,t_0)|
+\le\omega(|h|).
+\]
+This is valid for complex scalars as a norm inequality, without claiming
+a single complex Lagrange equality. Integrate and use the finite norm
+bound to obtain difference-quotient error at most $(b-a)\omega(|h|)$.
+It tends to zero, proving the derivative formula. The preceding continuity
+theorem applied to $f_t$ proves continuity of the resulting derivative.
+\end{proof}
+
+\KEntry{K03.14.moving_endpoints}{Leibniz's rule with moving endpoints}
+\begin{theorem}
+Let $\alpha,\beta\in C^1(J,\R)$. Near a parameter $t_0$, suppose
+$f,f_t$ are jointly continuous on a rectangle containing all interval
+endpoints $\alpha(t),\beta(t)$ and the intervals between them. Then
+\begin{align*}
+\frac{\dd}{\dd t}\int_{\alpha(t)}^{\beta(t)}f(x,t)\dd x
+={}&f(\beta(t),t)\beta'(t)-f(\alpha(t),t)\alpha'(t)\\
+&+\int_{\alpha(t)}^{\beta(t)}f_t(x,t)\dd x.
+\end{align*}
+Orientation permits the two endpoints to cross.
+\end{theorem}
+\begin{proof}
+Choose a fixed regular $x_*$ in the spatial interval and set
+$H(y,t)=\int_{x_*}^yf(x,t)\dd x$. The first fundamental theorem gives
+$H_y(y,t)=f(y,t)$, and the preceding differentiation theorem gives
+$H_t(y,t)=\int_{x_*}^yf_t(x,t)\dd x$ for fixed $y$.
+For completeness along a moving endpoint $y(t)$, split
+\begin{align*}
+H(y(t+h),t+h)-H(y(t),t)
+={}&\int_{y(t)}^{y(t+h)}f(x,t+h)\dd x\\
+&+\int_{x_*}^{y(t)}(f(x,t+h)-f(x,t))\dd x.
+\end{align*}
+The first quotient tends to $f(y(t),t)y'(t)$: subtract that constant
+integrand and bound the error by
+$|y(t+h)-y(t)|/|h|$ times the local uniform continuity error.
+The second quotient tends to $\int_{x_*}^{y(t)}f_t$ by the uniform
+difference-quotient estimate. Subtract these formulas for $y=\beta$
+and $y=\alpha$ and use oriented additivity. This establishes the rule
+using one-dimensional estimates only.
+\end{proof}
+
+\KEntry{K03.14.proper_order}{Interchanging two finite integrations}
+\begin{theorem}
+For continuous scalar $f$ on $[a,b]\times[c,d]$ both iterated proper
+integrals exist and
+\[\int_c^d\left(\int_a^bf(x,t)\dd x\right)\dd t
+=\int_a^b\left(\int_c^df(x,t)\dd t\right)\dd x.
+\]
+\end{theorem}
+\begin{proof}
+The inner sections are integrable and their integral functions are
+continuous by the continuity theorem, so the outer integrals exist.
+Let $\omega(\delta)$ be a uniform continuity modulus on the rectangle.
+Take tagged partitions $P,Q$ in $x,t$ with meshes below $\delta$ and
+form the finite double sum
+$D=\sum_{i,j}f(\xi_i,\tau_j)\Delta x_i\Delta t_j$.
+For every fixed $t$, replacing $\int_a^bf(x,t)\dd x$ by
+$\sum_i f(\xi_i,t)\Delta x_i$ has error at most
+$(b-a)\omega(\delta)$, uniformly in $t$, by integrating the
+cellwise difference. Integrating that error in $t$, and then replacing
+each $\int_c^df(\xi_i,t)\dd t$ by its tagged sum, shows the first
+iterated integral differs from $D$ by at most
+$2(b-a)(d-c)\omega(\delta)$. Reverse the order to obtain the same
+bound for the other iterated integral. Their difference tends to zero
+as $\delta\downarrow0$. This is an equality of limits of finite sums,
+not an application of a general multiple-integration theorem.
+\end{proof}
+
+\KEntry{K03.14.uniform_improper}{Uniform improper convergence}
+\begin{definition}
+Assume local proper integrability in $x$ for every $t\in T$ and write
+$F_R(t)=\int_a^Rf(x,t)\dd x$. The family converges uniformly
+improperly on $T$ if there is $F:T\to\K$ with
+$\sup_{t\in T}|F_R(t)-F(t)|\to0$ as $R\to\infty$.
+Equivalently, for every $\eps>0$ there is $R_0$ such that
+\[\left|\int_R^Sf(x,t)\dd x\right|<\eps
+\quad(t\in T,\ S\ge R\ge R_0).
+\]
+For a finite right singular endpoint $b$, require the same condition
+for $r_0<R<S<b$ with $r_0$ sufficiently close to $b$; for a left
+endpoint reverse the truncations. Several singularities require
+independent uniform conditions at every endpoint.
+\end{definition}
+\begin{proof}[Equivalence]
+Uniform convergence implies the displayed estimate by the triangle
+inequality. Conversely, for each fixed $t$ the ordinary Cauchy criterion
+gives a finite limit $F(t)$. Hold $R\ge R_0$ and let $S\to\infty$
+in the displayed inequality. This gives $|F(t)-F_R(t)|\le\eps$
+simultaneously for all $t\in T$. Apply the condition with an arbitrarily
+smaller tolerance to obtain uniform convergence. The same argument works
+at a finite singular endpoint.
+\end{proof}
+
+\KEntry{K03.14.uniform_comparison}{Uniform domination of tails}
+\begin{theorem}
+Suppose $g\ge0$ is locally properly integrable and $\int_A^\infty g$
+converges. If $|f(x,t)|\le g(x)$ for $x\ge A$ and all $t\in T$,
+and each $f$ section is locally properly integrable, then its improper
+integrals converge uniformly on $T$, with
+\[\sup_{t\in T}\left|\int_R^\infty f(x,t)\dd x\right|
+\le\int_R^\infty g(x)\dd x\quad(R\ge A).
+\]
+\end{theorem}
+\begin{proof}
+On every regular $[R,S]$, the finite norm and order inequalities give
+$|\int_R^Sf(x,t)\dd x|\le\int_R^Sg$ for every $t$.
+The right-hand tails are uniformly small in $S\ge R$ by convergence
+of $\int g$, so the uniform Cauchy criterion applies. Let $S\to\infty$
+in the finite inequality to obtain the quantitative bound. Integrals
+over the fixed initial interval exist separately by local integrability;
+they need not obey a single domination bound to prove tail convergence.
+Finite-endpoint versions have exactly the same proof on the corresponding
+truncations.
+\end{proof}
+
+\KEntry{K03.14.uniform_dirichlet}{Uniform Dirichlet test}
+\begin{theorem}
+Let $f(\cdot,t)$ be locally Riemann integrable and
+$A(x,t)=\int_a^xf(u,t)\dd u$. Suppose $|A(x,t)|\le C$ for all
+$x\ge a$, $t\in T$. Let $g(\cdot,t)\ge0$ be $C^1$ and
+nonincreasing, and suppose $\sup_{t\in T}g(R,t)\to0$.
+Then $\int_a^\infty f(x,t)g(x,t)\dd x$ converges uniformly on $T$.
+\end{theorem}
+\begin{proof}
+Products are locally integrable. The finite accumulation-parts proof
+in \KRef{K03.10.dirichlet} works for each fixed $t$, with the same
+constant: the primitive anchored at $R$ has modulus at most $2C$.
+Thus
+\[\left|\int_R^Sf(x,t)g(x,t)\dd x\right|
+\le2C g(R,t)\le2C\sup_{u\in T}g(R,u).
+\]
+The right side tends to zero independently of $S\ge R$ and $t$.
+The uniform Cauchy criterion proves the claim. Signed amplitudes of a
+fixed sign are covered by replacing $g$ by its modulus when that modulus
+has the same monotonicity and uniform limit property.
+\end{proof}
+
+\KEntry{K03.14.improper_continuity}{Continuity from uniform tails}
+\begin{theorem}
+If every proper truncation $F_R$ is continuous at $t_0$, and the
+improper tails converge uniformly on a relative neighborhood $T_0$
+of $t_0$, then $F(t)=\int_a^\infty f(x,t)\dd x$ is continuous at $t_0$.
+\end{theorem}
+\begin{proof}
+Choose $R$ with $\sup_{t\in T_0}|F(t)-F_R(t)|<\eps/3$.
+Continuity of this fixed $F_R$ gives
+$|F_R(t)-F_R(t_0)|<\eps/3$ for all sufficiently close $t\in T_0$.
+The triangle inequality gives
+\[|F(t)-F(t_0)|\le|F(t)-F_R(t)|+
+|F_R(t)-F_R(t_0)|+|F_R(t_0)-F(t_0)|<\eps.
+\]
+Joint continuity on each regular compact rectangle is one sufficient
+condition for the truncation continuity, by the proper theorem.
+\end{proof}
+
+\KEntry{K03.14.improper_derivative}{Differentiation from uniform derivative tails}
+\begin{theorem}
+Let $[c,d]$ be a compact parameter interval. Suppose every truncation
+$F_R$ is continuous on $[c,d]$ and differentiable inside, and proper
+differentiation is valid there:
+\[F_R'(t)=\int_a^R f_t(x,t)\dd x.
+\]
+Assume these derivative integrals converge uniformly on $[c,d]$ to
+$G(t)$ (using endpoint extensions where needed), and $F_R(t_*)$ has a
+finite limit at one $t_*\in[c,d]$. Then $F_R$ converges uniformly on
+$[c,d]$ to an improper integral family $F$, differentiable inside with
+$F'=G$. Joint continuity of $f,f_t$ on every regular compact rectangle
+is a sufficient condition for the proper differentiation assumptions.
+\end{theorem}
+\begin{proof}
+For any two late truncations, the norm mean-value inequality gives
+\[\sup_{t\in[c,d]}|F_R(t)-F_S(t)|
+\le|F_R(t_*)-F_S(t_*)|+(d-c)\sup_{u\in[c,d]}|F_R'(u)-F_S'(u)|.
+\]
+Both terms tend to zero, so completeness pointwise and the same uniform
+Cauchy argument as above yield a uniform limit $F$. In particular all
+original improper integrals now exist, not just the one at $t_*$.
+Fix an interior $t$ and a nonzero $h$ with $t+h\in[c,d]$.
+Apply the norm mean-value inequality to $F_S-F_R$ between these points
+and let $S\to\infty$. Uniform convergence of derivatives gives
+\[\left|\frac{F(t+h)-F(t)}h-
+\frac{F_R(t+h)-F_R(t)}h\right|
+\le\sup_{u\in[c,d]}|G(u)-F_R'(u)|.
+\]
+Hence the difference of the first quotient from $G(t)$ is at most this
+uniform error plus
+$|(F_R(t+h)-F_R(t))/h-F_R'(t)|+|F_R'(t)-G(t)|$.
+Choose $R$ first to make the first and third terms small, then let
+$h\to0$ for that fixed differentiable $F_R$. This proves $F'=G$.
+It is the derivative-limit argument of \KRef{K03.12.differentiation}
+spelled out for a continuous truncation parameter; uniform convergence
+of the original integrands alone would not justify this conclusion.
+\end{proof}
+
+\KEntry{K03.14.parameter_order}{Integrating an improper family in the parameter}
+\begin{theorem}
+Suppose $f$ is jointly continuous on $[a,R]\times[c,d]$ for every
+finite $R>a$, and $\int_a^\infty f(x,t)\dd x$ converges uniformly
+for $t\in[c,d]$. Then
+\[\int_c^d\left(\int_a^\infty f(x,t)\dd x\right)\dd t
+=\int_a^\infty\left(\int_c^df(x,t)\dd t\right)\dd x,
+\]
+with a proper outer integral on the left and a convergent improper
+outer integral on the right.
+\end{theorem}
+\begin{proof}
+The truncations $F_R$ are continuous and converge uniformly, so $F$ is
+continuous and properly integrable on $[c,d]$ by
+\KRef{K03.08.uniform_stability}. Let
+$H(x)=\int_c^df(x,t)\dd t$. Proper parameter continuity shows $H$
+is continuous on each regular $[a,R]$, hence locally properly integrable.
+For every $R$, the proper order theorem gives
+$\int_a^RH(x)\dd x=\int_c^dF_R(t)\dd t$.
+The right side tends to $\int_c^dF$ with error at most
+$(d-c)\|F_R-F\|_\infty$. Thus the left partial integrals have a
+finite limit, proving existence of the improper right side and the
+claimed equality simultaneously. More generally the same proof works
+if truncation order interchange and integrability are established by
+other explicit proper hypotheses.
+\end{proof}
+
+\KEntry{K03.14.local_uniform}{Local uniformity is sufficient}
+\begin{proposition}
+On an open parameter interval $J$, uniform tail convergence on each
+compact parameter interval implies continuity whenever truncations are
+continuous. Uniform convergence of the derivative-integral tails on
+each compact interval, with convergence of the original family at one
+point of each such interval, gives differentiability there. If $J$ is
+an interval and convergence is known at just one point, the base-point
+condition propagates to all compact subintervals by overlapping intervals.
+\end{proposition}
+\begin{proof}
+Every $t_0\in J$ is in the interior of some $[c,d]\subset J$.
+Apply the preceding continuity or differentiation theorem on that
+compact neighborhood. On overlaps the limiting functions agree because
+they are limits of the same truncations; so do their derivative formulas.
+For propagation from a fixed $t_*$ to any compact $K\subset J$, the
+closed interval spanning $K\cup\{t_*\}$ lies in $J$. Uniform derivative
+tails there and the one base point give convergence throughout by the
+preceding theorem. No single bound uniform over an unbounded $J$ is
+required for these local conclusions.
+\end{proof}
+
+\KEntry{K03.14.failure}{Pointwise convergence without parameter continuity}
+\begin{example}
+For $t\ge0$, $x\ge0$, put $f(x,t)=tE(-tx)$, so $f(x,0)=0$.
+For each fixed $x$ this is continuous at zero (indeed jointly continuous
+on finite rectangles). For $t>0$,
+\[F_R(t)=\int_0^RtE(-tx)\dd x=1-E(-tR),\qquad
+F(t)=1.
+\]
+At $t=0$ every partial integral and the improper value are zero, so $F$
+is discontinuous. The tail for $t>0$ equals $E(-tR)$, whose supremum
+over $0<t\le\delta$ is one for every $R$. Thus uniform convergence
+fails on every neighborhood of zero, exactly where the continuity
+theorem requires it. The finite computations use the proved exponential
+derivative and the infinite computation uses $E(-tR)\to0$ for fixed $t>0$.
+\end{example}
+
+\KEntry{K03.14.boundary_terms}{A moving boundary supplies the derivative}
+\begin{example}
+Let $f(x,t)=1$ and $F(t)=\int_0^t1\dd x=t$, using orientation for
+$t<0$. Thus $F'(t)=1$. The integrand parameter derivative is zero;
+Leibniz's rule supplies the value entirely from the upper boundary term
+$f(t,t)\,\frac{\dd t}{\dd t}=1$. Omitting that term would give the
+incorrect derivative zero, even for this continuous constant integrand.
+\end{example}

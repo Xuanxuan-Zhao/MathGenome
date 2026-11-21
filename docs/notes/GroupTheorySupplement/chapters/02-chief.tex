@@ -1,0 +1,167 @@
+\chapter{Chief series of finite groups}
+\label{ch:gr02-chief}
+
+The composition series in D07 have simple factors and require
+normality of each term in its successor
+\cite[entries K07.06.composition\_series\_definition and
+K07.06.jordan\_holder\_extension]{d07}. Here we refine the normal
+subgroups of a fixed ambient group \(G\). Their successive quotients
+carry the conjugation action of \(G\), which the factor comparison
+will preserve.
+
+\section{Chief factors and conjugation}
+
+\begin{definition}[GR02-C02.01. Chief series and chief factors]
+\label{def:gr02-chief-series}
+Let \(G\) be a finite group. A chief series is a strictly increasing
+chain
+\[
+  1=N_0<N_1<\cdots<N_r=G
+\]
+of normal subgroups of \(G\) such that no normal subgroup of \(G\)
+lies strictly between \(N_{i-1}\) and \(N_i\), for \(1\le i\le r\).
+The quotients \(N_i/N_{i-1}\) are the chief factors, and the integer
+\(r\) is the length. The chain of length zero is allowed for \(G=1\).
+
+A \(G\)-group is a group equipped with an action of \(G\) by
+automorphisms. When \(K\le L\) are both normal in \(G\), the
+natural \(G\)-group structure on \(L/K\) is
+\[
+  g\cdot(xK)=(gxg^{-1})K \qquad (g\in G,\ x\in L).
+\]
+A \(G\)-isomorphism of two such factors is a group isomorphism
+which intertwines the two actions of the same ambient \(G\).
+\end{definition}
+
+The formula is well defined since conjugation by \(g\) preserves both
+\(K\) and \(L\). The action restricted to \(L\) induces every inner
+automorphism of \(L/K\), so a \(G\)-invariant subgroup is normal in
+\(L/K\). For the trivial group, the list of factors is empty.
+
+\begin{proposition}[GR02-C02.02. Existence and the minimal normal criterion]
+\label{prop:gr02-chief-existence}
+Every finite group has a chief series. A strictly increasing chain as
+in Definition~\ref{def:gr02-chief-series}, with all its terms normal in
+\(G\), is a chief series precisely when \(N_i/N_{i-1}\) is a minimal
+nontrivial normal subgroup of \(G/N_{i-1}\) for each \(i\).
+\end{proposition}
+\begin{proof}
+The finite poset of normal subgroups of \(G\) has a maximal chain
+from \(1\) to \(G\). Such a chain admits no refinement by a normal
+subgroup of \(G\). Normal subgroups of \(G/N_{i-1}\) contained in
+\(N_i/N_{i-1}\) correspond under the quotient map to normal
+subgroups of \(G\) between \(N_{i-1}\) and \(N_i\)
+\cite[entry K07.04.correspondence\_theorem]{d07}. The endpoints of
+the interval correspond to the trivial subgroup and the whole
+factor. This proves the criterion in both directions.
+\end{proof}
+
+\section{Uniqueness and the solvable case}
+
+\begin{theorem}[GR02-C02.03. Equivariant Jordan--H\"older uniqueness for chief factors]
+\label{thm:gr02-chief-uniqueness}
+Any two chief series of a finite group \(G\) have the same length
+and the same multiset of \(G\)-isomorphism classes of factors.
+\end{theorem}
+\begin{proof}
+Keep \(G\) fixed throughout. For every normal subgroup \(N\) of
+\(G\), consider saturated chains from \(1\) to \(N\) in the poset
+of normal subgroups of \(G\). Here saturated means that consecutive
+terms admit no intermediate term in this poset. Such chains exist
+by finiteness, and their factors all carry the \(G\)-action of
+Definition~\ref{def:gr02-chief-series}.
+
+We compare the multisets of factors of these chains by induction on
+\(|N|\). The case \(N=1\) has an empty multiset. Let \(A\) and \(B\)
+be the penultimate terms of two chains ending at a nontrivial
+\(N\). If \(A=B\), induction compares the two chains up to \(A\)
+and the top factor \(N/A\) is common to both. If \(A\ne B\), neither
+contains the other by maximality. The product \(AB\) is normal in
+\(G\) and strictly contains \(A\), so \(AB=N\). Put \(L=A\cap B\).
+The quotient maps give isomorphisms
+\[
+  A/L \longrightarrow N/B,\quad aL\longmapsto aB,
+  \qquad
+  B/L \longrightarrow N/A,\quad bL\longmapsto bA.
+\]
+In each case the indicated intersection is the kernel before
+passing to the quotient, and \(AB=N\) gives surjectivity.
+Conjugating representatives by any \(g\in G\) commutes with both
+maps, so these are \(G\)-isomorphisms.
+
+There is no proper nontrivial \(G\)-invariant subgroup of \(N/B\),
+since its inverse image in \(N\) would be normal in \(G\) and
+strictly between \(B\) and \(N\). The same holds for \(N/A\).
+By the two isomorphisms, \(L<A\) and \(L<B\) are therefore saturated
+steps in the poset. Extend one saturated chain from \(1\) to \(L\)
+first by \(A\) and then by \(N\), or first by \(B\) and then by \(N\).
+Induction within \(A\) and \(B\) compares the original chains with
+these two chains, including the common top step on each side.
+The two constructed chains share all factors through \(L\), and
+their last two factors match in reverse order by the displayed
+\(G\)-isomorphisms. This finishes the induction. Taking \(N=G\)
+proves the theorem.
+\end{proof}
+
+This is the descending comparison used for ordinary composition
+series in D07 with the ambient conjugation retained at every step
+\cite[entry K07.06.jordan\_holder\_extension]{d07}. The ordinary
+group-isomorphism comparison for chief factors is also stated in
+\cite[Theorem~5.9]{chief-source}.
+
+\begin{corollary}[GR02-C02.04. Chief factors of finite solvable groups]
+\label{cor:gr02-chief-solvable}
+A finite group \(G\) is solvable if and only if it has a chief
+series with elementary abelian factors. If \(G\) is solvable, every
+chief factor is the additive group of a nonzero finite-dimensional
+\(\mathbb F_p\)-vector space for some prime \(p\) depending on the
+factor, and its \(G\)-action is linear over that field.
+\end{corollary}
+\begin{proof}
+Assume \(G\) solvable. Passage to subgroups and quotients preserves
+solvability by \cite[entry K07.15.solvable\_closure]{d07}. Hence the
+chief factor \(D=N_i/N_{i-1}\) is solvable. Its derived subgroup
+\([D,D]\) is characteristic in \(D\), hence is preserved by
+conjugation by \(G\). Since \(D\) is nontrivial and solvable,
+\([D,D]\) is proper. Minimality forces \([D,D]=1\), so \(D\) is
+abelian. Choose a prime \(p\) dividing the order of some nonidentity
+element of \(D\). A power of that element has order \(p\), and
+\[
+  D[p]=\{x\in D : x^p=1\}
+\]
+is a nontrivial characteristic subgroup because \(D\) is abelian.
+Minimality now gives \(D[p]=D\). An abelian group of exponent \(p\)
+has its usual \(\mathbb F_p\)-vector space structure by repeated
+addition, and each group automorphism respects this scalar action.
+
+Conversely, if the factors of a chief series are elementary
+abelian then they are solvable. Closure under extensions makes
+each term in the series solvable, starting at \(1\). This includes
+the chain of length zero for \(G=1\).
+\end{proof}
+
+\begin{example}[GR02-C02.05. The two kinds of series in the alternating group]
+\label{ex:gr02-chief-a4}
+In \(A_4\), let
+\[
+  V=\{1,(12)(34),(13)(24),(14)(23)\},\qquad
+  U=\langle(12)(34)\rangle .
+\]
+The subgroup \(V\) is elementary abelian of order \(4\), since the
+product of two distinct double transpositions in \(V\) is the
+third. It is normal in \(A_4\) since conjugation preserves cycle
+type. Conjugation by \((123)\) permutes the three nonidentity
+elements of \(V\) cyclically. Consequently every nontrivial
+normal subgroup of \(A_4\) contained in \(V\) equals \(V\).
+As \(A_4/V\) has order \(3\), \(1<V<A_4\) is a chief series.
+Its factors are \(V\) and \(C_3\). The action on \(V\) factors
+through \(A_4/V\) and permutes its three nonzero vectors, while
+the conjugation action on the factor \(A_4/V\) is trivial.
+
+The longer chain \(1<U<V<A_4\) is a composition series since
+adjacent terms are normal and the factors have prime orders
+\(2,2,3\). The subgroup \(U\) is moved to another subgroup by
+\((123)\), so this chain fails the ambient normality condition
+in Definition~\ref{def:gr02-chief-series}. See also
+\cite[Examples~5.2 and 5.7]{chief-source}.
+\end{example}

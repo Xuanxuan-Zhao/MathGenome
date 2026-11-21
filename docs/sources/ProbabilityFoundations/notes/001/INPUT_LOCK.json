@@ -1,0 +1,60 @@
+{
+  "source_hashes": {
+    "P1-05_Probability_Notes.tex": "6e1d669e24383c9841c3fee75d6b105b7d0e5d0cad769276e36b40098eb1de16",
+    "parts/p01.tex": "05cb75380bc5df94fcfc4142cc9cce19789584abea37dc85efc17ca83c04d99f",
+    "parts/p02.tex": "8a08af3eb067531a8d83ffd84ae0c7ea1575fef116336cc7651c136df142a26a",
+    "parts/p03.tex": "289db951cdf41aa6e7c644933b85545dc2e1444513ec9943da2dca52936ce3fe",
+    "parts/p04.tex": "d4cb1e30becf4c08c01b79124cca3c70556f0cd7a067e10b6d81e1f902d05b97",
+    "parts/p05.tex": "e2cb2bbf96625ebe5e16bd9d3e28b5bd87be096589f12f26c07bad3defafcd12",
+    "parts/p06.tex": "03242ff06c3774bb08a0634bf1656768b674bed2b2a1554fb329da467ec477a1",
+    "parts/p07.tex": "99c716533505a48f85aacc3d3833822e56620ebcc71181bff9f893ab50e81f79",
+    "parts/p08.tex": "6d33fa7ad91078cd3fc0bff040f80f82fbc9b4fe0b07dc98c722410bc3403077",
+    "parts/p09.tex": "948fdc1b29df7b2547a9fa091eb4a3ee764485be774f6e4065928eb01b02402d",
+    "output/pdf/P1-05_Probability_Notes.pdf": "ca3fda62bf1934f91572ef2bc2ac8a0c4e56826da47a0e1b97ef1c360264e7f9"
+  },
+  "source_map_sha256": "1d5162a8847d4fa207e71f3bfde0ad93e271159da44065735d4bad0b08a7b106",
+  "paper_sha256": "9d92ac07a5ef852cffe2b137acae9c3a2bf5b586d148d36b00fa21d76bcf1b69",
+  "chapter_ranges_in_paper": {
+    "parts/p01.tex": [
+      105,
+      481
+    ],
+    "parts/p02.tex": [
+      482,
+      789
+    ],
+    "parts/p03.tex": [
+      790,
+      1083
+    ],
+    "parts/p04.tex": [
+      1084,
+      1262
+    ],
+    "parts/p05.tex": [
+      1263,
+      1417
+    ],
+    "parts/p06.tex": [
+      1418,
+      2359
+    ],
+    "parts/p07.tex": [
+      2360,
+      2719
+    ],
+    "parts/p08.tex": [
+      2720,
+      3069
+    ],
+    "parts/p09.tex": [
+      3070,
+      3356
+    ]
+  },
+  "source_map_entries": 54,
+  "numbered_results": 90,
+  "pdf_pages": 54,
+  "mathematical_pages": 49,
+  "published_source_map_sha256": "0a8803fa06a7a4a081d4eacfd169ac61b65af337d853437bf62a47f0b3fcead7"
+}

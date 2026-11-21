@@ -1,0 +1,8 @@
+import MathGenome.Internal.MultivariableAnalysis.D04.C09.ArcLength
+import MathGenome.Internal.MultivariableAnalysis.D04.C09.CircleMultiplicity
+import MathGenome.Internal.MultivariableAnalysis.D04.C09.GradientIntegral
+import MathGenome.Internal.MultivariableAnalysis.D04.C09.Helix
+import MathGenome.Internal.MultivariableAnalysis.D04.C09.LineIntegrals
+import MathGenome.Internal.MultivariableAnalysis.D04.C09.PathAlgebra
+import MathGenome.Internal.MultivariableAnalysis.D04.C09.PathsLength
+import MathGenome.Internal.MultivariableAnalysis.D04.C09.Reparametrization

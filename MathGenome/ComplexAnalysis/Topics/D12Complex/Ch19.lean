@@ -1,0 +1,11 @@
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch19.ChainStability
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch19.ContinuationUniqueOperations
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch19.FactorialNaturalBoundary
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch19.FiniteContinuationChains
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch19.GermTopology
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch19.GermsContinuation
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch19.HomotopyInvariance
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch19.LogarithmRootMonodromy
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch19.Monodromy
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch19.PermanenceRelations
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch19.SimplyConnectedNoncontinuation

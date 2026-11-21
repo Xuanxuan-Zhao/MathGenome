@@ -1,0 +1,168 @@
+{
+  "format": "mathgenome-notes-revisions-1",
+  "components": {
+    "SingleVariableAnalysis": {
+      "edition": "v0.13.0",
+      "tex": "docs/notes-revisions/v0.13.0/D03/main.tex",
+      "pdf": "docs/notes-revisions/v0.13.0/D03/notes.pdf",
+      "pdf_labels": "docs/notes-revisions/v0.13.0/D03/pdf-labels.json",
+      "pdf_pages": 148,
+      "sha256": {
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.01.tex": "a5792520eebd1bf866ce3b7a1b53fb08ca4afc9fa3491eb12bace5f2c900d3ac",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.02.tex": "fc338c9dc76be5aadf6f98123f669abcd2b287e81d93d8db4c61df9d31f0ee57",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.03.tex": "6dbeff7f2afcffaa77143b7ad6dc8009cfa5f0c212339ef287f803415247737f",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.04.tex": "9557a855c9dd37fac213e66f36372ca5bedfe2ead4807b604f87d46474ccea5e",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.05.tex": "80db8feab6cae7d1ebaeaac4e46dc8dc8a130ef637f8606391befed016efaa67",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.06.tex": "23aa70b7abf4d108724f4fe22223811c8154a61becffd2e0d83d1336b3e9678d",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.07.tex": "e7174e3edc397d24284353aba45fb600fd28102366c7cd7c8b5d512c399acd30",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.08.tex": "15e2fccad382d1c4db02a0e0561f7afaad5f0b1f0f8a1c34095e89b0f97890e0",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.09.tex": "56ac24dacf7f99e5c8c105d93b7ae80a406199295351710303fca6bb0593fa5b",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.10.tex": "6864dae43615d2de83f642a6679003c185d82f1de086f2921d83430dc9a5f72c",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.11.tex": "6ecb6ab761587512173051ff8653fdb882943fe1a79e879d5900a19a9fcf4539",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.12.tex": "3ac52d57ce442c026eec52c1d9d5e1e4ac90b8ad30e4a9020ea9f7cf4fc3a25a",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.13.tex": "86a9b0d911a485f6ab57dffd6da29923e14bfc9f55f4718676b39b96680fe2d4",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.14.tex": "252f7e805550cce6ae7b5539192b61da8ff85423bc9f60dcc3474c61b75172db",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.15.tex": "b9bb3e206744bea87048824cb488bf5c1ca2780a44eceae9cf9c6341524a55c4",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.16.tex": "1156e6fc11301242fbb9cf04f2b7e335a009aeabe6983c26fc551bcb0e2f8663",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.17.tex": "6649e202f8e46925fc24be46a9d336e520bc559f1554e57c2ee31504e61131e2",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.18.tex": "d27df2cd5543a89153a42131cc3fcbe9664f80c73bcccc35896eac968bbbf6b9",
+        "docs/notes-revisions/v0.13.0/D03/chapters/M03.19.tex": "5a56aa4148a66137f2b0f36f1badf3d7c98c67d9a3ebf1e601d0dca6a068d05f",
+        "docs/notes-revisions/v0.13.0/D03/foundations.tex": "2d0bb628eec467164ea16232a77ee6c60e1b8488b423a462c96d79441ebad68c",
+        "docs/notes-revisions/v0.13.0/D03/frontmatter.tex": "5bf2ac5272778e10a6e6c3f58b503bde5c5d562600314f970b3529ff44845312",
+        "docs/notes-revisions/v0.13.0/D03/main.tex": "9e9afa86d52a621f8b2616b126e6b62c374116fb82a3953b8ade31769d577408",
+        "docs/notes-revisions/v0.13.0/D03/notes.pdf": "797db0235f8f01c2b0cd7633249c88b28536e544387f03239011a8e31c99fb3f",
+        "docs/notes-revisions/v0.13.0/D03/pdf-labels.json": "fd490440fb0fdb30047c9216943b3325151ad57820512dc83974dfb80d557083",
+        "docs/notes-revisions/v0.13.0/D03/preamble.tex": "875c7f480b0458122d3ee7ea1b603458d21d5d30104027b8acbf5d326370e741",
+        "docs/notes-revisions/v0.13.0/D03/source-index.tex": "28929afb53fbf397604df2289ba6cbfda8d3370613ed83aeab473339a014ad15",
+        "docs/notes-revisions/v0.13.0/D03/source-register.tex": "9f3d629f3d7f7b961b3da208b2d6daf79c9ec8065099db05ca34d45860b2f045",
+        "docs/notes-revisions/v0.13.0/D03/verification-register.tex": "422b45266c4a18faae27569c036602a4f07d5a7df1b98ce85d81b3607a71cdd3"
+      }
+    },
+    "MultivariableAnalysis": {
+      "edition": "v0.13.0",
+      "tex": "docs/notes-revisions/v0.13.0/D04/main.tex",
+      "pdf": "docs/notes-revisions/v0.13.0/D04/notes.pdf",
+      "pdf_labels": "docs/notes-revisions/v0.13.0/D04/pdf-labels.json",
+      "pdf_pages": 91,
+      "sha256": {
+        "docs/notes-revisions/v0.13.0/D04/main.tex": "b2e92f56f25cdeca9614e625bce8d119f59447ff2e8779d121ea373e585c2cad",
+        "docs/notes-revisions/v0.13.0/D04/notes.pdf": "3ab2d548af3b16282b9af78570a6a52ed0055e84ff7673d26920f0e04523760e",
+        "docs/notes-revisions/v0.13.0/D04/pdf-labels.json": "7af40a6c2eac84df3aff10bc04d08498d02c30a7f94b1405ebb8afcfcfa171b3"
+      }
+    },
+    "LinearAlgebra": {
+      "edition": "v0.13.0",
+      "tex": "docs/notes-revisions/v0.13.0/D05/main.tex",
+      "pdf": "docs/notes-revisions/v0.13.0/D05/notes.pdf",
+      "pdf_labels": "docs/notes-revisions/v0.13.0/D05/pdf-labels.json",
+      "pdf_pages": 152,
+      "sha256": {
+        "docs/notes-revisions/v0.13.0/D05/main.tex": "856c604064607c59efa04a36f3b83659a533d5a60c7637fdc5648366f3e4e538",
+        "docs/notes-revisions/v0.13.0/D05/notes.pdf": "7215b7b129fc2e92b57c417d63b47355dece044ce6f744610f9928d1fd1d2262",
+        "docs/notes-revisions/v0.13.0/D05/pdf-labels.json": "dd8becffe57cb2b9ff2652b91063e44ca69dc43c4a32d87e8c071a11907025b7"
+      }
+    },
+    "AbstractAlgebra": {
+      "edition": "v0.13.0",
+      "tex": "docs/notes-revisions/v0.13.0/D07/main.tex",
+      "pdf": "docs/notes-revisions/v0.13.0/D07/notes.pdf",
+      "pdf_labels": "docs/notes-revisions/v0.13.0/D07/pdf-labels.json",
+      "pdf_pages": 231,
+      "sha256": {
+        "docs/notes-revisions/v0.13.0/D07/algebraic-fta.tex": "e2b8ddf55e9ea4687a9fca5e00c995b106dfe985188494d0042491c299b648f0",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.01.tex": "8cc4c746452b9a56250ff67364f83756582d696e4e2ea770b10197f2db5a6ac0",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.02.tex": "46bb0a7b72839f70e19dc5b457d955697e44358eea17c9a13b2cc9b74aa9b0fe",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.03.tex": "541c8a9c370e13a2008f7a7ff4f4ecb68e7dbcd895c0ec71d50e0592950666cc",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.04.tex": "c9440f7b1c0dc3f34401a8c7a544e268783352af7589c84e1ddf6f2dc8cc6946",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.05.tex": "c9aa5c65df4d80b72cfc84c83adc688a5c0954514fc76be6f212596ec600164a",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.06.tex": "a019f44cd6153850ac099a3065f542c39ad173ae99bce71738c90f11bc6f39fa",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.07.tex": "5e09af402ddb9080b4289c6aeb71fc08012b34e5f6db5ff91daf4c7749eb9b15",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.08.tex": "2f40a08bb7e81e6823a105a6a46859a78f814d930d8036a4e81fad6fdfa31c9b",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.09.tex": "be4afe4a8acec6985daab48f86ed306a458c050c27eaa786855f9d77e254a007",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.10.tex": "7d1f66ca9a1bdaf582485ef7f814de0326c46f48ee4d044740db831adbacdd90",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.11.tex": "51dff63f41405bc3ecfba141ac2028531ec07fe946aebc573eaa47b9a2bdecf1",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.12.tex": "adad5e78a2b82b42e7e7770ee0850219d47bc7f814fe4a7704fb8b409066e0bc",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.13.tex": "65715f3ae815524ffe66c2de7fb2252931e2f069edb9046763ccf8e5099d6790",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.14.tex": "2f47ba1b1a6d3be18566acd98820718e2bf18d665d5dce52f1be490c7acbd6c6",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.15.tex": "ab02a4b4e0dd8844185e132dcbea1d71253b73f8b3c606d9dbd7191c6aa3f9ee",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.16.tex": "eb7996068abc907b8e6da477ff671b131268cdc65d509836c2839c4118a4c6f7",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.17.tex": "fcf37e4acd149a677c0d4895ae0d19f2221e1ce6025982ba50320f2b546aaa70",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.18.tex": "e9b80f217b5c8d10b6a4c71a3da5dc8385ce9b300b4853383ad39f859132f38f",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.19.tex": "369273d0a3a2020df7e3ac815c5b4d0561865d23cbd80c95c5ab4f5035642e5d",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.20.tex": "c5e4099f7128dacafe9218f5e12ed3452c104bc8eb5ed77165c2a73e8dae1dfc",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.21.tex": "7029b7d01a392533cbd989c9e28f3d3f39e2e3833f2df220d591b9f4b852a7bc",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.22.tex": "551db4f30b165a7301cb94225843807792261a52c49edad7759e86215699fc59",
+        "docs/notes-revisions/v0.13.0/D07/chapters/M07.23.tex": "4da0578bce81e071d9e2e66f14e599630e50de93ed2c874aed0e4bf7fb35ac91",
+        "docs/notes-revisions/v0.13.0/D07/foundations.tex": "783044ad642a55b42b11269a0dd58b702ef89f19c8874b28ad91e40e89c77426",
+        "docs/notes-revisions/v0.13.0/D07/frontmatter.tex": "010701a9bd080f40d33beca4af0df90309cd5e082901ed57a3ccae28b2e824b7",
+        "docs/notes-revisions/v0.13.0/D07/main.tex": "63b2bb303981adaa1e62cbf3bd793e9ca417e52a743324c1aab4f0e418216005",
+        "docs/notes-revisions/v0.13.0/D07/notes.pdf": "0cf39965874980a9c7094950f26fb5b7a11b817ff35d757d106abd4d445526fb",
+        "docs/notes-revisions/v0.13.0/D07/pdf-labels.json": "e19ef3cf57ad1f9b1c1e59bb7701937d8c9914750b5fe4e3bed83dcd9a5cbeb8",
+        "docs/notes-revisions/v0.13.0/D07/pi-transcendence.tex": "5b6f0b859b75a69d16dffd736c03745aa576317229401049999bab424e611f70",
+        "docs/notes-revisions/v0.13.0/D07/preamble.tex": "6c0b75d4d5ec96337602140fcc81d11846be8fc61ddc939fbd8c8340a93cc5af",
+        "docs/notes-revisions/v0.13.0/D07/source-register.tex": "eea140d718efaa04007fdc5d382daa6e3fca52c4b90ca2d281d1f1df9a993811",
+        "docs/notes-revisions/v0.13.0/D07/verification-register.tex": "83aeda37a5a2ca412c04b2e2cccf5547d1796051f300534bb761baa768883edc"
+      }
+    },
+    "PointSetTopology": {
+      "edition": "v0.13.0",
+      "tex": "docs/notes-revisions/v0.13.0/D10/main.tex",
+      "pdf": "docs/notes-revisions/v0.13.0/D10/notes.pdf",
+      "pdf_labels": "docs/notes-revisions/v0.13.0/D10/pdf-labels.json",
+      "pdf_pages": 97,
+      "sha256": {
+        "docs/notes-revisions/v0.13.0/D10/main.tex": "40e6bdfa201afc843ecb4f95110c3417cec5e958131f4f5078329ffc920fb82e",
+        "docs/notes-revisions/v0.13.0/D10/notes.pdf": "b8e8e6375628c9bdf305495948fecab81e461cda80c715584523d674d76a4960",
+        "docs/notes-revisions/v0.13.0/D10/pdf-labels.json": "cf5f6c22ddb82894b6046450eda08a638c7582a4c5bc856bbd7c8aa7ce4945f4"
+      }
+    },
+    "RealAnalysis": {
+      "edition": "v0.13.0",
+      "tex": "docs/notes-revisions/v0.13.0/D11/main.tex",
+      "pdf": "docs/notes-revisions/v0.13.0/D11/notes.pdf",
+      "pdf_labels": "docs/notes-revisions/v0.13.0/D11/pdf-labels.json",
+      "pdf_pages": 125,
+      "sha256": {
+        "docs/notes-revisions/v0.13.0/D11/main.tex": "b493ae9eee63046551cf2c8fdd164b3e8d4a29e469cc3a65ad40ff23e6f7a823",
+        "docs/notes-revisions/v0.13.0/D11/notes.pdf": "10c504be773cdab101a5d56645d2dd81ce394cbec132124341f2dc43814321e6",
+        "docs/notes-revisions/v0.13.0/D11/pdf-labels.json": "ce278c11036bc97dc3b465b49859adf192eec2ab717a659c6df4158af9cbd94c"
+      }
+    },
+    "ComplexAnalysis": {
+      "edition": "v0.13.0",
+      "tex": "docs/notes-revisions/v0.13.0/D12/main.tex",
+      "pdf": "docs/notes-revisions/v0.13.0/D12/notes.pdf",
+      "pdf_labels": "docs/notes-revisions/v0.13.0/D12/pdf-labels.json",
+      "pdf_pages": 91,
+      "sha256": {
+        "docs/notes-revisions/v0.13.0/D12/main.tex": "18ccdc0af7dae5f250719950d42c2c1b643a28a627e6ad3f92b5b25aa16a73d0",
+        "docs/notes-revisions/v0.13.0/D12/notes.pdf": "dcd8f7ed5c5298db7fa8ebbc1ba51440bfc5590c8491c8338ca055804e936164",
+        "docs/notes-revisions/v0.13.0/D12/pdf-labels.json": "86415883b678dc9ae7afcdcc7b5c206488aefa3f72b2196c827ecd0b855ec497"
+      }
+    },
+    "ODEDynamics": {
+      "edition": "v0.13.0",
+      "tex": "docs/notes-revisions/v0.13.0/D13/main.tex",
+      "pdf": "docs/notes-revisions/v0.13.0/D13/notes.pdf",
+      "pdf_labels": "docs/notes-revisions/v0.13.0/D13/pdf-labels.json",
+      "pdf_pages": 89,
+      "sha256": {
+        "docs/notes-revisions/v0.13.0/D13/main.tex": "8b4088a2cbe4d41c98832674a8509c7a93b154be154f549041c769ef5aabbe34",
+        "docs/notes-revisions/v0.13.0/D13/notes.pdf": "3c86cc0ce4cd96095bcddb9bd512c1b4cebf4e77f0813956c52a0971d3ed88e7",
+        "docs/notes-revisions/v0.13.0/D13/pdf-labels.json": "ec55123da11804e7adaff0d70d02dbbeeba24a0179595997682b0fc994fb336c"
+      }
+    },
+    "FunctionalAnalysis": {
+      "edition": "v0.13.0",
+      "tex": "docs/notes-revisions/v0.13.0/D16/main.tex",
+      "pdf": "docs/notes-revisions/v0.13.0/D16/notes.pdf",
+      "pdf_labels": "docs/notes-revisions/v0.13.0/D16/pdf-labels.json",
+      "pdf_pages": 341,
+      "sha256": {
+        "docs/notes-revisions/v0.13.0/D16/main.tex": "09a77a7d3bbe71c5215fb65c99f3e9181003ec6ae59d0f7552b7620e31e1a416",
+        "docs/notes-revisions/v0.13.0/D16/notes.pdf": "204d4d1f9f54d129e6c45fdd6f4f206e1cc0f457bedeae386a4f7049c49b26c2",
+        "docs/notes-revisions/v0.13.0/D16/pdf-labels.json": "3eace8467d82abc6b0ac35a53b795ff840932cf6bb16850660b9b2c44e15a25a"
+      }
+    }
+  }
+}

@@ -1,0 +1,403 @@
+\chapter{Group extensions and the Schur multiplier}
+\label{ch:gr02-extensions}
+
+The semidirect product and its internal criterion are established
+in \cite[K07.04.semidirect\_product and K07.04.semidirect\_recognition]{d07}.
+Here an extension of \(Q\) by \(N\) comes with a specified
+inclusion \(N\hookrightarrow E\) and quotient map \(p:E\to Q\).
+We identify \(N\) with its image. A splitting is a homomorphism
+\(s:Q\to E\) with \(ps=\operatorname{id}_Q\). Its image \(H\) is a
+complement, meaning \(NH=E\) and \(N\cap H=\{1\}\). Conversely the
+inverse of \(p|_H\) is a splitting for every complement. All groups
+in this chapter are discrete, and the abelian kernel \(A\) in a
+cohomology group is written additively. Integral group homology
+uses the trivial coefficient action unless otherwise specified.
+
+\section{Factor systems and outer actions}
+
+\begin{proposition}[GR02-C04.01. Factor systems for a general kernel]
+\label{prop:gr02-factor-system}
+Choose a set-theoretic section \(s:Q\to E\) with \(s(1)=1\).
+Define \(\alpha_q\in\operatorname{Aut}(N)\) by conjugation by \(s(q)\),
+and put \(f(q,r)=s(q)s(r)s(qr)^{-1}\in N\). Then
+\begin{align*}
+ \alpha_q\alpha_r &=\operatorname{Inn}(f(q,r))\,\alpha_{qr},\\
+ f(q,r)f(qr,t)&=\alpha_q(f(r,t))f(q,rt).
+\end{align*}
+Here \(\operatorname{Inn}(n)(x)=nxn^{-1}\). If \(s'(q)=b(q)s(q)\)
+with \(b(1)=1\), the new data are
+\[
+ \alpha'_q=\operatorname{Inn}(b(q))\alpha_q,\qquad
+ f'(q,r)=b(q)\alpha_q(b(r))f(q,r)b(qr)^{-1}.
+\]
+In particular \(q\mapsto[\alpha_q]\) is a homomorphism
+to \(\operatorname{Out}(N)=\operatorname{Aut}(N)/\operatorname{Inn}(N)\)
+independent of the section. Conversely, data satisfying the two
+identities and the normalizations
+\(\alpha_1=\operatorname{id}_N\), \(f(q,1)=f(1,q)=1\)
+give an extension on \(N\times Q\) with product
+\[
+ (n,q)(m,r)=\bigl(n\,\alpha_q(m)f(q,r),qr\bigr).
+\]
+\end{proposition}
+
+\begin{proof}
+Conjugation by \(s(q)s(r)=f(q,r)s(qr)\) gives the first identity.
+Expanding \((s(q)s(r))s(t)=s(q)(s(r)s(t))\) and cancelling \(s(qrt)\)
+on the right gives the second. Substitution of \(b(q)s(q)\) gives
+the displayed change of section. The inner automorphisms form a
+normal subgroup of \(\operatorname{Aut}(N)\), since conjugating
+\(\operatorname{Inn}(n)\) by any automorphism \(\beta\) gives
+\(\operatorname{Inn}(\beta(n))\). Thus the first identity and the
+change of section give the outer homomorphism.
+
+For the converse, if \(u\in N\), the two associations of
+\((n,q)(m,r)(u,t)\) have first coordinates
+\[
+ n\alpha_q(m) f(q,r)\alpha_{qr}(u) f(qr,t)
+ \quad\text{and}\quad
+ n\alpha_q(m)\alpha_q\alpha_r(u)\alpha_q(f(r,t))f(q,rt).
+\]
+They agree by the two identities, and the second coordinates both
+equal \(qrt\). The normalizations give the identity \((1,1)\).
+A right inverse to \((n,q)\) can be found with second coordinate
+\(q^{-1}\) by solving \(\alpha_q(m)=n^{-1}f(q,q^{-1})^{-1}\).
+A left inverse with that second coordinate is obtained by solving
+\(m\alpha_{q^{-1}}(n)f(q^{-1},q)=1\).
+Associativity makes the two inverses equal. Projection is a
+surjective homomorphism with kernel \(N\times\{1\}\).
+For the original extension the coordinate map
+\((n,q)\mapsto ns(q)\) is bijective and respects the product.
+\end{proof}
+
+When \(N=A\) is abelian, \(\alpha_q\) is independent of the lift of
+\(q\) and is an ordinary action of \(Q\) on \(A\). An equivalence
+between extensions with fixed kernel and quotient is a homomorphism
+of middle groups inducing the identity on \(A\) and on \(Q\).
+Such a map is injective because its kernel lies in \(A\). For
+surjectivity, first lift the quotient coordinate of a target
+element and then adjust the lift by an element of \(A\).
+
+\section{Abelian kernels and low-degree cohomology}
+
+We use the inhomogeneous bar differential from
+\cite[A02 and A03]{homalg}, with the left \(Q\)-module structure on
+\(A\). For \(a:Q\to A\), the two-coboundary is
+\[
+ (\delta a)(q,r)=a(q)+q\cdot a(r)-a(qr).
+\]
+A two-cocycle \(c\) satisfies
+\[
+ c(q,r)+c(qr,t)=q\cdot c(r,t)+c(q,rt).
+\]
+It is normalized if \(c(1,q)=c(q,1)=0\). The normalized
+cocycles give the same \(H^2\) classes as all inhomogeneous
+cocycles. Indeed the identity with \(q=1\) shows
+\(c(1,r)=c(1,1)\), and with \(t=1\) shows \(c(q,1)=q\cdot c(1,1)\).
+Subtract the coboundary of the constant cochain with value
+\(c(1,1)\) to normalize. If two normalized cocycles differ by
+\(\delta a\), evaluating at \((1,r)\) gives \(a(1)=0\).
+
+\begin{theorem}[GR02-C04.02. Abelian-kernel extensions and \(H^2\)]
+\label{thm:gr02-h2-extensions}
+Fix a left \(Q\)-action on \(A\). Equivalence classes of extensions
+of \(Q\) by \(A\) inducing that action correspond bijectively to
+\(H^2(Q,A)\). The zero class corresponds to the split extensions.
+\end{theorem}
+
+\begin{proof}
+By Proposition~\ref{prop:gr02-factor-system}, a normalized
+section gives a normalized cocycle \(c\), and changing the section
+adds a coboundary. An extension equivalence preserves the cocycle
+of the transported section. Conversely, a normalized cocycle
+defines an extension by the product
+\[
+ (x,q)(y,r)=(x+q\cdot y+c(q,r),qr)
+\]
+on \(A\times Q\), by the converse in the same proposition.
+Its canonical section \(q\mapsto(0,q)\) recovers \(c\), and the
+conjugation action on \(A\) is the given action. If
+\(c'=c+\delta a\), then \((x,q)\mapsto(x+a(q),q)\) carries the
+product for \(c'\) to the product for \(c\) and fixes the two
+end groups. Hence the constructions are inverse on classes.
+
+A homomorphic section has cocycle zero. If the class is zero,
+choose \(a\) with \(c+\delta a=0\); after the corresponding change
+of section its cocycle is zero, so the section is homomorphic.
+By the internal criterion this is precisely the semidirect product
+for the fixed action.
+\end{proof}
+
+\begin{theorem}[GR02-C04.03. Complements and \(H^1\)]
+\label{thm:gr02-h1-complements}
+For a split extension with abelian kernel \(A\), choose a reference
+splitting \(s_0\). The \(A\)-conjugacy classes of complements to
+\(A\) in \(E\) are in bijection with \(H^1(Q,A)\), with the class
+of \(s_0(Q)\) corresponding to zero.
+\end{theorem}
+
+\begin{proof}
+Identify \(E=A\rtimes Q\) by \(s_0\). A section is the graph
+of a function \(z:Q\to A\), and the semidirect product rule
+makes it a homomorphism precisely when
+\(z(qr)=z(q)+q\cdot z(r)\); this also implies \(z(1)=0\).
+Every complement determines its unique splitting by projection.
+Conjugating the graph by \((a,1)\) changes \(z(q)\) to
+\(z(q)+a-q\cdot a\). As \(a\) varies these changes are exactly
+the one-coboundaries, since they are the negatives of
+\(q\mapsto q\cdot a-a\). The description of \(H^1\) in
+\cite[A03]{homalg} now gives the bijection.
+\end{proof}
+
+The extension correspondence and the choice of reference
+splitting are also treated in \cite{conrad-extensions} and
+\cite[Theorems 23.3 and 24.3]{lassueur}. The cohomological
+Lyndon--Hochschild--Serre sequence is proved in
+\cite[A05]{homalg}. The next section constructs the low-degree
+homological sequence directly on bar chains.
+
+\begin{example}[GR02-C04.04. Two extensions of \(C_2\) by \(C_2\)]
+\label{ex:gr02-c2-extensions}
+Give \(A=C_2\) the trivial action of \(Q=C_2=\{1,t\}\).
+A normalized cocycle is determined by \(c(t,t)\), which can
+take either value in \(C_2\). Indeed, the identity holds whenever
+an argument is \(1\), and the triple \((t,t,t)\) gives just
+\(c(t,t)=c(t,t)\). Normalized coboundaries have
+\((\delta a)(t,t)=2a(t)=0\). The class \(c(t,t)=0\) gives
+\(C_2\times C_2\). In the other class the lift \((0,t)\) has
+square \((1,1_Q)\), where \(1\) in the first coordinate denotes
+the nonzero element of \(A=\mathbb Z/2\mathbb Z\).
+It has order four and generates the middle group \(C_4\).
+Thus even extensions with trivial action on the kernel can
+represent different cohomology classes.
+\end{example}
+
+\section{The Hopf formula}
+
+For groups \(U,V\) contained in a group \(E\), the notation
+\([U,V]\) denotes the subgroup generated by
+\([u,v]=uvu^{-1}v^{-1}\) for \(u\in U\) and \(v\in V\).
+In particular \([E,E]\) is the commutator subgroup. The integral
+bar complex from \cite[A10]{homalg}, on trivial coefficients,
+identifies \(H_1(K;\mathbb Z)\) with the abelianization of \(K\):
+in degree one the generators \([k]\) are cycles and the
+boundaries are \([l]-[kl]+[k]\). They impose exactly the relation
+that \(k\mapsto[k]\) is a homomorphism to an abelian group.
+
+\begin{proposition}[GR02-C04.05. The homological five-term sequence]
+\label{prop:gr02-homological-five-term}
+For an extension \(1\to N\to E\xrightarrow{p}Q\to 1\), there is
+a natural exact sequence
+\[
+ H_2(E;\mathbb Z)\longrightarrow H_2(Q;\mathbb Z)
+ \xrightarrow{d^2_{2,0}}N/[E,N]\longrightarrow
+ H_1(E;\mathbb Z)\longrightarrow H_1(Q;\mathbb Z)\longrightarrow 0.
+\]
+The maps between the homologies of \(E\) and \(Q\) are induced by
+\(p\). The map from \(N/[E,N]\) is induced by inclusion.
+\end{proposition}
+
+\begin{proof}
+Let \(C_\bullet(G)\) denote the integral normalized bar chains
+with trivial coefficients, with any tuple containing \(1\) taken
+as zero. The unnormalized integral bar chains compute group homology
+by \cite[A10]{homalg}. To check normalization in the degrees at issue,
+let \(D_\bullet\) be the subcomplex spanned by tuples containing \(1\).
+It is a subcomplex because the two faces removing a chosen identity
+cancel, and the other faces still contain it. Here \(D_0=0\) and
+\(d[1\mid1]=[1]\) kills \(H_1(D)\). A generator of \(D_2\) has
+boundary \([1]\). Modulo boundaries from \(D_3\) all generators of
+\(D_2\) equal \([1\mid1]\), since
+\[
+ d[1\mid1\mid g]=[1\mid g]-[1\mid1],
+ \qquad
+ d[g\mid1\mid1]=[1\mid1]-[g\mid1].
+\]
+A cycle in \(D_2\) has coefficient sum zero, so \(H_2(D)=0\).
+The quotient by \(D_\bullet\) thus has the same homology through
+degree two. Projection is surjective on normalized chains in every degree. Put
+\(J_\bullet=\ker(C_\bullet(E)\to C_\bullet(Q))\). Since \(J_0=0\),
+its first homology is \(J_1/dJ_2\).
+
+The group \(J_1\) is generated by differences \([nx]-[x]\), where
+\(n\in N\) and \(x\in E\). Indeed, choose a representative \(s(q)\)
+for each fiber, with \(s(1)=1\). Then \([e]-[s(p(e))]\) is a basis
+of \(J_1\) as \(e\) ranges over the elements other than the chosen
+representatives. Sending this basis element to the class of
+\(e\,s(p(e))^{-1}\) defines \(\rho:J_1\to N/[E,N]\), written
+additively in the target. It sends every \([nx]-[x]\) to the class
+of \(n\), so it is independent of the representatives. Likewise
+\(J_2\) is generated by \([na\mid mb]-[a\mid b]\), with \(n,m\in N\):
+choose a reference lift for each nonzero base pair and a degenerate
+reference lift for a pair mapping to zero. On applying \(d\), the
+three differences have \(\rho\)-values equal to the class of \(m\),
+minus the class of \(n(ama^{-1})\), and the class of \(n\),
+respectively. Their sum is zero.
+
+Conversely, the boundary of \([n\mid x]-[1\mid x]\) identifies
+\([nx]-[x]\) with \([n]\) in \(H_1(J)\). The boundary of
+\([n\mid m]-[1\mid1]\) gives \([nm]=[n]+[m]\). The boundary of
+\([x\mid n]-[x\mid1]\) gives \([xnx^{-1}]=[n]\) by the first identity.
+Thus \(n\mapsto[n]\) descends to \(N/[E,N]\) and is inverse to
+\(\rho\). Both maps are natural by their formulas on differences.
+The homology sequence of
+\(0\to J_\bullet\to C_\bullet(E)\to C_\bullet(Q)\to0\) yields the
+asserted sequence. The map from \(H_1(J)\) is induced by inclusion,
+and the maps from \(H_i(E)\) to \(H_i(Q)\) are induced by \(p\).
+
+To identify the connecting map with the transgression, filter the
+bar complex of \(E\) by the number of entries projecting
+nontrivially to \(Q\). In filtration degree \(i\), the bottom row
+on the first page is \(C_i(Q)\): a tuple of length \(i+1\) with
+one entry in \(N\) has filtration-preserving boundary the
+difference of two lifts of the same base tuple. These differences
+identify every pair of lifts. Indeed, a multiplication by \(N\)
+can be moved through successive adjacent positions by inserting
+the multiplier in \(N\), and then removed at the end of the
+tuple. The bottom-row differential therefore projects to the bar
+differential of \(Q\).
+
+In filtration degree zero, the first-page term in total degree one
+is \(H_1(N)\). The incoming first differential comes from
+chains with precisely one nontrivial projected entry in degree
+two and boundary in filtration zero, modulo boundaries.
+The chain \([x\mid n]-[xnx^{-1}\mid x]\) has boundary
+\([n]-[xnx^{-1}]\) in filtration zero, so these classes impose
+conjugation. Conversely any such chain is in \(J_2\), and the
+calculation with \(\rho\) shows that its boundary in filtration
+zero maps to zero in \(N/[E,N]\). Thus the second-page target
+is exactly \(N/[E,N]\).
+
+For a base two-cycle \(z\), choose any lift \(\widetilde z\).
+Write \(d\widetilde z\) as a sum of differences \([nx]-[x]\) and
+add the chains \([n\mid x]-[1\mid x]\) with the same coefficients
+to \(\widetilde z\). The new boundary is in filtration zero and
+is the corresponding sum of \([n]\)'s. Its class is both the
+connecting map of the short exact sequence and the second
+differential \(d^2_{2,0}\) of the filtered bar complex. This fixes
+the transgression sign for \(d[a\mid b]=[b]-[ab]+[a]\).
+For the spectral-sequence presentation, see \cite[Section 6.8.3]{weibel}.
+\end{proof}
+
+\begin{theorem}[GR02-C04.06. Hopf's formula for the Schur multiplier]
+\label{thm:gr02-hopf-formula}
+For a free presentation \(1\to R\to F\to G\to 1\), the Schur
+multiplier \(H_2(G;\mathbb Z)\) identifies naturally with
+\[
+       (R\cap[F,F])/[F,R].
+\]
+The natural identification compares different free presentations.
+\end{theorem}
+
+\begin{proof}
+Fix a free basis \(S\) of \(F\). Its Cayley graph with edges
+\(g\to gs\) for \(s\in S\) is a tree by the reduced-word normal
+form \cite[K07.01.free\_group\_universal\_property]{d07}.
+The augmented chain sequence
+over \(\mathbb Z[F]\) has the form
+\[
+ 0\to \bigoplus_{s\in S}\mathbb Z[F]\to\mathbb Z[F]\to\mathbb Z\to0 .
+\]
+Its boundary sends the edge \(g\to gs\) to \(gs-g\).
+Every \(g-1\) is a path boundary, giving exactness at vertices.
+A nonzero edge chain has finite support, and in the forest on
+those edges a leaf has nonzero boundary coefficient. This proves
+injectivity. Thus the sequence is a free resolution of the
+trivial left coefficient module, and the Tor description
+\cite[A10]{homalg} gives \(H_2(F;\mathbb Z)=0\).
+
+Proposition~\ref{prop:gr02-homological-five-term} identifies
+\(H_2(G;\mathbb Z)\) with the kernel of \(R/[F,R]\to F/[F,F]\),
+which is the displayed quotient. For a map of free presentations,
+the exact sequence is natural. A map between the quotient groups
+can be lifted by choosing images of free generators. If two lifts
+are chosen, their values differ elementwise by elements of the
+target relation subgroup. Those differences are central modulo
+commutators with the target free group, so both maps have the
+same values on commutators in that quotient. Hence the induced map
+on the displayed kernel is independent of the lift. Applied to
+the identity of \(G\), naturality gives the canonical comparison
+between presentations. See \cite[Theorem 6.8.8]{weibel}.
+\end{proof}
+
+\begin{example}[GR02-C04.07. Multipliers of cyclic groups and their products]
+\label{ex:gr02-multiplier-cyclic-product}
+For \(C_m\), take \(F\) free on one generator. As \([F,F]=1\),
+Theorem~\ref{thm:gr02-hopf-formula} gives \(H_2(C_m;\mathbb Z)=0\).
+For \(C_m\times C_n\) with \(m,n\geq 1\), present it with free
+generators \(x,y\) and relations \(x^m,y^n,[x,y]\). Let \(R\)
+be the normal closure of the relations. The quotient
+\(D=F/[F,R]\) has central image of \(R\), which contains
+\([D,D]\) because \(F/R\) is abelian. Its commutator subgroup is
+generated by \(z=[x,y]\) in \(D\). In fact \(F'\) is normally
+generated by \([x,y]\), since adjoining that relation makes
+the generators commute, and its image in \(D\) is central.
+The relations \(x^m,y^n\) have central image, so
+\(z^m=z^n=1\), by the commutator rules for central commutators.
+For example \([ab,y]=a[b,y]a^{-1}[a,y]=[b,y][a,y]\) in \(D\).
+
+Put \(d=\gcd(m,n)\). If \(d>1\), map \(x,y\) to \(I+E_{12}\)
+and \(I+E_{23}\) in the upper unitriangular \(3\times3\) matrices
+over \(\mathbb Z/d\mathbb Z\), where \(E_{ij}\) is a matrix unit.
+Their \(m\)-th and \(n\)-th powers, respectively, are identities.
+Their commutator is \(I+E_{13}\), which is central in this matrix
+group and has order \(d\). The image of \(R\) is central because
+its normal generators have central images, so the map kills
+\([F,R]\). Hence \(z\) has order at least \(d\), and its order
+divides \(d\). When \(d=1\) the latter already gives \(z=1\).
+The Hopf formula, with \(F'\subseteq R\), now gives
+\[
+          H_2(C_m\times C_n;\mathbb Z)\cong C_{\gcd(m,n)} .
+\]
+\end{example}
+
+\section{The universal central extension}
+
+A central extension of \(G\) is an extension with kernel
+in the center of its middle group. It is universal if it
+admits a unique homomorphism over \(G\) to every central
+extension of \(G\). A group is perfect if it equals its
+commutator subgroup.
+
+\begin{theorem}[GR02-C04.08. Universal central extensions of perfect groups]
+\label{thm:gr02-universal-central-extension}
+A group \(G\) has a universal central extension if and only if
+it is perfect. When \(G\) is perfect and \(F/R\cong G\) is any
+free presentation, the map
+\[
+       [F,F]/[F,R]\longrightarrow G
+\]
+is the universal central extension. Its source is perfect,
+and its kernel is \(H_2(G;\mathbb Z)\).
+\end{theorem}
+
+\begin{proof}
+Suppose \(G\) is perfect, and write \(D=F/[F,R]\) and
+\(\overline R\) for the image of \(R\). That image is central.
+Since \([F,F]\) maps onto \(G\), the subgroup
+\(U=[F,F]/[F,R]=[D,D]\) maps onto \(G\), with central kernel
+\((R\cap[F,F])/[F,R]\). Theorem~\ref{thm:gr02-hopf-formula}
+identifies this kernel. In addition \(D=U\overline R\), so
+every commutator of \(D\) is a commutator of elements of \(U\).
+It follows that \(U=[D,D]=[U,U]\).
+
+Given a central extension \(E\to G\), lift the free generators
+of \(F\) to \(E\), obtaining a homomorphism \(F\to E\) over
+\(G\). Its images of the elements of \(R\) lie in the central
+kernel, so the map kills \([F,R]\). Restriction yields a
+homomorphism \(U\to E\) over \(G\). If two such homomorphisms
+are given, their pointwise quotient lies in the central kernel
+and is a homomorphism into that abelian group. It must be
+trivial because \(U\) is perfect. This proves universality.
+
+Conversely, if \(U\to G\) is universal, the split central
+extension \(U/[U,U]\times G\to G\) admits two maps over \(G\)
+from \(U\), by using either the zero map or the abelianization
+map in the first coordinate. Uniqueness implies \(U=[U,U]\).
+Surjectivity then forces \(G\) to be perfect.
+See \cite[Theorem 6.9.5]{weibel}.
+\end{proof}
+
+For the stable elementary group \(E(R)\), the application in
+\cite[B12]{ktheory} identifies \(K_2(R)\) with the corresponding
+integral second homology.

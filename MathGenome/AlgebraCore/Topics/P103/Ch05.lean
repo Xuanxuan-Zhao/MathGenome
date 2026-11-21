@@ -1,0 +1,13 @@
+import MathGenome.Internal.AlgebraCore.P103.Ch05.AssociatedExactZeroDivisors
+import MathGenome.Internal.AlgebraCore.P103.Ch05.AssociatedFiniteness
+import MathGenome.Internal.AlgebraCore.P103.Ch05.AssociatedLocalization
+import MathGenome.Internal.AlgebraCore.P103.Ch05.AssociatedPrimesInterface
+import MathGenome.Internal.AlgebraCore.P103.Ch05.IrreducibleIntersections
+import MathGenome.Internal.AlgebraCore.P103.Ch05.IrreduciblePrimary
+import MathGenome.Internal.AlgebraCore.P103.Ch05.NoetherianFiniteness
+import MathGenome.Internal.AlgebraCore.P103.Ch05.PrimaryDecomposition
+import MathGenome.Internal.AlgebraCore.P103.Ch05.PrimaryIdealsExample
+import MathGenome.Internal.AlgebraCore.P103.Ch05.PrimaryLocalizationUniqueness
+import MathGenome.Internal.AlgebraCore.P103.Ch05.PrimarySubmodules
+import MathGenome.Internal.AlgebraCore.P103.Ch05.PrimeAvoidance
+import MathGenome.Internal.AlgebraCore.P103.Ch05.SupportGeometry

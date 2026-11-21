@@ -1,0 +1,39 @@
+{
+  "source_hashes": {
+    "P1-02_Analysis_Notes.tex": "a3a271fc17d6305a231ee06ab25d70fdfd442fbab46191b704dff208bc9b6dab",
+    "parts/u1.tex": "167b42c19b003aa1e4460481c09f9774e9acf2ef6362d0cfe1e2cbcaa61d5345",
+    "parts/u2.tex": "921bc3a618bb6f9f15f8bc8eb4fd96db3bac998ad7eede01efa634ca15b74808",
+    "parts/u3.tex": "c00306abe35d4857c063048f652f45fed7b822c09ec82ee172db45cf62c8da9a",
+    "parts/u4.tex": "c7382cb2559ec2ed050ec71287c1ac9ae9f53edbd011276898bd3ecfdfdc28e6",
+    "parts/u5.tex": "042a30bc282c56d31e6350c67331999d40c73f5bccede31e5566514c77de9f85",
+    "output/pdf/P1-02_Analysis_Notes.pdf": "5b1517115fbd808681c55b0c6fee68fd8566240bd3e143c58a53ae6e4c64bc25"
+  },
+  "source_map_sha256": "4c54864772ec12a24a6db1422e3aa4179ce6bcc17aa0796927fc01672ce01258",
+  "paper_sha256": "e6a47f8477fb790af5b02b2b8cc8d0239378518e53257ac7fd58cb4a8c61b919",
+  "chapter_ranges_in_paper": {
+    "parts/u1.tex": [
+      63,
+      789
+    ],
+    "parts/u2.tex": [
+      790,
+      1012
+    ],
+    "parts/u3.tex": [
+      1013,
+      1272
+    ],
+    "parts/u4.tex": [
+      1273,
+      1705
+    ],
+    "parts/u5.tex": [
+      1706,
+      2693
+    ]
+  },
+  "source_map_entries": 65,
+  "pdf_pages": 55,
+  "mathematical_pages": 50,
+  "published_source_map_sha256": "9095478471ec2bd02209fae1daf8345b41c67eac2ad7bf23cd294b5897268da9"
+}

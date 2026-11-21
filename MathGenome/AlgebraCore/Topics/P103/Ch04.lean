@@ -1,0 +1,17 @@
+import MathGenome.Internal.AlgebraCore.P103.Ch04.FlatGoingDown
+import MathGenome.Internal.AlgebraCore.P103.Ch04.GoingUp
+import MathGenome.Internal.AlgebraCore.P103.Ch04.HomFlatBaseChange
+import MathGenome.Internal.AlgebraCore.P103.Ch04.IntegralClosureLocalization
+import MathGenome.Internal.AlgebraCore.P103.Ch04.IntegralDimension
+import MathGenome.Internal.AlgebraCore.P103.Ch04.IntegralElementsTransitivity
+import MathGenome.Internal.AlgebraCore.P103.Ch04.IntegralFiniteGeneration
+import MathGenome.Internal.AlgebraCore.P103.Ch04.IntegralGoingDown
+import MathGenome.Internal.AlgebraCore.P103.Ch04.IntegralPrimeProperties
+import MathGenome.Internal.AlgebraCore.P103.Ch04.LocalDetection
+import MathGenome.Internal.AlgebraCore.P103.Ch04.LocalizationSpectrum
+import MathGenome.Internal.AlgebraCore.P103.Ch04.LocalizationSpectrumNonopen
+import MathGenome.Internal.AlgebraCore.P103.Ch04.LyingOver
+import MathGenome.Internal.AlgebraCore.P103.Ch04.ModuleLocalization
+import MathGenome.Internal.AlgebraCore.P103.Ch04.RadicalZariski
+import MathGenome.Internal.AlgebraCore.P103.Ch04.RingLocalization
+import MathGenome.Internal.AlgebraCore.P103.Ch04.SpectrumFunctorQuotient

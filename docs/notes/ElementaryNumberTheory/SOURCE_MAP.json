@@ -1,0 +1,1488 @@
+{
+  "bibliography_first_physical_page": 43,
+  "chapters": [
+    {
+      "chapter": 1,
+      "first_physical_page": 5,
+      "last_physical_page": 8,
+      "numbered_results": [
+        {
+          "first_physical_page": 5,
+          "kind": "lemma",
+          "number": "1.1",
+          "proof_lines": [
+            18,
+            24
+          ],
+          "statement_lines": [
+            14,
+            17
+          ]
+        },
+        {
+          "first_physical_page": 5,
+          "kind": "theorem",
+          "number": "1.2",
+          "proof_lines": [
+            36,
+            67
+          ],
+          "statement_lines": [
+            26,
+            35
+          ]
+        },
+        {
+          "first_physical_page": 6,
+          "kind": "theorem",
+          "number": "1.3",
+          "proof_lines": [
+            89,
+            106
+          ],
+          "statement_lines": [
+            76,
+            88
+          ]
+        },
+        {
+          "first_physical_page": 6,
+          "kind": "theorem",
+          "number": "1.4",
+          "proof_lines": [
+            134,
+            152
+          ],
+          "statement_lines": [
+            123,
+            133
+          ]
+        },
+        {
+          "first_physical_page": 7,
+          "kind": "theorem",
+          "number": "1.5",
+          "proof_lines": [
+            173,
+            186
+          ],
+          "statement_lines": [
+            156,
+            172
+          ]
+        },
+        {
+          "first_physical_page": 7,
+          "kind": "theorem",
+          "number": "1.6",
+          "proof_lines": [
+            212,
+            242
+          ],
+          "statement_lines": [
+            192,
+            211
+          ]
+        },
+        {
+          "first_physical_page": 8,
+          "kind": "theorem",
+          "number": "1.7",
+          "proof_lines": [
+            253,
+            265
+          ],
+          "statement_lines": [
+            249,
+            252
+          ]
+        }
+      ],
+      "source_file": "chapters/01-integers.tex",
+      "title": "Divisibility and integer congruences"
+    },
+    {
+      "chapter": 2,
+      "first_physical_page": 9,
+      "last_physical_page": 15,
+      "numbered_results": [
+        {
+          "first_physical_page": 9,
+          "kind": "theorem",
+          "number": "2.1",
+          "proof_lines": [
+            36,
+            60
+          ],
+          "statement_lines": [
+            23,
+            35
+          ]
+        },
+        {
+          "first_physical_page": 10,
+          "kind": "lemma",
+          "number": "2.2",
+          "proof_lines": [
+            75,
+            98
+          ],
+          "statement_lines": [
+            70,
+            74
+          ]
+        },
+        {
+          "first_physical_page": 10,
+          "kind": "theorem",
+          "number": "2.3",
+          "proof_lines": [
+            109,
+            157
+          ],
+          "statement_lines": [
+            100,
+            108
+          ]
+        },
+        {
+          "first_physical_page": 11,
+          "kind": "theorem",
+          "number": "2.4",
+          "proof_lines": [
+            173,
+            201
+          ],
+          "statement_lines": [
+            164,
+            172
+          ]
+        },
+        {
+          "first_physical_page": 11,
+          "kind": "theorem",
+          "number": "2.5",
+          "proof_lines": [
+            214,
+            250
+          ],
+          "statement_lines": [
+            203,
+            213
+          ]
+        },
+        {
+          "first_physical_page": 12,
+          "kind": "theorem",
+          "number": "2.6",
+          "proof_lines": [
+            266,
+            282
+          ],
+          "statement_lines": [
+            257,
+            265
+          ]
+        },
+        {
+          "first_physical_page": 13,
+          "kind": "theorem",
+          "number": "2.7",
+          "proof_lines": [
+            303,
+            323
+          ],
+          "statement_lines": [
+            293,
+            302
+          ]
+        },
+        {
+          "first_physical_page": 13,
+          "kind": "theorem",
+          "number": "2.8",
+          "proof_lines": [
+            340,
+            375
+          ],
+          "statement_lines": [
+            328,
+            339
+          ]
+        },
+        {
+          "first_physical_page": 14,
+          "kind": "theorem",
+          "number": "2.9",
+          "proof_lines": [
+            407,
+            442
+          ],
+          "statement_lines": [
+            390,
+            406
+          ]
+        },
+        {
+          "first_physical_page": 15,
+          "kind": "theorem",
+          "number": "2.10",
+          "proof_lines": [
+            471,
+            507
+          ],
+          "statement_lines": [
+            447,
+            470
+          ]
+        }
+      ],
+      "source_file": "chapters/02-congruences.tex",
+      "title": "Residue groups and quadratic reciprocity"
+    },
+    {
+      "chapter": 3,
+      "first_physical_page": 16,
+      "last_physical_page": 23,
+      "numbered_results": [
+        {
+          "first_physical_page": 16,
+          "kind": "theorem",
+          "number": "3.1",
+          "proof_lines": [
+            24,
+            40
+          ],
+          "statement_lines": [
+            13,
+            22
+          ]
+        },
+        {
+          "first_physical_page": 16,
+          "kind": "theorem",
+          "number": "3.2",
+          "proof_lines": [
+            64,
+            93
+          ],
+          "statement_lines": [
+            42,
+            62
+          ]
+        },
+        {
+          "first_physical_page": 17,
+          "kind": "proposition",
+          "number": "3.3",
+          "proof_lines": [
+            128,
+            141
+          ],
+          "statement_lines": [
+            102,
+            126
+          ]
+        },
+        {
+          "first_physical_page": 18,
+          "kind": "theorem",
+          "number": "3.4",
+          "proof_lines": [
+            157,
+            171
+          ],
+          "statement_lines": [
+            143,
+            155
+          ]
+        },
+        {
+          "first_physical_page": 18,
+          "kind": "theorem",
+          "number": "3.5",
+          "proof_lines": [
+            189,
+            199
+          ],
+          "statement_lines": [
+            178,
+            187
+          ]
+        },
+        {
+          "first_physical_page": 18,
+          "kind": "theorem",
+          "number": "3.6",
+          "proof_lines": [
+            217,
+            235
+          ],
+          "statement_lines": [
+            201,
+            215
+          ]
+        },
+        {
+          "first_physical_page": 19,
+          "kind": "lemma",
+          "number": "3.7",
+          "proof_lines": [
+            249,
+            287
+          ],
+          "statement_lines": [
+            242,
+            247
+          ]
+        },
+        {
+          "first_physical_page": 20,
+          "kind": "theorem",
+          "number": "3.8",
+          "proof_lines": [
+            298,
+            343
+          ],
+          "statement_lines": [
+            289,
+            296
+          ]
+        },
+        {
+          "first_physical_page": 21,
+          "kind": "lemma",
+          "number": "3.9",
+          "proof_lines": [
+            365,
+            377
+          ],
+          "statement_lines": [
+            361,
+            363
+          ]
+        },
+        {
+          "first_physical_page": 21,
+          "kind": "theorem",
+          "number": "3.10",
+          "proof_lines": [
+            385,
+            416
+          ],
+          "statement_lines": [
+            379,
+            383
+          ]
+        },
+        {
+          "first_physical_page": 21,
+          "kind": "theorem",
+          "number": "3.11",
+          "proof_lines": [
+            428,
+            464
+          ],
+          "statement_lines": [
+            418,
+            426
+          ]
+        },
+        {
+          "first_physical_page": 22,
+          "kind": "theorem",
+          "number": "3.12",
+          "proof_lines": [
+            476,
+            536
+          ],
+          "statement_lines": [
+            472,
+            474
+          ]
+        }
+      ],
+      "source_file": "chapters/03-arithmetic-functions.tex",
+      "title": "Arithmetic Functions and Elementary Prime Estimates"
+    },
+    {
+      "chapter": 4,
+      "first_physical_page": 24,
+      "last_physical_page": 31,
+      "numbered_results": [
+        {
+          "first_physical_page": 24,
+          "kind": "theorem",
+          "number": "4.1",
+          "proof_lines": [
+            16,
+            30
+          ],
+          "statement_lines": [
+            6,
+            15
+          ]
+        },
+        {
+          "first_physical_page": 24,
+          "kind": "theorem",
+          "number": "4.2",
+          "proof_lines": [
+            37,
+            62
+          ],
+          "statement_lines": [
+            32,
+            36
+          ]
+        },
+        {
+          "first_physical_page": 25,
+          "kind": "theorem",
+          "number": "4.3",
+          "proof_lines": [
+            76,
+            113
+          ],
+          "statement_lines": [
+            68,
+            75
+          ]
+        },
+        {
+          "first_physical_page": 25,
+          "kind": "theorem",
+          "number": "4.4",
+          "proof_lines": [
+            132,
+            148
+          ],
+          "statement_lines": [
+            115,
+            131
+          ]
+        },
+        {
+          "first_physical_page": 26,
+          "kind": "theorem",
+          "number": "4.5",
+          "proof_lines": [
+            181,
+            210
+          ],
+          "statement_lines": [
+            177,
+            180
+          ]
+        },
+        {
+          "first_physical_page": 27,
+          "kind": "lemma",
+          "number": "4.6",
+          "proof_lines": [
+            236,
+            260
+          ],
+          "statement_lines": [
+            222,
+            235
+          ]
+        },
+        {
+          "first_physical_page": 27,
+          "kind": "lemma",
+          "number": "4.7",
+          "proof_lines": [
+            271,
+            292
+          ],
+          "statement_lines": [
+            262,
+            270
+          ]
+        },
+        {
+          "first_physical_page": 27,
+          "kind": "theorem",
+          "number": "4.8",
+          "proof_lines": [
+            299,
+            447
+          ],
+          "statement_lines": [
+            294,
+            298
+          ]
+        },
+        {
+          "first_physical_page": 29,
+          "kind": "lemma",
+          "number": "4.9",
+          "proof_lines": [
+            461,
+            475
+          ],
+          "statement_lines": [
+            456,
+            460
+          ]
+        },
+        {
+          "first_physical_page": 29,
+          "kind": "theorem",
+          "number": "4.10",
+          "proof_lines": [
+            482,
+            598
+          ],
+          "statement_lines": [
+            477,
+            481
+          ]
+        }
+      ],
+      "source_file": "chapters/04-diophantine.tex",
+      "title": "Descent and Sums of Squares"
+    },
+    {
+      "chapter": 5,
+      "first_physical_page": 32,
+      "last_physical_page": 39,
+      "numbered_results": [
+        {
+          "first_physical_page": 32,
+          "kind": "theorem",
+          "number": "5.1",
+          "proof_lines": [
+            19,
+            29
+          ],
+          "statement_lines": [
+            12,
+            18
+          ]
+        },
+        {
+          "first_physical_page": 32,
+          "kind": "corollary",
+          "number": "5.2",
+          "proof_lines": [
+            36,
+            39
+          ],
+          "statement_lines": [
+            31,
+            35
+          ]
+        },
+        {
+          "first_physical_page": 32,
+          "kind": "theorem",
+          "number": "5.3",
+          "proof_lines": [
+            44,
+            81
+          ],
+          "statement_lines": [
+            41,
+            43
+          ]
+        },
+        {
+          "first_physical_page": 33,
+          "kind": "theorem",
+          "number": "5.4",
+          "proof_lines": [
+            113,
+            132
+          ],
+          "statement_lines": [
+            105,
+            112
+          ]
+        },
+        {
+          "first_physical_page": 34,
+          "kind": "theorem",
+          "number": "5.5",
+          "proof_lines": [
+            170,
+            197
+          ],
+          "statement_lines": [
+            139,
+            169
+          ]
+        },
+        {
+          "first_physical_page": 34,
+          "kind": "theorem",
+          "number": "5.6",
+          "proof_lines": [
+            216,
+            230
+          ],
+          "statement_lines": [
+            207,
+            215
+          ]
+        },
+        {
+          "first_physical_page": 35,
+          "kind": "corollary",
+          "number": "5.7",
+          "proof_lines": [
+            240,
+            256
+          ],
+          "statement_lines": [
+            232,
+            239
+          ]
+        },
+        {
+          "first_physical_page": 35,
+          "kind": "theorem",
+          "number": "5.8",
+          "proof_lines": [
+            273,
+            294
+          ],
+          "statement_lines": [
+            263,
+            272
+          ]
+        },
+        {
+          "first_physical_page": 36,
+          "kind": "theorem",
+          "number": "5.9",
+          "proof_lines": [
+            313,
+            337
+          ],
+          "statement_lines": [
+            304,
+            312
+          ]
+        },
+        {
+          "first_physical_page": 36,
+          "kind": "theorem",
+          "number": "5.10",
+          "proof_lines": [
+            354,
+            401
+          ],
+          "statement_lines": [
+            345,
+            353
+          ]
+        },
+        {
+          "first_physical_page": 37,
+          "kind": "lemma",
+          "number": "5.11",
+          "proof_lines": [
+            435,
+            452
+          ],
+          "statement_lines": [
+            416,
+            434
+          ]
+        },
+        {
+          "first_physical_page": 38,
+          "kind": "theorem",
+          "number": "5.12",
+          "proof_lines": [
+            461,
+            533
+          ],
+          "statement_lines": [
+            454,
+            460
+          ]
+        },
+        {
+          "first_physical_page": 39,
+          "kind": "theorem",
+          "number": "5.13",
+          "proof_lines": [
+            551,
+            565
+          ],
+          "statement_lines": [
+            544,
+            550
+          ]
+        },
+        {
+          "first_physical_page": 39,
+          "kind": "corollary",
+          "number": "5.14",
+          "proof_lines": [
+            571,
+            588
+          ],
+          "statement_lines": [
+            567,
+            570
+          ]
+        }
+      ],
+      "source_file": "chapters/05-continued-fractions.tex",
+      "title": "Continued fractions, approximation, and irrationality"
+    },
+    {
+      "chapter": 6,
+      "first_physical_page": 40,
+      "last_physical_page": 42,
+      "numbered_results": [
+        {
+          "first_physical_page": 40,
+          "kind": "lemma",
+          "number": "6.1",
+          "proof_lines": [
+            26,
+            70
+          ],
+          "statement_lines": [
+            13,
+            25
+          ]
+        },
+        {
+          "first_physical_page": 41,
+          "kind": "theorem",
+          "number": "6.2",
+          "proof_lines": [
+            86,
+            107
+          ],
+          "statement_lines": [
+            72,
+            85
+          ]
+        },
+        {
+          "first_physical_page": 41,
+          "kind": "theorem",
+          "number": "6.3",
+          "proof_lines": [
+            134,
+            148
+          ],
+          "statement_lines": [
+            124,
+            133
+          ]
+        },
+        {
+          "first_physical_page": 42,
+          "kind": "corollary",
+          "number": "6.4",
+          "proof_lines": [
+            162,
+            176
+          ],
+          "statement_lines": [
+            150,
+            161
+          ]
+        }
+      ],
+      "source_file": "chapters/06-pell.tex",
+      "title": "Pell Equations"
+    }
+  ],
+  "group_count": 42,
+  "groups": {
+    "A01": {
+      "first_numbered_result": "1.2",
+      "first_physical_page": 5,
+      "label_source_line": 27,
+      "latex_label": "nt:A01",
+      "latex_number": "1.2",
+      "original_contracts": [
+        "NT-01-C01-R01"
+      ],
+      "reference_locator": "HW I、V；A §§1.2–1.5、1.7；Shoup Ch. 4",
+      "scope_from_writing_ledger": "整数整除、Euclid 引理、非负 gcd 与 lcm、Euclid 算法和 Bézout。含 \\(\\gcd(0,0)=0\\)。",
+      "source_file": "chapters/01-integers.tex"
+    },
+    "A02": {
+      "first_numbered_result": "1.3",
+      "first_physical_page": 6,
+      "label_source_line": 76,
+      "latex_label": "nt:A02",
+      "latex_number": "1.3",
+      "original_contracts": [
+        "NT-01-C01-R02"
+      ],
+      "reference_locator": "HW I、XII；A §§1.4–1.8",
+      "scope_from_writing_ledger": "正整数唯一素分解及非零整数的符号分解，\\(v_p(ab)=v_p(a)+v_p(b)\\)，非零整数的赋值整除判据。",
+      "source_file": "chapters/01-integers.tex"
+    },
+    "A03": {
+      "first_numbered_result": "1.4",
+      "first_physical_page": 6,
+      "label_source_line": 123,
+      "latex_label": "nt:A03",
+      "latex_number": "1.4",
+      "original_contracts": [],
+      "reference_locator": "A Thms. 5.13–5.14；NZM §§2.1–2.3；Shoup Ch. 2",
+      "scope_from_writing_ledger": "\\(ax+by=c\\) 的整数可解判据和全体解。\\(ax\\equiv b\\bmod m\\) 可解恰在 \\(\\gcd(a,m)\\mid b\\)，可解时有 \\(\\gcd(a,m)\\) 个不同的模 \\(m\\) 解。",
+      "source_file": "chapters/01-integers.tex"
+    },
+    "A04": {
+      "first_numbered_result": "1.5",
+      "first_physical_page": 7,
+      "label_source_line": 156,
+      "latex_label": "nt:A04",
+      "latex_number": "1.5",
+      "original_contracts": [],
+      "reference_locator": "HW I、XVIII、XXII 的初等部分；NZM §8.1",
+      "scope_from_writing_ledger": "Legendre 阶乘赋值、二项式素数指数及每个素数幂对应的取整差为 \\(0\\) 或 \\(1\\)。",
+      "source_file": "chapters/01-integers.tex"
+    },
+    "A05": {
+      "first_numbered_result": "1.6",
+      "first_physical_page": 7,
+      "label_source_line": 192,
+      "latex_label": "nt:A05",
+      "latex_number": "1.6",
+      "original_contracts": [
+        "NT-01-C01-R03"
+      ],
+      "reference_locator": "A Thm. 5.26；HW VIII；Shoup Ch. 2；MathGenome D07",
+      "scope_from_writing_ledger": "任意有限正模数的 CRT。可解恰当 \\(a_i\\equiv a_j\\bmod\\gcd(m_i,m_j)\\) 对所有 \\(i,j\\) 成立，解在模 lcm 意义下唯一。两两互素时给出显式解及 \\(\\mathbb Z/(\\prod m_i)\\simeq\\prod_i\\mathbb Z/(m_i)\\)。",
+      "source_file": "chapters/01-integers.tex"
+    },
+    "A06": {
+      "first_numbered_result": "1.7",
+      "first_physical_page": 8,
+      "label_source_line": 249,
+      "latex_label": "nt:A06",
+      "latex_number": "1.7",
+      "original_contracts": [],
+      "reference_locator": "HW I–II；A §§1.4、1.6；A §7.2",
+      "scope_from_writing_ledger": "素数无穷，\\(3\\bmod4\\) 素数无穷的初等特例。",
+      "source_file": "chapters/01-integers.tex"
+    },
+    "B01": {
+      "first_numbered_result": "2.1",
+      "first_physical_page": 9,
+      "label_source_line": 23,
+      "latex_label": "nt:B01",
+      "latex_number": "2.1",
+      "original_contracts": [
+        "NT-01-C02-R01"
+      ],
+      "reference_locator": "A §§2.3–2.5、Thms. 5.17、5.19、5.24；NZM §2.1 Thms. 2.7–2.8、2.11",
+      "scope_from_writing_ledger": "\\(\\phi(1)=1\\)，欧拉函数素数幂与乘积公式、Euler 同余、Fermat 的单位版和全剩余类版、Wilson 定理及其逆（模数大于 1）。",
+      "source_file": "chapters/02-congruences.tex"
+    },
+    "B02": {
+      "first_numbered_result": "2.3",
+      "first_physical_page": 10,
+      "label_source_line": 100,
+      "latex_label": "nt:B02",
+      "latex_number": "2.3",
+      "original_contracts": [
+        "NT-01-C02-R02"
+      ],
+      "reference_locator": "LN Ch. 2；A Thm. 5.21、§10.4；MathGenome D07",
+      "scope_from_writing_ledger": "特征 \\(p\\) 的有限域阶为 \\(p^f\\)，\\(f\\ge1\\) 时存在且同构意义唯一。域乘法群的有限子群循环，有限域乘法群阶 \\(p^f-1\\)，生成元数 \\(\\phi(p^f-1)\\)。",
+      "source_file": "chapters/02-congruences.tex"
+    },
+    "B03": {
+      "first_numbered_result": "2.4",
+      "first_physical_page": 11,
+      "label_source_line": 164,
+      "latex_label": "nt:B03",
+      "latex_number": "2.4",
+      "original_contracts": [
+        "NT-01-C02-R02"
+      ],
+      "reference_locator": "A §§10.4–10.6；HW VIII",
+      "scope_from_writing_ledger": "奇素数幂原根提升。若 \\(p\\) 为奇素数、\\(u\\in\\mathbb Z\\) 且 \\(u\\equiv1\\bmod p\\)、\\(u\\ne1\\)，则 \\(v_p(u^p-1)=v_p(u-1)+1\\)。",
+      "source_file": "chapters/02-congruences.tex"
+    },
+    "B04": {
+      "first_numbered_result": "2.5",
+      "first_physical_page": 11,
+      "label_source_line": 203,
+      "latex_label": "nt:B04",
+      "latex_number": "2.5",
+      "original_contracts": [
+        "NT-01-C02-R02"
+      ],
+      "reference_locator": "A §§10.1–10.9、Thm. 10.11；Mathlib UnitsCyclic",
+      "scope_from_writing_ledger": "正模数单位群循环恰在 \\(1,2,4,p^k,2p^k\\)，其中 \\(p\\) 奇、\\(k\\ge1\\)。若存在原根，个数为 \\(\\phi(\\phi(m))\\)。补齐 \\(k\\ge3\\) 时模 \\(2^k\\) 单位唯一写成 \\((-1)^a5^b\\) 的分解，其中 \\(a\\in\\{0,1\\}\\)、\\(0\\le b<2^{k-2}\\)。",
+      "source_file": "chapters/02-congruences.tex"
+    },
+    "B05": {
+      "first_numbered_result": "2.6",
+      "first_physical_page": 12,
+      "label_source_line": 257,
+      "latex_label": "nt:B05",
+      "latex_number": "2.6",
+      "original_contracts": [],
+      "reference_locator": "A Thms. 5.28、5.30；NZM §§2.8–2.9",
+      "scope_from_writing_ledger": "整系数多项式的单根提升。若 \\(p\\) 为素数、\\(f(a)\\equiv0\\bmod p^j\\) 且 \\(p\\nmid f'(a)\\)，则在 \\(a+p^j t\\bmod p^{j+1}\\) 中唯一提升，\\(j\\ge1\\)。",
+      "source_file": "chapters/02-congruences.tex"
+    },
+    "B06": {
+      "first_numbered_result": "2.7",
+      "first_physical_page": 13,
+      "label_source_line": 293,
+      "latex_label": "nt:B06",
+      "latex_number": "2.7",
+      "original_contracts": [
+        "NT-01-C02-R03"
+      ],
+      "reference_locator": "A §§9.1–9.4；NZM §§3.1–3.2；Shoup Ch. 12",
+      "scope_from_writing_ledger": "奇素数的 Legendre 符号、乘法性、Euler 判据和 Gauss 引理，含素数整除分子时符号为零。",
+      "source_file": "chapters/02-congruences.tex"
+    },
+    "B07": {
+      "first_numbered_result": "2.8",
+      "first_physical_page": 13,
+      "label_source_line": 328,
+      "latex_label": "nt:B07",
+      "latex_number": "2.8",
+      "original_contracts": [
+        "NT-01-C02-R03"
+      ],
+      "reference_locator": "A §§9.3–9.5；NZM §§3.1–3.2；Shoup Ch. 12",
+      "scope_from_writing_ledger": "互异奇素数的二次互反律，\\((-1/p)=(-1)^{(p-1)/2}\\) 和 \\((2/p)=(-1)^{(p^2-1)/8}\\)。",
+      "source_file": "chapters/02-congruences.tex"
+    },
+    "B08": {
+      "first_numbered_result": "2.9",
+      "first_physical_page": 14,
+      "label_source_line": 390,
+      "latex_label": "nt:B08",
+      "latex_number": "2.9",
+      "original_contracts": [],
+      "reference_locator": "A §9.7；NZM §3.3；Shoup Ch. 12",
+      "scope_from_writing_ledger": "奇正分母 Jacobi 符号及其互反公式、补充律和 Euclid 型计算，分母 1 用空积。",
+      "source_file": "chapters/02-congruences.tex"
+    },
+    "B09": {
+      "first_numbered_result": "2.10",
+      "first_physical_page": 15,
+      "label_source_line": 448,
+      "latex_label": "nt:B09",
+      "latex_number": "2.10",
+      "original_contracts": [],
+      "reference_locator": "A §§5.9、9.6、10.11；NZM §§2.8–2.9；估值与 2 幂接口按此表补证",
+      "scope_from_writing_ledger": "\\(x^2\\equiv a\\bmod m\\) 的完整可解与解数判据，\\(m>0\\)。",
+      "source_file": "chapters/02-congruences.tex"
+    },
+    "C01": {
+      "first_numbered_result": "3.1",
+      "first_physical_page": 16,
+      "label_source_line": 13,
+      "latex_label": "nt:C01",
+      "latex_number": "3.1",
+      "original_contracts": [
+        "NT-01-C03-R01"
+      ],
+      "reference_locator": "A §§2.6–2.7",
+      "scope_from_writing_ledger": "正整数上的交换环值 Dirichlet 卷积环，单位 \\(\\delta\\)，逆存在当且仅当 \\(f(1)\\) 可逆。",
+      "source_file": "chapters/03-arithmetic-functions.tex"
+    },
+    "C02": {
+      "first_numbered_result": "3.2",
+      "first_physical_page": 16,
+      "label_source_line": 42,
+      "latex_label": "nt:C02",
+      "latex_number": "3.2",
+      "original_contracts": [
+        "NT-01-C03-R01"
+      ],
+      "reference_locator": "A §§2.8–2.11、2.15、11.2–11.5；HW XVI–XVII",
+      "scope_from_writing_ledger": "规范化乘法函数的素数幂分解、卷积闭合及逆的乘法性。复值乘法函数 \\(f\\) 若对实数 \\(s\\) 有 \\(\\sum_{n\\ge1}\\lvert f(n)\\rvert n^{-s}<\\infty\\)，则相应 Dirichlet 级数等于 Euler 乘积。特别地，\\(\\zeta(s)\\) 在 \\(s>1\\) 有此展开。",
+      "source_file": "chapters/03-arithmetic-functions.tex"
+    },
+    "C03": {
+      "first_numbered_result": "3.3",
+      "first_physical_page": 17,
+      "label_source_line": 102,
+      "latex_label": "nt:C03",
+      "latex_number": "3.3",
+      "original_contracts": [
+        "NT-01-C03-R02"
+      ],
+      "reference_locator": "A §§2.2–2.5、2.8、2.13；NZM §§4.2–4.3",
+      "scope_from_writing_ledger": "\\(\\mu,\\phi,\\tau,\\sigma_k,\\Lambda\\) 及素数幂值，\\(\\tau=\\mathbf1*\\mathbf1,\\ \\sigma_k=\\mathbf1*\\mathrm{id}_k,\\ \\mathbf1*\\Lambda=\\log\\)。",
+      "source_file": "chapters/03-arithmetic-functions.tex"
+    },
+    "C04": {
+      "first_numbered_result": "3.4",
+      "first_physical_page": 18,
+      "label_source_line": 143,
+      "latex_label": "nt:C04",
+      "latex_number": "3.4",
+      "original_contracts": [
+        "NT-01-C03-R02"
+      ],
+      "reference_locator": "A §§2.4、2.7–2.10；HW XVI",
+      "scope_from_writing_ledger": "\\(\\mu*\\mathbf1=\\delta\\)、Möbius 反演的双向公式、\\(\\sum_{d\\mid n}\\phi(d)=n\\)、\\(\\phi=\\mathrm{id}*\\mu\\)、\\(\\Lambda=\\mu*\\log\\)。",
+      "source_file": "chapters/03-arithmetic-functions.tex"
+    },
+    "C05": {
+      "first_numbered_result": "3.5",
+      "first_physical_page": 18,
+      "label_source_line": 178,
+      "latex_label": "nt:C05",
+      "latex_number": "3.5",
+      "original_contracts": [
+        "NT-01-C03-R03"
+      ],
+      "reference_locator": "A §3.12 Thm. 3.17；GKP Chs. 2–3",
+      "scope_from_writing_ledger": "双曲线分拆。整数截点 \\(U,V\\ge0\\) 满足 \\(UV\\le x<(U+1)(V+1)\\) 时，按两条边计数并减矩形一次。",
+      "source_file": "chapters/03-arithmetic-functions.tex"
+    },
+    "C06": {
+      "first_numbered_result": "3.6",
+      "first_physical_page": 18,
+      "label_source_line": 201,
+      "latex_label": "nt:C06",
+      "latex_number": "3.6",
+      "original_contracts": [
+        "NT-01-C03-R03"
+      ],
+      "reference_locator": "A Thm. 4.2；GKP Ch. 2",
+      "scope_from_writing_ledger": "有限离散分部求和和 Abel 积分形式。对 \\(a\\le b\\)、\\(w\\in C^1[a,b]\\)，区间按 \\((a,b]\\) 计。",
+      "source_file": "chapters/03-arithmetic-functions.tex"
+    },
+    "C07": {
+      "first_numbered_result": "3.8",
+      "first_physical_page": 20,
+      "label_source_line": 289,
+      "latex_label": "nt:C07",
+      "latex_number": "3.8",
+      "original_contracts": [],
+      "reference_locator": "A Thms. 3.3、3.7；NZM Thm. 8.25；MathGenome D03",
+      "scope_from_writing_ledger": "\\(\\sum_{n\\le x}\\tau(n)=x\\log x+(2\\gamma-1)x+O(\\sqrt x)\\)，\\(\\sum_{n\\le x}\\phi(n)=3x^2/\\pi^2+O(x\\log x)\\)，\\(\\sum_{n\\le x}\\mu(n)^2=6x/\\pi^2+O(\\sqrt x)\\)。",
+      "source_file": "chapters/03-arithmetic-functions.tex"
+    },
+    "C08": {
+      "first_numbered_result": "3.10",
+      "first_physical_page": 21,
+      "label_source_line": 379,
+      "latex_label": "nt:C08",
+      "latex_number": "3.10",
+      "original_contracts": [],
+      "reference_locator": "NZM §8.1 Thms. 8.3–8.5、Cor. 8.6；HW XVIII、XXII 的初等估计",
+      "scope_from_writing_ledger": "\\(\\theta(x)=\\sum_{p\\le x}\\log p,\\ \\psi(x)=\\sum_{p^k\\le x}\\log p\\) 的 Chebyshev 估计 \\(\\theta(x)\\asymp x,\\ \\psi(x)\\asymp x,\\ \\psi(x)-\\theta(x)=O(\\sqrt x)\\)，以及 \\(\\pi(x)\\asymp x/\\log x\\)。",
+      "source_file": "chapters/03-arithmetic-functions.tex"
+    },
+    "C09": {
+      "first_numbered_result": "3.11",
+      "first_physical_page": 21,
+      "label_source_line": 418,
+      "latex_label": "nt:C09",
+      "latex_number": "3.11",
+      "original_contracts": [],
+      "reference_locator": "A §4.8 Thm. 4.12，p. 89，及 §§2.8、3.11、4.2；NZM §8.1 Thm. 8.8",
+      "scope_from_writing_ledger": "\\(\\sum_{p\\le x}(\\log p)/p=\\log x+O(1)\\)，\\(\\sum_{p\\le x}1/p=\\log\\log x+B+O(1/\\log x)\\)，所以素数倒数和发散。",
+      "source_file": "chapters/03-arithmetic-functions.tex"
+    },
+    "C10": {
+      "first_numbered_result": "3.12",
+      "first_physical_page": 22,
+      "label_source_line": 472,
+      "latex_label": "nt:C10",
+      "latex_number": "3.12",
+      "original_contracts": [],
+      "reference_locator": "NZM §8.1 Thm. 8.7；固定 Mathlib Bertrand",
+      "scope_from_writing_ledger": "Bertrand 定理。每个实数 \\(x>1\\) 存在素数 \\(x<p<2x\\)。",
+      "source_file": "chapters/03-arithmetic-functions.tex"
+    },
+    "D01": {
+      "first_numbered_result": "4.1",
+      "first_physical_page": 24,
+      "label_source_line": 6,
+      "latex_label": "nt:D01",
+      "latex_number": "4.1",
+      "original_contracts": [
+        "NT-01-C04-R01"
+      ],
+      "reference_locator": "NZM §5.3 Thm. 5.5，p. 232；HW XIII",
+      "scope_from_writing_ledger": "正整数本原勾股三元组的双向参数化及交换两直角边后的唯一性。",
+      "source_file": "chapters/04-diophantine.tex"
+    },
+    "D02": {
+      "first_numbered_result": "4.2",
+      "first_physical_page": 24,
+      "label_source_line": 32,
+      "latex_label": "nt:D02",
+      "latex_number": "4.2",
+      "original_contracts": [
+        "NT-01-C04-R01"
+      ],
+      "reference_locator": "NZM §5.4 Thm. 5.10，pp. 237–238；HW XIII",
+      "scope_from_writing_ledger": "整数 \\(x,y\\ne0\\) 时 \\(x^4+y^4=z^2\\) 无解，故指数四的 Fermat 等式无非平凡解。",
+      "source_file": "chapters/04-diophantine.tex"
+    },
+    "D03": {
+      "first_numbered_result": "4.3",
+      "first_physical_page": 25,
+      "label_source_line": 68,
+      "latex_label": "nt:D03",
+      "latex_number": "4.3",
+      "original_contracts": [
+        "NT-01-C04-R03"
+      ],
+      "reference_locator": "HW XII、XX；NZM §3.6；P1-03 Euclid 域与 UFD 接口",
+      "scope_from_writing_ledger": "\\(\\mathbb Z[i]\\) 的范数、单位、Euclid 性及有理素数的分解。",
+      "source_file": "chapters/04-diophantine.tex"
+    },
+    "D04": {
+      "first_numbered_result": "4.4",
+      "first_physical_page": 25,
+      "label_source_line": 115,
+      "latex_label": "nt:D04",
+      "latex_number": "4.4",
+      "original_contracts": [
+        "NT-01-C04-R03"
+      ],
+      "reference_locator": "NZM §3.6 Thms. 3.20–3.22、Cor. 3.23，pp. 164–167；HW XX",
+      "scope_from_writing_ledger": "两平方充要条件及有序带符号的 \\(r_2(n)=4\\sum_{d\\mid n}\\chi_4(d)\\)，\\(n>0\\)，其中 \\(\\chi_4=0,1,-1\\) 对应偶数、\\(1,3\\bmod4\\)。",
+      "source_file": "chapters/04-diophantine.tex"
+    },
+    "D05": {
+      "first_numbered_result": "4.5",
+      "first_physical_page": 26,
+      "label_source_line": 177,
+      "latex_label": "nt:D05",
+      "latex_number": "4.5",
+      "original_contracts": [
+        "NT-01-C04-R04"
+      ],
+      "reference_locator": "HW XX；固定 Mathlib SumFourSquares；[几何路线对照](https://math.dartmouth.edu/~stevefan/papers/On%20Geometric%20Proofs%20of%20Theorems%20on%20Sums%20of%20Squares.pdf) §4",
+      "scope_from_writing_ledger": "Lagrange 四平方定理，包含 \\(0\\)，给非负整数见证。",
+      "source_file": "chapters/04-diophantine.tex"
+    },
+    "D06": {
+      "depends_on_local_labels": [
+        "lem:nt-minkowski",
+        "nt:dirichlet-primes"
+      ],
+      "first_numbered_result": "4.10",
+      "first_physical_page": 29,
+      "label_source_line": 477,
+      "latex_label": "nt:D06",
+      "latex_number": "4.10",
+      "original_contracts": [],
+      "reference_locator": "Fan §§2、5；Ankeny；A Ch. 7",
+      "scope_from_writing_ledger": "Legendre 三平方充要判据。正整数可表示当且仅当它不形如 \\(4^a(8b+7)\\)。零可表示。",
+      "source_file": "chapters/04-diophantine.tex"
+    },
+    "D07": {
+      "first_numbered_result": "6.3",
+      "first_physical_page": 41,
+      "label_source_line": 124,
+      "latex_label": "nt:D07",
+      "latex_number": "6.3",
+      "original_contracts": [
+        "NT-01-C04-R02"
+      ],
+      "reference_locator": "NZM §7.8 Thms. 7.23–7.26，pp. 352–354；Mathlib Pell",
+      "scope_from_writing_ledger": "\\(D>0\\) 非完全平方时 Pell \\(x^2-Dy^2=1\\) 有非平凡正解，所有 \\(x,y>0\\) 的解由基本解的正整数幂给出。",
+      "source_file": "chapters/06-pell.tex"
+    },
+    "D08": {
+      "first_numbered_result": "6.2",
+      "first_physical_page": 41,
+      "label_source_line": 72,
+      "latex_label": "nt:D08",
+      "latex_number": "6.2",
+      "original_contracts": [
+        "NT-01-C04-R02"
+      ],
+      "reference_locator": "NZM §7.7 Thm. 7.21，p. 350；§7.8 Thms. 7.22–7.26",
+      "scope_from_writing_ledger": "\\(\\sqrt D\\) 的周期长度 \\(\\ell\\) 与 Pell 范数 \\(\\pm1\\)。负 Pell 可解恰在 \\(\\ell\\) 奇时，正基本解取首个使 \\(k\\ell\\) 为偶数的周期回归，对应收敛分数索引 \\(k\\ell-1\\)。\\(\\ell\\) 偶取 \\(k=1\\)，\\(\\ell\\) 奇取 \\(k=2\\)。",
+      "source_file": "chapters/06-pell.tex"
+    },
+    "E01": {
+      "first_numbered_result": "5.1",
+      "first_physical_page": 32,
+      "label_source_line": 10,
+      "latex_label": "nt:E01",
+      "latex_number": "5.1",
+      "original_contracts": [
+        "NT-01-C05-R04"
+      ],
+      "reference_locator": "NZM §6.3 Thm. 6.13、Cor. 6.14–6.15、Thm. 6.18、习题 8，pp. 307–312；§9.2 Thm. 9.9，p. 415",
+      "scope_from_writing_ledger": "整系数多项式的有理根分子、分母整除判据，首一情形的有理根为整数，非完全 \\(k\\) 次幂的非负整数的正实 \\(k\\) 次根无理，\\(k\\ge2\\)。补经典常数 \\(e\\) 与 \\(\\pi\\) 的无理性。",
+      "source_file": "chapters/05-continued-fractions.tex"
+    },
+    "E02": {
+      "first_numbered_result": "5.4",
+      "first_physical_page": 33,
+      "label_source_line": 87,
+      "latex_label": "nt:E02",
+      "latex_number": "5.2",
+      "original_contracts": [
+        "NT-01-C05-R01"
+      ],
+      "reference_locator": "NZM §§7.1–7.3；HW X",
+      "scope_from_writing_ledger": "正分母有理数的有限简单连分数规范形及有限终止当且仅当有理。",
+      "source_file": "chapters/05-continued-fractions.tex"
+    },
+    "E03": {
+      "first_numbered_result": "5.5",
+      "first_physical_page": 34,
+      "label_source_line": 137,
+      "latex_label": "nt:E03",
+      "latex_number": "5.3",
+      "original_contracts": [
+        "NT-01-C05-R01",
+        "NT-01-C05-R02"
+      ],
+      "reference_locator": "NZM Thms. 7.4–7.5、7.11，pp. 330、336–337；HW X",
+      "scope_from_writing_ledger": "无理数收敛分数 \\(p_n/q_n\\) 的递推、交错行列式、互素、正分母、收敛及 \\(\\lvert x-p_n/q_n\\rvert<1/(q_n q_{n+1})\\)。",
+      "source_file": "chapters/05-continued-fractions.tex"
+    },
+    "E04": {
+      "first_numbered_result": "5.6",
+      "first_physical_page": 34,
+      "label_source_line": 205,
+      "latex_label": "nt:E04",
+      "latex_number": "5.4",
+      "original_contracts": [
+        "NT-01-C05-R02"
+      ],
+      "reference_locator": "NZM §7.5 Thms. 7.13–7.14，pp. 338–339；HW X–XI",
+      "scope_from_writing_ledger": "第二类最佳逼近。对 \\(0<q<q_{n+1}\\)，\\(\\lvert qx-p\\rvert\\ge\\lvert q_nx-p_n\\rvert\\)。Legendre 判据 \\(\\lvert x-p/q\\rvert<1/(2q^2)\\) 的既约分数是收敛分数。",
+      "source_file": "chapters/05-continued-fractions.tex"
+    },
+    "E05": {
+      "first_numbered_result": "5.8",
+      "first_physical_page": 35,
+      "label_source_line": 261,
+      "latex_label": "nt:E05",
+      "latex_number": "5.5",
+      "original_contracts": [
+        "NT-01-C05-R02"
+      ],
+      "reference_locator": "NZM §6.2 Thms. 6.8–6.9，p. 302；Mathlib DiophantineApproximation",
+      "scope_from_writing_ledger": "Dirichlet 有界分母逼近。实数 \\(x\\)、整数 \\(N\\ge1\\) 时有 \\(1\\le q\\le N\\) 和整数 \\(p\\) 使 \\(\\lvert qx-p\\rvert\\le1/(N+1)\\)，无理时严格。无理数有无穷多个既约分数误差小于 \\(1/q^2\\)。",
+      "source_file": "chapters/05-continued-fractions.tex"
+    },
+    "E06": {
+      "first_numbered_result": "5.9",
+      "first_physical_page": 36,
+      "label_source_line": 299,
+      "latex_label": "nt:E06",
+      "latex_number": "5.6",
+      "original_contracts": [],
+      "reference_locator": "HW III；NZM §§6.1–6.2 Thms. 6.1、6.4、6.7，pp. 298–301",
+      "scope_from_writing_ledger": "Farey 邻项的行列式为 1，分母和大于阶数，中项的最小分母与插入规则。",
+      "source_file": "chapters/05-continued-fractions.tex"
+    },
+    "E07": {
+      "first_numbered_result": "5.10",
+      "first_physical_page": 36,
+      "label_source_line": 343,
+      "latex_label": "nt:E07",
+      "latex_number": "5.7",
+      "original_contracts": [],
+      "reference_locator": "NZM §6.2 Thms. 6.11–6.12，pp. 304–306；HW XI",
+      "scope_from_writing_ledger": "Hurwitz 逼近的严格界 \\(1/(\\sqrt5\\,q^2)\\) 对无理数无穷多次成立，\\(\\sqrt5\\) 最优。",
+      "source_file": "chapters/05-continued-fractions.tex"
+    },
+    "E08": {
+      "first_numbered_result": "5.12",
+      "first_physical_page": 38,
+      "label_source_line": 455,
+      "latex_label": "nt:E08",
+      "latex_number": "5.12",
+      "original_contracts": [
+        "NT-01-C05-R03"
+      ],
+      "reference_locator": "NZM §7.7 Thms. 7.19–7.20，pp. 345、348；HW X",
+      "scope_from_writing_ledger": "实无理数的简单连分数最终周期当且仅当它是二次无理数，对于二次无理数，纯周期当且仅当 \\(x>1,-1<x'<0\\)，其中 \\(x'\\) 是代数共轭。",
+      "source_file": "chapters/05-continued-fractions.tex"
+    },
+    "E09": {
+      "first_numbered_result": "5.13",
+      "first_physical_page": 39,
+      "label_source_line": 542,
+      "latex_label": "nt:E09",
+      "latex_number": "5.9",
+      "original_contracts": [],
+      "reference_locator": "HW Ch. XI §11.7；以整数多项式与中值定理给出全证明",
+      "scope_from_writing_ledger": "Liouville 的代数无理数逼近下界和一个显式超越数。",
+      "source_file": "chapters/05-continued-fractions.tex"
+    }
+  },
+  "latex": {
+    "path": "P2-03_Elementary_Number_Theory_Notes.tex",
+    "sha256": "0577904c95675d4a9eac1d741f72e16dc84b9e20895575c7ae5d74b8adb1a999"
+  },
+  "local_proof_closure": {
+    "lem:nt-dirichlet-characters": {
+      "first_physical_page": 27,
+      "kind": "lemma",
+      "label_source_line": 223,
+      "latex_label": "lem:nt-dirichlet-characters",
+      "number": "4.6",
+      "proof_lines": [
+        236,
+        260
+      ],
+      "source_file": "chapters/04-diophantine.tex",
+      "statement_lines": [
+        222,
+        235
+      ]
+    },
+    "lem:nt-dirichlet-positive-series": {
+      "first_physical_page": 27,
+      "kind": "lemma",
+      "label_source_line": 263,
+      "latex_label": "lem:nt-dirichlet-positive-series",
+      "number": "4.7",
+      "prerequisite_proofs": [
+        "D12.05.01"
+      ],
+      "proof_lines": [
+        271,
+        292
+      ],
+      "source_file": "chapters/04-diophantine.tex",
+      "statement_lines": [
+        262,
+        270
+      ]
+    },
+    "nt:dirichlet-primes": {
+      "depends_on_local_labels": [
+        "lem:nt-dirichlet-characters",
+        "lem:nt-dirichlet-positive-series"
+      ],
+      "first_physical_page": 27,
+      "kind": "theorem",
+      "label_source_line": 295,
+      "latex_label": "nt:dirichlet-primes",
+      "lean_reference": "Nat.forall_exists_prime_gt_and_zmodEq",
+      "number": "4.8",
+      "prerequisite_proofs": [
+        "D12.05.01",
+        "D12.11.02"
+      ],
+      "proof_lines": [
+        299,
+        447
+      ],
+      "proof_reference": "Proof in Chapter 4. Apostol, Introduction to Analytic Number Theory, Chapter 7, gives a different proof. See also Stoll, Introductory Number Theory, §§23.17–23.19, for the product over all characters.",
+      "source_file": "chapters/04-diophantine.tex",
+      "statement_lines": [
+        294,
+        298
+      ],
+      "used_by": [
+        "D06"
+      ]
+    }
+  },
+  "mathematical_body_pages": 38,
+  "numbered_result_count": 57,
+  "numbered_result_counts_by_kind": {
+    "corollary": 4,
+    "lemma": 9,
+    "proposition": 1,
+    "theorem": 43
+  },
+  "original_contract_count": 17,
+  "original_contracts": {
+    "NT-01-C01-R01": [
+      "A01"
+    ],
+    "NT-01-C01-R02": [
+      "A02"
+    ],
+    "NT-01-C01-R03": [
+      "A05"
+    ],
+    "NT-01-C02-R01": [
+      "B01"
+    ],
+    "NT-01-C02-R02": [
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "NT-01-C02-R03": [
+      "B06",
+      "B07"
+    ],
+    "NT-01-C03-R01": [
+      "C01",
+      "C02"
+    ],
+    "NT-01-C03-R02": [
+      "C03",
+      "C04"
+    ],
+    "NT-01-C03-R03": [
+      "C05",
+      "C06"
+    ],
+    "NT-01-C04-R01": [
+      "D01",
+      "D02"
+    ],
+    "NT-01-C04-R02": [
+      "D07",
+      "D08"
+    ],
+    "NT-01-C04-R03": [
+      "D03",
+      "D04"
+    ],
+    "NT-01-C04-R04": [
+      "D05"
+    ],
+    "NT-01-C05-R01": [
+      "E02",
+      "E03"
+    ],
+    "NT-01-C05-R02": [
+      "E03",
+      "E04",
+      "E05"
+    ],
+    "NT-01-C05-R03": [
+      "E08"
+    ],
+    "NT-01-C05-R04": [
+      "E01"
+    ]
+  },
+  "package": "P2-03",
+  "pdf": {
+    "path": "P2-03_Elementary_Number_Theory_Notes.pdf",
+    "sha256": "2afa2f2febd4517d3443d19f7f15edcbca17d2ec345573a63d5da1e6676d803b"
+  },
+  "pdf_physical_pages": 43,
+  "resolved_internal_pdf_links": 169,
+  "sha256": {
+    "P2-03_Elementary_Number_Theory_Notes.tex": "c8c5bf3d0ca4e8e0431c1991dac945f3d64f0dc6ef346dc24d7fd42515c64b93",
+    "chapters/01-integers.tex": "115d9cde3751b425f03ce4956cd11f99c166bbe7dfdf4c8e076efc55cefcd0d0",
+    "chapters/02-congruences.tex": "41dca1ad7e36abc1aa496d42ed349e0e597c2b236933ed3f1143eb85a84410eb",
+    "chapters/03-arithmetic-functions.tex": "c3e994276e2903aa19eda9ba25fe099cf2546f96d46badfea0af2f162f5d38bf",
+    "chapters/04-diophantine.tex": "7e968a3624821292ef17df533bbcf46ea0fb21586e4d8a388c27abdcfb2533a2",
+    "chapters/05-continued-fractions.tex": "5cec9eb89468b9273d929556b7861a997aa3c6fc4ea85d1bb0a954b91fa2da12",
+    "chapters/06-pell.tex": "b54785cd0d12da179f018652682249f1f412a41d16691e8d7b0f4155d1cba699",
+    "output/pdf/P2-03_Elementary_Number_Theory_Notes.pdf": "daf4a4b3723d5a0ea0bf5c07068edc3178d18f632410d194294b39912c20d87a"
+  },
+  "title": "Foundations of Elementary Number Theory"
+}

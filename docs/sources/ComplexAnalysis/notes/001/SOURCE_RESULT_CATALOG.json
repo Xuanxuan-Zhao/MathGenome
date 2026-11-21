@@ -1,0 +1,2298 @@
+{
+  "format": "d12-source-result-catalog-1",
+  "scope": "All numbered mathematical environments in the adopted chapters; every principal result remains an obligation, valid equivalent proofs are allowed.",
+  "counts": {
+    "definition": 15,
+    "theorem": 112,
+    "lemma": 18,
+    "proposition": 23,
+    "corollary": 12,
+    "example": 0,
+    "remark": 0,
+    "construction": 0
+  },
+  "rows": [
+    {
+      "file": "chapters/01.tex",
+      "environment": "definition",
+      "line": 7,
+      "labels": [
+        "d12:01-01"
+      ],
+      "family_ids": [
+        "D12.01.01"
+      ],
+      "statement_tex": "[Complex limits and derivatives]\\family{D12.01.01}\\label{d12:01-01}\nFor a function defined near \\(a\\), the assertion \\(f(z)\\to L\\) means:\nfor every \\(\\eps>0\\), some \\(\\delta>0\\) makes\n\\(0<|z-a|<\\delta\\) imply \\(|f(z)-L|<\\eps\\).\nContinuity includes the value \\(f(a)\\). Its complex derivative is\n\\[\n f'(a)=\\lim_{h\\to0,\\ h\\ne0}\\frac{f(a+h)-f(a)}h .\n\\]\nA function is holomorphic on an open set when this derivative exists at\neach point; no continuity of the derivative is assumed.\n",
+      "statement_sha256": "0a9dc384308dcd2cd52c508dc6a9a84141ed282a7c0f59d0f693ffbd8e5428d6"
+    },
+    {
+      "file": "chapters/01.tex",
+      "environment": "proposition",
+      "line": 18,
+      "labels": [
+        "d12:01-01-rules"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Limits and differentiation rules]\\label{d12:01-01-rules}\nComplex convergence is equivalent to convergence of both real coordinates,\nand, for a punctured limit at \\(a\\), to convergence along every sequence\n\\(z_n\\ne a\\) in the domain tending to \\(a\\). Differentiability implies\ncontinuity. Sums, products,\nquotients where the denominator is nonzero, and compositions have derivatives\n\\[\n (af+bg)'=af'+bg',\\quad (fg)'=f'g+fg',\\quad\n (f/g)'=(f'g-fg')/g^2,\\quad (g\\circ f)'=(g'\\circ f)f'.\n\\]\nEvery assertion is local at a point where all displayed functions and\nderivatives exist; the corresponding holomorphic closure laws hold on the\nopen sets where they are defined.\n",
+      "statement_sha256": "e5cc4c73c97f51d22f1b694459e4b4b072a4d3b60b223a8c232716aa66070d9f"
+    },
+    {
+      "file": "chapters/01.tex",
+      "environment": "theorem",
+      "line": 58,
+      "labels": [
+        "d12:01-02"
+      ],
+      "family_ids": [
+        "D12.01.02"
+      ],
+      "statement_tex": "[The real differential and CR equations]\\family{D12.01.02}\\label{d12:01-02}\nIdentify \\(\\C\\) with \\(\\R^2\\). A function is complex differentiable at \\(a\\)\nif and only if it is real Fr\\'echet differentiable there and its real\ndifferential is complex-linear. For \\(f=u+\\iu v\\), assuming real\ndifferentiability at \\(a\\), this is equivalent to\n\\[\n u_x=v_y,\\qquad u_y=-v_x \\quad\\hbox{at }a.\n\\]\nIn that case \\(f'=u_x+\\iu v_x=v_y-\\iu u_y\\), and the real Jacobian is\n\\(\\det D_{\\R}f=|f'|^2\\).\n",
+      "statement_sha256": "fc0ba5b5572c4a493648f57fa0c671de086052da3d56a511da382cd19b90ecd7"
+    },
+    {
+      "file": "chapters/01.tex",
+      "environment": "theorem",
+      "line": 81,
+      "labels": [
+        "d12:01-03"
+      ],
+      "family_ids": [
+        "D12.01.03"
+      ],
+      "statement_tex": "[Sufficient regularity and its boundary]\\family{D12.01.03}\\label{d12:01-03}\nIf \\(u,v\\) have continuous first real partial derivatives on an open set,\nthen \\(u+\\iu v\\) is holomorphic exactly when CR holds there.\nExistence of the four partial derivatives and CR at one point, even together\nwith continuity of the function there, does not suffice.\n",
+      "statement_sha256": "61f11819e826c773d07e1d8d8b2ff3f2150bbd4933ada10df1b2a93d401bec7e"
+    },
+    {
+      "file": "chapters/01.tex",
+      "environment": "definition",
+      "line": 100,
+      "labels": [
+        "d12:01-04"
+      ],
+      "family_ids": [
+        "D12.01.04"
+      ],
+      "statement_tex": "[Three initially distinct notions]\\family{D12.01.04}\\label{d12:01-04}\nA function is \\(C^1\\)-holomorphic if it is complex differentiable and its\nderivative is continuous. It is power-series analytic if near every point\nit equals a convergent series \\(\\sum_{n\\ge0}a_n(z-a)^n\\).\nThese definitions initially impose different requirements.\n",
+      "statement_sha256": "aa48feebc4e46a3258d83d81a15d0171381a4f1c42bdb8d6f063e7d7ec18ad03"
+    },
+    {
+      "file": "chapters/01.tex",
+      "environment": "proposition",
+      "line": 106,
+      "labels": [
+        "d12:01-04-equivalence"
+      ],
+      "family_ids": [],
+      "statement_tex": "[The eventual equivalence]\\label{d12:01-04-equivalence}\nOn every open set, holomorphic, \\(C^1\\)-holomorphic and power-series analytic\nare equivalent; each implies real smoothness and holomorphic derivatives\nof every order.\n",
+      "statement_sha256": "2b4543f4157b0f3ab7102a4bc072dbb7548e95a164cebef3b356c036f424f981"
+    },
+    {
+      "file": "chapters/01.tex",
+      "environment": "proposition",
+      "line": 121,
+      "labels": [
+        "d12:01-05"
+      ],
+      "family_ids": [
+        "D12.01.05"
+      ],
+      "statement_tex": "[Locality and examples]\\family{D12.01.05}\\label{d12:01-05}\nRestrictions of holomorphic functions to open subsets are holomorphic.\nFunctions holomorphic on members of an open cover and equal on overlaps\nglue uniquely to a holomorphic function. Real smoothness does not imply\nholomorphy, and differentiability at one point does not imply holomorphy\non any neighborhood of that point.\n",
+      "statement_sha256": "2d627aa64eb1415acf7897987c10eecd82fede0fb8d807aac3f08a9689c288ec"
+    },
+    {
+      "file": "chapters/02.tex",
+      "environment": "theorem",
+      "line": 3,
+      "labels": [
+        "d12:02-01"
+      ],
+      "family_ids": [
+        "D12.02.01"
+      ],
+      "statement_tex": "[Radius and calculus of a power series]\\family{D12.02.01}\\label{d12:02-01}\nFor \\(\\sum_{n\\ge0}a_n(z-a)^n\\), put\n\\[\n L=\\limsup_{n\\to\\infty}|a_n|^{1/n},\\qquad R=L^{-1},\n \\quad 0^{-1}=\\infty,\\quad \\infty^{-1}=0.\n\\]\nThe series converges absolutely for \\(|z-a|<R\\), diverges for\n\\(|z-a|>R\\), and converges absolutely and uniformly on every closed disk\nof radius \\(r<R\\). Its sum is holomorphic there, its derivatives are the\ntermwise differentiated series, and each derivative and the termwise\nprimitive have the same radius \\(R\\). Thus\n\\(a_n=f^{(n)}(a)/n!\\).\n",
+      "statement_sha256": "afb5471e49bc9d12a0f421f87cb88716245af9d59dff192d1cf6b30435f20e41"
+    },
+    {
+      "file": "chapters/02.tex",
+      "environment": "theorem",
+      "line": 44,
+      "labels": [
+        "d12:02-02"
+      ],
+      "family_ids": [
+        "D12.02.02"
+      ],
+      "statement_tex": "[Series algebra and composition]\\family{D12.02.02}\\label{d12:02-02}\nOn a common open convergence disk, sums are coefficientwise and products\nare Cauchy products. Power-series coefficients representing a function\nnear their center are unique. If \\(F(a)=b\\), \\(F\\) is represented by a\npower series near \\(a\\), and \\(G\\) by a power series near \\(b\\), then\n\\(G\\circ F\\) has the convergent formally substituted series on a sufficiently\nsmall disk about \\(a\\).\n",
+      "statement_sha256": "a20608580768f418ab6355858d453a6afd19f9b06a109fbb2757770bc6b67762"
+    },
+    {
+      "file": "chapters/02.tex",
+      "environment": "theorem",
+      "line": 74,
+      "labels": [
+        "d12:02-03"
+      ],
+      "family_ids": [
+        "D12.02.03"
+      ],
+      "statement_tex": "[Exponential and trigonometric functions]\\family{D12.02.03}\\label{d12:02-03}\nThe entire function \\(E(z)=\\sum_{n\\ge0}z^n/n!\\) satisfies\n\\(E'=E\\), \\(E(z+w)=E(z)E(w)\\), \\(E(0)=1\\), and never vanishes.\nIt agrees with the real exponential on \\(\\R\\), and\n\\[\n E(x+\\iu y)=e^x(\\cos y+\\iu\\sin y),\\qquad\n E(z)=E(w)\\ \\Longleftrightarrow\\ z-w\\in2\\pi\\iu\\Z .\n\\]\nDefine\n\\[\n \\cos z=\\tfrac12(E(\\iu z)+E(-\\iu z)),\\quad\n \\sin z=\\tfrac1{2\\iu}(E(\\iu z)-E(-\\iu z)),\n\\]\nand \\(\\cosh z=(E(z)+E(-z))/2,\\ \\sinh z=(E(z)-E(-z))/2\\).\nTheir derivatives are \\(\\sin'=\\cos,\\ \\cos'=-\\sin,\\\n\\sinh'=\\cosh,\\ \\cosh'=\\sinh\\). Sine and hyperbolic sine are odd;\ncosine and hyperbolic cosine are even. Their addition identities and\n\\(\\sin^2z+\\cos^2z=1,\\ \\cosh^2z-\\sinh^2z=1\\) hold for complex\narguments. The period set of sine and cosine is \\(2\\pi\\Z\\);\ntheir zeros are respectively \\(\\pi\\Z\\) and \\(\\pi/2+\\pi\\Z\\), all simple.\nThe hyperbolic functions are obtained by imaginary substitution and\nhave period set \\(2\\pi\\iu\\Z\\). On their nonzero-denominator domains,\ndefine \\(\\tan=\\sin/\\cos,\\ \\cot=\\cos/\\sin,\\\n\\tanh=\\sinh/\\cosh,\\ \\coth=\\cosh/\\sinh\\); their derivatives are\n\\(1/\\cos^2,-1/\\sin^2,1/\\cosh^2,-1/\\sinh^2\\), respectively.\n",
+      "statement_sha256": "681586282a46e0217d2d7850cc877c5a70841899ec7f706107a739debb3a4613"
+    },
+    {
+      "file": "chapters/02.tex",
+      "environment": "theorem",
+      "line": 134,
+      "labels": [
+        "d12:02-04"
+      ],
+      "family_ids": [
+        "D12.02.04"
+      ],
+      "statement_tex": "[Principal logarithm]\\family{D12.02.04}\\label{d12:02-04}\nOn \\(S=\\C\\setminus(-\\infty,0]\\) put\n\\(\\operatorname{Log}z=\\log|z|+\\iu\\operatorname{Arg}z\\), where\n\\(-\\pi<\\operatorname{Arg}z<\\pi\\).\nIt is holomorphic, \\((\\operatorname{Log})'=1/z\\),\n\\(E(\\operatorname{Log}z)=z\\), and \\(\\operatorname{Log}1=0\\).\nIt is the inverse of \\(E\\) from the strip \\(|\\Imm z|<\\pi\\) onto \\(S\\).\nAny two continuous logarithms of the same nonzero function on a connected\nset differ by a constant in \\(2\\pi\\iu\\Z\\).\nThere is no continuous logarithm of \\(z\\) on \\(\\C\\setminus\\{0\\}\\).\n",
+      "statement_sha256": "b5a95449ae66fce67e11f03d960c3c9f43951772fb96864a60e9e6df6e0906ea"
+    },
+    {
+      "file": "chapters/02.tex",
+      "environment": "corollary",
+      "line": 164,
+      "labels": [
+        "d12:02-04-powers"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Powers with a chosen logarithm]\\label{d12:02-04-powers}\nOn the principal slit plane, for every \\(\\alpha\\in\\C\\),\n\\(z^\\alpha=\\exp(\\alpha\\operatorname{Log}z)\\) is holomorphic with\nderivative \\(\\alpha z^{\\alpha-1}\\), and\n\\(z^\\alpha z^\\beta=z^{\\alpha+\\beta}\\) for this one chosen logarithm.\nChanging a logarithm by \\(2\\pi\\iu k\\) multiplies the power by\n\\(e^{2\\pi\\iu k\\alpha}\\).\n",
+      "statement_sha256": "b35fff658e9883ca1d17c11c690f8ad510b0238ed27574eadd54d629dd980e46"
+    },
+    {
+      "file": "chapters/02.tex",
+      "environment": "theorem",
+      "line": 178,
+      "labels": [
+        "d12:02-05"
+      ],
+      "family_ids": [
+        "D12.02.05"
+      ],
+      "statement_tex": "[Local branches]\\family{D12.02.05}\\label{d12:02-05}\nIf \\(f\\) is holomorphic and \\(f(a)\\ne0\\), every chosen logarithm \\(c\\) of\n\\(f(a)\\) extends to a holomorphic logarithm \\(L\\) of \\(f\\) near \\(a\\), with\n\\(L'=f'/f\\). For each positive integer \\(n\\), every chosen \\(n\\)-th root\nof \\(f(a)\\) extends to a holomorphic \\(n\\)-th root near \\(a\\).\nExponential and nonzero power maps have the corresponding local inverse\nbranches.\n",
+      "statement_sha256": "1d2ae57e4f8e17f10e7b1eaf5feecd6aeca6eb46059fc5463a6f7d8165594aa5"
+    },
+    {
+      "file": "chapters/02.tex",
+      "environment": "corollary",
+      "line": 197,
+      "labels": [
+        "d12:02-05-inverse"
+      ],
+      "family_ids": [],
+      "statement_tex": "[The general local inverse branch]\\label{d12:02-05-inverse}\nA holomorphic function with nonzero derivative at a point has a\nholomorphic inverse branch on a neighborhood of its value.\n",
+      "statement_sha256": "c845d78b4373421313399d795314b9c0adfa7f08ae07c216116d431accd869df"
+    },
+    {
+      "file": "chapters/02.tex",
+      "environment": "theorem",
+      "line": 210,
+      "labels": [
+        "d12:02-06"
+      ],
+      "family_ids": [
+        "D12.02.06"
+      ],
+      "statement_tex": "[Abel's radial limit]\\family{D12.02.06}\\label{d12:02-06}\nIf \\(\\sum_{n\\ge0}a_n\\zeta^n=S\\) converges for a nonzero \\(\\zeta\\), then\n\\[\n \\lim_{t\\uparrow1}\\sum_{n\\ge0}a_n(t\\zeta)^n=S,\\qquad 0\\le t<1.\n\\]\nThe interior sums converge absolutely. No general boundary convergence\nor boundary extension follows merely from interior holomorphy.\n",
+      "statement_sha256": "6a3fa3b5af1689f990f20f7dd1c62bd6da94ea1ae9edac94944bee7322f72be5"
+    },
+    {
+      "file": "chapters/03.tex",
+      "environment": "definition",
+      "line": 3,
+      "labels": [
+        "d12:03-01"
+      ],
+      "family_ids": [
+        "D12.03.01"
+      ],
+      "statement_tex": "[Paths and finite chains]\\family{D12.03.01}\\label{d12:03-01}\nA path is a continuous \\(\\gamma:[a,b]\\to\\C\\), \\(a\\le b\\); its trace is\n\\(|\\gamma|=\\gamma([a,b])\\). It is piecewise \\(C^1\\) when a finite\npartition makes each restricted path \\(C^1\\), including its one-sided\nendpoint derivatives. For a continuous \\(f\\) on its trace set\n\\[\n \\int_\\gamma f(z)\\dd z=\\int_a^b f(\\gamma(t))\\gamma'(t)\\dd t,\n\\]\nsumming over those pieces. A finite chain is a finite integral linear\ncombination of paths; its integral is the corresponding linear sum.\nA cycle uses closed paths. A degenerate or constant path has integral zero.\n",
+      "statement_sha256": "7bbbf2b049888ca3cbf453fa12e46039848348836ccf87685c4e89505162294f"
+    },
+    {
+      "file": "chapters/03.tex",
+      "environment": "proposition",
+      "line": 15,
+      "labels": [
+        "d12:03-01-coordinates"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Real coordinate interpretation]\\label{d12:03-01-coordinates}\nFor \\(f=u+\\iu v,\\ \\gamma=x+\\iu y\\),\n\\[\n \\int_\\gamma f\\dd z\n =\\int_\\gamma(u\\dd x-v\\dd y)+\\iu\\int_\\gamma(v\\dd x+u\\dd y).\n\\]\nRefining the partition in the definition changes no value.\n",
+      "statement_sha256": "c696f3677e29ac2ec58e1590446e28e970d4e6bf758c50d7e6fdc0f0efbd7233"
+    },
+    {
+      "file": "chapters/03.tex",
+      "environment": "theorem",
+      "line": 30,
+      "labels": [
+        "d12:03-02"
+      ],
+      "family_ids": [
+        "D12.03.02"
+      ],
+      "statement_tex": "[Reversal, concatenation and parameter changes]\\family{D12.03.02}\\label{d12:03-02}\nIntegrals add under subdivision and concatenation and change sign under\nreversal. For an increasing piecewise \\(C^1\\) surjection \\(\\phi\\) of\ncompact parameter intervals, when both paths are piecewise \\(C^1\\),\n\\(\\int_{\\gamma\\circ\\phi}f\\dd z=\\int_\\gamma f\\dd z\\).\nThe same equality holds for every continuous nondecreasing surjection\nwhen the rectifiable integral below is used, with no differentiability\nor strict monotonicity of \\(\\phi\\).\n",
+      "statement_sha256": "377efe54fe91438acaa819393cdabde13f71ce07d83916431f226a8f912d1af6"
+    },
+    {
+      "file": "chapters/03.tex",
+      "environment": "theorem",
+      "line": 52,
+      "labels": [
+        "d12:03-03"
+      ],
+      "family_ids": [
+        "D12.03.03"
+      ],
+      "statement_tex": "[Length, estimates and integral limits]\\family{D12.03.03}\\label{d12:03-03}\nFor a piecewise \\(C^1\\) path its polygonal length is\n\\[\n \\ell(\\gamma)=\\sup_{a=t_0<\\cdots<t_m=b}\n       \\sum_j|\\gamma(t_j)-\\gamma(t_{j-1})|\n       =\\int_a^b|\\gamma'(t)|\\dd t.\n\\]\nFor continuous \\(f\\) on its trace,\n\\[\n \\left|\\int_\\gamma f\\dd z\\right|\n \\le\\int_a^b|f(\\gamma(t))|\\,|\\gamma'(t)|\\dd t\n \\le\\ell(\\gamma)\\sup_{|\\gamma|}|f|.\n\\]\nUniform convergence of continuous \\(f_n\\) to \\(f\\) on that fixed trace\nimplies convergence of their integrals. These estimates and uniform\ninterchange extend to all rectifiable paths.\n",
+      "statement_sha256": "02dee4e4ca998a7de4174eeb26c4a7c1372c27bf05dffddcab33729a6e5a9be4"
+    },
+    {
+      "file": "chapters/03.tex",
+      "environment": "lemma",
+      "line": 87,
+      "labels": [
+        "d12:03:polygonal-connectivity"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Polygonal connectivity]\\label{d12:03:polygonal-connectivity}\nEvery open connected subset of \\(\\C\\) is polygonally connected.\n",
+      "statement_sha256": "532db989db4791017ab80fe5d197bcc93ca0a447a28fd18f6ba19f43f267e88c"
+    },
+    {
+      "file": "chapters/03.tex",
+      "environment": "theorem",
+      "line": 98,
+      "labels": [
+        "d12:03-04"
+      ],
+      "family_ids": [
+        "D12.03.04"
+      ],
+      "statement_tex": "[Primitives and zero periods]\\family{D12.03.04}\\label{d12:03-04}\nFor a continuous \\(f\\) on a domain \\(\\Omega\\), the following are equivalent:\n\\(f\\) has a holomorphic primitive \\(F\\) with \\(F'=f\\);\nits integrals over piecewise \\(C^1\\) paths depend only on endpoints;\nits integral over every closed piecewise \\(C^1\\) path is zero.\nFor any such primitive and any rectifiable path in \\(\\Omega\\),\n\\(\\int_\\gamma f\\dd z=F(\\gamma(b))-F(\\gamma(a))\\).\nPrimitives on a domain are unique up to an additive constant.\n",
+      "statement_sha256": "6b5e5ee1009ed01479dde5a63b36bfb34408eb610f3f68b7e3d03f99dbdc2977"
+    },
+    {
+      "file": "chapters/03.tex",
+      "environment": "theorem",
+      "line": 137,
+      "labels": [
+        "d12:03-05"
+      ],
+      "family_ids": [
+        "D12.03.05"
+      ],
+      "statement_tex": "[Triangle criterion for a local primitive]\\family{D12.03.05}\\label{d12:03-05}\nSuppose \\(\\Omega\\) is star-shaped about \\(a\\), \\(f\\) is continuous there,\nand its integral around every triangle whose closed interior lies in\n\\(\\Omega\\) is zero. Then\n\\(F(z)=\\int_{[a,z]}f\\dd w\\) is a primitive of \\(f\\).\nIn particular this holds on a convex open set.\n",
+      "statement_sha256": "71956dcdf96185d25862765a3446436c14d167183bb8f775bb154c60310fc8dd"
+    },
+    {
+      "file": "chapters/03.tex",
+      "environment": "theorem",
+      "line": 155,
+      "labels": [
+        "d12:03-06"
+      ],
+      "family_ids": [
+        "D12.03.06"
+      ],
+      "statement_tex": "[The rectifiable/Stieltjes representation]\\family{D12.03.06}\\label{d12:03-06}\nA continuous path is rectifiable exactly when its total variation\n\\(V(\\gamma)=\\ell(\\gamma)\\) is finite. For such a rectifiable path and any\ncontinuous \\(u:[a,b]\\to\\C\\), the tagged sums\n\\[\n \\sum_j u(\\xi_j)\\bigl(\\gamma(t_j)-\\gamma(t_{j-1})\\bigr),\n \\qquad t_{j-1}\\le\\xi_j\\le t_j,\n\\]\nhave a unique limit as the partition mesh tends to zero.\nCall it \\(\\int_a^b u\\dd\\gamma\\), and define\n\\(\\int_\\gamma f\\dd z=\\int_a^b(f\\circ\\gamma)\\dd\\gamma\\).\nIt is linear, additive on subintervals, and bounded in modulus by\n\\(V(\\gamma)\\sup|u|\\). If \\(\\gamma\\) is AC, it agrees with\n\\(\\int_a^b u(t)\\gamma'(t)\\dd t\\), hence with the original\npiecewise \\(C^1\\) integral.\n",
+      "statement_sha256": "0ec1c115d4fff100a47f6f0cbaedaa48c023c61f333925a1ee614f5c67151c52"
+    },
+    {
+      "file": "chapters/03.tex",
+      "environment": "proposition",
+      "line": 195,
+      "labels": [
+        "d12:03-06-reparameterization"
+      ],
+      "family_ids": [],
+      "statement_tex": "[All monotone parameter changes]\\label{d12:03-06-reparameterization}\nLet \\(\\phi:[c,d]\\to[a,b]\\) be a continuous nondecreasing surjection.\nThen \\(V(\\gamma\\circ\\phi)=V(\\gamma)\\) and\n\\(\\int_{\\gamma\\circ\\phi}f\\dd z=\\int_\\gamma f\\dd z\\).\nFor a nonincreasing surjection the integral has the opposite sign.\n",
+      "statement_sha256": "2e267b01983a29f1489cee44975337d529a8ee4d451a06fd84e5705f51467c3c"
+    },
+    {
+      "file": "chapters/03.tex",
+      "environment": "proposition",
+      "line": 215,
+      "labels": [
+        "d12:03-06-measure-arclength"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Measure and arclength bridges]\\label{d12:03-06-measure-arclength}\nFor continuous BV \\(\\gamma\\), its normalized constant extension\n\\(\\widetilde\\gamma\\), zero to the left after subtraction of \\(\\gamma(a)\\),\nhas a finite complex Stieltjes measure \\(\\nu_\\gamma\\) satisfying\n\\[\n \\nu_\\gamma((s,t])=\\gamma(t)-\\gamma(s),\\quad\n |\\nu_\\gamma|([a,b])=V(\\gamma),\\quad \\nu_\\gamma(\\{a\\})=0.\n\\]\nFor continuous \\(u\\) on \\([a,b]\\),\n\\(\\int u\\dd\\gamma=\\int_{[a,b]}u\\dd\\nu_\\gamma\\).\nIf \\(L=V(\\gamma)>0\\), there is a \\(1\\)-Lipschitz path\n\\(\\sigma:[0,L]\\to\\C\\) and a continuous nondecreasing surjection\n\\(s:[a,b]\\to[0,L]\\) such that\n\\[\n \\gamma=\\sigma\\circ s,\\qquad\n \\int_\\gamma f\\dd z=\\int_0^L f(\\sigma(v))\\sigma'(v)\\dd v,\\qquad\n |\\sigma'|=1\\ \\hbox{a.e.}\n\\]\nFor \\(L=0\\) the path is constant and every integral is zero.\n",
+      "statement_sha256": "71696e4358cf7797218db2ae53410746161519205d285848b34a4155dd9d9ca8"
+    },
+    {
+      "file": "chapters/03.tex",
+      "environment": "lemma",
+      "line": 274,
+      "labels": [
+        "d12:03:trace-empty-interior"
+      ],
+      "family_ids": [],
+      "statement_tex": "[A finite-length trace has empty interior]\\label{d12:03:trace-empty-interior}\nThe trace of a rectifiable path has planar Lebesgue measure zero and hence\nempty interior.\n",
+      "statement_sha256": "b301b8f3e927c21d8884a02e6261ed0aabae5be3fdab6953e34833ac296b31f8"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "theorem",
+      "line": 3,
+      "labels": [
+        "d12:04-01"
+      ],
+      "family_ids": [
+        "D12.04.01"
+      ],
+      "statement_tex": "[Weak Goursat theorem]\\family{D12.04.01}\\label{d12:04-01}\nIf \\(f\\) is complex differentiable on a neighborhood of a closed triangle\n\\(T\\), its positively oriented boundary integral is zero. The same holds\nfor a rectangle by division along a diagonal. Continuity of \\(f'\\) is\nnot a hypothesis.\n",
+      "statement_sha256": "3b219c5e3008011306bcf63e332827c31f9401cbbbdd88a05004a5b26cd9c22a"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "lemma",
+      "line": 35,
+      "labels": [
+        "d12:04:exceptional-point"
+      ],
+      "family_ids": [],
+      "statement_tex": "[A continuous exceptional point]\\label{d12:04:exceptional-point}\nThe same zero-triangle conclusion holds if \\(f\\) is continuous near the\ntriangle and holomorphic there except possibly at one point.\n",
+      "statement_sha256": "33d5a3914bea30430d2bd1bb413eca3c39fbee03b87e0e0ea8db1455305d325b"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "theorem",
+      "line": 51,
+      "labels": [
+        "d12:04-02"
+      ],
+      "family_ids": [
+        "D12.04.02"
+      ],
+      "statement_tex": "[Disk Cauchy theorem, formula and all derivatives]\\family{D12.04.02}\\label{d12:04-02}\nA holomorphic function on a disk has a primitive and zero integral on every\nclosed rectifiable path there. If \\(f\\) is holomorphic on a neighborhood\nof \\(\\overline{B(a,r)}\\), and \\(C\\) is its positively oriented circle, then\nfor \\(|z-a|<r\\),\n\\[\n f(z)=\\frac1{2\\pi\\iu}\\int_C\\frac{f(w)}{w-z}\\dd w,\\qquad\n f^{(n)}(z)=\\frac{n!}{2\\pi\\iu}\n               \\int_C\\frac{f(w)}{(w-z)^{n+1}}\\dd w .\n\\]\nAll derivatives exist and are holomorphic. At the center, if\n\\(M=\\max_C|f|\\), then \\(|f^{(n)}(a)|\\le n!M/r^n\\).\n",
+      "statement_sha256": "b5fa08b10dbb6d548aece55722267705aad20a92a1d7a18c163967a67f1ecc0f"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "lemma",
+      "line": 100,
+      "labels": [
+        "d12:04:liouville"
+      ],
+      "family_ids": [],
+      "statement_tex": "[A preliminary Liouville theorem]\\label{d12:04:liouville}\nA bounded entire function is constant.\n",
+      "statement_sha256": "1d0fef931b10001fccc46051f4a04e52b786a499a14b685f5930d793acd5553d"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "definition",
+      "line": 111,
+      "labels": [
+        "d12:04-03"
+      ],
+      "family_ids": [
+        "D12.04.03"
+      ],
+      "statement_tex": "[Index of a cycle]\\family{D12.04.03}\\label{d12:04-03}\nFor a cycle \\(\\Gamma=\\sum_jm_j\\gamma_j\\), with\n\\(|\\Gamma|=\\bigcup_{m_j\\ne0}|\\gamma_j|\\), and \\(a\\notin|\\Gamma|\\), set\n\\[\n \\ind(\\Gamma,a)=\\frac1{2\\pi\\iu}\\int_\\Gamma\\frac{\\dd z}{z-a}.\n\\]\nA zero chain has empty trace and zero index.\n",
+      "statement_sha256": "61ec7fe96be70d91a761fef968e44c5254df363bae361971bd6b14d649d1c42d"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "theorem",
+      "line": 119,
+      "labels": [
+        "d12:04-03-properties"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Integer index and its support]\\label{d12:04-03-properties}\nThe index is integer-valued, continuous and locally constant off the\ntrace, and zero on its unbounded complementary component.\n",
+      "statement_sha256": "d5815a84f3725549b608f89ada8015b246155575878b691618b3dd78b98ed89c"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "proposition",
+      "line": 151,
+      "labels": [
+        "d12:04-04"
+      ],
+      "family_ids": [
+        "D12.04.04"
+      ],
+      "statement_tex": "[Index operations and homotopy]\\family{D12.04.04}\\label{d12:04-04}\nIndex adds under chain addition and concatenation and changes sign under\nreversal. If two closed piecewise \\(C^1\\) paths are joined by a continuous\nhomotopy of closed paths avoiding \\(a\\), their indices about \\(a\\) agree.\nThe homotopy need not be differentiable and its intermediate paths need\nnot be rectifiable.\n",
+      "statement_sha256": "c5a4c8e8153b47fc59da08778bf25c32f3ba6415d5b7ad7b8d06ffdd14c59fef"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "lemma",
+      "line": 180,
+      "labels": [
+        "d12:04:crossing-index"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Practical index computations]\\label{d12:04:crossing-index}\nA positively traversed circle has index one at each interior point and\nzero at each exterior point. More generally, suppose a closed piecewise\n\\(C^1\\) path avoids \\(a\\), starts off a ray \\(a+[0,\\infty)\\eta\\)\n(\\(|\\eta|=1\\)), and has finitely many transverse crossings of that ray,\nnone at a corner. Then its index is\n\\[\n \\sum_{\\gamma(t)-a\\in(0,\\infty)\\eta}\n        \\operatorname{sign}\\Imm\\!\\left(\\gamma'(t)/\\eta\\right).\n\\]\nIn particular positive rectangle and half-disk boundaries have index\none in their indicated interiors and zero in their exteriors.\nThese statements concern these explicit regions, not separation by an\narbitrary Jordan curve.\n",
+      "statement_sha256": "ce75ba5589f45f629e200924c09475ce7a6f39822d7cc50b6239c923f21f8450"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "corollary",
+      "line": 217,
+      "labels": [
+        "d12:04:green-index"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Index from a specified region and Green's theorem]\\label{d12:04:green-index}\nLet \\(D\\) be an already specified bounded planar region whose finite\npiecewise \\(C^1\\) oriented boundary cycle \\(\\Gamma\\) satisfies the\nhypotheses of the real Green theorem, also after removing a sufficiently\nsmall closed interior disk. Then\n\\(\\ind(\\Gamma,a)=1\\) for \\(a\\in D\\) and \\(0\\) for\n\\(a\\notin\\overline D\\), or for any other complementary component on\nwhich the same Green calculation has no pole.\nNo existence or separation theorem for the interior of an arbitrary\nJordan trace is asserted here.\n",
+      "statement_sha256": "0f525ded861f4a7a7de1b39351e110cfb27e890e8939b1a9d2117b81ebfcfb9f"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "theorem",
+      "line": 247,
+      "labels": [
+        "d12:04-05"
+      ],
+      "family_ids": [
+        "D12.04.05"
+      ],
+      "statement_tex": "[Full finite-cycle Cauchy theorem and formula]\\family{D12.04.05}\\label{d12:04-05}\nLet \\(f\\) be holomorphic on an open set \\(\\Omega\\), and let a finite\ncycle \\(\\Gamma\\) have its trace in \\(\\Omega\\). If\n\\(\\ind(\\Gamma,w)=0\\) for every \\(w\\notin\\Omega\\), then\n\\[\n \\int_\\Gamma f(z)\\dd z=0,\\qquad\n \\ind(\\Gamma,a)f(a)=\\frac1{2\\pi\\iu}\n       \\int_\\Gamma\\frac{f(z)}{z-a}\\dd z\\quad(a\\in\\Omega\\setminus|\\Gamma|).\n\\]\nThe derivative formula is\n\\[\n \\ind(\\Gamma,a)f^{(n)}(a)\n =\\frac{n!}{2\\pi\\iu}\\int_\\Gamma\n            \\frac{f(z)}{(z-a)^{n+1}}\\dd z.\n\\]\nNeither simple connectedness nor a simple trace is required.\n",
+      "statement_sha256": "f5bba11a6f6681254eaa168dfb41bea76d507f64360a445c23cb44ef649e94b7"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "theorem",
+      "line": 320,
+      "labels": [
+        "d12:04-06"
+      ],
+      "family_ids": [
+        "D12.04.06"
+      ],
+      "statement_tex": "[Homotopic Cauchy theorem and simple connectivity]\\family{D12.04.06}\\label{d12:04-06}\nIntegrals of a holomorphic function agree along piecewise \\(C^1\\) paths\nthat are fixed-endpoint homotopic in its open domain. They also agree\nfor freely homotopic closed loops. A null-homotopic closed path has zero\nintegral. Consequently every holomorphic function on a simply connected\ndomain has a primitive, and every zero-free holomorphic function there\nhas a holomorphic logarithm and an \\(n\\)-th root for every \\(n\\ge1\\).\n",
+      "statement_sha256": "670901d6da9234bf65d66808cccc798c8d40614c87d37bc6cb89b1122c483d52"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "theorem",
+      "line": 339,
+      "labels": [
+        "d12:04-07"
+      ],
+      "family_ids": [
+        "D12.04.07"
+      ],
+      "statement_tex": "[Global logarithm and root criteria]\\family{D12.04.07}\\label{d12:04-07}\nLet \\(f\\) be zero-free and holomorphic on a domain \\(\\Omega\\).\nIt has a holomorphic logarithm if and only if\n\\(\\int_\\gamma f'/f=0\\) on every closed piecewise \\(C^1\\) path.\nIt has a holomorphic \\(n\\)-th root, \\(n\\ge1\\), if and only if\n\\[\n \\frac1{2\\pi\\iu}\\int_\\gamma\\frac{f'}f\\dd z\\in n\\Z\n \\quad\\hbox{for every such closed path}.\n\\]\nAll logarithms differ by a constant \\(2\\pi\\iu k\\); all \\(n\\)-th roots\ndiffer by a constant \\(n\\)-th root of unity.\n",
+      "statement_sha256": "b331e4040c4f9df59eeebc136c70174087134918968ec0aaf419954799f5bdba"
+    },
+    {
+      "file": "chapters/04.tex",
+      "environment": "theorem",
+      "line": 372,
+      "labels": [
+        "d12:04-08"
+      ],
+      "family_ids": [
+        "D12.04.08"
+      ],
+      "statement_tex": "[Morera and continuous gluing]\\family{D12.04.08}\\label{d12:04-08}\nA continuous function on an open set is holomorphic if its integral\naround every triangle compactly contained there is zero.\nA continuous function holomorphic off one point, or off a locally\nfinite union of compact rectifiable arcs, is holomorphic everywhere.\nThe latter assertion is local: in each relatively compact small disk\nonly finitely many of the arcs are required.\n",
+      "statement_sha256": "d97356ba670e1baefc85d0cae79c3e6ad149aca9341eb300f0fb156cd3440144"
+    },
+    {
+      "file": "chapters/05.tex",
+      "environment": "theorem",
+      "line": 3,
+      "labels": [
+        "d12:05-01"
+      ],
+      "family_ids": [
+        "D12.05.01"
+      ],
+      "statement_tex": "[Taylor representation and smoothness]\\family{D12.05.01}\\label{d12:05-01}\nIf \\(f\\) is holomorphic on \\(B(a,R)\\), \\(0<R\\le\\infty\\), then\n\\[\n f(z)=\\sum_{n\\ge0}\\frac{f^{(n)}(a)}{n!}(z-a)^n,\\qquad |z-a|<R.\n\\]\nThe series and all its termwise derivatives converge absolutely uniformly\non compact subdisks. Holomorphic functions are real \\(C^\\infty\\);\n\\(\\partial_x f=f'\\), \\(\\partial_y f=\\iu f'\\), with the corresponding\niterated identities. Thus the equivalences stated in\n\\cref{d12:01-04-equivalence} are now proved.\n",
+      "statement_sha256": "e099f4553726c372d377fa15604f6eb455cf0ad4cadb237cb2ea98e3e72acccf"
+    },
+    {
+      "file": "chapters/05.tex",
+      "environment": "theorem",
+      "line": 31,
+      "labels": [
+        "d12:05-02"
+      ],
+      "family_ids": [
+        "D12.05.02"
+      ],
+      "statement_tex": "[Coefficient and remainder bounds]\\family{D12.05.02}\\label{d12:05-02}\nIf \\(M_r=\\max_{|w-a|=r}|f(w)|\\), where \\(r<R\\), then\n\\[\n |a_n|\\le M_r r^{-n},\\qquad\n \\left|f(z)-\\sum_{n=0}^Na_n(z-a)^n\\right|\n \\le M_r\\frac{(|z-a|/r)^{N+1}}{1-|z-a|/r}\n \\quad(|z-a|<r).\n\\]\nFor every \\(k\\ge0\\), center derivatives obey\n\\(|f^{(k)}(a)|\\le k!M_r/r^k\\).\n",
+      "statement_sha256": "46c1b4036d3c4f4c55e7783c81499e4f80fa136886b1fee1304749e9ca51e143"
+    },
+    {
+      "file": "chapters/05.tex",
+      "environment": "theorem",
+      "line": 50,
+      "labels": [
+        "d12:05-03"
+      ],
+      "family_ids": [
+        "D12.05.03"
+      ],
+      "statement_tex": "[Local zero factorization]\\family{D12.05.03}\\label{d12:05-03}\nAt each point \\(a\\), a holomorphic function either vanishes on a\nneighborhood or has a unique integer \\(m\\ge0\\) and a holomorphic \\(g\\)\nnear \\(a\\) with \\(g(a)\\ne0\\), such that\n\\(f(z)=(z-a)^m g(z)\\). If \\(f(a)=0\\), then \\(m\\ge1\\) is its zero\nmultiplicity. A finite-order zero is isolated. Multiplicities add under\nproducts of functions with finite orders.\n",
+      "statement_sha256": "858a28358f3a84dc4b41be51100b14b6b95e65f50c57cc154ac241fa2c6c66cb"
+    },
+    {
+      "file": "chapters/05.tex",
+      "environment": "theorem",
+      "line": 68,
+      "labels": [
+        "d12:05-04"
+      ],
+      "family_ids": [
+        "D12.05.04"
+      ],
+      "statement_tex": "[Identity theorem]\\family{D12.05.04}\\label{d12:05-04}\nOn a domain, a holomorphic function with zeros accumulating at a point\nof the domain is identically zero. Two holomorphic functions equal on\na set with an interior accumulation point are therefore equal everywhere.\n",
+      "statement_sha256": "12e0d385bba77cfe2014679d7b05e5968a67b2dcea9221673e180c803f137779"
+    },
+    {
+      "file": "chapters/05.tex",
+      "environment": "corollary",
+      "line": 84,
+      "labels": [
+        "d12:05-03-discrete"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Discrete and countable zero sets]\\label{d12:05-03-discrete}\nA holomorphic function on a domain, not identically zero, has isolated\nzeros, finitely many in each compact subset, and at most countably many\nin total. These claims are componentwise on a disconnected open set,\nand do not apply to components on which the function vanishes identically.\n",
+      "statement_sha256": "3d2a8fc95db451cf7af59baa8b23eb138be55a5a0252a12ef1a1857505c2daa0"
+    },
+    {
+      "file": "chapters/05.tex",
+      "environment": "lemma",
+      "line": 102,
+      "labels": [
+        "d12:05:inverse-noncritical"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Inverse at a noncritical point]\\label{d12:05:inverse-noncritical}\nIf \\(f'(a)\\ne0\\), \\(f\\) restricts to a biholomorphism between\nneighborhoods of \\(a\\) and \\(f(a)\\), and its inverse \\(h\\) satisfies\n\\(h'(w)=1/f'(h(w))\\).\n",
+      "statement_sha256": "9f2f8ff8fd987c3eea4673ef54f3f66ebf48df36ad75b7a5bc7e6c6d905b7a5a"
+    },
+    {
+      "file": "chapters/05.tex",
+      "environment": "theorem",
+      "line": 116,
+      "labels": [
+        "d12:05-05"
+      ],
+      "family_ids": [
+        "D12.05.05"
+      ],
+      "statement_tex": "[Local mapping normal form]\\family{D12.05.05}\\label{d12:05-05}\nIf \\(f\\) is holomorphic near \\(a\\) and not constant on any neighborhood\nof \\(a\\), there are \\(m\\ge1\\), \\(r>0\\), a neighborhood \\(U\\) of \\(a\\),\nand a biholomorphism \\(\\phi:U\\to B(0,r)\\) with \\(\\phi(a)=0\\), such that\n\\[\n f(z)-f(a)=\\phi(z)^m .\n\\]\nIts image is \\(B(f(a),r^m)\\); every value there other than \\(f(a)\\)\nhas exactly \\(m\\) distinct preimages in \\(U\\).\n",
+      "statement_sha256": "1858029271d1eec1aae95ffa70d20e75853d655aec75797a3cec3ce32ae20f9d"
+    },
+    {
+      "file": "chapters/05.tex",
+      "environment": "theorem",
+      "line": 143,
+      "labels": [
+        "d12:05-06"
+      ],
+      "family_ids": [
+        "D12.05.06"
+      ],
+      "statement_tex": "[Open maps and holomorphic inverses]\\family{D12.05.06}\\label{d12:05-06}\nA nonconstant holomorphic function on a domain is open.\nAn injective holomorphic function on a domain has nonzero derivative\neverywhere, is a homeomorphism onto its open image, and has a\nholomorphic inverse. A nonzero derivative alone guarantees only local\ninvertibility.\n",
+      "statement_sha256": "264d983bd3ccae3d521d918ae471d7c71e6d63bcf9ea4198d5bfc994104a4147"
+    },
+    {
+      "file": "chapters/05.tex",
+      "environment": "proposition",
+      "line": 164,
+      "labels": [
+        "d12:05-07"
+      ],
+      "family_ids": [
+        "D12.05.07"
+      ],
+      "statement_tex": "[Polynomial and analytic multiplicity]\\family{D12.05.07}\\label{d12:05-07}\nFor a nonzero polynomial \\(P\\), the analytic multiplicity of a root\n\\(a\\) equals the largest integer \\(m\\) such that \\((z-a)^m\\) divides\n\\(P\\) algebraically.\n",
+      "statement_sha256": "3b9a2ebea24370d3d7fac1cba90aa603434ef469c2192903052562991caa1cd9"
+    },
+    {
+      "file": "chapters/06.tex",
+      "environment": "theorem",
+      "line": 3,
+      "labels": [
+        "d12:06-01"
+      ],
+      "family_ids": [
+        "D12.06.01"
+      ],
+      "statement_tex": "[Maximum and minimum modulus]\\family{D12.06.01}\\label{d12:06-01}\nOn a domain, an interior local maximum of the modulus of a holomorphic\nfunction forces the function to be constant. If it is zero-free, the\nsame holds for an interior local minimum of its modulus.\nOn a bounded domain, a function continuous on the closure and holomorphic\ninside has modulus bounded by its boundary maximum.\nMore generally, the boundary hypothesis\n\\[\n \\limsup_{\\Omega\\ni z\\to\\xi}|f(z)|\\le M\n \\quad(\\xi\\in\\partial\\Omega),\\qquad M\\ge0,\n\\]\nalready implies \\(|f|\\le M\\) in a bounded domain.\n",
+      "statement_sha256": "7abfe6e3732793355b1b9a31f3e9baddeb50bb970c55b1735d7953e01ea7f0af"
+    },
+    {
+      "file": "chapters/06.tex",
+      "environment": "theorem",
+      "line": 35,
+      "labels": [
+        "d12:06-02"
+      ],
+      "family_ids": [
+        "D12.06.02"
+      ],
+      "statement_tex": "[Liouville and algebraic closure]\\family{D12.06.02}\\label{d12:06-02}\nEvery bounded entire function is constant. Every nonconstant complex\npolynomial has a root, and every polynomial of degree \\(n\\ge1\\) is a\nproduct of \\(n\\) linear factors, counted with their analytic/algebraic\nmultiplicities.\n",
+      "statement_sha256": "df2bc6100453eedcbe5ed2dde89894b3aed2ad51466e0b620bb561342272204a"
+    },
+    {
+      "file": "chapters/06.tex",
+      "environment": "theorem",
+      "line": 56,
+      "labels": [
+        "d12:06-03"
+      ],
+      "family_ids": [
+        "D12.06.03"
+      ],
+      "statement_tex": "[Schwarz lemma and all equality cases]\\family{D12.06.03}\\label{d12:06-03}\nIf \\(f:\\D\\to\\D\\) is holomorphic and \\(f(0)=0\\), then\n\\(|f(z)|\\le|z|\\) and \\(|f'(0)|\\le1\\).\nIf equality holds at a nonzero point, or \\(|f'(0)|=1\\), then\n\\(f(z)=cz\\), \\(|c|=1\\). Conversely these rotations give equality.\n",
+      "statement_sha256": "6e888fe75fe46a9630f1013979e7d1471021c19075144df1e7538eee6873d517"
+    },
+    {
+      "file": "chapters/06.tex",
+      "environment": "theorem",
+      "line": 72,
+      "labels": [
+        "d12:06-04"
+      ],
+      "family_ids": [
+        "D12.06.04"
+      ],
+      "statement_tex": "[Disk automorphisms and Schwarz--Pick]\\family{D12.06.04}\\label{d12:06-04}\nFor \\(a\\in\\D\\), the map\n\\(\\phi_a(z)=(z-a)/(1-\\bar a z)\\) is a disk automorphism with inverse\n\\((w+a)/(1+\\bar a w)\\).\nEvery holomorphic \\(f:\\D\\to\\D\\) satisfies\n\\[\n \\left|\\frac{f(z)-f(a)}{1-\\overline{f(a)}f(z)}\\right|\n \\le\\left|\\frac{z-a}{1-\\bar a z}\\right|,\\qquad\n \\frac{|f'(a)|}{1-|f(a)|^2}\\le\\frac1{1-|a|^2}.\n\\]\nEquality in the first inequality at \\(z\\ne a\\), or in the derivative\ninequality at any point, holds exactly for disk automorphisms.\nAll such automorphisms are \\(c\\phi_a\\), \\(|c|=1\\).\n",
+      "statement_sha256": "ba6b7e35ca0ac98e58c16ee3257c9b45b9740573041e2888648f423a9138f34b"
+    },
+    {
+      "file": "chapters/06.tex",
+      "environment": "theorem",
+      "line": 108,
+      "labels": [
+        "d12:06-05"
+      ],
+      "family_ids": [
+        "D12.06.05"
+      ],
+      "statement_tex": "[Hadamard three circles]\\family{D12.06.05}\\label{d12:06-05}\nLet \\(f\\) be holomorphic on \\(r_0<|z|<r_3\\) and not identically zero.\nFor \\(r_0<r_1<r<r_2<r_3\\), put\n\\(M(t)=\\max_{|z|=t}|f(z)|>0\\).\nThen\n\\[\n \\log M(r)\\le\n \\frac{\\log(r_2/r)}{\\log(r_2/r_1)}\\log M(r_1)\n +\\frac{\\log(r/r_1)}{\\log(r_2/r_1)}\\log M(r_2).\n\\]\nThus \\(\\log M(t)\\) is convex as a function of \\(\\log t\\).\nThe identically zero function satisfies the corresponding multiplicative\ninequality with zero values.\n",
+      "statement_sha256": "64ccdfb13b0867ff498892e2e4e84651f46deebefb81cb574470488b50ae2c0c"
+    },
+    {
+      "file": "chapters/06.tex",
+      "environment": "theorem",
+      "line": 141,
+      "labels": [
+        "d12:06-06"
+      ],
+      "family_ids": [
+        "D12.06.06"
+      ],
+      "statement_tex": "[A sector Phragm\\'en--Lindel\\\"of theorem]\\family{D12.06.06}\\label{d12:06-06}\nLet \\(\\alpha\\ge1/2\\) and\n\\[\n S_\\alpha=\\{re^{\\iu\\theta}:r>0,\\ |\\theta|<\\pi/(2\\alpha)\\}.\n\\]\nFor \\(\\alpha=1/2\\), use \\(-\\pi<\\theta<\\pi\\), so the negative ray is\nthe cut. Suppose \\(f\\) is holomorphic there,\n\\(\\limsup_{S_\\alpha\\ni z\\to\\xi}|f(z)|\\le M\\) at every finite\nboundary point, including zero, and \\(M\\ge0\\).\nIf for some \\(A>0,B\\ge0,0\\le\\beta<\\alpha\\),\n\\[\n |f(z)|\\le A\\exp(B|z|^\\beta)\n \\quad(z\\in S_\\alpha,\\ |z|\\hbox{ sufficiently large}),\n\\]\nthen \\(|f|\\le M\\) throughout the sector.\nThe strict growth threshold cannot be replaced by \\(\\beta=\\alpha\\).\n",
+      "statement_sha256": "1d2c703fae7c9123b874eac7229fa2225a0521a149c0b0b9f04ec8b68acfe10b"
+    },
+    {
+      "file": "chapters/07.tex",
+      "environment": "theorem",
+      "line": 3,
+      "labels": [
+        "d12:07-01"
+      ],
+      "family_ids": [
+        "D12.07.01"
+      ],
+      "statement_tex": "[Laurent expansion]\\family{D12.07.01}\\label{d12:07-01}\nLet \\(0\\le r_0<R_0\\le\\infty\\), and let \\(f\\) be holomorphic on\n\\(A=\\{r_0<|z-a|<R_0\\}\\). Then uniquely\n\\[\n f(z)=\\sum_{n\\in\\Z}c_n(z-a)^n,\\qquad\n c_n=\\frac1{2\\pi\\iu}\\int_{|w-a|=\\rho}\n                    \\frac{f(w)}{(w-a)^{n+1}}\\dd w\n \\quad(r_0<\\rho<R_0).\n\\]\nThe two one-sided series converge absolutely and uniformly on every\nclosed subannulus; both may be differentiated termwise any number of times.\nThe coefficient integral is independent of \\(\\rho\\).\n",
+      "statement_sha256": "d1058e256476eaa9f4b4b2f7215a3f0631b0a0c8fd1423ad8ddd67b5421c8787"
+    },
+    {
+      "file": "chapters/07.tex",
+      "environment": "definition",
+      "line": 57,
+      "labels": [
+        "d12:07-02"
+      ],
+      "family_ids": [
+        "D12.07.02"
+      ],
+      "statement_tex": "[Isolated singularities]\\family{D12.07.02}\\label{d12:07-02}\nAn isolated singularity at \\(a\\) means that \\(f\\) is holomorphic on\n\\(0<|z-a|<R\\). It is removable if \\(f\\) extends holomorphically to \\(a\\);\na pole of order \\(m\\ge1\\) if \\(f=(z-a)^{-m}g\\), with \\(g\\) holomorphic\nand \\(g(a)\\ne0\\); and essential if neither alternative holds.\nA general domain boundary point need not have a punctured neighborhood\nand is not covered by this terminology.\n",
+      "statement_sha256": "20f70651b2ec1ce464eb4ed5a24637d0f6bb39da523b8859d8319210b540e254"
+    },
+    {
+      "file": "chapters/07.tex",
+      "environment": "theorem",
+      "line": 65,
+      "labels": [
+        "d12:07-02-classification"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Coefficient and growth classification]\\label{d12:07-02-classification}\nIn the punctured-disk Laurent expansion:\nremovability means all negative coefficients vanish;\na pole of order \\(m\\) means \\(c_{-m}\\ne0\\) and \\(c_n=0\\) for \\(n<-m\\);\nessentiality means infinitely many negative coefficients are nonzero.\nFor an integer \\(m\\ge0\\), the bound \\(f(z)=O(|z-a|^{-m})\\) means at\nmost a pole of order \\(m\\), including removability.\nFor \\(m\\ge1\\), \\(f(z)=o(|z-a|^{-m})\\) means at most order \\(m-1\\).\nA finite limit at \\(a\\) is equivalent to removability, and\n\\(|f(z)|\\to\\infty\\) is equivalent to a pole.\n",
+      "statement_sha256": "0c960c0e2eaa5c06a80f763a8edea3280bb19a93292e894518c7902c060f361d"
+    },
+    {
+      "file": "chapters/07.tex",
+      "environment": "theorem",
+      "line": 101,
+      "labels": [
+        "d12:07-03"
+      ],
+      "family_ids": [
+        "D12.07.03"
+      ],
+      "statement_tex": "[Riemann removability and Casorati--Weierstrass]\\family{D12.07.03}\\label{d12:07-03}\nA bounded isolated singularity is removable; the weaker condition\n\\((z-a)f(z)\\to0\\) also suffices.\nAt an essential isolated singularity the image of every punctured\nneighborhood is dense in \\(\\C\\).\n",
+      "statement_sha256": "9e8c3e72bc48e377d9b2ac95e860985f844836ed6f91ae423b26ac776cb7d957"
+    },
+    {
+      "file": "chapters/07.tex",
+      "environment": "definition",
+      "line": 120,
+      "labels": [
+        "d12:07-04"
+      ],
+      "family_ids": [
+        "D12.07.04"
+      ],
+      "statement_tex": "[Scalar meromorphic functions]\\family{D12.07.04}\\label{d12:07-04}\nA scalar meromorphic function on an open set is holomorphic except at\na relatively closed discrete set of poles, with value \\(\\infty\\) at those poles.\nIt is never identically infinity on a connected component.\nAt a point where it is neither identically zero locally nor a pole,\nits signed order is its zero multiplicity; a pole of order \\(m\\) has\nsigned order \\(-m\\).\n",
+      "statement_sha256": "79c37c989fcee923db3ed02396bc0e0bb303ca9dbe4f7737eb899aa173677e93"
+    },
+    {
+      "file": "chapters/07.tex",
+      "environment": "proposition",
+      "line": 128,
+      "labels": [
+        "d12:07-04-quotients"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Local quotients and arithmetic]\\label{d12:07-04-quotients}\nScalar meromorphic functions are exactly the local quotients \\(p/q\\)\nof holomorphic functions with \\(q\\) not identically zero on the local\ndisk, after filling the cancellable singularities.\nThey are closed under addition, subtraction and multiplication;\nthe reciprocal exists meromorphically for a function not identically\nzero on any component. On a domain these functions form a field.\nFor nonzero factors, signed orders add under multiplication and subtract\nunder division.\n",
+      "statement_sha256": "831e98b9d15840647378878739fba4c10f2a34655f427591ede0b7d10ccebc33"
+    },
+    {
+      "file": "chapters/07.tex",
+      "environment": "definition",
+      "line": 160,
+      "labels": [
+        "d12:07-05"
+      ],
+      "family_ids": [
+        "D12.07.05"
+      ],
+      "statement_tex": "[Sphere and the coordinate at infinity]\\family{D12.07.05}\\label{d12:07-05}\nLet \\(\\Chat=\\C\\cup\\{\\infty\\}\\), with neighborhoods of infinity the sets\ncontaining \\(\\{\\infty\\}\\cup\\{|z|>R\\}\\).\nIts finite coordinate is \\(z\\); near infinity use \\(w=1/z\\), with\n\\(w(\\infty)=0\\). A scalar function is holomorphic or meromorphic at\ninfinity if its expression \\(f(1/w)\\) has that property at zero.\nAn isolated singularity at infinity requires holomorphy on some entire\nexterior \\(|z|>R\\).\n",
+      "statement_sha256": "edf32006be58fc6a0ad2fc127a6dbac0fa9d5bd8ef0a21ac1ac85f1b4f066c0a"
+    },
+    {
+      "file": "chapters/07.tex",
+      "environment": "proposition",
+      "line": 169,
+      "labels": [
+        "d12:07-05-classification"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Compact sphere and entire functions at infinity]\\label{d12:07-05-classification}\nThe sphere is compact, Hausdorff and connected, and its two coordinates\nhave holomorphic transition \\(w=1/z\\).\nAn entire function has a removable singularity at infinity precisely\nwhen it is constant; it has a pole there of order \\(m\\) precisely when\nit is a polynomial of degree \\(m\\ge1\\). A nonpolynomial entire function\nhas an essential singularity at infinity.\nFor reduced \\(P/Q\\) with degrees \\(p,q\\), the behavior at infinity is\na pole of order \\(p-q\\) if \\(p>q\\), a zero of order \\(q-p\\) if \\(p<q\\),\nand a finite nonzero value if \\(p=q\\).\n",
+      "statement_sha256": "43eccb6bedefbbb504eb26f89f1cd1ef9ddffe4873e2ed3c9e969e6f94c9a990"
+    },
+    {
+      "file": "chapters/07.tex",
+      "environment": "theorem",
+      "line": 205,
+      "labels": [
+        "d12:07-06"
+      ],
+      "family_ids": [
+        "D12.07.06"
+      ],
+      "statement_tex": "[Rationality and degree]\\family{D12.07.06}\\label{d12:07-06}\nEvery scalar meromorphic function on the whole compact sphere is rational.\nFor a nonconstant reduced rational function \\(P/Q\\),\n\\(d=\\max(\\deg P,\\deg Q)\\) is both the total number of its zeros and the\ntotal number of its poles on the sphere, counted with multiplicity.\nMore generally every sphere value has \\(d\\) preimages counted with its\nlocal multiplicities. A nonzero constant has no zeros or poles;\nthe identically zero function is excluded from finite zero-count claims.\n",
+      "statement_sha256": "f1d4bbf12ca4a9c5aeffb3f53d507115bc9e5049ba688e5da89c3084e1697cdf"
+    },
+    {
+      "file": "chapters/07.tex",
+      "environment": "definition",
+      "line": 240,
+      "labels": [
+        "d12:07-07"
+      ],
+      "family_ids": [
+        "D12.07.07"
+      ],
+      "statement_tex": "[Holomorphic maps into the sphere]\\family{D12.07.07}\\label{d12:07-07}\nA continuous map into \\(\\Chat\\) is holomorphic when its expression in\na target coordinate is holomorphic near every source point; at an\ninfinite value this expression is \\(1/F\\), with value zero.\nThe source may be a plane open set, or a sphere open set using its\nstated coordinates. Transition \\(z\\mapsto1/z\\) proves independence\nof these coordinates.\n",
+      "statement_sha256": "084fe130160cdbe0bd3118becbc239df1ffd0cd7a54be6a87585af8e2db92f39"
+    },
+    {
+      "file": "chapters/07.tex",
+      "environment": "theorem",
+      "line": 248,
+      "labels": [
+        "d12:07-07-bridge"
+      ],
+      "family_ids": [],
+      "statement_tex": "[The scalar/sphere-valued bridge]\\label{d12:07-07-bridge}\nOn a connected plane or sphere domain, the holomorphic sphere-valued\nmaps are exactly the scalar meromorphic functions with their pole values,\ntogether with the constant infinity map.\nA finite-valued holomorphic function on the whole sphere is constant.\n",
+      "statement_sha256": "0658a0c90bf45f19b96a0402247c1d3aceae697a2867eae6ac354a1500618e81"
+    },
+    {
+      "file": "chapters/08.tex",
+      "environment": "definition",
+      "line": 3,
+      "labels": [
+        "d12:08-01"
+      ],
+      "family_ids": [
+        "D12.08.01"
+      ],
+      "statement_tex": "[Residue]\\family{D12.08.01}\\label{d12:08-01}\nFor an isolated singularity with Laurent expansion\n\\(f(z)=\\sum_{n\\in\\Z}c_n(z-a)^n\\), set\n\\(\\Res_a(f(z)\\dd z)=c_{-1}\\), also written \\(\\Res(f;a)\\).\nEquivalently it is \\((2\\pi\\iu)^{-1}\\int_C f\\dd z\\) on any sufficiently\nsmall positive circle about \\(a\\).\n",
+      "statement_sha256": "650bf06c0da42b9891af7486fa33892f1deede93de7dd57997b443bc8e95df24"
+    },
+    {
+      "file": "chapters/08.tex",
+      "environment": "proposition",
+      "line": 10,
+      "labels": [
+        "d12:08-01-formulas"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Computation and coordinate invariance]\\label{d12:08-01-formulas}\nIf \\(f\\) has a pole of order at most \\(m\\ge1\\), then\n\\[\n \\Res(f;a)=\\frac1{(m-1)!}\n  \\left.\\frac{\\dd^{\\,m-1}}{\\dd z^{m-1}}\n             ((z-a)^m f(z))\\right|_{z=a}.\n\\]\nFor \\(f=p/q\\), with \\(p,q\\) holomorphic,\n\\(q(a)=0,\\ q'(a)\\ne0\\), the residue is \\(p(a)/q'(a)\\);\nif \\(p(a)=0\\) this may be a removable singularity.\nIf \\(z=\\phi(w)\\), \\(\\phi(b)=a,\\ \\phi'(b)\\ne0\\), is a local\nholomorphic coordinate, then\n\\[\n \\Res_b\\bigl(f(\\phi(w))\\phi'(w)\\dd w\\bigr)\n       =\\Res_a(f(z)\\dd z).\n\\]\n",
+      "statement_sha256": "a9854dccf9366d0941d3c4272152e25499057c5452fc5f423692644d976a50d9"
+    },
+    {
+      "file": "chapters/08.tex",
+      "environment": "theorem",
+      "line": 50,
+      "labels": [
+        "d12:08-02"
+      ],
+      "family_ids": [
+        "D12.08.02"
+      ],
+      "statement_tex": "[Residue theorem for cycles]\\family{D12.08.02}\\label{d12:08-02}\nLet \\(\\Omega\\) be open, \\(A\\subset\\Omega\\) a relatively closed discrete\nset, and \\(f\\) holomorphic on \\(\\Omega\\setminus A\\).\nLet a finite cycle \\(\\Gamma\\) avoid \\(A\\), with trace in \\(\\Omega\\),\nand suppose \\(\\ind(\\Gamma,w)=0\\) for \\(w\\notin\\Omega\\).\nThen\n\\[\n \\int_\\Gamma f\\dd z\n   =2\\pi\\iu\\sum_{a\\in A}\\ind(\\Gamma,a)\\Res(f;a).\n\\]\nOnly finitely many terms in the sum can be nonzero.\n",
+      "statement_sha256": "9219a6b5a8b63e3005a2cd25829eae15fb8ba2a69feff768c884dd3e75e87ea0"
+    },
+    {
+      "file": "chapters/08.tex",
+      "environment": "definition",
+      "line": 93,
+      "labels": [
+        "d12:08-03"
+      ],
+      "family_ids": [
+        "D12.08.03"
+      ],
+      "statement_tex": "[Residue at infinity]\\family{D12.08.03}\\label{d12:08-03}\nFor a differential \\(f(z)\\dd z\\) holomorphic on a large punctured\nneighborhood of infinity, define\n\\[\n \\Res_\\infty(f(z)\\dd z)\n   =\\Res_{w=0}\\bigl(-f(1/w)w^{-2}\\dd w\\bigr).\n\\]\nIt is minus the coefficient of \\(z^{-1}\\) in the exterior Laurent\nexpansion of \\(f\\).\n",
+      "statement_sha256": "2f8218b872370dc79b75c7890a36ceb795a0b6cf92e147cdb9903883a3973ff9"
+    },
+    {
+      "file": "chapters/08.tex",
+      "environment": "theorem",
+      "line": 103,
+      "labels": [
+        "d12:08-03-sum"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Sum on the sphere]\\label{d12:08-03-sum}\nA meromorphic differential on the sphere, expressed as \\(f(z)\\dd z\\)\nin the finite coordinate and by the transformed expression at infinity,\nhas total residue zero.\n",
+      "statement_sha256": "954b09f4928789e84f4c57eba95cecf3f2f53c21e2690e903fe8e2da92022e37"
+    },
+    {
+      "file": "chapters/08.tex",
+      "environment": "theorem",
+      "line": 121,
+      "labels": [
+        "d12:08-04"
+      ],
+      "family_ids": [
+        "D12.08.04"
+      ],
+      "statement_tex": "[Rational and trigonometric integrals]\\family{D12.08.04}\\label{d12:08-04}\nLet \\(R=P/Q\\) be a rational function in reduced form, with no real\npoles and \\(\\deg Q\\ge\\deg P+2\\). Then its ordinary improper integral\nis absolutely convergent and\n\\[\n \\int_{-\\infty}^{\\infty}R(x)\\dd x\n    =2\\pi\\iu\\sum_{\\Imm a>0}\\Res(R;a).\n\\]\nIf a rational expression \\(S(\\cos t,\\sin t)\\) has no poles for real\n\\(t\\), then\n\\[\n \\int_0^{2\\pi}S(\\cos t,\\sin t)\\dd t\n =2\\pi\\iu\\sum_{|a|<1}\\Res(T;a),\\quad\n T(z)=\\frac1{\\iu z}\n S\\!\\left(\\frac{z+z^{-1}}2,\\frac{z-z^{-1}}{2\\iu}\\right),\n\\]\nafter meromorphic cancellation.\nIn particular, for \\(a>|b|\\),\n\\[\n \\int_0^{2\\pi}\\frac{\\dd t}{a+b\\cos t}\n       =\\frac{2\\pi}{\\sqrt{a^2-b^2}},\\qquad\n \\int_{-\\infty}^{\\infty}\\frac{\\dd x}{1+x^2}=\\pi .\n\\]\n",
+      "statement_sha256": "ac522ecee33f135c79f09a7d797344ff49101618b78b6f5fd580304ae62ea43e"
+    },
+    {
+      "file": "chapters/08.tex",
+      "environment": "theorem",
+      "line": 175,
+      "labels": [
+        "d12:08-05"
+      ],
+      "family_ids": [
+        "D12.08.05"
+      ],
+      "statement_tex": "[Jordan estimate and oscillatory rational integrals]\\family{D12.08.05}\\label{d12:08-05}\nLet \\(c>0\\), and let \\(q\\) be continuous on the upper semicircle \\(C_r\\).\nThen\n\\[\n \\left|\\int_{C_r}e^{\\iu cz}q(z)\\dd z\\right|\n \\le\\frac{\\pi}{c}\\sup_{C_r}|q|.\n\\]\nConsequently this arc tends to zero if its supremum tends to zero.\nFor a proper rational function \\(R\\), without real poles, and \\(c>0\\),\nthe two one-sided ordinary improper tails exist and\n\\[\n \\int_{-\\infty}^{\\infty}e^{\\iu cx}R(x)\\dd x\n   =2\\pi\\iu\\sum_{\\Imm a>0}\\Res(e^{\\iu cz}R(z);a).\n\\]\nFor \\(c<0\\) use the lower poles and the factor \\(-2\\pi\\iu\\).\nIf the degree gap is at least two, the integrals are also absolutely\nconvergent. For \\(b>0,\\ c\\in\\R\\),\n\\[\n \\int_{-\\infty}^{\\infty}\\frac{\\cos(cx)}{x^2+b^2}\\dd x\n       =\\frac{\\pi}{b}e^{-b|c|}.\n\\]\n",
+      "statement_sha256": "382f62090d04d4b9f43cb69a7657150b7cb900734e4b1b041980ff544863e6f8"
+    },
+    {
+      "file": "chapters/08.tex",
+      "environment": "theorem",
+      "line": 229,
+      "labels": [
+        "d12:08-06"
+      ],
+      "family_ids": [
+        "D12.08.06"
+      ],
+      "statement_tex": "[Indentations and principal values]\\family{D12.08.06}\\label{d12:08-06}\nLet \\(R\\) be proper rational with only simple real poles, and \\(c>0\\).\nAt each real pole take symmetric deleted intervals, independently\nshrinking to zero. The tails at plus and minus infinity are taken as\nordinary one-sided limits. Then\n\\[\n \\operatorname{PV}\\int_{-\\infty}^{\\infty}e^{\\iu cx}R(x)\\dd x\n =2\\pi\\iu\\sum_{\\Imm a>0}\\Res(e^{\\iu cz}R(z);a)\n   +\\pi\\iu\\sum_{a\\in\\R}\\Res(e^{\\iu cz}R(z);a).\n\\]\nIn particular\n\\[\n \\operatorname{PV}\\int_{\\R}\\frac{e^{\\iu cx}}x\\dd x=\\pi\\iu,\\qquad\n \\int_0^\\infty\\frac{\\sin(cx)}x\\dd x=\\frac\\pi2 .\n\\]\nThe latter integral is ordinary improper but not absolutely convergent;\nthe former is not a licensed absolutely integrable scalar integral.\n",
+      "statement_sha256": "ebb2eecec8dbf311c0cdafa5a4fae9e8a67706862401f85085308dda51648969"
+    },
+    {
+      "file": "chapters/08.tex",
+      "environment": "theorem",
+      "line": 282,
+      "labels": [
+        "d12:08-07"
+      ],
+      "family_ids": [
+        "D12.08.07"
+      ],
+      "statement_tex": "[A branch-cut integral]\\family{D12.08.07}\\label{d12:08-07}\nFor real \\(0<s<1\\), the ordinary integral is absolutely convergent and\n\\[\n \\int_0^\\infty\\frac{x^{s-1}}{1+x}\\dd x=\\frac{\\pi}{\\sin\\pi s}.\n\\]\n",
+      "statement_sha256": "366c2d68f835a39e408c4985b81eaf97dfc4e410dad362074c595a7458ce3718"
+    },
+    {
+      "file": "chapters/08.tex",
+      "environment": "theorem",
+      "line": 318,
+      "labels": [
+        "d12:08-07-summation"
+      ],
+      "family_ids": [],
+      "statement_tex": "[A residue summation formula]\\label{d12:08-07-summation}\nFor real \\(a>0\\),\n\\[\n \\sum_{n\\in\\Z}\\frac1{n^2+a^2}=\\frac{\\pi}{a}\\coth(\\pi a).\n\\]\nThe bilateral sum is absolutely convergent.\n",
+      "statement_sha256": "92b6d8a61b44dc41e7357e469d8244d388c4d19d511c3e77258e62fa47e27d01"
+    },
+    {
+      "file": "chapters/09.tex",
+      "environment": "proposition",
+      "line": 5,
+      "labels": [
+        "d12:09-01"
+      ],
+      "family_ids": [
+        "D12.09.01"
+      ],
+      "statement_tex": "[Logarithmic derivative]\\family{D12.09.01}\\label{d12:09-01}\nIf a nonzero meromorphic function has signed order $m$ at $a$, then $f'/f$ has residue $m$ there. Its only poles are zeros and poles of $f$, and they are simple unless their residue is zero.\n",
+      "statement_sha256": "7d56a92913ad852396ccdbd292b31590f57ec163117eb661c3103a4c92cc638a"
+    },
+    {
+      "file": "chapters/09.tex",
+      "environment": "theorem",
+      "line": 13,
+      "labels": [
+        "d12:09-02"
+      ],
+      "family_ids": [
+        "D12.09.02"
+      ],
+      "statement_tex": "[Argument principle]\\family{D12.09.02}\\label{d12:09-02}\nFor a meromorphic $f$ on $\\Omega$, nonzero on every component relevant to a cycle $\\Gamma$, with no zero or pole on its trace,\n\\[\n \\frac1{2\\pi\\iu}\\int_\\Gamma\\frac{f'}f\\,dz\n =\\sum_{a}\\ind(\\Gamma,a)\\ord_a f.\n\\]\nThe left side is $\\ind(f\\circ\\Gamma,0)$, where images retain their parametrizations and integer coefficients. For an already specified bounded region $D$ satisfying the real Green theorem hypotheses (a $C^1$ boundary or the stated finite piecewise regular decomposition), its full positive boundary gives the ordinary number of zeros minus poles in $D$. This includes a Jordan-domain case when that given domain and boundary satisfy those hypotheses; it does not assert an interior for an arbitrary Jordan trace.\n",
+      "statement_sha256": "703251575615323c7fcf864faea2b857a710f1d1fb40e8a099ab4ba7813ca0c1"
+    },
+    {
+      "file": "chapters/09.tex",
+      "environment": "theorem",
+      "line": 26,
+      "labels": [
+        "d12:09-03"
+      ],
+      "family_ids": [
+        "D12.09.03"
+      ],
+      "statement_tex": "[Rouch\\'e]\\family{D12.09.03}\\label{d12:09-03}\nLet $f,g$ be holomorphic on a neighborhood of the trace and all nonzero-index points of a finite cycle $\\Gamma$. Suppose $|g-f|<|f|$ on its trace. Their index-weighted numbers of zeros agree. In particular their ordinary zero counts agree for the positive boundary of a given Green-regular region, or for a positive circle, under the preceding hypotheses.\n",
+      "statement_sha256": "c28ca585fdc0a543f8920dc423ee3ac3e6d994144b1ce66d8f7d20797b4e839c"
+    },
+    {
+      "file": "chapters/09.tex",
+      "environment": "corollary",
+      "line": 34,
+      "labels": [
+        "d12:09-04"
+      ],
+      "family_ids": [
+        "D12.09.04"
+      ],
+      "statement_tex": "[Perturbations and polynomial roots]\\family{D12.09.04}\\label{d12:09-04}\nIf $f$ has no zero on a compact counting contour, every holomorphic perturbation within $\\min|f|$ there has the same count. A monic polynomial of degree $n$ has exactly $n$ complex roots with multiplicity. Simple roots of a polynomial remain in any chosen disjoint sufficiently small disks about them under sufficiently small changes of its coefficients; there is exactly one root in each such disk. More generally a zero of multiplicity $m$ produces exactly $m$ perturbed zeros in its isolating disk.\n",
+      "statement_sha256": "3ed2a7824d3787908d988fba1920854881765342ff57514ef2eb67c46332b548"
+    },
+    {
+      "file": "chapters/09.tex",
+      "environment": "theorem",
+      "line": 42,
+      "labels": [
+        "d12:09-05"
+      ],
+      "family_ids": [
+        "D12.09.05"
+      ],
+      "statement_tex": "[Hurwitz]\\family{D12.09.05}\\label{d12:09-05}\nLet holomorphic $f_n$ converge locally uniformly on a domain to a holomorphic $f\\not\\equiv0$. On any isolating circle with closed disk in the domain and $f\\ne0$ on the circle, $f_n$ and $f$ eventually have the same number of zeros. If every $f_n$ is zero-free, the limit is zero-free or identically zero.\n",
+      "statement_sha256": "ad2e357a3a815d4c3f76b9b575ab19dfbf30b043f6ecb0e702472bcf4c8b7d3e"
+    },
+    {
+      "file": "chapters/09.tex",
+      "environment": "theorem",
+      "line": 50,
+      "labels": [
+        "d12:09-06"
+      ],
+      "family_ids": [
+        "D12.09.06"
+      ],
+      "statement_tex": "[Limits of univalent functions]\\family{D12.09.06}\\label{d12:09-06}\nA locally uniform holomorphic limit of injective holomorphic functions on a domain is either injective or constant.\n",
+      "statement_sha256": "12911b8df82650c3ecebe0d70b58eb042d17fc2e36e48e1c8d2efa356d52d77f"
+    },
+    {
+      "file": "chapters/10.tex",
+      "environment": "proposition",
+      "line": 3,
+      "labels": [
+        "d12:10-01"
+      ],
+      "family_ids": [
+        "D12.10.01"
+      ],
+      "statement_tex": "[Angles and orientation]\\family{D12.10.01}\\label{d12:10-01}\nAt a point where $f'(a)=c\\ne0$, the real differential of a holomorphic $f$ is multiplication by $c$: a rotation followed by dilation $|c|$, with determinant $|c|^2>0$. It preserves oriented angles of nonzero tangent vectors. The map is a conformal equivalence locally; a nonzero derivative everywhere does not assert global injectivity.\n",
+      "statement_sha256": "0b150a015072de9d5b7f2a66132ee01549a7c66c882effd664514322f5d77c9c"
+    },
+    {
+      "file": "chapters/10.tex",
+      "environment": "theorem",
+      "line": 10,
+      "labels": [
+        "d12:10-02"
+      ],
+      "family_ids": [
+        "D12.10.02"
+      ],
+      "statement_tex": "[M\\\"obius transformations]\\family{D12.10.02}\\label{d12:10-02}\nFor $ad-bc\\ne0$, $T(z)=(az+b)/(cz+d)$ extends to a biholomorphism of $\\Chat$, with $T(-d/c)=\\infty$ and $T(\\infty)=a/c$ when $c\\ne0$, and $T(\\infty)=\\infty$ when $c=0$. These maps form a group under composition; matrices represent the same map exactly when they differ by a nonzero scalar. Given two ordered triples of distinct sphere points there is a unique such map taking the first triple to the second. Cross ratios are preserved, including their limits when an entry is infinity.\n",
+      "statement_sha256": "bf7b5b9e6c0550a287974090fc3278a2468fd22928c2f565aa51b44b90885cb0"
+    },
+    {
+      "file": "chapters/10.tex",
+      "environment": "proposition",
+      "line": 23,
+      "labels": [
+        "d12:10-03"
+      ],
+      "family_ids": [
+        "D12.10.03"
+      ],
+      "statement_tex": "[Circles, reflections and automorphisms]\\family{D12.10.03}\\label{d12:10-03}\nM\\\"obius maps take generalized circles (circles or lines with infinity) to generalized circles. Reflection in one is the conjugate of $z\\mapsto\\bar z$ by a map taking it to the extended real line; it is independent of that map. Disk automorphisms are\n$e^{\\iu\\theta}(z-a)/(1-\\bar a z)$, $|a|<1$. Upper-half-plane automorphisms are real-coefficient fractions with positive determinant, modulo nonzero real scalar.\n",
+      "statement_sha256": "83b4c5b9e4a300f55d2b88c84403aa2358f4b8b425a79710e5d3301e1a6aa51a"
+    },
+    {
+      "file": "chapters/10.tex",
+      "environment": "proposition",
+      "line": 33,
+      "labels": [
+        "d12:10-04"
+      ],
+      "family_ids": [
+        "D12.10.04"
+      ],
+      "statement_tex": "[Explicit injective maps]\\family{D12.10.04}\\label{d12:10-04}\nThe Cayley map $C$ above maps $\\Imm z>0$ biholomorphically onto $\\D$. The exponential maps $\\{0<\\Imm z<\\theta\\}$ onto $\\{r e^{\\iu t}:r>0,0<t<\\theta\\}$ for $0<\\theta\\le2\\pi$, with the endpoint rays excluded, and inverse the logarithm with argument in $(0,\\theta)$. On a sector of opening $\\theta<2\\pi$, that logarithm gives a power map of exponent $\\pi/\\theta$ onto a half-plane after rotation. Finally\n$J(z)=(z+z^{-1})/2$ is a biholomorphism $\\{|z|>1\\}\\to\\C\\setminus[-1,1]$.\n",
+      "statement_sha256": "0bf99b2a0e23d1a51973f9f73e399ecbaa7c3efbaeaf46cb42cd17fae9f0f1c4"
+    },
+    {
+      "file": "chapters/10.tex",
+      "environment": "theorem",
+      "line": 43,
+      "labels": [
+        "d12:10-05"
+      ],
+      "family_ids": [
+        "D12.10.05"
+      ],
+      "statement_tex": "[Length and area]\\family{D12.10.05}\\label{d12:10-05}\nFor an absolutely continuous path $\\gamma$ with compact trace in the domain of a holomorphic $f$,\n$L(f\\circ\\gamma)=\\int |f'(\\gamma(t))|\\,|\\gamma'(t)|\\,dt$.\nFor an injective holomorphic $f:\\Omega\\to f(\\Omega)$ and a Lebesgue measurable $E\\subset\\Omega$,\n\\[\n m_2(f(E))=\\int_E |f'|^2\\dd m_2.\n\\]\nMore generally, for nonnegative measurable $h$ on $f(\\Omega)$ the integral over $f(E)$ equals $\\int_E h(f(z))|f'(z)|^2\\dd m_2(z)$; the scalar identity holds when the absolute integral is finite.\n",
+      "statement_sha256": "5efd9de1c730792f4b6f58da6e2ee4b1f514408a4f4c32cf20f628c5e04f39d4"
+    },
+    {
+      "file": "chapters/10.tex",
+      "environment": "corollary",
+      "line": 57,
+      "labels": [
+        "d12:10-06"
+      ],
+      "family_ids": [
+        "D12.10.06"
+      ],
+      "statement_tex": "[Specified classical domains]\\family{D12.10.06}\\label{d12:10-06}\nEvery disk and every half-plane is conformally equivalent to $\\D$. A horizontal strip of finite positive width, every sector of opening in $(0,2\\pi)$, and a plane slit along one ray are conformally equivalent to $\\D$. The exterior disk and the complement of a closed segment are equivalent to one another, not asserted equivalent to $\\D$.\n",
+      "statement_sha256": "d2eace8ec465a9c770f2ae0523fd73f294fe20e4d0d53d458b7876ce4c9f4b48"
+    },
+    {
+      "file": "chapters/11.tex",
+      "environment": "definition",
+      "line": 3,
+      "labels": [
+        "d12:11-01"
+      ],
+      "family_ids": [
+        "D12.11.01"
+      ],
+      "statement_tex": "[The compact-open metric]\\family{D12.11.01}\\label{d12:11-01}\nFor an open $\\Omega\\subset\\C$ choose\n$K_j=\\{z\\in\\Omega:|z|\\le j,\\ \\dist(z,\\C\\setminus\\Omega)\\ge1/j\\}$, with distance to the empty set interpreted as infinity. Empty suprema are zero. On continuous complex-valued functions put\n\\[\n d(f,g)=\\sum_{j\\ge1}2^{-j}\\min(1,\\sup_{K_j}|f-g|).\n\\]\nIts convergence is exactly uniform convergence on compact subsets. The space $\\Hol(\\Omega)$ is complete for this metric.\n",
+      "statement_sha256": "a2c77e8047a6abb4cae684f2e146ddc957bf9db217c52af54af50366376bdcce"
+    },
+    {
+      "file": "chapters/11.tex",
+      "environment": "theorem",
+      "line": 15,
+      "labels": [
+        "d12:11-02"
+      ],
+      "family_ids": [
+        "D12.11.02"
+      ],
+      "statement_tex": "[Holomorphic limits and all derivatives]\\family{D12.11.02}\\label{d12:11-02}\nA locally uniform limit of holomorphic functions is holomorphic, and every derivative converges locally uniformly to the corresponding derivative of the limit.\n",
+      "statement_sha256": "77e3afbbbb470cc9267dc4bf2b84c15409642a5596eb940d2e41e5bd69932212"
+    },
+    {
+      "file": "chapters/11.tex",
+      "environment": "lemma",
+      "line": 28,
+      "labels": [
+        "d12:11-04"
+      ],
+      "family_ids": [
+        "D12.11.04"
+      ],
+      "statement_tex": "[The compactness mechanism]\\family{D12.11.04}\\label{d12:11-04}\nA locally bounded family of holomorphic functions is equicontinuous on compact sets and every sequence has a subsequence converging uniformly on every compact subset. For continuous maps into a compact metric space, local equicontinuity alone gives such a subsequence.\n",
+      "statement_sha256": "d0a7fca1ead5da7629fd0f14b0c3dcb930f5e4514027526d9045a127da7c6229"
+    },
+    {
+      "file": "chapters/11.tex",
+      "environment": "theorem",
+      "line": 35,
+      "labels": [
+        "d12:11-03"
+      ],
+      "family_ids": [
+        "D12.11.03"
+      ],
+      "statement_tex": "[Finite-valued Montel]\\family{D12.11.03}\\label{d12:11-03}\nA family $\\mathcal F\\subset\\Hol(\\Omega)$ is locally bounded if and only if every sequence in it has a locally uniformly convergent subsequence with finite holomorphic limit. Equivalently its closure in $\\Hol(\\Omega)$ is compact.\n",
+      "statement_sha256": "7cc72b49804adf0c6b732eb0e93a15f1f621dc1da27fc45fb6c96aac71fd8122"
+    },
+    {
+      "file": "chapters/11.tex",
+      "environment": "theorem",
+      "line": 43,
+      "labels": [
+        "d12:11-05"
+      ],
+      "family_ids": [
+        "D12.11.05"
+      ],
+      "statement_tex": "[Vitali convergence]\\family{D12.11.05}\\label{d12:11-05}\nLet $\\Omega$ be a domain and $(f_n)$ locally bounded in $\\Hol(\\Omega)$. If $f_n$ converges at every point of a set having an accumulation point in $\\Omega$, it converges locally uniformly on $\\Omega$ to a holomorphic function.\n",
+      "statement_sha256": "0aabbb4f172f11a7cb0eb51d95bde934dc1ca601952b38973582206496db14ec"
+    },
+    {
+      "file": "chapters/11.tex",
+      "environment": "theorem",
+      "line": 50,
+      "labels": [
+        "d12:11-06"
+      ],
+      "family_ids": [
+        "D12.11.06"
+      ],
+      "statement_tex": "[Spherical limits]\\family{D12.11.06}\\label{d12:11-06}\nUse the chordal metric\n\\[\n \\chi(z,w)=\\frac{|z-w|}{\\sqrt{1+|z|^2}\\sqrt{1+|w|^2}},\\qquad\n \\chi(z,\\infty)=\\frac1{\\sqrt{1+|z|^2}}\n\\]\non $\\Chat$. It is a compact complete metric with the sphere topology. A locally uniform spherical limit of meromorphic maps on a domain is meromorphic or identically infinity. If the original functions are holomorphic and finite, the limit is finite holomorphic or identically infinity. The space of meromorphic maps together with the constant infinity is complete in the compact-open chordal metric. Spherical normality does not imply local ordinary boundedness.\n",
+      "statement_sha256": "d597c9fe4f62bc3a94a614942a3b75e1a2850e95b6caffde18c4df0fd2f3f4f2"
+    },
+    {
+      "file": "chapters/11.tex",
+      "environment": "theorem",
+      "line": 66,
+      "labels": [
+        "d12:11-07"
+      ],
+      "family_ids": [
+        "D12.11.07"
+      ],
+      "statement_tex": "[Marty's criterion]\\family{D12.11.07}\\label{d12:11-07}\nFor a meromorphic map put $f^\\#=|f'|/(1+|f|^2)$ off its poles, and use $(1/f)^\\#$ at a pole. This is continuous and well defined. A family of meromorphic maps on a domain is spherically normal if and only if its spherical derivatives are locally bounded.\n",
+      "statement_sha256": "bff25cf775910ffe244e05b853c5e16fa15b36240e42302e56720f0b72f91d44"
+    },
+    {
+      "file": "chapters/12.tex",
+      "environment": "lemma",
+      "line": 5,
+      "labels": [
+        "d12:12-02"
+      ],
+      "family_ids": [
+        "D12.12.02"
+      ],
+      "statement_tex": "[A bounded univalent class]\\family{D12.12.02}\\label{d12:12-02}\nIf a proper domain $\\Omega$ admits a holomorphic square root of every zero-free holomorphic function, then, for $z_0\\in\\Omega$, there exists an injective holomorphic $h:\\Omega\\to\\D$ with $h(z_0)=0$ and $h'(z_0)>0$.\n",
+      "statement_sha256": "39f1038fccbe3191f40efbeccbf56c65b8be4be3af15a683687ac6aee547e17f"
+    },
+    {
+      "file": "chapters/12.tex",
+      "environment": "lemma",
+      "line": 12,
+      "labels": [
+        "d12:12-03"
+      ],
+      "family_ids": [
+        "D12.12.03"
+      ],
+      "statement_tex": "[The extremal map fills the disk]\\family{D12.12.03}\\label{d12:12-03}\nUnder the same square-root hypothesis there is a biholomorphism $F:\\Omega\\to\\D$, $F(z_0)=0$, with positive real derivative.\n",
+      "statement_sha256": "2e29de55c39e5233b58cd1d7adf06f4d6a5e6c175833f84837edf7a9ee8d2b90"
+    },
+    {
+      "file": "chapters/12.tex",
+      "environment": "theorem",
+      "line": 22,
+      "labels": [
+        "d12:12-01"
+      ],
+      "family_ids": [
+        "D12.12.01"
+      ],
+      "statement_tex": "[Normalized planar Riemann mapping]\\family{D12.12.01}\\label{d12:12-01}\nFor a nonempty simply connected proper plane domain and $z_0$ in it, there is a unique biholomorphism $F:\\Omega\\to\\D$ such that $F(z_0)=0$ and $F'(z_0)>0$.\n",
+      "statement_sha256": "41b6e42e8061622dd428c7041a749e6c22b684abd55c0ccdb060cd1f274768ad"
+    },
+    {
+      "file": "chapters/12.tex",
+      "environment": "theorem",
+      "line": 30,
+      "labels": [
+        "d12:12-04"
+      ],
+      "family_ids": [
+        "D12.12.04"
+      ],
+      "statement_tex": "[Line and circle reflection]\\family{D12.12.04}\\label{d12:12-04}\nLet a disk centered on a real interval be split into upper and lower halves. If $f$ is holomorphic in the upper half, continuous on it together with the interval, and real on the interval, its extension $F(z)=\\overline{f(\\bar z)}$ in the lower half is holomorphic on the whole disk. The conjugated assertion holds for any source and target generalized circles, locally away from a chosen chart pole.\n",
+      "statement_sha256": "fe1b6fad804d52fc55e5792789dc3f0641f9abb50f021402fec3fd02d73324b1"
+    },
+    {
+      "file": "chapters/12.tex",
+      "environment": "theorem",
+      "line": 38,
+      "labels": [
+        "d12:12-05"
+      ],
+      "family_ids": [
+        "D12.12.05"
+      ],
+      "statement_tex": "[Analytic free arcs]\\family{D12.12.05}\\label{d12:12-05}\nSuppose source and target boundary arcs have parametrizations extending to injective holomorphic maps on neighborhoods of real intervals, with nonzero derivative, and the adjacent domains lie locally on one side. A holomorphic map on the source side, continuous through the arc and mapping the arc into the target arc, extends holomorphically across every interior arc point. If it is a conformal equivalence, is one-to-one on the arc, and carries the given sides to one another, its extension has nonzero derivative there.\n",
+      "statement_sha256": "74fa39bf5b6534472fc80d96b422b6f4da7fb7b46cbe7bfd45a665e4c390cfef"
+    },
+    {
+      "file": "chapters/12.tex",
+      "environment": "theorem",
+      "line": 45,
+      "labels": [
+        "d12:12-06"
+      ],
+      "family_ids": [
+        "D12.12.06"
+      ],
+      "statement_tex": "[Conditional Schwarz--Christoffel formula]\\family{D12.12.06}\\label{d12:12-06}\nLet $P$ be a bounded simple polygonal domain with vertices $v_1,\\ldots,v_n$ and interior angles $\\pi\\alpha_j$, $0<\\alpha_j<2$. Suppose a biholomorphism $F:\\{\\Imm z>0\\}\\to P$ is already given with a homeomorphic extension of the compactified boundaries. If the vertices correspond to finite real points $a_1<\\cdots<a_n$ and infinity corresponds to an interior side point, then\n\\[\n F'(z)=C\\prod_{j=1}^n(z-a_j)^{\\alpha_j-1},\\qquad C\\ne0,\n\\]\nwhere each factor uses its upper-half-plane logarithm. Hence $F(z)=A+C\\int_{z_*}^z\\prod(\\zeta-a_j)^{\\alpha_j-1}\\dd\\zeta$ for $z_* $ in the half-plane. If infinity corresponds to the last vertex, the product has just the finite $n-1$ prevertices. The finite-vertex local behavior is $F(z)-v_j=(z-a_j)^{\\alpha_j}u_j(z)$, with a nonvanishing holomorphic factor after selecting the indicated branch.\n",
+      "statement_sha256": "c410ad9bae680e312522de406696cffea1c5257cc8f96f257b45682be5cbc70f"
+    },
+    {
+      "file": "chapters/13.tex",
+      "environment": "proposition",
+      "line": 3,
+      "labels": [
+        "d12:13-01"
+      ],
+      "family_ids": [
+        "D12.13.01"
+      ],
+      "statement_tex": "[The differential definition]\\family{D12.13.01}\\label{d12:13-01}\nA real harmonic function is initially a $C^2$ function $u$ with $u_{xx}+u_{yy}=0$. Real and imaginary parts of a holomorphic function are harmonic. If $F:V\\to U$ is holomorphic and $u$ harmonic on $U$, then $u\\circ F$ is harmonic on $V$, including at critical points of $F$.\n",
+      "statement_sha256": "182714c2a4c2fc182f06f6b0bfcb4e7ba1c513b3969990b879450cfcec0aa4f5"
+    },
+    {
+      "file": "chapters/13.tex",
+      "environment": "theorem",
+      "line": 11,
+      "labels": [
+        "d12:13-02"
+      ],
+      "family_ids": [
+        "D12.13.02"
+      ],
+      "statement_tex": "[Conjugates and periods]\\family{D12.13.02}\\label{d12:13-02}\nEvery harmonic function has a harmonic conjugate locally. On a domain it has a global single-valued conjugate if and only if the real one-form $-u_y\\,dx+u_x\\,dy$ has zero integral around every closed piecewise $C^1$ path. The conjugate is unique up to a real constant. In particular it exists on simply connected domains. Harmonic functions are consequently $C^\\infty$ and real analytic locally.\n",
+      "statement_sha256": "165f5b374a7116d7659e6000f96420ce38e29aaf719c9e57a20c60f64ce2d38e"
+    },
+    {
+      "file": "chapters/13.tex",
+      "environment": "proposition",
+      "line": 22,
+      "labels": [
+        "d12:13-03"
+      ],
+      "family_ids": [
+        "D12.13.03"
+      ],
+      "statement_tex": "[Mean values and maximum principles]\\family{D12.13.03}\\label{d12:13-03}\nA harmonic function equals its average on every circle whose closed disk lies in its domain. On a domain an attained maximum or minimum forces constancy. On a bounded open set, $\\limsup_{z\\to\\xi}u(z)\\le M$ at every boundary point implies $u\\le M$. Conversely a continuous real function with the circle mean-value property on every sufficiently small disk is harmonic.\n",
+      "statement_sha256": "f6a596f267998c6b83cf824b84f89142e3a8c12b5cde6afc70e257fdb20a6646"
+    },
+    {
+      "file": "chapters/13.tex",
+      "environment": "theorem",
+      "line": 29,
+      "labels": [
+        "d12:13-04"
+      ],
+      "family_ids": [
+        "D12.13.04"
+      ],
+      "statement_tex": "[Poisson and the disk Dirichlet problem]\\family{D12.13.04}\\label{d12:13-04}\nFor continuous real $\\phi$ on $|\\zeta|=R$, $R>0$, put\n\\[\n P\\phi(z)=\\frac1{2\\pi}\\int_0^{2\\pi}\n \\frac{R^2-|z|^2}{|Re^{\\iu t}-z|^2}\\phi(Re^{\\iu t})\\dd t,\n \\qquad |z|<R.\n\\]\nIt is harmonic, extends continuously to the circle as $\\phi$, and is the unique continuous closed-disk harmonic solution. Every harmonic $u$ satisfies this formula with its own values on each interior circle.\n",
+      "statement_sha256": "15130a3b8fc050c61522a5c514b852f99c2fe987516f3e8b3c363965c17fa24c"
+    },
+    {
+      "file": "chapters/13.tex",
+      "environment": "theorem",
+      "line": 44,
+      "labels": [
+        "d12:13-05"
+      ],
+      "family_ids": [
+        "D12.13.05"
+      ],
+      "statement_tex": "[Schwarz integral]\\family{D12.13.05}\\label{d12:13-05}\nIf $f$ is holomorphic in $|z|<R$ and its real part extends continuously to the closed disk with boundary values $\\phi$, then\n\\[\n f(z)=\\frac1{2\\pi}\\int_0^{2\\pi}\n \\frac{Re^{\\iu t}+z}{Re^{\\iu t}-z}\\phi(Re^{\\iu t})\\dd t\n +\\iu\\Imm f(0).\n\\]\n",
+      "statement_sha256": "2ac2ed8aa9d6173f94b43441a148b56002011f62d450a78958df6df67b51af5c"
+    },
+    {
+      "file": "chapters/13.tex",
+      "environment": "theorem",
+      "line": 56,
+      "labels": [
+        "d12:13-06"
+      ],
+      "family_ids": [
+        "D12.13.06"
+      ],
+      "statement_tex": "[Harnack inequality and convergence]\\family{D12.13.06}\\label{d12:13-06}\nFor $u\\ge0$ harmonic on $B(a,R)$ and $|z-a|=r<R$,\n\\[\n \\frac{R-r}{R+r}u(a)\\le u(z)\\le\\frac{R+r}{R-r}u(a).\n\\]\nAn increasing sequence of real harmonic functions on a domain either converges locally uniformly to a finite harmonic function or tends to $+\\infty$ uniformly on every compact subset.\n",
+      "statement_sha256": "ef5d3e758448e62e688acbba282a43373d3de5fe6cb73635b3dd1401ade602d7"
+    },
+    {
+      "file": "chapters/13.tex",
+      "environment": "theorem",
+      "line": 69,
+      "labels": [
+        "d12:13-07"
+      ],
+      "family_ids": [
+        "D12.13.07"
+      ],
+      "statement_tex": "[Harmonic reflection and removable punctures]\\family{D12.13.07}\\label{d12:13-07}\nA harmonic function on a half-disk, continuous and zero on its diameter, extends harmonically by odd reflection. A bounded real harmonic function on a punctured disk extends harmonically across the puncture.\n",
+      "statement_sha256": "29a15a462c5e9ba9ed66b44e7010dfa4bf77e1410896c41c63ba3d76aac84323"
+    },
+    {
+      "file": "chapters/14.tex",
+      "environment": "definition",
+      "line": 3,
+      "labels": [
+        "d12:14-01"
+      ],
+      "family_ids": [
+        "D12.14.01"
+      ],
+      "statement_tex": "[Continuous subharmonic functions]\\family{D12.14.01}\\label{d12:14-01}\nA continuous real $u$ on an open set is subharmonic if on each closed interior disk it is bounded above by the harmonic Poisson extension of its boundary values. Equivalently it has the submean property on every interior circle; equivalently it obeys comparison with every harmonic function continuous on such a closed disk.\n",
+      "statement_sha256": "20e5dfe5a0639557a4137960532f6f55bd6915eb5cdb31a80c0ec55134a2bce4"
+    },
+    {
+      "file": "chapters/14.tex",
+      "environment": "lemma",
+      "line": 10,
+      "labels": [
+        "d12:14-02"
+      ],
+      "family_ids": [
+        "D12.14.02"
+      ],
+      "statement_tex": "[Operations and harmonic replacement]\\family{D12.14.02}\\label{d12:14-02}\nNonnegative linear combinations and finite maxima of continuous subharmonic functions are subharmonic. Replacing $u$ on an interior disk $B$ by its harmonic Poisson extension $H$ gives a continuous subharmonic function $u^B\\ge u$. The replacement is monotone in $u$. A local subharmonic function may also be pasted by taking its maximum with another subharmonic function, when its boundary limsup is at most the latter and the resulting function is continuous.\n",
+      "statement_sha256": "b8cabbd1d96682a73baa46e125d591d0ffb7670c3aaea84e1385bc211eb14924"
+    },
+    {
+      "file": "chapters/14.tex",
+      "environment": "theorem",
+      "line": 17,
+      "labels": [
+        "d12:14-03"
+      ],
+      "family_ids": [
+        "D12.14.03"
+      ],
+      "statement_tex": "[Perron's harmonic envelope]\\family{D12.14.03}\\label{d12:14-03}\nLet $\\Omega$ be a bounded domain and $\\phi:\\partial\\Omega\\to\\R$ continuous. Let $\\mathcal P_\\phi$ consist of continuous subharmonic $u$ on $\\Omega$ with $\\limsup_{z\\to\\xi}u(z)\\le\\phi(\\xi)$ at every boundary point. Then\n$H_\\phi(z)=\\sup_{u\\in\\mathcal P_\\phi}u(z)$ is finite and harmonic on $\\Omega$.\n",
+      "statement_sha256": "c8084513bd14da72c8d95cd0807f1ef2fffd714a5deb86d4325608a525aa5c36"
+    },
+    {
+      "file": "chapters/14.tex",
+      "environment": "theorem",
+      "line": 27,
+      "labels": [
+        "d12:14-04"
+      ],
+      "family_ids": [
+        "D12.14.04"
+      ],
+      "statement_tex": "[Barrier squeeze]\\family{D12.14.04}\\label{d12:14-04}\nA positive local barrier at $\\xi\\in\\partial\\Omega$ is a continuous superharmonic function $b$ on $\\Omega\\cap B(\\xi,r)$, extending continuously to its relative closure, with $b(\\xi)=0$ and $b>0$ at all other points there. Its existence implies $H_\\phi(z)\\to\\phi(\\xi)$ for every continuous boundary datum. Such a boundary point is called regular.\n",
+      "statement_sha256": "a48f6abaa56550cd9c7c1d3ac8f6e63bbd3ea2a5a3779540bf04a2d0b964d7e1"
+    },
+    {
+      "file": "chapters/14.tex",
+      "environment": "proposition",
+      "line": 35,
+      "labels": [
+        "d12:14-05"
+      ],
+      "family_ids": [
+        "D12.14.05"
+      ],
+      "statement_tex": "[Explicit regular points and a failure]\\family{D12.14.05}\\label{d12:14-05}\nDisk boundary points and boundary points with an exterior cone are regular. An exterior tangent disk also gives a barrier. The puncture of a punctured disk is not regular for arbitrary continuous data on that domain's boundary.\n",
+      "statement_sha256": "799a4ed769182efd8d3fa37c2b273362d50d78fee5d7d105c103ffb43197a640"
+    },
+    {
+      "file": "chapters/14.tex",
+      "environment": "theorem",
+      "line": 45,
+      "labels": [
+        "d12:14-06"
+      ],
+      "family_ids": [
+        "D12.14.06"
+      ],
+      "statement_tex": "[The regular Dirichlet problem]\\family{D12.14.06}\\label{d12:14-06}\nOn a bounded domain every boundary point of which has a barrier, every continuous real boundary datum has a unique harmonic solution continuous on the closure. The solution is $H_\\phi$, lies between the minimum and maximum of its boundary data, and depends linearly and positively on those data.\n",
+      "statement_sha256": "b236e56286db0cda2be2e80ead76d02ee36fb398bbfc2f9e4edcba5f6b47ce9c"
+    },
+    {
+      "file": "chapters/14.tex",
+      "environment": "lemma",
+      "line": 52,
+      "labels": [
+        "d12:14:circular-exhaustion"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Circular exhaustions and the Green identity]\\label{d12:14:circular-exhaustion}\nEvery plane domain has an exhaustion $D_j$ by connected finite unions of open disks, with $\\overline D_j\\subset D_{j+1}\\Subset\\Omega$, such that circle boundaries have no tangencies or triple intersections. These are regular domains. Their boundaries consist of finitely many analytic arcs and corners of interior angle in $(0,2\\pi)$. If a harmonic function on $D_j$ is continuous and zero on a boundary arc through a corner of angle $\\theta$, then near that corner\n$u=O(r^{\\alpha})$, $\\nabla u=O(r^{\\alpha-1})$, $\\alpha=\\pi/\\theta>0$.\nConsequently the second Green identity applies to pairs of their Green functions after removing poles and corners, and its corner boundary terms tend to zero.\n",
+      "statement_sha256": "d2cab1ad611008b1f63a4c92e3a8f5f567db3cb13f6f5be13d7f1a68b0438098"
+    },
+    {
+      "file": "chapters/14.tex",
+      "environment": "theorem",
+      "line": 73,
+      "labels": [
+        "d12:14-07"
+      ],
+      "family_ids": [
+        "D12.14.07"
+      ],
+      "statement_tex": "[Green functions, symmetry and invariance]\\family{D12.14.07}\\label{d12:14-07}\nEvery bounded domain has a canonical positive Green function $g_\\Omega(z,a)$: it is harmonic for $z\\ne a$, and $g_\\Omega(z,a)+\\log|z-a|$ is harmonic at $a$. It is the least positive function with these properties. It is symmetric in $z,a$ and invariant under biholomorphisms between bounded domains. At every regular boundary point it tends to zero. On a bounded regular domain it is the unique Green function continuous with value zero at all boundary points, and is obtained by solving the boundary correction $\\log|\\xi-a|$.\n",
+      "statement_sha256": "6ad22946aa1a11bb0128ba641ab15e75e6c82ead5f3305be3cf2e23d50d3190b"
+    },
+    {
+      "file": "chapters/14.tex",
+      "environment": "corollary",
+      "line": 85,
+      "labels": [
+        "d12:14-08"
+      ],
+      "family_ids": [
+        "D12.14.08"
+      ],
+      "statement_tex": "[Harmonic measures of boundary components]\\family{D12.14.08}\\label{d12:14-08}\nSuppose a bounded regular domain has finitely many disjoint compact boundary components $C_1,\\ldots,C_m$. There are unique continuous closed-domain harmonic functions $\\omega_j$ equal to one on $C_j$ and zero on the others. They satisfy $0\\le\\omega_j\\le1$, $\\sum_j\\omega_j=1$, and the solution with constant component data $c_j$ is $\\sum_jc_j\\omega_j$. If $m>1$, each $\\omega_j$ lies strictly between zero and one in the domain.\n",
+      "statement_sha256": "fbfec14069eb778018c879cbad297641a6979e370b71935c5cb67b7b44148558"
+    },
+    {
+      "file": "chapters/15.tex",
+      "environment": "lemma",
+      "line": 3,
+      "labels": [
+        "d12:15-01"
+      ],
+      "family_ids": [
+        "D12.15.01"
+      ],
+      "statement_tex": "[A compatible compact exhaustion]\\family{D12.15.01}\\label{d12:15-01}\nEvery open $\\Omega\\subset\\C$ has compact sets $K_n\\subset\\operatorname{int}K_{n+1}$ exhausting its compact subsets, such that every component of $\\Chat\\setminus K_n$ meets $\\Chat\\setminus\\Omega$. They may be chosen as finite unions of closed grid cells with selected bounded holes filled. Empty open sets and empty compact stages are allowed.\n",
+      "statement_sha256": "a694004bf9916b0b755ed1c7b43a5f07c25c94d5cfbcffb3c1f54675577fbd04"
+    },
+    {
+      "file": "chapters/15.tex",
+      "environment": "lemma",
+      "line": 10,
+      "labels": [
+        "d12:15-02"
+      ],
+      "family_ids": [
+        "D12.15.02"
+      ],
+      "statement_tex": "[A finite polygon representation]\\family{D12.15.02}\\label{d12:15-02}\nIf $K$ is compact, $K\\subset U$ open, and $f\\in\\Hol(U)$, there is a finite oriented polygonal cycle $\\Gamma$ in $U\\setminus K$ such that\n\\[\n f(z)=\\frac1{2\\pi\\iu}\\int_\\Gamma\\frac{f(\\zeta)}{\\zeta-z}\\dd\\zeta\\qquad(z\\in K).\n\\]\n",
+      "statement_sha256": "f1a2107a8052978793bd636b223d7086ef63a3f0db84b2a0383621d9d02c28a3"
+    },
+    {
+      "file": "chapters/15.tex",
+      "environment": "lemma",
+      "line": 21,
+      "labels": [
+        "d12:15-03"
+      ],
+      "family_ids": [
+        "D12.15.03"
+      ],
+      "statement_tex": "[Rational Riemann sums]\\family{D12.15.03}\\label{d12:15-03}\nThe representation in \\cref{d12:15-02} can be approximated uniformly on $K$ by rational functions whose poles lie on $\\Gamma$, hence outside $K$.\n",
+      "statement_sha256": "c268d643a3f16279c0edc5bebc3b6ad6985a2891d65f433659404ad6b4ee9e9d"
+    },
+    {
+      "file": "chapters/15.tex",
+      "environment": "theorem",
+      "line": 28,
+      "labels": [
+        "d12:15-04"
+      ],
+      "family_ids": [
+        "D12.15.04"
+      ],
+      "statement_tex": "[Runge with specified allowed poles]\\family{D12.15.04}\\label{d12:15-04}\nLet $K\\subset\\C$ be compact and let $A\\subset\\Chat\\setminus K$ meet every component of that spherical complement. Every function holomorphic on a neighborhood of $K$ is uniformly approximable there by rational functions with all poles in $A$. A pole at infinity means a polynomial part; it is permitted only when infinity is in $A$.\n",
+      "statement_sha256": "f3a2817ec175020db50bf64a170cd0c17bd27dbf54c8f7fc7403a04e039383ac"
+    },
+    {
+      "file": "chapters/15.tex",
+      "environment": "corollary",
+      "line": 41,
+      "labels": [
+        "d12:15-05"
+      ],
+      "family_ids": [
+        "D12.15.05"
+      ],
+      "statement_tex": "[Approximation on an open set]\\family{D12.15.05}\\label{d12:15-05}\nIf $A\\subset\\Chat\\setminus\\Omega$ meets each component of that complement, every $f\\in\\Hol(\\Omega)$ is a locally uniform limit of rational functions with poles in $A$. If $\\Chat\\setminus\\Omega$ is connected, polynomials suffice. No connectedness of $\\Omega$ is needed.\n",
+      "statement_sha256": "9f8d1c5609a3818000b1f42122fce854f68a9317253c9627a8d37dda091e2aea"
+    },
+    {
+      "file": "chapters/15.tex",
+      "environment": "theorem",
+      "line": 48,
+      "labels": [
+        "d12:15-06"
+      ],
+      "family_ids": [
+        "D12.15.06"
+      ],
+      "statement_tex": "[The planar polynomial hull]\\family{D12.15.06}\\label{d12:15-06}\nThe polynomial hull $\\widehat K=\\{a:|p(a)|\\le\\sup_K|p|\\text{ for every polynomial }p\\}$ of a nonempty compact plane set is $K$ together with all bounded components of $\\C\\setminus K$.\n",
+      "statement_sha256": "956f96cb26233172a54067360baeaed93fe61afc532356a01fdfaa975e0263d6"
+    },
+    {
+      "file": "chapters/15.tex",
+      "environment": "theorem",
+      "line": 55,
+      "labels": [
+        "d12:15-07"
+      ],
+      "family_ids": [
+        "D12.15.07"
+      ],
+      "statement_tex": "[Planar equivalences, with no circular prerequisite]\\family{D12.15.07}\\label{d12:15-07}\nFor a plane domain the following are equivalent: simple connectivity; connected spherical complement; zero closed-path periods for every holomorphic function; existence of primitives for every holomorphic function; existence of logarithms for every zero-free holomorphic function; existence of square roots for every such function; and existence of all positive-integer roots for every such function.\n",
+      "statement_sha256": "ecc188701da613e102156933e7f1effab1357fa5aa659e7cdce07667fcdd926d"
+    },
+    {
+      "file": "chapters/16.tex",
+      "environment": "theorem",
+      "line": 3,
+      "labels": [
+        "d12:16-01"
+      ],
+      "family_ids": [
+        "D12.16.01"
+      ],
+      "statement_tex": "[Infinite products and logarithms]\\family{D12.16.01}\\label{d12:16-01}\nFor nonzero complex factors $u_n$, convergence of their product to a nonzero value is equivalent to $u_n\\to1$ and convergence of the series of principal logarithms of a sufficiently late tail. In particular $\\sum|u_n-1|<\\infty$ ensures nonzero product convergence. If $u_n$ are holomorphic on an open set and $\\sum\\sup_K|u_n-1|<\\infty$ on every compact subset, their products converge locally uniformly to a holomorphic function. On a component where no factor is identically zero, the local zero order of the product is the sum of the zero orders of the factors; only finitely many terms of this sum are nonzero. If a factor is identically zero on a component, the product is identically zero there instead. A tail has no zeros on any fixed compact neighborhood once its factors are sufficiently close to one.\n",
+      "statement_sha256": "13d6b557fe3c4224d7ada249bc17c683ee8c7dbd32952d3c2890b4bb8c3b848a"
+    },
+    {
+      "file": "chapters/16.tex",
+      "environment": "lemma",
+      "line": 10,
+      "labels": [
+        "d12:16-02"
+      ],
+      "family_ids": [
+        "D12.16.02"
+      ],
+      "statement_tex": "[Canonical factors]\\family{D12.16.02}\\label{d12:16-02}\nPut $E_0(w)=1-w$ and $E_p(w)=(1-w)\\exp(w+w^2/2+\\cdots+w^p/p)$ for $p\\ge1$. It has precisely one zero, a simple zero at one. For $|w|\\le1/2$,\n\\[\n |\\log E_p(w)|\\le2|w|^{p+1},\\qquad\n |E_p(w)-1|\\le6|w|^{p+1},\n\\]\nwhere the logarithm is the branch zero at zero.\n",
+      "statement_sha256": "198974fee6214e0ad8fe12d7b8b1932ada3a909782e9763c335502355402b57e"
+    },
+    {
+      "file": "chapters/16.tex",
+      "environment": "theorem",
+      "line": 22,
+      "labels": [
+        "d12:16-03"
+      ],
+      "family_ids": [
+        "D12.16.03"
+      ],
+      "statement_tex": "[Entire prescribed zeros]\\family{D12.16.03}\\label{d12:16-03}\nEvery locally finite effective divisor in $\\C$ is the exact zero divisor of an entire function. If its nonzero points, repeated by positive multiplicity, are $a_n$ with $|a_n|\\to\\infty$, one may use\n$z^m\\prod_n E_n(z/a_n)$, where $m$ is the prescribed multiplicity at zero. Empty and finite divisors use the corresponding finite products.\n",
+      "statement_sha256": "0e6d294bc49e5f7c1aba6f429f8db6f052eade38d962b15c2d5811b7d116bd98"
+    },
+    {
+      "file": "chapters/16.tex",
+      "environment": "theorem",
+      "line": 30,
+      "labels": [
+        "d12:16-04"
+      ],
+      "family_ids": [
+        "D12.16.04"
+      ],
+      "statement_tex": "[Entire factorization]\\family{D12.16.04}\\label{d12:16-04}\nEvery entire $f\\not\\equiv0$ has a representation\n$f(z)=z^m e^{g(z)}\\prod_n E_{p_n}(z/a_n)$,\nwhere $g$ is entire, the $a_n$ list its nonzero zeros with multiplicity, and suitable nonnegative integers $p_n$ can be chosen, for example $p_n=n$. This is not the stronger finite-order degree bound of Chapter~\\ref{ch:d12-17}.\n",
+      "statement_sha256": "f871442567bd23779be4b481d6c7726e035f0cc548f43cd4d9c1ac249b071cde"
+    },
+    {
+      "file": "chapters/16.tex",
+      "environment": "theorem",
+      "line": 40,
+      "labels": [
+        "d12:16-05"
+      ],
+      "family_ids": [
+        "D12.16.05"
+      ],
+      "statement_tex": "[Prescribed zeros on a general open set]\\family{D12.16.05}\\label{d12:16-05}\nEvery locally finite effective divisor on an open plane set is the exact zero divisor of a holomorphic function there, chosen nonzero on every component outside its designated zeros.\n",
+      "statement_sha256": "8f5aca4b122893201a1d16ddf661a627b51089e57a4905689d5258445f18c3c2"
+    },
+    {
+      "file": "chapters/16.tex",
+      "environment": "corollary",
+      "line": 53,
+      "labels": [
+        "d12:16-06"
+      ],
+      "family_ids": [
+        "D12.16.06"
+      ],
+      "statement_tex": "[Holomorphic quotients]\\family{D12.16.06}\\label{d12:16-06}\nEvery scalar meromorphic function $f$ on an open plane set is $g/h$ with $g,h$ holomorphic and $h$ nonzero on each component away from its locally finite zero set.\n",
+      "statement_sha256": "e1ae45fe6ac65f09698f4a368067c957b52fc72d5b0d451eeeebaad36f6dcbb9"
+    },
+    {
+      "file": "chapters/16.tex",
+      "environment": "theorem",
+      "line": 60,
+      "labels": [
+        "d12:16-07"
+      ],
+      "family_ids": [
+        "D12.16.07"
+      ],
+      "statement_tex": "[Mittag--Leffler on an open plane set]\\family{D12.16.07}\\label{d12:16-07}\nLet $A$ be a locally finite subset of an open $\\Omega$, and prescribe at each $a\\in A$ a finite principal part $P_a(z)=\\sum_{k=1}^{m_a}c_{ak}(z-a)^{-k}$. There is a meromorphic $f$ with these principal parts and no other poles. A designated point is an actual pole exactly when its prescribed principal part is nonzero. All solutions differ by a holomorphic function.\n",
+      "statement_sha256": "389c9cc05fb35ed467a785a19a1b719990a6a7927ac6f9c4d07e41bf8daece71"
+    },
+    {
+      "file": "chapters/16.tex",
+      "environment": "theorem",
+      "line": 69,
+      "labels": [
+        "d12:16-08"
+      ],
+      "family_ids": [
+        "D12.16.08"
+      ],
+      "statement_tex": "[Cotangent and sine]\\family{D12.16.08}\\label{d12:16-08}\nOff the integer poles,\n\\[\n \\pi\\cot(\\pi z)=\\frac1z+\\sum_{n\\ge1}\\frac{2z}{z^2-n^2},\n \\qquad\n \\sin(\\pi z)=\\pi z\\prod_{n\\ge1}\\left(1-\\frac{z^2}{n^2}\\right).\n\\]\nThe paired series and product converge locally uniformly on their appropriate domains. Their pairing/order is part of the stated formulas.\n",
+      "statement_sha256": "cfcaba80661172a95f30d696fe7cb4afa55843a2a1bd8c0588004a0d1f204d46"
+    },
+    {
+      "file": "chapters/17.tex",
+      "environment": "theorem",
+      "line": 6,
+      "labels": [
+        "d12:17-01"
+      ],
+      "family_ids": [
+        "D12.17.01"
+      ],
+      "statement_tex": "[Poisson--Jensen and Jensen]\\label{d12:17-01}\\family{D12.17.01}\nLet $f$ be meromorphic on a neighborhood of $\\{|z|\\le R\\}$, with no\nzero or pole on its boundary, and let $a_j,b_j$ be its zeros and poles\ninside. For $|z|<R$ away from those points,\n\\[\n \\log|f(z)|=\\frac1{2\\pi}\\int_0^{2\\pi}\n \\Ree\\frac{Re^{\\iu t}+z}{Re^{\\iu t}-z}\\log|f(Re^{\\iu t})|\\,dt\n -\\sum_j G_R(z,a_j)+\\sum_jG_R(z,b_j),\n\\]\nwhere $G_R(z,a)=\\log\\left|\\dfrac{R^2-\\bar a z}{R(z-a)}\\right|$.\nIf $f(0)$ is finite and nonzero, then\n\\[\n \\frac1{2\\pi}\\int_0^{2\\pi}\\log|f(Re^{\\iu t})|\\,dt\n =\\log|f(0)|+\\sum_j\\log\\frac R{|a_j|}-\\sum_j\\log\\frac R{|b_j|}.\n\\]\n",
+      "statement_sha256": "ee4dae0ed6f6295c9cfde43c79a9475469c4e9a566608c093027f4b1212153d5"
+    },
+    {
+      "file": "chapters/17.tex",
+      "environment": "proposition",
+      "line": 37,
+      "labels": [
+        "d12:17-02"
+      ],
+      "family_ids": [
+        "D12.17.02"
+      ],
+      "statement_tex": "[The center and boundary zeros]\\label{d12:17-02}\\family{D12.17.02}\nIf $f(z)=z^m g(z)$ near zero, where $m\\in\\Z$ and $g(0)$ is finite and\nnonzero, Jensen's formula instead has center term\n$\\log|g(0)|+m\\log R$ and counts only nonzero interior zeros and poles.\nFor a function meromorphic on a neighborhood of the closed disk,\n$\\log|f(Re^{\\iu t})|$ is integrable even when boundary zeros or poles\noccur. Jensen's center formula remains valid, with boundary divisor\nterms contributing zero. The displayed Poisson--Jensen theorem above\nis used only on divisor-free boundary circles.\n",
+      "statement_sha256": "d4bbda6ba7071e470b4e30e7c6b3ecb3c744e6871873e770329a48439912cb95"
+    },
+    {
+      "file": "chapters/17.tex",
+      "environment": "corollary",
+      "line": 68,
+      "labels": [
+        "d12:17-03"
+      ],
+      "family_ids": [
+        "D12.17.03"
+      ],
+      "statement_tex": "[Counting zeros]\\label{d12:17-03}\\family{D12.17.03}\nIf $f$ is entire and $f(0)=1$, let $n(r)$ count its zeros in $|z|\\le r$.\nThen $n(r)\\log2\\le\\log M(2r)$, where\n$M(r)=\\max_{|z|=r}|f(z)|$. For a general nonzero entire function first\nfactor its center zero and normalize the nonzero remaining value.\n",
+      "statement_sha256": "7a64b49d09d48192795b4b6be5e0e5cf0eb22d650542e7361d3a9406980da460"
+    },
+    {
+      "file": "chapters/17.tex",
+      "environment": "definition",
+      "line": 81,
+      "labels": [
+        "d12:17-04"
+      ],
+      "family_ids": [
+        "D12.17.04"
+      ],
+      "statement_tex": "[Order, exponent, rank and genus]\\label{d12:17-04}\\family{D12.17.04}\nFor a nonzero entire function set\n\\[\n \\rho=\\limsup_{r\\to\\infty}\n       \\frac{\\log\\log\\max(e,M(r))}{\\log r}\\in[0,\\infty].\n\\]\nNonzero constants and polynomials have order zero. For its nonzero\nzeros $a_j$, let\n$\\lambda=\\inf\\{s>0:\\sum_j|a_j|^{-s}<\\infty\\}$, with infimum\n$+\\infty$ for an empty set of admissible exponents and with $\\lambda=0$\nfor a finite divisor. The canonical rank is the least integer $q\\ge0$\nsuch that $\\sum|a_j|^{-q-1}<\\infty$, or is infinite if none exists.\nWrite $E_q(w)=(1-w)\\exp(w+\\cdots+w^q/q)$, with $E_0(w)=1-w$.\nIf $f=z^m\\prod E_q(z/a_j)e^{Q(z)}$ with $Q$ polynomial, its genus is\n$\\max(q,\\deg Q)$; constants have degree convention zero here.\n",
+      "statement_sha256": "e373881e7805cbdd0d0a6feca82e86dc30885bd24f6072f3bbedb14628b04e28"
+    },
+    {
+      "file": "chapters/17.tex",
+      "environment": "proposition",
+      "line": 98,
+      "labels": [
+        "d12:17:exponent"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Growth of the divisor]\\label{d12:17:exponent}\nFor a finite-order entire function, $\\lambda\\le\\rho$ and\n$q\\le\\lfloor\\rho\\rfloor$. If the nonzero zero sequence is infinite,\nits counting function satisfies\n$\\lambda=\\limsup_{r\\to\\infty}\\log\\max(1,n(r))/\\log r$.\nWhenever $q$ is finite, $q\\le\\lambda\\le q+1$.\n",
+      "statement_sha256": "d48eaf1fd9b0b19ba7f2a86f9eac9fce049255182550e43e97e2e84341018700"
+    },
+    {
+      "file": "chapters/17.tex",
+      "environment": "lemma",
+      "line": 121,
+      "labels": [
+        "d12:17:lower-product"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Circles avoiding a canonical divisor]\\label{d12:17:lower-product}\nLet $\\rho<\\infty$, $p=\\lfloor\\rho\\rfloor$, and suppose\n$n(r)\\le C_s r^s$ for every $s>\\rho$. For\n$P(z)=\\prod_jE_p(z/a_j)$ and each $\\rho<t<p+1$, there are radii\n$r_k\\to\\infty$ and a constant $C_t$ such that\n\\[\n                   \\log|P(z)|\\ge-C_t r_k^t\\quad (|z|=r_k).\n\\]\nThe empty or finite product is included.\n",
+      "statement_sha256": "e85317ef14a04171a82f11b734f374c23505936db8a566b98a61276b313313e1"
+    },
+    {
+      "file": "chapters/17.tex",
+      "environment": "theorem",
+      "line": 162,
+      "labels": [
+        "d12:17-05"
+      ],
+      "family_ids": [
+        "D12.17.05"
+      ],
+      "statement_tex": "[Hadamard factorization]\\label{d12:17-05}\\family{D12.17.05}\nEvery nonzero entire function of finite order $\\rho$ has the factorization\n\\[\n f(z)=z^m e^{Q(z)}\\prod_jE_p(z/a_j),\\qquad\n p=\\lfloor\\rho\\rfloor,\\qquad\\deg Q\\le p.\n\\]\nIt also has a factorization using its minimal canonical rank $q$, with\nexponential polynomial of degree at most $p$; its genus is at most $\\rho$.\n",
+      "statement_sha256": "f048832cb48bdbf175374d69c91714026850f2a529b9fd1c3bce452c6d3040c2"
+    },
+    {
+      "file": "chapters/17.tex",
+      "environment": "theorem",
+      "line": 203,
+      "labels": [
+        "d12:17-06"
+      ],
+      "family_ids": [
+        "D12.17.06"
+      ],
+      "statement_tex": "[Blaschke zeros and products]\\label{d12:17-06}\\family{D12.17.06}\nThe nonzero zeros $a_j$ of a bounded, nonzero holomorphic function on\n$\\D$ satisfy $\\sum_j(1-|a_j|)<\\infty$. Conversely, a disk sequence\nwithout interior accumulation satisfying this condition is the exact\nzero sequence, with its listed multiplicities, of the bounded product\n\\[\n             B(z)=z^m\\prod_j\\frac{|a_j|}{a_j}\n                                      \\frac{a_j-z}{1-\\bar a_jz}.\n\\]\nHere $m\\ge0$ prescribes the center multiplicity; the product converges\nnormally and $|B|\\le1$.\n",
+      "statement_sha256": "d61e65f1728a063b39fd229cc654b467612ccb20e9d452aa083f69006d9c53b5"
+    },
+    {
+      "file": "chapters/17.tex",
+      "environment": "corollary",
+      "line": 236,
+      "labels": [
+        "d12:17-07"
+      ],
+      "family_ids": [
+        "D12.17.07"
+      ],
+      "statement_tex": "[Finite-order value consequences]\\label{d12:17-07}\\family{D12.17.07}\nA nonconstant finite-order entire function omitting $a$ is\n$a+e^{Q}$ for a nonconstant polynomial $Q$; it omits no other finite\nvalue. A nonconstant entire function of finite nonintegral order assumes\nevery finite value infinitely often.\n",
+      "statement_sha256": "d0eb1e209490f289e5216005cfe23d593719821a4aae20350c32f49fbd8a710e"
+    },
+    {
+      "file": "chapters/19.tex",
+      "environment": "definition",
+      "line": 10,
+      "labels": [
+        "d12:19-01"
+      ],
+      "family_ids": [
+        "D12.19.01"
+      ],
+      "statement_tex": "[Elements, germs and continuation]\\label{d12:19-01}\\family{D12.19.01}\nA function element is a holomorphic function on a connected open set. Two\nelements near $a$ have the same germ $[f]_a$ if they agree on a neighborhood\nof $a$. Along $\\gamma:[0,1]\\to\\Omega$, a continuation of $\\varphi$ is a\nfamily $\\varphi_t$ of germs at $\\gamma(t)$, with $\\varphi_0=\\varphi$, which\nis locally represented by one holomorphic function: near each parameter $s$\nthere are an open set $U$, a holomorphic $f$ on $U$, and a parameter interval\n$I$ containing $s$ such that $\\gamma(I)\\subset U$ and\n$\\varphi_t=[f]_{\\gamma(t)}$ for $t\\in I$.\n",
+      "statement_sha256": "63e518ea7a2756d97dde083fd7a3b51406f10a81e7eb9b92ef7fb00f91b57681"
+    },
+    {
+      "file": "chapters/19.tex",
+      "environment": "theorem",
+      "line": 21,
+      "labels": [
+        "d12:19:uniqueness"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Uniqueness along a fixed path]\\label{d12:19:uniqueness}\nContinuation, if it exists, is unique after its initial germ is fixed.\nIt can be reversed or concatenated, and is unchanged by an increasing\nhomeomorphic reparametrization of the parameter interval.\n",
+      "statement_sha256": "1780189598536d6d0ca7fe9199fd29a09028f8afb2569c14608996e806cfa0b8"
+    },
+    {
+      "file": "chapters/19.tex",
+      "environment": "proposition",
+      "line": 40,
+      "labels": [
+        "d12:19-02"
+      ],
+      "family_ids": [
+        "D12.19.02"
+      ],
+      "statement_tex": "[Finite chains and continuous germ families]\\label{d12:19-02}\\family{D12.19.02}\nContinuation is equivalent to the existence of a partition\n$0=t_0<\\cdots<t_N=1$, connected open sets $U_j$ containing\n$\\gamma([t_{j-1},t_j])$, and holomorphic functions $f_j$ on $U_j$, such\nthat $f_j$ and $f_{j+1}$ agree on the component of $U_j\\cap U_{j+1}$\ncontaining $\\gamma(t_j)$. The initial and final germs are those of $f_1$\nand $f_N$. It is also equivalent to a continuous lift into the germ space\nwhose basic open sets are $\\{[f]_z:z\\in U\\}$.\n",
+      "statement_sha256": "d526aea9e50d750f5a58903fec6c2b148bd0b6ce74c67d97f7e26ef193cb6d8c"
+    },
+    {
+      "file": "chapters/19.tex",
+      "environment": "proposition",
+      "line": 67,
+      "labels": [
+        "d12:19-03"
+      ],
+      "family_ids": [
+        "D12.19.03"
+      ],
+      "statement_tex": "[Permanence of relations]\\label{d12:19-03}\\family{D12.19.03}\nDerivatives, sums and products continue by differentiating, adding and\nmultiplying the local representatives. A holomorphic identity between\nfinitely many simultaneously continued functions and their derivatives,\nwith single-valued holomorphic coefficients on the base, persists along\nthe path. Quotients are included wherever the denominator is nonzero.\n",
+      "statement_sha256": "1755baea42020ab62d5f6b636fa08b06229f398e01fe07dca9ac1094b912a551"
+    },
+    {
+      "file": "chapters/19.tex",
+      "environment": "lemma",
+      "line": 85,
+      "labels": [
+        "d12:19-04"
+      ],
+      "family_ids": [
+        "D12.19.04"
+      ],
+      "statement_tex": "[Stability of a continuation chain]\\label{d12:19-04}\\family{D12.19.04}\nIf $\\varphi$ continues along $\\gamma$, there is $\\delta>0$ such that every\npath $\\eta$ with the same endpoints and\n$\\sup_t|\\eta(t)-\\gamma(t)|<\\delta$ has a continuation with the same\nterminal germ. With a varying terminal point, the terminal germ is that\nof the same final representative at the new point.\n",
+      "statement_sha256": "7dbc7c225c0e3824bc66a489d3418337c8d31510fa515024497ca7aa54a19e32"
+    },
+    {
+      "file": "chapters/19.tex",
+      "environment": "theorem",
+      "line": 105,
+      "labels": [
+        "d12:19-05"
+      ],
+      "family_ids": [
+        "D12.19.05"
+      ],
+      "statement_tex": "[Homotopy invariance]\\label{d12:19-05}\\family{D12.19.05}\nLet $H:[0,1]^2\\to\\Omega$ be continuous, with $H(0,s)=a$ and $H(1,s)=b$.\nSuppose the germ $\\varphi$ at $a$ admits continuation along every path\n$t\\mapsto H(t,s)$. All the resulting terminal germs at $b$ agree.\n",
+      "statement_sha256": "ad21fad2d6b317840c90348a7ed50b7f3e9ae08aacc0964eb111edd04b2f1507"
+    },
+    {
+      "file": "chapters/19.tex",
+      "environment": "theorem",
+      "line": 119,
+      "labels": [
+        "d12:19-06"
+      ],
+      "family_ids": [
+        "D12.19.06"
+      ],
+      "statement_tex": "[Monodromy]\\label{d12:19-06}\\family{D12.19.06}\nSuppose $\\Omega$ is simply connected and a holomorphic germ at $a\\in\\Omega$\nadmits continuation along every path starting at $a$. It is the germ of a\nunique holomorphic function on $\\Omega$.\n",
+      "statement_sha256": "89b38791704ef5346031ef8690b25c963ae6fef9cf731c1bc60daa6077881b45"
+    },
+    {
+      "file": "chapters/19.tex",
+      "environment": "theorem",
+      "line": 139,
+      "labels": [
+        "d12:19-07"
+      ],
+      "family_ids": [
+        "D12.19.07"
+      ],
+      "statement_tex": "[Monodromy and obstructions]\\label{d12:19-07}\\family{D12.19.07}\nA logarithm germ at a point of $\\C^*$ continues along every path in\n$\\C^*$. Around a piecewise $C^1$ loop $\\gamma$ its change is\n$2\\pi\\iu\\ind(\\gamma,0)$. An $n$th-root germ changes by the factor\n$\\exp(2\\pi\\iu\\ind(\\gamma,0)/n)$. Simple connectivity alone does not\nguarantee continuation. Moreover\n\\[\n                         F(z)=\\sum_{n=1}^\\infty z^{n!}\n\\]\nis holomorphic on $\\D$ and has the unit circle as a natural boundary.\n",
+      "statement_sha256": "a989ef2f926df3673f4c8860057f1e276cd2994e194d27112ca119aca8ef7b94"
+    },
+    {
+      "file": "chapters/20.tex",
+      "environment": "definition",
+      "line": 3,
+      "labels": [
+        "d12:20-01"
+      ],
+      "family_ids": [
+        "D12.20.01"
+      ],
+      "statement_tex": "[Surfaces and atlases]\\label{d12:20-01}\\family{D12.20.01}\nA Riemann surface is a nonempty connected, Hausdorff, second-countable topological\nspace with an atlas of homeomorphisms to plane domains whose transition\nmaps are holomorphic with holomorphic inverses. Compatible atlases define\nthe same complex structure. Domains in $\\C$, with the identity chart,\nare examples. Disconnected open subsets are unions of such surfaces,\nnot surfaces under the connected convention.\n",
+      "statement_sha256": "979453aa3ab5c7c29447538e39ebaa4e557fa22cf371ce182a5dcbb998f2bde9"
+    },
+    {
+      "file": "chapters/20.tex",
+      "environment": "proposition",
+      "line": 17,
+      "labels": [
+        "d12:20-02"
+      ],
+      "family_ids": [
+        "D12.20.02"
+      ],
+      "statement_tex": "[The sphere and the projective line]\\label{d12:20-02}\\family{D12.20.02}\nThe quotient $\\mathbb{CP}^1=(\\C^2\\setminus\\{0\\})/\\C^*$ is a compact\nRiemann surface. Its charts $[1:z]\\mapsto z$ and $[w:1]\\mapsto w$ identify\nit with $\\Chat$, with infinity coordinate $w=1/z$.\n",
+      "statement_sha256": "8c3aa140be0fa4c33cad15cead68726c4a5be3c460f21db04aed8e9d2e57e02e"
+    },
+    {
+      "file": "chapters/20.tex",
+      "environment": "theorem",
+      "line": 41,
+      "labels": [
+        "d12:20-03"
+      ],
+      "family_ids": [
+        "D12.20.03"
+      ],
+      "statement_tex": "[Maps, multiplicity and local form]\\label{d12:20-03}\\family{D12.20.03}\nA continuous map between surfaces is holomorphic when its coordinate expressions are\nholomorphic. This condition is chart independent. A nonconstant map has\nat each point $a$ a positive integer multiplicity $m_a$ and coordinates\ncentered at $a$ and its image in which it is $t\\mapsto t^{m_a}$.\nIt is locally biholomorphic exactly when $m_a=1$.\n",
+      "statement_sha256": "4bafa875fd8c6066c9d96e13e729ff9032c8214071ccd65e98886e9051c29358"
+    },
+    {
+      "file": "chapters/20.tex",
+      "environment": "theorem",
+      "line": 64,
+      "labels": [
+        "d12:20-04"
+      ],
+      "family_ids": [
+        "D12.20.04"
+      ],
+      "statement_tex": "[The continuation surface]\\label{d12:20-04}\\family{D12.20.04}\nThe germs obtainable by continuation of one holomorphic plane germ form\na Riemann surface $S$. The projection $p:S\\to\\Omega$ is locally\nbiholomorphic, and evaluation $[f]_z\\mapsto f(z)$ is holomorphic.\nThe full space of all germs need not be second countable; the assertion\nis about this single continuation component.\n",
+      "statement_sha256": "8a30ae2821c60601f21cd32409c829ec0a22fd8134978080d476487cea5d7ae4"
+    },
+    {
+      "file": "chapters/20.tex",
+      "environment": "theorem",
+      "line": 97,
+      "labels": [
+        "d12:20-05"
+      ],
+      "family_ids": [
+        "D12.20.05"
+      ],
+      "statement_tex": "[Covering and lifting bridges]\\label{d12:20-05}\\family{D12.20.05}\nA covering map is a map $p:E\\to B$ for which every point of $B$ has a\nneighborhood whose inverse image is a disjoint union of open sets mapped\nhomeomorphically onto that neighborhood. Paths have unique lifts from a\nchosen initial point. A fixed-endpoint path homotopy has a continuous\nlift from a chosen initial point, and its lifted endpoints agree.\nThe maps $\\exp:\\C\\to\\C^*$ and $z\\mapsto z^n:\\C^*\\to\\C^*$ are\nholomorphic coverings, the latter having $n$ sheets.\n",
+      "statement_sha256": "9e8145d02fb35b12164ef0e795331ae6daf0d1961f2a3011c6744187a7eb8e3a"
+    },
+    {
+      "file": "chapters/20.tex",
+      "environment": "theorem",
+      "line": 140,
+      "labels": [
+        "d12:20-06"
+      ],
+      "family_ids": [
+        "D12.20.06"
+      ],
+      "statement_tex": "[Compact maximum principle]\\label{d12:20-06}\\family{D12.20.06}\nA scalar holomorphic function on a compact Riemann surface is constant.\n",
+      "statement_sha256": "acb456236858ea18c095dd83670121f8e1959fc895baebbab388ac55fe167556"
+    },
+    {
+      "file": "chapters/20.tex",
+      "environment": "theorem",
+      "line": 151,
+      "labels": [
+        "d12:20-07"
+      ],
+      "family_ids": [
+        "D12.20.07"
+      ],
+      "statement_tex": "[Finite degree]\\label{d12:20-07}\\family{D12.20.07}\nLet $X$ be compact and $Y$ a connected Riemann surface. A nonconstant\nholomorphic map $f:X\\to Y$ is surjective, has finite fibres and finitely\nmany ramification points, and has a positive integer degree $d$ satisfying\n\\[\n                         \\sum_{a\\in f^{-1}(b)}m_a=d\\qquad(b\\in Y).\n\\]\nAway from its finitely many branch values it is a finite covering.\n",
+      "statement_sha256": "e3aec5facf8d2ec49fce3de4a6376fadac733c256904c51c89090381e24f41a8"
+    },
+    {
+      "file": "chapters/20.tex",
+      "environment": "theorem",
+      "line": 180,
+      "labels": [
+        "d12:20-08"
+      ],
+      "family_ids": [
+        "D12.20.08"
+      ],
+      "statement_tex": "[Completion over a puncture]\\label{d12:20-08}\\family{D12.20.08}\nA connected finite holomorphic covering of $0<|z|<r$ with $m$ sheets is\nbiholomorphically equivalent to $t\\mapsto t^m$ on $0<|t|<r^{1/m}$.\nIt can therefore be completed by one point, with local coordinate $t$,\nramification multiplicity $m$ and projection $z=t^m$.\n",
+      "statement_sha256": "811b3588368fe6b9589570a3d8a665d25c9a11a818552b473ea79f6fc71afbde"
+    },
+    {
+      "file": "chapters/21.tex",
+      "environment": "theorem",
+      "line": 6,
+      "labels": [
+        "d12:21-01"
+      ],
+      "family_ids": [
+        "D12.21.01"
+      ],
+      "statement_tex": "[A simple root varies holomorphically]\\label{d12:21-01}\\family{D12.21.01}\nLet $P(z,w)$ be a polynomial in $w$ whose coefficients are holomorphic\nnear $a$, with $P(a,b)=0$ and\n$P_w(a,b)\\ne0$. There are neighborhoods on which its zeros near $b$\nare precisely $w=f(z)$, with $f$ holomorphic and $f(a)=b$.\nFor a polynomial of fixed positive $w$-degree having distinct roots at\n$a$ and nonzero leading coefficient there, all its roots are represented\nby finitely many disjoint such branches on one disk about $a$.\n",
+      "statement_sha256": "9e26e56d84dd98a845b1eed52500bf57cde12418d9c8be593c28fc0aec3f8bed"
+    },
+    {
+      "file": "chapters/21.tex",
+      "environment": "theorem",
+      "line": 36,
+      "labels": [
+        "d12:21-02"
+      ],
+      "family_ids": [
+        "D12.21.02"
+      ],
+      "statement_tex": "[The finite exceptional set]\\label{d12:21-02}\\family{D12.21.02}\nLet $P\\in\\C[z,w]$ be irreducible and have $w$-degree $d>0$, with leading\ncoefficient $a_d(z)$. There is a nonzero polynomial $\\Delta(z)$, the\nresultant of $P$ and $P_w$, such that outside\n\\[\n                    E=\\{a_d\\Delta=0\\}\\subset\\C\n\\]\nthe polynomial has exactly $d$ distinct finite roots. In particular $E$\nis finite. The point at infinity must be considered separately.\n",
+      "statement_sha256": "77cad32809f05573670af93c2b1911c0edfaf2827f123dba617e4ea806623e10"
+    },
+    {
+      "file": "chapters/21.tex",
+      "environment": "theorem",
+      "line": 76,
+      "labels": [
+        "d12:21-03"
+      ],
+      "family_ids": [
+        "D12.21.03"
+      ],
+      "statement_tex": "[Continuation and monodromy permutations]\\label{d12:21-03}\\family{D12.21.03}\nOver $\\Omega=\\C\\setminus E$, the set\n$S=\\{(z,w):z\\in\\Omega,\\ P(z,w)=0\\}$ is a $d$-sheeted holomorphic\ncovering of $\\Omega$. Every branch continues along every path there.\nA loop permutes the $d$ root germs, and homotopic loops give the same\npermutation. Concatenation corresponds to successive application of the\npermutations, with the first traversed loop acting first.\n",
+      "statement_sha256": "c66f12a578cd7b976fd25f982b7d56b778c1c4a3ecef1604aab190db3dc89bea"
+    },
+    {
+      "file": "chapters/21.tex",
+      "environment": "theorem",
+      "line": 95,
+      "labels": [
+        "d12:21-04"
+      ],
+      "family_ids": [
+        "D12.21.04"
+      ],
+      "statement_tex": "[Local cyclic parameters]\\label{d12:21-04}\\family{D12.21.04}\nChoose a punctured disk about $c\\in E$ containing no other exceptional\npoint. Each cycle of length $h$ in its local monodromy has a single-valued\nparameter $t$ in which $z=c+t^h$ and its root is a holomorphic function\n$w=W(t)$ for $t\\ne0$. At infinity the corresponding formula is\n$z=t^{-h}$.\n",
+      "statement_sha256": "4b9b47b9109e54db5351e391d856ef56de0236c3039b3311f41fc07a72891d34"
+    },
+    {
+      "file": "chapters/21.tex",
+      "environment": "theorem",
+      "line": 113,
+      "labels": [
+        "d12:21-05"
+      ],
+      "family_ids": [
+        "D12.21.05"
+      ],
+      "statement_tex": "[Algebraic growth and finite Laurent tails]\\label{d12:21-05}\\family{D12.21.05}\nIn the preceding parameters, $W$ is meromorphic at $t=0$. In particular\nit has a convergent Laurent expansion with only finitely many negative\npowers. If $a_d(c)\\ne0$, the finite-point branches are bounded and\n$W$ is holomorphic at zero.\n",
+      "statement_sha256": "829ed1f6ba5b3f7c47a99c98aa9e6e23190e3fd1bfe6f881e1741a808787cfaa"
+    },
+    {
+      "file": "chapters/21.tex",
+      "environment": "theorem",
+      "line": 136,
+      "labels": [
+        "d12:21-06"
+      ],
+      "family_ids": [
+        "D12.21.06"
+      ],
+      "statement_tex": "[The symmetric-coefficient converse]\\label{d12:21-06}\\family{D12.21.06}\nSuppose a finite collection of $d$ analytic branches over the complement\nof a finite set in $\\Chat$ is invariant under continuation, and every\nbranch has at most power growth near each missing point in a finite\ncyclic parameter. Then all branches satisfy one nonzero equation in\n$\\C[z,w]$.\n",
+      "statement_sha256": "c5da27460a89236dc282ac11259abf62a7c88f6123c747f52bc6d3328a8589ad"
+    },
+    {
+      "file": "chapters/21.tex",
+      "environment": "corollary",
+      "line": 159,
+      "labels": [
+        "d12:21:transitivity"
+      ],
+      "family_ids": [],
+      "statement_tex": "[Irreducibility and connected branches]\\label{d12:21:transitivity}\nFor the irreducible polynomial of \\cref{d12:21-02}, the monodromy action\non its roots is transitive, so the covering $S$ is connected. Its finite\ncyclic completions over $E$ and infinity form a compact Riemann surface\non which both $z$ and $w$ are meromorphic.\n",
+      "statement_sha256": "fcfc6cfa0742001acf5a16cbffca2df325ba8a60fdbe5aa1cd676c2f9a4342b4"
+    },
+    {
+      "file": "chapters/21.tex",
+      "environment": "theorem",
+      "line": 190,
+      "labels": [
+        "d12:21-07"
+      ],
+      "family_ids": [
+        "D12.21.07"
+      ],
+      "statement_tex": "[Explicit smooth and singular examples]\\label{d12:21-07}\\family{D12.21.07}\nThe equation $w^n=z$ has the smooth parameter $t=w$, $z=t^n$; its compact\ncompletion is $\\mathbb{CP}^1$, branched with multiplicity $n$ at zero\nand infinity. If $P(z)$ is square-free of degree $d\\ge1$, the affine\ncurve $w^2=P(z)$ is smooth. Its compact surface has two unramified\npoints over infinity when $d$ is even and one point of multiplicity two\nwhen $d$ is odd. These statements do not turn singular affine curves\ninto smooth embedded curves.\n",
+      "statement_sha256": "89baf7926eb94341e12018928b3c093fca05788f320f5d4ae4fe1bd5101a1f25"
+    },
+    {
+      "file": "chapters/22.tex",
+      "environment": "theorem",
+      "line": 3,
+      "labels": [
+        "d12:22-01"
+      ],
+      "family_ids": [
+        "D12.22.01"
+      ],
+      "statement_tex": "[Lattice geometry and torus charts]\\label{d12:22-01}\\family{D12.22.01}\nLet $\\Lambda=\\Z\\omega_1+\\Z\\omega_2$, where $\\omega_1\\ne0$ and\n$\\Imm(\\omega_2/\\omega_1)>0$. Then $\\Lambda$ is discrete,\n$\\sum_{\\lambda\\ne0}|\\lambda|^{-s}<\\infty$ for $s>2$, and\n$T=\\C/\\Lambda$ is a compact Riemann surface. Its charts are induced by\nsmall plane disks, with translation transition maps.\n",
+      "statement_sha256": "9659e0b05232daf96b34105ca28900a16ae923776c88387bd3ba68ecf3bc1ba2"
+    },
+    {
+      "file": "chapters/22.tex",
+      "environment": "theorem",
+      "line": 34,
+      "labels": [
+        "d12:22-02"
+      ],
+      "family_ids": [
+        "D12.22.02"
+      ],
+      "statement_tex": "[Holomorphic elliptic functions and residues]\\label{d12:22-02}\\family{D12.22.02}\nA $\\Lambda$-periodic entire function is constant. For a meromorphic\n$\\Lambda$-periodic function the sum of its residues in a complete set\nof classes is zero. In particular it cannot have a single simple pole.\n",
+      "statement_sha256": "a20be6803ee3517fc8375f6951094b2d838f14252180131fe4c76d37d96e860e"
+    },
+    {
+      "file": "chapters/22.tex",
+      "environment": "theorem",
+      "line": 51,
+      "labels": [
+        "d12:22-03"
+      ],
+      "family_ids": [
+        "D12.22.03"
+      ],
+      "statement_tex": "[Divisor constraints]\\label{d12:22-03}\\family{D12.22.03}\nA nonconstant elliptic function has equally many zeros and poles on\n$T$, with multiplicities. If their representatives are $a_1,\\ldots,a_N$\nand $b_1,\\ldots,b_N$, then\n$\\sum a_j-\\sum b_j\\in\\Lambda$. Every finite value has exactly $N$\npreimages counted with multiplicity.\n",
+      "statement_sha256": "566c72ee65eb73d8243cd38ac6810e80a6fdb76ce0b1da6f9c6b9ca7388e0eb5"
+    },
+    {
+      "file": "chapters/22.tex",
+      "environment": "theorem",
+      "line": 79,
+      "labels": [
+        "d12:22-04"
+      ],
+      "family_ids": [
+        "D12.22.04"
+      ],
+      "statement_tex": "[The regularized Weierstrass series]\\label{d12:22-04}\\family{D12.22.04}\nThe series\n\\[\n \\wp(z)=\\frac1{z^2}+\\sum_{\\lambda\\in\\Lambda\\setminus\\{0\\}}\n              \\left(\\frac1{(z-\\lambda)^2}-\\frac1{\\lambda^2}\\right)\n\\]\nconverges normally away from $\\Lambda$ and defines a meromorphic\nfunction with precisely a double pole of principal part\n$(z-\\lambda)^{-2}$ at every lattice point. Its derivative is\n$\\wp'(z)=-2\\sum_{\\lambda\\in\\Lambda}(z-\\lambda)^{-3}$, normally and\nabsolutely convergent away from the poles.\n",
+      "statement_sha256": "9437b0afd30269501aae8f19fc680aef37c5c05ba1a43439372b2d63005eddfa"
+    },
+    {
+      "file": "chapters/22.tex",
+      "environment": "theorem",
+      "line": 103,
+      "labels": [
+        "d12:22-05"
+      ],
+      "family_ids": [
+        "D12.22.05"
+      ],
+      "statement_tex": "[Parity and genuine periods]\\label{d12:22-05}\\family{D12.22.05}\nThe function $\\wp$ is even, $\\wp'$ is odd, and both are\n$\\Lambda$-periodic. The complete period lattice of $\\wp$ is exactly\n$\\Lambda$.\n",
+      "statement_sha256": "28e7cc11a55cdde4562e1c49f93d513b4d520083eddeb1fff9d25e9340079e8f"
+    },
+    {
+      "file": "chapters/22.tex",
+      "environment": "theorem",
+      "line": 122,
+      "labels": [
+        "d12:22-06"
+      ],
+      "family_ids": [
+        "D12.22.06"
+      ],
+      "statement_tex": "[Differential equation and branch values]\\label{d12:22-06}\\family{D12.22.06}\nSet $g_2=60\\sum_{\\lambda\\ne0}\\lambda^{-4}$ and\n$g_3=140\\sum_{\\lambda\\ne0}\\lambda^{-6}$. Then\n\\[\n                \\wp'^2=4\\wp^3-g_2\\wp-g_3,\\qquad\n                \\wp''=6\\wp^2-g_2/2.\n\\]\nThe three nonzero half-period classes $h_1=\\omega_1/2$,\n$h_2=\\omega_2/2$, $h_3=(\\omega_1+\\omega_2)/2$ are exactly the\nzeros of $\\wp'$, each simple. Their values $e_j=\\wp(h_j)$ are distinct,\nand $4X^3-g_2X-g_3=4\\prod_{j=1}^3(X-e_j)$. In particular\n$g_2^3-27g_3^2\\ne0$.\n",
+      "statement_sha256": "fb6cac76a18ecd07eb4f53797177ea5e57a1bd6a2dcabf3ea4006ca80dac7614"
+    },
+    {
+      "file": "chapters/22.tex",
+      "environment": "theorem",
+      "line": 168,
+      "labels": [
+        "d12:22-07"
+      ],
+      "family_ids": [
+        "D12.22.07"
+      ],
+      "statement_tex": "[The torus and its projective cubic]\\label{d12:22-07}\\family{D12.22.07}\nThe map $\\wp:T\\to\\Chat$ has degree two and branch values\n$e_1,e_2,e_3,\\infty$. The projective curve\n\\[\n E:\\quad Y^2Z=4X^3-g_2XZ^2-g_3Z^3\\quad\\text{in }[Z:X:Y]\n\\]\nis nonsingular, and\n\\[\n \\Phi([z])=[1:\\wp(z):\\wp'(z)]\\ (z\\notin\\Lambda),\\qquad\n \\Phi([0])=O=[0:0:1]\n\\]\nis a biholomorphism $T\\to E$, including its infinity charts.\n",
+      "statement_sha256": "c3d2255e7bff46789aa925c9266132d66b0c6812ee888a3fd8e4f856f011cf05"
+    },
+    {
+      "file": "chapters/22.tex",
+      "environment": "theorem",
+      "line": 242,
+      "labels": [
+        "d12:22-08"
+      ],
+      "family_ids": [
+        "D12.22.08"
+      ],
+      "statement_tex": "[Zeta, sigma and Legendre]\\label{d12:22-08}\\family{D12.22.08}\nThe normally convergent expressions\n\\[\n \\zeta(z)=\\frac1z+\\sum_{\\lambda\\ne0}\n       \\left(\\frac1{z-\\lambda}+\\frac1\\lambda+\\frac z{\\lambda^2}\\right),\n \\qquad \\sigma(z)=z\\prod_{\\lambda\\ne0}E_2(z/\\lambda)\n\\]\nsatisfy $\\zeta'=-\\wp$ and $\\sigma'/\\sigma=\\zeta$.\nBoth are odd; $\\sigma$ is entire with simple zeros precisely $\\Lambda$.\nThere are constants $\\eta_j$ such that\n\\[\n \\zeta(z+\\omega_j)=\\zeta(z)+\\eta_j,\\qquad\n \\sigma(z+\\omega_j)=-e^{\\eta_j(z+\\omega_j/2)}\\sigma(z),\n \\qquad \\eta_1\\omega_2-\\eta_2\\omega_1=2\\pi\\iu.\n\\]\n",
+      "statement_sha256": "d8240c8d066d4d948d25a12153ce126c68c49bacc0baecaecb0e419e7d889abf"
+    },
+    {
+      "file": "chapters/22.tex",
+      "environment": "theorem",
+      "line": 297,
+      "labels": [
+        "d12:22-09"
+      ],
+      "family_ids": [
+        "D12.22.09"
+      ],
+      "statement_tex": "[Addition and the chord--tangent law]\\label{d12:22-09}\\family{D12.22.09}\nTransporting addition on $T$ through $\\Phi$ gives exactly the\nchord--tangent group law on $E$, with identity $O$ and inversion\n$[Z:X:Y]\\mapsto[Z:X:-Y]$. In particular, when the denominator is\nnonzero,\n\\[\n \\wp(z+w)=-\\wp(z)-\\wp(w)\n       +\\frac14\\left(\\frac{\\wp'(z)-\\wp'(w)}{\\wp(z)-\\wp(w)}\\right)^2.\n\\]\nThe equality is a meromorphic identity; the group description includes\ndiagonal, vertical, half-period and infinity cases.\n",
+      "statement_sha256": "400a86e454c251a7c8a0469b0d1ca22eb0215e8e5c0e14e8dc5db75db2a2f09d"
+    },
+    {
+      "file": "chapters/23.tex",
+      "environment": "theorem",
+      "line": 7,
+      "labels": [
+        "d12:23-01"
+      ],
+      "family_ids": [
+        "D12.23.01"
+      ],
+      "statement_tex": "[A quantitative Bloch theorem]\\label{d12:23-01}\\family{D12.23.01}\nIf $f$ is holomorphic on $\\D$ and $f'(0)=1$, some disk $S\\subset\\D$\nis a univalence disk for $f$, and $f(S)$ contains a disk of radius\n$1/64$. More generally, on $B(a,R)$ its image contains a disk of\nradius $R|f'(a)|/64$ when $f'(a)\\ne0$, with a single-valued inverse\non that disk coming from a univalence disk.\n",
+      "statement_sha256": "2def098fee5e2cc807d234995309c648409dbdfe62a7c167dd5b3edf2089364c"
+    },
+    {
+      "file": "chapters/23.tex",
+      "environment": "lemma",
+      "line": 39,
+      "labels": [
+        "d12:23:auxiliary"
+      ],
+      "family_ids": [],
+      "statement_tex": "[An omitted lattice of auxiliary values]\\label{d12:23:auxiliary}\nIf a holomorphic $f$ on a simply connected domain omits zero and one,\nthere is a holomorphic $g$ there such that\n\\[\n                      f=-\\exp(\\pi\\iu\\cosh(2g)).\n\\]\nThe image of $g$ contains no disk of radius two.\n",
+      "statement_sha256": "cf49cc8534588e9cfdb809aa7935ea52991ecb8418bdb202ac8eda0fd67e9d42"
+    },
+    {
+      "file": "chapters/23.tex",
+      "environment": "theorem",
+      "line": 74,
+      "labels": [
+        "d12:23-02"
+      ],
+      "family_ids": [
+        "D12.23.02"
+      ],
+      "statement_tex": "[Little Picard]\\label{d12:23-02}\\family{D12.23.02}\nA nonconstant entire function omits at most one finite complex value.\n",
+      "statement_sha256": "45753e12c0f2b86ea2c3f183e7351b4aac730aceef2951c398d91ca075a9f898"
+    },
+    {
+      "file": "chapters/23.tex",
+      "environment": "theorem",
+      "line": 88,
+      "labels": [
+        "d12:23-03"
+      ],
+      "family_ids": [
+        "D12.23.03"
+      ],
+      "statement_tex": "[Schottky control]\\label{d12:23-03}\\family{D12.23.03}\nFor $A>0$ and $0\\le r<1$ there is an explicit finite constant\n$C(A,r)$ such that every holomorphic $f:\\D\\to\\C\\setminus\\{0,1\\}$\nwith $|f(0)|\\le A$ satisfies $|f(z)|\\le C(A,r)$ on $|z|\\le r$.\nOne choice is, with $A_*=\\max(2,A)$,\n\\[\n C_0=1+\\frac{\\log A_*}{2\\pi},\\quad K=\\sqrt{C_0}+\\sqrt{C_0+1},\n \\quad C(A,r)=1+\\exp\\left(\\pi\\exp\\left[\n             2\\left(\\log K+\\pi+\\frac{128r}{1-r}\\right)\\right]\\right).\n\\]\nScaling gives the corresponding bound on every proper subdisk of any\ndisk where the same omitted values and center bound hold.\n",
+      "statement_sha256": "f143586833c45550fcdecd0977bb67de4f6c01e710459bbc9415b89c762d819a"
+    },
+    {
+      "file": "chapters/23.tex",
+      "environment": "theorem",
+      "line": 122,
+      "labels": [
+        "d12:23-04"
+      ],
+      "family_ids": [
+        "D12.23.04"
+      ],
+      "statement_tex": "[Montel--Carath\\'eodory]\\label{d12:23-04}\\family{D12.23.04}\nOn a plane domain $\\Omega$, holomorphic functions omitting zero and\none form a spherically normal family. Every sequence has a subsequence\nconverging compactly in the spherical metric to a holomorphic function\nor to the constant infinity. The finite limit may be the constant zero\nor one.\n",
+      "statement_sha256": "74aa88490c89b3df003c963577d1054672b21b81a3be51005d9a6b245f7981d2"
+    },
+    {
+      "file": "chapters/23.tex",
+      "environment": "theorem",
+      "line": 154,
+      "labels": [
+        "d12:23-05"
+      ],
+      "family_ids": [
+        "D12.23.05"
+      ],
+      "statement_tex": "[Great Picard]\\label{d12:23-05}\\family{D12.23.05}\nIf a holomorphic function has an isolated essential singularity at\n$a$, then in every punctured neighborhood of $a$ it takes every finite\nvalue, with at most one exception, infinitely many times. More precisely,\nthere is at most one finite value whose preimage is finite in some\npunctured neighborhood of $a$.\n",
+      "statement_sha256": "c1f1135a717342da34c07860803bfcd6552b872ea627ad20080000082b5aa15d"
+    },
+    {
+      "file": "chapters/23.tex",
+      "environment": "theorem",
+      "line": 195,
+      "labels": [
+        "d12:23-06"
+      ],
+      "family_ids": [
+        "D12.23.06"
+      ],
+      "statement_tex": "[The sphere-valued versions]\\label{d12:23-06}\\family{D12.23.06}\nMeromorphic functions on a domain omitting three fixed distinct sphere\nvalues form a spherically normal family. A meromorphic function on\n$\\C$ omitting three sphere values is constant. At an isolated essential\nsingularity of a meromorphic map to $\\Chat$, all sphere values with\nat most two exceptions are taken infinitely often in every punctured\nneighborhood.\n",
+      "statement_sha256": "39fb7a981a9da0bd65effbc5322bf5ff32d3ae7a0da8f0deb18602fa0ab2d89f"
+    }
+  ]
+}

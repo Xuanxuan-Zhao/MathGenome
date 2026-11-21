@@ -1,0 +1,1778 @@
+{
+  "scope": "Source navigation only. These authored statements are not Lean specifications or acceptance certificates.",
+  "results": [
+    {
+      "kind": "definition",
+      "title": "The ambient spaces",
+      "labels": [
+        "d04:01:euclidean"
+      ],
+      "file": "chapters/01.tex",
+      "line": 7
+    },
+    {
+      "kind": "proposition",
+      "title": "Coordinate estimates",
+      "labels": [
+        "d04:01:coordinate-estimates"
+      ],
+      "file": "chapters/01.tex",
+      "line": 19
+    },
+    {
+      "kind": "definition",
+      "title": "Ambient and relative topology",
+      "labels": [
+        "d04:01:topology"
+      ],
+      "file": "chapters/01.tex",
+      "line": 43
+    },
+    {
+      "kind": "proposition",
+      "title": "Basic topological tests",
+      "labels": [
+        "d04:01:closure-tests"
+      ],
+      "file": "chapters/01.tex",
+      "line": 56
+    },
+    {
+      "kind": "definition",
+      "title": "Relative limits and continuity",
+      "labels": [
+        "d04:01:limits"
+      ],
+      "file": "chapters/01.tex",
+      "line": 82
+    },
+    {
+      "kind": "theorem",
+      "title": "Sequential and coordinate criteria",
+      "labels": [
+        "d04:01:sequential-continuity"
+      ],
+      "file": "chapters/01.tex",
+      "line": 93
+    },
+    {
+      "kind": "proposition",
+      "title": "Continuous operations",
+      "labels": [
+        "d04:01:continuous-operations"
+      ],
+      "file": "chapters/01.tex",
+      "line": 113
+    },
+    {
+      "kind": "example",
+      "title": "Approach sets matter",
+      "labels": [
+        "d04:01:path-tests"
+      ],
+      "file": "chapters/01.tex",
+      "line": 131
+    },
+    {
+      "kind": "definition",
+      "title": "Compactness",
+      "labels": [
+        "d04:01:compact-definition"
+      ],
+      "file": "chapters/01.tex",
+      "line": 144
+    },
+    {
+      "kind": "theorem",
+      "title": "Finite-dimensional compactness",
+      "labels": [
+        "d04:01:compactness"
+      ],
+      "file": "chapters/01.tex",
+      "line": 150
+    },
+    {
+      "kind": "lemma",
+      "title": "Lebesgue number",
+      "labels": [
+        "d04:01:lebesgue-number"
+      ],
+      "file": "chapters/01.tex",
+      "line": 177
+    },
+    {
+      "kind": "theorem",
+      "title": "Continuous maps on compact sets",
+      "labels": [
+        "d04:01:compact-continuity"
+      ],
+      "file": "chapters/01.tex",
+      "line": 191
+    },
+    {
+      "kind": "proposition",
+      "title": "Distance and separation",
+      "labels": [
+        "d04:01:distance"
+      ],
+      "file": "chapters/01.tex",
+      "line": 207
+    },
+    {
+      "kind": "theorem",
+      "title": "Equivalence of norms",
+      "labels": [
+        "d04:01:norm-equivalence"
+      ],
+      "file": "chapters/01.tex",
+      "line": 229
+    },
+    {
+      "kind": "definition",
+      "title": "Connectedness and paths",
+      "labels": [
+        "d04:01:connected-definition"
+      ],
+      "file": "chapters/01.tex",
+      "line": 250
+    },
+    {
+      "kind": "theorem",
+      "title": "Connectedness in Euclidean domains",
+      "labels": [
+        "d04:01:connectedness"
+      ],
+      "file": "chapters/01.tex",
+      "line": 261
+    },
+    {
+      "kind": "corollary",
+      "title": "Connected components of an open set",
+      "labels": [
+        "d04:01:components"
+      ],
+      "file": "chapters/01.tex",
+      "line": 284
+    },
+    {
+      "kind": "definition",
+      "title": "Operator norm",
+      "labels": [
+        "d04:01:operator-norm"
+      ],
+      "file": "chapters/01.tex",
+      "line": 306
+    },
+    {
+      "kind": "proposition",
+      "title": "Linear and multilinear coordinate bridges",
+      "labels": [
+        "d04:01:operator-estimates"
+      ],
+      "file": "chapters/01.tex",
+      "line": 313
+    },
+    {
+      "kind": "definition",
+      "title": "Directional, partial, and total derivatives",
+      "labels": [
+        "d04:02:derivative"
+      ],
+      "file": "chapters/02.tex",
+      "line": 11
+    },
+    {
+      "kind": "proposition",
+      "title": "Uniqueness, continuity, and coordinates",
+      "labels": [
+        "d04:02:derivative-bridge"
+      ],
+      "file": "chapters/02.tex",
+      "line": 29
+    },
+    {
+      "kind": "example",
+      "title": "Why the domain is part of the definition",
+      "labels": [
+        "d04:02:relative-derivative"
+      ],
+      "file": "chapters/02.tex",
+      "line": 58
+    },
+    {
+      "kind": "theorem",
+      "title": "Chain rule",
+      "labels": [
+        "d04:02:chain-rule"
+      ],
+      "file": "chapters/02.tex",
+      "line": 70
+    },
+    {
+      "kind": "proposition",
+      "title": "Linear and bilinear rules",
+      "labels": [
+        "d04:02:bilinear-rule"
+      ],
+      "file": "chapters/02.tex",
+      "line": 98
+    },
+    {
+      "kind": "proposition",
+      "title": "Scalar reciprocal and quotient",
+      "labels": [
+        "d04:02:quotient-rule"
+      ],
+      "file": "chapters/02.tex",
+      "line": 124
+    },
+    {
+      "kind": "theorem",
+      "title": "Segment mean-value estimate",
+      "labels": [
+        "d04:02:mean-value"
+      ],
+      "file": "chapters/02.tex",
+      "line": 149
+    },
+    {
+      "kind": "corollary",
+      "title": "Constancy and Lipschitz bounds",
+      "labels": [
+        "d04:02:zero-derivative"
+      ],
+      "file": "chapters/02.tex",
+      "line": 172
+    },
+    {
+      "kind": "theorem",
+      "title": "Continuous partial derivatives",
+      "labels": [
+        "d04:02:continuous-partials"
+      ],
+      "file": "chapters/02.tex",
+      "line": 184
+    },
+    {
+      "kind": "definition",
+      "title": "Finite differentiability classes",
+      "labels": [
+        "d04:02:cr"
+      ],
+      "file": "chapters/02.tex",
+      "line": 212
+    },
+    {
+      "kind": "proposition",
+      "title": "Coordinate criterion and closure of $C^r$",
+      "labels": [
+        "d04:02:cr-calculus"
+      ],
+      "file": "chapters/02.tex",
+      "line": 222
+    },
+    {
+      "kind": "proposition",
+      "title": "Integration along a segment",
+      "labels": [
+        "d04:02:segment-ftc"
+      ],
+      "file": "chapters/02.tex",
+      "line": 250
+    },
+    {
+      "kind": "example",
+      "title": "Partials, directions, and differentiability",
+      "labels": [
+        "d04:02:counterexamples"
+      ],
+      "file": "chapters/02.tex",
+      "line": 270
+    },
+    {
+      "kind": "definition",
+      "title": "Higher differentials",
+      "labels": [
+        "d04:03:higher-derivative"
+      ],
+      "file": "chapters/03.tex",
+      "line": 7
+    },
+    {
+      "kind": "theorem",
+      "title": "Pointwise crossed partials",
+      "labels": [
+        "d04:03:crossed-partials"
+      ],
+      "file": "chapters/03.tex",
+      "line": 24
+    },
+    {
+      "kind": "theorem",
+      "title": "Symmetry and coordinate representation",
+      "labels": [
+        "d04:03:symmetry"
+      ],
+      "file": "chapters/03.tex",
+      "line": 55
+    },
+    {
+      "kind": "lemma",
+      "title": "Derivatives of line restrictions and homogeneous terms",
+      "labels": [
+        "d04:03:line-restriction"
+      ],
+      "file": "chapters/03.tex",
+      "line": 82
+    },
+    {
+      "kind": "theorem",
+      "title": "Taylor--Peano formula",
+      "labels": [
+        "d04:03:taylor-peano"
+      ],
+      "file": "chapters/03.tex",
+      "line": 100
+    },
+    {
+      "kind": "theorem",
+      "title": "Integral remainder",
+      "labels": [
+        "d04:03:taylor-integral"
+      ],
+      "file": "chapters/03.tex",
+      "line": 129
+    },
+    {
+      "kind": "corollary",
+      "title": "Remainder bounds and scalar Lagrange form",
+      "labels": [
+        "d04:03:taylor-bounds"
+      ],
+      "file": "chapters/03.tex",
+      "line": 162
+    },
+    {
+      "kind": "theorem",
+      "title": "Compact-uniform Taylor estimate",
+      "labels": [
+        "d04:03:uniform-taylor"
+      ],
+      "file": "chapters/03.tex",
+      "line": 192
+    },
+    {
+      "kind": "definition",
+      "title": "Multi-indices and Taylor polynomials",
+      "labels": [
+        "d04:03:multi-index"
+      ],
+      "file": "chapters/03.tex",
+      "line": 217
+    },
+    {
+      "kind": "proposition",
+      "title": "The factorial bridge",
+      "labels": [
+        "d04:03:factorial-bridge"
+      ],
+      "file": "chapters/03.tex",
+      "line": 229
+    },
+    {
+      "kind": "proposition",
+      "title": "Finite Taylor arithmetic",
+      "labels": [
+        "d04:03:taylor-arithmetic"
+      ],
+      "file": "chapters/03.tex",
+      "line": 245
+    },
+    {
+      "kind": "example",
+      "title": "Noncommuting partials",
+      "labels": [
+        "d04:03:mixed-counterexample"
+      ],
+      "file": "chapters/03.tex",
+      "line": 288
+    },
+    {
+      "kind": "example",
+      "title": "Smoothness is not analyticity",
+      "labels": [
+        "d04:03:flat-example"
+      ],
+      "file": "chapters/03.tex",
+      "line": 305
+    },
+    {
+      "kind": "remark",
+      "title": "Finite order and scalar specialization",
+      "labels": [
+        "d04:03:scope"
+      ],
+      "file": "chapters/03.tex",
+      "line": 317
+    },
+    {
+      "kind": "theorem",
+      "title": "Quantitative stability of matrix inversion",
+      "labels": [
+        "d04:04:inverse-stability"
+      ],
+      "file": "chapters/04.tex",
+      "line": 7
+    },
+    {
+      "kind": "proposition",
+      "title": "Smooth matrix inversion and its differential",
+      "labels": [
+        "d04:04:matrix-inversion"
+      ],
+      "file": "chapters/04.tex",
+      "line": 38
+    },
+    {
+      "kind": "theorem",
+      "title": "Contraction principle with error bound",
+      "labels": [
+        "d04:04:contraction"
+      ],
+      "file": "chapters/04.tex",
+      "line": 61
+    },
+    {
+      "kind": "theorem",
+      "title": "Local inverse with finite regularity",
+      "labels": [
+        "d04:04:inverse-function"
+      ],
+      "file": "chapters/04.tex",
+      "line": 91
+    },
+    {
+      "kind": "corollary",
+      "title": "A global inverse when injectivity is supplied",
+      "labels": [
+        "d04:04:injective-local-diffeomorphism"
+      ],
+      "file": "chapters/04.tex",
+      "line": 166
+    },
+    {
+      "kind": "theorem",
+      "title": "Implicit function theorem",
+      "labels": [
+        "d04:04:implicit-function"
+      ],
+      "file": "chapters/04.tex",
+      "line": 180
+    },
+    {
+      "kind": "theorem",
+      "title": "Constant-rank normal form",
+      "labels": [
+        "d04:04:constant-rank"
+      ],
+      "file": "chapters/04.tex",
+      "line": 229
+    },
+    {
+      "kind": "theorem",
+      "title": "Regular levels, graph charts, and tangent kernels",
+      "labels": [
+        "d04:04:regular-level"
+      ],
+      "file": "chapters/04.tex",
+      "line": 268
+    },
+    {
+      "kind": "corollary",
+      "title": "Submersions and immersions",
+      "labels": [
+        "d04:04:submersion-immersion"
+      ],
+      "file": "chapters/04.tex",
+      "line": 306
+    },
+    {
+      "kind": "example",
+      "title": "Several distinct failures",
+      "labels": [
+        "d04:04:counterexamples"
+      ],
+      "file": "chapters/04.tex",
+      "line": 332
+    },
+    {
+      "kind": "definition",
+      "title": "Relative extrema and stationary points",
+      "labels": [
+        "d04:05:extrema"
+      ],
+      "file": "chapters/05.tex",
+      "line": 8
+    },
+    {
+      "kind": "theorem",
+      "title": "Existence and first-order necessity",
+      "labels": [
+        "d04:05:existence-fermat"
+      ],
+      "file": "chapters/05.tex",
+      "line": 21
+    },
+    {
+      "kind": "theorem",
+      "title": "Second-order interior tests",
+      "labels": [
+        "d04:05:second-order"
+      ],
+      "file": "chapters/05.tex",
+      "line": 40
+    },
+    {
+      "kind": "theorem",
+      "title": "Lagrange multipliers",
+      "labels": [
+        "d04:05:lagrange"
+      ],
+      "file": "chapters/05.tex",
+      "line": 84
+    },
+    {
+      "kind": "theorem",
+      "title": "Tangent second variation",
+      "labels": [
+        "d04:05:constrained-second-variation"
+      ],
+      "file": "chapters/05.tex",
+      "line": 114
+    },
+    {
+      "kind": "remark",
+      "title": "The multiplier is fixed during variation",
+      "labels": [
+        "d04:05:fixed-multiplier"
+      ],
+      "file": "chapters/05.tex",
+      "line": 151
+    },
+    {
+      "kind": "theorem",
+      "title": "Active-constraint first-order rule",
+      "labels": [
+        "d04:05:active-constraints"
+      ],
+      "file": "chapters/05.tex",
+      "line": 163
+    },
+    {
+      "kind": "theorem",
+      "title": "Critical-cone second-order tests",
+      "labels": [
+        "d04:05:critical-cone"
+      ],
+      "file": "chapters/05.tex",
+      "line": 202
+    },
+    {
+      "kind": "example",
+      "title": "Compact, singular, and active boundary cases",
+      "labels": [
+        "d04:05:worked-constraints"
+      ],
+      "file": "chapters/05.tex",
+      "line": 252
+    },
+    {
+      "kind": "theorem",
+      "title": "Differential tests for convexity",
+      "labels": [
+        "d04:05:convexity"
+      ],
+      "file": "chapters/05.tex",
+      "line": 290
+    },
+    {
+      "kind": "remark",
+      "title": "Scope of optimization",
+      "labels": [
+        "d04:05:optimization-scope"
+      ],
+      "file": "chapters/05.tex",
+      "line": 330
+    },
+    {
+      "kind": "theorem",
+      "title": "Bounded Morse lemma",
+      "labels": [
+        "d04:05:morse"
+      ],
+      "file": "chapters/05.tex",
+      "line": 344
+    },
+    {
+      "kind": "corollary",
+      "title": "The index is independent of the chosen coordinates",
+      "labels": [
+        "d04:05:morse-index"
+      ],
+      "file": "chapters/05.tex",
+      "line": 427
+    },
+    {
+      "kind": "definition",
+      "title": "",
+      "labels": [
+        "d04:06:boxes"
+      ],
+      "file": "chapters/06.tex",
+      "line": 9
+    },
+    {
+      "kind": "theorem",
+      "title": "Equivalent integral criteria",
+      "labels": [
+        "d04:06:criteria"
+      ],
+      "file": "chapters/06.tex",
+      "line": 20
+    },
+    {
+      "kind": "proposition",
+      "title": "Integral calculus on a box",
+      "labels": [
+        "d04:06:algebra"
+      ],
+      "file": "chapters/06.tex",
+      "line": 32
+    },
+    {
+      "kind": "definition",
+      "title": "",
+      "labels": [
+        "d04:06:null"
+      ],
+      "file": "chapters/06.tex",
+      "line": 53
+    },
+    {
+      "kind": "lemma",
+      "title": "Elementary cover facts",
+      "labels": [
+        "d04:06:cover-facts"
+      ],
+      "file": "chapters/06.tex",
+      "line": 60
+    },
+    {
+      "kind": "theorem",
+      "title": "Riemann's discontinuity criterion",
+      "labels": [
+        "d04:06:riemann-criterion"
+      ],
+      "file": "chapters/06.tex",
+      "line": 68
+    },
+    {
+      "kind": "corollary",
+      "title": "Continuity and changes on exceptional sets",
+      "labels": [
+        "d04:06:exceptions"
+      ],
+      "file": "chapters/06.tex",
+      "line": 83
+    },
+    {
+      "kind": "definition",
+      "title": "",
+      "labels": [
+        "d04:06:jordan"
+      ],
+      "file": "chapters/06.tex",
+      "line": 91
+    },
+    {
+      "kind": "proposition",
+      "title": "Boundary and extension tests",
+      "labels": [
+        "d04:06:region-test"
+      ],
+      "file": "chapters/06.tex",
+      "line": 95
+    },
+    {
+      "kind": "theorem",
+      "title": "Darboux Fubini",
+      "labels": [
+        "d04:06:fubini"
+      ],
+      "file": "chapters/06.tex",
+      "line": 104
+    },
+    {
+      "kind": "example",
+      "title": "An exceptional slice",
+      "labels": [
+        "d04:06:bad-slice"
+      ],
+      "file": "chapters/06.tex",
+      "line": 132
+    },
+    {
+      "kind": "proposition",
+      "title": "Size of the exceptional slice set",
+      "labels": [
+        "d04:06:exceptional-slices"
+      ],
+      "file": "chapters/06.tex",
+      "line": 136
+    },
+    {
+      "kind": "proposition",
+      "title": "Slicing and geometric integrals",
+      "labels": [
+        "d04:06:cavalieri"
+      ],
+      "file": "chapters/06.tex",
+      "line": 144
+    },
+    {
+      "kind": "definition",
+      "title": "",
+      "labels": [
+        "d04:06:improper-definition"
+      ],
+      "file": "chapters/06.tex",
+      "line": 162
+    },
+    {
+      "kind": "theorem",
+      "title": "Absolute convergence and exhaustions",
+      "labels": [
+        "d04:06:absolute-exhaustion"
+      ],
+      "file": "chapters/06.tex",
+      "line": 170
+    },
+    {
+      "kind": "example",
+      "title": "Conditional order dependence",
+      "labels": [
+        "d04:06:conditional-order"
+      ],
+      "file": "chapters/06.tex",
+      "line": 182
+    },
+    {
+      "kind": "proposition",
+      "title": "Explicit Riemann--Lebesgue bridge",
+      "labels": [
+        "d04:06:measure-bridge"
+      ],
+      "file": "chapters/06.tex",
+      "line": 189
+    },
+    {
+      "kind": "lemma",
+      "title": "Finite continuous localization",
+      "labels": [
+        "d04:07:localization"
+      ],
+      "file": "chapters/07.tex",
+      "line": 9
+    },
+    {
+      "kind": "lemma",
+      "title": "Changing one coordinate",
+      "labels": [
+        "d04:07:one-coordinate"
+      ],
+      "file": "chapters/07.tex",
+      "line": 16
+    },
+    {
+      "kind": "lemma",
+      "title": "Composition and invertible affine maps",
+      "labels": [
+        "d04:07:affine"
+      ],
+      "file": "chapters/07.tex",
+      "line": 38
+    },
+    {
+      "kind": "theorem",
+      "title": "Continuous substitution for a $C^1$ diffeomorphism",
+      "labels": [
+        "d04:07:continuous-substitution"
+      ],
+      "file": "chapters/07.tex",
+      "line": 45
+    },
+    {
+      "kind": "lemma",
+      "title": "$C^1$ maps preserve null sets in equal dimensions",
+      "labels": [
+        "d04:07:null-preservation"
+      ],
+      "file": "chapters/07.tex",
+      "line": 69
+    },
+    {
+      "kind": "lemma",
+      "title": "Continuous upper and lower approximations",
+      "labels": [
+        "d04:07:sandwich"
+      ],
+      "file": "chapters/07.tex",
+      "line": 78
+    },
+    {
+      "kind": "theorem",
+      "title": "Full compact-supported Riemann substitution",
+      "labels": [
+        "d04:07:substitution"
+      ],
+      "file": "chapters/07.tex",
+      "line": 95
+    },
+    {
+      "kind": "corollary",
+      "title": "Bounded regions",
+      "labels": [
+        "d04:07:regions"
+      ],
+      "file": "chapters/07.tex",
+      "line": 117
+    },
+    {
+      "kind": "corollary",
+      "title": "Linear volume scaling",
+      "labels": [
+        "d04:07:linear-volume"
+      ],
+      "file": "chapters/07.tex",
+      "line": 129
+    },
+    {
+      "kind": "proposition",
+      "title": "Signs and oriented top forms",
+      "labels": [
+        "d04:07:orientation"
+      ],
+      "file": "chapters/07.tex",
+      "line": 141
+    },
+    {
+      "kind": "proposition",
+      "title": "Geometric coordinate formulas",
+      "labels": [
+        "d04:07:coordinates"
+      ],
+      "file": "chapters/07.tex",
+      "line": 155
+    },
+    {
+      "kind": "example",
+      "title": "Volumes and nonorthogonal systems",
+      "labels": [
+        "d04:07:volumes"
+      ],
+      "file": "chapters/07.tex",
+      "line": 180
+    },
+    {
+      "kind": "proposition",
+      "title": "Finite sheet counting",
+      "labels": [
+        "d04:07:multiplicity"
+      ],
+      "file": "chapters/07.tex",
+      "line": 185
+    },
+    {
+      "kind": "example",
+      "title": "A double angular traversal",
+      "labels": [
+        "d04:07:double-angle"
+      ],
+      "file": "chapters/07.tex",
+      "line": 197
+    },
+    {
+      "kind": "theorem",
+      "title": "Absolutely convergent improper substitution",
+      "labels": [
+        "d04:07:improper"
+      ],
+      "file": "chapters/07.tex",
+      "line": 202
+    },
+    {
+      "kind": "theorem",
+      "title": "Continuity and uniform limits",
+      "labels": [
+        "d04:08:continuity"
+      ],
+      "file": "chapters/08.tex",
+      "line": 9
+    },
+    {
+      "kind": "theorem",
+      "title": "A total derivative under a proper integral",
+      "labels": [
+        "d04:08:proper-derivative"
+      ],
+      "file": "chapters/08.tex",
+      "line": 25
+    },
+    {
+      "kind": "corollary",
+      "title": "Finite repeated differentiation",
+      "labels": [
+        "d04:08:repeated"
+      ],
+      "file": "chapters/08.tex",
+      "line": 50
+    },
+    {
+      "kind": "example",
+      "title": "Exponential moments",
+      "labels": [
+        "d04:08:exponential-moments"
+      ],
+      "file": "chapters/08.tex",
+      "line": 62
+    },
+    {
+      "kind": "theorem",
+      "title": "Leibniz rule with vector parameters",
+      "labels": [
+        "d04:08:endpoints"
+      ],
+      "file": "chapters/08.tex",
+      "line": 74
+    },
+    {
+      "kind": "lemma",
+      "title": "Derivative of a positive Jacobian",
+      "labels": [
+        "d04:08:jacobian-derivative"
+      ],
+      "file": "chapters/08.tex",
+      "line": 91
+    },
+    {
+      "kind": "theorem",
+      "title": "A bounded moving-domain formula",
+      "labels": [
+        "d04:08:moving-domain"
+      ],
+      "file": "chapters/08.tex",
+      "line": 104
+    },
+    {
+      "kind": "example",
+      "title": "Expanding a region",
+      "labels": [
+        "d04:08:expansion"
+      ],
+      "file": "chapters/08.tex",
+      "line": 133
+    },
+    {
+      "kind": "definition",
+      "title": "",
+      "labels": [
+        "d04:08:uniform-tails"
+      ],
+      "file": "chapters/08.tex",
+      "line": 144
+    },
+    {
+      "kind": "theorem",
+      "title": "Uniform improper limits and continuity",
+      "labels": [
+        "d04:08:improper-continuity"
+      ],
+      "file": "chapters/08.tex",
+      "line": 153
+    },
+    {
+      "kind": "lemma",
+      "title": "A uniform $C^1$ limit with vector parameters",
+      "labels": [
+        "d04:08:c1-limit"
+      ],
+      "file": "chapters/08.tex",
+      "line": 164
+    },
+    {
+      "kind": "theorem",
+      "title": "Improper differentiation from derivative tails",
+      "labels": [
+        "d04:08:improper-derivative"
+      ],
+      "file": "chapters/08.tex",
+      "line": 177
+    },
+    {
+      "kind": "proposition",
+      "title": "An improper interchange justified by uniform tails",
+      "labels": [
+        "d04:08:improper-interchange"
+      ],
+      "file": "chapters/08.tex",
+      "line": 197
+    },
+    {
+      "kind": "example",
+      "title": "Exponential tails",
+      "labels": [
+        "d04:08:exponential-tail"
+      ],
+      "file": "chapters/08.tex",
+      "line": 209
+    },
+    {
+      "kind": "example",
+      "title": "Pointwise convergence on a proper interval",
+      "labels": [
+        "d04:08:proper-counterexample"
+      ],
+      "file": "chapters/08.tex",
+      "line": 219
+    },
+    {
+      "kind": "example",
+      "title": "Escape of mass at an improper boundary",
+      "labels": [
+        "d04:08:escape"
+      ],
+      "file": "chapters/08.tex",
+      "line": 223
+    },
+    {
+      "kind": "example",
+      "title": "A translated center and its tails",
+      "labels": [
+        "d04:08:moving-singularity"
+      ],
+      "file": "chapters/08.tex",
+      "line": 227
+    },
+    {
+      "kind": "remark",
+      "title": "The measure alternative and the finite-dimensional scope",
+      "labels": [
+        "d04:08:measure-alternative"
+      ],
+      "file": "chapters/08.tex",
+      "line": 231
+    },
+    {
+      "kind": "definition",
+      "title": "Paths and polygonal length",
+      "labels": [
+        "d04:09:paths"
+      ],
+      "file": "chapters/09.tex",
+      "line": 7
+    },
+    {
+      "kind": "theorem",
+      "title": "Length equals the speed integral",
+      "labels": [
+        "d04:09:length"
+      ],
+      "file": "chapters/09.tex",
+      "line": 24
+    },
+    {
+      "kind": "proposition",
+      "title": "Arc-length parametrization",
+      "labels": [
+        "d04:09:arclength"
+      ],
+      "file": "chapters/09.tex",
+      "line": 53
+    },
+    {
+      "kind": "definition",
+      "title": "Two different line integrals",
+      "labels": [
+        "d04:09:integrals"
+      ],
+      "file": "chapters/09.tex",
+      "line": 73
+    },
+    {
+      "kind": "theorem",
+      "title": "Reparametrization",
+      "labels": [
+        "d04:09:reparametrize"
+      ],
+      "file": "chapters/09.tex",
+      "line": 92
+    },
+    {
+      "kind": "proposition",
+      "title": "Reversal, concatenation and estimates",
+      "labels": [
+        "d04:09:path-algebra"
+      ],
+      "file": "chapters/09.tex",
+      "line": 121
+    },
+    {
+      "kind": "theorem",
+      "title": "Gradient integral",
+      "labels": [
+        "d04:09:gradient-integral"
+      ],
+      "file": "chapters/09.tex",
+      "line": 144
+    },
+    {
+      "kind": "example",
+      "title": "Multiplicity changes both kinds of integral",
+      "labels": [
+        "d04:09:circle"
+      ],
+      "file": "chapters/09.tex",
+      "line": 162
+    },
+    {
+      "kind": "example",
+      "title": "A helical arc",
+      "labels": [
+        "d04:09:helix"
+      ],
+      "file": "chapters/09.tex",
+      "line": 175
+    },
+    {
+      "kind": "definition",
+      "title": "Regular patches",
+      "labels": [
+        "d04:10:patch"
+      ],
+      "file": "chapters/10.tex",
+      "line": 7
+    },
+    {
+      "kind": "definition",
+      "title": "Area integral",
+      "labels": [
+        "d04:10:area"
+      ],
+      "file": "chapters/10.tex",
+      "line": 22
+    },
+    {
+      "kind": "proposition",
+      "title": "Gram and cross-product formulas",
+      "labels": [
+        "d04:10:gram"
+      ],
+      "file": "chapters/10.tex",
+      "line": 36
+    },
+    {
+      "kind": "theorem",
+      "title": "Actual reparametrization invariance",
+      "labels": [
+        "d04:10:reparametrize"
+      ],
+      "file": "chapters/10.tex",
+      "line": 60
+    },
+    {
+      "kind": "proposition",
+      "title": "Overlapping surface patches",
+      "labels": [
+        "d04:10:assembly"
+      ],
+      "file": "chapters/10.tex",
+      "line": 97
+    },
+    {
+      "kind": "lemma",
+      "title": "Negligible seams",
+      "labels": [
+        "d04:10:seams"
+      ],
+      "file": "chapters/10.tex",
+      "line": 117
+    },
+    {
+      "kind": "example",
+      "title": "The Mobius strip",
+      "labels": [
+        "d04:10:mobius"
+      ],
+      "file": "chapters/10.tex",
+      "line": 140
+    },
+    {
+      "kind": "example",
+      "title": "Graphs",
+      "labels": [
+        "d04:10:graph"
+      ],
+      "file": "chapters/10.tex",
+      "line": 166
+    },
+    {
+      "kind": "example",
+      "title": "Sphere and flux",
+      "labels": [
+        "d04:10:sphere"
+      ],
+      "file": "chapters/10.tex",
+      "line": 183
+    },
+    {
+      "kind": "example",
+      "title": "Ruled surfaces",
+      "labels": [
+        "d04:10:ruled"
+      ],
+      "file": "chapters/10.tex",
+      "line": 206
+    },
+    {
+      "kind": "definition",
+      "title": "Gradient, divergence and curl",
+      "labels": [
+        "d04:11:operators"
+      ],
+      "file": "chapters/11.tex",
+      "line": 7
+    },
+    {
+      "kind": "proposition",
+      "title": "Product and differential identities",
+      "labels": [
+        "d04:11:identities"
+      ],
+      "file": "chapters/11.tex",
+      "line": 26
+    },
+    {
+      "kind": "theorem",
+      "title": "Potential, path independence and periods",
+      "labels": [
+        "d04:11:potential"
+      ],
+      "file": "chapters/11.tex",
+      "line": 73
+    },
+    {
+      "kind": "corollary",
+      "title": "Local and star-shaped potentials",
+      "labels": [
+        "d04:11:local-potential"
+      ],
+      "file": "chapters/11.tex",
+      "line": 112
+    },
+    {
+      "kind": "theorem",
+      "title": "The simply connected one-form case",
+      "labels": [
+        "d04:11:simply-connected"
+      ],
+      "file": "chapters/11.tex",
+      "line": 133
+    },
+    {
+      "kind": "example",
+      "title": "A domain matters",
+      "labels": [
+        "d04:11:angular-obstruction"
+      ],
+      "file": "chapters/11.tex",
+      "line": 169
+    },
+    {
+      "kind": "theorem",
+      "title": "Vector potential on a star-shaped domain",
+      "labels": [
+        "d04:11:vector-potential"
+      ],
+      "file": "chapters/11.tex",
+      "line": 181
+    },
+    {
+      "kind": "example",
+      "title": "Simply connected is insufficient in degree two",
+      "labels": [
+        "d04:11:punctured-three"
+      ],
+      "file": "chapters/11.tex",
+      "line": 206
+    },
+    {
+      "kind": "theorem",
+      "title": "Orthogonal coordinate formulas",
+      "labels": [
+        "d04:11:orthogonal"
+      ],
+      "file": "chapters/11.tex",
+      "line": 227
+    },
+    {
+      "kind": "example",
+      "title": "Cylindrical and spherical factors",
+      "labels": [
+        "d04:11:coordinates"
+      ],
+      "file": "chapters/11.tex",
+      "line": 269
+    },
+    {
+      "kind": "definition",
+      "title": "Classical regular domains",
+      "labels": [
+        "d04:12:domains"
+      ],
+      "file": "chapters/12.tex",
+      "line": 12
+    },
+    {
+      "kind": "lemma",
+      "title": "Regular-domain and Riemann interfaces",
+      "labels": [
+        "d04:12:region-interface"
+      ],
+      "file": "chapters/12.tex",
+      "line": 26
+    },
+    {
+      "kind": "theorem",
+      "title": "Green circulation and flux",
+      "labels": [
+        "d04:12:green"
+      ],
+      "file": "chapters/12.tex",
+      "line": 71
+    },
+    {
+      "kind": "example",
+      "title": "Orientation around holes",
+      "labels": [
+        "d04:12:annulus"
+      ],
+      "file": "chapters/12.tex",
+      "line": 101
+    },
+    {
+      "kind": "theorem",
+      "title": "Gauss divergence theorem",
+      "labels": [
+        "d04:12:gauss"
+      ],
+      "file": "chapters/12.tex",
+      "line": 115
+    },
+    {
+      "kind": "theorem",
+      "title": "Classical Stokes for a surface",
+      "labels": [
+        "d04:12:surface-stokes"
+      ],
+      "file": "chapters/12.tex",
+      "line": 148
+    },
+    {
+      "kind": "example",
+      "title": "Disk, hemisphere and box signs",
+      "labels": [
+        "d04:12:signs"
+      ],
+      "file": "chapters/12.tex",
+      "line": 180
+    },
+    {
+      "kind": "corollary",
+      "title": "Integration by parts",
+      "labels": [
+        "d04:12:parts"
+      ],
+      "file": "chapters/12.tex",
+      "line": 196
+    },
+    {
+      "kind": "example",
+      "title": "Simple exact values",
+      "labels": [
+        "d04:12:calibration"
+      ],
+      "file": "chapters/12.tex",
+      "line": 231
+    },
+    {
+      "kind": "corollary",
+      "title": "Local flux and circulation densities",
+      "labels": [
+        "d04:12:local-meaning"
+      ],
+      "file": "chapters/12.tex",
+      "line": 244
+    },
+    {
+      "kind": "definition",
+      "title": "Normalized covectors and forms",
+      "labels": [
+        "d04:13:forms"
+      ],
+      "file": "chapters/13.tex",
+      "line": 12
+    },
+    {
+      "kind": "proposition",
+      "title": "Basis and wedge normalization",
+      "labels": [
+        "d04:13:wedge"
+      ],
+      "file": "chapters/13.tex",
+      "line": 23
+    },
+    {
+      "kind": "definition",
+      "title": "Pullback",
+      "labels": [
+        "d04:13:pullback"
+      ],
+      "file": "chapters/13.tex",
+      "line": 55
+    },
+    {
+      "kind": "proposition",
+      "title": "Pullback calculus",
+      "labels": [
+        "d04:13:pullback-rules"
+      ],
+      "file": "chapters/13.tex",
+      "line": 64
+    },
+    {
+      "kind": "definition",
+      "title": "Exterior derivative",
+      "labels": [
+        "d04:13:exterior-derivative"
+      ],
+      "file": "chapters/13.tex",
+      "line": 85
+    },
+    {
+      "kind": "theorem",
+      "title": "Differential identities",
+      "labels": [
+        "d04:13:d-rules"
+      ],
+      "file": "chapters/13.tex",
+      "line": 95
+    },
+    {
+      "kind": "remark",
+      "title": "",
+      "labels": [
+        "d04:13:regularity-warning"
+      ],
+      "file": "chapters/13.tex",
+      "line": 120
+    },
+    {
+      "kind": "definition",
+      "title": "Closed and exact",
+      "labels": [
+        "d04:13:closed-exact"
+      ],
+      "file": "chapters/13.tex",
+      "line": 130
+    },
+    {
+      "kind": "theorem",
+      "title": "Euclidean Poincare lemma",
+      "labels": [
+        "d04:13:poincare"
+      ],
+      "file": "chapters/13.tex",
+      "line": 144
+    },
+    {
+      "kind": "example",
+      "title": "",
+      "labels": [
+        "d04:13:homotopy-example"
+      ],
+      "file": "chapters/13.tex",
+      "line": 190
+    },
+    {
+      "kind": "proposition",
+      "title": "The oriented Euclidean dictionary",
+      "labels": [
+        "d04:13:dictionary"
+      ],
+      "file": "chapters/13.tex",
+      "line": 198
+    },
+    {
+      "kind": "example",
+      "title": "A closed form that has no global primitive",
+      "labels": [
+        "d04:13:angular"
+      ],
+      "file": "chapters/13.tex",
+      "line": 225
+    },
+    {
+      "kind": "definition",
+      "title": "Embedded charts",
+      "labels": [
+        "d04:14:embedded"
+      ],
+      "file": "chapters/14.tex",
+      "line": 12
+    },
+    {
+      "kind": "theorem",
+      "title": "Local graph and transition theorem",
+      "labels": [
+        "d04:14:charts"
+      ],
+      "file": "chapters/14.tex",
+      "line": 25
+    },
+    {
+      "kind": "proposition",
+      "title": "Regular level sets and graphs",
+      "labels": [
+        "d04:14:level"
+      ],
+      "file": "chapters/14.tex",
+      "line": 66
+    },
+    {
+      "kind": "proposition",
+      "title": "Tangent spaces",
+      "labels": [
+        "d04:14:tangent"
+      ],
+      "file": "chapters/14.tex",
+      "line": 81
+    },
+    {
+      "kind": "remark",
+      "title": "Immersions and embeddings",
+      "labels": [
+        "d04:14:immersion"
+      ],
+      "file": "chapters/14.tex",
+      "line": 99
+    },
+    {
+      "kind": "definition",
+      "title": "Orientation",
+      "labels": [
+        "d04:14:orientation"
+      ],
+      "file": "chapters/14.tex",
+      "line": 114
+    },
+    {
+      "kind": "proposition",
+      "title": "Outward-first boundary orientation",
+      "labels": [
+        "d04:14:boundary-orientation"
+      ],
+      "file": "chapters/14.tex",
+      "line": 131
+    },
+    {
+      "kind": "proposition",
+      "title": "Orientations and densities",
+      "labels": [
+        "d04:14:metric-density"
+      ],
+      "file": "chapters/14.tex",
+      "line": 159
+    },
+    {
+      "kind": "lemma",
+      "title": "Explicit Euclidean cutoffs",
+      "labels": [
+        "d04:14:bumps"
+      ],
+      "file": "chapters/14.tex",
+      "line": 187
+    },
+    {
+      "kind": "theorem",
+      "title": "Finite partition near a compact set",
+      "labels": [
+        "d04:14:partition"
+      ],
+      "file": "chapters/14.tex",
+      "line": 207
+    },
+    {
+      "kind": "proposition",
+      "title": "An approximation tool",
+      "labels": [
+        "d04:14:mollify"
+      ],
+      "file": "chapters/14.tex",
+      "line": 235
+    },
+    {
+      "kind": "remark",
+      "title": "",
+      "labels": [
+        "d04:14:scope"
+      ],
+      "file": "chapters/14.tex",
+      "line": 264
+    },
+    {
+      "kind": "definition",
+      "title": "Cells and their integrals",
+      "labels": [
+        "d04:15:cells"
+      ],
+      "file": "chapters/15.tex",
+      "line": 7
+    },
+    {
+      "kind": "proposition",
+      "title": "Boundary cancellation",
+      "labels": [
+        "d04:15:boundary-square"
+      ],
+      "file": "chapters/15.tex",
+      "line": 26
+    },
+    {
+      "kind": "theorem",
+      "title": "Stokes on a $C^2$ cell",
+      "labels": [
+        "d04:15:cell-stokes"
+      ],
+      "file": "chapters/15.tex",
+      "line": 42
+    },
+    {
+      "kind": "corollary",
+      "title": "Closedness with a $C^1$ primitive",
+      "labels": [
+        "d04:15:exact-closed-c1"
+      ],
+      "file": "chapters/15.tex",
+      "line": 72
+    },
+    {
+      "kind": "theorem",
+      "title": "Stokes on a $C^1$ cell",
+      "labels": [
+        "d04:15:cell-stokes-c1"
+      ],
+      "file": "chapters/15.tex",
+      "line": 95
+    },
+    {
+      "kind": "lemma",
+      "title": "Directed substitution",
+      "labels": [
+        "d04:15:directed-substitution"
+      ],
+      "file": "chapters/15.tex",
+      "line": 119
+    },
+    {
+      "kind": "definition",
+      "title": "Integration on an embedded manifold",
+      "labels": [
+        "d04:15:manifold-integral"
+      ],
+      "file": "chapters/15.tex",
+      "line": 149
+    },
+    {
+      "kind": "theorem",
+      "title": "Independence of charts and weights",
+      "labels": [
+        "d04:15:independence"
+      ],
+      "file": "chapters/15.tex",
+      "line": 167
+    },
+    {
+      "kind": "proposition",
+      "title": "Intrinsic forms at finite regularity",
+      "labels": [
+        "d04:15:intrinsic-d"
+      ],
+      "file": "chapters/15.tex",
+      "line": 194
+    },
+    {
+      "kind": "theorem",
+      "title": "Generalized Stokes",
+      "labels": [
+        "d04:15:stokes"
+      ],
+      "file": "chapters/15.tex",
+      "line": 213
+    },
+    {
+      "kind": "remark",
+      "title": "The classical interfaces",
+      "labels": [
+        "d04:15:classical-bridge"
+      ],
+      "file": "chapters/15.tex",
+      "line": 290
+    },
+    {
+      "kind": "theorem",
+      "title": "Finite piecewise Stokes",
+      "labels": [
+        "d04:15:piecewise"
+      ],
+      "file": "chapters/15.tex",
+      "line": 304
+    },
+    {
+      "kind": "remark",
+      "title": "",
+      "labels": [
+        "d04:15:corners-scope"
+      ],
+      "file": "chapters/15.tex",
+      "line": 335
+    },
+    {
+      "kind": "corollary",
+      "title": "Exact integrals on cycles",
+      "labels": [
+        "d04:15:exact-cycles"
+      ],
+      "file": "chapters/15.tex",
+      "line": 344
+    },
+    {
+      "kind": "example",
+      "title": "A higher-degree obstruction",
+      "labels": [
+        "d04:15:radial-obstruction"
+      ],
+      "file": "chapters/15.tex",
+      "line": 354
+    }
+  ]
+}

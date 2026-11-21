@@ -1,0 +1,7 @@
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch02.ClosedPastingCounterexample
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch02.ContinuityTests
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch02.EmbeddingsAndCharacteristicMaps
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch02.LocallyFinitePasting
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch02.MapCounterexamples
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch02.Pasting
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch02.SeparateContinuityCounterexample

@@ -1,0 +1,505 @@
+\chapter{Double Complexes and Tensor Calculations}
+\label{ch:double-complexes}
+
+A double complex has two filtrations on its total complex. The two spectral
+sequences compute the same total cohomology under a common finiteness
+hypothesis, but the two filtrations on that cohomology need not coincide.
+We use cohomological indices for the general constructions and switch to
+homological indices for the tensor calculations. The sign and indexing
+conventions below specify how to pass between the two.
+
+\section{Totalization and its filtrations}
+
+\begin{proposition}[Totalization and interchange of the axes]
+\label{res:B01}
+Let \(C^{p,q}\), \(p,q\in\mathbb Z\), be objects of an additive category
+with differentials \(d_h\colon C^{p,q}\to C^{p+1,q}\) and
+\(d_v\colon C^{p,q}\to C^{p,q+1}\). Suppose that
+\(d_h^2=d_v^2=0\) and that the horizontal and vertical squares commute.
+On \(C^{p,q}\) define
+\[
+    D=d_h+(-1)^p d_v .
+\]
+This gives a differential on the direct-sum totalization when the requisite
+diagonal coproducts exist, and on the product totalization when the
+diagonal products exist. Multiplying \(d_v\) by \((-1)^p\) changes to the
+anticommuting convention and leaves \(D\) unchanged. The transposed double
+complex \(C^{\mathrm t}\) has \((C^{\mathrm t})^{q,p}=C^{p,q}\) with its
+horizontal and vertical differentials interchanged. Multiplication by
+\((-1)^{pq}\) from \(C^{p,q}\) to \((C^{\mathrm t})^{q,p}\) induces a
+natural isomorphism of total complexes in either totalization.
+\end{proposition}
+
+\begin{proof}
+Write \(a_{p,q}\) for the injection of a summand and \(b_{p,q}\) for the
+projection to a factor, with the total degree specified by \(p+q\).
+For the direct sum, the outgoing differential of each summand is the
+finite sum
+\[
+  D a_{p,q}=a_{p+1,q}d_h+(-1)^p a_{p,q+1}d_v.
+\]
+The coproduct property gives a unique map with these formulas. For
+the product, the incoming map to each output factor is
+\[
+  b_{p,q}D=d_h b_{p-1,q}+(-1)^p d_v b_{p,q-1}.
+\]
+Only two input coordinates occur, so the product property again gives
+a map. Composing twice and collecting the components gives the two
+square terms \(d_h^2,d_v^2\) and the mixed terms
+\[
+     (-1)^{p+1}d_vd_h+(-1)^p d_hd_v
+\]
+on input bidegree \((p,q)\). They all vanish. The same finite component
+calculation applies to the product by projecting to an output factor.
+With \(\widetilde d_v=(-1)^p d_v\), the mixed terms express
+\(d_h\widetilde d_v+\widetilde d_vd_h=0\). Rescaling by \((-1)^p\)
+again recovers the commuting convention.
+
+On the transposed totalization the differential, in the original
+coordinates, is \(d_v+(-1)^q d_h\). If \(T\) multiplies the input
+\(C^{p,q}\) by \((-1)^{pq}\), the coefficients of \(d_h\) and \(d_v\)
+in \(TD\) are respectively
+\((-1)^{(p+1)q}\) and \((-1)^p(-1)^{p(q+1)}\).
+These agree with the coefficients of \(d_h\) and \(d_v\) in
+\(D^{\mathrm t}T\). The formula defines an inverse by the same
+multipliers and reindexing in the opposite direction. These formulas
+commute with maps preserving both differential directions.
+\end{proof}
+
+The signs specialize to the tensor total complex: when both differentials
+lower degree, the same formula \(D=d_h+(-1)^p d_v\) works, since replacing
+\(p+1\) by \(p-1\) does not change the parity calculation.
+See \cite[Sections 5.1 and 5.6]{weibel} and
+\cite[Chapter 12, Sections 18 and 25]{stacks-homology}.
+
+\begin{lemma}[Finite diagonals and the column and row filtrations]
+\label{res:B02}
+Let \(C\) be a double cochain complex in an abelian category and suppose
+that for each \(n\) the set
+\[
+    I_n=\{(p,q)\colon p+q=n,\ C^{p,q}\ne 0\}
+\]
+is finite. The canonical map from the diagonal direct sum to the diagonal
+product is an isomorphism of complexes. Write \(K=\operatorname{Tot}C\)
+for their common value. There are two natural decreasing filtrations by
+subcomplexes
+\begin{align*}
+    F_{\mathrm c}^{a} K^n
+       &=\bigoplus_{\substack{p+q=n\\p\ge a}} C^{p,q},\\
+    F_{\mathrm r}^{a} K^n
+       &=\bigoplus_{\substack{p+q=n\\q\ge a}} C^{p,q}.
+\end{align*}
+Each filtration is finite in every degree. In particular, these statements
+apply when \(C^{p,q}=0\) unless \(p\ge p_0\) and \(q\ge q_0\) for fixed
+integers \(p_0,q_0\).
+\end{lemma}
+
+\begin{proof}
+The nonzero factors are indexed by \(I_n\), and the remaining zero factors
+may be removed by the universal properties of products and coproducts.
+The diagonal comparison is the biproduct isomorphism whose \((i,j)\)-entry
+is the identity for \(i=j\) and zero otherwise. The component formulas in
+Proposition~\ref{res:B01} show that these comparisons intertwine the
+differentials. In the column filtration, \(d_h\) increases the column
+and \(d_v\) preserves it, so both carry the indicated summands into the
+corresponding subobject in degree \(n+1\). In the row filtration, \(d_v\)
+increases the row and \(d_h\) preserves it. Each resulting inclusion is
+the split inclusion of a finite sub-biproduct in a given degree; the
+splittings need not be maps of complexes.
+
+For a nonzero diagonal, a threshold at most the minimum relevant index
+gives the whole degree, and a threshold greater than the maximum gives
+zero. The zero diagonal satisfies both bounds. For the translated
+first quadrant, a nonzero summand in degree \(n\) must have
+\(p_0\le p\le n-q_0\). This gives the required finiteness and allows
+the bounds to depend on \(n\).
+\end{proof}
+
+Outside the finite-diagonal setting the two totalizations can have
+different cohomology. For example, take \(C^{p,-p}=k\) for every integer
+\(p\), with \(k\) a nonzero field, and all other terms and differentials
+zero. The diagonal comparison on \(H^0\) is the inclusion of finite
+support sequences in all sequences. The convergence statements below
+use exactly the finite-diagonal hypothesis unless another bound is
+explicitly given.
+
+\section{The two spectral sequences}
+
+Use \(H_v^q(C^{p,*})\) for the cohomology of the vertical complex in
+column \(p\). The horizontal maps are maps of these unsigned vertical
+complexes and induce a differential on \(p\mapsto H_v^q(C^{p,*})\).
+The notation \(H_h^p H_v^q(C)\) refers to its degree \(p\) cohomology.
+The notation for the opposite order is defined by transposing the axes.
+
+\begin{proposition}[The first pages and their signs]
+\label{res:B03}
+Suppose \(C\) satisfies Lemma~\ref{res:B02}. For the column filtration
+on \(\operatorname{Tot}C\) the first pages, in cohomological convention,
+are
+\begin{align*}
+    E_{0,\mathrm c}^{p,q}&=C^{p,q},
+        &d_{0,\mathrm c}^{p,q}&=(-1)^p d_v,\\
+    E_{1,\mathrm c}^{p,q}&=H_v^q(C^{p,*}),
+        &d_{1,\mathrm c}^{p,q}&=H_v^q(d_h),\\
+    E_{2,\mathrm c}^{p,q}&=H_h^p H_v^q(C).
+\end{align*}
+For the row filtration use \(p\) for filtration degree, so that it is
+the original row index. Through the signed interchange of
+Proposition~\ref{res:B01} the row pages identify with the column pages
+of \(C^{\mathrm t}\). In particular
+\[
+    E_{1,\mathrm r}^{p,q}\simeq H_h^q(C^{*,p}),
+    \qquad
+    E_{2,\mathrm r}^{p,q}\simeq H_v^p H_h^q(C).
+\]
+These identifications are natural for maps of double complexes.
+\end{proposition}
+
+\begin{proof}
+In total degree \(p+q\) the quotient of the column terms at thresholds
+\(p,p+1\) is the biproduct factor \(C^{p,q}\). The horizontal term of \(D\)
+lands in the subobject being quotiented out, so the associated graded
+differential is \((-1)^p d_v\). Multiplication of a differential by
+\(-1\) leaves its kernel and image unchanged, so there is a canonical
+identification of the first page with the unsigned vertical cohomology.
+For a representative in column \(p\) that is vertically closed, its
+total differential is \(d_h\) of the representative, now in column
+\(p+1\). The commutation of the unsigned differentials implies that
+\(d_h\) takes vertical cycles to cycles and vertical boundaries to
+boundaries.
+
+The same argument works in an abelian category without element notation.
+The inclusion of the kernel of \(d_v\) in \(C^{p,q}\) has composite
+with \(D\) factoring through the column \(p+1\) summand, and the
+induced map to the quotient of cycles by boundaries is the map induced
+by \(d_h\). This is the first filtered differential of
+Theorem~\ref{res:F04}. Taking its cohomology gives the second page.
+
+The interchange isomorphism takes \(F_{\mathrm r}\) for \(C\) to
+\(F_{\mathrm c}\) for \(C^{\mathrm t}\). Equivalently, in the original
+coordinates \(C^{q,p}\) on the raw row page has \(d_0=d_h\), and the raw
+\(d_1\) is induced by \((-1)^q d_v\). The signed identification on
+\(E_1^{p,q}\) multiplies by \((-1)^{pq}\). Increasing \(p\) by one changes
+this multiplier by \((-1)^q\), which accounts for the raw sign.
+Thus the two descriptions give isomorphic spectral sequences with the
+same convention on later pages. The constructions use natural
+sub-biproduct inclusions, kernels, and images.
+\end{proof}
+
+\begin{theorem}[Convergence, comparison, and assembly]
+\label{res:B04}
+Suppose \(C\) has finite diagonals. Both spectral sequences of
+Proposition~\ref{res:B03} converge to \(H^*(\operatorname{Tot}C)\).
+More precisely, each gives, in degree \(n\), the finite decreasing
+filtration by images of
+\[
+  H^n(F^a\operatorname{Tot}C)\longrightarrow H^n(\operatorname{Tot}C),
+\]
+and \(E_\infty^{p,n-p}\) is naturally isomorphic to its \(p\)-th graded
+piece. If a map \(C\to C'\) between two such double complexes is a
+quasi-isomorphism on each column, or on each row, then the map on
+totalizations is a quasi-isomorphism. In particular, exactness of every
+column, or of every row, implies acyclicity of the total complex.
+
+Suppose moreover \(C^{p,q}=0\) for \(q<0\), and a map of horizontal
+complexes \(L^*\to C^{*,0}\) is annihilated by \(d_v\) and induces
+\(L^p\simeq H_v^0(C^{p,*})\) for every \(p\). If the other vertical
+cohomology vanishes, the induced map \(L^*\to\operatorname{Tot}C\) is
+a quasi-isomorphism. The transposed assertion holds for an augmentation
+into \(C^{0,*}\) when \(C^{p,q}=0\) for \(p<0\).
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{res:B02}, each filtration satisfies the degreewise finite
+hypothesis of Theorem~\ref{res:S01}. Its conclusion supplies the
+stabilized page and graded isomorphisms, including their compatibility
+with the induced map on cohomology. A columnwise quasi-isomorphism is an
+isomorphism on the \(E_{1,\mathrm c}\) page by
+Proposition~\ref{res:B03}. Hence it is an isomorphism on the stabilized
+page. In each total degree both induced filtrations are finite.
+For a morphism between such filtered objects, descend through
+\[
+    0\longrightarrow F^{a+1}H^n
+      \longrightarrow F^aH^n
+      \longrightarrow \operatorname{gr}_F^a H^n
+      \longrightarrow 0 .
+\]
+Starting at a large common zero threshold, an isomorphism on the first
+and third terms gives one on the middle term by the short five lemma.
+At a common lower threshold this gives the map on the whole cohomology
+object. This is also the finite comparison of
+Corollary~\ref{res:S03}. The row result follows by signed interchange,
+and comparison with the zero double complex gives the acyclicity claim.
+
+For the augmentation, view \(L^p\) as the double complex concentrated
+in bidegrees \((p,0)\). The hypothesis about \(d_v\) makes the
+augmentation a map of double complexes. It is a quasi-isomorphism on
+each column: in degree zero it induces the given isomorphism, and in
+the other degrees both cohomology objects vanish. Its totalization is
+the stated map from \(L^*\). For the row case transpose and use
+Proposition~\ref{res:B01}; on the axis the interchange multiplier is
+\((-1)^0=1\).
+\end{proof}
+
+The same argument applies to chain complexes with all indices
+negated. Suppose a first-quadrant chain double complex has a vertical
+augmentation commuting with the horizontal maps, exact in positive
+vertical degrees and inducing an isomorphism on vertical \(H_0\).
+The augmentation annihilates boundaries from vertical degree one
+and defines a map to a double complex concentrated in vertical
+degree zero. It is a quasi-isomorphism on each column, so the induced
+map from the total complex is a quasi-isomorphism as well.
+An analogous statement holds
+for horizontal resolutions. The module assembly and augmented
+comparisons in \cite[Chapter 10]{p103} specialize this argument. Compare
+\cite[Lemmas 12.25.1, 12.25.3, and 12.25.4]{stacks-homology} and
+\cite[Exercise 5.6.4]{weibel}.
+
+\section{Tensor complexes and change of rings}
+
+For a chain double complex \(C_{p,q}\), put \(C^{i,j}=C_{-i,-j}\).
+Descending column threshold \(i\ge -a\) then means original chain
+column \(p\le a\), which defines the usual increasing filtration
+\(F_a\) of the sum totalization. Replacing \((i,j)\) by \((-p,-q)\)
+sends the cohomological page differential of bidegree
+\((r,1-r)\) to a chain page differential of bidegree \((-r,r-1)\).
+Thus the same proofs compute successive quotients
+\(F_pH_{p+q}/F_{p-1}H_{p+q}\). For the row filtration we continue to put
+its filtration index first, so that the displayed first index is the
+original vertical degree in the chain double complex.
+
+In this section rings have identity, and module actions preserve it.
+We write the right \(R\)-module first in \(\otimes_R\) and in
+\(\operatorname{Tor}^R_n\), and the left \(R\)-module second. Unless an
+additional module action is specified, these constructions take values
+in abelian groups. We use homological grading, with resolutions in
+degrees \(0,1,\ldots\). The differential on the tensor double complex
+of right and left complexes \(P,Q\) is
+\[
+   \partial(x\otimes y)=\partial_P x\otimes y
+            +(-1)^i x\otimes\partial_Q y,\qquad x\in P_i.
+\]
+For a flat module, tensoring in the other variable is exact. In
+particular, it carries the cycle and boundary short exact sequences to
+short exact sequences and gives the canonical maps identifying
+homology after tensoring with the tensor products of the homology
+groups. This also gives the comparisons on the first pages used below.
+
+\begin{theorem}[Balance of Tor]
+\label{res:B05}
+For a right \(R\)-module \(A\) and a left \(R\)-module \(M\), let
+\(P_\bullet\to A\) and \(Q_\bullet\to M\) be projective resolutions in
+their respective module categories. There is a natural comparison,
+independent of the choices of projective resolutions,
+\[
+        H_n(P_\bullet\otimes_R M)
+        \;\simeq\; H_n(A\otimes_R Q_\bullet).
+\]
+Both groups compute \(\operatorname{Tor}_n^R(A,M)\).
+\end{theorem}
+
+\begin{proof}
+The double complex has terms \(P_i\otimes_R Q_j\) with the two commuting
+differentials. Each \(P_i\) is a flat right module, so the augmented
+column is exact after tensoring and computes \(P_i\otimes_R M\) in
+degree zero. Thus the map from the total complex induced by
+\(Q_\bullet\to M[0]\) is a quasi-isomorphism by
+Theorem~\ref{res:B04}. Likewise each \(Q_j\) is a flat left module, so
+augmentation by \(P_\bullet\to A[0]\) is a quasi-isomorphism from the
+same total complex to \(A\otimes_R Q_\bullet\). The map from the first
+homology group to the second is the inverse of the first total
+comparison followed by the second. Both augmentations are chain maps:
+they vanish away from the corresponding degree-zero row or column,
+commute along that row or column, and annihilate boundaries entering
+it. In the horizontal degree-zero quotient the tensor differential in
+the remaining direction has sign \((-1)^0=1\).
+
+For a morphism of module pairs, lift the two coefficient maps to maps
+of projective resolutions. The comparison theorem for projective
+resolutions gives lifts unique up to chain homotopy
+\cite[Chapter 10]{p103}. If two lifts in the right variable differ
+by \(\partial h+h\partial\), their maps on total complexes differ by
+the homotopy \(x\otimes y\mapsto h(x)\otimes y\). Indeed the vertical
+terms in its homotopy identity cancel since \(h\) increases \(i\) by one.
+If two lifts in the left variable differ by
+\(\partial h+h\partial\), use
+\(x\otimes y\mapsto(-1)^i x\otimes h(y)\);
+now the horizontal terms cancel. This proves independence on
+homology. Both augmentations commute with the lifted pair of maps.
+Applying the argument to lifts of identity maps compares two choices
+of resolutions by inverse maps on homology. These identities prove
+naturality and independence for the displayed comparison. The two
+augmentations determine the comparison on homology. See
+\cite[Chapter 11]{p103} for the module resolution models and
+\cite[Application 5.6.3]{weibel} for the spectral-sequence argument.
+\end{proof}
+
+\begin{theorem}[The K\"unneth spectral sequence]
+\label{res:B06}
+Let \(P_\bullet\) be a chain complex of flat right \(R\)-modules with
+\(P_i=0\) for \(i<L\) for some integer \(L\). For a left \(R\)-module \(M\)
+there is a natural homological spectral sequence
+\[
+    E^2_{p,q}=\operatorname{Tor}^R_p(H_q(P),M)
+       \quad\Longrightarrow\quad H_{p+q}(P_\bullet\otimes_R M).
+\]
+Its support lies in \(p\ge0,\ q\ge L\), with a finite target filtration
+in each degree and differential \(d_r\) of bidegree \((-r,r-1)\).
+\end{theorem}
+
+\begin{proof}
+Choose a projective left resolution \(Q_\bullet\to M\).
+Put \(D_{i,j}=P_i\otimes_R Q_j\). In total degree \(n\), possible
+nonzero terms have \(L\le i\le n,\ j=n-i\ge0\), so the
+finite-diagonal comparison applies even when \(L<0\).
+Flatness of \(P_i\) makes the vertical augmentation a
+quasi-isomorphism on each column, giving the natural target
+identification
+\[
+     H_n(\operatorname{Tot} D)\simeq H_n(P_\bullet\otimes_R M).
+\]
+For the other filtration, put \(p=j\) and \(q=i\).
+Flatness of \(Q_p\) gives horizontal homology
+\[
+      E^1_{p,q}\simeq H_q(P)\otimes_R Q_p .
+\]
+Under the signed interchange that orders the \(Q\) index first, the
+induced differential is \(1\otimes\partial_Q\). Equivalently, in the
+untransposed coordinates it has the constant factor \((-1)^q\) in
+each fixed \(q\). The cohomological sign calculation of
+Proposition~\ref{res:B03} with the indices negated gives the isomorphism
+of the two descriptions. Taking homology in \(p\) and using
+Theorem~\ref{res:B05} gives the displayed \(E^2\). The finite-diagonal
+bound and Theorem~\ref{res:B04} supply both convergence and the finite
+filtration on the target.
+
+A chain map of right complexes gives a map of the double complexes.
+For a coefficient map in \(M\), use a lifted map of the projective
+left resolutions. Two lifts differ by a homotopy which, after applying
+\(H_q(P)\otimes_R -\), is an ordinary homotopy of the first-page
+complexes in the \(p\)-direction. Hence they induce the same map on
+\(E^2\), and therefore on all later pages since those maps are induced
+on homology of pages. The augmentation comparisons commute with the
+maps on the two targets. Taking lifts between two choices for the same
+\(M\) yields natural comparisons from \(E^2\) onward and on the
+filtered target. The resulting spectral sequence is the one of
+\cite[Theorem 5.6.4]{weibel}.
+\end{proof}
+
+\begin{corollary}[The two-column case]
+\label{res:B08}
+In Theorem~\ref{res:B06}, suppose every \(H_q(P)\) admits a flat
+resolution of length at most one as a right \(R\)-module. Then for
+every \(n\) the target filtration gives a natural short exact sequence
+\[
+\begin{split}
+ 0 \longrightarrow H_n(P)\otimes_R M
+    \longrightarrow H_n(P_\bullet\otimes_R M)
+    \longrightarrow \operatorname{Tor}_1^R(H_{n-1}(P),M)
+    \longrightarrow 0 .
+\end{split}
+\]
+\end{corollary}
+
+\begin{proof}
+To see the vanishing for \(p>1\), use the length-one flat resolution
+of \(H_q(P)\) in the right variable and the chosen projective resolution
+of \(M\) in the left variable. The two augmentation comparisons of
+Theorem~\ref{res:B05} work for this pair because the terms on each
+side are flat. The computation by the right resolution has terms
+only in degrees zero and one. Thus all differentials from the second
+page onward vanish.
+Indeed each differential moves at least two columns.
+Only columns \(0,1\) can contain nonzero terms. The finite filtration
+on \(H_n\) therefore has \(F_{-1}=0\), \(F_0\) equal to the first
+nonzero graded piece, and \(F_1=H_n\). Their identifications are the
+terms in the sequence above. The left map can be read at \(F_0\).
+A cycle in \(P_n\) tensored with a lift of \(m\in M\) to \(Q_0\)
+represents the corresponding class in the filtered total complex,
+whose augmentation is the cycle tensored with \(m\). Changing the
+lift changes this representative by a vertical boundary, with the
+appropriate tensor sign. This gives the usual cycle-tensor edge map.
+
+For example, the length bound holds if every boundary module
+\(B_q(P)\) is flat. Exactness of
+\(0\to Z_q(P)\to P_q\to B_{q-1}(P)\to0\) and the long exact sequence
+of Tor with any left module show \(Z_q(P)\) is flat.
+The sequence \(0\to B_q(P)\to Z_q(P)\to H_q(P)\to0\) is then the
+required flat resolution. This is the hypothesis and calculation in
+\cite[Formula 5.6.5]{weibel}. Additional splitting conclusions use
+the hypotheses of the corresponding coefficient theorem, for
+example those on the complexes and ring in
+\cite[Chapter 11]{p103}.
+\end{proof}
+
+\begin{theorem}[Change of rings for Tor]
+\label{res:B07}
+Let \(f\colon R\to S\) be a homomorphism of rings, \(A\) a right
+\(R\)-module and \(M\) a left \(S\)-module. Regard \(M\) as a left
+\(R\)-module by restriction. There is a natural first-quadrant
+homological spectral sequence
+\[
+ E^2_{p,q}=\operatorname{Tor}^S_p\bigl(\operatorname{Tor}^R_q(A,S),M\bigr)
+       \quad\Longrightarrow\quad \operatorname{Tor}^R_{p+q}(A,M).
+\]
+In the inner Tor, \(S\) is the \(R\)-\(S\) bimodule obtained from \(f\)
+and right multiplication. Its right \(S\)-module structure supplies
+the first input of the outer Tor. The target filtration is finite
+in each degree.
+\end{theorem}
+
+\begin{proof}
+Choose a projective right \(R\)-resolution \(P_\bullet\to A\)
+and a projective left \(S\)-resolution \(Q_\bullet\to M\).
+Use the double complex
+\[
+    D_{i,j}=P_i\otimes_R Q_j
+          \simeq (P_i\otimes_R S)\otimes_S Q_j .
+\]
+The comparison sends \((x\otimes s)\otimes y\) to \(x\otimes sy\),
+with inverse \(x\otimes y\mapsto(x\otimes1)\otimes y\). The forward
+map respects the \(R\)-balance relation because
+\((xr)\otimes sy=x\otimes f(r)(sy)\), and the \(S\)-balance relation
+because \(s(ty)=(st)y\). For the inverse, the corresponding relation is
+\[
+   ((xr)\otimes1)\otimes y=(x\otimes f(r))\otimes y
+                         =(x\otimes 1)\otimes f(r)y.
+\]
+The two formulas are mutually inverse by \(S\)-balancing and commute
+with both differentials.
+
+The augmented complex \(Q_\bullet\to M\) remains exact in left
+\(R\)-modules, since restriction of scalars is exact.
+For each \(i\) the right module \(P_i\) is \(R\)-flat. Thus the
+vertical augmentations \(P_i\otimes_R Q_\bullet\to P_i\otimes_R M\)
+are quasi-isomorphisms. Theorem~\ref{res:B04} gives
+\[
+  H_n(\operatorname{Tot}D)\simeq H_n(P_\bullet\otimes_R M)
+          =\operatorname{Tor}^R_n(A,M).
+\]
+This argument uses the flatness of \(P_i\) over \(R\) and the
+exactness of restriction for \(Q_\bullet\). The flatness used for
+the other filtration is over \(S\).
+
+Specifically, each \(Q_j\) is \(S\)-flat. With the row index first,
+horizontal homology gives
+\[
+  E^1_{p,q}\simeq H_q(P_\bullet\otimes_R S)\otimes_S Q_p
+      =\operatorname{Tor}^R_q(A,S)\otimes_S Q_p .
+\]
+Here \(P_\bullet\otimes_R S\) is a complex of right \(S\)-modules
+whose maps come from those of \(P_\bullet\). Its homology gives
+the right action used in the statement. The sign comparison in
+Proposition~\ref{res:B03} identifies the \(p\)-direction with the
+resolution differential on \(Q\); its homology gives
+\(E^2_{p,q}\) by Theorem~\ref{res:B05} over \(S\).
+The two indices are nonnegative, so the total degree bounds and the
+conclusion of Theorem~\ref{res:B04} apply. For maps in \(A\) and \(M\)
+with \(f\) fixed, lifts to their respective resolutions induce maps
+of the double complexes. Homotopic choices in \(P\) give the same maps
+on the horizontal homology page; homotopic choices in \(Q\) give the
+same maps on the homology of that page. Augmentation and the common
+total homotopy identities in Theorem~\ref{res:B05} verify naturality
+on the target. This proves the change-of-rings comparison of
+\cite[Theorem 5.6.6]{weibel}.
+\end{proof}

@@ -1,0 +1,81 @@
+{
+  "paper_sha256": "d7f6030cf7b73162b0cf10e11ae60a8ab762554e438b3448675501f1be428aeb",
+  "pdf_sha256": "e21d3ea9297a9d37ad858ab30071f7fa236c5b7ffd42b654338726e8c408e989",
+  "source_map_sha256": "3774773818b0152a2cd4caef556c748d66c1da2acbcb0909b19d912a43c0dd3b",
+  "verified_sources": {
+    "unpublished-input-01": "1e193b0e22ce003b9802d874a58f6a152c7d6e0bb8d1f96802d7062ef80b39d0",
+    "unpublished-input-02": "c8f250c27cfdcd551e2e83f974bbeb4f70edb2c2eeed0993ad6a5b50e84c4c62",
+    "unpublished-input-03": "6c9deb88d4053cf3a94996dc600a20cad024e43afb68846ac0562d3eb857975c",
+    "P2-06_Foundations_of_Numerical_Analysis_Notes.tex": "cffa3dec57f2dc0b33971ec6c595faa79482975a2a6f34eef9bd74f6f993bf93",
+    "parts/ch01.tex": "b579ced361b5f48b21cb8e885513c7d4e50716d5979c1df753fe6620b05fabb3",
+    "parts/ch02.tex": "543d48f7dc7575a403bb7759bbca4d5937c79608a6bfc562530dd7d38473002d",
+    "parts/ch03.tex": "e6b1d4e8e7abd689cae025ffee28293ce7cf3589b7116f76cdbebda3bc1b1a8e",
+    "parts/ch04.tex": "855ddea2e4cd84bd3d323dbb39123a2388f2ef3e8cfd3d733f96b39affd03941",
+    "parts/ch05.tex": "8dcd73c6678c997e196384f350389c429cd3b9b64063f842f1bc1c3be945a903",
+    "parts/ch06.tex": "d5de0d9343212d971000b4e0342e507eb2459c0766a8bc5749eb2e57e9aa35a5",
+    "parts/ch07.tex": "a7f76ab25fa6f4762993fbdbb9e744d69e0f264c36a6817ac98a1d70289d8d97",
+    "parts/ch08.tex": "c1e9732186cdb4d934f23023ce50a116d05a62986555c88469b63952ea7a4d3b",
+    "parts/ch09.tex": "e21c122cf7888127d06310ac30039be37f827dcb566a2a81cb3b381f13eec182",
+    "docs/sources/SingleVariableAnalysis/notes-source/chapters/M03.03.tex": "6dbeff7f2afcffaa77143b7ad6dc8009cfa5f0c212339ef287f803415247737f",
+    "docs/sources/SingleVariableAnalysis/notes-source/chapters/M03.05.tex": "80db8feab6cae7d1ebaeaac4e46dc8dc8a130ef637f8606391befed016efaa67",
+    "docs/sources/SingleVariableAnalysis/notes-source/chapters/M03.06.tex": "23aa70b7abf4d108724f4fe22223811c8154a61becffd2e0d83d1336b3e9678d",
+    "docs/sources/SingleVariableAnalysis/notes-source/chapters/M03.16.tex": "1156e6fc11301242fbb9cf04f2b7e335a009aeabe6983c26fc551bcb0e2f8663",
+    "MathGenome/Internal/MultivariableAnalysis/D04/C02/SegmentMeanValue.lean": "a1aa1d6c1b7d81c66b7e8a940c6a042b3f22cacd99a78be7f9c7118ac84a3ecc",
+    "docs/sources/d05-notes.tex": "81d4236233819191fe3c01375bf1199bf121789beb6fafc957955548e5396a1f",
+    "docs/sources/D07/chapters/M07.09.tex": "be4afe4a8acec6985daab48f86ed306a458c050c27eaa786855f9d77e254a007",
+    "MathGenome/Internal/PointSetTopology/D10Topology/Ch14/Banach.lean": "f29d4bda5441e9b8d8d2deb443f3226c9601cd7414e8813be75ea2bdd2d527db",
+    "provenance/components/ExtremalOptimization/delivery/paper.tex [parts/ch08.tex]": "0f6c9a9f08ad337d0957da27dd06acc1d2d8ef51456715e3442cfec84791fe9c",
+    "output/pdf/P2-06_Foundations_of_Numerical_Analysis_Notes.pdf": "e21d3ea9297a9d37ad858ab30071f7fa236c5b7ffd42b654338726e8c408e989"
+  },
+  "chapter_ranges_in_paper": {
+    "parts/ch01.tex": [
+      86,
+      315
+    ],
+    "parts/ch02.tex": [
+      316,
+      541
+    ],
+    "parts/ch03.tex": [
+      542,
+      684
+    ],
+    "parts/ch04.tex": [
+      685,
+      1361
+    ],
+    "parts/ch05.tex": [
+      1362,
+      1688
+    ],
+    "parts/ch06.tex": [
+      1689,
+      2065
+    ],
+    "parts/ch07.tex": [
+      2066,
+      2458
+    ],
+    "parts/ch08.tex": [
+      2459,
+      2743
+    ],
+    "parts/ch09.tex": [
+      2744,
+      3104
+    ]
+  },
+  "chapters": 9,
+  "groups": 78,
+  "original_contracts": 50,
+  "pdf_pages": 45,
+  "results_by_kind": {
+    "definition": 5,
+    "proposition": 13,
+    "theorem": 57,
+    "lemma": 3,
+    "example": 1,
+    "corollary": 3
+  },
+  "published_source_map_sha256": "91c519a1db8da030268d6b6929c5720c55bfd79c33db99919890cf9258ba5d46"
+}

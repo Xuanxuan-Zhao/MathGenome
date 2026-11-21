@@ -1,0 +1,202 @@
+\chapter{Prime-power groups and finite structure}\label{chap:M07.06}
+
+All groups counted in this chapter are finite. Throughout this chapter $p$ denotes a prime. We will prove existence theorems rather than infer them from Lagrange's one-way divisibility statement.
+
+\KEntry{K07.06.cauchy}{Cauchy's theorem}
+\begin{theorem}\label{thm:cauchy}
+If $p$ is prime and $p\mid|G|$, then $G$ has an element, and hence a subgroup, of order $p$.
+\end{theorem}
+\begin{proof}
+Let $X$ be the tuples $(g_1,\ldots,g_p)$ with $g_1\cdots g_p=1$. Choosing the first $p-1$ entries determines the last, so $|X|=|G|^{p-1}$, divisible by $p$. Cyclic rotation preserves $X$: the rotated product is $g_1^{-1}(g_1\cdots g_p)g_1=1$. It defines an action of $C_p$. By orbit--stabilizer and Lagrange, each orbit has size one or $p$. Hence $|X|$ is congruent modulo $p$ to the number of fixed tuples. A tuple is fixed by the generating rotation exactly when it is $(g,\ldots,g)$ with $g^p=1$. The identity is one such tuple; divisibility shows that their number is at least $p$, so a nonidentity $g$ exists. Its order divides $p$ by Proposition~\ref{prop:order-divisibility} and is not one, so is $p$. Its cyclic subgroup has that order by Theorem~\ref{thm:cyclic-models}. No commutativity of $G$ was used.
+\end{proof}
+
+\KEntry{K07.06.pgroup_definition}{Finite prime-power groups}
+\begin{definition}
+For prime $p$, a finite $p$-group is a group of order $p^a$ with $a\geq0$. The trivial group is included for every prime.
+\end{definition}
+\begin{proposition}\label{prop:pgroup-characterization}
+A finite group has $p$-power order if and only if every element is killed by some power of $p$.
+\end{proposition}
+\begin{proof}
+For order $p^a$, Corollary~\ref{cor:finite-element-order} gives $g^{p^a}=1$ for every $g$. Conversely, suppose the elementwise condition holds. If a prime $q$ divides $|G|$, Cauchy's theorem supplies an element of order $q$. Its being killed by $p^k$ implies $q\mid p^k$, so $q=p$. Unique prime factorization of the positive integer $|G|$ therefore makes it a power of $p$, with $|G|=1$ giving exponent zero. The library predicate \texttt{IsPGroup} is the elementwise condition and is meaningful for infinite groups; its equivalence with the finite-cardinality definition here required finiteness and primality.
+\end{proof}
+
+\KEntry{K07.06.pgroup_fixed_points}{The fixed-point congruence}
+\begin{proposition}\label{prop:pgroup-fixed-points}
+If a finite $p$-group acts on a finite set $X$, then
+$|X|\equiv|X^G|\pmod p$, where $X^G$ is the set fixed by every group element. If $p\nmid|X|$, there is a fixed point.
+\end{proposition}
+\begin{proof}
+Every orbit size divides $p^a$ by Corollary~\ref{cor:orbit-stabilizer-count}, so is a power of $p$. The orbits of size one are precisely the globally fixed points; each other orbit has cardinality divisible by $p$. Adding orbit sizes gives the congruence. If there were no fixed point the congruence would make $p\mid|X|$, proving the last assertion. Empty $X$ satisfies the congruence, but not the last premise.
+\end{proof}
+
+\KEntry{K07.06.pgroup_center}{The center of a prime-power group}
+\begin{theorem}\label{thm:pgroup-center}
+A nontrivial finite $p$-group has nontrivial center, and $p\mid|Z(G)|$.
+\end{theorem}
+\begin{proof}
+Its order is $p^a$ with $a>0$. In the class equation, every noncentral class has size greater than one and a divisor of $p^a$, so is divisible by $p$. It follows that $|Z(G)|\equiv|G|\equiv0\pmod p$. The center contains $1$, so its positive cardinality divisible by $p$ is at least $p$, proving nontriviality. This is also the fixed-point congruence for conjugation.
+\end{proof}
+
+\KEntry{K07.06.cyclic_central_quotient}{Cyclic quotient by the center}
+\begin{proposition}\label{prop:cyclic-central-quotient}
+If $G/Z(G)$ is cyclic, then $G$ is abelian. Every group of order $p^2$ is consequently abelian.
+\end{proposition}
+\begin{proof}
+Choose $gZ(G)$ generating the quotient. Every $x\in G$ has the form $g^az$ with $a\in\Z,z\in Z(G)$. For $x=g^az$ and $y=g^bw$, centrality gives $xy=g^{a+b}zw=g^{b+a}wz=yx$. This also covers the trivial quotient. If $|G|=p^2$, Theorem~\ref{thm:pgroup-center} and Lagrange imply that $|Z(G)|$ is $p$ or $p^2$. The quotient has order $p$ or one, hence is cyclic by Corollary~\ref{cor:finite-element-order} or triviality. The first assertion now proves commutativity.
+\end{proof}
+
+\KEntry{K07.06.prime_square_classification}{Groups of order a prime square}
+\begin{theorem}\label{thm:prime-square-groups}
+For prime $p$, a group of order $p^2$ is isomorphic to exactly one of $C_{p^2}$ and $C_p\times C_p$.
+\end{theorem}
+\begin{proof}
+The group is abelian by Proposition~\ref{prop:cyclic-central-quotient}. If it has an element of order $p^2$, that element generates, giving the first case. Otherwise every nonidentity element has order $p$, since its order divides $p^2$. Choose such an $x$, and choose $y\notin\langle x\rangle$, possible since this subgroup has only $p$ elements. The subgroups generated by $x$ and $y$ meet trivially: a nonidentity common member would generate both prime-order subgroups, forcing $y\in\langle x\rangle$. They are normal because the group is abelian, and their product has $p^2$ elements by Proposition~\ref{prop:subgroup-product}. The internal product theorem gives $G\cong C_p\times C_p$. In this second group every element is killed by $p$, whereas the first has an element of order $p^2$, so they are not isomorphic.
+\end{proof}
+
+We next prove the existence of the largest prime-power subgroups. For this proof a Sylow $p$-subgroup means a subgroup of order $p^a$ when $|G|=p^am$ with $p\nmid m$. The equivalence with maximal $p$-subgroups is proved below.
+
+\KEntry{K07.06.sylow_existence}{Existence of Sylow and smaller prime-power subgroups}
+\begin{theorem}\label{thm:sylow-existence}
+If $|G|=p^am$ with $p\nmid m$, then $G$ contains a subgroup of order $p^a$. More generally, if $p^k\mid|G|$, it contains a subgroup of order $p^k$.
+\end{theorem}
+\begin{proof}
+Let $\mathcal X$ be the $p^a$-element subsets of the underlying set of $G$. We first check
+\[
+ |\mathcal X|=\binom{p^am}{p^a}\equiv m\pmod p.
+\]
+For $0<j<p$, $p\mid\binom pj$, because $p$ divides the numerator $p!$ but not $j!(p-j)!$. Thus coefficientwise congruence of integer polynomials gives $(1+t)^p\equiv1+t^p\pmod p$. Raising to $p$ repeatedly yields $(1+t)^{p^a}\equiv1+t^{p^a}$; raising the latter identity to $m$ and comparing the coefficient of $t^{p^a}$ gives the asserted congruence. This is just the binomial theorem and integer divisibility; it includes $a=0$.
+
+Left multiplication acts on $\mathcal X$. Since its cardinality is not divisible by $p$, at least one orbit has size not divisible by $p$. Let $S$ be a point of that orbit and $L$ its stabilizer. Orbit--stabilizer gives $|G|=|L||\Orb(S)|$, so $p^a\mid|L|$. But $L$ acts freely on the elements of $S$: $\ell s=s$ implies $\ell=1$ by cancellation. Its orbits in $S$ therefore all have size $|L|$, so $|L|$ divides $|S|=p^a$. These two divisibilities force $|L|=p^a$, giving a Sylow subgroup.
+
+For the stronger assertion it suffices to show that every group $P$ of order $p^a$ has a subgroup of order $p^k$ for $0\leq k\leq a$. Use induction on $a$. The case $a=0$ and the case $k=0$ use the trivial subgroup. For $a>0$, the center has order divisible by $p$ by Theorem~\ref{thm:pgroup-center}. Cauchy's theorem inside that center gives a central subgroup $Z$ of order $p$, normal in $P$. The quotient $P/Z$ has order $p^{a-1}$. By induction it has a subgroup of order $p^{k-1}$ when $k\geq1$. Its inverse image in $P$ has order $p\,p^{k-1}=p^k$ by Proposition~\ref{prop:hom-fibres} applied to the restricted quotient map. Applying this result inside a Sylow subgroup of $G$ proves the general assertion.
+\end{proof}
+
+\KEntry{K07.06.sylow_containment}{Containment of prime-power subgroups}
+\begin{theorem}\label{thm:sylow-containment}
+Fix a Sylow subgroup $Q$. Every $p$-subgroup $P\leq G$ lies in a conjugate of $Q$, and therefore in some Sylow subgroup.
+\end{theorem}
+\begin{proof}
+Let $P$ act by left multiplication on $G/Q$. Its cardinality $[G:Q]=m$ is not divisible by $p$. Proposition~\ref{prop:pgroup-fixed-points} supplies a fixed coset $gQ$. For every $u\in P$, equality $ugQ=gQ$ gives $g^{-1}ug\in Q$. Thus $P\leq gQg^{-1}$. Conjugation is a bijection, so this conjugate still has order $p^a$ and is a Sylow subgroup.
+\end{proof}
+
+\KEntry{K07.06.sylow_definition}{Cardinality and maximality agree}
+\begin{proposition}\label{prop:sylow-definition}
+For finite $G$ of order $p^am$, $p\nmid m$, a subgroup is maximal among $p$-subgroups if and only if it has order $p^a$.
+\end{proposition}
+\begin{proof}
+A subgroup of order $p^a$ cannot be properly contained in a larger $p$-subgroup: Lagrange would give a larger power of $p$ dividing $|G|$. Conversely a maximal $p$-subgroup is contained in a subgroup of order $p^a$ by Theorem~\ref{thm:sylow-containment}, so maximality makes them equal. Hence both definitions of Sylow subgroup agree. When $p\nmid|G|$, $a=0$ and the unique such subgroup is trivial. Maximal here refers only to $p$-subgroups, not to all proper subgroups of $G$.
+\end{proof}
+
+\KEntry{K07.06.sylow_conjugacy}{Conjugacy of Sylow subgroups}
+\begin{theorem}\label{thm:sylow-conjugacy}
+All Sylow $p$-subgroups of a finite group are conjugate.
+\end{theorem}
+\begin{proof}
+Apply Theorem~\ref{thm:sylow-containment} to a Sylow subgroup $P$ and a fixed Sylow $Q$. It gives $P\leq gQg^{-1}$. Both have the same finite order $p^a$, so the inclusion is equality.
+\end{proof}
+
+\KEntry{K07.06.sylow_counting}{The number of Sylow subgroups}
+\begin{theorem}\label{thm:sylow-counting}
+If $n_p$ is the number of Sylow $p$-subgroups and $|G|=p^am$, $p\nmid m$, then
+\[
+ n_p=[G:N_G(P)],\qquad n_p\mid m,\qquad n_p\equiv1\pmod p.
+\]
+\end{theorem}
+\begin{proof}
+Conjugacy and Proposition~\ref{prop:conjugacy-count} give the index formula. Since $P\leq N_G(P)$, index multiplication gives
+$m=[G:P]=[G:N_G(P)][N_G(P):P]$, proving divisibility. For the congruence let $P$ act by conjugation on the finite set of Sylow subgroups. It fixes itself. If it fixes $Q$, then $P\leq N_G(Q)$, so $PQ=QP$ is a subgroup: $pq=(pqp^{-1})p\in QP$, and inversion gives the reverse inclusion. Its order is $|P||Q|/|P\cap Q|$, a power of $p$ by Lagrange inside $P$. It contains $Q$, which has the largest allowable $p$-power order, so $PQ=Q$ and $P\leq Q$. Equal orders imply $P=Q$. Thus precisely one Sylow subgroup is fixed by all of $P$. The fixed-point congruence gives $n_p\equiv1\pmod p$.
+\end{proof}
+
+\KEntry{K07.06.sylow_normal_iff_unique}{Uniqueness, normality, and characteristicity}
+\begin{corollary}\label{cor:sylow-normal}
+A Sylow subgroup is normal if and only if it is the unique Sylow subgroup, equivalently $n_p=1$. A normal Sylow subgroup is characteristic.
+\end{corollary}
+\begin{proof}
+A normal subgroup has just itself as conjugate; conjugacy of Sylow subgroups then gives uniqueness. A unique Sylow subgroup is preserved by conjugation and hence normal. An automorphism preserves subgroup order, so permutes the subgroups of order $p^a$. If there is only one, every automorphism preserves it, proving characteristicity.
+\end{proof}
+
+\KEntry{K07.06.order_pq_cyclic_criterion}{Orders that are products of two primes}
+\begin{proposition}\label{prop:order-pq}
+Let $p<q$ be primes and $|G|=pq$. The Sylow $q$-subgroup is normal. If $p\nmid(q-1)$ then $G\cong C_{pq}$. If $p\mid(q-1)$, a nonabelian group $C_q\rtimes C_p$ exists as well as the cyclic group.
+\end{proposition}
+\begin{proof}
+Sylow counting gives $n_q\mid p$ and $n_q\equiv1\pmod q$; the only possibility is one since $p<q$. It gives $n_p\mid q$, so $n_p$ is one or $q$; the latter requires $p\mid(q-1)$. If this divisibility fails, both Sylow subgroups are normal, intersect trivially by their coprime orders, and have product of size $pq$. The internal direct-product theorem and Proposition~\ref{prop:product-orders} give $C_p\times C_q\cong C_{pq}$.
+
+For existence in the other case, the unit group of $\Z/q\Z$ has $q-1$ elements by the arithmetic unit criterion and primality of $q$. Cauchy's theorem gives a unit $u$ of order $p$. By Proposition~\ref{prop:cyclic-automorphisms}, exponentiation by $u$ is an automorphism of $C_q$ of order $p$. It defines a nontrivial action of $C_p$ and hence a semidirect product by Theorem~\ref{thm:semidirect-construction}. Its order is $pq$ by its underlying product set. An acting generator does not commute with a generator of $C_q$, because their conjugation changes the latter by $u\ne1$. Thus it is nonabelian. No classification of every nonabelian group of order $pq$ has been assumed in this existence statement.
+\end{proof}
+
+\KEntry{K07.06.small_order_examples}{Orders six, eight, and twelve}
+\begin{proposition}\label{prop:small-group-orders}
+The groups of order six are $C_6,S_3$. The groups of order eight are
+$C_8,C_4\times C_2,C_2^3,D_8,Q_8$, pairwise nonisomorphic. In $A_4$ the Sylow two-subgroup is the normal $V_4$, and $n_3=4$.
+\end{proposition}
+\begin{proof}
+For order six, the Sylow three-subgroup $N$ is normal, and a Sylow two-subgroup $H$ is a complement by the subgroup product formula. The semidirect recognition theorem applies. Since $\Aut(C_3)$ has two elements, its action by the generator of $H$ is trivial or inversion. The trivial case is $C_6$; in the other case the generators satisfy $a^3=b^2=1$, $bab=a^{-1}$. The abstract presentation with these relations has at most six elements, since every word reduces to $a^ib^j$ with $0\leq i<3$, $0\leq j<2$. The permutations $a=(123)$, $b=(12)$ satisfy these relations and generate six distinct such permutations, so the presented group is $S_3$ of order six. Its surjective map to the given nonabelian group of order six is an isomorphism.
+
+For order eight, an element of order eight gives $C_8$. If every nonidentity element has order two, then $(xy)^{-1}=xy$ while $(xy)^{-1}=y^{-1}x^{-1}=yx$, so the group is abelian. Choose $a\ne1$, then $b\notin\langle a\rangle$, then $c\notin\langle a,b\rangle$. The first two generate four elements and these three generate eight; the map $C_2^3\to G$ sending coordinate generators to $a,b,c$ is onto, hence an isomorphism.
+
+In all other cases choose $a$ of order four; $A=\langle a\rangle$ has index two and is normal. Choose $b\notin A$; every element is $a^i$ or $a^ib$, and $b^2=a^j$. If the group is abelian and has no element of order eight, $j$ must be even, since odd $j$ makes $b^2$ of order four and $b$ of order eight. For $j=2$ replace $b$ by $ba^{-1}$, whose square is one; for $j=0$ retain $b$. This yields a complementary order-two subgroup and $G\cong C_4\times C_2$.
+
+If the group is nonabelian, conjugation by $b$ on $A$ is the nonidentity automorphism, so $bab^{-1}=a^{-1}$. Since conjugation by $b$ fixes $b^2=a^j$, this relation gives $a^j=a^{-j}$, so $j=0$ or $2$ modulo four. The presentations with $a^4=1$, $bab^{-1}=a^{-1}$ and $b^2=1$ or $b^2=a^2$ each have at most eight elements, by the normal forms $a^ib^\epsilon$. Their concrete models $D_8$ and $Q_8$ from Chapter~\ref{chap:M07.01} have eight elements and satisfy the respective relations. Thus each presentation has exactly eight elements; its map onto $G$ is an isomorphism. The abelian examples are distinguished by maximum element order eight, four, and two. The two nonabelian examples are distinguished by involutions: $D_8$ has its four reflections and its half-turn, while $Q_8$ has only $-1$.
+
+Finally $V_4\mathrel{\triangleleft}A_4$ by Example~\ref{ex:normality-not-transitive} and has the required Sylow order four. There are eight three-cycles in $A_4$: choose their three-point support in four ways and one of two cyclic orientations. Each order-three subgroup has two nonidentity elements, all three-cycles, and distinct such subgroups meet trivially. Thus there are four Sylow three-subgroups.
+\end{proof}
+
+\KEntry{K07.06.no_simple_order_thirty}{A counting obstruction at order thirty}
+\begin{proposition}\label{prop:no-simple-thirty}
+A group of order thirty is not simple.
+\end{proposition}
+\begin{proof}
+Sylow counting restricts $n_5$ to $1$ or $6$ and $n_3$ to $1$ or $10$. If neither subgroup were normal, the six order-five subgroups would contribute $6\cdot4=24$ distinct elements of order five, and the ten order-three subgroups would contribute $10\cdot2=20$ distinct elements of order three. Distinct subgroups of a prime order meet only at the identity, since a nonidentity intersection element generates each. The two sets of elements are disjoint because an element cannot have both orders. Forty-four nonidentity elements do not fit in a group of order thirty. Hence a Sylow subgroup of order three or five is normal; it is nontrivial and proper, proving nonsimplicity.
+\end{proof}
+
+\KEntry{K07.06.simple_groups_boundary}{Elementary simple groups}
+\begin{definition}
+A simple group is nontrivial and has no normal subgroups except $\{1\}$ and itself.
+\end{definition}
+\begin{theorem}\label{thm:alternating-simple}
+Finite simple abelian groups are exactly the cyclic groups of prime order. For $n\geq5$, $A_n$ is nonabelian and simple. The group $A_4$ is not simple.
+\end{theorem}
+\begin{proof}
+In a nontrivial finite abelian simple group, the subgroup generated by any nonidentity element is normal, hence the whole group. Thus it is cyclic. If its order were composite, Theorem~\ref{thm:finite-cyclic-subgroups} would give a proper nontrivial subgroup, impossible. A prime-order group has only the two possible subgroup orders by Lagrange, hence is simple. The subgroup $V_4$ exhibits the failure for $A_4$.
+
+For $n\geq5$ let $N\ne\{1\}$ be normal in $A_n$, and choose $\sigma\in N$, $\sigma\ne1$. Pick $a$ moved by $\sigma$, put $b=\sigma(a)$, and choose distinct $c,d$ outside $\{a,b\}$. The three-cycle $\tau=(a\ c\ d)$ has support not containing $b$, whereas $\sigma\tau\sigma^{-1}$ has support containing $b$. They differ, so
+$\kappa=\sigma\tau\sigma^{-1}\tau^{-1}\ne1$. Normality puts $\kappa$ in $N$, and its support has at most six points, the union of the supports of the two three-cycles.
+
+An even nonidentity permutation moving at most six points has one of the following types: a three-cycle, two disjoint transpositions, a five-cycle, two disjoint three-cycles, or a four-cycle times a disjoint transposition. This list follows by partitioning a support of size at most six into cycle lengths at least two and retaining even sign, using Theorem~\ref{thm:permutation-sign}. We show in every case that $N$ contains a three-cycle. It already does in the first case. If $\kappa=(a\ b)(c\ d)$, choose a fixed point $e$, possible since $n\geq5$. Conjugating $(c\ d\ e)$ by $\kappa$ inverts it, so the commutator of $\kappa$ with that three-cycle is again a three-cycle. If $\kappa$ has a cycle of length at least four, take four consecutive entries $a,b,c,d$ on that cycle. Then
+\[
+ \kappa(a\ b\ c)\kappa^{-1}(a\ b\ c)^{-1}
+ =(b\ c\ d)(a\ c\ b)=(a\ d\ b),
+\]
+as checked on these four points; disjoint cycles of $\kappa$ do not affect this calculation. This covers both the five-cycle and four-plus-two cases. Finally, for $\kappa=(a\ b\ c)(d\ e\ f)$, its commutator with $(a\ b\ d)$ is
+\[
+ (b\ c\ e)(a\ d\ b)=(a\ d\ c\ e\ b),
+\]
+a five-cycle, which reduces to the previous case. Every commutator used lies in $N$ because its first entry does and $N$ is normal.
+
+All three-cycles are conjugate within $A_n$: choose a permutation relabelling their ordered entries. If that relabelling is odd, multiply it on the left by a transposition of two points outside the target triple. Such points exist since $n\geq5$, and this changes parity without changing the conjugated cycle. Normality therefore puts every three-cycle in $N$. They generate $A_n$ by Theorem~\ref{thm:alternating-basic}, so $N=A_n$. The cycles $(123)$ and $(345)$ do not commute (their two composites send $3$ to $4$ and $1$), proving noncommutativity. This is an elementary simplicity theorem, not a use of the classification of finite simple groups.
+\end{proof}
+
+\KEntry{K07.06.composition_series_definition}{Composition series}
+A composition series is a finite strictly increasing chain
+\[
+ \{1\}=G_0<G_1<\cdots<G_r=G
+\]
+in which $G_i\mathrel{\triangleleft}G_{i+1}$ and every quotient $G_{i+1}/G_i$ is simple. These quotients are its composition factors, counted with multiplicity. Only adjacent normality is required: the terms need not be normal in all of $G$. Example~\ref{ex:normality-not-transitive} explains why that distinction matters. The trivial group has the length-zero series.
+
+\KEntry{K07.06.jordan_holder_extension}{Existence and Jordan--H\"older uniqueness}
+\begin{theorem}\label{thm:group-jordan-holder}
+Every finite group has a composition series. Any two of its composition series have equal lengths and the same multiset of simple factors up to isomorphism.
+\end{theorem}
+\begin{proof}
+Existence follows by induction on $|G|$. For $G=\{1\}$ use the empty series. Otherwise choose a maximal proper normal subgroup $A$, which exists because the finite collection of proper normal subgroups contains $\{1\}$. The quotient $G/A$ is nontrivial and simple by Theorem~\ref{thm:group-correspondence}: an intermediate normal subgroup would contradict maximality. Induction gives a series for $A$, and appending $G$ gives one for $G$.
+
+For uniqueness use strong induction on $|G|$. The trivial group has no nonempty strictly increasing series. In two series of a nontrivial $G$, let $A,B$ be their penultimate terms. The simple last quotients make $A,B$ maximal proper normal subgroups by correspondence. If $A=B$, induction on $A$ pairs their earlier factors and their last factors coincide. If $A\ne B$, maximality gives $AB=G$: the product is normal (conjugation preserves both factors), contains $A$, and cannot equal $A$ since that would give $B\leq A$ and then $B=A$ by maximality of $B$. Put $L=A\cap B$. The second isomorphism theorem gives
+\[
+ A/L\cong G/B,\qquad B/L\cong G/A.
+\]
+Both are simple, so a composition series for $L$ followed by $A$ is a composition series for $A$, and one followed by $B$ is a series for $B$. Existence already supplies the series for $L$, including the trivial case. Since $|A|,|B|<|G|$, the induction hypothesis compares each original truncated series with its corresponding series through $L$. The factor list for the first full series is consequently the factor list of $L$, followed by $G/B$ and $G/A$; for the second it is that same list followed by $G/A$ and $G/B$. They are the same multiset. This gives a pairing by a permutation, and in particular equal lengths.
+
+This is not uniqueness of the chain or of the group from its factors: $C_4$ and $C_2\times C_2$ both have two factors $C_2$, but the first has an element of order four and the second does not.
+\end{proof}

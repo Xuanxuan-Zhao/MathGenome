@@ -1,0 +1,658 @@
+\chapter[Group (Co)homology and Lie Cohomology]
+  {Group (Co)homology and\\Lie Algebra Cohomology}
+\label{ch:group-and-lie}
+
+Throughout this chapter \(k\) is a commutative ring. Group modules are left
+modules over the group algebra, and all groups under consideration are
+discrete. For a Lie algebra \(\mathfrak g\) over \(k\), a coefficient
+module is a left module over \(U(\mathfrak g)\), or equivalently a
+\(k\)-module with a compatible \(\mathfrak g\)-action. The trivial module
+\(k\) is defined by the augmentation of the respective algebra. We
+apply the resolution arguments of Chapter~\ref{ch:derived-functors} and
+the composition spectral sequence to these two augmented algebras.
+The final section constructs coefficient group homology from a right
+bar resolution and identifies it with derived coinvariants.
+
+\section{Invariants and the bar resolution}
+
+\begin{proposition}[Invariants and group cohomology]\label{res:A01}
+For a group \(G\) and a left \(k[G]\)-module \(M\), evaluation at \(1\)
+identifies \(\operatorname{Hom}_{k[G]}(k,M)\) with \(M^G\), naturally in
+\(M\). Its right derived functors, written \(H^n(G,M)\), are
+\(\operatorname{Ext}_{k[G]}^n(k,M)\), computed either from an injective
+resolution of \(M\) or a projective resolution of \(k\).
+\end{proposition}
+
+\begin{proof}
+The image of \(1\) under a module map is fixed by each \(g\), and a
+fixed element \(m\) defines the map \(a\mapsto am\). This is a natural
+identification of left exact functors to \(k\)-modules. The category
+of modules over \(k[G]\) has enough injectives and projectives.
+Theorems~\ref{res:R09} and~\ref{res:R11} give the derived
+identifications and their independence of resolution.
+See \cite[Section 6.1]{weibel}.
+\end{proof}
+
+\begin{theorem}[The bar resolution and nonhomogeneous cochains]
+\label{res:A02}
+Let \(B_n(G)=k[G^{n+1}]\), the free \(k\)-module on \((n+1)\)-tuples,
+with the diagonal left \(G\)-action. With the alternating deletion
+boundary and the augmentation \(B_0(G)\to k\) sending every vertex
+to \(1\), this is a free \(k[G]\)-resolution of \(k\). Put
+\(C^n(G,M)=\operatorname{Map}(G^n,M)\), with \(C^0(G,M)=M\).
+The Hom complex from this resolution identifies with these cochains.
+Its differential in degree \(n\) is
+\begin{align*}
+ (df)(g_1,\ldots,g_{n+1})
+  &=g_1 f(g_2,\ldots,g_{n+1})\\
+  &\quad+\sum_{i=1}^{n}(-1)^i
+          f(g_1,\ldots,g_i g_{i+1},\ldots,g_{n+1})\\
+  &\quad+(-1)^{n+1} f(g_1,\ldots,g_n).
+\end{align*}
+In particular \(H^n(G,M)\) is its \(n\)-th cohomology.
+\end{theorem}
+
+\begin{proof}
+Two deleted positions in the boundary of a boundary occur in two
+orders with opposite signs. The degree-one boundary has equal
+augmentation on its two terms, so the augmented differential squares to
+zero everywhere. Each tuple has a unique representative with its first
+entry \(1\) after translation, which makes \(B_n(G)\) free as a left
+\(k[G]\)-module. On the underlying augmented \(k\)-complex set
+\[
+ s_{-1}(1)=(1),\qquad
+ s_n(g_0,\ldots,g_n)=(1,g_0,\ldots,g_n).
+\]
+Deleting the first entry of \(s_n\) gives the original tuple.
+Deleting any other entry occurs with sign opposite to the corresponding
+term of \(s_{n-1}\partial\). This proves \(\partial s+s\partial=1\),
+including degrees zero and \(-1\). The homotopy need only be
+\(k\)-linear: the resulting exactness of the underlying sequence is
+exactness of the sequence of \(k[G]\)-modules.
+
+The notation \([g_1|\cdots|g_n]\) denotes the tuple
+\((1,g_1,g_1g_2,\ldots,g_1\cdots g_n)\) in a basis over \(k[G]\).
+Deleting the first vertex in such a tuple gives
+\(g_1[g_2|\cdots|g_n]\). Deleting the \(i\)-th internal vertex
+multiplies its two adjacent increments, and deleting the last
+vertex drops \(g_n\). Thus precomposition by the boundary gives
+the displayed cochain formula. This uses the unsigned
+precomposition convention for the Hom from a chain resolution,
+as in Theorem~\ref{res:R11}. Equivalently, a homogeneous
+cochain is a map \(\varphi:G^{n+1}\to M\) satisfying
+\(\varphi(a\boldsymbol g)=a\varphi(\boldsymbol g)\).
+Its values on the displayed basis determine it uniquely. The
+identification commutes with all coefficient maps, and the free
+resolution computes cohomology by Proposition~\ref{res:A01}.
+See \cite[Sections 6.5.1--6.5.6]{weibel}.
+\end{proof}
+
+\begin{corollary}[Low degrees and the coefficient sequence]
+\label{res:A03}
+There are natural identifications
+\[
+ H^0(G,M)=M^G,\qquad
+ H^1(G,M)=
+ \frac{\{f:G\to M\mid f(gh)=f(g)+g f(h)\}}
+      {\{g\mapsto g m-m\mid m\in M\}} .
+\]
+A short exact sequence of coefficients yields a natural long exact
+sequence with connecting map given by the differential of a lifted cochain.
+\end{corollary}
+
+\begin{proof}
+At degrees zero and one the differential in
+Theorem~\ref{res:A02} gives precisely the indicated conditions.
+The functors \(\operatorname{Hom}_{k[G]}(B_n(G),-)\) are exact because
+the \(B_n(G)\) are free. The coefficient sequence thus gives a short
+exact sequence of cochain complexes. If a cocycle in the quotient
+complex is lifted to the middle complex, its differential belongs to
+the kernel complex. A second lift changes this differential by a
+kernel boundary, and a change of cocycle by a boundary permits a
+change of lift by a differential. These are the long exact sequence's
+connecting maps and they commute with maps of coefficient
+sequences. When the coefficient module is injective the groups in
+positive degree vanish, by Proposition~\ref{res:A01}. Thus the
+cochain long exact sequences have the universality proved by
+dimension shifting in Theorem~\ref{res:R09}. The identity on
+invariants extends uniquely to their comparison with the
+right-derived long exact sequences. See
+\cite[Sections 6.1 and 6.4]{weibel}.
+\end{proof}
+
+\section{Restriction, Shapiro, and group extensions}
+
+\begin{theorem}[Shapiro's lemma]\label{res:A04}
+If \(H\leq G\) and \(L\) is a left \(k[H]\)-module, put
+\[
+ \operatorname{Coind}_H^G L=\operatorname{Hom}_{k[H]}(k[G],L),
+ \qquad (g\varphi)(x)=\varphi(xg).
+\]
+For every \(n\) there is a natural isomorphism
+\(H^n(G,\operatorname{Coind}_H^GL)\simeq H^n(H,L)\). On
+homogeneous group cochains the comparison is restriction to tuples
+in \(H\), followed by evaluation at \(1\) on the coefficient.
+\end{theorem}
+
+\begin{proof}
+For any \(G\)-module \(X\), a \(G\)-map from \(X\) to the coinduced
+module has evaluation at \(1\) an \(H\)-map \(X|_H\to L\). Conversely
+an \(H\)-map \(u\) gives \(x\mapsto(a\mapsto u(ax))\), first for
+\(a\in G\) and then by \(k\)-linearity. This map has the required
+\(H\)-linearity in \(a\) and \(G\)-linearity in \(x\) by the given
+action. The two formulas are inverse and commute with both module
+variables. The restriction of \(B_\bullet(G)\) to \(H\) is still a
+free resolution since \(k[G]\) is free as a left \(k[H]\)-module
+on representatives of \(H\backslash G\). Hence the adjunction applied
+in every degree gives the computation on that resolution.
+The inclusion \(B_\bullet(H)\to B_\bullet(G)|_H\) lifts the
+identity of \(k\), so comparison of resolutions
+\cite[Chapter 10]{p103} identifies it with the canonical comparison
+on cohomology. Following evaluation at \(1\) by this comparison
+restricts homogeneous tuples as claimed. The same maps of complexes
+for all \(L\) prove naturality. See \cite[Theorem 6.3.2]{weibel}.
+\end{proof}
+
+\begin{theorem}[The Lyndon--Hochschild--Serre spectral sequence]
+\label{res:A05}
+Let \(N\) be normal in \(G\), \(Q=G/N\), and let \(M\) be a left
+\(k[G]\)-module. There is a natural first-quadrant spectral sequence
+\[
+ E_2^{p,q}=H^p(Q,H^q(N,M))\ \Longrightarrow\ H^{p+q}(G,M)
+\]
+with finite target filtration in each degree. The \(Q\)-action on
+the coefficient is induced from conjugation on \(N\) and the action on
+\(M\). Its two edges are inflation and restriction, the latter
+taking values in the invariants. In particular it gives
+\begin{align*}
+ 0\longrightarrow H^1(Q,M^N)
+  &\xrightarrow{\mathrm{inf}}H^1(G,M)
+  \xrightarrow{\mathrm{res}} H^1(N,M)^Q\\
+  &\xrightarrow{d_2}H^2(Q,M^N)
+  \xrightarrow{\mathrm{inf}}H^2(G,M).
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+The functor \(M\mapsto M^N\) takes values in \(Q\)-modules. An
+element \(g\) sends an \(N\)-invariant element to an \(N\)-invariant
+element by normality, and \(N\) acts trivially there. A \(G\)-map
+from an inflated \(Q\)-module factors uniquely through \(M^N\),
+which proves that this functor is right adjoint to inflation.
+Inflation is exact on underlying modules. Its right adjoint
+sends injectives to injectives: lifting along a monomorphism
+before applying the adjunction is exactly lifting along its
+inflation. In addition, restriction from \(G\) to \(N\) preserves
+injectives because the induction functor \(k[G]\otimes_{k[N]}-\)
+is an exact left adjoint, by freeness as a right \(k[N]\)-module.
+Thus if \(M\to I^\bullet\) is a \(G\)-injective resolution, the
+cohomology of \(C^\bullet=(I^\bullet)^N\) is \(H^q(N,M)\) as a
+\(k\)-module, with a canonical \(Q\)-action.
+
+For the identification of the action, on homogeneous \(N\)-cochains
+use
+\[
+ (g\varphi)(n_0,\ldots,n_j)
+ =g\,\varphi(g^{-1}n_0g,\ldots,g^{-1}n_jg).
+\]
+This respects \(N\)-equivariance and commutes with the deletion
+differential. On degree-zero invariants it acts through the action
+on the coefficient. For \(a\in N\), equivariance identifies this
+cochain operation with pullback by simultaneous right translation
+by \(a\) on homogeneous tuples. A homotopy on the resolution from
+the identity to this translation is
+\[
+ (n_0,\ldots,n_j)\longmapsto
+ \sum_{i=0}^{j}(-1)^i
+ (n_0,\ldots,n_i,n_i a,\ldots,n_j a).
+\]
+Deletions before and after the repeated vertex cancel against the
+corresponding prisms of the boundary faces. The two deletions at
+each transition cancel between consecutive terms, except for the
+two end faces, giving right translation minus identity. This homotopy
+is \(N\)-linear. The action on cohomology thus factors through \(Q\).
+It agrees with the injective-resolution action: use the
+first-quadrant array of homogeneous cochains \(C^j(N,I^r)\).
+Taking its cohomology first in the resolution direction produces
+\(C^*(N,M)\), since the bar terms are free. Taking it first in the
+bar direction produces \((I^\bullet)^N\), since the restricted
+terms are injective. Each of the two natural augmentations is a
+quasi-isomorphism by Theorem~\ref{res:B04}, and both are \(G\)-linear.
+
+Invariants satisfy \((M^N)^Q=M^G\). The hypotheses of
+Theorem~\ref{res:G04} therefore hold for \(M\mapsto M^N\) followed
+by \(Q\)-invariants, and its object case gives the asserted page
+and the finite abutment filtration. To identify the row edge,
+apply derived \(Q\)-invariants to the map
+\((M^N)[0]\to (I^\bullet)^N\). On bar cochains it is compared
+with the inclusion of coefficients and pullback of tuples along
+\(G\to Q\). In detail, for each \(I^r\) pullback gives
+\[
+ C^j(Q,(I^r)^N)\longrightarrow C^j(G,I^r).
+\]
+It commutes with both differentials. Both horizontal computations
+collapse onto degree zero by injectivity of \(I^r\) and \((I^r)^N\).
+There the map is the identity of \((I^r)^G\). The augmentations
+from the \(M\)-cochains are compatible with these maps, which
+identifies the row edge with the usual inflation map. The column
+edge on the models is induced by the inclusion
+\((I^\bullet)^G\to (I^\bullet)^N\), with cohomology in the fixed
+part. This is the usual restriction: restriction of homogeneous
+tuples gives a map \(C^j(G,I^r)\to C^j(N,I^r)\), which restricts
+to precisely that inclusion on degree-zero invariants; the two
+augmentations of the arrays again commute. The five terms then
+follow from Corollary~\ref{res:G05}. See \cite[Section 6.8]{weibel}.
+\end{proof}
+
+\section{The Chevalley--Eilenberg resolution}
+
+Let \(\mathfrak g\) be a Lie algebra over \(k\); its bracket is
+alternating and satisfies Jacobi. Write \(U=U(\mathfrak g)\).
+It is the quotient of the tensor algebra by the relations
+\(xy-yx=[x,y]\). The augmentation kills \(\mathfrak g\); a left
+\(U\)-module determines its underlying Lie module by restriction.
+In this section the underlying \(k\)-module of \(\mathfrak g\) is
+free, with no restriction on the rank. Write
+\(\widehat{\boldsymbol x}_i\) or \(\widehat{\boldsymbol x}_{ij}\)
+for the wedge formed by omitting the indicated entries, preserving
+the order of those that remain.
+
+\begin{proposition}[The Chevalley--Eilenberg complex]\label{res:A06}
+On \(V_n=U\otimes_k \bigwedge^n\mathfrak g\) put
+\begin{align*}
+ \partial(u\otimes x_1\wedge\cdots\wedge x_n)
+ &=\sum_{i=1}^n (-1)^{i-1}u x_i\otimes
+                       \widehat{\boldsymbol x}_i\\
+ &\quad+\sum_{1\leq i<j\leq n}(-1)^{i+j}u\otimes
+                   [x_i,x_j]\wedge \widehat{\boldsymbol x}_{ij}.
+\end{align*}
+These maps form an augmented \(U\)-linear chain complex \(V_\bullet\to k\).
+Under evaluation on \(1\otimes-\), the complex
+\(\operatorname{Hom}_U(V_\bullet,M)\) has degree \(n\) term
+\(C^n(\mathfrak g,M)=
+ \operatorname{Hom}_k(\bigwedge^n\mathfrak g,M)\).
+The coboundary is
+\begin{align*}
+ (df)(x_1,\ldots,x_{n+1})
+ &=\sum_{i=1}^{n+1}(-1)^{i-1}x_i f(\widehat{\boldsymbol x}_i)\\
+ &\quad+\sum_{1\leq i<j\leq n+1}(-1)^{i+j}
+                 f([x_i,x_j],\widehat{\boldsymbol x}_{ij}).
+\end{align*}
+\end{proposition}
+
+\begin{proof}
+The two formulas for the boundary are multilinear and alternating:
+the sign of a removal is the exterior sign of moving the removed
+factor to the front, with an additional minus sign for removal of
+a pair. If two entries are equal, terms omitting neither retain
+them and vanish, and terms omitting just one cancel in pairs.
+The bracket of the two equal entries is zero. Thus the formula
+descends to exterior powers without a restriction on the
+characteristic. Right multiplication of the \(U\)-factor in a
+summand commutes with its left \(U\)-action, which gives
+\(U\)-linearity. The augmentation kills the image of \(\partial:V_1\to V_0\).
+
+For the square of the differential, collect terms by the original
+indices involved. Move them to the front preserving the order of
+every other factor. This multiplies both contributions of a given
+type by the same exterior sign. For two removed entries \(x,y\),
+the two multiplication operations give \(u(xy-yx)\); multiplication
+of the newly created bracket gives \(-u[x,y]\). These cancel by
+the enveloping relation. For a removed \(x\) and a disjoint
+bracket \([y,z]\), the products obtained in the two orders are
+\(-ux\otimes[y,z]\) and \(+ux\otimes[y,z]\), with the remaining
+factors understood. Two disjoint brackets yield opposite terms
+because reversing their orders reverses the order of the two
+bracket factors in the wedge. For a triple \(x,y,z\) used in a
+nested bracket, the contribution is
+\[
+ u\otimes\bigl([[x,y],z]-[[x,z],y]+[[y,z],x]\bigr),
+\]
+wedged with the unused factors. This vanishes by Jacobi. These
+cases exhaust the two applications of the differential, proving
+\(\partial^2=0\). Finally a \(U\)-linear map \(V_n\to M\) is
+determined by its value on \(1\otimes-\), with the inverse given
+by \(u\otimes w\mapsto u f(w)\). Precomposition by \(\partial\)
+now gives the displayed coboundary, naturally in \(M\).
+See \cite[Section 7.7]{weibel}.
+\end{proof}
+
+\paragraph{The ordered monomials in the enveloping algebra.}
+Choose a totally ordered \(k\)-basis of \(\mathfrak g\). In a word
+in basis elements, replace a descending adjacent pair \(yx\) by
+\(xy+[y,x]\), expressing the bracket in the basis. This procedure
+terminates: in each resulting monomial either the word length
+decreases or the length is unchanged and the inversion count
+decreases. A word contains only finitely many letters and each
+bracket is a finite linear combination, irrespective of the size
+of the basis.
+
+Disjoint replacements commute. The only overlap of two different
+applicable replacements is a strictly descending triple \(zyx\).
+Starting with either pair and commuting the remaining descending
+pairs gives the same length-three term \(xyz\). The difference
+of the two expressions of smaller length is
+\[
+ [y,x]\,z-z\,[y,x]+y\,[z,x]-[z,x]\,y+[z,y]\,x-x\,[z,y].
+\]
+Each difference of concatenations of two basis-linear factors
+reduces to their Lie bracket. The resulting sum is
+\([[y,x],z]+[y,[z,x]]+[[z,y],x]=0\) by Jacobi. These checks apply
+with any unused prefix and suffix. Inducting on length and inversion
+count now gives unique linear normal forms. Indeed, to compare the
+first reductions, commute them in the disjoint case and use the
+computed overlap difference in the overlapping case, and normalize
+the resulting terms using the induction hypothesis. The normal form
+map kills every instance of the defining relation multiplied by
+a prefix and suffix, and thus kills the ideal they generate.
+Conversely every replacement is the defining relation in the quotient.
+Ordered words therefore form a \(k\)-basis of \(U\), and the
+associated graded algebra for the word-length filtration is
+\(\operatorname{Sym}_k(\mathfrak g)\): the generators commute in
+the top degree, and the sorted monomials on each side are the
+same basis. This is the free-module case of the
+Poincar\'e--Birkhoff--Witt theorem of \cite[Theorem 7.3.7]{weibel}.
+
+\begin{theorem}[Chevalley--Eilenberg computation of Ext]\label{res:A07}
+If \(\mathfrak g\) is free as a \(k\)-module, then the augmentation
+of Proposition~\ref{res:A06} is a free \(U(\mathfrak g)\)-resolution
+of \(k\). In particular the \(n\)-th cohomology of its cochain
+complex is naturally \(\operatorname{Ext}^n_{U(\mathfrak g)}(k,M)\).
+\end{theorem}
+
+\begin{proof}
+Filter \(V_n\) increasingly by total weight: weight at most \(a\)
+means that \(u\) belongs to the word-length step \(F_{a-n}U\),
+interpreted as zero for \(a-n<0\). The multiplication part of the
+boundary preserves weight and the bracket part lowers it by one.
+The sorted-word description above identifies the associated graded
+complex with the Koszul chain complex on the variables of
+\(\operatorname{Sym}_k(\mathfrak g)\); the differential is the sum
+of signed deletions with multiplication by the deleted variable.
+The augmentation on its degree-zero terms is the quotient map
+by the variables.
+
+For a finite subset of the basis, take the Koszul complex on that
+subset over the whole polynomial ring. Starting with no variables,
+adjoining one variable adds the two-term factor whose boundary
+is multiplication by that variable. Equivalently the larger complex
+is the chain mapping cone of multiplication by the new variable
+on the smaller complex, with the tensor differential sign of
+Chapter~\ref{ch:double-complexes}. The long exact sequence of that
+cone computes its homology: by induction the smaller complex has
+only degree-zero homology, the quotient by its variables, and
+the new variable acts injectively on this polynomial quotient.
+The cone thus has degree-zero homology the quotient by all variables
+in the enlarged subset and zero homology in positive degrees.
+For an infinite basis every wedge chain uses only a finite subset.
+A positive-degree cycle is therefore a boundary in some such
+finite-subset complex. The degree-zero homology of the union is
+the quotient by all variables, namely \(k\). This argument proves
+exactness of the augmented associated graded complex, in every
+weight since the Koszul boundary preserves that weight.
+
+Now let \(z\in V_n\) be a cycle for \(n>0\), or let \(z\in V_0\)
+lie in the kernel of the augmentation. It has finite filtration
+weight. Its leading class is a cycle of the augmented graded
+complex. By graded exactness lift a graded antecedent to a
+chain of one higher degree in the same filtration step. Subtracting
+its boundary from \(z\) lowers its filtration weight. Repeating
+terminates because the filtration in degree \(n\) is zero below
+weight \(n\). The sum of the chosen antecedents shows that \(z\)
+is a boundary. The augmentation is onto, and the modules \(V_n\)
+are free over \(U\), since ordered wedges of basis elements form
+a \(k\)-basis of \(\bigwedge^n\mathfrak g\).
+The resolution computes Ext by Theorem~\ref{res:R11}, with the
+identification of cochains in Proposition~\ref{res:A06}.
+See \cite[Theorem 7.7.2 and Corollary 7.7.3]{weibel}.
+\end{proof}
+
+\begin{corollary}[Low-degree Lie algebra cohomology]\label{res:A08}
+For the coefficients of Proposition~\ref{res:A06},
+\[
+ H^0(\mathfrak g,M)=M^{\mathfrak g},\qquad
+ H^1(\mathfrak g,M)=
+ \frac{\{f:\mathfrak g\to M\text{ \(k\)-linear}\mid
+ f([x,y])=x f(y)-y f(x)\}}
+ {\{x\mapsto x m\mid m\in M\}} .
+\]
+The corresponding differentials are \(dm(x)=xm\) and
+\(df(x,y)=xf(y)-yf(x)-f([x,y])\).
+\end{corollary}
+
+\begin{proof}
+These are the formulas of Proposition~\ref{res:A06} with zero
+and one input in the cochain, respectively. For a degree-zero
+vector \(m\), applying the second formula to \(x\mapsto xm\)
+gives \(x(ym)-y(xm)-[x,y]m=0\), using the defining module
+relation. Thus quotienting cocycles by these boundaries gives
+exactly derivations modulo inner derivations. All identifications
+are natural in \(M\), and Theorem~\ref{res:A07} identifies them
+with the corresponding Ext groups. See
+\cite[Definition 7.4.3 and Theorem 7.4.7]{weibel}.
+\end{proof}
+
+\section{The Lie algebra Hochschild--Serre comparison}
+
+\begin{theorem}[An ideal and its quotient]\label{res:A09}
+Let \(k\) be a field, \(\mathfrak g\) a Lie algebra over \(k\),
+\(\mathfrak h\) an ideal, and \(\mathfrak q=\mathfrak g/\mathfrak h\).
+For any \(\mathfrak g\)-module \(M\) there is a natural first-quadrant
+spectral sequence
+\[
+ E_2^{p,q}=H^p(\mathfrak q,H^q(\mathfrak h,M))
+           \ \Longrightarrow\ H^{p+q}(\mathfrak g,M)
+\]
+with finite target filtration in each degree. Its row and column
+edges are induced by inflation and restriction of Chevalley--Eilenberg
+cochains, and the restriction edge lands in the \(\mathfrak q\)-invariants.
+The five terms in degree one and two are
+\begin{align*}
+ 0\longrightarrow H^1(\mathfrak q,M^{\mathfrak h})
+ &\xrightarrow{\mathrm{inf}}H^1(\mathfrak g,M)
+ \xrightarrow{\mathrm{res}}H^1(\mathfrak h,M)^{\mathfrak q}\\
+ &\xrightarrow{d_2}H^2(\mathfrak q,M^{\mathfrak h})
+ \xrightarrow{\mathrm{inf}}H^2(\mathfrak g,M).
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+Choose a basis of \(\mathfrak h\) and extend it to a basis of
+\(\mathfrak g\). Order the complementary letters before the
+\(\mathfrak h\)-letters. The ordered-word computation preceding
+Theorem~\ref{res:A07} shows that the enveloping algebra of
+\(\mathfrak h\) embeds in \(U(\mathfrak g)\), and that
+\(U(\mathfrak g)\) is free as a right \(U(\mathfrak h)\)-module
+on the ordered complementary words. Hence restriction preserves
+injectives, being right adjoint to exact induction by tensoring
+with that free module. The \(\mathfrak h\)-invariant part of a
+\(\mathfrak g\)-module is a \(\mathfrak q\)-module:
+if \(x\in\mathfrak h\), \(y\in\mathfrak g\), and \(xm=0\) for all
+such \(x\), then \(x(ym)=y(xm)+[x,y]m=0\).
+The invariant functor is right adjoint to exact inflation
+because a map from an inflated module has image annihilated
+by \(\mathfrak h\). It thus sends injectives to injectives.
+The composite with \(\mathfrak q\)-invariants is precisely
+\(\mathfrak g\)-invariants. All three categories of modules
+have enough injectives. Theorems~\ref{res:A07} and~\ref{res:R09}
+identify the derived invariants with the cohomology groups in
+the statement, and Theorem~\ref{res:G04} applies.
+
+For clarity, the quotient action may also be computed on the
+cochains of Proposition~\ref{res:A06}. For \(y\in\mathfrak g\)
+define
+\[
+ (L_y f)(x_1,\ldots,x_j)
+ =y f(x_1,\ldots,x_j)-
+   \sum_{i=1}^{j} f(x_1,\ldots,[y,x_i],\ldots,x_j).
+\]
+The bracket terms are in \(\mathfrak h\). The action property
+follows from the module relation and Jacobi, which identifies the
+commutator of the adjoint operators with the adjoint of the bracket.
+It commutes with the cochain differential: on action terms this
+uses \(y(xm)-x(ym)=[y,x]m\), and on bracket terms it uses that
+\([y,-]\) is a derivation of the bracket. For \(a\in\mathfrak h\)
+put \((\iota_a f)(x_1,\ldots,x_{j-1})=f(a,x_1,\ldots,x_{j-1})\),
+and set \(\iota_a=0\) in degree zero. In
+\(d\iota_a f+\iota_a df\) the action and bracket terms
+on the \(x_i\) alone cancel in pairs after moving \(a\) to the
+first argument. The terms left are the action by \(a\) and
+one term \(-f(x_1,\ldots,[a,x_i],\ldots,x_j)\) per index.
+Thus \(d\iota_a+\iota_a d=L_a\), so the action descends to
+\(\mathfrak q\) on cohomology.
+
+To compare it with the action used by derived invariants, choose
+a \(\mathfrak g\)-injective resolution \(M\to I^\bullet\).
+The double complex \(C^j(\mathfrak h,I^r)\) has the displayed
+\(\mathfrak g\)-action by cochain maps. The same two augmentations
+as in the group proof apply: exactness of
+\(\operatorname{Hom}_k(\bigwedge^j\mathfrak h,-)\) computes the
+resolution-direction cohomology, while restriction preserving
+injectives makes the Chevalley--Eilenberg direction vanish in
+positive degrees for each \(I^r\). By Theorem~\ref{res:B04},
+the total cohomology comparisons are quasi-isomorphisms and
+identify the two actions. This proves the needed identification on
+the second page.
+
+Finally, the quotient map \(\mathfrak g\to\mathfrak q\) pulls
+back alternating cochains with values in \(M^{\mathfrak h}\),
+and its pullback commutes with the differential because it is
+a Lie map compatible with the action on these coefficients.
+Restriction is likewise a cochain map using the ideal inclusion.
+For each \(I^r\), pullback compares
+\(C^*(\mathfrak q,(I^r)^{\mathfrak h})\) with
+\(C^*(\mathfrak g,I^r)\). In degree-zero invariants it is the
+identity on \((I^r)^{\mathfrak g}\); the higher cohomology on
+both sides vanishes by injectivity. Thus it identifies the row
+edge induced by \((M^{\mathfrak h})[0]\to (I^\bullet)^{\mathfrak h}\)
+with inflation, because the comparison commutes with the coefficient
+augmentations induced by \(M\to I^\bullet\). In the same way,
+restriction of cochains
+computes the inclusion of invariant complexes
+\((I^\bullet)^{\mathfrak g}\to(I^\bullet)^{\mathfrak h}\)
+giving the column edge. Apply Corollary~\ref{res:G05} to get
+the five terms. See \cite[Section 7.5]{weibel}.
+\end{proof}
+
+\Needspace{24\baselineskip}
+\section{Coinvariants and coefficient group homology}
+
+\begin{theorem}[Group homology and its coefficient sequence]
+\label{res:A10}
+Let \(G\) be a discrete group, put \(R=k[G]\), and let \(M\) be
+a left \(R\)-module. Its coinvariants are
+\[
+ M_G=M/\langle gm-m:g\in G,\ m\in M\rangle_k
+       \simeq k\otimes_R M,
+\]
+where \(k\) is the trivial right \(R\)-module. For \(n\ge0\) define
+\[
+ H_n(G,M)=\operatorname{Tor}^{R}_n(k,M).
+\]
+These are naturally the left derived functors of coinvariants,
+with \(H_0(G,M)=M_G\). They can be computed from the complex
+\[
+ C_n(G,M)=\bigoplus_{(g_1,\ldots,g_n)\in G^n}M .
+\]
+Write \(m[g_1|\cdots|g_n]\) for a vector in the displayed summand
+and \(C_0(G,M)=M\). Its differential for \(n\ge1\) is
+\begin{align*}
+ \partial\bigl(m[g_1|\cdots|g_n]\bigr)
+ &=g_1^{-1}m[g_2|\cdots|g_n]\\
+ &\quad+\sum_{i=1}^{n-1}(-1)^i
+       m[g_1|\cdots|g_i g_{i+1}|\cdots|g_n]\\
+ &\quad+(-1)^n m[g_1|\cdots|g_{n-1}].
+\end{align*}
+Every short exact sequence \(0\to M'\to M\to M''\to0\) of
+left \(R\)-modules gives a natural long exact sequence
+\begin{align*}
+ \cdots &\longrightarrow H_n(G,M')\longrightarrow H_n(G,M)
+       \longrightarrow H_n(G,M'')\\
+ &\xrightarrow{\delta}H_{n-1}(G,M')\longrightarrow\cdots
+       \longrightarrow M_G\longrightarrow M''_G\longrightarrow0 .
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+In \(k\otimes_R M\), the tensor relation identifies
+\(1\otimes gm\) with \(1g\otimes m=1\otimes m\). Thus
+\(m\mapsto1\otimes m\) factors through \(M_G\). Its inverse sends
+\(a\otimes m\) to \(a[m]\) for \(a\in k\), and the augmentation
+formula for the trivial right action makes this inverse balanced.
+This proves the zeroth identification and shows that coinvariants
+are right exact.
+
+Take the free left bar resolution \(B_\bullet(G)\to k\) of
+\ref{res:A02}. On its underlying \(k\)-modules put
+\(b\cdot g=g^{-1}b\), extending \(k\)-linearly to a right
+\(R\)-action. Inversion reverses products, so
+\((b\cdot g)\cdot h=b\cdot(gh)\). The left-equivariant
+differential is also right-equivariant for this action.
+Call this augmented complex \(B_\bullet^{\mathrm r}(G)\to k\).
+The inverse twist of a free left \(R\)-module is a free right
+\(R\)-module: if its left basis is \((e_\alpha)\), then
+the elements \(e_\alpha\cdot g=g^{-1}e_\alpha\) are the same
+underlying \(k\)-basis as \(g e_\alpha\).
+Its exactness is the exactness already proved for the underlying
+bar complex, so this is a free right resolution of the trivial
+right module.
+
+Use the same free basis
+\([g_1|\cdots|g_n]=(1,g_1,g_1g_2,\ldots,g_1\cdots g_n)\)
+as in \ref{res:A02}, now as a right-module basis.
+Then \(B_n^{\mathrm r}(G)\otimes_R M\) identifies with the
+displayed direct sum by
+\([g_1|\cdots|g_n]\otimes m\mapsto m[g_1|\cdots|g_n]\).
+In the deletion boundary, the first face of this tuple is
+the left translate \(g_1[g_2|\cdots|g_n]\).
+In the twisted module it is
+\([g_2|\cdots|g_n]\cdot g_1^{-1}\); balancing therefore puts
+\(g_1^{-1}\) on the coefficient \(m\). The interior and final
+faces are unchanged. This proves the differential formula,
+and \(\partial^2=0\) also follows from the deletion calculation.
+The exponent \(-1\) in its first term records precisely this
+choice of right-module basis. At degree one the image is
+spanned by \(g^{-1}m-m\), the same submodule as that spanned by
+\(gm-m\), in agreement with the formula for \(H_0\).
+
+To compare with the derived functor in the coefficient variable,
+choose a projective left resolution \(P_\bullet\to M\).
+The first-quadrant double complex
+\(B_p^{\mathrm r}(G)\otimes_R P_q\) has finite diagonals.
+Each \(B_p^{\mathrm r}(G)\) is free, so resolving \(M\) in the
+\(q\)-direction identifies the total homology with the homology
+of \(B_\bullet^{\mathrm r}(G)\otimes_R M\).
+Each \(P_q\) is flat, so resolving \(k\) in the \(p\)-direction
+identifies that same homology with the homology of
+\(k\otimes_R P_\bullet\). These are the two resolution
+comparisons of \ref{res:B05}. The latter complex computes the
+left derived coinvariant functor by \ref{res:R07}; equivalently
+place \(P_q\) in cochain degree \(-q\) as in \ref{res:R14}.
+Thus the bar model, the two computations of Tor, and the derived
+coinvariants agree naturally. Comparison maps between projective
+resolutions are unique up to homotopy, so the comparisons are
+independent of the choices.
+
+Finally, the complex \(C_n(G,-)\) is a direct sum of copies of
+the coefficient module, hence is exact in every degree.
+A coefficient short exact sequence therefore gives a short
+exact sequence of chain complexes. For a cycle \(z''\) in the
+quotient complex, lift it to \(z\) in the middle complex.
+The vector \(\partial z\) belongs to the image of the first
+complex. Its unique preimage is a cycle by injectivity and
+\(\partial^2=0\), and its homology class defines
+\(\delta[z'']\). Changing the lift changes that preimage by a
+boundary; changing the cycle representative by a boundary has
+the same effect after choosing a lifted boundary. These maps
+commute with maps of coefficient sequences and give the
+displayed long exact sequence. To compare the connecting maps
+with the coefficient-derived construction, take a horseshoe of
+projective coefficient resolutions for the three modules.
+The two augmentations of each double complex used above give
+maps of short exact sequences of complexes: the horseshoe is
+degreewise split, and the right bar terms are free. Both maps
+induce the displayed homology isomorphisms. Naturality of the
+lift-and-boundary construction transports the same connecting
+map across both comparisons.
+See \cite[Section 6.1 and Application 6.5.4]{weibel}.
+\end{proof}

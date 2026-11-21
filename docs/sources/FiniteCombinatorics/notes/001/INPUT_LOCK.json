@@ -1,0 +1,93 @@
+{
+  "paper_sha256": "50ebd73d6583a912430d1707bea8752e83f8ae1936b81a588cab33132cb619d8",
+  "pdf_sha256": "ebb373bb0099c6a2b948d6fb31703b6757aa34cb9b36f71fa126fcf498009019",
+  "source_map_sha256": "72d12e6899ea598ed6625c84295daacc819f5530d868f39ff5a6b02f62fd5e74",
+  "verified_sources": {
+    "unpublished-input-01": "9d084059496f5008bfa6bb847faec35401f9e2ef1493659bc629af7341f61b76",
+    "unpublished-input-02": "1d7619b9a393e32232e0791ebef7083cafec7fb3247aa3997b665c225d28d412",
+    "unpublished-input-03": "4008b246c1f939ff0746702036b1e4337cdd55f3e6c0b5c6c69c7749010a1566",
+    "P2-04_Finite_Combinatorics_Notes.tex": "5fbb124309421f3aa358b116464b9a7d87110f7237baf6e986a6cd81c24df8ae",
+    "parts/ch01.tex": "0b175cf00199cb9eda08398abf1b28a3e0e2de6c79f29ee433424ae2ec919e67",
+    "parts/ch02.tex": "1fdf4818004de3bd471137e29f6823210859c521d61d2fc96ec63a7ea3cbfea2",
+    "parts/ch03.tex": "cc8c3d3d1311e14490fbe458aeeaa6e7e80e4afc0121c438525901522b9a2b63",
+    "parts/ch04.tex": "b73b9938151dcd721466395b20f2b5f200dfd55b17971cb3951f8dcfc32ea305",
+    "parts/ch05.tex": "e1a412f9256c102bdcd7dfbffd7dc65ec2fddfbcbf31f6c589c1fdee2cb19b0e",
+    "parts/ch06.tex": "011a4242855465b48f2b4cf08eb3e7c678abfca0e4659557678610a8fc484162",
+    "parts/ch07.tex": "c2ea410d464472db008c67a432329fd7b996aa03933615930b3334583ab11425",
+    "parts/ch08.tex": "d93dc8ad039d1d2a769f287e1755ae326b16c11dfcc259bda65542e4d8fbe38d",
+    "parts/ch09.tex": "6df3499ed1e6fe4a8ee6e839a89f874949aefa6da1657ab8e191aeec173bdd69",
+    "parts/ch10.tex": "05eb877662cbe23a2f59e983d5796c5e52a685d7ef6056574941d331e5394908",
+    "parts/ch11.tex": "067a9f83dccac5ed8925533b138a5011a7772cf5db7a0dc7369aba42484d1302",
+    "parts/ch12.tex": "32b241993d957572a597ce69acce124f1346defcc08ebc9e17cf1fc03dafcc9f",
+    "unpublished-input-17": "71e01aaa53846e272ebb8148a605c06b33da7ed538299a57f391e13b749a4183",
+    "unpublished-input-18": "115d9cde3751b425f03ce4956cd11f99c166bbe7dfdf4c8e076efc55cefcd0d0",
+    "unpublished-input-19": "c3e994276e2903aa19eda9ba25fe099cf2546f96d46badfea0af2f162f5d38bf",
+    "docs/sources/d05-notes.tex": "81d4236233819191fe3c01375bf1199bf121789beb6fafc957955548e5396a1f",
+    "MathGenome/Internal/D05/M15/DeterminantLine/CauchyBinet.lean": "ea532dccc2c7281c8bfdf7173b334a4c6ef6cd8ecb862fa93055e03560e8c229",
+    "MathGenome/Internal/D05/M10/Semisimple/ScalarExtension.lean": "62dbe722ca754685d9c40e93222295218c49b7e1e4e542a3bcd239e114f4f1a7",
+    "MathGenome/Internal/D07/Ch05/OrbitStabilizerCounting.lean": "f66a0a9b4997ce518233e680e2399204aef956e11b9246d5b52a221d770e97dc",
+    "output/pdf/P2-04_Finite_Combinatorics_Notes.pdf": "ebb373bb0099c6a2b948d6fb31703b6757aa34cb9b36f71fa126fcf498009019"
+  },
+  "chapter_ranges_in_paper": {
+    "parts/ch01.tex": [
+      83,
+      349
+    ],
+    "parts/ch02.tex": [
+      350,
+      623
+    ],
+    "parts/ch03.tex": [
+      624,
+      794
+    ],
+    "parts/ch04.tex": [
+      795,
+      988
+    ],
+    "parts/ch05.tex": [
+      989,
+      1159
+    ],
+    "parts/ch06.tex": [
+      1160,
+      1546
+    ],
+    "parts/ch07.tex": [
+      1547,
+      1813
+    ],
+    "parts/ch08.tex": [
+      1814,
+      2089
+    ],
+    "parts/ch09.tex": [
+      2090,
+      2496
+    ],
+    "parts/ch10.tex": [
+      2497,
+      2865
+    ],
+    "parts/ch11.tex": [
+      2866,
+      3291
+    ],
+    "parts/ch12.tex": [
+      3292,
+      3425
+    ]
+  },
+  "chapters": 12,
+  "groups": 80,
+  "original_contracts": 49,
+  "pdf_pages": 54,
+  "results_by_kind": {
+    "proposition": 12,
+    "theorem": 57,
+    "definition": 9,
+    "lemma": 4,
+    "corollary": 3
+  },
+  "published_source_map_sha256": "aae263a35e3050cb7b8dc0e640b33ee3f4461a4a00e61f5d6903ffa4a3404111"
+}

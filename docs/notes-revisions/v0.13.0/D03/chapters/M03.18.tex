@@ -1,0 +1,311 @@
+\chapter{Classical special integrals}
+\label{module:M03.18}
+\SourceRef{Zorich II, section 17.3; Rudin, section 8, Gamma-function part;
+Olver, chapter 2 (real positive arguments only)}
+
+\KEntry{K03.18.beta_definition}{The Beta integral and its domain}
+\begin{definition}
+For $p,q>0$ put
+\[
+ B(p,q)=\int_0^1 t^{p-1}(1-t)^{q-1}\dd t.
+\]
+This is an improper integral, with the two endpoints checked independently.
+\end{definition}
+\begin{proof}[Existence and symmetry]
+On $(0,1/2]$ the second factor is bounded above and below by positive constants,
+so convergence there follows from $\int_0^{1/2}t^{p-1}\dd t<\infty$.
+On $[1/2,1)$ use the same argument with $(1-t)^{q-1}$. Both tests require the
+indicated positive parameter; no linked truncation is being used. The integrand
+is positive, so $B(p,q)>0$. Substitution $u=1-t$ first on regular compact
+subintervals and then at each endpoint gives $B(p,q)=B(q,p)$.
+\end{proof}
+
+\KEntry{K03.18.beta_recurrence}{Beta recurrences}
+\begin{proposition}
+For $p,q>0$,
+\[
+ B(p+1,q)=\frac p{p+q}B(p,q),\qquad
+ B(p,q+1)=\frac q{p+q}B(p,q),\qquad B(p,1)=\frac1p.
+\]
+Consequently, for integers $n\geq0$,
+\begin{equation}\label{eq:beta-integer}
+ B(s,n+1)=\frac{n!}{s(s+1)\cdots(s+n)}\quad(s>0).
+\end{equation}
+\end{proposition}
+\begin{proof}
+Adding the two integrands gives $B(p+1,q)+B(p,q+1)=B(p,q)$.
+The derivative of $t^p(1-t)^q$ is
+$pt^{p-1}(1-t)^q-qt^p(1-t)^{q-1}$. Integrating on $[\eta,1-\delta]$ and sending
+$\eta,\delta$ independently to zero gives
+$pB(p,q+1)=qB(p+1,q)$, since the boundary values tend to zero and both
+derivative terms are integrable. Solving these two linear equations gives the
+recurrences. Direct evaluation of $\int_0^1t^{p-1}\dd t$ gives $1/p$.
+Iterate the recurrence in the second parameter to obtain
+\eqref{eq:beta-integer}; this is finite induction, not a Gamma identity.
+\end{proof}
+
+\KEntry{K03.18.gamma_definition}{The real Gamma integral}
+\begin{definition}
+For $s>0$ define
+\[
+ \Gamma(s)=\int_0^\infty t^{s-1}e^{-t}\dd t.
+\]
+\end{definition}
+\begin{proof}[Existence and positivity]
+On $(0,1]$ the integrand is bounded by $t^{s-1}$, whose improper integral is
+$1/s$. At infinity every fixed power is eventually dominated by an exponential:
+choose an integer $m>s$ and use the exponential series, or
+\KRef{K03.02.growth_scale}, to bound $t^{s-1}e^{-t}\leq C e^{-t/2}$ for
+$t\geq1$. The latter function has a finite integral. The two positive improper
+pieces therefore converge independently. The integrand is strictly positive on
+every nonempty compact subinterval of $(0,\infty)$, so $\Gamma(s)>0$.
+\end{proof}
+
+\KEntry{K03.18.gamma_recurrence}{Recurrence and factorial values}
+\begin{theorem}
+For $s>0$, $\Gamma(s+1)=s\Gamma(s)$; moreover $\Gamma(1)=1$ and
+$\Gamma(n+1)=n!$ for every integer $n\geq0$.
+\end{theorem}
+\begin{proof}
+On $[\eta,R]$ integrate $t^se^{-t}$ by parts:
+\[
+ \int_\eta^R t^se^{-t}\dd t
+ =[-t^se^{-t}]_\eta^R+s\int_\eta^R t^{s-1}e^{-t}\dd t.
+\]
+The upper boundary tends to zero by exponential domination; the lower boundary
+tends to zero since $s>0$. Both integrals exist by the preceding entry, so the
+recurrence follows from separate endpoint limits. The elementary integral of
+$e^{-t}$ is $1$ on $(0,\infty)$. Induction now proves the factorial formula,
+including $0!=1$.
+\end{proof}
+
+\KEntry{K03.18.gamma_euler_limit}{Euler's one-variable limit}
+\begin{theorem}
+For every $s>0$,
+\begin{equation}\label{eq:gamma-euler}
+ \Gamma(s)=\lim_{n\to\infty}n^sB(s,n+1)
+ =\lim_{n\to\infty}\frac{n!n^s}{s(s+1)\cdots(s+n)}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Substitute $u=nt$ in the Beta integral:
+\[
+ n^sB(s,n+1)=\int_0^n u^{s-1}(1-u/n)^n\dd u.
+\]
+For $0\leq u\leq n$ the logarithmic inequality $\log(1-v)\leq-v$ gives
+$(1-u/n)^n\leq e^{-u}$; the value at $u=n$ is interpreted by continuity.
+On every fixed $[\eta,R]\subset(0,\infty)$,
+$n\log(1-u/n)=-u+O(R^2/n)$ uniformly, so the integrands tend uniformly to
+$u^{s-1}e^{-u}$. This uniform logarithmic estimate follows, for example, by
+integrating $1/(1-v)-1$ on $0\leq v\leq R/n$; its absolute integral is at most
+$2(R/n)^2$ for $n\geq2R$.
+
+Here is the full improper-limit argument. On $(0,\eta)$ both nonnegative
+integrands are bounded by $u^{s-1}$, so their integrals are at most $\eta^s/s$.
+For $u\geq R$ their integrals are bounded by the tail of
+$u^{s-1}e^{-u}$, uniformly in $n$, with the first integrand set to zero for
+$u>n$. Given $\eps>0$, choose $\eta$ small and $R$ large to make these endpoint
+contributions below $\eps$, and then use uniform convergence on $[\eta,R]$.
+This proves the limit with ordinary proper integrals and tail estimates.
+Equation \eqref{eq:beta-integer} supplies the product formula. No
+multidimensional integration theorem is used.
+\end{proof}
+
+\KEntry{K03.18.gamma_regular}{Differentiation of Gamma}
+\begin{theorem}
+The function $\Gamma$ is $C^\infty$ on $(0,\infty)$ and, for $k\geq0$,
+\[
+ \Gamma^{(k)}(s)=\int_0^\infty t^{s-1}(\log t)^k e^{-t}\dd t.
+\]
+\end{theorem}
+\begin{proof}
+Fix $0<\alpha\leq s\leq\beta<\infty$. On $(0,1]$ the absolute value of the
+$k$th parameter derivative is at most
+$t^{\alpha-1}|\log t|^k$. Substitution $t=e^{-v}$ turns its integral into
+$\int_0^\infty e^{-\alpha v}v^k\dd v$, which converges by the Gamma
+existence estimate (or repeated integration by parts). On $[1,\infty)$ use
+$t^{\beta-1}(\log t)^ke^{-t}\leq C_k e^{-t/2}$. These two integrable bounds
+also apply to the next derivative. The tails are uniformly small in $s$.
+On each compact $t$-interval the integrands and their parameter derivatives are
+jointly continuous. Apply \KRef{K03.14.improper_derivative} separately at the
+two ends, and iterate. The same uniform-tail argument gives continuity of each
+derived integral. Since every positive parameter lies in such an interval,
+the asserted smoothness follows.
+\end{proof}
+
+\KEntry{K03.18.gamma_logconvex}{Log-convexity}
+\begin{theorem}
+$\log\Gamma$ is convex on $(0,\infty)$.
+\end{theorem}
+\begin{proof}
+For $0<\theta<1$ write
+\[
+ t^{(1-\theta)p+\theta q-1}e^{-t}
+ =(t^{p-1}e^{-t})^{1-\theta}(t^{q-1}e^{-t})^\theta.
+\]
+Holder's inequality on $[\eta,R]$, with exponents $1/(1-\theta)$ and
+$1/\theta$, bounds this integral by
+$(\int_\eta^R t^{p-1}e^{-t})^{1-\theta}
+ (\int_\eta^R t^{q-1}e^{-t})^\theta$.
+All three positive integrals have independent finite endpoint limits, so passage
+to those limits gives
+$\Gamma((1-\theta)p+\theta q)\leq\Gamma(p)^{1-\theta}\Gamma(q)^\theta$.
+Taking logarithms is legitimate by positivity. The cases $\theta=0,1$ are
+equalities. This is exactly convexity, using only the properly proved
+Riemann integral inequality \KRef{K03.09.holder}.
+\end{proof}
+
+\KEntry{K03.18.bohr_mollerup}{The Bohr--Mollerup characterization}
+\begin{theorem}
+If $F:(0,\infty)\to(0,\infty)$ satisfies $F(1)=1$,
+$F(x+1)=xF(x)$ and convexity of $\log F$, then $F=\Gamma$.
+\end{theorem}
+\begin{proof}
+Put $G=\log F$. Recurrence gives $F(n)=(n-1)!$.
+For $0<x\leq1$ and integer $n\geq2$, the ordered-secant-slope inequalities
+for the convex function $G$ yield
+\[
+ \log(n-1)\leq\frac{G(n+x)-G(n)}x\leq\log n.
+\]
+The upper inequality uses $[n,n+x]\subset[n,n+1]$; the lower one compares
+with $[n-1,n]$. Since
+$F(n+x)=F(x)\prod_{j=0}^{n-1}(x+j)$, exponentiating gives
+\[
+ \frac{(n-1)!(n-1)^x}{\prod_{j=0}^{n-1}(x+j)}
+ \leq F(x)\leq
+ \frac{(n-1)!n^x}{\prod_{j=0}^{n-1}(x+j)}.
+\]
+The left member tends to $\Gamma(x)$ by \eqref{eq:gamma-euler}; the quotient
+of the upper and lower members is $(n/(n-1))^x\to1$. Squeeze proves
+$F(x)=\Gamma(x)$ on $(0,1]$, and recurrence extends it to all positive $x$.
+Gamma itself has all three properties, already proved above. Recurrence and
+normalization alone are not unique: multiplication of Gamma by a positive
+nonconstant period-one function equal to one at $1$ preserves them.
+\end{proof}
+
+\KEntry{K03.18.beta_gamma}{The Beta--Gamma identity without a hidden double integral}
+\begin{theorem}
+For $p,q>0$,
+\[
+ B(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}.
+\]
+\end{theorem}
+\begin{proof}
+The Beta recurrence gives
+$B(p+n,q)=(p)_n B(p,q)/(p+q)_n$, where
+$(p)_n=p(p+1)\cdots(p+n-1)$.
+We first prove $n^qB(p+n,q)\to\Gamma(q)$.
+With $u=n(1-t)$ the left member is
+\[
+ \int_0^n u^{q-1}(1-u/n)^{n+p-1}\dd u.
+\]
+For $n\geq2$, $n+p-1\geq n/2$, so this integrand is bounded by
+$u^{q-1}e^{-u/2}$. On each $[\eta,R]$ it converges uniformly to
+$u^{q-1}e^{-u}$. At zero use the bound $u^{q-1}$, and at infinity use
+the displayed exponential bound. The three-interval argument in
+\KRef{K03.18.gamma_euler_limit} therefore proves the claimed limit.
+
+The quotient of the Euler product approximants for $\Gamma(p+q)$ and
+$\Gamma(p)$, with index $n-1$, shows
+\[
+ (n-1)^q\frac{(p)_n}{(p+q)_n}\longrightarrow
+ \frac{\Gamma(p+q)}{\Gamma(p)}.
+\]
+Every quantity is positive and the limit is nonzero, so inversion and
+$(n/(n-1))^q\to1$ give
+$\frac{(p+q)_n}{n^q(p)_n}\to\Gamma(p)/\Gamma(p+q)$.
+Multiply this by the established limit of $n^qB(p+n,q)$ and use the exact
+finite recurrence identity. This yields the formula without a polar,
+Jacobian or full Fubini theorem.
+\end{proof}
+
+\KEntry{K03.18.wallis}{Wallis integrals and the product}
+\begin{theorem}
+Let $I_n=\int_0^{\pi/2}\sin^n x\dd x$, $n\geq0$. Then $I_0=\pi/2$,
+$I_1=1$, $I_n=(n-1)I_{n-2}/n$ for $n\geq2$, and
+\[
+ \prod_{k=1}^n\frac{(2k)^2}{(2k-1)(2k+1)}\longrightarrow\frac\pi2.
+\]
+Writing $c_n=\binom{2n}{n}/4^n$, we also have
+$\sqrt n\,c_n\to1/\sqrt\pi$.
+\end{theorem}
+\begin{proof}
+The first two integrals follow from elementary primitives. Integrating
+$\sin^{n-1}x\sin x$ by parts for $n\geq2$ gives
+$I_n=(n-1)\int\sin^{n-2}x\cos^2x\dd x=(n-1)(I_{n-2}-I_n)$.
+Induction gives
+\[
+ I_{2n}=\frac\pi2c_n,\qquad I_{2n+1}=\frac1{(2n+1)c_n}.
+\]
+Since $0\leq\sin x\leq1$,
+$I_{2n+2}\leq I_{2n+1}\leq I_{2n}$.
+The quotient $I_{2n+2}/I_{2n}=(2n+1)/(2n+2)\to1$, hence
+$I_{2n+1}/I_{2n}\to1$. This quotient equals $2W_n/\pi$, where $W_n$
+is the displayed finite product, proving Wallis' limit. Further,
+$I_{2n}I_{2n+1}=\pi/[2(2n+1)]$. Combined with their quotient limit this
+gives $I_{2n}\sim\sqrt\pi/(2\sqrt n)$ and the stated limit for $c_n$.
+\end{proof}
+
+\KEntry{K03.18.gaussian}{The Gaussian integral by a one-variable route}
+\begin{theorem}
+$\Gamma(1/2)=\sqrt\pi$ and $\int_{-\infty}^{\infty}e^{-x^2}\dd x=\sqrt\pi$.
+\end{theorem}
+\begin{proof}
+The Euler approximant at $s=1/2$ simplifies algebraically to
+\[
+ \frac{n!\sqrt n}{(1/2)(3/2)\cdots(n+1/2)}
+ =\frac{2\sqrt n}{(2n+1)c_n}\longrightarrow\sqrt\pi
+\]
+by Wallis' limit. It therefore equals $\Gamma(1/2)$ in the limit.
+Substitution $t=x^2$ on positive regular intervals gives
+$\Gamma(1/2)=2\int_0^\infty e^{-x^2}\dd x$, including the endpoint limits.
+Evenness gives the two-sided formula. Both tails are absolutely convergent;
+there is no principal-value interpretation and no use of a two-dimensional
+coordinate substitution.
+\end{proof}
+
+\KEntry{K03.18.dirichlet_integral}{The Dirichlet sine integral}
+\begin{theorem}
+With $\sin x/x$ assigned its continuous value $1$ at zero,
+\[
+ \int_0^\infty\frac{\sin x}{x}\dd x=\frac\pi2.
+\]
+\end{theorem}
+\begin{proof}
+For $a>0$ define $J(a)=\int_0^\infty e^{-ax}\sin x/x\dd x$.
+Near zero the integrand is bounded; at infinity it is absolutely integrable.
+On a compact parameter interval $a\geq\alpha>0$, the parameter derivative
+is $-e^{-ax}\sin x$, bounded by $e^{-\alpha x}$. Thus the proved improper
+parameter differentiation rule gives
+\[
+ J'(a)=-\int_0^\infty e^{-ax}\sin x\dd x=-\frac1{1+a^2}.
+\]
+The last integral follows by evaluating the primitive
+$e^{-ax}(-a\sin x-\cos x)/(1+a^2)$ at zero and infinity.
+Also $|J(a)|\leq\int_0^\infty e^{-ax}\dd x=1/a$, since $|\sin x|\leq x$.
+The function $\arctan(1/a)$ has the same derivative and tends to zero as
+$a\to\infty$; constancy of their difference gives $J(a)=\arctan(1/a)$.
+
+It remains to remove damping, rather than assume it legitimate. For $a\geq0$
+and $R>0$, set $g_a(x)=e^{-ax}/x$. It is nonnegative decreasing, with
+$g_a(R)\leq1/R$. The primitive $F_R(y)=\int_R^y\sin x\dd x$ has absolute
+value at most $2$. Integration by parts gives, for $S>R$,
+\[
+ \left|\int_R^S g_a(x)\sin x\dd x\right|
+ \leq2g_a(S)+2(g_a(R)-g_a(S))\leq\frac2R.
+\]
+The same bound holds on the infinite tail, uniformly even at $a=0$;
+Dirichlet convergence at $a=0$ is included. On $[0,R]$ the damped integrand
+converges uniformly to $\sin x/x$ as $a\downarrow0$. Split at $R$, make both
+tails small, and then pass to the limit on the compact interval. Therefore
+the undamped integral is $\lim_{a\downarrow0}J(a)=\pi/2$.
+\end{proof}
+
+\KEntry{K03.18.other_special_functions}{Boundary of the special-function supplement}
+\begin{remark}[Routing record, not a new asserted theorem]
+Incomplete Gamma, error and Fresnel integrals can be studied after their specific
+convergence and error estimates are supplied. General Bessel, Airy, Legendre and
+hypergeometric theories belong to D13/D24. Their names here do not claim that
+their defining equations, existence theory or asymptotic formulas have been proved
+in these notes. No proof above depends on such a theory.
+\end{remark}

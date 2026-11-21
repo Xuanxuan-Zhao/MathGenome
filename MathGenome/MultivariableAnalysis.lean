@@ -1,0 +1,16 @@
+import MathGenome.MultivariableAnalysis.Topics.D04.C01
+import MathGenome.MultivariableAnalysis.Topics.D04.C02
+import MathGenome.MultivariableAnalysis.Topics.D04.C03
+import MathGenome.MultivariableAnalysis.Topics.D04.C04
+import MathGenome.MultivariableAnalysis.Topics.D04.C05
+import MathGenome.MultivariableAnalysis.Topics.D04.C06
+import MathGenome.MultivariableAnalysis.Topics.D04.C07
+import MathGenome.MultivariableAnalysis.Topics.D04.C08
+import MathGenome.MultivariableAnalysis.Topics.D04.C09
+import MathGenome.MultivariableAnalysis.Topics.D04.C10
+import MathGenome.MultivariableAnalysis.Topics.D04.C11
+import MathGenome.MultivariableAnalysis.Topics.D04.C12
+import MathGenome.MultivariableAnalysis.Topics.D04.C13
+import MathGenome.MultivariableAnalysis.Topics.D04.C14
+import MathGenome.MultivariableAnalysis.Topics.D04.C15
+import MathGenome.MultivariableAnalysis.Topics.D04CornerCompletion

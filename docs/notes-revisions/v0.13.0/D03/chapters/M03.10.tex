@@ -1,0 +1,335 @@
+\chapter{Improper integrals and tails}
+\SourceRef{Zorich I, Section 6.5, PDF pp. 413--421; Apostol, Section 10.13; Zorich II, Section 17.2 for the quantitative tail form}
+All improper integrals below require proper Riemann integrability on each
+regular compact truncation. Infinite endpoints and finite singular endpoints
+are treated by limits, not by assigning an integrand value at a singularity.
+
+\KEntry{K03.10.one_endpoint}{One singular endpoint}
+\begin{definition}
+Let $b\in\R\cup\{+\infty\}$ and $a<b$. If $f$ is properly integrable
+on every $[a,t]$, $a<t<b$, define
+\[\int_a^bf=\lim_{t\to b-}\int_a^tf
+\]
+only when this limit is finite in $\R$ or $\C$. For $b=+\infty$ the
+notation means $t\to+\infty$. Define a singular left endpoint by the
+corresponding right-hand limit, with orientation as in module 08.
+Infinite divergence is a separate conclusion, not convergence to a scalar.
+\end{definition}
+
+\KEntry{K03.10.several_endpoints}{Independent singular endpoints}
+\begin{definition}
+For $f$ locally integrable on $(a,b)$, choose $c\in(a,b)$ and define
+$\int_a^bf=\int_a^cf+\int_c^bf$ only if both terms converge
+independently. If there are finitely many interior singularities, split
+at each and require both adjacent one-sided integrals separately.
+\end{definition}
+\begin{proposition}
+Existence and value are independent of all regular splitting points.
+\end{proposition}
+\begin{proof}
+For $c<d$ in a regular region and a left truncation $u<c$,
+$\int_u^df=\int_u^cf+\int_c^df$. The last term is a fixed proper
+integral, so the limit for one splitting point exists if and only if
+the other does, with their values differing by that proper integral.
+The same calculation for right truncations cancels this difference in
+the total. Repeat for every regular component. This argument never
+links two singular truncation parameters, so it does not authorize
+cancellation between divergent endpoint terms.
+\end{proof}
+
+\KEntry{K03.10.cauchy}{The Cauchy tail criterion}
+\begin{theorem}
+$\int_a^bf$ converges if and only if for every $\eps>0$ there is a
+regular $r<b$ such that
+\[\left|\int_u^vf\right|<\eps\qquad(r<u<v<b).
+\]
+At infinity replace $r<b$ by a sufficiently large $r$.
+\end{theorem}
+\begin{proof}
+Write $H(t)=\int_a^tf$. Then $\int_u^vf=H(v)-H(u)$ by proper
+additivity. A finite limit of $H$ makes these differences small.
+Conversely choose any increasing cofinal sequence $t_n\to b$.
+The tail condition makes $H(t_n)$ Cauchy, hence convergent to a scalar
+$L$. Given $\eps$, choose a threshold for differences below $\eps/2$
+and then a $t_n$ beyond it with $|H(t_n)-L|<\eps/2$. Every sufficiently
+late $t$ has $|H(t)-H(t_n)|<\eps/2$ (reverse the order if necessary),
+so $H(t)\to L$. Left endpoint versions follow by reversing orientation.
+\end{proof}
+
+\KEntry{K03.10.nonnegative}{Nonnegative improper integrals}
+\begin{theorem}
+For real locally integrable $f\ge0$ on $[a,b)$, the partial integrals
+$H(t)=\int_a^tf$ increase. They converge finitely if and only if they
+are bounded above; otherwise they tend to $+\infty$.
+\end{theorem}
+\begin{proof}
+Order and additivity give $H(v)-H(u)=\int_u^vf\ge0$.
+If the set of partial values has finite supremum $L$, choose a partial
+value above $L-\eps$; all later values lie in $[L-\eps,L]$, proving
+convergence. If unbounded, for each $A$ choose one value above $A$;
+all later values stay above $A$, proving divergence to $+\infty$.
+\end{proof}
+
+\KEntry{K03.10.comparison}{Comparison and limit comparison}
+\begin{theorem}
+For eventually $0\le f\le g$, convergence of $\int g$ implies
+convergence of $\int f$. If $f,g$ are eventually positive and
+$f(x)/g(x)\to c\in(0,\infty)$ at the singular endpoint, their
+improper integrals converge or diverge together.
+\end{theorem}
+\begin{proof}
+Discard a regular initial segment, which contributes only a finite proper
+value. Order bounds partial integrals of $f$ by those of $g$, so the
+nonnegative boundedness criterion proves the first assertion. For the
+second, sufficiently late points satisfy
+$(c/2)g\le f\le(3c/2)g$. Apply comparison in both directions.
+Eventual positivity is needed for this order argument; the ratio test
+does not make the same conclusion for arbitrary sign-changing functions.
+\end{proof}
+
+\KEntry{K03.10.absolute}{Absolute and conditional convergence}
+\begin{definition}
+An improper integral is absolutely convergent if $\int|f|$ converges.
+It is conditionally convergent if $\int f$ converges and $\int|f|$
+does not. These definitions apply separately at every singular endpoint.
+\end{definition}
+\begin{theorem}
+Absolute convergence implies convergence for real or complex scalars,
+and $|\int f|\le\int|f|$.
+\end{theorem}
+\begin{proof}
+On every regular compact interval $|f|$ is integrable by module 08 and
+$|\int_u^vf|\le\int_u^v|f|$. Cauchy tails of the latter therefore
+give Cauchy tails of the former. Scalar completeness proves convergence;
+passing to the limit in the finite norm inequality proves the value bound.
+The oscillatory example below proves that the converse fails.
+\end{proof}
+
+\KEntry{K03.10.p_test}{Power and logarithmic tests}
+\begin{theorem}
+For real $p$,
+\[\int_1^\infty x^{-p}\dd x<\infty\iff p>1,\qquad
+\int_0^1 x^{-p}\dd x<\infty\iff p<1.
+\]
+For $A>1$, $\int_A^\infty\dd x/(x(\log x)^q)$ converges exactly
+when $q>1$.
+\end{theorem}
+\begin{proof}
+For $p\ne1$ a truncation from $u$ to $v$ equals
+$(v^{1-p}-u^{1-p})/(1-p)$, by the proved power derivative and
+Newton--Leibniz. At infinity $v^{1-p}$ tends to zero for $p>1$
+and to infinity for $p<1$; the resulting finite value for $p>1$ is
+$1/(p-1)$. At zero $u^{1-p}$ tends to zero exactly for $p<1$,
+giving $1/(1-p)$, and diverges for $p>1$.
+For $p=1$, truncations are $\log v-\log u$, divergent at both
+relevant endpoints. For the logarithmic test make the proper monotone
+substitution $y=\log x$, $\dd y=\dd x/x$ on each $[A,R]$.
+Since $\log R\to\infty$ this becomes the power test
+$\int_{\log A}^\infty y^{-q}\dd y$. The starting point $A>1$
+ensures positive logarithm and no extra singularity at $1$.
+\end{proof}
+
+\KEntry{K03.10.integral_test}{Series and integrals}
+\begin{theorem}
+If $f:[1,\infty)\to[0,\infty)$ is nonincreasing, then
+$\sum_{n=1}^{\infty}f(n)$ converges if and only if $\int_1^\infty f$
+does. If they converge, for every integer $N\ge1$,
+\[\int_{N+1}^{\infty}f\le\sum_{n=N+1}^{\infty}f(n)
+\le\int_N^{\infty}f.
+\]
+\end{theorem}
+\begin{proof}
+Monotone bounded functions are integrable on each finite interval.
+For integer $n$, monotonicity gives
+$f(n+1)\le\int_n^{n+1}f\le f(n)$.
+Sum over consecutive unit intervals. Boundedness of the nonnegative
+partial sums is equivalent to boundedness of partial integrals (an
+arbitrary truncation lies between two neighboring integer truncations).
+The respective monotone convergence criteria prove equivalence.
+Summing the shifted inequalities from $N$ to a finite upper integer
+and then taking its limit gives both stated remainder bounds.
+\end{proof}
+
+\KEntry{K03.10.dirichlet}{Dirichlet's oscillation test}
+\begin{lemma}[Proper parts formula for an accumulation primitive]
+If $f$ is Riemann integrable on $[r,s]$, $F(x)=\int_r^xf$, and
+$g\in C^1([r,s])$, then
+\[\int_r^sfg=F(s)g(s)-\int_r^sFg'.
+\]
+\end{lemma}
+\begin{proof}
+First suppose $g$ is real-valued; $f$ and $F$ may still be complex-valued. For a partition write $F_i=F(x_i)$, $g_i=g(x_i)$.
+The difference between $\int fg$ and
+$\sum_i g_{i-1}(F_i-F_{i-1})$ is at most
+$\|f\|_\infty(s-r)\omega_g(|P|)\to0$.
+Finite summation by parts writes the latter as
+$F(s)g(s)-\sum_iF_i(g_i-g_{i-1})$, since $F(r)=0$.
+By the mean value theorem $g_i-g_{i-1}=g'(\eta_i)\Delta x_i$.
+Replace $F_i$ by $F(\eta_i)$ with error at most
+$(s-r)\|g'\|_\infty\omega_F(|P|)\to0$.
+The remaining sum tends to $\int Fg'$, proving the formula.
+For complex-valued $g=u+iv$, apply the proved real-$g$ identity separately to $u$ and $v$ and combine the two identities by complex linearity of the proper integral. This supplies the complex case without a false exact complex mean-value tag.
+This proof is necessary because $F'=f$ need not hold at discontinuities
+of $f$; a merely integrable $f$ does not make $F$ a $C^1$ primitive.
+\end{proof}
+\begin{theorem}
+Let $f$ be locally Riemann integrable on $[a,\infty)$ with bounded
+accumulation $A(x)=\int_a^xf$, $|A(x)|\le C$. If real $g$ is $C^1$,
+monotone and tends to zero, then $\int_a^\infty fg$ converges.
+\end{theorem}
+\begin{proof}
+A monotone function tending to zero has constant sign, and $h=|g|$
+is nonincreasing with $h\to0$. For $R<S$ the primitive
+$F_R(x)=\int_R^xf=A(x)-A(R)$ satisfies $|F_R|\le2C$.
+The lemma, with $h'\le0$, gives
+\[\left|\int_R^Sfh\right|
+\le2Ch(S)+2C\int_R^S(-h')=2Ch(R).
+\]
+The right side tends to zero uniformly for $S\ge R\to\infty$,
+so the Cauchy criterion proves convergence of $fh$ and hence $fg$.
+The proof also works at a finite singular endpoint with $R,S$ tending
+to that endpoint in the specified direction.
+\end{proof}
+
+\KEntry{K03.10.abel}{Abel's test}
+\begin{theorem}
+If $\int_a^\infty f$ converges and real $g$ is bounded, $C^1$ and
+monotone, then $\int_a^\infty fg$ converges.
+\end{theorem}
+\begin{proof}
+Let $|g|\le B$. For given $\eps>0$, the Cauchy criterion gives
+$|F_R(x)|=|\int_R^xf|<\eps$ for all $x\ge R$ and all sufficiently
+large $R$. The proper accumulation parts formula gives
+\[\left|\int_R^Sfg\right|
+\le\eps\left(|g(S)|+\int_R^S|g'|\right)
+=\eps(|g(S)|+|g(S)-g(R)|)\le3B\eps.
+\]
+This proves Cauchy tails. For $B=0$ the product is zero.
+Bounded monotonicity also gives a finite limit $\ell$ of $g$; the
+identity $fg=\ell f+f(g-\ell)$ explains the distinct limits, but the
+displayed estimate proves convergence without an unproved interchange.
+\end{proof}
+
+\KEntry{K03.10.parts}{Improper integration by parts}
+\begin{theorem}
+On regular truncations let the proper parts formula hold for $u,v$.
+If $u(t)v(t)$ has a finite singular-endpoint limit and either of
+$\int uv'$ and $\int u'v$ converges, then the other converges and
+\[\int_a^buv'=[uv]_a^b-\int_a^bu'v.
+\]
+For several singular endpoints require these limits separately at each.
+\end{theorem}
+\begin{proof}
+For regular $t<b$, the proper formula is
+$\int_a^tuv'=u(t)v(t)-u(a)v(a)-\int_a^tu'v$.
+If the boundary product and one integral have finite limits, this
+identity expresses the remaining partial integral as a difference of
+convergent quantities and proves its finite limit and the formula.
+Repeat separately at a singular left endpoint or on either side of an
+interior singularity. If the product has no justified limit, subtracting
+formal infinite boundary terms is not a valid application of this theorem.
+\end{proof}
+
+\KEntry{K03.10.substitution}{Improper substitutions}
+\begin{theorem}
+Suppose $\phi:[\alpha,\beta)\to[a,b)$ is a monotone $C^1$
+parameterization with $\phi(\alpha)=a$, $\phi(t)\to b$ as
+$t\to\beta-$, and is onto the indicated interval. If $f$ is locally
+properly integrable, then
+\[\int_a^bf=\int_\alpha^\beta f(\phi(t))\phi'(t)\dd t
+\]
+whenever either improper limit converges, and existence of one is
+equivalent to existence of the other. Orientation handles decreasing
+parameterizations and left endpoints.
+\end{theorem}
+\begin{proof}
+On each regular $[\alpha,T]$ the monotone substitution theorem proves
+integrability of the transformed product and gives
+$\int_\alpha^T(f\circ\phi)\phi'=\int_a^{\phi(T)}f$.
+Cofinality $\phi(T)\to b$ proves the transformed limit if the original
+limit exists. Conversely, for each regular $r\in[a,b)$ choose
+$T_r$ with $\phi(T_r)=r$, using surjectivity; as $r\to b$, such
+$T_r$ leave every compact subinterval of $[\alpha,\beta)$, since its
+image has maximum strictly below $b$. Thus $T_r\to\beta$ and the
+same identity proves the original limit. Flat portions cause no problem.
+A nonmonotone parameterization is not covered by this cofinal argument.
+\end{proof}
+
+\KEntry{K03.10.principal_value}{Symmetric principal values}
+\begin{definition}
+At an interior singularity $c$ define, when finite,
+\[\operatorname{pv}\int_a^bf
+=\lim_{\eps\downarrow0}\left(\int_a^{c-\eps}f+
+\int_{c+\eps}^bf\right),
+\]
+assuming the other endpoints are regular or separately controlled.
+On the whole line a symmetric value is
+$\lim_{R\to\infty}\int_{-R}^Rf$, with any interior singularities
+handled explicitly. The center and linked truncation rule are part of
+the definition. Independent improper convergence implies the matching
+principal value by addition of limits, but not conversely.
+\end{definition}
+
+\KEntry{K03.10.pv_counterexample}{A principal value without an improper integral}
+\begin{example}
+For $f(x)=1/x$ on $[-1,1]\setminus\{0\}$,
+\[\int_{-1}^{-\eps}\frac{\dd x}{x}=\log\eps,\qquad
+\int_\eps^1\frac{\dd x}{x}=-\log\eps.
+\]
+Their sum is zero for each $\eps$, so the symmetric principal value
+is zero. The two terms separately tend to $-\infty$ and $+\infty$,
+so the ordinary improper integral does not exist.
+\end{example}
+
+\KEntry{K03.10.oscillatory_example}{A conditionally convergent oscillatory integral}
+\begin{example}
+$\int_1^\infty\sin x\,\dd x/x$ converges, but not absolutely.
+\end{example}
+\begin{proof}
+The primitive $\int_1^x\sin t\dd t=\cos1-\cos x$ is bounded by two,
+and $1/x$ decreases differentiably to zero, so Dirichlet applies.
+Since $\sin(\pi/2)=1$ and sine is continuous, choose
+$0<\delta<\pi/2$ such that $\sin x\ge1/2$ on
+$[\pi/2-\delta,\pi/2+\delta]$. For integer $k\ge1$, translate this
+interval by $k\pi$ to obtain $I_k$; the sign-change identity for sine
+gives $|\sin x|\ge1/2$ on every $I_k$. Thus
+\[\int_{I_k}\frac{|\sin x|}{x}\dd x
+\ge\frac{\delta}{(k+1)\pi}.
+\]
+The harmonic series diverges (group terms between consecutive powers of
+two, each group having sum at least $1/2$). Partial integrals of the
+absolute integrand therefore grow without bound. This proves conditional
+convergence by an actual recurring-interval lower bound.
+\end{proof}
+
+\KEntry{K03.10.tail_bounds}{Quantitative oscillatory remainders}
+\begin{theorem}
+If $|A(x)|=|\int_a^xf|\le C$ and real $g\ge0$ is $C^1$,
+nonincreasing and tends to zero, then for $S\ge R\ge a$,
+\[\left|\int_R^Sfg\right|\le2Cg(R),\qquad
+\left|\int_R^\infty fg\right|\le2Cg(R).
+\]
+\end{theorem}
+\begin{proof}
+The proof of Dirichlet already gives the first bound, with primitive
+$A(x)-A(R)$ bounded by $2C$. Dirichlet proves the infinite integral
+exists, so letting $S\to\infty$ proves the second bound by continuity
+of modulus. If instead one assumes directly
+$|\int_R^xf|\le C_R$ for all $x\ge R$, the same calculation improves
+both bounds to $C_Rg(R)$. These estimates specify the tail, rather than
+merely invoking convergence by name, and will be used uniformly in
+parameters in module 14.
+\end{proof}
+
+\KEntry{K03.10.endpoint_counterexample}{Linked endpoint truncations are insufficient}
+\begin{example}
+On $(0,1)$ let $f(x)=1/(1-x)-1/x$. A primitive on this interval is
+$H(x)=-\log(1-x)-\log x$. Since $H(1-\eps)=H(\eps)$,
+$\int_\eps^{1-\eps}f=0$ for every $0<\eps<1/2$.
+Nevertheless
+$\int_\eps^{1/2}f=H(1/2)-H(\eps)\to-\infty$,
+and
+$\int_{1/2}^{1-\eps}f=H(1-\eps)-H(1/2)\to+\infty$.
+Both independent endpoint conditions fail. A finite linked limit on two
+moving endpoints therefore does not establish ordinary improper convergence.
+\end{example}

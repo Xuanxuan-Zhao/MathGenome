@@ -1,0 +1,8 @@
+import MathGenome.Internal.ExtremalOptimization.P205.Matching.BipartiteHulls
+import MathGenome.Internal.ExtremalOptimization.P205.Matching.Birkhoff
+import MathGenome.Internal.ExtremalOptimization.P205.Matching.Hungarian
+import MathGenome.Internal.ExtremalOptimization.P205.Matching.HungarianStep
+import MathGenome.Internal.ExtremalOptimization.P205.Matching.Models
+import MathGenome.Internal.ExtremalOptimization.P205.Matching.PerfectAssignment
+import MathGenome.Internal.ExtremalOptimization.P205.Matching.TriangleRelaxation
+import MathGenome.Internal.ExtremalOptimization.P205.Matching.WeightedDuality

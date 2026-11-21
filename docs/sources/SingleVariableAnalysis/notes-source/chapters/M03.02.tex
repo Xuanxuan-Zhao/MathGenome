@@ -1,0 +1,124 @@
+\chapter{Function limits and asymptotic comparison}
+All limits in this chapter have an explicitly chosen approach. Unless indicated otherwise $E\subset\R$ and $f:E\to\K$, where $\K=\R$ or $\C$. The same finite-point metric arguments also work for $E\subset\C$.
+\SourceRef{Zorich I, 3.2; Rudin, Chapter 4; Olver, Chapter 1}
+
+\KEntry{K03.02.relative_limit}{Limits relative to a domain}
+\begin{definition}
+A point $a$ is an accumulation point of $E$ if every $\delta>0$ admits $x\in E$ with $0<|x-a|<\delta$. We write $\lim_{E\ni x\to a}f(x)=L\in\K$ if
+\[ (\forall\eps>0)(\exists\delta>0)(\forall x\in E)\quad 0<|x-a|<\delta\ \Longrightarrow\ |f(x)-L|<\eps. \]
+The value at $a$, if defined, is absent from this condition. We require accumulation whenever discussing uniqueness of a punctured limit.
+\end{definition}
+\begin{proposition}
+At an accumulation point the limit is unique.
+\end{proposition}
+\begin{proof}
+If $L\ne M$ were limits, take their common neighborhood for errors $|L-M|/3$ and choose an approach point in it. The triangle inequality gives $|L-M|<2|L-M|/3$. Without accumulation the implication can be vacuous for every $L$, so the hypothesis cannot be removed.
+\end{proof}
+
+\KEntry{K03.02.one_sided}{One-sided and infinite limits}
+\begin{definition}
+The right-hand limit uses $x\in E\cap(a,a+\delta)$, and the left-hand limit uses $x\in E\cap(a-\delta,a)$. Each stated one-sided limit presupposes approach points arbitrarily near $a$ on that side. At $+\infty$, replace $0<|x-a|<\delta$ by $x>A$; at $-\infty$, use $x<-A$, where $A$ may be taken positive. Such approaches require $E$ to be unbounded in the indicated direction. For a real-valued function, $f\to+\infty$ means that for every $B\in\R$, $f(x)>B$ eventually along the stated approach; $f\to-\infty$ uses $f(x)<B$. For complex values only $|f|\to\infty$ has this order-free meaning.
+\end{definition}
+If both sides accumulate, the two-sided finite limit exists with value $L$ exactly when both one-sided limits are $L$: the forward implication restricts a neighborhood, and the reverse takes the smaller of its two radii. On $E=(0,\infty)$ an approach to zero is a right-hand relative limit; adding a nonexistent left side conveys no extra information.
+
+\KEntry{K03.02.sequential}{The sequential criterion}
+\begin{theorem}
+At an accumulation point $a$, $f(x)\to L$ within $E$ if and only if $f(x_n)\to L$ for every sequence $x_n\in E\setminus\{a\}$ with $x_n\to a$. The analogous criterion holds for a chosen side and for approaches to $\pm\infty$.
+\end{theorem}
+\begin{proof}
+A limit estimate applies to every sufficiently late term of such a sequence. Conversely if the limit condition fails, some $\eps_0>0$ admits, for each $n$, a point $x_n\in E$ with $0<|x_n-a|<1/n$ and $|f(x_n)-L|\ge\eps_0$. This sequence contradicts the asserted sequential property. For a side choose each point on that side; for $+\infty$ choose $x_n>n$ when constructing a failed test sequence, and similarly for $-\infty$.
+\end{proof}
+
+\KEntry{K03.02.algebra}{Algebra and composition of limits}
+\begin{theorem}
+Along a common nontrivial approach, if $f\to A$ and $g\to B$ are finite, then $cf+dg\to cA+dB$, $fg\to AB$, and $|f|\to|A|$. If $B\ne0$, eventually $g\ne0$ and $f/g\to A/B$.
+If $f:E\to D$, $f(x)\to b$, and $g:D\to\K$ is continuous at $b\in D$, then $g(f(x))\to g(b)$. Alternatively, if $g(y)\to C$ as $D\ni y\to b$ in the punctured sense and $f(x)\ne b$ eventually, then $g(f(x))\to C$.
+\end{theorem}
+\begin{proof}
+The sequential criterion reduces every algebra assertion to \KRef{K03.01.limit_algebra}; alternatively its inequalities apply verbatim on small neighborhoods. For continuous composition, choose $\eta$ so that $y\in D$, $|y-b|<\eta$ implies $|g(y)-g(b)|<\eps$, then choose a sufficiently small input neighborhood with $|f(x)-b|<\eta$. For punctured composition the same argument requires $0<|f(x)-b|$, supplied by eventual avoidance. The latter condition matters: a punctured limit of $g$ says nothing about its actual value at $b$, while $f$ may equal $b$ repeatedly.
+\end{proof}
+
+\KEntry{K03.02.squeeze}{Comparison along an approach}
+\begin{theorem}
+Along the same domain and side, eventual real inequalities $f\le g\le h$ and $f,h\to L$ imply $g\to L$. An eventual estimate $|u-L|\le v$ with $v\to0$ implies $u\to L$. Eventual real $f\le g$ and finite limits imply $\lim f\le\lim g$.
+\end{theorem}
+\begin{proof}
+Intersect the neighborhoods in which the inequalities hold with neighborhoods where both outer functions lie in $(L-\eps,L+\eps)$. The middle function then lies there too. The absolute estimate is the definition of a limit. The order assertion follows by contradiction, choosing disjoint neighborhoods of two incorrectly ordered limits. These arguments also apply on tails at infinity.
+\end{proof}
+
+\KEntry{K03.02.cauchy}{A Cauchy criterion for finite limits}
+\begin{theorem}
+At an accumulation point $a$, a function $f:E\to\K$ has a finite limit if and only if for every $\eps>0$ some $\delta>0$ satisfies
+\[ |f(x)-f(y)|<\eps\quad( x,y\in E,\ 0<|x-a|,|y-a|<\delta). \]
+There are identical one-sided and infinite-endpoint versions, with both points in the selected approach neighborhoods.
+\end{theorem}
+\begin{proof}
+A finite limit gives this estimate by two errors $<\eps/2$. Conversely choose $x_n\in E$ with $0<|x_n-a|<1/n$. The condition makes $f(x_n)$ Cauchy, so by scalar completeness it tends to some $L$. Given $\eps>0$, choose $\delta$ for pairwise error $<\eps/2$ and a sufficiently late $x_n$ in this neighborhood with $|f(x_n)-L|<\eps/2$. Every approach point $x$ in the same neighborhood satisfies $|f(x)-L|<\eps$. For a side or infinity choose a sequence of points in its nested approach neighborhoods and use the same proof.
+\end{proof}
+
+\KEntry{K03.02.oscillation}{Punctured and unpunctured oscillation}
+\begin{definition}
+For a nonempty set $A\subset E$ set $\osc(f,A)=\sup_{x,y\in A}|f(x)-f(y)|\in[0,+\infty]$, and set its value to zero for the empty set. Define punctured oscillation at an accumulation point by
+\[ \omega^*(f,a)=\inf_{\delta>0}\osc\bigl(f,E\cap\{0<|x-a|<\delta\}\bigr). \]
+If $a\in E$, unpunctured oscillation $\omega(f,a)$ instead uses $E\cap\{|x-a|<\delta\}$.
+\end{definition}
+\begin{proposition}
+$\omega^*(f,a)=0$ is equivalent to existence of a finite punctured limit. At $a\in E$, $\omega(f,a)=0$ is equivalent to continuity at $a$.
+\end{proposition}
+\begin{proof}
+An infimum of these nonnegative nested oscillations is zero exactly when, for every $\eps>0$, some neighborhood has oscillation $<\eps$. The punctured statement is \KRef{K03.02.cauchy}. In an unpunctured neighborhood one may set $y=a$, obtaining $|f(x)-f(a)|<\eps$. Conversely continuity gives oscillation $\le2\eps$ on a sufficiently small neighborhood. For example $f(x)=0$ when $x\ne0$, $f(0)=1$ has $\omega^*(f,0)=0$ and $\omega(f,0)=1$.
+\end{proof}
+
+\KEntry{K03.02.big_o}{Big-O and little-o}
+\begin{definition}
+Fix an approach within a common domain $E$. For scalar functions $f,g$, write $f=O(g)$ if eventually $|f|\le C|g|$ for some finite $C\ge0$. Write $f=o(g)$ if for every $\eps>0$ eventually $|f|\le\eps|g|$. The neighborhood may depend on $\eps$ in the latter definition. These are inequalities, so they remain meaningful at zeros of $g$ and force $f=0$ there eventually. If $g$ is eventually nonzero, they are equivalent respectively to eventual boundedness of $f/g$ and to $f/g\to0$.
+\end{definition}
+The ratio characterizations follow by division by $|g|>0$ in both directions. In particular $o(g)$ implies $O(g)$ by taking $\eps=1$.
+
+\KEntry{K03.02.equivalence}{Asymptotic equivalence}
+\begin{definition}
+Write $f\sim g$ along a fixed approach if $g$ is eventually nonzero and $f/g\to1$.
+\end{definition}
+\begin{proposition}
+Under eventual nonvanishing of $g$, $f\sim g$ if and only if $f-g=o(g)$. Equivalence implies eventual nonvanishing of $f$, $f=O(g)$, $g=O(f)$, symmetry, and transitivity.
+\end{proposition}
+\begin{proof}
+The identity $(f-g)/g=f/g-1$ gives the first assertion. Eventually $|f/g-1|<1/2$, so $1/2<|f/g|<3/2$. This proves nonvanishing and the two bounds. The reciprocal of a limit $1$ is $1$, and products of two such ratios tend to $1$, proving symmetry and transitivity on a common tail. Without eventual nonzero denominators this ratio definition is not being asserted.
+\end{proof}
+
+\KEntry{K03.02.o_algebra}{Calculus of error bounds}
+\begin{proposition}
+All the following statements concern one common approach. Bounds $f=O(g)$, $g=O(h)$ imply $f=O(h)$; if either of the two bounds is little-o, their composite is little-o. Sums satisfy $O(g)+O(g)\subset O(g)$ and $o(g)+o(g)\subset o(g)$. More generally $f=O(g)$, $u=O(v)$ imply $fu=O(gv)$, with little-o for the product if either factor bound is little-o. Fixed scalar multiples preserve both bounds. If $v$ is eventually nonzero, dividing an estimate by $v$ gives the corresponding estimate with comparison function divided by $v$.
+\end{proposition}
+\begin{proof}
+Intersect all required neighborhoods. Transitivity of big-O follows from $|f|\le C|g|\le CD|h|$. If $f=o(g)$ choose its bound with coefficient $\eps/\max(1,D)$; if $g=o(h)$ use $\eps/\max(1,C)$. For sums add the inequalities, taking coefficients $\eps/2$ for two little-o terms. For products multiply the bounds and use the same coefficient choice as for transitivity. Scaling multiplies constants; division divides both sides of the pointwise inequality by $|v|$. These arguments permit zeros in comparison functions and introduce nonvanishing only when division actually occurs.
+\end{proof}
+
+\KEntry{K03.02.equivalence_replacement}{Replacement of factors and failure under subtraction}
+\begin{proposition}
+If $f\sim F$ and $g\sim G$, then $fg\sim FG$ and $f/g\sim F/G$, on their eventual domains. Subtraction admits no analogous unrestricted replacement rule.
+\end{proposition}
+\begin{proof}
+The first quotient of products is $(f/F)(g/G)\to1$, and the quotient of ratios is $(f/F)/(g/G)\to1$; eventual nonvanishing follows from \KRef{K03.02.equivalence}. For the failure, as $x\to0$ through nonzero reals, $x+x^2\sim x$ and $x\sim x$, but $(x+x^2)-x=x^2$ whereas replacing both terms gives $x-x=0$. The residual leading term was destroyed by cancellation, and $x^2$ is not asymptotically equivalent to zero under our definition.
+\end{proof}
+
+\KEntry{K03.02.growth_scale}{Logarithms, powers, and exponentials}
+\begin{theorem}
+After the constructions in \KRef{K03.07.exp_construction}, \KRef{K03.07.log_construction}, and \KRef{K03.07.real_powers}, for fixed real $m,k\ge0$ and $\eps,c>0$,
+\[ (\log x)^m=o(x^\eps),\qquad x^k=o(\exp(cx))\quad(x\to+\infty). \]
+\end{theorem}
+\begin{proof}
+For $y\ge0$ and any integer $N$, the positive-term exponential series gives $\exp(\eps y)\ge (\eps y)^N/N!$. Choose $N>m$. For $y\ge1$, $y^m/\exp(\eps y)\le N!\eps^{-N}y^{m-N}\to0$, since positive powers tend to infinity by the real-power properties in module 07. Put $y=\log x\to+\infty$ and $\exp(\eps\log x)=x^\eps$. Likewise choose an integer $N>k$ and use $\exp(cx)\ge(cx)^N/N!$, obtaining $x^k/\exp(cx)\le N!c^{-N}x^{k-N}\to0$. None of these facts is used in constructing the earlier sequence limits or the general series theory.
+\end{proof}
+
+\KEntry{K03.02.path_dependence}{Different approaches can give different answers}
+\begin{example}
+On $\R\setminus\{0\}$ the function $x/|x|$ is $1$ on the right and $-1$ on the left. Hence its two one-sided limits at zero differ and it has no two-sided limit. Its values along $x_n=1/n$ all equal $1$, showing that one convergent sampling sequence cannot prove the full limit. The sequential criterion requires every approach sequence; $-1/n$ already defeats this claim.
+\end{example}
+
+\KEntry{K03.02.domain_zeros}{A bounded ratio need not converge}
+\begin{example}
+For $x\ne0$ put $f(x)=x\sin(1/x)$ and $g(x)=x$. The trigonometric construction and identities in \KRef{K03.07.trig_properties} give $|f(x)|\le|g(x)|$, so $f=O(g)$ near zero and $f\to0$. But $f/g=\sin(1/x)$ has no limit: at
+\[ x_n=(\pi/2+2\pi n)^{-1},\qquad y_n=(3\pi/2+2\pi n)^{-1} \]
+it equals $1$ and $-1$, respectively. Both sequences tend to zero. Thus $f$ is neither $o(g)$ nor equivalent to $g$. The repeated zeros of $f$ cause no difficulty for the inequality definition of big-O, while ratio manipulations always retain the nonzero denominator $g(x)=x$ on the punctured domain.
+\end{example}

@@ -1,0 +1,4 @@
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Localization.ClosedZeroSets
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Localization.Extension
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Localization.Partitions
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Localization.SmoothExhaustion

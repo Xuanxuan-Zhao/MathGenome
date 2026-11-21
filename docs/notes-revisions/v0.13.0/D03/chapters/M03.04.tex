@@ -1,0 +1,152 @@
+\chapter{Derivatives and differential rules}
+The independent variable is real, even when the value lies in $\C$. Unless an endpoint is explicitly mentioned, differentiation takes place at an interior point of an interval.
+\SourceRef{Zorich I, 5.1--5.2; Apostol, Chapter 5; Pugh, 3.1}
+
+\KEntry{K03.04.derivative}{The real-variable derivative}
+\begin{definition}
+For $f:I\to\K$ and interior $a\in I$, the derivative is the finite limit
+\[ f'(a)=\lim_{h\to0,\ h\in\R\setminus\{0\}}\frac{f(a+h)-f(a)}h. \]
+For $f=u+iv$, existence is equivalent to existence of $u'(a)$ and $v'(a)$, and $f'=u'+iv'$. This follows by taking real and imaginary parts of the difference quotients and using $|u+iv|\le|u|+|v|$ for the converse. It is not the definition of a derivative with complex increments; that separate notion belongs to complex analysis.
+\end{definition}
+
+\KEntry{K03.04.one_sided}{One-sided derivatives}
+\begin{definition}
+The right derivative $f'_+(a)$ uses $h\downarrow0$ and the left derivative $f'_-(a)$ uses $h\uparrow0$, wherever the corresponding side of the domain contains an interval. A derivative at an included endpoint means the available one-sided derivative only when that convention is stated.
+\end{definition}
+\begin{proposition}
+At an interior point a finite ordinary derivative exists if and only if both finite one-sided derivatives exist and agree.
+\end{proposition}
+\begin{proof}
+A two-sided limit restricts to each side. If the one-sided limits equal $L$, choose for each $\eps$ a radius on either side making the quotient within $\eps$ of $L$; their minimum works for every nonzero $h$ of sufficiently small modulus.
+\end{proof}
+
+\KEntry{K03.04.peano}{Differentiability as a linear approximation}
+\begin{theorem}
+$f$ is differentiable at $a$ with derivative $L$ if and only if
+\[ f(a+h)=f(a)+Lh+r(h),\qquad r(h)=o(h)\quad(h\to0). \]
+Differentiability implies continuity at $a$.
+\end{theorem}
+\begin{proof}
+For $h\ne0$, $r(h)/h$ is the difference between the difference quotient and $L$, so the two conditions are equivalent by \KRef{K03.02.big_o}. Since $r(h)=o(h)$ implies $r(h)\to0$, the increment $Lh+r(h)$ tends to zero. This is continuity. For example $|h|$ tends to zero but has unequal left and right quotients, so the converse is false.
+\end{proof}
+
+\KEntry{K03.04.linear_rules}{Linear rules}
+\begin{proposition}
+If $f_1,\ldots,f_m:I\to\K$ are differentiable at $a$ and $c_1,\ldots,c_m\in\K$ are constant, then
+\[ \left(\sum_{j=1}^m c_jf_j\right)'(a)=\sum_{j=1}^m c_j f_j'(a). \]
+In particular constants have derivative zero and the identity has derivative one.
+\end{proposition}
+\begin{proof}
+The difference quotient of the sum is the finite sum of the difference quotients with the same constants. Limit algebra gives the formula. Constant and identity difference quotients are identically zero and one, respectively.
+\end{proof}
+
+\KEntry{K03.04.product}{Products, reciprocals, and quotients}
+\begin{theorem}
+For scalar functions differentiable at $a$,
+\[ (fg)'(a)=f'(a)g(a)+f(a)g'(a). \]
+If $g(a)\ne0$, it stays nonzero near $a$ and
+\[ (1/g)'(a)=-\frac{g'(a)}{g(a)^2},\qquad (f/g)'(a)=\frac{f'(a)g(a)-f(a)g'(a)}{g(a)^2}. \]
+\end{theorem}
+\begin{proof}
+Subtract $f(a)g(a)$ by first subtracting $f(a)g(a+h)$ to get the quotient
+\[ \frac{f(a+h)-f(a)}h g(a+h)+f(a)\frac{g(a+h)-g(a)}h. \]
+Differentiability gives continuity, hence the stated limit. If $g(a)\ne0$, continuity bounds $|g(a+h)|$ below by $|g(a)|/2$, and
+\[ \frac{1/g(a+h)-1/g(a)}h=-\frac{g(a+h)-g(a)}{h\,g(a+h)g(a)}\to-\frac{g'(a)}{g(a)^2}. \]
+The product rule applied to $f(1/g)$ proves the last formula.
+\end{proof}
+
+\KEntry{K03.04.chain}{The chain rule}
+\begin{theorem}
+Let $f:I\to\R$ be differentiable at $a$, and let $g:J\to\K$ be differentiable at $b=f(a)$, where $J$ contains a neighborhood of $b$ and $f$ maps a neighborhood of $a$ into $J$. Then
+\[ (g\circ f)'(a)=g'(f(a))f'(a). \]
+\end{theorem}
+\begin{proof}
+Set $k=f(a+h)-b=f'(a)h+o(h)$, so $k=O(h)$ and $k\to0$. Write $g(b+k)-g(b)=g'(b)k+\eta(k)k$, with $\eta(k)\to0$ for $k\ne0$ and $\eta(0)=0$. Such a remainder exists by differentiability. Substitution gives
+\[ g(f(a+h))-g(f(a))=g'(b)f'(a)h+o(h)+\eta(k)O(h). \]
+The last term is $o(h)$, including when $k=0$, and \KRef{K03.04.peano} finishes the proof. A complex-valued inner function would require an outer function on a complex domain, for which this theorem supplies no assertion.
+\end{proof}
+
+\KEntry{K03.04.inverse}{The inverse derivative}
+\begin{theorem}
+Let $f:I\to\R$ be continuous and strictly monotone on an interval, let $a$ be interior, and suppose $f'(a)\ne0$. Then its inverse $g:f(I)\to I$ is differentiable at $b=f(a)$, with
+\[ g'(b)=\frac1{f'(a)}. \]
+The corresponding available one-sided statement holds at an included endpoint if its one-sided derivative is finite and nonzero.
+\end{theorem}
+\begin{proof}
+The inverse is continuous by \KRef{K03.03.inverse_continuity}. For $y\ne b$ put $x=g(y)\ne a$; as $y\to b$, $x\to a$, and
+\[ \frac{g(y)-g(b)}{y-b}=\left(\frac{f(x)-f(a)}{x-a}\right)^{-1}\to\frac1{f'(a)}. \]
+The image contains points on both sides of $b$ when $a$ is interior, by strict monotonicity on an interval. For endpoints the same ratio is taken on the available side.
+\end{proof}
+
+\KEntry{K03.04.higher}{Higher derivatives and regularity classes}
+\begin{definition}
+On an open interval set $f^{(0)}=f$ and recursively $f^{(j+1)}=(f^{(j)})'$ wherever defined. A function is $k$ times differentiable on the interval when all derivatives through $k$ exist there. It belongs to $C^k$ when these derivatives are continuous, and to $C^\infty$ when it belongs to $C^k$ for every finite $k$. On a compact interval, $C^k$ means the interior derivatives have continuous extensions to the endpoints agreeing with their available one-sided derivatives.
+\end{definition}
+Existence of a derivative gives continuity of the preceding derivative, but gives no continuity of the new derivative itself. The examples \KRef{K03.04.noncontinuous_derivative} and \KRef{K03.04.unbounded_derivative} quantify this distinction already at order one.
+
+\KEntry{K03.04.leibniz}{The higher product rule}
+\begin{theorem}
+If $f,g$ are $k$ times differentiable on a common open interval, then
+\[ (fg)^{(k)}=\sum_{j=0}^k\binom kj f^{(j)}g^{(k-j)}. \]
+\end{theorem}
+\begin{proof}
+The case $k=0$ is the product itself. Differentiate the finite sum at order $k$ using the product rule. The coefficient of $f^{(j)}g^{(k+1-j)}$ for $1\le j\le k$ becomes $\binom{k}{j-1}+\binom{k}{j}=\binom{k+1}{j}$ by the finite factorial identity, and the two boundary coefficients remain one. Induction gives every order up to the available differentiability; continuity of the highest derivative is not required.
+\end{proof}
+
+\KEntry{K03.04.elementary_rules}{Elementary derivative formulas and their domains}
+\begin{proposition}
+The following real-variable formulas apply after the indicated functions have been constructed in module 07:
+\[
+\begin{array}{c|c|c}
+ f(x)&f'(x)&\text{domain of this formula}\\\hline
+ x^n&nx^{n-1}&x\in\R,\ n\in\N\\
+ x^\alpha&\alpha x^{\alpha-1}&x>0,\ \alpha\in\R\\
+ \exp x&\exp x&x\in\R\\
+ \log x&1/x&x>0\\
+ \sin x&\cos x&x\in\R\\
+ \cos x&-\sin x&x\in\R\\
+ \tan x&1/\cos^2x&\cos x\ne0\\
+ \arcsin x&(1-x^2)^{-1/2}&-1<x<1\\
+ \arccos x&-(1-x^2)^{-1/2}&-1<x<1\\
+ \arctan x&(1+x^2)^{-1}&x\in\R
+\end{array}
+\]
+The derivative of $x^0=1$ is zero everywhere; its formula does not require interpreting $0\cdot0^{-1}$ at zero. Negative integer powers obey the power rule on $\R\setminus\{0\}$.
+\end{proposition}
+\begin{proof}
+Induction with the product rule proves positive integer powers; the reciprocal rule gives negative integers on their domain. The series differentiation arguments in \KRef{K03.07.exp_construction} and \KRef{K03.07.sin_cos} give the exponential and trigonometric formulas. Applying the inverse rule to the positive exponential gives the logarithm formula, as established in \KRef{K03.07.log_derivative}. The identity $x^\alpha=\exp(\alpha\log x)$ then gives $\alpha\exp(\alpha\log x)/x=\alpha x^{\alpha-1}$. The quotient rule and $\cos^2x+\sin^2x=1$ give the tangent formula. For $x=\sin y$, $y\in(-\pi/2,\pi/2)$, $\cos y=\sqrt{1-x^2}>0$, so the inverse rule gives the arcsine formula. For $x=\cos y$, $y\in(0,\pi)$, $\sin y=\sqrt{1-x^2}>0$, giving the arccosine sign. For $x=\tan y$, $y\in(-\pi/2,\pi/2)$, $1/\cos^2y=1+x^2$ gives the arctangent formula. The branch and range facts used here are proved in \KRef{K03.07.trig_inverses}; no formula is asserted at endpoints where its displayed denominator vanishes.
+\end{proof}
+
+\KEntry{K03.04.modulus}{Differentiating an absolute value}
+\begin{proposition}
+The real function $|x|$ has derivative $1$ for $x>0$, $-1$ for $x<0$, and no derivative at zero. If $f:I\to\C$ is differentiable at $a$ and $f(a)\ne0$, then
+\[ (|f|)'(a)=\frac{\RePart(\overline{f(a)}f'(a))}{|f(a)|}. \]
+If $f(a)=0$, then $|f|$ is differentiable at $a$ if and only if $f'(a)=0$, in which case its derivative is zero.
+\end{proposition}
+\begin{proof}
+The first claim follows from the formulas $|x|=x$ and $|x|=-x$ on the two open half-lines; the one-sided quotients at zero are $1$ and $-1$. For the nonzero case rationalize the norm increment:
+\[ \frac{|f(a+h)|-|f(a)|}{h}=\frac{|f(a+h)|^2-|f(a)|^2}{h\,(|f(a+h)|+|f(a)|)}. \]
+The derivative of $|f|^2=u^2+v^2$ is $2(uu'+vv')=2\RePart(\bar f f')$, and the denominator tends to $2|f(a)|>0$. If $f(a)=0$, differentiability gives $f(a+h)=h(f'(a)+o(1))$, hence $|f(a+h)|/h$ tends to $|f'(a)|$ from the right and $-|f'(a)|$ from the left. Equality of these limits is precisely $f'(a)=0$.
+\end{proof}
+
+\KEntry{K03.04.noncontinuous_derivative}{A discontinuous derivative}
+\begin{example}
+Set $f(0)=0$ and $f(x)=x^2\sin(1/x)$ for $x\ne0$. Then $f'(0)=0$, since $|f(h)/h|\le|h|\to0$. For $x\ne0$ the product and chain rules give
+\[ f'(x)=2x\sin(1/x)-\cos(1/x). \]
+At $x_n=1/(2\pi n)$ the derivative equals $-1$, so it does not tend to $f'(0)=0$. Thus $f$ is differentiable on $\R$ but is not $C^1$ at zero. The trigonometric identities used in this and the next example are supplied by module 07.
+\end{example}
+
+\KEntry{K03.04.unbounded_derivative}{An unbounded derivative}
+\begin{example}
+Set $g(0)=0$ and $g(x)=x^2\sin(1/x^2)$ for $x\ne0$. The bound $|g(h)/h|\le|h|$ proves $g'(0)=0$. Away from zero,
+\[ g'(x)=2x\sin(1/x^2)-\frac2x\cos(1/x^2). \]
+For $x_n=(2\pi n)^{-1/2}$, this equals $-2\sqrt{2\pi n}$ and is unbounded in every neighborhood of zero. Proper Riemann integrability on a compact interval requires boundedness, by \KRef{K03.08.integral}; consequently this derivative is not properly Riemann integrable on any compact interval containing zero in its interior. Differentiability alone therefore supplies no such integrability condition.
+\end{example}
+
+\KEntry{K03.04.geometric}{Tangents and velocities}
+\begin{proposition}
+At a differentiability point $a$, the affine function $\ell(x)=f(a)+f'(a)(x-a)$ satisfies $f(a+h)-\ell(a+h)=o(h)$. It is the unique affine function through $f(a)$ with this property. For a scalar path $f(t)$, the same derivative is its instantaneous velocity.
+\end{proposition}
+\begin{proof}
+The approximation is \KRef{K03.04.peano}. If another slope $v$ gave the same error, subtraction would give $(f'(a)-v)h=o(h)$; division for $h\ne0$ forces $v=f'(a)$. The velocity statement is the definition as the limit of displacement divided by elapsed real time. At a point where this limit does not exist no tangent or velocity conclusion is supplied by this result.
+\end{proof}

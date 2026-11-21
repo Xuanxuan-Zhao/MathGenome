@@ -1,0 +1,288 @@
+\chapter{Krull Topology and the Inverse Limit}\label{ch:krull-topology}
+
+Let \(L/K\) be a Galois extension, and put
+\(G=\operatorname{Gal}(L/K)\). Products in \(G\) are compositions,
+with the right factor applied first. For an intermediate field \(E\),
+write \(G_E=\operatorname{Gal}(L/E)\), viewed as a subgroup of \(G\).
+For a finite subset \(S\subseteq L\), put
+\[
+ G(S)=\{\sigma\in G:\sigma(x)=x\text{ for all }x\in S\}.
+\]
+In particular, \(G(S)=G_{K(S)}\). Fixing \(S\) fixes every expression
+obtained from its elements and \(K\) by the field operations, and hence
+fixes the field they generate.
+
+\section{The neighborhood basis and restriction}
+
+\begin{proposition}[Finite pointwise stabilizers]\label{res:T01}
+There is a unique topology with basis consisting of the left cosets
+\(\sigma G(S)\), where \(S\) ranges over the finite subsets of \(L\).
+In this topology \(G\) is a topological group, and the groups \(G(S)\)
+are an open neighborhood basis at the identity. This is the
+\emph{Krull topology}.
+\end{proposition}
+
+\begin{proof}
+The subsets \(G(S)\) are subgroups, with
+\[
+ G(S)\cap G(S')=G(S\cup S'),\qquad
+ \sigma G(S)\sigma^{-1}=G(\sigma S).
+\]
+For the second identity, \(\sigma h\sigma^{-1}\) fixes each \(\sigma x\)
+if and only if \(h\) fixes each \(x\). Every point belongs to a proposed
+basic open set. If \(\gamma\) belongs to two basic cosets, each coset can
+be written using \(\gamma\) as representative. Their intersection then
+equals \(\gamma G(S\cup S')\). This proves the basis property.
+Equivalently, \(\sigma G(S)\) consists of all automorphisms which agree
+with \(\sigma\) on \(S\).
+
+For continuity of multiplication, fix a basic neighborhood
+\(\sigma\tau G(S)\) at a product. If \(\tau'\) agrees with \(\tau\) on
+\(S\) and \(\sigma'\) agrees with \(\sigma\) on \(\tau S\), then
+\(\sigma'\tau'(x)=\sigma\tau(x)\) for \(x\in S\). Thus the product of
+the neighborhoods \(\sigma G(\tau S)\) and \(\tau G(S)\) is contained
+in the given neighborhood. For inversion, if \(\sigma'\) agrees
+with \(\sigma\) on \(\sigma^{-1}S\), then
+\(\sigma'(\sigma^{-1}x)=x\) for \(x\in S\). Applying the inverse of
+\(\sigma'\) proves that \((\sigma')^{-1}\) agrees with \(\sigma^{-1}\)
+on \(S\). This supplies the required basic neighborhood at \(\sigma\).
+In a topological group translations are homeomorphisms, so the identity
+basis determines the entire topology. See
+\cite[Section 7, following 7.2, and Proposition 7.6]{milne}.
+\end{proof}
+
+Let \(\mathcal E\) be the set of finite Galois intermediate fields of
+\(L/K\). For \(E\in\mathcal E\), put
+\[
+ Q_E=\operatorname{Gal}(E/K),\qquad
+ r_E\colon G\longrightarrow Q_E,\quad \sigma\longmapsto \sigma|_E,
+ \qquad N_E=\ker r_E=G_E.
+\]
+We regard every \(Q_E\) as a discrete group. Theorem~\ref{res:F04}
+gives the two indexing properties used here: \(\mathcal E\) is
+directed by inclusion, and its union is \(L\).
+
+\begin{proposition}[A basis of finite quotient kernels]\label{res:T02}
+The subgroups \(N_E\), for \(E\in\mathcal E\), form an open neighborhood
+basis at the identity. Each is clopen and normal of finite index, and
+\(\bigcap_{E\in\mathcal E}N_E=\{1\}\). If \(L/K\) is finite, the Krull
+topology is discrete.
+\end{proposition}
+
+\begin{proof}
+For each \(E\in\mathcal E\), choose a \(K\)-basis of \(E\) and let \(S_E\)
+be its finite set of elements. Then \(N_E=G(S_E)\), since a
+\(K\)-automorphism fixing the basis pointwise fixes \(E\). Conversely,
+Proposition~\ref{res:F03} places any finite \(S\subseteq L\) in some
+\(E\in\mathcal E\). For that \(E\) one has \(N_E\subseteq G(S)\), giving
+the claimed basis. Proposition~\ref{res:F07} identifies \(N_E\) as the
+kernel of the surjection \(r_E\), so it is normal and its index is
+\(|Q_E|\). Every open subgroup has open cosets. The complement of
+\(N_E\) is the union of its other cosets, making \(N_E\) closed as well.
+An automorphism in all \(N_E\) fixes their fields' union \(L\) pointwise.
+If \(L/K\) is finite we may take \(E=L\), for which \(N_E=\{1\}\).
+Translations then give open singletons throughout \(G\).
+Compare \cite[Propositions 7.6--7.8]{milne} and
+\cite[Section 2.11]{rz}.
+\end{proof}
+
+\begin{proposition}[Initial topologies and continuous action]\label{res:T03}
+The Krull topology is the initial topology of the evaluations
+\(\sigma\mapsto\sigma(x)\) to discrete \(L\), for all \(x\in L\). It is
+also the initial topology of the restrictions \(r_E\) to discrete
+\(Q_E\), for all \(E\in\mathcal E\). The action \(G\times L\to L\) is
+jointly continuous when \(L\) is discrete. If \(M/K\) is a Galois
+intermediate extension, then restriction
+\(G\to\operatorname{Gal}(M/K)\) is continuous for the Krull topologies.
+\end{proposition}
+
+\begin{proof}
+The nonempty inverse image of a singleton under the evaluation at \(x\)
+is a coset of \(G(\{x\})\), and any \(\sigma G(S)\) is the intersection
+of the corresponding fibers for \(x\in S\). These identities give the
+first topology. Each nonempty fiber of \(r_E\) is a coset of \(N_E\).
+Conversely all these cosets are fibers. By Proposition~\ref{res:T02}
+they form a basis, giving the second initial topology.
+
+At \((\sigma,x)\), the action is constant on
+\(\sigma G(\{x\})\times\{x\}\). This is an open neighborhood, which
+proves joint continuity. It also yields the corresponding universal
+property for an action map: if a map \(u\colon X\to G\) from a
+topological space has continuous induced map
+\((z,x)\mapsto u(z)(x)\) on \(X\times L\), then each
+\(z\mapsto u(z)(x)\) is continuous by fixing \(x\), so \(u\) is
+continuous by the first initial description.
+
+For the restriction to \(M\), Proposition~\ref{res:F07} gives the
+homomorphism, since \(M/K\) is Galois. For \(x\in M\), its composite
+with evaluation at \(x\) is the evaluation in \(L\) with values in the
+discrete subset \(M\). This composite is continuous as a map into
+discrete \(M\), because the inverse images of its singletons are
+the same as the corresponding inverse images for evaluation in \(L\).
+Applying the first initial description to \(M/K\) gives continuity
+of restriction, including when \(M/K\) is infinite.
+See \cite[Propositions 7.6--7.7]{milne} and
+\cite[Tags 0BMJ and 0BMK]{stacks}.
+\end{proof}
+
+\section{An inverse system of finite groups}
+
+\begin{proposition}[The compatible-tuple limit]\label{res:T04}
+For \(E\subseteq E'\) in \(\mathcal E\), let
+\(r_{E',E}\colon Q_{E'}\to Q_E\) be restriction. These onto maps
+form an inverse system. With coordinatewise group operations and
+the subspace topology from \(\prod_{E\in\mathcal E}Q_E\), the group
+\[
+ P=\left\{(\sigma_E)_{E\in\mathcal E} :
+       r_{E',E}(\sigma_{E'})=\sigma_E
+       \text{ whenever }E\subseteq E'\right\}
+\]
+is its inverse limit in topological groups.
+\end{proposition}
+
+\begin{proof}
+The restrictions make sense because \(E/K\) is Galois, and
+Proposition~\ref{res:F07}, applied to \(E'/K\), gives surjectivity.
+Restrictions are the identity when the two fields agree, and
+\(r_{E'',E}=r_{E',E}r_{E'',E'}\) for \(E\subseteq E'\subseteq E''\).
+The maps are continuous between discrete groups. Every compatibility
+equation is preserved by multiplication and inversion because its
+transition map is a homomorphism. Thus \(P\) is a subgroup of the
+product, where multiplication and inversion are continuous by the
+product topology.
+
+Let \(X\) be a topological group with continuous homomorphisms
+\(f_E\colon X\to Q_E\) satisfying \(r_{E',E}f_{E'}=f_E\).
+Their componentwise pairing takes values in \(P\). It is a continuous
+homomorphism to \(P\) by the product and subspace topologies, with all
+the prescribed components. An element of \(P\) is its tuple of
+components, so these conditions determine the factorization uniquely.
+This is the stated limit property.
+See \cite[Examples 7.22--7.23 and 7.26]{milne}.
+\end{proof}
+
+\begin{theorem}[Gluing compatible automorphisms]\label{res:T05}
+The homomorphism
+\[
+ \rho\colon G\longrightarrow P,\qquad
+ \sigma\longmapsto (\sigma|_E)_{E\in\mathcal E}
+\]
+is an isomorphism of groups. Its composite with projection to \(Q_E\)
+is \(r_E\), and each such projection is surjective.
+\end{theorem}
+
+\begin{proof}
+The finite restrictions of an automorphism are compatible by their
+composition law. Two automorphisms with the same restrictions agree
+on the union \(L\), proving injectivity.
+
+Given \((\sigma_E)\in P\) and \(x\in L\), choose \(E\in\mathcal E\)
+containing \(x\) and set \(\sigma(x)=\sigma_E(x)\). If \(E'\) also
+contains \(x\), choose a common upper field \(E''\) by directedness.
+The two proposed values equal \(\sigma_{E''}(x)\) by compatibility.
+To test addition or multiplication, choose one field containing
+both inputs. It also contains their sum and product, and the
+corresponding \(\sigma_E\) respects those operations. The glued map
+fixes \(K\) and preserves \(1\) for the same reason.
+
+The tuple \((\sigma_E^{-1})\) is compatible because restrictions are
+homomorphisms. Its glued map is a two-sided inverse to \(\sigma\):
+on any \(E\), both maps preserve \(E\) and their restrictions are
+inverse automorphisms. Thus \(\sigma\in G\) and \(\rho(\sigma)\) is
+the prescribed tuple. The identification of projections follows
+from the definition of \(\rho\), and their surjectivity follows
+from Proposition~\ref{res:F07}.
+See \cite[Example 7.26]{milne},
+\cite[Theorem 2.11.1]{rz}, and \cite[Tag 0BU2]{stacks}.
+\end{proof}
+
+\begin{theorem}[Topological inverse limit and profiniteness]\label{res:T06}
+The isomorphism \(\rho\) is a homeomorphism. Consequently \(G\) is
+compact, Hausdorff, and totally disconnected, and is profinite.
+\end{theorem}
+
+\begin{proof}
+Continuity of every \(r_E\) makes \(\rho\) continuous into the product
+and hence into \(P\). Its inverse is continuous because every
+\(r_E\) composed with that inverse is the coordinate projection
+on \(P\), and the \(r_E\) generate the Krull topology by
+Proposition~\ref{res:T03}.
+
+Each \(Q_E\) is finite discrete, hence compact and Hausdorff.
+Their product is compact by the Tychonoff product theorem proved in
+\cite[Chapter~5, \texttt{d10:05:tychonoff}]{d10}. It is Hausdorff
+because distinct tuples differ in a coordinate.
+For each \(E\subseteq E'\) the compatibility equation defining \(P\)
+is the inverse image of the diagonal of \(Q_E\times Q_E\) under
+\[
+  (\sigma_D)_D \longmapsto
+      \bigl(r_{E',E}(\sigma_{E'}),\sigma_E\bigr).
+\]
+This map is continuous and the diagonal is closed. Taking the
+intersection of these closed sets shows that \(P\) is a closed
+subspace of the compact Hausdorff product. If two points of \(P\)
+differ, a fiber of one coordinate separates them by a clopen
+subset of \(P\). No connected subset can contain both points.
+Thus \(P\) and \(G\) are totally disconnected. The presentation
+by finite discrete groups gives profiniteness directly.
+See \cite[Propositions 7.8 and 7.25 and Example 7.26]{milne}
+and \cite[Theorem 2.11.1]{rz}.
+\end{proof}
+
+\section{Closure, cofinality, and a change of base}
+
+\begin{proposition}[Closure on finite levels]\label{res:T07}
+For any subset \(A\subseteq G\),
+\[
+ \overline A=\bigcap_{E\in\mathcal E}r_E^{-1}(r_E(A)).
+\]
+If \(\mathcal E_0\subseteq\mathcal E\) is cofinal for inclusion,
+then it suffices to use \(E\in\mathcal E_0\) in this formula.
+For the same cofinal subset the coordinate restriction
+\(P\to\varprojlim_{D\in\mathcal E_0}Q_D\) is an isomorphism of
+topological groups.
+\end{proposition}
+
+\begin{proof}
+For each \(g\in G\), its basic neighborhood \(gN_E\) is
+\(r_E^{-1}(\{r_E(g)\})\). It meets \(A\) if and only if
+\(r_E(g)\in r_E(A)\). Membership in \(\overline A\) is equivalent
+to this meeting condition for every basic neighborhood, proving the
+formula. If \(E\subseteq D\), then \(N_D\subseteq N_E\), so the
+cofinal subgroups still furnish a neighborhood basis. The same
+proof gives the restricted closure formula.
+
+To see the limit comparison, start with a compatible tuple over
+\(\mathcal E_0\). For any \(E\in\mathcal E\), choose
+\(D\in\mathcal E_0\) with \(E\subseteq D\) and define its \(E\)-entry
+to be \(r_{D,E}(\sigma_D)\). If two choices \(D,D'\) are made, first
+take a common upper bound in \(\mathcal E\) and then an upper
+bound for it in \(\mathcal E_0\). The compatibility equations
+through this upper field make the two entries equal. For
+\(E\subseteq E'\), choose \(D\) containing \(E'\), so the transition
+law also makes the reconstructed entries compatible. This proves
+that reconstruction is inverse to coordinate restriction.
+It is continuous since each reconstructed entry is the composite
+of a projection on \(\mathcal E_0\) and a transition. Both maps
+respect the group operations coordinatewise. Compare
+\cite[Proposition 7.12(b) and Example 7.26]{milne}.
+\end{proof}
+
+\begin{proposition}[The Krull topology over an intermediate field]
+\label{res:T08}
+For any intermediate field \(M\) of \(L/K\), the topology on \(G_M\)
+induced from \(G\) equals its intrinsic Krull topology for \(L/M\).
+\end{proposition}
+
+\begin{proof}
+The extension \(L/M\) is Galois by Proposition~\ref{res:F02}. Its
+Krull topology has identity neighborhoods given by the pointwise
+stabilizers of finite \(S\subseteq L\) in \(G_M\), by
+Proposition~\ref{res:T01} over the new base. These are precisely
+\(G_M\cap G(S)\). The intersections also form the induced
+neighborhood basis at the identity, and their translates by
+points of \(G_M\) therefore give both topologies. This comparison
+uses the same elements of the top field \(L\) on the two sides and
+applies to every intermediate field \(M\).
+See \cite[Theorem 2.11.3]{rz}.
+\end{proof}

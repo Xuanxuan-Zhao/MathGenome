@@ -1,0 +1,44 @@
+import MathGenome.Internal.D07.Ch12.AdjoinDefinition
+import MathGenome.Internal.D07.Ch12.AdjoinRoot
+import MathGenome.Internal.D07.Ch12.AlgebraicClosure
+import MathGenome.Internal.D07.Ch12.AlgebraicClosureSimultaneousRootField
+import MathGenome.Internal.D07.Ch12.AlgebraicDefinition
+import MathGenome.Internal.D07.Ch12.AlgebraicTower
+import MathGenome.Internal.D07.Ch12.CharacteristicZeroSeparability
+import MathGenome.Internal.D07.Ch12.CompositumDegreeBound
+import MathGenome.Internal.D07.Ch12.CompositumDegreeBoundTrivialIntersectionInsufficient
+import MathGenome.Internal.D07.Ch12.DegreeDefinition
+import MathGenome.Internal.D07.Ch12.DegreeDivisibility
+import MathGenome.Internal.D07.Ch12.DerivativeCriterion
+import MathGenome.Internal.D07.Ch12.EmbeddingCount
+import MathGenome.Internal.D07.Ch12.EmbeddingExtension
+import MathGenome.Internal.D07.Ch12.ExtensionDefinition
+import MathGenome.Internal.D07.Ch12.FiniteAlgebraic
+import MathGenome.Internal.D07.Ch12.FiniteAlgebraicAlgebraicClosureInfiniteDegree
+import MathGenome.Internal.D07.Ch12.FiniteGeneration
+import MathGenome.Internal.D07.Ch12.FiniteIntermediateCriterion
+import MathGenome.Internal.D07.Ch12.FiniteMultiplicativeCyclic
+import MathGenome.Internal.D07.Ch12.Inseparability
+import MathGenome.Internal.D07.Ch12.MinpolyDivisibility
+import MathGenome.Internal.D07.Ch12.MinpolyExistence
+import MathGenome.Internal.D07.Ch12.NormalCharacterizations
+import MathGenome.Internal.D07.Ch12.NormalCharacterizationsNonnormalTowers
+import MathGenome.Internal.D07.Ch12.NormalDefinition
+import MathGenome.Internal.D07.Ch12.PerfectFields
+import MathGenome.Internal.D07.Ch12.PowerBasis
+import MathGenome.Internal.D07.Ch12.PrimitiveElement
+import MathGenome.Internal.D07.Ch12.PrimitiveElementInseparableNonsimpleExample
+import MathGenome.Internal.D07.Ch12.RelativeAlgebraicClosure
+import MathGenome.Internal.D07.Ch12.SeparableDefinition
+import MathGenome.Internal.D07.Ch12.SeparableTowers
+import MathGenome.Internal.D07.Ch12.SimpleClassification
+import MathGenome.Internal.D07.Ch12.SimpleDegree
+import MathGenome.Internal.D07.Ch12.SimpleEmbeddings
+import MathGenome.Internal.D07.Ch12.SplittingDefinition
+import MathGenome.Internal.D07.Ch12.SplittingDegreeBound
+import MathGenome.Internal.D07.Ch12.SplittingDegreeBoundFactorialInequality
+import MathGenome.Internal.D07.Ch12.SplittingExistenceUniqueness
+import MathGenome.Internal.D07.Ch12.TowerLaw
+
+/-! Algebraic and transcendental extensions.
+Public thematic import; verified D07 declaration names are preserved. -/

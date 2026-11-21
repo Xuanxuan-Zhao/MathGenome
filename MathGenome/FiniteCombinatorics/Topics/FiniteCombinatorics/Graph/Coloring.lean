@@ -1,0 +1,8 @@
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.Coloring.Bipartite
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.Coloring.Brooks
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.Coloring.BrooksOrder
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.Coloring.ChromaticPolynomial
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.Coloring.DegeneracyOrder
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.Coloring.DeletionContraction
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.Coloring.Foundations
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.Coloring.Greedy

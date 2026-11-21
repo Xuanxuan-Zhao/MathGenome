@@ -1,0 +1,340 @@
+\chapter{Elementary representations of groups}
+\label{chap:M07.17}
+The basic constructions in this chapter apply to any group. Finiteness of
+the group and restrictions on the characteristic are introduced only in
+the averaging theorem. Scalar endomorphism and dimension-one conclusions
+have their own algebraic-closedness and dimension hypotheses.
+
+\KEntry{K07.17.definition}{Linear and matrix representations}
+\begin{definition}
+For a field $K$, a group $G$ and a $K$-vector space $V$, a representation
+is a homomorphism $\rho:G\to\GL_K(V)$, where the product of linear
+automorphisms is composition. We write $gv=\rho(g)v$.
+\end{definition}
+Equivalently, one may give endomorphisms $\rho(g)\in\End_K(V)$
+satisfying $\rho(1)=I$ and $\rho(gh)=\rho(g)\rho(h)$.
+Indeed $\rho(g)\rho(g^{-1})=\rho(g^{-1})\rho(g)=I$, so every
+endomorphism so specified is invertible with inverse $\rho(g^{-1})$.
+Conversely an automorphism-valued homomorphism satisfies these identities
+after forgetting the inverse data. These constructions are inverse.
+
+For a finite basis $b=(b_1,\ldots,b_n)$, let $A_g$ be the matrix of
+$\rho(g)$ in $b$. The rule for matrices of compositions gives
+$A_{gh}=A_gA_h$ and $A_1=I_n$, and $A_{g^{-1}}$ is the inverse of
+$A_g$. Conversely a homomorphism $G\to\GL_n(K)$ acts on $K^n$ and
+can be transported to $V$ by the coordinate isomorphism. Thus the
+chosen basis provides the stated correspondence, including $n=0$.
+
+\KEntry{K07.17.examples}{Trivial, permutation, regular and sign representations}
+The trivial representation has $\rho(g)=I$ for every $g$; its
+homomorphism laws follow from $I^2=I$. If $X$ is a $G$-set, let
+$K^{(X)}$ be the space of finite-support formal sums $\sum_xa_xe_x$.
+Set $\rho(g)e_x=e_{gx}$ and extend linearly. A finite-support vector
+has a finite-support image. On every basis vector,
+$\rho(g)\rho(h)e_x=e_{g(hx)}=e_{(gh)x}$ and $\rho(1)e_x=e_x$;
+equality on the basis proves the representation laws. For finite $X$
+the dimension is $|X|$. For $X=G$ with left translation this is the
+regular representation. If $g$ acts trivially in the regular
+representation, then $e_g=\rho(g)e_1=e_1$, so $g=1$; it is faithful.
+For a general $G$-set, an element fixes every basis vector exactly
+when it fixes every point, so the kernel is the action kernel.
+
+The sign homomorphism of the symmetric group gives a one-dimensional
+representation $\rho(\sigma)v=\sgn(\sigma)v$, with $\pm1$ mapped
+to $K$. Multiplicativity of sign is proved in
+\ref{K07.02.transpositions_parity}; scalar multiplication then proves
+the representation law. In characteristic two $-1=1$, so this
+representation is trivial. No irreducibility claim follows merely
+from the existence of a permutation basis.
+
+\KEntry{K07.17.subrepresentations_quotients}{Invariant subspaces and quotients}
+A subspace $U\le V$ is invariant if $\rho(g)U\subseteq U$ for
+every $g$. This is in fact equality: for $u\in U$,
+$u=\rho(g)\rho(g^{-1})u$ lies in $\rho(g)U$. Restriction therefore
+defines an automorphism of $U$, and restriction respects products and
+identity. On the quotient set of additive cosets put
+\[
+ g(v+U)=\rho(g)v+U.
+\]
+If $v-w\in U$, then $\rho(g)v-\rho(g)w\in U$; this proves
+representative independence. Additivity and compatibility with scalars
+descend from $\rho(g)$. Identity and composition can be checked on
+$v+U$ using those laws in $V$, and the action of $g^{-1}$ is inverse.
+Thus $V/U$ has a quotient representation. The inclusion of $U$ and
+the quotient map are equivariant. The condition is invariance of a
+subspace, not normality of a subgroup. For monoid actions the equality
+$\rho(g)U=U$ need not follow from inclusion.
+
+\KEntry{K07.17.intertwiners_equivalence}{Intertwiners and equivalence}
+For representations $\rho$ on $V$ and $\sigma$ on $W$, an
+intertwiner is a linear map $T:V\to W$ satisfying
+\[
+ T\rho(g)=\sigma(g)T\quad(g\in G).
+\]
+Intertwiners are closed under addition and scalar multiplication, by
+distributing both sides of this equality. Identity maps intertwine,
+and the composite of two intertwiners intertwines, by substituting
+the two equations. If $T$ is bijective, the equation multiplied by
+$T^{-1}$ on both sides gives
+$T^{-1}\sigma(g)=\rho(g)T^{-1}$. Consequently invertible
+intertwiners define a reflexive, symmetric and transitive equivalence
+relation on representations.
+
+Suppose $V,W$ have finite bases and equal dimension $n$; write their
+matrices as $A_g,B_g$ and the matrix of $T$ as $P$. Equality of linear
+maps is equivalent to equality of their matrices, so the intertwining
+equations are $PA_g=B_gP$. The map $T$ is invertible exactly when
+$P$ is invertible, in which case
+$B_g=PA_gP^{-1}$ for every $g$, with the \emph{same} $P$.
+This also proves the converse by turning $P$ into a coordinate map.
+Representations of different finite dimensions cannot be equivalent,
+by the basis theorem. Choosing a different conjugating matrix for
+each group element does not establish an equivalence.
+
+\KEntry{K07.17.kernels_images}{Kernels, images and the first isomorphism}
+\begin{proposition}
+If $T$ intertwines $\rho$ and $\sigma$, its kernel and image are
+invariant, and the linear isomorphism
+$\overline T:V/\ker T\to\im T$ is equivariant.
+\end{proposition}
+\begin{proof}
+If $Tv=0$, then $T\rho(g)v=\sigma(g)Tv=0$.
+If $w=Tv$, then $\sigma(g)w=T\rho(g)v\in\im T$.
+These prove invariance. The linear first isomorphism theorem
+identifies $\overline T(v+\ker T)=Tv$ as a well-defined bijective
+linear map. For its additional equivariance property compute
+\[
+ \overline T(g(v+\ker T))=T\rho(g)v
+   =\sigma(g)Tv=g\overline T(v+\ker T).
+\]
+Every quotient class has such a representative, so this proves the
+equation on the whole quotient.
+\end{proof}
+
+\KEntry{K07.17.direct_sums}{Direct sums and a common block diagonal form}
+For representations on $V,W$, define
+$g(v,w)=(\rho(g)v,\sigma(g)w)$. Linearity, identity and
+composition follow componentwise. The two inclusions and projections
+intertwine. For an internal decomposition into invariant subspaces
+$E=U\oplus W$, the addition map $U\oplus W\to E$ is an
+equivariant linear isomorphism, because
+$g(u+w)=gu+gw$ and uniqueness of direct-sum coordinates gives the
+inverse. If bases of $U,W$ are finite, their concatenation is a basis
+of $E$ in which \emph{all} action matrices are block diagonal.
+
+Conversely, a common basis in which every $A_g$ has the same block
+partition determines the spans of the two basis blocks. Multiplication
+by each block diagonal matrix preserves both spans. They have zero
+intersection and span $E$, proving the invariant internal direct sum.
+An invariant subspace alone gives only an upper triangular block
+form after extending its basis: the other block need not be invariant.
+For an infinite family, direct sum denotes finite support, and no
+equality with the full product is asserted.
+
+\KEntry{K07.17.irreducible_definition}{Irreducibility and semisimplicity}
+A representation on $V$ is irreducible when $V\ne0$ and its only
+invariant subspaces are $0,V$. It is semisimple when every invariant
+subspace has an invariant complement. A zero representation space is
+semisimple and is not irreducible.
+
+\begin{theorem}\label{thm:semisimple-finite-sum}
+In finite dimension, a representation is semisimple if and only if it
+is a finite direct sum of irreducible representations. No finiteness
+of $G$ or characteristic restriction is needed for this equivalence.
+\end{theorem}
+\begin{proof}
+Suppose first that $V$ is semisimple. If $V=0$, use the empty sum.
+Otherwise choose a nonzero invariant subspace $S$ of least positive
+dimension. Any proper nonzero invariant subspace of $S$ would have
+smaller positive dimension, so $S$ is irreducible. Choose an invariant
+complement $T$. It too is semisimple: for $A\le T$ invariant, choose
+$V=A\oplus B$ with $B$ invariant. Every $t\in T$ is $a+b$ with
+$a\in A\subset T$, hence $b=t-a\in T\cap B$. Thus
+$T=A\oplus(T\cap B)$. Since $\dim T<\dim V$, dimension induction
+decomposes $T$ and then $V$ as required.
+
+For the converse induct on the number of irreducible summands. The
+empty sum has the asserted property. Write $V=S\oplus T$ with $S$
+irreducible and $T$ a sum of fewer irreducibles, hence semisimple by
+induction. Let $A\le V$ be invariant. Its intersection with $S$ is
+either $S$ or zero. If $S\subset A$, projecting onto $T$ shows
+$A=S\oplus(A\cap T)$: subtracting the $S$-coordinate leaves a
+vector of $A\cap T$. Choose an invariant complement $C$ to $A\cap T$
+in $T$. Then $V=A\oplus C$.
+
+If $A\cap S=0$, the projection $q:V\to T$ restricts to an
+equivariant isomorphism $A\to B=q(A)$. Since $T$ is semisimple,
+$T=B\oplus C$ for an invariant $C$. Relative to $S\oplus T$, the
+inverse of $q|_A$ writes $A$ as the graph
+$\{(f(b),b):b\in B\}$ of a linear map $f:B\to S$.
+For $(s,b+c)\in S\oplus(B\oplus C)$ the decomposition
+\[
+ (s,b+c)=(f(b),b)+(s-f(b),c)
+\]
+shows $V=A+(S\oplus C)$. Intersection is zero because its
+$T$-coordinate would lie in $B\cap C=0$ and its $A$-vector would
+then lie in $A\cap S=0$. Both $S$ and $C$ are invariant, so
+$S\oplus C$ is the required invariant complement.
+\end{proof}
+Irreducibility is stronger than indecomposability: the modular example
+below has no invariant complementary line but does have an invariant
+line. Over $\R$, let a generator of $C_4$ act on $\R^2$ by
+$J=\left(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\right)$.
+An invariant real line would give a real eigenvalue $a$ with $a^2=-1$,
+which is impossible. Over $\C$ the eigenvalues $i,-i$ give two
+invariant eigenlines. Thus extending scalars can change irreducibility.
+
+\KEntry{K07.17.schur_nonscalar}{Schur's zero-or-isomorphism lemma}
+\begin{theorem}\label{thm:schur-general}
+A nonzero intertwiner between irreducible representations over any
+field is an equivalence. In particular $\End_G(V)$ is a division
+algebra for an irreducible $V$, without a finite-dimensional hypothesis.
+\end{theorem}
+\begin{proof}
+The kernel and image are invariant by the earlier proposition. The
+kernel cannot be all of $V$, because $T\ne0$; it is therefore zero.
+The image is nonzero, so irreducibility of the target makes it the
+whole target. The map is thus bijective; its linear inverse
+intertwines by the inverse computation already proved. Equivariant
+endomorphisms form a subalgebra of $\End_K(V)$, and every nonzero
+element now has an inverse in that subalgebra. Its identity is
+nonzero since $V\ne0$. This is precisely a division algebra.
+\end{proof}
+The real rotation example supplies a nonscalar equivariant
+endomorphism $J$ with $J^2=-I$, since $J$ commutes with all powers
+of $J$. Hence a scalar conclusion would be false over an arbitrary
+field.
+
+\KEntry{K07.17.schur_scalar}{Scalar Schur lemma}
+\begin{theorem}\label{thm:schur-scalar}
+If $K$ is algebraically closed and $V$ is nonzero, finite-dimensional
+and irreducible, each $T\in\End_G(V)$ is a unique scalar multiple
+of $I$. The scalar map $K\to\End_G(V)$ is an algebra isomorphism.
+\end{theorem}
+\begin{proof}
+The characteristic polynomial has positive degree and a root
+$\lambda\in K$, so $T-\lambda I$ has nonzero kernel by the
+linear-algebra foundation. It is an intertwiner because both $T$
+and $\lambda I$ commute with the action. If it were nonzero,
+Theorem~\ref{thm:schur-general} would make it invertible, contradicting
+its nonzero kernel. Thus $T=\lambda I$. If also $T=\mu I$, choose
+$v\ne0$; then $(\lambda-\mu)v=0$ forces $\lambda=\mu$ in a
+vector space over a field. Scalar multiplication preserves addition,
+product and identity and lands in the commutant. The preceding
+arguments prove surjectivity and injectivity, respectively. Its
+$K$-linear dimension is therefore one.
+\end{proof}
+
+\KEntry{K07.17.maschke_projection}{Maschke averaging and invariant complements}
+\begin{theorem}\label{thm:maschke}
+Let $G$ be finite and $K$ a field such that $m=|G|\cdot1_K\ne0$.
+Every invariant subspace $U$ of any $K$-representation $V$ has an
+invariant complement, even when $V$ is infinite-dimensional.
+\end{theorem}
+\begin{proof}
+Extend a basis of $U$ to a basis of $V$ and let $E:V\to V$ be the
+projection onto $U$ that kills the added basis vectors. Thus
+$E(V)\subset U$ and $E|_U=I_U$. Define
+\[
+ P=m^{-1}\sum_{g\in G}\rho(g)E\rho(g^{-1}).
+\]
+Every summand has image in $U$, since $U$ is invariant. For $u\in U$,
+$\rho(g^{-1})u\in U$, so each summand sends $u$ to $u$.
+Consequently $P(V)\subset U$ and $P|_U=I_U$, whence $P^2=P$.
+For $h\in G$, substitution $g'=hg$ is a bijection of $G$ and gives
+\[
+ \rho(h)P\rho(h^{-1})
+  =m^{-1}\sum_{g\in G}\rho(hg)E\rho((hg)^{-1})=P.
+\]
+Therefore $P$ commutes with every $\rho(h)$ and $\ker P$ is
+invariant. Finally every $v$ is
+$P(v)+(v-P(v))$, with first term in $U$ and second in $\ker P$.
+An element of $U\cap\ker P$ equals its own image under $P$ and
+also has image zero, so it is zero. Thus $V=U\oplus\ker P$.
+\end{proof}
+The nonzero scalar condition holds in characteristic zero. In positive
+characteristic $p$, it is exactly $p\nmid|G|$; division by $|G|$ is
+not meaningful when this condition fails.
+
+\KEntry{K07.17.complete_reducibility}{Finite-dimensional complete reducibility}
+Under the hypotheses of Theorem~\ref{thm:maschke}, a
+finite-dimensional representation is a finite direct sum of
+irreducibles. Indeed Maschke gives the invariant-complement
+definition of semisimplicity, and
+Theorem~\ref{thm:semisimple-finite-sum} proves the required finite
+decomposition, including the empty sum for $V=0$. The equivalence of
+that internal sum with an external sum is the addition isomorphism
+proved in \ref{K07.17.direct_sums}. This argument requires neither
+algebraic closedness nor that all irreducible summands be one-dimensional.
+
+\KEntry{K07.17.modular_counterexample}{Failure in the modular characteristic}
+Let $p$ be prime and work over $K=\F_p$. Put
+$N=\left(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\right)$
+and $J=I+N$. Since $N^2=0$, induction on $a\ge0$ gives
+$(I+N)^a=I+aN$: the inductive step multiplies out and the $N^2$
+term vanishes. In particular $J^p=I$. Hence the rule sending the
+generator of $C_p=\Z/p\Z$ to $J$ is well-defined: changing an
+integer exponent by a multiple of $p$ leaves its power unchanged.
+It is a representation because exponents add when powers multiply.
+The line $U=Ke_1$ is invariant and fixed pointwise.
+
+Suppose $W$ is a complementary invariant line. Its nonzero vector
+has nonzero second coordinate, since otherwise $W=U$; rescale it
+to $w=ae_1+e_2$. Then $Jw=(a+1)e_1+e_2$. Invariance makes
+$Jw=cw$ for some $c\in K$. Comparing second coordinates gives
+$c=1$; comparing first coordinates then gives $a+1=a$, impossible
+in a field. Thus no invariant complement exists. The argument works
+for $p=2$ as well. The same calculation shows the only invariant
+line is $U$, so a decomposition into two nonzero invariant summands
+is impossible, although the representation is reducible.
+
+\KEntry{K07.17.abelian_irreducible_dimension}{Irreducibles of an abelian group}
+Suppose $G$ is abelian, $K$ algebraically closed, and $V$ a nonzero
+finite-dimensional irreducible representation. For each $g$, the
+operator $\rho(g)$ commutes with every $\rho(h)$, so scalar Schur
+gives $\rho(g)=\lambda_gI$. Choose $v\ne0$. The line $Kv$ is
+invariant under all these scalar operators; irreducibility forces
+$Kv=V$. Thus $\dim_KV=1$. No finiteness of $G$ was used. In
+characteristic dividing a finite group order this conclusion about
+irreducibles remains valid, while arbitrary representations need
+not split, as the preceding example shows. The real rotation
+example proves the algebraic-closedness hypothesis cannot simply
+be omitted.
+
+\KEntry{K07.17.characters}{Characters and conjugacy invariance}
+For finite-dimensional $V$ define the character
+$\chi_\rho(g)=\Tr_K(\rho(g))$. The trace is basis independent.
+For completeness, in finite matrices
+\[
+ \Tr(AB)=\sum_i\sum_j a_{ij}b_{ji}
+        =\sum_j\sum_i b_{ji}a_{ij}=\Tr(BA),
+\]
+where commuting scalar entries and interchanging finite sums justify
+the equality. Hence $\Tr(PAP^{-1})=\Tr(A)$.
+Applying this with $P=\rho(h)$ proves
+$\chi_\rho(hgh^{-1})=\chi_\rho(g)$. An equivalence has action
+matrices conjugate by a single $P$, so it preserves characters as
+well. Since $\rho(1)=I$, $\chi_\rho(1)=(\dim_KV)\cdot1_K$.
+In positive characteristic this value need not recover the natural
+number dimension. For example, over $\F_p$ the zero space and a
+$p$-dimensional trivial representation of the trivial group both
+have zero character and are not equivalent. Thus no arbitrary-field
+character-classification theorem is asserted here.
+
+\KEntry{K07.17.character_direct_sum}{Trace of a direct sum and permutation characters}
+In concatenated finite bases, the action of $g$ on $V\oplus W$
+has blocks $\rho(g),\sigma(g)$. Summing its diagonal entries
+therefore proves
+\[
+ \chi_{\rho\oplus\sigma}(g)=\chi_\rho(g)+\chi_\sigma(g).
+\]
+This identity uses no averaging or characteristic hypothesis. For
+the representation associated to a finite $G$-set $X$, the matrix
+column of $e_x$ has its single $1$ in row $gx$. Its diagonal entry
+is $1$ exactly when $gx=x$, and otherwise is zero. Consequently
+\[
+ \chi(g)=|\{x\in X:gx=x\}|\cdot1_K.
+\]
+This is a count of fixed \emph{basis points}, interpreted in $K$.
+It is not a formula equating trace and dimension of a fixed subspace
+for an arbitrary linear operator.

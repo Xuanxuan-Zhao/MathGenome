@@ -1,0 +1,2672 @@
+{
+  "title": "Variational Methods, Convex Analysis, and Optimality",
+  "group_count": 69,
+  "original_contract_count": 30,
+  "numbered_result_count": 110,
+  "numbered_result_counts_by_kind": {
+    "lemma": 14,
+    "theorem": 62,
+    "corollary": 7,
+    "proposition": 27
+  },
+  "pdf_physical_pages": 62,
+  "mathematical_text_physical_pages": [
+    5,
+    61
+  ],
+  "chapters": [
+    {
+      "chapter": "V01",
+      "title_latex": "Convex Geometry and Separation",
+      "groups": 10,
+      "first_physical_page": 5,
+      "last_physical_page": 12
+    },
+    {
+      "chapter": "V02",
+      "title_latex": "Convex Functions, Conjugates, and Subgradients",
+      "groups": 8,
+      "first_physical_page": 13,
+      "last_physical_page": 19
+    },
+    {
+      "chapter": "V03",
+      "title_latex": "Minimization, Weak Compactness, and Hilbert-Space Problems",
+      "groups": 7,
+      "first_physical_page": 20,
+      "last_physical_page": 24
+    },
+    {
+      "chapter": "V04",
+      "title_latex": "Perturbation Duality and Convex Constraints",
+      "groups": 7,
+      "first_physical_page": 25,
+      "last_physical_page": 30
+    },
+    {
+      "chapter": "V05",
+      "title_latex": "Linear, Quadratic, and Conic Programs",
+      "groups": 6,
+      "first_physical_page": 31,
+      "last_physical_page": 35
+    },
+    {
+      "chapter": "V06",
+      "title_latex": "Smooth Optimality and Constraint Qualifications",
+      "groups": 7,
+      "first_physical_page": 36,
+      "last_physical_page": 40
+    },
+    {
+      "chapter": "V07",
+      "title_latex": "First and Second Variations",
+      "groups": 8,
+      "first_physical_page": 41,
+      "last_physical_page": 47
+    },
+    {
+      "chapter": "V08",
+      "title_latex": "The Sobolev Direct Method and Weak Equations",
+      "groups": 8,
+      "first_physical_page": 48,
+      "last_physical_page": 55
+    },
+    {
+      "chapter": "V09",
+      "title_latex": "Variational Duality and Fluxes",
+      "groups": 4,
+      "first_physical_page": 56,
+      "last_physical_page": 58
+    },
+    {
+      "chapter": "V10",
+      "title_latex": "Fixed Points and an Existence Principle",
+      "groups": 4,
+      "first_physical_page": 59,
+      "last_physical_page": 61
+    }
+  ],
+  "books_and_paper": {
+    "D": {
+      "title": "Dacorogna, Introduction to the Calculus of Variations，第 4 版",
+      "bibliography": {
+        "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+        "line": 4830,
+        "key": "Dacorogna"
+      }
+    },
+    "E": {
+      "title": "Ekeland–Témam, Convex Analysis and Variational Problems，SIAM 1999",
+      "bibliography": {
+        "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+        "line": 4824,
+        "key": "EkelandTemam"
+      }
+    },
+    "R": {
+      "title": "Rockafellar, Convex Analysis，1972 年印次",
+      "bibliography": {
+        "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+        "line": 4818,
+        "key": "Rockafellar"
+      }
+    },
+    "B": {
+      "title": "Boyd–Vandenberghe, Convex Optimization，馆藏更正版",
+      "bibliography": {
+        "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+        "line": 4821,
+        "key": "Boyd"
+      }
+    },
+    "N": {
+      "title": "Nocedal–Wright, Numerical Optimization，第 1 版",
+      "bibliography": {
+        "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+        "line": 4833,
+        "key": "NocedalWright"
+      }
+    },
+    "H": {
+      "title": "Brezis, Functional Analysis, Sobolev Spaces and Partial Differential Equations，2011",
+      "bibliography": {
+        "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+        "line": 4827,
+        "key": "Brezis"
+      }
+    },
+    "L": {
+      "title": "Liberzon, Calculus of Variations and Optimal Control Theory，馆藏版",
+      "bibliography": {
+        "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+        "line": 4836,
+        "key": "Liberzon"
+      }
+    },
+    "MF": {
+      "title": "Mangasarian–Fromovitz，1967 年原论文",
+      "url": "https://pages.cs.wisc.edu/~olvi/oldpapers/MFCQ.pdf",
+      "printed_pages": "37–47"
+    }
+  },
+  "inputs": [
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "1d76a27d844cec49079837b60ada45179c1ccd35490bf93027cbcd94d271f1bf"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "ad692bf06adacbe228c40d12507d48124ddf3fbabf78705a7ed3dafe5bf673cd"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "55f99832f9a9a2de0af37720bab76534eaeceb2dda22388fc2083f0198b1821d"
+    },
+    {
+      "path": "P1-06_Variational_Notes.tex",
+      "sha256": "1a8715d7bdf85e5ed23796252974aa029061c21d0eb523652987fdd1dd93b172"
+    },
+    {
+      "path": "parts/v01.tex",
+      "sha256": "e663c473dd14eae6af332e41f99c2662f07b52863d9ca4869b6b4236d077f7a9"
+    },
+    {
+      "path": "parts/v02.tex",
+      "sha256": "406477c6aa0b81fd292d7b809bdc996f1ed1997155daf4a62a2fe9d9a37e8bad"
+    },
+    {
+      "path": "parts/v03.tex",
+      "sha256": "8aedca77017512e0d78a0ab722fbee08b4a62e7973bd5c6ab09becc34862b2f7"
+    },
+    {
+      "path": "parts/v04.tex",
+      "sha256": "da6de9e3c01490c054a81b3ed21b80bf359d5461648435347b001954002143eb"
+    },
+    {
+      "path": "parts/v05.tex",
+      "sha256": "0baabad0701058f0db4ec95f12dbba00daa230cb946384efd6ec0bbba1c98cd0"
+    },
+    {
+      "path": "parts/v06.tex",
+      "sha256": "9ee5567a522ba9b921f0459242d5203904729983a103aa00b834142ed028bffc"
+    },
+    {
+      "path": "parts/v07.tex",
+      "sha256": "8151f155d34f398dd8e92b25b9c32f6d2f01793811a109b844728cff49087b9c"
+    },
+    {
+      "path": "parts/v08.tex",
+      "sha256": "1e61edccadefaa78d0db1ad81d2d6baa876d94eba7cc54f708914c3311eb6e49"
+    },
+    {
+      "path": "parts/v09.tex",
+      "sha256": "057f03db4891b1727514ec7b0ceb402c2a85c4b265dbd147cce9dcb2fd6def54"
+    },
+    {
+      "path": "parts/v10.tex",
+      "sha256": "66e08a1c1954aad824864205392396a7b92f4fb6b40e0929eaab868a35119ed2"
+    }
+  ],
+  "pdf": {
+    "path": "output/pdf/P1-06_Variational_Notes.pdf",
+    "sha256": "f8d2e0d1cf55829bfaebded6d95edfc5f6e6dc1a949a52082d68776d58a3a979"
+  },
+  "original_contracts": {
+    "AN-17-C01-R01": {
+      "family_ids": [
+        "V03.01",
+        "V03.02"
+      ],
+      "preserved_content": "自反空间弱子列、弱序列闭可行集、强制且弱序列下半连续的极小值",
+      "original_title": "Direct method in a reflexive space"
+    },
+    "AN-17-C02-R01": {
+      "family_ids": [
+        "V07.01",
+        "V08.07"
+      ],
+      "preserved_content": "两侧紧支撑变分、弱等式与连续散度下的点态式",
+      "original_title": "Euler–Lagrange equation"
+    },
+    "AN-17-C02-R02": {
+      "family_ids": [
+        "V03.06",
+        "V03.07",
+        "V09.03"
+      ],
+      "preserved_content": "实／复 Hilbert 强制形式、唯一性与估计、对称／Hermitian 能量条件",
+      "original_title": "Coercive Hilbert variational existence interface"
+    },
+    "AN-17-C03-R01": {
+      "family_ids": [
+        "V04.01",
+        "V04.03",
+        "V04.05"
+      ],
+      "preserved_content": "Banach 连续性资格、指定符号的 Fenchel 对偶、对偶达到",
+      "original_title": "Fenchel duality with qualification"
+    },
+    "AN-17-C03-R02": {
+      "family_ids": [
+        "V02.05",
+        "V02.06"
+      ],
+      "preserved_content": "局部凸 Hausdorff 的 Fenchel–Moreau、\\(0\\in\\partial f\\)",
+      "original_title": "Fenchel–Moreau and subgradient optimality"
+    },
+    "AN-17-C04-R01": {
+      "family_ids": [
+        "V10.01"
+      ],
+      "preserved_content": "有限维实空间任意非空紧凸集的连续自映射",
+      "original_title": "Brouwer fixed point"
+    },
+    "AN-17-C04-R02": {
+      "family_ids": [
+        "V10.02"
+      ],
+      "preserved_content": "非空闭凸 \\(C\\)、相对紧像的 Schauder",
+      "original_title": "Schauder fixed point"
+    },
+    "OPT-01-C01.R01": {
+      "family_ids": [
+        "V01.01",
+        "V02.01",
+        "V02.04"
+      ],
+      "preserved_content": "凸集／函数、proper、连续对偶配对和共轭定义",
+      "original_title": "Convexity, proper convex functions and conjugate"
+    },
+    "OPT-01-C01.R02": {
+      "family_ids": [
+        "V01.04",
+        "V01.05"
+      ],
+      "preserved_content": "开分离、紧闭严格间隔、闭凸边界支持",
+      "original_title": "Separation and supporting hyperplanes"
+    },
+    "OPT-01-C01.R03": {
+      "family_ids": [
+        "V02.04",
+        "V02.05"
+      ],
+      "preserved_content": "Fenchel–Young 与闭凸双共轭",
+      "original_title": "Fenchel–Young and biconjugation"
+    },
+    "OPT-01-C02.R01": {
+      "family_ids": [
+        "V02.06"
+      ],
+      "preserved_content": "次梯度定义、指标法锥",
+      "original_title": "Convex subdifferential"
+    },
+    "OPT-01-C02.R02": {
+      "family_ids": [
+        "V02.06"
+      ],
+      "preserved_content": "全局极小、共轭取等和次梯度互逆",
+      "original_title": "Subgradient optimality and conjugacy"
+    },
+    "OPT-01-C02.R03": {
+      "family_ids": [
+        "V04.02",
+        "V04.04"
+      ],
+      "preserved_content": "有资格的和与链规则",
+      "original_title": "Subgradient sum and affine chain rules"
+    },
+    "OPT-01-C02.R04": {
+      "family_ids": [
+        "V02.07"
+      ],
+      "preserved_content": "内点可微单次梯度和 ri 次梯度存在",
+      "original_title": "Differentiability and supporting inequality"
+    },
+    "OPT-01-C03.R01": {
+      "family_ids": [
+        "V03.02"
+      ],
+      "preserved_content": "紧性／有限维闭次水平的最优值达到",
+      "original_title": "Compact/coercive minimum existence"
+    },
+    "OPT-01-C03.R02": {
+      "family_ids": [
+        "V03.03"
+      ],
+      "preserved_content": "凸局部即全局、严格凸至多一个",
+      "original_title": "Convex local/global and strict uniqueness"
+    },
+    "OPT-01-C03.R03": {
+      "family_ids": [
+        "V03.03"
+      ],
+      "preserved_content": "强凸二次下界与梯度平方上界",
+      "original_title": "Strong-convexity error bound"
+    },
+    "OPT-01-C04.R01": {
+      "family_ids": [
+        "V01.05",
+        "V05.01",
+        "V05.03"
+      ],
+      "preserved_content": "LP 与锥规划原对偶、正对偶锥约定",
+      "original_title": "Primal/dual LP and conic program"
+    },
+    "OPT-01-C04.R02": {
+      "family_ids": [
+        "V05.01"
+      ],
+      "preserved_content": "LP 弱强对偶、达到、互补、可行／无界边界",
+      "original_title": "LP weak/strong duality and complementary slackness"
+    },
+    "OPT-01-C04.R03": {
+      "family_ids": [
+        "V05.02"
+      ],
+      "preserved_content": "半正定 QP、可行 KKT 全局性及达到条件",
+      "original_title": "Convex quadratic program conditions"
+    },
+    "OPT-01-C05.R01": {
+      "family_ids": [
+        "V01.09"
+      ],
+      "preserved_content": "\\(Ax=b,x\\ge0\\) 与 \\(A^\\mathsf Ty\\ge0,b^\\mathsf Ty<0\\) 的二择",
+      "original_title": "Farkas alternative"
+    },
+    "OPT-01-C05.R02": {
+      "family_ids": [
+        "V04.06",
+        "V04.07"
+      ],
+      "preserved_content": "相对内部 Slater、零间隙及乘子达到",
+      "original_title": "Slater convex duality"
+    },
+    "OPT-01-C05.R03": {
+      "family_ids": [
+        "V04.02",
+        "V04.05"
+      ],
+      "preserved_content": "有限维线性复合的 ri 资格与对偶达到",
+      "original_title": "Fenchel–Rockafellar duality"
+    },
+    "OPT-02-C01.R01": {
+      "family_ids": [
+        "V06.01"
+      ],
+      "preserved_content": "无约束 Fermat、二阶必要性",
+      "original_title": "Unconstrained differentiable necessary conditions"
+    },
+    "OPT-02-C01.R02": {
+      "family_ids": [
+        "V06.01"
+      ],
+      "preserved_content": "正定 Hessian、严格极小及局部二次增长",
+      "original_title": "Second-order sufficient condition"
+    },
+    "OPT-02-C01.R03": {
+      "family_ids": [
+        "V02.07",
+        "V03.03"
+      ],
+      "preserved_content": "凸梯度支撑与凸集上的一阶充要判据",
+      "original_title": "Convex differentiable first-order characterization"
+    },
+    "OPT-02-C02.R01": {
+      "family_ids": [
+        "V06.03",
+        "V06.04"
+      ],
+      "preserved_content": "\\(g\\le0\\) 约定下的 KKT 四条件",
+      "original_title": "Classical smooth KKT system"
+    },
+    "OPT-02-C02.R02": {
+      "family_ids": [
+        "V06.03",
+        "V06.04",
+        "V06.05"
+      ],
+      "preserved_content": "LICQ／MFCQ 乘子存在、LICQ 唯一",
+      "original_title": "KKT necessity under LICQ/MFCQ"
+    },
+    "OPT-02-C02.R03": {
+      "family_ids": [
+        "V04.06",
+        "V04.07"
+      ],
+      "preserved_content": "凸 KKT 充分性及相应 Slater 必要性",
+      "original_title": "Convex KKT sufficiency"
+    },
+    "OPT-02-C02.R04": {
+      "family_ids": [
+        "V06.06",
+        "V06.07"
+      ],
+      "preserved_content": "LICQ 的临界锥必要性与固定 KKT 乘子充分性",
+      "original_title": "Constrained second-order tests"
+    }
+  },
+  "families": {
+    "V01.01": {
+      "title_latex": "Affine hulls and relative interiors",
+      "path": "parts/v01.tex",
+      "line": 8,
+      "label": "v01-01",
+      "number": "1.1",
+      "printed_pdf_page": "1",
+      "physical_pdf_page": 5,
+      "planned_scope": "仿射包、凸包、锥包、面、相对内部的定义和基本运算。非空有限维凸集的相对内部非空",
+      "planned_proof_route": "取仿射无关点的单纯形，利用其相对开球。证明从 ri 点到闭包点的半开线段性质",
+      "source_locators": "R §§1–3、6 pp. 43–47。B §2.1",
+      "original_contract_ids": [
+        "OPT-01-C01.R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": "Hull descriptions and elementary operations",
+          "statement_line": 25,
+          "proof_line": 33,
+          "label": "lem:hull-descriptions",
+          "number": "1.2",
+          "printed_pdf_page": "1",
+          "physical_pdf_page": 5
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Relative interiors and half-open segments",
+          "statement_line": 46,
+          "proof_line": 54,
+          "label": "thm:relative-segment",
+          "number": "1.3",
+          "printed_pdf_page": "1",
+          "physical_pdf_page": 5
+        }
+      ]
+    },
+    "V01.02": {
+      "title_latex": "Relative interior calculus",
+      "path": "parts/v01.tex",
+      "line": 80,
+      "label": "v01-02",
+      "number": "1.2",
+      "printed_pdf_page": "2",
+      "physical_pdf_page": 6,
+      "planned_scope": "ri 与闭包、有限交、和、线性像和有资格的逆像。相对内部允许低维与单点",
+      "planned_proof_route": "在仿射包中使用开映射和线段延长。交与逆像显式保留共同 ri 点条件。闭包可换 ri 的闭包，线性像的闭性另判",
+      "source_locators": "R Thms. 6.3–6.7 pp. 46–49",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": "An extendible-segment test",
+          "statement_line": 82,
+          "proof_line": 88,
+          "label": "lem:ri-extendible",
+          "number": "1.4",
+          "printed_pdf_page": "2",
+          "physical_pdf_page": 6
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Relative interior identities",
+          "statement_line": 96,
+          "proof_line": 115,
+          "label": "thm:ri-calculus",
+          "number": "1.5",
+          "printed_pdf_page": "2",
+          "physical_pdf_page": 6
+        }
+      ]
+    },
+    "V01.03": {
+      "title_latex": "Finite convex hulls, extreme points, and Helly's theorem",
+      "path": "parts/v01.tex",
+      "line": 162,
+      "label": "v01-03",
+      "number": "1.3",
+      "printed_pdf_page": "3",
+      "physical_pdf_page": 7,
+      "planned_scope": "Carathéodory、有限维紧凸集的极点表示、Radon 与 Helly",
+      "planned_proof_route": "消去仿射依赖的凸系数，按面维数下降得到紧凸极点表示。用仿射依赖的正负分解证明 Radon，再证有限 Helly",
+      "source_locators": "R §§17、18、21 pp. 153–197",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Carath\\'eodory",
+          "statement_line": 164,
+          "proof_line": 169,
+          "label": "thm:caratheodory",
+          "number": "1.6",
+          "printed_pdf_page": "3",
+          "physical_pdf_page": 7
+        },
+        {
+          "kind": "lemma",
+          "title_latex": "Relative boundary support in Euclidean space",
+          "statement_line": 180,
+          "proof_line": 188,
+          "label": "lem:euclidean-boundary-support",
+          "number": "1.7",
+          "printed_pdf_page": "3",
+          "physical_pdf_page": 7
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Extreme point representation",
+          "statement_line": 203,
+          "proof_line": 209,
+          "label": "thm:extreme-representation",
+          "number": "1.8",
+          "printed_pdf_page": "3",
+          "physical_pdf_page": 7
+        },
+        {
+          "kind": "lemma",
+          "title_latex": "Radon's partition",
+          "statement_line": 225,
+          "proof_line": 231,
+          "label": "lem:radon-partition",
+          "number": "1.9",
+          "printed_pdf_page": "3",
+          "physical_pdf_page": 7
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Finite Helly",
+          "statement_line": 239,
+          "proof_line": 245,
+          "label": "thm:helly",
+          "number": "1.10",
+          "printed_pdf_page": "3",
+          "physical_pdf_page": 7
+        }
+      ]
+    },
+    "V01.04": {
+      "title_latex": "Separation and supporting hyperplanes",
+      "path": "parts/v01.tex",
+      "line": 257,
+      "label": "v01-04",
+      "number": "1.4",
+      "printed_pdf_page": "4",
+      "physical_pdf_page": 8,
+      "planned_scope": "实局部凸 Hausdorff 的开集弱分离、紧与闭强分离。有限维的支持超平面和 ri 不交时的真分离",
+      "planned_proof_route": "以 Minkowski 泛函调用 Hahn–Banach，紧闭强分离给出统一间隔。边界点对外点分离并取单位法向极限。对集合差在仿射包内处理 ri，真分离要求至少一对点取严格不等式",
+      "source_locators": "R §11 pp. 95–101。E I §1 pp. 3–6。H §1.2 p. 4 起",
+      "original_contract_ids": [
+        "OPT-01-C01.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Open and compact--closed separation",
+          "statement_line": 259,
+          "proof_line": 270,
+          "label": "thm:geometric-separation",
+          "number": "1.11",
+          "printed_pdf_page": "4",
+          "physical_pdf_page": 8
+        },
+        {
+          "kind": "corollary",
+          "title_latex": "Finite-dimensional support and proper separation",
+          "statement_line": 313,
+          "proof_line": 324,
+          "label": "thm:proper-separation",
+          "number": "1.12",
+          "printed_pdf_page": "4",
+          "physical_pdf_page": 8
+        }
+      ]
+    },
+    "V01.05": {
+      "title_latex": "Halfspaces, dual cones, and polars",
+      "path": "parts/v01.tex",
+      "line": 354,
+      "label": "v01-05",
+      "number": "1.5",
+      "printed_pdf_page": "5",
+      "physical_pdf_page": 9,
+      "planned_scope": "闭凸集是闭半空间的交。正对偶锥、极锥、双极与支持函数的集合语言",
+      "planned_proof_route": "对外点严格分离。分离量沿锥缩放，把阈值化为零。统一正负号并证明取闭凸锥包后的双极",
+      "source_locators": "R Thm. 11.5、§§13–15。B §§2.5–2.6",
+      "original_contract_ids": [
+        "OPT-01-C01.R02",
+        "OPT-01-C04.R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Halfspace representation and cone bipolarity",
+          "statement_line": 365,
+          "proof_line": 375,
+          "label": "thm:cone-bipolar",
+          "number": "1.14",
+          "printed_pdf_page": "5",
+          "physical_pdf_page": 9
+        }
+      ]
+    },
+    "V01.06": {
+      "title_latex": "Recession directions and convex sublevels",
+      "path": "parts/v01.tex",
+      "line": 399,
+      "label": "v01-06",
+      "number": "1.6",
+      "printed_pdf_page": "5",
+      "physical_pdf_page": 9,
+      "planned_scope": "衰退锥、闭凸集和子水平集的无界判据。函数衰退量用增量商",
+      "planned_proof_route": "用射线及闭凸性证明衰退方向与基点无关，以逃逸序列归一化证明有限维非零衰退方向。对函数应用上图",
+      "source_locators": "R §§8–9，Thm. 8.5 p. 66",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Rays, escape, and recession",
+          "statement_line": 410,
+          "proof_line": 418,
+          "label": "prop:rec-set",
+          "number": "1.16",
+          "printed_pdf_page": "5",
+          "physical_pdf_page": 9
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "Recession of a function",
+          "statement_line": 435,
+          "proof_line": 450,
+          "label": "prop:rec-function",
+          "number": "1.17",
+          "printed_pdf_page": "5",
+          "physical_pdf_page": 9
+        }
+      ]
+    },
+    "V01.07": {
+      "title_latex": "When linear images are closed",
+      "path": "parts/v01.tex",
+      "line": 471,
+      "label": "v01-07",
+      "number": "1.7",
+      "printed_pdf_page": "6",
+      "physical_pdf_page": 10,
+      "planned_scope": "有限维非空闭凸集线性像的闭性判据和反例",
+      "planned_proof_route": "R Thm. 9.1 的条件是 \\(\\operatorname{rec}C\\cap\\ker A\\) 落在衰退锥的线性部分。先消去共同直线，若逆像仍无界则归一化给出矛盾。用 PSD 投影给反例",
+      "source_locators": "R §9 pp. 72–74。B §2.6",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "A closed-image criterion",
+          "statement_line": 473,
+          "proof_line": 480,
+          "label": "thm:closed-image",
+          "number": "1.18",
+          "printed_pdf_page": "6",
+          "physical_pdf_page": 10
+        }
+      ]
+    },
+    "V01.08": {
+      "title_latex": "Polyhedra and finite elimination",
+      "path": "parts/v01.tex",
+      "line": 513,
+      "label": "v01-08",
+      "number": "1.8",
+      "printed_pdf_page": "6",
+      "physical_pdf_page": 10,
+      "planned_scope": "多面体的有限线性表示、投影仍为多面体",
+      "planned_proof_route": "逐变量作 Fourier–Motzkin 消元，分别处理无上下界的行和等式。保留多面体线性像闭性，给 LP 最优值像和 QP 降维使用",
+      "source_locators": "R §§19–20、22。N §13.2",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Fourier--Motzkin elimination",
+          "statement_line": 521,
+          "proof_line": 527,
+          "label": "thm:poly-image",
+          "number": "1.21",
+          "printed_pdf_page": "6",
+          "physical_pdf_page": 10
+        }
+      ]
+    },
+    "V01.09": {
+      "title_latex": "Finite cones and theorems of the alternative",
+      "path": "parts/v01.tex",
+      "line": 548,
+      "label": "v01-09",
+      "number": "1.9",
+      "printed_pdf_page": "7",
+      "physical_pdf_page": 11,
+      "planned_scope": "有限生成锥闭性、Farkas 二择、严格方向的 Gordan 变体",
+      "planned_proof_route": "从非负系数中消去线性依赖到独立支撑。有限个支撑取子列及线性逆。对 \\(b\\) 和列锥严格分离给 Farkas，再取子空间与开正交象限分离导出 Gordan",
+      "source_locators": "R §§19、22 pp. 170 起、198–212。B §5.8.3",
+      "original_contract_ids": [
+        "OPT-01-C05.R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": "Finite generation gives closedness",
+          "statement_line": 550,
+          "proof_line": 555,
+          "label": "lem:finitely-generated-closed",
+          "number": "1.22",
+          "printed_pdf_page": "7",
+          "physical_pdf_page": 11
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Farkas' alternative",
+          "statement_line": 571,
+          "proof_line": 581,
+          "label": "thm:farkas",
+          "number": "1.23",
+          "printed_pdf_page": "7",
+          "physical_pdf_page": 11
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Gordan's alternative",
+          "statement_line": 595,
+          "proof_line": 604,
+          "label": "thm:gordan",
+          "number": "1.24",
+          "printed_pdf_page": "7",
+          "physical_pdf_page": 11
+        }
+      ]
+    },
+    "V01.10": {
+      "title_latex": "Tangent and normal cones of polyhedra",
+      "path": "parts/v01.tex",
+      "line": 625,
+      "label": "v01-10",
+      "number": "1.10",
+      "printed_pdf_page": "8",
+      "physical_pdf_page": 12,
+      "planned_scope": "仿射多面体的活动线性化切锥与法锥精确表达",
+      "planned_proof_route": "一阶必要性与局部直线可行反向，再用 Farkas 表示极锥为活动法向非负组合加等式法向张成。无额外严格可行假设",
+      "source_locators": "R §22。N §§12.3、13.2",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Active linear constraints",
+          "statement_line": 635,
+          "proof_line": 650,
+          "label": "thm:poly-normal",
+          "number": "1.26",
+          "printed_pdf_page": "8",
+          "physical_pdf_page": 12
+        }
+      ]
+    },
+    "V02.01": {
+      "title_latex": "Epigraphs, lower semicontinuity, and convex operations",
+      "path": "parts/v02.tex",
+      "line": 4,
+      "label": "v02-01",
+      "number": "2.1",
+      "printed_pdf_page": "9",
+      "physical_pdf_page": 13,
+      "planned_scope": "proper 凸函数、上图、下半连续与闭子水平集。Jensen 与保凸操作",
+      "planned_proof_route": "证明有限凸组合不等式，按上图核对正和、最大、仿射复合和 perspective 的正参数范围。下确界投影保凸但闭性要另证",
+      "source_locators": "R §§4–5、7。B ch. 3",
+      "original_contract_ids": [
+        "OPT-01-C01.R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Epigraph criteria",
+          "statement_line": 18,
+          "proof_line": 25,
+          "label": "prop:epigraph-criteria",
+          "number": "2.2",
+          "printed_pdf_page": "9",
+          "physical_pdf_page": 13
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "Convex operations",
+          "statement_line": 49,
+          "proof_line": 60,
+          "label": "prop:convex-operations",
+          "number": "2.3",
+          "printed_pdf_page": "9",
+          "physical_pdf_page": 13
+        }
+      ]
+    },
+    "V02.02": {
+      "title_latex": "Continuity on relative interiors",
+      "path": "parts/v02.tex",
+      "line": 98,
+      "label": "v02-02",
+      "number": "2.2",
+      "printed_pdf_page": "10",
+      "physical_pdf_page": 14,
+      "planned_scope": "有限维相对内部连续及相对局部 Lipschitz。赋范空间凸函数局部有上界则在该邻域内连续",
+      "planned_proof_route": "用包围小球的凸组合给局部上界，反射得下界，再用射线比较得 Lipschitz。有限维在仿射包内进行",
+      "source_locators": "R §10，Thm. 10.1 p. 82。E I §2 pp. 10–13",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Upper bounds and local Lipschitz continuity",
+          "statement_line": 100,
+          "proof_line": 109,
+          "label": "thm:convex-local-lipschitz",
+          "number": "2.4",
+          "printed_pdf_page": "10",
+          "physical_pdf_page": 14
+        }
+      ]
+    },
+    "V02.03": {
+      "title_latex": "Weak lower semicontinuity and Mazur's lemma",
+      "path": "parts/v02.tex",
+      "line": 133,
+      "label": "v02-03",
+      "number": "2.3",
+      "printed_pdf_page": "10",
+      "physical_pdf_page": 14,
+      "planned_scope": "闭凸集弱闭，范数下半连续的凸函数弱下半连续。Mazur 凸组合",
+      "planned_proof_route": "以 V01.04 分离闭凸集。弱收敛列的尾凸包范数闭包包含极限，否则连续线性泛函给矛盾",
+      "source_locators": "H Thm. 3.7、Cor. 3.9 pp. 60–61。E I §§1–2",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Weak closure and convex approximation",
+          "statement_line": 135,
+          "proof_line": 144,
+          "label": "thm:convex-weak-closed",
+          "number": "2.5",
+          "printed_pdf_page": "10",
+          "physical_pdf_page": 14
+        }
+      ]
+    },
+    "V02.04": {
+      "title_latex": "Conjugates and the Fenchel--Young inequality",
+      "path": "parts/v02.tex",
+      "line": 163,
+      "label": "v02-04",
+      "number": "2.4",
+      "printed_pdf_page": "11",
+      "physical_pdf_page": 15,
+      "planned_scope": "Fenchel 共轭及 Fenchel–Young。指标、支持函数、范数和正定／退化二次型的共轭",
+      "planned_proof_route": "从上确界验证凸闭和配对不等式，范数用对偶球。半正定二次型分解核与像，正交方向不受控时共轭为 \\(+\\infty\\)",
+      "source_locators": "R §§12–16。B §3.3。E I §§3–4",
+      "original_contract_ids": [
+        "OPT-01-C01.R01",
+        "OPT-01-C01.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Conjugacy and examples",
+          "statement_line": 176,
+          "proof_line": 197,
+          "label": "prop:conjugate-basic",
+          "number": "2.7",
+          "printed_pdf_page": "11",
+          "physical_pdf_page": 15
+        }
+      ]
+    },
+    "V02.05": {
+      "title_latex": "Fenchel--Moreau and vertical separation",
+      "path": "parts/v02.tex",
+      "line": 231,
+      "label": "v02-05",
+      "number": "2.5",
+      "printed_pdf_page": "11",
+      "physical_pdf_page": 15,
+      "planned_scope": "Fenchel–Moreau。实局部凸 Hausdorff 空间上 proper 闭凸函数等于双共轭",
+      "planned_proof_route": "先在定义域点下方分离以取得全局连续仿射下界。若另一个外点的分离泛函沿竖直方向系数为零，以此下界校正为非竖直且仍严格，继而逼近函数值",
+      "source_locators": "E I.3.1 pp. 14–16、I.4.1 p. 18。R Thms. 12.1–12.2",
+      "original_contract_ids": [
+        "AN-17-C03-R02",
+        "OPT-01-C01.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Fenchel--Moreau",
+          "statement_line": 237,
+          "proof_line": 244,
+          "label": "thm:fenchel-moreau",
+          "number": "2.8",
+          "printed_pdf_page": "11",
+          "physical_pdf_page": 15
+        }
+      ]
+    },
+    "V02.06": {
+      "title_latex": "Subgradients and Fenchel equality",
+      "path": "parts/v02.tex",
+      "line": 283,
+      "label": "v02-06",
+      "number": "2.6",
+      "printed_pdf_page": "12",
+      "physical_pdf_page": 16,
+      "planned_scope": "次微分和指标法锥，\\(0\\in\\partial f(x)\\) 的全局最优性，Fenchel–Young 取等和共轭次微分互逆",
+      "planned_proof_route": "展开支持不等式和取上确界。互逆用闭凸的双共轭，次微分集合允许为空。相对内部存在性在下一条证明",
+      "source_locators": "R §23，Thm. 23.5。E I.5.1",
+      "original_contract_ids": [
+        "AN-17-C03-R02",
+        "OPT-01-C02.R01",
+        "OPT-01-C02.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Stationarity and equality",
+          "statement_line": 296,
+          "proof_line": 312,
+          "label": "thm:fenchel-equality",
+          "number": "2.10",
+          "printed_pdf_page": "12",
+          "physical_pdf_page": 16
+        }
+      ]
+    },
+    "V02.07": {
+      "title_latex": "Directional derivatives, differentiability, and monotonicity",
+      "path": "parts/v02.tex",
+      "line": 329,
+      "label": "v02-07",
+      "number": "2.7",
+      "printed_pdf_page": "13",
+      "physical_pdf_page": 17,
+      "planned_scope": "单侧方向导数、有限维 ri 点次梯度存在、连续凸函数内点方向导数的支持函数表示、可微支撑和次梯度单调性",
+      "planned_proof_route": "方向商单调给次线性，在相对仿射包用 Hahn–Banach 支撑并延拓。可微内点的支撑唯一，对有限维内点证明次梯度单点反推可微。把边界扩展值与内点公式分开",
+      "source_locators": "R Thms. 23.2、23.4、25.1。E I.5.2 p. 22。B §3.1.3",
+      "original_contract_ids": [
+        "OPT-01-C02.R04",
+        "OPT-02-C01.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Directional quotients and support",
+          "statement_line": 331,
+          "proof_line": 353,
+          "label": "prop:directional-support",
+          "number": "2.11",
+          "printed_pdf_page": "13",
+          "physical_pdf_page": 17
+        },
+        {
+          "kind": "corollary",
+          "title_latex": "Smooth support and monotonicity",
+          "statement_line": 386,
+          "proof_line": 404,
+          "label": "cor:convex-differentiability",
+          "number": "2.12",
+          "printed_pdf_page": "13",
+          "physical_pdf_page": 17
+        }
+      ]
+    },
+    "V02.08": {
+      "title_latex": "Proximal maps and the Moreau envelope",
+      "path": "parts/v02.tex",
+      "line": 435,
+      "label": "v02-08",
+      "number": "2.8",
+      "printed_pdf_page": "14",
+      "physical_pdf_page": 18,
+      "planned_scope": "Hilbert 近端、Moreau 包络、firm nonexpansiveness 和基本分解",
+      "planned_proof_route": "仿射下界与平方项使下确界有限，强凸中点使极小列 Cauchy。用方向导数加光滑平方项求近端最优判据。由单调性得非扩张，双共轭给 Moreau 分解，两端比较给包络梯度",
+      "source_locators": "基于 R §§12、23–24 和 E I §5 的凸共轭与次微分，补写近端接口",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Proximal existence and characterization",
+          "statement_line": 447,
+          "proof_line": 460,
+          "label": "thm:prox-characterization",
+          "number": "2.13",
+          "printed_pdf_page": "14",
+          "physical_pdf_page": 18
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Envelope gradient and Moreau decomposition",
+          "statement_line": 499,
+          "proof_line": 513,
+          "label": "thm:moreau",
+          "number": "2.14",
+          "printed_pdf_page": "14",
+          "physical_pdf_page": 18
+        }
+      ]
+    },
+    "V03.01": {
+      "title_latex": "Weakly convergent subsequences in reflexive spaces",
+      "path": "parts/v03.tex",
+      "line": 5,
+      "label": "v03-01",
+      "number": "3.1",
+      "printed_pdf_page": "16",
+      "physical_pdf_page": 20,
+      "planned_scope": "自反实 Banach 的有界列可取弱收敛子列。弱紧与弱星紧的接口",
+      "planned_proof_route": "取有界列的可分闭线性包，Hahn–Banach 证明其自反。可分空间的弱星对偶球可度量，自反使其等于弱拓扑。用可数弱稠密集、Mazur 的分离论证取得范数稠密测试，作对角抽取并用自反性表示极限",
+      "source_locators": "H Thms. 3.16–3.18 pp. 66–70、§3.6。E II §1",
+      "original_contract_ids": [
+        "AN-17-C01-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Weak subsequences in a reflexive Banach space",
+          "statement_line": 14,
+          "proof_line": 19,
+          "label": "thm:reflexive-weak-subsequence",
+          "number": "3.1",
+          "printed_pdf_page": "16",
+          "physical_pdf_page": 20
+        }
+      ]
+    },
+    "V03.02": {
+      "title_latex": "The direct method and its hypotheses",
+      "path": "parts/v03.tex",
+      "line": 65,
+      "label": "v03-02",
+      "number": "3.2",
+      "printed_pdf_page": "17",
+      "physical_pdf_page": 21,
+      "planned_scope": "紧集最小值、有限维强制最小值、自反空间直接法。保留非空弱序列闭可行集及 proper、下有界、强制、弱序列下半连续的目标",
+      "planned_proof_route": "有限能量比较点保证非空次水平集，沿极小列取弱子列。也列弱紧次水平集的拓扑版本。给 \\(\\ell^2\\) 单位球上的范数连续但不取最小反例",
+      "source_locators": "E II.1.2 pp. 35–36。R §27。D ch. 3",
+      "original_contract_ids": [
+        "AN-17-C01-R01",
+        "OPT-01-C03.R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Three forms of the direct method",
+          "statement_line": 75,
+          "proof_line": 94,
+          "label": "thm:direct-method",
+          "number": "3.2",
+          "printed_pdf_page": "17",
+          "physical_pdf_page": 21
+        }
+      ]
+    },
+    "V03.03": {
+      "title_latex": "Convex minimizers and quantitative strong convexity",
+      "path": "parts/v03.tex",
+      "line": 126,
+      "label": "v03-03",
+      "number": "3.3",
+      "printed_pdf_page": "18",
+      "physical_pdf_page": 22,
+      "planned_scope": "凸局部极小即全局、严格凸唯一性。可微 \\(\\mu\\)-强凸函数在 \\(\\mu>0\\) 且极小点存在时的二次增长与梯度误差界",
+      "planned_proof_route": "在可行线段上缩小参数。对强凸函数用支撑二次式，分别代入极小点和对二次式取下确界。给凸可行集上的梯度变分不等式。存在性与唯一性分开",
+      "source_locators": "R §27。B §§4.2、9.1 pp. 457–461。N Thm. 2.5 p. 17",
+      "original_contract_ids": [
+        "OPT-01-C03.R02",
+        "OPT-01-C03.R03",
+        "OPT-02-C01.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Local minima, uniqueness, and first-order testing",
+          "statement_line": 128,
+          "proof_line": 140,
+          "label": "prop:v03-03-01",
+          "number": "3.4",
+          "printed_pdf_page": "18",
+          "physical_pdf_page": 22
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Strong-convexity bounds",
+          "statement_line": 151,
+          "proof_line": 162,
+          "label": "thm:v03-03-02",
+          "number": "3.5",
+          "printed_pdf_page": "18",
+          "physical_pdf_page": 22
+        }
+      ]
+    },
+    "V03.04": {
+      "title_latex": "Ekeland's metric variational principle",
+      "path": "parts/v03.tex",
+      "line": 178,
+      "label": "v03-04",
+      "number": "3.4",
+      "printed_pdf_page": "18",
+      "physical_pdf_page": 22,
+      "planned_scope": "Ekeland 变分原理的常用度量版。完备度量、proper 下半连续且下有界、给定近似极小点",
+      "planned_proof_route": "以带距离惩罚的下降集迭代，求和控制总位移，完备性与下半连续给极限和严格变分不等式。附光滑近似驻点推论，参数按 \\(\\epsilon/\\lambda\\) 固定",
+      "source_locators": "E I §6 Thm. 6.1 pp. 29–30",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Ekeland",
+          "statement_line": 180,
+          "proof_line": 191,
+          "label": "thm:v03-04-01",
+          "number": "3.6",
+          "printed_pdf_page": "18",
+          "physical_pdf_page": 22
+        },
+        {
+          "kind": "corollary",
+          "title_latex": "Approximate stationarity",
+          "statement_line": 215,
+          "proof_line": 221,
+          "label": "cor:v03-04-02",
+          "number": "3.7",
+          "printed_pdf_page": "19",
+          "physical_pdf_page": 23
+        }
+      ]
+    },
+    "V03.05": {
+      "title_latex": "Projection onto a closed convex set",
+      "path": "parts/v03.tex",
+      "line": 230,
+      "label": "v03-05",
+      "number": "3.5",
+      "printed_pdf_page": "19",
+      "physical_pdf_page": 23,
+      "planned_scope": "Hilbert 闭凸投影的存在唯一性、变分刻画和 firm nonexpansiveness",
+      "planned_proof_route": "平行四边形证明极小列为 Cauchy，线段变分给法向不等式，交换两个投影并相加",
+      "source_locators": "H §5.1 pp. 131–135。B §§6、8 的投影例",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Hilbert projection",
+          "statement_line": 232,
+          "proof_line": 249,
+          "label": "thm:hilbert-projection",
+          "number": "3.8",
+          "printed_pdf_page": "19",
+          "physical_pdf_page": 23
+        }
+      ]
+    },
+    "V03.06": {
+      "title_latex": "Stampacchia's variational inequality",
+      "path": "parts/v03.tex",
+      "line": 274,
+      "label": "v03-06",
+      "number": "3.6",
+      "printed_pdf_page": "19",
+      "physical_pdf_page": 23,
+      "planned_scope": "Stampacchia。非空闭凸 \\(C\\)，有界线性实双线性形式强制，解相应变分不等式且唯一",
+      "planned_proof_route": "Riesz 表示算子，选 \\(0<\\tau<2\\alpha/M^2\\)，对 \\(P_C(I-\\tau A+\\tau b)\\) 用收缩和投影刻画。对称时说明等价的能量最小化",
+      "source_locators": "H Thm. 5.6 p. 138。E II §3",
+      "original_contract_ids": [
+        "AN-17-C02-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Bounded coercive bilinear form",
+          "statement_line": 276,
+          "proof_line": 291,
+          "label": "thm:stampacchia",
+          "number": "3.9",
+          "printed_pdf_page": "19",
+          "physical_pdf_page": 23
+        }
+      ]
+    },
+    "V03.07": {
+      "title_latex": "Lax--Milgram over the real and complex fields",
+      "path": "parts/v03.tex",
+      "line": 317,
+      "label": "v03-07",
+      "number": "3.7",
+      "printed_pdf_page": "20",
+      "physical_pdf_page": 24,
+      "planned_scope": "Lax–Milgram。实非对称及复 sesquilinear 强制版本，唯一性、\\(\\lVert u\\rVert\\le\\lVert\\ell\\rVert/\\alpha\\)，对称或 Hermitian 的能量表述",
+      "planned_proof_route": "取整个 Hilbert 空间并用双向测试。复情形对实部求解，再用 \\(iv\\) 恢复虚部。变分能量限定实对称／复 Hermitian",
+      "source_locators": "H Cor. 5.8 p. 140。E II.3.3 pp. 44–45",
+      "original_contract_ids": [
+        "AN-17-C02-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Lax--Milgram",
+          "statement_line": 319,
+          "proof_line": 336,
+          "label": "thm:lax-milgram",
+          "number": "3.10",
+          "printed_pdf_page": "20",
+          "physical_pdf_page": 24
+        }
+      ]
+    },
+    "V04.01": {
+      "title_latex": "Value functions and the dual bound",
+      "path": "parts/v04.tex",
+      "line": 4,
+      "label": "v04-01",
+      "number": "4.1",
+      "printed_pdf_page": "21",
+      "physical_pdf_page": 25,
+      "planned_scope": "扰动值函数 \\(v(u)=\\inf_x\\Phi(x,u)\\)，对偶的弱界、双共轭值和次梯度判据",
+      "planned_proof_route": "在 \\(v(0)\\) 有限且 proper 的范围内展开 \\(v^*(y)=\\Phi^*(0,y)\\)。对偶上确界是 \\(v^{**}(0)\\)，有零间隙且对偶达到等价于存在 \\(\\partial v(0)\\)。仅值相等用闭包条件另述",
+      "source_locators": "E III §2 pp. 50–54。R §§29–30。B §5.3",
+      "original_contract_ids": [
+        "AN-17-C03-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Perturbation duality",
+          "statement_line": 21,
+          "proof_line": 32,
+          "label": "thm:perturbation-duality",
+          "number": "4.1",
+          "printed_pdf_page": "21",
+          "physical_pdf_page": 25
+        },
+        {
+          "kind": "lemma",
+          "title_latex": "Local upper bound and supporting functional",
+          "statement_line": 63,
+          "proof_line": 71,
+          "label": "lem:local-value-support",
+          "number": "4.2",
+          "printed_pdf_page": "22",
+          "physical_pdf_page": 26
+        }
+      ]
+    },
+    "V04.02": {
+      "title_latex": "Finite-dimensional Fenchel--Rockafellar duality",
+      "path": "parts/v04.tex",
+      "line": 107,
+      "label": "v04-02",
+      "number": "4.2",
+      "printed_pdf_page": "22",
+      "physical_pdf_page": 26,
+      "planned_scope": "有限维 Fenchel–Rockafellar。proper 闭凸 \\(f,g\\)、线性 \\(A\\)、\\(A(\\operatorname{ri}\\operatorname{dom} f)\\cap\\operatorname{ri}\\operatorname{dom} g\\ne\\varnothing\\) 且原值有限",
+      "planned_proof_route": "取 \\(\\Phi(x,u)=f(x)+g(Ax+u)\\)。由 ri 演算得 \\(0\\in\\operatorname{ri}\\operatorname{dom} v\\)。从原值有限排除 \\(v=-\\infty\\)，在仿射包支撑并延拓斜率。推出 \\(\\max_y[-f^*(-A^*y)-g^*(y)]\\) 与达到",
+      "source_locators": "R Thms. 31.1–31.3 pp. 327–334。E III §4",
+      "original_contract_ids": [
+        "OPT-01-C02.R03",
+        "OPT-01-C05.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Relative-interior qualification",
+          "statement_line": 109,
+          "proof_line": 124,
+          "label": "thm:finite-fenchel",
+          "number": "4.3",
+          "printed_pdf_page": "22",
+          "physical_pdf_page": 26
+        }
+      ]
+    },
+    "V04.03": {
+      "title_latex": "Banach-space Fenchel duality",
+      "path": "parts/v04.tex",
+      "line": 160,
+      "label": "v04-03",
+      "number": "4.3",
+      "printed_pdf_page": "23",
+      "physical_pdf_page": 27,
+      "planned_scope": "Banach 空间 Fenchel 对偶。proper 闭凸 \\(f,g\\)、有界线性 \\(A\\)，存在 \\(x_0\\in\\operatorname{dom}f\\) 使 \\(g\\) 在 \\(Ax_0\\) 连续，且原值有限",
+      "planned_proof_route": "以 \\(x_0\\) 给原点邻域的上界，凸性和反射给有限与连续，连续支撑给对偶最优。原问题达到需另验紧性或强制性",
+      "source_locators": "E III Props. 2.1–2.4、Thm. 4.1。R §31 作有限维对照",
+      "original_contract_ids": [
+        "AN-17-C03-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Continuity qualification",
+          "statement_line": 162,
+          "proof_line": 172,
+          "label": "thm:banach-fenchel",
+          "number": "4.4",
+          "printed_pdf_page": "23",
+          "physical_pdf_page": 27
+        }
+      ]
+    },
+    "V04.04": {
+      "title_latex": "Exact subdifferential rules",
+      "path": "parts/v04.tex",
+      "line": 191,
+      "label": "v04-04",
+      "number": "4.4",
+      "printed_pdf_page": "23",
+      "physical_pdf_page": 27,
+      "planned_scope": "凸函数精确和／仿射链规则、合格的法锥交式。另纳入一项多面体时用该项 dom 代替 ri dom 的有限维和规则",
+      "planned_proof_route": "对固定次梯度减去仿射项，用对偶分解。多面体指标情形在 \\(\\operatorname{aff}\\operatorname{dom} f\\) 分离 \\(\\operatorname{epi} f\\) 与 \\(P\\times(-\\infty,p)\\)。ri 见证排除竖直分离，借 V01.08、V01.10 分解线性支持。一般多面体函数用上图提升为指标情形",
+      "source_locators": "R Thms. 23.8–23.9、Cor. 23.8.1 pp. 223–226。E I.5.6–7",
+      "original_contract_ids": [
+        "OPT-01-C02.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Sum and affine chain rules",
+          "statement_line": 193,
+          "proof_line": 216,
+          "label": "thm:exact-subdiff",
+          "number": "4.5",
+          "printed_pdf_page": "23",
+          "physical_pdf_page": 27
+        },
+        {
+          "kind": "lemma",
+          "title_latex": "Supporting inequality over a polyhedron",
+          "statement_line": 243,
+          "proof_line": 263,
+          "label": "lem:polyhedral-support",
+          "number": "4.6",
+          "printed_pdf_page": "23",
+          "physical_pdf_page": 27
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "One polyhedral summand",
+          "statement_line": 309,
+          "proof_line": 319,
+          "label": "thm:polyhedral-sum",
+          "number": "4.7",
+          "printed_pdf_page": "24",
+          "physical_pdf_page": 28
+        }
+      ]
+    },
+    "V04.05": {
+      "title_latex": "Saddles, certificates, and sensitivity",
+      "path": "parts/v04.tex",
+      "line": 357,
+      "label": "v04-05",
+      "number": "4.5",
+      "printed_pdf_page": "25",
+      "physical_pdf_page": 29,
+      "planned_scope": "鞍点、最优性成对证书及灵敏度",
+      "planned_proof_route": "写出 Fenchel–Young 余量及其逐项为零。扰动值的次梯度给全局支撑，若值函数可微则唯一斜率给边际变化。明确对偶达到与原问题达到是两项",
+      "source_locators": "E III §§2–3。R §28、Thm. 31.3。B §§5.4、5.6",
+      "original_contract_ids": [
+        "AN-17-C03-R01",
+        "OPT-01-C05.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Fenchel certificate and saddle",
+          "statement_line": 359,
+          "proof_line": 376,
+          "label": "thm:fenchel-saddle",
+          "number": "4.8",
+          "printed_pdf_page": "25",
+          "physical_pdf_page": 29
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "Value sensitivity",
+          "statement_line": 395,
+          "proof_line": 403,
+          "label": "prop:fenchel-sensitivity",
+          "number": "4.9",
+          "printed_pdf_page": "25",
+          "physical_pdf_page": 29
+        }
+      ]
+    },
+    "V04.06": {
+      "title_latex": "Slater's condition and affine inequalities",
+      "path": "parts/v04.tex",
+      "line": 420,
+      "label": "v04-06",
+      "number": "4.6",
+      "printed_pdf_page": "25",
+      "physical_pdf_page": 29,
+      "planned_scope": "有限维 Slater，含非线性不等式严格、仿射不等式可非严格的常用加强",
+      "planned_proof_route": "把仿射约束先放入多面体 \\(P\\)，在 \\(D\\cap P\\) 上扰动非线性界，严格可行给原点邻域上界。由 V04.01 得非线性乘子，再用 V04.04 中的上图分离和 V01.10 恢复仿射乘子。此步直接分离有限下确界，即使原问题未达到也成立。共同定义域 ri 与有限原值要注明",
+      "source_locators": "B §§5.2.3、5.3.2 pp. 226–236。R §§20、23、28",
+      "original_contract_ids": [
+        "OPT-01-C05.R02",
+        "OPT-02-C02.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Refined Slater condition",
+          "statement_line": 422,
+          "proof_line": 436,
+          "label": "thm:refined-slater",
+          "number": "4.10",
+          "printed_pdf_page": "25",
+          "physical_pdf_page": 29
+        }
+      ]
+    },
+    "V04.07": {
+      "title_latex": "Convex KKT conditions and boundary examples",
+      "path": "parts/v04.tex",
+      "line": 480,
+      "label": "v04-07",
+      "number": "4.7",
+      "printed_pdf_page": "26",
+      "physical_pdf_page": 30,
+      "planned_scope": "凸 KKT 的充要方向。有限可行 KKT 点推出全局最优，已达到最优时的必要方向由相应资格给出",
+      "planned_proof_route": "用 Lagrangian 全局极小与互补得到充分性。光滑情形转为梯度，闭凸情形保留次梯度和定义域。另列对偶有间隙或不达到的反例",
+      "source_locators": "B §§5.5、5.6 与 Exs. 5.21–5.22 p. 280。R §28",
+      "original_contract_ids": [
+        "OPT-01-C05.R02",
+        "OPT-02-C02.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Convex KKT optimality",
+          "statement_line": 482,
+          "proof_line": 494,
+          "label": "thm:convex-kkt",
+          "number": "4.11",
+          "printed_pdf_page": "26",
+          "physical_pdf_page": 30
+        }
+      ]
+    },
+    "V05.01": {
+      "title_latex": "Linear programs, attainment, and duality",
+      "path": "parts/v05.tex",
+      "line": 4,
+      "label": "v05-01",
+      "number": "5.1",
+      "printed_pdf_page": "27",
+      "physical_pdf_page": 31,
+      "planned_scope": "标准形 LP、弱／强对偶、两侧达到、互补松弛与不可行／无界关系",
+      "planned_proof_route": "用 \\((Ax,c^\\mathsf T x+s)\\) 的多面体闭像得原值达到，再由 V01.10 得对偶证书。正负号直接由间隙展开核验。区分仅一侧可行和双侧不可行",
+      "source_locators": "N Thm. 13.1 pp. 364–367。R §§19、22。B §4.3、Ex. 5.23",
+      "original_contract_ids": [
+        "OPT-01-C04.R01",
+        "OPT-01-C04.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Linear programming duality",
+          "statement_line": 6,
+          "proof_line": 19,
+          "label": "thm:linear-programming-duality",
+          "number": "5.1",
+          "printed_pdf_page": "27",
+          "physical_pdf_page": 31
+        },
+        {
+          "kind": "corollary",
+          "title_latex": "Feasibility alternatives",
+          "statement_line": 47,
+          "proof_line": 53,
+          "label": "cor:lp-alternatives",
+          "number": "5.2",
+          "printed_pdf_page": "27",
+          "physical_pdf_page": 31
+        }
+      ]
+    },
+    "V05.02": {
+      "title_latex": "Convex quadratic programs and reduced Hessians",
+      "path": "parts/v05.tex",
+      "line": 78,
+      "label": "v05-02",
+      "number": "5.2",
+      "printed_pdf_page": "28",
+      "physical_pdf_page": 32,
+      "planned_scope": "半正定凸 QP。可行且下确界有限时的达到、KKT，以及等式 QP 的约化 Hessian 与鞍点矩阵",
+      "planned_proof_route": "将多面体投到 \\((Q^{1/2}x,c^\\mathsf Tx)\\)。若有限值则像不含向下竖直衰退，至少一条仿射下界控制线性坐标，二次次水平由此有界。等式情形在 \\(\\ker A\\) 上检验正定及鞍点矩阵可逆",
+      "source_locators": "N §§16.1、16.3 pp. 440–453。B §4.4。R §27",
+      "original_contract_ids": [
+        "OPT-01-C04.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Convex quadratic programming",
+          "statement_line": 80,
+          "proof_line": 96,
+          "label": "thm:convex-qp",
+          "number": "5.3",
+          "printed_pdf_page": "28",
+          "physical_pdf_page": 32
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "Equality constraints and the reduced Hessian",
+          "statement_line": 129,
+          "proof_line": 143,
+          "label": "prop:reduced-hessian",
+          "number": "5.4",
+          "printed_pdf_page": "28",
+          "physical_pdf_page": 32
+        }
+      ]
+    },
+    "V05.03": {
+      "title_latex": "Conic duality and relative strict feasibility",
+      "path": "parts/v05.tex",
+      "line": 164,
+      "label": "v05-03",
+      "number": "5.3",
+      "printed_pdf_page": "29",
+      "physical_pdf_page": 33,
+      "planned_scope": "标准锥原对偶、弱对偶、互补配对、相对严格可行时的值相等和对偶达到",
+      "planned_proof_route": "对闭凸锥用正对偶写出间隙。原点附近在 \\(A(\\operatorname{span}K)\\) 中用线性右逆扰动等式，\\(\\operatorname{ri}K\\) 保可行。支撑值函数后将乘子延拓回环境空间。每侧达到分别陈述",
+      "source_locators": "B §§5.9.1–2 pp. 264–269。R §§14、28",
+      "original_contract_ids": [
+        "OPT-01-C04.R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Conic Slater condition",
+          "statement_line": 181,
+          "proof_line": 188,
+          "label": "thm:conic-slater",
+          "number": "5.5",
+          "printed_pdf_page": "29",
+          "physical_pdf_page": 33
+        },
+        {
+          "kind": "corollary",
+          "title_latex": "Strict feasibility on the dual side",
+          "statement_line": 212,
+          "proof_line": 218,
+          "label": "cor:dual-slater",
+          "number": "5.6",
+          "printed_pdf_page": "29",
+          "physical_pdf_page": 33
+        }
+      ]
+    },
+    "V05.04": {
+      "title_latex": "Standard cones and quadratic epigraphs",
+      "path": "parts/v05.tex",
+      "line": 240,
+      "label": "v05-04",
+      "number": "5.4",
+      "printed_pdf_page": "29",
+      "physical_pdf_page": 33,
+      "planned_scope": "正交象限、Lorentz 锥和 PSD 锥自对偶，SOCP／SDP 代表性表示",
+      "planned_proof_route": "Lorentz 用 Cauchy–Schwarz 并构造反向试向量。PSD 用迹配对、谱分解与秩一测试。用 Schur 补给一个二次上图的锥表示，奇异端点写明条件",
+      "source_locators": "B §§2.6、4.4–4.6、5.9。B App. A",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Self-dual cones",
+          "statement_line": 242,
+          "proof_line": 254,
+          "label": "prop:standard-self-dual-cones",
+          "number": "5.7",
+          "printed_pdf_page": "29",
+          "physical_pdf_page": 33
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "A Schur complement with a singular block",
+          "statement_line": 271,
+          "proof_line": 282,
+          "label": "prop:singular-schur",
+          "number": "5.8",
+          "printed_pdf_page": "30",
+          "physical_pdf_page": 34
+        }
+      ]
+    },
+    "V05.05": {
+      "title_latex": "Closure, weak infeasibility, and nonattainment",
+      "path": "parts/v05.tex",
+      "line": 313,
+      "label": "v05-05",
+      "number": "5.5",
+      "printed_pdf_page": "30",
+      "physical_pdf_page": 34,
+      "planned_scope": "线性像非闭、弱不可行和强对偶下原问题不达到的反例",
+      "planned_proof_route": "将 \\(2\\times2\\) PSD 投影至 \\((a,b)\\)，展示 \\((0,1)\\) 在闭包。再以 \\(\\inf x\\) 且矩阵 \\(\\bigl(\\begin{smallmatrix}x&1\\\\1&y\\end{smallmatrix}\\bigr)\\succeq0\\) 给严格可行但下确界不达到",
+      "source_locators": "B §§2.6、5.9。R §9 的闭像限制",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Nonclosed image and weak infeasibility",
+          "statement_line": 315,
+          "proof_line": 322,
+          "label": "prop:sdp-weak-infeasibility",
+          "number": "5.9",
+          "printed_pdf_page": "30",
+          "physical_pdf_page": 34
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "Strict feasibility with an unattained primal infimum",
+          "statement_line": 339,
+          "proof_line": 345,
+          "label": "prop:sdp-nonattainment",
+          "number": "5.10",
+          "printed_pdf_page": "30",
+          "physical_pdf_page": 34
+        }
+      ]
+    },
+    "V05.06": {
+      "title_latex": "Finite matrix minimax",
+      "path": "parts/v05.tex",
+      "line": 357,
+      "label": "v05-06",
+      "number": "5.6",
+      "printed_pdf_page": "31",
+      "physical_pdf_page": 35,
+      "planned_scope": "有限矩阵博弈的极小极大与混合策略达到",
+      "planned_proof_route": "对两概率单纯形，将最坏收益改写成有限线性不等式和一个标量，再用 LP 对偶。一般无限维 minimax 另属专题",
+      "source_locators": "E VI p. 165 起。R §§36–37。V05.01",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Finite matrix game",
+          "statement_line": 359,
+          "proof_line": 372,
+          "label": "thm:matrix-minimax",
+          "number": "5.11",
+          "printed_pdf_page": "31",
+          "physical_pdf_page": 35
+        }
+      ]
+    },
+    "V06.01": {
+      "title_latex": "Unconstrained first- and second-order tests",
+      "path": "parts/v06.tex",
+      "line": 4,
+      "label": "v06-01",
+      "number": "6.1",
+      "printed_pdf_page": "32",
+      "physical_pdf_page": 36,
+      "planned_scope": "无约束 Fermat、Hessian 半正定必要与正定充分。严格极小和局部二次增长",
+      "planned_proof_route": "沿直线微分两次。正定在有限维单位球给统一常数，Taylor 控制余项。用 \\(x^4\\)、\\(-x^4\\) 分辨退化，在 Hilbert 情形用非一致正定反例说明区别",
+      "source_locators": "N Thms. 2.1–2.5 pp. 15–17。L §1.2.1",
+      "original_contract_ids": [
+        "OPT-02-C01.R01",
+        "OPT-02-C01.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Unconstrained optimality tests",
+          "statement_line": 6,
+          "proof_line": 23,
+          "label": "thm:unconstrained-tests",
+          "number": "6.1",
+          "printed_pdf_page": "32",
+          "physical_pdf_page": 36
+        }
+      ]
+    },
+    "V06.02": {
+      "title_latex": "Equality manifolds and multipliers",
+      "path": "parts/v06.tex",
+      "line": 76,
+      "label": "v06-02",
+      "number": "6.2",
+      "printed_pdf_page": "33",
+      "physical_pdf_page": 37,
+      "planned_scope": "满秩等式约束的切空间、乘子存在与唯一、约束一阶变化",
+      "planned_proof_route": "由隐函数定理证明每个核方向可由可行曲线实现，消去切空间得到法向表示。区分有限维满秩与 Banach 隐函数所需的分裂满射",
+      "source_locators": "L §1.2.2。N §12.3。D04 C04–C05",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": "Local equality chart",
+          "statement_line": 78,
+          "proof_line": 90,
+          "label": "lem:equality-chart",
+          "number": "6.2",
+          "printed_pdf_page": "33",
+          "physical_pdf_page": 37
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Equality multiplier rule",
+          "statement_line": 106,
+          "proof_line": 118,
+          "label": "thm:equality-multipliers",
+          "number": "6.3",
+          "printed_pdf_page": "33",
+          "physical_pdf_page": 37
+        }
+      ]
+    },
+    "V06.03": {
+      "title_latex": "Active constraints, tangency, and qualification",
+      "path": "parts/v06.tex",
+      "line": 140,
+      "label": "v06-03",
+      "number": "6.3",
+      "printed_pdf_page": "33",
+      "physical_pdf_page": 37,
+      "planned_scope": "活动集、Bouligand 切锥、线性化锥。LICQ 与 MFCQ 的精确定义，MFCQ 下两锥相等",
+      "planned_proof_route": "可行割线给包含。MFCQ 取严格内向方向 \\(w\\)，对 \\(d+\\epsilon w\\) 沿等式流形构造可行曲线，再用切锥闭性。等式梯度独立，且仅对活动不等式要求严格方向",
+      "source_locators": "N Defs. 12.1、12.5 pp. 328、352–353。N §§12.3、12.6。MF §3",
+      "original_contract_ids": [
+        "OPT-02-C02.R01",
+        "OPT-02-C02.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Tangent cone under MFCQ",
+          "statement_line": 167,
+          "proof_line": 173,
+          "label": "prop:tangent-mfcq",
+          "number": "6.4",
+          "printed_pdf_page": "33",
+          "physical_pdf_page": 37
+        }
+      ]
+    },
+    "V06.04": {
+      "title_latex": "Fritz John and the first-order KKT rule",
+      "path": "parts/v06.tex",
+      "line": 210,
+      "label": "v06-04",
+      "number": "6.4",
+      "printed_pdf_page": "34",
+      "physical_pdf_page": 38,
+      "planned_scope": "Fritz John、正规／异常乘子、LICQ 或 MFCQ 下 KKT 必要性",
+      "planned_proof_route": "若等式导数不满秩直接给异常乘子。满秩时在等式切空间用 Gordan 排除目标与所有活动不等式同时下降。MFCQ 排除异常系数，归一化为 KKT。也给由切锥极锥到 KKT 的路线",
+      "source_locators": "MF §§2–3。N Thm. 12.1 p. 328、Thm. 12.9 p. 353",
+      "original_contract_ids": [
+        "OPT-02-C02.R01",
+        "OPT-02-C02.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Fritz John and KKT necessity",
+          "statement_line": 221,
+          "proof_line": 234,
+          "label": "thm:fritz-john",
+          "number": "6.5",
+          "printed_pdf_page": "34",
+          "physical_pdf_page": 38
+        }
+      ]
+    },
+    "V06.05": {
+      "title_latex": "Multiplier uniqueness, compactness, and degeneracy",
+      "path": "parts/v06.tex",
+      "line": 286,
+      "label": "v06-05",
+      "number": "6.5",
+      "printed_pdf_page": "35",
+      "physical_pdf_page": 39,
+      "planned_scope": "LICQ 乘子唯一、MFCQ 乘子集非空紧且可多解。互补与严格互补的区别",
+      "planned_proof_route": "LICQ 线性独立给唯一；若 MFCQ 乘子列无界，归一化得到异常非零向量，矛盾。用重复约束给多解，以 \\(\\min x\\) 约束 \\(x^2\\le0\\) 给资格失败",
+      "source_locators": "N §§12.2、12.6。MF §3。B Ex. 5.22",
+      "original_contract_ids": [
+        "OPT-02-C02.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Qualified multiplier sets",
+          "statement_line": 288,
+          "proof_line": 295,
+          "label": "prop:qualified-multiplier-sets",
+          "number": "6.6",
+          "printed_pdf_page": "35",
+          "physical_pdf_page": 39
+        }
+      ]
+    },
+    "V06.06": {
+      "title_latex": "The critical cone and second-order necessity",
+      "path": "parts/v06.tex",
+      "line": 341,
+      "label": "v06-06",
+      "number": "6.6",
+      "printed_pdf_page": "35",
+      "physical_pdf_page": 39,
+      "planned_scope": "LICQ 下约束二阶必要性。临界锥与 Lagrangian Hessian",
+      "planned_proof_route": "对临界方向用隐函数实现保留零方向导数的活动约束和所有等式，严格下降的活动约束自动可行。互补保证正乘子的约束沿曲线取等，约束目标的二阶项即 Lagrangian 二阶项",
+      "source_locators": "N Thm. 12.5 p. 343",
+      "original_contract_ids": [
+        "OPT-02-C02.R04"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Second-order necessary condition under LICQ",
+          "statement_line": 359,
+          "proof_line": 368,
+          "label": "thm:licq-second-order-necessity",
+          "number": "6.7",
+          "printed_pdf_page": "35",
+          "physical_pdf_page": 39
+        }
+      ]
+    },
+    "V06.07": {
+      "title_latex": "Fixed-multiplier second-order sufficiency",
+      "path": "parts/v06.tex",
+      "line": 396,
+      "label": "v06-07",
+      "number": "6.7",
+      "printed_pdf_page": "36",
+      "physical_pdf_page": 40,
+      "planned_scope": "固定 KKT 乘子下的约束二阶充分性。临界锥非零方向上的严格正性推出局部二次增长",
+      "planned_proof_route": "若无统一增长，取违反增长的可行序列并归一化割线。极限落在临界锥，\\(L(x)\\le f(x)\\) 和 \\(\\nabla L(x_*)=0\\) 使 Taylor 与严格正性矛盾。锥仅含零向量时同样适用",
+      "source_locators": "N Thm. 12.6 p. 345。D04 现有声明覆盖带 LICQ 版本",
+      "original_contract_ids": [
+        "OPT-02-C02.R04"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Constrained quadratic growth",
+          "statement_line": 398,
+          "proof_line": 413,
+          "label": "thm:constrained-growth",
+          "number": "6.8",
+          "printed_pdf_page": "36",
+          "physical_pdf_page": 40
+        }
+      ]
+    },
+    "V07.01": {
+      "title_latex": "Fixed endpoints and the Euler--Lagrange equation",
+      "path": "parts/v07.tex",
+      "line": 4,
+      "label": "v07-01",
+      "number": "7.1",
+      "printed_pdf_page": "37",
+      "physical_pdf_page": 41,
+      "planned_scope": "泛函、一阶变分、强／弱局部极值的拓扑、基本引理、经典固定端点 Euler–Lagrange",
+      "planned_proof_route": "分清 \\(C^0\\) 和 \\(C^1\\) 邻域。先对两侧变分差商用有界或可积控制，再积分分部。用紧支撑测试的分布结论到连续时的点态结论",
+      "source_locators": "D §1.3.3、Thm. 2.1 p. 59。L §§2.2–2.3.1",
+      "original_contract_ids": [
+        "AN-17-C02-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": "Fundamental lemma and distributional derivative",
+          "statement_line": 21,
+          "proof_line": 32,
+          "label": "lem:variation-fundamental",
+          "number": "7.1",
+          "printed_pdf_page": "37",
+          "physical_pdf_page": 41
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "First variation at fixed endpoints",
+          "statement_line": 54,
+          "proof_line": 71,
+          "label": "thm:first-variation",
+          "number": "7.2",
+          "printed_pdf_page": "37",
+          "physical_pdf_page": 41
+        }
+      ]
+    },
+    "V07.02": {
+      "title_latex": "Free, constrained, and moving endpoints",
+      "path": "parts/v07.tex",
+      "line": 92,
+      "label": "v07-02",
+      "number": "7.2",
+      "printed_pdf_page": "38",
+      "physical_pdf_page": 42,
+      "planned_scope": "自由端点、指定端点子流形的横截条件，移动端点的基本边界项",
+      "planned_proof_route": "先给固定时间端点允许的切向变化。移动时间时由 Leibniz 和链式法则给 \\([L_{u'}\\cdot \\delta u+(L-u'\\cdot L_{u'})\\delta t]\\)，写清 \\(\\delta u\\) 为端点的总位移",
+      "source_locators": "L §2.3.5 p. 34 起。D §2.2",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": "Inner time variation",
+          "statement_line": 94,
+          "proof_line": 102,
+          "label": "lem:inner-time-variation",
+          "number": "7.3",
+          "printed_pdf_page": "38",
+          "physical_pdf_page": 42
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "Boundary term and transversality",
+          "statement_line": 121,
+          "proof_line": 145,
+          "label": "prop:variation-boundary",
+          "number": "7.4",
+          "printed_pdf_page": "38",
+          "physical_pdf_page": 42
+        }
+      ]
+    },
+    "V07.03": {
+      "title_latex": "The Du Bois--Reymond identity and first integrals",
+      "path": "parts/v07.tex",
+      "line": 181,
+      "label": "v07-03",
+      "number": "7.3",
+      "printed_pdf_page": "39",
+      "physical_pdf_page": 43,
+      "planned_scope": "Du Bois–Reymond 与 Beltrami 恒等式，忽略坐标的守恒动量",
+      "planned_proof_route": "用已证 Euler–Lagrange 和链式求导得到 \\(d(L-u'\\cdot L_{u'})/dt=L_t\\)。列出足以做经典链式求导的正则性",
+      "source_locators": "D Thm. 2.11 pp. 73–75。L §2.3.4",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "First integrals",
+          "statement_line": 183,
+          "proof_line": 198,
+          "label": "prop:beltrami",
+          "number": "7.5",
+          "printed_pdf_page": "39",
+          "physical_pdf_page": 43
+        }
+      ]
+    },
+    "V07.04": {
+      "title_latex": "Integral equality constraints and abnormal multipliers",
+      "path": "parts/v07.tex",
+      "line": 213,
+      "label": "v07-04",
+      "number": "7.4",
+      "printed_pdf_page": "39",
+      "physical_pdf_page": 43,
+      "planned_scope": "积分等式约束下的乘子变分。正则与异常的区别",
+      "planned_proof_route": "选择使约束导数满秩的有限组试方向，在这些坐标用 IFT 精确保持约束，再在线性核上求一阶必要性。约束导数不满秩可给异常关系，不能直接正规化",
+      "source_locators": "L §2.5.1 p. 42 起。D §6 作模型",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Isoperimetric multiplier rule",
+          "statement_line": 215,
+          "proof_line": 231,
+          "label": "thm:v07-04-01",
+          "number": "7.6",
+          "printed_pdf_page": "39",
+          "physical_pdf_page": 43
+        }
+      ]
+    },
+    "V07.05": {
+      "title_latex": "Second variation and the Legendre conditions",
+      "path": "parts/v07.tex",
+      "line": 254,
+      "label": "v07-05",
+      "number": "7.5",
+      "printed_pdf_page": "40",
+      "physical_pdf_page": 44,
+      "planned_scope": "二阶变分、经典 Legendre 必要性及多维向量的 Legendre–Hadamard 桥接",
+      "planned_proof_route": "Taylor 得二阶形式。用局部测试使一阶项和混合项消失于主阶。多维在光滑极值处用有截断的高频秩一变分并平均振荡平方。只得到秩一方向，区别全矩阵正定",
+      "source_locators": "L §2.6.1 p. 47 起。D §§3.4–3.5 作向量对照",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Legendre necessity in one dimension",
+          "statement_line": 256,
+          "proof_line": 269,
+          "label": "thm:v07-05-01",
+          "number": "7.7",
+          "printed_pdf_page": "40",
+          "physical_pdf_page": 44
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Legendre--Hadamard necessity",
+          "statement_line": 286,
+          "proof_line": 298,
+          "label": "thm:v07-05-02",
+          "number": "7.8",
+          "printed_pdf_page": "40",
+          "physical_pdf_page": 44
+        }
+      ]
+    },
+    "V07.06": {
+      "title_latex": "The strengthened Legendre--Jacobi sufficient condition",
+      "path": "parts/v07.tex",
+      "line": 329,
+      "label": "v07-06",
+      "number": "7.6",
+      "printed_pdf_page": "41",
+      "physical_pdf_page": 45,
+      "planned_scope": "标量一维加强 Legendre–Jacobi 充分性和二次变分的强制性",
+      "planned_proof_route": "将交叉项分部写成 Sturm 形式，\\(P\\ge c>0\\)。\\((a,b]\\) 无共轭点时扰动 Jacobi 初值取得 \\([a,b]\\) 上正解，因式分解 \\(Q(\\eta)=\\int P v^2((\\eta/v)')^2\\) 给 \\(H^1_0\\) 统一下界。再用 \\(C^1\\) 小扰动的 Taylor 余项",
+      "source_locators": "L §2.6.2 pp. 50–54",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Coercive scalar second variation",
+          "statement_line": 331,
+          "proof_line": 347,
+          "label": "thm:v07-06-01",
+          "number": "7.9",
+          "printed_pdf_page": "41",
+          "physical_pdf_page": 45
+        }
+      ]
+    },
+    "V07.07": {
+      "title_latex": "Needle variations and corner conditions",
+      "path": "parts/v07.tex",
+      "line": 402,
+      "label": "v07-07",
+      "number": "7.7",
+      "printed_pdf_page": "42",
+      "physical_pdf_page": 46,
+      "planned_scope": "一维强极小的 Weierstrass excess，分段光滑曲线的固定／可动角点条件",
+      "planned_proof_route": "对一小段改变斜率并用远端小校正恢复端点，扣去已为零的第一变分，再除以段长。角点分段积分分部，分别变动角点位置和时刻。写明分段光滑可行类及所需正则性",
+      "source_locators": "L §§3.1.1–3.1.2 pp. 57–65",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Weierstrass excess",
+          "statement_line": 404,
+          "proof_line": 417,
+          "label": "thm:v07-07-01",
+          "number": "7.10",
+          "printed_pdf_page": "42",
+          "physical_pdf_page": 46
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "Weierstrass--Erdmann corner conditions",
+          "statement_line": 447,
+          "proof_line": 458,
+          "label": "prop:v07-07-02",
+          "number": "7.11",
+          "printed_pdf_page": "42",
+          "physical_pdf_page": 46
+        }
+      ]
+    },
+    "V07.08": {
+      "title_latex": "The planar isoperimetric inequality and graph area",
+      "path": "parts/v07.tex",
+      "line": 480,
+      "label": "v07-08",
+      "number": "7.8",
+      "printed_pdf_page": "42",
+      "physical_pdf_page": 46,
+      "planned_scope": "平面正则简单闭曲线的等周不等式和图形面积的第一变分",
+      "planned_proof_route": "弧长参数、Wirtinger 与面积公式得周长–面积不等式，等号推出圆。图形面积只推出极值的弱最小曲面式，线性增长情形的存在性另处理",
+      "source_locators": "D ch. 5 p. 175、ch. 6 pp. 203–208。L §2.1.1",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": "Periodic Wirtinger inequality",
+          "statement_line": 482,
+          "proof_line": 493,
+          "label": "lem:v07-08-01",
+          "number": "7.12",
+          "printed_pdf_page": "42",
+          "physical_pdf_page": 46
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Planar isoperimetric inequality",
+          "statement_line": 504,
+          "proof_line": 511,
+          "label": "thm:v07-08-02",
+          "number": "7.13",
+          "printed_pdf_page": "43",
+          "physical_pdf_page": 47
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "First variation of graph area",
+          "statement_line": 535,
+          "proof_line": 551,
+          "label": "prop:v07-08-03",
+          "number": "7.14",
+          "printed_pdf_page": "43",
+          "physical_pdf_page": 47
+        }
+      ]
+    },
+    "V08.01": {
+      "title_latex": "Admissible classes, zero boundary values, and compactness",
+      "path": "parts/v08.tex",
+      "line": 20,
+      "label": "v08-01",
+      "number": "8.1",
+      "printed_pdf_page": "44",
+      "physical_pdf_page": 48,
+      "planned_scope": "\\(W^{1,p}\\)、\\(W_0^{1,p}\\)、非齐次仿射边值类，自反性、Poincaré、强紧性与迹",
+      "planned_proof_route": "以函数和弱导数的闭图嵌入有限个 \\(L^p\\)，\\(1<p<\\infty\\) 自反。零边值 Poincaré 用线方向与密度，在任意有界开域成立。一般 \\(W^{1,p}\\) 强 \\(L^p\\) 用有界 Lipschitz 延拓及 Rellich。迹核只在适当域使用",
+      "source_locators": "D §1.4、Thm. 1.51 pp. 44–45。H §9.2。P1‑02 U4–U5",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": null,
+          "statement_line": 33,
+          "proof_line": 45,
+          "label": "prop:sobolev-affine",
+          "number": "8.1",
+          "printed_pdf_page": "44",
+          "physical_pdf_page": 48
+        },
+        {
+          "kind": "theorem",
+          "title_latex": null,
+          "statement_line": 71,
+          "proof_line": 79,
+          "label": "thm:sobolev-compact-affine",
+          "number": "8.2",
+          "printed_pdf_page": "45",
+          "physical_pdf_page": 49
+        }
+      ]
+    },
+    "V08.02": {
+      "title_latex": "Strong--weak lower semicontinuity of integral energies",
+      "path": "parts/v08.tex",
+      "line": 111,
+      "label": "v08-02",
+      "number": "8.2",
+      "printed_pdf_page": "45",
+      "physical_pdf_page": 49,
+      "planned_scope": "有限测度域的强–弱积分下半连续。\\(s_n\\to s\\) 强 \\(L^q\\)、纤维变量分量在 \\(L^{r_i}\\) 弱收敛，\\(1<r_i<\\infty\\)，有限 Carathéodory 被积函数对纤维凸且下界 \\(-a(x)-C\\lVert s\\rVert^q\\)，\\(a\\in L^1\\)",
+      "planned_proof_route": "沿下极限取 a.e. 收敛子列，加可积平移化为非负。对有理中心和一列二次正则化参数取可测近端点，得到依 \\(s\\) 连续的可数仿射下界。取极限处有限最大及可测选择，限制到系数一致有界的大集合传过强–弱积分。再用非负性及单调收敛去截断",
+      "source_locators": "D Thm. 3.3、Remark 3.4、§3.3.2 pp. 103–109。E VIII §1 p. 231。此处补出一般版本的证明",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": null,
+          "statement_line": 120,
+          "proof_line": 139,
+          "label": "thm:strong-weak-integral",
+          "number": "8.3",
+          "printed_pdf_page": "45",
+          "physical_pdf_page": 49
+        }
+      ]
+    },
+    "V08.03": {
+      "title_latex": "The direct method with convex gradient dependence",
+      "path": "parts/v08.tex",
+      "line": 235,
+      "label": "v08-03",
+      "number": "8.3",
+      "printed_pdf_page": "47",
+      "physical_pdf_page": 51,
+      "planned_scope": "梯度凸 Sobolev 直接法。标量与向量，\\(p>q\\ge1\\)，有界 Lipschitz 域，含负低阶项，有限竞争者",
+      "planned_proof_route": "零边值差和 Poincaré 控制 \\(L^p\\)，用 Young 吸收低阶 \\(L^q\\)，得有界极小列。保留原边值，紧性给强 \\(L^q\\)，V08.02 给下半连续。包括 Dirichlet 模型及带源项的二次例",
+      "source_locators": "D Thm. 3.1 p. 99、Thm. 3.3 pp. 103–104、Ex. 3.3.4。E II.1.2",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": null,
+          "statement_line": 237,
+          "proof_line": 250,
+          "label": "thm:gradient-convex-existence",
+          "number": "8.4",
+          "printed_pdf_page": "47",
+          "physical_pdf_page": 51
+        },
+        {
+          "kind": "corollary",
+          "title_latex": null,
+          "statement_line": 272,
+          "proof_line": 283,
+          "label": "cor:dirichlet-model",
+          "number": "8.5",
+          "printed_pdf_page": "47",
+          "physical_pdf_page": 51
+        }
+      ]
+    },
+    "V08.04": {
+      "title_latex": "Uniqueness and the scope of the existence hypotheses",
+      "path": "parts/v08.tex",
+      "line": 299,
+      "label": "v08-04",
+      "number": "8.4",
+      "printed_pdf_page": "47",
+      "physical_pdf_page": 51,
+      "planned_scope": "直接法的唯一性和必要假设反例",
+      "planned_proof_route": "严格联合凸给唯一。独立于 \\(u\\) 的梯度严格凸时用零边值 Poincaré。用 \\(p=1\\) 或缺强制性的具体例解释为何须重新核对存在",
+      "source_locators": "D Exs. 3.7–3.10 pp. 104–107",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": null,
+          "statement_line": 301,
+          "proof_line": 310,
+          "label": "prop:sobolev-unique",
+          "number": "8.6",
+          "printed_pdf_page": "47",
+          "physical_pdf_page": 51
+        }
+      ]
+    },
+    "V08.05": {
+      "title_latex": "Minors: integral identities and weak continuity",
+      "path": "parts/v08.tex",
+      "line": 355,
+      "label": "v08-05",
+      "number": "8.5",
+      "printed_pdf_page": "48",
+      "physical_pdf_page": 52,
+      "planned_scope": "固定零迹差时的低阶 minors 积分恒等式及弱连续性。\\(k<p\\) 时 \\(k\\) 阶 minors 弱收敛于 \\(L^{p/k}\\)",
+      "planned_proof_route": "对光滑映射证明子式的散度恒等式和 Piola 抵消。用密度、Hölder 传到 Sobolev。从低阶向高阶归纳，用 \\(u_n\\) 的强 \\(L^p\\) 与余子式的弱收敛传分布极限，再用有界性和自反性识别弱极限",
+      "source_locators": "D Lemma 3.26 pp. 122–125、Remark 3.23",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": null,
+          "statement_line": 365,
+          "proof_line": 378,
+          "label": "lem:minor-divergence",
+          "number": "8.8",
+          "printed_pdf_page": "48",
+          "physical_pdf_page": 52
+        },
+        {
+          "kind": "proposition",
+          "title_latex": null,
+          "statement_line": 402,
+          "proof_line": 411,
+          "label": "prop:fixed-trace-minors",
+          "number": "8.9",
+          "printed_pdf_page": "49",
+          "physical_pdf_page": 53
+        },
+        {
+          "kind": "theorem",
+          "title_latex": null,
+          "statement_line": 426,
+          "proof_line": 439,
+          "label": "thm:weak-minors",
+          "number": "8.10",
+          "printed_pdf_page": "49",
+          "physical_pdf_page": 53
+        }
+      ]
+    },
+    "V08.06": {
+      "title_latex": "An existence theorem for polyconvex integrands",
+      "path": "parts/v08.tex",
+      "line": 470,
+      "label": "v08-06",
+      "number": "8.6",
+      "printed_pdf_page": "49",
+      "physical_pdf_page": 53,
+      "planned_scope": "明确 \\(p>\\min(d,m)\\) 且 \\(p>q\\) 时的多凸存在性模型。包括 D 的 \\(2\\times2\\) 版本",
+      "planned_proof_route": "在所有独立 minor 坐标上要求凸表示和统一下界。用 V08.05 给混合 \\(L^{p/k}\\) 弱收敛，再用 V08.02。说明凸推出多凸，多凸与一般拟凸必要充分理论的关系仅作定位",
+      "source_locators": "D Thm. 3.22 pp. 120–122、Remark 3.23、§3.6",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": null,
+          "statement_line": 482,
+          "proof_line": 498,
+          "label": "thm:polyconvex-existence",
+          "number": "8.11",
+          "printed_pdf_page": "49",
+          "physical_pdf_page": 53
+        },
+        {
+          "kind": "proposition",
+          "title_latex": null,
+          "statement_line": 511,
+          "proof_line": 520,
+          "label": "prop:polyconvex-test",
+          "number": "8.12",
+          "printed_pdf_page": "50",
+          "physical_pdf_page": 54
+        }
+      ]
+    },
+    "V08.07": {
+      "title_latex": "Weak Euler--Lagrange equations and test classes",
+      "path": "parts/v08.tex",
+      "line": 545,
+      "label": "v08-07",
+      "number": "8.7",
+      "printed_pdf_page": "50",
+      "physical_pdf_page": 54,
+      "planned_scope": "有限能量极值的弱 Euler–Lagrange，紧支撑测试与全 \\(W_0^{1,p}\\) 测试的不同增长条件",
+      "planned_proof_route": "紧支撑光滑扰动使用各方向的可积支配。具有 \\(p-1\\) 阶导数增长的 Carathéodory 形式用 Hölder 传到全测试，\\(p=1\\) 情形采用有界导数。常数项可积或给出有限参考能量。连续散度时再给强式",
+      "source_locators": "D Thm. 3.13、Remark 3.14 pp. 112–116",
+      "original_contract_ids": [
+        "AN-17-C02-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": null,
+          "statement_line": 555,
+          "proof_line": 574,
+          "label": "thm:el-dominated",
+          "number": "8.13",
+          "printed_pdf_page": "50",
+          "physical_pdf_page": 54
+        },
+        {
+          "kind": "theorem",
+          "title_latex": null,
+          "statement_line": 591,
+          "proof_line": 613,
+          "label": "thm:el-sobolev",
+          "number": "8.14",
+          "printed_pdf_page": "51",
+          "physical_pdf_page": 55
+        }
+      ]
+    },
+    "V08.08": {
+      "title_latex": "Convex sufficiency and the natural boundary condition",
+      "path": "parts/v08.tex",
+      "line": 635,
+      "label": "v08-08",
+      "number": "8.8",
+      "printed_pdf_page": "51",
+      "physical_pdf_page": 55,
+      "planned_scope": "联合凸情形由对全零边值测试的弱驻点推出全局极小。Dirichlet、\\(p\\)-Laplace 和边界弱式接口",
+      "planned_proof_route": "用点态凸支持式积分。用强制性和严格凸区分存在、唯一与方程。紧支撑测试先给内部方程，再核对能否按密度扩展。自由边界通量通过独立的边界分部与允许测试处理",
+      "source_locators": "D §§3.2、3.4。H §9.3",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": null,
+          "statement_line": 637,
+          "proof_line": 643,
+          "label": "prop:weak-el-sufficient",
+          "number": "8.15",
+          "printed_pdf_page": "51",
+          "physical_pdf_page": 55
+        },
+        {
+          "kind": "proposition",
+          "title_latex": null,
+          "statement_line": 658,
+          "proof_line": 671,
+          "label": "prop:natural-boundary",
+          "number": "8.16",
+          "printed_pdf_page": "51",
+          "physical_pdf_page": 55
+        }
+      ]
+    },
+    "V09.01": {
+      "title_latex": "Convex integral functionals and their conjugates",
+      "path": "parts/v09.tex",
+      "line": 11,
+      "label": "v09-01",
+      "number": "9.1",
+      "printed_pdf_page": "52",
+      "physical_pdf_page": 56,
+      "planned_scope": "凸积分泛函在 \\(L^p\\) 上的连续性及共轭积分，\\(1<p<\\infty\\)，有限 Carathéodory 凸密度具有双侧 \\(p\\) 增长",
+      "planned_proof_route": "强 \\(L^p\\) 给相应能量的一致可积，Vitali 推连续。取可数有理向量求点态共轭，有限最大值的可测选择给反向不等式，极限用单调收敛。注明 \\((L^p)'=L^{p'}\\) 的语境",
+      "source_locators": "E IV §§1–2 pp. 75–87。H §4.3",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": null,
+          "statement_line": 19,
+          "proof_line": 36,
+          "label": "thm:integral-conjugacy",
+          "number": "9.1",
+          "printed_pdf_page": "52",
+          "physical_pdf_page": 56
+        }
+      ]
+    },
+    "V09.02": {
+      "title_latex": "The Dirichlet--flux dual pair",
+      "path": "parts/v09.tex",
+      "line": 72,
+      "label": "v09-02",
+      "number": "9.2",
+      "printed_pdf_page": "53",
+      "physical_pdf_page": 57,
+      "planned_scope": "\\(p\\)-Dirichlet 的梯度–通量对偶，\\(1<p<\\infty\\)，有界域及任意有界线性右端，原问题与通量各自的达到",
+      "planned_proof_route": "取 \\(A=\\nabla\\)、\\(f=-\\ell\\)、\\(g(F)=\\int\\lVert F\\rVert^p/p\\)。V04.03 得对偶 \\(\\max_{A^*\\sigma=\\ell}-\\int\\lVert\\sigma\\rVert^{p'}/p'\\)。由 Poincaré、范数弱下半连续和右端弱连续，经 V03.02 独立得原问题达到。以测试函数检验 \\(A^*\\sigma=-\\operatorname{div}\\sigma\\)",
+      "source_locators": "E III Thms. 4.1–4.2、IV §§1–2。D ch. 3",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": null,
+          "statement_line": 74,
+          "proof_line": 92,
+          "label": "thm:dirichlet-flux",
+          "number": "9.2",
+          "printed_pdf_page": "53",
+          "physical_pdf_page": 57
+        },
+        {
+          "kind": "corollary",
+          "title_latex": null,
+          "statement_line": 124,
+          "proof_line": 130,
+          "label": "cor:p-dirichlet-flux",
+          "number": "9.3",
+          "printed_pdf_page": "53",
+          "physical_pdf_page": 57
+        }
+      ]
+    },
+    "V09.03": {
+      "title_latex": "Constitutive relations and the quadratic case",
+      "path": "parts/v09.tex",
+      "line": 141,
+      "label": "v09-03",
+      "number": "9.3",
+      "printed_pdf_page": "53",
+      "physical_pdf_page": 57,
+      "planned_scope": "最优通量与 constitutive law，二次能量及非对称形式的分界",
+      "planned_proof_route": "Fenchel 取等给 \\(\\sigma=\\lVert\\nabla u\\rVert^{p-2}\\nabla u\\)，梯度为零时通量取零。代回弱式。\\(p=2\\) 与对称 Lax–Milgram 比较，非对称形式使用 V03.07 的弱解结论",
+      "source_locators": "E III §3、IV §§1–2。H §5.3",
+      "original_contract_ids": [
+        "AN-17-C02-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": null,
+          "statement_line": 143,
+          "proof_line": 157,
+          "label": "prop:optimal-flux",
+          "number": "9.4",
+          "printed_pdf_page": "53",
+          "physical_pdf_page": 57
+        }
+      ]
+    },
+    "V09.04": {
+      "title_latex": "An obstacle problem",
+      "path": "parts/v09.tex",
+      "line": 200,
+      "label": "v09-04",
+      "number": "9.4",
+      "printed_pdf_page": "54",
+      "physical_pdf_page": 58,
+      "planned_scope": "Hilbert 障碍模型的存在、唯一与变分不等式，接触的弱解释",
+      "planned_proof_route": "给定非空 \\(K=\\{v\\in H^1_0:v\\ge\\psi\\}\\)，证明闭凸，调用 V03.06 或对称能量。非负测试给分布不等式，有额外连续性时在严格脱离障碍的开集用双向测试",
+      "source_locators": "E II §2、IV §3 p. 88 起。H §5.3",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": null,
+          "statement_line": 202,
+          "proof_line": 220,
+          "label": "thm:hilbert-obstacle",
+          "number": "9.5",
+          "printed_pdf_page": "54",
+          "physical_pdf_page": 58
+        }
+      ]
+    },
+    "V10.01": {
+      "title_latex": "Sperner's lemma and Brouwer's theorem",
+      "path": "parts/v10.tex",
+      "line": 4,
+      "label": "v10-01",
+      "number": "10.1",
+      "printed_pdf_page": "55",
+      "physical_pdf_page": 59,
+      "planned_scope": "Sperner 的单纯形桥接与 Brouwer。任意有限维实赋范空间中非空紧凸 \\(K\\)，连续自映射有不动点",
+      "planned_proof_route": "单纯形有限细分用奇偶计数和连续性取极限，再把紧凸集置于大单纯形并用欧氏投影连续回缩到该集合。低维和单点都保留",
+      "source_locators": "H Ex. 6.26 的 Brouwer 前置。D10 第 17 章已验收证明",
+      "original_contract_ids": [
+        "AN-17-C04-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": "Sperner parity",
+          "statement_line": 13,
+          "proof_line": 18,
+          "label": "lem:sperner-parity",
+          "number": "10.1",
+          "printed_pdf_page": "55",
+          "physical_pdf_page": 59
+        },
+        {
+          "kind": "lemma",
+          "title_latex": "Fine triangulations",
+          "statement_line": 43,
+          "proof_line": 49,
+          "label": "lem:fine-simplex-triangulations",
+          "number": "10.2",
+          "printed_pdf_page": "55",
+          "physical_pdf_page": 59
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Brouwer fixed point theorem",
+          "statement_line": 82,
+          "proof_line": 88,
+          "label": "thm:brouwer-compact-convex",
+          "number": "10.3",
+          "printed_pdf_page": "56",
+          "physical_pdf_page": 60
+        }
+      ]
+    },
+    "V10.02": {
+      "title_latex": "Schauder through finite-dimensional approximation",
+      "path": "parts/v10.tex",
+      "line": 125,
+      "label": "v10-02",
+      "number": "10.2",
+      "printed_pdf_page": "56",
+      "physical_pdf_page": 60,
+      "planned_scope": "Schauder。Banach 中非空闭凸 \\(C\\)，连续自映射像相对紧",
+      "planned_proof_route": "在像的闭包取有限细网，用连续距离权重映到有限凸包。Brouwer 得近似不动点，像的紧性给子列，闭性与连续性给真不动点。\\(C\\) 可无界",
+      "source_locators": "H Ex. 6.26 p. 179",
+      "original_contract_ids": [
+        "AN-17-C04-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Schauder",
+          "statement_line": 127,
+          "proof_line": 133,
+          "label": "thm:schauder-fixed-point",
+          "number": "10.4",
+          "printed_pdf_page": "56",
+          "physical_pdf_page": 60
+        }
+      ]
+    },
+    "V10.03": {
+      "title_latex": "A Schaefer continuation criterion",
+      "path": "parts/v10.tex",
+      "line": 164,
+      "label": "v10-03",
+      "number": "10.3",
+      "printed_pdf_page": "57",
+      "physical_pdf_page": 61,
+      "planned_scope": "Schaefer 的有界同伦集合推论。Banach 空间上 \\(T\\) 连续且将有界集映为相对紧集",
+      "planned_proof_route": "对 \\(x=tT(x),\\ 0\\le t\\le1\\) 的集合取严格更大球，以径向截断组合紧映射，Schauder 给固定点。若截断真正起作用，将违反先验界",
+      "source_locators": "从 V10.02 的短推论。与 H Ex. 6.26 的紧逼近接口一致",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Schaefer",
+          "statement_line": 166,
+          "proof_line": 176,
+          "label": "thm:v10-03-01",
+          "number": "10.5",
+          "printed_pdf_page": "57",
+          "physical_pdf_page": 61
+        }
+      ]
+    },
+    "V10.04": {
+      "title_latex": "Boundary examples and the contraction principle",
+      "path": "parts/v10.tex",
+      "line": 192,
+      "label": "v10-04",
+      "number": "10.4",
+      "printed_pdf_page": "57",
+      "physical_pdf_page": 61,
+      "planned_scope": "不动点条件的边界和 Banach 收缩接口",
+      "planned_proof_route": "用圆周旋转及开区间自映射测试凸性与紧闭假设。用 \\(\\ell^2\\) 闭单位球自映射 \\(x\\mapsto(\\sqrt{1-\\lVert x\\rVert^2},x_1,x_2,\\dots)\\) 检验相对紧性。收缩定理用于 V03.06 时引用已有结论，区分不动点的存在与唯一",
+      "source_locators": "D10 第 17 章边界例。D13 及 Mathlib 的收缩接口",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Banach contraction principle",
+          "statement_line": 212,
+          "proof_line": 220,
+          "label": "prop:v10-04-01",
+          "number": "10.7",
+          "printed_pdf_page": "57",
+          "physical_pdf_page": 61
+        }
+      ]
+    }
+  }
+}

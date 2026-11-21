@@ -1,0 +1,568 @@
+\chapter[Filtered complexes and convergence]
+  {Filtered Complexes, Exact Couples,\\and Convergence}
+\label{ch:filtrations}
+
+A filtered complex gives successive approximations to its cohomology.
+The pages and differentials can be constructed in any abelian category.
+Identifying their limiting pieces with cohomology requires an additional
+argument about the filtration. We give both the finite argument and a
+module version allowing infinitely many filtration steps. The indexing
+throughout is cohomological, with decreasing filtrations. The two
+constructions below follow the same indexing as
+\cite[Sections 12.21 and 12.24]{stacks-homology}. The filtered-complex
+and exact-couple arguments can also be found in
+\cite[Sections 5.4, 5.5, and 5.9]{weibel}.
+
+\section{The pages of a filtered complex}
+
+\begin{definition}[Filtered complexes and associated graded objects]
+\label{res:F01}
+Let $\mathcal A$ be an abelian category. A decreasingly filtered cochain
+complex $(K,F)$ consists of subobjects $F^pK^n\subset K^n$, for integers
+$p,n$, satisfying
+\[
+ F^{p+1}K^n\subset F^pK^n,\qquad
+ d(F^pK^n)\subset F^pK^{n+1}.
+\]
+A filtered map is a cochain map carrying each $F^p$ into the corresponding
+$F^p$ of its target. Each $F^pK$ is itself a cochain complex, and
+$\operatorname{gr}_F^pK=F^pK/F^{p+1}K$ is a quotient complex. Its differential
+is induced by the restriction of $d$ to $F^pK$.
+\end{definition}
+
+The restriction squares to zero because the inclusion of the subcomplex
+is monic. The quotient differential exists because $d$ preserves the
+next filtration step. Its square is zero because the quotient projection
+is epic. Both constructions respect identity maps and composition.
+
+\begin{lemma}[Exact sequences between filtration steps]
+\label{res:F02}
+The filtration steps give two natural short exact sequences of complexes.
+\begin{align*}
+ 0&\longrightarrow F^{p+1}K\longrightarrow F^pK
+    \longrightarrow \operatorname{gr}_F^pK\longrightarrow 0,\\
+ 0&\longrightarrow \operatorname{gr}_F^{p+1}K
+    \longrightarrow F^pK/F^{p+2}K
+    \longrightarrow \operatorname{gr}_F^pK\longrightarrow 0 .
+\end{align*}
+In the second sequence the connecting morphism sends a cycle in the
+quotient, represented by $x$ in $F^pK^n$, to the class represented by
+$dx$ in $F^{p+1}K^{n+1}/F^{p+2}K^{n+1}$.
+\end{lemma}
+
+\begin{proof}
+The first sequence is exact by the definition of the quotient. In the
+second, the kernel of $F^pK/F^{p+2}K\to F^pK/F^{p+1}K$ is
+$F^{p+1}K/F^{p+2}K$. These statements hold in each degree, and the
+restriction and quotient differentials commute with the displayed maps
+by Definition~\ref{res:F01}. To compute the connecting morphism, take the
+differential of a lift of a quotient cycle. It lies in the kernel
+subcomplex and is a cycle there. Changing the lift by a kernel element
+changes the resulting cycle by a kernel boundary. Changing the quotient
+cycle by a boundary allows one to subtract the differential of a lift,
+which does not alter the image under the connecting morphism. Every
+operation occurs in the natural diagram of short exact sequences, so
+this description also proves naturality. In an abelian category,
+the lifts in this argument are taken after epic pullback, as described
+below.
+\end{proof}
+
+\paragraph{Working with subobjects.}
+We use intersections, inverse images, images, and finite sums of
+subobjects. A formula involving a representative means a morphism
+from a test object. An epic map need not lift that morphism on the
+original test object, but does after pulling back the epimorphism.
+Epimorphisms in an abelian category are stable under pullback. Two
+successive lifts can therefore be made over a common epic cover.
+Containment in a subobject descends along that cover: if $T'\to T$
+is epic and the composite $T'\to T\to X$ factors through $Y\subset X$,
+then $T\to X\to X/Y$ vanishes and $T\to X$ factors through $Y$.
+Representatives of a sum of subobjects can be decomposed after an
+epic pullback along the map from their direct sum onto their sum.
+These rules justify the representative arguments below without
+countable sums or projective generators in $\mathcal A$.
+
+\begin{proposition}[Cycles, boundaries, and page differentials]
+\label{res:F03}
+For $r\geq 0$ and $n=p+q$, put
+\[
+ A_r^{p,n}=F^pK^n\cap d^{-1}(F^{p+r}K^{n+1}).
+\]
+On the graded piece $\operatorname{gr}_F^pK^n$, put
+\begin{align*}
+ Z_r^{p,q}
+   &=\bigl(A_r^{p,n}+F^{p+1}K^n\bigr)/F^{p+1}K^n,\\
+ B_r^{p,q}
+   &=\bigl((F^pK^n\cap d(F^{p-r+1}K^{n-1}))+F^{p+1}K^n\bigr)
+      /F^{p+1}K^n.
+\end{align*}
+Then $B_r^{p,q}\subset Z_r^{p,q}$. Put $E_r^{p,q}=Z_r^{p,q}/B_r^{p,q}$.
+There is a well-defined map
+\[
+ d_r^{p,q}\colon E_r^{p,q}\longrightarrow E_r^{p+r,q-r+1},
+ \qquad [x]\longmapsto [dx],
+\]
+and $d_r^2=0$.
+\end{proposition}
+
+\begin{proof}
+Every boundary in $F^pK^n$ lies in $A_r^{p,n}$ since its differential
+vanishes. For $r=0$, $A_0^{p,n}=F^pK^n$ and $B_0=0$. Thus $E_0$ is
+the graded piece and $d_0$ is its differential. For $r\geq1$ the
+subobject identity
+\[
+ F^pK^n\cap d(F^{p-r+1}K^{n-1})=d A_{r-1}^{p-r+1,n-1}
+\]
+holds by pulling back an epic map to the image of $d$.
+Also $A_r^{p,n}\cap F^{p+1}K^n=A_{r-1}^{p+1,n}$. Since the boundary
+subobject is contained in $A_r$, the modular law for subobjects
+gives the quotient presentation
+\begin{equation}
+ \label{eq:page-quotient}
+ E_r^{p,q}=
+ \frac{A_r^{p,n}}
+ {A_{r-1}^{p+1,n}+d A_{r-1}^{p-r+1,n-1}}\qquad(r\geq1).
+\end{equation}
+For $x\in A_r^{p,n}$, its differential lies in $F^{p+r}K^{n+1}$
+and has zero differential, so it lies in the numerator at the
+target. Adding a term from $A_{r-1}^{p+1,n}$ changes $dx$ by an
+element of $dA_{r-1}^{p+1,n}$ in the target denominator. Adding a
+boundary does not change $dx$. Thus the formula descends. Applying
+it twice gives zero.
+\end{proof}
+
+\begin{theorem}[The first pages and the passage to the next page]
+\label{res:F04}
+The pages in Proposition~\ref{res:F03} form a cohomological
+spectral sequence. More explicitly,
+\[
+ E_0^{p,q}=\operatorname{gr}_F^pK^{p+q},\quad
+ E_1^{p,q}=H^{p+q}(\operatorname{gr}_F^pK),\quad
+ E_{r+1}^{p,q}\simeq H^{p,q}(E_r,d_r),
+\]
+where the last object is the kernel of the outgoing differential
+modulo the image of the incoming differential. Under the $E_1$
+identification, $d_1$ is the connecting morphism of the second exact
+sequence in Lemma~\ref{res:F02}.
+\end{theorem}
+
+\begin{proof}
+The assertion for $E_0$ follows from Proposition~\ref{res:F03}. Its
+cycles are exactly the classes whose differential lands in $F^{p+1}$,
+and its boundaries come from $d(F^pK^{p+q-1})$, which gives $E_1$.
+The connecting morphism in Lemma~\ref{res:F02} had the formula
+$[x]\mapsto[dx]$, giving the assertion about $d_1$ with the chosen signs.
+
+For $r\geq1$, let $n=p+q$ and let $x$ represent a cycle of $(E_r,d_r)$.
+By \eqref{eq:page-quotient} at the target, write
+\[
+ dx=u+dv,\qquad
+ u\in A_{r-1}^{p+r+1,n+1},\quad v\in A_{r-1}^{p+1,n}.
+\]
+Then $x-v$ represents the same class, and $d(x-v)=u\in F^{p+r+1}$.
+Thus the $d_r$-cycles are represented by $A_{r+1}^{p,n}$. The converse
+holds because the differential of an element of $A_{r+1}^{p,n}$ is
+closed and lies in $F^{p+r+1}$, hence belongs to the first summand of
+the target denominator.
+
+The incoming $d_r$ contributes $d A_r^{p-r,n-1}$. This also contains
+$d A_{r-1}^{p-r+1,n-1}$, since the latter antecedents satisfy
+$d y\in F^p$. The only remaining quotient relation from
+\eqref{eq:page-quotient} comes from
+$A_{r+1}^{p,n}\cap A_{r-1}^{p+1,n}=A_r^{p+1,n}$. Consequently the
+cohomology of $(E_r,d_r)$ is canonically the quotient of
+$A_{r+1}^{p,n}$ by
+$A_r^{p+1,n}+d A_r^{p-r,n-1}$, which is $E_{r+1}^{p,q}$.
+The epic pullback argument above supplies the indicated decompositions
+and proves the equalities of subobjects for arbitrary $\mathcal A$.
+\end{proof}
+
+An application starting with the second page can use the subsystem
+$r\geq2$ with the same bidegrees and page transitions. Its first
+specified page is then $E_2$ in our notation. The identification
+of either earlier page still requires the filtered complex.
+
+\section{Exact couples and functoriality}
+
+\begin{theorem}[The exact couple of a filtration]
+\label{res:F05}
+Put $D_1^{p,n}=H^n(F^pK)$ and regard $E_1^{p,n-p}$ as indexed by
+$(p,n)$. The first short exact sequence of Lemma~\ref{res:F02}
+gives an exact couple, with maps
+\[
+\begin{split}
+ i&\colon D_1^{p+1,n}\longrightarrow D_1^{p,n},\\
+ j&\colon D_1^{p,n}\longrightarrow E_1^{p,n-p},\\
+ k&\colon E_1^{p,n-p}\longrightarrow D_1^{p+1,n+1}.
+\end{split}
+\]
+The derived exact couples give the same $E_r$ and $d_r$ as
+Proposition~\ref{res:F03} for all $r\geq1$.
+\end{theorem}
+
+\begin{proof}
+The long exact cohomology sequence supplies exactness at each of the
+three types of terms. To derive an exact couple, temporarily suppress
+the indices. Set $D'=\operatorname{im}i$ and
+$E'=\ker(jk)/\operatorname{im}(jk)$. The differential $jk$ squares to
+zero because $kj=0$. The new maps are
+\[
+ i'(a')=i(a'),\qquad j'(ia)=[j(a)],\qquad k'([e])=k(e).
+\]
+Changing $a$ by $\ker i=\operatorname{im}k$ changes $j(a)$ by a
+boundary. If $jk(e)=0$, then $k(e)\in\ker j=\operatorname{im}i$,
+and $k$ kills boundaries because $kj=0$. Thus the three maps exist.
+For exactness at the target of $i'$, if $j'(ia)=0$ then
+$j(a)=jk(e)$ for a representative $e$. Hence $a-k(e)\in\ker j
+=\operatorname{im}i$, so $ia\in\operatorname{im}i'$. At its source,
+if $i(a')=0$ then $a'=k(e)$, and $a'\in\operatorname{im}i$ implies
+$jk(e)=0$. Exactness at $E'$ follows because $k(e)=0$ implies
+$e=j(a)$ and $[e]=j'(ia)$. The other inclusions follow by
+composition. The same arguments apply componentwise to a bigraded
+couple and with epic lifts in $\mathcal A$.
+
+After $r-1$ derivations the terms and the indices of the maps are
+\[
+\begin{split}
+ D_r^{p,n}
+  &=\operatorname{im}\bigl(H^n(F^{p+r-1}K)\longrightarrow
+        H^n(F^pK)\bigr),\\
+ j_r&\colon D_r^{p,n}\longrightarrow E_r^{p+r-1,n-p-r+1},\\
+ k_r&\colon E_r^{p,n-p}\longrightarrow D_r^{p+1,n+1}.
+\end{split}
+\]
+To compare with \eqref{eq:page-quotient}, $j_r$ takes a closed
+representative in $F^{p+r-1}$ of an element of $D_r^{p,n}$ and uses
+that representative in $E_r$. Two such representatives differ by
+a boundary from $F^p$ lying in $F^{p+r-1}$, hence give the same
+page class. The map $k_r$ sends $[x]$ to the cohomology class of
+$dx$ in $F^{p+1}$, which lies in the image from $F^{p+r}$.
+The denominator in \eqref{eq:page-quotient} changes $dx$ by a
+boundary in $F^{p+1}$. For $r=1$ these are exactly the maps of the
+long exact sequence of the first short exact sequence of
+Lemma~\ref{res:F02}. On derivation the new $j$ uses a lift from
+one deeper filtration step. The new $k$ uses a representative
+$x\in A_{r+1}^{p,n}$, which exists by Theorem~\ref{res:F04}.
+These are the stated formulas for $r+1$. Finally $j_rk_r$
+sends $[x]$ to $[dx]$ in bidegree $(p+r,q-r+1)$, proving
+agreement of the constructions.
+\end{proof}
+
+\begin{proposition}[Functoriality and comparison of pages]
+\label{res:F06}
+A filtered cochain map induces bidegree-zero maps on all pages,
+commuting with the page differentials and the isomorphisms
+$E_{r+1}\simeq H(E_r,d_r)$. These maps preserve identities and
+composition. An isomorphism in every bidegree of one page induces
+isomorphisms on all later pages.
+\end{proposition}
+
+\begin{proof}
+A filtered cochain map carries $A_r$ into $A_r$ because it commutes
+with $d$. The same holds for the two summands in the denominator of
+\eqref{eq:page-quotient}. The induced quotient map sends $[x]$ to
+the class of its image. Consequently it commutes with $[x]\mapsto[dx]$.
+The next-page identification in Theorem~\ref{res:F04} was induced
+by inclusion of $A_{r+1}$, so it is natural as well. Maps on quotients
+inherit identities and composition from the maps on complexes.
+An isomorphism of the bigraded objects commuting with the differentials
+is an isomorphism of their complexes and hence induces an isomorphism
+on the next page. Induction gives the assertion for every later page.
+\end{proof}
+
+\section{The limiting filtration}
+
+\begin{theorem}[Convergence under degreewise finite filtrations]
+\label{res:S01}
+Suppose that for each $n$ there are integers $a_n,b_n$ such that
+$F^pK^n=K^n$ for $p\leq a_n$ and $F^pK^n=0$ for $p\geq b_n$.
+The page terms are eventually stable in every bidegree and, for
+each fixed total degree, the stabilization is uniform over its
+bidegrees. Define
+\[
+ F^pH^n(K)=\operatorname{im}\bigl(H^n(F^pK)\longrightarrow H^n(K)\bigr).
+\]
+This is a finite decreasing filtration. The stable page is
+naturally identified with its associated graded by
+\[
+ E_\infty^{p,q}\simeq
+ F^pH^{p+q}(K)/F^{p+1}H^{p+q}(K).
+\]
+\end{theorem}
+
+\begin{proof}
+Write $Z^n=\ker(d\colon K^n\to K^{n+1})$ and
+$B^n=\operatorname{im}(d\colon K^{n-1}\to K^n)$.
+Choose $r\geq1$ large enough that $F^{p+r}K^{n+1}=0$ and
+$F^{p-r+1}K^{n-1}=K^{n-1}$. Then the numerator of
+\eqref{eq:page-quotient} is $F^pK^n\cap Z^n$, its first denominator
+summand is $F^{p+1}K^n\cap Z^n$, and the second is
+$F^pK^n\cap B^n$. Increasing $r$ leaves this presentation
+unchanged. There are only finitely many possibly nonzero terms
+of $E_0$ on each total degree, so a common bound for these
+bidegrees suffices. All other terms remain zero.
+
+The image defining the cohomology filtration is the image of
+$F^pK^n\cap Z^n$ in $Z^n/B^n$. This proves that the filtration
+has the same two bounds in degree $n$ as the original
+filtration in that degree. The kernel of
+$F^pK^n\cap Z^n\longrightarrow F^pH^n/F^{p+1}H^n$ is
+$(F^{p+1}K^n\cap Z^n)+(F^pK^n\cap B^n)$. Indeed, a
+representative mapping into $F^{p+1}H^n$ agrees in cohomology
+with a cycle in $F^{p+1}K^n$, so their difference is a boundary
+already in $F^pK^n$. Conversely both summands map to zero.
+This identifies the quotient with the stable page. The construction
+uses only natural subobject operations, so the identification
+commutes with filtered cochain maps.
+\end{proof}
+
+Thus in the finite situation the spectral sequence determines the
+successive quotients of an actual finite filtration of the target.
+The filtration is exhaustive, separated, and complete. Different
+conventions for convergence beyond this situation appear in
+\cite[Chapter 3]{mccleary} and \cite[Section 5.2]{weibel}.
+We will name the filtration properties that a limit claim provides.
+
+\begin{theorem}[Bounded below and exhaustive chain filtrations]
+\label{res:S02}
+Let $C_\bullet$ be a chain complex of modules with an increasing
+filtration preserved by the differential. Assume that in each degree
+$n$, $F_aC_n=0$ for $a$ sufficiently small and
+$\bigcup_a F_aC_n=C_n$. Define the homological page indices so that
+$E^r_{a,b}$ has total chain degree $a+b$. For each bidegree there is
+an eventual numerator of cycles in the associated graded, while
+the boundaries form an increasing family. The quotient of
+that numerator by the union of those boundaries is
+$E^\infty_{a,b}\simeq F_aH_{a+b}(C)/F_{a-1}H_{a+b}(C)$.
+This identification is natural. The target filtration is bounded
+below in each degree and exhaustive.
+\end{theorem}
+
+\begin{proof}
+Apply Proposition~\ref{res:F03} to $K^n=C_{-n}$ and
+$F^pK^n=F_{-p}C_{-n}$. Then $(p,q)=(-a,-b)$, and the
+differential has homological bidegree $(-r,r-1)$.
+In the decreasing cochain indexing $F^{p+r}K^{n+1}=0$ for large
+$r$ by the lower bound on the increasing chain filtration.
+The first formula for $Z_r$ in Proposition~\ref{res:F03}
+therefore becomes
+\[
+ \bigl((F^pK^n\cap Z^n)+F^{p+1}K^n\bigr)/F^{p+1}K^n
+\]
+for all sufficiently large $r$. On the boundary side,
+exhaustivity gives
+$\bigcup_r (F^pK^n\cap d(F^{p-r+1}K^{n-1}))=F^pK^n\cap B^n$.
+Indeed a boundary has a preimage in a finite filtration step,
+and every element in the union is already a boundary.
+Forming the quotient after adding $F^{p+1}K^n$ commutes with
+this directed union, since membership means that a representative
+is the sum of an element in some step and an element in
+$F^{p+1}K^n$. Quotienting the eventual cycle subobject of the
+graded piece by this union gives the quotient
+$(F^pK^n\cap Z^n)/((F^{p+1}K^n\cap Z^n)+(F^pK^n\cap B^n))$
+by the modular law. It is the graded piece of $H^n(K)$ by the
+image and kernel computation in Theorem~\ref{res:S01}.
+Every cohomology class has a cycle in some step by exhaustivity,
+and the zero bounds descend to the target. All constructions
+preserve maps of filtered complexes. Reversing the indices gives
+the assertion for $C$.
+\end{proof}
+
+The boundary family in Theorem~\ref{res:S02} need not stabilize
+at a finite page. For example, in the decreasing cochain
+convention over a field, put $K^0=\bigoplus_{i\geq1}k e_i$ and
+$K^1=\bigoplus_{i\geq1}k f_i$, with $d e_i=f_i$. Give $e_i$
+filtration degree $-i$ and every $f_i$ degree $0$, where
+filtration degree $s$ means inclusion in $F^p$ exactly for
+$p\leq s$. In bidegree $(0,1)$, $E_r$ for $r\geq1$ is
+spanned by the classes of $f_i$ with $i\geq r$.
+Its eventual quotient by the union of boundaries is zero,
+as is $H^1(K)$, although no single page has this value.
+
+\begin{corollary}[Comparison with the target]
+\label{res:S03}
+Let $u\colon(K,F)\to(L,F)$ be a filtered cochain map of two
+complexes satisfying the finiteness hypotheses of
+Theorem~\ref{res:S01}. If $u$ gives an isomorphism in every
+bidegree on some page, then $H^n(u)$ is an isomorphism on every
+target filtration step, and its inverse preserves the filtrations.
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{res:F06}, the maps are isomorphisms on every
+later page. Theorem~\ref{res:S01} identifies the resulting maps
+with isomorphisms on all associated graded pieces of $H^n(u)$.
+Fix $n$ and take a common $b_n$ for the two finite filtrations.
+At $p=b_n$ the map is an isomorphism between zero objects.
+The short exact sequence for a step and its successor, on the
+source and target, gives a commutative diagram. If the map at
+$p+1$ is an isomorphism, the left map and the map on the
+$p$th graded quotient are isomorphisms. The snake lemma gives
+zero kernel and cokernel for the middle map at $p$. Downward
+induction to a common lower bound proves the statement at every
+step. These stepwise inverses are compatible with inclusions,
+which proves the filtration assertion about the inverse.
+\end{proof}
+
+\section{Collapse, edge maps, and products}
+
+\begin{proposition}[Collapse and extensions]
+\label{res:S04}
+Under the hypotheses of Theorem~\ref{res:S01}, if a page $E_s$ is
+concentrated in one row $q=q_0$ with $s\geq2$, or in one column
+$p=p_0$ with $s\geq1$, it is stable. Each target cohomology object
+is naturally isomorphic to its unique possibly nonzero graded
+piece, via the relevant quotient and inclusion. If several pieces
+survive on a diagonal, they determine a succession of extension
+problems.
+\end{proposition}
+
+\begin{proof}
+Every differential on or after the given page changes the row
+by $1-r\ne0$ in the first case, or the column by $r\ne0$ in the
+second. The exactness of the passage to the next page therefore
+gives $E_s=E_\infty$. On each total degree the finite filtration
+has at most one nonzero quotient. The steps before that quotient
+equal the whole object and the steps after it are zero. The
+displayed identification follows from Theorem~\ref{res:S01}.
+If there are several surviving pieces, each next step is
+specified by an exact sequence
+$0\to F^{p+1}H^n\to F^pH^n\to E_\infty^{p,n-p}\to0$.
+The pieces alone need not specify its extension class.
+For example, two-step filtrations of $\mathbb Z/4$ by
+$2(\mathbb Z/4)$ and of $\mathbb Z/2\oplus\mathbb Z/2$ by its
+first factor have the same graded pieces. The first extension does
+not split, since every element outside the subgroup has order four.
+The second is split by its second factor.
+\end{proof}
+
+\begin{theorem}[First-quadrant edge maps and five terms]
+\label{res:S05}
+Suppose that Theorem~\ref{res:S01} applies and that $E_2$ vanishes
+outside $p,q\geq0$. For $n\geq0$ there are natural edge maps
+$E_2^{n,0}\to H^n(K)$ and $H^n(K)\to E_2^{0,n}$.
+In low degrees they fit into an exact sequence
+\[
+ 0\longrightarrow E_2^{1,0}\longrightarrow H^1(K)
+ \longrightarrow E_2^{0,1}\xrightarrow{d_2}
+ E_2^{2,0}\longrightarrow H^2(K).
+\]
+\end{theorem}
+
+\begin{proof}
+For $r\geq2$, no differential leaves row zero and no differential
+enters column zero. Thus the stable terms in row zero are quotients
+of the corresponding $E_2$ terms, and those in column zero are
+subobjects. In total degree $n$, the only possibly nonzero
+stable terms have $0\leq p\leq n$, so $F^0H^n=H^n$ and
+$F^{n+1}H^n=0$. Composing the quotient onto $E_\infty^{n,0}$
+with the identification with $F^nH^n$ and its inclusion defines
+the row edge. Composing projection from $H^n$ onto $F^0H^n/F^1H^n$
+with the identification with $E_\infty^{0,n}$ and its inclusion
+defines the column edge.
+
+An inspection of possible source and target bidegrees gives
+\[
+ E_\infty^{1,0}=E_2^{1,0},\qquad
+ E_\infty^{0,1}=\ker(d_2^{0,1}),\qquad
+ E_\infty^{2,0}=\operatorname{coker}(d_2^{0,1}).
+\]
+In fact the only outgoing differential from $(0,1)$ for $r\geq2$
+is at $r=2$, and the only possible incoming differential to
+$(2,0)$ is the same map. The filtration of $H^1$ gives the
+injection of $F^1H^1$ and the quotient by it. That quotient
+equals the kernel of $d_2$. The last edge map factors as the
+quotient by the image of $d_2$ followed by the inclusion of
+$F^2H^2$, proving exactness at $E_2^{2,0}$.
+
+For a nonzero $d_2$ over a field $k$, take
+$K^1=k a$, $K^2=k b$, and $d a=b$, with filtration degrees
+$0$ for $a$ and $2$ for $b$. On $E_0$ the only nonzero positions are
+$(0,1)$ and $(2,0)$. The maps $d_0$ and $d_1$ vanish for degree
+reasons, so the same classes span $E_2$. The formula of
+Proposition~\ref{res:F03} gives $d_2[a]=[b]$, an isomorphism.
+The page $E_3$ is zero, in agreement with the acyclicity of $K$.
+\end{proof}
+
+\begin{proposition}[Multiplicative filtrations]
+\label{res:S06}
+Suppose $K$ is a cochain differential graded algebra over a commutative
+ring, with $F^pK\cdot F^sK\subset F^{p+s}K$.
+Every page carries a product adding bidegrees. The sign in the
+derivation identity
+\[
+ d_r([x][y])=d_r([x])[y]+(-1)^{|x|}[x]d_r([y])
+\]
+depends on the total degree of $x$.
+The product on $E_{r+1}$ agrees with the cohomology product for
+$d_r$. Under the hypotheses of Theorem~\ref{res:S01}, its stable
+product is the associated graded product of the cohomology algebra.
+If the algebra is unital and $1\in F^0K^0$, the class of $1$
+gives the unit on every page.
+\end{proposition}
+
+\begin{proof}
+The product on $E_0$ is well defined by the multiplicativity of
+the filtration. For $r\geq1$, let $x\in A_r^{p,n}$ and
+$y\in A_r^{s,m}$ be homogeneous and put $P=p+s$. The identity
+$d(xy)=(dx)y+(-1)^n x\,dy$ places the differential in
+$F^{P+r}$, so $xy\in A_r^{P,n+m}$. If $x$ is changed by an
+element $v\in A_{r-1}^{p+1,n}$, then $v y\in F^{P+1}$ and
+$d(vy)\in F^{P+r}$, giving the first denominator summand of
+\eqref{eq:page-quotient}. If $x$ is changed by $du$ with
+$u\in A_{r-1}^{p-r+1,n-1}$, write
+\[
+ (du)y=d(uy)-(-1)^{n-1}u(dy).
+\]
+Here $uy$ lies in $F^{P-r+1}$ and $d(uy)$ lies in $F^P$,
+so $d(uy)$ belongs to the second denominator summand.
+Also $u(dy)$ lies in $F^{P+1}$ and its differential lies in
+$F^{P+r}$, so it belongs to the first. If the change is made in
+$y$, the same containment for $xv$ is immediate. For a change
+$du$ in $y$, use $x(du)=(-1)^n(d(xu)-(dx)u)$, placing the
+first term in the second denominator summand and the second
+term in the first. This verifies well-definedness without any
+commutativity assumption on $K$.
+
+Associativity, the unit assertion, and the displayed derivation
+identity descend from their representatives. The next-page
+isomorphism was induced by the inclusion of $A_{r+1}$, and
+that inclusion preserves products. Finally, the image filtration
+on $H^*(K)$ is multiplicative because products of cycles in
+$F^p$ and $F^s$ are cycles in $F^{p+s}$. The stable
+identification in Theorem~\ref{res:S01} sends a closed
+representative to its cohomology class modulo the next step,
+so it preserves the graded product.
+\end{proof}
+
+\begin{example}[Stable pages and a nonseparated target]
+\label{res:S07}
+Let $k$ be a field. In degrees zero and one take
+$K^0=\bigoplus_{i\geq0} k e_i$ and $K^1=\bigoplus_{i\geq0} k f_i$.
+Define $d e_i=f_i-f_{i+1}$. In each degree, filter by the tails
+$i\geq\max(p,0)$. This decreasing filtration is exhaustive and
+separated on the complex. The associated graded differential is
+an isomorphism at every nonzero graded step, so $E_1=0$ and
+every later page is zero. Nevertheless $H^1(K)\simeq k$ and
+$F^pH^1(K)=H^1(K)$ for every $p$. In particular the stable
+page is compatible with the zero associated graded of the target,
+but the target filtration fails separation.
+\end{example}
+
+To see the cohomology assertion, let $\sigma\colon K^1\to k$
+sum the coefficients. It kills $d(K^0)$. For a finitely supported
+sequence $(b_i)$ whose total sum is zero, put
+$a_i=\sum_{j=0}^i b_j$. These $a_i$ are finitely supported and
+$d(\sum_i a_i e_i)=\sum_i b_i f_i$, so $\ker\sigma=d(K^0)$.
+The same recurrence for a zero differential shows $H^0(K)=0$.
+The class of $f_i$ generates $H^1(K)$ for every $i$, so every
+tail maps onto it. The completeness comparison has zero codomain
+because $\varprojlim_p H^1(K)/F^pH^1(K)=0$. On replacing each direct sum
+by its tail completion, which is the corresponding product, the
+same recurrence solves $d a=b$ for arbitrary $(b_i)$.
+The completed complex is acyclic and has the same $E_0$ page.
+This verifies directly why the finite hypotheses in
+Theorem~\ref{res:S01} matter and why the pages alone cannot detect
+whether passing to the completion changes cohomology. General
+criteria using complete filtrations require separate hypotheses
+and are treated in \cite[Section 5.5]{weibel}.

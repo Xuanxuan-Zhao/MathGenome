@@ -1,0 +1,11 @@
+import MathGenome.Internal.FourierSobolev.P102.Approximation.Alternation
+import MathGenome.Internal.FourierSobolev.P102.Approximation.BernsteinDerivative
+import MathGenome.Internal.FourierSobolev.P102.Approximation.BestExistence
+import MathGenome.Internal.FourierSobolev.P102.Approximation.JacksonInterval
+import MathGenome.Internal.FourierSobolev.P102.Approximation.JacksonInverse
+import MathGenome.Internal.FourierSobolev.P102.Approximation.JacksonKernel
+import MathGenome.Internal.FourierSobolev.P102.Approximation.JacksonPeriodic
+import MathGenome.Internal.FourierSobolev.P102.Approximation.MarkovDerivative
+import MathGenome.Internal.FourierSobolev.P102.Approximation.Runge
+import MathGenome.Internal.FourierSobolev.P102.Approximation.StoneWeierstrass
+import MathGenome.Internal.FourierSobolev.P102.Approximation.UniformApproximation

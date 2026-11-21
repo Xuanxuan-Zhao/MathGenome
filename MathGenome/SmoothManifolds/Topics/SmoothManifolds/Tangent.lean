@@ -1,0 +1,8 @@
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Tangent.BoundaryCones
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Tangent.Bundle
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Tangent.CoordinateCurves
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Tangent.Differential
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Tangent.EmbeddedComparison
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Tangent.FiniteRegularity
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Tangent.HadamardLocal
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Tangent.Models

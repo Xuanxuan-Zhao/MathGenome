@@ -1,0 +1,7 @@
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Foundations.Atlases
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Foundations.Boundary
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Foundations.CompactExhaustion
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Foundations.Models
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Foundations.Products
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Foundations.SmoothMaps
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Foundations.Topology

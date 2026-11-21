@@ -1,0 +1,2835 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks,bookmarksopen,bookmarksnumbered]{hyperref}
+\hypersetup{pdftitle={Foundations of Elementary Number Theory},
+  pdfauthor={MathGenome},pdfsubject={Unified notes, P2-03}}
+\allowdisplaybreaks[1]
+\setlength{\emergencystretch}{2em}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{27mm}
+{\large MathGenome \enspace / \enspace P2-03\par}
+\vspace{8mm}
+\hrule height 0.8pt
+\vspace{11mm}
+{\Huge\bfseries Foundations of\\[2mm] Elementary Number Theory\par}
+\vspace{12mm}
+{\large Unified notes\par}
+\vspace{6mm}
+{\normalsize Integer arithmetic, congruences, and reciprocity\\
+Arithmetic functions and elementary prime estimates\\
+Diophantine equations, continued fractions, and approximation\par}
+\vfill
+{\large 8 November 2026\par}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\tableofcontents
+
+\chapter*{Scope and conventions}
+\addcontentsline{toc}{chapter}{Scope and conventions}
+These notes develop the arithmetic of integers and finite residue rings,
+followed by arithmetic functions, sums of squares, and rational
+approximation. The final chapter uses continued fractions to determine
+the positive solutions of both signs of Pell's equation. The treatment
+draws on Hardy and Wright for the broad organization, Apostol for
+arithmetic functions and congruences, and Niven, Zuckerman, and Montgomery
+for the Diophantine and approximation chapters
+\cite{hardy-wright,apostol,nzm}.
+
+Moduli and rational denominators are positive unless explicitly stated
+otherwise. A prime is a positive prime integer, and gcds are nonnegative.
+Prime valuations of integers are used on nonzero arguments unless a
+zero convention is given. Arithmetic functions have positive-integer
+arguments, and a divisor sum runs over positive divisors. The two
+normalizations for rational approximation are distinguished throughout:
+the error of a fraction and the error of its integer numerator after
+multiplying by its denominator.
+
+The standard prerequisites are elementary real analysis (limits, series,
+differentiation and integration), elementary group and field theory
+(including splitting fields), and finite-dimensional linear algebra.
+The three-square proof uses ordinary Euclidean volume. Its auxiliary
+prime comes from Dirichlet's theorem on primes in reduced residue
+classes, proved in Chapter~\ref{ch:nt-diophantine}. That chapter proves
+the required character identities and nonvanishing at \(1\), the
+lattice argument, and the conversion of its output into three
+integer squares.
+
+\mainmatter
+\chapter{Divisibility and integer congruences}
+\label{chap:integers}
+
+This chapter fixes the arithmetic conventions used throughout the notes.
+We write $\mathbb N=\{0,1,2,\ldots\}$, $\mathbb N_{>0}$ for the positive
+integers, and $a\mid b$ if $b=ac$ for an integer $c$. In particular,
+$0\mid b$ holds precisely when $b=0$. Gcds and lcms are nonnegative.
+All congruence moduli are positive, and $a\equiv b\pmod m$ means
+$m\mid(a-b)$. See \cite[Chs.~I, V, VIII]{hardy-wright},
+\cite[Chs.~1 and 5]{apostol}, and \cite[Chs.~2 and 4]{shoup}.
+
+\section{Euclidean division and linear combinations}
+
+\begin{lemma}[Division with remainder]\label{nt:division}
+For $a\in\mathbb Z$ and $m>0$ there are unique integers $q,r$ such that
+$a=qm+r$ and $0\le r<m$.
+\end{lemma}
+\begin{proof}
+Choose the least nonnegative member $r$ of $\{a-km:k\in\mathbb Z\}$.
+This set has a nonnegative member by taking $k$ sufficiently negative,
+and $r\ge m$ would make $r-m$ a smaller one. Two possible remainders
+differ by a multiple of $m$ strictly between $-m$ and $m$, so they
+agree and their quotients agree.
+\end{proof}
+
+\begin{theorem}[Euclidean algorithm, B\'ezout, and Euclid's lemma]
+\label{nt:A01}
+Given $a,b\in\mathbb Z$, the Euclidean algorithm applied to $|a|,|b|$
+returns their nonnegative gcd $d$. The set $a\mathbb Z+b\mathbb Z$
+equals $d\mathbb Z$, and every common divisor of $a,b$ divides $d$.
+For $(a,b)=(0,0)$ this reads $d=0$. If a prime $p$ divides $ab$, then
+$p$ divides $a$ or $b$. The least common multiple of $a,b$ is $0$
+when $ab=0$ and $|ab|/d$ otherwise. In all cases the common multiples
+are exactly the multiples of the lcm.
+\end{theorem}
+\begin{proof}
+Start with $r_0=|a|$ and $r_1=|b|$. Whenever $r_i>0$, divide
+$r_{i-1}=q_i r_i+r_{i+1}$ with $0\le r_{i+1}<r_i$. At each
+step
+\[
+ r_{i-1}\mathbb Z+r_i\mathbb Z=r_i\mathbb Z+r_{i+1}\mathbb Z.
+\]
+One inclusion uses the remainder formula, and the other uses the
+division formula. Strict descent forces a final pair $(d,0)$. If
+$b=0$ the initial pair already has this form. The initial ideal
+equals $a\mathbb Z+b\mathbb Z$, so the displayed invariance proves the
+claim about linear combinations. In particular $d$ divides both
+integers and is a linear combination of them. This also gives the
+extended algorithm: retain the coefficients of $r_0,r_1$ as
+combinations of $a,b$ and update the coefficient vector of
+$r_{i+1}$ by subtracting $q_i$ times that of $r_i$ from that of
+$r_{i-1}$. The coefficient vector of the final $d$ is a B\'ezout
+pair.
+
+If $p\nmid a$, the only positive common divisor of $p,a$ is $1$, so
+$up+va=1$ for some integers $u,v$. Multiplication by $b$ shows that
+$p\mid ab$ implies $p\mid b$. More generally, if $\gcd(x,y)=1$
+and $x\mid yz$, the identity $ux+vy=1$ multiplied by $z$ proves
+$x\mid z$.
+
+For $ab\ne0$, write $|a|=dA$, $|b|=dB$. Dividing the B\'ezout
+identity by $d$ shows $\gcd(A,B)=1$. The positive number $dAB$
+is a common multiple. If $M$ is any common multiple, write
+$M=dAu$ and use $B\mid Au$ and coprime cancellation to deduce
+$B\mid u$. This gives $dAB\mid M$. When $ab=0$, the only
+common multiple is $0$.
+\end{proof}
+
+\section{Prime factorization and valuations}
+
+A prime is an integer $p>1$ whose only positive divisors are $1,p$.
+For a nonzero integer $n$, its sign is $+1$ or $-1$ according to
+whether $n>0$ or $n<0$. The units of $\mathbb Z$ are exactly
+$1,-1$, since $xy=1$ forces $|x|=|y|=1$.
+
+\begin{theorem}[Unique factorization and prime valuations]\label{nt:A02}
+Every positive integer is a product of primes, unique up to order,
+with the empty product for $1$. Each nonzero integer is its sign
+times such a product. For a prime $p$ and $n\ne0$, define $v_p(n)$
+as the exponent of $p$ in this factorization. For nonzero $a,b$,
+\[
+ v_p(ab)=v_p(a)+v_p(b),\qquad
+ a\mid b\ \Longleftrightarrow\ v_p(a)\le v_p(b)
+                       \text{ for every prime }p.
+\]
+For nonzero $a,b$, the $p$-valuations of their gcd and lcm are the
+minimum and maximum of $v_p(a),v_p(b)$, respectively.
+\end{theorem}
+\begin{proof}
+Use strong induction for existence. A composite $n>1$ has a
+factorization $n=uv$ with $1<u,v<n$, so its factors have prime
+factorizations. For uniqueness, a prime in one product divides
+the other product. Repeated Euclid's lemma gives a factor on that
+side which it divides, and primality forces the factors to agree.
+Cancel that factor and repeat. This procedure cannot leave a
+nonempty prime product equal to $1$. Taking absolute values and
+restoring the sign proves the integer version.
+
+For nonzero inputs, multiplying products adds the exponents. If
+$a\mid b$, write $b=ac$ and apply this formula, since $c\ne0$.
+Conversely, use the differences of the exponents and the sign of
+$b$ divided by the sign of $a$ to construct $c\in\mathbb Z$ with
+$b=ac$. The numbers with the componentwise minimum and maximum
+exponents, and positive sign, therefore satisfy the defining gcd
+and lcm divisibility properties.
+\end{proof}
+
+In particular, $v_p(1)=v_p(-1)=0$ and $p^j\mid n$ exactly when
+$j\le v_p(n)$ for $n\ne0$. One may extend $v_p$ by $v_p(0)=+\infty$
+in $\mathbb N\cup\{+\infty\}$. Then the product formula uses
+$+\infty+k=+\infty$, and divisibility still has the stated
+comparison interpretation. Indeed, every $a$ divides $0$, and
+$0$ divides only $0$. With this convention the gcd and lcm
+formulas also hold when either input is $0$, using
+$\min(+\infty,+\infty)=\max(+\infty,+\infty)=+\infty$.
+Any use of a finite valuation explicitly assumes the input is
+nonzero. A frequently used consequence is that if $v_p(U)=j$
+is finite and $p^{j+1}\mid V$, then $v_p(U+V)=j$. Dividing by
+$p^j$ gives a nonzero residue plus zero modulo $p$.
+
+\section{Linear equations and linear congruences}
+
+\begin{theorem}[Linear Diophantine equations and congruences]\label{nt:A03}
+Let $a,b,c\in\mathbb Z$ and $d=\gcd(a,b)$. The equation $ax+by=c$
+has an integer solution exactly when $d\mid c$. If $d>0$ and
+$(x_0,y_0)$ is one solution, all solutions are
+\[
+ (x,y)=(x_0+(b/d)t,\;y_0-(a/d)t),\qquad t\in\mathbb Z.
+\]
+For $m>0$ the congruence $ax\equiv b\pmod m$ is solvable exactly
+when $d'=\gcd(a,m)$ divides $b$. If solvable, it has exactly $d'$
+solutions as classes modulo $m$.
+\end{theorem}
+\begin{proof}
+By Theorem~\ref{nt:A01}, the set of possible values of $ax+by$
+is $d\mathbb Z$. When $d=0$ both coefficients vanish, so every
+pair is a solution for $c=0$ and there are no solutions otherwise.
+For $d>0$, subtract a fixed solution and divide by $d$. The
+differences $X=x-x_0$ and $Y=y-y_0$ obey
+$(a/d)X+(b/d)Y=0$ with coprime coefficients. If $b\ne0$, coprime
+cancellation gives $X=(b/d)t$, and substitution gives $Y=-(a/d)t$.
+If $b=0$, then $a/d=\pm1$, so $X=0$ and every $Y$ is again of the
+specified form. Substitution proves that every pair in the formula
+is a solution.
+
+The congruence is equivalent to $ax+my=b$ for some $y\in\mathbb Z$.
+When $d'\mid b$, the preceding formula shows that $x$ ranges over
+$x_0+(m/d')\mathbb Z$. Two parameters $t,t'$ give the same class
+modulo $m$ exactly when $d'\mid(t-t')$. Thus the $d'$ parameters
+$0,\ldots,d'-1$ yield all distinct classes, including the case
+$m=1$.
+\end{proof}
+
+\section{Factorials and binomial coefficients}
+
+\begin{theorem}[Legendre's factorial formula]\label{nt:A04}
+If $p$ is prime and $n\in\mathbb N$, then
+\[
+ v_p(n!)=\sum_{j\ge1}\left\lfloor\frac{n}{p^j}\right\rfloor .
+\]
+For $0\le k\le n$,
+\[
+ v_p\binom nk
+   =\sum_{j\ge1}\left(
+       \left\lfloor\frac n{p^j}\right\rfloor
+       -\left\lfloor\frac k{p^j}\right\rfloor
+       -\left\lfloor\frac{n-k}{p^j}\right\rfloor
+     \right).
+\]
+Every summand in the latter sum is $0$ or $1$, and all summands
+with $p^j>n$ vanish.
+\end{theorem}
+\begin{proof}
+Use additivity of $v_p$ and count the pairs $(i,j)$ with
+$1\le i\le n$ and $1\le j\le v_p(i)$. For fixed $j$, the number
+of choices for $i$ is the number of positive multiples of $p^j$
+at most $n$, which is $\lfloor n/p^j\rfloor$. When $n=0$ both
+counts are empty and $0!=1$. The binomial coefficient counts the
+$k$-element subsets of an $n$-element set. Counting permutations
+by their first $k$ elements gives
+$n!=\binom nk k!(n-k)!$, so additivity gives the second formula.
+For each $j$, write $k$ and $n-k$ by division with remainder
+modulo $p^j$. The difference of the floors is the floor of the
+sum of these two remainders divided by $p^j$. The sum belongs to
+$[0,2p^j)$, as required.
+\end{proof}
+This elementary counting formula is used for prime-counting
+bounds. See \cite[\S8.1]{nzm}.
+
+\section{The Chinese remainder theorem}
+
+\begin{theorem}[Finite Chinese remainder theorem]\label{nt:A05}
+Let $m_1,\ldots,m_s>0$ and $a_1,\ldots,a_s\in\mathbb Z$. There is
+an integer $x$ satisfying all $x\equiv a_i\pmod{m_i}$ if and only
+if
+\[
+ a_i\equiv a_j\pmod{\gcd(m_i,m_j)}\qquad(1\le i,j\le s).
+\]
+If a solution exists, its class is unique modulo
+$L=\operatorname{lcm}(m_1,\ldots,m_s)$. If the moduli are pairwise
+coprime and $M=\prod_i m_i$, the reduction map is a ring
+isomorphism
+\[
+ \mathbb Z/M\mathbb Z \longrightarrow
+     \prod_{i=1}^s \mathbb Z/m_i\mathbb Z.
+\]
+For $m_i>1$, set $M_i=M/m_i$, choose $u_i$ with
+$M_i u_i\equiv1\pmod{m_i}$, and set $e_i=M_i u_i$. The inverse
+sends $(a_i)_i$ to the class of $\sum_{m_i>1}a_i e_i$ modulo $M$.
+The empty lcm and product are both $1$.
+\end{theorem}
+\begin{proof}
+Necessity follows from the divisibility of both $x-a_i$ and
+$x-a_j$ by their moduli. For two moduli $m,n$, write $x=a+mt$.
+The remaining condition is $mt\equiv b-a\pmod n$, so
+Theorem~\ref{nt:A03} proves sufficiency. The difference of any
+two solutions is divisible by both $m,n$, hence by their lcm,
+and adding an lcm multiple preserves both congruences.
+
+For more moduli, suppose a solution $y$ is known for the first
+$s-1$ conditions. Write $L'$ for the lcm of the first $s-1$
+moduli. For each prime power $p^k$ dividing $\gcd(L',m_s)$, some
+previous $m_i$ is divisible by $p^k$, by the componentwise maximum
+formula for $v_p(L')$. The hypotheses give $p^k\mid(a_i-a_s)$,
+and $p^k\mid(y-a_i)$ by the choice of $y$. Thus $p^k\mid(y-a_s)$.
+As this holds for each prime power in $\gcd(L',m_s)$, their product
+divides the difference. Apply the two-modulus case to
+$y\bmod L'$ and $a_s\bmod m_s$. The difference and translation
+argument with the full lcm proves uniqueness. A one-modulus
+system needs no induction, and for the empty system every
+integer is a solution, giving one class modulo $1$.
+
+For pairwise coprime moduli, the lcm equals the product by the
+valuation formulas. Reduction is a well-defined ring homomorphism
+as each $m_i$ divides $M$. Its bijectivity follows from existence
+and uniqueness. The cofactor $M_i$ is coprime to $m_i$, so
+B\'ezout gives $u_i$. Each $e_i$ is $1$ in its own component
+and $0$ in every other, proving the inverse formula. A modulus
+$1$ contributes a one-element factor and imposes no condition.
+The same formula includes the empty product as the one-element
+ring.
+\end{proof}
+Compare \cite[Thm.~5.26]{apostol}. The finite coprime isomorphism,
+existence, uniqueness, and explicit inverse already have
+counterparts in \cite[D07, Ch.~9]{mathgenome}.
+
+\section{Two elementary infinitude results}
+
+\begin{theorem}[Infinitely many primes]\label{nt:A06}
+There are infinitely many primes. There are also infinitely many
+primes congruent to $3$ modulo $4$.
+\end{theorem}
+\begin{proof}
+For a proposed finite list of all primes, take their product $P$,
+where $P=1$ if the list is empty. The integer $P+1>1$ has a prime
+factor by Theorem~\ref{nt:A02}. A prime factor of $P$ cannot
+divide $P+1$, so the list is incomplete.
+
+For a proposed finite list of primes congruent to $3\bmod4$,
+take their product $P$ and factor $4P-1>1$. This number is odd
+and is $3\bmod4$. Every odd prime is $1$ or $3$ modulo $4$, and
+a product made entirely from primes congruent to $1$ would itself
+be $1$. Thus at least one prime factor is $3\bmod4$. It cannot
+be on the list, since the listed primes divide $4P$.
+\end{proof}
+The progression result here uses only factorization. A later
+application to three squares invokes the general prime-existence
+theorem for reduced arithmetic progressions, proved in
+Theorem~\ref{nt:dirichlet-primes}.
+For the elementary prime arguments, see \cite[Chs.~I and II]{hardy-wright}
+and \cite[\S\S1.4, 1.6, 7.2]{apostol}.
+\chapter{Residue groups and quadratic reciprocity}
+\label{chap:congruences}
+
+For $m\ge1$, write $U_m=(\mathbb Z/m\mathbb Z)^\times$ for the
+multiplicative group of units. A primitive root modulo $m$ is a
+representative of a generator of $U_m$. This convention includes
+$m=1$, whose sole class is its multiplicative identity. The
+proofs in this chapter follow the arithmetic conventions of
+Chapter~\ref{chap:integers}. Main references are
+\cite[Chs.~5, 9, 10]{apostol},
+\cite[Chs.~2 and 3]{nzm}, and \cite[Ch.~12]{shoup}.
+
+\section{Euler, Fermat, and Wilson}
+
+For an element $g$ of a finite group, its order is the least positive
+$d$ such that $g^d=1$. A positive power with this property exists
+because two among $1,g,g^2,\ldots$ agree. Division of any integer
+exponent by $d$ shows that $g^j=1$ exactly when $d\mid j$.
+The powers $1,\ldots,g^{d-1}$ comprise a subgroup of size $d$.
+Its left cosets partition the group into sets of this size, so
+$d$ divides the group order.
+
+\begin{theorem}[Totient and classical congruences]\label{nt:B01}
+Set $\phi(m)=|U_m|$, equivalently the number of $0\le a<m$
+with $\gcd(a,m)=1$. Then $\phi(1)=1$, $\phi(p^k)=p^{k-1}(p-1)$
+for every prime $p$ and $k\ge1$, and
+\[
+ \phi(m)=m\prod_{p\mid m}\left(1-\frac1p\right),\qquad
+ \phi(mn)=\phi(m)\phi(n)\quad\text{if }\gcd(m,n)=1.
+\]
+If $\gcd(a,m)=1$ then $a^{\phi(m)}\equiv1\pmod m$. In particular,
+for a prime $p$ and $p\nmid a$ one has $a^{p-1}\equiv1\pmod p$.
+For every integer $a$ and prime $p$ one has $a^p\equiv a\pmod p$.
+Finally, $m>1$ is prime exactly when $(m-1)!\equiv-1\pmod m$.
+\end{theorem}
+\begin{proof}
+B\'ezout gives an inverse whenever $\gcd(a,m)=1$. Conversely,
+$ab\equiv1\pmod m$ gives $ab+mc=1$ for an integer $c$, so the
+gcd is $1$. This applies also to the one class modulo $1$.
+For $p^k$, among the $p^k$ representatives there are $p^{k-1}$
+multiples of $p$, and the others are units. The isomorphism in
+Theorem~\ref{nt:A05} restricts to units because multiplication
+and inversion in a product are componentwise. This proves the
+totient formulas by unique factorization.
+
+The order of a unit divides $|U_m|$, by the coset argument.
+This gives Euler's congruence. For $m=p$ multiply the resulting
+unit congruence by $a$ to obtain the all-residue formula when
+$p\nmid a$. If $p\mid a$, both sides vanish modulo $p$.
+
+For odd prime $p$, the only self-inverse units are $1$ and $-1$.
+Indeed $p\mid(x-1)(x+1)$ forces one factor to vanish modulo
+$p$, by Euclid's lemma. All other units pair with a different
+inverse, contributing $1$ per pair, while $1$ and $-1$ contribute
+$-1$. For $p=2$, the factorial is $1\equiv-1\pmod2$.
+If $m>1$ is composite, choose a divisor $d$ with $1<d<m$.
+It divides $(m-1)!$, so the factorial cannot be congruent to
+$-1$ even modulo $d$. Congruence modulo $m$ would imply
+congruence modulo $d$.
+\end{proof}
+See \cite[\S\S2.3--2.5 and Thms.~5.17, 5.19, 5.24]{apostol}.
+
+\section{Finite fields and cyclic multiplicative groups}
+
+A nonzero polynomial of degree $d$ over a field has at most
+$d$ distinct roots. Division by $X-\alpha$ shows that each
+root $\alpha$ gives such a factor, and induction on degree
+gives the bound. We also use the following algebraic construction.
+
+\begin{lemma}[Splitting fields]\label{nt:splitting-field}
+For a nonconstant polynomial over a field $K$, there is a field
+generated over $K$ by all of its roots in which the polynomial
+splits, unique up to $K$-isomorphism.
+\end{lemma}
+\begin{proof}
+If the polynomial has a nonlinear irreducible factor $h$, adjoining
+the class of $X$ in $K[X]/(h)$ gives a field containing a root of
+$h$. Irreducible factors exist by induction on degree, and the
+quotient is a field because polynomial division and the Euclidean
+algorithm give a B\'ezout identity between $h$ and every
+nonzero residue class. The number of linear factors, counted
+with multiplicity, increases when adjoining a root of a
+nonlinear factor. Repeating in the enlarged fields eventually
+makes the polynomial split. The subfield generated over $K$
+by the resulting roots is the desired splitting field.
+
+For uniqueness, let $L,L'$ be two splitting fields. Starting with
+the identity on $K$, extend an embedding into $L'$ one root at
+a time. If a root $\alpha$ has irreducible polynomial $h$ over
+the currently embedded subfield, then $h$ divides the original
+polynomial over that subfield. This follows by division by $h$,
+since a nonzero remainder would have smaller degree and vanish
+at $\alpha$. The image of $h$ has a root in $L'$ because it divides
+a split polynomial. The quotient construction extends the embedding
+by sending $\alpha$ to that root. Once all roots have been
+adjoined, the image contains a full linear factorization of the
+polynomial, hence all of its roots in $L'$. They generate $L'$.
+\end{proof}
+
+\begin{theorem}[Finite fields and cyclicity]\label{nt:B02}
+Every finite field has prime characteristic $p$ and cardinality
+$p^f$ for an integer $f\ge1$. For each prime $p$ and $f\ge1$
+there is a field of this cardinality, unique up to an isomorphism
+fixing the prime field. Every finite subgroup of the multiplicative
+group of a field is cyclic. In particular, a field of cardinality
+$q$ has a cyclic multiplicative group of order $q-1$ with exactly
+$\phi(q-1)$ generators.
+\end{theorem}
+\begin{proof}
+In a finite field some positive multiple of $1$ is zero, by
+finiteness of the additive group. Its least positive value $p$
+must be prime. If $p=ab$ with $1<a,b<p$, then
+$(a\cdot1)(b\cdot1)=0$ with both factors nonzero. Thus the field
+contains the image of $\mathbb F_p=\mathbb Z/p\mathbb Z$. As a
+vector space over it the field has a finite basis, obtained by
+adjoining elements outside the span until it spans the finite
+set. A basis of size $f$ gives $p^f$ coordinate vectors.
+
+Conversely put $q=p^f$ and take a splitting field of $X^q-X$
+over $\mathbb F_p$. The formal derivative is $-1$, so no root
+can be repeated, since a repeated linear factor would make the
+derivative vanish there. In characteristic $p$ the binomial
+coefficients $\binom pj$ for $0<j<p$ are divisible by $p$
+(by Theorem~\ref{nt:A04}), so the map $x\mapsto x^p$ is additive
+and multiplicative. Iteration proves the same for $x\mapsto x^q$.
+Its fixed points are therefore closed under addition,
+subtraction, and multiplication. They contain $0,1$ and are
+closed under inverses of nonzero elements, because
+$(x^{-1})^q=(x^q)^{-1}$. This root set is a field with $q$
+elements. Every field of order $q$ is a splitting field of the
+same polynomial, since every nonzero element satisfies
+$x^{q-1}=1$ by the finite group argument and all $q$ elements
+are roots. Lemma~\ref{nt:splitting-field} proves uniqueness.
+
+Let $H$ be a finite subgroup of the multiplicative group of
+a field, and let $e$ be the lcm of its element orders. For
+each prime power $\ell^a$ occurring exactly in $e$, some element
+of $H$ has order $\ell^a t$ with $\ell\nmid t$. Its $t$-th
+power has order $\ell^a$, by the criterion for exponents
+annihilating an element. Two commuting elements of coprime
+orders $r,s$ have product of order $rs$. In fact a power that
+kills the product makes the corresponding powers of the two
+elements inverse, so each belongs to the intersection of
+their cyclic subgroups. An element of this intersection has
+order dividing both $r$ and $s$ and is the identity. Therefore
+both $r$ and $s$ divide the exponent. Taking the product of the
+chosen prime-power-order elements yields an element of order
+$e$, with the identity for $e=1$. All of $H$ consists of roots
+of $X^e-1$, so $|H|\le e$ by the root bound, whereas the element
+of order $e$ has $e$ distinct powers in $H$. Thus $H$ is cyclic.
+
+Finally, if $g$ has order $d$, then $g^j$ has order
+$d/\gcd(d,j)$, since $d\mid jt$ exactly when
+$d/\gcd(d,j)\mid t$. The generators are the $\phi(d)$ classes of
+exponents coprime to $d$. Apply this to $d=q-1$, including
+$q=2$, when $d=1$.
+\end{proof}
+See \cite[Ch.~2]{lidl} and \cite[\S10.4]{apostol}.
+The cardinality, existence, uniqueness, and unit-group
+statements have separate counterparts in \cite[D07, Ch.~13]{mathgenome}.
+
+\section{Primitive roots for positive moduli}
+
+\begin{theorem}[Lifting a primitive root at an odd prime]\label{nt:B03}
+Let $p$ be an odd prime. If $u\in\mathbb Z$, $u\equiv1\pmod p$,
+and $u\ne1$, then
+\[
+ v_p(u^p-1)=v_p(u-1)+1.
+\]
+There is an integer $g$ that generates $U_{p^k}$ for every
+$k\ge1$.
+\end{theorem}
+\begin{proof}
+Write $u=1+p^j w$ with $j\ge1$ and $p\nmid w$. The linear term
+of $(1+p^jw)^p-1$ is $p^{j+1}w$. For $2\le i<p$, the
+$i$-th term is divisible by $p^{1+ij}$, hence by $p^{j+2}$.
+The final term is divisible by $p^{jp}$, which is also at
+least $p^{j+2}$ since $p\ge3$. Thus after division by $p^{j+1}$
+the residue is $w\pmod p$, giving the exact valuation.
+
+Choose a representative $g_0$ of a generator of
+$\mathbb F_p^\times$ with $1\le g_0<p$. Its order $p-1$ is at
+least $2$, so $g_0\ge2$. Both $g_0^{p-1}$ and
+$(g_0+p)^{p-1}$ are $1\bmod p$, and their difference modulo
+$p^2$ is
+\[
+  p(p-1)g_0^{p-2}.
+\]
+This is nonzero modulo $p^2$. At least one of $g_0,g_0+p$
+therefore satisfies $v_p(g^{p-1}-1)=1$. The preceding valuation
+formula, iterated from $u=g^{p-1}>1$, gives
+\[
+ v_p\!\left(g^{(p-1)p^r}-1\right)=1+r,\qquad r\ge0.
+\]
+The order of $g$ modulo $p^k$ is a multiple of $p-1$ by
+reduction modulo $p$, and divides $(p-1)p^{k-1}$ by
+Theorem~\ref{nt:B01}. For $k\ge2$, the displayed valuation
+at $r=k-2$ excludes every proper divisor of $(p-1)p^{k-1}$
+that is a multiple of $p-1$. Thus $g$ has order $(p-1)p^{k-1}$
+and generates the unit group. The case $k=1$ holds by choice.
+\end{proof}
+
+\begin{theorem}[Classification and count of primitive roots]\label{nt:B04}
+For $m\ge1$, $U_m$ is cyclic exactly for
+\[
+ m=1,\ 2,\ 4,\ p^k,\ \text{or }2p^k
+ \qquad(p\text{ an odd prime},\ k\ge1).
+\]
+For each cyclic $U_m$, the number of primitive-root classes is
+$\phi(\phi(m))$. For $k\ge3$, the units modulo $2^k$ have the
+unique form $(-1)^a5^b$ with $a\in\{0,1\}$ and
+$0\le b<2^{k-2}$.
+\end{theorem}
+\begin{proof}
+For each $r\ge0$,
+\[
+ v_2\!\left(5^{2^r}-1\right)=r+2.
+\]
+For $r=0$ this is $v_2(4)=2$. In the induction step,
+factor the next difference as
+$(5^{2^r}-1)(5^{2^r}+1)$. The second factor is $2\bmod4$,
+so the valuation increases by one. The order of $5$ modulo
+$2^k$ divides the group order $2^{k-1}$ and hence is a power
+of two. The first $r$ with $5^{2^r}\equiv1\pmod{2^k}$ is
+$k-2$, so the order is $2^{k-2}$. Its powers lie in the
+$1\bmod4$ classes, and those classes number $2^{k-2}$, so
+the powers exhaust them. Each unit is $1$ or $3\bmod4$.
+A unit in the latter class is the negative of one in the former.
+This proves existence and uniqueness of the displayed form.
+It also produces distinct elements of order two, namely $-1$
+and $5^{2^{k-3}}$, for every $k\ge3$. A cyclic group has
+at most one element of order two: in a cyclic group of
+order $d$, the only possible nonidentity solution of
+$2j\equiv0\pmod d$ is $j=d/2$ when $d$ is even.
+
+The groups $U_1,U_2$ are trivial and $U_4$ is cyclic of order $2$.
+Theorem~\ref{nt:B03} treats $p^k$, and $U_{2p^k}$ is
+isomorphic to $U_{p^k}$ by the Chinese remainder theorem since
+$U_2$ is trivial. For the remaining cases write
+$m=2^j\prod_i p_i^{k_i}$ with distinct odd primes $p_i$.
+If $j\ge3$, the two order-two elements of $U_{2^j}$ give
+two in the product. If there are at least two odd-prime
+factors, choose the element $-1$ in each of two distinct
+factors and the identity elsewhere to give two such elements.
+If $j=2$ and there is an odd-prime factor, use $-1$ in $U_4$
+and $-1$ in an odd-prime factor in the same way. These cases
+exhaust the remaining $m$. Finally the count follows from
+the generator count in Theorem~\ref{nt:B02} applied to a
+cyclic group of order $\phi(m)$.
+\end{proof}
+For the lift and classification, see
+\cite[\S\S10.1--10.9 and Thm.~10.11]{apostol}. The classification
+has a fixed-version counterpart in \cite[UnitsCyclic]{mathlib}.
+
+\section{Simple-root lifting}
+
+\begin{theorem}[Polynomial roots modulo prime powers]\label{nt:B05}
+Let $p$ be prime, $F\in\mathbb Z[X]$, $j\ge1$, and
+$a\in\mathbb Z$ with $F(a)\equiv0\pmod{p^j}$ and
+$p\nmid F'(a)$. Among the $p$ classes
+$a+p^j t\pmod{p^{j+1}}$ with $t\bmod p$, exactly one is a
+root of $F$ modulo $p^{j+1}$. It has the same nonzero derivative
+residue modulo $p$ as $a$. Consequently a simple root modulo $p$
+extends uniquely at every higher prime power.
+\end{theorem}
+\begin{proof}
+For a monomial, the binomial expansion at $a+p^jt$ has constant
+term, linear term, and all terms of order at least two divisible
+by $p^{2j}$. Summing the monomials gives
+\[
+ F(a+p^jt)\equiv F(a)+p^jtF'(a)\pmod{p^{j+1}}
+\]
+because $2j\ge j+1$. Dividing the required congruence by $p^j$
+leads to the linear congruence
+\[
+ tF'(a)\equiv-F(a)/p^j\pmod p,
+\]
+which has one solution modulo $p$ since $F'(a)$ is a unit
+there. Every lift of $a\bmod p^j$ has the indicated form,
+and $F'(a+p^jt)\equiv F'(a)\pmod p$. Induction proves the
+full lifting assertion.
+\end{proof}
+This is the finite-modulus simple-root result. For a root with
+zero derivative modulo $p$, a separate analysis is needed.
+See \cite[Thms.~5.28 and 5.30]{apostol}.
+
+\section{Legendre symbols and Gauss's lemma}
+
+For an odd prime $p$, the Legendre symbol $\left(\frac ap\right)$
+is $0$ if $p\mid a$, $1$ if $a$ represents a nonzero square
+modulo $p$, and $-1$ otherwise.
+
+\begin{theorem}[Euler's criterion and Gauss's lemma]\label{nt:B06}
+Put $h=(p-1)/2$. For all integers $a,b$,
+\[
+ a^h\equiv\left(\frac ap\right)\pmod p,\qquad
+ \left(\frac{ab}p\right)=\left(\frac ap\right)\left(\frac bp\right).
+\]
+If $p\nmid a$, let $N$ count the least positive residues of
+$a,2a,\ldots,ha$ that are greater than $p/2$. Then
+$\left(\frac ap\right)=(-1)^N$.
+\end{theorem}
+\begin{proof}
+The zero case of Euler's criterion is immediate since $h\ge1$.
+For a unit $a$, write it as a power $g^j$ of a generator of
+$\mathbb F_p^\times$. The squares are exactly the even powers,
+since the group order $2h$ is even. The element $g^h$ has order
+two, so it is $-1$ by the factorization $(X-1)(X+1)$ over the
+field. Thus $a^h=(-1)^j$, giving the criterion. Multiplicativity
+follows because the congruences respect products and the three
+integers $-1,0,1$ are distinct modulo $p$.
+
+For Gauss's lemma, replace each residue of $ia$ above $p/2$
+by its negative signed representative in $[-h,-1]$, and keep the
+others in $[1,h]$. The absolute values are all distinct. If the
+values for $i,j$ agree then $ia\equiv\pm ja\pmod p$, giving
+$i\equiv\pm j\pmod p$. Equality with a plus sign forces $i=j$;
+the minus sign is impossible since $2\le i+j\le p-1$. Thus
+the absolute values are a permutation of $1,\ldots,h$.
+Multiplying the signed representatives gives
+$a^h h!\equiv(-1)^N h!\pmod p$. The factorial is invertible
+modulo $p$, and Euler's criterion identifies the resulting sign.
+\end{proof}
+See \cite[\S\S9.1--9.4]{apostol} and \cite[\S\S3.1--3.2]{nzm}.
+
+\section{Quadratic reciprocity and its supplements}
+
+\begin{theorem}[Quadratic reciprocity]\label{nt:B07}
+For distinct odd primes $p,q$,
+\[
+ \left(\frac qp\right)\left(\frac pq\right)
+   =(-1)^{((p-1)/2)((q-1)/2)}.
+\]
+For every odd prime $p$,
+\[
+ \left(\frac{-1}p\right)=(-1)^{(p-1)/2},\qquad
+ \left(\frac 2p\right)=(-1)^{(p^2-1)/8}.
+\]
+\end{theorem}
+\begin{proof}
+The first supplement follows from Euler's criterion with $a=-1$.
+For the second, the least residues of $2i$ for
+$1\le i\le h=(p-1)/2$ are exactly $2,4,\ldots,2h$.
+The number greater than $p/2$ is $h-\lfloor p/4\rfloor$.
+It is even for $p\equiv1,7\pmod8$ and odd for
+$p\equiv3,5\pmod8$. This follows by writing $p=8t+r$ with
+$r=1,3,5,7$. The same parities hold for $(p^2-1)/8$, since
+it is congruent to $(r^2-1)/8$ modulo $2$. Gauss's lemma gives
+the result.
+
+For the main law, first let $a$ be any positive odd integer
+coprime to $p$ and write
+$ia=p\lfloor ia/p\rfloor+r_i$ with $1\le r_i\le p-1$ for
+$1\le i\le h$. The absolute values of the signed representatives
+are a permutation of $1,\ldots,h$. Changing a residue
+$r_i>p/2$ to its signed representative changes its absolute-value
+parity, because $r_i$ and $p-r_i$ have opposite parity.
+If $N$ is the number of such changes, then
+$\sum_i r_i\equiv\sum_i i+N\pmod2$. Reducing the division
+identities modulo $2$ and using $a,p$ odd gives
+\[
+ \sum_{i=1}^h\left\lfloor\frac{ia}{p}\right\rfloor\equiv N\pmod2.
+\]
+This gives the floor-sum form of Gauss's lemma.
+
+Let $k=(q-1)/2$. In the rectangle of pairs
+$1\le i\le h$, $1\le j\le k$, there is no pair with $q i=p j$,
+since it would force $p\mid i$. For fixed $i$, the number
+of pairs with $p j<q i$ is $\lfloor qi/p\rfloor$. Indeed
+$qi/p$ is not an integer and is less than $q/2$, so its
+floor is at most $k$. By the same argument for fixed $j$,
+the complementary count is $\lfloor pj/q\rfloor$.
+Thus the sum of the two floor sums is $hk$, and the two
+floor-sum signs multiply to $(-1)^{hk}$.
+\end{proof}
+See \cite[\S\S9.3--9.5]{apostol}, \cite[\S\S3.1--3.2]{nzm},
+and \cite[Ch.~12]{shoup}.
+
+\section{The Jacobi symbol and its computation}
+
+For positive odd $m=\prod_p p^{e_p}$, define
+\[
+ \left(\frac am\right)_{\!J}
+   =\prod_{p:e_p>0}\left(\frac ap\right)^{e_p},
+\]
+where the factors on the right are Legendre symbols. The empty
+product for $m=1$ is $1$. When $m$ is an odd prime, the two
+symbols agree.
+
+\begin{theorem}[Jacobi rules]\label{nt:B08}
+The Jacobi symbol depends only on the class of the numerator
+modulo its denominator, is multiplicative in each argument, and
+is zero exactly when the arguments have gcd greater than $1$.
+Its supplement formulas are
+\[
+ \left(\frac{-1}m\right)_{\!J}=(-1)^{(m-1)/2},\qquad
+ \left(\frac 2m\right)_{\!J}=(-1)^{(m^2-1)/8}.
+\]
+For positive odd $a,m$,
+\[
+ \left(\frac am\right)_{\!J}
+   =(-1)^{((a-1)/2)((m-1)/2)}\left(\frac ma\right)_{\!J}.
+\]
+These rules compute the symbol by Euclidean reductions. A value
+$+1$ alone does not imply a square residue for composite $m$.
+\end{theorem}
+\begin{proof}
+The assertions about the residue class, multiplication, and
+zero follow from the prime factors and Theorem~\ref{nt:B06}.
+For positive odd $u,v$ we have
+\begin{align*}
+ \frac{uv-1}{2}&\equiv\frac{u-1}{2}+\frac{v-1}{2}\pmod2,\\
+ \frac{(uv)^2-1}{8}&\equiv\frac{u^2-1}{8}+\frac{v^2-1}{8}\pmod2.
+\end{align*}
+In the first identity the omitted term is $(u-1)(v-1)/2$,
+which is even. In the second the omitted term is
+$(u^2-1)(v^2-1)/8$, a multiple of $8$ because odd squares
+are $1\bmod8$. These identities combine the prime-factor
+supplements into the stated formulas.
+
+If $a,m$ are not coprime, both symbols in the reciprocity
+formula vanish. Otherwise all prime-factor pairs are distinct.
+Apply Theorem~\ref{nt:B07} to each pair, with multiplicities.
+The total sign exponent is the product of
+$\sum_{p\mid a} v_p(a)(p-1)/2$ and
+$\sum_{q\mid m} v_q(m)(q-1)/2$. The first parity identity
+reduces these sums to $(a-1)/2$ and $(m-1)/2$ modulo $2$.
+This also covers a denominator or numerator equal to $1$.
+
+For the computation, first return $1$ if $m=1$. Otherwise
+reduce the numerator to $0\le r<m$. If $r=0$, return $0$.
+For $r>0$, extract the power of two $r=2^v c$ with $c$ odd,
+and remove its symbol by the second supplement. If $c=1$,
+the remaining symbol is $1$. For $c>1$, reciprocity gives
+the known sign and the symbol with numerator $m$ and
+denominator $c$. Repeat with that smaller denominator.
+This terminates and uses only the proved equalities, including
+when a zero result occurs. For example
+$\left(\frac{2}{15}\right)_{\!J}
+ =\left(\frac23\right)\left(\frac25\right)=1$,
+but $2$ is not a square modulo $3$ and hence not modulo $15$.
+\end{proof}
+See \cite[\S9.7]{apostol} and \cite[\S3.3]{nzm}.
+
+\section{All roots of a quadratic congruence}
+
+\begin{theorem}[Quadratic congruences over arbitrary positive moduli]
+\label{nt:B09}
+Let $a\in\mathbb Z$, $m>0$, and write $m=\prod_p p^{k_p}$ over
+the positive prime exponents. The number of roots of
+$x^2\equiv a\pmod m$ is the product of the root counts below
+for the prime powers $p^{k_p}$. The empty product is $1$.
+For $p^k$, $k\ge1$, the count is given as follows.
+\begin{enumerate}
+ \item If $a\equiv0\pmod{p^k}$, the roots are the classes
+       divisible by $p^{\lceil k/2\rceil}$, so there are
+       $p^{\lfloor k/2\rfloor}$ roots.
+ \item Otherwise $s=v_p(a)<k$. If $s$ is odd there are no
+       roots. If $s=2t$, set $j=k-2t$ and $a'=a/p^{2t}$.
+       The count is $p^t$ times the number of roots of
+       $y^2\equiv a'\pmod{p^j}$, where $p\nmid a'$.
+       For odd $p$, this latter count is $2$ if
+       $\left(\frac{a'}p\right)=1$ and $0$ otherwise.
+       For $p=2$, the unit counts are $1$ for $j=1$,
+       $2$ for $j=2$ when $a'\equiv1\pmod4$, and $4$ for
+       $j\ge3$ when $a'\equiv1\pmod8$. In the last two
+       ranges the count is zero if the indicated condition
+       fails.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+The Chinese remainder bijection identifies the equation with
+the independent equations in all prime-power components,
+so it multiplies the counts. If $a$ is the zero class modulo
+$p^k$, the condition is $2v_p(x)\ge k$ for nonzero $x$.
+The same divisibility criterion includes $x=0$. The number
+of classes divisible by $p^{\lceil k/2\rceil}$ is the quotient
+$p^k/p^{\lceil k/2\rceil}=p^{\lfloor k/2\rfloor}$.
+
+If $a$ is not the zero class, changing its representative by
+a multiple of $p^k$ preserves its valuation $s<k$. The
+same fact applied to $x^2=a+p^k z$ shows that a root must
+have $2v_p(x)=s$, excluding odd $s$. When $s=2t$, write
+$x=p^t y$. The classes $x\bmod p^k$ divisible by $p^t$ are
+in bijection with $y\bmod p^{k-t}$. After dividing the
+congruence by $p^{2t}$ the required equation is
+$y^2\equiv a'\pmod{p^{k-2t}}$, with $y$ automatically a unit.
+Every class of $y$ modulo $p^{k-2t}$ has exactly $p^t$ lifts
+modulo $p^{k-t}$, and all these lifts give distinct $x$.
+
+For odd $p$, a square unit modulo $p$ has two distinct roots
+$\pm y$, by the degree-two root bound, and a nonsquare has
+none. Each root of $Y^2-a'$ is simple since $2y\not\equiv0\pmod p$,
+and Theorem~\ref{nt:B05} lifts it uniquely. This gives the
+odd-prime count. Modulo $2$ there is one odd class, and modulo
+$4$ both odd classes square to $1$. If $j\ge3$, any odd
+square is $1\bmod8$: writing an odd integer as $2r+1$ gives
+its square as $1+4r(r+1)$, and $r(r+1)$ is even.
+In the decomposition from Theorem~\ref{nt:B04}, squaring kills
+the sign and doubles the exponent of $5$ modulo $2^{j-2}$.
+Its kernel has size $4$, since the exponent has two choices
+with $2b\equiv0\pmod{2^{j-2}}$ and the sign is arbitrary.
+Its image has size $2^{j-1}/4=2^{j-3}$, because every
+nonempty fibre is a coset of the kernel. This equals the
+number of classes congruent to $1\bmod8$, so the image
+is precisely those classes, each with four roots.
+\end{proof}
+The count separates singular roots from simple roots and includes
+the degenerate modulus $1$. The prime-power ingredients can be
+compared with \cite[\S\S5.9, 9.6, 10.11]{apostol}.
+\chapter[Arithmetic functions and primes]{Arithmetic Functions and Elementary Prime Estimates}
+\label{ch:arithmetic-functions}
+
+Throughout this chapter \(\mathbb N_{>0}\) denotes the positive integers.
+In a sum with a real upper limit \(x\), an index \(n\le x\) always means a
+positive integer \(n\) satisfying the displayed inequality. All logarithms
+are natural logarithms. Statements in \(O\)-notation or \(\asymp\)-notation
+refer to \(x\to+\infty\). We write \(F\asymp G\) for two eventual inequalities
+\(cG\le F\le CG\) with constants \(c,C>0\).
+
+\section{Dirichlet convolution and local factors}
+
+\begin{theorem}[Convolution and its units]\label{nt:C01}
+Let \(R\) be a commutative ring with identity. The functions
+\(f\colon\mathbb N_{>0}\to R\) form a commutative ring under pointwise
+addition and the product
+\[
+ (f*g)(n)=\sum_{d\mid n}f(d)g(n/d).
+\]
+The identity \(\delta\) takes value \(1\) at \(1\) and \(0\) elsewhere.
+A function is a unit for this product exactly when \(f(1)\) is a unit in \(R\).
+\end{theorem}
+
+\begin{proof}
+Write the product as a sum over ordered pairs \((a,b)\) with \(ab=n\).
+Interchanging \(a\) and \(b\) gives commutativity, and expanding either
+association of a triple product gives
+\(\sum_{abc=n}f(a)g(b)h(c)\), with each ordered triple occurring once.
+Distributivity follows from distributivity in \(R\). The term with index
+\(1\) in the \(\delta\) factor gives the identity law.
+
+If \(f*g=\delta\), evaluation at \(1\) gives \(f(1)g(1)=1\).
+Conversely, for \(f(1)\) a unit, define \(g(1)=f(1)^{-1}\) and for \(n>1\) set
+\[
+ g(n)=-f(1)^{-1}\sum_{\substack{d\mid n\\d>1}} f(d)g(n/d).
+\]
+Each \(n/d\) on the right is strictly less than \(n\), so the recursion
+defines \(g\) on all positive integers. The equations it imposes are
+precisely the coefficients of \(f*g=\delta\).
+\end{proof}
+
+\begin{theorem}[Multiplicativity and Euler products]\label{nt:C02}
+A function \(f\colon\mathbb N_{>0}\to R\) is called multiplicative if
+\(f(1)=1\) and \(f(ab)=f(a)f(b)\) whenever \(\gcd(a,b)=1\). Such a function
+is determined by its prime-power values through
+\[
+ f(n)=\prod_{p\mid n} f\bigl(p^{v_p(n)}\bigr).
+\]
+Any assignment of values at positive prime powers extends uniquely to a
+multiplicative function. Multiplicative functions are closed under
+convolution and inversion in the convolution ring.
+
+If \(f\) is complex-valued and multiplicative and a real \(s\) satisfies
+\(\sum_{n\ge1}|f(n)|n^{-s}<\infty\), then
+\[
+ \sum_{n\ge1}\frac{f(n)}{n^s}
+   =\prod_p\left(\sum_{j\ge0}\frac{f(p^j)}{p^{js}}\right).
+\]
+The product is the limit of the products over \(p\le y\) as \(y\to\infty\).
+In particular, for \(s>1\),
+\(\zeta(s)=\sum_{n\ge1} n^{-s}=\prod_p(1-p^{-s})^{-1}\).
+\end{theorem}
+
+\begin{proof}
+Unique prime factorization and induction on the number of distinct prime
+divisors give the product formula. For the converse, coprime factors
+have disjoint sets of prime divisors, so the formula is multiplicative.
+The empty product gives the prescribed value at \(1\).
+
+If \(\gcd(a,b)=1\), each divisor of \(ab\) is uniquely \(d_1d_2\), where
+\(d_1\mid a\), \(d_2\mid b\). Both \(d_1,d_2\) and \(a/d_1,b/d_2\) are
+coprime pairs. Multiplicativity of \(f,g\) therefore factors the divisor
+sum for \((f*g)(ab)\) as \((f*g)(a)(f*g)(b)\).
+For the inverse, set \(g(1)=1\) and assign the prime-power values by
+\[
+ g(p^j)=-\sum_{i=1}^j f(p^i)g(p^{j-i})\qquad(j\ge1).
+\]
+Extend these values multiplicatively. By construction \(f*g\) vanishes
+at every positive prime power and is \(1\) at \(1\). Since \(f*g\) is
+multiplicative, it equals \(\delta\).
+
+For the analytic assertion, each local series converges absolutely as
+its terms form a subseries of the given absolutely convergent series.
+A finite product of these series expands absolutely into the sum over
+integers all of whose prime factors lie among the finitely many selected
+primes. Each coefficient follows from multiplicativity and each integer
+in that sum has a unique exponent tuple. Selecting \(p\le y\), every
+omitted integer exceeds \(y\). The difference from the full series is
+bounded by \(\sum_{n>y}|f(n)|n^{-s}\), which tends to zero. For the
+constant function \(1\) and \(s>1\), convergence follows by comparison
+with \(\int_1^\infty t^{-s}\,dt\), and the local geometric series is
+\((1-p^{-s})^{-1}\).
+\end{proof}
+
+The finite convolution and the analytic passage to prime products use
+different hypotheses. For the source treatments of both, see
+\cite[Sections 2.6--2.11, 2.15, and 11.2--11.5]{apostol} and
+\cite[Chapters XVI--XVII]{hardy-wright}.
+
+\section{Classical arithmetic functions and M\"obius inversion}
+
+\begin{proposition}[Classical functions]\label{nt:C03}
+Write \(\mathbf{1}(n)=1\), \(\mathrm{id}_k(n)=n^k\), and
+\(\log(n)=\log n\) for arithmetic functions. The M\"obius function \(\mu\)
+vanishes on integers with a squared prime factor and has value
+\((-1)^r\) on a product of \(r\) distinct primes. The Euler totient
+\(\phi(n)\) counts the integers from \(1\) to \(n\) coprime to \(n\).
+The divisor count \(\tau(n)\) and the divisor power sum \(\sigma_k(n)\)
+satisfy, for \(k\ge0\),
+\[
+ \tau=\mathbf{1}*\mathbf{1},\qquad
+ \sigma_k=\mathbf{1}*\mathrm{id}_k .
+\]
+These four functions are multiplicative. For primes \(p\) and \(j\ge1\),
+\[
+ \mu(p^j)=
+ \begin{cases}-1& j=1,\\0&j\ge2,\end{cases}
+ \quad
+ \phi(p^j)=p^j-p^{j-1},\quad
+ \tau(p^j)=j+1,\quad
+ \sigma_k(p^j)=\sum_{i=0}^j p^{ik}.
+\]
+In particular \(\sigma_0=\tau\). The von Mangoldt function
+\(\Lambda(n)=\log p\) when \(n=p^j\) with \(j\ge1\) and \(0\) otherwise
+satisfies \(\mathbf{1}*\Lambda=\log\).
+\end{proposition}
+
+\begin{proof}
+The empty product gives \(\mu(1)=1\). The definition of \(\mu\) on
+prime-power factors and Theorem~\ref{nt:C02} give multiplicativity.
+The integers from \(1\) to \(n\) represent each class modulo \(n\) once.
+Thus the residue-class description of \(\phi\) in Theorem~\ref{nt:B01}
+gives multiplicativity via the Chinese remainder theorem and the
+prime-power formula by deleting the \(p^{j-1}\) multiples of \(p\)
+among \(p^j\) classes. Both \(\mathbf{1}\) and \(\mathrm{id}_k\) are multiplicative,
+and the two divisor sums and their prime-power formulas follow by
+listing the divisors. Finally, if \(n=\prod_p p^{e_p}\), the only
+divisors that contribute to \(\sum_{d\mid n}\Lambda(d)\) are
+\(p,p^2,\ldots,p^{e_p}\). The resulting sum is
+\(\sum_p e_p\log p=\log n\), which is \(0\) at \(n=1\).
+\end{proof}
+
+\begin{theorem}[M\"obius inversion]\label{nt:C04}
+For functions \(f,g\colon\mathbb N_{>0}\to R\), with integer-valued
+coefficients sent to \(R\) by the unital map \(\mathbb Z\to R\), one has
+\[
+ g(n)=\sum_{d\mid n}f(d)\ \text{for all }n
+ \quad\Longleftrightarrow\quad
+ f(n)=\sum_{d\mid n}\mu(d)g(n/d)\ \text{for all }n .
+\]
+In the integer-valued convolution ring,
+\(\mu*\mathbf{1}=\delta\), \(\sum_{d\mid n}\phi(d)=n\), and
+\(\phi=\mu*\mathrm{id}_1\). In the real-valued ring
+\(\Lambda=\mu*\log\).
+\end{theorem}
+
+\begin{proof}
+The multiplicative function \(\mu*\mathbf{1}\) takes value
+\(\mu(1)+\mu(p)+\cdots+\mu(p^j)=0\) at \(p^j\) for \(j\ge1\).
+Its value at \(1\) is \(1\), so it is \(\delta\). Mapping the integer
+coefficients into \(R\) gives the same identity there. Multiplication by
+\(\mu\) sends \(g=\mathbf{1}*f\) to \(f=\mu*g\), and multiplication by
+\(\mathbf{1}\) reverses this step.
+
+For each \(d\mid n\), the integers \(k\) with \(1\le k\le n\) and
+\(\gcd(k,n)=d\) are the \(k=dt\) with \(1\le t\le n/d\) and
+\(\gcd(t,n/d)=1\). Thus \(n=\sum_{d\mid n}\phi(n/d)
+=\sum_{d\mid n}\phi(d)\). Applying inversion gives the totient formula.
+The Mangoldt formula follows by applying inversion to
+\(\mathbf{1}*\Lambda=\log\) over \(\mathbb R\).
+\end{proof}
+
+See \cite[Sections 2.2--2.8 and 2.13]{apostol} and
+\cite[Sections 4.2--4.3]{nzm} for these functions and identities.
+
+\section{Exact summation identities}
+
+\begin{theorem}[Dirichlet hyperbola identity]\label{nt:C05}
+For \(f,g\colon\mathbb N_{>0}\to R\), put \(F(t)=\sum_{n\le t}f(n)\)
+and \(G(t)=\sum_{n\le t}g(n)\). Let \(U,V\) be nonnegative integers and
+\(x\) a real number with \(UV\le x<(U+1)(V+1)\). Then
+\[
+ \sum_{n\le x}(f*g)(n)=
+ \sum_{u\le U}f(u)G(x/u)+\sum_{v\le V}g(v)F(x/v)-F(U)G(V).
+\]
+In particular one can take \(U=V=\lfloor\sqrt{x}\rfloor\).
+\end{theorem}
+
+\begin{proof}
+The sum on the left is the sum of \(f(u)g(v)\) over positive integer
+pairs with \(uv\le x\). Every such pair has \(u\le U\) or \(v\le V\).
+Indeed a pair with \(u\ge U+1\) and \(v\ge V+1\) has \(uv>x\).
+The two sums on the right count these two subsets. Their overlap is
+exactly the rectangle \(u\le U,\ v\le V\), since its pairs satisfy
+\(uv\le UV\le x\). Subtracting the full rectangle once yields the
+identity. If \(U=0\) or \(V=0\) the relevant rectangle and sum are empty,
+and the same reasoning applies. The symmetric choice of cut satisfies
+both required inequalities.
+\end{proof}
+
+\begin{theorem}[Partial summation]\label{nt:C06}
+Let \(A(t)=\sum_{n\le t}a_n\). For \(1\le m\le N\), the discrete
+identity in a commutative ring is
+\[
+ \sum_{n=m}^{N} a_n w_n
+ =A(N)w_N-A(m-1)w_m+\sum_{n=m}^{N-1} A(n)(w_n-w_{n+1}).
+\]
+For real or complex coefficients, \(a\le b\) real, and a weight
+\(w\) of class \(C^1\) on \([a,b]\), the Abel identity is
+\[
+ \sum_{a<n\le b} a_nw(n)
+ =A(b)w(b)-A(a)w(a)-\int_a^b A(t)w'(t)\,dt .
+\]
+When \(a=b\) this is interpreted with empty sum and zero integral.
+\end{theorem}
+
+\begin{proof}
+For the discrete version, insert \(a_n=A(n)-A(n-1)\) and shift the
+index of the second sum. The two boundary terms and the paired
+interior terms are the ones displayed.
+
+For \(a<b\) and \(t\in[a,b]\), the finite decomposition
+\(A(t)=A(a)+\sum_{a<n\le b}a_n\mathbf{1}_{[n,b]}(t)\)
+gives by the fundamental theorem of calculus
+\[
+ \int_a^b A(t)w'(t)\,dt
+ =A(a)(w(b)-w(a))
+   +\sum_{a<n\le b}a_n(w(b)-w(n)).
+\]
+Here \(\mathbf{1}_{[n,b]}\) is the indicator of the interval. An integer
+\(a\) contributes through \(A(a)\), and an integer \(b\) gives the
+zero-length integral at \(n=b\). Since
+\(A(b)=A(a)+\sum_{a<n\le b}a_n\), rearrangement gives the formula with
+the stated endpoints.
+\end{proof}
+
+See \cite[Theorems 3.17 and 4.2]{apostol} and
+\cite[Chapters 2--3]{gkp}.
+
+\section{Three average orders}
+
+\begin{lemma}[Harmonic numbers and the Basel sum]
+For \(H_m=\sum_{j=1}^m1/j\), the limit
+\(\gamma=\lim_{m\to\infty}(H_m-\log m)\) exists, and
+\(H_m=\log m+\gamma+O(1/m)\). Also
+\(\sum_{n\ge1}n^{-2}=\pi^2/6\).
+\end{lemma}
+
+\begin{proof}
+The difference \((H_m-\log m)-(H_{m+1}-\log(m+1))\) is
+\(\int_m^{m+1} dt/t-1/(m+1)\). It is nonnegative and bounded above by
+\(1/m-1/(m+1)\). The sequence is bounded below by \(0\), by the integral
+comparison \(H_m\ge\log(m+1)\), so it converges to \(\gamma\). Summing
+the bounds on the differences from \(m\) to infinity bounds the
+difference from \(\gamma\) by \(1/m\).
+
+For the second identity let \(0\le r<1\), \(0\le t\le\pi\). The geometric
+series and taking imaginary parts give
+\[
+ \frac{\partial}{\partial r}
+    \sum_{n\ge1}\frac{r^n\sin(nt)}{n}
+ =\sum_{n\ge1}r^{n-1}\sin(nt)
+ =\frac{\sin t}{1-2r\cos t+r^2}.
+\]
+Differentiation is justified by uniform convergence on
+\(0\le r\le R<1\). The derivative on the right is also the derivative
+of \(\arctan(r\sin t/(1-r\cos t))\), and both antiderivatives vanish
+at \(r=0\). Integrating the resulting identity in \(t\) gives
+\[
+ \sum_{n\ge1}\frac{r^n(1-(-1)^n)}{n^2}
+ =\int_0^\pi \arctan\!\left(\frac{r\sin t}{1-r\cos t}\right)dt .
+\]
+The integration of the series uses uniform convergence at each fixed
+\(r<1\). As \(r\) increases to \(1\), the integrand tends to
+\((\pi-t)/2\) for \(0<t\le\pi\). On \([\varepsilon,\pi]\) the
+convergence is uniform because the denominators are bounded below by
+\(\min(1,1-\cos\varepsilon)>0\). On \([0,\varepsilon]\) both the
+integrand and its limiting expression are bounded by \(\pi/2\), which
+allows the integral to converge on the full interval. On the left,
+the summable majorant \(2/n^2\) bounds the tails uniformly in \(r\).
+The limit is therefore
+\[
+ 2\sum_{n\text{ odd}}\frac1{n^2}=\frac{\pi^2}{4}.
+\]
+The even terms comprise one quarter of the full reciprocal-square
+sum, so the left side is three halves of that sum.
+\end{proof}
+
+\begin{theorem}[Divisors, totients, and squarefree integers]\label{nt:C07}
+One has
+\begin{align*}
+ \sum_{n\le x}\tau(n)&=x\log x+(2\gamma-1)x+O(\sqrt{x}),\\
+ \sum_{n\le x}\phi(n)&=\frac{3}{\pi^2}x^2+O(x\log x),\\
+ \sum_{n\le x}\mu(n)^2&=\frac{6}{\pi^2}x+O(\sqrt{x}).
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+For \(x\ge1\) put \(m=\lfloor\sqrt{x}\rfloor\). Theorem~\ref{nt:C05}
+with \(f=g=\mathbf{1}\) gives
+\[
+ \sum_{n\le x}\tau(n)=2\sum_{d\le m}\lfloor x/d\rfloor-m^2
+                  =2xH_m-m^2+O(m).
+\]
+Here \(m^2=x+O(\sqrt{x})\). Also
+\(0\le\log\sqrt{x}-\log m\le 1/m\) and \(m\ge\sqrt{x}/2\).
+The harmonic estimate therefore gives the first formula.
+
+For the other two formulas, absolute convergence of both
+\(\sum\mu(n)n^{-2}\) and \(\sum n^{-2}\) allows the double sum
+of their product to be grouped by the product of its indices. By
+Theorem~\ref{nt:C04} this gives
+\[
+ \left(\sum_{d\ge1}\frac{\mu(d)}{d^2}\right)
+ \left(\sum_{m\ge1}\frac{1}{m^2}\right)
+ =\sum_{n\ge1}\frac{(\mu*\mathbf{1})(n)}{n^2}=1 .
+\]
+Thus \(\sum_{d\ge1}\mu(d)/d^2=6/\pi^2\).
+The totient convolution yields
+\[
+ \sum_{n\le x}\phi(n)
+ =\sum_{d\le x}\mu(d)\sum_{m\le x/d}m
+ =\frac{x^2}{2}\sum_{d\le x}\frac{\mu(d)}{d^2}
+       +O\!\left(x\sum_{d\le x}\frac1d\right).
+\]
+For \(y=x/d\ge1\), the error in replacing
+\(\lfloor y\rfloor(\lfloor y\rfloor+1)/2\) by \(y^2/2\) is \(O(y)\),
+uniformly in \(y\). The harmonic estimate bounds the total error by
+\(O(x\log x)\). Extending the main sum to infinity costs \(O(x)\)
+because \(\sum_{d>x}d^{-2}=O(1/x)\).
+
+Finally, \(\mu(n)^2=\sum_{d^2\mid n}\mu(d)\). Both sides factor over
+prime powers, since a square divisor is specified by independently
+choosing its exponent at each prime. At \(p^e\), for \(e=0,1\) the
+sum is \(1\), and for \(e\ge2\) it is \(1-1=0\). Thus
+\[
+ \sum_{n\le x}\mu(n)^2
+ =\sum_{d\le\sqrt{x}}\mu(d)\lfloor x/d^2\rfloor
+ =x\sum_{d\le\sqrt{x}}\frac{\mu(d)}{d^2}+O(\sqrt{x}).
+\]
+Extending the main sum costs \(O(\sqrt{x})\), again by the
+reciprocal-square tail estimate, proving the third formula.
+\end{proof}
+
+The divisor and totient estimates are the classical formulas in
+\cite[Theorems 3.3 and 3.7]{apostol}. The squarefree count is treated
+in \cite[Theorem 8.25]{nzm}.
+
+\section{Chebyshev estimates and reciprocal primes}
+
+For \(x\ge1\), define
+\begin{align*}
+ P(x)&=\prod_{p\le x}p,
+ &\theta(x)&=\sum_{p\le x}\log p,\\
+ \psi(x)&=\sum_{p^k\le x,\ k\ge1}\log p,
+ &\pi(x)&=\#\{p\le x:p\text{ prime}\}.
+\end{align*}
+In this section and the next one, an index \(p\) in a product or sum
+over primes always ranges over positive primes.
+
+\begin{lemma}[A bound for the prime product]\label{nt:prime-product-bound}
+For every real \(x\ge1\), \(P(x)\le4^x\).
+\end{lemma}
+
+\begin{proof}
+First take integer \(x=n\) and use strong induction. For \(n=1,2\)
+the claim follows from \(P(1)=1\), \(P(2)=2\). For even \(n>2\),
+\(n\) is composite, so \(P(n)=P(n-1)\le4^{n-1}\).
+For odd \(n=2m+1\ge3\), every prime \(m+1<p\le 2m+1\) divides
+\(\binom{2m+1}{m}\). Such a prime divides the numerator factorial
+and neither denominator factorial. Distinct primes are coprime,
+so their product divides the binomial coefficient. The two equal
+coefficients \(\binom{2m+1}{m}\) and \(\binom{2m+1}{m+1}\) have sum
+at most \(2^{2m+1}\), hence either one is at most \(4^m\).
+Consequently \(P(2m+1)\le P(m+1)4^m\le4^{2m+1}\).
+For real \(x\), apply the integer bound to \(\lfloor x\rfloor\).
+\end{proof}
+
+\begin{theorem}[Chebyshev's estimates]\label{nt:C08}
+One has \(\psi(x)-\theta(x)=O(\sqrt{x})\),
+\(\theta(x)\asymp x\), \(\psi(x)\asymp x\), and
+\(\pi(x)\asymp x/\log x\).
+\end{theorem}
+
+\begin{proof}
+The prime product bound gives \(\theta(x)\le x\log4\). Separating
+the powers in \(\psi\) gives
+\begin{align*}
+ 0\le\psi(x)-\theta(x)
+ &=\theta(\sqrt{x})+
+   \sum_{3\le k\le \lfloor\log x/\log 2\rfloor}\theta(x^{1/k})\\
+ &=O(\sqrt{x}+x^{1/3}\log x)=O(\sqrt{x}).
+\end{align*}
+The last comparison follows from the boundedness of
+\((\log x)x^{-1/6}\) for \(x\ge2\).
+
+For an integer \(m\ge1\), the factorial valuation formula
+\ref{nt:A04} shows that each power \(p^j\le2m\) contributes
+\(\lfloor 2m/p^j\rfloor-2\lfloor m/p^j\rfloor\), either \(0\)
+or \(1\), to \(v_p\!\left(\binom{2m}{m}\right)\). Therefore
+\(\log\binom{2m}{m}\le\psi(2m)\). The central coefficient is the
+largest of the \(2m+1\) binomial coefficients, since the ratio of
+successive coefficients is \((2m-j)/(j+1)\) for indices \(j,j+1\).
+Its logarithm is at least \(m\log4-\log(2m+1)\), since the
+coefficients sum to \(4^m\). Taking \(m=\lfloor x/2\rfloor\) and
+using monotonicity proves an eventual positive linear lower bound
+for \(\psi(x)\). Subtracting \(\psi(x)-\theta(x)=O(\sqrt{x})\)
+gives the same lower bound, with a smaller constant, for \(\theta(x)\).
+The upper bounds follow from the prime product and power estimates.
+
+For \(x>1\), \(\theta(x)\le \pi(x)\log x\), which gives the lower
+bound for \(\pi(x)\). The primes exceeding \(\sqrt{x}\) each contribute
+at least \(\tfrac12\log x\) to \(\theta(x)\), and there are at most
+\(\sqrt{x}\) smaller primes. Thus
+\(\pi(x)\le\sqrt{x}+2\theta(x)/\log x=O(x/\log x)\).
+\end{proof}
+
+\begin{theorem}[Two elementary Mertens estimates]\label{nt:C09}
+There is a real constant \(B\) such that
+\[
+ \sum_{p\le x}\frac{\log p}{p}=\log x+O(1),
+ \qquad
+ \sum_{p\le x}\frac1p=\log\log x+B+O(1/\log x).
+\]
+In particular, the sum of the reciprocals of the primes diverges.
+\end{theorem}
+
+\begin{proof}
+Sum \(\log n=\sum_{d\mid n}\Lambda(d)\) over \(n\le x\) to get
+\[
+ \log(\lfloor x\rfloor!)=\sum_{d\le x}\Lambda(d)\lfloor x/d\rfloor.
+\]
+Comparing the sum of \(\log n\) for \(n\le N=\lfloor x\rfloor\) to
+\(\int_1^N\log t\,dt\) gives an error of size at most \(\log N\).
+Thus the left side is \(x\log x+O(x)\). Replacing the floors on
+the right costs at most
+\(\sum_{d\le x}\Lambda(d)=\psi(x)=O(x)\). Dividing by \(x\) gives
+\(\sum_{d\le x}\Lambda(d)/d=\log x+O(1)\).
+The terms with prime powers of exponent at least two contribute a
+bounded amount, since
+\[
+ \sum_p\sum_{k\ge2}\frac{\log p}{p^k}
+ =\sum_p\frac{\log p}{p(p-1)}
+ \le 2\sum_{n\ge2}\frac{\log n}{n^2}<\infty.
+\]
+The final convergence follows by integral comparison.
+This proves the first estimate.
+
+For \(t\ge2\) write \(M(t)=\sum_{p\le t}(\log p)/p=\log t+E(t)\).
+Here \(E\) is bounded on \([2,\infty)\). Apply Theorem~\ref{nt:C06}
+with weight \(w(t)=1/\log t\) on \([2,x]\) and add the contribution
+\(1/2=M(2)w(2)\) from the lower endpoint. Then
+\[
+ \sum_{p\le x}\frac1p
+ =\frac{M(x)}{\log x}+\int_2^x\frac{M(t)}{t(\log t)^2}\,dt.
+\]
+The \(\log t\) terms give \(1+\log\log x-\log\log2\). The integral
+of \(E(t)/(t(\log t)^2)\) converges absolutely on \([2,\infty)\).
+Its tail from \(x\) is \(O(1/\log x)\), since
+\(\int_x^\infty dt/(t(\log t)^2)=1/\log x\). The term
+\(E(x)/\log x\) has the same bound. Taking
+\(B=1-\log\log2+\int_2^\infty E(t)\,dt/(t(\log t)^2)\)
+yields the result.
+\end{proof}
+
+See \cite[Section 8.1, Theorems 8.3--8.5, Corollary 8.6 and
+Theorem 8.8]{nzm}, and
+\cite[Sections 3.11, 4.2 and 4.8]{apostol}.
+
+\section{Bertrand's postulate}
+
+\begin{theorem}[Bertrand]\label{nt:C10}
+For every real \(x>1\), there is a prime \(p\) with \(x<p<2x\).
+\end{theorem}
+
+\begin{proof}
+First take an integer \(n\ge1024\) and suppose that there is no prime
+strictly between \(n\) and \(2n\). The endpoint \(2n\) is composite.
+For \(p\le\sqrt{2n}\), the valuation formula used in
+Theorem~\ref{nt:C08} gives \(p^{v_p(\binom{2n}{n})}\le2n\), because the
+valuation is at most the number of powers \(p^j\le2n\). There are at
+most \(\sqrt{2n}\) such primes. For \(\sqrt{2n}<p\le 2n/3\), the
+valuation is at most one and the product of the contributions is at
+most \(P(2n/3)\le4^{2n/3}\). For \(2n/3<p\le n\), one has \(p^2>2n\),
+\(\lfloor 2n/p\rfloor=2\), and \(\lfloor n/p\rfloor=1\), so the
+valuation vanishes. These intervals and the assumed absence of
+primes up to \(2n\) above \(n\) give
+\[
+ \frac{4^n}{2n+1}\le\binom{2n}{n}
+       \le (2n)^{\sqrt{2n}}\,4^{2n/3}.
+\]
+The lower bound uses the largest-coefficient argument of
+Theorem~\ref{nt:C08}. Taking logarithms and dividing by \(n\) implies
+\[
+ \frac{\log4}{3}\le
+ \frac{\log(2n+1)}{n}+\sqrt{\frac2n}\log(2n).
+\]
+Both terms on the right decrease for real \(n\ge1024\). The derivative
+of the first has the sign of
+\(2n/(2n+1)-\log(2n+1)<0\), by integration of \(1/t\) from \(1\) to
+\(2n+1\). The derivative of the second has the sign of
+\(1-\tfrac12\log(2n)<0\). At \(n=1024\) the right side is less than
+\[
+ \frac{(12+46\cdot 11)\log2}{1024}<\frac{\log4}{3},
+\]
+using \(2049<2^{12}\), \(\sqrt{2048}<46\), and \(2048=2^{11}\).
+This contradiction proves the claim for \(n\ge1024\).
+
+For \(2\le n<1024\), use the increasing chain
+\[
+ 2,\,3,\,5,\,7,\,13,\,23,\,43,\,83,\,163,\,317,\,631,\,1259 .
+\]
+Each entry after the first is less than twice the previous entry.
+For completeness the rows below list the remainders upon dividing an
+entry by the primes at most its square root in increasing order.
+A composite number has a prime divisor at most its square root, so
+the nonzero remainders certify primality.
+\[
+\begin{array}{c|l@{\qquad}c|l}
+ 2&\text{none}&3&\text{none}\\
+ 5&1&7&1\\
+ 13&1,1&23&1,2\\
+ 43&1,1,3&83&1,2,3,6\\
+ 163&1,1,3,2,9&317&1,2,2,2,9,5,11\\
+ 631&1,1,1,1,4,7,2,4,10&1259&1,2,4,6,5,11,1,5,17,12,19
+\end{array}
+\]
+The required trial divisors are among
+\(2,3,5,7,11,13,17,19,23,29,31\).
+For any \(n\) in the small range there are consecutive chain entries
+\(p_i\le n<p_{i+1}\). Then \(n<p_{i+1}<2p_i\le2n\).
+
+For real \(x\ge2\), apply the integer statement to
+\(n=\lfloor x\rfloor\). An integer \(p>n\) has \(p\ge n+1>x\), and
+\(p<2n\le2x\). For \(1<x<2\), take \(p=2\).
+\end{proof}
+
+See \cite[Section 8.1, Theorem 8.7]{nzm} for the statement in this
+form. The classical central-binomial-coefficient argument uses the
+same valuation interface as Theorem~\ref{nt:C08}.
+\chapter{Descent and Sums of Squares}
+\label{ch:nt-diophantine}
+
+\section{Primitive right triangles and descent}
+
+\begin{theorem}[Primitive Pythagorean triples]\label{nt:D01}
+Let \(a,b,c\) be positive integers with \(a^2+b^2=c^2\) and
+\(\gcd(a,b)=1\). After interchanging the legs if necessary so that \(b\)
+is even, there are unique integers \(r>s>0\) such that
+\[
+ a=r^2-s^2,\qquad b=2rs,\qquad c=r^2+s^2,\qquad
+ \gcd(r,s)=1,\qquad r\not\equiv s\pmod 2.
+\]
+Conversely these conditions on \(r,s\) give a primitive triple.
+\end{theorem}
+\begin{proof}
+Both legs cannot be even, and two odd squares sum to \(2\bmod4\),
+which is not a square. Thus exactly one leg is even and \(c\) is odd.
+Any prime dividing \(a,c\) divides \(b^2\) and hence \(b\), so
+\(\gcd(a,c)=1\). The positive integers \((c+a)/2\) and \((c-a)/2\)
+are coprime because every common divisor divides their sum \(c\)
+and their difference \(a\). Their product is \((b/2)^2\).
+Unique prime factorization shows that each is a square, say \(r^2\)
+and \(s^2\). This also proves uniqueness. They are coprime and their
+sum \(c\) is odd, so \(r,s\) have opposite parity.
+Conversely the displayed formulas give the identity by expansion.
+A common odd prime divisor of \(r^2-s^2\) and \(2rs\) would divide
+one of \(r,s\) and then both. The first leg is odd, so the two legs
+are coprime.
+\end{proof}
+
+\begin{theorem}[Fermat's descent at exponent four]\label{nt:D02}
+If \(x,y\in\mathbb Z\setminus\{0\}\), no integer \(z\) satisfies
+\(x^4+y^4=z^2\). In particular \(x^4+y^4=z^4\) has no solution with
+\(xy\ne0\).
+\end{theorem}
+\begin{proof}
+If a solution exists, take positive \(x,y,z\) by taking absolute
+values, and choose one with \(z\) least. If \(d=\gcd(x,y)>1\), then
+\(d^4\mid z^2\), whence \(d^2\mid z\) by prime valuations. Dividing
+\(x,y\) by \(d\) and \(z\) by \(d^2\) gives a smaller solution.
+Thus \((x^2,y^2,z)\) is primitive, and we may take \(x\) odd and
+\(y\) even. Theorem~\ref{nt:D01} gives
+\[
+ x^2=r^2-s^2,\qquad y^2=2rs,\qquad z=r^2+s^2
+\]
+with \(r,s\) coprime and of opposite parity. If \(r\) were even,
+\(r^2-s^2\equiv3\bmod4\), so \(r\) is odd and \(s\) is even.
+The identity \((y/2)^2=r(s/2)\) and coprimality give
+\(r=u^2\) and \(s=2v^2\), for positive \(u,v\).
+
+The triple \((x,s,r)\) is also primitive: a common prime of \(x,s\)
+would divide \(r\) from \(x^2+s^2=r^2\), contrary to \(\gcd(r,s)=1\).
+Applying Theorem~\ref{nt:D01} again gives
+\[
+ x=k^2-h^2,\qquad s=2kh,\qquad r=k^2+h^2,\qquad \gcd(k,h)=1.
+\]
+Now \(kh=v^2\), so \(k=A^2\) and \(h=B^2\) for positive \(A,B\).
+This gives \(A^4+B^4=u^2\) and \(u\le r<z\), contradicting the choice
+of \(z\). In the fourth-power equation one can take \(z^2\) as the
+square root of its right-hand side and apply the stronger result.
+\end{proof}
+For the classical parametrization and descent see \cite[Sections
+5.3--5.4, Theorems 5.5 and 5.10]{nzm}.
+
+\section{Gaussian integers and two squares}
+
+\begin{theorem}[Arithmetic of Gaussian integers]\label{nt:D03}
+The ring \(\mathbb Z[i]\) is Euclidean for the norm
+\(N(a+bi)=a^2+b^2\). Its units are \(1,-1,i,-i\), and it has unique
+factorization up to units and order. The rational prime \(2\) is a
+unit times \((1+i)^2\). An odd rational prime \(p\equiv3\bmod4\)
+is prime in \(\mathbb Z[i]\), and if \(p\equiv1\bmod4\) it is the
+product of two nonassociate conjugate primes of norm \(p\).
+\end{theorem}
+\begin{proof}
+Complex conjugation gives \(N(zw)=N(z)N(w)\). If \(w\ne0\), round the
+two coordinates of \(z/w\) to nearest integers to obtain \(q\in\mathbb
+Z[i]\). Then \(z=qw+r\), where
+\[
+ N(r)=N(w)\,|z/w-q|^2\le\tfrac12N(w)<N(w).
+\]
+An element is a unit exactly when its norm is \(1\), which lists the
+four units. Euclidean division shows that a nonzero ideal is generated
+by an element in it of least positive norm. Thus a gcd generates the
+ideal of linear combinations and satisfies a B\'ezout identity.
+If an irreducible \(\varpi\) does not divide \(a\), their gcd is a unit.
+Multiplying a B\'ezout identity by \(b\) then gives
+\(\varpi\mid b\) whenever \(\varpi\mid ab\). So irreducibles are
+prime. Factoring nonunits by induction on their norms gives existence
+and prime cancellation gives uniqueness.
+
+The equation \(2=-i(1+i)^2\) gives the factorization at \(2\), and
+\(1+i\) is irreducible because its norm is \(2\). If an odd prime \(p\)
+factors into two nonunits, their positive integer norms are both \(p\)
+since \(N(p)=p^2\). When \(p\equiv3\bmod4\) this is impossible because
+squares modulo \(4\) are \(0,1\). When \(p\equiv1\bmod4\), the
+supplement for \(-1\) in Theorem~\ref{nt:B07} gives an integer \(t\)
+with \(t^2\equiv-1\bmod p\). The element \(p\) divides
+\((t+i)(t-i)\) in \(\mathbb Z[i]\) but divides neither factor, as is
+seen from the imaginary coordinates. Therefore \(p\) is reducible.
+A factor \(\varpi\) of norm \(p\) satisfies \(p=\varpi\overline\varpi\).
+Both factors are irreducible, since a factorization of either into
+two nonunits would express its prime norm as a product of integers
+greater than \(1\).
+If \(\varpi=a+bi\) is associate to its conjugate, a check of the four
+units gives \(a=0\), \(b=0\), or \(a=\pm b\). In each case \(p\)
+would be a square or twice a square. Thus the factors are nonassociate.
+Finally, any Gaussian prime \(\varpi\) divides the positive rational
+integer \(N(\varpi)\), so primality and ordinary factorization imply
+that it divides a rational prime. The cases above therefore list all
+Gaussian prime types.
+\end{proof}
+
+\begin{theorem}[Two squares, with representation count]\label{nt:D04}
+For \(n>0\), the number \(r_2(n)\) of ordered signed pairs
+\((a,b)\in\mathbb Z^2\) with \(a^2+b^2=n\) is
+\[
+ r_2(n)=4\sum_{d\mid n}\chi_4(d),\qquad
+ \chi_4(d)=
+ \begin{cases}
+ 0&d\text{ even},\\
+ 1&d\equiv1\pmod4,\\
+ -1&d\equiv3\pmod4.
+ \end{cases}
+\]
+In particular \(n\) is a sum of two squares exactly when every prime
+\(p\equiv3\bmod4\) has even exponent in \(n\). An odd prime is a sum
+of two squares exactly when it is \(1\bmod4\). There is exactly one
+pair at \(n=0\).
+\end{theorem}
+\begin{proof}
+A pair amounts to a Gaussian integer \(z=a+bi\) of norm \(n\).
+In the factorization of \(z\), the exponent of \(1+i\) is fixed
+by the exponent of \(2\) in \(n\). An inert rational prime
+\(p\equiv3\bmod4\) has norm \(p^2\), so its exponent in \(z\) is
+half its exponent in \(n\) and requires that exponent to be even.
+A split prime of exponent \(e\) in \(n\) allows \(e+1\) choices
+for the exponents of the two norm-\(p\) primes in \(z\). Theorem
+\ref{nt:D03} gives all choices independently, and each product gives
+four different elements by multiplication by the units, since it is
+nonzero. On the other hand \(\chi_4\) is multiplicative: an even
+factor gives zero, and the two odd classes multiply as \(1,-1\).
+The factor of the divisor sum at \(2\) is \(1\), at a split prime is
+\(e+1\), and at an inert prime is \(1-1+\cdots+(-1)^e\).
+The factors match the count. The claims about existence, primes and
+zero follow.
+\end{proof}
+See \cite[Chapters XII and XX]{hardy-wright} and
+\cite[Section 3.6, Theorems 3.20--3.22 and Corollary 3.23]{nzm}.
+The count treats the coordinates as ordered and does not identify
+sign changes.
+
+\section{Four squares by a minimal-multiple argument}
+
+For \(A=(a_0,\mathbf a)\) and \(B=(b_0,\mathbf b)\) with
+\(\mathbf a,\mathbf b\in\mathbb Z^3\), set
+\[
+ C(A,B)=
+ \bigl(a_0b_0+\mathbf a\mathbin{\cdot}\mathbf b,\ 
+       b_0\mathbf a-a_0\mathbf b-\mathbf a\times\mathbf b\bigr).
+\]
+Write \(\|A\|^2=a_0^2+\|\mathbf a\|^2\).
+The cross product is perpendicular to each vector and satisfies
+\(\|\mathbf a\times\mathbf b\|^2=
+\|\mathbf a\|^2\|\mathbf b\|^2-(\mathbf a\cdot\mathbf b)^2\)
+by the coordinate formula. On expanding \(\|C(A,B)\|^2\) the two
+terms involving \(2a_0b_0(\mathbf a\cdot\mathbf b)\) cancel,
+leaving
+\begin{equation}\label{eq:nt-four-square-product}
+ \|C(A,B)\|^2=\|A\|^2\|B\|^2.
+\end{equation}
+In particular all four coordinates of \(C(A,B)\) are integers.
+When \(A\equiv B\pmod m\) coordinatewise, its last three coordinates
+are \(0\bmod m\), and its first is \(\|B\|^2\bmod m\).
+
+\begin{theorem}[Lagrange's four-square theorem]\label{nt:D05}
+Every nonnegative integer is a sum of four squares of nonnegative
+integers.
+\end{theorem}
+\begin{proof}
+Zero, one, and the prime \(2\) have explicit representations.
+By \eqref{eq:nt-four-square-product} and ordinary factorization
+it suffices to handle an odd prime \(p\). The two subsets
+\(\{a^2:a\in\mathbb F_p\}\) and \(\{-1-b^2:b\in\mathbb F_p\}\)
+of \(\mathbb F_p\) each have \((p+1)/2\) elements, since a nonzero
+square has exactly the two roots \(a,-a\). The subsets intersect.
+Choose integer representatives \(a,b\) with
+\(|a|,|b|\le(p-1)/2\) for an intersection. Then
+\[
+ a^2+b^2+1=mp,\qquad 0<mp\le 2((p-1)/2)^2+1<p^2.
+\]
+Thus at least one \(m\) with \(0<m<p\) works. Choose the least
+positive \(m\) for which \(mp=\|A\|^2\) with integer coordinates.
+
+If \(m\) is even, the number of odd coordinates of \(A\) is even,
+so after reordering they form two pairs of matching parity. A pair
+\((a,b)\) is replaced by \(((a+b)/2,(a-b)/2)\), which halves its
+sum of squares. This gives a representation of \((m/2)p\),
+contrary to minimality. If \(m>1\) is odd, choose \(B\equiv A\bmod m\)
+with all coordinates bounded by \((m-1)/2\) in absolute value.
+Then \(\|B\|^2=mm'\) with \(0\le m'<m\). If \(m'=0\) then \(m\)
+divides every coordinate of \(A\), giving \(m^2\mid mp\) and hence
+\(m\mid p\), impossible for \(1<m<p\). Consequently \(0<m'<m\).
+All four coordinates of \(C(A,B)\) are divisible by \(m\), by the
+congruences after \eqref{eq:nt-four-square-product}. Dividing them
+by \(m\) represents \(pm'\), another contradiction. Thus \(m=1\).
+Taking absolute values of the final coordinates makes the witnesses
+nonnegative.
+\end{proof}
+For the descent see \cite[Chapter XX]{hardy-wright}.
+
+\section{Primes in reduced residue classes}
+
+We prove the prime-existence result used to choose the auxiliary
+prime in Theorem~\ref{nt:D06}. The complex-analytic tools are Taylor
+expansion on a disk and holomorphy under locally uniform limits, proved
+in the MathGenome complex analysis notes, D12.05.01 and D12.11.02.
+The continuation, nonvanishing, and prime-class extraction needed here
+are proved below.
+
+\begin{lemma}[Characters of a finite abelian group]
+\label{lem:nt-dirichlet-characters}
+Let \(G\) be a finite abelian group of order \(h\), and let
+\(\widehat G\) be the group of homomorphisms from \(G\) to the
+complex numbers of absolute value \(1\). Then \(|\widehat G|=h\),
+and
+\[
+ \frac1h\sum_{\chi\in\widehat G}\chi(g)
+  =\begin{cases}1&g=1,\\0&g\ne1.\end{cases}
+\]
+A nontrivial character satisfies \(\sum_{g\in G}\chi(g)=0\).
+If \(g\) has order \(f\), the values \(\chi(g)\) run through all
+\(f\)-th roots of unity, each with multiplicity \(h/f\).
+\end{lemma}
+\begin{proof}
+Let \(H\) be a subgroup and \(\psi\) a character of \(H\).
+Adjoin \(x\in G\) and let \(d\) be the order of \(xH\) in
+\(\langle H,x\rangle/H\). For each of the \(d\) roots \(z\) of
+\(z^d=\psi(x^d)\), the formula
+\(\widetilde\psi(yx^j)=\psi(y)z^j\) for \(y\in H\) defines a
+character on \(\langle H,x\rangle\).
+Indeed, \(yx^j=y'x^{j'}\) implies \(j-j'=dk\) for some \(k\)
+and \(y'=yx^{dk}\), so both representations give the same value.
+Multiplicativity follows because \(G\) is abelian. Every extension
+has this form since its value at \(x\) determines it. Iterating
+the construction along a chain of subgroups obtained by adjoining
+elements gives exactly \([G:H]\) extensions of each character of
+\(H\). In particular there are \(h\) characters starting from the
+trivial subgroup. Starting from \(\langle g\rangle\) proves the
+claim about the distribution of values at \(g\).
+
+For \(g\ne1\), some character \(\chi_*\) has \(\chi_*(g)\ne1\)
+by this distribution. Multiplication by \(\chi_*\) permutes the
+characters, so the sum of their values at \(g\) equals itself
+times \(\chi_*(g)\) and is zero. For \(g=1\) every summand equals
+\(1\). Finally, for a nontrivial \(\chi\), choose \(x\) with
+\(\chi(x)\ne1\) and reindex the group sum by \(g\mapsto xg\).
+The same argument gives \(\sum_{g\in G}\chi(g)=0\).
+\end{proof}
+
+\begin{lemma}[Continuation from nonnegative coefficients]
+\label{lem:nt-dirichlet-positive-series}
+Suppose \(b_n\ge0\) and the series
+\(F(s)=\sum_{n\ge1}b_n n^{-s}\) converges absolutely for
+\(\operatorname{Re}s>1\), where \(n^{-s}=\exp(-s\log n)\).
+If \(F\) has a holomorphic continuation throughout
+\(\operatorname{Re}s>0\), the series converges at every positive
+real \(\sigma\).
+\end{lemma}
+\begin{proof}
+At \(s=2\) the derivatives are given term by term. For each
+derivative order \(j\), the terms on \(\operatorname{Re}s\ge3/2\)
+are bounded in absolute value by \(C_j b_n n^{-5/4}\), since
+\((\log n)^j n^{-1/4}\) is bounded for \(n\ge1\). This summable
+bound justifies the derivative formula on a neighborhood of \(2\).
+The disk \(|s-2|<2\) lies in the half-plane of holomorphy,
+so its Taylor series represents \(F\) there. For \(0<\sigma\le1\)
+put \(t=2-\sigma\), which satisfies \(0<t<2\). The Taylor formula
+then gives
+\[
+ F(\sigma)
+ =\sum_{j\ge0}\frac{t^j}{j!}\sum_{n\ge1}b_n(\log n)^j n^{-2}
+ =\sum_{n\ge1}b_n n^{-2}\exp(t\log n)
+ =\sum_{n\ge1}b_n n^{-\sigma}.
+\]
+In the first sum the two signs, one from differentiation and one
+from \(s-2=-t\), cancel. All terms in the double sum are nonnegative,
+so both orders give the same supremum of finite subsums. The
+Taylor series converges to a finite value, proving the claim.
+For \(\sigma>1\) convergence is an assumption.
+\end{proof}
+
+\begin{theorem}[Dirichlet's theorem on primes in arithmetic progressions]
+\label{nt:dirichlet-primes}
+If \(M\ge1\), \(a\in\mathbb Z\), and \(\gcd(a,M)=1\), then for every
+real bound \(T\) there is a prime \(q>T\) with \(q\equiv a\pmod M\).
+\end{theorem}
+\begin{proof}
+Take \(G=(\mathbb Z/M\mathbb Z)^\times\), with the trivial group
+for \(M=1\), and let \(h=|G|\). Extend each \(\chi\in\widehat G\)
+periodically to integers by using its value on the residue class for
+integers coprime to \(M\) and \(0\) otherwise. This extension is
+multiplicative since a product is coprime to \(M\) exactly when
+both factors are. Write \(\chi_0\) for the principal character,
+which is \(1\) on units. For \(\operatorname{Re}s>1\) put
+\[
+ L(s,\chi)=\sum_{n\ge1}\chi(n)n^{-s}
+          =\prod_p(1-\chi(p)p^{-s})^{-1}.
+\]
+To see the equality, expand the geometric series in the factors
+for primes \(p\le Y\). Unique factorization gives the sum over
+integers whose prime divisors are all at most \(Y\). The remaining
+terms have total absolute value at most
+\(\sum_{n>Y}n^{-\operatorname{Re}s}\), which tends to zero.
+
+For a nonprincipal character, the sum over each period is zero
+by Lemma~\ref{lem:nt-dirichlet-characters}. Consequently
+\(A_\chi(x)=\sum_{n\le x}\chi(n)\) is bounded in absolute value
+by \(M\). Summing the integrals of \(s x^{-s-1}\) on \([n,N]\)
+over \(1\le n\le N\) gives
+\[
+ \sum_{n\le N}\chi(n)n^{-s}
+   =A_\chi(N)N^{-s}+s\int_1^N A_\chi(x)x^{-s-1}\,dx .
+\]
+The first term tends to zero on \(\operatorname{Re}s>0\).
+On any compact subset of that half-plane, take
+\(\operatorname{Re}s\ge\delta>0\) and \(|s|\le B\).
+The integral tail from \(N\) is bounded by \(BMN^{-\delta}/\delta\).
+The integrals up to finite \(N\) are holomorphic in \(s\), by
+expanding the exponential locally uniformly on the bounded
+interval of integration. Their locally uniform limit gives the
+holomorphic continuation of \(L(s,\chi)\).
+
+For the principal character, its Euler product gives
+\(L(s,\chi_0)=\zeta(s)\prod_{p\mid M}(1-p^{-s})\) on
+\(\operatorname{Re}s>1\). Applying the same integral identity to
+the sequence \(1,1,\ldots\), whose partial-sum function is
+\(\lfloor x\rfloor\), gives on that half-plane
+\[
+ \zeta(s)=s\int_1^\infty\lfloor x\rfloor x^{-s-1}\,dx
+         =\frac{s}{s-1}
+            -s\int_1^\infty (x-\lfloor x\rfloor)x^{-s-1}\,dx.
+\]
+The last integral has the locally uniform tail estimate just
+proved, with \(1\) in place of \(M\). Thus \(L(s,\chi_0)\) is
+meromorphic on \(\operatorname{Re}s>0\) with its only pole there
+a simple pole at \(1\). Its residue is
+\(c_M=\prod_{p\mid M}(1-p^{-1})>0\), with the empty product
+equal to \(1\).
+
+We next prove \(L(1,\chi)\ne0\) for every \(\chi\ne\chi_0\).
+Put \(F(s)=\prod_{\chi\in\widehat G}L(s,\chi)\).
+At \(p\mid M\) its local factor is \(1\). For \(p\nmid M\) let
+\(f_p\) be the order of its class in \(G\). By
+Lemma~\ref{lem:nt-dirichlet-characters}, its local factor is
+\[
+ \prod_{\chi\in\widehat G}(1-\chi(p)p^{-s})^{-1}
+     =(1-p^{-f_ps})^{-h/f_p}.
+\]
+Here the identity follows by multiplying \(1-\omega z\) over
+the \(f_p\)-th roots of unity to get \(1-z^{f_p}\).
+The resulting power series in \(p^{-s}\) has nonnegative
+coefficients, since it is a product of \(h/f_p\) geometric
+series in \(p^{-f_ps}\). Its coefficient at every exponent
+divisible by \(f_p\) is at least \(1\). Expanding over finite
+sets of primes therefore gives multiplicative coefficients
+\(b_n\ge0\), with \(b_{m^h}\ge1\) for every \(m\) coprime to \(M\),
+since \(f_p\mid h\).
+
+For real \(\sigma>1\), the finite product of local factors
+over \(p\le Y\) is bounded by
+\(\prod_{p\le Y}(1-p^{-\sigma})^{-h}\le\zeta(\sigma)^h\).
+Its expansion is the nonnegative sum over \(n\) with all
+prime factors at most \(Y\). Letting \(Y\to\infty\) shows
+\(\sum_n b_n n^{-\sigma}<\infty\). This also proves absolute
+convergence for complex \(s\) with \(\operatorname{Re}s>1\).
+By the Euler products for \(L\) and absolute convergence of the
+expanded sum we have \(F(s)=\sum_n b_n n^{-s}\) there.
+If a nonprincipal \(L(1,\chi)\) vanished, its local Taylor
+expansion would cancel the simple principal pole and make
+\(F\) holomorphic throughout \(\operatorname{Re}s>0\).
+Lemma~\ref{lem:nt-dirichlet-positive-series} would then give
+convergence at \(s=1/h\). But
+\[
+ \sum_{n\ge1}b_n n^{-1/h}
+ \ \ge\ \sum_{\gcd(m,M)=1}\frac{1}{m}
+ \ \ge\ \sum_{j\ge0}\frac{1}{1+jM}
+ \ =\ \infty.
+\]
+The last series diverges by comparison with
+\(M^{-1}\sum_{j\ge0}(j+1)^{-1}\). The product argument applies
+to every nonprincipal character.
+
+For real \(\sigma>1\), define the continuous function
+\[
+ E_\chi(\sigma)
+  =\sum_p\sum_{j\ge1}\frac{\chi(p)^j}{j p^{j\sigma}}.
+\]
+The double series converges absolutely and locally uniformly
+on \(\sigma>1\), by comparison with
+\(\sum_{n\ge2}n^{-\sigma}/(1-n^{-\sigma})\).
+For \(|z|<1\), the series \(H(z)=\sum_{j\ge1}z^j/j\) satisfies
+\(H'(z)=1/(1-z)\). Thus \((1-z)e^{H(z)}\) has derivative zero
+and value \(1\) at \(0\). Apply this identity at each prime
+with \(z=\chi(p)p^{-\sigma}\) and pass from finite products
+to the limit to get
+\(\exp E_\chi(\sigma)=L(\sigma,\chi)\).
+The terms with \(j\ge2\) are uniformly bounded in sum of absolute
+values for \(\sigma>1\) by
+\(\sum_{n\ge2}1/(n(n-1))\).
+
+For \(\chi_0\), \(E_{\chi_0}(\sigma)\) is real and hence equals
+the real logarithm of \(L(\sigma,\chi_0)\).
+The residue computation gives
+\[
+ E_{\chi_0}(\sigma)=\log\frac1{\sigma-1}+O(1)
+ \qquad (\sigma\downarrow1).
+\]
+For \(\chi\ne\chi_0\), let \(w=L(1,\chi)\ne0\) and choose
+\(\lambda\in\mathbb C\) with \(e^\lambda=w\).
+On a short interval above \(1\) we have
+\(|z(\sigma)|<1/2\) for \(z(\sigma)=L(\sigma,\chi)/w-1\).
+The function \(\lambda-H(-z(\sigma))\) is bounded and continuous
+there, and its exponential is \(L(\sigma,\chi)\) by the identity
+for \(H\). The difference between \(E_\chi\) and
+this expression is a continuous function with values in
+\(2\pi i\mathbb Z\), so it is constant on that interval.
+Thus \(E_\chi(\sigma)=O(1)\) as \(\sigma\downarrow1\).
+Subtracting the uniformly bounded tails with \(j\ge2\)
+gives the same estimates for \(\sum_p\chi(p)p^{-\sigma}\).
+
+For \(p\nmid M\), the orthogonality identity in
+Lemma~\ref{lem:nt-dirichlet-characters} applied to the unit
+\([p][a]^{-1}\) selects \(p\equiv a\pmod M\).
+For \(p\mid M\) every character term vanishes and such a
+prime cannot lie in the reduced class. Thus
+\[
+ h\sum_{p\equiv a\ (M)}p^{-\sigma}
+   =\sum_{\chi\in\widehat G}\overline{\chi(a)}
+              \sum_p\chi(p)p^{-\sigma}
+   =\log\frac1{\sigma-1}+O(1).
+\]
+The left side is unbounded as \(\sigma\downarrow1\).
+A finite set of primes would give a bounded sum, proving the
+asserted existence above any bound.
+\end{proof}
+
+For the theorem and a different proof, see \cite[Chapter 7]{apostol}.
+The product over all characters is also used in
+M.~Stoll's \href{https://mathe2.uni-bayreuth.de/stoll/lecture-notes/IntroductoryNumberTheory.pdf}
+{\emph{Introductory Number Theory}}, \S\S23.17--23.19.
+
+\section{Three squares and a three-dimensional lattice}
+
+\begin{lemma}[A three-dimensional lattice bound]\label{lem:nt-minkowski}
+Let \(L=B\mathbb Z^3\) for an invertible real \(3\times3\) matrix \(B\).
+If an open ball about \(0\) has volume strictly larger than
+\(8|\det B|\), then it contains a nonzero point of \(L\).
+\end{lemma}
+\begin{proof}
+The translates by \(L\) of \(F=B[0,1)^3\) partition \(\mathbb R^3\).
+This follows by applying \(B^{-1}\) and taking the coordinatewise
+integer and fractional parts. The volume of \(F\) is \(|\det B|\).
+Let \(U\) be the concentric ball with half the radius of the given
+ball, so \(\operatorname{vol}(U)>|\det B|\). The sets
+\((U-\lambda)\cap F\), \(\lambda\in L\), have total volume
+\(\operatorname{vol}(U)\), by the partition and translation invariance.
+Only finitely many of these sets are nonempty, since \(U,F\) are
+bounded and \(B^{-1}\) sends bounded sets to bounded sets. They cannot
+be pairwise disjoint in \(F\). Thus \(x+\lambda\) and \(x+\mu\) lie
+in \(U\) for some \(x\in F\) and \(\lambda\ne\mu\). Their difference
+is a nonzero lattice point and its norm is less than twice the radius
+of \(U\).
+\end{proof}
+
+\begin{theorem}[Legendre's three-square theorem]\label{nt:D06}
+A positive integer \(n\) is the sum of three integer squares if and
+only if it is not of the form \(4^a(8b+7)\) for nonnegative integers
+\(a,b\). Zero is the sum of three squares.
+\end{theorem}
+\begin{proof}
+The triple \((0,0,0)\) represents zero. Squares are \(0,1\bmod4\),
+so if three squares sum to a multiple
+of \(4\), all three coordinates are even. Repeated division by \(4\)
+reduces the claimed obstruction to \(7\bmod8\). The residues of
+squares modulo \(8\) are \(0,1,4\). Three such residues cannot sum to
+\(7\bmod8\), proving necessity.
+
+For sufficiency, write \(n=d^2 n_0\) with \(n_0\) squarefree.
+After removing the powers of \(4\) from \(n\), the remaining
+odd square factor is \(1\bmod8\). Thus the obstruction is unchanged
+on passing to \(n_0\), and a representation of \(n_0\) gives one of
+\(n\) by multiplication by \(d\). We now write \(n\) for the
+squarefree integer, with \(n>1\) since \(1\) has an immediate
+representation. Write \(n=2^k m\) with \(k\in\{0,1\}\) and \(m\) odd.
+Let \(\ell=1\) for \(n\equiv3\bmod8\), and \(\ell=0\) otherwise.
+
+For each odd prime \(p\mid m\) choose a nonzero class of \(q\bmod p\)
+such that \(\bigl(\frac{-2^\ell q}{p}\bigr)=1\). For instance one
+may impose \(-2^\ell q\equiv1\bmod p\). Also impose \(q\equiv1\bmod8\)
+when \(n\equiv1,2,3,5\bmod8\) and \(q\equiv5\bmod8\) when
+\(n\equiv6\bmod8\). These are all squarefree possibilities outside
+the obstruction. The Chinese remainder theorem gives one class
+modulo \(8m\), coprime to \(8m\). Theorem~\ref{nt:dirichlet-primes}
+gives a prime \(q>n\) in this class. In particular \(q\equiv1\bmod4\).
+For clarity, the relevant signs are recorded together:
+\[
+\begin{array}{c|ccccc}
+ n\bmod 8 &1&2&3&5&6\\ \hline
+ k &0&1&0&0&1\\
+ (m-1)/2\bmod2 &0&0&1&0&1\\
+ \ell &0&0&1&0&0\\
+ q\bmod8 &1&1&1&1&5
+\end{array}
+\]
+Hence \(\bigl(\frac{-2^k}{q}\bigr)=(-1)^{k(m-1)/2}\) by the
+supplements in Theorem~\ref{nt:B07}. The last sign equals
+\(\bigl(\frac{-2^\ell}{m}\bigr)_{\!J}\), with the Jacobi symbol at
+\(m=1\) read as \(1\). Indeed, for \(\ell=0\) this is the supplement
+for \(-1\); for \(\ell=1\) one has \(m=n\equiv3\bmod8\), and the
+two supplements give \(\bigl(\frac{-2}{m}\bigr)_{\!J}=1\).
+Reciprocity with \(q\equiv1\bmod4\) and
+\(\bigl(\frac{-2^\ell q}{p}\bigr)=1\) give
+\[
+ \left(\frac{m}{q}\right)
+  =\prod_{p\mid m}\left(\frac{p}{q}\right)
+  =\prod_{p\mid m}\left(\frac{q}{p}\right)
+  =\left(\frac{-2^\ell}{m}\right)_{\!J}.
+\]
+Thus \(\bigl(\frac{-n}{q}\bigr)=1\).
+
+Set \(b_0=2^\ell q\), which is coprime to \(n\). There are integers
+\(u,v\) such that
+\begin{equation}\label{eq:nt-three-square-congruences}
+ u^2\equiv-n\pmod{4^\ell q},\qquad
+ v^2\equiv-b_0^{-1}\pmod n .
+\end{equation}
+For the first congruence, a root exists modulo \(q\) by the last
+symbol. When \(\ell=1\), \(-n\equiv1\bmod4\) and we combine a root
+modulo \(4\) with the root modulo \(q\). For the second congruence,
+at each odd \(p\mid n\) the element \(-b_0^{-1}\) is a square
+because \(-b_0\) is a nonzero square there. If \(2\mid n\), then
+\(b_0\) is odd and the congruence is \(v^2\equiv1\bmod2\).
+Squarefreeness and CRT combine the roots modulo all of \(n\).
+
+For integers \(r,s,t\) put \(W=b_0r+us\) and consider the lattice
+of triples
+\[
+ X=vW+nt,\qquad Y=\frac{W}{\sqrt{b_0}},\qquad
+ Z=\sqrt{\frac n{b_0}}\,s .
+\]
+The linear transformation has determinant of absolute value
+\(n\sqrt{b_0}\sqrt{n/b_0}=n^{3/2}\), by expansion along its last
+column. An open ball of radius \(\sqrt{2n}\) has volume
+\(\frac{8\sqrt2\pi}{3}n^{3/2}>8n^{3/2}\). The formula follows by
+integrating the area \(\pi(2n-z^2)\) of its horizontal disk
+sections, and the strict inequality follows from \(\pi>3\).
+Lemma~\ref{lem:nt-minkowski} gives a nonzero lattice point in this
+ball. At this point \(X\) is an integer and
+\[
+ S=Y^2+Z^2
+  =\frac{W^2+ns^2}{b_0}
+  =b_0r^2+2urs+\frac{u^2+n}{b_0}s^2
+\]
+is an integer by \eqref{eq:nt-three-square-congruences}.
+Modulo \(n\), one has \(S\equiv b_0^{-1}W^2\) and
+\(X\equiv vW\), so \(X^2+S\equiv0\bmod n\).
+The squared norm is strictly between \(0\) and \(2n\);
+consequently \(X^2+S=n\).
+
+It remains to prove \(S\) is a sum of two integer squares. If
+\(S=0\) this holds. Otherwise let \(p\) be an odd prime of odd
+exponent in \(S\). Since \(q>n\ge S\), we have \(p\nmid b_0\).
+First suppose \(p\nmid n\). From \(n=X^2+S\) it follows that
+\(\bigl(\frac n p\bigr)=1\). Remove the largest common power \(p^j\)
+from \(W,s\), where \(j\) exists since \(S>0\). Write
+\(W=p^j W_1,\ s=p^j s_1\). The exponent of \(p\) in
+\(W_1^2+ns_1^2\) is still odd, since the original exponent in
+\(b_0S\) was odd and we removed \(p^{2j}\). In particular
+\(W_1^2\equiv-ns_1^2\bmod p\). Neither coordinate is zero modulo
+\(p\), since otherwise both would be, contrary to the choice of \(j\).
+Thus \(\bigl(\frac{-n}{p}\bigr)=1\), and division by the first
+symbol yields \(\bigl(\frac{-1}{p}\bigr)=1\).
+
+Now suppose \(p\mid n\). Since \(p\mid S\), reduction modulo \(p\) gives \(p\mid X\)
+and \(p\mid W\) from \(X^2+S=n\) and \(b_0 S=W^2+ns^2\).
+Substituting the latter into \(b_0n=b_0X^2+b_0S\) gives
+\(b_0n\equiv ns^2\bmod p^2\). Because \(p\) divides the squarefree
+\(n\) to exponent one, division yields \(s^2\equiv b_0\bmod p\).
+So \(\bigl(\frac{b_0}{p}\bigr)=1\), and the imposed condition
+\(\bigl(\frac{-b_0}{p}\bigr)=1\) again gives
+\(\bigl(\frac{-1}{p}\bigr)=1\).
+In both cases the supplement gives \(p\equiv1\bmod4\). Thus the
+criterion in Theorem~\ref{nt:D04} applies to \(S\). Adding \(X^2\)
+gives the desired three squares, and the square factor removed at
+the start can be restored.
+\end{proof}
+The sufficiency argument is the lattice proof of Ankeny
+\cite{ankeny}, in the uniform modular setup of \cite[Section 5]{fan}.
+The inequalities, congruences, and final use of the two-square
+criterion above also cover the even squarefree cases.
+\chapter[Continued fractions and approximation]{Continued fractions, approximation, and irrationality}
+\label{ch:nt-cf}
+
+We write a rational number as \(p/q\) with \(p,q\in\mathbb Z\) and
+\(q>0\). Its reduced form satisfies \(\gcd(p,q)=1\). The absolute errors
+\(\lvert x-p/q\rvert\) and \(\lvert qx-p\rvert\) lead to different
+approximation statements. We keep the two errors separate throughout.
+
+\section{Rational roots and classical irrational numbers}
+\label{nt:E01}
+
+\begin{theorem}[Rational roots]
+Let \(P(X)=c_dX^d+\cdots+c_0\in\mathbb Z[X]\), where \(d\ge1\) and
+\(c_d\ne0\). If \(p/q\) is a nonzero reduced root with \(q>0\), then
+\(p\mid c_0\) and \(q\mid c_d\). If \(0\) is a root, then \(c_0=0\) and
+its reduced denominator is \(1\). In particular, every rational root of
+a monic integer polynomial is an integer.
+\end{theorem}
+\begin{proof}
+Multiplication of \(P(p/q)=0\) by \(q^d\) gives
+\[
+ c_dp^d+c_{d-1}p^{d-1}q+\cdots+c_0q^d=0.
+\]
+Reduction modulo \(\lvert p\rvert\) gives \(p\mid c_0q^d\), and reduction
+modulo \(q\) gives \(q\mid c_dp^d\). Coprimality and Bézout's identity
+permit cancellation of \(q^d\) in the first divisibility and \(p^d\) in
+the second. The zero and monic cases follow from evaluation at zero
+and the denominator condition.
+\end{proof}
+
+\begin{corollary}
+If \(k\ge2\) and \(m\) is a nonnegative integer which is not a \(k\)th
+power in \(\mathbb Z_{\ge0}\), then the nonnegative real \(k\)th root of
+\(m\) is irrational. This includes \(\sqrt m\) for nonsquare \(m\).
+\end{corollary}
+\begin{proof}
+A rational nonnegative root of \(X^k-m\) would be a nonnegative integer
+by the monic case. Its \(k\)th power would equal \(m\).
+\end{proof}
+
+\begin{theorem}
+The real numbers \(e\) and \(\pi\) are irrational.
+\end{theorem}
+\begin{proof}
+The Taylor series for \(\exp(1)\) gives
+\(e=\sum_{j=0}^{\infty}1/j!\). If \(e=a/b\) with \(b>0\), choose an
+integer \(N\ge\max\{b,2\}\). Both \(N!e\) and
+\(N!\sum_{j=0}^N1/j!\) would be integers, whereas their difference
+satisfies
+\[
+ 0<\sum_{k=1}^{\infty}\frac{1}{(N+1)\cdots(N+k)}
+ \le \sum_{k=1}^{\infty}(N+1)^{-k}=\frac1N<1.
+\]
+
+For \(\pi\), suppose \(\pi=a/b\) with positive integers \(a,b\). For
+a positive integer \(N\) set
+\[
+ f(t)=\frac{t^N(a-bt)^N}{N!},\qquad
+ F(t)=\sum_{j=0}^{N}(-1)^j f^{(2j)}(t).
+\]
+At \(t=0\) every derivative of \(f\) is an integer. In fact the
+coefficient of \(t^{N+k}\), for \(0\le k\le N\), is an integer divided
+by \(N!\), and \((N+k)!/N!\) is an integer. The remaining derivatives
+vanish at zero. Since \(f(\pi-t)=f(t)\), the endpoint derivatives at
+\(\pi\) are integers as well. The degree of \(f\) is \(2N\), so
+\(F''+F=f\). Consequently
+\[
+ \int_0^\pi f(t)\sin t\,dt
+ =\bigl[F'(t)\sin t-F(t)\cos t\bigr]_0^\pi
+ = F(\pi)+F(0)\in\mathbb Z.
+\]
+On \(0<t<\pi\) the integrand is strictly positive. The bound
+\(t(a-bt)=bt(\pi-t)\le b\pi^2/4\) gives
+\[
+ 0<\int_0^\pi f(t)\sin t\,dt
+ \le \frac{\pi(b\pi^2/4)^N}{N!}.
+\]
+The successive upper bounds have ratio \((b\pi^2/4)/(N+1)\), which
+tends to zero. For large \(N\) the integral is an integer strictly
+between \(0\) and \(1\), a contradiction.
+\end{proof}
+
+For the rational-root theorem and the proofs of irrationality, see
+\cite[\S6.3, Theorems 6.13 and 6.18 and Exercise 8]{nzm}.
+
+\section{Finite simple continued fractions}
+\label{nt:E02}
+
+For a real number \(x\), set \(\alpha_0=x\). At step \(j\), put
+\(a_j=\lfloor\alpha_j\rfloor\). If \(\alpha_j=a_j\), stop. Otherwise
+set
+\[
+ \alpha_{j+1}=\frac{1}{\alpha_j-a_j}.
+\]
+The \(\alpha_j\) are the complete quotients and the \(a_j\) the partial
+quotients. Whenever it is defined, \(\alpha_{j+1}>1\), so \(a_j\ge1\)
+for \(j\ge1\). The initial integer \(a_0\) can have any sign. For a finite
+list we use the notation
+\[
+ [a_0;a_1,\ldots,a_n]
+ =a_0+\cfrac1{a_1+\cfrac1{\ddots+\cfrac1{a_n}}},
+ \qquad [a_0]=a_0.
+\]
+
+\begin{theorem}[Finite expansion and normalization]
+The algorithm terminates exactly for rational \(x\). Every rational
+has a unique finite expansion with \(a_0\in\mathbb Z\), \(a_j\ge1\) for
+\(j\ge1\), and \(a_n\ge2\) if \(n\ge1\). For \(a_n\ge2\) the
+expansion obtained by replacing \(a_n\) by \(a_n-1,1\) has the same
+value. For an integer \(a_0\), its other finite expansion is
+\([a_0-1;1]\).
+\end{theorem}
+\begin{proof}
+For a rational complete quotient \(u/v\) in lowest terms with \(v>0\),
+Euclidean division with remainder gives \(u=a_jv+r\), \(0\le r<v\),
+including when \(u<0\). If \(r=0\), the algorithm stops. If \(r>0\),
+the next complete quotient is \(v/r\), and \(\gcd(v,r)=1\).
+The positive denominators strictly decrease. Conversely, termination
+expresses \(x\) as a finite list of additions and nonzero reciprocals of
+integers, hence as a rational number. If the algorithm stops at
+\(j\ge1\), then \(\alpha_j>1\) is an integer and \(a_j\ge2\).
+
+For a list satisfying the last-entry condition, each tail with index
+at least \(1\) is greater than \(1\). Thus each entry is the floor of the
+corresponding tail, and reciprocating its fractional part recovers the
+next tail. The given list must therefore be exactly the one produced
+by the algorithm. The identities for a final \(1\) follow from
+\(u+1/1=u+1\). Conversely a noncanonical list ends in \(1\), and merging
+its last two entries produces a canonical list, including the case
+of a two-entry list that merges to an integer. This accounts for all
+finite expansions under the stated digit conventions.
+\end{proof}
+
+See \cite[Chapter X]{hardy-wright} and \cite[\S\S7.1--7.3]{nzm}.
+
+\section{Convergents and exact error bounds}
+\label{nt:E03}
+
+\begin{theorem}[Convergent recurrences and estimates]
+For the simple continued fraction of \(x\), define
+\[
+ \begin{aligned}
+ p_{-2}&=0,&p_{-1}&=1,&p_n&=a_np_{n-1}+p_{n-2},\\
+ q_{-2}&=1,&q_{-1}&=0,&q_n&=a_nq_{n-1}+q_{n-2}.
+ \end{aligned}
+\]
+At every defined index \(n\ge0\), the convergent \(p_n/q_n\) is
+\([a_0;\ldots,a_n]\) in lowest terms, and
+\begin{equation}
+ p_nq_{n-1}-p_{n-1}q_n=(-1)^{n+1}.
+ \label{eq:nt-cf-det}
+\end{equation}
+The denominators satisfy \(q_0=1\), \(q_1=a_1\) if defined, and
+\(q_{n+1}>q_n\) for \(n\ge1\) when both exist. If \(x\) is irrational,
+then for all \(n\ge0\)
+\begin{equation}
+ x=\frac{p_n\alpha_{n+1}+p_{n-1}}{q_n\alpha_{n+1}+q_{n-1}},\qquad
+ q_nx-p_n=\frac{(-1)^n}{q_n\alpha_{n+1}+q_{n-1}},
+ \label{eq:nt-cf-tail}
+\end{equation}
+and
+\begin{equation}
+ \frac{1}{q_n(q_{n+1}+q_n)}
+ < \left|x-\frac{p_n}{q_n}\right|
+ < \frac{1}{q_nq_{n+1}}.
+ \label{eq:nt-cf-error}
+\end{equation}
+In particular the convergents tend to \(x\).
+\end{theorem}
+\begin{proof}
+The recurrences give, by induction,
+\[
+ \prod_{j=0}^{n}
+ \begin{pmatrix}a_j&1\\1&0\end{pmatrix}
+ =\begin{pmatrix}p_n&p_{n-1}\\q_n&q_{n-1}\end{pmatrix},
+\]
+where the factors are in increasing order from left to right.
+This is the matrix of the composition of the maps \(t\mapsto a_j+1/t\).
+Evaluating the finite nested expression gives \(p_n/q_n\).
+The determinant of each factor is \(-1\), proving
+\eqref{eq:nt-cf-det}. Any common divisor of \(p_n,q_n\) divides this
+determinant, so the fraction is reduced. The recurrence gives
+\(q_0=1\) and \(q_1=a_1\ge1\). For \(n\ge1\) we have
+\(q_{n+1}\ge q_n+q_{n-1}>q_n\).
+
+In the infinite case, evaluating the composition at
+\(t=\alpha_{n+1}\) proves the first equality in
+\eqref{eq:nt-cf-tail}. Subtracting \(p_n\) after multiplication by
+\(q_n\) and using \eqref{eq:nt-cf-det} proves the second.
+Now \(a_{n+1}<\alpha_{n+1}<a_{n+1}+1\), whence
+\[
+ q_{n+1}<q_n\alpha_{n+1}+q_{n-1}<q_{n+1}+q_n.
+\]
+The reciprocal inequalities yield \eqref{eq:nt-cf-error}. The
+denominators grow unboundedly since they are eventually strictly
+increasing positive integers.
+\end{proof}
+
+In particular, an infinite digit string produced by the algorithm
+determines its real value uniquely, by the limit of its convergents.
+The recurrences, determinants, and tail formulas can be compared with
+\cite[\S\S7.2--7.4, Theorems 7.4, 7.5, and 7.11]{nzm}.
+
+\section{Best approximation and Legendre's criterion}
+\label{nt:E04}
+
+\begin{theorem}[Best approximation of the second kind]
+Let \(x\) be irrational and \(p_n/q_n\) be its \(n\)th convergent. If
+\(p,q\) are integers and \(0<q<q_{n+1}\), then
+\[
+ \lvert qx-p\rvert\ge \lvert q_nx-p_n\rvert.
+\]
+Equality is possible only for \((p,q)=(p_n,q_n)\) under the indicated
+denominator constraint.
+\end{theorem}
+\begin{proof}
+Consecutive column vectors \((p_n,q_n)\) and \((p_{n+1},q_{n+1})\)
+are an integer basis of \(\mathbb Z^2\) because their determinant is
+\(1\) or \(-1\). Write
+\((p,q)=u(p_n,q_n)+v(p_{n+1},q_{n+1})\) with integers \(u,v\).
+Put \(\delta_i=q_ix-p_i\). By \eqref{eq:nt-cf-tail},
+\(\delta_n,\delta_{n+1}\) are nonzero with opposite signs.
+If \(v=0\), then \(q=uq_n>0\), so \(u\ge1\) and the error is
+\(u\lvert\delta_n\rvert\).
+If \(v>0\), then \(q<q_{n+1}\) forces \(u<0\). If \(v<0\), then
+\(q>0\) forces \(u>0\). In either case \(v\ne0\), the terms
+\(u\delta_n\) and \(v\delta_{n+1}\) have the same sign. Their combined
+absolute value is strictly greater than
+\(\lvert u\rvert\lvert\delta_n\rvert\ge\lvert\delta_n\rvert\).
+\end{proof}
+
+\begin{corollary}[Legendre's criterion]
+\label{cor:nt-legendre}
+If \(x\) is irrational and a reduced \(p/q\) with \(q>0\) satisfies
+\[
+ \left|x-\frac pq\right|<\frac{1}{2q^2},
+\]
+then \(p/q\) is a convergent of \(x\).
+\end{corollary}
+\begin{proof}
+Choose the largest \(n\ge0\) with \(q_n\le q\), which exists since
+\(q_0=1\) and \(q_n\to\infty\). The choice handles the possible equality
+\(q_0=q_1\) and gives \(q<q_{n+1}\). If \(p/q\ne p_n/q_n\), the
+nonzero integer \(q_np-qp_n\) satisfies
+\[
+ \begin{aligned}
+ 1
+ &\le \lvert q_np-qp_n\rvert\\
+ &\le q_n\lvert qx-p\rvert+q\lvert q_nx-p_n\rvert\\
+ &\le (q_n+q)\lvert qx-p\rvert<1.
+ \end{aligned}
+\]
+The middle estimate uses the second-kind theorem, and the last uses
+\(q_n\le q\) and the assumed strict bound. This contradiction gives the
+required convergent.
+\end{proof}
+
+See \cite[\S7.5, Theorems 7.13--7.14]{nzm}.
+
+\section{Dirichlet's approximation theorem}
+\label{nt:E05}
+
+\begin{theorem}[Bounded denominators]
+For each real \(x\) and integer \(N\ge1\), there are integers \(p,q\)
+with \(1\le q\le N\) and
+\[
+ \lvert qx-p\rvert\le\frac1{N+1}.
+\]
+The bound is strict when \(x\) is irrational. Consequently an irrational
+\(x\) has infinitely many distinct reduced \(p/q\) with
+\(\lvert x-p/q\rvert<1/q^2\).
+\end{theorem}
+\begin{proof}
+Take the \(N+1\) fractional parts \(\{jx\}\) for \(0\le j\le N\),
+with labels \(j\). If two coincide, their distinct labels give
+\(qx=p\) by subtraction and a sign choice, with \(1\le q\le N\).
+Otherwise order the points cyclically on the unit interval with
+endpoints identified. The \(N+1\) successive gaps, including the gap
+from the last point back to the first, sum to \(1\). A shortest gap
+has length at most \(1/(N+1)\). With endpoint labels \(i,j\), that gap
+equals \((j-i)x\) minus an integer, with the integer chosen to account
+for any wrap. Taking \(q=\lvert j-i\rvert\) and changing the sign of
+the integer if needed gives the claimed absolute value. If \(x\) is
+irrational, every gap is irrational, since \(j-i\ne0\), and cannot
+equal \(1/(N+1)\).
+
+For irrational \(x\), the fractions thus obtained satisfy
+\(\lvert x-p/q\rvert\le1/(q(N+1))<1/q^2\). Reducing the fraction
+preserves the strict \(1/q^2\) estimate when \(q\) is replaced by its
+possibly smaller reduced denominator. As \(N\to\infty\), the errors
+tend to zero because they are at most \(1/(N+1)\). A finite collection
+of rationals would have a positive minimum distance from \(x\), so
+infinitely many different reduced fractions occur.
+\end{proof}
+
+Compare \cite[\S6.2, Theorems 6.8--6.9]{nzm}.
+
+\section{Farey fractions}
+\label{nt:E06}
+
+Let \(\mathcal F_N\) be the increasing list of reduced fractions in
+\([0,1]\) with denominator at most \(N\), where \(N\ge1\).
+
+\begin{theorem}[Neighbors, mediants, and insertion]
+If \(a/b<c/d\) are consecutive members of \(\mathcal F_N\), then
+\[
+ bc-ad=1,\qquad b+d>N.
+\]
+The unique reduced fraction strictly between them of least denominator
+is the mediant \((a+c)/(b+d)\). To obtain \(\mathcal F_{N+1}\), insert
+this mediant in precisely the neighboring intervals with \(b+d=N+1\).
+\end{theorem}
+\begin{proof}
+First suppose \(a/b<c/d\) are reduced with \(bc-ad=1\). For any reduced
+\(p/q\) strictly between them, the vectors \((a,b),(c,d)\) form an
+integer basis, and
+\[
+ (p,q)=u(a,b)+v(c,d),\qquad
+ u=cq-dp>0,\qquad v=bp-aq>0.
+\]
+The coefficients are positive integers because \(a/b<p/q<c/d\).
+It follows that \(q=ub+vd\ge b+d\), with equality exactly for
+\(u=v=1\). The mediant is reduced, since a common divisor of
+\(a+c,b+d\) divides \((a+c)b-(b+d)a=1\). The determinant of each of
+the pairs formed by splitting at the mediant is also \(1\), as direct
+substitution shows.
+
+At \(N=1\), the endpoints \(0/1,1/1\) have determinant \(1\) and
+denominator sum \(2>1\). Assume the claims about neighbors at \(N\).
+Any fraction new at \(N+1\) has denominator \(N+1\) and lies in the
+interior of one of these neighboring intervals. The first paragraph
+shows that such a fraction exists in this interval exactly when
+\(b+d=N+1\) and that it then is the mediant. Pairs untouched by
+insertion have sum \(b+d>N+1\). Pairs created by insertion have sums
+\(2b+d\) and \(b+2d\), both larger than \(b+d=N+1\), and determinant
+\(1\). This proves the result by induction.
+\end{proof}
+
+See \cite[Chapter III]{hardy-wright} and
+\cite[\S\S6.1--6.2, Theorems 6.1, 6.4, and 6.7]{nzm}.
+
+\section{Hurwitz's bound and its optimality}
+\label{nt:E07}
+
+\begin{theorem}[Hurwitz]
+For every irrational real \(x\), infinitely many distinct reduced
+fractions \(p/q\) satisfy
+\[
+ \left|x-\frac pq\right|<\frac{1}{\sqrt5\,q^2}.
+\]
+For any \(C>\sqrt5\), the assertion with \(C\) in place of \(\sqrt5\)
+fails for \(x=(1+\sqrt5)/2\).
+\end{theorem}
+\begin{proof}
+First subtract an integer from \(x\) so that \(0<x<1\). This does not
+alter denominators, coprimality, or approximation errors after
+translating fractions back. For each \(N\), choose the neighbors
+\(a/b<c/d\) of \(\mathcal F_N\) bracketing \(x\). Their distance is
+\(1/(bd)\). Put \(g=(1+\sqrt5)/2\) and \(s=d/b\). If both neighbors
+fail the strict estimate, then
+\[
+ \frac{1}{bd}
+ =\left(x-\frac ab\right)+\left(\frac cd-x\right)
+ \ge\frac1{\sqrt5}\left(\frac1{b^2}+\frac1{d^2}\right),
+ \qquad
+ s+\frac1s\le\sqrt5.
+\]
+The latter inequality is \(s^2-\sqrt5\,s+1\le0\), whose roots are
+\(g^{-1}\) and \(g\). Both endpoints are irrational, while \(s\) is
+rational, so \(g^{-1}<s<g\).
+
+If \(x\) is below the mediant and the mediant also fails, the left
+neighbor and the mediant bracket \(x\). These have determinant \(1\),
+so the same necessary inequality applies to the ratio
+\((b+d)/b=1+s>1+g^{-1}=g\), a contradiction. If \(x\) is above the
+mediant, use the right neighbor and the mediant with ratio
+\((b+d)/d=1+1/s>g\). The gap test is invariant under inverting the
+ratio, so it again gives a contradiction. The irrational \(x\) cannot
+equal the mediant. Hence one of the two endpoints or their mediant is
+a successful fraction.
+
+All three candidates lie in a closed interval of length \(1/(bd)\).
+From \(b+d\ge N+1\) and \((b-1)(d-1)\ge0\) we get
+\(bd\ge b+d-1\ge N\). Thus the successful fractions have errors at
+most \(1/N\). These fractions cannot belong to a fixed finite set,
+whose distances from \(x\) would have a positive minimum.
+
+For sharpness write \(g'=(1-\sqrt5)/2\). The polynomial
+\(T^2-T-1\) has irrational roots \(g,g'\). For each rational \(p/q\),
+\[
+ 1\le \lvert p^2-pq-q^2\rvert
+ =q^2\left|\frac pq-g\right|\left|\frac pq-g'\right|.
+\]
+If infinitely many distinct reduced fractions satisfied the stronger
+bound with \(C>\sqrt5\), one could take a sequence with denominators
+tending to infinity. Indeed, for bounded denominators there are only
+finitely many fractions in the bounded interval imposed by the bound.
+Along this sequence \(p/q\to g\), and the displayed inequality would
+force \(\lvert p/q-g'\rvert>C\) at every term. Its limit is
+\(\lvert g-g'\rvert=\sqrt5<C\), a contradiction.
+\end{proof}
+
+This is the Farey-neighbor route of
+\cite[\S6.2, Theorems 6.11--6.12]{nzm}, with the gap comparison
+expressed through the two roots of \(s^2-\sqrt5\,s+1\).
+
+\section{Periodicity and reduced complete quotients}
+
+A quadratic irrational is a real number of degree two over
+\(\mathbb Q\). Its conjugate \(y'\) is the other root of its irreducible
+quadratic. We call \(y\) reduced when \(y>1\) and \(-1<y'<0\).
+An infinite continued fraction is eventually periodic if its digit
+sequence is periodic after finitely many entries, and purely periodic
+if periodic from its first entry.
+
+\begin{lemma}[Reduced quotients and their predecessors]
+\label{lem:nt-reduced-step}
+The map \(T(y)=1/(y-\lfloor y\rfloor)\) sends reduced quadratic
+irrationals to reduced quadratic irrationals. Each reduced \(z\) has
+exactly one reduced predecessor under \(T\), namely
+\[
+ y=\left\lfloor-\frac1{z'}\right\rfloor+\frac1z .
+\]
+If \(y=(P+\sqrt D)/Q\), with integers \(P,Q,D\), positive nonsquare
+\(D\), \(Q\ne0\), and \(Q\mid D-P^2\), then its next quotient has
+the same \(D\) and is
+\begin{equation}
+ T(y)=\frac{P_++\sqrt D}{Q_+},
+ \qquad
+ P_+=\lfloor y\rfloor Q-P,\qquad Q_+=\frac{D-P_+^2}{Q}.
+ \label{eq:nt-cf-surd-step}
+\end{equation}
+Here \(Q_+\ne0\) is an integer and \(Q_+\mid D-P_+^2\).
+\end{lemma}
+\begin{proof}
+For reduced \(y\), we have \(a=\lfloor y\rfloor\ge1\) and
+\(0<y-a<1\), so \(T(y)>1\). Its conjugate is \(1/(y'-a)\in(-1,0)\).
+For a reduced \(z\), a predecessor with digit \(a\) must be
+\(y=a+1/z\). Its conjugate lies in \((-1,0)\) exactly when
+\[
+ -1-\frac1{z'}<a<-\frac1{z'} .
+\]
+Since \(-1/z'>1\) is irrational, the open interval contains exactly
+the integer \(a=\lfloor-1/z'\rfloor\ge1\). Then \(y>1\) and its floor
+is \(a\) because \(0<1/z<1\). This proves existence and uniqueness.
+
+For the formula, \(y-a=(\sqrt D-P_+)/Q\); rationalizing gives
+\eqref{eq:nt-cf-surd-step}. The equality \(P_+\equiv-P\bmod Q\)
+ensures that \(Q_+\) is an integer. Nonsquareness of \(D\) makes
+\(D-P_+^2\ne0\). The relation \(D-P_+^2=QQ_+\) gives the divisibility
+in the next state.
+\end{proof}
+
+\begin{theorem}[Lagrange periodicity and the pure-period criterion]
+\label{nt:E08}
+The simple continued fraction of a real irrational \(x\) is
+eventually periodic if and only if \(x\) is a quadratic irrational.
+For a real quadratic irrational \(x\), the expansion is purely
+periodic if and only if \(x\) is reduced.
+\end{theorem}
+\begin{proof}
+First suppose a complete quotient \(y\) has a purely periodic expansion
+with period length \(r\ge1\), and let \(b_0,\ldots,b_{r-1}\) be the
+first \(r\) digits. Since the first digit recurs at a positive index,
+all these digits are positive. In particular \(y>1\). Its complete
+quotient at index \(r\) is again \(y\), because their infinite digit
+strings agree and their convergents determine the value. Let
+\(P_i^\ast,Q_i^\ast\) be the numerator and denominator recurrences for
+this digit list, with the initial conventions of
+Section~\ref{nt:E03}, and put \(t=r-1\). The fixed-point equality
+from \eqref{eq:nt-cf-tail} is equivalent to
+\[
+ Q_t^\ast y^2+(Q_{t-1}^\ast-P_t^\ast)y-P_{t-1}^\ast=0.
+\]
+This is a genuine quadratic since \(Q_t^\ast>0\). As \(y\) is
+irrational, this polynomial gives its quadratic conjugate.
+The polynomial is negative at \(0\) because \(P_{t-1}^\ast>0\).
+At \(-1\) its value is
+\((Q_t^\ast-Q_{t-1}^\ast)+(P_t^\ast-P_{t-1}^\ast)>0\).
+For \(t=0\) the denominator difference is \(1\) and the numerator
+difference is \(b_0-1\ge0\). For \(t=1\) the numerator difference is
+positive because \(P_1^\ast=b_1b_0+1\). For \(t\ge2\) both differences
+are positive by the recurrences. Thus the root other than \(y>1\)
+belongs to \((-1,0)\), proving that \(y\) is reduced.
+If \(x\) has an eventually periodic expansion, some complete quotient
+has a purely periodic expansion. Formula \eqref{eq:nt-cf-tail}
+expresses \(x\) as an integer linear fractional transformation of this
+quadratic irrational when the periodic part starts after the first
+digit. Hence \(x\) lies in a quadratic extension of \(\mathbb Q\);
+since it is irrational, it has degree two. When the periodic part
+starts at the first digit, the preceding argument applies to \(x\)
+directly.
+
+Now let \(x\) be a quadratic irrational. If \(Ax^2+Bx+C=0\)
+with integers \(A\ne0,B,C\), its discriminant
+\(D=B^2-4AC\) is a positive nonsquare integer. The quadratic formula
+writes \(x=(P_0+\sqrt D)/Q_0\) with \(P_0=-B,Q_0=2A\) for the
+plus root, or \(P_0=B,Q_0=-2A\) for the minus root. In both cases
+\(Q_0\mid D-P_0^2\). The recurrence
+\eqref{eq:nt-cf-surd-step} gives this representation for every complete
+quotient.
+
+To see that the quotients eventually become reduced, solve
+\eqref{eq:nt-cf-tail} for \(\alpha_{n+1}\) and conjugate, obtaining
+\[
+ \alpha_{n+1}'
+   =\frac{p_{n-1}-q_{n-1}x'}{q_nx'-p_n}.
+\]
+The denominator is nonzero because \(x'\) is irrational.
+For large \(n\), both \(x'-p_{n-1}/q_{n-1}\) and
+\(x'-p_n/q_n\) have the same sign as \(x'-x\), by convergence of the
+convergents. Since the denominator indices are then positive, the
+displayed quotient is negative. A further step has conjugate
+\(1/(\alpha_{n+1}'-a_{n+1})\in(-1,0)\), because \(a_{n+1}\ge1\).
+The real quotient at this step is greater than \(1\), so the reduced
+condition holds and remains true by Lemma~\ref{lem:nt-reduced-step}.
+
+For any reduced state \((P+\sqrt D)/Q\), the difference of its two
+conjugates is \(2\sqrt D/Q>0\), so \(Q>0\). The real quotient greater
+than \(1\) gives \(Q<P+\sqrt D\). The negative conjugate gives
+\(P<\sqrt D\). In particular \(-\sqrt D<P<\sqrt D\) and
+\(0<Q<2\sqrt D\). There are only finitely many such integer pairs.
+The update \eqref{eq:nt-cf-surd-step} is deterministic, so the sequence
+of reduced states repeats and the digits are eventually periodic.
+
+If \(x\) was already reduced, every complete quotient in its orbit is
+reduced. Suppose \(T^i(x)=T^j(x)\) with \(0\le i<j\).
+Uniqueness of the reduced predecessor gives
+\(T^{i-1}(x)=T^{j-1}(x)\) when \(i>0\). Repeating gives
+\(x=T^{j-i}(x)\). Thus its digit sequence was periodic from the first
+entry. The necessity of the reduced condition for a pure period was
+proved in the first paragraph.
+\end{proof}
+
+The two periodicity criteria are given in
+\cite[\S7.7, Theorems 7.19--7.20]{nzm}. In the case \(x=\sqrt D\),
+our notation gives \(P_0=0,Q_0=1\) in
+\eqref{eq:nt-cf-surd-step}. The next chapter uses this recurrence to
+identify exactly which convergents solve the Pell equations.
+
+\section{Liouville's inequality and an explicit transcendental number}
+\label{nt:E09}
+
+\begin{theorem}[Liouville's inequality]
+If \(x\) is a real algebraic irrational of degree \(d\ge2\), there
+exists \(c_x>0\) such that for every reduced \(p/q\) with \(q>0\),
+\[
+ \left|x-\frac pq\right|\ge \frac{c_x}{q^d}.
+\]
+\end{theorem}
+\begin{proof}
+Let \(P\) be an irreducible integer polynomial of degree \(d\) with
+\(P(x)=0\), obtained by clearing denominators in the minimal
+polynomial. No rational is a root, since irreducibility and a
+rational root would give degree one. Thus
+\(q^dP(p/q)\) is a nonzero integer and
+\(\lvert P(p/q)\rvert\ge q^{-d}\). Set
+\[
+ M=\max\left\{1,\sup_{t\in[x-1,x+1]}\lvert P'(t)\rvert\right\}.
+\]
+If \(p/q\) lies in that interval, the mean value theorem gives
+\(\lvert P(p/q)\rvert\le M\lvert x-p/q\rvert\).
+Outside the interval, \(\lvert x-p/q\rvert>1\ge1/(Mq^d)\).
+Take \(c_x=1/M\).
+\end{proof}
+
+\begin{corollary}
+The number \(\displaystyle L=\sum_{j=1}^{\infty}10^{-j!}\) is
+transcendental.
+\end{corollary}
+\begin{proof}
+Put \(Q_N=10^{N!}\), and let \(P_N/Q_N\) be the truncation after the
+\(N\)th term, with \(P_N\in\mathbb Z\). The positive tail satisfies
+\[
+ 0<L-\frac{P_N}{Q_N}
+ \le\frac{10}{9}\,10^{-(N+1)!}
+ <2Q_N^{-(N+1)}.
+\]
+The first inequality follows by bounding the tail by the geometric
+series of all integer exponents starting at \((N+1)!\).
+If \(L=a/b\) were rational with \(b>0\), its positive difference
+from \(P_N/Q_N\) would be at least \(1/(bQ_N)\), contradicting the
+upper bound for large \(N\). Thus \(L\) is irrational.
+If it were algebraic of degree \(d\), Liouville's inequality applied
+to the reduced truncation, whose denominator is at most \(Q_N\), would
+give a lower bound \(c_L/Q_N^d\). This again contradicts the upper
+bound as \(N\to\infty\).
+\end{proof}
+
+See \cite[Chapter XI, \S11.7]{hardy-wright}.
+\chapter{Pell Equations}
+\label{ch:nt-pell}
+
+Fix a positive nonsquare integer \(D\) and let \(a_0=\lfloor\sqrt
+D\rfloor\). In particular \(D\ge2\). We use the complete quotients and
+convergent indices of Chapter~\ref{ch:nt-cf}. The arithmetic here takes
+place in \(\mathbb Z[\sqrt D]\); no assumption of squarefreeness, and no
+identification with the full ring of integers of the quadratic field,
+is needed.
+
+\section{Return points and the two norms}
+
+\begin{lemma}[Return points of the square-root expansion]
+\label{lem:nt-pell-return}
+There is a least \(\ell\ge1\) such that
+\[
+ \sqrt D=[a_0;\overline{a_1,\ldots,a_{\ell-1},2a_0}].
+\]
+With \(\alpha_j=(P_j+\sqrt D)/Q_j\) the complete quotients,
+\(Q_0=1\), and \(Q_j=1\) for \(j\ge1\) exactly when \(\ell\mid j\).
+The convergents \(p_n/q_n\) satisfy
+\begin{equation}\label{eq:nt-pell-norm}
+ p_n^2-Dq_n^2=(-1)^{n+1}Q_{n+1}\qquad(n\ge0).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The first complete quotient after \(\sqrt D\) is
+\(\alpha_1=(\sqrt D-a_0)^{-1}>1\), with conjugate
+\((- \sqrt D-a_0)^{-1}\in(-1,0)\). Thus it is reduced and its
+complete quotients are purely periodic by Theorem~\ref{nt:E08}.
+They have the forms \((P_j+\sqrt D)/Q_j\) with integers \(P_j,Q_j\)
+and \(Q_j>0\). In detail, \(P_0=0,Q_0=1\), and rationalizing the
+reciprocal after subtraction of \(a_j\) gives
+\[
+ P_{j+1}=a_j Q_j-P_j,\qquad Q_{j+1}=(D-P_{j+1}^2)/Q_j.
+\]
+The first step gives \(P_1=a_0,Q_1=D-a_0^2>0\). Subsequently
+the reduced inequalities give \(-\sqrt D<P_j<\sqrt D\) and
+\(-\sqrt D<P_{j+1}<\sqrt D\): the latter follows from
+\(a_jQ_j\le P_j+\sqrt D<(a_j+1)Q_j\) with strictness on the left,
+and from \(a_j\ge1\) and \(P_j<\sqrt D\).
+So \(Q_{j+1}>0\). It is an integer because \(Q_j\mid D-P_j^2\) and
+\(P_{j+1}\equiv-P_j\bmod Q_j\); the new divisibility follows from the
+displayed product relation.
+
+The reduced number \(\sqrt D+a_0\) has digit \(2a_0\) and maps
+to \(\alpha_1\). A reduced predecessor of \(\alpha_1\) is unique
+by Lemma~\ref{lem:nt-reduced-step}. Thus if \(\ell\) is the period
+length of \(\alpha_1\), then \(\alpha_\ell=\sqrt D+a_0\).
+For \(j\ge1\), \(Q_j=1\) is equivalent to
+\(\alpha_j=\sqrt D+a_0\), since reducedness then gives
+\(-1<P_j-\sqrt D<0\), and the coefficients in the
+\(\mathbb Q\)-basis \(1,\sqrt D\) determine \(P_j,Q_j\) uniquely.
+Pure periodicity and the least return length now show exactly
+when \(Q_j=1\). The last digit of each period is \(2a_0\).
+
+To obtain the norm formula, solve the convergent tail identity
+\eqref{eq:nt-cf-tail} for \(\alpha_{n+1}\):
+\[
+ \alpha_{n+1}
+   =\frac{p_{n-1}-q_{n-1}\sqrt D}{q_n\sqrt D-p_n}.
+\]
+The denominator is nonzero by irrationality. On rationalizing,
+the coefficient of \(\sqrt D\) is
+\[
+ \frac{p_{n-1}q_n-q_{n-1}p_n}{Dq_n^2-p_n^2}
+ =\frac{(-1)^n}{Dq_n^2-p_n^2}.
+\]
+Equating it to \(1/Q_{n+1}\) gives \eqref{eq:nt-pell-norm}.
+\end{proof}
+
+\begin{theorem}[Period and Pell signs]\label{nt:D08}
+Let \(\ell\) be as in Lemma~\ref{lem:nt-pell-return}. Among positive
+integers \(x,y\), the solutions of \(x^2-Dy^2=\varepsilon\), where
+\(\varepsilon\in\{1,-1\}\), are exactly
+\[
+ (x,y)=(p_{k\ell-1},q_{k\ell-1}),\qquad
+ k\ge1,\quad (-1)^{k\ell}=\varepsilon .
+\]
+The least positive solution in the ordering by \(x+y\sqrt D\)
+is therefore the one with the least such \(k\). For the plus sign
+it is obtained at \(k=1\) if \(\ell\) is even and \(k=2\) if
+\(\ell\) is odd. The minus sign is possible exactly when \(\ell\)
+is odd, and then its least solution occurs at \(k=1\).
+\end{theorem}
+\begin{proof}
+Each pair displayed has norm \(\varepsilon\) by
+\eqref{eq:nt-pell-norm}, and it has positive coordinates because
+\(p_0=a_0\ge1,\ q_0=1\), and the recurrence uses positive digits
+at later steps. Conversely a solution with \(x,y>0\) is coprime,
+since a common divisor would have its square divide \(1\).
+Moreover \(x^2\ge D y^2-1\ge2y^2-1\ge y^2\), so
+\(x/y+\sqrt D>2\). Thus
+\[
+ \left|\sqrt D-\frac{x}{y}\right|
+ =\frac{1}{y^2(x/y+\sqrt D)}<\frac{1}{2y^2}.
+\]
+Legendre's criterion in Corollary~\ref{cor:nt-legendre} shows that \(x/y\) is
+a convergent. The convergent is reduced with positive denominator,
+so its numerator and denominator are precisely \(x,y\).
+By \eqref{eq:nt-pell-norm} this forces \(Q_{n+1}=1\); the return
+criterion gives \(n+1=k\ell\) and the sign condition follows.
+Finally \(p_n\) strictly increases for \(n\ge0\) by the recurrence
+(\(p_1=a_1a_0+1>p_0\)), and \(q_n\) does not decrease, so the
+ordering by \(x+y\sqrt D\) agrees with the order of the indicated
+indices.
+\end{proof}
+
+\section{The fundamental unit and all positive solutions}
+
+For \(u=x+y\sqrt D\) with integer coefficients, write
+\(\overline u=x-y\sqrt D\) and \(N(u)=u\overline u=x^2-Dy^2\).
+Norm is multiplicative by conjugation. If \(N(u)=\varepsilon\) with
+\(\varepsilon=\pm1\), then \(u^{-1}=\varepsilon\overline u\)
+also lies in \(\mathbb Z[\sqrt D]\). Conversely, a unit has norm
+an invertible integer, since its norm times the norm of its inverse
+is \(1\). If such a unit satisfies \(u>1\) as a real number, then
+\[
+ x=\tfrac12(u+\varepsilon/u)>0,\qquad
+ y=\tfrac1{2\sqrt D}(u-\varepsilon/u)>0.
+\]
+Conversely \(x,y>0\) gives \(u>1\).
+
+\begin{theorem}[Fundamental positive Pell solution]\label{nt:D07}
+The equation \(x^2-Dy^2=1\) has a solution with \(x,y>0\).
+Let \(u_+=x_++y_+\sqrt D\) be the least unit \(>1\) of norm \(1\).
+All solutions with \(x,y>0\) are obtained uniquely as
+\[
+ x+y\sqrt D=u_+^j,\qquad j=1,2,\ldots .
+\]
+Among units with positive real value and norm \(1\), all integer
+powers are allowed, with exponent \(0\) giving \(1\).
+\end{theorem}
+\begin{proof}
+Theorem~\ref{nt:D08} proves existence and identifies the least one.
+Alternatively, once any solution bounds the search interval above,
+each of \(x,y>0\) is bounded on that interval, so the least exists.
+For \(u>1\) of norm \(1\), choose the unique \(j\ge0\) such that
+\(u_+^j\le u<u_+^{j+1}\). This choice exists since powers of a real
+number \(>1\) strictly increase without bound. The quotient
+\(w=u/u_+^j\) is an integral-coefficient unit of norm \(1\) and
+satisfies \(1\le w<u_+\). If \(w>1\), it would yield a positive
+integer pair contradicting minimality. Hence \(w=1\).
+This gives the positive powers, and their uniqueness follows by
+strict increase. Positive values below \(1\) are the inverses of
+values above \(1\). The value \(1\) corresponds to the identity
+since \(1,\sqrt D\) are linearly independent over \(\mathbb Q\).
+\end{proof}
+
+\begin{corollary}[All positive solutions for norm \(-1\)]
+\label{cor:nt-pell-minus}
+If \(\ell\) is odd and \(u_-=x_-+y_-\sqrt D>1\) is the least
+unit of norm \(-1\) greater than \(1\), then
+\[
+ u_+ = u_-^2,\qquad
+ \{x+y\sqrt D:x,y>0,\ x^2-Dy^2=-1\}
+   =\{u_-u_+^j:j=0,1,2,\ldots\}.
+\]
+For even \(\ell\) the set of positive solutions of norm \(-1\) is
+empty.
+\end{corollary}
+\begin{proof}
+Existence and the even case follow from Theorem~\ref{nt:D08}.
+When the minus solutions exist, any such \(u>1\) has \(u/u_-\ge1\)
+of norm \(1\), so Theorem~\ref{nt:D07} gives the claimed
+parametrization. Conversely every indicated product is \(>1\) of
+norm \(-1\), hence yields positive coordinates. Also \(u_-^2\) is
+\(>1\) of norm \(1\), so \(u_-^2\ge u_+\).
+If the inequality were strict, \(u_+/u_-\) would have norm \(-1\)
+and lie below \(u_-\). If \(u_+>u_-\), this quotient would lie above
+\(1\), contradicting
+the minimality of \(u_-\). If \(u_+<u_-\), then its inverse
+\(u_-/u_+>1\) also has norm \(-1\) and is below \(u_-\),
+again a contradiction. Equality \(u_+=u_-\) is impossible because
+their norms differ. Thus \(u_+=u_-^2\).
+\end{proof}
+
+For the square-root expansion and the two Pell signs see
+\cite[Sections 7.7--7.8, Theorems 7.21--7.26]{nzm}.
+For example, \(D=2\) has period length \(1\), with \(u_-=1+\sqrt2\)
+and \(u_+=3+2\sqrt2\). For \(D=3\) the period length is \(2\),
+with \(u_+=2+\sqrt3\) and no norm-\(-1\) solution.
+
+\backmatter
+\begin{thebibliography}{10}
+
+\bibitem{hardy-wright}
+G. H. Hardy and E. M. Wright.
+\emph{An Introduction to the Theory of Numbers}.
+Sixth edition, revised by D. R. Heath-Brown and J. H. Silverman.
+Oxford University Press, 2008.
+\href{https://academic.oup.com/book/54489}{Publisher contents}.
+
+\bibitem{apostol}
+T. M. Apostol.
+\emph{Introduction to Analytic Number Theory}.
+Springer, 1976.
+\href{https://doi.org/10.1007/978-1-4757-5579-4}{Publisher edition}.
+
+\bibitem{nzm}
+I. Niven, H. S. Zuckerman, and H. L. Montgomery.
+\emph{An Introduction to the Theory of Numbers}.
+Fifth edition. John Wiley \& Sons, 1991.
+
+\bibitem{shoup}
+V. Shoup.
+\emph{A Computational Introduction to Number Theory and Algebra}.
+Second edition. Cambridge University Press, 2009.
+\href{https://www.shoup.net/ntb/}{Author's edition}.
+
+\bibitem{lidl}
+R. Lidl and H. Niederreiter.
+\emph{Introduction to Finite Fields and Their Applications}.
+Revised edition. Cambridge University Press, 1994.
+
+\bibitem{gkp}
+R. L. Graham, D. E. Knuth, and O. Patashnik.
+\emph{Concrete Mathematics}.
+Second edition. Addison-Wesley, 1994.
+
+\bibitem{fan}
+S. Fan.
+\href{https://math.dartmouth.edu/~stevefan/papers/On\%20Geometric\%20Proofs\%20of\%20Theorems\%20on\%20Sums\%20of\%20Squares.pdf}
+{\emph{On Geometric Proofs of Theorems on Sums of Squares}},
+Sections 2 and 5.
+
+\bibitem{ankeny}
+N. C. Ankeny.
+Sums of three squares.
+\emph{Proceedings of the American Mathematical Society}, 8 (1957), 316--319.
+\href{https://doi.org/10.1090/S0002-9939-1957-0085275-8}{DOI}.
+
+\bibitem{mathlib}
+The Mathlib Community.
+\emph{Mathlib}, Lean 4.35.0 snapshot,
+\href{https://github.com/leanprover-community/mathlib4/tree/56a005855ea17e0b0958f73ec801ae140b0a1679}{commit \texttt{56a005855}}.
+Cited for existing Lean interfaces, independently of the mathematical
+proofs in this text.
+
+\bibitem{mathgenome}
+MathGenome.
+\emph{Abstract Algebra} and \emph{Single-Variable Analysis}.
+Library sources accompanying the MathGenome release.
+
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,160 @@
+\documentclass[11pt,oneside,openany]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{hyperref}
+
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome Advanced Finite Group Representation Theory}
+\fi
+
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\hypersetup{
+  colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Advanced Finite Group Representation Theory},
+  pdfsubject={The Symmetric Group and Schur-Weyl Duality},
+  pdfauthor={MathGenome},bookmarksnumbered=true
+}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{9pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{4pt}{25pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\fancypagestyle{plain}{%
+  \fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\thispdfpagelabel{Cover}
+\begin{flushleft}
+\vspace*{0.65in}
+{\large\scshape\color{deepgreen}MathGenome\par}
+\vspace{0.35in}
+{\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+\vspace{0.43in}
+{\color{ink}\fontsize{36}{42}\selectfont\bfseries
+Advanced Finite Group\\[4pt] Representation Theory\par}
+\vspace{0.32in}
+{\color{deepgreen}\Large The Symmetric Group and Schur--Weyl Duality\par}
+\vfill
+{\large Mathematical lecture notes\par}
+\vspace{0.10in}
+{\normalsize MathGenome v0.21.0 dependency baseline\par}
+\vspace*{0.45in}
+\end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+\tableofcontents
+
+\chapter*{Scope and conventions}
+\addcontentsline{toc}{chapter}{Scope and conventions}
+
+A partition organizes both a conjugacy class of the symmetric group
+and an irreducible module. Young tableaux connect these two roles.
+They describe the construction and branching of the simple modules,
+and give bases and character formulas that can be used in explicit
+calculations. These modules occur again in tensor powers, alongside
+polynomial representations of the general linear group.
+
+Chapter 1 constructs Specht modules from tabloids, proves that they
+are exactly the simple complex representations, and compares the
+two orders of the Young symmetrizer. Chapter 2 proves the standard
+basis and branching rule, and derives the hook-length formula from
+the corner recurrence. Chapter 3 uses the Cauchy kernel to recover
+characters and relates them to Schur polynomials, induction, and
+border-strip deletion, and gives both Jacobi--Trudi formulas.
+Chapter 4 computes both centralizers on
+\(V^{\otimes n}\), determines which shapes occur, and classifies
+homogeneous polynomial representations. The main references for
+these two parts of the story are \cite[Chapters 2--4]{sagan} and
+\cite[Sections 4.12--4.22]{etingof}.
+
+Unless a coefficient field is specified, all representations and
+vector spaces are finite dimensional over \(\mathbb C\). Rows of
+a Young diagram are read left to right, with the longest at the
+top. Permutations compose right to left. The slot action on tensor
+powers is a left action, with output slot \(i\) coming from
+slot \(\sigma^{-1}(i)\). Our Hermitian forms are linear in the first
+argument. The empty partition labels the trivial module of \(S_0\),
+and the zeroth tensor power is \(\mathbb C\).
+
+The proofs draw on the ordinary character and induction theory in
+\cite[Chapters 8--9]{algebra-core} and the weighted path determinant
+in \cite[Chapter 3]{finite-combinatorics}. The accompanying source
+map lists the precise sources, internal dependencies, and applicable
+Lean interfaces for every numbered entry.
+
+\mainmatter
+\input{chapters/01-specht-modules}
+\input{chapters/02-tableaux-and-branching}
+\input{chapters/03-characters-and-schur-polynomials}
+\input{chapters/04-schur-weyl}
+
+\backmatter
+\begin{thebibliography}{9}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\bibitem{sagan}
+Bruce E. Sagan.
+\emph{The Symmetric Group: Representations, Combinatorial Algorithms,
+and Symmetric Functions}, second edition.
+Graduate Texts in Mathematics 203, Springer, 2001.
+\href{https://doi.org/10.1007/978-1-4757-6804-6}{DOI}.
+
+\bibitem{etingof}
+Pavel Etingof et al.
+\emph{Introduction to Representation Theory}.
+MIT 18.712 lecture notes, Fall 2010, archived OCW version.
+\href{https://ocw.mit.edu/courses/18-712-introduction-to-representation-theory-fall-2010/resources/mit18_712f10_replect/}{MIT OpenCourseWare}.
+
+\bibitem{algebra-core}
+MathGenome.
+\emph{Algebra Core} (P1-03), accepted notes and formalization.
+Chapters 8--9 treat ordinary finite-group representations,
+characters, induction, and Mackey theory. MathGenome v0.21.0.
+
+\bibitem{finite-combinatorics}
+MathGenome.
+\emph{Finite Combinatorics} (P2-04), accepted notes and formalization.
+Chapter 3 includes the weighted Lindstr\"om--Gessel--Viennot path
+determinant. MathGenome v0.21.0.
+\end{thebibliography}
+\end{document}

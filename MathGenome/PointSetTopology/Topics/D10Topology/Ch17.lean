@@ -1,0 +1,9 @@
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch17.BarycentricSubdivision
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch17.BrouwerConvex
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch17.BrouwerSimplex
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch17.FacetIncidence
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch17.FixedPointBoundaries
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch17.MetricProjection
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch17.NoRetraction
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch17.SimplexTriangulation
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch17.Sperner

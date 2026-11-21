@@ -1,0 +1,2517 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks,bookmarksopen,bookmarksnumbered]{hyperref}
+\hypersetup{pdftitle={Extremal Methods, Networks, and Matroid Optimization},
+  pdfauthor={MathGenome},pdfsubject={Unified mathematical notes, P2-05}}
+\allowdisplaybreaks[1]
+\setlength{\emergencystretch}{2em}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{27mm}
+{\large MathGenome \enspace / \enspace P2-05\par}
+\vspace{8mm}
+\hrule height 0.8pt
+\vspace{11mm}
+{\Huge\bfseries Extremal Methods, Networks,\\[3pt]
+and Matroid Optimization\par}
+\vspace{12mm}
+{\large Unified mathematical notes\par}
+\vspace{6mm}
+{\normalsize Extremal graphs, set families, and Ramsey theory\\
+The probabilistic method, concentration, and the local lemma\\
+Linear programming, network flows, assignment, and matroids\par}
+\vfill
+{\large 8 November 2026\par}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\baselineskip}{10.6pt}
+\tableofcontents
+\endgroup
+
+\chapter*{Scope and conventions}
+\addcontentsline{toc}{chapter}{Scope and conventions}
+The first three chapters study finite extremal bounds, shadows of
+set families, and Ramsey theory. Chapters 4--6 develop the probabilistic
+method from existence and alteration to moment bounds, concentration,
+and the local lemma. The last three chapters develop dual certificates,
+integrality, network and assignment algorithms, and matroid
+optimization. The companion result map lists fifty writing groups,
+including twenty-two original contracts, with statement and proof
+locations.
+
+Extremal graphs are finite simple undirected graphs unless an infinite
+ground set is explicitly specified. Directed networks have labelled
+arcs and use net outflow for divergence. Matroids have a finite
+specified ground set. A finite probability model includes its
+outcomes and probabilities, and statements on general probability
+spaces specify the required measurability and integrability. Empty
+sums and products are \(0\) and \(1\), respectively.
+
+The optimization chapters use the proved finite-dimensional
+separation, Farkas, and linear programming results in \cite{p106},
+and the matching, graph, network, and finite matroid results in
+\cite{p204}. Exact references are given where these results are used.
+The probability arguments use elementary measure and integration
+from \cite{d11}. Textbook citations identify the source or a parallel
+treatment. The proofs below give the mathematical arguments for the
+new results, including the finite transport and conditioning steps
+that are needed to apply them.
+
+\mainmatter
+\chapter{Extremal Graphs}
+
+All graphs in this chapter are finite, simple, and undirected. A copy
+means a subgraph copy, so it may have extra edges in the ambient graph.
+Write \(e(G)\) for the number of edges of \(G\).
+
+\section{Clique extremal numbers}
+
+\begin{theorem}[Mantel and Tur\'an]\label{p205:W01}
+For integers \(n\ge 0\) and \(r\ge 1\), let \(T_r(n)\) be the complete
+\(r\)-partite graph on \(n\) vertices with part sizes differing by at
+most one. Parts may be empty. Every \(K_{r+1}\)-free graph on \(n\)
+vertices has at most \(e(T_r(n))\) edges. Equality holds exactly for
+graphs isomorphic to \(T_r(n)\). For \(n=qr+b\) with \(0\le b<r\),
+\[
+ e(T_r(n))=\binom n2-(r-b)\binom q2-b\binom{q+1}2.
+\]
+In particular, a triangle-free \(n\)-vertex graph has at most
+\(\lfloor n^2/4\rfloor\) edges.
+\end{theorem}
+\begin{proof}
+The case \(n=0\) is immediate. Choose a \(K_{r+1}\)-free graph with the
+maximum number of edges. If \(u,v\) are distinct nonadjacent vertices,
+replace the neighborhood of \(u\) by that of \(v\). This creates no
+\(K_{r+1}\). Such a clique through \(u\) cannot use \(v\), and substituting
+\(v\) for \(u\) would give a clique in the old graph. The edge change is
+\(\deg(v)-\deg(u)\). Reversing the roles of \(u,v\) shows that
+\(\deg(u)=\deg(v)\).
+
+Suppose \(u,w\) are adjacent and each is nonadjacent to a third vertex
+\(v\). Their degrees both equal \(\deg(v)\). Delete their incident
+edges, and connect each of \(u,w\) to the old neighborhood of \(v\).
+The two replaced vertices are nonadjacent and neither is adjacent to
+\(v\). Any clique through either can therefore again be transferred
+to an old clique through \(v\). The edge gain is
+\(2\deg(v)-(\deg(u)+\deg(w)-1)=1\), a contradiction. Thus the relation
+of equality or nonadjacency is transitive and is an equivalence
+relation. Its classes are the parts of a complete multipartite graph.
+There are at most \(r\) nonempty parts because one point from each part
+forms a clique.
+
+Pad the list of part sizes to \(r\) with zeros. For part sizes \(a\ge b+2\),
+moving one point from the larger to the smaller reduces the missing
+edge count by
+\(\binom a2+\binom b2-\binom{a-1}2-\binom{b+1}2=a-b-1>0\).
+The resulting graph is still \(K_{r+1}\)-free, so all sizes in a
+maximizer differ by at most one. Such a graph exists and is
+\(K_{r+1}\)-free, and its part sizes are uniquely specified up to
+permutation. Subtracting the within-part pairs proves the formula.
+For \(r=2\), the two sizes are \(\lfloor n/2\rfloor,\lceil n/2\rceil\),
+with product \(\lfloor n^2/4\rfloor\).
+\end{proof}
+
+\section{Forbidden complete bipartite graphs}
+
+\begin{theorem}[K\H{o}v\'ari--S\'os--Tur\'an]\label{p205:W02}
+Let \(1\le s\le t\) be integers. If \(G\) has \(n\) vertices and no
+copy of \(K_{s,t}\), then
+\[
+  2e(G)\le (s-1)n+(t-1)^{1/s}n^{\,2-1/s}.
+\]
+For fixed \(s,t\) this gives the upper bound \(O(n^{\,2-1/s})\).
+\end{theorem}
+\begin{proof}
+The empty graph gives the \(n=0\) case. The case \(s=1\) follows
+from the maximum degree bound \(t-1\), which also handles \(t=1\).
+Assume \(n\ge1\) and \(s\ge2\). Count pairs \((v,S)\) where \(S\)
+consists of \(s\) neighbors of \(v\). Every \(s\)-set \(S\) has at
+most \(t-1\) common neighbors. A common neighbor cannot belong to
+\(S\), since there are no loops. Thus
+\[
+  \sum_v\binom{\deg(v)}s\le(t-1)\binom ns.
+\]
+For a nonnegative integer \(d\) one has
+\(s!\binom ds\ge \max\{d-s+1,0\}^s\). For \(d\ge s\) use the \(s\)
+factors of the falling factorial, and for \(d<s\) both sides are
+zero. Set \(y_v=\max\{\deg(v)-s+1,0\}\) and
+\(\bar y=n^{-1}\sum_v y_v\). For \(x\ge0\) the inequality
+\(x^s\ge \bar y^s+s\bar y^{s-1}(x-\bar y)\) follows by integrating
+the monotone derivative of \(x^s\) between \(x\) and \(\bar y\).
+Summing at \(x=y_v\) gives
+\[
+ n\bar y^s\le\sum_v y_v^s\le s!(t-1)\binom ns\le (t-1)n^s.
+\]
+Since \(2e(G)-(s-1)n\le \sum_v y_v\), taking the positive \(s\)-th
+root yields the stated bound.
+\end{proof}
+
+\section{Dense graphs and multipartite subgraphs}
+
+For \(r,t\ge1\), write \(K_r(t)\) for the complete \(r\)-partite
+graph with \(t\) vertices in every part.
+
+\begin{lemma}[Dense families of transversal tuples]\label{p205:transversal-density}
+Let \(r,t\ge1\) and \(0<c\le1\) be fixed. For all sufficiently large
+\(n\), suppose \(V_1,\dots,V_r\) are finite sets of size at most \(n\)
+and \(\mathcal E\subseteq V_1\times\cdots\times V_r\) has at least
+\(cn^r\) tuples. There exist \(t\)-subsets \(T_i\subseteq V_i\)
+such that \(T_1\times\cdots\times T_r\subseteq\mathcal E\).
+\end{lemma}
+\begin{proof}
+When \(r=1\), choose \(t\) elements among the at least \(cn\) allowed
+points. Suppose \(r>1\), and for a prefix \(u\) of length \(r-1\)
+let \(N(u)\subseteq V_r\) be the set of its extensions. Prefixes with
+\(|N(u)|<cn/2\) contribute at most \(cn^r/2\) tuples in total. Since
+each prefix contributes at most \(n\), at least \(cn^{r-1}/2\)
+prefixes have \(|N(u)|\ge cn/2\). For large enough \(n\), say \(cn/2\ge2t\),
+each such prefix has at least \((cn/4)^t/t!\) distinct \(t\)-subsets
+of \(N(u)\), by the falling factorial formula. Count pairs of a
+prefix and such a subset. There are at most \(n^t/t!\) subsets on
+the last part, so one \(t\)-set \(T_r\) extends at least
+\((c/2)(c/4)^t n^{r-1}\) prefixes. Apply the induction hypothesis
+to the family of these prefixes. The resulting product can be
+extended by every point of \(T_r\).
+\end{proof}
+
+\begin{theorem}[Clique blow-ups above the Tur\'an threshold]\label{p205:W03}
+Fix integers \(r\ge2,\ t\ge1\) and \(\varepsilon>0\). For all
+sufficiently large \(n\), every \(n\)-vertex graph \(G\) with
+\[
+  e(G)\ge \left(1-\frac1{r-1}+\varepsilon\right)\binom n2
+\]
+contains \(K_r(t)\).
+\end{theorem}
+\begin{proof}
+If \(1-1/(r-1)+\varepsilon>1\), the hypothesis is impossible for
+\(n\ge2\). Otherwise put \(d=1-1/(r-1)\). Choose a fixed integer
+\(m\ge r\) large enough that \(d/(m-1)\le\varepsilon/2\).
+For every partition into \(r-1\) parts with sizes \(a_i\), the number
+of crossing pairs is \((m^2-\sum_i a_i^2)/2\). The inequality
+\(\sum_i(a_i-m/(r-1))^2\ge0\) gives the bound \(d m^2/2\).
+Consequently Theorem~\ref{p205:W01} gives
+\[
+  e(T_{r-1}(m))\le(d+\varepsilon/2)\binom m2.
+\]
+
+For \(n\ge m\), choose an \(m\)-set uniformly. Each edge is included
+with probability \(\binom m2/\binom n2\), so the expected number of
+sampled edges is at least \((d+\varepsilon)\binom m2\). Write \(q\)
+for the proportion of samples containing an \(r\)-clique. A sample
+outside this proportion has at most \((d+\varepsilon/2)\binom m2\)
+edges, and every sample has at most \(\binom m2\). Hence the
+expected number is at most \((d+\varepsilon/2+q)\binom m2\) and
+\(q\ge\varepsilon/2\). Each \(r\)-clique lies in
+\(\binom{n-r}{m-r}\) samples, so the number of \(r\)-cliques is at
+least
+\[
+  \frac{\varepsilon}{2}\frac{\binom nm}{\binom{n-r}{m-r}}
+    =\frac{\varepsilon}{2}\frac{\binom nr}{\binom mr}.
+\]
+For \(n\ge2r\), the last expression is at least a fixed positive
+multiple of \(n^r\).
+
+Independently label each vertex uniformly by one of \(r\) labels.
+A given \(r\)-clique has all labels distinct with probability
+\(r!/r^r\). By averaging there is a partition into the label classes
+with at least this proportion of the cliques crossing all classes.
+They give transversal tuples in the product of the classes, so
+Lemma~\ref{p205:transversal-density} supplies \(t\) points in each
+class all of whose transversal tuples are cliques. Any two points
+from different chosen classes can be completed to a transversal tuple,
+and therefore are adjacent. They give the required subgraph.
+\end{proof}
+
+\begin{theorem}[Erd\H{o}s--Stone--Simonovits]\label{p205:W04}
+Let \(H\) be a finite simple graph with at least one edge, and
+write \(\operatorname{ex}(n,H)\) for the largest number of edges
+in an \(n\)-vertex \(H\)-free graph. Then
+\[
+ \lim_{n\to\infty}\frac{\operatorname{ex}(n,H)}{\binom n2}
+   =1-\frac1{\chi(H)-1}.
+\]
+In particular, the limiting density for bipartite \(H\) is zero.
+\end{theorem}
+\begin{proof}
+Set \(r=\chi(H)\ge2\). The graph \(T_{r-1}(n)\) is \((r-1)\)-colorable,
+so it contains no copy of \(H\). If its part sizes are \(a_i\), then
+\(a_i/n\to1/(r-1)\) for every \(i\). Its edge count is
+\((n^2-\sum_i a_i^2)/2\), giving the required limit inferior.
+In a proper \(r\)-coloring of \(H\), every color class has at most
+\(t=|V(H)|\) vertices. Map each color class injectively into its
+part of \(K_r(t)\) to embed \(H\). For each fixed \(\varepsilon>0\),
+Theorem~\ref{p205:W03} then rules out the threshold density
+\(1-1/(r-1)+\varepsilon\) for all sufficiently large \(H\)-free
+graphs. Letting \(\varepsilon\) tend to zero gives the limit superior.
+\end{proof}
+
+The clique bounds and the general density theorem are treated in
+\cite[Section~7.1]{diestel} and \cite[Sections~1.3 and~1.5]{zhao}.
+The bipartite bound is the classical estimate of \cite{kst}.
+\chapter{Extremal Set Families}
+
+For a finite set \(X\), write \(\binom Xk\) for its layer of
+\(k\)-element subsets. A family of subsets is an antichain if
+distinct members are incomparable by inclusion. It is intersecting
+if any two members have a point in common. For a family
+\(\mathcal F\subseteq\binom Xk\), its lower shadow \(\partial\mathcal F\)
+consists of the \((k-1)\)-sets contained in members of \(\mathcal F\)
+when \(k\ge1\). The shadow of a family of empty sets is defined
+to be empty.
+
+\section{Antichains and layer densities}
+
+\begin{theorem}[LYM and Sperner]\label{p205:W05}
+If \(|X|=n\) and \(\mathcal A\) is an antichain of subsets of \(X\), then
+\[
+ \sum_{A\in\mathcal A}\binom n{|A|}^{-1}\le1,
+ \qquad |\mathcal A|\le\binom n{\lfloor n/2\rfloor}.
+\]
+Equality in the first inequality holds exactly for full layers.
+Equality in the second holds exactly for full middle layers
+\(\binom X{\lfloor n/2\rfloor}\) or \(\binom X{\lceil n/2\rceil}\).
+\end{theorem}
+\begin{proof}
+A permutation of \(X\) determines the chain of all its initial
+sets, including the empty set and \(X\). A \(k\)-set occurs in
+exactly \(k!(n-k)!\) of the \(n!\) permutation chains, counting
+permutations with multiplicity. Each chain contains at most one
+member of \(\mathcal A\). Counting the pairs of a permutation and
+a member on its chain gives the first inequality after division by
+\(n!\).
+
+If equality holds, each permutation chain contains exactly one
+member. Swapping two adjacent points in a permutation changes
+exactly one initial set. If the chosen member changes, its rank
+must be that of the changed set. In fact, if the old chosen member
+was unchanged, it would still be the unique member on the new
+chain. If it was changed, all unchanged sets fail to belong to
+the family, so the new chosen member is at the same rank. Any
+permutation can be obtained from any other by adjacent swaps,
+for example by bringing the desired first point to the front
+and repeating on the tail. Hence there is one rank for all
+chosen members. Every set at this rank occurs on a permutation
+chain and must be chosen there. Conversely each full layer
+makes the first inequality an equality.
+
+The ratio of successive binomial coefficients is \((n-k)/(k+1)\)
+for \(0\le k<n\), so their maximum is
+\(M=\binom n{\lfloor n/2\rfloor}\), attained precisely at the middle
+rank or ranks. Each summand is at least \(1/M\). For equality in the
+cardinality bound, the sum must equal one and each member must have
+a maximizing rank, so the first equality classification gives the
+second one. For \(n=0\) there is only the empty-set layer, and for
+\(n=1\) both ranks are middle ranks. The count and its equality
+conditions apply in both cases.
+\end{proof}
+
+\begin{proposition}[Local LYM]\label{p205:W06}
+If \(1\le k\le n=|X|\) and \(\mathcal A\subseteq\binom Xk\), then
+\[
+ \frac{|\partial\mathcal A|}{\binom n{k-1}}
+ \ge \frac{|\mathcal A|}{\binom nk}.
+\]
+If \(0\le k<n\), the upper shadow \(\partial^+\mathcal A\) consisting
+of \((k+1)\)-sets containing a member similarly satisfies
+\[
+ \frac{|\partial^+\mathcal A|}{\binom n{k+1}}
+ \ge \frac{|\mathcal A|}{\binom nk}.
+\]
+\end{proposition}
+\begin{proof}
+Count pairs \((A,B)\) with \(A\in\mathcal A\), \(B\subset A\) and
+\(|B|=k-1\). The count is \(k|\mathcal A|\), and at most
+\(n-k+1\) extensions are possible for each \(B\). Thus
+\(k|\mathcal A|\le(n-k+1)|\partial\mathcal A|\), which is the first
+claim by the ratio of binomial coefficients. Complementation
+interchanges the upper shadow of \(\mathcal A\) with the lower
+shadow of its complementary family in rank \(n-k\).
+\end{proof}
+
+\section{Uniform intersecting families}
+
+\begin{theorem}[Erd\H{o}s--Ko--Rado bound]\label{p205:W07}
+For \(1\le k\le n/2\), an intersecting family
+\(\mathcal F\subseteq\binom Xk\) satisfies
+\[
+ |\mathcal F|\le\binom{n-1}{k-1}.
+\]
+The full star, consisting of all \(k\)-sets containing a fixed
+point, attains the bound. If \(n=2k\), equality holds exactly when
+the family contains one member of every complementary pair.
+\end{theorem}
+\begin{proof}
+Place the points in an arbitrary cyclic order with positions
+numbered modulo \(n\). Consider the arcs of \(k\) consecutive points
+that belong to \(\mathcal F\). If at least one belongs, rotate
+positions so that one selected arc begins at \(0\). An arc that
+intersects this arc has a start in
+\(\{-(k-1),\ldots,k-1\}\) modulo \(n\). These \(2k-1\) positions
+are distinct because \(n\ge2k\). For each \(i=1,\ldots,k-1\),
+the arcs starting at \(i-k\) and \(i\) have disjoint consecutive
+blocks, whose combined length is \(2k\le n\). Thus at most one
+from each pair is selected, and there are at most \(k\) selected arcs.
+If no arc belongs to the family the same bound holds.
+
+Now choose the permutation assigning points to positions uniformly.
+For each position its \(k\)-arc is a uniform \(k\)-set. Averaging the
+number of selected arcs gives
+\(n|\mathcal F|/\binom nk\le k\). The bound follows, and the full
+star has precisely that many members by counting its remaining
+\(k-1\) points. When \(n=2k\), the only disjoint \(k\)-sets are
+complements of one another. At most one can be taken from each
+pair, and \(\binom nk/2=\binom{n-1}{k-1}\), proving the equality
+criterion.
+\end{proof}
+
+\begin{theorem}[Uniqueness in the strict range]\label{p205:W08}
+If \(k\ge1\) and \(n>2k\), the full stars are the only intersecting
+families of \(k\)-sets of size \(\binom{n-1}{k-1}\).
+\end{theorem}
+\begin{proof}
+Order \(X=\{1,\ldots,n\}\). For \(i<j\), shift a set containing
+\(j\) and avoiding \(i\) to the set with \(j\) replaced by \(i\)
+provided the replacement is absent from the family. Keep every
+other set. This preserves the size since each moved set has a
+distinct, previously absent image. It also preserves intersection.
+Indeed, if two resulting sets are disjoint, at least one was
+moved, and they cannot both have moved because both images
+would contain \(i\). Write the moved set as \(C\cup\{i\}\) with
+preimage \(C\cup\{j\}\), and the retained set as \(B\). The old
+intersection then forces \(j\in B\). Since \(B\) avoids \(i\) and
+was retained, \(B\setminus\{j\}\cup\{i\}\) was in the old family,
+disjoint from \(C\cup\{j\}\). This is a contradiction.
+Perform any shift that changes the family until no such shift remains.
+The sum of all point labels over all members strictly decreases at
+each change, so this process terminates.
+
+We prove the classification by induction on \(k\), uniformly in
+\(n>2k\). At \(k=1\) the maximizing family is a singleton star.
+For \(k\ge2\), let \(\mathcal F_0\) be the sets of the shifted
+family avoiding \(n\), and let \(\mathcal F_1\) consist of the
+sets containing \(n\) with \(n\) removed. Both are intersecting
+families on \(n-1\) points. For \(\mathcal F_1\), if two members
+\(C,D\) were disjoint, choose \(i\in\{1,\dots,n-1\}\setminus(C\cup D)\).
+The shifted family would contain \(C\cup\{i\}\), which is disjoint
+from \(D\cup\{n\}\). By Theorem~\ref{p205:W07},
+\[
+ |\mathcal F_0|\le\binom{n-2}{k-1},
+ \qquad |\mathcal F_1|\le\binom{n-2}{k-2}.
+\]
+Both ranks are within the theorem's range because \(n-1\ge2k\).
+Pascal's identity and the extremal size force equality in both.
+Since \(n-1>2(k-1)\), induction shows that \(\mathcal F_1\) is a
+full star at some \(c<n\). A member of \(\mathcal F_0\) avoiding
+\(c\) would be disjoint from a \((k-1)\)-set containing \(c\)
+on the remaining points of \(\{1,\ldots,n-1\}\). There are at
+least \(k-1\) remaining points, so this is impossible.
+Thus the entire shifted family lies in the star at \(c\)
+and fills it by its size.
+
+It remains to undo each shift. Suppose the \((i,j)\)-shift of an
+intersecting family is a full star at \(c\). If \(c\notin\{i,j\}\),
+a shift preserves whether each set contains \(c\), so the original
+family is that same star by cardinality. If \(c=j\), take any
+\((k-1)\)-set \(D\) avoiding \(i,j\). The set \(D\cup\{j\}\)
+cannot survive a shift without \(D\cup\{i\}\) also being present,
+which is impossible in the output star. If \(c=i\), the original
+family contains all \(k\)-sets containing both \(i,j\), none
+containing neither, and exactly one from
+\(\{D\cup\{i\},D\cup\{j\}\}\) for each such \(D\). This follows by
+checking the shift on each two-set pair, where the number of
+members is preserved. For disjoint \(D,D'\) the chosen points
+from \(\{i,j\}\) must agree, or the two corresponding members
+would be disjoint.
+
+The graph of \((k-1)\)-sets of \(X\setminus\{i,j\}\) joined when
+disjoint is connected. To see this, one can connect any two
+\((k-1)\)-sets by successive single-point replacements. The union
+of two successive sets has \(k\) elements. Its complement in
+\(X\setminus\{i,j\}\) has size \(n-2-k\ge k-1\), so these two
+sets have a common disjoint neighbor. This gives a walk in the
+disjointness graph. The choice between \(i,j\) is therefore
+constant and the original family is a full star. Undoing the
+finitely many shifts completes the proof.
+\end{proof}
+
+\section{The minimum shadow}
+
+Give \(X\) a linear order. For distinct sets \(A,B\) of the same
+size, let \(A<_{\mathrm{colex}}B\) if the largest point of
+\(A\mathbin{\triangle} B\) belongs to \(B\). This is a linear order
+on each layer. In the order \(x_1<\cdots<x_n\) on \(X\), it agrees
+with increasing values of \(\sum_{x_i\in A}2^{i-1}\), since the
+largest differing term outweighs the sum of the smaller terms.
+Let \(I_k(m)\) be the first \(m\) sets in this order.
+
+\begin{lemma}[The shadow of an initial segment]\label{p205:colex-shadow}
+For \(1\le k\le n\), the shadow of a colex initial segment in
+\(\binom Xk\) is a colex initial segment in \(\binom X{k-1}\).
+If the initial segment is nonempty with greatest member \(S\),
+then its shadow ends at \(S\setminus\{\min S\}\).
+\end{lemma}
+\begin{proof}
+The empty case is immediate. Put \(S'=S\setminus\{\min S\}\).
+For a \(k\)-set \(A\le_{\mathrm{colex}} S\), the greatest of its
+\((k-1)\)-subsets is obtained by removing \(\min A\). We show that
+this set is at most \(S'\). If \(A=S\), this is clear. Otherwise
+let \(d\in S\setminus A\) be the largest differing point.
+If \(d=\min S\), the two sets agree above \(d\), with \(A\) having
+one more point below \(d\). Removing the two minima therefore
+gives the same set. If \(d>\min S\), then \(\min A<d\). Otherwise
+\(A\) would have all its \(k\) points above \(d\), where it agrees
+with \(S\), although \(S\) also contains \(d\). Removing both minima
+then leaves \(d\) as the largest differing point and it lies in \(S'\).
+It follows that every point of the shadow is at most \(S'\).
+
+Conversely, let \(B\le_{\mathrm{colex}}S'\) have size \(k-1\).
+For \(B=S'\) use the extension \(S\). Otherwise let \(d\in S'\setminus B\)
+be the largest differing point, and let \(x\) be the least point of
+\(X\setminus B\). Thus \(x\le d\). If \(x<d\), then \(B\cup\{x\}\)
+is below \(S\) in colex, since \(\min S<d\) and \(d\) is still the
+largest differing point. If \(x=d\), then \(B\) contains every point
+below \(d\). Above \(d\) the sets \(B,S'\) agree. Since \(S'\) has
+the same size as \(B\) and contains \(d\), it has one fewer point
+below \(d\). The additional point \(\min S\) fills this single
+gap below \(d\), and \(S=B\cup\{d\}\). Thus every such \(B\)
+belongs to the shadow.
+\end{proof}
+
+For disjoint, equally sized sets \(U,V\subseteq X\), call \(A\)
+movable when it contains \(V\) and avoids \(U\). Its replacement
+is \(A^*=(A\setminus V)\cup U\). The compression \(C_{U,V}\)
+of a family replaces each movable member whose replacement
+is absent, and leaves other members in place. The inverse on
+replacements removes \(U\) and restores \(V\). In particular the
+compression preserves rank and cardinality. A family is
+\(C_{U,V}\)-closed if it contains the replacement of each
+movable member. For \(U=V=\varnothing\) this holds automatically.
+
+\begin{lemma}[Smaller compressions control the shadow]\label{p205:uv-shadow}
+Suppose \(U,V\) are disjoint nonempty sets of equal size. For every
+\(x\in U\), assume that some \(y\in V\) has the property that
+\(\mathcal F\) is \(C_{U\setminus\{x\},\,V\setminus\{y\}}\)-closed.
+Then
+\[
+ \partial(C_{U,V}\mathcal F)
+   \ \subseteq\ C_{U,V}(\partial\mathcal F).
+\]
+In particular, \(C_{U,V}\) does not increase the shadow size.
+\end{lemma}
+\begin{proof}
+Take \(B\) in the left side and write \(A=B\cup\{z\}\) for an
+extension in \(C_{U,V}\mathcal F\), with \(z\notin B\).
+First suppose \(A\notin\mathcal F\). Then
+\(A=D\cup U\) has been moved from \(D\cup V\in\mathcal F\),
+where \(D\) avoids \(U\cup V\). If \(z\notin U\),
+\((D\setminus\{z\})\cup V\) belongs to \(\partial\mathcal F\)
+and its replacement is \(B\). Hence \(B\) belongs to the
+compressed shadow, whether it is newly moved there or already
+present. If \(z\in U\), choose \(y\in V\) as in the hypothesis
+for \(x=z\). Compressing \(D\cup V\) along
+\((U\setminus\{z\}, V\setminus\{y\})\) gives
+\[
+   D\cup(U\setminus\{z\})\cup\{y\}=B\cup\{y\}\in\mathcal F.
+\]
+Thus \(B\in\partial\mathcal F\) and it is retained under \(C_{U,V}\)
+because it does not contain \(V\).
+
+Now suppose \(A\in\mathcal F\). Then \(B\in\partial\mathcal F\), and
+we need consider only movable \(B\), say \(B=D\cup V\)
+with \(D\) avoiding \(U\cup V\). If \(z\notin U\),
+\(A\) is also movable. It survived in the compressed family, so its
+replacement \(D\cup U\cup\{z\}\) was in \(\mathcal F\).
+The set \(B^*=D\cup U\) therefore belongs to \(\partial\mathcal F\).
+If \(z\in U\), choose \(y\in V\) for \(x=z\). The smaller
+compression sends \(D\cup V\cup\{z\}\) to
+\(D\cup U\cup\{y\}\), which lies in \(\mathcal F\) by closure.
+Again \(B^*\in\partial\mathcal F\). In both subcases \(B\) is
+retained because its replacement was already in the shadow.
+The inclusion follows. The final inequality uses cardinality
+preservation of the compression applied to the shadow.
+\end{proof}
+
+\begin{theorem}[Kruskal--Katona in colex form]\label{p205:W09}
+Let \(1\le k\le |X|\), let \(\mathcal F\subseteq\binom Xk\), and
+put \(m=|\mathcal F|\). For every \(0\le j\le k\),
+\[
+   \bigl|\partial^j I_k(m)\bigr|\le\bigl|\partial^j\mathcal F\bigr|,
+\]
+where \(\partial^0\) is the identity.
+\end{theorem}
+\begin{proof}
+Call a pair of nonempty disjoint equally sized sets \(U,V\) useful
+if \(\max U<\max V\). If some useful compression changes
+\(\mathcal F\), choose such a pair with \(|U|\) minimal. If
+\(|U|=1\), deleting the points gives the identity compression.
+Otherwise let \(y=\min V\). For every \(x\in U\) the pair
+\(U\setminus\{x\}, V\setminus\{y\}\) is still useful since
+\(\max(V\setminus\{y\})=\max V\). Its compression fixes
+\(\mathcal F\) by minimality. A compression fixes the family
+exactly when it is closed. Thus Lemma~\ref{p205:uv-shadow}
+shows that the chosen compression does not increase the shadow.
+
+Each changed member decreases in colex because the largest point
+of its symmetric difference with its replacement belongs to \(V\).
+The sum of the colex ranks of the family members is a nonnegative
+integer, strictly decreasing at each step. Repeating the choice
+eventually gives a family closed under every useful compression.
+Such a family is a colex initial segment. Indeed, if \(A\) belongs
+and \(B<_{\mathrm{colex}}A\) is absent, then
+\(U=B\setminus A,\ V=A\setminus B\) form a useful pair sending
+\(A\) to \(B\), contradicting closure. Rank and cardinality
+were preserved, so the final family is \(I_k(m)\) and
+\(|\partial I_k(m)|\le|\partial\mathcal F|\).
+
+Now suppose \(\partial^j I_k(m)\) is an initial segment of size
+\(a\le b=|\partial^j\mathcal F|\) in rank \(k-j>0\).
+It is contained in the initial segment of size \(b\) in that rank.
+Taking shadows preserves inclusion, and the one-step inequality
+for \(\partial^j\mathcal F\) bounds the shadow of the larger
+initial segment. Lemma~\ref{p205:colex-shadow} ensures that
+\(\partial^{j+1} I_k(m)\) is again an initial segment. Induction
+starting at \(j=0\) proves the assertion through \(j=k\).
+\end{proof}
+
+\begin{remark}
+The argument uses an arbitrary finite linearly ordered ground set.
+Its increasing enumeration identifies it with the ordered \(n\)-point
+set used by the Mathlib colex declarations. An order-preserving
+bijection sends the greatest point of any symmetric difference
+to the greatest point of its image, preserves ranks, and sends
+one-point deletions bijectively to one-point deletions.
+Thus it transports both colex segments and every iterated shadow.
+The colex compression route follows the structure of the checked
+Mathlib proof~\cite{mathlib}. The binomial expansion formulation
+is discussed in \cite[Section~10.4]{jukna}.
+\end{remark}
+
+\section{Set-pair inequalities}
+
+\begin{theorem}[Bollob\'as's set-pair inequality]\label{p205:W10}
+Let \((A_i,B_i)\) be finitely many pairs of finite sets. Assume
+\(A_i\cap B_i=\varnothing\) for every \(i\) and
+\(A_i\cap B_j\ne\varnothing\) for all ordered pairs \(i\ne j\).
+Then
+\[
+   \sum_i\binom{|A_i|+|B_i|}{|A_i|}^{-1}\le1.
+\]
+\end{theorem}
+\begin{proof}
+Choose a uniform permutation of the union of all sets. Let \(E_i\)
+be the event that every point of \(A_i\) precedes every point of
+\(B_i\). The relative order of \(A_i\cup B_i\) is uniform.
+Choosing the positions of \(A_i\) gives
+\(\mathbb P(E_i)=\binom{|A_i|+|B_i|}{|A_i|}^{-1}\), including empty
+sides. If \(i\ne j\), choose \(x\in A_i\cap B_j\) and
+\(y\in A_j\cap B_i\). These points are distinct by the within-pair
+disjointness. Event \(E_i\) requires \(x\) before \(y\), and \(E_j\)
+requires \(y\) before \(x\), so the events are pairwise disjoint.
+Adding their probabilities proves the claim.
+\end{proof}
+
+For the classical antichain, intersecting-family, and set-pair
+bounds, see \cite[Sections~7.2 and~8.3--8.4]{jukna}.
+\chapter{Finite and Infinite Ramsey Theory}
+
+For a set \(X\) and a positive integer \(k\), write \([X]^k\) for
+its \(k\)-element subsets. A subset \(Y\subseteq X\) is homogeneous
+for a coloring of \([X]^k\) if there is a color that all members of
+\([Y]^k\) have. For a nonempty color set this condition holds
+vacuously whenever \(|Y|<k\).
+
+\section{Infinite and finite multicolor Ramsey}
+
+\begin{theorem}[Infinite Ramsey]\label{p205:W11}
+Let \(k,r\ge1\) be integers. Every coloring of \([\mathbb N]^k\)
+with \(r\) colors has an infinite homogeneous subset. The same
+conclusion holds for a coloring of the \(k\)-sets of any infinite set.
+\end{theorem}
+\begin{proof}
+For \(k=1\), an infinite set partitioned into finitely many
+parts has an infinite part, since a finite union of finite sets is
+finite. Suppose the result holds for \(k-1\), where \(k\ge2\).
+The induction hypothesis also holds on each infinite subset of
+\(\mathbb N\) by transport along its increasing enumeration.
+
+Starting with \(S_0=\mathbb N\), recursively take \(a_i=\min S_i\).
+The points of \(S_i\) greater than \(a_i\) form an infinite set.
+Color their \((k-1)\)-sets \(U\) by the old color of
+\(\{a_i\}\cup U\). By induction this induced coloring is constant,
+with some color \(d_i\), on the \((k-1)\)-sets of an infinite
+subset \(S_{i+1}\subseteq S_i\setminus\{a_i\}\). The \(a_i\) are
+strictly increasing. Among the indices \(i\) there is an infinite
+set \(I\) with a common \(d_i=d\). For any \(k\)-set drawn from
+\(\{a_i:i\in I\}\), let \(a_i\) be its least point. All the other
+points belong to \(S_{i+1}\) by nesting, so the \(k\)-set has color \(d\).
+This proves homogeneity. For an arbitrary infinite set, choose a
+sequence of distinct points recursively from the complements of its
+finite initial segments. Pull back along this injection of
+\(\mathbb N\), and take the image of an infinite homogeneous subset.
+\end{proof}
+
+\begin{theorem}[Finite Ramsey]\label{p205:W12}
+For integers \(k,r,m\ge1\) there is an integer \(N\ge m\) such that
+every \(r\)-coloring of the \(k\)-sets of an \(N\)-point set has a
+homogeneous \(m\)-set.
+\end{theorem}
+\begin{proof}
+Take \(N=m\) if \(m<k\) or \(r=1\). For \(k=1\), take
+\(N=r(m-1)+1\) by counting points in the color classes.
+In the remaining cases suppose that no \(N\) works. Call a coloring
+of the \(k\)-sets of \(\{1,\ldots,n\}\) bad if it has no homogeneous
+\(m\)-set. Every restriction of a bad coloring to a shorter
+initial segment is bad. Organize the bad colorings into a tree by
+connecting each level \(n+1\) coloring to its restriction at level
+\(n\). The level-zero root has bad extensions of arbitrarily large
+length, and every node has finitely many children since a finite
+set of new \(k\)-sets must be colored with finitely many colors.
+
+At a node with arbitrarily long extensions, at least one child
+has arbitrarily long extensions. Otherwise take the maximum of
+the finitely many upper bounds for its children to obtain a bound
+at the node. Repeatedly choose such a child to obtain compatible
+colorings at all levels. For each \(k\)-set of positive integers,
+its color is fixed by every sufficiently long initial segment,
+so these colorings define an infinite coloring. An infinite
+homogeneous subset exists by Theorem~\ref{p205:W11}. Any \(m\)
+of its points lie in some finite initial segment, contradicting
+that segment's bad coloring.
+\end{proof}
+
+\section{Two-color graph Ramsey numbers}
+
+\begin{theorem}[Recursion and the first diagonal value]\label{p205:W13}
+For integers \(a,b\ge1\), let \(R(a,b)\) be the least positive \(n\)
+such that every red--blue edge coloring of \(K_n\) has a red \(K_a\)
+or a blue \(K_b\). Then \(R(1,b)=R(a,1)=1\), and for \(a,b\ge2\),
+\[
+ R(a,b)\le R(a-1,b)+R(a,b-1)
+    \qquad\text{and}\qquad
+ R(a,b)\le\binom{a+b-2}{a-1}.
+\]
+In particular \(R(3,3)=6\).
+\end{theorem}
+\begin{proof}
+Existence follows from Theorem~\ref{p205:W12} with \(k=r=2\)
+and \(m=\max\{a,b\}\). A single vertex is a clique in either
+color, proving the boundary values. Put \(u=R(a-1,b)\),
+\(v=R(a,b-1)\), and fix a vertex \(x\) in a colored \(K_{u+v}\).
+Among the \(u+v-1\) other vertices, either at least \(u\) are
+joined to \(x\) in red, or at least \(v\) in blue. In the red case
+the \(u\) chosen neighbors contain a blue \(K_b\) or a red
+\(K_{a-1}\), which extends by \(x\). In the blue case the symmetric
+argument yields a red \(K_a\) or a blue \(K_b\).
+The binomial bound now follows by induction on \(a+b\) using
+Pascal's identity with the boundary values. It gives
+\(R(3,3)\le\binom42=6\). On five cyclically ordered vertices, color
+the cycle edges red and the other edges blue. Each color forms a
+five-cycle, so neither contains a triangle. Thus \(R(3,3)>5\).
+\end{proof}
+
+The general Ramsey statements follow the distinction between infinite
+induction and finite compactness in \cite[Section~9.1]{diestel}.
+For the two-color graph bounds see \cite[Section~4.9]{jukna}.
+\chapter[Elementary Probabilistic Method]{The Elementary Probabilistic Method}
+\label{p205:probabilistic}
+
+A probability argument can find a combinatorial object by studying the
+distribution of a sample that encodes it. The witness is an outcome whose
+decoded object has the desired property. We develop avoidance, alteration,
+and a deterministic selection rule on finite experiments. Alon and Spencer
+give the classical starting points for these methods \cite{alon}.
+
+\section{Positive probability and finite avoidance}
+
+Write \((\Omega,\mathcal F,\mathbb P)\) for a probability space. In a finite
+weighted experiment we take \(\mathcal F=2^\Omega\) and give each outcome
+\(\omega\) a weight \(p_\omega\ge 0\), with
+\(\sum_{\omega\in\Omega}p_\omega=1\).
+Then \(\mathbb P(A)=\sum_{\omega\in A}p_\omega\). The positive support is
+\(\{\omega\in\Omega:p_\omega>0\}\). If \(Z:\Omega\to\mathbb R\) is a real
+quantity in such an experiment, its expectation is
+\(\mathbb E Z=\sum_{\omega\in\Omega}p_\omega Z(\omega)\).
+For an event \(A\), the indicator \(\mathbf 1_A\) equals \(1\) on \(A\) and
+\(0\) on its complement, so \(\mathbb E\mathbf 1_A=\mathbb P(A)\). The sum
+formula makes expectation linear even if the summed quantities are
+dependent.
+
+\begin{proposition}[Existence from positive probability]
+\label{p205:W14}
+Let \(A\in\mathcal F\) satisfy \(\mathbb P(A)>0\). Then \(A\) is nonempty.
+In a finite weighted experiment, \(A\) contains a positive-weight
+outcome. In particular, if \(f\) sends outcomes to combinatorial objects
+and the event \(A\) consists of outcomes whose images under \(f\) have a
+specified property, that property is realized by an object \(f(\omega)\).
+\end{proposition}
+
+\begin{proof}
+The empty set has probability zero, so \(A\) contains an outcome.
+In the finite case, a positive sum of nonnegative weights has a positive
+summand. Apply \(f\) to the chosen outcome.
+\end{proof}
+
+\begin{proposition}[Union bound and simultaneous avoidance]
+\label{p205:W15}
+For measurable events \(A_i\), indexed by a finite set \(I\), one has
+\[
+  \mathbb P\!\left(\bigcup_{i\in I} A_i\right)
+       \le \sum_{i\in I}\mathbb P(A_i).
+\]
+If the sum on the right is strictly less than \(1\), then
+\(\mathbb P(\bigcap_{i\in I} A_i^c)>0\).
+\end{proposition}
+
+\begin{proof}
+Enumerate \(I\) as \(i_1,\ldots,i_m\) and define
+\[
+ B_j=A_{i_j}\setminus\bigcup_{\ell<j}A_{i_\ell}.
+\]
+These measurable sets are pairwise disjoint, have the same union as the
+\(A_i\), and satisfy \(B_j\subseteq A_{i_j}\).
+Finite additivity and monotonicity give
+the inequality. Taking complements shows that the probability of
+simultaneous avoidance is at least \(1-\sum_i\mathbb P(A_i)>0\).
+For \(I=\varnothing\) the bad union is empty and the good intersection
+is \(\Omega\), with probability \(1\).
+\end{proof}
+
+\begin{theorem}[A random-coloring lower bound for Ramsey numbers]
+\label{p205:W16}
+For integers \(n\ge 0\) and \(k\ge 2\), if
+\[
+  \binom nk\,2^{\,1-\binom k2}<1,
+\]
+then \(R(k,k)>n\). In particular \(R(k,k)>2^{k/2}\) for \(k\ge3\).
+\end{theorem}
+
+\begin{proof}
+Color each edge of \(K_n\) red or blue independently with probability
+\(1/2\) for either color. For any fixed \(k\)-set of vertices, there are
+\(\binom k2\) edges on it and the two monochromatic patterns are
+distinct, since \(k\ge2\). Its bad-event probability is
+\(2^{1-\binom k2}\). By Proposition~\ref{p205:W15}, a coloring exists
+that has no monochromatic \(K_k\). If the Ramsey number were at most
+\(n\), restricting that coloring to \(R(k,k)\) vertices would give a
+contradiction. When \(n<k\), the family of bad events is empty and the
+same conclusion holds.
+
+Take \(n=\lfloor 2^{k/2}\rfloor\). Since \(\binom nk\le n^k/k!\), the
+left side of the criterion is at most \(2^{1+k/2}/k!\). This is strictly
+less than \(1\) at \(k=3\), since \(2^{5/2}<6\). Increasing \(k\) to
+\(k+1\) multiplies the bound by \(\sqrt{2}/(k+1)<1\). Therefore
+\(R(k,k)\ge \lfloor 2^{k/2}\rfloor+1>2^{k/2}\).
+\end{proof}
+
+\section{Alteration and deterministic choices}
+
+\begin{theorem}[The finite alteration principle]
+\label{p205:W17}
+For each outcome of a finite weighted experiment, suppose a finite
+object has size \(S\) and an associated nonnegative integer defect
+count \(D\). Suppose a specified deterministic deletion procedure
+repairs every object on the positive support, removing at most \(D\)
+items, and yields an object of size at least \(S-D\) with all defects
+cleared. Then some repaired object has size at least
+\(\mathbb E(S-D)\).
+\end{theorem}
+
+\begin{proof}
+The maximum of \(S-D\) over the nonempty positive support is at least
+its weighted mean. Choose an outcome attaining the maximum and apply
+the repair procedure. In an application where defects are forbidden
+subsets and deletion cannot create new forbidden subsets, a concrete
+procedure is to enumerate the original defects and, whenever the
+next still survives, delete a member of it. At most one deletion is
+charged to each original defect, and every remaining defect would
+have been among the original ones and would have been hit at its
+turn. An application with different defect data must establish its
+own repair property.
+\end{proof}
+
+\begin{corollary}[An independence bound by deletion]
+\label{p205:W18}
+Let \(G\) be a finite simple graph with \(n\) vertices and \(m\) edges.
+For each real \(p\in[0,1]\), its independence number satisfies
+\[
+  \alpha(G)\ge pn-p^2m .
+\]
+\end{corollary}
+
+\begin{proof}
+Independently keep each vertex with probability \(p\). Let \(S\) be
+the number of kept vertices and \(D\) the number of edges whose two
+endpoints are kept. Their expectations are \(pn\) and \(p^2m\), by
+the indicator sum and by independence of the two choices on each
+edge. Enumerate the edges originally kept and remove one endpoint
+whenever the edge still survives. The remaining vertices are
+independent and at most \(D\) vertices were deleted. Apply
+Theorem~\ref{p205:W17}. The experiment and deletion argument also
+apply at \(p=0\) and \(p=1\) and when the graph is empty.
+\end{proof}
+
+\begin{theorem}[Method of conditional expectations]
+\label{p205:W19}
+In a finite weighted experiment revealed in finitely many stages,
+there is a positive-weight outcome whose real objective is at
+least its initial expectation. One may choose such an outcome
+by selecting a positive-probability branch of nondecreasing
+conditional expectation at each stage.
+In particular a finite simple graph with \(m\) edges admits a
+cut of at least \(m/2\) edges, obtained by this rule on successive
+vertex choices.
+\end{theorem}
+
+\begin{proof}
+A finite staged experiment can be described by a sequence of
+successively refining partitions of its outcomes, starting at the
+trivial partition and ending at singletons. At a current cell \(C\)
+of positive probability define the conditional expectation to be
+\[
+  \mathbb E[Z\mid C]=
+     \frac{\sum_{\omega\in C}p_\omega Z(\omega)}{\mathbb P(C)}.
+\]
+If \(C_1,\ldots,C_s\) are its positive-probability child cells, their
+total probability is \(\mathbb P(C)\). The defining sum split among
+the children yields
+\[
+  \mathbb E[Z\mid C]
+     =\sum_{j=1}^{s}\frac{\mathbb P(C_j)}{\mathbb P(C)}
+                      \mathbb E[Z\mid C_j].
+\]
+At least one child's conditional expectation is at least the
+parent's. Choose such a child at every stage. At the terminal
+singleton the conditional expectation is the objective value.
+
+For the cut, color all vertices with independent fair bits and let
+\(Z\) count edges whose ends receive different bits. Each edge is cut
+with probability \(1/2\), so \(\mathbb E Z=m/2\). Reveal one bit at a
+time. On any prefix the contribution of an edge with both ends
+revealed is its known indicator. If at least one endpoint is
+unrevealed, the contribution is \(1/2\), since the unrevealed
+choices remain independent and fair. This supplies the conditional
+means used to choose successive bits. An empty graph has a cut with
+zero edges and the same argument permits an empty sequence of choices.
+\end{proof}
+\chapter{Moments and Concentration}
+\label{p205:moments}
+
+This chapter moves from expected counts to quantitative probability
+bounds. The moment inequalities are stated on probability spaces, so
+that the same formulas apply to finite experiments and to measurable
+random variables with the indicated integrability. The finite
+applications require only weighted sums.
+
+\section{Indicator variables, first moments, and second moments}
+
+For a real random variable \(X\) we write \(\mathbb E X\) for its
+integral under the probability measure. If \(X\) and \(Y\) have finite
+second moments, put
+\[
+ \operatorname{Var}(X)=\mathbb E[(X-\mathbb E X)^2],\qquad
+ \operatorname{Cov}(X,Y)=
+ \mathbb E[(X-\mathbb E X)(Y-\mathbb E Y)] .
+\]
+The expression for the covariance is integrable, since
+\(2|uv|\le u^2+v^2\) for real \(u,v\). Expanding the square and the
+product gives
+\(\operatorname{Var}(X)=\mathbb E[X^2]-(\mathbb E X)^2\) and
+\(\operatorname{Cov}(X,Y)=\mathbb E[XY]-\mathbb E X\,\mathbb E Y\).
+
+\begin{proposition}[Indicator counts and the Caro--Wei bound]
+\label{p205:W20}
+Let \(A_i\), \(i\in I\), be a finite family of measurable events, and
+let \(Z=\sum_i\mathbf 1_{A_i}\), with \(p_i=\mathbb P(A_i)\). Then
+\[
+ \mathbb E Z=\sum_i p_i,\qquad
+ \operatorname{Var}(Z)=
+  \sum_{i,j\in I}\operatorname{Cov}(\mathbf 1_{A_i},\mathbf 1_{A_j}).
+\]
+In an enumeration of \(I\), the second formula is
+\[
+ \operatorname{Var}(Z)=\sum_i p_i(1-p_i)
+   +2\sum_{i<j}\bigl(\mathbb P(A_i\cap A_j)-p_i p_j\bigr).
+\]
+If \(G\) is a finite simple graph and \(d(v)\) is the degree of \(v\),
+then
+\[
+ \alpha(G)\ge\sum_{v\in V(G)}\frac{1}{d(v)+1}.
+\]
+\end{proposition}
+
+\begin{proof}
+The expectation formula follows by linearity. Write
+\(Z-\mathbb E Z=\sum_i(\mathbf 1_{A_i}-p_i)\), expand its square and
+integrate. For the diagonal terms use \(\mathbf 1_{A_i}^2=\mathbf
+1_{A_i}\). For each off-diagonal term use
+\(\mathbf 1_{A_i}\mathbf 1_{A_j}=\mathbf 1_{A_i\cap A_j}\).
+In particular the off-diagonal covariance is zero whenever the
+two events are independent.
+
+For the graph bound, choose a uniform random ordering of the
+vertices. Include each vertex that precedes all its neighbors.
+The selected vertices form an independent set, since adjacent
+vertices cannot both precede one another. The relative order on
+\(\{v\}\cup N(v)\) is uniform: each of its \((d(v)+1)!\) orders
+extends to the same number of orders of the full vertex set.
+Thus the selection probability of \(v\) is \(1/(d(v)+1)\).
+The expected size of the selected set equals the stated sum,
+and every selected set has size at most \(\alpha(G)\).
+The sum is zero when the vertex set is empty.
+\end{proof}
+
+\begin{theorem}[Markov's inequality and the zero-defect criterion]
+\label{p205:W21}
+If \(X\ge0\) almost surely is integrable and \(a>0\), then
+\[
+ \mathbb P(X\ge a)\le \frac{\mathbb E X}{a}.
+\]
+If \(X\) is nonnegative integer-valued almost surely and
+\(\mathbb E X<1\), then \(\mathbb P(X=0)>0\).
+\end{theorem}
+
+\begin{proof}
+The pointwise inequality \(a\mathbf 1_{\{X\ge a\}}\le X\) holds
+almost surely. Integrating and dividing by \(a>0\) gives the
+first assertion. Under the integer-valued hypothesis,
+\(\{X\ne0\}\) and \(\{X\ge1\}\) agree off a null set. The
+first assertion with \(a=1\) bounds their probability strictly
+below \(1\).
+\end{proof}
+
+\begin{theorem}[Second-moment existence bound]
+\label{p205:W22}
+If \(X\ge0\) almost surely, \(0<\mathbb E X<\infty\), and
+\(\mathbb E[X^2]<\infty\), then
+\[
+  \mathbb P(X>0)\ge
+       \frac{(\mathbb E X)^2}{\mathbb E[X^2]} .
+\]
+\end{theorem}
+
+\begin{proof}
+For a measurable event \(B\) with \(\mathbb P(B)>0\), the
+nonnegative square
+\(\mathbb E[(X\mathbf 1_B-c\mathbf 1_B)^2]\) with
+\(c=\mathbb E[X\mathbf 1_B]/\mathbb P(B)\) gives
+\[
+  (\mathbb E[X\mathbf 1_B])^2\le
+      \mathbb P(B)\,\mathbb E[X^2\mathbf 1_B]
+      \le \mathbb P(B)\,\mathbb E[X^2].
+\]
+The same inequality holds for \(\mathbb P(B)=0\) because the
+integral over a null set vanishes. Use \(B=\{X>0\}\). Its
+truncated expectation is \(\mathbb E X>0\), so the inequality
+also gives \(\mathbb E[X^2]>0\) before division.
+This is the second-moment argument in its indicator form
+\cite{roch}.
+\end{proof}
+
+\begin{theorem}[Strict Paley--Zygmund and the variance method]
+\label{p205:W23}
+Let \(X\) satisfy the hypotheses of Theorem~\ref{p205:W22} and
+write \(\mu=\mathbb E X\). For \(0\le\theta<1\),
+\[
+ \mathbb P(X>\theta\mu)\ge
+   \frac{(1-\theta)^2\mu^2}{\mathbb E[X^2]}.
+\]
+Also
+\[
+ \mathbb P(X=0)\le\frac{\operatorname{Var}(X)}{\mu^2}.
+\]
+Consequently, for any sequence of such variables, on possibly
+different probability spaces, if
+\(\operatorname{Var}(X_n)/(\mathbb E X_n)^2\to0\), then
+\(\mathbb P(X_n>0)\to1\).
+\end{theorem}
+
+\begin{proof}
+Let \(B=\{X>\theta\mu\}\). On \(B^c\) the bound is \(X\le\theta\mu\),
+so \(\mathbb E[X\mathbf 1_{B^c}]\le\theta\mu\,\mathbb P(B^c)
+\le\theta\mu\). Thus \(\mathbb E[X\mathbf 1_B]\ge(1-\theta)\mu\).
+Apply the indicator Cauchy--Schwarz inequality from the proof
+of Theorem~\ref{p205:W22}, square the positive lower bound, and
+divide by \(\mathbb E[X^2]>0\). The strict threshold is important:
+the complement used here includes equality. For \(\theta=0\)
+one recovers the second-moment bound \cite{tao,alon}.
+
+For any \(t>0\), Markov's inequality applied to
+\((X-\mu)^2\) gives
+\[
+ \mathbb P(|X-\mu|\ge t)
+  =\mathbb P((X-\mu)^2\ge t^2)
+  \le \frac{\operatorname{Var}(X)}{t^2}.
+\]
+The event \(X=0\) has deviation exactly \(\mu>0\), and is
+included in the deviation event with threshold \(\mu\). This
+proves the bound at zero. As \(X_n\ge0\) almost surely,
+\(\mathbb P(X_n>0)=1-\mathbb P(X_n=0)\), proving the limit.
+\end{proof}
+
+\section{An alteration example}
+
+\begin{theorem}[High girth and high chromatic number]
+\label{p205:W24}
+Given integers \(g\ge3\) and \(k\ge1\), there is a finite
+simple graph with no cycle of length at most \(g\) and with
+chromatic number greater than \(k\).
+\end{theorem}
+
+\begin{proof}
+Fix \(g,k\) and choose \(n\) large. In the random graph on \(n\)
+labeled vertices, choose each edge independently with
+probability \(p=n^{-1+1/(2g)}\). Let \(C\) count all cycles of
+length between \(3\) and \(g\). A cycle of length \(\ell\)
+is specified by an ordered list of \(\ell\) distinct vertices,
+up to its \(2\ell\) presentations by changing the starting
+vertex and direction. Each such cycle occurs with probability
+\(p^\ell\). Therefore
+\[
+ \mathbb E C\le \sum_{\ell=3}^g \frac{n^\ell p^\ell}{2\ell}
+      \le g n^{1/2}.
+\]
+By Theorem~\ref{p205:W21},
+\(\mathbb P(C\ge n/2)\le 2g\,n^{-1/2}\).
+
+Put \(a=\lceil n/(4k)\rceil\). For any fixed \(a\) vertices,
+independence requires that all \(\binom a2\) possible internal
+edges be absent. Proposition~\ref{p205:W15} gives
+\[
+ \mathbb P(\alpha(G)\ge a)
+    \le \binom na(1-p)^{\binom a2}
+    \le 2^n\exp\!\bigl(-p\binom a2\bigr).
+\]
+For \(n\ge 8k\), the inequalities \(a\ge n/(4k)\) and
+\(a-1\ge n/(8k)\) give
+\[
+  p\binom a2\ge \frac{n^{1+1/(2g)}}{64k^2}.
+\]
+Thus the upper bound for \(\mathbb P(\alpha(G)\ge a)\) tends
+to zero as \(n\) tends to infinity. The two bad-event
+probabilities thus sum to less than \(1\) for some \(n\).
+Choose a graph with \(C<n/2\) and \(\alpha(G)<a\).
+
+Process its original short cycles, deleting a vertex whenever
+the next cycle still survives. Deletion creates no new cycle,
+and fewer than \(n/2\) vertices are deleted. The remaining
+induced graph has more than \(n/2\) vertices and no short
+cycle. Every independent set in it was independent in the
+original graph, so a color class has size at most
+\(a-1<n/(4k)\). At most \(k\) such classes cover fewer than
+\(n/4\) vertices. This proves the claimed chromatic number.
+The construction is the standard random-graph use of alteration
+\cite{alon}.
+\end{proof}
+
+\section{Exponential moments}
+
+For a bounded real random variable \(X\), its moment-generating
+function is \(M_X(\lambda)=\mathbb E e^{\lambda X}\).
+For independent bounded real variables \(X_i\) and bounded
+measurable functions \(f_i\) on their essential ranges,
+\(\mathbb E\prod_i f_i(X_i)=\prod_i\mathbb E f_i(X_i)\).
+For indicator functions this is the defining finite-product
+probability identity for independence. Expanding finite sums
+extends it to simple functions. Uniform approximation of
+bounded measurable functions by simple functions obtained
+by partitioning their ranges gives the general identity.
+In particular \(M_{\sum_i X_i}(\lambda)=\prod_iM_{X_i}(\lambda)\).
+By Markov's inequality, for \(\lambda>0\) and a bounded
+real \(Y\),
+\[
+ \mathbb P(Y\ge t)\le e^{-\lambda t}\mathbb E e^{\lambda Y}.
+\]
+This follows by applying Theorem~\ref{p205:W21} to the
+nonnegative variable \(e^{\lambda Y}\) at \(e^{\lambda t}>0\).
+
+\begin{theorem}[Hoeffding's bound for independent bounded variables]
+\label{p205:W25}
+Let \(X_1,\ldots,X_m\) be independent real variables with
+\(a_i\le X_i\le b_i\) almost surely, for finite real endpoints
+\(a_i\le b_i\). Define
+\[
+  S=\sum_{i=1}^m(X_i-\mathbb E X_i),\qquad
+  V=\sum_{i=1}^m(b_i-a_i)^2.
+\]
+If \(t>0\) and \(V>0\), each of
+\(\mathbb P(S\ge t)\) and \(\mathbb P(S\le -t)\) is at most
+\(\exp(-2t^2/V)\). If \(V=0\), then \(S=0\) almost surely and
+both tail probabilities are zero for \(t>0\).
+\end{theorem}
+
+\begin{proof}
+First let \(a\le X\le b\) almost surely and set
+\(Y=X-\mathbb E X\). Its essential range lies in a bounded
+interval \([\alpha,\beta]\) of length \(b-a\).
+Let \(M(\lambda)=\mathbb E e^{\lambda Y}\) and
+\(f(\lambda)=\log M(\lambda)\). The function \(M\) is strictly
+positive. To differentiate, fix a compact interval of
+\(\lambda\)-values and an essential bound \(|Y|\le B\).
+For \(j=0,1,2\), the absolute value of
+\(Y^j e^{\lambda Y}\) is bounded by a finite constant
+depending only on \(B\) and the interval. Difference quotients
+of the integrands for the first and second derivatives are
+bounded by the corresponding derivative bounds on a slightly
+larger interval, by the mean-value theorem. Dominated convergence
+\cite[Theorem~D11.06.dominated\_convergence]{d11}
+yields \(M'(\lambda)=\mathbb E[Ye^{\lambda Y}]\) and
+\(M''(\lambda)=\mathbb E[Y^2e^{\lambda Y}]\), with both
+derivatives continuous.
+
+The tilted probability measure with density
+\(e^{\lambda Y}/M(\lambda)\) has total mass \(1\). The
+logarithmic derivative formula gives
+\[
+ f''(\lambda)=
+     \frac{\mathbb E[Y^2e^{\lambda Y}]}{M(\lambda)}
+     -\left(\frac{\mathbb E[Ye^{\lambda Y}]}{M(\lambda)}\right)^2,
+\]
+the variance under this measure. For its expectation
+\(\mathbb E_\lambda\), any constant \(u\) satisfies
+\[
+ \mathbb E_\lambda[(Y-u)^2]
+  =\operatorname{Var}_\lambda(Y)+(\mathbb E_\lambda Y-u)^2 .
+\]
+Choose \(u=(\alpha+\beta)/2\). Almost surely
+\((Y-u)^2\le (b-a)^2/4\), and the tilted measure also has this
+almost-sure bound. Hence \(f''(\lambda)\le (b-a)^2/4\) for all
+real \(\lambda\). Since \(f(0)=f'(0)=0\), integrating twice
+along the line segment from \(0\) to \(\lambda\) gives
+\[
+ f(\lambda)=\lambda^2\int_0^1 (1-s) f''(s\lambda)\,ds
+     \le\frac{\lambda^2(b-a)^2}{8},
+\]
+valid for either sign of \(\lambda\). This proves the
+one-variable exponential bound underlying Hoeffding's
+inequality \cite{hoeffding,alon}.
+
+Independence now yields
+\(\mathbb E e^{\lambda S}\le e^{\lambda^2 V/8}\). The
+exponential Markov bound gives
+\(\mathbb P(S\ge t)\le\exp(-\lambda t+\lambda^2V/8)\)
+for \(\lambda>0\). At \(\lambda=4t/V\) the exponent is
+\(-2t^2/V\). Use the same argument for \(-S\) to bound
+\(\mathbb P(S\le-t)\). If \(V=0\), all \(a_i=b_i\), so
+each centered variable is zero almost surely and their finite
+sum is zero almost surely. This also includes the empty sum.
+\end{proof}
+
+\pagebreak
+\begin{theorem}[Multiplicative Chernoff bounds for Bernoulli sums]
+\label{p205:W26}
+Let \(X_1,\ldots,X_m\) be independent Bernoulli variables,
+with success probabilities \(p_i\in[0,1]\). Put
+\(S=\sum_i X_i\) and \(\mu=\sum_i p_i\). For \(\delta\ge0\),
+\[
+ \mathbb P(S\ge (1+\delta)\mu)
+ \le\left(\frac{e^\delta}{(1+\delta)^{1+\delta}}\right)^\mu .
+\]
+For \(0\le\delta<1\),
+\[
+ \mathbb P(S\le (1-\delta)\mu)
+ \le\left(\frac{e^{-\delta}}{(1-\delta)^{1-\delta}}\right)^\mu .
+\]
+At \(\delta=1\), the lower-tail bound is
+\(\mathbb P(S=0)\le e^{-\mu}\).
+If \(\mu=0\), then \(S=0\) almost surely and these
+inequalities hold with right sides equal to \(1\).
+\end{theorem}
+
+\begin{proof}
+For any real \(\lambda\),
+\[
+ \mathbb E e^{\lambda S}
+  =\prod_i(1+p_i(e^\lambda-1))
+  \le \exp(\mu(e^\lambda-1)).
+\]
+Each factor is positive, and the inequality follows from
+\(1+u\le e^u\), obtained for example by the minimum of
+\(e^u-1-u\) at \(u=0\). For \(\mu>0\) and \(\delta>0\),
+use exponential Markov for the upper tail with
+\(\lambda=\log(1+\delta)>0\). The exponent is
+\(\mu(\delta-(1+\delta)\log(1+\delta))\), which yields the
+first formula. If \(0<\delta<1\), take
+\(\lambda=\log(1-\delta)<0\) and observe that on the
+lower-tail event \(e^{\lambda S}\ge
+e^{\lambda(1-\delta)\mu}\). Markov now gives the exponent
+\(\mu(-\delta-(1-\delta)\log(1-\delta))\).
+For \(\delta=0\) both asserted bounds are \(1\).
+For \(\delta=1\), independence gives
+\(\mathbb P(S=0)=\prod_i(1-p_i)\le\exp(-\sum_i p_i)\).
+Finally \(\mu=0\) forces each \(p_i=0\), including the
+possibility of an empty sum, proving the stated degeneracy
+\cite{alon}.
+\end{proof}
+\chapter{The Lov\'asz Local Lemma}
+\label{p205:local-lemma}
+
+The finite union bound avoids all bad events when their total probability
+is below \(1\). The local lemma allows a different test in which each
+bad event is controlled by the number and probabilities of events
+that can interact with it. We state the exact independence hypothesis
+and prove the product lower bound for simultaneous avoidance.
+Classical accounts appear in \cite[Section~5.1]{alon} and
+\cite[Sections~2.2--2.3]{vondrak}.
+
+\section{Dependency graphs}
+
+\begin{definition}[A dependency graph for events]
+\label{p205:W27}
+Let \((A_i)_{i\in I}\) be a finite family of measurable events on a
+probability space. A simple graph \(D\) on \(I\), with neighbor sets
+\(N(i)\), is a dependency graph for the events if each \(A_i\) is
+independent of the sigma-algebra generated by the events
+\(A_j\) with \(j\notin N(i)\cup\{i\}\). Explicitly, for every event
+\(B\) in that sigma-algebra one requires
+\[
+   \mathbb P(A_i\cap B)=\mathbb P(A_i)\mathbb P(B).
+\]
+\end{definition}
+
+For example, suppose the experiment is a finite product of finite
+weighted sample spaces, with independent coordinates. For each
+\(i\) let \(A_i\) be determined by the coordinates in a set \(S_i\).
+Join distinct \(i,j\) when \(S_i\cap S_j\ne\varnothing\). Each \(A_i\)
+is a measurable cylinder event on its coordinate set. All the
+non-neighbor events of \(A_i\) are measurable with respect to the
+coordinates in \(T_i=\bigcup_{j\notin N(i)\cup\{i\}} S_j\).
+Complements and countable unions of events determined by \(T_i\)
+are still determined by \(T_i\), so the sigma-algebra generated by
+the non-neighbor events has the same measurability property.
+The sets \(S_i,T_i\) are disjoint. To see the required independence
+directly, sum the product probabilities over assignments on the
+two disjoint blocks and over the unused coordinates. The sum over
+unused coordinates is \(1\), and the remaining sum factors as the
+product of the two marginal probabilities. This also applies if a
+block is empty.
+
+Pairwise independence does not suffice for
+Definition~\ref{p205:W27}. Let \(U,V\) be independent fair bits.
+The events \(A=\{U=0\}\), \(B=\{V=0\}\), and \(C=\{U=V\}\)
+each have probability \(1/2\) and each pair has intersection
+probability \(1/4\). But \(A\cap B\) belongs to the sigma-algebra
+generated by \(A,B\), and
+\[
+   \mathbb P(C\cap(A\cap B))=\tfrac14
+      \ne\mathbb P(C)\mathbb P(A\cap B)=\tfrac18 .
+\]
+Thus the graph with no edges fails the dependency-graph condition
+for this family.
+
+\section{The asymmetric and symmetric bounds}
+
+\begin{theorem}[Finite asymmetric Lov\'asz local lemma]
+\label{p205:W28}
+Let \(D\) be a dependency graph for a finite event family
+\((A_i)_{i\in I}\). Suppose numbers \(x_i\in[0,1)\) satisfy
+\[
+   \mathbb P(A_i)\le x_i\prod_{j\in N(i)}(1-x_j)
+   \qquad(i\in I).
+\]
+Then
+\[
+   \mathbb P\!\left(\bigcap_{i\in I}A_i^c\right)
+     \ge \prod_{i\in I}(1-x_i)>0 .
+\]
+\end{theorem}
+
+\begin{proof}
+For \(S\subseteq I\), write \(B_S=\bigcap_{j\in S}A_j^c\) and
+\(B_\varnothing=\Omega\). For a positive-probability event \(B\),
+write \(\mathbb P(A\mid B)=\mathbb P(A\cap B)/\mathbb P(B)\).
+We prove by induction on \(|S|\) both
+\(\mathbb P(B_S)>0\) and
+\begin{equation}\label{p205:lll-conditional}
+     \mathbb P(A_i\mid B_S)\le x_i
+     \qquad(i\notin S).
+\end{equation}
+For \(S=\varnothing\), positivity is immediate and the hypothesis
+gives \(\mathbb P(A_i)\le x_i\). Suppose \(|S|=m\ge1\) and both
+statements are established for all smaller sets. Select \(j\in S\).
+By the conditional estimate at \(S\setminus\{j\}\),
+\[
+ \mathbb P(B_S)=\mathbb P(B_{S\setminus\{j\}})
+         (1-\mathbb P(A_j\mid B_{S\setminus\{j\}}))
+     \ge \mathbb P(B_{S\setminus\{j\}})(1-x_j)>0 .
+\]
+
+To establish \eqref{p205:lll-conditional} at this size, fix \(i\notin S\)
+and write \(U=S\cap N(i)\) and \(T=S\setminus U\). The event \(B_T\)
+is in the non-neighbor sigma-algebra of \(A_i\) and has positive
+probability. Therefore
+\[
+  \mathbb P(A_i\mid B_S)=
+    \frac{\mathbb P(A_i\cap B_U\mid B_T)}
+         {\mathbb P(B_U\mid B_T)}
+    \le \frac{\mathbb P(A_i)}{\mathbb P(B_U\mid B_T)}.
+\]
+If \(U\) is empty the denominator is \(1\). Otherwise enumerate
+\(U\) as \(u_1,\ldots,u_h\). The conditional chain rule gives
+\[
+ \mathbb P(B_U\mid B_T)
+ =\prod_{\ell=1}^h\!
+     \left(1-\mathbb P\bigl(A_{u_\ell}\mid
+            B_{T\cup\{u_1,\ldots,u_{\ell-1}\}}\bigr)\right)
+ \ge \prod_{j\in U}(1-x_j).
+\]
+Every conditioning set in this product has size at most \(m-1\)
+and excludes the event being estimated. In the product before the
+inequality, each factor is the ratio of the probability after
+adjoining \(u_\ell\) to the probability before it. The ratios
+telescope to \(\mathbb P(B_S)/\mathbb P(B_T)\). All terms are
+well-defined and the bounds follow from the induction hypothesis.
+The same lower bound holds for the empty product when \(U\) is empty.
+Using the hypothesis on \(\mathbb P(A_i)\) now gives
+\[
+  \mathbb P(A_i\mid B_S)\le
+   x_i\prod_{j\in N(i)\setminus U}(1-x_j)\le x_i,
+\]
+completing the induction. Finally enumerate \(I\) and apply the
+conditional chain rule to the complements in this order. Estimate
+each factor by \eqref{p205:lll-conditional} to obtain the required
+product. Every factor is strictly positive. In particular the argument
+allows \(x_i=0\). The empty family gives the probability and product
+both equal to \(1\).
+\end{proof}
+
+\begin{corollary}[Finite symmetric Lov\'asz local lemma]
+\label{p205:W29}
+Suppose a dependency graph for the event family has maximum degree
+at most an integer \(d\ge0\), and that \(\mathbb P(A_i)\le p\) for
+some \(p\ge0\) and every \(i\). If \(e\,p(d+1)\le1\), then
+\(\mathbb P(\bigcap_i A_i^c)>0\).
+\end{corollary}
+
+\begin{proof}
+If \(d\ge1\), use the same \(x=1/(d+1)\in(0,1)\) for every event.
+Since \(\log(1+s)\le s\) for \(s\ge0\) by integrating
+\(1/(1+s)\le1\), one has \((1+1/d)^d\le e\). Consequently
+\[
+ x(1-x)^{|N(i)|}\ge \frac{1}{d+1}\left(\frac d{d+1}\right)^d
+     \ge\frac{1}{e(d+1)}\ge p .
+\]
+If \(d=0\), take \(x=p\) with \(0\le p\le1/e<1\), since all neighbour
+products are \(1\). In either case apply Theorem~\ref{p205:W28}.
+The empty event family has avoidance probability \(1\).
+\end{proof}
+
+\section{An application to hypergraph coloring}
+
+\begin{theorem}[Property B under bounded edge intersections]
+\label{p205:W30}
+Let a finite hypergraph have every edge of size at least \(k\ge1\).
+Suppose each edge intersects at most \(d\ge0\) other edges.
+If \(e\,2^{1-k}(d+1)\le1\), there is a red--blue coloring
+of the vertices with no monochromatic edge.
+\end{theorem}
+
+\begin{proof}
+Assign each vertex an independent fair red--blue color.
+For an edge \(F\), the two monochromatic patterns on \(F\) are
+distinct because \(F\) is nonempty. The probability of the bad
+event is therefore \(2^{1-|F|}\le 2^{1-k}\). Its coordinate set
+is the vertex set of \(F\), so the dependency graph obtained by
+joining intersecting edges satisfies Definition~\ref{p205:W27}
+by the product argument above. Apply
+Corollary~\ref{p205:W29} with \(p=2^{1-k}\) and take a witnessing
+coloring by Proposition~\ref{p205:W14}. If the hypergraph has
+no edges every coloring is a witness.
+\end{proof}
+\chapter{Linear Programming and Total Unimodularity}
+
+\section{Duality and certificates}
+
+Vectors and matrices in this chapter are finite and real unless
+integrality is specified. Inequalities on vectors are coordinatewise.
+We use the finite-dimensional linear programming theorem and Farkas
+alternative proved in \cite[Theorems 5.1 and 1.23]{p106}. Schrijver
+\cite[vol.~A, Sections 5.4--5.6 and 13.2]{schrijver} gives a parallel
+treatment.
+
+\begin{theorem}[Linear programming certificates]\label{p205:W31}
+Consider the primal and dual
+\[
+ \inf\{c^{\mathsf T}x:Ax=b,\ x\ge0\},
+ \qquad
+ \sup\{b^{\mathsf T}y:A^{\mathsf T}y\le c\}.
+\]
+For feasible \(x,y\), their objective values are equal exactly when
+\(x_i(c-A^{\mathsf T}y)_i=0\) for every \(i\). Either condition certifies
+optimality on both sides. If the primal is feasible with finite
+infimum, there is such a pair. The primal is infeasible exactly when
+there exists \(u\) with \(A^{\mathsf T}u\ge0\) and \(b^{\mathsf T}u<0\).
+For a feasible primal, the infimum is \(-\infty\) exactly when there
+exists \(d\ge0\) with \(Ad=0\) and \(c^{\mathsf T}d<0\).
+\end{theorem}
+
+\begin{proof}
+Subtract the objectives and use \(Ax=b\) to get
+\(x^{\mathsf T}(c-A^{\mathsf T}y)\). Its summands are nonnegative.
+This proves weak duality, the equality test and the optimality
+certificate. Attainment of both optima and equality of their values
+in the finite case are precisely \cite[Theorem 5.1]{p106} in this
+standard form.
+
+If both \(x\) and \(u\) in the infeasibility test existed, then
+\(0\le x^{\mathsf T}A^{\mathsf T}u=b^{\mathsf T}u<0\). The converse
+is the Farkas alternative for \(Ax=b,\ x\ge0\).
+For the unboundedness test, start at any feasible \(x_0\) and use
+\(x_0+td\) for \(t\ge0\). Conversely, unboundedness makes the dual
+infeasible by weak duality. Write its feasibility conditions as
+\[
+ [\,A^{\mathsf T},-A^{\mathsf T},I\,](y^+,y^-,s)^{\mathsf T}=c,
+ \qquad y^+,y^-,s\ge0 .
+\]
+The Farkas certificate for this system is a vector \(d\) with
+\(Ad\ge0\), \(-Ad\ge0\), \(d\ge0\), and \(c^{\mathsf T}d<0\),
+as required.
+\end{proof}
+
+We can pass to the standard form from a system with free variables,
+mixed equalities and inequalities, and either objective direction.
+Split each free coordinate into the difference of two nonnegative
+ones, add one slack to each upper inequality, and negate the
+objective for maximization. These transformations preserve the set
+of objective values. A row used as an upper inequality in a
+maximization has a nonnegative dual multiplier because its slack
+has objective coefficient zero. An equality has a free multiplier.
+We apply this correspondence explicitly to the two matching models
+in Chapter~\ref{p205:ch08}.
+
+\section{Vertices and active rows}
+
+A point \(x\) of a convex set is extreme if it admits no expression
+\(x=(x_++x_-)/2\) with two distinct points \(x_+,x_-\) of the set.
+This midpoint test also rules out any nontrivial convex
+decomposition into two points, by taking a smaller symmetric
+segment within the latter segment. A polyhedron is pointed if it
+contains no affine line. We use vertex to mean extreme point of a
+polyhedron.
+
+\begin{theorem}[Active rows and vertex optima]\label{p205:W32}
+Let \(P=\{x\in\mathbb R^n:Ax\le b\}\). A point \(x\in P\) is a vertex
+exactly when the rows with \(a_i^{\mathsf T}x=b_i\) span the dual
+coordinate space. If \(P\) is nonempty and pointed, a linear
+functional with finite optimum on \(P\) attains it at a vertex.
+Every nonempty bounded \(P\) is the convex hull of its vertices.
+\end{theorem}
+
+\begin{proof}
+If the active rows fail to span, choose a nonzero \(d\) annihilated
+by all of them. The finitely many inactive inequalities have
+strict slack, so \(x\pm\epsilon d\) are feasible for sufficiently
+small \(\epsilon>0\). Conversely, if \(x\) is the midpoint of two
+feasible points, every row active at \(x\) is active at both
+endpoints. Spanning forces the endpoints to coincide.
+
+Start at an optimal point, whose existence follows from the
+standard-form transformation and Theorem~\ref{p205:W31}.
+If the active rows do not span, take \(d\) as above. A small step
+in either direction is feasible, so the objective vanishes on \(d\).
+If every row vanished on \(d\), the entire line through \(x\)
+parallel to \(d\) would be feasible. By pointedness, change the
+sign of \(d\) if necessary to make some row positive on \(d\).
+The first new active constraint occurs after a step of length
+\[
+ t_*=\min_{i:a_i^{\mathsf T}d>0}
+          \frac{b_i-a_i^{\mathsf T}x}{a_i^{\mathsf T}d}.
+\]
+The minimum is over a nonempty finite set and is positive. The new
+row is independent of the old active span, since it is positive
+on \(d\). The rank therefore increases without changing the
+objective. After finitely many steps the active rows span.
+
+For the last assertion start at any feasible \(x\). If the active
+rows fail to span, use a nonzero \(d\) in their common kernel.
+Boundedness gives first hits in both directions, at positive
+distances \(t_+,t_-\). The point \(x\) is the convex combination of
+\(x+t_+d\) and \(x-t_-d\) with respective weights
+\(t_-/(t_++t_-)\) and \(t_+/(t_++t_-)\). At both new points
+the active rank increases. Induction on the rank deficit expresses
+\(x\) as a finite convex combination of vertices. The reverse
+containment is convexity.
+\end{proof}
+
+\section{Integer hulls and incidence matrices}
+
+\begin{definition}[Total unimodularity]\label{p205:W33}
+An integer matrix is \emph{totally unimodular} if every square
+submatrix has determinant in \(\{0,1,-1\}\). We include the
+empty determinant \(1\).
+\end{definition}
+
+\begin{theorem}[Integer right-hand sides]\label{p205:integer-hull}
+Let \(A\) be totally unimodular and \(b\) integer.
+Every vertex of \(P=\{x:Ax\le b\}\) is integral. In fact
+\(P=\operatorname{conv}(P\cap\mathbb Z^n)\), with the empty
+hull interpreted as empty. For nonempty \(P\), a finite
+linear optimum has an integer optimizer if \(P\) is pointed,
+in particular if it is bounded.
+\end{theorem}
+
+\begin{proof}
+First note that transposition, submatrices, row sign changes,
+and row repetition preserve total unimodularity. For repetition,
+a square minor with two identical rows vanishes. Appending rows
+from \(I\) and \(-I\) also preserves the property, since expansion
+along any such row reduces a nonzero minor to a smaller one up to
+sign. These facts cover bounds, and cover replacing an equality
+row by two opposite inequalities.
+
+At a vertex take \(n\) independent active rows by
+Theorem~\ref{p205:W32}. Their square matrix has determinant
+\(\pm1\), so Cramer's rule expresses every coordinate as an integer.
+Now for any \(x\in P\), add the coordinate box
+\(\lfloor x_i\rfloor\le z_i\le\lceil x_i\rceil\) on the variable
+\(z\). This is a nonempty bounded polyhedron with integer right-hand
+side and a totally unimodular constraint matrix. Its vertices are
+integral and lie in \(P\), and its vertex hull contains \(x\)
+by Theorem~\ref{p205:W32}. This argument also works if \(P\) contains
+a line. The reverse hull inclusion follows from convexity. Finally
+a finite optimum on pointed \(P\) has an optimal vertex by
+Theorem~\ref{p205:W32}.
+\end{proof}
+
+\begin{theorem}[Hoffman--Kruskal criterion]\label{p205:W34}
+An integer matrix \(A\) is totally unimodular exactly when every
+polyhedron \(\{x:x\ge0,\ Ax\le b\}\) with integral \(b\) has
+integral vertices.
+\end{theorem}
+
+\begin{proof}
+The forward direction follows by adjoining \(-I\) and applying
+Theorem~\ref{p205:integer-hull}. For the converse, suppose that
+a nonsingular submatrix \(B\) on row set \(I_0\) and column set
+\(J_0\) has determinant of absolute value at least two. There is
+an integer vector \(q\) with \(B^{-1}q\) nonintegral. Indeed, if
+every column \(B^{-1}e_i\) were integral, the determinant of
+\(B^{-1}\) would be an integer. Choose an integer vector \(k\)
+so that \(z=B^{-1}q+k\) has positive entries, and set
+\(x_{J_0}=z\), \(x_{J_0^c}=0\). On \(I_0\) use the integer right-hand
+side \(q+Bk\), and on all other rows use the ceilings of the
+row products \(a_i^{\mathsf T}x\). The resulting point is feasible,
+with \(I_0\) and all the coordinate rows on \(J_0^c\) active.
+A vector annihilated by these rows must first vanish on \(J_0^c\)
+and then vanish on \(J_0\) by invertibility of \(B\). Thus \(x\)
+is a vertex, contradicting integrality.
+\end{proof}
+
+\begin{theorem}[Network and bipartite integrality]\label{p205:W35}
+The node--arc incidence matrix of a finite directed network and the
+unsigned vertex--edge incidence matrix of a finite bipartite graph
+are totally unimodular. If \(B\) is a node--arc incidence matrix
+using the net-outflow sign, \(b,\ell,u\) are integral and the bounds
+are finite, all vertices of
+\[
+             \{f:Bf=b,\ \ell\le f\le u\}
+\]
+are integral. A nonempty such polyhedron has an integral optimizer
+for every linear objective. For a bipartite graph \((V,E)\), the
+matching polytope is exactly
+\[
+ \left\{x\in\mathbb R^E:x\ge0,\
+              \sum_{e\ni v}x_e\le1\ \text{for every }v\in V\right\}.
+\]
+Replacing every degree inequality by equality gives the hull of
+perfect matchings. Here a matching polytope denotes the convex
+hull of the respective incidence vectors.
+\end{theorem}
+
+\begin{proof}
+A nonloop arc contributes \(+1\) at its tail and \(-1\) at its
+head. A loop has zero column. In any square submatrix, a column
+with at most one nonzero entry allows determinant expansion.
+If every column has two nonzero entries, the row sum is zero,
+and the determinant vanishes. Induction gives total unimodularity,
+also for parallel arcs. For a bipartite graph, negating the rows
+of one part gives the directed incidence matrix of the
+orientation from the other part.
+
+Equality and bound constraints preserve the minor property by
+the closure rules in Theorem~\ref{p205:integer-hull}. This gives
+the flow assertions. In the bipartite systems each nonnegative
+edge coordinate is at most one by either of its incident vertex
+constraints. The polyhedra are bounded, so each is the hull of
+its integral vertices. Integral feasible points are precisely
+the required zero-one matching vectors, or perfect matching
+vectors in the equality case. If there is no perfect matching,
+the latter polyhedron is empty, because otherwise it has an
+integral vertex.
+\end{proof}
+
+\begin{example}[The degree relaxation on a triangle]
+Set each edge coordinate to \(1/2\). The three degree inequalities
+are equalities. On a fixed ordering of the edges the active
+equations are \(x_1+x_2=x_2+x_3=x_3+x_1=1\), with the unique
+solution \((1/2,1/2,1/2)\). Thus this is a fractional vertex.
+Every actual matching in the triangle has size at most one.
+\end{example}
+\chapter{Network Flows and Assignment}\label{p205:ch08}
+
+\section{Residual networks and shortest augmentation}
+
+A finite directed network here has a finite vertex set \(V\) and
+a set of labelled arcs \(E\), with a tail and a head for each arc.
+Parallel and oppositely oriented arcs can have different labels.
+A flow is a real vector indexed by arcs. Its net outflow at \(v\)
+is the sum on outgoing arcs minus the sum on incoming arcs.
+A loop contributes zero to net outflow. Write \(\delta^+(S)\) and
+\(\delta^-(S)\) for the arcs leaving and entering \(S\), respectively.
+For an arc vector \(a\) and an arc set \(F\), put
+\(a(F)=\sum_{e\in F}a_e\).
+
+For bounds \(\ell\le f\le u\), the forward residual copy of an
+arc has capacity \(u_e-f_e\) and the backward copy has capacity
+\(f_e-\ell_e\), each present when its capacity is positive. These
+copies retain the original arc label and a direction sign.
+Augmentation adds the selected amount along forward copies and
+subtracts it along backward copies. A simple residual path is
+limited by its minimum residual capacity. A simple residual
+cycle can be augmented by the same rule. If both copies of one
+arc occur on a cycle their increments cancel, so feasibility
+still follows from the individual residual bounds.
+
+\begin{theorem}[Flow--cut optimality certificates]\label{p205:W36}
+Let \(s,t\) be distinct vertices and \(u_e\ge0\) be finite real
+capacities. Consider flows \(0\le f\le u\) conserving at vertices
+other than \(s,t\), with value equal to the net outflow at \(s\).
+A flow and a cut \(S\) with \(s\in S,\ t\notin S\) certify each
+other's optimality when the flow value equals \(u(\delta^+(S))\).
+There always exists a pair of equal value. If all capacities
+are integers, the flow in such a pair can be taken integral.
+\end{theorem}
+
+\begin{proof}
+Summing the net outflows over \(S\) gives
+\[
+     \operatorname{val}(f)=f(\delta^+(S))-f(\delta^-(S))
+                            \le u(\delta^+(S)).
+\]
+This proves the certificate. With real capacities, the flow
+polyhedron is closed, bounded and nonempty because it contains
+zero. Take a maximizing flow. A residual \(s\)--\(t\) path would
+improve it, so the set reachable from \(s\) is a cut. Every
+outgoing arc is saturated and every incoming arc carries zero,
+since otherwise the reachability set would grow. Thus its
+capacity is the flow value. This is the same real-capacity
+argument as in \cite[Chapter 7, W44--W46]{p204}.
+
+For integral \(u\), choose an integral optimal vertex by
+Theorem~\ref{p205:W35}. To apply that theorem, adjoin an arc
+\(t\to s\) with bounds \([-M,M]\), where
+\(M=\sum_{e\in E}u_e\). Set its flow to the value of the
+original flow and impose zero net outflow at every vertex.
+This gives a bijective extension of the original feasible set
+because the value has absolute value at most \(M\). Maximizing
+the new arc coordinate gives an integral original maximizer.
+The reachable cut construction still applies.
+\end{proof}
+
+\begin{theorem}[Shortest augmenting paths]\label{p205:W37}
+Starting from zero in the setting of Theorem~\ref{p205:W36},
+augment by the full residual bottleneck along a shortest
+\(s\)--\(t\) residual path as long as there is one. With real
+capacities, this returns a maximum flow after \(O(|V||E|)\)
+augmentations. A breadth-first search and update per iteration
+use \(O(|V|+|E|)\) arc inspections and elementary operations.
+\end{theorem}
+
+\begin{proof}
+Loops can be ignored. Let \(d(v)\) and \(d'(v)\) be the distances
+from \(s\) before and after an augmentation, with distance
+\(\infty\) for an unreachable vertex. On the selected shortest
+path every edge goes from distance \(j\) to \(j+1\), because its
+prefixes are also shortest. Suppose some distance decreases, and
+follow a new shortest path to the first vertex \(v\) with
+\(d'(v)<d(v)\), reached by an arc \(u\to v\). Its predecessor
+satisfies \(d(u)\le d'(u)<\infty\). If the arc was present before
+the augmentation then \(d(v)\le d(u)+1\le d'(v)\), a contradiction.
+A newly available arc is the reverse copy of an arc \(v\to u\)
+on the selected path. In this case \(d(v)=d(u)-1<d'(v)\), again
+a contradiction. Hence distances never decrease.
+
+In each augmentation some residual copy is saturated and
+disappears. If the same labelled copy \(u\to v\) disappears
+by saturation again, its paired copy \(v\to u\) must have been
+used in between to restore its capacity. At the earlier
+saturation \(d(v)=d(u)+1\). At the intervening use of \(v\to u\),
+the then-current distance of \(u\) is the distance of \(v\) plus
+one, so it is at least the earlier distance of \(u\) plus two.
+Distances of reachable vertices on a simple path are bounded by
+\(|V|-1\). Thus any fixed labelled copy can be charged at most
+\(O(|V|)\) times. There are at most \(2|E|\) copies, so only
+\(O(|V||E|)\) augmentations are possible. Searching adjacency
+lists, tracing the path and updating its copies give the stated
+per-iteration count, with one final search if no path remains.
+The cut of reachable vertices then certifies optimality.
+\end{proof}
+
+This is the Edmonds--Karp shortest-path rule in
+\cite[vol.~A, Section 10.5]{schrijver}. The operation bound
+counts exact residual operations, independently of the values
+of the capacities.
+
+\section{Bounded flows and minimum costs}
+
+\begin{theorem}[Hoffman circulation and fixed divergence]\label{p205:W38}
+Let \(\ell_e\le u_e\) be finite real arc bounds and let \(b\)
+be a real vertex vector with \(\sum_v b_v=0\). There is a flow
+within the bounds with net outflow \(b\) exactly when
+\[
+ b(S)\le u(\delta^+(S))-\ell(\delta^-(S))
+                       \qquad(S\subseteq V).
+\]
+Here \(b(S)=\sum_{v\in S}b_v\). If \(b,\ell,u\) are integral,
+there is an integral feasible flow whenever these conditions hold.
+The case \(b=0\) gives the circulation criterion.
+\end{theorem}
+
+\begin{proof}
+Summing the required net outflows over \(S\) gives necessity.
+For sufficiency, let \(B\) denote the net-outflow incidence
+matrix and write \(g=f-\ell\), \(c=u-\ell\),
+\(\beta=b-B\ell\). We need \(0\le g\le c\) and \(Bg=\beta\).
+The cut inequalities become
+\(\beta(S)\le c(\delta^+(S))\), and \(\sum_v\beta_v=0\).
+
+Add a new source \(s_*\), a new sink \(t_*\), and arcs
+\(s_*\to v\) of capacity \(\beta_v\) for \(\beta_v>0\) and
+\(v\to t_*\) of capacity \(-\beta_v\) for \(\beta_v<0\).
+Let \(D=\sum_{\beta_v>0}\beta_v=\sum_{\beta_v<0}(-\beta_v)\).
+A source--sink flow of value \(D\) saturates every artificial
+arc, so its restriction has net outflow \(\beta\). Conversely
+a solution \(g\) extends to a flow of value \(D\) using precisely
+those artificial loads. For a cut with original part \(S\), the
+capacity is
+\[
+ c(\delta^+(S))
+     +\sum_{v\notin S,\ \beta_v>0}\beta_v
+     +\sum_{v\in S,\ \beta_v<0}(-\beta_v)
+       =D+c(\delta^+(S))-\beta(S).
+\]
+Thus all cuts have capacity at least \(D\).
+Theorem~\ref{p205:W36} produces the required flow, integrally
+when the data are integral. Add \(\ell\) back. Empty sets and
+\(D=0\) fit the same formulas.
+\end{proof}
+
+\begin{theorem}[Minimum-cost flow and potential certificates]\label{p205:W39}
+Let \(f\) be feasible for the bounded fixed-divergence problem of
+Theorem~\ref{p205:W38}. Give each arc a real cost \(w_e\), with
+residual costs \(w_e\) forward and \(-w_e\) backward. Then the
+following are equivalent.
+\begin{enumerate}
+\item The flow \(f\) minimizes \(\sum_e w_ef_e\).
+\item Its residual graph has no directed cycle of strictly negative
+total cost, with loops allowed as cycles.
+\item There is a real vertex function \(\pi\) such that every
+residual arc \(v\to z\) of cost \(w\) satisfies
+\(w+\pi(v)-\pi(z)\ge0\).
+\end{enumerate}
+For integral bounds and divergence, a nonempty feasible set admits
+an integral minimum-cost flow, also for real costs.
+\end{theorem}
+
+\begin{proof}
+A negative-cost cycle gives a feasible improving augmentation by
+its positive bottleneck. Both copies of the same original arc
+would form a zero-cost two-arc cycle if they comprised the entire
+cycle, and in any event their signed contributions cancel.
+This proves the first implication. For the reverse implication,
+compare \(f\) with another feasible \(h\). Put the positive parts
+of \(h_e-f_e\) on forward copies and the negative parts with
+opposite sign on backward copies. The resulting nonnegative
+residual arc vector is a circulation, since \(h\) and \(f\)
+have the same divergence. Decompose it into directed cycles
+with positive coefficients as in \cite[Chapter 7, W47]{p204}.
+Concretely, follow positive arcs until a vertex repeats, subtract
+the minimum load on the resulting cycle, and repeat. Conservation
+persists and the positive support shrinks each time. The cost
+difference is the same weighted sum of cycle costs, so it is
+nonnegative if there is no negative cycle.
+
+To construct \(\pi\), add a new vertex with a zero-cost outgoing
+arc to each original vertex and no incoming arc. Let \(\pi(v)\)
+be the minimum cost of a path from the new vertex to \(v\).
+Every walk can have its closed subwalks removed without increasing
+its cost. Indeed, a closed walk decomposes into directed cycles
+by splitting at repeated vertices, and each has nonnegative cost.
+Thus the minimum over the finitely many simple paths exists
+and equals the infimum over walks. Appending an arc of cost
+\(w\) gives \(\pi(z)\le\pi(v)+w\), as claimed. Conversely,
+sum the reduced-cost inequalities around a cycle and cancel
+the potentials. The final integrality assertion is
+Theorem~\ref{p205:W35} applied to the cost objective.
+\end{proof}
+
+The feasible-flow and reduced-cost constructions follow the
+interfaces in \cite[vol.~A, Sections 11.2--11.4 and 12.1--12.2]{schrijver}.
+
+\section{Bipartite assignment and its dual}
+
+Let \(L\) and \(R\) be the two sides of a finite bipartite graph.
+An allowed edge \(ij\) joins \(i\in L\) to \(j\in R\), with
+real weight \(w_{ij}\). The incidence matrix on the allowed edges
+is denoted by \(A\), with rows indexed by the vertices. The
+following two forms use different sign conditions for their
+dual variables.
+
+\begin{theorem}[Perfect assignment duality]\label{p205:W40}
+Assume that a perfect matching exists. Its maximum possible weight
+equals
+\[
+   \min\left\{\sum_{i\in L}u_i+\sum_{j\in R}v_j:
+          u_i+v_j\ge w_{ij}\ \text{for each allowed }ij\right\},
+\]
+where the potentials are free real numbers. The minimum is attained.
+For feasible potentials a perfect matching is jointly optimal with
+them exactly when all its edges are tight.
+\end{theorem}
+
+\begin{proof}
+The linear relaxation maximizes \(w^{\mathsf T}x\) under \(Ax=\mathbf
+1,\ x\ge0\). By Theorem~\ref{p205:W35} it has a perfect matching
+as an optimizer. Minimize \(-w^{\mathsf T}x\) instead and apply
+Theorem~\ref{p205:W31}. Negating the equality multiplier yields
+the displayed minimization with no sign restriction. The two
+objectives agree at a joint optimum. In general the difference
+between potential sum and matching weight is the sum, over the
+matching, of nonnegative edge slacks, giving the tightness test.
+\end{proof}
+
+\begin{theorem}[Weighted bipartite matching duality]\label{p205:W41}
+Without a perfect matching requirement, the maximum matching weight
+equals the same minimum with \(u_i,v_j\ge0\). The empty matching is
+allowed and the minimum is attained. A matching and feasible
+potentials certify each other's optimality precisely when the
+matching uses tight edges and all its unmatched vertices have
+zero potential.
+\end{theorem}
+
+\begin{proof}
+The relaxation is now \(Ax+s=\mathbf 1,\ x,s\ge0\), with objective
+\(w^{\mathsf T}x\). Theorem~\ref{p205:W35} identifies an optimizer
+that is a matching. Apply Theorem~\ref{p205:W31} to the minimization
+of its negative. The constraints on the slack columns give
+nonnegativity of the negated dual multipliers, and the edge columns
+give \(u_i+v_j\ge w_{ij}\). The difference of the objectives is
+the sum of edge slacks on the matching plus the potentials of the
+unmatched vertices. All these terms are nonnegative, which proves
+the certificate in both directions.
+\end{proof}
+
+\begin{theorem}[Birkhoff--von Neumann decomposition]\label{p205:W42}
+A finite square matrix with nonnegative entries and every row and
+column sum equal to one is a convex combination of permutation
+matrices. Its extreme points, in the set of all such matrices of the
+same size, are precisely the permutation matrices. If some positions
+are prescribed to be zero, all permutations in the decomposition
+can be chosen supported on the allowed positions. These permutation
+matrices are also precisely the extreme points of the restricted set.
+\end{theorem}
+
+\begin{proof}
+The zero-size matrix is itself the empty permutation matrix.
+For positive size, build the bipartite graph of positive entries.
+For any set \(S\) of rows, its total mass \(\#S\) lies in its
+neighbor columns \(N(S)\), with each receiving at most one.
+Thus \(\#S\le\#N(S)\), and Hall's theorem
+\cite[Chapter 8, W51]{p204} gives a perfect matching.
+Let \(P\) be its permutation matrix, and let \(\lambda>0\)
+be the smallest matrix entry on that matching. If \(\lambda=1\),
+all other entries vanish by the row sums. Otherwise \(X-\lambda P\)
+is nonnegative, has row and column sums \(1-\lambda\), and has
+strictly smaller positive support. Induct on support after dividing
+by \(1-\lambda\) and use
+\[
+             X=\lambda P+(1-\lambda)\frac{X-\lambda P}{1-\lambda}.
+\]
+All permutations respect the original positive support. Conversely
+every permutation matrix is extreme, since in a convex
+decomposition its zero positions force zeros in both summands
+and row sums then force the ones. A convex combination involving
+distinct permutations is not extreme, as follows by isolating
+one of its positive coefficients. The same argument applies with
+prescribed zero positions. The unrestricted theorem is also
+available in the fixed Mathlib \cite{mathlib}.
+\end{proof}
+
+\begin{theorem}[Hungarian method on allowed edges]\label{p205:W43}
+For a finite bipartite graph that has a perfect matching, the
+tight-edge Hungarian method terminates after finitely many
+potential updates and matching augmentations. It returns a
+maximum-weight perfect matching and an optimal feasible potential
+pair for Theorem~\ref{p205:W40}.
+\end{theorem}
+
+\begin{proof}
+The empty graph with empty sides is immediate. Otherwise both sides
+have the same cardinality, and each left vertex has an allowed
+neighbor. Start with \(v_j=0\) and
+\(u_i=\max_{j:ij\text{ allowed}}w_{ij}\), and an empty matching.
+Maintain feasible potentials and a matching on tight edges.
+Fix an unmatched left vertex \(i_0\). Search from \(i_0\) along
+tight edges outside the matching from left to right, and along
+matched edges from right to left. If this reaches an unmatched
+right vertex, a simple alternating path gives a tight-edge
+augmentation.
+
+Otherwise let \(S\) and \(T\) be the reached left and right vertices.
+Each reached right vertex is matched to a reached left vertex, and
+each reached left vertex other than \(i_0\) arrived by such a
+matched edge. Hence \(\#S=\#T+1\). A perfect matching in the allowed
+graph requires an allowed edge from \(S\) to \(R\setminus T\),
+since its edges from \(S\) have distinct right endpoints.
+No such edge is matched in the current matching and no such edge
+is tight, by the search. Take the minimum \(\delta>0\) of
+\(u_i+v_j-w_{ij}\) over these edges. Subtract \(\delta\) from
+\(u_i\) for \(i\in S\) and add it to \(v_j\) for \(j\in T\).
+Slacks on \(S\times(R\setminus T)\) decrease by at most their
+old value. Those on \((L\setminus S)\times T\) increase and all
+others stay fixed. Matched edges have both endpoints inside the
+reached sets or both outside, so they stay tight.
+The previously reached alternating paths also stay tight.
+At least one new right vertex becomes reachable via a newly tight
+edge from \(S\). Thus for this root, repeated updates either reach an
+unmatched right vertex or strictly enlarge the reached right set.
+They must eventually give an augmentation, since an unsuccessful
+search always has \(\#T<\#L=\#R\) and an edge available for the next
+update. Each augmentation increases matching size by one. The
+resulting perfect matching is tight and certifies optimality by
+Theorem~\ref{p205:W40}.
+\end{proof}
+
+See Kuhn \cite{kuhn} and \cite[vol.~A, Sections 17.2--17.3]{schrijver}
+for the assignment method and its historical form.
+\chapter{Matroid Polytopes and Optimization}
+\label{p205:ch09}
+
+A finite matroid on \(E\) is a family of independent subsets
+containing the empty set, closed under subsets, and satisfying
+augmentation. This last axiom says that for independent \(I,J\)
+with \(|I|<|J|\), some \(e\in J\setminus I\) has \(I\cup\{e\}\)
+independent. Write \(r(S)\) for the maximum size of an independent
+subset of \(S\). A basis of \(S\) is a maximal independent subset of
+\(S\). By augmentation all such bases have size \(r(S)\). The bases
+of the matroid are the bases of \(E\).
+This is the convention of \cite[Chapter~10, W64]{p204}.
+
+For \(x\in\mathbb R^E\) and \(S\subseteq E\), write
+\(x(S)=\sum_{e\in S}x_e\), and write \(\mathbf 1_S\) for the
+indicator vector of \(S\). The dot product is
+\(w\cdot x=\sum_{e\in E}w_e x_e\).
+
+\section{Greedy weights and rank polytopes}
+
+\begin{theorem}[Maximum-weight basis]
+\label{p205:W44}
+Assign arbitrary real weights to a finite matroid's elements.
+Scan them in nonincreasing weight order, adding each element
+whose addition preserves independence. Every tie order gives
+a maximum-weight basis.
+\end{theorem}
+
+\begin{proof}
+The empty ground set has the unique basis \(\varnothing\).
+Otherwise list the elements as \(e_1,\ldots,e_n\), with
+\(w_i=w_{e_i}\) and \(P_i=\{e_1,\ldots,e_i\}\).
+Write \(B\) for the greedy output.
+If an element of \(P_i\) was rejected, then it was dependent
+when added to the set selected at its step. By heredity its
+addition to \(B\cap P_i\) is still dependent. Thus \(B\cap P_i\)
+is maximal independent in \(P_i\) and has size \(r(P_i)\).
+In particular \(B\) is a basis. For every \(x\in\mathbb R^E\)
+the telescoping identity is
+\begin{equation}
+\label{p205:matroid-prefix-sum}
+w\cdot x=w_n x(E)+\sum_{i=1}^{n-1}(w_i-w_{i+1})x(P_i).
+\end{equation}
+Indeed the coefficient of \(x_{e_j}\) on the right is
+\(w_n+\sum_{i=j}^{n-1}(w_i-w_{i+1})=w_j\).
+For every basis \(D\) we have \(|D|=r(E)\) and
+\(|D\cap P_i|\le r(P_i)\). The term involving \(w_n\) is constant
+on bases even when \(w_n<0\), and every other coefficient is
+nonnegative. The greedy basis attains all prefix bounds.
+The same argument applies to any ordering within a tie block.
+\end{proof}
+
+For the wider greedy characterization of matroids see
+\cite[Chapter~12, W78--W80]{p204}. The weight and polytope
+arguments follow \cite[Sections~40.1--40.2]{schrijver} and
+\cite[Section~1.8]{oxley}.
+
+\begin{lemma}[A finite convex hull is determined by its linear bounds]
+\label{p205:matroid-support}
+Let \(F\) be a nonempty finite subset of a Euclidean space. If
+\(w\cdot x\le\max_{z\in F} w\cdot z\) for every \(w\), then
+\(x\in\operatorname{conv}F\).
+\end{lemma}
+
+\begin{proof}
+Put \(K=\operatorname{conv}F\). This set is compact because it is
+the image of the compact simplex of convex coefficients under a
+linear map. If \(x\notin K\), minimize distance from \(x\) at some
+\(y\in K\). For \(z\in K\) the squared distance from \(x\) to
+\(y+t(z-y)\), \(0\le t\le 1\), is
+\[
+ \|x-y\|^2-2t(x-y)\cdot(z-y)+t^2\|z-y\|^2.
+\]
+Minimality at \(t=0\) gives \((x-y)\cdot(z-y)\le0\) by dividing
+by positive \(t\) and letting \(t\) decrease to zero. With
+\(w=x-y\) we have \(w\cdot z\le w\cdot y\) throughout \(K\), while
+\(w\cdot x=w\cdot y+\|w\|^2>w\cdot y\). This contradicts the
+assumed linear bound. For the general separation theorem see
+\cite[Chapter~1, Open and compact--closed separation]{p106}.
+\end{proof}
+
+\begin{theorem}[Matroid base polytope]
+\label{p205:W45}
+For every finite matroid \(M\) with rank \(r\),
+\[
+ \begin{aligned}
+ &\operatorname{conv}\{\mathbf 1_B\mid B\text{ is a basis of }M\}\\
+ &\quad =
+ \{x\in\mathbb R^E\mid x\ge 0,\ x(S)\le r(S)\text{ for all }S\subseteq E,\
+                  x(E)=r(E)\}.
+ \end{aligned}
+\]
+Its vertices are precisely the basis indicators and are integral.
+\end{theorem}
+
+\begin{proof}
+Each basis indicator satisfies the constraints. The constraints
+are linear, so their solution set contains the indicated hull.
+For the reverse inclusion let \(x\) satisfy the constraints.
+When \(E=\varnothing\) both sets consist of the unique empty vector.
+Otherwise let \(w\in\mathbb R^E\) and order \(E\) as in
+Theorem~\ref{p205:W44}. The greedy basis \(B\) has
+\(\mathbf 1_B(P_i)=r(P_i)\) for each \(i\) by its prefix invariant.
+In \eqref{p205:matroid-prefix-sum}, the term \(w_n x(E)\) equals
+\(w_n\mathbf 1_B(E)\) and all other coefficients are nonnegative.
+Hence \(w\cdot x\le w\cdot\mathbf 1_B\) for every \(w\).
+Lemma~\ref{p205:matroid-support} gives the reverse inclusion.
+
+An extreme point of a hull of finitely many points belongs to
+the generating set, since an expression with positive mass on
+distinct points would exhibit a proper convex decomposition.
+Conversely, if a basis indicator is a convex combination of other
+indicators, then each coordinate equal to \(0\) forces the same
+coordinate to be \(0\) in every positive-weight summand.
+A coordinate equal to \(1\) forces that coordinate to be \(1\)
+in every positive-weight summand. Thus all such summands equal
+the original indicator, proving extremality.
+\end{proof}
+
+\begin{theorem}[Matroid independence polytope]
+\label{p205:W46}
+For every finite matroid \(M\) with rank \(r\),
+\[
+ \operatorname{conv}\{\mathbf 1_I\mid I\text{ is independent in }M\}
+ =
+ \{x\in\mathbb R^E\mid x\ge 0,\ x(S)\le r(S)\text{ for all }S\subseteq E\}.
+\]
+For a finite undirected graph \(G=(V,E)\) the corresponding forest
+polytope is
+\begin{equation}
+\label{p205:forest-polytope}
+ \{x\in\mathbb R^E\mid
+      x\ge0,\ x(E(S))\le |S|-1
+      \text{ for all nonempty }S\subseteq V\},
+\end{equation}
+where \(E(S)\) is the set of edges with both endpoints in \(S\).
+The spanning forest polytope adds \(x(E)=|V|-c(G)\), where
+\(c(G)\) counts all components, including isolated vertices.
+For a connected graph with at least one vertex this specializes
+to the spanning tree polytope with \(x(E)=|V|-1\).
+\end{theorem}
+
+\begin{proof}
+Every independent indicator satisfies the rank constraints.
+For the reverse inclusion fix a solution \(x\) and a direction \(w\).
+If \(w\) has no positive coordinate, \(w\cdot x\le0=w\cdot
+\mathbf 1_\varnothing\). Otherwise list the positive elements
+\(e_1,\ldots,e_m\) in nonincreasing order and put \(w_{m+1}=0\).
+For \(P_i=\{e_1,\ldots,e_i\}\), telescoping and nonnegativity of \(x\)
+give
+\[
+ w\cdot x\le \sum_{i=1}^m (w_i-w_{i+1})x(P_i)
+ \le \sum_{i=1}^m (w_i-w_{i+1})r(P_i).
+\]
+The last quantity is \(w\cdot\mathbf 1_I\), where \(I\) is the
+greedy selection on the positive elements. Its prefix ranks follow
+from the proof of Theorem~\ref{p205:W44}. No nonpositive element is
+needed to realize the bound. Now apply Lemma~\ref{p205:matroid-support}.
+
+The graphic matroid has forests for independent sets, and its rank
+on \(A\subseteq E\) is \(|V|-c(V,A)\), where \(c(V,A)\) counts
+components of the spanning subgraph \((V,A)\).
+Indeed a maximal forest in each component must span it. Otherwise
+an edge joining two of the forest components could be added without
+creating a cycle. A tree on \(q\ge1\) vertices has \(q-1\) edges,
+as follows by repeatedly deleting a leaf. Summing over components
+gives the rank formula. The matroid construction is the graphic
+case of \cite[Chapter~11, W72]{p204}.
+
+For nonempty \(S\), any forest of \(E(S)\) has at most \(|S|-1\)
+edges, so the rank constraints imply \eqref{p205:forest-polytope}.
+Conversely, for any \(A\subseteq E\) let \(S_1,\ldots,S_h\) be
+the vertex sets of the components of \((V,A)\). Every edge of
+\(A\) lies within one \(S_i\), and by \(x\ge0\) we get
+\[
+ x(A)\le\sum_{i=1}^h x(E(S_i))
+      \le\sum_{i=1}^h(|S_i|-1)
+      =|V|-h=r(A).
+\]
+The empty graph gives the empty sum. The spanning forests are
+the graphic matroid bases, so the remaining statements follow
+from Theorem~\ref{p205:W45}.
+\end{proof}
+
+\section{Spanning trees and exchange}
+
+\begin{theorem}[Kruskal's algorithm]
+\label{p205:W47}
+In a finite undirected graph with real edge weights, process
+edges in nondecreasing weight order and include an edge whenever
+it does not create a cycle. For any ordering of tied edges, the
+output is a spanning forest of minimum total weight. On a connected
+graph with at least one vertex it is a minimum spanning tree.
+\end{theorem}
+
+\begin{proof}
+A spanning forest consists of a spanning tree in every component
+of the original graph. These are precisely the bases of the graphic
+matroid. Processing edges by nondecreasing weight is basis greedy
+with the negatives of those weights. Theorem~\ref{p205:W44}
+therefore gives a minimum-weight basis. In the empty graph the
+output is the empty forest.
+\end{proof}
+
+\begin{theorem}[Cut and cycle certificates and Prim's algorithm]
+\label{p205:W48}
+Let \(G\) be a finite connected undirected graph with at least one
+vertex, with arbitrary real edge weights. Loops may be discarded,
+and parallel edges are distinguished.
+\begin{enumerate}
+\item Let \(F\) be a forest contained in some minimum spanning tree.
+If a nontrivial vertex cut has no edge of \(F\) crossing it, then
+any minimum-weight edge crossing it can be added to \(F\) while
+preserving extendibility to a minimum spanning tree.
+Consequently Prim's algorithm gives a minimum spanning tree from
+any starting vertex and with arbitrary ties.
+\item A spanning tree \(T\) is minimum if and only if every
+edge \(e\notin T\) with distinct endpoints satisfies
+\[
+ w_e\ge\max_{f\in P_T(e)}w_f,
+\]
+where \(P_T(e)\) is the unique \(T\)-path between those endpoints.
+\item A spanning tree \(T\) is the unique minimum spanning tree if
+and only if these inequalities are all strict.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For the first assertion choose a minimum tree \(D\) containing \(F\)
+and a light crossing edge \(e\). If \(e\notin D\), the unique path
+in \(D\) between the endpoints of \(e\) crosses the cut, so choose
+a crossing edge \(f\) on that path. By the cut condition \(f\notin F\).
+Adding \(e\) and deleting \(f\) gives a tree containing \(F\cup\{e\}\).
+Its weight is at most that of \(D\) because \(w_e\le w_f\).
+It is therefore minimum. If \(e\in D\) the original \(D\) suffices.
+Prim begins with a singleton visited set and no chosen edges.
+When the visited set is proper, connectedness supplies a crossing
+edge. Choosing a light one adds a new vertex and keeps the chosen
+edges a tree on the visited set, so none of them crosses the next
+cut. Induction applies the cut assertion at each step. At the
+last step the chosen tree itself is minimum.
+
+For the second assertion, if \(w_e<w_f\) for some \(f\in P_T(e)\),
+adding \(e\) to \(T\) and removing \(f\) lowers the weight. Conversely
+suppose the stated inequalities hold. For any spanning tree \(D\ne T\)
+choose \(e\in D\setminus T\) and remove it. The endpoints of \(e\)
+lie in the two different components of \(D-e\). The path \(P_T(e)\)
+therefore has an edge \(f\) crossing the cut between the components.
+The only edge of \(D\) crossing that cut was \(e\), so \(f\notin D\).
+Replacing \(e\) by \(f\) gives another tree and changes its weight
+by \(w_f-w_e\le0\). The replacement decreases \(|D\setminus T|\)
+by one. Iteration ends at \(T\), whose weight is thus at most
+that of the original \(D\).
+
+Under the strict inequalities each replacement from a tree
+\(D\ne T\) strictly lowers its weight. Hence \(T\) is uniquely
+minimum. If \(T\) is minimum and an equality holds for a non-tree
+edge \(e\), choose \(f\in P_T(e)\) attaining the path maximum.
+The exchange \(T-f+e\) gives a different tree of the same
+weight. These arguments also cover a tree with no non-tree edges
+between distinct vertices.
+\end{proof}
+
+For the spanning tree algorithms, graphic polytope, and certificates
+see \cite[Sections~50.1--50.4 and 50.6]{schrijver}.
+
+\section{Intersection and union}
+
+\begin{lemma}[Restrictions and contraction]
+\label{p205:matroid-minors}
+For a finite matroid \(M\), restriction to \(U\subseteq E\) keeps
+the independent subsets of \(U\) and preserves their ranks.
+For \(C\subseteq E\), contraction \(M/C\) is a matroid on
+\(E\setminus C\). Its rank on \(S\subseteq E\setminus C\) is
+\(r_M(S\cup C)-r_M(C)\). For any basis \(I\) of \(C\), a set
+\(J\subseteq E\setminus C\) is independent in \(M/C\) exactly
+when \(I\cup J\) is independent in \(M\).
+\end{lemma}
+
+\begin{proof}
+Restriction inherits all independence axioms. For contraction
+fix a basis \(I\) of \(C\) and take as independent those \(J\)
+for which \(I\cup J\) is independent in \(M\).
+This gives heredity and the empty set. If two such \(J,K\)
+satisfy \(|J|<|K|\), then augment \(I\cup J\) using \(I\cup K\).
+The added element lies in \(K\setminus J\). This proves the
+matroid axioms on \(E\setminus C\).
+
+Any independent \(I\cup J\) with \(J\subseteq S\) has size at
+most \(r_M(C\cup S)\). For equality extend \(I\) to a maximal
+independent subset of \(C\cup S\). All added elements lie in
+\(S\), since no element of \(C\setminus I\) can extend the
+original basis \(I\) and heredity continues to forbid it.
+Thus the maximum size of \(J\) is \(r_M(C\cup S)-|I|\).
+Because \(|I|=r_M(C)\), the resulting rank is independent of
+the chosen basis \(I\). A set is independent exactly when its
+rank equals its size, so the construction is independent of
+that choice as well.
+\end{proof}
+
+This also gives the part of the minor calculus from
+\cite[Chapter~10, W69]{p204} needed in the next argument.
+
+\begin{theorem}[Edmonds' unweighted matroid intersection theorem]
+\label{p205:W49}
+Let \(M_1,M_2\) be finite matroids on the same ground set \(E\)
+with rank functions \(r_1,r_2\). The maximum size of a common
+independent set is
+\[
+ m=\min_{U\subseteq E}\bigl(r_1(U)+r_2(E\setminus U)\bigr).
+\]
+\end{theorem}
+
+\begin{proof}
+A common independent \(I\) splits into independent subsets of
+\(U\) in \(M_1\) and of \(E\setminus U\) in \(M_2\). This proves
+\(|I|\le m\). For attainment use induction on \(|E|\).
+If \(E\) is empty both sides are zero. If \(E=\{e\}\), the
+minimum is \(\min(r_1(\{e\}),r_2(\{e\}))\), which is \(1\)
+exactly when \(\{e\}\) is independent in both matroids.
+
+Suppose first that some nonempty proper \(U\subset E\) attains
+the minimum, and put \(V=E\setminus U\). On \(U\) apply
+induction to \(M_1|U\) and \(M_2/V\). For \(A\subseteq U\) the
+corresponding rank sum is
+\[
+ r_1(A)+r_2(E\setminus A)-r_2(V)\ge m-r_2(V)=r_1(U),
+\]
+by Lemma~\ref{p205:matroid-minors}. At \(A=U\) it equals
+\(r_1(U)\). Hence a common independent \(I_U\) of size \(r_1(U)\)
+exists. It is a basis of \(U\) in \(M_1\) and independent in
+\(M_2/V\).
+On \(V\) apply induction to \(M_1/U\) and \(M_2|V\).
+For \(A\subseteq V\) their rank sum is
+\[
+ r_1(U\cup A)-r_1(U)+r_2(V\setminus A)\ge m-r_1(U)=r_2(V),
+\]
+with equality at \(A=\varnothing\). This gives a common
+independent \(I_V\) of size \(r_2(V)\) which is independent in
+\(M_1/U\) and is a basis of \(V\) in \(M_2\).
+The contraction criterion applied with basis \(I_U\) in \(M_1\)
+and basis \(I_V\) in \(M_2\) makes \(I_U\cup I_V\) independent
+in both. It has size \(m\).
+
+Suppose now that every minimizing set is either \(\varnothing\)
+or \(E\), where \(|E|\ge2\). Fix \(e\in E\) and put
+\(E'=E\setminus\{e\}\). For any \(A\subseteq E'\) write
+\(B=E'\setminus A\) and \(q=r_1(A)+r_2(B)\).
+The original splits at \(A\) and \(A\cup\{e\}\) have rank
+sums \(r_1(A)+r_2(B\cup\{e\})\) and
+\(r_1(A\cup\{e\})+r_2(B)\), respectively.
+Each is at least \(m\) and at most \(q+1\), since adding one
+element increases rank by at most one. If \(q<m\), integrality
+makes both original sums equal \(m\). This gives two minimizing
+sets differing by one element, so they cannot both be among
+\(\varnothing,E\). Thus \(q\ge m\) for every \(A\subseteq E'\).
+By induction the restrictions to \(E'\) admit a common independent
+set of size at least \(m\). It is common independent in the original
+matroids, where the upper bound proves equality.
+\end{proof}
+
+\begin{theorem}[Matroid union, rank, and partition criterion]
+\label{p205:W50}
+Let \(M_1,\ldots,M_k\) be finite matroids on the same ground set
+\(E\), with ranks \(r_1,\ldots,r_k\). The sets expressible as
+a union of one independent set of each \(M_i\) are the independent
+sets of a matroid. Its rank on \(S\subseteq E\) is
+\[
+ \rho(S)=\min_{T\subseteq S}
+       \left(|S\setminus T|+\sum_{i=1}^k r_i(T)\right).
+\]
+In particular, \(S\) partitions into disjoint sets \(S_i\)
+independent in the respective \(M_i\) if and only if
+\[
+ |T|\le \sum_{i=1}^k r_i(T)\qquad\text{for every }T\subseteq S.
+\]
+Empty parts are allowed. In the case \(k=0\) the only independent
+set is empty and the formulas give rank zero.
+\end{theorem}
+
+\begin{proof}
+If an element occurs in more than one chosen independent set,
+assign it to one such index and delete it from the others.
+Heredity preserves independence, so the union may be made disjoint.
+For \(k=0\), \(\min_{T\subseteq S}|S\setminus T|=0\) and the
+partition condition holds precisely for \(S=\varnothing\).
+Assume \(k\ge1\).
+
+Fix \(S\subseteq E\) and use the labeled ground set
+\(X=S\times\{1,\ldots,k\}\). On \(X\) define two matroids.
+The first allows a set \(J\subseteq X\) when each slice
+\(J_i=\{e\mid(e,i)\in J\}\) is independent in \(M_i\).
+The second allows at most one copy of any element \(e\).
+Both are hereditary and contain the empty set.
+For augmentation in the first, a larger total size yields
+some slice of larger size, where the original augmentation
+axiom applies. For the second, a larger set uses more distinct
+labels \(e\), so an element with a new label can be added.
+The rank of the first on \(U\subseteq X\) is \(\sum_i r_i(U_i)\)
+by optimizing the slices separately. The rank of the second
+on \(Y\subseteq X\) is the number of distinct elements \(e\)
+represented in \(Y\).
+
+A common independent set of the two matroids represents a
+subset of \(S\) with its disjoint assignment to the \(M_i\).
+By Theorem~\ref{p205:W49} its largest size is the minimum of
+the split rank sums on \(X\). Given \(U\subseteq X\) let
+\(T\subseteq S\) consist of the elements all of whose copies
+belong to \(U\). The second matroid has rank \(|S\setminus T|\)
+on \(X\setminus U\), and the first has rank at least
+\(\sum_i r_i(T)\) on \(U\), since \(T\subseteq U_i\) for every
+\(i\). Conversely \(U=T\times\{1,\ldots,k\}\) realizes equality
+in this rank comparison for every \(T\subseteq S\). This proves
+the formula for the largest assignable subset size \(\rho(S)\).
+
+It remains to verify that the assignable subsets form a matroid.
+Their family contains the empty set and is hereditary. The
+function \(\rho\) is integral, monotone, and normalized, since
+it is a maximum subset size. For \(e\notin S\), deleting \(e\)
+from an assignable subset of \(S\cup\{e\}\) leaves one in \(S\),
+so \(\rho(S\cup\{e\})-\rho(S)\le1\).
+To show submodularity, choose minimizing \(T_1\subseteq S_1\),
+\(T_2\subseteq S_2\) in the formula for \(\rho(S_1)\) and
+\(\rho(S_2)\). Cardinality addition for unions and intersections
+gives
+\begin{align*}
+ |S_1\setminus T_1|+|S_2\setminus T_2|
+ &= |(S_1\cup S_2)\setminus(T_1\cup T_2)|\\
+ &\quad+|(S_1\cap S_2)\setminus(T_1\cap T_2)|.
+\end{align*}
+Each \(r_i\) is submodular. For a direct verification, extend a
+basis of \(T_1\cap T_2\) to a basis \(B\) of \(T_1\), then extend
+\(B\) to a basis of \(T_1\cup T_2\). The second extension adds
+only elements from \(T_2\setminus T_1\). These added elements,
+together with the original basis of \(T_1\cap T_2\), form an
+independent subset of \(T_2\). Its size gives
+\(r_i(T_1\cap T_2)+r_i(T_1\cup T_2)-r_i(T_1)\le r_i(T_2)\).
+Thus the sum of the two minima at \(T_1,T_2\) is at least the
+sum of the expressions at \(T_1\cup T_2\) and \(T_1\cap T_2\)
+for \(S_1\cup S_2\) and \(S_1\cap S_2\). The latter sum is
+at least \(\rho(S_1\cup S_2)+\rho(S_1\cap S_2)\).
+
+For completeness this submodularity gives augmentation of the
+assignable family directly. If \(I,J\) are assignable and no
+\(e\in J\setminus I\) augments \(I\), then
+\(\rho(I\cup\{e\})=\rho(I)=|I|\) for each such \(e\).
+For any \(A\supseteq I\) and \(e\notin A\), submodularity applied
+to \(A\) and \(I\cup\{e\}\) gives
+\(\rho(A\cup\{e\})-\rho(A)\le
+  \rho(I\cup\{e\})-\rho(I)\).
+Consequently adding the elements of \(J\setminus I\) one at a
+time leaves \(\rho(I\cup J)=\rho(I)=|I|\). Monotonicity yields
+\(|J|=\rho(J)\le |I|\). This proves augmentation whenever
+\(|I|<|J|\), and hence \(\rho\) is the rank of the union matroid.
+
+Finally \(S\) is assignable exactly when \(\rho(S)=|S|\).
+Every expression in the minimum for \(\rho(S)\) is at least
+\(|S|\) exactly when every \(T\subseteq S\) has
+\(\sum_i r_i(T)\ge |T|\). Since the expression at
+\(T=\varnothing\) equals \(|S|\), this is the claimed equivalence.
+\end{proof}
+
+The unweighted min--max and union formulas are in
+\cite[Sections~41.1 and 42.1]{schrijver}.
+
+\backmatter
+\begin{thebibliography}{99}
+\bibitem{diestel} R. Diestel, \emph{Graph Theory}, 5th ed.,
+  Springer, 2017, Sections 7.1 and 9.1.
+\bibitem{jukna} S. Jukna, \emph{Extremal Combinatorics}, 2nd ed.,
+  Springer, 2011.
+\bibitem{kst} T. K\H{o}v\'ari, V. T. S\'os, and P. Tur\'an,
+  On a problem of K. Zarankiewicz, \emph{Colloquium Math.} 3
+  (1954), 50--57.
+  \href{https://doi.org/10.4064/cm-3-1-50-57}{DOI}.
+\bibitem{zhao} Y. Zhao, \emph{Graph Theory and Additive
+  Combinatorics}, MIT 18.225 lecture notes, Fall 2023,
+  Sections 1.3 and 1.5.
+\bibitem{alon} N. Alon and J. H. Spencer,
+  \emph{The Probabilistic Method}, 4th ed., Wiley, 2016.
+\bibitem{tao} T. Tao, \emph{275A, Notes 1: Integration and
+  Expectation}, 2015, Exercise 44.
+\bibitem{roch} S. Roch, \emph{First and Second Moment Methods},
+  graduate probability lecture notes, Lecture 6.
+\bibitem{vondrak} J. Vondr\'ak, \emph{The Lov\'asz Local Lemma},
+  Stanford Math 233A lecture notes, 2018, Lecture 2.
+\bibitem{hoeffding} W. Hoeffding, Probability inequalities for sums
+  of bounded random variables, \emph{J. Amer. Statist. Assoc.} 58
+  (1963), 13--30.
+  \href{https://doi.org/10.1080/01621459.1963.10500830}{DOI}.
+\bibitem{schrijver} A. Schrijver, \emph{Combinatorial Optimization:
+  Polyhedra and Efficiency}, vols.~A--C, Springer, 2003.
+\bibitem{oxley} J. Oxley, \emph{Matroid Theory}, 2nd ed.,
+  Oxford University Press, 2011.
+\bibitem{kuhn} H. W. Kuhn, The Hungarian method for the assignment
+  problem, \emph{Naval Research Logistics Quarterly} 2 (1955), 83--97.
+  \href{https://doi.org/10.1002/nav.3800020109}{DOI}.
+\bibitem{p106} MathGenome, \emph{Variational Methods, Convex
+  Analysis, and Optimality}, unified notes P1-06, Chapters 1 and 5,
+  8 November 2026.
+\bibitem{p204} MathGenome, \emph{Finite Combinatorics:
+  Enumeration, Graphs, and Matroids}, unified notes P2-04,
+  8 November 2026.
+\bibitem{d11} MathGenome, \emph{Unified Real Analysis and Measure
+  Theory Notes}, D11, Chapters 5, 6, and 10.
+\bibitem{mathlib} The Mathlib Community, \emph{Mathlib},
+  \href{https://github.com/leanprover-community/mathlib4/tree/56a005855ea17e0b0958f73ec801ae140b0a1679}{fixed revision
+  \texttt{56a005855ea1}}. Relevant modules include
+  \texttt{Combinatorics.SetFamily.KruskalKatona} and
+  \texttt{Analysis.Convex.Birkhoff}.
+\end{thebibliography}
+\end{document}

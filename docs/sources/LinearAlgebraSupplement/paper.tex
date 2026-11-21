@@ -1,0 +1,605 @@
+\documentclass[11pt,oneside,openany]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{hyperref}
+
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome ALG-01 core supplement}
+\fi
+
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\definecolor{palegreen}{HTML}{F0F4EF}
+\hypersetup{
+  colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Linear and Multilinear Algebra and Matrix Theory},
+  pdfsubject={Symmetric powers over commutative rings and Witt theory over fields},
+  pdfauthor={MathGenome},bookmarksnumbered=true
+}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{9pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{4pt}{24pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries\color{ink}}{\thesubsection}{0.7em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\fancypagestyle{plain}{%
+  \fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \thispdfpagelabel{Cover}
+  \begin{flushleft}
+    \vspace*{0.65in}
+    {\large\scshape\color{deepgreen}MathGenome\par}
+    \vspace{0.32in}
+    {\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+    \vspace{0.45in}
+    {\color{ink}\fontsize{34}{39}\selectfont\bfseries
+       Linear and Multilinear\par Algebra and Matrix Theory\par}
+    \vspace{0.30in}
+    {\color{deepgreen}\Large
+       Symmetric Powers and Witt Theory\par}
+    \vfill
+    {\large Supplementary lecture notes\par}
+    \vspace{0.12in}
+    {\normalsize ALG-01 \enspace\textperiodcentered\enspace MathGenome v0.22.0 reference baseline\par}
+    \vspace*{0.48in}
+  \end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+{\small\tableofcontents}
+\chapter*{Scope and reading guide}
+\addcontentsline{toc}{chapter}{Scope and reading guide}
+\markboth{Scope and reading guide}{}
+
+This supplement develops symmetric powers over arbitrary commutative
+rings and Witt decomposition and cancellation over fields of
+characteristic different from two. The route through ALG-01 below
+points to the existing proofs and identifies where the new chapters
+enter.
+
+{\setlength{\fboxsep}{0.8em}\setlength{\fboxrule}{0.35pt}%
+\noindent\fcolorbox{rulegreen}{palegreen}{%
+\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+\textbf{Result keys.} \texttt{LA01-C05.01} belongs to module
+\texttt{ALG-01-C05}. The source map records its conventions,
+dependencies, and PDF and TeX locations. Keys beginning with
+\texttt{K05} refer to result groups in the released D05 notes.
+\end{minipage}}\par}
+
+\section*{The six core modules}
+
+\paragraph{C01 \enspace Vector spaces, modules, and dimension.}
+D05, groups K05.02--03 and K05.06, proves the field results on bases,
+rank--nullity, and quotients \cite{d05}.
+\emph{Algebra Core} supplies module quotients, exactness, and split
+sequences \cite[Ch.~1]{p103}. D07 treats modules over a PID \cite[Ch.~16]{d07}.
+
+\paragraph{C02 \enspace Duality and forms.}
+D05, groups K05.07 and K05.11, gives dual bases, the dual of a quotient,
+scalar conventions on forms, and nondegeneracy.
+Group K05.13 gives the adjoint on finite-dimensional real and complex
+inner-product spaces.
+
+\paragraph{C03 \enspace Determinants and canonical forms.}
+D05, groups K05.05, K05.08, and K05.10, gives determinants, Cayley--Hamilton,
+primary decomposition, and rational and Jordan forms.
+Jordan form uses a splitting field. For the Smith form over a PID,
+see D07, Chapter~16.
+
+\paragraph{C04 \enspace Spectral and singular-value methods.}
+D05, groups K05.12--14, proves the finite-dimensional real and complex
+spectral, SVD, and polar results. For the Hilbert-space partial-isometry
+version see \cite{d16}, and for the min--max and matrix perturbation
+bounds see \cite{p206}.
+
+\paragraph{C05 \enspace Tensor, exterior, and symmetric powers.}
+The balanced tensor construction is in \cite[Ch.~1]{p103}. D05,
+group K05.15, treats the field case. The comparison
+\(S\otimes_R\bigwedge_R^n M\simeq\bigwedge_S^n(S\otimes_R M)\)
+is the degree-\(n\) comparison in \cite[RK-03 and RK-04]{commalg}.
+Chapter~\ref{ch:la01-symmetric} develops the symmetric powers over rings.
+
+\paragraph{C06 \enspace Quadratic forms and Witt theory.}
+D05, group K05.11, provides polarization, diagonalization, and the
+orthogonal-complement results. Chapter~\ref{ch:la01-witt} gives
+hyperbolic splitting and Witt cancellation with the characteristic
+hypothesis and the nondegenerate scope planned for NT-06.
+For the classical treatment see \cite[Ch.~I, Sec.~4]{lam-witt}.
+
+\mainmatter
+\chapter{Symmetric powers over a commutative ring}\label{ch:la01-symmetric}
+
+Throughout the chapter \(R\) is a commutative ring with identity, all
+algebra maps preserve the identity, and \(M\) is an \(R\)-module.
+The construction uses the balanced tensor product and its
+associativity from \emph{Algebra Core}
+\cite[ALG-03-C02-S01]{p103}. The field case, including the monomial
+basis, is developed in \emph{Linear Algebra}
+\cite[entries 15.symmetric and 15.symmetric\_basis]{d05}. Here the
+coefficient ring and the module may be arbitrary.
+
+\section{The symmetric algebra and its universal properties}
+
+\begin{definition}[LA01-C05.01. The symmetric algebra]
+\label{def:la01-symmetric-algebra}
+The tensor algebra is \(T_R(M)=\bigoplus_{n\ge 0}M^{\otimes_R n}\),
+with \(M^{\otimes_R 0}=R\) and product given by concatenation of
+tensors. The symmetric algebra \(\operatorname{Sym}_R(M)\) is its
+quotient by the two-sided ideal \(J\) generated by
+\(x\otimes y-y\otimes x\) for \(x,y\in M\). The degree-\(n\) component
+is the symmetric power \(\operatorname{Sym}^n_R(M)\).
+\end{definition}
+
+The ideal \(J\) is homogeneous because its generators have degree
+two. More explicitly, a homogeneous piece of a product
+\(a(x\otimes y-y\otimes x)b\) is a sum of such products where \(a,b\)
+are homogeneous and their degrees add to the required degree minus
+two. There are no relations in degrees zero and one. Thus
+\(\operatorname{Sym}^0_R(M)=R\) and
+\(\operatorname{Sym}^1_R(M)=M\) canonically. We write \(x_1\cdots x_n\)
+for the image of a pure tensor, with empty product \(1\). Scalars
+commute with everything, and degree-one generators commute by the
+defining relations. Since these generate the quotient as an
+\(R\)-algebra, it is commutative. See \cite[Algebra, Section 10.13]{stacks-sym}.
+
+\begin{proposition}[LA01-C05.02. Universal symmetric multilinear maps]
+\label{prop:la01-symmetric-multilinear}
+For every \(n\ge 0\) and every \(R\)-module \(N\), the assignment
+\(g\mapsto ((x_1,\ldots,x_n)\mapsto g(x_1\cdots x_n))\) gives a natural
+bijection from \(R\)-linear maps \(\operatorname{Sym}^n_R(M)\to N\)
+to symmetric \(R\)-multilinear maps \(M^n\to N\). For \(n=0\) the
+right-hand side means the choices of a single element of \(N\).
+\end{proposition}
+\begin{proof}
+For \(n\ge 1\), iteration of the tensor universal property
+gives a unique linear map on \(M^{\otimes_R n}\) extending any
+multilinear map on \(M^n\). In degree \(n\ge 2\), the homogeneous
+description of \(J\) shows that \(J\cap M^{\otimes_R n}\) is spanned
+by differences of pure tensors related by one adjacent swap.
+Indeed the factors before and after the generator can be taken
+to be pure tensors, which span their respective tensor powers.
+A linear map kills these differences precisely when its associated
+multilinear map is invariant under adjacent swaps. Those swaps
+generate the whole permutation group. This proves the bijection
+for \(n\ge 2\), and for \(n=1\) both descriptions give all linear
+maps \(M\to N\). For \(n=0\) use \(g\mapsto g(1)\) on
+\(\operatorname{Hom}_R(R,N)\).
+
+The construction is natural in \(N\) by postcomposition. A
+linear map \(M\to M'\) induces tensor powers that take adjacent
+differences to adjacent differences. The induced maps on the
+quotients give naturality in \(M\) by precomposition.
+\end{proof}
+
+\begin{proposition}[LA01-C05.03. The free commutative algebra property]
+\label{prop:la01-symmetric-free}
+For any commutative \(R\)-algebra \(A\), each \(R\)-linear map
+\(f\colon M\to A\) extends uniquely to an \(R\)-algebra map
+\(\operatorname{Sym}_R(M)\to A\).
+\end{proposition}
+\begin{proof}
+For every \(n\), the product \(f(x_1)\cdots f(x_n)\) is symmetric
+and multilinear. Proposition~\ref{prop:la01-symmetric-multilinear}
+extends it to a linear map on the degree-\(n\) component.
+For degree zero this gives the structure map \(R\to A\).
+The direct sum of these maps respects multiplication on products
+of pure classes, where it agrees with multiplication of the images
+of all their factors in \(A\). By bilinearity it respects
+multiplication on the whole algebra, and its degree-zero component
+takes the unit to the unit. The images of \(R\) and of \(M\)
+determine the map on all products and linear combinations of
+generators, giving uniqueness.
+\end{proof}
+
+\begin{theorem}[LA01-C05.04. The monomial basis of a finite free module]
+\label{thm:la01-symmetric-basis}
+Suppose \(M\) is free with basis \(e_1,\ldots,e_r\), allowing \(r=0\).
+The assignment \(e_i\mapsto X_i\) gives a graded \(R\)-algebra
+isomorphism
+\[
+  \operatorname{Sym}_R(M)\cong R[X_1,\ldots,X_r],
+\]
+where every \(X_i\) has degree one. For every \(n\ge 0\), the
+elements \(e_1^{a_1}\cdots e_r^{a_r}\), with all \(a_i\ge 0\) and
+\(\sum_i a_i=n\), are an \(R\)-basis of \(\operatorname{Sym}^n_R(M)\).
+When \(r\ge 1\) there are \(\binom{n+r-1}{n}\) basis indices. For
+\(r=0\), the basis consists of \(1\) in degree zero and is empty
+in positive degrees.
+\end{theorem}
+\begin{proof}
+Send the basis linearly to the variables and extend using
+Proposition~\ref{prop:la01-symmetric-free}. Sending \(X_i\) to \(e_i\)
+defines the reverse map by the universal property of the polynomial
+algebra. Each composition fixes the scalars and all the algebra
+generators on its side, so both compositions are identities.
+The maps preserve degree. The formal polynomial algebra is the free
+\(R\)-module on its formal monomials, and its degree pieces are
+spanned by the monomials of the indicated total degree. For \(r\ge 1\),
+the exponents can be recorded by placing \(r-1\) separators among
+\(n+r-1\) positions, with the \(n\) other positions recording the
+degree. For \(r=0\) the polynomial algebra is \(R\) in degree zero.
+This gives the asserted bases in every degree.
+\end{proof}
+
+The basis statement over a commutative ring also follows from the
+multilinear approach in \cite[Theorem 1.2]{conrad-sym}.
+
+\section{Extension of scalars}
+
+\begin{theorem}[LA01-C05.05. Arbitrary base change]
+\label{thm:la01-symmetric-base-change}
+Let \(R\to S\) be any homomorphism of commutative rings with
+identity and let \(M_S=S\otimes_R M\). The graded \(S\)-algebra map
+\[
+  S\otimes_R \operatorname{Sym}_R(M)
+  \longrightarrow \operatorname{Sym}_S(M_S),
+  \qquad
+  s\otimes (x_1\cdots x_n)\longmapsto
+       s(1\otimes x_1)\cdots(1\otimes x_n)
+\]
+is an isomorphism and gives a comparison in every degree \(n\ge 0\).
+It is natural in \(M\) and compatible with compositions of
+ring maps under the usual associativity of scalar extension.
+\end{theorem}
+\begin{proof}
+The \(R\)-linear map \(x\mapsto 1\otimes x\), with values in
+degree one of \(\operatorname{Sym}_S(M_S)\), extends to an
+\(R\)-algebra map by Proposition~\ref{prop:la01-symmetric-free}.
+Multiplying its values by \(s\) defines the indicated map on
+simple tensors, by the balanced tensor universal property. This
+map respects scalar multiplication and algebra multiplication.
+In the opposite direction, \(s\otimes x\mapsto s\otimes x\) with
+values in degree one of \(S\otimes_R\operatorname{Sym}_R(M)\)
+is the scalar extension of the degree-one inclusion. It extends
+to an \(S\)-algebra map by the same proposition over \(S\).
+The \(1\otimes x\) generate both algebras over \(S\), and the
+two compositions fix these elements and the scalars. The maps
+are therefore inverse. They preserve degree, and tensor products
+commute with direct sums, so the degreewise comparisons follow.
+
+For a module map \(f\colon M\to M'\), the two routes send the
+generator \(1\otimes x\) to \(1\otimes f(x)\). For \(S\to U\),
+the two routes after scalar extension send \(1\otimes(1\otimes
+x)\) to the degree-one generator \(1\otimes x\) over \(U\).
+In both cases agreement on the generators proves the claim.
+\end{proof}
+
+The base-change comparison is the module version of the pullback
+formula for symmetric algebras
+\cite[Modules, Lemma 17.21.3]{stacks-sym}. For exterior powers,
+\emph{Advanced Commutative Algebra} gives the alternating quotient
+construction and its coefficient comparison in RK-03 and RK-04
+\cite[RK-03 and RK-04]{commalg}. In degree \(q\) the map is
+\[
+  s\otimes(x_1\wedge\cdots\wedge x_q)
+  \longmapsto s(1\otimes x_1)\wedge\cdots\wedge(1\otimes x_q).
+\]
+The alternating condition is vanishing on repeated inputs,
+including in characteristic two. RK-04 applies the comparison to
+the terms of the Koszul complex for every ring map and uses
+flatness in the statement about Koszul homology.
+
+\begin{example}[LA01-C05.06. A torsion module and nonflat base change]
+\label{ex:la01-symmetric-torsion}
+Take \(R=\mathbb Z\), \(M=(\mathbb Z/2\mathbb Z)e\) with generator
+\(e\), and \(S=\mathbb F_2\). A linear map \(M\to A\) into a
+commutative \(\mathbb Z\)-algebra is specified by an element of
+\(A\) annihilated by \(2\). The same choices specify
+\(\mathbb Z\)-algebra maps \(\mathbb Z[X]/(2X)\to A\) via \(X\).
+The canonical maps induced by \(e\leftrightarrow X\) are inverse
+on the generators, so
+\(\operatorname{Sym}_{\mathbb Z}(M)\cong\mathbb Z[X]/(2X)\).
+Its degree-zero part is \(\mathbb Z\), and each positive degree
+is generated by \(X^n\) with coefficient module \(\mathbb Z/2\mathbb Z\).
+After scalar extension the quotient becomes \(\mathbb F_2[X]\),
+in agreement with the rank-one description of
+\(\operatorname{Sym}_{\mathbb F_2}(M_S)\).
+This extension is nonflat because tensoring
+\(\mathbb Z\xrightarrow{\,2\,}\mathbb Z\) with \(\mathbb F_2\)
+sends an injection to the zero map on a nonzero module.
+\end{example}
+
+\begin{example}[LA01-C05.07. The quotient in characteristic two]
+\label{ex:la01-symmetric-char-two}
+Let \(M=\mathbb F_2 e_1\oplus\mathbb F_2 e_2\) and let \(\tau\)
+exchange the factors of \(M^{\otimes 2}\) over \(\mathbb F_2\).
+In the tensor basis the fixed subspace has basis
+\[
+  e_1\otimes e_1,\qquad e_2\otimes e_2,\qquad
+  e_1\otimes e_2+e_2\otimes e_1.
+\]
+Indeed the coefficients of the two mixed tensors must be equal.
+The quotient map takes the third basis element to
+\(2e_1e_2=0\), even though \(e_1e_2\) is a nonzero basis monomial
+of the quotient. Thus the map from the fixed tensors to the
+symmetric quotient is neither injective nor surjective. The
+averaging construction in \cite[entry 15.normalization]{d05}
+uses invertible factorials in its field setting, while the
+quotient and the monomial basis above hold in every characteristic.
+\end{example}
+\chapter{Witt theory of quadratic spaces}
+\label{ch:la01-witt}
+
+Throughout this chapter \(k\) is a field with
+\(\operatorname{char} k\ne 2\), and the ambient quadratic spaces are
+finite dimensional and nondegenerate. For a quadratic form \(q\) we
+use the symmetric bilinear form
+\[
+  B(x,y)=\frac{q(x+y)-q(x)-q(y)}{2},
+  \qquad q(x)=B(x,x).
+\]
+Nondegeneracy means that \(B\) has zero radical. An isometry is a
+linear isomorphism preserving \(q\), equivalently \(B\). We write
+\(\perp\) for an orthogonal direct sum and \(\langle a\rangle\) for
+the line with form \(x\mapsto ax^2\). These conventions agree with
+the polarization and diagonalization of the archived notes
+\cite[11.polarization and 11.diagonal\_congruence]{d05}.
+
+For a subspace \(U\subseteq V\), write
+\(U^\perp=\{x\in V:B(x,U)=0\}\).
+When the restriction to \(U\) is nondegenerate, the decomposition
+\(V=U\perp U^\perp\) is the symmetric case of the projection argument
+in \cite[11.nondegenerate]{d05}. In fact, for \(v\in V\), the
+restriction \(B(v,-)|_U\) has a unique representative \(u\in U\)
+under \(U\cong U^*\) via \(B|_U\). Thus \(v-u\in U^\perp\).
+The restriction to \(U^\perp\) is nondegenerate because a vector
+orthogonal to both summands belongs to the radical of \(V\).
+
+\section{Isotropic vectors and hyperbolic planes}
+
+A nonzero vector \(e\) is \emph{isotropic} if \(q(e)=0\).
+A space is \emph{anisotropic} when its only vector of value zero is
+the zero vector, so the zero space is anisotropic. A subspace \(T\)
+is \emph{totally isotropic} if \(q|_T=0\); by polarization this is
+equivalent to \(B|_{T\times T}=0\). The hyperbolic plane \(H\) is
+\(k^2\) with \(q_H(x,y)=xy\), equivalently
+\(\langle 1\rangle\perp\langle -1\rangle\) by the invertible
+change \((s,t)\mapsto(s+t,s-t)\).
+
+\begin{lemma}[LA01-C06.01. Splitting a hyperbolic plane]
+\label{lem:la01-hyperbolic-splitting}
+If \(e\in V\) is isotropic, there is an isotropic vector \(f\)
+with \(2B(e,f)=1\). Then \(P=ke+kf\) is isometric to \(H\) and
+\(V=P\perp P^\perp\) with \(P^\perp\) nondegenerate.
+\end{lemma}
+
+\begin{proof}
+Nondegeneracy and \(e\ne 0\) give a vector pairing nontrivially
+with \(e\). Scale it to \(f_0\) with \(2B(e,f_0)=1\), and put
+\(f=f_0-q(f_0)e\). The identities
+\[
+  2B(e,f)=1,\qquad
+  q(f)=q(f_0)-2q(f_0)B(e,f_0)+q(f_0)^2q(e)=0
+\]
+show that \(e,f\) are independent and \(q(se+tf)=st\).
+Their Gram matrix has diagonal zero and off-diagonal entries
+\(1/2\), so the restriction to \(P\) is nondegenerate. Apply the
+orthogonal splitting for a nondegenerate restriction.
+\end{proof}
+
+\section{Reflections and cancellation}
+
+\begin{lemma}[LA01-C06.02. Moving vectors of the same nonzero value]
+\label{lem:la01-reflections}
+For \(w\in V\) with \(q(w)\ne 0\), the reflection
+\[
+  s_w(x)=x-\frac{2B(x,w)}{q(w)}\,w
+\]
+is an isometry. If \(u,v\in V\) satisfy
+\(q(u)=q(v)=a\ne 0\), an isometry sending \(u\) to \(v\)
+can be chosen as a product of at most two reflections.
+\end{lemma}
+
+\begin{proof}
+The orthogonal decomposition \(V=kw\perp(kw)^\perp\) shows
+that \(s_w\) negates the \(kw\) coordinate and fixes
+\((kw)^\perp\). It is therefore an involution and preserves \(q\).
+If \(q(u-v)\ne 0\), then \(2B(u,u-v)=q(u-v)\), so
+\(s_{u-v}(u)=v\). Otherwise
+\[
+  q(u+v)=2q(u)+2q(v)-q(u-v)=4a\ne 0.
+\]
+In this case \(2B(u,u+v)=q(u+v)\), so \(s_{u+v}(u)=-v\).
+The reflection \(s_v\) sends \(-v\) to \(v\). This second case
+also works when \(u=v\).
+\end{proof}
+
+\begin{theorem}[LA01-C06.03. Witt cancellation]
+\label{thm:la01-witt-cancellation}
+Let \(U,V,W\) be nondegenerate quadratic spaces. If
+\(U\perp W\cong V\perp W\), then \(U\cong V\).
+The same conclusion holds when the copies of \(W\) are
+replaced by two isometric nondegenerate spaces.
+\end{theorem}
+
+\begin{proof}
+First let \(W=ke\) with \(q(e)=a\ne 0\). For an isometry
+\(F:U\perp W\to V\perp W\), the vectors \(F(e)\) and the
+specified \(e\) in the target both have value \(a\).
+By Lemma~\ref{lem:la01-reflections} there is a target isometry
+\(s\) sending \(F(e)\) to the target \(e\). The isometry \(sF\)
+then carries the orthogonal complement of the source line to
+the orthogonal complement of the target line. These
+complements are \(U\) and \(V\).
+
+For arbitrary \(W\), take an orthogonal basis by
+\cite[11.diagonal\_congruence]{d05}. Nondegeneracy makes every
+diagonal coefficient nonzero. Cancel the lines one at a time
+by the preceding argument. When \(W=0\), the given isometry is
+already the desired isometry. For two isometric copies of
+\(W\), identify them by their given isometry before cancelling.
+\end{proof}
+
+\section{Witt decomposition and Witt index}
+
+\begin{theorem}[LA01-C06.04. Witt decomposition and uniqueness]
+\label{thm:la01-witt-decomposition}
+There is an isometry
+\[
+  V\cong H^{\perp r}\perp A
+\]
+for an integer \(r\ge 0\) and an anisotropic space \(A\). The
+integer \(r\) and the isometry class of \(A\) depend only on \(V\).
+We call \(A\) the anisotropic part and \(r\) the Witt index.
+Here \(H^{\perp 0}=0\).
+\end{theorem}
+
+\begin{proof}
+If \(V\) is anisotropic, take \(r=0\). Otherwise split off a
+hyperbolic plane by Lemma~\ref{lem:la01-hyperbolic-splitting} and
+repeat in its nondegenerate complement. The dimension drops by
+two at each step, so this process ends with an anisotropic
+remainder, possibly zero.
+
+For another decomposition \(H^{\perp s}\perp A'\), assume
+\(r\le s\) after exchanging the two decompositions if needed.
+Witt cancellation (Theorem~\ref{thm:la01-witt-cancellation})
+gives \(A\cong H^{\perp(s-r)}\perp A'\). If \(s-r>0\), the
+right side has a nonzero isotropic vector, contradicting
+anisotropy of \(A\). Thus \(r=s\) and \(A\cong A'\).
+\end{proof}
+
+\begin{proposition}[LA01-C06.05. Totally isotropic subspaces and the Witt index]
+\label{prop:la01-witt-index}
+Let \(T\subseteq V\) be totally isotropic of dimension \(m\).
+There is an orthogonal sum of \(m\) hyperbolic planes in \(V\)
+whose chosen first isotropic basis vectors span \(T\).
+Consequently \(m\le r\), and \(r\) is the maximum dimension of a
+totally isotropic subspace. Every totally isotropic subspace
+maximal by inclusion has dimension \(r\).
+\end{proposition}
+
+\begin{proof}
+For \(m=0\) take the empty sum. For \(m>0\), choose
+\(e\in T\setminus\{0\}\) and use
+Lemma~\ref{lem:la01-hyperbolic-splitting} to write
+\(V=P\perp P^\perp\) with \(P=ke+kf\) and \(2B(e,f)=1\).
+For \(t\in T\), total isotropy gives \(B(t,e)=0\). The vector
+\[
+  t-2B(t,f)e
+\]
+also pairs to zero with \(f\), so it lies in \(T\cap P^\perp\).
+Thus \(T=ke\oplus(T\cap P^\perp)\). Apply the induction
+hypothesis to this \((m-1)\)-dimensional subspace inside the
+nondegenerate space \(P^\perp\). This produces the claimed \(m\)
+planes, with a nondegenerate orthogonal complement \(C\).
+
+Decompose \(C\) by Theorem~\ref{thm:la01-witt-decomposition}.
+Uniqueness gives \(r=m\) plus the Witt index of \(C\), hence
+\(m\le r\). The span of one isotropic coordinate vector in each
+of the \(r\) planes in a Witt decomposition has dimension \(r\).
+If \(T\) is maximal by inclusion, \(C\) is anisotropic, since an
+isotropic line in \(C\) could be adjoined orthogonally to \(T\).
+Then the Witt index of \(C\) is zero and \(m=r\).
+\end{proof}
+
+For the general theory, see \cite[Ch.~II, Secs.~7--8]{witt-source}.
+
+\begin{example}[LA01-C06.06. A Witt index that increases after extending scalars]
+\label{ex:la01-witt-base-change}
+On \(\mathbb{Q}^4\) take \(q(x,y,u,v)=xy+u^2-2v^2\).
+The last two coordinates form a nondegenerate plane with no
+nonzero isotropic vector. Indeed, \(u^2=2v^2\) with \(v\ne 0\)
+would make \(2\) a rational square: writing \(u/v=a/b\) in
+lowest terms would give \(a^2=2b^2\), forcing both \(a\) and
+\(b\) even. If \(v=0\), then \(u=0\). The displayed form is
+therefore \(H\) plus an anisotropic plane, and its Witt index
+over \(\mathbb{Q}\) is \(1\).
+
+Over \(\mathbb{Q}(\sqrt{2})\) the change
+\((u,v)\mapsto(u+\sqrt{2}v,u-\sqrt{2}v)\) is invertible and
+turns \(u^2-2v^2\) into a product of the two new coordinates.
+That plane becomes hyperbolic, so the Witt index after extension
+is \(2\). Both computations use
+Theorem~\ref{thm:la01-witt-decomposition}.
+\end{example}
+
+\backmatter
+{\raggedright
+\begin{thebibliography}{9}
+
+\bibitem{d05}
+MathGenome, \emph{Linear Algebra and Foundational Higher Algebra}
+(D05), revised notes archived in MathGenome v0.22.0.
+Statement keys start with \texttt{K05}.
+
+\bibitem{p103}
+MathGenome, \emph{Algebra Core} (P1-03), Chapters~1--2, archived
+in MathGenome v0.22.0.
+
+\bibitem{d07}
+MathGenome, \emph{Abstract Algebra} (D07), revised notes,
+Chapter~16, archived in MathGenome v0.22.0.
+
+\bibitem{p206}
+MathGenome, \emph{Foundations of Numerical Analysis} (P2-06),
+Chapter~5, archived in MathGenome v0.22.0.
+
+\bibitem{d16}
+MathGenome, \emph{Functional Analysis} (D16), the Hilbert-space
+polar decomposition, archived in MathGenome v0.22.0.
+
+\bibitem{commalg}
+MathGenome, \emph{Advanced Commutative Algebra}, Results RK-03
+and RK-04, archived in MathGenome v0.22.0.
+
+\bibitem{stacks-sym}
+The Stacks Project Authors,
+\href{https://stacks.math.columbia.edu/tag/00DM}{\emph{Tensor algebra}},
+Section~10.13, and
+\href{https://stacks.math.columbia.edu/tag/01CI}{\emph{Symmetric and exterior powers}},
+Lemma~17.21.3.
+
+\bibitem{conrad-sym}
+B. Conrad, \href{https://math.stanford.edu/~conrad/210APage/handouts/symmwedgebasis.pdf}{\emph{Bases of Symmetric and Exterior Powers}},
+Math~210A, Stanford University, Theorem~1.2 and its proof.
+
+\bibitem{witt-source}
+R. Elman, N. Karpenko, and A. Merkurjev,
+\href{https://www.math.ucla.edu/~rse/book/Kniga.pdf}{\emph{The Algebraic and Geometric Theory of Quadratic Forms}},
+AMS Colloquium Publications 56, 2008, Chapter~II, Sections~7--8.
+
+\bibitem{lam-witt}
+T. Y. Lam,
+\href{https://doi.org/10.1090/gsm/067}{\emph{Introduction to Quadratic Forms over Fields}},
+Graduate Studies in Mathematics 67, AMS, 2005, Chapter~I, Section~4.
+
+\end{thebibliography}
+}
+\end{document}

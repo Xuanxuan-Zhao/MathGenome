@@ -1,0 +1,1047 @@
+{
+  "ch:d13-01": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "chapter.1"
+  },
+  "d13:01:solution": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "definition.1.1"
+  },
+  "d13:01:integral": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "theorem.1.2"
+  },
+  "d13:01:pasting": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "proposition.1.3"
+  },
+  "d13:01:autonomous": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "definition.1.4"
+  },
+  "d13:01:higher-order": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "theorem.1.5"
+  },
+  "d13:01:autonomization": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "proposition.1.6"
+  },
+  "d13:01:coordinates": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "proposition.1.7"
+  },
+  "d13:01:boundary-example": {
+    "pdf_page": 10,
+    "printed_page": "3",
+    "pdf_destination": "example.1.8"
+  },
+  "ch:d13-02": {
+    "pdf_page": 11,
+    "printed_page": "4",
+    "pdf_destination": "chapter.2"
+  },
+  "d13:02:linear": {
+    "pdf_page": 11,
+    "printed_page": "4",
+    "pdf_destination": "theorem.2.1"
+  },
+  "d13:02:separable": {
+    "pdf_page": 11,
+    "printed_page": "4",
+    "pdf_destination": "theorem.2.2"
+  },
+  "d13:02:logistic": {
+    "pdf_page": 11,
+    "printed_page": "4",
+    "pdf_destination": "example.2.3"
+  },
+  "d13:02:exact": {
+    "pdf_page": 12,
+    "printed_page": "5",
+    "pdf_destination": "proposition.2.4"
+  },
+  "d13:02:integrating-factor": {
+    "pdf_page": 12,
+    "printed_page": "5",
+    "pdf_destination": "proposition.2.5"
+  },
+  "d13:02:bernoulli": {
+    "pdf_page": 12,
+    "printed_page": "5",
+    "pdf_destination": "proposition.2.6"
+  },
+  "d13:02:riccati": {
+    "pdf_page": 12,
+    "printed_page": "6",
+    "pdf_destination": "proposition.2.7"
+  },
+  "d13:02:oscillator": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "theorem.2.8"
+  },
+  "d13:02:energy": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "proposition.2.9"
+  },
+  "ch:d13-03": {
+    "pdf_page": 14,
+    "printed_page": "7",
+    "pdf_destination": "chapter.3"
+  },
+  "d13:03:lipschitz": {
+    "pdf_page": 14,
+    "printed_page": "7",
+    "pdf_destination": "definition.3.1"
+  },
+  "d13:03:derivative-bound": {
+    "pdf_page": 14,
+    "printed_page": "7",
+    "pdf_destination": "lemma.3.2"
+  },
+  "d13:03:contraction": {
+    "pdf_page": 14,
+    "printed_page": "7",
+    "pdf_destination": "lemma.3.3"
+  },
+  "d13:03:picard": {
+    "pdf_page": 14,
+    "printed_page": "7",
+    "pdf_destination": "theorem.3.4"
+  },
+  "d13:03:uniqueness": {
+    "pdf_page": 15,
+    "printed_page": "8",
+    "pdf_destination": "corollary.3.5"
+  },
+  "d13:03:uniform-box": {
+    "pdf_page": 15,
+    "printed_page": "8",
+    "pdf_destination": "theorem.3.6"
+  },
+  "d13:03:ascoli": {
+    "pdf_page": 16,
+    "printed_page": "9",
+    "pdf_destination": "lemma.3.7"
+  },
+  "d13:03:peano": {
+    "pdf_page": 16,
+    "printed_page": "9",
+    "pdf_destination": "theorem.3.8"
+  },
+  "d13:03:nonunique": {
+    "pdf_page": 16,
+    "printed_page": "9",
+    "pdf_destination": "example.3.9"
+  },
+  "d13:03:osgood": {
+    "pdf_page": 17,
+    "printed_page": "10",
+    "pdf_destination": "theorem.3.10"
+  },
+  "ch:d13-04": {
+    "pdf_page": 18,
+    "printed_page": "11",
+    "pdf_destination": "chapter.4"
+  },
+  "d13:04:maximal": {
+    "pdf_page": 18,
+    "printed_page": "11",
+    "pdf_destination": "theorem.4.1"
+  },
+  "d13:04:rebase": {
+    "pdf_page": 18,
+    "printed_page": "11",
+    "pdf_destination": "proposition.4.2"
+  },
+  "d13:04:continuation": {
+    "pdf_page": 18,
+    "printed_page": "11",
+    "pdf_destination": "theorem.4.3"
+  },
+  "d13:04:escape": {
+    "pdf_page": 19,
+    "printed_page": "12",
+    "pdf_destination": "corollary.4.4"
+  },
+  "d13:04:confinement": {
+    "pdf_page": 19,
+    "printed_page": "12",
+    "pdf_destination": "corollary.4.5"
+  },
+  "d13:04:linear-growth": {
+    "pdf_page": 19,
+    "printed_page": "12",
+    "pdf_destination": "theorem.4.6"
+  },
+  "d13:04:quadratic-blowup": {
+    "pdf_page": 20,
+    "printed_page": "13",
+    "pdf_destination": "example.4.7"
+  },
+  "d13:04:domain-boundary": {
+    "pdf_page": 20,
+    "printed_page": "13",
+    "pdf_destination": "example.4.8"
+  },
+  "d13:04:local-not-global": {
+    "pdf_page": 20,
+    "printed_page": "13",
+    "pdf_destination": "example.4.9"
+  },
+  "ch:d13-05": {
+    "pdf_page": 21,
+    "printed_page": "14",
+    "pdf_destination": "chapter.5"
+  },
+  "d13:05:gronwall": {
+    "pdf_page": 21,
+    "printed_page": "14",
+    "pdf_destination": "theorem.5.1"
+  },
+  "d13:05:general-gronwall": {
+    "pdf_page": 21,
+    "printed_page": "14",
+    "pdf_destination": "corollary.5.2"
+  },
+  "d13:05:perturbation": {
+    "pdf_page": 21,
+    "printed_page": "15",
+    "pdf_destination": "theorem.5.3"
+  },
+  "d13:05:initial-bound": {
+    "pdf_page": 22,
+    "printed_page": "15",
+    "pdf_destination": "corollary.5.4"
+  },
+  "d13:05:comparison": {
+    "pdf_page": 22,
+    "printed_page": "15",
+    "pdf_destination": "theorem.5.5"
+  },
+  "d13:05:common-interval": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "theorem.5.6"
+  },
+  "d13:05:field-convergence": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "corollary.5.7"
+  },
+  "d13:05:openness": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "theorem.5.8"
+  },
+  "d13:05:lifespan": {
+    "pdf_page": 24,
+    "printed_page": "17",
+    "pdf_destination": "corollary.5.9"
+  },
+  "d13:05:finite-time": {
+    "pdf_page": 24,
+    "printed_page": "17",
+    "pdf_destination": "example.5.10"
+  },
+  "ch:d13-06": {
+    "pdf_page": 25,
+    "printed_page": "18",
+    "pdf_destination": "chapter.6"
+  },
+  "d13:06:linear-volterra": {
+    "pdf_page": 25,
+    "printed_page": "18",
+    "pdf_destination": "lemma.6.1"
+  },
+  "d13:06:c1-dependence": {
+    "pdf_page": 26,
+    "printed_page": "19",
+    "pdf_destination": "theorem.6.2"
+  },
+  "d13:06:initial-time": {
+    "pdf_page": 27,
+    "printed_page": "20",
+    "pdf_destination": "proposition.6.3"
+  },
+  "d13:06:ck-dependence": {
+    "pdf_page": 27,
+    "printed_page": "20",
+    "pdf_destination": "theorem.6.4"
+  },
+  "d13:06:variations": {
+    "pdf_page": 27,
+    "printed_page": "21",
+    "pdf_destination": "theorem.6.5"
+  },
+  "d13:06:perturbation-expansion": {
+    "pdf_page": 28,
+    "printed_page": "21",
+    "pdf_destination": "corollary.6.6"
+  },
+  "d13:06:local-diffeomorphism": {
+    "pdf_page": 28,
+    "printed_page": "21",
+    "pdf_destination": "corollary.6.7"
+  },
+  "d13:06:polydisc-limit": {
+    "pdf_page": 29,
+    "printed_page": "22",
+    "pdf_destination": "lemma.6.8"
+  },
+  "d13:06:analytic-dependence": {
+    "pdf_page": 29,
+    "printed_page": "22",
+    "pdf_destination": "theorem.6.9"
+  },
+  "d13:06:real-analytic": {
+    "pdf_page": 30,
+    "printed_page": "23",
+    "pdf_destination": "corollary.6.10"
+  },
+  "d13:06:smooth-not-analytic": {
+    "pdf_page": 30,
+    "printed_page": "23",
+    "pdf_destination": "example.6.11"
+  },
+  "ch:d13-07": {
+    "pdf_page": 31,
+    "printed_page": "24",
+    "pdf_destination": "chapter.7"
+  },
+  "d13:07:exp-definition": {
+    "pdf_page": 31,
+    "printed_page": "24",
+    "pdf_destination": "definition.7.1"
+  },
+  "d13:07:exp": {
+    "pdf_page": 31,
+    "printed_page": "24",
+    "pdf_destination": "theorem.7.2"
+  },
+  "d13:07:jordan": {
+    "pdf_page": 31,
+    "printed_page": "24",
+    "pdf_destination": "proposition.7.3"
+  },
+  "d13:07:fundamental": {
+    "pdf_page": 32,
+    "printed_page": "25",
+    "pdf_destination": "theorem.7.4"
+  },
+  "d13:07:variation": {
+    "pdf_page": 32,
+    "printed_page": "25",
+    "pdf_destination": "theorem.7.5"
+  },
+  "d13:07:liouville": {
+    "pdf_page": 32,
+    "printed_page": "25",
+    "pdf_destination": "theorem.7.6"
+  },
+  "d13:07:nilpotent-example": {
+    "pdf_page": 32,
+    "printed_page": "26",
+    "pdf_destination": "example.7.7"
+  },
+  "ch:d13-08": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "chapter.8"
+  },
+  "d13:08:monodromy": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "definition.8.1"
+  },
+  "d13:08:translation": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "lemma.8.2"
+  },
+  "d13:08:matrix-log": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "lemma.8.3"
+  },
+  "d13:08:floquet": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "theorem.8.4"
+  },
+  "d13:08:real-log-counterexample": {
+    "pdf_page": 35,
+    "printed_page": "28",
+    "pdf_destination": "example.8.5"
+  },
+  "d13:08:stability": {
+    "pdf_page": 35,
+    "printed_page": "28",
+    "pdf_destination": "theorem.8.6"
+  },
+  "d13:08:periodic-forcing": {
+    "pdf_page": 35,
+    "printed_page": "28",
+    "pdf_destination": "proposition.8.7"
+  },
+  "ch:d13-09": {
+    "pdf_page": 36,
+    "printed_page": "29",
+    "pdf_destination": "chapter.9"
+  },
+  "d13:09:reduction": {
+    "pdf_page": 36,
+    "printed_page": "29",
+    "pdf_destination": "proposition.9.1"
+  },
+  "d13:09:ordinary-series": {
+    "pdf_page": 36,
+    "printed_page": "29",
+    "pdf_destination": "theorem.9.2"
+  },
+  "d13:09:indicial": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "definition.9.3"
+  },
+  "d13:09:frobenius": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "theorem.9.4"
+  },
+  "d13:09:resonance": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "theorem.9.5"
+  },
+  "d13:09:singular-examples": {
+    "pdf_page": 38,
+    "printed_page": "31",
+    "pdf_destination": "example.9.6"
+  },
+  "d13:09:legendre": {
+    "pdf_page": 38,
+    "printed_page": "31",
+    "pdf_destination": "proposition.9.7"
+  },
+  "ch:d13-10": {
+    "pdf_page": 39,
+    "printed_page": "32",
+    "pdf_destination": "chapter.10"
+  },
+  "d13:10:boundary": {
+    "pdf_page": 39,
+    "printed_page": "32",
+    "pdf_destination": "definition.10.1"
+  },
+  "d13:10:lagrange": {
+    "pdf_page": 39,
+    "printed_page": "32",
+    "pdf_destination": "proposition.10.2"
+  },
+  "d13:10:separation": {
+    "pdf_page": 39,
+    "printed_page": "32",
+    "pdf_destination": "proposition.10.3"
+  },
+  "d13:10:green": {
+    "pdf_page": 40,
+    "printed_page": "33",
+    "pdf_destination": "lemma.10.4"
+  },
+  "d13:10:compact-spectral": {
+    "pdf_page": 40,
+    "printed_page": "34",
+    "pdf_destination": "lemma.10.5"
+  },
+  "d13:10:spectrum": {
+    "pdf_page": 41,
+    "printed_page": "34",
+    "pdf_destination": "theorem.10.6"
+  },
+  "d13:10:resolvent": {
+    "pdf_page": 41,
+    "printed_page": "34",
+    "pdf_destination": "proposition.10.7"
+  },
+  "d13:10:oscillation": {
+    "pdf_page": 42,
+    "printed_page": "35",
+    "pdf_destination": "theorem.10.8"
+  },
+  "d13:10:dirichlet-example": {
+    "pdf_page": 42,
+    "printed_page": "35",
+    "pdf_destination": "example.10.9"
+  },
+  "ch:d13-11": {
+    "pdf_page": 44,
+    "printed_page": "37",
+    "pdf_destination": "chapter.11"
+  },
+  "d13:11:flow": {
+    "pdf_page": 44,
+    "printed_page": "37",
+    "pdf_destination": "theorem.11.1"
+  },
+  "d13:11:orbits": {
+    "pdf_page": 44,
+    "printed_page": "37",
+    "pdf_destination": "proposition.11.2"
+  },
+  "d13:11:invariant": {
+    "pdf_page": 44,
+    "printed_page": "37",
+    "pdf_destination": "definition.11.3"
+  },
+  "d13:11:first-integral": {
+    "pdf_page": 44,
+    "printed_page": "38",
+    "pdf_destination": "theorem.11.4"
+  },
+  "d13:11:flowbox": {
+    "pdf_page": 45,
+    "printed_page": "38",
+    "pdf_destination": "theorem.11.5"
+  },
+  "d13:11:omega": {
+    "pdf_page": 45,
+    "printed_page": "38",
+    "pdf_destination": "theorem.11.6"
+  },
+  "d13:11:hamiltonian": {
+    "pdf_page": 45,
+    "printed_page": "38",
+    "pdf_destination": "proposition.11.7"
+  },
+  "ch:d13-12": {
+    "pdf_page": 47,
+    "printed_page": "40",
+    "pdf_destination": "chapter.12"
+  },
+  "d13:12:definitions": {
+    "pdf_page": 47,
+    "printed_page": "40",
+    "pdf_destination": "definition.12.1"
+  },
+  "d13:12:lyapunov": {
+    "pdf_page": 47,
+    "printed_page": "40",
+    "pdf_destination": "theorem.12.2"
+  },
+  "d13:12:matrix-lyapunov": {
+    "pdf_page": 47,
+    "printed_page": "40",
+    "pdf_destination": "lemma.12.3"
+  },
+  "d13:12:linearized-stability": {
+    "pdf_page": 48,
+    "printed_page": "41",
+    "pdf_destination": "theorem.12.4"
+  },
+  "d13:12:zero-example": {
+    "pdf_page": 48,
+    "printed_page": "41",
+    "pdf_destination": "example.12.5"
+  },
+  "d13:12:lasalle": {
+    "pdf_page": 48,
+    "printed_page": "41",
+    "pdf_destination": "theorem.12.6"
+  },
+  "d13:12:damped-pendulum": {
+    "pdf_page": 48,
+    "printed_page": "42",
+    "pdf_destination": "example.12.7"
+  },
+  "ch:d13-13": {
+    "pdf_page": 50,
+    "printed_page": "43",
+    "pdf_destination": "chapter.13"
+  },
+  "d13:13:nullclines": {
+    "pdf_page": 50,
+    "printed_page": "43",
+    "pdf_destination": "definition.13.1"
+  },
+  "d13:13:nullcline-example": {
+    "pdf_page": 50,
+    "printed_page": "43",
+    "pdf_destination": "example.13.2"
+  },
+  "d13:13:index-jump": {
+    "pdf_page": 50,
+    "printed_page": "43",
+    "pdf_destination": "lemma.13.3"
+  },
+  "d13:13:monotone-crossings": {
+    "pdf_page": 51,
+    "printed_page": "44",
+    "pdf_destination": "lemma.13.4"
+  },
+  "d13:13:poincare-bendixson": {
+    "pdf_page": 52,
+    "printed_page": "45",
+    "pdf_destination": "theorem.13.5"
+  },
+  "d13:13:trapping": {
+    "pdf_page": 52,
+    "printed_page": "45",
+    "pdf_destination": "corollary.13.6"
+  },
+  "d13:13:dulac": {
+    "pdf_page": 52,
+    "printed_page": "45",
+    "pdf_destination": "theorem.13.7"
+  },
+  "d13:13:annulus": {
+    "pdf_page": 52,
+    "printed_page": "45",
+    "pdf_destination": "example.13.8"
+  },
+  "d13:13:pendulum": {
+    "pdf_page": 52,
+    "printed_page": "46",
+    "pdf_destination": "example.13.9"
+  },
+  "ch:d13-14": {
+    "pdf_page": 54,
+    "printed_page": "47",
+    "pdf_destination": "chapter.14"
+  },
+  "d13:14:return-map": {
+    "pdf_page": 54,
+    "printed_page": "47",
+    "pdf_destination": "theorem.14.1"
+  },
+  "d13:14:multipliers": {
+    "pdf_page": 54,
+    "printed_page": "47",
+    "pdf_destination": "theorem.14.2"
+  },
+  "d13:14:orbital-definition": {
+    "pdf_page": 55,
+    "printed_page": "48",
+    "pdf_destination": "definition.14.3"
+  },
+  "d13:14:orbital-stability": {
+    "pdf_page": 55,
+    "printed_page": "48",
+    "pdf_destination": "theorem.14.4"
+  },
+  "d13:14:orbital-instability": {
+    "pdf_page": 55,
+    "printed_page": "48",
+    "pdf_destination": "proposition.14.5"
+  },
+  "d13:14:radial-example": {
+    "pdf_page": 56,
+    "printed_page": "49",
+    "pdf_destination": "example.14.6"
+  },
+  "ch:d13-15": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "chapter.15"
+  },
+  "d13:15:discrete-system": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "definition.15.1"
+  },
+  "d13:15:conjugacy-definition": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "definition.15.2"
+  },
+  "d13:15:conjugacy-transport": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "proposition.15.3"
+  },
+  "d13:15:interval-fixed-point": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "proposition.15.4"
+  },
+  "d13:15:stability-definition": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "definition.15.5"
+  },
+  "d13:15:adapted-norm": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "lemma.15.6"
+  },
+  "d13:15:linearized-stability": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "theorem.15.7"
+  },
+  "d13:15:linearized-instability": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "theorem.15.8"
+  },
+  "d13:15:periodic-multipliers": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "proposition.15.9"
+  },
+  "d13:15:circle-lift": {
+    "pdf_page": 59,
+    "printed_page": "52",
+    "pdf_destination": "definition.15.11"
+  },
+  "d13:15:rotation-number": {
+    "pdf_page": 59,
+    "printed_page": "52",
+    "pdf_destination": "theorem.15.12"
+  },
+  "d13:15:rigid-rotation": {
+    "pdf_page": 59,
+    "printed_page": "52",
+    "pdf_destination": "theorem.15.13"
+  },
+  "d13:15:logistic-fixed-points": {
+    "pdf_page": 60,
+    "printed_page": "53",
+    "pdf_destination": "proposition.15.14"
+  },
+  "d13:15:logistic-tent": {
+    "pdf_page": 60,
+    "printed_page": "53",
+    "pdf_destination": "proposition.15.15"
+  },
+  "ch:d13-16": {
+    "pdf_page": 61,
+    "printed_page": "54",
+    "pdf_destination": "chapter.16"
+  },
+  "d13:16:family-definition": {
+    "pdf_page": 61,
+    "printed_page": "54",
+    "pdf_destination": "definition.16.1"
+  },
+  "d13:16:simple-persistence": {
+    "pdf_page": 61,
+    "printed_page": "54",
+    "pdf_destination": "proposition.16.2"
+  },
+  "d13:16:saddle-node": {
+    "pdf_page": 61,
+    "printed_page": "54",
+    "pdf_destination": "theorem.16.3"
+  },
+  "d13:16:transcritical": {
+    "pdf_page": 62,
+    "printed_page": "55",
+    "pdf_destination": "theorem.16.4"
+  },
+  "d13:16:pitchfork": {
+    "pdf_page": 62,
+    "printed_page": "55",
+    "pdf_destination": "theorem.16.5"
+  },
+  "d13:16:flip-normal-form": {
+    "pdf_page": 62,
+    "printed_page": "55",
+    "pdf_destination": "proposition.16.7"
+  },
+  "d13:16:cubic-normal-form": {
+    "pdf_page": 63,
+    "printed_page": "56",
+    "pdf_destination": "lemma.16.8"
+  },
+  "d13:16:hopf-return-expansion": {
+    "pdf_page": 63,
+    "printed_page": "56",
+    "pdf_destination": "lemma.16.9"
+  },
+  "d13:16:planar-hopf": {
+    "pdf_page": 64,
+    "printed_page": "57",
+    "pdf_destination": "theorem.16.10"
+  },
+  "d13:16:invariant-graph": {
+    "pdf_page": 64,
+    "printed_page": "57",
+    "pdf_destination": "proposition.16.12"
+  },
+  "d13:16:triangular-center": {
+    "pdf_page": 65,
+    "printed_page": "58",
+    "pdf_destination": "theorem.16.13"
+  },
+  "ch:d13-17": {
+    "pdf_page": 66,
+    "printed_page": "59",
+    "pdf_destination": "chapter.17"
+  },
+  "d13:17:chaos-definition": {
+    "pdf_page": 66,
+    "printed_page": "59",
+    "pdf_destination": "definition.17.1"
+  },
+  "d13:17:shift-definition": {
+    "pdf_page": 66,
+    "printed_page": "59",
+    "pdf_destination": "definition.17.2"
+  },
+  "d13:17:shift-compactness": {
+    "pdf_page": 66,
+    "printed_page": "59",
+    "pdf_destination": "lemma.17.3"
+  },
+  "d13:17:full-shift-chaos": {
+    "pdf_page": 66,
+    "printed_page": "59",
+    "pdf_destination": "theorem.17.4"
+  },
+  "d13:17:inverse-branch-coding": {
+    "pdf_page": 67,
+    "printed_page": "60",
+    "pdf_destination": "theorem.17.5"
+  },
+  "d13:17:logistic-cantor": {
+    "pdf_page": 67,
+    "printed_page": "60",
+    "pdf_destination": "theorem.17.6"
+  },
+  "d13:17:tent-chaos": {
+    "pdf_page": 68,
+    "printed_page": "61",
+    "pdf_destination": "proposition.17.7"
+  },
+  "d13:17:affine-horseshoe": {
+    "pdf_page": 68,
+    "printed_page": "61",
+    "pdf_destination": "theorem.17.9"
+  },
+  "ch:d13-18": {
+    "pdf_page": 70,
+    "printed_page": "63",
+    "pdf_destination": "chapter.18"
+  },
+  "d13:18:exponent-definition": {
+    "pdf_page": 70,
+    "printed_page": "63",
+    "pdf_destination": "definition.18.1"
+  },
+  "d13:18:norm-independence": {
+    "pdf_page": 70,
+    "printed_page": "63",
+    "pdf_destination": "proposition.18.2"
+  },
+  "d13:18:linear-exponents": {
+    "pdf_page": 70,
+    "printed_page": "63",
+    "pdf_destination": "theorem.18.3"
+  },
+  "d13:18:ergodic-exponents": {
+    "pdf_page": 71,
+    "printed_page": "64",
+    "pdf_destination": "proposition.18.4"
+  },
+  "d13:18:attractor-definition": {
+    "pdf_page": 71,
+    "printed_page": "64",
+    "pdf_destination": "definition.18.6"
+  },
+  "d13:18:trapping-attractor": {
+    "pdf_page": 71,
+    "printed_page": "64",
+    "pdf_destination": "theorem.18.7"
+  },
+  "d13:18:hausdorff-definition": {
+    "pdf_page": 72,
+    "printed_page": "65",
+    "pdf_destination": "definition.18.9"
+  },
+  "d13:18:mass-distribution": {
+    "pdf_page": 72,
+    "printed_page": "65",
+    "pdf_destination": "lemma.18.10"
+  },
+  "d13:18:cantor-dimension": {
+    "pdf_page": 72,
+    "printed_page": "65",
+    "pdf_destination": "theorem.18.11"
+  },
+  "ch:d13-19": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "chapter.19"
+  },
+  "d13:19:preserving-definition": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "definition.19.1"
+  },
+  "d13:19:composition-isometry": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "lemma.19.2"
+  },
+  "d13:19:poincare-recurrence": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "theorem.19.3"
+  },
+  "d13:19:metric-recurrence": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "corollary.19.4"
+  },
+  "d13:19:hilbert-projection": {
+    "pdf_page": 75,
+    "printed_page": "68",
+    "pdf_destination": "lemma.19.6"
+  },
+  "d13:19:mean-ergodic": {
+    "pdf_page": 75,
+    "printed_page": "68",
+    "pdf_destination": "theorem.19.7"
+  },
+  "d13:19:maximal-lemma": {
+    "pdf_page": 75,
+    "printed_page": "68",
+    "pdf_destination": "lemma.19.8"
+  },
+  "d13:19:dense-coboundaries": {
+    "pdf_page": 76,
+    "printed_page": "69",
+    "pdf_destination": "lemma.19.9"
+  },
+  "d13:19:birkhoff": {
+    "pdf_page": 76,
+    "printed_page": "69",
+    "pdf_destination": "theorem.19.10"
+  },
+  "d13:19:ergodic-criterion": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "corollary.19.11"
+  },
+  "d13:19:probability-compactness": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "lemma.19.12"
+  },
+  "d13:19:invariant-probability": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "theorem.19.13"
+  },
+  "d13:19:unique-ergodic-uniform": {
+    "pdf_page": 78,
+    "printed_page": "71",
+    "pdf_destination": "theorem.19.14"
+  },
+  "d13:19:rotation-ergodicity": {
+    "pdf_page": 78,
+    "printed_page": "71",
+    "pdf_destination": "theorem.19.15"
+  },
+  "d13:19:bernoulli-measure": {
+    "pdf_page": 78,
+    "printed_page": "71",
+    "pdf_destination": "lemma.19.16"
+  },
+  "d13:19:bernoulli-mixing": {
+    "pdf_page": 79,
+    "printed_page": "72",
+    "pdf_destination": "theorem.19.17"
+  },
+  "ch:d13-20": {
+    "pdf_page": 80,
+    "printed_page": "73",
+    "pdf_destination": "chapter.20"
+  },
+  "d13:20:hyperbolicity": {
+    "pdf_page": 80,
+    "printed_page": "73",
+    "pdf_destination": "definition.20.1"
+  },
+  "d13:20:dichotomy": {
+    "pdf_page": 80,
+    "printed_page": "73",
+    "pdf_destination": "lemma.20.2"
+  },
+  "d13:20:cutoff": {
+    "pdf_page": 80,
+    "printed_page": "73",
+    "pdf_destination": "lemma.20.3"
+  },
+  "d13:20:green": {
+    "pdf_page": 81,
+    "printed_page": "74",
+    "pdf_destination": "lemma.20.4"
+  },
+  "d13:20:perron": {
+    "pdf_page": 81,
+    "printed_page": "74",
+    "pdf_destination": "lemma.20.5"
+  },
+  "d13:20:stable-manifold": {
+    "pdf_page": 82,
+    "printed_page": "75",
+    "pdf_destination": "theorem.20.6"
+  },
+  "d13:20:local-global": {
+    "pdf_page": 83,
+    "printed_page": "76",
+    "pdf_destination": "remark.20.7"
+  },
+  "d13:20:hartman-grobman": {
+    "pdf_page": 83,
+    "printed_page": "76",
+    "pdf_destination": "theorem.20.8"
+  },
+  "d13:20:example-graph": {
+    "pdf_page": 84,
+    "printed_page": "77",
+    "pdf_destination": "example.20.9"
+  },
+  "ch:d13-21": {
+    "pdf_page": 85,
+    "printed_page": "78",
+    "pdf_destination": "chapter.21"
+  },
+  "d13:21:index-properties": {
+    "pdf_page": 85,
+    "printed_page": "78",
+    "pdf_destination": "lemma.21.1"
+  },
+  "d13:21:collar": {
+    "pdf_page": 86,
+    "printed_page": "79",
+    "pdf_destination": "lemma.21.2"
+  },
+  "d13:21:jump": {
+    "pdf_page": 86,
+    "printed_page": "79",
+    "pdf_destination": "lemma.21.3"
+  },
+  "d13:21:smooth-jordan": {
+    "pdf_page": 87,
+    "printed_page": "80",
+    "pdf_destination": "theorem.21.4"
+  },
+  "d13:21:domain-interior": {
+    "pdf_page": 88,
+    "printed_page": "81",
+    "pdf_destination": "corollary.21.5"
+  }
+}

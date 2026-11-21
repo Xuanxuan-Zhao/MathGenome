@@ -1,0 +1,55 @@
+\chapter{An algebraic proof of the fundamental theorem of algebra}
+\label{app:algebraic-fta}
+
+This proof replaces an appeal to the fundamental theorem of algebra as a prior theorem. Its analytic inputs are only the intermediate value theorem for real continuous functions and the existence of a nonnegative square root of a nonnegative real number. The ordered real field, the complex field $\C=\R[i]$ with $i^2=-1$, and coefficientwise complex conjugation are already constructed. No complex logarithm, exponential, winding number, transcendence theorem or statement that $\C$ is algebraically closed is used.
+
+The algebraic inputs are the abstract splitting-field construction in Entry~\ref{K07.12.splitting_existence_uniqueness}, characteristic-zero separability in Entry~\ref{K07.12.characteristic_zero_separability}, the finite Galois theorem in Entries~\ref{K07.14.splitting_criterion}, \ref{K07.14.fundamental_correspondence} and~\ref{K07.14.degree_index}, and Sylow existence, including smaller prime-power subgroups, in Entry~\ref{K07.06.sylow_existence}. All these proofs apply to abstract fields and finite groups and were established independently of any complex root-existence assertion. In particular, this appendix does not call on a representation-theoretic diagonalization over $\C$ that might itself have used the theorem being proved.
+
+\begin{lemma}\label{lem:real-no-odd-extension}
+Every odd-degree real polynomial has a real zero, and $\R$ has no nontrivial finite extension of odd degree.
+\end{lemma}
+\begin{proof}
+For an odd-degree polynomial $f(X)=a_dX^d+\cdots+a_0$ with $a_d\ne0$, divide by $a_d$. If $M=1+\sum_{j<d}|a_j/a_d|$, then for $|x|>M$,
+\[\left|\sum_{j<d}(a_j/a_d)x^j\right|
+ \leq\left(\sum_{j<d}|a_j/a_d|\right)|x|^{d-1}<|x|^d.
+\]
+Thus the monic polynomial is positive for $x>M$ and negative for $x<-M$, because $d$ is odd. Polynomials are continuous, so the intermediate value theorem gives a zero.
+
+Suppose $E/\R$ were finite of odd degree and contained $a\notin\R$. By the tower law, the degree of the irreducible minimal polynomial of $a$ divides $[E:\R]$ and is therefore odd. It is greater than one, yet the first paragraph gives it a real zero. The factor theorem would then make this irreducible polynomial linear, a contradiction. Hence every element of $E$ belongs to $\R$ and $E=\R$.
+\end{proof}
+
+\begin{lemma}\label{lem:complex-square-root-algebraic}
+Every complex number has a square root in $\C$. Consequently every quadratic polynomial over $\C$ splits, and $\C$ has no quadratic field extension.
+\end{lemma}
+\begin{proof}
+Write $z=a+bi$. If $b=0$ and $a\geq0$, take its nonnegative real square root; if $b=0$ and $a<0$, use $i\sqrt{-a}$. These cases include $z=0$. If $b\ne0$, let $r=\sqrt{a^2+b^2}$. Then $r>|a|$, so
+\[u=\sqrt{(r+a)/2}>0,\qquad v=\frac{b}{2u}\]
+are defined real numbers. Since $(r-a)(r+a)=b^2$, one has $v^2=(r-a)/2$. Therefore $u^2-v^2=a$ and $2uv=b$, proving $(u+vi)^2=z$.
+
+For $AX^2+BX+C$ with $A\ne0$, the quadratic formula is valid because $2A\ne0$ in characteristic zero and $B^2-4AC$ has the square root just constructed. It gives both roots, including a repeated one when the discriminant is zero. If $E/\C$ had degree two, any $a\in E\setminus\C$ would have a degree-two minimal polynomial by the tower law. Such a polynomial has a root in $\C$ and is reducible, a contradiction.
+\end{proof}
+
+\begin{theorem}[Fundamental theorem of algebra]\label{thm:algebraic-fta}
+Every nonconstant polynomial in $\C[X]$ has a complex root. Equivalently, $\C$ is algebraically closed, and every polynomial of degree $n\geq1$ is a product of $n$ linear factors over $\C$, with multiplicities counted.
+\end{theorem}
+\begin{proof}
+Let $f\in\C[X]$ have positive degree. Write $\overline f$ for coefficientwise conjugation and put
+\[h(X)=(X^2+1)f(X)\overline f(X).\]
+This polynomial has real coefficients: conjugation fixes $X^2+1$ and interchanges the two other factors. By the abstract splitting-field theorem there is a finite splitting field $L/\R$ for $h$. Its existence has not assumed that any of these roots are already complex numbers. The distinct irreducible factors of $h$ are separable in characteristic zero; their product is separable with the same splitting field. Consequently $L/\R$ is finite Galois.
+
+There is a root $j\in L$ of $X^2+1$. It is not real, since the square of a real number is nonnegative. The field $T=\R(j)$ is therefore a degree-two extension of $\R$, and
+\[\iota:\C\longrightarrow T,\qquad a+bi\longmapsto a+bj\]
+is an $\R$-isomorphism: the defining multiplication relation is the same, and $1,j$ are real-linearly independent. We use this explicit copy of $\C$ inside $L$; we have not silently assumed the original complex field contained the abstract splitting field. In particular, by the preceding lemma $T$ has no quadratic extension.
+
+Let $G=\Gal(L/\R)$ and choose a Sylow $2$-subgroup $P$. Its fixed field has degree $[G:P]$ over $\R$, which is odd. Lemma~\ref{lem:real-no-odd-extension} forces that fixed field to be $\R$. The Galois correspondence then gives $P=G$. Thus $G$ is a finite $2$-group.
+
+Let $H=\Gal(L/T)$. If $H\ne1$, it has order $2^m$ with $m\geq1$. By the prime-power subgroup existence theorem it has a subgroup $J$ of order $2^{m-1}$. The fixed field $L^J$ contains $T$, and the degree-index formula gives
+\[[L^J:T]=[H:J]=2.\]
+This contradicts the absence of quadratic extensions of $T$. Hence $H=1$ and $L=T$.
+
+The polynomial $h$ splits in $T$. Under $\iota$, the transported polynomial $\iota(f)$ divides $h$ in $T[X]$. By unique factorization in the field polynomial ring, every positive-degree divisor of a product of linear polynomials has a linear factor; therefore $\iota(f)$ has a zero in $T$. Applying $\iota^{-1}$ gives a zero of $f$ in $\C$. Repeated division by the corresponding linear factor lowers the degree by one and proves the complete linear factorization statement. Conversely such factorizations plainly give the root property, proving the equivalences.
+\end{proof}
+
+\begin{remark}
+The proof is the Sylow-$2$ argument in Dummit--Foote, Section~14.6, Theorem~35, second proof (printed~617, PDF~631), with its real/quadratic preliminary facts on printed~615--616. Stewart, Section~23.3, Theorem~23.12 and Corollary~23.13, gives the same route in a more general ordered-field setting. Artin, Section~15.10 (printed~471, PDF~483), instead outlines a winding-number argument; that outline is not being substituted for a proof here. This appendix is independent of the later special Lindemann proof of $\pi$ transcendence, so its use as a foundation for complex splitting fields creates no transcendence cycle.
+\end{remark}

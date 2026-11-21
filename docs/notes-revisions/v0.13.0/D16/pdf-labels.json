@@ -1,0 +1,3462 @@
+{
+  "fa2:p1:c01": {
+    "pdf_page": 10,
+    "printed_page": "2",
+    "pdf_destination": "chapter.1"
+  },
+  "fa2:p1:c01:norm": {
+    "pdf_page": 10,
+    "printed_page": "2",
+    "pdf_destination": "definition.1.1"
+  },
+  "fa2:p1:c01:operations": {
+    "pdf_page": 10,
+    "printed_page": "2",
+    "pdf_destination": "proposition.1.2"
+  },
+  "fa2:p1:c01:banach": {
+    "pdf_page": 11,
+    "printed_page": "3",
+    "pdf_destination": "definition.1.3"
+  },
+  "fa2:p1:c01:series-completeness": {
+    "pdf_page": 11,
+    "printed_page": "3",
+    "pdf_destination": "theorem.1.4"
+  },
+  "fa2:p1:c01:finite-dimension": {
+    "pdf_page": 11,
+    "printed_page": "3",
+    "pdf_destination": "theorem.1.5"
+  },
+  "fa2:p1:c01:sequence-spaces": {
+    "pdf_page": 12,
+    "printed_page": "4",
+    "pdf_destination": "definition.1.6"
+  },
+  "fa2:p1:c01:holder": {
+    "pdf_page": 12,
+    "printed_page": "4",
+    "pdf_destination": "lemma.1.7"
+  },
+  "fa2:p1:c01:examples-complete": {
+    "pdf_page": 12,
+    "printed_page": "4",
+    "pdf_destination": "theorem.1.8"
+  },
+  "fa2:p1:c01:riesz-lemma": {
+    "pdf_page": 12,
+    "printed_page": "4",
+    "pdf_destination": "lemma.1.9"
+  },
+  "fa2:p1:c01:compact-ball": {
+    "pdf_page": 13,
+    "printed_page": "5",
+    "pdf_destination": "theorem.1.10"
+  },
+  "fa2:p1:c01:unit-vectors": {
+    "pdf_page": 13,
+    "printed_page": "5",
+    "pdf_destination": "example.1.11"
+  },
+  "fa2:p1:c02": {
+    "pdf_page": 14,
+    "printed_page": "6",
+    "pdf_destination": "chapter.2"
+  },
+  "fa2:p1:c02:complete-subspace": {
+    "pdf_page": 14,
+    "printed_page": "6",
+    "pdf_destination": "proposition.2.1"
+  },
+  "fa2:p1:c02:quotient-norm": {
+    "pdf_page": 14,
+    "printed_page": "6",
+    "pdf_destination": "definition.2.2"
+  },
+  "fa2:p1:c02:quotient-map": {
+    "pdf_page": 14,
+    "printed_page": "6",
+    "pdf_destination": "proposition.2.3"
+  },
+  "fa2:p1:c02:quotient-complete": {
+    "pdf_page": 15,
+    "printed_page": "7",
+    "pdf_destination": "theorem.2.4"
+  },
+  "fa2:p1:c02:completion": {
+    "pdf_page": 15,
+    "printed_page": "7",
+    "pdf_destination": "theorem.2.5"
+  },
+  "fa2:p1:c02:products": {
+    "pdf_page": 16,
+    "printed_page": "8",
+    "pdf_destination": "proposition.2.6"
+  },
+  "fa2:p1:c02:hilbert-sum": {
+    "pdf_page": 16,
+    "printed_page": "8",
+    "pdf_destination": "definition.2.7"
+  },
+  "fa2:p1:c02:hilbert-sum-complete": {
+    "pdf_page": 16,
+    "printed_page": "8",
+    "pdf_destination": "proposition.2.8"
+  },
+  "fa2:p1:c02:topological-sum": {
+    "pdf_page": 17,
+    "printed_page": "9",
+    "pdf_destination": "definition.2.9"
+  },
+  "fa2:p1:c02:projections": {
+    "pdf_page": 17,
+    "printed_page": "9",
+    "pdf_destination": "proposition.2.10"
+  },
+  "fa2:p1:c03": {
+    "pdf_page": 18,
+    "printed_page": "10",
+    "pdf_destination": "chapter.3"
+  },
+  "fa2:p1:c03:bounded-criterion": {
+    "pdf_page": 18,
+    "printed_page": "10",
+    "pdf_destination": "theorem.3.1"
+  },
+  "fa2:p1:c03:operator-norm": {
+    "pdf_page": 18,
+    "printed_page": "10",
+    "pdf_destination": "definition.3.2"
+  },
+  "fa2:p1:c03:operator-estimates": {
+    "pdf_page": 18,
+    "printed_page": "10",
+    "pdf_destination": "proposition.3.3"
+  },
+  "fa2:p1:c03:operator-complete": {
+    "pdf_page": 19,
+    "printed_page": "11",
+    "pdf_destination": "theorem.3.4"
+  },
+  "fa2:p1:c03:neumann": {
+    "pdf_page": 19,
+    "printed_page": "11",
+    "pdf_destination": "theorem.3.5"
+  },
+  "fa2:p1:c03:resolvent-identity": {
+    "pdf_page": 19,
+    "printed_page": "11",
+    "pdf_destination": "proposition.3.6"
+  },
+  "fa2:p1:c03:perturbation": {
+    "pdf_page": 20,
+    "printed_page": "12",
+    "pdf_destination": "theorem.3.7"
+  },
+  "fa2:p1:c04": {
+    "pdf_page": 21,
+    "printed_page": "13",
+    "pdf_destination": "chapter.4"
+  },
+  "fa2:p1:c04:dual": {
+    "pdf_page": 21,
+    "printed_page": "13",
+    "pdf_destination": "definition.4.1"
+  },
+  "fa2:p1:c04:dual-complete": {
+    "pdf_page": 21,
+    "printed_page": "13",
+    "pdf_destination": "proposition.4.2"
+  },
+  "fa2:p1:c04:canonical-map": {
+    "pdf_page": 21,
+    "printed_page": "13",
+    "pdf_destination": "definition.4.3"
+  },
+  "fa2:p1:c04:evaluation-contractive": {
+    "pdf_page": 21,
+    "printed_page": "13",
+    "pdf_destination": "proposition.4.4"
+  },
+  "fa2:p1:c04:annihilators": {
+    "pdf_page": 22,
+    "printed_page": "14",
+    "pdf_destination": "definition.4.5"
+  },
+  "fa2:p1:c04:dual-maps": {
+    "pdf_page": 22,
+    "printed_page": "14",
+    "pdf_destination": "proposition.4.6"
+  },
+  "fa2:p1:c05": {
+    "pdf_page": 23,
+    "printed_page": "15",
+    "pdf_destination": "chapter.5"
+  },
+  "fa2:p1:c05:sublinear": {
+    "pdf_page": 23,
+    "printed_page": "15",
+    "pdf_destination": "definition.5.1"
+  },
+  "fa2:p1:c05:real-hahn-banach": {
+    "pdf_page": 23,
+    "printed_page": "15",
+    "pdf_destination": "theorem.5.2"
+  },
+  "fa2:p1:c05:norm-extension": {
+    "pdf_page": 24,
+    "printed_page": "16",
+    "pdf_destination": "theorem.5.3"
+  },
+  "fa2:p1:c05:norming": {
+    "pdf_page": 24,
+    "printed_page": "16",
+    "pdf_destination": "corollary.5.4"
+  },
+  "fa2:p1:c05:bidual-isometry": {
+    "pdf_page": 24,
+    "printed_page": "16",
+    "pdf_destination": "theorem.5.5"
+  },
+  "fa2:p1:c05:restriction": {
+    "pdf_page": 25,
+    "printed_page": "17",
+    "pdf_destination": "theorem.5.6"
+  },
+  "fa2:p1:c05:linfinity-counterexample": {
+    "pdf_page": 25,
+    "printed_page": "17",
+    "pdf_destination": "example.5.7"
+  },
+  "fa2:p1:c06": {
+    "pdf_page": 26,
+    "printed_page": "18",
+    "pdf_destination": "chapter.6"
+  },
+  "fa2:p1:c06:gauge": {
+    "pdf_page": 26,
+    "printed_page": "18",
+    "pdf_destination": "definition.6.1"
+  },
+  "fa2:p1:c06:gauge-properties": {
+    "pdf_page": 26,
+    "printed_page": "18",
+    "pdf_destination": "lemma.6.2"
+  },
+  "fa2:p1:c06:open-separation": {
+    "pdf_page": 27,
+    "printed_page": "19",
+    "pdf_destination": "theorem.6.3"
+  },
+  "fa2:p1:c06:strong-separation": {
+    "pdf_page": 27,
+    "printed_page": "19",
+    "pdf_destination": "theorem.6.4"
+  },
+  "fa2:p1:c06:polars": {
+    "pdf_page": 28,
+    "printed_page": "20",
+    "pdf_destination": "definition.6.5"
+  },
+  "fa2:p1:c06:bipolar": {
+    "pdf_page": 28,
+    "printed_page": "20",
+    "pdf_destination": "theorem.6.6"
+  },
+  "fa2:p1:c06:double-annihilator": {
+    "pdf_page": 28,
+    "printed_page": "20",
+    "pdf_destination": "theorem.6.7"
+  },
+  "fa2:p1:c06:convex-closure": {
+    "pdf_page": 29,
+    "printed_page": "21",
+    "pdf_destination": "section.6.4"
+  },
+  "fa2:p1:c06:conjugates": {
+    "pdf_page": 29,
+    "printed_page": "21",
+    "pdf_destination": "definition.6.8"
+  },
+  "fa2:p1:c06:fenchel-moreau": {
+    "pdf_page": 29,
+    "printed_page": "21",
+    "pdf_destination": "theorem.6.9"
+  },
+  "fa2:p1:c06:conjugate-examples": {
+    "pdf_page": 30,
+    "printed_page": "22",
+    "pdf_destination": "example.6.10"
+  },
+  "fa2:p1:c07": {
+    "pdf_page": 31,
+    "printed_page": "23",
+    "pdf_destination": "chapter.7"
+  },
+  "fa2:p1:c07:category": {
+    "pdf_page": 31,
+    "printed_page": "23",
+    "pdf_destination": "definition.7.1"
+  },
+  "fa2:p1:c07:baire": {
+    "pdf_page": 31,
+    "printed_page": "23",
+    "pdf_destination": "theorem.7.2"
+  },
+  "fa2:p1:c07:uniform-boundedness": {
+    "pdf_page": 31,
+    "printed_page": "23",
+    "pdf_destination": "theorem.7.3"
+  },
+  "fa2:p1:c07:weak-boundedness": {
+    "pdf_page": 32,
+    "printed_page": "24",
+    "pdf_destination": "corollary.7.4"
+  },
+  "fa2:p1:c07:pointwise-limit": {
+    "pdf_page": 32,
+    "printed_page": "24",
+    "pdf_destination": "theorem.7.5"
+  },
+  "fa2:p1:c07:dense-convergence": {
+    "pdf_page": 32,
+    "printed_page": "24",
+    "pdf_destination": "theorem.7.6"
+  },
+  "fa2:p1:c07:incomplete-counterexample": {
+    "pdf_page": 33,
+    "printed_page": "25",
+    "pdf_destination": "example.7.7"
+  },
+  "fa2:p1:c07:dense-counterexample": {
+    "pdf_page": 33,
+    "printed_page": "25",
+    "pdf_destination": "example.7.8"
+  },
+  "fa2:p1:c08": {
+    "pdf_page": 34,
+    "printed_page": "26",
+    "pdf_destination": "chapter.8"
+  },
+  "fa2:p1:c08:open-mapping": {
+    "pdf_page": 34,
+    "printed_page": "26",
+    "pdf_destination": "theorem.8.1"
+  },
+  "fa2:p1:c08:bounded-inverse": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "corollary.8.2"
+  },
+  "fa2:p1:c08:closed-graph": {
+    "pdf_page": 35,
+    "printed_page": "27",
+    "pdf_destination": "theorem.8.3"
+  },
+  "fa2:p1:c08:incomplete-norms": {
+    "pdf_page": 35,
+    "printed_page": "27",
+    "pdf_destination": "example.8.4"
+  },
+  "fa2:p1:c08:equivalent-norms": {
+    "pdf_page": 35,
+    "printed_page": "27",
+    "pdf_destination": "corollary.8.5"
+  },
+  "fa2:p1:c08:closed-range": {
+    "pdf_page": 35,
+    "printed_page": "27",
+    "pdf_destination": "theorem.8.6"
+  },
+  "fa2:p1:c08:splitting": {
+    "pdf_page": 36,
+    "printed_page": "28",
+    "pdf_destination": "theorem.8.7"
+  },
+  "fa2:p1:tvs": {
+    "pdf_page": 37,
+    "printed_page": "29",
+    "pdf_destination": "chapter.9"
+  },
+  "fa2:p1:tvs-definitions": {
+    "pdf_page": 37,
+    "printed_page": "29",
+    "pdf_destination": "definition.9.1"
+  },
+  "fa2:p1:balanced-bounded": {
+    "pdf_page": 37,
+    "printed_page": "29",
+    "pdf_destination": "proposition.9.2"
+  },
+  "fa2:p1:finite-dimensional-tvs": {
+    "pdf_page": 38,
+    "printed_page": "30",
+    "pdf_destination": "theorem.9.3"
+  },
+  "fa2:p1:seminorm-model": {
+    "pdf_page": 38,
+    "printed_page": "30",
+    "pdf_destination": "theorem.9.4"
+  },
+  "fa2:p1:tvs-metrization": {
+    "pdf_page": 38,
+    "printed_page": "30",
+    "pdf_destination": "theorem.9.5"
+  },
+  "fa2:p1:tvs-quotient": {
+    "pdf_page": 39,
+    "printed_page": "31",
+    "pdf_destination": "proposition.9.6"
+  },
+  "fa2:p1:nonlocally-convex": {
+    "pdf_page": 39,
+    "printed_page": "31",
+    "pdf_destination": "example.9.7"
+  },
+  "fa2:p1:tvs-ubp": {
+    "pdf_page": 40,
+    "printed_page": "32",
+    "pdf_destination": "theorem.9.8"
+  },
+  "fa2:p1:fspace-open-graph": {
+    "pdf_page": 40,
+    "printed_page": "32",
+    "pdf_destination": "theorem.9.9"
+  },
+  "fa2:p1:separate-bilinear": {
+    "pdf_page": 40,
+    "printed_page": "32",
+    "pdf_destination": "proposition.9.10"
+  },
+  "fa2:p1:topological-algebra-norm": {
+    "pdf_page": 41,
+    "printed_page": "33",
+    "pdf_destination": "corollary.9.11"
+  },
+  "fa2:p1:hahn-banach": {
+    "pdf_page": 41,
+    "printed_page": "33",
+    "pdf_destination": "theorem.9.12"
+  },
+  "fa2:p1:lcs-strong-separation": {
+    "pdf_page": 41,
+    "printed_page": "33",
+    "pdf_destination": "theorem.9.13"
+  },
+  "fa2:p1:general-bipolar": {
+    "pdf_page": 41,
+    "printed_page": "33",
+    "pdf_destination": "theorem.9.14"
+  },
+  "fa2:p1:alaoglu": {
+    "pdf_page": 42,
+    "printed_page": "34",
+    "pdf_destination": "theorem.9.15"
+  },
+  "fa2:p1:compact-hull-frechet": {
+    "pdf_page": 42,
+    "printed_page": "34",
+    "pdf_destination": "theorem.9.16"
+  },
+  "fa2:p1:barycenters": {
+    "pdf_page": 42,
+    "printed_page": "34",
+    "pdf_destination": "theorem.9.17"
+  },
+  "fa2:p1:frechet-holomorphy": {
+    "pdf_page": 42,
+    "printed_page": "35",
+    "pdf_destination": "theorem.9.18"
+  },
+  "fa2:p1:c12": {
+    "pdf_page": 44,
+    "printed_page": "36",
+    "pdf_destination": "chapter.10"
+  },
+  "fa2:p1:c12:dual-pair": {
+    "pdf_page": 44,
+    "printed_page": "36",
+    "pdf_destination": "definition.10.1"
+  },
+  "fa2:p1:c12:initial-properties": {
+    "pdf_page": 44,
+    "printed_page": "36",
+    "pdf_destination": "proposition.10.2"
+  },
+  "fa2:p1:c12:weak-star": {
+    "pdf_page": 45,
+    "printed_page": "37",
+    "pdf_destination": "definition.10.3"
+  },
+  "fa2:p1:c12:weak-star-comparison": {
+    "pdf_page": 45,
+    "printed_page": "37",
+    "pdf_destination": "proposition.10.4"
+  },
+  "fa2:p1:c12:convergence": {
+    "pdf_page": 45,
+    "printed_page": "37",
+    "pdf_destination": "proposition.10.5"
+  },
+  "fa2:p1:c12:examples": {
+    "pdf_page": 45,
+    "printed_page": "37",
+    "pdf_destination": "example.10.6"
+  },
+  "fa2:p1:c12:bounded-sequences": {
+    "pdf_page": 46,
+    "printed_page": "38",
+    "pdf_destination": "theorem.10.7"
+  },
+  "fa2:p1:c12:qualifications": {
+    "pdf_page": 46,
+    "printed_page": "38",
+    "pdf_destination": "remark.10.8"
+  },
+  "fa2:p1:c12:norm-lsc": {
+    "pdf_page": 46,
+    "printed_page": "38",
+    "pdf_destination": "proposition.10.9"
+  },
+  "fa2:p1:c12:convex-closure": {
+    "pdf_page": 46,
+    "printed_page": "38",
+    "pdf_destination": "theorem.10.10"
+  },
+  "fa2:p1:c12:mazur": {
+    "pdf_page": 46,
+    "printed_page": "38",
+    "pdf_destination": "corollary.10.11"
+  },
+  "fa2:p1:c13": {
+    "pdf_page": 48,
+    "printed_page": "40",
+    "pdf_destination": "chapter.11"
+  },
+  "fa2:p1:c13:scalar-product-compactness": {
+    "pdf_page": 48,
+    "printed_page": "40",
+    "pdf_destination": "lemma.11.1"
+  },
+  "fa2:p1:c13:alaoglu": {
+    "pdf_page": 48,
+    "printed_page": "40",
+    "pdf_destination": "theorem.11.2"
+  },
+  "fa2:p1:c13:product-dependency": {
+    "pdf_page": 49,
+    "printed_page": "41",
+    "pdf_destination": "remark.11.3"
+  },
+  "fa2:p1:c13:metric": {
+    "pdf_page": 49,
+    "printed_page": "41",
+    "pdf_destination": "theorem.11.4"
+  },
+  "fa2:p1:c13:subsequences": {
+    "pdf_page": 49,
+    "printed_page": "41",
+    "pdf_destination": "corollary.11.5"
+  },
+  "fa2:p1:c13:embedding": {
+    "pdf_page": 50,
+    "printed_page": "42",
+    "pdf_destination": "proposition.11.6"
+  },
+  "fa2:p1:c13:converse-metric": {
+    "pdf_page": 50,
+    "printed_page": "42",
+    "pdf_destination": "proposition.11.7"
+  },
+  "fa2:p1:c13:nonmetrizable": {
+    "pdf_page": 50,
+    "printed_page": "42",
+    "pdf_destination": "example.11.8"
+  },
+  "fa2:p1:c13:whole-dual": {
+    "pdf_page": 50,
+    "printed_page": "42",
+    "pdf_destination": "remark.11.9"
+  },
+  "fa2:p1:c14": {
+    "pdf_page": 52,
+    "printed_page": "44",
+    "pdf_destination": "chapter.12"
+  },
+  "fa2:p1:c14:reflexive": {
+    "pdf_page": 52,
+    "printed_page": "44",
+    "pdf_destination": "definition.12.1"
+  },
+  "fa2:p1:c14:goldstine": {
+    "pdf_page": 52,
+    "printed_page": "44",
+    "pdf_destination": "theorem.12.2"
+  },
+  "fa2:p1:goldstine": {
+    "pdf_page": 52,
+    "printed_page": "44",
+    "pdf_destination": "theorem.12.2"
+  },
+  "fa2:p1:c14:ball-characterization": {
+    "pdf_page": 52,
+    "printed_page": "44",
+    "pdf_destination": "theorem.12.3"
+  },
+  "fa2:p1:c14:isomorphism-invariance": {
+    "pdf_page": 53,
+    "printed_page": "45",
+    "pdf_destination": "proposition.12.4"
+  },
+  "fa2:p1:c14:stability": {
+    "pdf_page": 53,
+    "printed_page": "45",
+    "pdf_destination": "theorem.12.5"
+  },
+  "fa2:p1:c14:dual-separability": {
+    "pdf_page": 53,
+    "printed_page": "45",
+    "pdf_destination": "lemma.12.6"
+  },
+  "fa2:p1:c14:weak-subsequence": {
+    "pdf_page": 53,
+    "printed_page": "46",
+    "pdf_destination": "theorem.12.7"
+  },
+  "fa2:p1:c14:uniform-convexity": {
+    "pdf_page": 54,
+    "printed_page": "46",
+    "pdf_destination": "definition.12.8"
+  },
+  "fa2:p1:c14:milman-pettis": {
+    "pdf_page": 54,
+    "printed_page": "46",
+    "pdf_destination": "theorem.12.9"
+  },
+  "fa2:p1:c14:uc-examples": {
+    "pdf_page": 54,
+    "printed_page": "46",
+    "pdf_destination": "proposition.12.10"
+  },
+  "fa2:p1:c14:radon-riesz": {
+    "pdf_page": 55,
+    "printed_page": "47",
+    "pdf_destination": "proposition.12.11"
+  },
+  "fa2:p1:c14:reflexive-examples": {
+    "pdf_page": 55,
+    "printed_page": "47",
+    "pdf_destination": "corollary.12.12"
+  },
+  "fa2:p1:c14:minimization": {
+    "pdf_page": 56,
+    "printed_page": "48",
+    "pdf_destination": "theorem.12.13"
+  },
+  "fa2:p1:c14:attainment-examples": {
+    "pdf_page": 56,
+    "printed_page": "48",
+    "pdf_destination": "corollary.12.14"
+  },
+  "fa2:p1:weak-advanced": {
+    "pdf_page": 57,
+    "printed_page": "49",
+    "pdf_destination": "chapter.13"
+  },
+  "fa2:p1:separable-weak-compact": {
+    "pdf_page": 57,
+    "printed_page": "49",
+    "pdf_destination": "lemma.13.1"
+  },
+  "fa2:p1:eberlein-smulian": {
+    "pdf_page": 57,
+    "printed_page": "49",
+    "pdf_destination": "theorem.13.2"
+  },
+  "fa2:p1:weak-compact-sequential-density": {
+    "pdf_page": 58,
+    "printed_page": "50",
+    "pdf_destination": "corollary.13.3"
+  },
+  "fa2:p1:weak-compact-hull": {
+    "pdf_page": 58,
+    "printed_page": "50",
+    "pdf_destination": "theorem.13.4"
+  },
+  "fa2:p1:schur": {
+    "pdf_page": 59,
+    "printed_page": "51",
+    "pdf_destination": "proposition.13.5"
+  },
+  "fa2:p1:separable-tvs-dual-compact": {
+    "pdf_page": 59,
+    "printed_page": "51",
+    "pdf_destination": "corollary.13.6"
+  },
+  "fa2:p1:primal-weak-metrizable": {
+    "pdf_page": 59,
+    "printed_page": "52",
+    "pdf_destination": "proposition.13.7"
+  },
+  "fa2:p1:incomplete-compact-hull": {
+    "pdf_page": 60,
+    "printed_page": "52",
+    "pdf_destination": "example.13.8"
+  },
+  "fa2:p1:bounded-weak-star": {
+    "pdf_page": 60,
+    "printed_page": "52",
+    "pdf_destination": "theorem.13.9"
+  },
+  "fa2:p1:krein-smulian": {
+    "pdf_page": 61,
+    "printed_page": "53",
+    "pdf_destination": "theorem.13.10"
+  },
+  "fa2:p1:krein-smulian-incomplete": {
+    "pdf_page": 61,
+    "printed_page": "53",
+    "pdf_destination": "example.13.11"
+  },
+  "fa2:p1:ekeland": {
+    "pdf_page": 61,
+    "printed_page": "53",
+    "pdf_destination": "lemma.13.12"
+  },
+  "fa2:p1:bishop-phelps": {
+    "pdf_page": 61,
+    "printed_page": "54",
+    "pdf_destination": "theorem.13.13"
+  },
+  "fa2:p1:bishop-phelps-separation": {
+    "pdf_page": 62,
+    "printed_page": "54",
+    "pdf_destination": "corollary.13.14"
+  },
+  "fa2:p1:james-chapter": {
+    "pdf_page": 63,
+    "printed_page": "55",
+    "pdf_destination": "chapter.14"
+  },
+  "fa2:p1:james-block-lemma": {
+    "pdf_page": 63,
+    "printed_page": "55",
+    "pdf_destination": "lemma.14.1"
+  },
+  "fa2:p1:james-witness": {
+    "pdf_page": 65,
+    "printed_page": "57",
+    "pdf_destination": "lemma.14.2"
+  },
+  "fa2:p1:james": {
+    "pdf_page": 65,
+    "printed_page": "57",
+    "pdf_destination": "theorem.14.3"
+  },
+  "fa2:p1:james-closedness": {
+    "pdf_page": 66,
+    "printed_page": "58",
+    "pdf_destination": "remark.14.4"
+  },
+  "fa2:p1:c15": {
+    "pdf_page": 67,
+    "printed_page": "59",
+    "pdf_destination": "chapter.15"
+  },
+  "fa2:p1:c15:basis": {
+    "pdf_page": 67,
+    "printed_page": "59",
+    "pdf_destination": "definition.15.1"
+  },
+  "fa2:p1:c15:coordinate-continuity": {
+    "pdf_page": 67,
+    "printed_page": "59",
+    "pdf_destination": "theorem.15.2"
+  },
+  "fa2:p1:c15:partial-sums": {
+    "pdf_page": 68,
+    "printed_page": "60",
+    "pdf_destination": "proposition.15.3"
+  },
+  "fa2:p1:c15:basis-criterion": {
+    "pdf_page": 68,
+    "printed_page": "60",
+    "pdf_destination": "theorem.15.4"
+  },
+  "fa2:p1:c15:canonical": {
+    "pdf_page": 69,
+    "printed_page": "61",
+    "pdf_destination": "proposition.15.5"
+  },
+  "fa2:p1:c15:three-bases": {
+    "pdf_page": 69,
+    "printed_page": "61",
+    "pdf_destination": "remark.15.6"
+  },
+  "fa2:p1:c15:unconditional": {
+    "pdf_page": 69,
+    "printed_page": "61",
+    "pdf_destination": "definition.15.7"
+  },
+  "fa2:p1:c15:unconditional-criteria": {
+    "pdf_page": 69,
+    "printed_page": "61",
+    "pdf_destination": "theorem.15.8"
+  },
+  "fa2:p1:c15:subset-projections": {
+    "pdf_page": 70,
+    "printed_page": "62",
+    "pdf_destination": "proposition.15.9"
+  },
+  "fa2:p1:c15:complementation": {
+    "pdf_page": 70,
+    "printed_page": "62",
+    "pdf_destination": "proposition.15.10"
+  },
+  "fa2:p1:c15:complement-counterexamples": {
+    "pdf_page": 70,
+    "printed_page": "62",
+    "pdf_destination": "example.15.11"
+  },
+  "fa2:p1:c15:compact-approximation": {
+    "pdf_page": 71,
+    "printed_page": "63",
+    "pdf_destination": "proposition.15.12"
+  },
+  "fa2:p1:bases-advanced": {
+    "pdf_page": 72,
+    "printed_page": "64",
+    "pdf_destination": "chapter.16"
+  },
+  "fa2:p1:equivalent-bases": {
+    "pdf_page": 72,
+    "printed_page": "64",
+    "pdf_destination": "proposition.16.1"
+  },
+  "fa2:p1:basic-selection": {
+    "pdf_page": 72,
+    "printed_page": "64",
+    "pdf_destination": "theorem.16.2"
+  },
+  "fa2:p1:basis-renorming": {
+    "pdf_page": 73,
+    "printed_page": "65",
+    "pdf_destination": "proposition.16.3"
+  },
+  "fa2:p1:no-czero-wuc": {
+    "pdf_page": 73,
+    "printed_page": "65",
+    "pdf_destination": "theorem.16.4"
+  },
+  "fa2:p1:orlicz-pettis": {
+    "pdf_page": 74,
+    "printed_page": "66",
+    "pdf_destination": "theorem.16.5"
+  },
+  "fa2:p1:dual-bases": {
+    "pdf_page": 74,
+    "printed_page": "66",
+    "pdf_destination": "theorem.16.6"
+  },
+  "fa2:p1:unconditional-reflexivity": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "theorem.16.7"
+  },
+  "fa2:p1:schauder-haar": {
+    "pdf_page": 75,
+    "printed_page": "67",
+    "pdf_destination": "theorem.16.8"
+  },
+  "fa2:p1:czero-uncomplemented": {
+    "pdf_page": 76,
+    "printed_page": "68",
+    "pdf_destination": "theorem.16.9"
+  },
+  "fa2:p1:james-space-definition": {
+    "pdf_page": 77,
+    "printed_page": "69",
+    "pdf_destination": "definition.16.10"
+  },
+  "fa2:p1:james-space": {
+    "pdf_page": 77,
+    "printed_page": "69",
+    "pdf_destination": "theorem.16.11"
+  },
+  "fa2:p1:geometry": {
+    "pdf_page": 79,
+    "printed_page": "71",
+    "pdf_destination": "chapter.17"
+  },
+  "fa2:p1:rotund-definitions": {
+    "pdf_page": 79,
+    "printed_page": "71",
+    "pdf_destination": "definition.17.1"
+  },
+  "fa2:p1:strict-approximation": {
+    "pdf_page": 79,
+    "printed_page": "71",
+    "pdf_destination": "theorem.17.2"
+  },
+  "fa2:p1:uc-stability": {
+    "pdf_page": 79,
+    "printed_page": "72",
+    "pdf_destination": "theorem.17.3"
+  },
+  "fa2:p1:clarkson": {
+    "pdf_page": 80,
+    "printed_page": "72",
+    "pdf_destination": "theorem.17.4"
+  },
+  "fa2:p1:smoothness-definitions": {
+    "pdf_page": 81,
+    "printed_page": "73",
+    "pdf_destination": "definition.17.5"
+  },
+  "fa2:p1:gateaux-smoothness": {
+    "pdf_page": 81,
+    "printed_page": "73",
+    "pdf_destination": "theorem.17.6"
+  },
+  "fa2:p1:uniform-smooth-duality": {
+    "pdf_page": 81,
+    "printed_page": "73",
+    "pdf_destination": "theorem.17.7"
+  },
+  "fa2:p1:strong-rotundity": {
+    "pdf_page": 82,
+    "printed_page": "74",
+    "pdf_destination": "theorem.17.8"
+  },
+  "fa2:p1:c24": {
+    "pdf_page": 84,
+    "printed_page": "76",
+    "pdf_destination": "chapter.18"
+  },
+  "fa2:p1:c24:faces": {
+    "pdf_page": 84,
+    "printed_page": "76",
+    "pdf_destination": "definition.18.1"
+  },
+  "fa2:p1:c24:face-operations": {
+    "pdf_page": 84,
+    "printed_page": "76",
+    "pdf_destination": "lemma.18.2"
+  },
+  "fa2:p1:c24:lcs-separation": {
+    "pdf_page": 84,
+    "printed_page": "76",
+    "pdf_destination": "lemma.18.3"
+  },
+  "fa2:p1:c24:face-extreme": {
+    "pdf_page": 85,
+    "printed_page": "77",
+    "pdf_destination": "proposition.18.4"
+  },
+  "fa2:p1:c24:krein-milman": {
+    "pdf_page": 85,
+    "printed_page": "77",
+    "pdf_destination": "theorem.18.5"
+  },
+  "fa2:p1:krein-milman": {
+    "pdf_page": 85,
+    "printed_page": "77",
+    "pdf_destination": "theorem.18.5"
+  },
+  "fa2:p1:c24:topology-example": {
+    "pdf_page": 85,
+    "printed_page": "77",
+    "pdf_destination": "example.18.6"
+  },
+  "fa2:p1:c24:finite-approximation": {
+    "pdf_page": 86,
+    "printed_page": "78",
+    "pdf_destination": "lemma.18.7"
+  },
+  "fa2:p1:c24:schauder": {
+    "pdf_page": 86,
+    "printed_page": "78",
+    "pdf_destination": "theorem.18.8"
+  },
+  "fa2:p1:c24:compact-hull": {
+    "pdf_page": 86,
+    "printed_page": "78",
+    "pdf_destination": "lemma.18.9"
+  },
+  "fa2:p1:c24:compact-map": {
+    "pdf_page": 86,
+    "printed_page": "78",
+    "pdf_destination": "theorem.18.10"
+  },
+  "fa2:p1:c24:incomplete-hull": {
+    "pdf_page": 87,
+    "printed_page": "79",
+    "pdf_destination": "example.18.11"
+  },
+  "fa2:p1:c24:contraction-comparison": {
+    "pdf_page": 87,
+    "printed_page": "79",
+    "pdf_destination": "proposition.18.12"
+  },
+  "fa2:p1:c24:comparison-example": {
+    "pdf_page": 87,
+    "printed_page": "79",
+    "pdf_destination": "example.18.13"
+  },
+  "fa2:p1:convex-advanced": {
+    "pdf_page": 88,
+    "printed_page": "80",
+    "pdf_destination": "chapter.19"
+  },
+  "fa2:p1:fenchel-moreau-lcs": {
+    "pdf_page": 88,
+    "printed_page": "80",
+    "pdf_destination": "theorem.19.1"
+  },
+  "fa2:p1:fenchel-rockafellar": {
+    "pdf_page": 88,
+    "printed_page": "80",
+    "pdf_destination": "theorem.19.2"
+  },
+  "fa2:p1:invariant-hahn-banach": {
+    "pdf_page": 89,
+    "printed_page": "81",
+    "pdf_destination": "theorem.19.3"
+  },
+  "fa2:p1:banach-limits": {
+    "pdf_page": 89,
+    "printed_page": "81",
+    "pdf_destination": "corollary.19.4"
+  },
+  "fa2:p1:banach-measure": {
+    "pdf_page": 89,
+    "printed_page": "81",
+    "pdf_destination": "corollary.19.5"
+  },
+  "fa2:p1:ba-representation": {
+    "pdf_page": 90,
+    "printed_page": "82",
+    "pdf_destination": "proposition.19.6"
+  },
+  "fa2:p1:milman-converse": {
+    "pdf_page": 90,
+    "printed_page": "82",
+    "pdf_destination": "theorem.19.7"
+  },
+  "fa2:p1:choquet": {
+    "pdf_page": 91,
+    "printed_page": "83",
+    "pdf_destination": "theorem.19.8"
+  },
+  "fa2:p1:birkhoff-von-neumann": {
+    "pdf_page": 91,
+    "printed_page": "83",
+    "pdf_destination": "theorem.19.9"
+  },
+  "fa2:p1:bernstein": {
+    "pdf_page": 92,
+    "printed_page": "84",
+    "pdf_destination": "theorem.19.10"
+  },
+  "fa2:p1:bernstein-source-endpoint": {
+    "pdf_page": 92,
+    "printed_page": "84",
+    "pdf_destination": "remark.19.11"
+  },
+  "fa2:p1:bernstein-open-half-line": {
+    "pdf_page": 93,
+    "printed_page": "85",
+    "pdf_destination": "corollary.19.12"
+  },
+  "fa2:p1:schauder": {
+    "pdf_page": 93,
+    "printed_page": "85",
+    "pdf_destination": "theorem.19.13"
+  },
+  "fa2:p1:leray-schauder": {
+    "pdf_page": 93,
+    "printed_page": "85",
+    "pdf_destination": "corollary.19.14"
+  },
+  "fa2:p1:markov-kakutani": {
+    "pdf_page": 94,
+    "printed_page": "86",
+    "pdf_destination": "theorem.19.15"
+  },
+  "fa2:p1:small-cap": {
+    "pdf_page": 94,
+    "printed_page": "86",
+    "pdf_destination": "lemma.19.16"
+  },
+  "fa2:p1:ryll-nardzewski": {
+    "pdf_page": 94,
+    "printed_page": "86",
+    "pdf_destination": "theorem.19.17"
+  },
+  "fa2:p1:supplements": {
+    "pdf_page": 96,
+    "printed_page": "88",
+    "pdf_destination": "chapter.20"
+  },
+  "fa2:p1:holder-banach": {
+    "pdf_page": 96,
+    "printed_page": "88",
+    "pdf_destination": "proposition.20.1"
+  },
+  "fa2:p1:metric-completion": {
+    "pdf_page": 96,
+    "printed_page": "88",
+    "pdf_destination": "theorem.20.2"
+  },
+  "fa2:p1:positive-integral-completion": {
+    "pdf_page": 97,
+    "printed_page": "89",
+    "pdf_destination": "corollary.20.3"
+  },
+  "fa2:p1:tight-cb-representation": {
+    "pdf_page": 97,
+    "printed_page": "89",
+    "pdf_destination": "theorem.20.4"
+  },
+  "fa2:p1:nets": {
+    "pdf_page": 98,
+    "printed_page": "90",
+    "pdf_destination": "proposition.20.5"
+  },
+  "fa2:p1:weak-nonsequential": {
+    "pdf_page": 98,
+    "printed_page": "90",
+    "pdf_destination": "example.20.6"
+  },
+  "fa2:p1:weak-norm-finite-rank": {
+    "pdf_page": 99,
+    "printed_page": "91",
+    "pdf_destination": "proposition.20.7"
+  },
+  "fa2:p1:intrinsic-completeness": {
+    "pdf_page": 99,
+    "printed_page": "91",
+    "pdf_destination": "remark.20.8"
+  },
+  "fa2:p1:distance-support-duality": {
+    "pdf_page": 99,
+    "printed_page": "91",
+    "pdf_destination": "corollary.20.9"
+  },
+  "fa2:p1:nonmeagre-range": {
+    "pdf_page": 100,
+    "printed_page": "92",
+    "pdf_destination": "corollary.20.10"
+  },
+  "fa2:p1:finite-codimension-range": {
+    "pdf_page": 100,
+    "printed_page": "92",
+    "pdf_destination": "corollary.20.10"
+  },
+  "fa2:p1:operator-topologies": {
+    "pdf_page": 100,
+    "printed_page": "92",
+    "pdf_destination": "theorem.20.11"
+  },
+  "fa2:p1:operator-topology-boundaries": {
+    "pdf_page": 101,
+    "printed_page": "93",
+    "pdf_destination": "example.20.12"
+  },
+  "fa2:p1:banach-sums": {
+    "pdf_page": 101,
+    "printed_page": "93",
+    "pdf_destination": "theorem.20.13"
+  },
+  "fa2:p1:closed-sums": {
+    "pdf_page": 101,
+    "printed_page": "93",
+    "pdf_destination": "theorem.20.14"
+  },
+  "fa2:p1:positive-extension": {
+    "pdf_page": 102,
+    "printed_page": "94",
+    "pdf_destination": "proposition.20.15"
+  },
+  "fa2:p1:nonattainment-example": {
+    "pdf_page": 102,
+    "printed_page": "94",
+    "pdf_destination": "example.20.16"
+  },
+  "fa2:p1:finite-dimensional-approximation": {
+    "pdf_page": 103,
+    "printed_page": "95",
+    "pdf_destination": "proposition.20.17"
+  },
+  "fa2:p1:mazur-ulam": {
+    "pdf_page": 103,
+    "printed_page": "95",
+    "pdf_destination": "theorem.20.18"
+  },
+  "fa2:p1:sobczyk": {
+    "pdf_page": 103,
+    "printed_page": "95",
+    "pdf_destination": "theorem.20.20"
+  },
+  "fa2:p1:weak-sequential-completeness": {
+    "pdf_page": 103,
+    "printed_page": "95",
+    "pdf_destination": "proposition.20.21"
+  },
+  "fa2:p1:weierstrass": {
+    "pdf_page": 104,
+    "printed_page": "96",
+    "pdf_destination": "lemma.20.22"
+  },
+  "fa2:p1:stone-weierstrass": {
+    "pdf_page": 104,
+    "printed_page": "96",
+    "pdf_destination": "theorem.20.23"
+  },
+  "fa2:p1:convex-function-extremes": {
+    "pdf_page": 104,
+    "printed_page": "96",
+    "pdf_destination": "theorem.20.25"
+  },
+  "fa2:p1:baire-one": {
+    "pdf_page": 105,
+    "printed_page": "97",
+    "pdf_destination": "theorem.20.26"
+  },
+  "fa2:p1:generic-nondifferentiability": {
+    "pdf_page": 105,
+    "printed_page": "97",
+    "pdf_destination": "theorem.20.27"
+  },
+  "fa2:p1:banach-stone": {
+    "pdf_page": 106,
+    "printed_page": "98",
+    "pdf_destination": "theorem.20.28"
+  },
+  "fa2:p1:ck-bidual-borel": {
+    "pdf_page": 106,
+    "printed_page": "98",
+    "pdf_destination": "proposition.20.29"
+  },
+  "fa2:p1:frechet-derivative": {
+    "pdf_page": 107,
+    "printed_page": "99",
+    "pdf_destination": "definition.20.31"
+  },
+  "fa2:p1:banach-chain-rule": {
+    "pdf_page": 107,
+    "printed_page": "99",
+    "pdf_destination": "proposition.20.32"
+  },
+  "fa2:p1:banach-implicit": {
+    "pdf_page": 107,
+    "printed_page": "99",
+    "pdf_destination": "theorem.20.33"
+  },
+  "fa2:p1:asplund-chapter": {
+    "pdf_page": 109,
+    "printed_page": "101",
+    "pdf_destination": "chapter.21"
+  },
+  "fa2:p1:asplund-convex-iteration": {
+    "pdf_page": 109,
+    "printed_page": "101",
+    "pdf_destination": "theorem.21.1"
+  },
+  "fa2:p1:quadratic-seminorm": {
+    "pdf_page": 110,
+    "printed_page": "102",
+    "pdf_destination": "lemma.21.2"
+  },
+  "fa2:p1:asplund-rate-strictness": {
+    "pdf_page": 110,
+    "printed_page": "102",
+    "pdf_destination": "theorem.21.3"
+  },
+  "fa2:p1:asplund-renorming": {
+    "pdf_page": 111,
+    "printed_page": "103",
+    "pdf_destination": "theorem.21.4"
+  },
+  "fa2:p1:asplund-complex": {
+    "pdf_page": 111,
+    "printed_page": "104",
+    "pdf_destination": "corollary.21.5"
+  },
+  "fa2:p1:infimal-convolution-chapter": {
+    "pdf_page": 113,
+    "printed_page": "105",
+    "pdf_destination": "chapter.22"
+  },
+  "fa2:p1:infconv-domain-closure": {
+    "pdf_page": 113,
+    "printed_page": "105",
+    "pdf_destination": "theorem.22.1"
+  },
+  "fa2:p1:infconv-full-cone": {
+    "pdf_page": 114,
+    "printed_page": "106",
+    "pdf_destination": "theorem.22.2"
+  },
+  "fa2:p1:infconv-banach-closed-cone": {
+    "pdf_page": 115,
+    "printed_page": "107",
+    "pdf_destination": "theorem.22.4"
+  },
+  "fa2:p2:projection": {
+    "pdf_page": 118,
+    "printed_page": "110",
+    "pdf_destination": "theorem.23.1"
+  },
+  "fa2:p2:projection-lattice": {
+    "pdf_page": 118,
+    "printed_page": "110",
+    "pdf_destination": "proposition.23.2"
+  },
+  "fa2:p2:riesz": {
+    "pdf_page": 119,
+    "printed_page": "111",
+    "pdf_destination": "theorem.23.3"
+  },
+  "fa2:p2:orthonormal-basis": {
+    "pdf_page": 119,
+    "printed_page": "111",
+    "pdf_destination": "theorem.23.4"
+  },
+  "fa2:p2:adjoint": {
+    "pdf_page": 119,
+    "printed_page": "112",
+    "pdf_destination": "theorem.23.5"
+  },
+  "fa2:p2:closed-range": {
+    "pdf_page": 120,
+    "printed_page": "112",
+    "pdf_destination": "theorem.23.6"
+  },
+  "fa2:p2:lax-milgram": {
+    "pdf_page": 120,
+    "printed_page": "112",
+    "pdf_destination": "theorem.23.7"
+  },
+  "fa2:p2:stampacchia": {
+    "pdf_page": 120,
+    "printed_page": "112",
+    "pdf_destination": "theorem.23.8"
+  },
+  "fa2:p2:parallelogram": {
+    "pdf_page": 121,
+    "printed_page": "113",
+    "pdf_destination": "proposition.23.9"
+  },
+  "fa2:p2:geometry-open": {
+    "pdf_page": 121,
+    "printed_page": "113",
+    "pdf_destination": "remark.23.10"
+  },
+  "fa2:p2:minty-browder": {
+    "pdf_page": 121,
+    "printed_page": "113",
+    "pdf_destination": "theorem.23.11"
+  },
+  "fa2:p2:prehilbert-variants-chapter": {
+    "pdf_page": 122,
+    "printed_page": "114",
+    "pdf_destination": "chapter.24"
+  },
+  "fa2:p2:prehilbert-completion": {
+    "pdf_page": 122,
+    "printed_page": "114",
+    "pdf_destination": "proposition.24.1"
+  },
+  "fa2:p2:prehilbert-projection": {
+    "pdf_page": 122,
+    "printed_page": "114",
+    "pdf_destination": "theorem.24.2"
+  },
+  "fa2:p2:prehilbert-parseval": {
+    "pdf_page": 123,
+    "printed_page": "115",
+    "pdf_destination": "proposition.24.3"
+  },
+  "fa2:p2:source-convergence-domain-tests": {
+    "pdf_page": 123,
+    "printed_page": "115",
+    "pdf_destination": "proposition.24.4"
+  },
+  "fa2:p2:bounded-form-representation": {
+    "pdf_page": 124,
+    "printed_page": "116",
+    "pdf_destination": "proposition.24.5"
+  },
+  "fa2:p2:elementary-adjoint-tests": {
+    "pdf_page": 124,
+    "printed_page": "116",
+    "pdf_destination": "proposition.24.6"
+  },
+  "fa2:p2:absolute-lax-milgram": {
+    "pdf_page": 124,
+    "printed_page": "116",
+    "pdf_destination": "theorem.24.7"
+  },
+  "fa2:p2:prehilbert-compact-spectral": {
+    "pdf_page": 125,
+    "printed_page": "117",
+    "pdf_destination": "corollary.24.8"
+  },
+  "fa2:p2:gram-distance": {
+    "pdf_page": 125,
+    "printed_page": "117",
+    "pdf_destination": "proposition.24.9"
+  },
+  "fa2:p2:duality-regularization-chapter": {
+    "pdf_page": 127,
+    "printed_page": "119",
+    "pdf_destination": "chapter.25"
+  },
+  "fa2:p2:subgradient-calculus": {
+    "pdf_page": 127,
+    "printed_page": "119",
+    "pdf_destination": "theorem.25.1"
+  },
+  "fa2:p2:subgradient-slater": {
+    "pdf_page": 128,
+    "printed_page": "120",
+    "pdf_destination": "proposition.25.2"
+  },
+  "fa2:p2:finite-convex-continuity": {
+    "pdf_page": 129,
+    "printed_page": "121",
+    "pdf_destination": "remark.25.3"
+  },
+  "fa2:p2:duality-smoothness": {
+    "pdf_page": 129,
+    "printed_page": "121",
+    "pdf_destination": "theorem.25.4"
+  },
+  "fa2:p2:banach-moreau": {
+    "pdf_page": 130,
+    "printed_page": "122",
+    "pdf_destination": "theorem.25.5"
+  },
+  "fa2:p2:asymptotic-center": {
+    "pdf_page": 130,
+    "printed_page": "122",
+    "pdf_destination": "theorem.25.6"
+  },
+  "fa2:p2:bounded-orbit-fixed-point": {
+    "pdf_page": 131,
+    "printed_page": "123",
+    "pdf_destination": "corollary.25.7"
+  },
+  "fa2:p2:hilbert-prox-chapter": {
+    "pdf_page": 132,
+    "printed_page": "124",
+    "pdf_destination": "chapter.26"
+  },
+  "fa2:p2:hilbert-prox-definition": {
+    "pdf_page": 132,
+    "printed_page": "124",
+    "pdf_destination": "definition.26.1"
+  },
+  "fa2:p2:hilbert-prox": {
+    "pdf_page": 132,
+    "printed_page": "124",
+    "pdf_destination": "theorem.26.2"
+  },
+  "fa2:p2:prox-moreau": {
+    "pdf_page": 133,
+    "printed_page": "125",
+    "pdf_destination": "theorem.26.3"
+  },
+  "fa2:p2:prox-small-parameter": {
+    "pdf_page": 133,
+    "printed_page": "125",
+    "pdf_destination": "theorem.26.4"
+  },
+  "fa2:p2:prox-large-parameter": {
+    "pdf_page": 134,
+    "printed_page": "126",
+    "pdf_destination": "theorem.26.5"
+  },
+  "fa2:p2:prox-scaled-limit": {
+    "pdf_page": 134,
+    "printed_page": "127",
+    "pdf_destination": "corollary.26.6"
+  },
+  "fa2:p2:prox-realification": {
+    "pdf_page": 135,
+    "printed_page": "127",
+    "pdf_destination": "remark.26.7"
+  },
+  "fa2:p2:source-problems-chapter": {
+    "pdf_page": 136,
+    "printed_page": "128",
+    "pdf_destination": "chapter.27"
+  },
+  "fa2:p2:extreme-set-tests": {
+    "pdf_page": 136,
+    "printed_page": "128",
+    "pdf_destination": "lemma.27.1"
+  },
+  "fa2:p2:classical-ball-extremes": {
+    "pdf_page": 136,
+    "printed_page": "128",
+    "pdf_destination": "proposition.27.2"
+  },
+  "fa2:p2:positive-automatic-continuity": {
+    "pdf_page": 137,
+    "printed_page": "129",
+    "pdf_destination": "theorem.27.3"
+  },
+  "fa2:p2:positive-cone-examples": {
+    "pdf_page": 137,
+    "printed_page": "129",
+    "pdf_destination": "remark.27.4"
+  },
+  "fa2:p2:positive-graph-estimate": {
+    "pdf_page": 137,
+    "printed_page": "129",
+    "pdf_destination": "theorem.27.5"
+  },
+  "fa2:p2:schur-cauchy-sphere": {
+    "pdf_page": 138,
+    "printed_page": "130",
+    "pdf_destination": "proposition.27.6"
+  },
+  "fa2:p2:weakstar-adjoint-closures": {
+    "pdf_page": 138,
+    "printed_page": "130",
+    "pdf_destination": "proposition.27.7"
+  },
+  "fa2:p2:clarkson": {
+    "pdf_page": 139,
+    "printed_page": "131",
+    "pdf_destination": "theorem.27.8"
+  },
+  "fa2:p2:endpoint-interpolation-bridge": {
+    "pdf_page": 139,
+    "printed_page": "132",
+    "pdf_destination": "corollary.27.9"
+  },
+  "fa2:p2:kakutani-chapter": {
+    "pdf_page": 141,
+    "printed_page": "133",
+    "pdf_destination": "chapter.28"
+  },
+  "fa2:p2:projection-regularity": {
+    "pdf_page": 141,
+    "printed_page": "133",
+    "pdf_destination": "lemma.28.1"
+  },
+  "fa2:p2:meridian": {
+    "pdf_page": 142,
+    "printed_page": "134",
+    "pdf_destination": "lemma.28.2"
+  },
+  "fa2:p2:ellipsoid": {
+    "pdf_page": 143,
+    "printed_page": "135",
+    "pdf_destination": "theorem.28.3"
+  },
+  "fa2:p2:kakutani": {
+    "pdf_page": 143,
+    "printed_page": "135",
+    "pdf_destination": "theorem.28.4"
+  },
+  "fa2:p2:radial-criterion": {
+    "pdf_page": 144,
+    "printed_page": "136",
+    "pdf_destination": "lemma.28.5"
+  },
+  "fa2:p2:radial-hilbert": {
+    "pdf_page": 144,
+    "printed_page": "136",
+    "pdf_destination": "theorem.28.6"
+  },
+  "fa2:p2:radial-plane-exception": {
+    "pdf_page": 144,
+    "printed_page": "137",
+    "pdf_destination": "proposition.28.7"
+  },
+  "fa2:p2:banach-adjoint": {
+    "pdf_page": 146,
+    "printed_page": "138",
+    "pdf_destination": "proposition.29.1"
+  },
+  "fa2:p2:schauder-adjoint": {
+    "pdf_page": 146,
+    "printed_page": "138",
+    "pdf_destination": "theorem.29.2"
+  },
+  "fa2:p2:ap-definition": {
+    "pdf_page": 147,
+    "printed_page": "139",
+    "pdf_destination": "definition.29.3"
+  },
+  "fa2:p2:compact-disk": {
+    "pdf_page": 147,
+    "printed_page": "139",
+    "pdf_destination": "lemma.29.4"
+  },
+  "fa2:p2:approximation-property": {
+    "pdf_page": 147,
+    "printed_page": "139",
+    "pdf_destination": "theorem.29.5"
+  },
+  "fa2:p2:gantmacher": {
+    "pdf_page": 148,
+    "printed_page": "140",
+    "pdf_destination": "theorem.29.6"
+  },
+  "fa2:p2:complete-continuity": {
+    "pdf_page": 148,
+    "printed_page": "140",
+    "pdf_destination": "proposition.29.7"
+  },
+  "fa2:p2:dunford-pettis": {
+    "pdf_page": 148,
+    "printed_page": "140",
+    "pdf_destination": "theorem.29.8"
+  },
+  "fa2:p2:dp-examples-open": {
+    "pdf_page": 149,
+    "printed_page": "141",
+    "pdf_destination": "remark.29.9"
+  },
+  "fa2:p2:lomonosov-lemma": {
+    "pdf_page": 149,
+    "printed_page": "141",
+    "pdf_destination": "lemma.29.10"
+  },
+  "fa2:p2:lomonosov": {
+    "pdf_page": 149,
+    "printed_page": "141",
+    "pdf_destination": "theorem.29.11"
+  },
+  "fa2:p2:dp-examples-chapter": {
+    "pdf_page": 150,
+    "printed_page": "142",
+    "pdf_destination": "chapter.30"
+  },
+  "fa2:p2:vitali-hahn-saks": {
+    "pdf_page": 150,
+    "printed_page": "142",
+    "pdf_destination": "theorem.30.1"
+  },
+  "fa2:p2:linfinity-weak-l1": {
+    "pdf_page": 151,
+    "printed_page": "143",
+    "pdf_destination": "lemma.30.2"
+  },
+  "fa2:p2:dp-classical-examples": {
+    "pdf_page": 151,
+    "printed_page": "143",
+    "pdf_destination": "theorem.30.3"
+  },
+  "fa2:p2:unitization": {
+    "pdf_page": 153,
+    "printed_page": "145",
+    "pdf_destination": "proposition.31.1"
+  },
+  "fa2:p2:surjective-perturbation": {
+    "pdf_page": 153,
+    "printed_page": "145",
+    "pdf_destination": "proposition.31.2"
+  },
+  "fa2:p2:function-algebra-characters": {
+    "pdf_page": 153,
+    "printed_page": "145",
+    "pdf_destination": "proposition.31.3"
+  },
+  "fa2:p2:stone-cech": {
+    "pdf_page": 153,
+    "printed_page": "145",
+    "pdf_destination": "proposition.31.3"
+  },
+  "fa2:p2:shifts": {
+    "pdf_page": 154,
+    "printed_page": "146",
+    "pdf_destination": "proposition.31.4"
+  },
+  "fa2:p2:spectrum-radius": {
+    "pdf_page": 154,
+    "printed_page": "146",
+    "pdf_destination": "theorem.31.5"
+  },
+  "fa2:p2:banach-analytic": {
+    "pdf_page": 155,
+    "printed_page": "147",
+    "pdf_destination": "proposition.31.6"
+  },
+  "fa2:p2:holomorphic-calculus": {
+    "pdf_page": 155,
+    "printed_page": "147",
+    "pdf_destination": "theorem.31.7"
+  },
+  "fa2:p2:riesz-projection": {
+    "pdf_page": 156,
+    "printed_page": "148",
+    "pdf_destination": "theorem.31.8"
+  },
+  "fa2:p2:polynomial-hull": {
+    "pdf_page": 156,
+    "printed_page": "148",
+    "pdf_destination": "proposition.31.9"
+  },
+  "fa2:p2:gelfand": {
+    "pdf_page": 156,
+    "printed_page": "148",
+    "pdf_destination": "theorem.31.10"
+  },
+  "fa2:p2:gkz": {
+    "pdf_page": 157,
+    "printed_page": "149",
+    "pdf_destination": "theorem.31.11"
+  },
+  "fa2:p2:exponentials": {
+    "pdf_page": 157,
+    "printed_page": "149",
+    "pdf_destination": "proposition.31.12"
+  },
+  "fa2:p2:wiener": {
+    "pdf_page": 157,
+    "printed_page": "149",
+    "pdf_destination": "theorem.31.13"
+  },
+  "fa2:p2:riesz-schauder": {
+    "pdf_page": 159,
+    "printed_page": "151",
+    "pdf_destination": "theorem.32.1"
+  },
+  "fa2:p2:dual-regularization": {
+    "pdf_page": 160,
+    "printed_page": "152",
+    "pdf_destination": "theorem.32.2"
+  },
+  "fa2:p2:algebraic-pseudoinverse": {
+    "pdf_page": 160,
+    "printed_page": "152",
+    "pdf_destination": "proposition.32.3"
+  },
+  "fa2:p2:matrix-toeplitz": {
+    "pdf_page": 161,
+    "printed_page": "153",
+    "pdf_destination": "theorem.32.4"
+  },
+  "fa2:p2:dual-fredholm": {
+    "pdf_page": 161,
+    "printed_page": "153",
+    "pdf_destination": "theorem.32.5"
+  },
+  "fa2:p2:kernel-compactness": {
+    "pdf_page": 162,
+    "printed_page": "154",
+    "pdf_destination": "proposition.32.6"
+  },
+  "fa2:p2:atkinson": {
+    "pdf_page": 162,
+    "printed_page": "154",
+    "pdf_destination": "theorem.32.8"
+  },
+  "fa2:p2:index": {
+    "pdf_page": 162,
+    "printed_page": "154",
+    "pdf_destination": "theorem.32.9"
+  },
+  "fa2:p2:index-components": {
+    "pdf_page": 163,
+    "printed_page": "155",
+    "pdf_destination": "proposition.32.10"
+  },
+  "fa2:p2:essential-spectrum": {
+    "pdf_page": 163,
+    "printed_page": "155",
+    "pdf_destination": "theorem.32.11"
+  },
+  "fa2:p2:local-spectrum": {
+    "pdf_page": 164,
+    "printed_page": "156",
+    "pdf_destination": "proposition.32.12"
+  },
+  "fa2:p2:toeplitz": {
+    "pdf_page": 164,
+    "printed_page": "156",
+    "pdf_destination": "theorem.32.13"
+  },
+  "fa2:p2:isolated-fredholm": {
+    "pdf_page": 165,
+    "printed_page": "157",
+    "pdf_destination": "proposition.32.14"
+  },
+  "fa2:p2:trace-index": {
+    "pdf_page": 165,
+    "printed_page": "157",
+    "pdf_destination": "proposition.32.15"
+  },
+  "fa2:p2:ritz-semifredholm-chapter": {
+    "pdf_page": 166,
+    "printed_page": "158",
+    "pdf_destination": "chapter.33"
+  },
+  "fa2:p2:ritz-approximation": {
+    "pdf_page": 166,
+    "printed_page": "158",
+    "pdf_destination": "theorem.33.1"
+  },
+  "fa2:p2:one-sided-fredholm": {
+    "pdf_page": 166,
+    "printed_page": "158",
+    "pdf_destination": "theorem.33.2"
+  },
+  "fa2:p2:classical-fredholm-chapter": {
+    "pdf_page": 168,
+    "printed_page": "160",
+    "pdf_destination": "chapter.34"
+  },
+  "fa2:p2:classical-fredholm": {
+    "pdf_page": 168,
+    "printed_page": "160",
+    "pdf_destination": "theorem.34.1"
+  },
+  "fa2:p2:classical-fredholm-product": {
+    "pdf_page": 169,
+    "printed_page": "161",
+    "pdf_destination": "theorem.34.2"
+  },
+  "fa2:p2:classical-fredholm-eigenvalues": {
+    "pdf_page": 170,
+    "printed_page": "162",
+    "pdf_destination": "corollary.34.3"
+  },
+  "fa2:p2:fredholm-holder": {
+    "pdf_page": 170,
+    "printed_page": "162",
+    "pdf_destination": "proposition.34.4"
+  },
+  "fa2:p2:compact-spectral": {
+    "pdf_page": 172,
+    "printed_page": "164",
+    "pdf_destination": "theorem.35.1"
+  },
+  "fa2:p2:singular-system": {
+    "pdf_page": 173,
+    "printed_page": "165",
+    "pdf_destination": "theorem.35.2"
+  },
+  "fa2:p2:hilbert-schmidt": {
+    "pdf_page": 174,
+    "printed_page": "166",
+    "pdf_destination": "theorem.35.3"
+  },
+  "fa2:p2:trace-class": {
+    "pdf_page": 174,
+    "printed_page": "166",
+    "pdf_destination": "theorem.35.4"
+  },
+  "fa2:p2:weyl-inequalities": {
+    "pdf_page": 175,
+    "printed_page": "167",
+    "pdf_destination": "lemma.35.5"
+  },
+  "fa2:p2:lidskii": {
+    "pdf_page": 175,
+    "printed_page": "167",
+    "pdf_destination": "theorem.35.6"
+  },
+  "fa2:p2:fredholm-determinant": {
+    "pdf_page": 176,
+    "printed_page": "168",
+    "pdf_destination": "theorem.35.7"
+  },
+  "fa2:p2:mercer": {
+    "pdf_page": 176,
+    "printed_page": "169",
+    "pdf_destination": "theorem.35.8"
+  },
+  "fa2:p2:perron-cq": {
+    "pdf_page": 177,
+    "printed_page": "169",
+    "pdf_destination": "theorem.35.9"
+  },
+  "fa2:p2:riesz-basis": {
+    "pdf_page": 178,
+    "printed_page": "170",
+    "pdf_destination": "theorem.35.10"
+  },
+  "fa2:p2:krein-rutman": {
+    "pdf_page": 178,
+    "printed_page": "170",
+    "pdf_destination": "theorem.35.11"
+  },
+  "fa2:p2:kernel-trace-criteria-chapter": {
+    "pdf_page": 180,
+    "printed_page": "172",
+    "pdf_destination": "chapter.36"
+  },
+  "fa2:p2:holder-trace-class": {
+    "pdf_page": 180,
+    "printed_page": "172",
+    "pdf_destination": "theorem.36.1"
+  },
+  "fa2:p2:volterra-not-trace-class": {
+    "pdf_page": 181,
+    "printed_page": "173",
+    "pdf_destination": "example.36.2"
+  },
+  "fa2:p2:continuous-kernel-not-trace-class": {
+    "pdf_page": 181,
+    "printed_page": "173",
+    "pdf_destination": "example.36.3"
+  },
+  "fa2:p2:cstar-unitization": {
+    "pdf_page": 183,
+    "printed_page": "175",
+    "pdf_destination": "proposition.37.1"
+  },
+  "fa2:p2:abelian-von-neumann": {
+    "pdf_page": 183,
+    "printed_page": "175",
+    "pdf_destination": "theorem.37.2"
+  },
+  "fa2:p2:spectral-multiplicity": {
+    "pdf_page": 185,
+    "printed_page": "177",
+    "pdf_destination": "theorem.37.3"
+  },
+  "fa2:p2:commutative-cstar": {
+    "pdf_page": 185,
+    "printed_page": "178",
+    "pdf_destination": "theorem.37.4"
+  },
+  "fa2:p2:cstar-positive": {
+    "pdf_page": 186,
+    "printed_page": "178",
+    "pdf_destination": "theorem.37.5"
+  },
+  "fa2:p2:cstar-quotient": {
+    "pdf_page": 186,
+    "printed_page": "178",
+    "pdf_destination": "proposition.37.6"
+  },
+  "fa2:p2:gns": {
+    "pdf_page": 187,
+    "printed_page": "179",
+    "pdf_destination": "theorem.37.7"
+  },
+  "fa2:p2:pvm-definition": {
+    "pdf_page": 187,
+    "printed_page": "179",
+    "pdf_destination": "definition.37.8"
+  },
+  "fa2:p2:representation-pvm": {
+    "pdf_page": 188,
+    "printed_page": "180",
+    "pdf_destination": "theorem.37.9"
+  },
+  "fa2:p2:normal-spectral": {
+    "pdf_page": 188,
+    "printed_page": "180",
+    "pdf_destination": "theorem.37.10"
+  },
+  "fa2:p2:cyclic-model": {
+    "pdf_page": 188,
+    "printed_page": "180",
+    "pdf_destination": "theorem.37.11"
+  },
+  "fa2:p2:polar": {
+    "pdf_page": 189,
+    "printed_page": "181",
+    "pdf_destination": "theorem.37.12"
+  },
+  "fa2:p2:fuglede-putnam": {
+    "pdf_page": 189,
+    "printed_page": "181",
+    "pdf_destination": "theorem.37.13"
+  },
+  "fa2:p2:double-commutant": {
+    "pdf_page": 189,
+    "printed_page": "181",
+    "pdf_destination": "theorem.37.14"
+  },
+  "fa2:p2:mean-ergodic": {
+    "pdf_page": 190,
+    "printed_page": "182",
+    "pdf_destination": "proposition.37.15"
+  },
+  "fa2:p2:spectral-corollaries": {
+    "pdf_page": 190,
+    "printed_page": "182",
+    "pdf_destination": "corollary.37.16"
+  },
+  "fa2:ap:chapter": {
+    "pdf_page": 192,
+    "printed_page": "184",
+    "pdf_destination": "chapter.38"
+  },
+  "fa2:ap:trace-obstruction": {
+    "pdf_page": 192,
+    "printed_page": "184",
+    "pdf_destination": "lemma.38.1"
+  },
+  "fa2:ap:walsh": {
+    "pdf_page": 193,
+    "printed_page": "185",
+    "pdf_destination": "lemma.38.2"
+  },
+  "fa2:ap:finite-twirl": {
+    "pdf_page": 193,
+    "printed_page": "185",
+    "pdf_destination": "equation.38.1"
+  },
+  "fa2:ap:intersection": {
+    "pdf_page": 194,
+    "printed_page": "186",
+    "pdf_destination": "equation.38.2"
+  },
+  "fa2:ap:row": {
+    "pdf_page": 194,
+    "printed_page": "186",
+    "pdf_destination": "equation.38.3"
+  },
+  "fa2:ap:balance": {
+    "pdf_page": 194,
+    "printed_page": "186",
+    "pdf_destination": "equation.38.4"
+  },
+  "fa2:ap:coordinate": {
+    "pdf_page": 195,
+    "printed_page": "187",
+    "pdf_destination": "equation.38.5"
+  },
+  "fa2:ap:differences": {
+    "pdf_page": 195,
+    "printed_page": "187",
+    "pdf_destination": "lemma.38.3"
+  },
+  "fa2:ap:counterexample": {
+    "pdf_page": 195,
+    "printed_page": "188",
+    "pdf_destination": "theorem.38.4"
+  },
+  "fa2:p2:brondsted-rockafellar": {
+    "pdf_page": 197,
+    "printed_page": "189",
+    "pdf_destination": "theorem.39.1"
+  },
+  "fa2:p2:kirszbraun": {
+    "pdf_page": 197,
+    "printed_page": "189",
+    "pdf_destination": "theorem.39.2"
+  },
+  "fa2:p2:cotlar": {
+    "pdf_page": 198,
+    "printed_page": "190",
+    "pdf_destination": "theorem.39.3"
+  },
+  "fa2:p2:kirk-fixed-point": {
+    "pdf_page": 198,
+    "printed_page": "191",
+    "pdf_destination": "theorem.39.4"
+  },
+  "fa2:p2:alternating-projections": {
+    "pdf_page": 199,
+    "printed_page": "191",
+    "pdf_destination": "theorem.39.5"
+  },
+  "fa2:p2:projection-displacement-chapter": {
+    "pdf_page": 200,
+    "printed_page": "192",
+    "pdf_destination": "chapter.40"
+  },
+  "fa2:p2:projection-displacement": {
+    "pdf_page": 200,
+    "printed_page": "192",
+    "pdf_destination": "theorem.40.1"
+  },
+  "fa2:p2:projection-nearest-pair": {
+    "pdf_page": 201,
+    "printed_page": "193",
+    "pdf_destination": "corollary.40.2"
+  },
+  "fa2:p2:minimax": {
+    "pdf_page": 202,
+    "printed_page": "194",
+    "pdf_destination": "theorem.41.1"
+  },
+  "fa2:p2:noncoercive-vi": {
+    "pdf_page": 203,
+    "printed_page": "195",
+    "pdf_destination": "theorem.41.2"
+  },
+  "fa2:p2:potential-vi": {
+    "pdf_page": 203,
+    "printed_page": "195",
+    "pdf_destination": "theorem.41.3"
+  },
+  "fa2:p2:minty-compact-domain": {
+    "pdf_page": 203,
+    "printed_page": "195",
+    "pdf_destination": "theorem.41.4"
+  },
+  "fa2:p2:minty-source-signs": {
+    "pdf_page": 204,
+    "printed_page": "196",
+    "pdf_destination": "remark.41.5"
+  },
+  "fa2:p3:closed-adjoint": {
+    "pdf_page": 206,
+    "printed_page": "198",
+    "pdf_destination": "theorem.42.1"
+  },
+  "fa2:p3:schrodinger-potential": {
+    "pdf_page": 206,
+    "printed_page": "198",
+    "pdf_destination": "proposition.42.2"
+  },
+  "fa2:p3:derivative-domains": {
+    "pdf_page": 206,
+    "printed_page": "199",
+    "pdf_destination": "example.42.3"
+  },
+  "fa2:p3:banach-closed-range": {
+    "pdf_page": 207,
+    "printed_page": "199",
+    "pdf_destination": "theorem.42.4"
+  },
+  "fa2:p3:cayley": {
+    "pdf_page": 207,
+    "printed_page": "200",
+    "pdf_destination": "theorem.42.5"
+  },
+  "fa2:p3:deficiency-extensions": {
+    "pdf_page": 208,
+    "printed_page": "200",
+    "pdf_destination": "theorem.42.6"
+  },
+  "fa2:p3:friedrichs": {
+    "pdf_page": 209,
+    "printed_page": "201",
+    "pdf_destination": "theorem.42.7"
+  },
+  "fa2:p3:kato-rellich": {
+    "pdf_page": 209,
+    "printed_page": "201",
+    "pdf_destination": "theorem.42.8"
+  },
+  "fa2:p3:unbounded-calculus": {
+    "pdf_page": 209,
+    "printed_page": "201",
+    "pdf_destination": "theorem.42.9"
+  },
+  "fa2:p3:unbounded-commutation": {
+    "pdf_page": 210,
+    "printed_page": "202",
+    "pdf_destination": "proposition.42.10"
+  },
+  "fa2:p3:normal-spectral": {
+    "pdf_page": 210,
+    "printed_page": "202",
+    "pdf_destination": "theorem.42.11"
+  },
+  "fa2:p3:lp-multiplication-chapter": {
+    "pdf_page": 212,
+    "printed_page": "204",
+    "pdf_destination": "chapter.43"
+  },
+  "fa2:p3:lp-multiplication": {
+    "pdf_page": 212,
+    "printed_page": "204",
+    "pdf_destination": "theorem.43.1"
+  },
+  "fa2:p3:lp-multiplication-bounds": {
+    "pdf_page": 213,
+    "printed_page": "205",
+    "pdf_destination": "theorem.43.2"
+  },
+  "fa2:p3:lp-multiplication-spectrum": {
+    "pdf_page": 213,
+    "printed_page": "206",
+    "pdf_destination": "theorem.43.3"
+  },
+  "fa2:p3:lp-multiplication-compact": {
+    "pdf_page": 214,
+    "printed_page": "206",
+    "pdf_destination": "proposition.43.4"
+  },
+  "fa2:p3:subspace-gap": {
+    "pdf_page": 216,
+    "printed_page": "208",
+    "pdf_destination": "lemma.44.1"
+  },
+  "fa2:p3:banach-linear-maximal-monotone": {
+    "pdf_page": 216,
+    "printed_page": "208",
+    "pdf_destination": "theorem.44.2"
+  },
+  "fa2:p3:banach-adjoint-sum": {
+    "pdf_page": 217,
+    "printed_page": "209",
+    "pdf_destination": "theorem.44.3"
+  },
+  "fa2:p3:adjoint-sum-strict": {
+    "pdf_page": 218,
+    "printed_page": "210",
+    "pdf_destination": "example.44.4"
+  },
+  "fa2:p3:semigroup-basics": {
+    "pdf_page": 219,
+    "printed_page": "211",
+    "pdf_destination": "theorem.45.1"
+  },
+  "fa2:p3:resolvent-decay-obstruction": {
+    "pdf_page": 219,
+    "printed_page": "211",
+    "pdf_destination": "theorem.45.2"
+  },
+  "fa2:p3:spectral-gap-decay-obstruction": {
+    "pdf_page": 220,
+    "printed_page": "212",
+    "pdf_destination": "corollary.45.3"
+  },
+  "fa2:p3:semigroup-spectral-mapping": {
+    "pdf_page": 220,
+    "printed_page": "212",
+    "pdf_destination": "theorem.45.4"
+  },
+  "fa2:p3:growth-spectral-gap": {
+    "pdf_page": 221,
+    "printed_page": "213",
+    "pdf_destination": "example.45.5"
+  },
+  "fa2:p3:linear-monotone": {
+    "pdf_page": 221,
+    "printed_page": "213",
+    "pdf_destination": "proposition.45.6"
+  },
+  "fa2:p3:normal-semigroup": {
+    "pdf_page": 222,
+    "printed_page": "214",
+    "pdf_destination": "theorem.45.7"
+  },
+  "fa2:p3:hille-yosida": {
+    "pdf_page": 222,
+    "printed_page": "214",
+    "pdf_destination": "theorem.45.8"
+  },
+  "fa2:p3:lumer-phillips": {
+    "pdf_page": 223,
+    "printed_page": "215",
+    "pdf_destination": "theorem.45.9"
+  },
+  "fa2:p3:evolution": {
+    "pdf_page": 223,
+    "printed_page": "215",
+    "pdf_destination": "theorem.45.10"
+  },
+  "fa2:p3:semigroup-perturbation": {
+    "pdf_page": 223,
+    "printed_page": "216",
+    "pdf_destination": "theorem.45.11"
+  },
+  "fa2:p3:trotter-kato": {
+    "pdf_page": 224,
+    "printed_page": "216",
+    "pdf_destination": "theorem.45.12"
+  },
+  "fa2:p3:product-formula": {
+    "pdf_page": 224,
+    "printed_page": "216",
+    "pdf_destination": "theorem.45.13"
+  },
+  "fa2:p3:lax-equivalence": {
+    "pdf_page": 225,
+    "printed_page": "217",
+    "pdf_destination": "proposition.45.14"
+  },
+  "fa2:p3:adjoint-semigroup": {
+    "pdf_page": 225,
+    "printed_page": "217",
+    "pdf_destination": "theorem.45.15"
+  },
+  "fa2:p3:stone": {
+    "pdf_page": 226,
+    "printed_page": "218",
+    "pdf_destination": "theorem.45.16"
+  },
+  "fa2:p3:selfadjoint-smoothing": {
+    "pdf_page": 226,
+    "printed_page": "218",
+    "pdf_destination": "theorem.45.17"
+  },
+  "fa2:p3:triple-trace": {
+    "pdf_page": 227,
+    "printed_page": "219",
+    "pdf_destination": "lemma.46.1"
+  },
+  "fa2:p3:parabolic-triple": {
+    "pdf_page": 227,
+    "printed_page": "219",
+    "pdf_destination": "theorem.46.2"
+  },
+  "fa2:p3:hyperbolic-chapter": {
+    "pdf_page": 229,
+    "printed_page": "221",
+    "pdf_destination": "chapter.47"
+  },
+  "fa2:p3:hyperbolic-triple": {
+    "pdf_page": 229,
+    "printed_page": "221",
+    "pdf_destination": "theorem.47.1"
+  },
+  "fa2:p3:hamburger-moment": {
+    "pdf_page": 232,
+    "printed_page": "224",
+    "pdf_destination": "theorem.48.1"
+  },
+  "fa2:p3:fourier-four-points": {
+    "pdf_page": 232,
+    "printed_page": "224",
+    "pdf_destination": "proposition.48.2"
+  },
+  "fa2:p3:moment-nonuniqueness": {
+    "pdf_page": 232,
+    "printed_page": "225",
+    "pdf_destination": "example.48.3"
+  },
+  "fa2:p3:sturm-liouville": {
+    "pdf_page": 233,
+    "printed_page": "225",
+    "pdf_destination": "theorem.48.4"
+  },
+  "fa2:p3:periodic-convolution": {
+    "pdf_page": 233,
+    "printed_page": "225",
+    "pdf_destination": "proposition.48.5"
+  },
+  "fa2:p3:stieltjes-moment": {
+    "pdf_page": 234,
+    "printed_page": "226",
+    "pdf_destination": "theorem.48.6"
+  },
+  "fa2:p3:jacobi-moment": {
+    "pdf_page": 234,
+    "printed_page": "226",
+    "pdf_destination": "proposition.48.7"
+  },
+  "fa2:p3:moment-determinacy": {
+    "pdf_page": 234,
+    "printed_page": "226",
+    "pdf_destination": "theorem.48.8"
+  },
+  "fa2:p3:position-momentum": {
+    "pdf_page": 235,
+    "printed_page": "227",
+    "pdf_destination": "theorem.48.9"
+  },
+  "fa2:p3:no-bounded-ccr": {
+    "pdf_page": 235,
+    "printed_page": "227",
+    "pdf_destination": "proposition.48.10"
+  },
+  "fa2:p3:kooper-wave": {
+    "pdf_page": 236,
+    "printed_page": "228",
+    "pdf_destination": "proposition.48.12"
+  },
+  "fa2:p3:homogeneous-wave-group": {
+    "pdf_page": 236,
+    "printed_page": "228",
+    "pdf_destination": "proposition.48.13"
+  },
+  "fa2:p3:heat-poisson": {
+    "pdf_page": 237,
+    "printed_page": "229",
+    "pdf_destination": "theorem.48.14"
+  },
+  "fa2:p3:legendre": {
+    "pdf_page": 237,
+    "printed_page": "229",
+    "pdf_destination": "proposition.48.15"
+  },
+  "fa2:p3:nonlinear-monotone": {
+    "pdf_page": 237,
+    "printed_page": "229",
+    "pdf_destination": "theorem.48.16"
+  },
+  "fa2:p3:subgradient": {
+    "pdf_page": 238,
+    "printed_page": "230",
+    "pdf_destination": "proposition.48.17"
+  },
+  "fa2:p3:confining-potential": {
+    "pdf_page": 238,
+    "printed_page": "230",
+    "pdf_destination": "theorem.48.18"
+  },
+  "fa2:p3:hermite-oscillator": {
+    "pdf_page": 239,
+    "printed_page": "231",
+    "pdf_destination": "theorem.48.19"
+  },
+  "fa2:p3:krein-extensions-chapter": {
+    "pdf_page": 241,
+    "printed_page": "233",
+    "pdf_destination": "chapter.49"
+  },
+  "fa2:p3:krein-resolvent-order": {
+    "pdf_page": 241,
+    "printed_page": "233",
+    "pdf_destination": "theorem.49.1"
+  },
+  "fa2:p3:stieltjes-determinacy": {
+    "pdf_page": 242,
+    "printed_page": "234",
+    "pdf_destination": "theorem.49.2"
+  },
+  "fa2:p3:weyl-chapter": {
+    "pdf_page": 244,
+    "printed_page": "236",
+    "pdf_destination": "chapter.50"
+  },
+  "fa2:p3:stone-von-neumann": {
+    "pdf_page": 244,
+    "printed_page": "236",
+    "pdf_destination": "theorem.50.1"
+  },
+  "fa2:p3:gaussian-corner": {
+    "pdf_page": 245,
+    "printed_page": "237",
+    "pdf_destination": "equation.50.1"
+  },
+  "fa2:p3:source-refinements": {
+    "pdf_page": 246,
+    "printed_page": "238",
+    "pdf_destination": "chapter.51"
+  },
+  "fa2:p3:weak-semigroup-continuity": {
+    "pdf_page": 246,
+    "printed_page": "238",
+    "pdf_destination": "theorem.51.1"
+  },
+  "fa2:p3:weak-scheme-existence": {
+    "pdf_page": 246,
+    "printed_page": "238",
+    "pdf_destination": "theorem.51.2"
+  },
+  "fa2:p3:eventual-norm-spectral-mapping": {
+    "pdf_page": 247,
+    "printed_page": "239",
+    "pdf_destination": "theorem.51.3"
+  },
+  "fa2:p3:translation-model": {
+    "pdf_page": 248,
+    "printed_page": "240",
+    "pdf_destination": "proposition.51.4"
+  },
+  "fa2:p4:function-spaces": {
+    "pdf_page": 250,
+    "printed_page": "242",
+    "pdf_destination": "chapter.52"
+  },
+  "fa2:p4:sequence-duals": {
+    "pdf_page": 250,
+    "printed_page": "242",
+    "pdf_destination": "theorem.52.1"
+  },
+  "fa2:p4:radon-nikodym": {
+    "pdf_page": 250,
+    "printed_page": "242",
+    "pdf_destination": "theorem.52.2"
+  },
+  "fa2:p4:lp-duality": {
+    "pdf_page": 251,
+    "printed_page": "243",
+    "pdf_destination": "theorem.52.3"
+  },
+  "fa2:p4:riesz-markov": {
+    "pdf_page": 251,
+    "printed_page": "243",
+    "pdf_destination": "theorem.52.4"
+  },
+  "fa2:p4:stieltjes-bridge": {
+    "pdf_page": 252,
+    "printed_page": "244",
+    "pdf_destination": "proposition.52.5"
+  },
+  "fa2:p4:riemann-stieltjes-endpoint": {
+    "pdf_page": 252,
+    "printed_page": "244",
+    "pdf_destination": "corollary.52.6"
+  },
+  "fa2:p4:l1-gliding-hump": {
+    "pdf_page": 253,
+    "printed_page": "245",
+    "pdf_destination": "lemma.52.7"
+  },
+  "fa2:p4:dunford-pettis-l1": {
+    "pdf_page": 253,
+    "printed_page": "245",
+    "pdf_destination": "theorem.52.8"
+  },
+  "fa2:p4:bochner-definition": {
+    "pdf_page": 254,
+    "printed_page": "246",
+    "pdf_destination": "definition.52.9"
+  },
+  "fa2:p4:bochner": {
+    "pdf_page": 254,
+    "printed_page": "246",
+    "pdf_destination": "theorem.52.10"
+  },
+  "fa2:p4:dominated-convergence": {
+    "pdf_page": 254,
+    "printed_page": "246",
+    "pdf_destination": "theorem.52.10"
+  },
+  "fa2:p4:lp-completeness": {
+    "pdf_page": 254,
+    "printed_page": "246",
+    "pdf_destination": "theorem.52.10"
+  },
+  "fa2:p4:pettis-measurability": {
+    "pdf_page": 254,
+    "printed_page": "246",
+    "pdf_destination": "proposition.52.11"
+  },
+  "fa2:p4:distributions": {
+    "pdf_page": 256,
+    "printed_page": "248",
+    "pdf_destination": "chapter.53"
+  },
+  "fa2:p4:test-lf": {
+    "pdf_page": 256,
+    "printed_page": "248",
+    "pdf_destination": "definition.53.1"
+  },
+  "fa2:p4:test-bounded": {
+    "pdf_page": 256,
+    "printed_page": "248",
+    "pdf_destination": "theorem.53.2"
+  },
+  "fa2:p4:finite-order": {
+    "pdf_page": 256,
+    "printed_page": "248",
+    "pdf_destination": "theorem.53.2"
+  },
+  "fa2:p4:distribution-calculus": {
+    "pdf_page": 256,
+    "printed_page": "249",
+    "pdf_destination": "proposition.53.3"
+  },
+  "fa2:p4:partition-unity": {
+    "pdf_page": 257,
+    "printed_page": "249",
+    "pdf_destination": "lemma.53.4"
+  },
+  "fa2:p4:distribution-gluing": {
+    "pdf_page": 257,
+    "printed_page": "249",
+    "pdf_destination": "theorem.53.5"
+  },
+  "fa2:p4:point-support": {
+    "pdf_page": 257,
+    "printed_page": "249",
+    "pdf_destination": "theorem.53.6"
+  },
+  "fa2:p4:distribution-structure": {
+    "pdf_page": 257,
+    "printed_page": "249",
+    "pdf_destination": "theorem.53.6"
+  },
+  "fa2:p4:young": {
+    "pdf_page": 258,
+    "printed_page": "250",
+    "pdf_destination": "theorem.53.7"
+  },
+  "fa2:p4:approximate-identity": {
+    "pdf_page": 258,
+    "printed_page": "250",
+    "pdf_destination": "theorem.53.7"
+  },
+  "fa2:p4:distribution-convolution": {
+    "pdf_page": 258,
+    "printed_page": "250",
+    "pdf_destination": "theorem.53.8"
+  },
+  "fa2:p4:fourier-chapter": {
+    "pdf_page": 260,
+    "printed_page": "252",
+    "pdf_destination": "chapter.54"
+  },
+  "fa2:p4:fourier-normalization": {
+    "pdf_page": 260,
+    "printed_page": "252",
+    "pdf_destination": "definition.54.1"
+  },
+  "fa2:p4:fourier-inversion": {
+    "pdf_page": 260,
+    "printed_page": "252",
+    "pdf_destination": "theorem.54.2"
+  },
+  "fa2:p4:plancherel": {
+    "pdf_page": 260,
+    "printed_page": "252",
+    "pdf_destination": "theorem.54.2"
+  },
+  "fa2:p4:tempered-examples": {
+    "pdf_page": 260,
+    "printed_page": "252",
+    "pdf_destination": "proposition.54.3"
+  },
+  "fa2:p4:paley-wiener": {
+    "pdf_page": 261,
+    "printed_page": "253",
+    "pdf_destination": "theorem.54.4"
+  },
+  "fa2:p4:polynomial-division": {
+    "pdf_page": 261,
+    "printed_page": "253",
+    "pdf_destination": "lemma.54.5"
+  },
+  "fa2:p4:compact-pde-solvability": {
+    "pdf_page": 262,
+    "printed_page": "254",
+    "pdf_destination": "theorem.54.6"
+  },
+  "fa2:p4:fundamental-solution": {
+    "pdf_page": 262,
+    "printed_page": "254",
+    "pdf_destination": "theorem.54.7"
+  },
+  "fa2:p4:sobolev-chapter": {
+    "pdf_page": 263,
+    "printed_page": "255",
+    "pdf_destination": "chapter.55"
+  },
+  "fa2:p4:sobolev-definition": {
+    "pdf_page": 263,
+    "printed_page": "255",
+    "pdf_destination": "definition.55.1"
+  },
+  "fa2:p4:sobolev-calculus": {
+    "pdf_page": 263,
+    "printed_page": "255",
+    "pdf_destination": "theorem.55.2"
+  },
+  "fa2:p4:one-dimensional-sobolev": {
+    "pdf_page": 264,
+    "printed_page": "256",
+    "pdf_destination": "theorem.55.3"
+  },
+  "fa2:p4:sobolev-extension": {
+    "pdf_page": 264,
+    "printed_page": "256",
+    "pdf_destination": "theorem.55.4"
+  },
+  "fa2:p4:sobolev-translations": {
+    "pdf_page": 264,
+    "printed_page": "256",
+    "pdf_destination": "proposition.55.5"
+  },
+  "fa2:p4:sobolev-one": {
+    "pdf_page": 265,
+    "printed_page": "257",
+    "pdf_destination": "lemma.55.6"
+  },
+  "fa2:p4:sobolev-embedding": {
+    "pdf_page": 265,
+    "printed_page": "257",
+    "pdf_destination": "theorem.55.7"
+  },
+  "fa2:p4:kolmogorov-riesz": {
+    "pdf_page": 266,
+    "printed_page": "258",
+    "pdf_destination": "theorem.55.8"
+  },
+  "fa2:p4:rellich": {
+    "pdf_page": 266,
+    "printed_page": "258",
+    "pdf_destination": "theorem.55.8"
+  },
+  "fa2:p4:sobolev-trace": {
+    "pdf_page": 266,
+    "printed_page": "258",
+    "pdf_destination": "theorem.55.9"
+  },
+  "fa2:p4:poincare": {
+    "pdf_page": 266,
+    "printed_page": "258",
+    "pdf_destination": "theorem.55.9"
+  },
+  "fa2:p4:negative-sobolev": {
+    "pdf_page": 267,
+    "printed_page": "259",
+    "pdf_destination": "theorem.55.10"
+  },
+  "fa2:p4:sobolev-hilbert": {
+    "pdf_page": 267,
+    "printed_page": "259",
+    "pdf_destination": "theorem.55.11"
+  },
+  "fa2:p4:periodic-sobolev": {
+    "pdf_page": 268,
+    "printed_page": "260",
+    "pdf_destination": "proposition.55.12"
+  },
+  "fa2:p4:elliptic-parametrix": {
+    "pdf_page": 268,
+    "printed_page": "260",
+    "pdf_destination": "theorem.55.13"
+  },
+  "fa2:p4:interpolation-chapter": {
+    "pdf_page": 269,
+    "printed_page": "261",
+    "pdf_destination": "chapter.56"
+  },
+  "fa2:p4:three-lines": {
+    "pdf_page": 269,
+    "printed_page": "261",
+    "pdf_destination": "lemma.56.1"
+  },
+  "fa2:p4:riesz-thorin": {
+    "pdf_page": 269,
+    "printed_page": "261",
+    "pdf_destination": "theorem.56.2"
+  },
+  "fa2:p4:marcinkiewicz": {
+    "pdf_page": 269,
+    "printed_page": "262",
+    "pdf_destination": "theorem.56.3"
+  },
+  "fa2:p4:maximal": {
+    "pdf_page": 270,
+    "printed_page": "262",
+    "pdf_destination": "theorem.56.4"
+  },
+  "fa2:p4:cz-decomposition": {
+    "pdf_page": 270,
+    "printed_page": "262",
+    "pdf_destination": "lemma.56.5"
+  },
+  "fa2:p4:calderon-zygmund": {
+    "pdf_page": 270,
+    "printed_page": "263",
+    "pdf_destination": "theorem.56.6"
+  },
+  "fa2:p4:cz-multiplier": {
+    "pdf_page": 271,
+    "printed_page": "263",
+    "pdf_destination": "proposition.56.7"
+  },
+  "fa2:p4:hilbert-transform": {
+    "pdf_page": 271,
+    "printed_page": "263",
+    "pdf_destination": "theorem.56.8"
+  },
+  "fa2:p4:principal-value": {
+    "pdf_page": 271,
+    "printed_page": "263",
+    "pdf_destination": "theorem.56.8"
+  },
+  "fa2:p4:hardy-atomic": {
+    "pdf_page": 272,
+    "printed_page": "264",
+    "pdf_destination": "proposition.56.9"
+  },
+  "fa2:p4:bmo": {
+    "pdf_page": 272,
+    "printed_page": "264",
+    "pdf_destination": "definition.56.10"
+  },
+  "fa2:p4:hardy-p-atoms": {
+    "pdf_page": 273,
+    "printed_page": "265",
+    "pdf_destination": "theorem.56.11"
+  },
+  "fa2:p4:hardy-maximal-forward": {
+    "pdf_page": 273,
+    "printed_page": "265",
+    "pdf_destination": "theorem.56.12"
+  },
+  "fa2:p4:hardy-bmo-dual": {
+    "pdf_page": 273,
+    "printed_page": "266",
+    "pdf_destination": "theorem.56.13"
+  },
+  "fa2:p4:representation-chapter": {
+    "pdf_page": 275,
+    "printed_page": "267",
+    "pdf_destination": "chapter.57"
+  },
+  "fa2:p4:herglotz": {
+    "pdf_page": 275,
+    "printed_page": "267",
+    "pdf_destination": "theorem.57.1"
+  },
+  "fa2:p4:circle-moment": {
+    "pdf_page": 275,
+    "printed_page": "267",
+    "pdf_destination": "corollary.57.2"
+  },
+  "fa2:p4:bochner-positive": {
+    "pdf_page": 275,
+    "printed_page": "268",
+    "pdf_destination": "theorem.57.3"
+  },
+  "fa2:p4:poisson-summation": {
+    "pdf_page": 276,
+    "printed_page": "268",
+    "pdf_destination": "proposition.57.4"
+  },
+  "fa2:p4:wiener-local": {
+    "pdf_page": 276,
+    "printed_page": "268",
+    "pdf_destination": "lemma.57.5"
+  },
+  "fa2:p4:wiener-tauberian": {
+    "pdf_page": 277,
+    "printed_page": "269",
+    "pdf_destination": "theorem.57.6"
+  },
+  "fa2:p4:hardy-disk": {
+    "pdf_page": 277,
+    "printed_page": "269",
+    "pdf_destination": "definition.57.7"
+  },
+  "fa2:p4:beurling": {
+    "pdf_page": 277,
+    "printed_page": "269",
+    "pdf_destination": "theorem.57.8"
+  },
+  "fa2:p4:hardy-factorization": {
+    "pdf_page": 278,
+    "printed_page": "270",
+    "pdf_destination": "theorem.57.9"
+  },
+  "fa2:p4:hardy-halfplane": {
+    "pdf_page": 278,
+    "printed_page": "270",
+    "pdf_destination": "lemma.57.10"
+  },
+  "fa2:p4:titchmarsh": {
+    "pdf_page": 279,
+    "printed_page": "271",
+    "pdf_destination": "theorem.57.11"
+  },
+  "fa2:p4:titchmarsh-halfline": {
+    "pdf_page": 280,
+    "printed_page": "272",
+    "pdf_destination": "corollary.57.12"
+  },
+  "fa2:p4:hardy-divisibility": {
+    "pdf_page": 280,
+    "printed_page": "272",
+    "pdf_destination": "proposition.57.13"
+  },
+  "fa2:p4:fractional-sobolev": {
+    "pdf_page": 281,
+    "printed_page": "273",
+    "pdf_destination": "definition.57.14"
+  },
+  "fa2:p4:sharp-trace": {
+    "pdf_page": 281,
+    "printed_page": "273",
+    "pdf_destination": "theorem.57.15"
+  },
+  "fa2:p4:second-trace": {
+    "pdf_page": 282,
+    "printed_page": "274",
+    "pdf_destination": "theorem.57.16"
+  },
+  "fa2:p4:besicovitch": {
+    "pdf_page": 283,
+    "printed_page": "275",
+    "pdf_destination": "theorem.57.17"
+  },
+  "fa2:p4:homogeneous-extension": {
+    "pdf_page": 283,
+    "printed_page": "275",
+    "pdf_destination": "theorem.57.18"
+  },
+  "fa2:p4:homogeneous-fourier": {
+    "pdf_page": 284,
+    "printed_page": "276",
+    "pdf_destination": "proposition.57.19"
+  },
+  "fa2:p4:laplace-heat-fundamental": {
+    "pdf_page": 285,
+    "printed_page": "277",
+    "pdf_destination": "example.57.20"
+  },
+  "fa2:p4:fourier-failures": {
+    "pdf_page": 285,
+    "printed_page": "277",
+    "pdf_destination": "theorem.57.21"
+  },
+  "fa2:p4:grothendieck-lp": {
+    "pdf_page": 286,
+    "printed_page": "278",
+    "pdf_destination": "theorem.57.22"
+  },
+  "fa2:p4:hausdorff-young": {
+    "pdf_page": 286,
+    "printed_page": "278",
+    "pdf_destination": "corollary.57.23"
+  },
+  "fa2:p4:laplace-hankel": {
+    "pdf_page": 286,
+    "printed_page": "278",
+    "pdf_destination": "theorem.57.24"
+  },
+  "fa2:p4:john-nirenberg": {
+    "pdf_page": 287,
+    "printed_page": "279",
+    "pdf_destination": "theorem.57.25"
+  },
+  "fa2:p4:hardy-fourier": {
+    "pdf_page": 288,
+    "printed_page": "280",
+    "pdf_destination": "proposition.57.26"
+  },
+  "fa2:p4:lacunary-subspace": {
+    "pdf_page": 288,
+    "printed_page": "280",
+    "pdf_destination": "example.57.27"
+  },
+  "fa2:p4:hahn-vitali-saks": {
+    "pdf_page": 289,
+    "printed_page": "281",
+    "pdf_destination": "theorem.57.28"
+  },
+  "fa2:p4:de-la-vallee-poussin": {
+    "pdf_page": 290,
+    "printed_page": "282",
+    "pdf_destination": "theorem.57.29"
+  },
+  "fa2:p4:measure-approximation": {
+    "pdf_page": 290,
+    "printed_page": "282",
+    "pdf_destination": "proposition.57.30"
+  },
+  "fa2:p4:sharp-interval-poincare": {
+    "pdf_page": 290,
+    "printed_page": "282",
+    "pdf_destination": "proposition.57.31"
+  },
+  "fa2:p4:hardy-converse-chapter": {
+    "pdf_page": 292,
+    "printed_page": "284",
+    "pdf_destination": "chapter.58"
+  },
+  "fa2:p4:hardy-fixed-maximal": {
+    "pdf_page": 292,
+    "printed_page": "284",
+    "pdf_destination": "theorem.58.1"
+  },
+  "fa2:p4:hardy-weighted-convolution": {
+    "pdf_page": 292,
+    "printed_page": "284",
+    "pdf_destination": "equation.58.1"
+  },
+  "fa2:p4:hardy-lowpass-inverse": {
+    "pdf_page": 292,
+    "printed_page": "284",
+    "pdf_destination": "lemma.58.2"
+  },
+  "fa2:p4:hardy-shifted-average": {
+    "pdf_page": 293,
+    "printed_page": "285",
+    "pdf_destination": "equation.58.2"
+  },
+  "fa2:p4:hardy-compact-transfer": {
+    "pdf_page": 293,
+    "printed_page": "285",
+    "pdf_destination": "lemma.58.3"
+  },
+  "fa2:p4:hardy-tail-bumps": {
+    "pdf_page": 294,
+    "printed_page": "286",
+    "pdf_destination": "equation.58.3"
+  },
+  "fa2:p4:hardy-radial-transfer": {
+    "pdf_page": 294,
+    "printed_page": "286",
+    "pdf_destination": "equation.58.4"
+  },
+  "fa2:p4:hardy-peetre": {
+    "pdf_page": 294,
+    "printed_page": "286",
+    "pdf_destination": "lemma.58.4"
+  },
+  "fa2:p4:hardy-whitney": {
+    "pdf_page": 295,
+    "printed_page": "287",
+    "pdf_destination": "lemma.58.5"
+  },
+  "fa2:p4:hardy-grand-atomic": {
+    "pdf_page": 295,
+    "printed_page": "287",
+    "pdf_destination": "theorem.58.6"
+  },
+  "fa2:p4:final-source-bridges": {
+    "pdf_page": 298,
+    "printed_page": "290",
+    "pdf_destination": "chapter.59"
+  },
+  "fa2:p4:distribution-primitive": {
+    "pdf_page": 298,
+    "printed_page": "290",
+    "pdf_destination": "proposition.59.1"
+  },
+  "fa2:p4:positive-distribution-measure": {
+    "pdf_page": 298,
+    "printed_page": "290",
+    "pdf_destination": "theorem.59.2"
+  },
+  "fa2:p4:convex-distribution-hessian": {
+    "pdf_page": 299,
+    "printed_page": "291",
+    "pdf_destination": "proposition.59.3"
+  },
+  "fa2:p4:periodic-distributions": {
+    "pdf_page": 299,
+    "printed_page": "291",
+    "pdf_destination": "theorem.59.4"
+  },
+  "fa2:p4:hardy-decaying-molecule": {
+    "pdf_page": 300,
+    "printed_page": "292",
+    "pdf_destination": "lemma.59.5"
+  },
+  "fa2:p4:cz-hardy-invariance": {
+    "pdf_page": 300,
+    "printed_page": "292",
+    "pdf_destination": "theorem.59.6"
+  },
+  "fa2:p4:cz-annular-criterion": {
+    "pdf_page": 301,
+    "printed_page": "293",
+    "pdf_destination": "theorem.59.7"
+  },
+  "fa2:p4:generic-fourier-divergence": {
+    "pdf_page": 301,
+    "printed_page": "294",
+    "pdf_destination": "theorem.59.8"
+  },
+  "fa2:p4:vector-duality-chapter": {
+    "pdf_page": 303,
+    "printed_page": "295",
+    "pdf_destination": "chapter.60"
+  },
+  "fa2:p4:reflexive-measure-range": {
+    "pdf_page": 303,
+    "printed_page": "295",
+    "pdf_destination": "lemma.60.1"
+  },
+  "fa2:p4:vector-radon-nikodym": {
+    "pdf_page": 303,
+    "printed_page": "296",
+    "pdf_destination": "theorem.60.2"
+  },
+  "fa2:p4:vector-rn-failure": {
+    "pdf_page": 304,
+    "printed_page": "296",
+    "pdf_destination": "example.60.3"
+  },
+  "fa2:p4:vector-lp-dual": {
+    "pdf_page": 304,
+    "printed_page": "296",
+    "pdf_destination": "theorem.60.4"
+  },
+  "fa2:p4:vector-lp-reflexive": {
+    "pdf_page": 305,
+    "printed_page": "298",
+    "pdf_destination": "theorem.60.5"
+  },
+  "fa2:p4:krein-chapter": {
+    "pdf_page": 307,
+    "printed_page": "299",
+    "pdf_destination": "chapter.61"
+  },
+  "fa2:p4:krein-kernel": {
+    "pdf_page": 307,
+    "printed_page": "299",
+    "pdf_destination": "lemma.61.1"
+  },
+  "fa2:p4:krein-even": {
+    "pdf_page": 309,
+    "printed_page": "301",
+    "pdf_destination": "theorem.61.2"
+  },
+  "fa2:p4:krein-nonunique": {
+    "pdf_page": 310,
+    "printed_page": "302",
+    "pdf_destination": "proposition.61.3"
+  },
+  "fa2:p4:krein-odd": {
+    "pdf_page": 310,
+    "printed_page": "302",
+    "pdf_destination": "theorem.61.4"
+  },
+  "fa2:p4:constrained-support": {
+    "pdf_page": 311,
+    "printed_page": "303",
+    "pdf_destination": "theorem.62.1"
+  },
+  "fa2:p4:nemytskii-energy": {
+    "pdf_page": 311,
+    "printed_page": "304",
+    "pdf_destination": "theorem.62.2"
+  },
+  "fa2:p4:singular-weight-minimizer": {
+    "pdf_page": 312,
+    "printed_page": "304",
+    "pdf_destination": "example.62.3"
+  },
+  "fa2:p4:marcinkiewicz-space": {
+    "pdf_page": 313,
+    "printed_page": "305",
+    "pdf_destination": "theorem.62.4"
+  },
+  "fa2:p5:integral-chapter": {
+    "pdf_page": 316,
+    "printed_page": "308",
+    "pdf_destination": "chapter.63"
+  },
+  "fa2:p5:ascoli": {
+    "pdf_page": 316,
+    "printed_page": "308",
+    "pdf_destination": "lemma.63.1"
+  },
+  "fa2:p5:continuous-kernel": {
+    "pdf_page": 316,
+    "printed_page": "308",
+    "pdf_destination": "theorem.63.2"
+  },
+  "fa2:p5:l2-kernel": {
+    "pdf_page": 316,
+    "printed_page": "308",
+    "pdf_destination": "theorem.63.3"
+  },
+  "fa2:p5:schur": {
+    "pdf_page": 317,
+    "printed_page": "309",
+    "pdf_destination": "theorem.63.4"
+  },
+  "fa2:p5:weakly-singular-kernel": {
+    "pdf_page": 317,
+    "printed_page": "309",
+    "pdf_destination": "theorem.63.5"
+  },
+  "fa2:p5:finite-kernel": {
+    "pdf_page": 318,
+    "printed_page": "310",
+    "pdf_destination": "proposition.63.6"
+  },
+  "fa2:p5:fredholm-kernel": {
+    "pdf_page": 318,
+    "printed_page": "310",
+    "pdf_destination": "theorem.63.7"
+  },
+  "fa2:p5:picard": {
+    "pdf_page": 318,
+    "printed_page": "310",
+    "pdf_destination": "theorem.63.8"
+  },
+  "fa2:p5:volterra-chapter": {
+    "pdf_page": 320,
+    "printed_page": "312",
+    "pdf_destination": "chapter.64"
+  },
+  "fa2:p5:volterra-resolvent": {
+    "pdf_page": 320,
+    "printed_page": "312",
+    "pdf_destination": "theorem.64.1"
+  },
+  "fa2:p5:gronwall": {
+    "pdf_page": 320,
+    "printed_page": "312",
+    "pdf_destination": "lemma.64.2"
+  },
+  "fa2:p5:volterra-regularity": {
+    "pdf_page": 320,
+    "printed_page": "312",
+    "pdf_destination": "proposition.64.3"
+  },
+  "fa2:p5:first-kind-smooth": {
+    "pdf_page": 320,
+    "printed_page": "312",
+    "pdf_destination": "proposition.64.3"
+  },
+  "fa2:p5:fractional-definition": {
+    "pdf_page": 321,
+    "printed_page": "313",
+    "pdf_destination": "definition.64.4"
+  },
+  "fa2:p5:weak-volterra": {
+    "pdf_page": 321,
+    "printed_page": "313",
+    "pdf_destination": "theorem.64.5"
+  },
+  "fa2:p5:abel": {
+    "pdf_page": 322,
+    "printed_page": "314",
+    "pdf_destination": "theorem.64.6"
+  },
+  "fa2:p5:holder-repair": {
+    "pdf_page": 322,
+    "printed_page": "314",
+    "pdf_destination": "theorem.64.7"
+  },
+  "fa2:p5:fractional-regularity-example": {
+    "pdf_page": 323,
+    "printed_page": "315",
+    "pdf_destination": "example.64.8"
+  },
+  "fa2:p5:nonlinear-volterra": {
+    "pdf_page": 323,
+    "printed_page": "315",
+    "pdf_destination": "theorem.64.9"
+  },
+  "fa2:p5:nonunique-blowup-third": {
+    "pdf_page": 324,
+    "printed_page": "316",
+    "pdf_destination": "example.64.10"
+  },
+  "fa2:p5:delay-model": {
+    "pdf_page": 324,
+    "printed_page": "316",
+    "pdf_destination": "proposition.64.11"
+  },
+  "fa2:p5:hammerstein-extremal": {
+    "pdf_page": 324,
+    "printed_page": "316",
+    "pdf_destination": "theorem.64.12"
+  },
+  "fa2:p5:fractional-gronwall": {
+    "pdf_page": 325,
+    "printed_page": "317",
+    "pdf_destination": "theorem.64.13"
+  },
+  "fa2:p5:weighted-volterra-regularity": {
+    "pdf_page": 325,
+    "printed_page": "317",
+    "pdf_destination": "theorem.64.13"
+  },
+  "fa2:p5:galerkin-existence": {
+    "pdf_page": 326,
+    "printed_page": "318",
+    "pdf_destination": "proposition.64.14"
+  },
+  "fa2:p5:sobolev-form-bridge": {
+    "pdf_page": 326,
+    "printed_page": "318",
+    "pdf_destination": "corollary.64.15"
+  },
+  "fa2:p5:nonlinear-ergodic": {
+    "pdf_page": 326,
+    "printed_page": "319",
+    "pdf_destination": "theorem.64.16"
+  },
+  "fa2:p5:hardy-averaging": {
+    "pdf_page": 327,
+    "printed_page": "320",
+    "pdf_destination": "theorem.64.17"
+  },
+  "fa2:p5:cone-geometry": {
+    "pdf_page": 328,
+    "printed_page": "320",
+    "pdf_destination": "proposition.64.18"
+  },
+  "fa2:p5:one-sided-regularizer-perturbation": {
+    "pdf_page": 329,
+    "printed_page": "321",
+    "pdf_destination": "proposition.64.19"
+  },
+  "fa2:p5:least-squares-nonconvergence": {
+    "pdf_page": 329,
+    "printed_page": "321",
+    "pdf_destination": "example.64.20"
+  },
+  "fa2:p5:cordial": {
+    "pdf_page": 330,
+    "printed_page": "322",
+    "pdf_destination": "theorem.64.21"
+  },
+  "fa2:p5:volterra-singular-system": {
+    "pdf_page": 330,
+    "printed_page": "322",
+    "pdf_destination": "theorem.64.22"
+  },
+  "fa2:p5:long-time-convolution": {
+    "pdf_page": 330,
+    "printed_page": "322",
+    "pdf_destination": "proposition.64.23"
+  },
+  "fa2:p5:approximation-chapter": {
+    "pdf_page": 331,
+    "printed_page": "323",
+    "pdf_destination": "chapter.65"
+  },
+  "fa2:p5:compact-uniform-convergence": {
+    "pdf_page": 331,
+    "printed_page": "323",
+    "pdf_destination": "lemma.65.1"
+  },
+  "fa2:p5:collective-compact": {
+    "pdf_page": 331,
+    "printed_page": "323",
+    "pdf_destination": "theorem.65.2"
+  },
+  "fa2:p5:iteration-radius": {
+    "pdf_page": 331,
+    "printed_page": "323",
+    "pdf_destination": "proposition.65.3"
+  },
+  "fa2:p5:projection-method": {
+    "pdf_page": 332,
+    "printed_page": "324",
+    "pdf_destination": "theorem.65.4"
+  },
+  "fa2:p5:second-kind-projection": {
+    "pdf_page": 332,
+    "printed_page": "324",
+    "pdf_destination": "corollary.65.5"
+  },
+  "fa2:p5:galerkin": {
+    "pdf_page": 332,
+    "printed_page": "324",
+    "pdf_destination": "theorem.65.6"
+  },
+  "fa2:p5:cea": {
+    "pdf_page": 332,
+    "printed_page": "324",
+    "pdf_destination": "theorem.65.6"
+  },
+  "fa2:p5:ritz": {
+    "pdf_page": 332,
+    "printed_page": "324",
+    "pdf_destination": "theorem.65.6"
+  },
+  "fa2:p5:tikhonov": {
+    "pdf_page": 333,
+    "printed_page": "325",
+    "pdf_destination": "theorem.65.7"
+  },
+  "fa2:p5:tikhonov-rate": {
+    "pdf_page": 333,
+    "printed_page": "325",
+    "pdf_destination": "proposition.65.8"
+  },
+  "fa2:p5:spectral-regularization": {
+    "pdf_page": 333,
+    "printed_page": "325",
+    "pdf_destination": "theorem.65.9"
+  },
+  "fa2:p5:moment-regularization": {
+    "pdf_page": 333,
+    "printed_page": "326",
+    "pdf_destination": "theorem.65.10"
+  },
+  "fa2:p5:quasi-solution": {
+    "pdf_page": 334,
+    "printed_page": "326",
+    "pdf_destination": "proposition.65.11"
+  },
+  "fa2:p5:rkhs": {
+    "pdf_page": 334,
+    "printed_page": "326",
+    "pdf_destination": "theorem.65.12"
+  },
+  "fa2:p5:representation-chapter": {
+    "pdf_page": 335,
+    "printed_page": "327",
+    "pdf_destination": "chapter.66"
+  },
+  "fa2:p5:positive-extension": {
+    "pdf_page": 335,
+    "printed_page": "327",
+    "pdf_destination": "theorem.66.1"
+  },
+  "fa2:p5:kakutani-affine": {
+    "pdf_page": 335,
+    "printed_page": "327",
+    "pdf_destination": "theorem.66.2"
+  },
+  "fa2:p5:markov-kakutani": {
+    "pdf_page": 335,
+    "printed_page": "327",
+    "pdf_destination": "theorem.66.3"
+  },
+  "fa2:p5:invariant-mean": {
+    "pdf_page": 335,
+    "printed_page": "327",
+    "pdf_destination": "theorem.66.3"
+  },
+  "fa2:p5:haar": {
+    "pdf_page": 336,
+    "printed_page": "328",
+    "pdf_destination": "theorem.66.4"
+  },
+  "fa2:p5:stone-weierstrass": {
+    "pdf_page": 337,
+    "printed_page": "329",
+    "pdf_destination": "theorem.66.5"
+  },
+  "fa2:p5:extreme-measures": {
+    "pdf_page": 337,
+    "printed_page": "329",
+    "pdf_destination": "theorem.66.5"
+  },
+  "fa2:p5:lyapunov": {
+    "pdf_page": 337,
+    "printed_page": "329",
+    "pdf_destination": "theorem.66.6"
+  },
+  "fa2:p5:bishop": {
+    "pdf_page": 337,
+    "printed_page": "329",
+    "pdf_destination": "theorem.66.7"
+  },
+  "fa2:p5:bishop-interpolation": {
+    "pdf_page": 338,
+    "printed_page": "330",
+    "pdf_destination": "theorem.66.8"
+  },
+  "fa2:p5:blaschke-interpolation": {
+    "pdf_page": 338,
+    "printed_page": "330",
+    "pdf_destination": "proposition.66.9"
+  },
+  "fa2:p5:absolute-synthesis": {
+    "pdf_page": 339,
+    "printed_page": "331",
+    "pdf_destination": "theorem.66.10"
+  },
+  "fa2:p5:poisson-synthesis": {
+    "pdf_page": 339,
+    "printed_page": "331",
+    "pdf_destination": "corollary.66.11"
+  },
+  "fa2:p5:toeplitz-summability": {
+    "pdf_page": 339,
+    "printed_page": "331",
+    "pdf_destination": "theorem.66.12"
+  },
+  "fa2:p5:quadrature": {
+    "pdf_page": 339,
+    "printed_page": "331",
+    "pdf_destination": "proposition.66.13"
+  },
+  "fa2:p5:markov-kernel": {
+    "pdf_page": 339,
+    "printed_page": "332",
+    "pdf_destination": "proposition.66.14"
+  },
+  "fa2:p5:continuous-spectrum-example": {
+    "pdf_page": 340,
+    "printed_page": "332",
+    "pdf_destination": "example.66.15"
+  }
+}

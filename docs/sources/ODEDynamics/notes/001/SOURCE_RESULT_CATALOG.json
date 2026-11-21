@@ -1,0 +1,2386 @@
+{
+  "format": "d13-source-result-catalog-1",
+  "note": "Extracted from the actual complete notes; navigation does not replace independent source reading. Equivalent proof routes are permitted.",
+  "chapters": [
+    {
+      "number": 1,
+      "title": "Equations, solution concepts, and changes of formulation",
+      "source": "chapters/M13.01.tex",
+      "adopted_results": 5,
+      "definitions": 2,
+      "labels": [
+        "d13:01:solution",
+        "d13:01:integral",
+        "d13:01:pasting",
+        "d13:01:autonomous",
+        "d13:01:higher-order",
+        "d13:01:autonomization",
+        "d13:01:coordinates",
+        "d13:01:boundary-example"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Explicit equations and elementary models",
+      "source": "chapters/M13.02.tex",
+      "adopted_results": 8,
+      "definitions": 0,
+      "labels": [
+        "d13:02:linear",
+        "d13:02:separable",
+        "d13:02:logistic",
+        "d13:02:exact",
+        "d13:02:integrating-factor",
+        "d13:02:bernoulli",
+        "d13:02:riccati",
+        "d13:02:oscillator",
+        "d13:02:energy"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Local existence and uniqueness",
+      "source": "chapters/M13.03.tex",
+      "adopted_results": 8,
+      "definitions": 1,
+      "labels": [
+        "d13:03:lipschitz",
+        "d13:03:derivative-bound",
+        "d13:03:contraction",
+        "d13:03:picard",
+        "d13:03:uniqueness",
+        "d13:03:uniform-box",
+        "d13:03:ascoli",
+        "d13:03:peano",
+        "d13:03:nonunique",
+        "d13:03:osgood"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Maximal solutions, continuation, and blow-up",
+      "source": "chapters/M13.04.tex",
+      "adopted_results": 6,
+      "definitions": 0,
+      "labels": [
+        "d13:04:maximal",
+        "d13:04:rebase",
+        "d13:04:continuation",
+        "d13:04:escape",
+        "d13:04:confinement",
+        "d13:04:linear-growth",
+        "d13:04:quadratic-blowup",
+        "d13:04:domain-boundary",
+        "d13:04:local-not-global"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Comparison estimates and continuous dependence",
+      "source": "chapters/M13.05.tex",
+      "adopted_results": 9,
+      "definitions": 0,
+      "labels": [
+        "d13:05:gronwall",
+        "d13:05:general-gronwall",
+        "d13:05:perturbation",
+        "d13:05:initial-bound",
+        "d13:05:comparison",
+        "d13:05:common-interval",
+        "d13:05:field-convergence",
+        "d13:05:openness",
+        "d13:05:lifespan",
+        "d13:05:finite-time"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Differentiable and analytic dependence",
+      "source": "chapters/M13.06.tex",
+      "adopted_results": 10,
+      "definitions": 0,
+      "labels": [
+        "d13:06:linear-volterra",
+        "d13:06:c1-dependence",
+        "d13:06:initial-time",
+        "d13:06:ck-dependence",
+        "d13:06:variations",
+        "d13:06:perturbation-expansion",
+        "d13:06:local-diffeomorphism",
+        "d13:06:polydisc-limit",
+        "d13:06:analytic-dependence",
+        "d13:06:real-analytic",
+        "d13:06:smooth-not-analytic"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Linear systems and matrix exponentials",
+      "source": "chapters/M13.07.tex",
+      "adopted_results": 5,
+      "definitions": 1,
+      "labels": [
+        "d13:07:exp-definition",
+        "d13:07:exp",
+        "d13:07:jordan",
+        "d13:07:fundamental",
+        "d13:07:variation",
+        "d13:07:liouville",
+        "d13:07:nilpotent-example"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Periodic linear equations and Floquet theory",
+      "source": "chapters/M13.08.tex",
+      "adopted_results": 5,
+      "definitions": 1,
+      "labels": [
+        "d13:08:monodromy",
+        "d13:08:translation",
+        "d13:08:matrix-log",
+        "d13:08:floquet",
+        "d13:08:real-log-counterexample",
+        "d13:08:stability",
+        "d13:08:periodic-forcing"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Second-order equations and convergent series",
+      "source": "chapters/M13.09.tex",
+      "adopted_results": 5,
+      "definitions": 1,
+      "labels": [
+        "d13:09:reduction",
+        "d13:09:ordinary-series",
+        "d13:09:indicial",
+        "d13:09:frobenius",
+        "d13:09:resonance",
+        "d13:09:singular-examples",
+        "d13:09:legendre"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Regular Sturm--Liouville problems",
+      "source": "chapters/M13.10.tex",
+      "adopted_results": 7,
+      "definitions": 1,
+      "labels": [
+        "d13:10:boundary",
+        "d13:10:lagrange",
+        "d13:10:separation",
+        "d13:10:green",
+        "d13:10:compact-spectral",
+        "d13:10:spectrum",
+        "d13:10:resolvent",
+        "d13:10:oscillation",
+        "d13:10:dirichlet-example"
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Local flows, invariant sets, and first integrals",
+      "source": "chapters/M13.11.tex",
+      "adopted_results": 6,
+      "definitions": 1,
+      "labels": [
+        "d13:11:flow",
+        "d13:11:orbits",
+        "d13:11:invariant",
+        "d13:11:first-integral",
+        "d13:11:flowbox",
+        "d13:11:omega",
+        "d13:11:hamiltonian"
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Equilibria and Lyapunov stability",
+      "source": "chapters/M13.12.tex",
+      "adopted_results": 4,
+      "definitions": 1,
+      "labels": [
+        "d13:12:definitions",
+        "d13:12:lyapunov",
+        "d13:12:matrix-lyapunov",
+        "d13:12:linearized-stability",
+        "d13:12:zero-example",
+        "d13:12:lasalle",
+        "d13:12:damped-pendulum"
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Planar dynamics and limit sets",
+      "source": "chapters/M13.13.tex",
+      "adopted_results": 5,
+      "definitions": 1,
+      "labels": [
+        "d13:13:nullclines",
+        "d13:13:nullcline-example",
+        "d13:13:index-jump",
+        "d13:13:monotone-crossings",
+        "d13:13:poincare-bendixson",
+        "d13:13:trapping",
+        "d13:13:dulac",
+        "d13:13:annulus",
+        "d13:13:pendulum"
+      ]
+    },
+    {
+      "number": 14,
+      "title": "Periodic orbits and return maps",
+      "source": "chapters/M13.14.tex",
+      "adopted_results": 4,
+      "definitions": 1,
+      "labels": [
+        "d13:14:return-map",
+        "d13:14:multipliers",
+        "d13:14:orbital-definition",
+        "d13:14:orbital-stability",
+        "d13:14:orbital-instability",
+        "d13:14:radial-example"
+      ]
+    },
+    {
+      "number": 15,
+      "title": "Discrete dynamical systems",
+      "source": "chapters/M13.15.tex",
+      "adopted_results": 10,
+      "definitions": 4,
+      "labels": [
+        "d13:15:discrete-system",
+        "d13:15:conjugacy-definition",
+        "d13:15:conjugacy-transport",
+        "d13:15:interval-fixed-point",
+        "d13:15:stability-definition",
+        "d13:15:adapted-norm",
+        "d13:15:linearized-stability",
+        "d13:15:linearized-instability",
+        "d13:15:periodic-multipliers",
+        null,
+        "d13:15:circle-lift",
+        "d13:15:rotation-number",
+        "d13:15:rigid-rotation",
+        "d13:15:logistic-fixed-points",
+        "d13:15:logistic-tent"
+      ]
+    },
+    {
+      "number": 16,
+      "title": "Local bifurcations and bounded center reductions",
+      "source": "chapters/M13.16.tex",
+      "adopted_results": 10,
+      "definitions": 1,
+      "labels": [
+        "d13:16:family-definition",
+        "d13:16:simple-persistence",
+        "d13:16:saddle-node",
+        "d13:16:transcritical",
+        "d13:16:pitchfork",
+        null,
+        "d13:16:flip-normal-form",
+        "d13:16:cubic-normal-form",
+        "d13:16:hopf-return-expansion",
+        "d13:16:planar-hopf",
+        null,
+        "d13:16:invariant-graph",
+        "d13:16:triangular-center",
+        null
+      ]
+    },
+    {
+      "number": 17,
+      "title": "Symbolic dynamics and rigorous chaotic examples",
+      "source": "chapters/M13.17.tex",
+      "adopted_results": 6,
+      "definitions": 2,
+      "labels": [
+        "d13:17:chaos-definition",
+        "d13:17:shift-definition",
+        "d13:17:shift-compactness",
+        "d13:17:full-shift-chaos",
+        "d13:17:inverse-branch-coding",
+        "d13:17:logistic-cantor",
+        "d13:17:tent-chaos",
+        null,
+        "d13:17:affine-horseshoe",
+        null
+      ]
+    },
+    {
+      "number": 18,
+      "title": "Growth exponents, attractors and Cantor dimensions",
+      "source": "chapters/M13.18.tex",
+      "adopted_results": 6,
+      "definitions": 3,
+      "labels": [
+        "d13:18:exponent-definition",
+        "d13:18:norm-independence",
+        "d13:18:linear-exponents",
+        "d13:18:ergodic-exponents",
+        null,
+        "d13:18:attractor-definition",
+        "d13:18:trapping-attractor",
+        null,
+        "d13:18:hausdorff-definition",
+        "d13:18:mass-distribution",
+        "d13:18:cantor-dimension",
+        null
+      ]
+    },
+    {
+      "number": 19,
+      "title": "Invariant measures and introductory ergodic theory",
+      "source": "chapters/M13.19.tex",
+      "adopted_results": 15,
+      "definitions": 1,
+      "labels": [
+        "d13:19:preserving-definition",
+        "d13:19:composition-isometry",
+        "d13:19:poincare-recurrence",
+        "d13:19:metric-recurrence",
+        null,
+        "d13:19:hilbert-projection",
+        "d13:19:mean-ergodic",
+        "d13:19:maximal-lemma",
+        "d13:19:dense-coboundaries",
+        "d13:19:birkhoff",
+        "d13:19:ergodic-criterion",
+        "d13:19:probability-compactness",
+        "d13:19:invariant-probability",
+        "d13:19:unique-ergodic-uniform",
+        "d13:19:rotation-ergodicity",
+        "d13:19:bernoulli-measure",
+        "d13:19:bernoulli-mixing",
+        null
+      ]
+    },
+    {
+      "number": 20,
+      "title": "Hyperbolic local theory and bounded Green operators",
+      "source": "chapters/M13.20.tex",
+      "adopted_results": 6,
+      "definitions": 1,
+      "labels": [
+        "d13:20:hyperbolicity",
+        "d13:20:dichotomy",
+        "d13:20:cutoff",
+        "d13:20:green",
+        "d13:20:perron",
+        "d13:20:stable-manifold",
+        "d13:20:local-global",
+        "d13:20:hartman-grobman",
+        "d13:20:example-graph"
+      ]
+    },
+    {
+      "number": 21,
+      "title": "Separation by a regular closed plane curve",
+      "source": "chapters/M13.21.tex",
+      "adopted_results": 5,
+      "definitions": 0,
+      "labels": [
+        "d13:21:index-properties",
+        "d13:21:collar",
+        "d13:21:jump",
+        "d13:21:smooth-jordan",
+        "d13:21:domain-interior"
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "label": "d13:01:solution",
+      "kind": "definition",
+      "title": "Classical solution and initial value problem",
+      "statement": "A classical solution of $x'=f(t,x)$ on a nonempty open interval $I$ is a\n$C^1$ map $x:I\\to\\R^n$ with $(t,x(t))\\in U$ and\n$x'(t)=f(t,x(t))$ for every $t\\in I$. It solves the initial value problem\nat $(s,\\xi)\\in U$ if $s\\in I$ and $x(s)=\\xi$.\nOn a compact interval we require continuity on the whole interval and the\ncorresponding one-sided derivative at an endpoint; equivalently, we use the\nintegral formulation below. A maximal solution is one admitting no extension\nto a strictly larger open interval. A global solution is defined for all\n$t\\in\\R$.",
+      "chapter": 1,
+      "source_file": "chapters/M13.01.tex",
+      "line": 11,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:01:integral",
+      "kind": "theorem",
+      "title": "Differential and integral formulations",
+      "statement": "Let $I$ be an interval containing $s$, and let $x:I\\to\\R^n$ be continuous\nwith graph in $U$. Then $x$ solves the initial value problem with value\n$\\xi$ if and only if\n\\[\n x(t)=\\xi+\\int_s^t f(r,x(r))\\,\\dd r\\qquad(t\\in I).\n\\]\nThe integral is oriented, so the same assertion applies for $t<s$.",
+      "chapter": 1,
+      "source_file": "chapters/M13.01.tex",
+      "line": 23,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:01:pasting",
+      "kind": "proposition",
+      "title": "Restriction and compatible pasting",
+      "statement": "Restriction of a solution to a subinterval is a solution. If two solutions\non intervals $I_1,I_2$ agree on their nonempty intersection, they define a\nsolution on $I_1\\cup I_2$. A left solution and a right solution that are\ncontinuous up to a common time $s$, have the same value $\\xi$ there, and\nsatisfy the equation up to their respective sides can also be pasted.",
+      "chapter": 1,
+      "source_file": "chapters/M13.01.tex",
+      "line": 42,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:01:autonomous",
+      "kind": "definition",
+      "title": "Autonomous and parameter-dependent equations",
+      "statement": "An autonomous equation has the form $x'=F(x)$ on an open\n$\\Omega\\subset\\R^n$. A parameter-dependent equation is\n$x'=f(t,x,p)$, where $p$ belongs to an open subset of $\\R^m$ and remains\nconstant along a solution. A parameter is not an additional freely chosen\nfunction of time. We write $\\Phi(t,s,\\xi,p)$ for the unique solution value\nwhen uniqueness has been established.",
+      "chapter": 1,
+      "source_file": "chapters/M13.01.tex",
+      "line": 60,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:01:higher-order",
+      "kind": "theorem",
+      "title": "Reduction of a higher-order equation",
+      "statement": "For $m\\geq1$, the equation\n\\[\n y^{(m)}=G(t,y,y',\\ldots,y^{(m-1)})\n\\]\nwith continuous $G$ on an open subset of $\\R\\times(\\R^d)^m$ is equivalent\nto the first-order system on that same time interval\n\\[\n Y'=(Y_2,Y_3,\\ldots,Y_m,G(t,Y_1,\\ldots,Y_m)),\n \\qquad Y=(y,y',\\ldots,y^{(m-1)}).\n\\]\nPrescribing the $m$ derivatives of $y$ at $s$ is equivalent to prescribing\n$Y(s)$.",
+      "chapter": 1,
+      "source_file": "chapters/M13.01.tex",
+      "line": 70,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:01:autonomization",
+      "kind": "proposition",
+      "title": "Autonomization",
+      "statement": "The nonautonomous equation $x'=f(t,x,p)$ is equivalent to the autonomous\nsystem on the open set of allowed $(\\tau,x,p)$,\n\\[\n (\\tau,x,p)'=(1,f(\\tau,x,p),0).\n\\]\nThe solution starting at $(s,\\xi,p)$ at elapsed time $0$ has\n$\\tau(h)=s+h$, constant parameter $p$, and\n$x(h)=\\Phi(s+h,s,\\xi,p)$ whenever either side is defined.",
+      "chapter": 1,
+      "source_file": "chapters/M13.01.tex",
+      "line": 94,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:01:coordinates",
+      "kind": "proposition",
+      "title": "Coordinate and time changes",
+      "statement": "If $H:\\Omega\\to\\widetilde\\Omega$ is a $C^1$ diffeomorphism, then\n$z=H(x)$ transforms $x'=f(t,x)$ into\n\\[\n z'=DH(H^{-1}(z))f(t,H^{-1}(z)).\n\\]\nIf $\\theta:J\\to I$ is a $C^1$ diffeomorphism of intervals with nonzero\nderivative, $y(r)=x(\\theta(r))$ satisfies\n$y'(r)=\\theta'(r)f(\\theta(r),y(r))$. In particular, time reversal changes\n$f(t,x)$ into $-f(-t,x)$ after the choice of time origin.",
+      "chapter": 1,
+      "source_file": "chapters/M13.01.tex",
+      "line": 111,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:01:boundary-example",
+      "kind": "example",
+      "title": "Boundary values need not determine a solution",
+      "statement": "Every solution of $y''+y=0$ has the form $A\\cos t+B\\sin t$, as follows\neither by differentiation and initial-value uniqueness or by the\noscillator calculation in Chapter~\\ref{ch:d13-02}. The conditions\n$y(0)=y(\\pi)=0$ leave $B$ arbitrary. The conditions $y(0)=0$,\n$y(\\pi)=1$ have no solution. Thus existence and uniqueness for initial\nvalues do not settle a two-point boundary problem. Boundary conditions\nwill be part of the operator domain in Chapter~\\ref{ch:d13-10}.",
+      "chapter": 1,
+      "source_file": "chapters/M13.01.tex",
+      "line": 130,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:02:linear",
+      "kind": "theorem",
+      "title": "Scalar variation of constants",
+      "statement": "Let $a,b:I\\to\\mathbb K$ be continuous, where $\\mathbb K=\\R$ or $\\C$,\nand $s\\in I$. Write $A(t)=\\int_s^t a(r)\\,\\dd r$. The unique solution\nof $x'=a(t)x+b(t)$, $x(s)=\\xi$, on $I$ is\n\\[\n x(t)=e^{A(t)}\\left(\\xi+\\int_s^t e^{-A(r)}b(r)\\,\\dd r\\right).\n\\]",
+      "chapter": 2,
+      "source_file": "chapters/M13.02.tex",
+      "line": 4,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:02:separable",
+      "kind": "theorem",
+      "title": "Separation on a nonvanishing branch",
+      "statement": "Let $a:I\\to\\R$ and $g:J\\to\\R$ be continuous, where $I,J$ are open\nintervals and $g$ is nowhere zero on $J$. Fix $s\\in I$ and $\\xi\\in J$,\nand define $H(u)=\\int_\\xi^u 1/g(v)\\,\\dd v$. Then $H$ is strictly\nmonotone with a $C^1$ inverse on $H(J)$. The solution of\n$x'=a(t)g(x)$, $x(s)=\\xi$, taking values in $J$ is\n\\[\n x(t)=H^{-1}\\left(\\int_s^t a(r)\\,\\dd r\\right)\n\\]\non the connected component containing $s$ of the times for which the\nargument lies in $H(J)$. Every solution taking values in $J$ has this\nform. If $g(c)=0$ at some point outside this branch, $x\\equiv c$ must\nbe included separately as an equilibrium solution.",
+      "chapter": 2,
+      "source_file": "chapters/M13.02.tex",
+      "line": 20,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:02:logistic",
+      "kind": "example",
+      "title": "Growth, logistic growth, and actual maximal intervals",
+      "statement": "For $r,K>0$, the logistic equation $x'=rx(1-x/K)$ with $x(s)=\\xi$\nhas\n\\[\n x(t)=\\frac{K\\xi e^{r(t-s)}}{K+\\xi(e^{r(t-s)}-1)}.\n\\]\nFor $\\xi=0$ and $\\xi=K$ this gives the two equilibria. For\n$0<\\xi<K$, the denominator is positive for all real $t$, the solution\nis global, increases, and has limits $0$ and $K$ as $t$ tends to\n$-\\infty$ and $+\\infty$. If $\\xi>K$, its maximal interval is\n$(s+r^{-1}\\log(1-K/\\xi),\\infty)$. If $\\xi<0$, its maximal interval is\n$(-\\infty,s+r^{-1}\\log(1-K/\\xi))$. These claims follow by direct\ndifferentiation, the sign of the denominator, and its simple zero at the\nstated finite endpoint. Local uniqueness follows because the vector field\nis $C^1$; no continuation through a pole is possible in $\\R$.\nUnrestricted exponential growth is the special linear equation $x'=rx$,\nwith solution $\\xi e^{r(t-s)}$ and no finite-time pole.",
+      "chapter": 2,
+      "source_file": "chapters/M13.02.tex",
+      "line": 45,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:02:exact",
+      "kind": "proposition",
+      "title": "Exactness on a rectangle",
+      "statement": "Let $R=I\\times J$ be an open rectangle and let $P,Q\\in C^1(R)$ with\n$P_x=Q_t$. Fix $(s,\\xi)\\in R$. The function\n\\[\n F(t,x)=\\int_s^t P(r,\\xi)\\,\\dd r+\\int_\\xi^x Q(t,v)\\,\\dd v\n\\]\nsatisfies $F_t=P$, $F_x=Q$. A $C^1$ graph $x(t)$ satisfies\n$P(t,x(t))+Q(t,x(t))x'(t)=0$ exactly when $F(t,x(t))$ is constant.\nWhere $Q\\ne0$, this is a normal-form equation $x'=-P/Q$.",
+      "chapter": 2,
+      "source_file": "chapters/M13.02.tex",
+      "line": 65,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:02:integrating-factor",
+      "kind": "proposition",
+      "title": "Integrating factors",
+      "statement": "For $C^1$ functions $P,Q$ on a rectangle, any nowhere-zero $C^1$\nfunction $\\mu$ satisfying $(\\mu P)_x=(\\mu Q)_t$ converts\n$P+Qx'=0$ into an exact equation without changing its solution set.\nIf $Q\\ne0$ and $(P_x-Q_t)/Q=h(t)$ depends only on $t$, one may take\n$\\mu(t)=\\exp(\\int_s^t h(r)\\,\\dd r)$. If $P\\ne0$ and\n$(Q_t-P_x)/P=k(x)$ depends only on $x$, one may take\n$\\mu(x)=\\exp(\\int_\\xi^x k(v)\\,\\dd v)$.",
+      "chapter": 2,
+      "source_file": "chapters/M13.02.tex",
+      "line": 89,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:02:bernoulli",
+      "kind": "proposition",
+      "title": "Bernoulli reduction",
+      "statement": "For continuous real $a,b$, real $p\\ne1$, and a positive unknown $x$,\nthe substitution $u=x^{1-p}$ gives a bijection between positive solutions\nof $x'=a(t)x+b(t)x^p$ and positive solutions of\n\\[\n u'=(1-p)a(t)u+(1-p)b(t).\n\\]\nThe inverse is $x=u^{1/(1-p)}$ on the interval where $u>0$.",
+      "chapter": 2,
+      "source_file": "chapters/M13.02.tex",
+      "line": 106,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:02:riccati",
+      "kind": "proposition",
+      "title": "Riccati reduction about a known solution",
+      "statement": "Let $a,b,c$ be continuous and let $v$ solve $v'=av^2+bv+c$ on $I$.\nOn any interval on which $x-v$ is nowhere zero, $x$ solves the same\nRiccati equation if and only if $u=1/(x-v)$ solves\n\\[\n u'=-(2av+b)u-a,\n\\]\nwith $u$ nowhere zero. The inverse is $x=v+1/u$.",
+      "chapter": 2,
+      "source_file": "chapters/M13.02.tex",
+      "line": 124,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:02:oscillator",
+      "kind": "theorem",
+      "title": "Harmonic oscillator",
+      "statement": "For $\\omega>0$, the unique solution of $y''+\\omega^2y=0$ with\n$y(s)=a$, $y'(s)=b$ is\n\\[\n y(t)=a\\cos(\\omega(t-s))+(b/\\omega)\\sin(\\omega(t-s)).\n\\]\nIt is global, and $((y')^2+\\omega^2y^2)/2$ is constant. If $\\omega=0$,\nthe solution is instead $a+b(t-s)$.",
+      "chapter": 2,
+      "source_file": "chapters/M13.02.tex",
+      "line": 141,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:02:energy",
+      "kind": "proposition",
+      "title": "Mechanical energy",
+      "statement": "If $V\\in C^1(J)$ and $y''=-V'(y)$ takes values in the interval $J$, then\n\\[\n E(t)=\\tfrac12(y'(t))^2+V(y(t))\n\\]\nis constant. On a branch where $E-V(y)>0$ and $y'$ has fixed sign,\nthe trajectory satisfies $y'=\\pm\\sqrt{2(E-V(y))}$ and may be recovered\nby the separable formula. Turning points must be handled with the original\nsecond-order equation rather than division by the vanishing square root.",
+      "chapter": 2,
+      "source_file": "chapters/M13.02.tex",
+      "line": 159,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:03:lipschitz",
+      "kind": "definition",
+      "title": "Local Lipschitz control in the state",
+      "statement": "A continuous $f:U\\to\\R^n$ is locally Lipschitz in the state, uniformly\nin time, if each $(s,\\xi)\\in U$ has a product neighborhood on which\n\\[\n \\norm{f(t,x)-f(t,y)}\\leq L\\norm{x-y}\n\\]\nfor a constant $L$ and all permitted $t,x,y$. For a parameter-dependent\nfield the constant is also uniform for parameters in a sufficiently small\nneighborhood. This is a local hypothesis; one constant on all of $U$\nis not required.",
+      "chapter": 3,
+      "source_file": "chapters/M13.03.tex",
+      "line": 4,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:03:derivative-bound",
+      "kind": "lemma",
+      "title": "A derivative criterion",
+      "statement": "On a convex state ball $B$, if $D_xf$ exists, is continuous in all\nvariables, and has operator norm at most $L$, then the preceding\nLipschitz bound holds on $B$. In particular, a jointly $C^1$ field is\nlocally Lipschitz in the state, uniformly in its other variables.",
+      "chapter": 3,
+      "source_file": "chapters/M13.03.tex",
+      "line": 16,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:03:contraction",
+      "kind": "lemma",
+      "title": "Uniform convergence of a contraction iteration",
+      "statement": "If $K$ maps a nonempty closed subset $X$ of a Banach space into itself\nand $\\norm{Ku-Kv}\\leq q\\norm{u-v}$ for $0\\leq q<1$, then $K$ has\nexactly one fixed point $u_*$. For $u_{j+1}=Ku_j$,\n\\[\n \\norm{u_j-u_*}\\leq\\frac{q^j}{1-q}\\norm{u_1-u_0}.\n\\]",
+      "chapter": 3,
+      "source_file": "chapters/M13.03.tex",
+      "line": 33,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:03:picard",
+      "kind": "theorem",
+      "title": "Picard--Lindelof on a controlled box",
+      "statement": "Suppose $f$ is continuous on\n$Q=[s-a,s+a]\\times\\overline B(\\xi,b)\\subset U$, has norm at most\n$M$, and is Lipschitz in $x$ there with constant $L$. Choose $h>0$\nwith $h\\leq a$, $Mh\\leq b$, and $Lh<1$. There is a solution with\ninitial value $\\xi$ on $[s-h,s+h]$, staying in the closed state ball.\nIt is the uniform limit of the Picard iterates\n\\[\n u_0(t)=\\xi,\\qquad\n u_{j+1}(t)=\\xi+\\int_s^t f(r,u_j(r))\\,\\dd r.\n\\]\nIt is the only solution of this initial value problem whose graph stays\nin this box on the whole interval. If, additionally, $f$ is locally\nLipschitz in the state uniformly in time throughout $U$, any two local\nsolutions with these initial data agree on their common interval of definition.",
+      "chapter": 3,
+      "source_file": "chapters/M13.03.tex",
+      "line": 51,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:03:uniqueness",
+      "kind": "corollary",
+      "title": "Local uniqueness under local hypotheses",
+      "statement": "If $f$ is continuous and locally Lipschitz in the state uniformly in\ntime on the open set $U$, every $(s,\\xi)\\in U$ admits a local solution,\nunique on overlaps with that initial value. Two solution trajectories\ncannot intersect at a common time and then separate while both remain\ndefined.",
+      "chapter": 3,
+      "source_file": "chapters/M13.03.tex",
+      "line": 91,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:03:uniform-box",
+      "kind": "theorem",
+      "title": "One interval for nearby data",
+      "statement": "Suppose a field $f(t,x,p)$ is continuous and has uniform bounds $M,L$\non\n\\[\n [s_0-a,s_0+a]\\times\\overline B(\\xi_0,b)\\times\\overline B(p_0,c)\n\\]\ninside its open domain, with the bound $L$ applying to state differences.\nChoose $h>0$ with $h\\leq a$, $Mh\\leq b/2$, and $Lh<1$.\nFor every $s\\in(s_0-h/2,s_0+h/2)$,\n$\\xi\\in B(\\xi_0,b/2)$ and $p\\in B(p_0,c)$, the corresponding solution\nexists on the common interval $J=[s_0-h/2,s_0+h/2]$ and stays in\n$\\overline B(\\xi_0,b)$. All three constants are independent of this\nchoice of nearby initial data.",
+      "chapter": 3,
+      "source_file": "chapters/M13.03.tex",
+      "line": 107,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:03:ascoli",
+      "kind": "lemma",
+      "title": "Compactness for equicontinuous curves",
+      "statement": "A uniformly bounded, equicontinuous sequence of maps from a compact\ninterval to $\\R^n$ has a uniformly convergent subsequence.",
+      "chapter": 3,
+      "source_file": "chapters/M13.03.tex",
+      "line": 133,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:03:peano",
+      "kind": "theorem",
+      "title": "Peano existence",
+      "statement": "Suppose $f$ is continuous on\n$[s,s+a]\\times\\overline B(\\xi,b)$ and $\\norm{f}\\leq M$ there.\nIf $0<h\\leq a$ and $Mh\\leq b$, there is at least one solution on\n$[s,s+h]$ starting at $\\xi$ and staying in the closed ball. There is\nan analogous solution to the left when the corresponding left box is\navailable. No uniqueness assertion is made.",
+      "chapter": 3,
+      "source_file": "chapters/M13.03.tex",
+      "line": 151,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:03:nonunique",
+      "kind": "example",
+      "title": "Continuity does not give uniqueness",
+      "statement": "The continuous field $f(x)=2\\sqrt{|x|}$ has the solutions\n\\[\n x_a(t)=\\begin{cases}0,&t\\leq a,\\\\(t-a)^2,&t\\geq a,\\end{cases}\n \\qquad a\\geq0,\n\\]\nall with $x_a(0)=0$, as well as the identically zero solution. The\nderivative exists and is zero at the joining time, so these are\nclassical solutions. The quotient\n$|f(x)-f(0)|/|x|=2/\\sqrt{x}$ for $x>0$ is unbounded near zero;\nthe Lipschitz hypothesis fails precisely where the waiting time is\npossible.",
+      "chapter": 3,
+      "source_file": "chapters/M13.03.tex",
+      "line": 192,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:03:osgood",
+      "kind": "theorem",
+      "title": "Osgood uniqueness",
+      "statement": "In a compact local box suppose\n\\[\n \\norm{f(t,x)-f(t,y)}\\leq\\omega(\\norm{x-y}),\n\\]\nwhere $\\omega:[0,\\infty)\\to[0,\\infty)$ is continuous and\nnondecreasing, $\\omega(0)=0$, $\\omega(r)>0$ for $r>0$, and\n$\\int_0^\\delta \\dd r/\\omega(r)=\\infty$ for every $\\delta>0$.\nThen two solutions with the same initial value agree while they stay\nin a sufficiently small common box. Local applications give uniqueness\non their whole common interval.",
+      "chapter": 3,
+      "source_file": "chapters/M13.03.tex",
+      "line": 207,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:04:maximal",
+      "kind": "theorem",
+      "title": "Unique maximal solution",
+      "statement": "For every $(s,\\xi)\\in U$ there is exactly one maximal solution through\nthat initial datum. Its domain is an open interval\n\\[\n I(s,\\xi)=(T_-(s,\\xi),T_+(s,\\xi)),\\qquad T_-<s<T_+,\n\\]\nwhere endpoints may be infinite. Every other solution through the datum\nis a restriction of it on its own domain.",
+      "chapter": 4,
+      "source_file": "chapters/M13.04.tex",
+      "line": 9,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:04:rebase",
+      "kind": "proposition",
+      "title": "Changing the base time",
+      "statement": "If $r\\in I(s,\\xi)$ and $\\eta=\\Phi(r,s,\\xi)$, then\n$I(r,\\eta)=I(s,\\xi)$ and\n$\\Phi(t,r,\\eta)=\\Phi(t,s,\\xi)$ throughout that interval.",
+      "chapter": 4,
+      "source_file": "chapters/M13.04.tex",
+      "line": 32,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:04:continuation",
+      "kind": "theorem",
+      "title": "Finite-endpoint continuation criterion",
+      "statement": "Let $x$ solve the equation on $(a,b)$ with $b<\\infty$. It extends to a\nsolution on $(a,b+\\varepsilon)$ for some $\\varepsilon>0$ if and only if\nthere is a sequence $t_j\\uparrow b$ such that\n\\[\n (t_j,x(t_j))\\longrightarrow(b,\\eta)\\in U.\n\\]\nIn that case $x(t)\\to\\eta$ as $t\\uparrow b$ and the extended value at\n$b$ is $\\eta$. The time-reversed assertion holds at a finite left endpoint.",
+      "chapter": 4,
+      "source_file": "chapters/M13.04.tex",
+      "line": 46,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:04:escape",
+      "kind": "corollary",
+      "title": "Escape from every compact subset",
+      "statement": "If the maximal right endpoint $T_+$ is finite, the graph of its solution\neventually leaves every compact set $K\\subset U$ as $t\\uparrow T_+$.\nIf $U=\\R\\times\\R^n$, then necessarily\n$\\norm{\\Phi(t,s,\\xi)}\\to\\infty$ as $t\\uparrow T_+$. Analogous\nstatements hold at a finite left endpoint.",
+      "chapter": 4,
+      "source_file": "chapters/M13.04.tex",
+      "line": 71,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:04:confinement",
+      "kind": "corollary",
+      "title": "Compact confinement gives global forward existence",
+      "statement": "Suppose a forward solution has the following property: for every finite\n$B>s$, all its values at times $t\\in[s,B)$ at which it is defined lie\nin a compact set $K_B\\subset\\R^n$ with $[s,B]\\times K_B\\subset U$.\nThen its maximal right endpoint is $+\\infty$.",
+      "chapter": 4,
+      "source_file": "chapters/M13.04.tex",
+      "line": 89,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:04:linear-growth",
+      "kind": "theorem",
+      "title": "Global existence under linear growth",
+      "statement": "Suppose $U=\\R\\times\\R^n$ and, for every finite $B>0$, there are\nnonnegative constants $a_B,b_B$ such that\n\\[\n \\norm{f(t,x)}\\leq a_B+b_B\\norm{x}\n \\qquad(|t|\\leq B,\\ x\\in\\R^n).\n\\]\nEvery maximal solution is global. More quantitatively, on any available\ninterval between $s$ and $t$ contained in $[-B,B]$, it satisfies\n\\[\n \\norm{x(t)}\\leq\n \\begin{cases}\n \\norm{x(s)}e^{b_B|t-s|}\n       +a_B(e^{b_B|t-s|}-1)/b_B,&b_B>0,\\\\\n \\norm{x(s)}+a_B|t-s|,&b_B=0.\n \\end{cases}\n\\]",
+      "chapter": 4,
+      "source_file": "chapters/M13.04.tex",
+      "line": 101,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:04:quadratic-blowup",
+      "kind": "example",
+      "title": "Quadratic blow-up",
+      "statement": "The solution of $x'=x^2$, $x(s)=\\xi$, is\n$x(t)=\\xi/(1-\\xi(t-s))$. For $\\xi>0$ the maximal interval is\n$(-\\infty,s+1/\\xi)$ and $x(t)\\to+\\infty$ at the right endpoint.\nFor $\\xi<0$ it is $(s+1/\\xi,\\infty)$, with a pole at the left\nendpoint. For $\\xi=0$ it is the global zero solution. Direct\ndifferentiation checks the equation. The field is smooth, so uniqueness\nidentifies the solution on its entire pole-free interval; the pole\nprevents any extension through the finite endpoint.",
+      "chapter": 4,
+      "source_file": "chapters/M13.04.tex",
+      "line": 133,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:04:domain-boundary",
+      "kind": "example",
+      "title": "A bounded state can hit the domain boundary",
+      "statement": "On $U=\\R\\times(-1,1)$, the equation $x'=1$, $x(0)=0$, has the\nmaximal solution $x(t)=t$ on $(-1,1)$. It is bounded but not global\nin the prescribed domain. Its graph escapes every compact subset of\n$U$ by approaching $x=1$ or $x=-1$. Extending the formula to all of\n$\\R$ solves an equation on a different state domain, not the original\nproblem.",
+      "chapter": 4,
+      "source_file": "chapters/M13.04.tex",
+      "line": 144,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:04:local-not-global",
+      "kind": "example",
+      "title": "Local Lipschitz continuity is not linear growth",
+      "statement": "The field $x^2$ is locally Lipschitz everywhere but has finite-time\nblow-up for positive initial data. Conversely, $\\sin(x^2)$ is bounded,\nso the linear-growth theorem makes all its solutions global, although\nits derivative $2x\\cos(x^2)$ is unbounded and the field is not globally\nLipschitz. A bounded derivative is a convenient sufficient condition,\nnot a necessary one for global existence.",
+      "chapter": 4,
+      "source_file": "chapters/M13.04.tex",
+      "line": 153,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:05:gronwall",
+      "kind": "theorem",
+      "title": "Gronwall with an inhomogeneous term",
+      "statement": "Let $u,b,c$ be continuous nonnegative functions on $[s,T]$, and let\n$A\\geq0$. If\n\\[\n u(t)\\leq A+\\int_s^t\\bigl(b(r)u(r)+c(r)\\bigr)\\,\\dd r,\n\\]\nthen\n\\[\n u(t)\\leq A\\exp\\left(\\int_s^t b\\right)\n       +\\int_s^t c(r)\\exp\\left(\\int_r^t b\\right)\\,\\dd r.\n\\]\nFor constant $b=L\\geq0$ and $c=\\delta\\geq0$, the right side is\n$Ae^{L(t-s)}+\\delta E_L(t-s)$, where\n\\[\n E_L(v)=\\begin{cases}(e^{Lv}-1)/L,&L>0,\\\\v,&L=0.\\end{cases}\n\\]",
+      "chapter": 5,
+      "source_file": "chapters/M13.05.tex",
+      "line": 4,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:05:general-gronwall",
+      "kind": "corollary",
+      "title": "A variable initial bound",
+      "statement": "If $u,b,a$ are continuous nonnegative functions on $[s,T]$ and\n$u(t)\\leq a(t)+\\int_s^t b(r)u(r)\\,\\dd r$, then\n\\[\n u(t)\\leq a(t)+\\int_s^t a(r)b(r)\n                \\exp\\left(\\int_r^t b\\right)\\,\\dd r.\n\\]\nIf $a$ is nondecreasing, this is at most\n$a(t)\\exp(\\int_s^t b)$.",
+      "chapter": 5,
+      "source_file": "chapters/M13.05.tex",
+      "line": 36,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:05:perturbation",
+      "kind": "theorem",
+      "title": "Perturbation and residual estimate",
+      "statement": "Let $x$ solve $x'=f(t,x)$ and let $y$ be a $C^1$ curve on a compact\ninterval containing $s$. Assume all required graph points lie in the\ndomain of $f$,\n\\[\n \\norm{f(t,x(t))-f(t,y(t))}\\leq L\\norm{x(t)-y(t)},\\qquad\n \\norm{y'(t)-f(t,y(t))}\\leq\\delta\n\\]\nthere, with $L,\\delta\\geq0$. Then\n\\[\n \\norm{x(t)-y(t)}\\leq\n e^{L|t-s|}\\norm{x(s)-y(s)}+\\delta E_L(|t-s|).\n\\]\nIn particular, if $y'=g(t,y)$ and $\\norm{f(t,z)-g(t,z)}\\leq\\delta$\non a set containing the graph of $y$, this is the same bound for two\ndifferent vector fields.",
+      "chapter": 5,
+      "source_file": "chapters/M13.05.tex",
+      "line": 54,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:05:initial-bound",
+      "kind": "corollary",
+      "title": "Sharp dependence on initial values",
+      "statement": "Two solutions of the same $L$-Lipschitz field, on a common interval and\nwithin the set where that bound holds, satisfy\n\\[\n \\norm{\\Phi(t,s,\\xi)-\\Phi(t,s,\\eta)}\n       \\leq e^{L|t-s|}\\norm{\\xi-\\eta}.\n\\]\nThe exponential cannot in general be replaced by a uniform-in-time\nconstant: $x'=Lx$ gives equality for $t\\geq s$ in one dimension.",
+      "chapter": 5,
+      "source_file": "chapters/M13.05.tex",
+      "line": 82,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:05:comparison",
+      "kind": "theorem",
+      "title": "Subsolutions and supersolutions",
+      "statement": "Let $J$ be an open real interval and let $f:[a,b]\\times J\\to\\R$ be\ncontinuous and locally Lipschitz in its second variable uniformly in\ntime. Suppose $u,v\\in C^1([a,b],J)$ satisfy\n\\[\n u'\\leq f(t,u),\\qquad v'\\geq f(t,v),\\qquad u(a)\\leq v(a).\n\\]\nThen $u(t)\\leq v(t)$ for every $t\\in[a,b]$.",
+      "chapter": 5,
+      "source_file": "chapters/M13.05.tex",
+      "line": 99,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:05:common-interval",
+      "kind": "theorem",
+      "title": "Persistence on a compact solution interval",
+      "statement": "Let $\\bar x$ be a solution of a continuous, locally state-Lipschitz\nfield $f:U\\to\\R^n$, and let $[a,b]$ be a compact subinterval of its\nopen solution interval. There are $\\rho>0$ and $L\\geq0$ such that\nthe compact tube\n\\[\n Q_\\rho=\\{(t,z):a\\leq t\\leq b,\n                 \\norm{z-\\bar x(t)}\\leq\\rho\\}\n\\]\nlies in $U$ and $f$ has state Lipschitz constant $L$ on each tube\nslice. Let $g:U\\to\\R^n$ be another continuous, locally state-Lipschitz\nfield with $\\sup_{Q_\\rho}\\norm{g-f}\\leq\\delta$. For $s'\\in[a,b]$\nand $\\xi'$ put $d=\\norm{\\xi'-\\bar x(s')}$ and $T=b-a$. If\n\\[\n e^{LT}(d+\\delta T)<\\rho/2,\n\\]\nthe solution of $y'=g(t,y)$, $y(s')=\\xi'$, exists on the entire\ninterval $[a,b]$ and satisfies\n\\[\n \\norm{y(t)-\\bar x(t)}\n \\leq de^{L|t-s'|}+\\delta E_L(|t-s'|)<\\rho/2.\n\\]",
+      "chapter": 5,
+      "source_file": "chapters/M13.05.tex",
+      "line": 132,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:05:field-convergence",
+      "kind": "corollary",
+      "title": "Locally uniform convergence of vector fields",
+      "statement": "Suppose $f_j,f:U\\to\\R^n$ are continuous and locally state-Lipschitz,\nand $f_j\\to f$ uniformly on compact subsets of $U$. If\n$(s_j,\\xi_j)\\to(s,\\xi)$ and $[a,b]$ is a compact subinterval of\n$I_f(s,\\xi)$ with $s$ in its interior, then, for all sufficiently\nlarge $j$, the solutions for $f_j$ starting at $(s_j,\\xi_j)$ exist\non $[a,b]$ and converge there uniformly to the solution for $f$.\nNo uniform bound on the Lipschitz constants of $f_j$ is required.",
+      "chapter": 5,
+      "source_file": "chapters/M13.05.tex",
+      "line": 180,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:05:openness",
+      "kind": "theorem",
+      "title": "Open maximal domain and joint continuity",
+      "statement": "Let $U\\subset\\R\\times\\R^n\\times\\R^m$ be open and let\n$f(t,x,p)$ be continuous and locally state-Lipschitz uniformly in\ntime and parameters. The maximal solution domain\n\\[\n \\mathcal D=\\{(t,s,\\xi,p):(s,\\xi,p)\\in U,\n                   \\ t\\in I(s,\\xi,p)\\}\n\\]\nis open, and $\\Phi:\\mathcal D\\to\\R^n$ is jointly continuous.",
+      "chapter": 5,
+      "source_file": "chapters/M13.05.tex",
+      "line": 200,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:05:lifespan",
+      "kind": "corollary",
+      "title": "Semicontinuity of lifespan",
+      "statement": "On its initial-data domain, $T_+(s,\\xi,p)$ is lower semicontinuous\nand $T_-(s,\\xi,p)$ is upper semicontinuous, with infinite endpoints\nunderstood in the extended real sense.",
+      "chapter": 5,
+      "source_file": "chapters/M13.05.tex",
+      "line": 236,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:05:finite-time",
+      "kind": "example",
+      "title": "Continuous dependence is a finite-time assertion",
+      "statement": "For $x'=x$, solutions with initial values $0$ and $\\varepsilon$ at\nzero have difference $\\varepsilon e^t$. It tends to zero uniformly on\neach fixed compact time interval as $\\varepsilon\\to0$, but not\nuniformly on $[0,\\infty)$. Similarly, for $x'=x^2$ the common interval\naround the zero solution can be chosen arbitrarily long when the\ninitial value is sufficiently small; a fixed nonzero positive initial\nvalue still has finite forward lifespan. These are compatible with,\nnot exceptions to, the compact-interval and semicontinuity theorems.",
+      "chapter": 5,
+      "source_file": "chapters/M13.05.tex",
+      "line": 252,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:06:linear-volterra",
+      "kind": "lemma",
+      "title": "Linear Volterra equations",
+      "statement": "Let $A:[a,b]\\to\\R^{n\\times n}$ and\n$B:[a,b]\\to\\R^{n\\times r}$ be continuous, let $s\\in[a,b]$, and\nlet $Y_s\\in\\R^{n\\times r}$. There is a unique solution on $[a,b]$ of\n\\[\n Y(t)=Y_s+\\int_s^t\\bigl(A(u)Y(u)+B(u)\\bigr)\\,\\dd u.\n\\]\nIf $\\norm{A}\\leq L$ and $\\norm{B}\\leq M$ there, then\n$\\norm{Y(t)}\\leq\\norm{Y_s}e^{L|t-s|}+ME_L(|t-s|)$.\nContinuous variation of $A,B,Y_s$, uniform on this interval, gives\nuniform-in-time continuous variation of $Y$; in particular a jointly\ncontinuous family of coefficients and initial values gives a jointly\ncontinuous family of solutions locally in its parameters.",
+      "chapter": 6,
+      "source_file": "chapters/M13.06.tex",
+      "line": 11,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:06:c1-dependence",
+      "kind": "theorem",
+      "title": "$C^1$ dependence and the first variational equations",
+      "statement": "Let $f\\in C^1(U,\\R^n)$, where\n$U\\subset\\R\\times\\R^n\\times\\R^m$ is open. Then\n$\\Phi(t,s,\\xi,p)$ is jointly $C^1$ on $\\mathcal D$. With the\ninitial time, state, and parameter fixed, put\n\\[\n A(t)=D_xf(t,\\Phi(t,s,\\xi,p),p),\\qquad\n Y(t)=D_\\xi\\Phi(t,s,\\xi,p),\\quad\n Z(t)=D_p\\Phi(t,s,\\xi,p).\n\\]\nThese derivatives are the uniquely determined solutions of\n\\[\n Y'=AY,\\quad Y(s)=I_n,\\qquad\n Z'=AZ+D_pf(t,\\Phi(t,s,\\xi,p),p),\\quad Z(s)=0.\n\\]\nAlso $\\partial_t\\Phi=f(t,\\Phi,p)$.",
+      "chapter": 6,
+      "source_file": "chapters/M13.06.tex",
+      "line": 54,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:06:initial-time",
+      "kind": "proposition",
+      "title": "Derivative in the starting time",
+      "statement": "Under the preceding hypotheses,\n\\[\n \\partial_s\\Phi(t,s,\\xi,p)\n    =-D_\\xi\\Phi(t,s,\\xi,p)f(s,\\xi,p).\n\\]\nIn particular, this is not in general the negative of the terminal\nvelocity $-f(t,\\Phi(t,s,\\xi,p),p)$ for a nonautonomous field.",
+      "chapter": 6,
+      "source_file": "chapters/M13.06.tex",
+      "line": 146,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:06:ck-dependence",
+      "kind": "theorem",
+      "title": "$C^k$ and smooth dependence",
+      "statement": "If $f\\in C^k(U,\\R^n)$ for an integer $k\\geq1$, then $\\Phi$ is\njointly $C^k$ on $\\mathcal D$, and its terminal-time derivative\n$\\partial_t\\Phi=f(t,\\Phi,p)$ is itself jointly $C^k$. If $f$ is\n$C^\\infty$, so is $\\Phi$.",
+      "chapter": 6,
+      "source_file": "chapters/M13.06.tex",
+      "line": 170,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:06:variations",
+      "kind": "theorem",
+      "title": "Higher variational equations",
+      "statement": "Let $F\\in C^k(\\Omega,\\R^n)$ and\n$H_j(t,\\xi)=D_\\xi^j\\psi(t,\\xi)$ for $1\\leq j\\leq k$.\nFor vectors $v_1,\\ldots,v_j$, $H_1(0)=I_n$,\n$H_j(0)=0$ for $j\\geq2$, and\n\\[\n \\frac{\\dd}{\\dd t}H_j(t)[v_1,\\ldots,v_j]\n =\\sum_{\\pi}\n D^{|\\pi|}F(\\psi(t))\n \\left[H_{|B|}(t)[v_i:i\\in B]:B\\in\\pi\\right],\n\\]\nwhere the sum is over all partitions $\\pi$ of $\\{1,\\ldots,j\\}$.\nThe partition with one block contributes $DF(\\psi)H_j$; all other\nterms use variations of order less than $j$. In particular,\n\\[\n \\begin{split}\n (H_2[v,w])'&=DF(\\psi)H_2[v,w]\n             +D^2F(\\psi)[H_1v,H_1w],\\\\\n H_2(0)[v,w]&=0.\n \\end{split}\n\\]\nThus each new-order variation solves a linear inhomogeneous equation\nonce the lower-order variations are known.",
+      "chapter": 6,
+      "source_file": "chapters/M13.06.tex",
+      "line": 207,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:06:perturbation-expansion",
+      "kind": "corollary",
+      "title": "First-order regular perturbation",
+      "statement": "Let $f(t,x,\\varepsilon)$ be $C^1$ near the graph of a reference\nsolution $x_0$ on a compact interval $J$ containing $s$. Suppose\n$\\xi(\\varepsilon)$ is $C^1$ near zero, with $\\xi(0)=\\xi_0$, and\nlet $x_\\varepsilon(s)=\\xi(\\varepsilon)$. For all sufficiently small\n$\\varepsilon$, $x_\\varepsilon$ exists on the same $J$ and\n\\[\n x_\\varepsilon(t)=x_0(t)+\\varepsilon z(t)+o(\\varepsilon)\n\\]\nuniformly for $t\\in J$, where\n\\[\n z'=D_xf(t,x_0,0)z+\\partial_\\varepsilon f(t,x_0,0),\n \\qquad z(s)=\\xi'(0).\n\\]\nIf the field and initial curve are $C^2$, the remainder is\n$O(\\varepsilon^2)$ uniformly on $J$.",
+      "chapter": 6,
+      "source_file": "chapters/M13.06.tex",
+      "line": 252,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:06:local-diffeomorphism",
+      "kind": "corollary",
+      "title": "Invertibility of the solution map",
+      "statement": "For fixed $s,t,p$, let\n$\\Omega_{s,t,p}=\\{\\xi:(t,s,\\xi,p)\\in\\mathcal D\\}$. If $f$ is\n$C^k$, $k\\geq1$, the map\n$\\xi\\mapsto\\Phi(t,s,\\xi,p)$ is a $C^k$ diffeomorphism from the\nopen set $\\Omega_{s,t,p}$ onto $\\Omega_{t,s,p}$, with inverse\n$\\eta\\mapsto\\Phi(s,t,\\eta,p)$. In particular its state derivative\nis invertible at every allowed datum. These sets need not be all of\n$\\R^n$.",
+      "chapter": 6,
+      "source_file": "chapters/M13.06.tex",
+      "line": 281,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:06:polydisc-limit",
+      "kind": "lemma",
+      "title": "Uniform limits on complex polydiscs",
+      "statement": "A locally uniform limit of holomorphic maps on an open subset of\n$\\C^d$ is holomorphic. Here holomorphic means locally represented by\nan absolutely convergent power series in the $d$ complex variables.\nThe assertion applies componentwise to maps with values in $\\C^n$.",
+      "chapter": 6,
+      "source_file": "chapters/M13.06.tex",
+      "line": 300,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:06:analytic-dependence",
+      "kind": "theorem",
+      "title": "Holomorphic local dependence",
+      "statement": "Let $f(z,w,\\lambda)$ be holomorphic on an open neighborhood of\n$(z_0,w_0,\\lambda_0)\\in\\C\\times\\C^n\\times\\C^m$. The complex\ninitial value problem\n\\[\n \\partial_z w=f(z,w,\\lambda),\\qquad w(z_0)=\\xi\n\\]\nhas, for $(z,\\xi,\\lambda)$ in sufficiently small product\nneighborhoods of $(z_0,w_0,\\lambda_0)$, a solution jointly\nholomorphic in these variables and unique as a local solution germ.\nThe initial complex time may also vary near $z_0$, with joint\nholomorphic dependence on that time, the terminal time, initial state,\nand parameters.",
+      "chapter": 6,
+      "source_file": "chapters/M13.06.tex",
+      "line": 329,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:06:real-analytic",
+      "kind": "corollary",
+      "title": "Real-analytic dependence",
+      "statement": "If a real field $f(t,x,p)$ is real analytic on its open domain, its\nreal maximal solution map is real analytic on $\\mathcal D$.",
+      "chapter": 6,
+      "source_file": "chapters/M13.06.tex",
+      "line": 394,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:06:smooth-not-analytic",
+      "kind": "example",
+      "title": "A smooth equation with a nonanalytic solution",
+      "statement": "Set $g(t)=e^{-1/t^2}$ for $t>0$ and $g(t)=0$ for $t\\leq0$.\nEach positive-side derivative is a polynomial in $1/t$ times\n$e^{-1/t^2}$ and tends to zero at zero, because the exponential\ndecays faster than every power. Induction therefore shows that the\nextension is $C^\\infty$ and every derivative at zero vanishes.\nThe equation $x'=g(t)$, $x(0)=0$, has the smooth solution\n$x(t)=\\int_0^t g(r)\\,\\dd r$. All its derivatives at zero vanish,\nbut it is positive for every $t>0$. Its Taylor series at zero is\nidentically zero and does not represent it on any neighborhood.\nThus the smooth-dependence theorem cannot be used as an\nanalytic-dependence theorem.",
+      "chapter": 6,
+      "source_file": "chapters/M13.06.tex",
+      "line": 423,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:07:exp-definition",
+      "kind": "definition",
+      "title": "Matrix exponential",
+      "statement": "For \\(A\\in\\mathbb K^{n\\times n}\\) put\n\\[\n e^{tA}=\\sum_{j=0}^{\\infty}\\frac{t^j A^j}{j!},\\qquad t\\in\\R .\n\\]",
+      "chapter": 7,
+      "source_file": "chapters/M13.07.tex",
+      "line": 10,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:07:exp",
+      "kind": "theorem",
+      "title": "Exponential calculus",
+      "statement": "The series is locally uniformly convergent, is infinitely differentiable,\nand satisfies\n\\[\n \\frac{\\dd}{\\dd t}e^{tA}=Ae^{tA}=e^{tA}A,\\quad e^{0A}=I,\\quad\n \\norm{e^{tA}}\\le e^{|t|\\norm A}.\n\\]\nMoreover \\(e^{(s+t)A}=e^{sA}e^{tA}\\), so \\((e^{tA})^{-1}=e^{-tA}\\).\nIf \\(AB=BA\\), then \\(e^{A+B}=e^Ae^B\\); no such conclusion is asserted for\nnoncommuting matrices.",
+      "chapter": 7,
+      "source_file": "chapters/M13.07.tex",
+      "line": 17,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:07:jordan",
+      "kind": "proposition",
+      "title": "Jordan blocks and real solutions",
+      "statement": "Over \\(\\C\\), a block \\(J=\\lambda I+N\\), \\(N^m=0\\), has\n\\[\n e^{tJ}=e^{\\lambda t}\\sum_{j=0}^{m-1}\\frac{t^jN^j}{j!}.\n\\]\nConsequently every component of a constant-coefficient solution is a finite\nsum of polynomials times exponentials. For a real matrix, a conjugate pair\n\\(\\alpha\\pm i\\beta\\) gives real combinations of\n\\(t^j e^{\\alpha t}\\cos(\\beta t)\\) and\n\\(t^j e^{\\alpha t}\\sin(\\beta t)\\).\nIf every eigenvalue has real part less than \\(-a<0\\), then for each\n\\(0<b<a\\) some \\(C_b<\\infty\\) satisfies\n\\(\\norm{e^{tA}}\\le C_b e^{-bt}\\) for \\(t\\ge0\\).",
+      "chapter": 7,
+      "source_file": "chapters/M13.07.tex",
+      "line": 41,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:07:fundamental",
+      "kind": "theorem",
+      "title": "Evolution matrix",
+      "statement": "Let \\(A:I\\to\\mathbb K^{n\\times n}\\) be continuous and \\(s\\in I\\).\nThere is a unique matrix \\(U(t,s)\\), defined for all \\(t\\in I\\), with\n\\[\n \\partial_tU(t,s)=A(t)U(t,s),\\qquad U(s,s)=I .\n\\]\nIt is invertible and, whenever the indicated times belong to \\(I\\),\n\\[\n U(t,r)U(r,s)=U(t,s),\\quad U(t,s)^{-1}=U(s,t),\\quad\n \\partial_sU(t,s)=-U(t,s)A(s).\n\\]\nIn particular\n\\(\\norm{U(t,s)}\\le\\exp(\\int_{\\min(s,t)}^{\\max(s,t)}\\norm{A(r)}\\,\\dd r)\\).\nEvery fundamental matrix is \\(X(t)=U(t,s)C\\) for a fixed invertible \\(C\\).",
+      "chapter": 7,
+      "source_file": "chapters/M13.07.tex",
+      "line": 66,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:07:variation",
+      "kind": "theorem",
+      "title": "Variation of constants",
+      "statement": "For continuous \\(b:I\\to\\mathbb K^n\\), the unique solution of\n\\(x'=A(t)x+b(t)\\), \\(x(s)=x_0\\), is\n\\[\n x(t)=U(t,s)x_0+\\int_s^t U(t,r)b(r)\\,\\dd r\n     =X(t)\\left(X(s)^{-1}x_0+\\int_s^t X(r)^{-1}b(r)\\,\\dd r\\right).\n\\]",
+      "chapter": 7,
+      "source_file": "chapters/M13.07.tex",
+      "line": 98,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:07:liouville",
+      "kind": "theorem",
+      "title": "Liouville's formula",
+      "statement": "For every fundamental matrix,\n\\[\n \\det X(t)=\\det X(s)\\,\n   \\exp\\left(\\int_s^t\\operatorname{tr} A(r)\\,\\dd r\\right).\n\\]\nFor a real system this determinant never changes sign.",
+      "chapter": 7,
+      "source_file": "chapters/M13.07.tex",
+      "line": 114,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:07:nilpotent-example",
+      "kind": "example",
+      "title": "Polynomial growth is not exponential growth",
+      "statement": "For \\(A=\\left(\\begin{smallmatrix}0&1\\\\0&0\\end{smallmatrix}\\right)\\),\n\\(e^{tA}=\\left(\\begin{smallmatrix}1&t\\\\0&1\\end{smallmatrix}\\right)\\).\nThe only eigenvalue is zero, but the origin is not Lyapunov stable:\ninitial data \\((0,\\varepsilon)\\) reach first component \\(1\\) at\n\\(t=1/\\varepsilon\\). Thus a nonpositive real-part condition alone does not\nguarantee bounded solutions.",
+      "chapter": 7,
+      "source_file": "chapters/M13.07.tex",
+      "line": 130,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:08:monodromy",
+      "kind": "definition",
+      "title": "Monodromy and multipliers",
+      "statement": "The monodromy matrix is \\(M=X(T)\\). Its complex eigenvalues, counted with\nalgebraic multiplicity, are the Floquet multipliers. With an initial time\n\\(s\\), the monodromy is \\(U(s+T,s)\\); these matrices are similar, since\n\\(U(s+T,s)=X(s)MX(s)^{-1}\\). Hence the multipliers do not depend on \\(s\\).",
+      "chapter": 8,
+      "source_file": "chapters/M13.08.tex",
+      "line": 6,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:08:translation",
+      "kind": "lemma",
+      "title": "Translation identity",
+      "statement": "For all real \\(t\\), \\(X(t+T)=X(t)M\\). Thus\n\\(X(kT+r)=X(r)M^k\\) for every integer \\(k\\) and real \\(r\\).",
+      "chapter": 8,
+      "source_file": "chapters/M13.08.tex",
+      "line": 13,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:08:matrix-log",
+      "kind": "lemma",
+      "title": "Complex matrix logarithm",
+      "statement": "Every invertible complex matrix \\(M\\) is \\(e^L\\) for some complex matrix \\(L\\).",
+      "chapter": 8,
+      "source_file": "chapters/M13.08.tex",
+      "line": 23,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:08:floquet",
+      "kind": "theorem",
+      "title": "Complex Floquet representation",
+      "statement": "Even if \\(A\\) is real, regard it temporarily as complex. There are a constant\ncomplex matrix \\(B\\) and a complex \\(C^1\\), invertible, \\(T\\)-periodic matrix\n\\(P(t)\\) such that\n\\[\n X(t)=P(t)e^{tB},\\qquad P(0)=I .\n\\]\nThe change of variables \\(x=P(t)y\\) converts \\(x'=A(t)x\\) into \\(y'=By\\).",
+      "chapter": 8,
+      "source_file": "chapters/M13.08.tex",
+      "line": 40,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:08:real-log-counterexample",
+      "kind": "example",
+      "title": "A real \\(T\\)-periodic representation can fail",
+      "statement": "Take \\(T=1\\), let \\(R(t)\\) denote rotation through angle \\(\\pi t\\), and set\n\\[\n X(t)=R(t)\\begin{pmatrix}1&0\\\\0&2^t\\end{pmatrix},\\qquad\n A(t)=\\pi\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}\n       +R(t)\\begin{pmatrix}0&0\\\\0&\\log2\\end{pmatrix}R(t)^{-1}.\n\\]\nThen \\(A(t+1)=A(t)\\), \\(X'=AX\\), and \\(M=\\operatorname{diag}(-1,-2)\\).\nIf \\(e^B=M\\) with real \\(B\\), then \\(B\\) commutes with \\(M\\), so its\noff-diagonal entries vanish. Its exponential would consequently have two\npositive diagonal entries, a contradiction. A real, period-one Floquet\nfactorization would imply precisely such a \\(B\\).\nThe complex theorem therefore cannot be silently read as a real theorem\nwith the same period.",
+      "chapter": 8,
+      "source_file": "chapters/M13.08.tex",
+      "line": 59,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:08:stability",
+      "kind": "theorem",
+      "title": "Multiplier criteria",
+      "statement": "The zero solution is exponentially asymptotically stable if and only if all\nmultipliers satisfy \\(|\\mu|<1\\). It is Lyapunov stable if and only if all\n\\(|\\mu|\\le1\\) and each Jordan block belonging to \\(|\\mu|=1\\) has size one.\nIf some \\(|\\mu|>1\\), or a unit-modulus multiplier has a nontrivial Jordan\nblock, it is unstable.",
+      "chapter": 8,
+      "source_file": "chapters/M13.08.tex",
+      "line": 75,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:08:periodic-forcing",
+      "kind": "proposition",
+      "title": "Periodic solutions and forcing",
+      "statement": "The homogeneous system has a nonzero \\(T\\)-periodic solution exactly when\n\\(1\\) is an eigenvalue of \\(M\\). If \\(b\\) is continuous and \\(T\\)-periodic,\na \\(T\\)-periodic solution of \\(x'=Ax+b\\) exists exactly when\n\\[\n (I-M)x_0=M\\int_0^T X(r)^{-1}b(r)\\,\\dd r\n\\]\nis solvable. In particular it exists uniquely if \\(1\\) is not a multiplier.",
+      "chapter": 8,
+      "source_file": "chapters/M13.08.tex",
+      "line": 97,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:09:reduction",
+      "kind": "proposition",
+      "title": "Reduction of order",
+      "statement": "On a real interval, let \\(p,q\\) be continuous and let \\(y_1\\) be a nowhere\nzero solution of \\(y''+py'+qy=0\\). A linearly independent second solution is\n\\[\n y_2(t)=y_1(t)\\int_{t_0}^t\n          \\frac{\\exp(-\\int_{t_0}^s p(r)\\,\\dd r)}{y_1(s)^2}\\,\\dd s .\n\\]\nThe same formula holds locally on a simply connected complex domain on\nwhich the coefficients and \\(y_1\\) are holomorphic and \\(y_1\\ne0\\),\nusing holomorphic primitives.",
+      "chapter": 9,
+      "source_file": "chapters/M13.09.tex",
+      "line": 5,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:09:ordinary-series",
+      "kind": "theorem",
+      "title": "Series at an ordinary point",
+      "statement": "Suppose \\(p(z)=\\sum_{k\\ge0}p_kz^k\\) and\n\\(q(z)=\\sum_{k\\ge0}q_kz^k\\) are holomorphic on \\(|z|<R\\).\nEvery solution of \\(y''+py'+qy=0\\) with prescribed \\(y(0),y'(0)\\)\nis holomorphic there, and its coefficients satisfy\n\\[\n (n+2)(n+1)a_{n+2}\n =-\\sum_{k=0}^n\\big((n-k+1)p_ka_{n-k+1}+q_ka_{n-k}\\big).\n\\]\nConversely these coefficients determine that solution.",
+      "chapter": 9,
+      "source_file": "chapters/M13.09.tex",
+      "line": 26,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:09:indicial",
+      "kind": "definition",
+      "title": "Indicial polynomial",
+      "statement": "For\n\\[\n z^2y''+zp(z)y'+q(z)y=0,\\qquad p,q\\text{ holomorphic on }|z|<R,\n\\]\nthe indicial polynomial is \\(I(r)=r(r-1)+p_0r+q_0\\).\nChoose a branch of \\(\\log z\\) on a slit punctured disc and write\n\\(z^r=e^{r\\log z}\\). Claims involving these powers use that chosen domain.",
+      "chapter": 9,
+      "source_file": "chapters/M13.09.tex",
+      "line": 58,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:09:frobenius",
+      "kind": "theorem",
+      "title": "Nonresonant Frobenius solutions",
+      "statement": "If \\(I(r)=0\\) and \\(I(r+n)\\ne0\\) for every integer \\(n\\ge1\\), there is a\nsolution\n\\[\n y=z^r\\sum_{n=0}^\\infty a_nz^n,\\qquad a_0=1,\n\\]\nwhose power series converges on \\(|z|<R\\), with\n\\[\n I(r+n)a_n\n =-\\sum_{k=1}^n\\big((r+n-k)p_k+q_k\\big)a_{n-k}.\n\\]\nIf the two indicial roots differ by a noninteger, this construction gives\ntwo independent solutions.",
+      "chapter": 9,
+      "source_file": "chapters/M13.09.tex",
+      "line": 68,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:09:resonance",
+      "kind": "theorem",
+      "title": "Repeated and resonant roots",
+      "statement": "Suppose the roots are ordered so that \\(r_1-r_2=m\\) is a nonnegative\ninteger. There is a solution \\(y_1=z^{r_1}a(z)\\), \\(a(0)=1\\).\nOn a sufficiently small slit disc a second independent solution has form\n\\[\n \\begin{cases}\n z^{r_2}b(z)+c\\,y_1(z)\\log z,\\quad b(0)=1, & m\\ge1,\\\\\n y_1(z)\\log z+z^{r_1}b(z), &m=0,\n \\end{cases}\n\\]\nwith \\(a,b\\) holomorphic. In the first case \\(c\\) may be zero; it must\nnot be assumed zero merely because the coefficients are analytic away\nfrom the singular point.",
+      "chapter": 9,
+      "source_file": "chapters/M13.09.tex",
+      "line": 104,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:09:singular-examples",
+      "kind": "example",
+      "title": "Euler and Bessel equations",
+      "statement": "For \\(z^2y''+azy'+by=0\\), distinct indicial roots give \\(z^{r_1},z^{r_2}\\);\na repeated root gives \\(z^r,z^r\\log z\\), directly verified by\ndifferentiation. For Bessel's equation\n\\(z^2y''+zy'+(z^2-\\nu^2)y=0\\), \\(\\nu\\ge0\\), the larger-root solution is\n\\[\n z^\\nu\\sum_{j=0}^\\infty\n \\frac{(-1)^j z^{2j}}{4^j j!\\prod_{k=1}^j(\\nu+k)} .\n\\]\nThe empty product is one. Its ratio test proves convergence for all\n\\(z\\), and substitution verifies the equation. This normalization omits\nthe optional gamma-factor in the customary notation \\(J_\\nu\\).",
+      "chapter": 9,
+      "source_file": "chapters/M13.09.tex",
+      "line": 141,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:09:legendre",
+      "kind": "proposition",
+      "title": "Polynomial Legendre solutions",
+      "statement": "For every integer \\(m\\ge0\\), the equation\n\\[\n ((1-x^2)y')'+m(m+1)y=0\n\\]\nhas a polynomial solution \\(P_m\\) of degree \\(m\\), unique up to a nonzero\nscalar. Solutions of different degrees are orthogonal in \\(L^2(-1,1)\\).",
+      "chapter": 9,
+      "source_file": "chapters/M13.09.tex",
+      "line": 155,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:10:boundary",
+      "kind": "definition",
+      "title": "Separated real boundary conditions",
+      "statement": "A separated condition is\n\\[\n \\alpha_a y(a)+\\beta_a p(a)y'(a)=0,\\qquad\n \\alpha_b y(b)+\\beta_b p(b)y'(b)=0 ,\n\\]\nwhere each coefficient pair is real and nonzero as a pair.\nDirichlet conditions mean \\(y(a)=y(b)=0\\). In this chapter the full\neigenfunction-completeness theorem is adopted for Dirichlet conditions;\nthe boundary-form and orthogonality results also cover the displayed\ngeneral separated conditions.",
+      "chapter": 10,
+      "source_file": "chapters/M13.10.tex",
+      "line": 17,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:10:lagrange",
+      "kind": "proposition",
+      "title": "Lagrange identity",
+      "statement": "For \\(C^2\\) functions \\(u,v\\),\n\\[\n \\int_a^b\\big((Lu)\\overline v-u\\overline{Lv}\\big)\\,\\dd x\n   =\\big[p(u\\overline{v'}-u'\\overline v)\\big]_a^b .\n\\]\nThe boundary term vanishes for functions satisfying the same separated\nreal conditions. Every corresponding eigenvalue is real, and eigenfunctions\nfor distinct eigenvalues are orthogonal in \\(H\\).",
+      "chapter": 10,
+      "source_file": "chapters/M13.10.tex",
+      "line": 30,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:10:separation",
+      "kind": "proposition",
+      "title": "Simple zeros and separation",
+      "statement": "A nonzero real solution has no simultaneous zero of \\(y,py'\\); its zeros\nare simple and isolated. Between consecutive zeros of one solution, every\nindependent solution of the same equation has exactly one zero.\nFor \\(\\mu>\\lambda\\), between consecutive zeros of a solution at \\(\\lambda\\)\nevery nonzero real solution at \\(\\mu\\) has a zero.",
+      "chapter": 10,
+      "source_file": "chapters/M13.10.tex",
+      "line": 50,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:10:green",
+      "kind": "lemma",
+      "title": "Green operator",
+      "statement": "Choose \\(c>0\\) so that \\(Q=q+cw\\ge1\\) on \\([a,b]\\).\nThere is a real continuous symmetric kernel \\(G(x,t)\\), strictly positive\nwhen \\(a<x,t<b\\), such that\n\\[\n (Kf)(x)=\\int_a^bG(x,t)f(t)w(t)\\,\\dd t\n\\]\nis the inverse Dirichlet solution of\n\\(-(pu')'+Qu=wf\\). As an operator \\(H\\to H\\), \\(K\\) is compact,\nself-adjoint, injective, and strictly positive:\n\\(\\langle Kf,f\\rangle_w>0\\) for \\(f\\ne0\\).",
+      "chapter": 10,
+      "source_file": "chapters/M13.10.tex",
+      "line": 84,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:10:compact-spectral",
+      "kind": "lemma",
+      "title": "Positive compact spectral theorem",
+      "statement": "Let \\(K\\) be a compact self-adjoint positive operator on a Hilbert space.\nThe closed span of its positive-eigenvalue eigenspaces is\n\\((\\ker K)^\\perp\\). Every nonzero eigenvalue has finite multiplicity.\nThere are at most countably many of them; if infinitely many are listed\nwith multiplicity, they tend to zero.",
+      "chapter": 10,
+      "source_file": "chapters/M13.10.tex",
+      "line": 134,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:10:spectrum",
+      "kind": "theorem",
+      "title": "Dirichlet eigenfunction expansion",
+      "statement": "The regular Dirichlet problem has a sequence of simple real eigenvalues\n\\[\n \\lambda_1<\\lambda_2<\\cdots,\\qquad \\lambda_j\\longrightarrow+\\infty,\n\\]\nand real eigenfunctions \\(\\phi_j\\) forming an orthonormal basis of \\(H\\).\nThus every \\(f\\in H\\) has\n\\[\n f=\\sum_{j=1}^{\\infty}\\langle f,\\phi_j\\rangle_w\\phi_j\n \\quad\\hbox{in }H,\\qquad\n \\norm f_H^2=\\sum_{j=1}^{\\infty}|\\langle f,\\phi_j\\rangle_w|^2 .\n\\]\nThis is an \\(L^2\\) assertion; pointwise or uniformly convergent expansions\nrequire additional hypotheses.",
+      "chapter": 10,
+      "source_file": "chapters/M13.10.tex",
+      "line": 174,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:10:resolvent",
+      "kind": "proposition",
+      "title": "Resolvent alternative",
+      "statement": "For \\(f\\in H\\) and \\(\\lambda\\notin\\{\\lambda_j\\}\\), the equation\n\\((L-\\lambda w)y=wf\\) with Dirichlet conditions has a unique solution\nin the following specified sense: \\(y\\in C^1\\), \\(py'\\) is absolutely\ncontinuous, and the equation holds almost everywhere. It is given in \\(H\\) by\n\\[\n y=\\sum_j\\frac{\\langle f,\\phi_j\\rangle_w}{\\lambda_j-\\lambda}\\phi_j.\n\\]\nAt \\(\\lambda=\\lambda_k\\), it is solvable exactly when\n\\(\\langle f,\\phi_k\\rangle_w=0\\), and then the solutions differ by multiples\nof \\(\\phi_k\\).",
+      "chapter": 10,
+      "source_file": "chapters/M13.10.tex",
+      "line": 210,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:10:oscillation",
+      "kind": "theorem",
+      "title": "Dirichlet oscillation count",
+      "statement": "The eigenfunction \\(\\phi_j\\) has exactly \\(j-1\\) zeros in \\((a,b)\\).",
+      "chapter": 10,
+      "source_file": "chapters/M13.10.tex",
+      "line": 238,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:10:dirichlet-example",
+      "kind": "example",
+      "title": "Constant coefficients",
+      "statement": "For \\(p=w=1,q=0,[a,b]=[0,\\ell]\\),\n\\(\\lambda_j=(j\\pi/\\ell)^2\\) and\n\\(\\phi_j=\\sqrt{2/\\ell}\\sin(j\\pi x/\\ell)\\).\nSubstitution proves the equation and boundary conditions, and the preceding\ntheorem identifies their completeness and nodal counts.\nBy contrast the initial-value problem for \\(y''+\\lambda y=0\\) is unique for\nevery \\(\\lambda\\), while a homogeneous boundary problem has nonzero\nsolutions at the discrete eigenvalues.",
+      "chapter": 10,
+      "source_file": "chapters/M13.10.tex",
+      "line": 277,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:11:flow",
+      "kind": "theorem",
+      "title": "A flow has a domain",
+      "statement": "The set \\(\\mathcal D=\\{(t,x):x\\in\\Omega,\\ t\\in I_x\\}\\) is open,\n\\(\\Phi:\\mathcal D\\to\\Omega\\) is \\(C^k\\), and\n\\[\n \\Phi(0,x)=x,\\qquad\n I_{\\Phi(s,x)}=I_x-s,\\qquad\n \\Phi(t,\\Phi(s,x))=\\Phi(t+s,x)\n\\]\nwhenever \\(s\\in I_x\\) and \\(t+s\\in I_x\\).\nFor each fixed \\(t\\), \\(x\\mapsto\\Phi(t,x)\\) is a \\(C^k\\) diffeomorphism\nfrom its open domain to the domain of \\(\\Phi(-t,\\cdot)\\).\nFurthermore\n\\[\n D_x\\Phi(t,x)f(x)=f(\\Phi(t,x)).\n\\]",
+      "chapter": 11,
+      "source_file": "chapters/M13.11.tex",
+      "line": 7,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:11:orbits",
+      "kind": "proposition",
+      "title": "Orbit alternatives",
+      "statement": "An equilibrium \\(p\\) is characterized by \\(f(p)=0\\), and its solution is\nconstant. Two maximal orbits are disjoint or identical as sets. A\nnonconstant orbit is either injectively parametrized by time or periodic.\nIn the periodic case its solution is complete and has a least positive\nperiod \\(T\\); all its periods are \\(T\\Z\\).",
+      "chapter": 11,
+      "source_file": "chapters/M13.11.tex",
+      "line": 35,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:11:invariant",
+      "kind": "definition",
+      "title": "Invariant sets",
+      "statement": "A set is positively invariant if every solution starting in it stays in\nit for all nonnegative times in its maximal interval. It is invariant\nif this holds for both signs of time. A compact positively invariant\nsubset of \\(\\Omega\\) supports complete forward solutions, by the\ncontinuation theorem. An invariant compact subset supports complete\ntwo-sided solutions.",
+      "chapter": 11,
+      "source_file": "chapters/M13.11.tex",
+      "line": 54,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:11:first-integral",
+      "kind": "theorem",
+      "title": "First integrals and regular constraints",
+      "statement": "A \\(C^1\\) function \\(H:\\Omega\\to\\R\\) is constant on each solution exactly\nwhen \\(DH(x)f(x)=0\\) for every \\(x\\).\nMore generally let \\(h:\\Omega\\to\\R^m\\) be \\(C^1\\), have rank \\(m\\)\non \\(S=h^{-1}(c)\\), and satisfy \\(Dh(x)f(x)=0\\) for \\(x\\in S\\).\nThen \\(S\\) is invariant.",
+      "chapter": 11,
+      "source_file": "chapters/M13.11.tex",
+      "line": 63,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:11:flowbox",
+      "kind": "theorem",
+      "title": "Straightening a nonzero field",
+      "statement": "If \\(f(p)\\ne0\\), a neighborhood of \\(p\\) has \\(C^1\\) coordinates\n\\((s,z)\\in(-\\varepsilon,\\varepsilon)\\times V\\) in which the field is\n\\(\\partial/\\partial s\\). For a \\(C^k\\) field the coordinate map is \\(C^k\\).",
+      "chapter": 11,
+      "source_file": "chapters/M13.11.tex",
+      "line": 87,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:11:omega",
+      "kind": "theorem",
+      "title": "Compact omega-limit sets",
+      "statement": "Suppose a positive orbit has compact closure \\(K\\subset\\Omega\\).\nIts omega-limit set\n\\[\n \\omega(x)=\\bigcap_{s\\ge0}\\overline{\\{\\Phi(t,x):t\\ge s\\}}\n\\]\nis nonempty, compact, connected and invariant. Its points are exactly\nlimits \\(\\Phi(t_j,x)\\) with \\(t_j\\to\\infty\\), and\n\\(\\operatorname{dist}(\\Phi(t,x),\\omega(x))\\to0\\).",
+      "chapter": 11,
+      "source_file": "chapters/M13.11.tex",
+      "line": 104,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:11:hamiltonian",
+      "kind": "proposition",
+      "title": "Hamiltonian energy and volume",
+      "statement": "For \\(H\\in C^2(\\Omega)\\), \\(\\Omega\\subset\\R^{2m}\\), the system\n\\(q'=\\partial_pH,\\ p'=-\\partial_qH\\) preserves \\(H\\).\nIts local time maps have Jacobian determinant one, and therefore\npreserve Lebesgue measure on their open domains and measurable subsets\nthereof.",
+      "chapter": 11,
+      "source_file": "chapters/M13.11.tex",
+      "line": 138,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:12:definitions",
+      "kind": "definition",
+      "title": "Stability notions",
+      "statement": "The origin is Lyapunov stable if for every \\(\\varepsilon>0\\) some\n\\(\\delta>0\\) ensures \\(\\norm{x_0}<\\delta\\) implies\n\\(\\norm{\\Phi(t,x_0)}<\\varepsilon\\) for every \\(t\\ge0\\).\nIt is locally asymptotically stable if it is stable and all sufficiently\nnearby solutions tend to zero. It is locally exponentially stable if\nsome \\(C,\\alpha,\\delta>0\\) satisfy\n\\(\\norm{\\Phi(t,x_0)}\\le Ce^{-\\alpha t}\\norm{x_0}\\) for \\(t\\ge0\\)\nand \\(\\norm{x_0}<\\delta\\). These assertions include forward existence.",
+      "chapter": 12,
+      "source_file": "chapters/M13.12.tex",
+      "line": 6,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:12:lyapunov",
+      "kind": "theorem",
+      "title": "Lyapunov's direct method",
+      "statement": "Let \\(V\\in C^1\\) near zero, \\(V(0)=0\\), \\(V(x)>0\\) for \\(x\\ne0\\),\nand \\(\\dot V(x)=DV(x)f(x)\\le0\\). Then the origin is stable.\nIf \\(\\dot V(x)<0\\) for \\(x\\ne0\\), it is asymptotically stable.\nIf, on a neighborhood,\n\\[\n c_1\\norm x^2\\le V(x)\\le c_2\\norm x^2,\\qquad\n \\dot V(x)\\le-c_3\\norm x^2,\\qquad c_i>0,\n\\]\nit is exponentially stable with estimate\n\\[\n \\norm{\\Phi(t,x_0)}\n \\le\\sqrt{c_2/c_1}\\,e^{-c_3t/(2c_2)}\\norm{x_0}\n\\]\nfor sufficiently small \\(x_0\\).",
+      "chapter": 12,
+      "source_file": "chapters/M13.12.tex",
+      "line": 17,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:12:matrix-lyapunov",
+      "kind": "lemma",
+      "title": "The Lyapunov matrix equation",
+      "statement": "A real matrix \\(A\\) has all eigenvalues in the open left half-plane\nif and only if, for any prescribed symmetric positive definite \\(Q\\),\nthere is a symmetric positive definite \\(P\\) with\n\\[\n A^{\\mathsf T}P+PA=-Q .\n\\]\nWhen it exists, it is unique and is\n\\(P=\\int_0^\\infty e^{tA^{\\mathsf T}}Qe^{tA}\\,\\dd t\\).",
+      "chapter": 12,
+      "source_file": "chapters/M13.12.tex",
+      "line": 52,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:12:linearized-stability",
+      "kind": "theorem",
+      "title": "Linearized stability and instability",
+      "statement": "Let \\(A=Df(0)\\).\nIf every eigenvalue of \\(A\\) has negative real part, the equilibrium is\nlocally exponentially stable. If some eigenvalue has positive real part,\nthe equilibrium is unstable. Eigenvalues on the imaginary axis alone\ndo not decide either conclusion.",
+      "chapter": 12,
+      "source_file": "chapters/M13.12.tex",
+      "line": 75,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:12:zero-example",
+      "kind": "example",
+      "title": "The inconclusive zero eigenvalue",
+      "statement": "All three scalar equations \\(x'=-x^3,\\ x'=x^3,\\ x'=0\\) have derivative\nzero at the equilibrium. The first has\n\\(x(t)=x_0(1+2t x_0^2)^{-1/2}\\), hence asymptotic stability; the second\nhas finite-time escape for each positive nonzero initial value and is\nunstable; the last is stable but not attractive. Linearization must not\nbe used to classify these nonhyperbolic cases.",
+      "chapter": 12,
+      "source_file": "chapters/M13.12.tex",
+      "line": 118,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:12:lasalle",
+      "kind": "theorem",
+      "title": "LaSalle's invariance principle on a compact set",
+      "statement": "Let \\(K\\subset\\Omega\\) be compact and positively invariant.\nSuppose \\(V\\in C^1\\) on a neighborhood of \\(K\\) and \\(\\dot V\\le0\\) on \\(K\\).\nLet \\(E=\\{x\\in K:\\dot V(x)=0\\}\\), and let \\(M\\) be the largest invariant\nsubset of \\(E\\), meaning the union of complete orbits contained in \\(E\\).\nFor each \\(x\\in K\\),\n\\(\\operatorname{dist}(\\Phi(t,x),M)\\to0\\).\nIf \\(M\\) is a singleton equilibrium, every such orbit converges to it.",
+      "chapter": 12,
+      "source_file": "chapters/M13.12.tex",
+      "line": 127,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:12:damped-pendulum",
+      "kind": "example",
+      "title": "A damped mechanical equilibrium",
+      "statement": "For \\(x'=y,\\ y'=-\\sin x-cy\\), \\(c>0\\), the energy\n\\(V=y^2/2+1-\\cos x\\) satisfies \\(\\dot V=-cy^2\\).\nIn a small compact sublevel around \\((0,0)\\), the only complete orbit\ncontained in \\(\\{y=0\\}\\) is the equilibrium: staying there also requires\n\\(\\sin x=0\\). The direct method and LaSalle therefore give local\nasymptotic stability. In contrast the undamped equation conserves \\(V\\),\nso its nearby nonzero-energy solutions cannot converge to \\((0,0)\\).",
+      "chapter": 12,
+      "source_file": "chapters/M13.12.tex",
+      "line": 149,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:13:nullclines",
+      "kind": "definition",
+      "title": "Coordinate nullclines",
+      "statement": "For $x'=F(x,y)$, $y'=G(x,y)$, the coordinate nullclines are\n$N_x=\\{(x,y):F(x,y)=0\\}$ and $N_y=\\{(x,y):G(x,y)=0\\}$.\nEquilibria are exactly $N_x\\cap N_y$. Away from both nullclines, the signs\nof $F,G$ specify the quadrant of the tangent vector. At a point of\n$N_x\\setminus N_y$ the tangent is vertical and nonzero; at a point of\n$N_y\\setminus N_x$ it is horizontal and nonzero. A nullcline need not\nitself be invariant. These are coordinate-dependent descriptions of the\nvector field, not additional conservation laws.",
+      "chapter": 13,
+      "source_file": "chapters/M13.13.tex",
+      "line": 10,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:13:nullcline-example",
+      "kind": "example",
+      "title": "A complete sign chart in the positive quadrant",
+      "statement": "Consider $x'=x(1-x-y)$, $y'=y(x-a)$ with $0<a<1$.\nThe nullclines are $x=0$ or $y=1-x$ for the first component, and\n$y=0$ or $x=a$ for the second. In $x,y>0$, the first component is\npositive exactly below $y=1-x$; the second is positive exactly to the\nright of $x=a$. Combining the two comparisons gives all four sign\nregions. The equilibria in the closed positive quadrant are\n$(0,0)$, $(1,0)$ and $(a,1-a)$, obtained by intersecting the listed\nzero sets. In particular most points on either nullcline are not\nequilibria. Positive coordinates stay positive while a solution exists:\nalong that solution,\n\\[\n x(t)=x(0)\\exp\\!\\left(\\int_0^t(1-x(s)-y(s))\\,\\dd s\\right),\\quad\n y(t)=y(0)\\exp\\!\\left(\\int_0^t(x(s)-a)\\,\\dd s\\right).\n\\]\nThe formulas follow by scalar integrating factors and also show the\ninvariance of either axis when its initial coordinate is zero.\nThey justify the phase-region interpretation rather than relying on a\nnumerically drawn picture.",
+      "chapter": 13,
+      "source_file": "chapters/M13.13.tex",
+      "line": 21,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:13:index-jump",
+      "kind": "lemma",
+      "title": "Index jump across a straight edge",
+      "statement": "Suppose a closed piecewise \\(C^1\\) curve meets a small disc in one\noriented straight arc and has no other points in that disc. The winding\nindex immediately to the left of the oriented arc is one greater than\nthe index immediately to its right.",
+      "chapter": 13,
+      "source_file": "chapters/M13.13.tex",
+      "line": 51,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:13:monotone-crossings",
+      "kind": "lemma",
+      "title": "Monotone intersections",
+      "statement": "Successive intersections of a forward orbit with a transverse segment\nare either all the same point, making the orbit periodic, or are strictly\nmonotone in the segment coordinate. In particular an omega-limit set\nintersects a sufficiently short transverse segment in at most one point.",
+      "chapter": 13,
+      "source_file": "chapters/M13.13.tex",
+      "line": 73,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:13:poincare-bendixson",
+      "kind": "theorem",
+      "title": "Poincare--Bendixson, regular compact case",
+      "statement": "Suppose a positive orbit has compact closure in \\(\\Omega\\), and its\nomega-limit set contains no equilibrium. That omega-limit set is one\nnonconstant periodic orbit.",
+      "chapter": 13,
+      "source_file": "chapters/M13.13.tex",
+      "line": 131,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:13:trapping",
+      "kind": "corollary",
+      "title": "A trapping set without equilibria",
+      "statement": "A nonempty compact positively invariant subset \\(K\\subset\\Omega\\)\ncontaining no equilibrium contains a periodic orbit.",
+      "chapter": 13,
+      "source_file": "chapters/M13.13.tex",
+      "line": 158,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:13:dulac",
+      "kind": "theorem",
+      "title": "Bendixson--Dulac exclusion",
+      "statement": "Let \\(D\\subset\\Omega\\) be open and simply connected and let \\(B\\in C^1(D)\\).\nIf \\(\\operatorname{div}(Bf)\\) is everywhere strictly positive on \\(D\\),\nor everywhere strictly negative, no nonconstant periodic orbit is\ncontained in \\(D\\). The choice \\(B=1\\) is Bendixson's criterion.",
+      "chapter": 13,
+      "source_file": "chapters/M13.13.tex",
+      "line": 168,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:13:annulus",
+      "kind": "example",
+      "title": "Why the domain matters",
+      "statement": "For\n\\[\n x'=(1-x^2-y^2)x-y,\\qquad\n y'=x+(1-x^2-y^2)y ,\n\\]\npolar coordinates on \\(r>0\\) give \\(r'=r(1-r^2)\\), \\(\\theta'=1\\).\nThe annulus \\(1/2\\le r\\le2\\) is positively invariant: on its inner\nboundary the radial derivative is positive and on its outer boundary\nnegative, precluding a first exit. It contains no equilibria and contains\nthe periodic orbit \\(r=1\\), of period \\(2\\pi\\).\nEvery nonzero solution tends to that circle, since the scalar radial\nequation is monotone toward its only positive equilibrium.",
+      "chapter": 13,
+      "source_file": "chapters/M13.13.tex",
+      "line": 190,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:13:pendulum",
+      "kind": "example",
+      "title": "The pendulum and an equilibrium in the limit set",
+      "statement": "For \\(x'=y,\\ y'=-\\sin x\\), the energy\n\\(E=y^2/2+1-\\cos x\\) is constant.\nAt \\((2k\\pi,0)\\) its Hessian is positive definite, giving Lyapunov-stable\ncenters. At \\(((2k+1)\\pi,0)\\) the linearization has eigenvalues \\(1,-1\\),\nso those equilibria are unstable. For \\(0<E<2\\), the compact energy oval\nsurrounding a center is regular and invariant; the preceding theorem\nshows it is a periodic orbit. At energy \\(2\\), a branch can approach\nthe saddle instead. The hypothesis excluding equilibria from the\nomega-limit set cannot be deleted.",
+      "chapter": 13,
+      "source_file": "chapters/M13.13.tex",
+      "line": 205,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:14:return-map",
+      "kind": "theorem",
+      "title": "Local return time and map",
+      "statement": "On an open neighborhood of \\(p\\) in \\(\\Sigma\\) there is a unique \\(C^k\\)\nfunction \\(\\tau(z)\\) close to \\(T\\) such that\n\\(\\tau(p)=T\\) and\n\\[\n P(z)=\\Phi(\\tau(z),z)\\in\\Sigma .\n\\]\nAfter shrinking the neighborhoods, \\(P\\) is a \\(C^k\\) local\ndiffeomorphism fixing \\(p\\). The section can be chosen so that this is\nthe first positive return for the points under consideration.\nWriting \\(M=D_x\\Phi(T,p)\\), for \\(v\\in\\ker\\ell\\),\n\\[\n D\\tau(p)v=-\\frac{\\ell(Mv)}{\\ell(f(p))},\\qquad\n DP(p)v=Mv-f(p)\\frac{\\ell(Mv)}{\\ell(f(p))}.\n\\]",
+      "chapter": 14,
+      "source_file": "chapters/M13.14.tex",
+      "line": 9,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:14:multipliers",
+      "kind": "theorem",
+      "title": "The neutral multiplier and transverse multipliers",
+      "statement": "The variational equation along \\(\\Gamma\\) has \\(T\\)-periodic coefficients\n\\(A(t)=Df(\\Phi(t,p))\\). Its monodromy \\(M\\) satisfies \\(Mf(p)=f(p)\\).\nThe operator induced by \\(M\\) on\n\\(\\R^n/\\operatorname{span}\\{f(p)\\}\\) is conjugate to \\(DP(p)\\).\nConsequently the characteristic polynomial factors as\n\\[\n \\det(\\lambda I-M)=(\\lambda-1)\\det(\\lambda I-DP(p)),\n \\qquad\n \\det DP(p)=\\exp\\left(\\int_0^T\\operatorname{div}f(\\Phi(t,p))\\,\\dd t\\right).\n\\]\nFor a planar orbit its single transverse multiplier is therefore\nstrictly positive.",
+      "chapter": 14,
+      "source_file": "chapters/M13.14.tex",
+      "line": 49,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:14:orbital-definition",
+      "kind": "definition",
+      "title": "Orbital stability",
+      "statement": "Orbital stability means that solutions starting sufficiently close to\nthe compact set \\(\\Gamma\\) remain close to that set for all future time.\nOrbital asymptotic stability additionally requires their distance to\n\\(\\Gamma\\) to tend to zero. No claim is made that they tend to one\nfixed point of the moving periodic orbit at the same time phase.",
+      "chapter": 14,
+      "source_file": "chapters/M13.14.tex",
+      "line": 77,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:14:orbital-stability",
+      "kind": "theorem",
+      "title": "Transverse contraction implies orbital attraction",
+      "statement": "If every eigenvalue of \\(DP(p)\\) has modulus less than one, then\n\\(\\Gamma\\) is locally exponentially orbitally stable:\nsome \\(C,\\alpha,\\delta>0\\) satisfy\n\\[\n \\operatorname{dist}(\\Phi(t,x),\\Gamma)\n \\le C e^{-\\alpha t}\\operatorname{dist}(x,\\Gamma),\\qquad t\\ge0,\n\\]\nwhenever \\(\\operatorname{dist}(x,\\Gamma)<\\delta\\).",
+      "chapter": 14,
+      "source_file": "chapters/M13.14.tex",
+      "line": 85,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:14:orbital-instability",
+      "kind": "proposition",
+      "title": "An unstable transverse multiplier",
+      "statement": "If \\(DP(p)\\) has an eigenvalue of modulus greater than one,\n\\(\\Gamma\\) is orbitally unstable.\nFor a planar orbit, the criteria reduce to attraction when\n\\(\\int_0^T\\operatorname{div}f\\,\\dd t<0\\) and instability when it is positive.\nEquality leaves the nonlinear question undecided.",
+      "chapter": 14,
+      "source_file": "chapters/M13.14.tex",
+      "line": 135,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:14:radial-example",
+      "kind": "example",
+      "title": "A computable multiplier",
+      "statement": "For the oscillator of Example~\\ref{d13:13:annulus}, \\(\\Gamma=\\{r=1\\}\\)\nhas period \\(2\\pi\\). The radial variation satisfies\n\\(\\rho'=(1-3r^2)\\rho=-2\\rho\\) on that orbit, so its transverse multiplier\nis \\(e^{-4\\pi}<1\\). The tangential multiplier is \\(1\\).\nThe orbit is attracting although the full monodromy cannot have all\nmultipliers inside the unit circle. This is why equilibrium and\nperiodic-orbit stability criteria must not be confused.",
+      "chapter": 14,
+      "source_file": "chapters/M13.14.tex",
+      "line": 156,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:15:discrete-system",
+      "kind": "definition",
+      "title": "Discrete system and periodic point",
+      "statement": "A discrete dynamical system is a map \\(F:X\\to X\\); its forward orbit at \\(x\\)\nis \\((F^n x)_{n\\geq0}\\), with \\(F^0=\\id\\) and \\(F^{n+1}=F\\circ F^n\\).\nA set \\(A\\) is positively invariant if \\(F(A)\\subset A\\), and invariant if\n\\(F(A)=A\\). A point has least period \\(p\\geq1\\) if \\(F^p x=x\\) and no\nsmaller positive integer has this property. Negative iterates are used only\nwhen \\(F\\) is invertible.",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 5,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:15:conjugacy-definition",
+      "kind": "definition",
+      "title": "Conjugacy and semiconjugacy",
+      "statement": "Maps \\(F:X\\to X\\), \\(G:Y\\to Y\\) are topologically conjugate if a\nhomeomorphism \\(h:X\\to Y\\) satisfies \\(hF=Gh\\). A continuous surjection\nsatisfying that equation is a semiconjugacy. Injectivity is part of the\nfirst definition and is not part of the second.",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 14,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:15:conjugacy-transport",
+      "kind": "proposition",
+      "title": "Transport by a conjugacy",
+      "statement": "If \\(hF=Gh\\), then \\(hF^n=G^nh\\) for every \\(n\\geq0\\). For a conjugacy,\nperiodic points and their least periods, invariant sets and dense forward\norbits correspond. At a fixed point, Lyapunov stability and asymptotic\nstability are preserved by a conjugacy.",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 21,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:15:interval-fixed-point",
+      "kind": "proposition",
+      "title": "An invariant interval",
+      "statement": "Every continuous map \\(F:[a,b]\\to[a,b]\\), \\(a<b\\), has a fixed point.\nIf it is Lipschitz with constant \\(q<1\\), the fixed point \\(p\\) is unique,\nevery forward orbit converges to it, and\n\\(\\abs{F^nx-p}\\leq q^n\\abs{x-p}\\).",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 40,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:15:stability-definition",
+      "kind": "definition",
+      "title": "Stability for a map",
+      "statement": "A fixed point \\(p\\) of a continuous map on a metric space is Lyapunov stable\nif, for every \\(\\varepsilon>0\\), some \\(\\delta>0\\) makes\n\\(\\dist(F^nx,p)<\\varepsilon\\) for all \\(n\\geq0\\) whenever\n\\(\\dist(x,p)<\\delta\\). It is asymptotically stable if it is stable and attracts\na neighborhood. It is locally exponentially stable if there are \\(C>0\\),\n\\(0<q<1\\) and a neighborhood on which\n\\(\\norm{F^nx-p}\\leq Cq^n\\norm{x-p}\\).",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 55,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:15:adapted-norm",
+      "kind": "lemma",
+      "title": "Adapted finite-dimensional norms",
+      "statement": "Let \\(A\\) be a real or complex finite-dimensional linear operator. If\n\\(\\rho(A)<a\\), there is an equivalent norm \\(\\norm{\\cdot}_*\\) with\n\\(\\norm{A}_*\\leq a\\). If \\(A\\) is invertible and all its eigenvalues have\nmodulus greater than \\(a>0\\), an equivalent norm satisfies\n\\(\\norm{Av}_*\\geq a\\norm{v}_*\\).",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 65,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:15:linearized-stability",
+      "kind": "theorem",
+      "title": "Linearized attraction",
+      "statement": "Let \\(F\\) be \\(C^1\\) near a fixed point \\(p\\in\\R^d\\). If\n\\(\\rho(DF(p))<1\\), then \\(p\\) is locally exponentially stable.",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 87,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:15:linearized-instability",
+      "kind": "theorem",
+      "title": "Linearized instability",
+      "statement": "Let \\(F\\) be \\(C^1\\) near a fixed point \\(p\\in\\R^d\\). If \\(DF(p)\\) has\nan eigenvalue of modulus greater than one, \\(p\\) is Lyapunov unstable.\nEigenvalues of modulus one in other directions do not invalidate this\nsufficient criterion.",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 101,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:15:periodic-multipliers",
+      "kind": "proposition",
+      "title": "Periodic-orbit test",
+      "statement": "For a \\(C^1\\) map, let \\(p\\) have least period \\(m\\). If\n\\(\\rho(D(F^m)(p))<1\\), its finite periodic orbit is locally exponentially\nattracting and stable. If this derivative has an eigenvalue of modulus\ngreater than one, the periodic orbit is unstable.",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 135,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": null,
+      "kind": "example",
+      "title": "The unit-circle boundary needs nonlinear terms",
+      "statement": "At zero the maps \\(x\\mapsto x-x^3\\) and \\(x\\mapsto x+x^3\\) both have\nderivative one. For sufficiently small \\(0<\\abs{x}<1\\), the first\nstrictly decreases \\(\\abs{x}\\); its limiting value must be zero, while\nthe second strictly increases \\(\\abs{x}\\) until it exits any fixed\nsmall interval. Thus a multiplier on the unit circle alone settles\nneither attraction nor instability.",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 153,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:15:circle-lift",
+      "kind": "definition",
+      "title": "Circle and lift",
+      "statement": "Write \\(\\mathbb T=\\R/\\Z\\), with distance\n\\(\\dist([x],[y])=\\inf_{k\\in\\Z}\\abs{x-y-k}\\).\nAn increasing homeomorphism \\(L:\\R\\to\\R\\) with \\(L(x+1)=L(x)+1\\)\ninduces an orientation-preserving circle homeomorphism\n\\(F([x])=[L(x)]\\). Such an \\(L\\) is called a lift.",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 164,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:15:rotation-number",
+      "kind": "theorem",
+      "title": "Rotation number of an increasing lift",
+      "statement": "For an increasing lift \\(L\\), the limit\n\\[\n \\rho(L)=\\lim_{n\\to\\infty}\\frac{L^n(x)-x}{n}\n\\]\nexists and is independent of \\(x\\). Replacing \\(L\\) by \\(L+k\\),\n\\(k\\in\\Z\\), replaces \\(\\rho(L)\\) by \\(\\rho(L)+k\\).\nThe induced circle homeomorphism has a periodic point if and only if\n\\(\\rho(L)\\) is rational. More precisely, \\(\\rho(L)=p/q\\), \\(q\\geq1\\),\nif and only if \\(L^q(x)=x+p\\) for some \\(x\\).",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 172,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:15:rigid-rotation",
+      "kind": "theorem",
+      "title": "Rigid rotations",
+      "statement": "For \\(R_\\alpha([x])=[x+\\alpha]\\), if \\(\\alpha=p/q\\) in lowest terms,\nevery point has least period \\(q\\). If \\(\\alpha\\) is irrational, every\nforward orbit is dense, no point is periodic, and all orbit distances\nare preserved.",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 205,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:15:logistic-fixed-points",
+      "kind": "proposition",
+      "title": "Logistic fixed points",
+      "statement": "Let \\(f_\\mu(x)=\\mu x(1-x)\\). The interval \\([0,1]\\) is positively\ninvariant for \\(0\\leq\\mu\\leq4\\). Its fixed points are zero and, when\n\\(\\mu\\neq0\\), \\(1-\\mu^{-1}\\), the latter lying in \\([0,1]\\) for\n\\(\\mu\\geq1\\). Zero is locally attracting for \\(0\\leq\\mu<1\\) and\nrepelling for \\(\\mu>1\\); the nonzero fixed point is locally attracting\nfor \\(1<\\mu<3\\) and repelling for \\(\\mu>3\\).",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 235,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:15:logistic-tent",
+      "kind": "proposition",
+      "title": "An exact change of coordinates",
+      "statement": "The increasing homeomorphism \\(h:[0,1]\\to[0,1]\\),\n\\(h(t)=\\sin^2(\\pi t/2)\\), conjugates the tent map\n\\[\n \\tau(t)=\n \\begin{cases}2t,&0\\leq t\\leq1/2,\\\\2-2t,&1/2\\leq t\\leq1,\\end{cases}\n\\]\nto \\(f_4\\): \\(h\\circ\\tau=f_4\\circ h\\).",
+      "chapter": 15,
+      "source_file": "chapters/M13.15.tex",
+      "line": 252,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:16:family-definition",
+      "kind": "definition",
+      "title": "A local family",
+      "statement": "Here a scalar flow family is \\(x'=f(x,\\mu)\\), with real parameter \\(\\mu\\);\na map family is \\(x_{n+1}=F_\\mu(x_n)\\). We study equilibria or periodic\norbits in a fixed neighborhood of the distinguished state and parameter.\nTheir number, stability and conjugacy type may change at a bifurcation.\nStatements below specify actual equations and nondegeneracy conditions;\na sketch of branches is not the definition of the conclusion.",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 5,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:16:simple-persistence",
+      "kind": "proposition",
+      "title": "Persistence of a simple equilibrium",
+      "statement": "If \\(f\\) is \\(C^1\\), \\(f(0,0)=0\\), and \\(f_x(0,0)\\neq0\\), then all nearby\nequilibria form a unique \\(C^1\\) graph \\(x=x(\\mu)\\). Its scalar\nlinearized stability has constant type for sufficiently small \\(\\mu\\).\nFor a map, the same persistence assertion holds if\n\\(\\partial_xF_0(0)\\neq1\\), applied to \\(F_\\mu(x)-x\\).",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 14,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:16:saddle-node",
+      "kind": "theorem",
+      "title": "Generic scalar saddle-node",
+      "statement": "Suppose \\(f\\) is \\(C^3\\) near \\((0,0)\\) and\n\\[\n f(0,0)=f_x(0,0)=0,\\qquad f_\\mu(0,0)\\neq0,\\qquad f_{xx}(0,0)\\neq0.\n\\]\nThere is a local state coordinate \\(y=y(x)\\), \\(y'(0)=1\\), in which the\nequilibrium set is exactly \\(\\mu=a y^2\\), where\n\\(a=-f_{xx}(0,0)/(2f_\\mu(0,0))\\neq0\\).\nThus sufficiently close to the origin there are two equilibria on the\nside \\(\\mu/a>0\\), none on the other side, and a double equilibrium at\n\\(\\mu=0\\). The two simple equilibria have opposite scalar stability.\nThis conclusion describes the equilibrium set, not a claim of an exact\ntime-preserving normal form for the whole vector field.",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 29,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:16:transcritical",
+      "kind": "theorem",
+      "title": "Transcritical exchange",
+      "statement": "Let \\(f\\) be \\(C^3\\), with \\(f(0,\\mu)=0\\) for all small \\(\\mu\\), and\n\\[\n f_x(0,0)=0,\\qquad a=f_{x\\mu}(0,0)\\neq0,\\qquad\n b=\\tfrac12f_{xx}(0,0)\\neq0 .\n\\]\nAll nearby equilibria are \\(x=0\\) and a unique branch\n\\(x=\\chi(\\mu)=-a\\mu/b+o(\\mu)\\). The branches meet only at \\(\\mu=0\\)\nand exchange stability: their derivatives have respective signs\n\\(\\operatorname{sgn}(a\\mu)\\) and \\(-\\operatorname{sgn}(a\\mu)\\).",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 62,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:16:pitchfork",
+      "kind": "theorem",
+      "title": "A symmetric pitchfork",
+      "statement": "Suppose \\(f\\) is \\(C^5\\), odd in \\(x\\), and\n\\[\n f_x(0,0)=0,\\qquad a=f_{x\\mu}(0,0)\\neq0,\\qquad\n b=\\tfrac16f_{xxx}(0,0)\\neq0 .\n\\]\nBesides \\(x=0\\), two small equilibria exist exactly on the side\n\\(-a\\mu/b>0\\). They are \\(x=\\pm\\sqrt{s(\\mu)}\\), where\n\\(s(0)=0\\), \\(s'(0)=-a/b\\).\nThe derivative at zero has sign \\(a\\mu\\), and that on either nonzero\nbranch has sign \\(-a\\mu\\), for sufficiently small nonzero parameters.",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 88,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": null,
+      "kind": "example",
+      "title": "The symmetry is a genuine hypothesis",
+      "statement": "The equation \\(x'=\\mu x-x^3\\) has the stable branches\n\\(\\pm\\sqrt{\\mu}\\) for \\(\\mu>0\\). Adding a constant perturbation\n\\(\\varepsilon\\neq0\\) destroys the branch \\(x=0\\) and the odd symmetry.\nIts equilibria solve a different cubic equation; the pitchfork theorem\ncannot be applied while ignoring that perturbation.",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 122,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:16:flip-normal-form",
+      "kind": "proposition",
+      "title": "A period-doubling normal form",
+      "statement": "For \\(F_\\mu(x)=-(1+\\mu)x+x^3\\), zero is locally attracting for small\n\\(\\mu<0\\) and unstable for small \\(\\mu>0\\). For \\(0<\\mu<1\\),\nthe two points \\(\\pm\\sqrt{\\mu}\\) form a stable orbit of least period two,\nwith multiplier \\((-1+2\\mu)^2\\). Its amplitude tends to zero as\n\\(\\mu\\downarrow0\\).",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 130,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:16:cubic-normal-form",
+      "kind": "lemma",
+      "title": "A finite-order complex normal form",
+      "statement": "Let a real \\(C^5\\) planar family have an equilibrium at zero for each\nsmall \\(\\mu\\). Suppose the eigenvalues of its linearization are\n\\(a(\\mu)\\pm i b(\\mu)\\), with \\(a(0)=0\\) and \\(b(0)=\\omega>0\\).\nThere are parameter-smooth real local coordinates, written as a complex\ncoordinate \\(w\\), in which\n\\[\n w'=(a(\\mu)+ib(\\mu))w+c(\\mu)w^2\\overline w+\n       R(w,\\overline w,\\mu),\\qquad R=O(\\abs{w}^4),\\quad\n D_wR=O(\\abs{w}^3).\n\\]\nThe estimates are uniform for small \\(\\mu\\), with the corresponding\nparameter derivatives. The coefficient \\(c(0)\\) is obtained by the\nexplicit homological procedure in the proof. In these coordinates put\n\\(\\ell=\\Re c(0)\\); its nonvanishing is the cubic nondegeneracy condition.",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 150,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:16:hopf-return-expansion",
+      "kind": "lemma",
+      "title": "Return-map expansion",
+      "statement": "For the normal form above, the first return to the positive real ray\nhas radial map, for sufficiently small \\(r\\geq0\\),\n\\[\n P(r,\\mu)=e^{2\\pi a/b}r+K(\\mu)r^3+O(r^4),\\qquad\n K(0)=\\frac{2\\pi\\ell}{\\omega}.\n\\]\nThe remainder is \\(C^1\\)-controlled: its radial derivative is \\(O(r^3)\\)\nand its parameter derivative is \\(O(r^4)\\). The return is defined\nlocally; it is not a global section for all trajectories.",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 205,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:16:planar-hopf",
+      "kind": "theorem",
+      "title": "Nondegenerate planar Hopf",
+      "statement": "Under Lemma~\\ref{d13:16:cubic-normal-form}, suppose in addition\n\\(a'(0)\\neq0\\) and \\(\\ell\\neq0\\).\nFor sufficiently small parameters, there is a unique small periodic\norbit precisely on the side \\(a(\\mu)\\ell<0\\). Its positive-ray radius\nsatisfies\n\\[\n \\mu=-\\frac{\\ell}{a'(0)}r^2+O(r^3),\\qquad\n r^2=-\\frac{a'(0)}{\\ell}\\mu+o(\\abs{\\mu}).\n\\]\nIts period tends to \\(2\\pi/\\omega\\).\nIt is asymptotically orbitally stable if \\(\\ell<0\\) and unstable if\n\\(\\ell>0\\); the equilibrium has the stability type determined by\nthe sign of \\(a(\\mu)\\). Uniqueness concerns periodic orbits contained\nin a sufficiently small fixed neighborhood.",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 248,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": null,
+      "kind": "example",
+      "title": "A check on the normalization",
+      "statement": "For \\(z'=(\\mu+i\\omega)z-z\\abs{z}^2\\), the quadratic elimination is\nempty and \\(c=-1\\). The exact polar equations are\n\\(r'=\\mu r-r^3\\), \\(\\theta'=\\omega\\). The stable cycle has\n\\(r=\\sqrt{\\mu}\\) for \\(\\mu>0\\), verifying the signs, amplitude and\nperiod in the theorem. If the cubic term is absent, \\(\\ell=0\\);\nthe nondegenerate theorem deliberately makes no conclusion.",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 295,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:16:invariant-graph",
+      "kind": "proposition",
+      "title": "The invariance equation",
+      "statement": "For a \\(C^1\\) system \\(x'=f(x,y)\\), \\(y'=g(x,y)\\), a \\(C^1\\) graph\n\\(y=h(x)\\) is locally invariant if\n\\[\n Dh(x)f(x,h(x))=g(x,h(x)).\n\\]\nMore precisely this identity implies that trajectories of\n\\(x'=f(x,h(x))\\), lifted to \\((x,h(x))\\), are trajectories of the\nfull system while they remain in the graph domain; uniqueness gives\nthe local invariance. Conversely local invariance implies the identity.",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 306,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:16:triangular-center",
+      "kind": "theorem",
+      "title": "A proved triangular center graph",
+      "statement": "Consider\n\\[\n x'=f(x),\\qquad y'=-By+g(x),\\qquad (x,y)\\in\\R^m\\times\\R^k.\n\\]\nAssume \\(f\\) is \\(C^1\\), globally Lipschitz with constant \\(L\\), and\n\\(f(0)=Df(0)=0\\). Assume \\(g\\) is \\(C^1\\), bounded with bounded\nderivative, and \\(g(0)=Dg(0)=0\\). If\n\\(\\norm{e^{-Bt}}\\leq M e^{-\\beta t}\\) for \\(t\\geq0\\), where\n\\(\\beta>L\\), then\n\\[\n h(x)=\\int_0^\\infty e^{-Bs}g(\\phi_{-s}(x))\\,\\dd s\n\\]\nis \\(C^1\\), \\(h(0)=Dh(0)=0\\), and its graph is invariant.\nFor any full solution,\n\\[\n y(t)-h(x(t))=e^{-Bt}(y(0)-h(x(0)))\\quad(t\\geq0).\n\\]\nThus the graph is tangent to the center subspace and attracts each\nvertical fiber exponentially. This is a triangular special theorem;\nit does not assert a general coupled center-manifold theorem.",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 324,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": null,
+      "kind": "remark",
+      "title": "Scope of the reduction",
+      "statement": "The invariance equation alone neither constructs a graph nor proves its\nregularity. The triangular theorem supplies one genuine construction\nunder stated gap assumptions. Hyperbolic stable and unstable manifolds\nare treated separately in Chapter~\\ref{ch:d13-20}. General high-dimensional\ncoupled center-manifold existence, higher-codimension bifurcation theory\nand global bifurcations are further developments, not silently assumed\nlemmas in the preceding planar proofs.",
+      "chapter": 16,
+      "source_file": "chapters/M13.16.tex",
+      "line": 367,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:17:chaos-definition",
+      "kind": "definition",
+      "title": "Transitivity, density and sensitivity",
+      "statement": "For a continuous map \\(F:X\\to X\\) on a metric space, topological\ntransitivity means that, for nonempty open \\(U,V\\subset X\\), some\n\\(n\\geq0\\) satisfies \\(F^n(U)\\cap V\\neq\\varnothing\\).\nSensitive dependence means that some \\(\\delta>0\\) has the following\nproperty: for every \\(x\\) and every neighborhood \\(U\\) of \\(x\\), there\nare \\(y\\in U\\) and \\(n\\geq0\\) with\n\\(\\dist(F^nx,F^ny)>\\delta\\).\nIn this chapter \\emph{chaotic} means transitive, with dense periodic\npoints and sensitive dependence. Each of the three properties will\nbe checked for the examples; this convention is not a claim that\nall definitions of chaos are equivalent on all spaces.",
+      "chapter": 17,
+      "source_file": "chapters/M13.17.tex",
+      "line": 5,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:17:shift-definition",
+      "kind": "definition",
+      "title": "One-sided and two-sided shifts",
+      "statement": "Let \\(\\Sigma^+=\\{0,1\\}^{\\N_0}\\) and \\(\\Sigma=\\{0,1\\}^{\\Z}\\).\nThe shift is \\((\\sigma s)_j=s_{j+1}\\).\nOn \\(\\Sigma^+\\), set \\(d_+(s,t)=2^{-N}\\), where \\(N\\) is the first\nindex at which \\(s,t\\) differ, and set \\(d_+(s,s)=0\\).\nOn \\(\\Sigma\\), use\n\\[\n d_{\\Z}(s,t)=\\sum_{j\\in\\Z}2^{-\\abs{j}-2}\\abs{s_j-t_j}.\n\\]\nThese metrics induce the product topology. Specifying finitely many\ncoordinates gives a cylinder set; initial cylinders suffice on\n\\(\\Sigma^+\\). The one-sided shift is surjective but not injective;\nthe two-sided shift is a homeomorphism.",
+      "chapter": 17,
+      "source_file": "chapters/M13.17.tex",
+      "line": 19,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:17:shift-compactness",
+      "kind": "lemma",
+      "title": "Compactness of the symbolic spaces",
+      "statement": "Both symbolic spaces are compact, have no isolated points, and are\ntotally disconnected.",
+      "chapter": 17,
+      "source_file": "chapters/M13.17.tex",
+      "line": 34,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:17:full-shift-chaos",
+      "kind": "theorem",
+      "title": "Full-shift chaos",
+      "statement": "Both shifts are chaotic in Definition~\\ref{d13:17:chaos-definition}.\nFor every \\(n\\geq1\\), \\(\\sigma^n\\) has exactly \\(2^n\\) fixed points.\nEach shift also has a dense forward orbit.",
+      "chapter": 17,
+      "source_file": "chapters/M13.17.tex",
+      "line": 51,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:17:inverse-branch-coding",
+      "kind": "theorem",
+      "title": "A coding theorem with disjoint branches",
+      "statement": "Let \\(K\\) be a nonempty compact metric space of finite diameter, and\nlet \\(b_0,b_1:K\\to K\\) be injective contractions with common constant\n\\(q<1\\) and disjoint images. Suppose a continuous map \\(F\\), defined\non a neighborhood containing those images, satisfies \\(Fb_i=\\id_K\\).\nSet\n\\[\n K_n=\\bigcup_{s_0,\\ldots,s_{n-1}\\in\\{0,1\\}}\n          b_{s_0}\\cdots b_{s_{n-1}}K,\\qquad\n \\Lambda=\\bigcap_{n\\geq1}K_n .\n\\]\nThere is a homeomorphism \\(\\pi:\\Sigma^+\\to\\Lambda\\) satisfying\n\\(F\\pi=\\pi\\sigma\\). In particular \\(\\Lambda\\) is compact, invariant,\nhas no isolated points, is totally disconnected, and \\(F|_\\Lambda\\)\nis chaotic.",
+      "chapter": 17,
+      "source_file": "chapters/M13.17.tex",
+      "line": 82,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:17:logistic-cantor",
+      "kind": "theorem",
+      "title": "A chaotic invariant set for a quadratic polynomial",
+      "statement": "For every \\(\\mu\\geq5\\), \\(f_\\mu(x)=\\mu x(1-x)\\) has a compact invariant\nCantor set \\(\\Lambda_\\mu\\subset[0,1]\\) on which it is conjugate to\nthe one-sided binary shift and hence chaotic.\nThis does not say that \\(f_\\mu\\) maps all of \\([0,1]\\) into itself.",
+      "chapter": 17,
+      "source_file": "chapters/M13.17.tex",
+      "line": 123,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:17:tent-chaos",
+      "kind": "proposition",
+      "title": "Tent-map exactness and chaos",
+      "statement": "The tent map \\(\\tau\\) of Proposition~\\ref{d13:15:logistic-tent} is\nchaotic. Every nonempty relatively open interval \\(I\\subset[0,1]\\)\nhas \\(\\tau^n(I)=[0,1]\\) for some \\(n\\). Consequently \\(f_4\\) is\nchaotic on its full invariant interval.",
+      "chapter": 17,
+      "source_file": "chapters/M13.17.tex",
+      "line": 146,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": null,
+      "kind": "remark",
+      "title": "Why not identify the interval with the binary shift?",
+      "statement": "At the tent-map turning point, the two inverse branches meet.\nItineraries at preimages of that point need boundary conventions,\nand the coding need not be injective. The full interval is connected,\nwhereas the full symbolic space is totally disconnected, so they\ncannot be homeomorphic. The disjoint-branch hypothesis above is\nessential to its stronger conjugacy conclusion.",
+      "chapter": 17,
+      "source_file": "chapters/M13.17.tex",
+      "line": 172,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:17:affine-horseshoe",
+      "kind": "theorem",
+      "title": "Affine strip horseshoe",
+      "statement": "Fix \\(0<r<1/2\\), and let\n\\[\n C_r=\\left\\{(1-r)\\sum_{j=0}^\\infty s_jr^j:\n                       s_j\\in\\{0,1\\}\\right\\}\\subset[0,1].\n\\]\nOn the disjoint vertical strips\n\\(V_0=[0,r]\\times[0,1]\\),\n\\(V_1=[1-r,1]\\times[0,1]\\), define\n\\[\n H(x,y)=\\left(\\frac{x-(1-r)i}{r},\\,ry+(1-r)i\\right)\n             \\quad\\hbox{for }(x,y)\\in V_i .\n\\]\nThis map is a homeomorphism from \\(V_0\\cup V_1\\) onto two disjoint\nhorizontal strips. Its maximal set with a bi-infinite orbit in the\nunit square is \\(\\Lambda=C_r\\times C_r\\), and \\(H|_\\Lambda\\) is\nconjugate to the two-sided binary shift. On each strip its derivative\nhas expanding and contracting factors \\(r^{-1}\\) and \\(r\\).\nThe statement concerns this explicitly defined local strip model;\nno unspecified smooth extension over the middle gap is assumed.",
+      "chapter": 17,
+      "source_file": "chapters/M13.17.tex",
+      "line": 183,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": null,
+      "kind": "example",
+      "title": "Ergodic rotation is not sensitive",
+      "statement": "An irrational circle rotation has dense orbits by\nTheorem~\\ref{d13:15:rigid-rotation}, but it is an isometry and has no\nperiodic points. Given a proposed sensitivity constant, take a\nsmaller-radius neighborhood; all paired distances remain smaller\nfor every time. Thus density of orbits alone does not prove chaos.\nIts measure-theoretic ergodicity will be a separate assertion in\nChapter~\\ref{ch:d13-19}.",
+      "chapter": 17,
+      "source_file": "chapters/M13.17.tex",
+      "line": 235,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:18:exponent-definition",
+      "kind": "definition",
+      "title": "Derivative growth",
+      "statement": "For a \\(C^1\\) map \\(F:U\\to U\\), \\(U\\subset\\R^d\\) open, \\(x\\in U\\)\nand \\(v\\neq0\\), the finite-time directional growth rate is\n\\[\n \\lambda_n(x,v)=\\frac1n\\log\\frac{\\norm{D(F^n)(x)v}}{\\norm{v}} .\n\\]\nThe directional Lyapunov exponent is its limit when that limit exists,\npossibly \\(-\\infty\\); \\(\\log0=-\\infty\\).\nAn operator-norm upper rate uses\n\\(\\limsup_n n^{-1}\\log\\norm{D(F^n)(x)}\\).\nFor a differentiable flow replace \\(n\\) by \\(t\\to+\\infty\\).\nFor a matrix cocycle \\(A(x)\\) over a map \\(T\\), replace \\(D(F^n)(x)\\)\nby \\(A(T^{n-1}x)\\cdots A(x)\\).\nA limsup is not, by definition alone, an existing limit.",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 5,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:18:norm-independence",
+      "kind": "proposition",
+      "title": "Norm independence",
+      "statement": "In a fixed finite-dimensional space the existence and value of each\nof these limits, and of the corresponding limsup, are independent\nof the chosen equivalent norm.",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 21,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:18:linear-exponents",
+      "kind": "theorem",
+      "title": "Constant linear-flow exponents",
+      "statement": "Let \\(A\\) be a real or complex finite-dimensional matrix and \\(v\\neq0\\).\nIn the complex generalized eigenspace decomposition let\n\\[\n \\alpha(v)=\\max\\{\\Re\\lambda:\\text{the component of \\(v\\) in \\(E_\\lambda\\)\n                                        is nonzero}\\}.\n\\]\nThen\n\\(\\lim_{t\\to\\infty}t^{-1}\\log\\norm{e^{tA}v}=\\alpha(v)\\).\nIn particular the operator-norm limit is the largest real part of\nan eigenvalue. Nontrivial Jordan blocks do not change these limits.",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 36,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:18:ergodic-exponents",
+      "kind": "proposition",
+      "title": "One-dimensional and volume exponents",
+      "statement": "Let \\(F\\) be \\(C^1\\) on an open subset of \\(\\R^d\\), and let\n\\(\\mu\\) be an invariant probability measure on a compact invariant\nset \\(K\\) in that open set. If\n\\(g(x)=\\log\\abs{\\det DF(x)}\\) is in \\(L^1(\\mu)\\), then\n\\[\n \\frac1n\\log\\abs{\\det D(F^n)(x)}\n       \\longrightarrow g^*(x)\n \\quad\\text{for almost every }x,\n\\]\nwhere \\(g^*\\) is invariant and \\(\\int g^*\\,\\dd\\mu=\\int g\\,\\dd\\mu\\).\nIf \\(\\mu\\) is ergodic, the limit is the constant \\(\\int g\\,\\dd\\mu\\).\nFor \\(d=1\\) this is the directional derivative exponent.\nFor \\(d>1\\) it is a volume-growth assertion, not an assertion that\nevery individual directional exponent exists.",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 68,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": null,
+      "kind": "example",
+      "title": "A bounded cocycle without a pointwise exponent",
+      "statement": "Over the one-sided shift take the scalar cocycle \\(A(s)=e^{s_0}\\).\nIt is continuous, bounded and invertible. Choose a sequence consisting\nof alternating all-zero and all-one blocks, with lengths\n\\(L_j=2^{2^j}\\). At the end of block \\(j\\), the proportion occupied\nby earlier blocks is at most\n\\((L_1+\\cdots+L_{j-1})/L_j\\to0\\).\nThus the logarithmic growth average has subsequences tending to zero\nand to one. It has no limit at that base point.\nThis does not contradict the preceding almost-everywhere theorem:\nit neither supplies an invariant ergodic measure typical for that\npoint nor verifies a full-measure claim about it.",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 98,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:18:attractor-definition",
+      "kind": "definition",
+      "title": "A stable attractor",
+      "statement": "For a continuous map on a metric space, a stable attractor is a\nnonempty compact set \\(A\\) with \\(F(A)=A\\), which is Lyapunov stable\nand attracts a neighborhood: \\(\\dist(F^nx,A)\\to0\\) for every point\nin that neighborhood. Stability uses neighborhoods of the whole set.\nThe basin is the set of points whose forward iterates approach \\(A\\).\nThis definition does not require transitivity or positive exponents.",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 114,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:18:trapping-attractor",
+      "kind": "theorem",
+      "title": "A compact trapping-set construction",
+      "statement": "Let \\(F:X\\to X\\) be continuous on a metric space. If \\(K\\neq\\varnothing\\)\nis compact and \\(F(K)\\subset\\operatorname{int}K\\), then\n\\[\n A=\\bigcap_{n\\geq0}F^n(K)\n\\]\nis a stable attractor. Attraction is uniform for starting points in\n\\(K\\): every neighborhood \\(V\\) of \\(A\\) contains \\(F^n(K)\\) for\nall sufficiently large \\(n\\). Its basin contains the open set\n\\(\\bigcup_{n\\geq0}F^{-n}(\\operatorname{int}K)\\).",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 123,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": null,
+      "kind": "example",
+      "title": "Attraction need not mean chaos",
+      "statement": "For \\(F(x)=x/2\\) on \\(\\R\\), \\(K=[-1,1]\\) is trapping and\n\\(A=\\{0\\}\\). Its derivative exponent is \\(-\\log2\\).\nThis is a stable attractor, but it has neither the sensitive\ndependence nor the large orbit structure of the horseshoe.",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 160,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:18:hausdorff-definition",
+      "kind": "definition",
+      "title": "Hausdorff measure and dimension",
+      "statement": "For \\(s>0\\) and \\(\\delta>0\\), define\n\\[\n \\mathcal H^s_\\delta(E)=\n \\inf\\left\\{\\sum_i(\\operatorname{diam}U_i)^s:\n E\\subset\\bigcup_iU_i,\\ \\operatorname{diam}U_i\\leq\\delta\\right\\}.\n\\]\nSet \\(\\mathcal H^s(E)=\\lim_{\\delta\\downarrow0}\\mathcal H^s_\\delta(E)\\)\nand\n\\(\\dim_H E=\\inf\\{s>0:\\mathcal H^s(E)=0\\}\\).\nFor a compact subset of the line, let \\(N_\\varepsilon(E)\\) be the\nleast number of intervals of length at most \\(\\varepsilon\\) that\ncover it. Its box dimension is\n\\(\\lim_{\\varepsilon\\downarrow0}\\log N_\\varepsilon(E)/\n \\log(1/\\varepsilon)\\), when that limit exists.",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 169,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:18:mass-distribution",
+      "kind": "lemma",
+      "title": "The mass-distribution estimate",
+      "statement": "If a Borel probability measure \\(\\nu\\), supported on \\(E\\subset\\R\\),\nsatisfies \\(\\nu(J)\\leq C\\abs{J}^s\\) for every sufficiently short\ninterval \\(J\\), then \\(\\mathcal H^s(E)\\geq C^{-1}\\).",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 186,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:18:cantor-dimension",
+      "kind": "theorem",
+      "title": "Dimension of a two-branch Cantor set",
+      "statement": "For \\(0<r<1/2\\), the set \\(C_r\\) of\nTheorem~\\ref{d13:17:affine-horseshoe} has\n\\[\n \\dim_H C_r=\\dim_{\\mathrm{box}}C_r\n       =d=\\frac{\\log2}{\\log(1/r)},\\qquad\n          0<\\mathcal H^d(C_r)<\\infty .\n\\]\nIn particular the middle-thirds set has dimension \\(\\log2/\\log3\\).",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 199,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": null,
+      "kind": "remark",
+      "title": "Limits of the present conclusions",
+      "statement": "A numerical rate, a limsup, and an almost-everywhere Lyapunov\nexponent are different assertions. Likewise a box-dimension\nestimate is not automatically a Hausdorff-dimension theorem.\nThe general multiplicative ergodic theorem and general dimension\nformulae are outside this bounded bridge chapter. The linear,\nintegrable scalar/volume and separated Cantor results above are\nactual proved asymptotic statements within it.",
+      "chapter": 18,
+      "source_file": "chapters/M13.18.tex",
+      "line": 247,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:19:preserving-definition",
+      "kind": "definition",
+      "title": "Measure-preserving and ergodic maps",
+      "statement": "Let \\((X,\\mathcal A,\\mu)\\) be a probability space. A measurable map\n\\(T:X\\to X\\) is measure preserving if\n\\(\\mu(T^{-1}E)=\\mu(E)\\) for every measurable \\(E\\).\nA measurable set is invariant modulo null sets if\n\\(\\mu(T^{-1}E\\mathbin{\\triangle}E)=0\\).\nThe map is ergodic if every such set has measure zero or one.\nIt is mixing if\n\\(\\mu(A\\cap T^{-n}B)\\to\\mu(A)\\mu(B)\\) for all measurable \\(A,B\\).\nNo inverse map is required in these definitions.",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 5,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:19:composition-isometry",
+      "kind": "lemma",
+      "title": "Integration and composition",
+      "statement": "For a measure-preserving map, \\(\\int h\\circ T\\,\\dd\\mu=\\int h\\,\\dd\\mu\\)\nfor nonnegative measurable \\(h\\), and for every integrable \\(h\\).\nConsequently \\(Uh=h\\circ T\\) is a well-defined linear isometry on\n\\(L^p(\\mu)\\), \\(1\\leq p\\leq\\infty\\).\nThe averages \\(A_nh=n^{-1}\\sum_{j=0}^{n-1}U^jh\\) have norm at most one\nas operators on each of these spaces.",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 17,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:poincare-recurrence",
+      "kind": "theorem",
+      "title": "Poincare recurrence",
+      "statement": "For a measurable \\(E\\), almost every \\(x\\in E\\) returns to \\(E\\)\ninfinitely many times: \\(T^nx\\in E\\) for infinitely many \\(n\\geq1\\).\nThe assertion also holds on any finite measure space.",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 36,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:metric-recurrence",
+      "kind": "corollary",
+      "title": "Metric recurrence",
+      "statement": "If \\(X\\) is a second-countable metric space with Borel probability\n\\(\\mu\\), almost every \\(x\\) has a sequence \\(n_k\\to\\infty\\) with\n\\(T^{n_k}x\\to x\\).",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 51,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": null,
+      "kind": "example",
+      "title": "Finiteness cannot be dropped",
+      "statement": "Translation \\(T(n)=n+1\\) preserves counting measure on \\(\\Z\\), but\nthe set \\(\\{0\\}\\) never returns to itself. This does not contradict\nthe theorem because the whole space has infinite measure.",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 64,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:19:hilbert-projection",
+      "kind": "lemma",
+      "title": "Closed-subspace projection",
+      "statement": "In a real or complex Hilbert space, every closed linear subspace\n\\(M\\) has an orthogonal decomposition \\(H=M\\oplus M^\\perp\\).",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 72,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:mean-ergodic",
+      "kind": "theorem",
+      "title": "Mean ergodic theorem for an isometry",
+      "statement": "Let \\(U\\) be a linear isometry of a Hilbert space into itself, not\nnecessarily onto. If \\(P\\) is orthogonal projection onto\n\\(\\operatorname{Fix}U=\\{h:Uh=h\\}\\), then\n\\[\n \\frac1n\\sum_{j=0}^{n-1}U^jh\\longrightarrow Ph\n       \\quad\\hbox{in Hilbert norm}.\n\\]\nIn particular this applies to composition by a probability-preserving\nmap on \\(L^2(\\mu)\\).",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 90,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:maximal-lemma",
+      "kind": "lemma",
+      "title": "Finite and infinite maximal ergodic estimate",
+      "statement": "Let \\(f\\in L^1(\\mu)\\) be real and put\n\\(S_kf=\\sum_{j=0}^{k-1}f\\circ T^j\\).\nFor \\(E_N=\\{\\max_{1\\leq k\\leq N}S_kf>0\\}\\),\n\\(\\int_{E_N}f\\,\\dd\\mu\\geq0\\).\nThe same holds for \\(E=\\{\\sup_{k\\geq1}S_kf>0\\}\\).\nConsequently, for \\(h\\in L^1\\) and \\(\\alpha>0\\),\n\\[\n \\mu\\{\\sup_{n\\geq1}A_n\\abs{h}>\\alpha\\}\n       \\leq\\frac{\\norm{h}_1}{\\alpha}.\n\\]",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 126,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:dense-coboundaries",
+      "kind": "lemma",
+      "title": "Dense bounded coboundaries",
+      "statement": "In real \\(L^1\\) on a probability space, the class\n\\[\n \\mathcal D=\\{v+(I-U)g:\\ v,g\\in L^\\infty,\\ Uv=v\\}\n\\]\nis dense. For \\(d=v+(I-U)g\\) in this class, \\(A_nd\\to v\\) almost\neverywhere and in \\(L^1\\).",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 155,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:birkhoff",
+      "kind": "theorem",
+      "title": "Pointwise and \\(L^1\\) ergodic theorem",
+      "statement": "For a probability-preserving \\(T\\) and \\(f\\in L^1(\\mu)\\), the averages\n\\[\n A_nf(x)=\\frac1n\\sum_{j=0}^{n-1}f(T^jx)\n\\]\nconverge almost everywhere and in \\(L^1\\) to an integrable function\n\\(f^*\\). It satisfies \\(f^*\\circ T=f^*\\) almost everywhere and\n\\[\n \\int_E f^*\\,\\dd\\mu=\\int_E f\\,\\dd\\mu\n\\]\nfor every invariant measurable set \\(E\\), in particular for \\(E=X\\).\nIf \\(T\\) is ergodic, \\(f^*=\\int f\\,\\dd\\mu\\) almost everywhere.\nComplex-valued functions are treated componentwise.",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 178,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:ergodic-criterion",
+      "kind": "corollary",
+      "title": "An equivalent ergodicity criterion",
+      "statement": "A probability-preserving map is ergodic if and only if for every\nintegrable \\(f\\), its time averages converge almost everywhere to\nthe constant \\(\\int f\\,\\dd\\mu\\). Mixing implies ergodicity.",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 248,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:probability-compactness",
+      "kind": "lemma",
+      "title": "Weak compactness of probabilities",
+      "statement": "On a nonempty compact metric space \\(K\\), every sequence of Borel\nprobability measures has a subsequence for which the integrals of\nevery real continuous function converge to those for a Borel\nprobability measure.",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 263,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:invariant-probability",
+      "kind": "theorem",
+      "title": "Existence of an invariant probability",
+      "statement": "Every continuous map \\(T:K\\to K\\) on a nonempty compact metric\nspace has an invariant Borel probability measure.",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 297,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:unique-ergodic-uniform",
+      "kind": "theorem",
+      "title": "Unique ergodicity gives uniform continuous averages",
+      "statement": "If the continuous map \\(T:K\\to K\\) above has a unique invariant\nBorel probability \\(\\nu\\), then for every \\(g\\in C(K,\\R)\\),\n\\[\n \\sup_{x\\in K}\\left|\\frac1n\\sum_{j=0}^{n-1}g(T^jx)\n                         -\\int g\\,\\dd\\nu\\right|\\longrightarrow0 .\n\\]",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 316,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:rotation-ergodicity",
+      "kind": "theorem",
+      "title": "Irrational rotations",
+      "statement": "Lebesgue probability on \\(\\mathbb T=\\R/\\Z\\) is preserved by\n\\(R_\\alpha(x)=x+\\alpha\\). If \\(\\alpha\\) is irrational, this rotation\nis ergodic and uniquely ergodic, but not mixing.\nFor every continuous periodic \\(g\\), its orbit averages converge\nuniformly to \\(\\int_0^1g(x)\\,\\dd x\\).",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 336,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:bernoulli-measure",
+      "kind": "lemma",
+      "title": "A Bernoulli probability on the shift",
+      "statement": "On either binary symbolic space there is a unique Borel probability\nassigning mass \\(2^{-m}\\) to each cylinder specifying \\(m\\) distinct\ncoordinates. Coordinates on disjoint finite index sets are independent.",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 376,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:19:bernoulli-mixing",
+      "kind": "theorem",
+      "title": "Bernoulli shifts are mixing",
+      "statement": "The binary shifts preserve their Bernoulli probability and are mixing,\nhence ergodic. Almost every sequence has frequency \\(1/2\\) of the\nsymbol one in its nonnegative coordinates. Periodic sequences are\ndense topologically but have total probability zero.",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 397,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": null,
+      "kind": "remark",
+      "title": "What the introduction does and does not claim",
+      "statement": "Recurrence is an almost-everywhere conclusion under finite invariant\nmeasure. Ergodicity identifies almost-everywhere time averages with\nspace averages; mixing is stronger, and uniform convergence for\ncontinuous observables here uses unique ergodicity and compactness.\nThese statements have different quantifiers and are not substitutes\nfor one another. Entropy theory, equilibrium states and the general\nmultiplicative ergodic theorem require additional chapters and are\nnot adopted as unproved extensions of these results.",
+      "chapter": 19,
+      "source_file": "chapters/M13.19.tex",
+      "line": 433,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:20:hyperbolicity",
+      "kind": "definition",
+      "title": "Hyperbolicity",
+      "statement": "A real matrix $A$ is hyperbolic if none of its complex eigenvalues has real\npart zero. Write $\\R^n=E^s\\oplus E^u$ for the real invariant sums corresponding\nto eigenvalues with negative and positive real parts, and $P^s,P^u$ for the\ncommuting projections. Either subspace is allowed to be zero.",
+      "chapter": 20,
+      "source_file": "chapters/M13.20.tex",
+      "line": 10,
+      "coverage_role": "required-definition"
+    },
+    {
+      "label": "d13:20:dichotomy",
+      "kind": "lemma",
+      "title": "Exponential dichotomy",
+      "statement": "For hyperbolic $A$ there are $K\\geq1$ and $\\alpha>0$ such that\n\\[\n \\norm{e^{tA}P^s}\\leq Ke^{-\\alpha t},\\qquad\n \\norm{e^{-tA}P^u}\\leq Ke^{-\\alpha t}\\quad(t\\geq0).\n\\]\nEvery bounded solution of $z'=Az$ on all of $\\R$ is zero.",
+      "chapter": 20,
+      "source_file": "chapters/M13.20.tex",
+      "line": 17,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:20:cutoff",
+      "kind": "lemma",
+      "title": "A small bounded nonlinear extension",
+      "statement": "Suppose $f$ is $C^k$, $1\\leq k\\leq\\infty$, near zero, $f(0)=0$, and\n$Df(0)=A$. For every $\\delta>0$ there is a global $C^k$ map $r:\\R^n\\to\\R^n$\nwith compact support, $r(0)=Dr(0)=0$, $\\Lip(r)\\leq\\delta$, such that\n$Ax+r(x)=f(x)$ in a neighborhood of zero. All derivatives of any fixed\norder at most $k$ are bounded and uniformly continuous. The modified\nequation has a complete global flow.",
+      "chapter": 20,
+      "source_file": "chapters/M13.20.tex",
+      "line": 36,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:20:green",
+      "kind": "lemma",
+      "title": "The bounded Green inverse",
+      "statement": "For $g\\in C_b(\\R,\\R^n)$ define\n\\[\n (Gg)(t)=\\int_{-\\infty}^t e^{(t-s)A}P^s g(s)\\,\\dd s\n          -\\int_t^\\infty e^{(t-s)A}P^u g(s)\\,\\dd s.\n\\]\nThen $Gg$ is the unique bounded $C^1$ solution of $z'=Az+g$ and\n$\\norm{Gg}_\\infty\\leq C_G\\norm{g}_\\infty$, where $C_G=2K/\\alpha$.",
+      "chapter": 20,
+      "source_file": "chapters/M13.20.tex",
+      "line": 64,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:20:perron",
+      "kind": "lemma",
+      "title": "Lyapunov--Perron fixed points and their regularity",
+      "statement": "For every $\\xi\\in E^s$ there is a unique $w_\\xi\\in X_\\beta$ satisfying\n\\begin{align*}\n w(t)={}&e^{tA}\\xi+\n       \\int_0^t e^{(t-s)A}P^s r(w(s))\\,\\dd s\\\\\n       &-\\int_t^\\infty e^{(t-s)A}P^u r(w(s))\\,\\dd s.\n\\end{align*}\nIt solves $w'=Aw+r(w)$, satisfies $P^s w(0)=\\xi$, and\n\\[\n \\norm{w_\\xi}_\\beta\\leq\\frac{K}{1-q_\\beta}\\norm{\\xi}.\n\\]\nThe map $\\xi\\mapsto w_\\xi$ into $X_\\beta$ is $C^k$.",
+      "chapter": 20,
+      "source_file": "chapters/M13.20.tex",
+      "line": 100,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:20:stable-manifold",
+      "kind": "theorem",
+      "title": "Local stable and unstable manifolds",
+      "statement": "Let a $C^k$ real vector field, $1\\leq k\\leq\\infty$, have a hyperbolic zero\nat $p$. In coordinates centered at $p$ there are $C^k$ graphs\n\\[\n W^s_{\\rm graph}=\\{\\xi+h^s(\\xi):\\xi\\in E^s\\},\\qquad\n W^u_{\\rm graph}=\\{\\eta+h^u(\\eta):\\eta\\in E^u\\}\n\\]\nfor a small extension agreeing with the original field near $p$.\nHere $h^s:E^s\\to E^u$, $h^u:E^u\\to E^s$ vanish with their derivatives at\nzero. The graphs are respectively forward and backward invariant for the\nextension. Their sufficiently small portions give local invariant\nmanifolds for the original field. Their trajectories converge to $p$\nexponentially in the appropriate time direction.\n\nMore precisely, choose a ball $U$ on which the extension equals the\noriginal field. Every original forward trajectory remaining in a\nsufficiently small bounded neighborhood of $p$ for all $t\\geq0$ starts\non the stable graph. Conversely all graph points with sufficiently small\n$\\norm{\\xi}$ stay in $U$ for all $t\\geq0$ and satisfy\n$\\norm{\\Phi(t,p+\\xi+h^s(\\xi))-p}\\leq C\\norm{\\xi}e^{-\\beta t}$.\nThe reversed-time statement holds for the unstable graph.",
+      "chapter": 20,
+      "source_file": "chapters/M13.20.tex",
+      "line": 164,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:20:local-global",
+      "kind": "remark",
+      "title": "Local versus global stable sets",
+      "statement": "A full stable set can return from far away and need not coincide with\none small graph throughout an arbitrary neighborhood. The characterization\nabove uses trajectories remaining in the chosen local neighborhood.\nTaking backward flow images of local stable portions gives the global\nstable manifold as an immersed manifold, not necessarily a closed\nembedded submanifold of the entire ambient space.\nHere is the chart argument for that last assertion. Within the modified\nstable graph take the open parameter set\n$V_s=\\{\\xi:\\norm{w_\\xi}_\\beta<\\eta\\}$ for small $\\eta$.\nThe shift estimate\n$\\norm{w_\\xi(\\cdot+\\tau)}_\\beta\\leq e^{-\\beta\\tau}\\norm{w_\\xi}_\\beta$\nmakes its image forward invariant. The sets obtained by applying\n$\\Phi(-m,\\cdot)$ to this image on its actual backward-existence domain,\nfor integers $m\\geq0$, are nested\nmanifold charts covering the global stable set: every convergent\ntrajectory eventually stays in the original small ball, is on the graph\nby the theorem, and eventually has arbitrarily small stable parameter.\nFinite-time flow maps are $C^k$ local diffeomorphisms. On overlapping\nstable-graph parameter charts their derivatives have full stable rank,\nso the finite-dimensional inverse theorem gives $C^k$ chart transitions\nand open inclusions. The resulting countable atlas is Hausdorff because\nits inclusion in $\\R^n$ is continuous and injective, and it is second\ncountable from the countably many Euclidean parameter charts. Its\ninclusion has injective differential in every chart, proving immersion.\nThe atlas topology need not equal the ambient subspace topology.",
+      "chapter": 20,
+      "source_file": "chapters/M13.20.tex",
+      "line": 216,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:20:hartman-grobman",
+      "kind": "theorem",
+      "title": "Hartman--Grobman for flows",
+      "statement": "Let $f\\in C^1$ near a hyperbolic zero $p$, and put $A=Df(p)$.\nThere is a homeomorphism $H$ between neighborhoods of zero and $p$,\n$H(0)=p$, which conjugates $x'=Ax$ to $y'=f(y)$ for every time interval\non which the two corresponding trajectories remain in these\nneighborhoods. Time is preserved. No differentiability or Lipschitz\nregularity of $H$ is asserted.",
+      "chapter": 20,
+      "source_file": "chapters/M13.20.tex",
+      "line": 245,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:20:example-graph",
+      "kind": "example",
+      "title": "A nonlinear stable graph",
+      "statement": "For $x'=-x+y^2$, $y'=y$, the stable graph at zero is $y=0$.\nThe unstable graph is $x=y^2/3$: differentiating this identity along a\ntrajectory gives $x'=2y^2/3=-y^2/3+y^2$. In fact\n$y(t)=y_0e^t$ and\n$x(t)=e^{-t}(x_0-y_0^2/3)+(y_0^2/3)e^{2t}$.\nDecay as $t\\to-\\infty$ holds precisely when $x_0=y_0^2/3$.\nThus the unstable graph is tangent to the unstable axis but is not that\nlinear axis. The formula also checks both the nonlinear graph and its\norientation in time directly.",
+      "chapter": 20,
+      "source_file": "chapters/M13.20.tex",
+      "line": 311,
+      "coverage_role": "example-or-editorial"
+    },
+    {
+      "label": "d13:21:index-properties",
+      "kind": "lemma",
+      "title": "Index properties without a separation theorem",
+      "statement": "For a continuous loop $\\alpha:[0,1]\\to\\R^2\\setminus\\{p\\}$,\nwith $\\alpha(0)=\\alpha(1)$, its winding index about $p$ is an integer.\nIt is unchanged under any continuous loop homotopy avoiding $p$.\nFor fixed $\\alpha$ it is locally constant as a function of $p$ off\nthe trace, and it is zero for $p$ outside a sufficiently large ball.\nFor a $C^1$ loop it equals\n\\[\n \\operatorname{ind}(\\alpha,p)=\\frac{1}{2\\pi}\n \\int_0^1\\frac{\\det(\\alpha(t)-p,\\alpha'(t))}\n                    {\\norm{\\alpha(t)-p}^2}\\,\\dd t.\n\\]",
+      "chapter": 21,
+      "source_file": "chapters/M13.21.tex",
+      "line": 12,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:21:collar",
+      "kind": "lemma",
+      "title": "A $C^1$ collar for a regular embedded loop",
+      "statement": "Let $\\gamma:\\R/\\Z\\to\\R^2$ be a $C^1$ injective map with\n$\\gamma'(t)\\ne0$ for all $t$. There are a periodic $C^1$ vector\nfield $v(t)$ and $a>0$ for which\n\\[\n F:(\\R/\\Z)\\times(-a,a)\\longrightarrow\\R^2,\n \\qquad F(t,r)=\\gamma(t)+rv(t)\n\\]\nis a $C^1$ diffeomorphism onto an open neighborhood $N$ of the curve.\nMoreover $\\det(\\gamma'(t),v(t))>0$ for all $t$. The two sets\n$N_+=F((\\R/\\Z)\\times(0,a))$ and\n$N_-=F((\\R/\\Z)\\times(-a,0))$ are disjoint path-connected subsets\nof the curve complement.",
+      "chapter": 21,
+      "source_file": "chapters/M13.21.tex",
+      "line": 61,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:21:jump",
+      "kind": "lemma",
+      "title": "Local index jump at a regular arc",
+      "statement": "With the preceding orientation of the collar,\n\\[\n \\operatorname{ind}(\\gamma,p_+)\n       -\\operatorname{ind}(\\gamma,p_-)=1\n \\qquad(p_+\\in N_+,\\ p_-\\in N_-).\n\\]",
+      "chapter": 21,
+      "source_file": "chapters/M13.21.tex",
+      "line": 117,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:21:smooth-jordan",
+      "kind": "theorem",
+      "title": "Jordan separation for a regular $C^1$ loop",
+      "statement": "Let $\\gamma:\\R/\\Z\\to\\R^2$ be $C^1$, injective, and regular\n($\\gamma'\\ne0$), and let $\\Gamma$ be its trace. Then\n$\\R^2\\setminus\\Gamma$ has exactly two connected components:\na bounded open component $\\Omega$ and an unbounded open component $E$.\nThey are path connected,\n\\[\n \\partial\\Omega=\\partial E=\\Gamma,\n \\qquad \\overline\\Omega=\\Omega\\cup\\Gamma,\n\\]\nand $\\Omega$ has $C^1$ boundary. The winding index is zero on $E$\nand is identically either $1$ or $-1$ on $\\Omega$, according to the\norientation of $\\gamma$.",
+      "chapter": 21,
+      "source_file": "chapters/M13.21.tex",
+      "line": 168,
+      "coverage_role": "main-result"
+    },
+    {
+      "label": "d13:21:domain-interior",
+      "kind": "corollary",
+      "title": "Interior containment in a simply connected domain",
+      "statement": "Let $U\\subset\\R^2$ be open and simply connected, meaning path connected\nwith every continuous loop contractible within $U$. If the trace of a\nregular $C^1$ embedded loop $\\gamma$ lies in $U$, then its bounded\ninterior $\\Omega$ and its closure both lie in $U$.",
+      "chapter": 21,
+      "source_file": "chapters/M13.21.tex",
+      "line": 238,
+      "coverage_role": "main-result"
+    }
+  ]
+}

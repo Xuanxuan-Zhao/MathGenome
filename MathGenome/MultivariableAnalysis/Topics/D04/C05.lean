@@ -1,0 +1,16 @@
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.ActiveConstraintCoordinates
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.ActiveConstraints
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.ConstrainedHessianBridge
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.ConstrainedSecondVariation
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.Convexity
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.CriticalCone
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.CriticalConeNecessity
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.ExistenceFermat
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.ExtremaInterfaces
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.LagrangeMultipliers
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.Morse
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.MorseCoefficients
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.MorseIndex
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.SecondOrderTests
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.SmoothSquareCompletion
+import MathGenome.Internal.MultivariableAnalysis.D04.C05.WorkedConstraints

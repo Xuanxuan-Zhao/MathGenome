@@ -1,0 +1,3165 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks,bookmarksopen,bookmarksnumbered]{hyperref}
+\hypersetup{pdftitle={Foundations of Numerical Analysis},
+  pdfauthor={MathGenome},pdfsubject={Unified mathematical notes, P2-06}}
+\allowdisplaybreaks[1]
+\setlength{\emergencystretch}{2em}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{27mm}
+{\large MathGenome \enspace / \enspace P2-06\par}
+\vspace{8mm}
+\hrule height 0.8pt
+\vspace{11mm}
+{\Huge\bfseries Foundations of\\[3pt] Numerical Analysis\par}
+\vspace{4mm}
+{\LARGE Error, Stability, and Certified Algorithms\par}
+\vspace{12mm}
+{\large Unified mathematical notes\par}
+\vspace{6mm}
+{\normalsize Floating-point error, conditioning, and stability\\
+Matrix factorizations, least squares, and spectral perturbation\\
+Interpolation, quadrature, root finding, and Newton methods\par}
+\vfill
+{\large 8 November 2026\par}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\baselineskip}{10.6pt}
+\tableofcontents
+\endgroup
+
+\chapter*{Scope and conventions}
+\addcontentsline{toc}{chapter}{Scope and conventions}
+
+The first three chapters develop the common language of rounding,
+condition numbers, backward error, and finite-time stability.
+Chapters 4 and 5 use this language for matrix factorizations,
+least squares, eigenvalues, and low-rank approximation.
+Chapters 6 and 7 treat interpolation, numerical differentiation,
+and quadrature. Chapters 8 and 9 develop root enclosures, fixed
+points, and local and semilocal Newton convergence.
+The result map records the seventy-eight writing groups and
+their relationships to the fifty original contracts.
+
+A computed value in a rounding analysis is the exact real value
+stored by the stated arithmetic model. Each primitive is subject to
+its own safe-domain assumption. When an algorithm is studied
+in exact arithmetic, its inputs and intermediates use the exact
+operations of the indicated field. In a certification theorem,
+a residual or an error enclosure is used only with the hypotheses
+that make it a bound on the true quantity.
+
+The established mathematical prerequisites include real calculus
+from \cite{d03}, multivariable derivatives from \cite{d04},
+finite-dimensional spectral theory and matrix factorizations
+from \cite{d05}, the finite Chinese remainder theorem from
+\cite{d07}, complete-space fixed points from \cite{d10}, and
+the doubly stochastic decomposition from \cite{p205}.
+Where a result is used as a dependency, the exact mathematical
+interface is given in the text or companion map. The proof
+of each new numerical bound gives the steps needed to transfer
+the relevant exact theorem to the algorithm or certificate.
+Textbook citations locate the statements and parallel treatments.
+
+\mainmatter
+\chapter{Floating-Point Models and Error Enclosures}\label{p206:ch01}
+
+\section{The arithmetic model}
+
+The rounding model used here concerns finitely many real numbers.
+A stored number is identified with its real value. Exact arithmetic
+inside an expression is indicated by ordinary arithmetic symbols, and
+a rounding operation is indicated by \(\operatorname{fl}\).
+The conventions follow \cite[Sections 2.1--2.5]{higham}.
+
+\begin{definition}[A finite radix model]\label{p206:W01}
+Fix an integer radix \(\beta\ge2\), an integer precision \(p\ge1\),
+and integer exponent limits \(e_{\min}\le e_{\max}\).
+The positive normal numbers are \(m\beta^e\), where
+\(\beta^{p-1}\le m<\beta^p\) is an integer and
+\(e_{\min}\le e\le e_{\max}\). Adjoin their negatives and zero.
+With gradual underflow, also adjoin the signed numbers
+\(m\beta^{e_{\min}}\) for \(1\le m<\beta^{p-1}\).
+Let \(F\) be the resulting finite set.
+Nearest rounding chooses a point of \(F\) at minimum distance,
+with a fixed deterministic tie rule, for example the smaller
+point in case of a tie. Set
+\[
+ u=\tfrac12\beta^{1-p},\qquad
+ a_{\min}=\beta^{p-1+e_{\min}},\qquad
+ a_{\max}=(\beta^p-1)\beta^{e_{\max}}.
+\]
+The normal safe domain used for relative rounding consists of zero
+and the reals with \(a_{\min}\le |x|\le a_{\max}\).
+\end{definition}
+
+\begin{proposition}[Nearest rounding on the normal safe domain]
+For every \(x\) in the normal safe domain,
+\(\operatorname{fl}(x)=x(1+\delta)\) for some real \(\delta\)
+with \(|\delta|\le u\).
+\end{proposition}
+\begin{proof}
+Zero is represented exactly. For \(x>0\) in the safe range,
+choose a binade
+\([\beta^{p-1}\beta^e,\beta^p\beta^e]\) containing \(x\).
+Its consecutive points are spaced by \(\beta^e\), including the
+last gap up to the next binade when that endpoint exists.
+In the top binade the assertion applies only up to \(a_{\max}\).
+Thus one of the adjacent points is within \(\beta^e/2\) of \(x\),
+and division by \(x\ge\beta^{p-1}\beta^e\) gives the bound.
+For negative \(x\), the available distances are those of \(-x\)
+under reflection of the representable set. The distance bound
+is independent of the tie rule.
+\end{proof}
+
+The mathematical nearest map is defined on all reals. The normal
+safe domain specifies where its relative-error theorem applies.
+Other format models can use a smaller proved domain or a different
+absolute bound near underflow.
+
+\begin{definition}[Rounded operations]\label{p206:W02}
+For representable inputs, rounded addition, subtraction,
+multiplication and division are
+\(\operatorname{fl}(a+b)\), \(\operatorname{fl}(a-b)\),
+\(\operatorname{fl}(ab)\), and \(\operatorname{fl}(a/b)\),
+respectively. Division requires \(b\ne0\).
+A fused multiply-add is \(\operatorname{fl}(ab+c)\), with the
+product and addition exact before the single rounding.
+A rounded square root, when used, acts on a nonnegative
+exact argument and applies one rounding to its real square root.
+\end{definition}
+For these models the relative estimate is a statement about
+the exact result of each primitive. In a separate multiply and add,
+both the product and the addition require their own range check.
+For a fused expression, the range check is on the exact \(ab+c\).
+The analysis below may equivalently start with an abstract relative
+model on a specified domain if these same bounds are assumed.
+
+\begin{proposition}[One-round error and enclosures]\label{p206:W03}
+Suppose a computed \(z\) satisfies \(z=x(1+\delta)\),
+\(|\delta|\le u<1\). Then \(x\) belongs to the closed interval
+whose endpoints are \(z/(1-u)\) and \(z/(1+u)\), ordered by size.
+In particular \(z=0\) implies \(x=0\) in this model. If instead
+\(|z-x|\le\eta\), the interval \([z-\eta,z+\eta]\) contains \(x\).
+If directed values \(z_\downarrow\le x\le z_\uparrow\)
+are available, they themselves give an enclosure.
+\end{proposition}
+\begin{proof}
+All possible divisors \(1+\delta\) are positive and the function
+\(s\mapsto z/s\) is monotone or constant on that interval. This
+gives the ordered relative enclosure for either sign of \(z\).
+The absolute enclosure is the rearranged absolute inequality.
+For a finite ordered format, a directed value can be obtained as
+the largest representable point below, or the smallest above,
+provided the respective defining set is nonempty. These choices
+prove the directed inequalities separately.
+\end{proof}
+
+\begin{theorem}[Gradual underflow and Sterbenz's lemma]\label{p206:W04}
+With gradual underflow, nearest rounding of any \(|x|\le a_{\min}\)
+has absolute error at most \(\beta^{e_{\min}}/2\).
+If \(a,b\) are positive representable numbers with
+\(a/2\le b\le2a\), then \(a-b\) is representable.
+The latter assertion also applies to like-signed negative inputs
+by reflection.
+\end{theorem}
+\begin{proof}
+From zero to \(a_{\min}\) the grid, including both endpoints,
+has spacing \(\beta^{e_{\min}}\). Reflection handles the
+negative side and nearest rounding gives the half-spacing bound.
+
+For exact subtraction interchange the inputs and negate the
+difference if necessary, so \(b\le a\le2b\).
+Use the grid exponent \(e\) of \(b\), with \(e=e_{\min}\) if it is
+subnormal. Write \(b=m\beta^e\), \(m\le\beta^p-1\).
+Since \(a\ge b\), its grid exponent is at least \(e\).
+Thus \(a-b=k\beta^e\) for an integer \(0\le k\le m\).
+If \(k=0\) the result is zero. If \(0<k<\beta^{p-1}\),
+successively multiply \(k\) by \(\beta\) and reduce \(e\) by one,
+until the coefficient is normal or the minimum exponent is reached.
+At the first normal step the coefficient is less than \(\beta^p\).
+At the minimum exponent a shorter coefficient is allowed.
+This proves representability.
+\end{proof}
+Exact subtraction of stored inputs is compatible with sensitivity
+to their original errors. For \(a-b\ne0\), individual input
+perturbations bounded by \(\epsilon |a|\) and \(\epsilon |b|\)
+can change the difference by \(\epsilon(|a|+|b|)\).
+Opposite signs for the two perturbations attain this bound.
+The corresponding relative amplification may be large even
+when the subtraction primitive is exact.
+
+\begin{proposition}[Outward interval operations]\label{p206:W05}
+Let \(X=[a,b]\) and \(Y=[c,d]\). Addition is enclosed by outward
+rounding of \([a+c,b+d]\), subtraction by that of \([a-d,b-c]\),
+and multiplication by that of the interval between the minimum
+and maximum of \(ac,ad,bc,bd\). If \(0\notin Y\), the reciprocal
+is enclosed by outward rounding of \([1/d,1/c]\), and division
+is enclosed by multiplying with that reciprocal enclosure.
+Each outward endpoint used must exist.
+\end{proposition}
+\begin{proof}
+The affine dependence on the coordinates gives the two signed
+addition bounds. For a product each coordinate separately has
+an affine dependence, so its extrema over the rectangle occur
+at corners. The reciprocal is decreasing on each component of
+\(\mathbb R\setminus\{0\}\). These real ranges contain all exact
+values, and replacing their left and right endpoints by a lower
+and an upper bound preserves containment. The stated product
+argument applies to the enlarged reciprocal interval.
+\end{proof}
+
+\section{Accumulation of rounding factors}
+
+\begin{lemma}[Signed products of rounding factors]\label{p206:W06}
+Let \(|\delta_i|\le u\) for \(1\le i\le n\), with \(u\ge0\)
+and \(u<1\). If \(nu<1\) and \(\rho_i\in\{-1,1\}\), then
+\[
+ \prod_{i=1}^n(1+\delta_i)^{\rho_i}=1+\theta,\qquad
+ |\theta|\le \gamma_n:=\frac{nu}{1-nu}.
+\]
+The empty product has \(\theta=0\).
+\end{lemma}
+\begin{proof}
+For either sign of \(\rho_i\), the factor lies in
+\([1-u,(1-u)^{-1}]\), using \(1+u\le(1-u)^{-1}\).
+Induction gives \((1-u)^n\ge1-nu\), so the product is between
+\(1-nu\) and \((1-nu)^{-1}\). The farther endpoint from one
+is at distance \(\gamma_n\).
+\end{proof}
+
+\begin{theorem}[Sequential dot product]\label{p206:W07}
+Suppose the inputs \(x_i,y_i\) are exact stored numbers and all
+operations below satisfy the relative model with \(nu<1\).
+Either form of the following sequential dot product produces
+\[
+ \widehat s=\sum_{i=1}^n x_i y_i(1+\theta_i),\qquad
+ |\theta_i|\le\gamma_n,\qquad
+ \left|\widehat s-\sum_{i=1}^n x_i y_i\right|
+       \le\gamma_n\sum_{i=1}^n |x_i y_i|.
+\]
+The first form separately rounds each product and adds the stored
+products from left to right, starting at the first one. The second
+starts from zero and applies one fused multiply-add per term.
+The empty dot product is zero.
+\end{theorem}
+\begin{proof}
+In the first form, write the product rounding factor of term
+\(i\) as \(1+\alpha_i\) and the sum rounding factor when term \(j\)
+is inserted as \(1+\delta_j\), \(j\ge2\).
+The first term has the product factor and \(n-1\) sum factors.
+Term \(i\ge2\) has its product factor and sum factors for
+\(j=i,\ldots,n\), at most \(n\) in total. This follows by
+distributing each sum factor over the two terms at its step.
+In the fused recurrence a term \(i\) acquires precisely the factors
+for steps \(i,\ldots,n\). Lemma~\ref{p206:W06} bounds each
+path, and the triangle inequality gives the absolute estimate.
+\end{proof}
+In a different evaluation order the bound must use a proved path
+length \(N\) and its condition \(Nu<1\). In particular, a bound
+using \(N=2n\) requires \(2nu<1\), even if a sharper analysis of
+the same algorithm only needs \(nu<1\).
+
+\begin{theorem}[Summation depth and matrix products]\label{p206:W08}
+For a binary rounded sum of real inputs \(x_i\), let \(d\)
+bound the number of additions from any input to the output.
+Under the relative model and \(du<1\),
+the absolute error is at most \(\gamma_d\sum_i|x_i|\).
+For \(n\ge1\) leaves, a balanced tree can be chosen with
+\(d=\lceil\log_2 n\rceil\). If the exact sum \(s\) is nonzero,
+its componentwise relative condition number is
+\(\sum_i|x_i|/|s|\).
+For a matrix product with inner dimension \(k\), computing each
+entry as in Theorem~\ref{p206:W07} under \(ku<1\) yields
+\[
+       |\widehat{AB}-AB|\le \gamma_k\,|A|\,|B|.
+\]
+Here matrix absolute values and inequalities are entrywise.
+\end{theorem}
+\begin{proof}
+Expand the tree recursively. Each leaf has one factor per
+rounded addition on its path, so Lemma~\ref{p206:W06} and
+the triangle inequality give the estimate. Splitting any group
+of leaves into two groups whose sizes differ by at most one gives
+the asserted depth by induction. An additional independently
+rounded product at each leaf increases the bound on depth by one.
+
+If \(|\Delta x_i|\le\epsilon |x_i|\), the change of the exact sum
+has modulus at most \(\epsilon\sum_i |x_i|\). Choosing
+\(\Delta x_i=\epsilon|x_i|\) for every \(i\) attains the bound.
+Divide by \(\epsilon|s|\). At \(s=0\) this argument yields an
+absolute bound without dividing. Apply the dot-product estimate
+to each entry to obtain the last formula, including \(k=0\)
+with zero dot products.
+\end{proof}
+\chapter{Conditioning and Backward Error}
+
+\section{Local sensitivity}
+
+A condition number is assigned to a mathematical problem and a
+choice of input and output scales. Throughout this chapter a matrix
+norm used with a vector norm is subordinate to it. Different input
+and output spaces may carry different vector norms.
+
+\begin{definition}[Absolute and relative condition numbers]\label{p206:W09}
+Let \(f:U\to Y\) be Fr\'echet differentiable at \(x\) in an open
+subset \(U\) of a finite-dimensional normed space \(X\), with \(Y\)
+also normed. Set
+\[
+ \kappa_{\mathrm{abs}}(f,x)=\|Df(x)\|,\qquad
+ \kappa_{\mathrm{rel}}(f,x)
+   =\|Df(x)\|\frac{\|x\|}{\|f(x)\|}\quad (x\ne0,\ f(x)\ne0).
+\]
+The latter definition uses the indicated relative scales.
+At a zero scale the absolute condition number remains defined.
+A singular problem that fails to define a differentiable solution
+map lies outside this derivative formula.
+\end{definition}
+The first number has a worst-case interpretation. For sufficiently
+small \(r>0\) define
+\[
+ K(r)=r^{-1}\sup_{\|v\|\le r}\|f(x+v)-f(x)\|.
+\]
+Differentiability gives a uniform remainder bound
+\(\|f(x+v)-f(x)-Df(x)v\|\le\omega(r)\|v\|\) for
+\(\|v\|\le r\), with \(\omega(r)\to0\).
+Hence \(K(r)\le\|Df(x)\|+\omega(r)\). For any unit vector \(w\),
+test \(v=rw\) to obtain \(K(r)\ge\|Df(x)w\|-\omega(r)\).
+Taking the supremum in \(w\) gives convergence to
+\(\|Df(x)\|\). If \(X\) is zero dimensional then \(K(r)=0\).
+The relative interpretation follows by replacing the input radius
+by \(r\|x\|\) and dividing the output by \(\|f(x)\|\).
+See \cite[Sections 1.5--1.6]{higham} for these scales.
+
+\begin{theorem}[Neumann series and inverse perturbation]\label{p206:W10}
+Let \(A:X\to Y\) be a bounded invertible linear map of Banach
+spaces with bounded inverse and let \(\Delta A:X\to Y\) be
+bounded linear. If \(E=A^{-1}\Delta A\) satisfies
+\(\|E\|<1\), then \(A+\Delta A\) is invertible and
+\[
+ \|(A+\Delta A)^{-1}\|\le \frac{\|A^{-1}\|}{1-\|E\|}.
+\]
+The inverse of \(I+E\) is \(\sum_{j\ge0}(-E)^j\), and
+\[
+ (A+\Delta A)^{-1}-A^{-1}
+       =-(A+\Delta A)^{-1}\Delta A\,A^{-1}.
+\]
+\end{theorem}
+\begin{proof}
+The algebra of bounded operators on \(X\) is complete in its
+operator norm. The series converges since
+\(\|(-E)^j\|\le\|E\|^j\), including \(j=0\) with
+\(\|I\|\le1\). Multiplying the partial sums on either side
+by \(I+E\) gives \(I-(-E)^{N+1}\), which tends to \(I\).
+Thus the sum is the inverse and has norm at most
+\((1-\|E\|)^{-1}\). Factor \(A+\Delta A=A(I+E)\)
+and apply the norm bound. For the difference identity, insert
+the factors \(A\) and \(A+\Delta A\) between the two inverses and
+subtract. The argument also works in a unital Banach algebra with
+\(\|1\|\le1\). The geometric-series identity is available in
+the fixed Mathlib as \texttt{Units.oneSub} with the sign changed
+\cite{mathlib}.
+\end{proof}
+
+\begin{theorem}[Perturbed linear systems]\label{p206:W11}
+Let \(A\) be invertible, \(Ax=b\), and
+\(\|A^{-1}\|\|\Delta A\|<1\). Put
+\((A+\Delta A)\tilde x=b+\Delta b\).
+If \(b\ne0\), define
+\(a=\|\Delta A\|/\|A\|\), \(c=\|\Delta b\|/\|b\|\),
+and \(\kappa(A)=\|A\|\|A^{-1}\|\). Then
+\[
+ \frac{\|\tilde x-x\|}{\|x\|}
+ \le \frac{\kappa(A)(a+c)}{1-\kappa(A)a}.
+\]
+For any \(b\), the corresponding absolute bound is
+\[
+ \|\tilde x-x\|
+ \le \frac{\|A^{-1}\|}{1-\|A^{-1}\|\|\Delta A\|}
+       \bigl(\|\Delta b\|+\|\Delta A\|\|x\|\bigr).
+\]
+\end{theorem}
+\begin{proof}
+The preceding theorem gives the perturbed inverse. Subtract
+\((A+\Delta A)x=b+\Delta A x\) from the perturbed equation to get
+\((A+\Delta A)(\tilde x-x)=\Delta b-\Delta A x\).
+Taking norms gives the absolute estimate.
+If \(b\ne0\), then \(x\ne0\) and
+\(\|\Delta b\|/\|x\|\le c\|A\|\). Divide and simplify.
+The case \(b=0\) uses the absolute version.
+\end{proof}
+
+\section{Forward and backward errors}
+
+\begin{definition}[Two error measurements]\label{p206:W12}
+For exact data \(x\) and an observed output \(\hat y\), the
+absolute forward error is \(\|\hat y-f(x)\|\). Its relative
+version divides by the chosen nonzero output scale.
+For backward error choose an admissible set of perturbations
+\(\mathcal D_x\) and a nonnegative size \(s(v)\) on that set.
+The backward error is
+\[
+ \inf\{s(v):v\in\mathcal D_x,\ x+v\in U,\ f(x+v)=\hat y\},
+\]
+with the infimum \(+\infty\) when there is no feasible
+perturbation. A backward certificate is a particular feasible
+perturbation together with a bound on its size.
+\end{definition}
+For example one can use the norm of a perturbation, its
+relative norm, or componentwise bounds scaled by selected data.
+A finite infimum guarantees the existence of arbitrarily close
+feasible sizes. To guarantee a minimum one can assume in finite
+dimension that the feasible perturbations form a nonempty closed set
+and that the size is a norm. A minimizing sequence then has a
+bounded subsequence converging to a feasible minimizer.
+The closedness assumption matters, for example when admissible
+inputs are required to stay in an open region.
+
+\begin{theorem}[Conditioning converts backward error to forward error]
+\label{p206:W13}
+Suppose \(f\) is Fr\'echet differentiable at \(x\), with
+\(x,f(x)\ne0\). For actual perturbations \(v\) with
+\(\hat y=f(x+v)\) and \(\epsilon=\|v\|/\|x\|\to0\),
+\[
+ \frac{\|\hat y-f(x)\|}{\|f(x)\|}
+    \le \kappa_{\mathrm{rel}}(f,x)\epsilon+o(\epsilon).
+\]
+For a fixed segment \([x,x+v]\), continuity on the segment,
+differentiability along its interior, and a uniform derivative
+bound \(\|Df\|\le L\) there give
+\(\|f(x+v)-f(x)\|\le L\|v\|\).
+\end{theorem}
+\begin{proof}
+Write the Fr\'echet remainder and divide its estimate by
+\(\|f(x)\|\). Its modulus of smallness can be taken uniform
+for all perturbations in a sufficiently small ball, as in
+the proof following Definition~\ref{p206:W09}.
+If the reported relative backward error is an infimum \(b_*\)
+rather than an attained perturbation, use perturbations of size
+at most \(b_*+\tau\). For each fixed \(\epsilon_0>0\), the
+ratio is bounded by
+\((\kappa_{\mathrm{rel}}+\epsilon_0)(b_*+\tau)\)
+whenever these perturbations are sufficiently small. Letting
+\(\tau\downarrow0\) gives the same first-order conclusion for
+the infimum, including zero by continuity.
+
+For the finite bound apply the real mean value theorem to
+a norm-one real functional of \(t\mapsto f(x+tv)\) that
+attains the norm on the difference of its endpoint values.
+Such a functional is given by Hahn--Banach, including on the
+realification of a complex space. Its scalar derivative is
+bounded in modulus by \(L\|v\|\), which proves the assertion.
+If the endpoint difference is zero the bound holds directly.
+This segment form is also the estimate in
+\texttt{Convex.norm\_image\_sub\_le\_of\_norm\_fderiv\_le}
+of the fixed Mathlib \cite{mathlib}; the Euclidean version
+is in the multivariable notes \cite{d04}.
+\end{proof}
+
+\begin{theorem}[Linear residual certificates]\label{p206:W14}
+Let \(A\) be invertible, \(Ax=b\), and \(r=b-A\hat x\).
+Then
+\[
+ \|\hat x-x\|\le\|A^{-1}\|\|r\|,\qquad
+ \frac{\|\hat x-x\|}{\|x\|}
+      \le \kappa(A)\frac{\|r\|}{\|b\|}\quad (b\ne0).
+\]
+The absolute normwise backward error when only the right-hand side
+can change is exactly \(\|r\|\).
+\end{theorem}
+\begin{proof}
+The identity \(x-\hat x=A^{-1}r\) gives the first bound,
+and \(\|b\|\le\|A\|\|x\|\) gives the second. The equation
+\(A\hat x=b+\Delta b\) forces \(\Delta b=-r\).
+Thus the backward certificate exists, is unique in this model,
+and has the claimed size.
+\end{proof}
+
+\begin{theorem}[Joint normwise and componentwise backward error]
+\label{p206:W15}
+Given \(A,b,\hat x\), let \(r=b-A\hat x\).
+For \(\alpha,\beta\ge0\), allow
+\(\|\Delta A\|\le\epsilon\alpha\) and
+\(\|\Delta b\|\le\epsilon\beta\), where the matrix norm is
+subordinate. The least \(\epsilon\) for which
+\((A+\Delta A)\hat x=b+\Delta b\) is possible is
+\[
+                 \frac{\|r\|}{\alpha\|\hat x\|+\beta}.
+\]
+For nonnegative scales \(E\) and \(f\) on entries of \(A\)
+and \(b\), the analogous componentwise answer is
+\[
+     \max_i\frac{|r_i|}{(E|\hat x|+f)_i}.
+\]
+A zero numerator and denominator give zero, a nonzero numerator
+over zero gives \(+\infty\), and the maximum over no rows is zero.
+Finite values are attained in each model.
+\end{theorem}
+\begin{proof}
+The equation \(r=\Delta A\hat x-\Delta b\) and the triangle
+inequality give both lower bounds. For the normwise bound let
+\(D=\alpha\|\hat x\|+\beta>0\) and put \(c=r/D\).
+When \(\hat x\ne0\) choose a dual functional \(\phi\) of norm one
+with \(\phi(\hat x)=\|\hat x\|\) by Hahn--Banach.
+Take \(\Delta A=\alpha c\otimes\phi\), acting as
+\(v\mapsto\alpha c\,\phi(v)\), and take \(\Delta b=-\beta c\).
+If \(\hat x=0\), take \(\Delta A=0\) and the same \(\Delta b\).
+When \(D=0\) only \(r=0\) is feasible, attained by zero perturbations.
+
+For the componentwise bound put \(D_i=(E|\hat x|+f)_i\).
+When \(D_i>0\) set \(s_i=r_i/D_i\).
+Choose scalars \(\zeta_j\) with \(|\zeta_j|\le1\) and
+\(\zeta_j\hat x_j=|\hat x_j|\), for example the conjugate
+phase when \(\hat x_j\ne0\) and zero otherwise.
+Use \(\Delta A_{ij}=s_i E_{ij}\zeta_j\) and
+\(\Delta b_i=-s_i f_i\). This produces exactly \(r_i\)
+with size at most the proposed maximum. In a row with \(D_i=0\),
+a nonzero residual is infeasible; for a zero residual set
+the perturbation row to zero. This proves attainment for all
+finite cases. See \cite[Sections 7.1--7.2]{higham}.
+\end{proof}
+\chapter{Stability, Consistency, and Convergence}
+
+\section{Finite-horizon definitions}
+
+Let \(X\) be a Banach space. For every \(h>0\) let \(C_h\) be
+a bounded linear operator on \(X\). Let \(T(t)\), \(t\ge0\), be a
+strongly continuous semigroup of bounded linear operators, so
+\(T(0)=I\), \(T(s+t)=T(s)T(t)\), and \(t\mapsto T(t)x\) is
+continuous for every \(x\in X\). Thus \(C_h^n\) and \(T(nh)\)
+act on the same space. Write \(T_0>0\) for a fixed horizon.
+The distinctions below specialize the consistency and stability
+framework in \cite[Section 4.2]{trefpde}.
+
+\begin{definition}[Stability, defects and convergence]\label{p206:W16}
+Finite-horizon small-step stability means that for this \(T_0\)
+there are \(h_0>0\) and \(M<\infty\) with
+\[
+ \|C_h^n\|\le M\quad\text{for all }0<h\le h_0,\quad
+                        n\ge0,\quad nh\le T_0.
+\]
+Pointwise local consistency at \(x\) means
+\(h^{-1}\|(C_h-T(h))x\|\to0\).
+Uniform orbit consistency for \(x\) on this horizon means
+\[
+ \tau_h(x):=\max_{\substack{j\ge0\\(j+1)h\le T_0}}
+      h^{-1}\|(C_h-T(h))T(jh)x\|\longrightarrow0,
+\]
+where a maximum over no steps is zero.
+Strong convergence, uniform in mesh times on this horizon, means
+\[
+ E_h(x):=\max_{\substack{n\ge0\\nh\le T_0}}
+                    \|C_h^n x-T(nh)x\|\longrightarrow0
+              \quad\text{for each }x\in X.
+\]
+For statements on all finite horizons the bounds may depend on \(T_0\).
+\end{definition}
+For \(x\) in the generator domain, the one-step pointwise
+condition is equivalent to
+\((C_h-I)x/h\to Ax\). Indeed, by definition of the generator,
+\((T(h)-I)x/h\to Ax\), and their difference is the local defect
+with its sign. This equivalence is pointwise.
+The positive convergence theorem below uses the stronger control
+along the trajectory, or assumes that this control has been
+verified on a dense class.
+
+\section{Error propagation and stability}
+
+\begin{theorem}[A finite-time error recurrence]\label{p206:W17}
+Let \(L,\tau_h\ge0\), \(h>0\), and let nonnegative errors satisfy
+\[
+ e_{j+1}\le(1+Lh)e_j+h\tau_h
+                 \quad\text{whenever }(j+1)h\le T_0.
+\]
+For every \(nh\le T_0\),
+\[
+ e_n\le e^{LT_0}e_0+T_0e^{LT_0}\tau_h .
+\]
+If \(e_0,\tau_h\to0\) as \(h\downarrow0\), the maximum of \(e_n\)
+on the horizon tends to zero. More generally, a nonnegative
+\(\tau_{h,j}\) in the recurrence contributes
+\(\sum_{j=0}^{n-1}h(1+Lh)^{n-1-j}\tau_{h,j}\).
+\end{theorem}
+\begin{proof}
+Successive substitution, or induction on \(n\), gives the weighted
+sum and the initial term \((1+Lh)^n e_0\).
+Because \(1+Lh\le e^{Lh}\) and \(nh\le T_0\), every weight
+without its factor \(h\) is at most \(e^{LT_0}\).
+The sum of the \(n\) factors \(h\) is at most \(T_0\).
+This proof includes \(L=0\) and \(n=0\).
+\end{proof}
+
+We use the following form of uniform boundedness. If a family of
+bounded linear maps on a Banach space is bounded at each \(x\),
+then its operator norms are uniformly bounded. For completeness,
+the sets \(F_m=\{x:\sup_i\|S_i x\|\le m\}\) are closed and cover
+the space. By the Baire category theorem one contains an open
+ball. If a ball of radius \(r\) about \(x_0\) lies in \(F_m\),
+then \(\|S_i v\|\le2m\) for \(\|v\|\le r/2\) by subtracting
+the values at \(x_0+v\) and \(x_0\). Scaling yields the common
+bound \(4m/r\). Baire and the uniform-boundedness theorem are
+available in the fixed Mathlib \cite{mathlib}.
+In particular, strong continuity on \([0,T_0]\) bounds each
+orbit, so
+\[
+                   K_{T_0}:=\sup_{0\le t\le T_0}\|T(t)\|<\infty.
+\]
+
+\begin{theorem}[Convergence implies small-step stability]
+\label{p206:W18}
+Strong convergence uniform in mesh times on \([0,T_0]\) for
+every initial vector implies finite-horizon small-step stability
+on \([0,T_0]\).
+\end{theorem}
+\begin{proof}
+Suppose there is no common operator bound on any sufficiently
+small step range. For every \(j\ge1\) choose \(0<h_j\le 1/j\)
+and \(n_jh_j\le T_0\) with \(\|C_{h_j}^{n_j}\|>j\).
+For every \(x\in X\), the difference between \(C_{h_j}^{n_j}x\)
+and \(T(n_jh_j)x\) tends to zero. Since the exact orbit is bounded,
+the family \(C_{h_j}^{n_j}\) is bounded at each \(x\).
+Uniform boundedness gives a common operator norm bound, a
+contradiction.
+\end{proof}
+
+\begin{example}[The step restriction]
+On \(X=\mathbb R\) take \(T(t)=I\) and \(T_0=1\).
+For \(0<h\le1/2\), let \(C_h=I\). For \(h>1/2\) with
+\(h\ne3/4\), let \(C_h\) be scalar multiplication by
+\(1/|h-3/4|\). Define \(C_{3/4}=I\).
+All operators are individually bounded and small-step convergence
+is exact, while \(n=1\) and \(h\to3/4\) prevent a common bound
+over every \(h\) with \(nh\le1\).
+\end{example}
+
+\begin{theorem}[Stability and uniform orbit consistency imply convergence]
+\label{p206:W19}
+Under finite-horizon small-step stability, for every \(x\)
+and \(0<h\le h_0\),
+\[
+               E_h(x)\le MT_0\tau_h(x).
+\]
+If \(\tau_h(x)\to0\) on a dense class of \(x\), then
+\(E_h(x)\to0\) for all \(x\in X\).
+\end{theorem}
+\begin{proof}
+For \(n\ge1\) the identity
+\[
+ C_h^nx-T(nh)x
+     =\sum_{j=0}^{n-1}C_h^{n-1-j}(C_h-T(h))T(jh)x
+\]
+follows by telescoping consecutive terms
+\(C_h^{n-j}T(jh)x\). It uses the semigroup property and requires
+no commutation between \(C_h\) and \(T(h)\).
+When \(nh\le T_0\), each norm is bounded by \(Mh\tau_h(x)\).
+Summing and including \(n=0\) proves the estimate.
+For an arbitrary \(x\), approximate by \(y\) from the dense
+class. For each step and time in the same range,
+\[
+  E_h(x)\le E_h(y)+(M+K_{T_0})\|x-y\|.
+\]
+First let \(h\downarrow0\) for the fixed \(y\), then
+let \(\|x-y\|\) tend to zero.
+\end{proof}
+\chapter{Factorizations and Least Squares}
+\label{p206:factorizations}
+
+A superscript \(^{*}\) denotes conjugate transpose, or transpose over
+\(\mathbb R\). Absolute values of matrices in entrywise inequalities
+are taken entry by entry, and their products are ordinary matrix
+products of nonnegative entries. Matrix norms with subscript \(2\)
+are operator norms for the Euclidean norm. The exact arguments
+allow real or complex data where specified. The rounding bounds
+use the real scalar model of Chapter~1, with no exceptional range
+events in any listed operation. Input entries are the given stored
+numbers. The notation \(\gamma_k=ku/(1-ku)\) and the signed product
+bound are as in Lemma~\ref{p206:W06}.
+
+\section{Elimination and triangular solves}
+
+\begin{theorem}[Exact row-pivoted LU]\label{p206:W20}
+Every square matrix over a field admits \(PA=LU\), where \(P\) is a
+permutation matrix, \(L\) is unit lower triangular, and \(U\) is in
+row-echelon form and is upper triangular. Elimination may skip
+a column whose remaining entries are all zero.
+For elimination without row exchanges and with a pivot in every
+column up to the last, nonzero division pivots are equivalent to
+nonvanishing leading principal minors of orders \(1,\ldots,n-1\).
+The last diagonal entry is nonzero exactly when the full determinant
+is nonzero, provided the earlier pivots exist.
+\end{theorem}
+
+\begin{proof}
+After \(r\) pivots, keep \(PA=LB\), where \(B\) is the current matrix
+and \(L\) is unit lower triangular with off-diagonal entries supported
+in its first \(r\) columns. Initially \(P=L=I\), \(B=A\). Scan the
+columns from left to right. If the current column is zero on rows
+\(r+1,\ldots,n\), advance the column and keep the row cursor \(r+1\).
+Otherwise choose a nonzero entry among those rows and exchange its
+row with row \(r+1\). If the exchange is \(S\), replace \(P,B,L\)
+by \(SP,SB,SLS^{-1}\), respectively. The new \(L\) is still of the
+prescribed form since this exchange fixes its first \(r\) indices.
+Concretely, the exchange must include the entries of the previous
+multiplier columns in those rows.
+
+Divide the remaining entries in the pivot column by the pivot and
+store the quotients as the tail of a vector \(\ell\) supported on
+rows \(r+2,\ldots,n\). Subtract each multiplier times the pivot row
+from its row. This multiplies \(B\) by \(I-\ell e_{r+1}^{\mathsf T}\),
+where \(e_{r+1}\) is a coordinate vector. Its inverse is
+\(I+\ell e_{r+1}^{\mathsf T}\) because \(e_{r+1}^{\mathsf T}\ell=0\).
+Multiplying \(L\) by this inverse stores \(\ell\) in its next multiplier column,
+since \(L\ell=\ell\). These operations preserve every previously
+cleared or skipped column on the unprocessed rows. At the end the
+pivot columns increase strictly with the pivot row, and all rows
+after the last pivot are zero. The \(i\)-th pivot column is at
+least \(i\), which gives the upper-triangular form. The empty matrix
+has the empty factorization.
+
+For the unexchanged algorithm, the elimination steps through
+pivot \(k-1\) reduce the leading \(k\)-square block by
+determinant-preserving row additions. Its determinant is
+the product of the first \(k\) pivots as soon as the preceding
+\(k-1\) pivots have been computed. Induction gives the claimed
+criterion and the assertion about the terminal diagonal. An
+invertible matrix can have a zero leading minor, as shown by
+the matrix exchanging two coordinates. Existence of a bare
+unpivoted factorization is a weaker assertion. For example
+\(\operatorname{diag}(0,1)=I\operatorname{diag}(0,1)\), although a
+Doolittle step dividing by its first diagonal entry is unavailable.
+\end{proof}
+
+For a fixed sequential subtraction kernel let
+\[
+  s_t=\operatorname{fl}\bigl(s_{t-1}
+                    -\operatorname{fl}(a_tb_t)\bigr),
+  \qquad 1\le t\le k .
+\]
+If the multiplication and subtraction at step \(t\) have factors
+\(1+\mu_t\) and \(1+\sigma_t\), the real identities are
+\[
+ \begin{aligned}
+ s_{t-1}&=\frac{s_t}{1+\sigma_t}+a_tb_t(1+\mu_t),\\
+ s_0&=s_k\prod_{j=1}^{k}(1+\sigma_j)^{-1}
+      +\sum_{t=1}^k a_tb_t(1+\mu_t)
+                      \prod_{j<t}(1+\sigma_j)^{-1}.
+ \end{aligned}                                                   \tag{4.1}\label{p206:subtracttrace}
+\]
+The second identity follows by successively substituting the first.
+An individual summand uses \(t\) factors, regardless of the total
+number of operations. When a final division or square root is
+undone, its factors affect only the terminal term of
+\eqref{p206:subtracttrace}.
+
+\begin{theorem}[Componentwise backward error of a triangular solve]
+\label{p206:W21}
+Let \(T\in\mathbb R^{n\times n}\) be triangular with nonzero diagonal.
+Use forward or backward substitution with sequential rounded
+multiply-subtract steps and one final rounded division in each row.
+Suppose every operation is safe and \(nu<1\). The result
+\(\hat x\) satisfies
+\[
+        (T+\Delta T)\hat x=b,\qquad
+        |\Delta T|\le \gamma_n|T|.
+\]
+The correction preserves the triangular pattern and all structural
+zeros.
+\end{theorem}
+
+\begin{proof}
+In row \(i\) begin with \(s_0=b_i\) and apply the sequential
+kernel to pairs \(T_{ij},\hat x_j\) for already determined
+coordinates \(j\). If there are \(k\) such entries,
+\[
+ s_k=T_{ii}\hat x_i(1+\delta_i)^{-1}.
+\]
+By \eqref{p206:subtracttrace} each off-diagonal coefficient \(T_{ij}\) is multiplied
+by at most \(k\) signed factors and the diagonal coefficient
+by \(k+1\le n\). Apply Lemma~\ref{p206:W06} to each coefficient
+and collect the perturbed coefficients row by row. A zero
+coefficient stays zero under this description, including the
+case of a zero product. When \(n=0\) the assertion is empty.
+\end{proof}
+
+\begin{theorem}[A safe sequential Doolittle run]\label{p206:W22}
+Consider real square elimination, with row exchanges as in
+Theorem~\ref{p206:W20}. Assume columns \(1,\ldots,n-1\) are
+processed in order without skips, all pivots used as divisors
+are nonzero, and each division and trailing update uses the
+relative error model.
+Store each multiplier by a rounded division and update each
+trailing entry by the sequential multiply-subtract step
+\eqref{p206:subtracttrace}.
+If \(3nu<1\), the stored factors satisfy
+\[
+ PA+\Delta A=\hat L\hat U,\qquad
+             |\Delta A|\le\gamma_{3n}|\hat L|\,|\hat U|.
+\]
+\end{theorem}
+
+\begin{proof}
+Use final row positions to label the stored quantities.
+A future row exchange relabels its trailing data and its already
+computed multipliers together. Therefore the row eventually
+placed at position \(i\) is updated with the multiplier
+\(\hat l_{it}\) at each preceding pivot \(t<i\).
+Fix an entry \((i,j)\) and put \(k=\min(i,j)\). Its successive
+values from \(s_0=(PA)_{ij}\) use products \(\hat l_{it}\hat u_{tj}\)
+for \(t=1,\ldots,k-1\). If \(i\le j\), the value after these updates
+is stored as \(\hat u_{ij}\), with \(\hat l_{ii}=1\).
+If \(i>j\), the multiplier division gives
+\[
+       s_{j-1}=\hat l_{ij}\hat u_{jj}(1+\delta_{ij})^{-1}.
+\]
+Hence \eqref{p206:subtracttrace} expresses \((PA)_{ij}\) as the sum of its exact
+\((\hat L\hat U)_{ij}\) terms, each multiplied by a product of
+at most \(n\) signed factors. The terminal product uses at most
+\(k\) factors and earlier terms use at most \(k-1\).
+The difference from the unweighted sum is bounded by
+\(\gamma_n\sum_t|\hat l_{it}\hat u_{tj}|\).
+Since \(\gamma_n\le\gamma_{3n}\), this yields the advertised
+conservative constant. The empty factorization again satisfies
+the statement. The trace bound is conditional on the specified
+run, including its pivot hypotheses.
+\end{proof}
+
+\begin{theorem}[Partial pivot growth and an end-to-end solve certificate]
+\label{p206:W23}
+For exact elimination on a nonzero \(n\)-square real matrix,
+choose a largest-magnitude available entry in the current pivot
+column. The maximum magnitude among all entries in the successive
+trailing submatrices and computed \(U\) rows is at most
+\(2^{n-1}\max_{ij}|a_{ij}|\). Choosing the first row on a tie can
+attain the bound.
+
+For a rounded run satisfying Theorem~\ref{p206:W22}, suppose
+the forward and backward triangular solves of
+\(\hat L y=Pb\), \(\hat Ux=y\) satisfy Theorem~\ref{p206:W21}.
+Then the computed \(\hat x\) solves
+\[
+ (PA+\Delta A_{\rm solve})\hat x=Pb,\qquad
+ |\Delta A_{\rm solve}|
+   \le(\gamma_{3n}+2\gamma_n+\gamma_n^2)|\hat L|\,|\hat U|.
+\]
+\end{theorem}
+
+\begin{proof}
+With exact partial pivoting \(|l_{it}|\le1\). Every Schur update
+has the form \(a_{ij}^{\rm new}=a_{ij}^{\rm old}-l_{it}u_{tj}\),
+so the old maximum on the active matrix bounds its magnitude
+by twice that maximum. Row exchanges preserve maxima. At most
+\(n-1\) such growth steps occur. For sharpness use the matrix whose
+columns \(j<n\) have \(1\) on the diagonal, \(-1\) below it, and
+\(0\) above it, with all entries in the last column equal to \(1\).
+No pivot exchange is made under the stated tie rule. All
+multipliers below each of the first \(n-1\) pivots are \(-1\).
+After each update the remaining last-column entries double,
+while the later columns other than the last retain their
+initial form. The last diagonal entry is \(2^{n-1}\).
+The growth bound concerns exact partial pivoting. The solve
+certificate uses the actual stored factors.
+
+By the two triangular certificates,
+\[
+ (\hat L+\Delta L)\hat y=Pb,\qquad
+ (\hat U+\Delta U)\hat x=\hat y .
+\]
+Expand the product of the two perturbed factors. Its correction
+to \(PA\) is
+\(\Delta A+\Delta L\hat U+\hat L\Delta U+\Delta L\Delta U\).
+Entrywise triangle inequalities and
+\(|\Delta L|\le\gamma_n|\hat L|\),
+\(|\Delta U|\le\gamma_n|\hat U|\) give the bound. To obtain an
+error in the original system, multiply by \(P^{-1}\), and use
+the inverse or conditioning bounds of Chapter~2 when the
+resulting normwise perturbation satisfies their hypotheses.
+\end{proof}
+
+These elimination and triangular solve conventions are comparable
+to \cite[Chapters~8--9]{higham} and \cite[Sections~3.2--3.4]{golub}.
+
+\section{Positive matrices and Cholesky factorization}
+
+\begin{theorem}[Positive-definite Cholesky]\label{p206:W24}
+A real symmetric or complex Hermitian positive-definite matrix
+\(A\) has a unique factorization \(A=R^*R\) with \(R\) upper
+triangular and positive real diagonal. Equivalently
+\(A=LL^*\), where \(L=R^*\) is lower triangular with positive real
+diagonal.
+\end{theorem}
+
+\begin{proof}
+Use induction, starting with the empty matrix. Partition
+\[
+ A=\begin{pmatrix}\alpha&a^*\\a&B\end{pmatrix}.
+\]
+The first diagonal entry \(\alpha\) is positive. In any factor
+of the stated form the first row must be
+\((\sqrt{\alpha},a^*/\sqrt{\alpha})\), by comparing the first
+row of \(R^*R\) with that of \(A\). The remaining factor must
+factor \(B-aa^*/\alpha\). This Schur complement is positive
+definite because for every nonzero \(y\) its quadratic form
+equals that of \(A\) at \((-a^*y/\alpha,y)\), which is nonzero.
+Induction gives the unique remaining block, and block
+multiplication proves the factorization.
+\end{proof}
+
+\begin{theorem}[A canonical semidefinite Cholesky factor]
+\label{p206:W25}
+A Hermitian positive-semidefinite matrix \(A\) has a unique factor
+\(A=R^*R\) among upper triangular \(R\) whose diagonal is real
+nonnegative and whose entire \(i\)-th row vanishes whenever
+\(R_{ii}=0\).
+\end{theorem}
+
+\begin{proof}
+If the leading diagonal is positive, repeat the block argument
+of Theorem~\ref{p206:W24}. The Schur complement is now
+positive semidefinite by the same quadratic-form identity. If
+the leading diagonal is zero, then each off-diagonal entry in
+its row is zero. Indeed, for the block above, if \(a^*y\ne0\),
+the quadratic form at \((t,y)\) equals
+\(2\operatorname{Re}(\overline{t}\,a^*y)+y^*By\) and becomes
+negative on choosing \(t=-s a^*y\) for large real \(s>0\).
+Take a zero leading row and column in \(R\) and factor the
+remaining positive-semidefinite block by induction.
+Uniqueness at a positive pivot follows from the same row
+comparison as before. At a zero pivot the normalization
+forces the entire first row of \(R\) to be zero. Without this
+normalization, \(\operatorname{diag}(0,1)\) also has
+\(R=\left(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\right)\)
+as an upper triangular factor with nonnegative diagonal.
+\end{proof}
+
+\begin{theorem}[Conditional backward error of real Cholesky]
+\label{p206:W26}
+Use a real symmetric input matrix and compute the lower triangular
+Cholesky factor column by column. To form the residual for
+\((i,j)\), \(i\ge j\), start with \(a_{ij}\) and apply
+\eqref{p206:subtracttrace}
+to products \(\hat l_{it}\hat l_{jt}\) for \(t<j\).
+Apply a rounded square root to the resulting diagonal residual,
+and divide the off-diagonal residuals by that stored diagonal.
+Suppose the square roots have positive arguments, the divisions
+have nonzero divisors, and the relative model holds for every
+operation, including the square roots. If \((3n+3)u<1\), then
+\[
+        A+\Delta A=\hat L\hat L^*,\qquad
+        |\Delta A|\le\gamma_{3n+3}|\hat L|\,|\hat L^*|.
+\]
+\end{theorem}
+
+\begin{proof}
+For \(i>j\) the terminal residual equals
+\(\hat l_{ij}\hat l_{jj}/(1+\delta_{ij})\). For \(i=j\)
+it equals \(\hat l_{jj}^2/(1+\delta_{jj})^2\), because the
+rounded square root of that residual is \(\hat l_{jj}\).
+The terminal product in \eqref{p206:subtracttrace} thus has at most \(j+1\)
+signed factors, and every earlier product has at most \(j-1\).
+Apply Lemma~\ref{p206:W06} with these counts and use
+\(j+1\le 3n+3\). The lower-triangular estimates imply the
+upper-triangular ones by symmetry. Define the correction
+as \(\hat L\hat L^*-A\).
+The hypotheses separate successful rounded execution from
+the positive-definite exact factorization. For example, use binary
+arithmetic with precision four and round to nearest on
+\[
+ A=\begin{pmatrix}9/32&1/4\\1/4&1/4\end{pmatrix}.
+\]
+The determinant is \(1/128>0\) and \(a_{11}>0\), so \(A\) is
+positive definite. The exact first square root is between
+\(1/2\) and \(17/32\), the midpoint of \(1/2\) and its
+successor \(9/16\), since
+\((17/32)^2=289/1024>9/32\). It rounds to \(1/2\). The first
+multiplier is then exactly \(1/2\), and its rounded square is
+exactly \(1/4\). The computed second diagonal residual is zero,
+even though the exact Schur complement is positive.
+\end{proof}
+
+For the exact factors and conditional Cholesky bounds see
+\cite[Chapter~10]{higham}, \cite[Section~4.2]{golub}, and
+\cite[entry 14.qr\_cholesky]{d05}.
+
+\section{Exact QR and least squares}
+
+\begin{theorem}[Reduced QR with a fixed diagonal convention]
+\label{p206:W27}
+For \(A\in\mathbb K^{m\times n}\) of full column rank, with
+\(\mathbb K=\mathbb R\) or \(\mathbb C\), there are unique
+\(Q,R\) such that \(A=QR\), \(Q^*Q=I_n\), and \(R\) is upper
+triangular with positive real diagonal.
+\end{theorem}
+
+\begin{proof}
+Process the columns \(a_j\) in order. Remove their projections
+onto the previous orthonormal \(q_i\), obtaining
+\(v_j=a_j-\sum_{i<j}q_i(q_i^*a_j)\). This vector is nonzero
+because otherwise \(a_j\) is in the span of the preceding
+columns. Put \(r_{jj}=\|v_j\|_2\), \(q_j=v_j/r_{jj}\),
+and \(r_{ij}=q_i^*a_j\) for \(i<j\). The projection construction
+gives orthonormal columns and \(A=QR\). The empty factorization
+fits the same statement. For uniqueness, \(R^*R=A^*A\) and
+\(A^*A\) is positive definite when \(n>0\), so \(R\) is
+determined by Theorem~\ref{p206:W24}. Then \(Q=AR^{-1}\).
+\end{proof}
+
+\begin{theorem}[Least squares and the normal equations]
+\label{p206:W28}
+For a linear map \(A\) between finite-dimensional real or complex
+inner-product spaces and a vector \(b\) in the target, a vector \(x\)
+minimizes \(\|Ax-b\|_2\) exactly when \(A^*(Ax-b)=0\).
+Minimizers always exist. If \(A\) is injective, the minimizer
+is unique and equals \((A^*A)^{-1}A^*b\).
+\end{theorem}
+
+\begin{proof}
+Decompose \(b=b_{\parallel}+b_\perp\) into its orthogonal
+components in \(\operatorname{ran}(A)\) and its orthogonal
+complement. Then
+\[
+      \|Ax-b\|_2^2=\|Ax-b_{\parallel}\|_2^2+\|b_\perp\|_2^2 .
+\]
+The first term can be made zero, and it vanishes exactly when
+\(Ax-b\) is orthogonal to the range. The adjoint identifies
+this condition with the normal equations. Injectivity implies
+\(\langle A^*Av,v\rangle=\|Av\|_2^2>0\) for each \(v\ne0\),
+so \(A^*A\) is invertible in finite dimensions and the
+stated formula follows.
+\end{proof}
+
+\begin{corollary}[Reduced QR solution formula]\label{p206:W29}
+If \(A=QR\) is the full-column-rank reduced QR factorization, the
+unique least-squares solution is \(x=R^{-1}Q^*b\).
+\end{corollary}
+
+\begin{proof}
+Substitution into the normal equations gives
+\(R^*Rx=R^*Q^*b\). Both triangular factors \(R,R^*\) are
+invertible. Cancel the first factor and solve the remaining
+triangular equation. Equivalently \(Ax=QQ^*b\) is the
+orthogonal projection of \(b\) onto the column space.
+\end{proof}
+
+\begin{theorem}[A real Householder reflector]\label{p206:W30}
+For \(x\in\mathbb R^d\setminus\{0\}\), set
+\[
+ \alpha=-\operatorname{sign}_{+}(x_1)\|x\|_2,\qquad
+ v=x-\alpha e_1,\qquad
+ H(v)=I-\frac{2vv^*}{v^*v},
+\]
+where \(\operatorname{sign}_{+}(0)=1\). Then
+\(|v_1|=|x_1|+\|x\|_2\), \(v\ne0\), \(H(v)\) is orthogonal,
+and \(H(v)x=\alpha e_1\).
+\end{theorem}
+
+\begin{proof}
+The sign choice proves the identity for \(|v_1|\). The rank-one
+matrix \(vv^*/(v^*v)\) is the self-adjoint projection onto
+\(\mathbb Rv\). Squaring \(I\) minus twice that projection
+gives \(I\), so \(H(v)\) is orthogonal. Because
+\(\alpha^2=\|x\|_2^2\),
+\[
+     v^*v=2\|x\|_2^2-2\alpha x_1=2v^*x .
+\]
+The formula for \(H(v)x\) now gives \(x-v=\alpha e_1\).
+The zero vector may be left fixed by using the identity.
+\end{proof}
+
+\begin{theorem}[Exact Householder QR and the condition number of \(A^*A\)]
+\label{p206:W31}
+For a real \(m\)-by-\(n\) matrix with \(m\ge n\), successive
+Householder reflections applied to the column tails construct a
+factorization \(A=QR\) with \(Q^*Q=I_n\) and \(R\) upper
+triangular. For full column rank one can choose the signs to
+give positive diagonal. If \(n>0\) and \(A\) has full column
+rank, then
+\[
+       \kappa_2(A^*A)=\kappa_2(A)^2,\qquad
+       \kappa_2(A)=\frac{\sigma_{\max}(A)}{\sigma_{\min}(A)}.
+\]
+Here \(\sigma_{\min}(A)>0\) is the least singular value on
+the domain.
+\end{theorem}
+
+\begin{proof}
+At step \(j\), apply Theorem~\ref{p206:W30} on coordinates
+\(j,\ldots,m\) of column \(j\), and extend the reflector by
+the identity on the earlier coordinates. An earlier column
+has zero tail on this block and is unchanged. A zero current
+tail is also left unchanged. After all steps the matrix is
+\(\binom{R}{0}\). Inverting the product of the orthogonal
+updates gives the full orthogonal factor, whose first \(n\)
+columns give \(Q\). For full column rank \(R\) is invertible,
+so its diagonal entries are nonzero. Multiplying the
+corresponding columns of \(Q\) and rows of \(R\) by the same
+sign makes each diagonal positive and preserves \(QR\).
+The spectral theorem applied to \(A^*A\) gives eigenvalues
+\(\sigma_j(A)^2\). Its norm and inverse norm are the largest
+of these and the reciprocal of the least, respectively. This
+gives the squared condition number.
+\end{proof}
+
+For the equivalent projection and factorization interfaces see
+\cite[entries 14.least\_squares, 14.normal\_equations, and
+14.qr\_cholesky]{d05}, \cite[Sections~5.1--5.3]{golub}, and
+\cite[Chapters~19--20]{higham}.
+
+\section{Rounded QR and least-squares sensitivity}
+
+\begin{theorem}[Columnwise backward error of a real Householder trace]
+\label{p206:W32}
+Assume \(m\ge n\). At step \(j\) of the procedure in
+Theorem~\ref{p206:W31}, let \(d=m-j+1\) be the active row count
+and \(x\) the stored tail of the pivot column. If \(x=0\), do
+nothing. Otherwise compute a sequential dot product of \(x\) with
+itself, take its rounded square root \(\hat\nu\), set
+\(\hat\alpha=-\operatorname{sign}_+(x_1)\hat\nu\), and store
+\(w=(\operatorname{fl}(x_1-\hat\alpha),x_2,\ldots,x_d)\).
+Replace the active pivot tail by \(\hat\alpha e_1\).
+For each trailing stored tail \(y\), compute sequential dot
+products \(\hat p\) for \(w^*y\) and \(\hat q\) for \(w^*w\), and use
+\[
+ \hat t=\operatorname{fl}\bigl(\operatorname{fl}(2\hat p)/\hat q\bigr),
+ \qquad
+ \hat y_i=\operatorname{fl}\bigl(y_i-\operatorname{fl}(\hat t w_i)\bigr).
+\]
+Suppose all listed operations are safe, signs and copying are exact,
+and \(\gamma_d<1\) for every nontrivial step.
+There is a product of exact orthogonal reflectors whose first \(n\)
+columns form \(Q\), and a matrix \(E\) with \(A+E=Q\hat R\)
+for the stored \(\hat R\), such that
+\[
+       \|E_{:i}\|_2
+           \le \left(\prod_{j=1}^{n}(1+c_j)-1\right)\|A_{:i}\|_2 .
+\]
+The constants \(c_j\) are given explicitly below in terms of
+\(d\) and \(u\), with \(c_j=0\) for a skipped step.
+\end{theorem}
+
+\begin{proof}
+Fix a nontrivial step, write \(\gamma=\gamma_d\), and let
+\(\nu=\|x\|_2>0\). The dot-product bound
+(Theorem~\ref{p206:W07}) places the computed squared norm in
+\([(1-\gamma)\nu^2,(1+\gamma)\nu^2]\). It is positive.
+The relative square-root error then yields
+\[
+ |\hat\nu-\nu|\le a\nu,\qquad
+ a=\max\{1-(1-u)\sqrt{1-\gamma},\,
+                     (1+u)\sqrt{1+\gamma}-1\}.
+\]
+With \(\alpha,v\) as in Theorem~\ref{p206:W30}, only the first
+coordinate of \(w\) differs from the corresponding coordinate
+of \(v\). Its error is bounded by
+\[
+ \|w-v\|_2\le a\nu+u(|x_1|+\hat\nu)\le b_0\nu,
+ \qquad b_0=a+u(2+a).
+\]
+The sign choice makes the unrounded first component have
+magnitude \(|x_1|+\hat\nu>0\); multiplication by its positive
+relative factor preserves nonvanishing. Thus \(w\ne0\).
+For nonzero \(v,w\), let \(p=v/\|v\|_2\) and \(q=w/\|w\|_2\).
+Adding and subtracting \(w/\|v\|_2\) gives
+\(\|p-q\|_2\le 2\|v-w\|_2/\|v\|_2\).
+The identity \(pp^*-qq^*=(p-q)p^*+q(p-q)^*\) then gives
+\[
+   \|H(v)-H(w)\|_2\le4\|p-q\|_2\le8b_0,
+\]
+using \(\|v\|_2\ge\nu\). In particular the stored pivot replacement
+differs from \(H(w)x\) by at most \((a+8b_0)\|x\|_2\).
+
+For a trailing tail \(y\), write \(p_0=w^*y\),
+\(q_0=\|w\|_2^2\), and \(t_0=2p_0/q_0\). The dot-product
+bounds give
+\[
+ |\hat p-p_0|\le\gamma\|w\|_2\|y\|_2,\qquad
+       \hat q=q_0(1+\varepsilon),\quad |\varepsilon|\le\gamma .
+\]
+Here \(\sum_i|w_i y_i|\le\|w\|_2\|y\|_2\) and \(q_0>0\).
+The scale and divide operations give
+\(\hat t=(2\hat p/q_0)r\) with
+\(r=(1+\delta_1)(1+\delta_2)/(1+\varepsilon)\) and
+\(|\delta_k|\le u\). Put
+\[
+ R_0=\frac{(1+u)^2}{1-\gamma},\qquad
+ D_0=\max\left\{R_0-1,\,1-\frac{(1-u)^2}{1+\gamma}\right\}.
+\]
+Then \(0<r\le R_0\) and \(|r-1|\le D_0\). Expanding
+\(r\hat p-p_0=(r-1)p_0+r(\hat p-p_0)\) and using Cauchy--Schwarz
+gives
+\[
+ \begin{aligned}
+  |\hat t-t_0|\|w\|_2&\le 2(D_0+R_0\gamma)\|y\|_2,\\
+  |\hat t|\|w\|_2&\le 2R_0(1+\gamma)\|y\|_2 .
+ \end{aligned}
+\]
+In each component the product and subtraction relative errors
+give
+\[
+ |\hat y_i-(y_i-\hat t w_i)|
+      \le u|y_i|+(2u+u^2)|\hat t w_i|.
+\]
+This follows by expanding the subtraction as
+\((y_i-\hat t w_i(1+\delta))(1+\epsilon)\) and bounding the two
+coefficients. Since \(H(w)y=y-t_0w\), the trailing-column
+error is bounded by \(c_{\rm tail}\|y\|_2\), where
+\[
+   c_{\rm tail}
+     =2(D_0+R_0\gamma)+u+2(2u+u^2)R_0(1+\gamma).
+\]
+Take \(c_j=\max\{a+8b_0,c_{\rm tail}\}\) for this step.
+
+Let \(B_j\) be the full stored matrix after \(j\) updates and
+\(H_j\) the exact \(H(w)\) extended by the identity on the
+earlier rows. For each column, the preceding estimates say
+\(B_j=H_jB_{j-1}+F_j\) with
+\(\|(F_j)_{:i}\|_2\le c_j\|(B_{j-1})_{:i}\|_2\).
+Previously cleared columns stay exactly unchanged since their
+tails are zero. The full column norm dominates its tail norm,
+so the same inequality holds for the full matrices.
+Orthogonality gives
+\(\|(B_j)_{:i}\|_2\le\prod_{k\le j}(1+c_k)\|A_{:i}\|_2\).
+Pull the final matrix \(\binom{\hat R}{0}\) back by the
+inverse orthogonal product. Its difference from \(A\) is the
+sum of the local corrections transformed by orthogonal factors.
+For column \(i\) the bound is
+\[
+   \sum_{j=1}^n c_j\prod_{k<j}(1+c_k)\|A_{:i}\|_2
+        =\left(\prod_{j=1}^n(1+c_j)-1\right)\|A_{:i}\|_2 .
+\]
+This constructs the exact implicit \(Q\) claimed in the theorem.
+If \(n=0\) the bound is zero. If an explicit \(Q\) is formed
+by further rounded operations, its error or orthogonality
+defect must be bounded separately.
+\end{proof}
+
+\begin{theorem}[QR residual and orthogonality certificate]
+\label{p206:W33}
+Let \(m\ge n\), let \(A,\hat Q\) be \(m\)-by-\(n\) matrices
+and \(\hat R\) be \(n\)-square, and suppose
+\[
+       \|A-\hat Q\hat R\|_2\le\rho,\qquad
+       \|\hat Q^*\hat Q-I\|_2\le\eta<1,\qquad \eta\ge0.
+\]
+There is an \(m\)-by-\(n\) matrix \(\widetilde Q\) with
+\(\widetilde Q^*\widetilde Q=I_n\) and
+\[
+ \|A-\widetilde Q\hat R\|_2
+     \le \rho+\frac{\eta}{1+\sqrt{1-\eta}}\,\|\hat R\|_2 .
+\]
+\end{theorem}
+
+\begin{proof}
+Put \(G=\hat Q^*\hat Q\). Its eigenvalues lie in
+\([1-\eta,1+\eta]\) by the Rayleigh quotient bound for \(G-I\),
+so its positive square root and inverse square root exist by
+orthogonal or unitary diagonalization. Define
+\(\widetilde Q=\hat QG^{-1/2}\). Its columns are orthonormal, and
+\[
+ \hat Q-\widetilde Q=\widetilde Q(G^{1/2}-I),\qquad
+ \|\hat Q-\widetilde Q\|_2=\|G^{1/2}-I\|_2.
+\]
+Multiplication by \(\widetilde Q\) preserves vector norms.
+For \(\lambda\in[1-\eta,1+\eta]\),
+\[
+       |\sqrt{\lambda}-1|
+       =\frac{|\lambda-1|}{1+\sqrt{\lambda}}
+       \le\frac{\eta}{1+\sqrt{1-\eta}} .
+\]
+The spectral norm bound follows, and the triangle inequality
+and submultiplicativity applied to
+\(A-\widetilde Q\hat R=(A-\hat Q\hat R)+(\hat Q-\widetilde Q)\hat R\)
+complete the proof. The empty-column case is vacuous.
+This certificate uses supplied bounds \(\rho,\eta\). Their
+verification for any explicit stored \(\hat Q,\hat R\) is a
+separate part of a numerical argument.
+\end{proof}
+
+\begin{theorem}[Derivative of a full-column-rank least-squares solution]
+\label{p206:W34}
+For real \(A\) of full column rank and a real vector \(b\),
+let \(x=(A^*A)^{-1}A^*b\), \(r=b-Ax\), and
+\(A^\dagger=(A^*A)^{-1}A^*\). As a function of the matrix and
+right-hand side, the Fr\'echet derivative of \(x\) in the
+direction \((E,f)\) is
+\[
+             A^\dagger(f-Ex)+(A^*A)^{-1}E^*r .
+\]
+\end{theorem}
+
+\begin{proof}
+Put \(B=A^*A\), \(B_E=(A+E)^*(A+E)\). The difference
+\(B_E-B=A^*E+E^*A+E^*E\) is \(O(\|E\|_2)\) as \(E\to0\).
+Theorem~\ref{p206:W10} makes \(B_E\) invertible near \(E=0\)
+with uniformly bounded inverse. The inverse identity
+\(B_E^{-1}-B^{-1}=-B_E^{-1}(B_E-B)B^{-1}\)
+gives \(B_E^{-1}-B^{-1}=O(\|E\|_2)\). In particular \(A+E\)
+has full column rank there. Subtract its normal equations
+from the equation at the old \(x\), in the form
+\[
+ \begin{aligned}
+  B_E(x(A+E,b+f)-x)
+      &=(A+E)^*(b+f-(A+E)x)\\
+      &= A^*(f-Ex)+E^*r+E^*(f-Ex).
+ \end{aligned}
+\]
+In the last step \(A^*r=0\). The last term is
+\(O((\|E\|_2+\|f\|_2)^2)\), and replacing \(B_E^{-1}\) by
+\(B^{-1}\) on the linear terms makes another error of this
+order. This proves Fr\'echet differentiability with the stated
+derivative. The residual-dependent term vanishes for a consistent
+system and can affect sensitivity for inconsistent data.
+\end{proof}
+
+\begin{theorem}[Rank-deficient least squares and the minimum-norm solution]
+\label{p206:W35}
+For an arbitrary real or complex matrix \(A\), the set of
+least-squares minimizers is \(A^\dagger b+\ker A\), with
+\(A^\dagger b\) the unique minimizer of least Euclidean norm.
+\end{theorem}
+
+\begin{proof}
+Use the exact singular value decomposition
+\cite[entry 14.svd]{d05}. For the positive singular values
+\(\sigma_i\), write \(Av_i=\sigma_i u_i\) on the orthonormal
+right singular vectors and let \(A^\dagger b=
+\sum_{\sigma_i>0}\sigma_i^{-1}v_i(u_i^*b)\).
+The vectors \(u_i\) span \(\operatorname{ran}(A)\), while the
+vectors \(v_i\) span \((\ker A)^\perp\).
+Consequently \(AA^\dagger b\) is the projection of \(b\)
+onto the range. The proof of Theorem~\ref{p206:W28} identifies
+all minimizers as the inverse image of that projection, namely
+\(A^\dagger b+\ker A\). Orthogonality of \(A^\dagger b\) to
+the kernel makes the squared norm of \(A^\dagger b+k\)
+equal to \(\|A^\dagger b\|_2^2+\|k\|_2^2\).
+This also handles the rank-zero case with an empty sum.
+\end{proof}
+
+For Householder error analysis and least-squares perturbations,
+compare \cite[Chapters~19--20]{higham}. The exact rank-deficient
+formula also appears in \cite[Section~5.5]{golub} and
+\cite[entries 14.least\_squares and 14.svd\_pseudoinverse]{d05}.
+\chapter{Spectral Perturbation and Low-Rank Approximation}
+
+We work over \(\mathbb C\), with the real versions obtained when the
+data and the asserted decompositions are real. The Euclidean
+operator norm is \(\|\cdot\|_2\) and the Frobenius norm is
+\(\|\cdot\|_F\). We use the orthonormal spectral theorem for
+Hermitian and normal matrices and the finite singular value
+decomposition, as proved in \cite[Modules 13 and 14]{d05}.
+A rectangular matrix \(A:\mathbb K^n\to\mathbb K^m\) has an
+orthonormal basis of right singular vectors, obtained from
+\(A^*A\). The singular values are ordered nonincreasingly and
+are padded with zeros beyond the positive rank. A Hermitian
+matrix of size \(n\) has eigenvalues in nondecreasing order.
+
+\section{Hermitian eigenvalues and residuals}
+
+\begin{theorem}[Courant--Fischer]\label{p206:W36}
+For Hermitian \(A\) of size \(n\) write \(R_A(x)=x^*Ax\)
+on unit vectors. For \(1\le i\le n\),
+\[
+ \lambda_i(A)
+  = \min_{\dim S=i}\ \max_{\substack{x\in S\\\|x\|_2=1}}R_A(x)
+  = \max_{\dim S=n-i+1}\ \min_{\substack{x\in S\\\|x\|_2=1}}R_A(x).
+\]
+\end{theorem}
+\begin{proof}
+Choose an orthonormal eigenbasis \(v_1,\ldots,v_n\) in that order.
+On the span of the first \(i\) basis vectors the maximum Rayleigh
+quotient is \(\lambda_i\). Every \(i\)-dimensional subspace
+intersects \(\operatorname{span}(v_i,\ldots,v_n)\) nontrivially
+because the dimensions sum to \(n+1\). A unit vector in that
+intersection has Rayleigh quotient at least \(\lambda_i\).
+This proves the first formula. Interchanging the two spans and
+inequalities gives the second. The extreme values on a subspace
+are attained by compactness of its unit sphere. Repeated eigenvalues
+require no choice of a particular eigenbasis within their spaces.
+\end{proof}
+
+\begin{theorem}[Weyl's Hermitian perturbation bound]\label{p206:W37}
+If \(A,E\) are Hermitian of the same size, then for every
+eigenvalue index,
+\[
+                |\lambda_i(A+E)-\lambda_i(A)|\le\|E\|_2 .
+\]
+\end{theorem}
+\begin{proof}
+On a unit vector, the Rayleigh quotients differ by
+\(x^*Ex\), of modulus at most \(\|E\|_2\) by Cauchy--Schwarz.
+The same bound therefore holds after taking the maximum in each
+fixed subspace and then the minimum over all subspaces of
+dimension \(i\) in Theorem~\ref{p206:W36}.
+\end{proof}
+
+\begin{theorem}[Gershgorin and a Hermitian residual certificate]
+\label{p206:W38}
+Every eigenvalue of a complex square matrix belongs to one of the
+row disks with centers \(a_{ii}\) and radii
+\(\sum_{j\ne i}|a_{ij}|\). The same conclusion holds for column
+disks. If \(A\) is Hermitian, \(v\) is a unit vector and
+\(\mu\in\mathbb R\), then
+\[
+ \operatorname{dist}(\mu,\sigma(A))\le\|(A-\mu I)v\|_2 .
+\]
+For a group of eigenvalues, let \(P\) be the orthogonal projection
+onto their joint eigenspaces. If the other eigenvalues all have
+distance at least \(\delta>0\) from \(\mu\), then
+\(\|(I-P)v\|_2\le\|(A-\mu I)v\|_2/\delta\).
+\end{theorem}
+\begin{proof}
+In an eigenvector choose a coordinate \(i\) of maximum modulus.
+It is nonzero, and the \(i\)-th row equation gives
+\(|\lambda-a_{ii}|\le\sum_{j\ne i}|a_{ij}|\) after division by
+that modulus. The transposed matrix has the same characteristic
+polynomial and its row disks are the column disks of \(A\).
+For the Hermitian assertions write \(v=\sum_j c_j v_j\) in an
+orthonormal eigenbasis. Then
+\[
+ \|(A-\mu I)v\|_2^2=\sum_j|\lambda_j-\mu|^2|c_j|^2,
+ \qquad\sum_j|c_j|^2=1.
+\]
+Use the minimum spectral distance in the whole sum for the first
+bound, and the gap \(\delta\) in the sum over the complement for
+the second.
+\end{proof}
+These comparisons are developed in \cite[Sections 7.2 and 8.1--8.2]{golub}.
+The row disk theorem also has a fixed Mathlib and MathGenome
+implementation \cite{mathlib,d05}.
+
+\section{Diagonalizable perturbations}
+
+\begin{theorem}[Bauer--Fike with a specified subordinate norm]
+\label{p206:W39}
+Let \(A=V\Lambda V^{-1}\) with \(\Lambda\) diagonal, and let
+\(\mu\) be an eigenvalue of \(A+E\).
+For any subordinate norm and \(\mu\notin\sigma(A)\),
+\[
+ 1\le\|(\mu I-\Lambda)^{-1}\|\ \|V^{-1}EV\|.
+\]
+If the norm of a diagonal matrix is the maximum modulus of its
+diagonal entries, then
+\[
+      \min_i|\mu-\lambda_i|\le\|V\|\,\|V^{-1}\|\,\|E\|.
+\]
+This hypothesis holds for the subordinate \(\ell_p\) norms,
+\(1\le p\le\infty\).
+\end{theorem}
+\begin{proof}
+For a nonzero eigenvector \(x\) put \(z=V^{-1}x\).
+If \(\mu\) is outside the spectrum of \(A\), its equation
+gives \(z=(\mu I-\Lambda)^{-1}V^{-1}EVz\).
+Take norms and divide by \(\|z\|>0\).
+For an \(\ell_p\) norm the diagonal operator is bounded above
+by the maximum diagonal modulus directly from the vector norm,
+and a coordinate vector attains it. The stated diagonal norm
+property turns the inverse norm into
+\(1/\min_i|\mu-\lambda_i|\). Submultiplicativity finishes the
+estimate. When \(\mu\) is already an eigenvalue of \(A\),
+the left side of the spectral-distance assertion is zero.
+\end{proof}
+The subordinate \(p\)-norm statement is \cite[Theorem 7.2.2]{golub}.
+An arbitrary subordinate norm need not have the diagonal property.
+For a concrete failure, take
+\[
+ A=\begin{pmatrix}0&0\\0&1\end{pmatrix},\quad
+ S=\begin{pmatrix}1&M\\0&1\end{pmatrix},\quad
+ SES^{-1}=\begin{pmatrix}0&0\\1/M&0\end{pmatrix},\qquad M>2.
+\]
+Use the vector norm \(\|x\|=\|Sx\|_\infty\). Its subordinate
+norm on \(E\) is \(1/M\). The diagonalization of \(A\)
+may use \(V=I\), whose condition number is one in this norm.
+But \(S(A+E)S^{-1}\) has rows \((0,M)\) and \((1/M,1)\).
+Its eigenvalues are \((1\pm\sqrt5)/2\), both at distance
+\((\sqrt5-1)/2\) from \(\{0,1\}\).
+This exceeds \(1/M\). The resolvent inequality still holds.
+
+\section{Singular values and optimal approximation}
+
+\begin{theorem}[Singular-value perturbations]\label{p206:W40}
+For same-size real or complex matrices \(A,A+E\), with
+singular values ordered and padded as above,
+\[
+                |\sigma_i(A+E)-\sigma_i(A)|\le\|E\|_2 .
+\]
+\end{theorem}
+\begin{proof}
+On the \(n\)-dimensional right-hand space of \(A\), for
+\(1\le i\le n\),
+\[
+ \sigma_i(A)
+     =\min_{\dim S=n-i+1}\ \max_{\substack{x\in S\\\|x\|_2=1}}\|Ax\|_2 .
+\]
+The span of the last \(n-i+1\) right singular vectors gives
+the upper bound. Every subspace of that dimension intersects
+the span of the first \(i\) right singular vectors, and a unit
+vector in the intersection gives the lower bound. This uses
+the SVD formula for \(\|Ax\|_2^2\), including all its zero
+directions. Since \(\|Ax\|_2\) and \(\|(A+E)x\|_2\) differ
+by at most \(\|E\|_2\) on any unit vector, compare the
+two subspace extrema. Indices beyond \(n\) contribute zero;
+when the right space has dimension zero the result is immediate.
+\end{proof}
+
+\begin{theorem}[Best rank-\(k\) approximation in operator norm]
+\label{p206:W41}
+For an integer \(k\ge0\), truncating an SVD after its first
+\(k\) singular terms gives a minimizer over all matrices of
+rank at most \(k\). The minimum of \(\|A-B\|_2\) is
+\(\sigma_{k+1}(A)\).
+\end{theorem}
+\begin{proof}
+The residual of the truncated SVD acts on the remaining singular
+directions with largest coefficient \(\sigma_{k+1}\), so its
+operator norm is that coefficient. When \(k\ge\operatorname{rank}A\),
+the truncation is \(A\) and the minimum is zero.
+Otherwise \(\ker B\) has dimension at least \(n-k\) for any
+competitor \(B\), and intersects the span of the first \(k+1\)
+right singular vectors. On a unit vector \(x\) there,
+\((A-B)x=Ax\) has norm at least \(\sigma_{k+1}\).
+The lower bound follows.
+\end{proof}
+
+\begin{theorem}[Best rank-\(k\) approximation in Frobenius norm]
+\label{p206:W42}
+The same SVD truncation minimizes \(\|A-B\|_F\) over matrices
+of rank at most \(k\), with squared minimum
+\(\sum_{i>k}\sigma_i(A)^2\).
+\end{theorem}
+\begin{proof}
+For \(k\ge\operatorname{rank} A\) the claim holds by taking \(B=A\).
+For \(k<\operatorname{rank} A\), choose an orthonormal basis
+\(y_1,\ldots,y_{n-k}\) of an \((n-k)\)-dimensional subspace of
+\(\ker B\). Extend it to an orthonormal basis of the right space.
+By the Frobenius sum formula,
+\[
+ \|A-B\|_F^2
+    \ge\sum_{j=1}^{n-k}\|Ay_j\|_2^2
+    =\sum_{i=1}^n\sigma_i^2 w_i,\qquad
+       w_i=\sum_{j=1}^{n-k}|v_i^*y_j|^2 .
+\]
+Here \(v_i\) are the right singular vectors. By orthogonal
+projection, \(0\le w_i\le1\), and summing the Parseval identity
+for each \(y_j\) gives \(\sum_i w_i=n-k\).
+The difference from \(\sum_{i>k}\sigma_i^2\) is
+\(\sum_{i\le k}\sigma_i^2w_i-\sum_{i>k}\sigma_i^2(1-w_i)\).
+The weights in the two sums have equal total, and the first
+set of coefficients is at least the second set, so the difference
+is nonnegative. For \(k=0\), all weights equal one.
+The residual of the truncated SVD attains the claimed value.
+\end{proof}
+The SVD constructions and norm identities used here are in
+\cite[Section 14]{d05}; see also \cite[Section 2.4]{golub}.
+
+\begin{theorem}[Hoffman--Wielandt and a Frobenius singular-value bound]
+\label{p206:W43}
+For normal \(n\times n\) matrices \(A,B\) with eigenvalues
+\(\lambda_i,\mu_i\), there is a permutation \(\pi\) with
+\[
+        \sum_i|\lambda_i-\mu_{\pi(i)}|^2\le\|A-B\|_F^2 .
+\]
+For Hermitian matrices one may match the eigenvalues in increasing
+order. For rectangular matrices \(A,B\) of the same size,
+\[
+        \sum_i\bigl(\sigma_i(A)-\sigma_i(B)\bigr)^2\le\|A-B\|_F^2 .
+\]
+\end{theorem}
+\begin{proof}
+Use orthonormal eigenbases \(u_i,v_j\) for the normal matrices.
+The mixed-basis entry of \(A-B\) is
+\(u_i^*(A-B)v_j=(\lambda_i-\mu_j)u_i^*v_j\).
+Indeed \(u_i^*A=\lambda_i u_i^*\) by the orthonormal
+diagonalization, and \(Bv_j=\mu_jv_j\).
+Frobenius norm is unchanged by orthonormal changes on either side,
+so
+\[
+  \|A-B\|_F^2=\sum_{i,j}|\lambda_i-\mu_j|^2\,|u_i^*v_j|^2.
+\]
+The matrix \(P_{ij}=|u_i^*v_j|^2\) has row and column sums one
+by Parseval. The Birkhoff--von Neumann decomposition proved
+in \cite[Chapter 8, W42]{p205} writes \(P\) as a convex
+combination of permutation matrices. The displayed cost is
+linear in \(P\), so one permutation has cost at most its average.
+For Hermitian matrices the eigenvalues are real. If
+\(a\le b\) and \(c\le d\), swapping the crossed pairing
+\((a,d),(b,c)\) to \((a,c),(b,d)\) decreases the squared cost by
+\(2(b-a)(d-c)\ge0\). Repeated removal of inversions shows that
+the sorted pairing is optimal, including ties.
+
+For rectangular \(A\), use the Hermitian matrix on the direct sum
+of the left and right spaces given by
+\[
+                  H(A)=\begin{pmatrix}0&A\\A^*&0\end{pmatrix}.
+\]
+For each positive singular value with unit pair \(u,v\),
+the vectors \((u,v)\) and \((u,-v)\) have eigenvalues
+\(\sigma\) and \(-\sigma\); the remaining kernel directions give
+zero. More explicitly, with \(q=\min(m,n)\) the increasing list
+is \(-\sigma_1,\ldots,-\sigma_q\), followed by \(|m-n|\) zeros,
+followed by \(\sigma_q,\ldots,\sigma_1\).
+The paired squared spectral differences for \(H(A),H(B)\)
+therefore sum to twice the sum of squared singular-value
+differences. Meanwhile
+\(\|H(A)-H(B)\|_F^2=2\|A-B\|_F^2\).
+The Hermitian result gives the claim.
+\end{proof}
+See \cite{hoffman,mirsky} for the classical spectral and
+singular-value inequalities.
+
+\pagebreak
+\section{Power and inverse iterations}
+
+\begin{theorem}[The dominant direction of power iteration]
+\label{p206:W44}
+Let \(A\) be diagonalizable and let its nonzero eigenvalue
+\(\lambda_1\) have modulus strictly larger than that of every
+other distinct eigenvalue. Let \(p_1\) be the spectral component
+of \(x_0\) in the \(\lambda_1\) eigenspace and assume \(p_1\ne0\).
+Then the unit directions \(z_j=A^jx_0/\|A^jx_0\|_2\),
+after multiplication by \((|\lambda_1|/\lambda_1)^j\),
+converge to \(p_1/\|p_1\|_2\) with error \(O(r^j)\), where
+\(r=\max_{\lambda\ne\lambda_1}|\lambda/\lambda_1|<1\)
+and the maximum of the empty set is zero.
+\end{theorem}
+\begin{proof}
+Decompose \(x_0=p_1+\sum_{\lambda\ne\lambda_1}p_\lambda\)
+in the direct sum of eigenspaces. Since the \(\lambda_1\) component
+of \(A^jx_0\) is nonzero, all directions are defined.
+Put \(y_j=\lambda_1^{-j}A^jx_0\). For \(j\ge1\),
+\(\|y_j-p_1\|_2\le r^j\sum_{\lambda\ne\lambda_1}\|p_\lambda\|_2\).
+For any nonzero \(y,p\) one has
+\[
+ \left\|\frac{y}{\|y\|_2}-\frac{p}{\|p\|_2}\right\|_2
+  \le \frac{\|y-p\|_2+|\|y\|_2-\|p\|_2|}{\|p\|_2}
+  \le \frac{2\|y-p\|_2}{\|p\|_2}.
+\]
+Use this with \(y_j,p_1\); its normalized \(y_j\) is the stated
+phase correction. If all other eigenvalues are zero, the first
+iterate has the exact corrected direction. In the real case the
+phase correction is a sign. Multiplicity of the dominant
+eigenvalue within its eigenspace does not affect this proof.
+\end{proof}
+
+\begin{corollary}[Fixed-shift inverse iteration]\label{p206:W45}
+Let \(A\) be diagonalizable and \(\mu\notin\sigma(A)\).
+Suppose one distinct eigenvalue \(\lambda_1\) uniquely minimizes
+\(|\lambda-\mu|\), with a nonzero initial component in its
+eigenspace. The exact iteration that solves
+\((A-\mu I)y=x\) and normalizes \(y\) converges in direction
+to that component, with the phase convention of
+Theorem~\ref{p206:W44} and geometric factor
+\[
+       \max_{\lambda\ne\lambda_1}
+                    \frac{|\lambda_1-\mu|}{|\lambda-\mu|}.
+\]
+With a single distinct eigenvalue the directions are already exact
+up to phase.
+\end{corollary}
+\begin{proof}
+The operator \((A-\mu I)^{-1}\) has the same eigenspaces and
+eigenvalues \((\lambda-\mu)^{-1}\). The closest eigenvalue
+of \(A\) gives the uniquely largest modulus for this operator.
+Apply the power iteration result. Normalizing after each step
+gives the same direction as normalizing its power applied to
+the original vector. The proof concerns exact solves.
+A residual of a rounded solve can be converted to a forward error
+using Theorem~\ref{p206:W14}, with the inverse norm of the shifted
+matrix.
+\end{proof}
+\chapter{Polynomial Interpolation and Approximation}
+\label{p206:ch06}
+
+Let \(\mathcal P_n(K)\) denote the polynomials over \(K\) of degree at
+most \(n\), including the zero polynomial. When \(K=\mathbb R\) and an
+interval is specified, we also view these polynomials as functions on
+that interval. Distinctness of the nodes is essential for ordinary
+interpolation. Repeated nodes will encode higher-order data.
+
+\section{Lagrange, Newton, and barycentric forms}
+
+\begin{proposition}[Lagrange cardinal polynomials]\label{p206:W46}
+Let \(K\) be a field and \(x_0,\ldots,x_n\) pairwise distinct elements
+of \(K\). For prescribed values \(y_0,\ldots,y_n\), set
+\[
+ \ell_i(X)=\prod_{j\ne i}\frac{X-x_j}{x_i-x_j},
+ \qquad
+ p(X)=\sum_{i=0}^n y_i\ell_i(X).
+\]
+Then \(\ell_i\in\mathcal P_n(K)\), \(\ell_i(x_j)=\delta_{ij}\), and
+\(p(x_i)=y_i\) for each \(i\). The singleton case has
+\(\ell_0=1\). The empty sum constructs the zero polynomial for empty
+data.
+\end{proposition}
+
+\begin{proof}
+All denominators are nonzero. Each \(\ell_i\) is a product of \(n\)
+linear factors scaled by field elements. At \(x_i\) every factor is
+\(1\). At \(x_j\), \(j\ne i\), the factor with numerator \(X-x_j\)
+vanishes. Evaluation of the sum gives the claim.
+\end{proof}
+
+\begin{theorem}[Existence and uniqueness]\label{p206:W47}
+Data at \(n+1\) distinct nodes determine a unique polynomial in
+\(\mathcal P_n(K)\). The \(\ell_i\) form the basis of this space dual
+to evaluation at the nodes.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{p206:W46} gives existence. The difference of two
+solutions is divisible by all \(X-x_i\), and hence by their product,
+since the linear factors are pairwise coprime. This product has
+degree \(n+1\), so the degree bound forces the difference to vanish.
+Applying the interpolation formula to arbitrary polynomial data
+proves the basis assertion. Empty data have no uniqueness in
+\(\mathcal P_n(K)\) for \(n\ge0\).
+\end{proof}
+
+These formulas are the ordinary distinct-node interpolation of
+\cite[Section 2.1.1]{stoer}. The fixed Mathlib revision
+\cite{mathlib} provides the corresponding construction, evaluation
+and degree lemmas in \texttt{Mathlib/LinearAlgebra/Lagrange.lean}.
+
+\begin{theorem}[Newton divided differences]\label{p206:W48}
+For pairwise distinct nodes in a field, define divided differences
+for any ordered sublist by \(f[x_i]=y_i\) and
+\[
+ f[x_i,\ldots,x_j]
+ =\frac{f[x_{i+1},\ldots,x_j]-f[x_i,\ldots,x_{j-1}]}{x_j-x_i}.
+\]
+The divided difference on a list equals the coefficient of the
+highest allowed degree in its interpolation polynomial, and is
+invariant under permutations of the node-value pairs. In
+particular the interpolant on the original list is
+\[
+ p(X)=\sum_{k=0}^n c_k\prod_{j=0}^{k-1}(X-x_j),
+ \qquad c_k=f[x_0,\ldots,x_k].
+\]
+To evaluate it at \(x\), start with \(r=c_n\) and replace
+\(r\) by \(c_k+(x-x_k)r\) for \(k=n-1,\ldots,0\).
+\end{theorem}
+
+\begin{proof}
+Write \(p_{i,j}\) for the degree-\(\le j-i\) interpolant on
+\(x_i,\ldots,x_j\). For \(i<j\) the polynomial
+\[
+ \frac{(X-x_i)p_{i+1,j}(X)-(X-x_j)p_{i,j-1}(X)}{x_j-x_i}
+\]
+takes the prescribed value at both end nodes and at every
+interior node. For an interior node both polynomials have the
+same data value, and the difference of the two linear factors
+is \(x_j-x_i\). Its degree is at most \(j-i\), so it equals
+\(p_{i,j}\). Comparing the coefficients of \(X^{j-i}\)
+gives the recursion from the respective coefficients of
+\(X^{j-i-1}\). The singleton case starts the induction.
+Uniqueness makes that coefficient independent of node order.
+
+Next \(p_{0,k}-p_{0,k-1}\) has degree at most \(k\) and
+vanishes at the first \(k\) nodes. It is \(c_k\) times their
+monic nodal product, by its coefficient of \(X^k\).
+Summing these differences gives the representation. The backward
+recursion follows by successively factoring out the first
+linear factor from the remaining terms.
+\end{proof}
+
+\begin{proposition}[Barycentric identities]\label{p206:W49}
+For \(n+1\) distinct nodes in a field set
+\[
+ \omega(X)=\prod_j(X-x_j),\qquad
+ w_i=\frac{1}{\prod_{j\ne i}(x_i-x_j)}.
+\]
+At a non-node \(x\), the exact interpolant satisfies
+\[
+ p(x)=\omega(x)\sum_{i=0}^n\frac{w_i y_i}{x-x_i}
+     =\frac{\displaystyle\sum_{i=0}^n w_i y_i/(x-x_i)}
+             {\displaystyle\sum_{i=0}^n w_i/(x-x_i)}.
+\]
+The denominator of the second expression is nonzero.
+At \(x=x_i\), evaluation is the prescribed \(y_i\).
+\end{proposition}
+
+\begin{proof}
+The first formula follows by factoring \(\ell_i(x)\) as
+\(\omega(x)w_i/(x-x_i)\). Apply it to the constant data \(y_i=1\).
+Their interpolant is \(1\), by uniqueness. Thus the denominator
+in the quotient is \(1/\omega(x)\), which is nonzero, and the
+second formula follows. A floating-point analysis additionally
+needs error bounds for the computed nodes and weights.
+See \cite[Section 2]{berrut} for the barycentric forms.
+\end{proof}
+
+\section{Interpolation remainders and repeated nodes}
+
+We use Rolle's theorem in its interval form from
+\cite[\texttt{K03.05.rolle}]{d03}. Here \(C^r[a,b]\) uses continuous
+derivatives through order \(r\) on the closed interval, with the
+usual one-sided interpretation at the ends.
+
+\begin{lemma}[Rolle's theorem with repeated zeros]\label{p206:repeated-rolle}
+Let \(g\in C^{N-1}[a,b]\). Suppose it has distinct marked points
+\(t_1<\cdots<t_s\) with positive integers \(m_i\), with
+\(\sum_i m_i=N\), and that \(g^{(j)}(t_i)=0\) for \(0\le j<m_i\).
+Then \(g^{(N-1)}\) vanishes at some point of \([t_1,t_s]\).
+\end{lemma}
+
+\begin{proof}
+For \(N=1\) use the marked point. For \(N\ge2\), at each \(t_i\)
+with \(m_i\ge2\), the derivative \(g'\) has the specified vanishing
+of order \(m_i-1\). Also, between each pair \(t_i,t_{i+1}\), Rolle's
+theorem supplies an interior zero of \(g'\). The new points
+are distinct from one another and from the old ones.
+Thus \(g'\) has a list of marked zeros of total multiplicity
+\(\sum_i(m_i-1)+(s-1)=N-1\). Induction inside the same
+closed hull proves the result.
+\end{proof}
+
+\begin{theorem}[Lagrange remainder]\label{p206:W50}
+Let \(x_0,\ldots,x_n\) be distinct nodes of a real interval and \(x\)
+another point of that interval, possibly a node. Suppose \(f\) is
+\(C^{n+1}\) there and let \(p\) interpolate the \(f(x_i)\).
+There is a \(\xi\) in the closed convex hull of \(x,x_0,\ldots,x_n\)
+such that
+\[
+ f(x)-p(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}
+                   \prod_{i=0}^n(x-x_i).
+\]
+\end{theorem}
+
+\begin{proof}
+For a node \(x\) the identity is zero on both sides. Otherwise put
+\(c=(f(x)-p(x))/\omega(x)\), with \(\omega\) the monic nodal product.
+Then \(g=f-p-c\omega\) vanishes at the \(n+1\) nodes and at \(x\).
+Apply Lemma~\ref{p206:repeated-rolle} with \(N=n+2\) to this
+list of distinct zeros. Since \(p^{(n+1)}=0\) and
+\(\omega^{(n+1)}=(n+1)!\), the zero of \(g^{(n+1)}\)
+gives \(c=f^{(n+1)}(\xi)/(n+1)!\).
+\end{proof}
+
+\begin{theorem}[Hermite interpolation and remainder]\label{p206:W51}
+Let \(s\ge1\), let \(x_1,\ldots,x_s\) be pairwise distinct nodes of a field,
+and \(m_i\ge1\) integers with \(N=\sum_i m_i\).
+For each node prescribe a residue class modulo \((X-x_i)^{m_i}\).
+There is a unique representative \(p\) of degree less than \(N\)
+meeting all the residues.
+
+For real nodes in an interval and \(f\in C^N\) on that interval,
+take the residues to be the Taylor polynomials at \(x_i\) through
+degree \(m_i-1\). Then \(p^{(j)}(x_i)=f^{(j)}(x_i)\) for
+\(0\le j<m_i\). At each point \(x\) of the interval,
+\[
+ f(x)-p(x)=\frac{f^{(N)}(\xi)}{N!}
+                \prod_{i=1}^s(x-x_i)^{m_i}
+\]
+for some \(\xi\) in the closed hull of the nodes and \(x\).
+\end{theorem}
+
+\begin{proof}
+Let \(q_i=(X-x_i)^{m_i}\), \(q=\prod_iq_i\), and
+\(Q_i=\prod_{j\ne i}q_j\). Since \(Q_i\) and \(q_i\) are
+coprime, the polynomial Euclidean algorithm gives \(u_i,v_i\)
+with \(u_iQ_i+v_iq_i=1\). If \(a_i\) represents the requested
+class, \(\sum_i a_i u_i Q_i\) has the correct residues.
+Its remainder on division by the monic polynomial \(q\)
+has degree less than \(N\) and the same residues.
+The difference of two solutions of degree less than \(N\)
+is divisible by \(q\), so vanishes. This is the polynomial
+construction underlying the finite Chinese remainder theorem
+\cite[\texttt{K07.09.crt\_finite\_integer}]{d07}.
+In arbitrary characteristic the residues are the data.
+Over \(\mathbb R\), the coefficient of \((X-x_i)^j\)
+is \(p^{(j)}(x_i)/j!\), which proves the equivalence
+with the derivative conditions.
+
+At a node the error is zero. Otherwise set
+\(c=(f(x)-p(x))/q(x)\) and \(g=f-p-cq\).
+At \(x_i\), this has a marked zero of multiplicity \(m_i\),
+because \(q\) and its first \(m_i-1\) derivatives vanish
+there. There is also the new zero \(x\), giving total
+multiplicity \(N+1\). Lemma~\ref{p206:repeated-rolle} gives
+\(g^{(N)}(\xi)=0\). As \(p^{(N)}=0\) and \(q^{(N)}=N!\),
+the desired identity follows.
+\end{proof}
+
+\section{Lebesgue constants and node geometry}
+
+\begin{theorem}[Interpolation norm and near-best error]\label{p206:W52}
+Let \(a<b\) and choose \(n+1\) distinct nodes in \([a,b]\).
+Let \(I_n:C[a,b]\to\mathcal P_n(\mathbb R)\) be interpolation
+with the uniform norm on both spaces. Then
+\[
+ \lVert I_n\rVert=\Lambda_n
+   :=\max_{x\in[a,b]}\sum_{i=0}^n|\ell_i(x)|,
+ \qquad
+ \lVert f-I_nf\rVert_\infty
+ \le(1+\Lambda_n)\inf_{p\in\mathcal P_n(\mathbb R)}
+                   \lVert f-p\rVert_\infty .
+\]
+\end{theorem}
+
+\begin{proof}
+The sum defining \(\Lambda_n\) is continuous, so it attains its
+maximum at some \(x_*\). The interpolation formula gives the upper
+norm bound. Prescribe at each node the sign of \(\ell_i(x_*)\),
+choosing \(0\) when \(\ell_i(x_*)=0\). Connect these values by
+linear interpolation between adjacent nodes in increasing order,
+and extend constantly up to the two interval ends. This gives a
+continuous function of uniform norm at most \(1\) with interpolant
+equal to \(\Lambda_n\) at \(x_*\). Hence the norm is exactly
+\(\Lambda_n\). For any polynomial \(p\in\mathcal P_n(\mathbb R)\),
+uniqueness gives \(I_np=p\). Thus \(f-I_nf=(1-I_n)(f-p)\).
+Take norms and then the infimum. See \cite[Chapter 15]{trefapprox}.
+\end{proof}
+
+\begin{theorem}[Chebyshev nodes and a uniform approximation rate]\label{p206:W53}
+For \(m\ge1\), let \(T_m(\cos\theta)=\cos(m\theta)\), and let
+\(\theta_j=(j+\tfrac12)\pi/m\), \(0\le j<m\). On \([-1,1]\) the
+unique monic polynomial of degree \(m\) of least uniform norm is
+\(2^{1-m}T_m\), whose roots are \(\cos\theta_j\).
+Interpolation at these \(m=n+1\) roots has
+\(\Lambda_n=O(1+\log(n+1))\), with an absolute constant.
+The affine images of the nodes give the corresponding minimax
+monic nodal polynomial and the same Lebesgue bound on any fixed
+nondegenerate compact interval. On that interval these interpolants
+converge uniformly for every Hölder continuous function.
+\end{theorem}
+
+\begin{proof}
+The cosine addition formula gives \(T_0=1\), \(T_1=X\) and
+\(T_{j+1}=2XT_j-T_{j-1}\). In particular \(T_m\) has
+degree \(m\) and leading coefficient \(2^{m-1}\). Its uniform
+norm is \(1\) and its \(m\) distinct roots are as stated.
+The fixed Mathlib revision has these facts and extremal statements
+in the \texttt{Polynomial.Chebyshev} namespace \cite{mathlib}.
+
+For minimax uniqueness, use the \(m+1\) decreasing points
+\(z_i=\cos(i\pi/m)\), \(0\le i\le m\), and write
+\(v_i=\prod_{j\ne i}(z_i-z_j)^{-1}\). Their signs are \((-1)^i\).
+The leading coefficient of a degree-\(\le m\) polynomial \(q\)
+is \(\sum_i v_i q(z_i)\) by Lagrange interpolation.
+Since \(T_m(z_i)=(-1)^i\), the sum of the \(|v_i|\) is
+\(2^{m-1}\). For a monic \(q\),
+\[
+  1\le \sum_i |v_i|\lVert q\rVert_\infty
+    =2^{m-1}\lVert q\rVert_\infty .
+\]
+Equality forces every \(q(z_i)=2^{1-m}(-1)^i\), since each
+term must attain its signed upper bound. Uniqueness of interpolation
+then gives \(q=2^{1-m}T_m\).
+
+For the Lebesgue estimate put \(x=\cos\theta\) with
+\(0\le\theta\le\pi\). At a non-node, the \(j\)-th cardinal
+polynomial satisfies
+\[
+ |\ell_j(\cos\theta)|
+  =\frac{|\cos(m\theta)|\sin\theta_j}
+         {m|\cos\theta-\cos\theta_j|}
+  \le \frac{\pi\,|\cos(m\theta)|}{m|\theta-\theta_j|}.
+\]
+Indeed \(|T_m'(\cos\theta_j)|=m/\sin\theta_j\).
+Factor the cosine difference as twice the product of the
+sines of the half-sum and half-difference, in absolute value.
+For fixed \(\theta_j\) the sine of the half-sum on the range
+\(0\le\theta\le\pi\) is at least
+\(\min(\sin(\theta_j/2),\cos(\theta_j/2))\),
+so \(\sin\theta_j\le2\sin((\theta+\theta_j)/2)\).
+Also \(|\sin((\theta-\theta_j)/2)|\ge|\theta-\theta_j|/\pi\).
+These inequalities give the displayed bound.
+
+Choose the closest angular node \(\theta_{j_*}\), with distance
+at most \(\pi/(2m)\). The mean value theorem gives
+\(|\cos(m\theta)|\le m|\theta-\theta_{j_*}|\), so the closest
+term contributes at most \(\pi\). For each \(k\ge1\) there
+are at most two indices with \(|j-j_*|=k\), and their angular
+distance is at least \((k-\tfrac12)\pi/m\). Hence at every non-node
+the sum is at most
+\[
+ \pi+2\sum_{k=1}^{m-1}\frac{1}{k-\tfrac12}
+      =O(1+\log m).
+\]
+At a node the sum is \(1\). The affine change of variable
+preserves all cardinal values and thus the interpolation norm.
+It also gives the minimax monic polynomial on \([a,b]\), since
+for every monic \(q\) of degree \(m\) on that interval the map
+\[
+ t\longmapsto
+ \left(\frac{2}{b-a}\right)^m q\!\left(\frac{a+b}{2}
+                              +\frac{b-a}{2}t\right)
+\]
+is monic and scales all uniform norms by the same factor.
+
+For the convergence assertion, use that affine change to work on
+\([0,1]\). If \(|f(t)-f(s)|\le L|t-s|^\alpha\), \(0<\alpha\le1\),
+the degree-\(\le n\) Bernstein polynomial is
+\(B_nf(t)=\mathbb E f(Z/n)\) with \(Z\) binomial of parameters
+\(n,t\). Since \(\mathbb E Z=nt\) and
+\(\mathbb E(Z/n-t)^2=t(1-t)/n\), concavity of \(u^{\alpha/2}\)
+gives
+\[
+ |B_nf(t)-f(t)|
+ \le L\,\mathbb E|Z/n-t|^\alpha
+ \le L(4n)^{-\alpha/2}\qquad (n\ge1).
+\]
+The binomial moment identities also appear in
+\cite[\texttt{K03.16.bernstein}]{d03}. Inserting \(B_nf\) into
+Theorem~\ref{p206:W52} gives a bound of order
+\((1+\log(n+1))n^{-\alpha/2}\), which tends to zero.
+\end{proof}
+
+\begin{theorem}[Failure of equispaced interpolation for continuous functions]\label{p206:W54}
+For \(n+1\) equally spaced nodes including both endpoints of a
+fixed nondegenerate interval, and \(n\ge2\),
+\[
+  \Lambda_n\ge\frac{2^n}{2n(n+1)^2}.
+\]
+In particular there exists a single continuous real function
+on the interval whose equispaced interpolation polynomials
+have unbounded uniform norm.
+\end{theorem}
+
+\begin{proof}
+Rescale the nodes for a fixed \(n\) to \(0,1,\ldots,n\) and
+evaluate at \(x=1/2\). The product over all nodes satisfies
+\[
+ \prod_{k=0}^n|x-k|
+   =\frac{n!}{2}\prod_{k=1}^n\left(1-\frac{1}{2k}\right)
+   \ge\frac{n!}{2(n+1)},
+\]
+since \(1-1/(2k)\ge k/(k+1)\). Choose a central index \(j\)
+maximizing \(\binom nj\). The maximum is at least
+\(2^n/(n+1)\), by summing all binomial coefficients.
+Also \(|j-1/2|\le n\) and
+\(\prod_{k\ne j}|j-k|=j!(n-j)!\). Thus the single term
+\(|\ell_j(1/2)|\) is at least the stated lower bound.
+
+Return to the fixed interval. Each \(I_n\) is a bounded linear
+operator on \(C[a,b]\), a Banach space, and its norm is
+\(\Lambda_n\) by Theorem~\ref{p206:W52}. If every continuous
+\(f\) had \(\sup_n\lVert I_nf\rVert_\infty<\infty\), uniform
+boundedness would give \(\sup_n\lVert I_n\rVert<\infty\),
+contrary to the lower bound. Here the fixed Mathlib theorem is
+\texttt{banach\_steinhaus} \cite{mathlib}. In its Baire argument
+the closed sets \(\{f:\sup_n\lVert I_nf\rVert_\infty\le k\}\)
+would cover the Banach space. A ball of radius \(r>0\) in one
+of them then gives \(\lVert I_n g\rVert_\infty\le2k\) for
+every \(\lVert g\rVert_\infty<r\), by subtracting the value
+at its center. This yields a uniform operator norm bound.
+\end{proof}
+\chapter{Numerical Differentiation and Quadrature}
+\label{p206:ch07}
+
+Throughout this chapter the error of a quadrature rule \(Q\) is
+the integral minus \(Q\). For \(f\) on a compact interval,
+\(\lVert f\rVert_\infty\) denotes its uniform norm there. Numerical
+differentiation will use separate estimates for the analytic
+stencil and the errors in the sample values.
+
+\section{Peano kernels and composite rules}
+
+\begin{theorem}[Peano kernel representation]\label{p206:W55}
+Let \(a<b\), let \(r\ge2\), and let \(E:C[a,b]\to\mathbb R\)
+be a bounded linear functional vanishing on polynomials of
+degree less than \(r\). Define \(u_+=\max(u,0)\) and
+\[
+ K(t)=E\!\left(\frac{(\,\cdot-t)_+^{r-1}}{(r-1)!}\right),
+ \qquad a\le t\le b.
+\]
+Then \(K\) is continuous and every \(f\in C^r[a,b]\) satisfies
+\[
+ E(f)=\int_a^b f^{(r)}(t)K(t)\,dt,\qquad
+ |E(f)|\le\lVert f^{(r)}\rVert_\infty\int_a^b|K(t)|\,dt.
+\]
+If \(K\) has a constant sign, its \(L^1\) norm is
+\(\left|E((\,\cdot\,)^r/r!)\right|\).
+\end{theorem}
+
+\begin{proof}
+Taylor's formula with integral remainder about \(a\) gives
+\[
+ f(x)=\sum_{k=0}^{r-1}\frac{f^{(k)}(a)}{k!}(x-a)^k
+       +\int_a^b f^{(r)}(t)\frac{(x-t)_+^{r-1}}{(r-1)!}\,dt.
+\]
+The integral formula is proved in \cite[\texttt{K03.06.integral}]{d03}.
+The kernel in the integral is jointly continuous on the compact
+square since \(r\ge2\). Consequently \(t\mapsto
+f^{(r)}(t)(\,\cdot-t)_+^{r-1}/(r-1)!\) is uniformly continuous
+into \(C[a,b]\). The Riemann sums converge in the uniform norm
+because for a mesh of size at most \(\delta\), the uniform error is
+at most \(b-a\) times the modulus of continuity at \(\delta\).
+Boundedness of \(E\) allows application to these sums and
+passage to the limit. Its vanishing on the Taylor polynomial
+leaves exactly the representation. The same uniform continuity
+argument shows continuity of \(K\), and integration of absolute
+values gives the error bound. Finally \(f(x)=x^r/r!\) has
+\(f^{(r)}=1\), so \(E(f)=\int K\). Constant sign gives the
+last assertion.
+\end{proof}
+
+For example, the difference between integration and a finite
+weighted sum of point evaluations is bounded on \(C[a,b]\).
+The representation in this setting is the Peano error formula
+of \cite[Section 3.2, Theorem 3.2.3]{stoer}.
+
+\begin{theorem}[Composite midpoint and trapezoidal errors]\label{p206:W56}
+Let \(f\in C^2[a,b]\) with \(a<b\), \(n\ge1\), and
+\(h=(b-a)/n\). Write \(M_n\) and \(T_n\) for the rules obtained
+by adding the midpoint and trapezoidal rules on the \(n\)
+subintervals of length \(h\). Then
+\[
+ \left|\int_a^b f-M_n(f)\right|
+     \le \frac{(b-a)h^2}{24}\lVert f''\rVert_\infty,
+ \qquad
+ \left|\int_a^b f-T_n(f)\right|
+     \le \frac{(b-a)h^2}{12}\lVert f''\rVert_\infty .
+\]
+\end{theorem}
+
+\begin{proof}
+Translate a subinterval to \([0,h]\). Both rules are exact
+for constants and linear functions, by their zeroth and first
+moments, so Theorem~\ref{p206:W55} applies with \(r=2\).
+For \(0\le t\le h\) the integral of \((x-t)_+\) is
+\((h-t)^2/2\). The midpoint rule subtracts \(h(h/2-t)_+\),
+and its kernel becomes
+\[
+ K_M(t)=
+ \begin{cases}
+ t^2/2 & 0\le t\le h/2,\\
+ (h-t)^2/2 & h/2\le t\le h.
+ \end{cases}
+\]
+Its integral is \(2\int_0^{h/2}t^2/2\,dt=h^3/24\).
+The trapezoidal rule subtracts \(h(h-t)/2\), leaving
+\(K_T(t)=-t(h-t)/2\), whose integral is \(-h^3/12\).
+Thus each local absolute error is bounded by the appropriate
+kernel norm times the uniform second derivative bound.
+The sum of the bounds uses \(nh^3=(b-a)h^2\).
+\end{proof}
+
+\begin{theorem}[Composite Simpson error]\label{p206:W57}
+Let \(f\in C^4[a,b]\) with \(a<b\), let \(n\ge2\) be even, and
+let \(h=(b-a)/n\). Form \(S_n\) by applying the three-point
+weights \(h(1,4,1)/3\) to successive disjoint panels of length
+\(2h\). Then
+\[
+ \left|\int_a^b f-S_n(f)\right|
+      \le \frac{(b-a)h^4}{180}\lVert f^{(4)}\rVert_\infty .
+\]
+\end{theorem}
+
+\begin{proof}
+On \([0,2h]\), direct substitution into the rule for
+\(1,x,x^2,x^3\) gives \(2h,2h^2,8h^3/3,4h^4\),
+respectively, their exact integrals. Therefore the Peano
+representation uses \(r=4\). On \(h\le t\le2h\), only the
+right node contributes to the rule on \((x-t)_+^3/6\), so
+\[
+ K(t)=\frac{(2h-t)^4}{24}-\frac{h(2h-t)^3}{18}
+      =\frac{(2h-t)^3(2h-3t)}{72}\le0 .
+\]
+Reflection \(x\mapsto2h-x\) preserves \(E\) and takes
+\((x-(2h-t))_+^3\) to \((t-x)_+^3\).
+The difference of \((x-t)_+^3\) and \((t-x)_+^3\) is
+the cubic \((x-t)^3\), which \(E\) annihilates.
+Hence \(K(2h-t)=K(t)\), so the kernel is nonpositive on
+the whole panel. Its mass equals the error on \(x^4/24\).
+\[
+ \int_0^{2h}K(t)\,dt
+ =\left(\frac4{15}-\frac5{18}\right)h^5=-\frac{h^5}{90}.
+\]
+Sum the resulting local bounds over \(n/2\) panels.
+The composite rules and their error formulas are discussed in
+\cite[Sections 3.1 and 3.2]{stoer}.
+\end{proof}
+
+\section{Gaussian quadrature and the Jacobi matrix}
+
+Let \(\mu\) be a finite positive Borel measure on \(\mathbb R\)
+concentrated on an interval. A finite moment of order \(2n\)
+means \(\int |x|^{2n}\,d\mu<\infty\). All moments of lower
+orders then exist absolutely. We use its closed support,
+consisting of points all of whose open neighborhoods have
+positive measure. Its complement is null because that open
+complement is a countable union of open intervals of measure
+zero, by the countable rational interval basis.
+
+\begin{theorem}[Gaussian quadrature for a positive measure]\label{p206:W58}
+Let \(n\ge1\). Assume that \(\mu\) has a finite moment of
+order \(2n\) and that the Gram matrix
+\[
+ G_n=\left(\int x^{i+j}\,d\mu(x)\right)_{0\le i,j\le n}
+\]
+is positive definite. Equivalently, the support of \(\mu\)
+contains at least \(n+1\) points. There is a unique monic
+polynomial \(\pi_n\) of degree \(n\) orthogonal to every
+polynomial of degree less than \(n\), and it has \(n\)
+distinct real roots \(x_1,\ldots,x_n\) strictly between the
+infimum and supremum of the support. There are positive
+weights \(w_i\) such that
+\[
+ \int p\,d\mu=\sum_{i=1}^n w_i p(x_i)
+ \qquad\text{for every }p\in\mathcal P_{2n-1}(\mathbb R).
+\]
+No deterministic rule using at most \(n\) point values can be exact on all
+polynomials of degree at most \(2n\).
+\end{theorem}
+
+\begin{proof}
+For a vector \(c\), the form \(c^\mathsf{T}G_nc\) equals
+the integral of the square of the associated polynomial.
+If the support contains at least \(n+1\) points, a nonzero
+polynomial of degree at most \(n\) is nonzero at some
+support point. By continuity its square is bounded below
+by a positive number on a neighborhood of positive measure.
+The form is therefore positive for nonzero \(c\).
+If the support has at most \(n\) points, the product of
+the corresponding linear factors is a nonzero polynomial
+of degree at most \(n\) vanishing almost everywhere.
+This proves the equivalence, also for the zero measure.
+
+Write \(\pi_n(X)=X^n+\sum_{j=0}^{n-1}a_jX^j\). The
+\(n\) orthogonality equations against \(1,x,\ldots,x^{n-1}\)
+have the invertible leading principal Gram block as their
+coefficient matrix. This gives existence and uniqueness.
+
+For the root count, let \(q\) be the product of the distinct
+real roots of \(\pi_n\) of odd multiplicity lying strictly
+between the support extremes. If there are fewer than \(n\),
+then \(\deg q<n\), and \(\pi_n q\) has a constant sign on
+the open interval between the extremes because its interior
+roots all have even multiplicity. The sign extends weakly
+to any finite ends. Moreover the distinct zeros of \(\pi_n q\)
+are zeros of \(\pi_n\), so at most \(n\) real points.
+At some support point the product is nonzero. Its absolute
+value is bounded below on a neighborhood of positive measure,
+and the constant sign on the support makes the integral
+nonzero. Integrability follows from the moment assumption
+because \(\deg(\pi_n q)\le2n-1\). This contradicts
+orthogonality. There must therefore be \(n\) such roots,
+and the degree shows they are all simple.
+
+For the cardinal polynomials \(\ell_i\) at these \(n\)
+nodes set \(w_i=\int\ell_i\,d\mu\). Interpolation shows
+exactness through degree \(n-1\). If \(\deg p\le2n-1\),
+divide \(p=\pi_n s+r\) with \(\deg r<n\) and
+\(\deg s\le n-1\). The integral of \(\pi_n s\) is zero,
+and its nodal values vanish, so exactness for \(r\) proves
+the claim. Applying exactness to \(\ell_i^2\) gives
+\(w_i=\int\ell_i^2\,d\mu>0\), by positivity of the Gram
+form. Finally, run a proposed deterministic point-evaluation rule
+on the zero polynomial. Its at most \(n\) queried points determine
+a monic nodal product whose square vanishes at all of them but has
+positive integral by the Gram condition. Run the same rule on that
+square. Every answer on the zero-data path stays zero, so even if
+the rule chooses points adaptively it takes the same path and gives
+the same output. It cannot be exact for both inputs.
+\end{proof}
+
+The construction is the general orthogonal-polynomial Gaussian
+rule of \cite[Section 4.1]{gautschi} and
+\cite[Section 3.6]{stoer}. The hypothesis for nondegeneracy
+through degree \(n\) gives positive squared norms even at degree
+\(n\), giving the exactness limit in the theorem.
+
+\begin{theorem}[Gaussian remainder and Jacobi computation]\label{p206:W59}
+Under the hypotheses of Theorem~\ref{p206:W58}, suppose in addition
+for the analytic remainder that the support is contained in
+\([a,b]\) and \(f\in C^{2n}[a,b]\). Then, with
+\(Q_n(f)=\sum_iw_i f(x_i)\),
+\[
+ \left|\int f\,d\mu-Q_n(f)\right|
+ \le\frac{\lVert f^{(2n)}\rVert_\infty}{(2n)!}
+          \int \pi_n^2\,d\mu .
+\]
+In fact the error is \(f^{(2n)}(\xi)\int\pi_n^2\,d\mu/(2n)!\)
+for some \(\xi\in[a,b]\).
+
+For the exact computation of nodes and weights, let \(p_k\),
+\(0\le k\le n\), be orthonormal polynomials for \(\mu\) with
+positive leading coefficients. The Jacobi matrix of order \(n\)
+represents multiplication by \(x\) followed by orthogonal
+projection onto the span of \(p_0,\ldots,p_{n-1}\). It is real
+symmetric tridiagonal, with positive subdiagonal entries where
+present. Its eigenvalues are the \(x_i\). If \(v_i\) is a unit
+eigenvector for \(x_i\), with coordinates indexed from zero, then
+\[
+ w_i=\mu(\mathbb R)\,|(v_i)_0|^2.
+\]
+These matrix formulas use the moment assumptions alone.
+\end{theorem}
+
+\begin{proof}
+For the analytic error, interpolate \(f,f'\) at each \(x_i\)
+by a polynomial \(H\) of degree at most \(2n-1\) using
+Theorem~\ref{p206:W51}. Since \(H\) and \(f\) have the same
+nodal values, \(Q_n(f)=Q_n(H)=\int H\,d\mu\).
+Put \(m_*=\min_{[a,b]} f^{(2n)}\) and
+\(M_*=\max_{[a,b]} f^{(2n)}\).
+The Hermite remainder gives the pointwise bounds
+\[
+  \frac{m_*}{(2n)!}\pi_n(x)^2
+  \le f(x)-H(x)
+  \le\frac{M_*}{(2n)!}\pi_n(x)^2.
+\]
+Integrate these derivative bounds against the positive measure.
+This avoids choosing a measurable intermediate point. Since
+\(\int\pi_n^2\,d\mu>0\), the scaled error is between
+\(m_*\) and \(M_*\), and continuity gives the exact
+intermediate derivative value. The absolute bound follows.
+
+For the computation, Gram--Schmidt on \(1,X,\ldots,X^n\)
+is valid by the Gram condition. Multiplication by \(X\)
+is symmetric for the polynomial inner product, since
+\(\langle Xp_j,p_i\rangle=\langle p_j,Xp_i\rangle\).
+If \(i<j-1\), the second term is zero by orthogonality
+because \(\deg(Xp_i)<j\). Symmetry also gives the zeros
+for \(j<i-1\). Thus for \(0\le j<n\) there is the
+three-term recurrence
+\[
+ Xp_j=\beta_{j+1}p_{j+1}+\alpha_jp_j+\beta_jp_{j-1},
+ \quad
+ \alpha_j=\langle Xp_j,p_j\rangle,\qquad
+ \beta_{j+1}=\frac{\operatorname{lc}(p_j)}
+                   {\operatorname{lc}(p_{j+1})}>0 ,
+\]
+with \(p_{-1}=0,\ \beta_0=0\) and \(\operatorname{lc}\)
+the leading coefficient. The formula for \(\beta_{j+1}\)
+comes from comparing leading coefficients. Symmetry
+identifies the coefficient of \(p_{j-1}\) with \(\beta_j\).
+The Jacobi matrix has diagonal \(\alpha_j\) and off-diagonal
+entries \(\beta_j\) between rows \(j-1,j\) for \(1\le j<n\).
+The recurrence at a root \(x_i\) of \(p_n\) shows that
+\((p_j(x_i))_{0\le j<n}\) is its eigenvector for \(x_i\),
+since the term in \(p_n\) disappears. The vector is nonzero
+because \(p_0=\mu(\mathbb R)^{-1/2}\).
+
+To normalize these vectors, the matrix \(U\) with entries
+\(U_{ji}=\sqrt{w_i}\,p_j(x_i)\) satisfies
+\[
+ (UU^\mathsf{T})_{jk}=\sum_{i=1}^n w_i p_j(x_i)p_k(x_i)
+                     =\int p_jp_k\,d\mu=\delta_{jk},
+\]
+by exactness through degree \(2n-2\). Being square, \(U\)
+has unit orthogonal columns. The \(n\) roots are distinct,
+so each eigenspace is one-dimensional, and any unit
+eigenvector for \(x_i\) agrees with the corresponding
+column up to sign. Its first coordinate is
+\(\sqrt{w_i}\,\mu(\mathbb R)^{-1/2}\) up to that sign.
+This gives the claimed weight formula, the exact
+Jacobi-matrix interface in \cite[Section 4.1]{gautschi}.
+\end{proof}
+
+\section{Finite differences and extrapolation}
+
+\begin{theorem}[Truncation and sample error]\label{p206:W60}
+Fix \(x\in\mathbb R\) and \(h>0\). Suppose the sampled values
+\(y(t)\) at the stencil points satisfy \(|y(t)-f(t)|\le\eta\).
+If \(f\in C^3[x-h,x+h]\) and
+\(M_3=\sup_{[x-h,x+h]}|f^{(3)}|\), then the central difference
+satisfies
+\[
+ \left|\frac{y(x+h)-y(x-h)}{2h}-f'(x)\right|
+       \le \frac{M_3h^2}{6}+\frac{\eta}{h}.
+\]
+If \(f\in C^2[x,x+h]\) and \(M_2=\sup_{[x,x+h]}|f''|\),
+then the forward difference satisfies
+\[
+ \left|\frac{y(x+h)-y(x)}h-f'(x)\right|
+       \le\frac{M_2h}{2}+\frac{2\eta}{h}.
+\]
+These bounds assume exact subtraction and division of the
+sampled values.
+\end{theorem}
+
+\begin{proof}
+For the central formula use Taylor through order two at \(x\)
+for each of \(x+h,x-h\). The quadratic and constant terms
+cancel. Each remaining Taylor error has magnitude at most
+\(M_3h^3/6\), giving \(M_3h^2/6\) after subtraction and
+division by \(2h\). The two sample errors contribute at most
+\(2\eta/(2h)\). For the forward formula Taylor through
+order one has error at most \(M_2h^2/2\). Divide by \(h\)
+and add the two scaled sample errors to get the second bound.
+See \cite[\texttt{K03.06.lagrange}]{d03} for the Lagrange
+remainder and \cite[Section 5.5]{driscoll} for the
+differentiation error setting.
+\end{proof}
+
+For step selection, take \(M_2,M_3,\eta\) independent of \(h\)
+on \(0<h\le H\) by using derivative bounds on the entire
+allowed neighborhood and a uniform sample error bound. If both
+terms in the central bound have positive coefficients, the
+unconstrained minimum occurs at \(h=(3\eta/M_3)^{1/3}\),
+since the derivative of the bound is \(M_3h/3-\eta/h^2\)
+and changes from negative to positive there. For the forward
+bound the derivative is \(M_2/2-2\eta/h^2\), giving
+\(h=(4\eta/M_2)^{1/2}\). In each case cap this value by \(H\).
+With positive sample error and zero derivative bound, the bound
+decreases up to \(H\). With zero sample error and positive
+derivative bound it tends to zero as \(h\) decreases to zero.
+With both zero it vanishes identically. If forming the stencil
+itself involves rounded subtraction or division, the arithmetic
+model of Chapter~\ref{p206:ch01} supplies an additional error
+term beyond the sample-error budget.
+
+\pagebreak
+\begin{proposition}[One-step Richardson extrapolation]\label{p206:W61}
+Suppose \(A(h)=A+c h^p+O(h^{p+q})\) as \(h\downarrow0\),
+where \(p,q>0\), and fix \(\lambda>1\). Then
+\[
+ R(h)=\frac{\lambda^p A(h/\lambda)-A(h)}{\lambda^p-1}
+       = A+O(h^{p+q}).
+\]
+If the two approximations at \(h/\lambda\) and \(h\) have
+absolute data errors at most \(\delta_{h/\lambda}\) and
+\(\delta_h\), the same linear combination in exact arithmetic
+has an additional error at most
+\[
+ \frac{\lambda^p\delta_{h/\lambda}+\delta_h}{\lambda^p-1}.
+\]
+For the central derivative stencil on exact data and \(f\in C^5\),
+the choice \(p=2,\ \lambda=2\) gives a fourth-order formula.
+\end{proposition}
+
+\begin{proof}
+The identity \(\lambda^p(h/\lambda)^p=h^p\) cancels the leading
+error term. The constants leave \(A\), and the remainder is
+\(O(h^{p+q})\) for fixed \(\lambda\). The input error bound follows
+by the triangle inequality. For the central stencil, Taylor
+through order four gives
+\[
+ \frac{f(x+h)-f(x-h)}{2h}
+       =f'(x)+\frac{f^{(3)}(x)}6 h^2+r(h),\qquad
+ |r(h)|\le\frac{\lVert f^{(5)}\rVert_\infty}{120}h^4,
+\]
+The even terms cancel, and each Taylor remainder is at most
+\(\lVert f^{(5)}\rVert_\infty h^5/120\) on the stencil interval.
+Thus \((4A(h/2)-A(h))/3\) has truncation error bounded by
+\(\lVert f^{(5)}\rVert_\infty h^4/288\).
+See \cite[Section 3.4]{stoer} for extrapolated quadrature.
+\end{proof}
+\chapter[Brackets, Fixed Points, and Stopping]{Bracketing, Fixed Points, and Certified Stopping}
+
+A small residual and a small error are different quantities. A bracket
+controls the location of a scalar root geometrically. A contraction
+provides a different certificate, in which the residual is divided by a
+positive distance from the limiting contraction factor \(1\). We first
+develop both certificates in exact arithmetic, then specify what must be
+verified when an evaluation is approximate. The scalar bracketing method
+is discussed in \cite[Section~2.1]{persson}, and the fixed-point method in
+\cite[Section~5.2]{stoer} and \cite[Section~4.2]{driscoll}.
+
+\section{Brackets and safeguarded updates}
+
+\begin{theorem}[Root existence in a bracket]\label{p206:W62}
+Let \(a<b\) and let \(f\colon[a,b]\to\mathbb R\) be continuous. If
+\(f(a)f(b)\le 0\), there is a root in \([a,b]\). If both endpoint values
+are nonzero and have opposite signs, there is a root in \((a,b)\).
+\end{theorem}
+\begin{proof}
+A zero endpoint is already a root. In the remaining case, zero lies
+strictly between the endpoint values, so the intermediate value theorem
+\cite[entry \texttt{K03.03.intermediate\_values}]{d03} gives a root
+strictly between the endpoints. For example, \(x(x^2-1)\) has opposite
+signs at \(-2\) and \(2\) and has all three roots \(-1,0,1\) in the
+bracket.
+\end{proof}
+
+\begin{theorem}[Bisection and its bracket invariant]\label{p206:W63}
+Under the assumptions of Theorem~\ref{p206:W62}, set
+\(I_0=[a_0,b_0]=[a,b]\). For a current interval \(I_n\) form its exact
+midpoint \(m_n=(a_n+b_n)/2\). Either return an endpoint or midpoint
+known to be a root, or keep a half interval whose endpoint values
+have product at most zero. For every step carried out,
+\[
+ I_{n+1}\subseteq I_n,\qquad f(a_n)f(b_n)\le 0,\qquad
+ b_n-a_n=2^{-n}(b-a).
+\]
+Every midpoint is within \(2^{-n-1}(b-a)\) of a root in its bracket.
+If the process continues indefinitely, the endpoints and midpoints
+converge to a root \(x_*\), and the same bound holds for
+\(\lvert m_n-x_*\rvert\) at every \(n\).
+\end{theorem}
+\begin{proof}
+For strictly opposite endpoint signs, a nonzero midpoint value shares
+the sign of one endpoint. Replacing that endpoint by the midpoint
+keeps the product negative. A midpoint root can be returned or retained
+as an endpoint of either half. If an endpoint already is a root, the
+half containing it keeps the product at most zero. This proves the
+invariant, and each completed update halves the interval width.
+Theorem~\ref{p206:W62} supplies a root in every bracket, so its distance
+from the midpoint is at most half the width.
+
+For an infinite run the left endpoints are nondecreasing and the
+right endpoints are nonincreasing. They are bounded, and their
+difference tends to zero, so they have the same limit \(x_*\).
+Continuity gives
+\(f(x_*)^2=\lim_{n\to\infty}f(a_n)f(b_n)\le0\).
+The limit is in every interval, giving the stated midpoint bound
+relative to this one root.
+\end{proof}
+
+\begin{proposition}[Step count and certified signs]\label{p206:W64}
+For \(\epsilon>0\), exact bisection requires at most
+\[
+ N_\epsilon=\max\left(0,\left\lceil
+      \log_2\frac{b-a}{2\epsilon}\right\rceil\right)
+\]
+half-interval updates before its current midpoint certifies an absolute
+root error of at most \(\epsilon\). Evaluating that final midpoint is
+unnecessary if the bracket and the midpoint alone are the desired
+certificate.
+
+If a function evaluation at a point \(x\) returns a certified enclosure
+\([l,u]\ni f(x)\), then \(l>0\) certifies a positive sign, \(u<0\)
+certifies a negative sign, and \([l,u]=[0,0]\) certifies a root. A
+strict-sign update requires a certified sign.
+\end{proposition}
+\begin{proof}
+By Theorem~\ref{p206:W63}, half the width after \(n\) updates is
+\((b-a)2^{-n-1}\). This is at most \(\epsilon\) exactly when
+\(n\ge\log_2((b-a)/(2\epsilon))\), with \(n\) an integer and \(n\ge0\).
+In particular, the initial midpoint suffices when the initial half-width
+is at most \(\epsilon\). Each sign implication follows directly from
+membership in \([l,u]\). If the enclosure contains zero without being
+\([0,0]\), it certifies neither a strict sign nor a root. In that case
+the existing bracket remains available, and a sharper enclosure may
+allow another update. An interior representable point must also be
+available when implementing a step with a fixed number format.
+\end{proof}
+
+With directed rounding, the enclosure hypotheses can be proved using
+the containment properties from Chapter~1. The step-count formula
+applies to completed exact halvings. In an implementation, if a stored
+output \(z\) is inside a verified bracket \([a',b']\), any certified upper
+bound on \(\max(z-a',b'-z)\) is a valid error radius for \(z\). If it
+is impossible to represent the exact midpoint or to certify the sign at
+a new point, the existing enclosure is still the certificate.
+
+\begin{theorem}[Safeguarded bracketing]\label{p206:W65}
+Start with a strict sign bracket and fix \(0<\alpha\le\tfrac12\).
+If the current bracket is \([a_n,b_n]\) of width \(w_n\), a proposed
+point from another method may be used when it is in the central
+interval
+\[
+ [a_n+\alpha w_n,\ b_n-\alpha w_n].
+\]
+Otherwise use the exact midpoint. If the chosen point has a certified
+nonzero sign, replace the endpoint with the same sign. If it is a
+certified root, return it. Each successful update preserves a sign
+bracket and satisfies \(w_{n+1}\le(1-\alpha)w_n\). Consequently an
+infinite sequence of successful updates converges to a root, and
+its \(n\)-th bracket midpoint has error at most
+\((b-a)(1-\alpha)^n/2\) with respect to that root.
+\end{theorem}
+\begin{proof}
+The accepted point is at distance at least \(\alpha w_n\) from
+each endpoint. The midpoint satisfies the same condition.
+A nonzero sign selects the opposite-sign subinterval, whose width
+is at most \(w_n-\alpha w_n\). The nested interval argument of
+Theorem~\ref{p206:W63} applies to this geometrically decreasing
+width. If a proposed Newton or secant step is undefined, the midpoint
+is an admissible choice. If the sign cannot be certified, or if
+finite representation prevents selecting a point certified to be in
+the central interval, the old bracket is retained. The stated
+geometric bound counts only successful updates.
+\end{proof}
+
+\section{Exact and inexact fixed-point iterations}
+
+\begin{theorem}[Banach's fixed-point theorem]\label{p206:W66}
+Let \((X,d)\) be a nonempty complete metric space and let
+\(T\colon X\to X\) satisfy
+\[
+ d(Tx,Ty)\le q\,d(x,y)\quad\text{for all }x,y\in X,\qquad
+ 0\le q<1.
+\]
+Then \(T\) has a unique fixed point \(p\), and \(x_n=T^n x_0\)
+converges to \(p\) from every \(x_0\in X\).
+\end{theorem}
+\begin{proof}
+Inductively, \(d(x_{j+1},x_j)\le q^j d(x_1,x_0)\), with \(q^0=1\)
+also when \(q=0\). For \(m>n\), the triangle inequality yields
+\[
+ d(x_m,x_n)\le
+ d(x_1,x_0)\sum_{j=n}^{m-1}q^j
+ \le\frac{q^n}{1-q}d(x_1,x_0).
+\]
+The right-hand side tends to zero, so the iterates converge to
+some \(p\in X\). The contraction inequality implies continuity of
+\(T\). Passing to the limit in \(x_{n+1}=Tx_n\) gives \(Tp=p\).
+For any other fixed point \(p'\), the inequality
+\(d(p,p')\le qd(p,p')\) forces \(p=p'\).
+This is the contraction argument also used in \cite{d10}.
+\end{proof}
+
+\begin{corollary}[A closed invariant domain]\label{p206:W67}
+Let \(D\) be a nonempty closed subset of a complete metric space.
+If \(T(D)\subseteq D\) and the contraction inequality holds for
+points in \(D\), then there is a unique fixed point in \(D\), and the
+iterates from any point of \(D\) converge to it.
+\end{corollary}
+\begin{proof}
+With the restricted metric, every Cauchy sequence in \(D\) is Cauchy
+in the ambient space, and its ambient limit lies in \(D\) by closedness.
+Invariance makes the restriction of \(T\) a self-map of this complete
+space, so Theorem~\ref{p206:W66} applies there. The iterates of this
+restriction agree with the ambient iterates because all their points
+stay in \(D\).
+\end{proof}
+
+\begin{proposition}[Sensitivity of a fixed point]\label{p206:W68}
+Suppose \(T\) has fixed point \(p\), satisfies the contraction
+inequality with \(0\le q<1\), and \(\widetilde T\) has a fixed point
+\(\tilde p\) in the same space. If
+\(d(Tx,\widetilde T x)\le\delta\) for all \(x\) in that space, then
+\[
+ d(p,\tilde p)\le\frac{\delta}{1-q}.
+\]
+In fact the perturbation bound at \(\tilde p\) suffices.
+\end{proposition}
+\begin{proof}
+Use \(T\tilde p\) as the intermediate point in the triangle
+inequality.
+\[
+ d(p,\tilde p)
+ \le d(Tp,T\tilde p)+d(T\tilde p,\widetilde T\tilde p)
+ \le qd(p,\tilde p)+\delta.
+\]
+Rearrangement gives the claim. To supply the existence premise,
+one can prove that \(\widetilde T\) is itself a contraction on a
+nonempty closed invariant subset of the complete domain. The resulting
+fixed point then comes from Corollary~\ref{p206:W67}.
+\end{proof}
+
+\begin{proposition}[A priori and a posteriori bounds]\label{p206:W69}
+For the iteration of Theorem~\ref{p206:W66}, the bounds
+\[
+ d(x_n,p)\le\frac{q^n}{1-q}d(x_1,x_0),\qquad
+ d(x_n,p)\le\frac{d(x_{n+1},x_n)}{1-q}
+\]
+hold for all \(n\ge0\).
+\end{proposition}
+\begin{proof}
+Take \(m\to\infty\) in the geometric-tail bound in the proof of
+Theorem~\ref{p206:W66}. This gives the first inequality.
+Starting that estimate with the new initial point \(x_n\) gives the
+second. When \(q=0\), \(T\) is constant, hence \(x_1=p\) and the bounds
+hold with \(q^0=1\). When \(x_0=p\), both right-hand sides are zero.
+\end{proof}
+
+\begin{proposition}[Fixed-point residual as a stopping certificate]\label{p206:W70}
+For any \(x\) in a domain on which \(T\) is a \(q\)-contraction
+with fixed point \(p\),
+\[
+ d(x,p)\le \frac{d(x,Tx)}{1-q}.
+\]
+In particular, a verified upper bound on \(d(x,Tx)\) of at most
+\((1-q)\epsilon\) certifies \(d(x,p)\le\epsilon\).
+\end{proposition}
+\begin{proof}
+The triangle inequality gives
+\(d(x,p)\le d(x,Tx)+d(Tx,Tp)\le d(x,Tx)+q\,d(x,p)\).
+Since \(1-q>0\), we can move the last term to the left and divide.
+The conclusion continues to hold with any upper bound substituted
+for the exact residual.
+\end{proof}
+
+\begin{theorem}[Inexact contraction iteration]\label{p206:W71}
+In the setting of Theorem~\ref{p206:W66} or
+Corollary~\ref{p206:W67}, let \(p\) be the fixed point.
+Suppose an approximate sequence \(x_j\) remains in the contraction
+domain and satisfies \(d(x_{j+1},Tx_j)\le\delta_j\) for all \(j\ge0\).
+Then
+\[
+ d(x_n,p)\le q^n d(x_0,p)+
+             \sum_{j=0}^{n-1}q^{n-1-j}\delta_j .
+\]
+For a common bound \(\delta_j\le\delta\) the upper limit of these
+distances is at most \(\delta/(1-q)\). If \(\delta_j\to0\), then
+\(x_n\to p\).
+\end{theorem}
+\begin{proof}
+The triangle and contraction inequalities yield
+\(d(x_{j+1},p)\le\delta_j+q\,d(x_j,p)\). Induction gives the
+displayed finite sum, which is empty at \(n=0\). For a common
+bound it is at most \(\delta(1-q^n)/(1-q)\). If \(\delta_j\to0\),
+given \(\varepsilon>0\) choose \(J\) so that \(\delta_j\le
+(1-q)\varepsilon/2\) for all \(j\ge J\). The corresponding tail
+of the sum is at most \(\varepsilon/2\). The contribution of the
+finitely many terms \(j<J\) and of the initial distance tends to
+zero. This proves convergence, including \(q=0\).
+
+If \(y\) is an approximation to \(Tx\) with certified error at most
+\(\delta_x\), the triangle inequality gives
+\(d(x,Tx)\le d(x,y)+\delta_x\).
+Thus an upper bound on \(d(x,y)\) plus \(\delta_x\) can be used
+in Proposition~\ref{p206:W70}. Verify separately that the computed
+iterates stay in the contraction domain.
+\end{proof}
+
+\begin{proposition}[Inverse-slope certificate for a scalar root]\label{p206:W72}
+Let \(x,x_*\) lie in an interval, with \(f(x_*)=0\). Assume \(f\)
+is continuous on the closed segment between \(x\) and \(x_*\),
+differentiable in its interior, and \(\lvert f'(t)\rvert\ge m>0\)
+there. Then
+\[
+ \lvert x-x_*\rvert\le\frac{\lvert f(x)\rvert}{m}.
+\]
+\end{proposition}
+\begin{proof}
+When \(x=x_*\) the claim is immediate. Otherwise the real mean value
+theorem \cite[entry \texttt{K03.05.lagrange}]{d03} gives
+\(f(x)-f(x_*)=f'(\xi)(x-x_*)\) for an interior point \(\xi\).
+Taking absolute values proves the estimate. The assumptions include
+the usual continuously differentiable case. A verified lower slope bound
+on an entire certified bracket containing both \(x\) and a root also
+suffices, even when the root location is unknown.
+
+For \(f(x)=x^2\) at its root zero the residual is the square of the
+error, so no fixed linear inverse-residual bound holds on a
+neighborhood of that root. Even at simple roots, a bound uniform
+in the function cannot follow from a small residual alone.
+The functions \(f_\sigma(x)=\sigma x\) with \(\sigma>0\) have
+residual \(\sigma\) at \(x=1\) and root error \(1\).
+\end{proof}
+\chapter{Local and Semilocal Newton Methods}
+
+Local theorems assume that a root is already known to exist and
+describe a neighborhood from which Newton's method converges.
+A semilocal theorem uses data at the proposed starting point and
+bounds on a specified ball to prove existence as well as convergence.
+This distinction is important when the goal is a certificate.
+
+\section{Scalar Newton and secant iterations}
+
+\begin{theorem}[Local quadratic convergence at a simple root]\label{p206:W73}
+Let \(f\) be real and \(C^2\) on a neighborhood of
+\([x_*-R,x_*+R]\), where \(R>0\) and \(f(x_*)=0\). Suppose that on this
+interval \(\lvert f'\rvert\ge m>0\) and \(\lvert f''\rvert\le M\).
+Let \(0<r\le R\) with \(Mr/(2m)<1\). From
+\(\lvert x_0-x_*\rvert\le r\), the exact Newton iterates
+\(x_{n+1}=x_n-f(x_n)/f'(x_n)\) stay in the closed radius-\(r\) interval
+and converge to \(x_*\). With \(e_n=x_n-x_*\),
+\[
+ \lvert e_{n+1}\rvert\le\frac{M}{2m}\lvert e_n\rvert^2 .
+\]
+If \(M=0\) then one step suffices.
+\end{theorem}
+\begin{proof}
+Apply Taylor's formula at \(x_n\) with endpoint \(x_*\),
+\[
+ 0=f(x_n)+f'(x_n)(x_*-x_n)+R_n,\qquad
+ \lvert R_n\rvert\le\tfrac12 M\lvert e_n\rvert^2 .
+\]
+The formula is the real Lagrange remainder of \cite{d03},
+entry \texttt{K03.06.lagrange}. Since \(f'(x_n)\ne0\),
+rearrangement gives \(e_{n+1}=R_n/f'(x_n)\). In the radius-\(r\)
+interval this implies
+\(\lvert e_{n+1}\rvert\le (Mr/(2m))\lvert e_n\rvert\).
+Induction gives invariance and convergence. The remainder vanishes
+when \(M=0\). A root that is reached remains fixed under the iteration.
+See also \cite[Section~2.3]{persson}.
+\end{proof}
+
+\begin{proposition}[Newton iteration at a multiple root]\label{p206:W74}
+Near \(x_*\), suppose
+\(f(x)=(x-x_*)^m g(x)\), where \(m\ge2\) is an integer,
+\(g\in C^2\), and \(g(x_*)\ne0\). The usual Newton map, defined
+away from the root in a sufficiently small neighborhood, satisfies
+\[
+ e_{\mathrm{new}}=(1-1/m)e+O(e^2),\qquad e=x-x_*.
+\]
+The corrected step \(x-mf(x)/f'(x)\) satisfies
+\(e_{\mathrm{new}}=O(e^2)\). Both maps give convergent iterations
+from a sufficiently small neighborhood, with an iterate at the
+root interpreted as a successful stop. For a nonterminating
+ordinary Newton iteration the absolute error ratio tends to
+\(1-1/m\).
+\end{proposition}
+\begin{proof}
+For \(e\ne0\) the derivative is
+\(e^{m-1}(m g(x)+e g'(x))\). The quantity in parentheses tends to
+\(m g(x_*)\ne0\), so its absolute value has a positive lower
+bound near \(x_*\). Cancelling the common factor gives the exact
+identity
+\[
+ \frac{f(x)}{f'(x)}
+ =\frac{e\,g(x)}{m g(x)+e g'(x)}
+ =\frac{e}{m}-\frac{e^2 g'(x)}{m(m g(x)+e g'(x))}.
+\]
+The last coefficient is bounded near \(x_*\), which gives both
+error formulas. For the ordinary map choose a radius so that the
+absolute linear factor plus the quadratic remainder divided by
+\(\lvert e\rvert\) is strictly below \(1\). For the corrected map
+choose a radius so that its quadratic estimate also implies a
+strict contraction of the distance to the root. Thus in each case
+the errors stay within the chosen neighborhood and tend to zero.
+The first formula then gives the error ratio for the ordinary map.
+This correction uses the specified multiplicity
+\cite[Section~2.4]{persson}.
+\end{proof}
+
+\begin{theorem}[Local convergence and order of the secant method]\label{p206:W75}
+Let \(f\) be real and \(C^2\) near a simple root \(x_*\).
+Take two distinct initial points \(x_0,x_1\) sufficiently close to
+\(x_*\). Stop at any root encountered. Otherwise the exact
+secant iterates
+\[
+ x_{n+1}=x_n-\frac{f(x_n)}{f[x_{n-1},x_n]}
+ \qquad (n\ge1)
+\]
+are well defined and converge to \(x_*\). Here \(f[u,v]\) is
+the first divided difference. If the iteration does not terminate
+and \(f''(x_*)\ne0\), let
+\[
+ \varphi=\frac{1+\sqrt5}{2},\qquad
+ C=\left|\frac{f''(x_*)}{2 f'(x_*)}\right|.
+\]
+Then
+\(\lim_{n\to\infty}\lvert e_{n+1}\rvert/\lvert e_n\rvert^\varphi
+ =C^{1/\varphi}>0\).
+\end{theorem}
+\begin{proof}
+Choose an interval about \(x_*\) on which \(\lvert f'\rvert\ge m>0\)
+and \(\lvert f''\rvert\le M\). The mean value theorem bounds each
+nondegenerate first divided difference below in magnitude by \(m\).
+For distinct \(x_{n-1},x_n,x_*\), consider the affine interpolant
+\(\ell\) through \(x_{n-1},x_n\). Its root is \(x_{n+1}\), and
+\(\ell(x_*)=-f[x_{n-1},x_n]e_{n+1}\).
+The divided-difference interpolation identity
+(Theorem~\ref{p206:W48}) gives
+\[
+ f(x_*)-\ell(x_*)
+   = f[x_{n-1},x_n,x_*](x_*-x_{n-1})(x_*-x_n).
+\]
+Since \(f(x_*)=0\), we obtain
+\[
+ e_{n+1}
+ =\frac{f[x_{n-1},x_n,x_*]}{f[x_{n-1},x_n]}\,e_n e_{n-1}.
+\]
+Equivalently, the affine interpolation remainder
+(Theorem~\ref{p206:W50}) identifies the second divided difference
+with \(f''(\xi)/2\) for some \(\xi\) in the convex hull of the three
+points. In particular
+\(\lvert e_{n+1}\rvert\le (M/(2m))\lvert e_n e_{n-1}\rvert\).
+Choose a radius \(r\) within the interval with \(Mr/(2m)<1\).
+If both errors have absolute value at most \(r\), this estimate
+keeps the next point in the interval and decreases the error from
+the current point by at least a fixed geometric factor. Before
+termination, \(f(x_n)\ne0\), so \(x_{n+1}\ne x_n\); hence each
+successive divided difference continues to be defined. If \(M=0\),
+the same estimate gives an exact root at the first secant step.
+
+For a nonterminating run write \(E_n=\lvert e_n\rvert\) and
+\[
+ C_n=\left|\frac{f[x_{n-1},x_n,x_*]}{f[x_{n-1},x_n]}\right|.
+\]
+The mean value representations and continuity show \(C_n\to C\).
+Each \(C_n>0\), since \(E_{n+1}=C_nE_nE_{n-1}\) and all the errors
+are positive. For \(r_n=E_n/E_{n-1}^{\varphi}\), the identity
+\(\varphi(\varphi-1)=1\) gives
+\[
+ r_{n+1}=C_n r_n^{-1/\varphi}.
+\]
+Thus \(s_n=\log r_n\) satisfies
+\(s_{n+1}=\log C_n-s_n/\varphi\). Subtract
+\(s=(\log C)/\varphi\), the fixed point of the limiting recursion.
+The resulting recurrence has coefficient of magnitude \(1/\varphi<1\)
+and a forcing term tending to zero. Unfolding it gives a decaying
+initial term and a geometric convolution of the forcing terms.
+Splitting the convolution at a fixed index shows it tends to zero,
+as in Theorem~\ref{p206:W71}. Hence \(s_n\to s\), proving the asserted
+error order. Compare \cite[Section~2.3]{persson} and
+\cite[Section~4.4]{driscoll}.
+\end{proof}
+
+\section{Banach-space Newton estimates}
+
+We take the derivative to be the Fr\'echet derivative. For complex
+spaces the line parameter in the following argument is real. A ball
+on which estimates are imposed will be contained in an open domain
+of differentiability.
+
+\begin{lemma}[Remainder on a segment]\label{p206:newton-segment}
+Let \(F\colon U\to Y\) be differentiable, with \(U\) open in a
+Banach space \(X\) and \(Y\) Banach. Let \(D\subset U\) be convex and
+suppose \(F'\) is Lipschitz with constant \(L\) on \(D\).
+For \(x,y\in D\),
+\[
+ \|F(y)-F(x)-F'(x)(y-x)\|\le\tfrac12 L\|y-x\|^2 .
+\]
+\end{lemma}
+\begin{proof}
+For \(d=y-x\), the segment path \(s\mapsto F(x+sd)\) has continuous
+derivative \(F'(x+sd)d\) on \([0,1]\). Its integral is
+\(F(y)-F(x)\). Indeed the continuous Banach-valued derivative has a
+Riemann integral by completeness, and the scalar fundamental theorem
+applied after each bounded linear functional gives this identity,
+since bounded functionals commute with Riemann sums and separate
+points by Hahn--Banach. Subtracting \(F'(x)d\) inside the integral
+bounds the integrand in norm by \(Ls\|d\|^2\), giving the
+factor \(1/2\).
+\end{proof}
+
+\begin{theorem}[Local Newton in Banach spaces]\label{p206:W76}
+Let \(F\colon U\to Y\) be differentiable on an open subset of
+a Banach space \(X\), with \(Y\) Banach. Suppose \(F(x_*)=0\),
+\(F'(x_*)\colon X\to Y\) is a bounded isomorphism, and \(F'\) is
+Lipschitz with constant \(L\) on \(\overline B(x_*,R)\subset U\).
+Set \(b=\|F'(x_*)^{-1}\|\). For \(0<r\le R\) with
+\[
+ bLr<1,\qquad \frac{bLr}{2(1-bLr)}<1 ,
+\]
+Newton's method from any \(x_0\in\overline B(x_*,r)\) is defined,
+stays in this ball, and converges to \(x_*\) with the bound
+\[
+ \|x_{n+1}-x_*\|\le \frac{bL}{2(1-bLr)}\|x_n-x_*\|^2.
+\]
+\end{theorem}
+\begin{proof}
+Such an \(r\) exists by taking it sufficiently small.
+For \(x\) in that ball,
+\(\|F'(x_*)^{-1}(F'(x)-F'(x_*))\|\le bLr<1\).
+The Neumann-series inverse estimate (Theorem~\ref{p206:W10})
+gives invertibility of \(F'(x)\) and
+\(\|F'(x)^{-1}\|\le b/(1-bLr)\). At the Newton point
+\(N_F(x)=x-F'(x)^{-1}F(x)\), use \(F(x_*)=0\) to write
+\[
+ N_F(x)-x_*
+  =F'(x)^{-1}\bigl[F(x_*)-F(x)-F'(x)(x_*-x)\bigr].
+\]
+Lemma~\ref{p206:newton-segment} proves the error estimate. With the
+chosen \(r\), this bounds the next error by a fixed fraction of the
+current error, proving invariance and convergence. When \(L=0\),
+the bound gives one-step convergence. A finite-dimensional account
+appears in \cite[Section~5.3]{stoer}.
+\end{proof}
+
+\section{The Newton--Kantorovich theorem}
+
+\begin{theorem}[Semilocal radius, error, and uniqueness]\label{p206:W77}
+Let \(X,Y\) be Banach spaces, let \(U\subseteq X\) be open, and
+let \(F\colon U\to Y\) be differentiable. At a starting point
+\(x_0\in U\) assume that \(F'(x_0)\) is a bounded isomorphism,
+and put \(B=F'(x_0)^{-1}\). Suppose \(\eta,L>0\), \(2\eta L\le1\),
+and
+\[
+ \|BF(x_0)\|\le\eta,\qquad
+ \|B(F'(x)-F'(y))\|\le L\|x-y\|
+ \quad (x,y\in\overline B(x_0,t_*)),
+\]
+where \(\overline B(x_0,t_*)\subset U\) and
+\[
+ D=\sqrt{1-2\eta L},\qquad
+ t_*=\frac{1-D}{L},\qquad t_{**}=\frac{1+D}{L}.
+\]
+For \(m(t)=\eta-t+\tfrac12 Lt^2\), define
+\(t_0=0\) and \(t_{n+1}=t_n-m(t_n)/m'(t_n)\).
+Then the Newton sequence \(x_{n+1}=N_F(x_n)\) is well defined,
+\(\|x_n-x_0\|\le t_n<t_*\), and it converges to the unique zero
+\(x_*\) of \(F\) in the closed ball \(\overline B(x_0,t_*)\).
+The estimates
+\[
+ \|x_{n+1}-x_n\|\le t_{n+1}-t_n,\qquad
+ \|x_*-x_n\|\le t_*-t_n,\qquad
+ \|x_*-x_{n+1}\|\le \tfrac12\|x_*-x_n\|
+\]
+hold also when \(2\eta L=1\). If \(2\eta L<1\), the last estimate
+can be supplemented by
+\[
+ \|x_*-x_{n+1}\|\le\frac{L}{2D}\|x_*-x_n\|^2 .
+\]
+If \(2\eta L<1\) and the domain and derivative bound extend
+to \(\overline B(x_0,\rho)\) for \(t_*\le\rho<t_{**}\), the zero
+is unique on that larger closed ball as well.
+\end{theorem}
+\begin{proof}
+\emph{Scalar majorant.}
+For \(0\le t<t_*\), we have \(m(t)>0\) and \(1-Lt=-m'(t)>0\).
+Write \(s=m(t)/(1-Lt)>0\). Expanding the quadratic at \(t\) gives
+\[
+ \begin{split}
+ m(t+s)&=\tfrac12 Ls^2,\\
+ t_*-(t+s)&=\frac{L}{2(1-Lt)}(t_*-t)^2 .
+ \end{split}
+\]
+The second identity uses \(m(t_*)=0\) and implies \(t<t+s<t_*\).
+Consequently the scalar iterates increase and are bounded by \(t_*\).
+If their limit were below \(t_*\), continuity of the scalar update
+there would force \(m\) to vanish at that limit. Thus \(t_n\uparrow t_*\).
+Writing \(d_n=t_*-t_n>0\) and
+\(c_n=L/(2(1-Lt_n))\) gives \(d_{n+1}=c_n d_n^2\).
+Since \(1-Lt_n=D+Ld_n\), we have
+\(c_nd_n\le\tfrac12\), with equality at the critical case \(D=0\).
+For \(D>0\), \(c_n\le L/(2D)\).
+
+\emph{Majorization of the Newton steps.}
+Set \(G=BF\colon U\to X\). Then \(G'(x_0)=I\) and the stipulated
+Lipschitz constant for \(G'\) is \(L\).
+Where \(G'\) is invertible, \(F'\) is invertible and
+\(F'(x)^{-1}F(x)=G'(x)^{-1}G(x)\), so both Newton maps agree.
+At step \(n\), assume
+\(\|x_n-x_0\|\le t_n\) and \(\|G(x_n)\|\le m(t_n)\), as holds at
+\(n=0\). The estimate
+\(\|G'(x_n)-I\|\le Lt_n<1\) and Theorem~\ref{p206:W10} yield
+\[
+ \|G'(x_n)^{-1}\|\le\frac1{1-Lt_n},\qquad
+ \|x_{n+1}-x_n\|\le\frac{m(t_n)}{1-Lt_n}=t_{n+1}-t_n .
+\]
+The triangle inequality gives
+\(\|x_{n+1}-x_0\|\le t_{n+1}<t_*\). In particular the segment between
+the two iterates lies in the required ball. The defining Newton
+equation cancels the first-order terms in
+Lemma~\ref{p206:newton-segment}, giving
+\[
+ \|G(x_{n+1})\|
+ \le \tfrac12 L\|x_{n+1}-x_n\|^2
+ \le \tfrac12 L(t_{n+1}-t_n)^2
+ = m(t_{n+1}).
+\]
+This closes the induction. For \(j>n\), summing step bounds
+gives \(\|x_j-x_n\|\le t_j-t_n\). The sequence is Cauchy, and
+completeness gives a limit \(x_*\) in the closed ball with
+\(\|x_*-x_n\|\le d_n\). Since \(m(t_n)\to0\), continuity of \(G\)
+gives \(G(x_*)=0\) and hence \(F(x_*)=0\).
+
+\emph{Rates and uniqueness.}
+For any zero \(y\) in \(\overline B(x_0,t_*)\), the error identity
+from Theorem~\ref{p206:W76}, applied to \(G\) on the segment from
+\(x_n\) to \(y\), gives
+\[
+ \|y-x_{n+1}\|\le c_n\|y-x_n\|^2 .
+\]
+At \(n=0\) we have \(\|y-x_0\|\le d_0\).
+Induction with \(d_{n+1}=c_nd_n^2\) shows \(\|y-x_n\|\le d_n\),
+so \(y=x_*\). For \(y=x_*\) the same inequality and
+\(c_nd_n\le1/2\) give the stated linear estimate, while the uniform
+bound on \(c_n\) for \(D>0\) gives the quadratic estimate.
+All inverses used here are taken at finite iterates with
+\(Lt_n<1\), including when \(D=0\). For example,
+\(F(t)=\eta-t+Lt^2/2\) with \(2\eta L=1\) has a double zero at
+\(t_*\). Its Newton error halves at each step from zero.
+
+Finally, if \(D>0\) and the assumptions hold on the larger ball,
+take a zero \(y\) there and set \(s=\|y-x_0\|\le\rho\).
+Taylor's estimate at \(x_0\) gives
+\[
+ s-\eta\le\|G(x_0)+(y-x_0)\|\le\tfrac12 Ls^2 .
+\]
+Thus \(m(s)\ge0\). The two distinct roots of \(m\) are \(t_*\) and
+\(t_{**}\), and \(m<0\) strictly between them. Since \(s<t_{**}\),
+we have \(s\le t_*\), reducing to the uniqueness already proved.
+In the scalar quadratic example with \(2\eta L<1\), \(t_{**}\)
+is a second zero, so the open upper bound on the radius is
+necessary in general. The majorant argument is based on
+\cite[Theorem~1 and Corollaries~10--12]{ferreira}.
+\end{proof}
+
+\begin{proposition}[Degenerate data and a stable radius expression]\label{p206:W78}
+In the semilocal setting, if the residual bound is \(\eta=0\),
+then \(x_0\) is already a zero and its certified existence
+radius is zero. If \(L=0\), suppose the radius-\(\eta\) closed
+ball lies in the domain and the derivative bound with \(L=0\)
+holds there. Then a single Newton step gives a zero in that
+ball, and the zero is unique there. For \(L>0\) and
+\(0\le 2\eta L\le1\), the exact identity
+\[
+ t_*=\frac{2\eta}{1+\sqrt{1-2\eta L}}
+\]
+avoids subtracting two nearly equal numbers in the numerator.
+\end{proposition}
+\begin{proof}
+If \(\eta=0\), then \(BF(x_0)=0\). Invertibility of \(B\) implies
+\(F(x_0)=0\). If \(L=0\), the derivative of \(G=BF\) is \(I\)
+throughout the specified ball. Applying
+Lemma~\ref{p206:newton-segment} with zero constant, for any
+\(d\) in that ball centered at the origin we obtain
+\(G(x_0+d)=G(x_0)+d\). The Newton displacement from \(x_0\) is
+\(-G(x_0)\), whose norm is at most \(\eta\). Its endpoint is the
+unique zero by the affine formula. This also covers the
+intersection of the two degenerate cases. For \(L>0\), multiply
+the numerator \(1-\sqrt{1-2\eta L}\) by its conjugate and divide
+by \(L(1+\sqrt{1-2\eta L})\). The resulting formula extends to
+\(L=0\) with value \(\eta\). For a numerical certificate the
+data and the computed radius still require certified bounds.
+\end{proof}
+
+\backmatter
+\begingroup
+\small
+\begin{thebibliography}{99}
+\setlength{\itemsep}{0.25em}
+\bibitem{higham} N. J. Higham, \emph{Accuracy and Stability of
+  Numerical Algorithms}, 2nd ed., SIAM, 2002.
+\bibitem{golub} G. H. Golub and C. F. Van Loan, \emph{Matrix
+  Computations}, 4th ed., Johns Hopkins University Press, 2013.
+\bibitem{stoer} J. Stoer and R. Bulirsch, \emph{Introduction to
+  Numerical Analysis}, 3rd ed., Springer, 2002.
+\bibitem{driscoll} T. A. Driscoll and R. J. Braun, \emph{Fundamentals
+  of Numerical Computation}, SIAM and the
+  \href{https://fncbook.com/}{authors' online edition}.
+\bibitem{trefpde} L. N. Trefethen, \emph{Finite Difference and
+  Spectral Methods for Ordinary and Partial Differential Equations},
+  \href{https://people.maths.ox.ac.uk/trefethen/4all.pdf}{Chapter 4, Section 4.2}.
+\bibitem{berrut} J.-P. Berrut and L. N. Trefethen, Barycentric
+  Lagrange interpolation, \emph{SIAM Review} 46 (2004), 501--517.
+  \href{https://doi.org/10.1137/S0036144502417715}{DOI}.
+\bibitem{trefapprox} L. N. Trefethen, \emph{Approximation Theory
+  and Approximation Practice}, SIAM, 2013, Chapter 15,
+  \href{https://doi.org/10.1137/1.9781611975949.ch15}{Lebesgue constants}.
+\bibitem{gautschi} W. Gautschi,
+  \href{https://www.cs.purdue.edu/homes/wxg/selected_works/section_11/179.pdf}
+       {Orthogonal Polynomials, Quadrature, and Approximation:
+        Computational Methods and Software (in Matlab)},
+  author manuscript, Section 4.1, pp.~36--40.
+\bibitem{persson} P.-O. Persson,
+  \href{https://persson.berkeley.edu/math128a/lecture_notes/math128a_lecture_notes_chapter_2.html}
+       {Solutions of Equations in One Variable},
+  Math 128A lecture notes, Chapter 2.
+\bibitem{ferreira} O. P. Ferreira and B. F. Svaiter,
+  \emph{Kantorovich's Theorem on Newton's Method},
+  \href{https://arxiv.org/abs/1209.5704}{arXiv:1209.5704}, 2012.
+\bibitem{hoffman} A. J. Hoffman and H. W. Wielandt,
+  The variation of the spectrum of a normal matrix,
+  \emph{Duke Math. J.} 20 (1953), 37--39.
+  \href{https://doi.org/10.1215/S0012-7094-53-02004-3}{DOI}.
+\bibitem{mirsky} L. Mirsky, Symmetric gauge functions and unitarily
+  invariant norms, \emph{Quart. J. Math.} 11 (1960), 50--59.
+  \href{https://doi.org/10.1093/qmath/11.1.50}{DOI}.
+\bibitem{d03} MathGenome, D03 unified notes on single-variable analysis,
+  Modules 3, 5, 6, and 16.
+\bibitem{d04} MathGenome, D04 unified notes on multivariable analysis,
+  Chapter 2, segment mean value bound.
+\bibitem{d05} MathGenome, \emph{Linear Algebra and Foundational Higher
+  Algebra}, D05 unified notes, Modules 9, 13, and 14.
+\bibitem{d07} MathGenome, D07 unified notes on abstract algebra,
+  Module 9, finite Chinese remainder theorem.
+\bibitem{d10} MathGenome, D10 point-set topology,
+  Chapter 14, Banach contraction theorem.
+\bibitem{p205} MathGenome, \emph{Extremal Methods, Networks, and
+  Matroid Optimization}, unified notes P2-05, Chapter 8, W42.
+\bibitem{mathlib} The Mathlib Community, \emph{Mathlib},
+  \href{https://github.com/leanprover-community/mathlib4/tree/56a005855ea17e0b0958f73ec801ae140b0a1679}
+       {fixed revision \texttt{56a005855ea1}}.
+\end{thebibliography}
+\endgroup
+\end{document}

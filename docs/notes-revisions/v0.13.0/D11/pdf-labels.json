@@ -1,0 +1,1912 @@
+{
+  "base:d11-set": {
+    "pdf_page": 6,
+    "printed_page": "v",
+    "pdf_destination": "foundation.1"
+  },
+  "base:d11-scalar": {
+    "pdf_page": 6,
+    "printed_page": "v",
+    "pdf_destination": "foundation.2"
+  },
+  "base:d11-linear": {
+    "pdf_page": 6,
+    "printed_page": "v",
+    "pdf_destination": "foundation.3"
+  },
+  "base:d11-calculus": {
+    "pdf_page": 6,
+    "printed_page": "v",
+    "pdf_destination": "foundation.4"
+  },
+  "base:d11-topology": {
+    "pdf_page": 6,
+    "printed_page": "v",
+    "pdf_destination": "foundation.5"
+  },
+  "ch:d11-01": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "chapter.1"
+  },
+  "d11:01:measurable-space": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "definition.1.1"
+  },
+  "d11:01:generated-sigma": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "proposition.1.2"
+  },
+  "d11:01:trace-sigma": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "proposition.1.3"
+  },
+  "d11:01:positive-measure": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "definition.1.4"
+  },
+  "d11:01:measure-bounds": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "theorem.1.5"
+  },
+  "d11:01:continuity-sets": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "theorem.1.6"
+  },
+  "d11:01:countable-additivity-criterion": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "theorem.1.7"
+  },
+  "d11:01:finite-sigma-finite": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "definition.1.8"
+  },
+  "d11:01:sigma-finite-exhaustion": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "lemma.1.9"
+  },
+  "d11:01:elementary-measures": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "proposition.1.10"
+  },
+  "d11:01:null-complete": {
+    "pdf_page": 10,
+    "printed_page": "3",
+    "pdf_destination": "definition.1.11"
+  },
+  "d11:01:restriction-measure": {
+    "pdf_page": 10,
+    "printed_page": "3",
+    "pdf_destination": "proposition.1.12"
+  },
+  "d11:01:measure-sums-limits": {
+    "pdf_page": 10,
+    "printed_page": "3",
+    "pdf_destination": "proposition.1.13"
+  },
+  "d11:01:borel-cantelli-one": {
+    "pdf_page": 10,
+    "printed_page": "3",
+    "pdf_destination": "corollary.1.14"
+  },
+  "d11:01:pi-lambda": {
+    "pdf_page": 10,
+    "printed_page": "3",
+    "pdf_destination": "theorem.1.15"
+  },
+  "d11:01:measure-uniqueness-generators": {
+    "pdf_page": 11,
+    "printed_page": "4",
+    "pdf_destination": "theorem.1.16"
+  },
+  "d11:01:monotone-class": {
+    "pdf_page": 11,
+    "printed_page": "4",
+    "pdf_destination": "theorem.1.17"
+  },
+  "d11:01:functional-monotone-class": {
+    "pdf_page": 11,
+    "printed_page": "4",
+    "pdf_destination": "corollary.1.18"
+  },
+  "d11:01:union-sigma-failure": {
+    "pdf_page": 11,
+    "printed_page": "4",
+    "pdf_destination": "example.1.19"
+  },
+  "d11:01:finite-additivity-failure": {
+    "pdf_page": 11,
+    "printed_page": "5",
+    "pdf_destination": "example.1.20"
+  },
+  "d11:01:continuity-above-failure": {
+    "pdf_page": 12,
+    "printed_page": "5",
+    "pdf_destination": "example.1.21"
+  },
+  "ch:d11-02": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "chapter.2"
+  },
+  "d11:02:outer-measure": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "definition.2.1"
+  },
+  "d11:02:cover-outer-measure": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "proposition.2.2"
+  },
+  "d11:02:caratheodory-measurable": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "definition.2.3"
+  },
+  "d11:02:caratheodory-theorem": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "theorem.2.4"
+  },
+  "d11:02:premeasure": {
+    "pdf_page": 14,
+    "printed_page": "7",
+    "pdf_destination": "definition.2.5"
+  },
+  "d11:02:premeasure-outer-agreement": {
+    "pdf_page": 14,
+    "printed_page": "7",
+    "pdf_destination": "theorem.2.6"
+  },
+  "d11:02:extension-existence-uniqueness": {
+    "pdf_page": 14,
+    "printed_page": "8",
+    "pdf_destination": "theorem.2.7"
+  },
+  "d11:02:completion": {
+    "pdf_page": 15,
+    "printed_page": "8",
+    "pdf_destination": "proposition.2.8"
+  },
+  "d11:02:induced-outer-completion": {
+    "pdf_page": 15,
+    "printed_page": "8",
+    "pdf_destination": "theorem.2.9"
+  },
+  "d11:02:extension-nonuniqueness": {
+    "pdf_page": 16,
+    "printed_page": "9",
+    "pdf_destination": "example.2.10"
+  },
+  "d11:02:outer-not-additive": {
+    "pdf_page": 16,
+    "printed_page": "9",
+    "pdf_destination": "example.2.11"
+  },
+  "ch:d11-03": {
+    "pdf_page": 17,
+    "printed_page": "10",
+    "pdf_destination": "chapter.3"
+  },
+  "d11:03:borel-euclidean": {
+    "pdf_page": 17,
+    "printed_page": "10",
+    "pdf_destination": "definition.3.1"
+  },
+  "d11:03:borel-generators": {
+    "pdf_page": 17,
+    "printed_page": "10",
+    "pdf_destination": "theorem.3.2"
+  },
+  "d11:03:lebesgue-outer": {
+    "pdf_page": 17,
+    "printed_page": "10",
+    "pdf_destination": "proposition.3.3"
+  },
+  "eq:d11-finite-box-cover": {
+    "pdf_page": 18,
+    "printed_page": "11",
+    "pdf_destination": "equation.3.1"
+  },
+  "d11:03:lebesgue-measure": {
+    "pdf_page": 18,
+    "printed_page": "11",
+    "pdf_destination": "proposition.3.4"
+  },
+  "d11:03:null-countable": {
+    "pdf_page": 18,
+    "printed_page": "11",
+    "pdf_destination": "corollary.3.5"
+  },
+  "d11:03:euclidean-regularity": {
+    "pdf_page": 18,
+    "printed_page": "11",
+    "pdf_destination": "theorem.3.6"
+  },
+  "d11:03:global-closed-open-approximation": {
+    "pdf_page": 19,
+    "printed_page": "12",
+    "pdf_destination": "corollary.3.7"
+  },
+  "d11:03:borel-approximation": {
+    "pdf_page": 19,
+    "printed_page": "12",
+    "pdf_destination": "theorem.3.8"
+  },
+  "d11:03:lebesgue-completion": {
+    "pdf_page": 19,
+    "printed_page": "12",
+    "pdf_destination": "theorem.3.9"
+  },
+  "d11:03:translation-dilation": {
+    "pdf_page": 20,
+    "printed_page": "13",
+    "pdf_destination": "theorem.3.10"
+  },
+  "d11:03:euclidean-measure-uniqueness": {
+    "pdf_page": 20,
+    "printed_page": "13",
+    "pdf_destination": "theorem.3.11"
+  },
+  "d11:03:cantor-null-uncountable": {
+    "pdf_page": 20,
+    "printed_page": "13",
+    "pdf_destination": "proposition.3.12"
+  },
+  "d11:03:vitali-nonmeasurable": {
+    "pdf_page": 21,
+    "printed_page": "14",
+    "pdf_destination": "example.3.13"
+  },
+  "d11:03:positive-set-nonmeasurable-subset": {
+    "pdf_page": 21,
+    "printed_page": "14",
+    "pdf_destination": "corollary.3.14"
+  },
+  "d11:03:singular-function-route": {
+    "pdf_page": 21,
+    "printed_page": "14",
+    "pdf_destination": "proposition.3.15"
+  },
+  "d11:03:lebesgue-not-borel": {
+    "pdf_page": 21,
+    "printed_page": "14",
+    "pdf_destination": "example.3.16"
+  },
+  "d11:03:steinhaus": {
+    "pdf_page": 22,
+    "printed_page": "15",
+    "pdf_destination": "theorem.3.17"
+  },
+  "ch:d11-04": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "chapter.4"
+  },
+  "d11:04:measurable-map": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "definition.4.1"
+  },
+  "d11:04:generator-test": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "theorem.4.2"
+  },
+  "d11:04:composition": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "theorem.4.3"
+  },
+  "d11:04:coordinates-complex": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "theorem.4.4"
+  },
+  "d11:04:scalar-operations": {
+    "pdf_page": 24,
+    "printed_page": "17",
+    "pdf_destination": "theorem.4.5"
+  },
+  "d11:04:countable-limits": {
+    "pdf_page": 24,
+    "printed_page": "17",
+    "pdf_destination": "theorem.4.6"
+  },
+  "d11:04:simple-function": {
+    "pdf_page": 24,
+    "printed_page": "17",
+    "pdf_destination": "definition.4.7"
+  },
+  "d11:04:simple-approximation": {
+    "pdf_page": 25,
+    "printed_page": "18",
+    "pdf_destination": "theorem.4.8"
+  },
+  "d11:04:almost-everywhere": {
+    "pdf_page": 25,
+    "printed_page": "18",
+    "pdf_destination": "definition.4.9"
+  },
+  "d11:04:common-exceptional-set": {
+    "pdf_page": 25,
+    "printed_page": "18",
+    "pdf_destination": "lemma.4.10"
+  },
+  "d11:04:ae-measurability-complete": {
+    "pdf_page": 25,
+    "printed_page": "18",
+    "pdf_destination": "theorem.4.11"
+  },
+  "d11:04:completion-representative": {
+    "pdf_page": 25,
+    "printed_page": "19",
+    "pdf_destination": "theorem.4.12"
+  },
+  "d11:04:essential-bounds": {
+    "pdf_page": 26,
+    "printed_page": "19",
+    "pdf_destination": "definition.4.13"
+  },
+  "d11:04:essential-bound-attained": {
+    "pdf_page": 26,
+    "printed_page": "19",
+    "pdf_destination": "theorem.4.14"
+  },
+  "d11:04:incomplete-modification-failure": {
+    "pdf_page": 26,
+    "printed_page": "19",
+    "pdf_destination": "example.4.15"
+  },
+  "d11:04:uncountable-sup-failure": {
+    "pdf_page": 26,
+    "printed_page": "19",
+    "pdf_destination": "example.4.16"
+  },
+  "d11:04:measurable-modulus-insufficient": {
+    "pdf_page": 26,
+    "printed_page": "19",
+    "pdf_destination": "example.4.17"
+  },
+  "d11:04:lebesgue-composition-boundary": {
+    "pdf_page": 26,
+    "printed_page": "20",
+    "pdf_destination": "remark.4.18"
+  },
+  "ch:d11-05": {
+    "pdf_page": 28,
+    "printed_page": "21",
+    "pdf_destination": "chapter.5"
+  },
+  "d11:05:simple-integral": {
+    "pdf_page": 28,
+    "printed_page": "21",
+    "pdf_destination": "definition.5.1"
+  },
+  "d11:05:simple-integral-well-defined": {
+    "pdf_page": 28,
+    "printed_page": "21",
+    "pdf_destination": "lemma.5.2"
+  },
+  "d11:05:nonnegative-integral": {
+    "pdf_page": 28,
+    "printed_page": "21",
+    "pdf_destination": "definition.5.3"
+  },
+  "d11:05:nonnegative-algebra": {
+    "pdf_page": 29,
+    "printed_page": "22",
+    "pdf_destination": "theorem.5.4"
+  },
+  "d11:05:null-invariance": {
+    "pdf_page": 29,
+    "printed_page": "22",
+    "pdf_destination": "theorem.5.5"
+  },
+  "d11:05:monotone-convergence": {
+    "pdf_page": 29,
+    "printed_page": "22",
+    "pdf_destination": "theorem.5.6"
+  },
+  "d11:05:beppo-levi": {
+    "pdf_page": 29,
+    "printed_page": "23",
+    "pdf_destination": "theorem.5.7"
+  },
+  "d11:05:fatou": {
+    "pdf_page": 30,
+    "printed_page": "23",
+    "pdf_destination": "theorem.5.8"
+  },
+  "d11:05:markov": {
+    "pdf_page": 30,
+    "printed_page": "23",
+    "pdf_destination": "theorem.5.9"
+  },
+  "d11:05:zero-integral": {
+    "pdf_page": 30,
+    "printed_page": "23",
+    "pdf_destination": "theorem.5.10"
+  },
+  "d11:05:weighted-measure": {
+    "pdf_page": 30,
+    "printed_page": "23",
+    "pdf_destination": "construction.5.11"
+  },
+  "d11:05:atomic-integrals": {
+    "pdf_page": 30,
+    "printed_page": "24",
+    "pdf_destination": "theorem.5.12"
+  },
+  "d11:05:continuity-domains": {
+    "pdf_page": 31,
+    "printed_page": "24",
+    "pdf_destination": "theorem.5.13"
+  },
+  "d11:05:fatou-strict-mass-escape": {
+    "pdf_page": 31,
+    "printed_page": "24",
+    "pdf_destination": "example.5.14"
+  },
+  "ch:d11-06": {
+    "pdf_page": 32,
+    "printed_page": "25",
+    "pdf_destination": "chapter.6"
+  },
+  "d11:06:absolute-integrability": {
+    "pdf_page": 32,
+    "printed_page": "25",
+    "pdf_destination": "definition.6.1"
+  },
+  "d11:06:scalar-integral": {
+    "pdf_page": 32,
+    "printed_page": "25",
+    "pdf_destination": "construction.6.2"
+  },
+  "d11:06:linearity-order-norm": {
+    "pdf_page": 32,
+    "printed_page": "25",
+    "pdf_destination": "theorem.6.3"
+  },
+  "d11:06:integrable-domination": {
+    "pdf_page": 33,
+    "printed_page": "26",
+    "pdf_destination": "theorem.6.4"
+  },
+  "d11:06:scalar-ae-invariance": {
+    "pdf_page": 33,
+    "printed_page": "26",
+    "pdf_destination": "theorem.6.5"
+  },
+  "d11:06:absolute-continuity-integral": {
+    "pdf_page": 33,
+    "printed_page": "26",
+    "pdf_destination": "theorem.6.6"
+  },
+  "d11:06:dominated-convergence": {
+    "pdf_page": 33,
+    "printed_page": "27",
+    "pdf_destination": "theorem.6.7"
+  },
+  "d11:06:bounded-convergence": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "corollary.6.8"
+  },
+  "d11:06:absolute-series-interchange": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "theorem.6.9"
+  },
+  "d11:06:scalar-domain-additivity": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "theorem.6.10"
+  },
+  "d11:06:integral-order-detection": {
+    "pdf_page": 35,
+    "printed_page": "28",
+    "pdf_destination": "theorem.6.11"
+  },
+  "d11:06:parameter-differentiation": {
+    "pdf_page": 35,
+    "printed_page": "28",
+    "pdf_destination": "theorem.6.12"
+  },
+  "d11:06:parameter-continuity": {
+    "pdf_page": 35,
+    "printed_page": "28",
+    "pdf_destination": "theorem.6.13"
+  },
+  "d11:06:domination-counterexamples": {
+    "pdf_page": 35,
+    "printed_page": "28",
+    "pdf_destination": "example.6.14"
+  },
+  "d11:06:vitali-route": {
+    "pdf_page": 35,
+    "printed_page": "29",
+    "pdf_destination": "remark.6.15"
+  },
+  "ch:d11-07": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "chapter.7"
+  },
+  "d11:07:convergence-modes": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "definition.7.1"
+  },
+  "d11:07:lp-convergence": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "definition.7.2"
+  },
+  "d11:07:norm-to-measure": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "theorem.7.3"
+  },
+  "d11:07:finite-ae-to-measure": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "theorem.7.4"
+  },
+  "d11:07:measure-subsequence-uniqueness": {
+    "pdf_page": 37,
+    "printed_page": "31",
+    "pdf_destination": "theorem.7.5"
+  },
+  "d11:07:finite-subsequence-characterization": {
+    "pdf_page": 38,
+    "printed_page": "31",
+    "pdf_destination": "theorem.7.6"
+  },
+  "d11:07:summable-errors-ae": {
+    "pdf_page": 38,
+    "printed_page": "31",
+    "pdf_destination": "theorem.7.7"
+  },
+  "d11:07:cauchy-measure-complete": {
+    "pdf_page": 38,
+    "printed_page": "31",
+    "pdf_destination": "theorem.7.8"
+  },
+  "d11:07:egorov": {
+    "pdf_page": 39,
+    "printed_page": "32",
+    "pdf_destination": "theorem.7.9"
+  },
+  "d11:07:almost-uniform-implications": {
+    "pdf_page": 39,
+    "printed_page": "32",
+    "pdf_destination": "theorem.7.10"
+  },
+  "d11:07:lusin-real-line": {
+    "pdf_page": 39,
+    "printed_page": "32",
+    "pdf_destination": "theorem.7.11"
+  },
+  "d11:07:continuous-ae-sequence": {
+    "pdf_page": 40,
+    "printed_page": "33",
+    "pdf_destination": "corollary.7.12"
+  },
+  "d11:07:dominated-measure-lone": {
+    "pdf_page": 40,
+    "printed_page": "33",
+    "pdf_destination": "theorem.7.13"
+  },
+  "d11:07:fatou-measure": {
+    "pdf_page": 40,
+    "printed_page": "33",
+    "pdf_destination": "theorem.7.14"
+  },
+  "d11:07:local-measure": {
+    "pdf_page": 40,
+    "printed_page": "33",
+    "pdf_destination": "definition.7.15"
+  },
+  "d11:07:measure-algebra-operations": {
+    "pdf_page": 40,
+    "printed_page": "34",
+    "pdf_destination": "theorem.7.16"
+  },
+  "d11:07:typewriter-counterexample": {
+    "pdf_page": 41,
+    "printed_page": "34",
+    "pdf_destination": "example.7.17"
+  },
+  "d11:07:infinite-measure-failures": {
+    "pdf_page": 41,
+    "printed_page": "34",
+    "pdf_destination": "example.7.18"
+  },
+  "d11:07:ae-invariance-modes": {
+    "pdf_page": 41,
+    "printed_page": "34",
+    "pdf_destination": "theorem.7.19"
+  },
+  "ch:d11-08": {
+    "pdf_page": 42,
+    "printed_page": "35",
+    "pdf_destination": "chapter.8"
+  },
+  "d11:08:product-sigma": {
+    "pdf_page": 42,
+    "printed_page": "35",
+    "pdf_destination": "definition.8.1"
+  },
+  "d11:08:sections": {
+    "pdf_page": 42,
+    "printed_page": "35",
+    "pdf_destination": "theorem.8.2"
+  },
+  "d11:08:measurable-pair": {
+    "pdf_page": 42,
+    "printed_page": "35",
+    "pdf_destination": "proposition.8.3"
+  },
+  "d11:08:section-integrals-one-sided": {
+    "pdf_page": 42,
+    "printed_page": "35",
+    "pdf_destination": "theorem.8.4"
+  },
+  "d11:08:product-measure": {
+    "pdf_page": 43,
+    "printed_page": "36",
+    "pdf_destination": "construction.8.5"
+  },
+  "d11:08:tonelli": {
+    "pdf_page": 43,
+    "printed_page": "36",
+    "pdf_destination": "theorem.8.6"
+  },
+  "d11:08:fubini": {
+    "pdf_page": 43,
+    "printed_page": "37",
+    "pdf_destination": "theorem.8.7"
+  },
+  "d11:08:null-sections": {
+    "pdf_page": 44,
+    "printed_page": "37",
+    "pdf_destination": "theorem.8.8"
+  },
+  "d11:08:completed-product": {
+    "pdf_page": 44,
+    "printed_page": "37",
+    "pdf_destination": "theorem.8.9"
+  },
+  "d11:08:finite-product-permutations": {
+    "pdf_page": 45,
+    "printed_page": "38",
+    "pdf_destination": "theorem.8.10"
+  },
+  "d11:08:euclidean-product-completion": {
+    "pdf_page": 45,
+    "printed_page": "38",
+    "pdf_destination": "theorem.8.11"
+  },
+  "d11:08:completion-sections-failure": {
+    "pdf_page": 46,
+    "printed_page": "39",
+    "pdf_destination": "example.8.12"
+  },
+  "d11:08:nonsigma-finite-tonelli-failure": {
+    "pdf_page": 46,
+    "printed_page": "39",
+    "pdf_destination": "example.8.13"
+  },
+  "d11:08:signed-fubini-failure": {
+    "pdf_page": 46,
+    "printed_page": "39",
+    "pdf_destination": "example.8.14"
+  },
+  "d11:08:sum-integral-counting": {
+    "pdf_page": 46,
+    "printed_page": "40",
+    "pdf_destination": "proposition.8.15"
+  },
+  "d11:08:subgraph-cavalieri": {
+    "pdf_page": 47,
+    "printed_page": "40",
+    "pdf_destination": "theorem.8.16"
+  },
+  "d11:08:tensor-integrals": {
+    "pdf_page": 47,
+    "printed_page": "40",
+    "pdf_destination": "theorem.8.17"
+  },
+  "ch:d11-09": {
+    "pdf_page": 49,
+    "printed_page": "42",
+    "pdf_destination": "chapter.9"
+  },
+  "d11:09:pushforward": {
+    "pdf_page": 49,
+    "printed_page": "42",
+    "pdf_destination": "definition.9.1"
+  },
+  "d11:09:transport-nonnegative": {
+    "pdf_page": 49,
+    "printed_page": "42",
+    "pdf_destination": "theorem.9.2"
+  },
+  "d11:09:transport-integrable": {
+    "pdf_page": 49,
+    "printed_page": "42",
+    "pdf_destination": "theorem.9.3"
+  },
+  "d11:09:pushforward-composition": {
+    "pdf_page": 49,
+    "printed_page": "42",
+    "pdf_destination": "proposition.9.4"
+  },
+  "d11:09:pushforward-density-bridge": {
+    "pdf_page": 49,
+    "printed_page": "42",
+    "pdf_destination": "proposition.9.5"
+  },
+  "d11:09:linear-jacobian": {
+    "pdf_page": 50,
+    "printed_page": "43",
+    "pdf_destination": "theorem.9.6"
+  },
+  "d11:09:c1-jacobian": {
+    "pdf_page": 50,
+    "printed_page": "43",
+    "pdf_destination": "theorem.9.7"
+  },
+  "d11:09:polar-measure": {
+    "pdf_page": 51,
+    "printed_page": "44",
+    "pdf_destination": "theorem.9.8"
+  },
+  "d11:09:radial-integrability": {
+    "pdf_page": 52,
+    "printed_page": "45",
+    "pdf_destination": "corollary.9.9"
+  },
+  "d11:09:monotone-ac-substitution": {
+    "pdf_page": 52,
+    "printed_page": "45",
+    "pdf_destination": "theorem.9.10"
+  },
+  "d11:09:composition-measurability-failure": {
+    "pdf_page": 52,
+    "printed_page": "45",
+    "pdf_destination": "example.9.11"
+  },
+  "d11:09:von-neumann-composition": {
+    "pdf_page": 53,
+    "printed_page": "46",
+    "pdf_destination": "theorem.9.12"
+  },
+  "ch:d11-10": {
+    "pdf_page": 54,
+    "printed_page": "47",
+    "pdf_destination": "chapter.10"
+  },
+  "d11:10:lp-definition": {
+    "pdf_page": 54,
+    "printed_page": "47",
+    "pdf_destination": "definition.10.1"
+  },
+  "d11:10:holder": {
+    "pdf_page": 54,
+    "printed_page": "47",
+    "pdf_destination": "theorem.10.2"
+  },
+  "d11:10:cauchy-schwarz": {
+    "pdf_page": 54,
+    "printed_page": "47",
+    "pdf_destination": "corollary.10.3"
+  },
+  "d11:10:minkowski": {
+    "pdf_page": 54,
+    "printed_page": "47",
+    "pdf_destination": "theorem.10.4"
+  },
+  "d11:10:quotient-construction": {
+    "pdf_page": 55,
+    "printed_page": "48",
+    "pdf_destination": "definition.10.5"
+  },
+  "d11:10:completeness": {
+    "pdf_page": 55,
+    "printed_page": "48",
+    "pdf_destination": "theorem.10.6"
+  },
+  "d11:10:chebyshev": {
+    "pdf_page": 55,
+    "printed_page": "48",
+    "pdf_destination": "proposition.10.7"
+  },
+  "d11:10:sigmafinite-support": {
+    "pdf_page": 55,
+    "printed_page": "48",
+    "pdf_destination": "lemma.10.8"
+  },
+  "d11:10:lp-convergence-measure": {
+    "pdf_page": 55,
+    "printed_page": "48",
+    "pdf_destination": "proposition.10.9"
+  },
+  "d11:10:dominated-lp": {
+    "pdf_page": 55,
+    "printed_page": "49",
+    "pdf_destination": "proposition.10.10"
+  },
+  "d11:10:finite-measure-inclusion": {
+    "pdf_page": 56,
+    "printed_page": "49",
+    "pdf_destination": "proposition.10.11"
+  },
+  "d11:10:elementary-norm-interpolation": {
+    "pdf_page": 56,
+    "printed_page": "49",
+    "pdf_destination": "proposition.10.12"
+  },
+  "d11:10:sequence-space-inclusion": {
+    "pdf_page": 56,
+    "printed_page": "49",
+    "pdf_destination": "proposition.10.13"
+  },
+  "d11:10:inclusion-failure": {
+    "pdf_page": 56,
+    "printed_page": "49",
+    "pdf_destination": "example.10.14"
+  },
+  "d11:10:distribution-layer-cake": {
+    "pdf_page": 56,
+    "printed_page": "49",
+    "pdf_destination": "theorem.10.15"
+  },
+  "d11:10:weak-endpoint-bridge": {
+    "pdf_page": 56,
+    "printed_page": "50",
+    "pdf_destination": "proposition.10.16"
+  },
+  "d11:10:minkowski-integral": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "theorem.10.17"
+  },
+  "d11:10:jensen": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "theorem.10.18"
+  },
+  "d11:10:c0p-boundary": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "example.10.19"
+  },
+  "d11:10:cohn-endpoint-translation": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "proposition.10.20"
+  },
+  "ch:d11-11": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "chapter.11"
+  },
+  "d11:11:finite-p-simple-density": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "theorem.11.1"
+  },
+  "d11:11:bounded-simple-infinity": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "proposition.11.2"
+  },
+  "d11:11:step-density": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "theorem.11.3"
+  },
+  "d11:11:cc-density-euclidean": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "theorem.11.4"
+  },
+  "d11:11:radon-cc-density-bridge": {
+    "pdf_page": 59,
+    "printed_page": "52",
+    "pdf_destination": "theorem.11.5"
+  },
+  "d11:11:translation-continuity": {
+    "pdf_page": 59,
+    "printed_page": "52",
+    "pdf_destination": "theorem.11.6"
+  },
+  "d11:11:convolution-young": {
+    "pdf_page": 59,
+    "printed_page": "52",
+    "pdf_destination": "theorem.11.7"
+  },
+  "d11:11:approximate-identity-lp": {
+    "pdf_page": 59,
+    "printed_page": "52",
+    "pdf_destination": "theorem.11.8"
+  },
+  "d11:11:approximate-identity-uniform": {
+    "pdf_page": 60,
+    "printed_page": "53",
+    "pdf_destination": "theorem.11.9"
+  },
+  "d11:11:approximate-identity-lebesgue-points": {
+    "pdf_page": 60,
+    "printed_page": "53",
+    "pdf_destination": "theorem.11.10"
+  },
+  "d11:11:smooth-density": {
+    "pdf_page": 60,
+    "printed_page": "53",
+    "pdf_destination": "theorem.11.11"
+  },
+  "d11:11:finite-p-separability": {
+    "pdf_page": 60,
+    "printed_page": "53",
+    "pdf_destination": "theorem.11.12"
+  },
+  "d11:11:infinity-density-failure": {
+    "pdf_page": 61,
+    "printed_page": "54",
+    "pdf_destination": "example.11.13"
+  },
+  "ch:d11-12": {
+    "pdf_page": 62,
+    "printed_page": "55",
+    "pdf_destination": "chapter.12"
+  },
+  "d11:12:bv-definition": {
+    "pdf_page": 62,
+    "printed_page": "55",
+    "pdf_destination": "definition.12.1"
+  },
+  "d11:12:jordan-functions": {
+    "pdf_page": 62,
+    "printed_page": "55",
+    "pdf_destination": "theorem.12.2"
+  },
+  "d11:12:bv-one-sided": {
+    "pdf_page": 62,
+    "printed_page": "55",
+    "pdf_destination": "proposition.12.3"
+  },
+  "d11:12:normalized-stieltjes": {
+    "pdf_page": 63,
+    "printed_page": "56",
+    "pdf_destination": "theorem.12.4"
+  },
+  "d11:12:ac-definition": {
+    "pdf_page": 64,
+    "printed_page": "57",
+    "pdf_destination": "definition.12.5"
+  },
+  "d11:12:ac-basic": {
+    "pdf_page": 64,
+    "printed_page": "57",
+    "pdf_destination": "proposition.12.6"
+  },
+  "d11:12:ac-primitive": {
+    "pdf_page": 64,
+    "printed_page": "57",
+    "pdf_destination": "theorem.12.7"
+  },
+  "d11:12:ac-stieltjes-equivalence": {
+    "pdf_page": 64,
+    "printed_page": "57",
+    "pdf_destination": "theorem.12.8"
+  },
+  "d11:12:ac-ftc": {
+    "pdf_page": 65,
+    "printed_page": "58",
+    "pdf_destination": "theorem.12.9"
+  },
+  "d11:12:monotone-differentiation": {
+    "pdf_page": 65,
+    "printed_page": "58",
+    "pdf_destination": "theorem.12.10"
+  },
+  "d11:12:bv-derivative": {
+    "pdf_page": 65,
+    "printed_page": "58",
+    "pdf_destination": "theorem.12.11"
+  },
+  "d11:12:ac-integration-parts": {
+    "pdf_page": 65,
+    "printed_page": "59",
+    "pdf_destination": "proposition.12.12"
+  },
+  "d11:12:stieltjes-integration-parts": {
+    "pdf_page": 66,
+    "printed_page": "59",
+    "pdf_destination": "proposition.12.13"
+  },
+  "d11:12:stieltjes-three-parts": {
+    "pdf_page": 66,
+    "printed_page": "59",
+    "pdf_destination": "theorem.12.14"
+  },
+  "d11:12:singular-continuous-counterexample": {
+    "pdf_page": 66,
+    "printed_page": "59",
+    "pdf_destination": "example.12.15"
+  },
+  "d11:12:continuous-not-bv": {
+    "pdf_page": 67,
+    "printed_page": "60",
+    "pdf_destination": "example.12.16"
+  },
+  "d11:12:ac-composition-boundary": {
+    "pdf_page": 67,
+    "printed_page": "60",
+    "pdf_destination": "example.12.17"
+  },
+  "d11:12:monotone-null-image-characterization": {
+    "pdf_page": 67,
+    "printed_page": "60",
+    "pdf_destination": "theorem.12.18"
+  },
+  "d11:12:rectifiable-curve-bridge": {
+    "pdf_page": 68,
+    "printed_page": "61",
+    "pdf_destination": "proposition.12.19"
+  },
+  "ch:d11-13": {
+    "pdf_page": 69,
+    "printed_page": "62",
+    "pdf_destination": "chapter.13"
+  },
+  "d11:13:averages-maximal-definition": {
+    "pdf_page": 69,
+    "printed_page": "62",
+    "pdf_destination": "definition.13.1"
+  },
+  "d11:13:finite-ball-covering": {
+    "pdf_page": 69,
+    "printed_page": "62",
+    "pdf_destination": "lemma.13.2"
+  },
+  "d11:13:maximal-weak11": {
+    "pdf_page": 69,
+    "printed_page": "62",
+    "pdf_destination": "theorem.13.3"
+  },
+  "d11:13:lebesgue-differentiation": {
+    "pdf_page": 69,
+    "printed_page": "63",
+    "pdf_destination": "theorem.13.4"
+  },
+  "d11:13:density-points": {
+    "pdf_page": 70,
+    "printed_page": "63",
+    "pdf_destination": "corollary.13.5"
+  },
+  "d11:13:regular-shrinking": {
+    "pdf_page": 70,
+    "printed_page": "63",
+    "pdf_destination": "proposition.13.6"
+  },
+  "d11:13:measure-weak-bound": {
+    "pdf_page": 70,
+    "printed_page": "63",
+    "pdf_destination": "lemma.13.7"
+  },
+  "d11:13:measure-differentiation": {
+    "pdf_page": 70,
+    "printed_page": "63",
+    "pdf_destination": "theorem.13.8"
+  },
+  "d11:13:regular-measure-differentiation": {
+    "pdf_page": 71,
+    "printed_page": "64",
+    "pdf_destination": "theorem.13.9"
+  },
+  "d11:13:approximate-continuity": {
+    "pdf_page": 71,
+    "printed_page": "64",
+    "pdf_destination": "corollary.13.10"
+  },
+  "d11:13:maximal-not-l1": {
+    "pdf_page": 71,
+    "printed_page": "64",
+    "pdf_destination": "example.13.11"
+  },
+  "ch:d11-14": {
+    "pdf_page": 72,
+    "printed_page": "65",
+    "pdf_destination": "chapter.14"
+  },
+  "d11:14:signed-complex-definition": {
+    "pdf_page": 72,
+    "printed_page": "65",
+    "pdf_destination": "definition.14.1"
+  },
+  "d11:14:negative-extraction": {
+    "pdf_page": 72,
+    "printed_page": "65",
+    "pdf_destination": "lemma.14.2"
+  },
+  "d11:14:hahn": {
+    "pdf_page": 72,
+    "printed_page": "65",
+    "pdf_destination": "theorem.14.3"
+  },
+  "d11:14:jordan": {
+    "pdf_page": 72,
+    "printed_page": "65",
+    "pdf_destination": "theorem.14.4"
+  },
+  "d11:14:total-variation": {
+    "pdf_page": 73,
+    "printed_page": "66",
+    "pdf_destination": "theorem.14.5"
+  },
+  "d11:14:complex-finite-variation": {
+    "pdf_page": 73,
+    "printed_page": "66",
+    "pdf_destination": "corollary.14.6"
+  },
+  "d11:14:variation-inequalities": {
+    "pdf_page": 73,
+    "printed_page": "66",
+    "pdf_destination": "proposition.14.7"
+  },
+  "d11:14:mutual-singularity": {
+    "pdf_page": 73,
+    "printed_page": "66",
+    "pdf_destination": "definition.14.8"
+  },
+  "d11:14:scalar-integration": {
+    "pdf_page": 73,
+    "printed_page": "67",
+    "pdf_destination": "definition.14.9"
+  },
+  "d11:14:integral-variation-bound": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "proposition.14.10"
+  },
+  "d11:14:density-measure-variation": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "theorem.14.11"
+  },
+  "d11:14:zero-set-not-null": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "example.14.12"
+  },
+  "d11:14:normalized-measure-function-bridge": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "proposition.14.13"
+  },
+  "d11:14:extended-signed-variant": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "proposition.14.14"
+  },
+  "ch:d11-15": {
+    "pdf_page": 76,
+    "printed_page": "69",
+    "pdf_destination": "chapter.15"
+  },
+  "d11:15:absolute-continuity": {
+    "pdf_page": 76,
+    "printed_page": "69",
+    "pdf_destination": "definition.15.1"
+  },
+  "d11:15:absolute-continuity-epsilon-delta": {
+    "pdf_page": 76,
+    "printed_page": "69",
+    "pdf_destination": "proposition.15.2"
+  },
+  "d11:15:rn-positive-finite": {
+    "pdf_page": 76,
+    "printed_page": "69",
+    "pdf_destination": "theorem.15.3"
+  },
+  "d11:15:rn-positive-sigmafinite": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "theorem.15.4"
+  },
+  "d11:15:rn-signed-complex": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "theorem.15.5"
+  },
+  "d11:15:ac-singular-zero": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "lemma.15.6"
+  },
+  "d11:15:lebesgue-decomposition-finite-target": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "theorem.15.7"
+  },
+  "d11:15:lebesgue-decomposition-sigmafinite": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "theorem.15.8"
+  },
+  "d11:15:density-change-integral": {
+    "pdf_page": 78,
+    "printed_page": "71",
+    "pdf_destination": "proposition.15.9"
+  },
+  "d11:15:rn-chain-rule": {
+    "pdf_page": 78,
+    "printed_page": "71",
+    "pdf_destination": "proposition.15.10"
+  },
+  "d11:15:polar-decomposition": {
+    "pdf_page": 78,
+    "printed_page": "71",
+    "pdf_destination": "theorem.15.11"
+  },
+  "d11:15:rn-non-sigmafinite-failure": {
+    "pdf_page": 78,
+    "printed_page": "71",
+    "pdf_destination": "example.15.12"
+  },
+  "d11:15:conditioning-route": {
+    "pdf_page": 78,
+    "printed_page": "71",
+    "pdf_destination": "proposition.15.13"
+  },
+  "d11:15:lebesgue-rn-sigmafinite-signed": {
+    "pdf_page": 78,
+    "printed_page": "72",
+    "pdf_destination": "corollary.15.14"
+  },
+  "ch:d11-16": {
+    "pdf_page": 80,
+    "printed_page": "73",
+    "pdf_destination": "chapter.16"
+  },
+  "d11:16:riemann-criterion": {
+    "pdf_page": 80,
+    "printed_page": "73",
+    "pdf_destination": "theorem.16.1"
+  },
+  "d11:16:proper-integral-equality": {
+    "pdf_page": 80,
+    "printed_page": "73",
+    "pdf_destination": "theorem.16.2"
+  },
+  "d11:16:absolute-improper-bridge": {
+    "pdf_page": 81,
+    "printed_page": "74",
+    "pdf_destination": "theorem.16.3"
+  },
+  "d11:16:conditional-improper-counterexample": {
+    "pdf_page": 81,
+    "printed_page": "74",
+    "pdf_destination": "example.16.4"
+  },
+  "d11:16:lebesgue-not-riemann": {
+    "pdf_page": 81,
+    "printed_page": "74",
+    "pdf_destination": "example.16.5"
+  },
+  "d11:16:gauge-integral-boundary": {
+    "pdf_page": 81,
+    "printed_page": "74",
+    "pdf_destination": "remark.16.6"
+  },
+  "ch:d11-17": {
+    "pdf_page": 82,
+    "printed_page": "75",
+    "pdf_destination": "chapter.17"
+  },
+  "d11:17:uniform-absolute-continuity": {
+    "pdf_page": 82,
+    "printed_page": "75",
+    "pdf_destination": "definition.17.1"
+  },
+  "d11:17:finite-measure-tails": {
+    "pdf_page": 82,
+    "printed_page": "75",
+    "pdf_destination": "definition.17.2"
+  },
+  "d11:17:amplitude-tails": {
+    "pdf_page": 82,
+    "printed_page": "75",
+    "pdf_destination": "definition.17.3"
+  },
+  "d11:17:definition-comparison": {
+    "pdf_page": 82,
+    "printed_page": "76",
+    "pdf_destination": "proposition.17.4"
+  },
+  "d11:17:folland-ui-convention": {
+    "pdf_page": 83,
+    "printed_page": "76",
+    "pdf_destination": "proposition.17.5"
+  },
+  "d11:17:atomic-ui-counterexample": {
+    "pdf_page": 83,
+    "printed_page": "76",
+    "pdf_destination": "example.17.6"
+  },
+  "d11:17:dominated-and-finite-families": {
+    "pdf_page": 83,
+    "printed_page": "76",
+    "pdf_destination": "proposition.17.7"
+  },
+  "d11:17:norm-convergence-controls": {
+    "pdf_page": 83,
+    "printed_page": "77",
+    "pdf_destination": "proposition.17.8"
+  },
+  "d11:17:vitali-lp-cauchy": {
+    "pdf_page": 84,
+    "printed_page": "77",
+    "pdf_destination": "theorem.17.9"
+  },
+  "d11:17:vitali-lp-convergence": {
+    "pdf_page": 84,
+    "printed_page": "77",
+    "pdf_destination": "corollary.17.10"
+  },
+  "d11:17:royden-vitali-versions": {
+    "pdf_page": 84,
+    "printed_page": "77",
+    "pdf_destination": "proposition.17.11"
+  },
+  "d11:17:spikes-counterexample": {
+    "pdf_page": 85,
+    "printed_page": "78",
+    "pdf_destination": "example.17.12"
+  },
+  "d11:17:escaping-mass-counterexample": {
+    "pdf_page": 85,
+    "printed_page": "78",
+    "pdf_destination": "example.17.13"
+  },
+  "ch:d11-18": {
+    "pdf_page": 86,
+    "printed_page": "79",
+    "pdf_destination": "chapter.18"
+  },
+  "d11:18:borel-baire": {
+    "pdf_page": 86,
+    "printed_page": "79",
+    "pdf_destination": "definition.18.1"
+  },
+  "d11:18:regularity-predicates": {
+    "pdf_page": 86,
+    "printed_page": "79",
+    "pdf_destination": "definition.18.2"
+  },
+  "d11:18:radon-and-source-names": {
+    "pdf_page": 86,
+    "printed_page": "79",
+    "pdf_destination": "remark.18.3"
+  },
+  "d11:18:lch-local-finite-bridge": {
+    "pdf_page": 86,
+    "printed_page": "79",
+    "pdf_destination": "proposition.18.4"
+  },
+  "d11:18:compact-cutoff": {
+    "pdf_page": 87,
+    "printed_page": "80",
+    "pdf_destination": "lemma.18.5"
+  },
+  "d11:18:baire-borel-second-countable": {
+    "pdf_page": 87,
+    "printed_page": "80",
+    "pdf_destination": "theorem.18.6"
+  },
+  "d11:18:radon-sigmafinite-inner": {
+    "pdf_page": 87,
+    "printed_page": "80",
+    "pdf_destination": "theorem.18.7"
+  },
+  "d11:18:sigmafinite-radon-regular": {
+    "pdf_page": 87,
+    "printed_page": "81",
+    "pdf_destination": "corollary.18.8"
+  },
+  "d11:18:second-countable-borel-regular": {
+    "pdf_page": 88,
+    "printed_page": "81",
+    "pdf_destination": "theorem.18.9"
+  },
+  "d11:18:metric-closed-regular": {
+    "pdf_page": 88,
+    "printed_page": "81",
+    "pdf_destination": "theorem.18.10"
+  },
+  "d11:18:polish-tightness-regular": {
+    "pdf_page": 89,
+    "printed_page": "82",
+    "pdf_destination": "theorem.18.11"
+  },
+  "d11:18:finite-radon-tightness": {
+    "pdf_page": 89,
+    "printed_page": "82",
+    "pdf_destination": "corollary.18.12"
+  },
+  "d11:18:radon-support": {
+    "pdf_page": 89,
+    "printed_page": "82",
+    "pdf_destination": "theorem.18.13"
+  },
+  "d11:18:product-borel-bridge": {
+    "pdf_page": 89,
+    "printed_page": "82",
+    "pdf_destination": "proposition.18.14"
+  },
+  "d11:18:cc-tensor-approximation": {
+    "pdf_page": 90,
+    "printed_page": "83",
+    "pdf_destination": "lemma.18.15"
+  },
+  "d11:18:radon-product": {
+    "pdf_page": 90,
+    "printed_page": "83",
+    "pdf_destination": "construction.18.16"
+  },
+  "d11:18:sigmafinite-radon-product": {
+    "pdf_page": 90,
+    "printed_page": "83",
+    "pdf_destination": "theorem.18.17"
+  },
+  "ch:d11-19": {
+    "pdf_page": 92,
+    "printed_page": "85",
+    "pdf_destination": "chapter.19"
+  },
+  "d11:19:cc-czero": {
+    "pdf_page": 92,
+    "printed_page": "85",
+    "pdf_destination": "definition.19.1"
+  },
+  "d11:19:finite-compact-partition": {
+    "pdf_page": 92,
+    "printed_page": "85",
+    "pdf_destination": "lemma.19.2"
+  },
+  "d11:19:positive-functional-bound": {
+    "pdf_page": 92,
+    "printed_page": "86",
+    "pdf_destination": "lemma.19.3"
+  },
+  "d11:19:positive-content-measure": {
+    "pdf_page": 93,
+    "printed_page": "86",
+    "pdf_destination": "construction.19.4"
+  },
+  "d11:19:positive-content-integral": {
+    "pdf_page": 93,
+    "printed_page": "86",
+    "pdf_destination": "lemma.19.5"
+  },
+  "d11:19:positive-riesz-markov": {
+    "pdf_page": 94,
+    "printed_page": "87",
+    "pdf_destination": "theorem.19.6"
+  },
+  "d11:19:recover-open-compact-mass": {
+    "pdf_page": 94,
+    "printed_page": "87",
+    "pdf_destination": "corollary.19.7"
+  },
+  "d11:19:finite-positive-czero": {
+    "pdf_page": 94,
+    "printed_page": "87",
+    "pdf_destination": "theorem.19.8"
+  },
+  "d11:19:functional-jordan": {
+    "pdf_page": 94,
+    "printed_page": "88",
+    "pdf_destination": "lemma.19.9"
+  },
+  "d11:19:complex-radon-variation": {
+    "pdf_page": 95,
+    "printed_page": "88",
+    "pdf_destination": "definition.19.10"
+  },
+  "d11:19:variation-test-function": {
+    "pdf_page": 95,
+    "printed_page": "88",
+    "pdf_destination": "lemma.19.11"
+  },
+  "d11:19:czero-duality": {
+    "pdf_page": 95,
+    "printed_page": "88",
+    "pdf_destination": "theorem.19.12"
+  },
+  "d11:19:compact-representation": {
+    "pdf_page": 96,
+    "printed_page": "89",
+    "pdf_destination": "corollary.19.13"
+  },
+  "d11:19:stein-exercise9-interface": {
+    "pdf_page": 96,
+    "printed_page": "89",
+    "pdf_destination": "corollary.19.14"
+  },
+  "d11:19:stein-problem5-caution": {
+    "pdf_page": 96,
+    "printed_page": "89",
+    "pdf_destination": "example.19.15"
+  },
+  "ch:d11-20": {
+    "pdf_page": 98,
+    "printed_page": "91",
+    "pdf_destination": "chapter.20"
+  },
+  "d11:20:integral-pairing": {
+    "pdf_page": 98,
+    "printed_page": "91",
+    "pdf_destination": "definition.20.1"
+  },
+  "d11:20:pairing-norm-finite-q": {
+    "pdf_page": 98,
+    "printed_page": "91",
+    "pdf_destination": "theorem.20.2"
+  },
+  "d11:20:pairing-norm-endpoint": {
+    "pdf_page": 98,
+    "printed_page": "91",
+    "pdf_destination": "theorem.20.3"
+  },
+  "d11:20:l2-hilbert-interface": {
+    "pdf_page": 99,
+    "printed_page": "92",
+    "pdf_destination": "proposition.20.4"
+  },
+  "d11:20:orthogonal-projection": {
+    "pdf_page": 99,
+    "printed_page": "92",
+    "pdf_destination": "theorem.20.5"
+  },
+  "d11:20:hilbert-riesz": {
+    "pdf_page": 99,
+    "printed_page": "92",
+    "pdf_destination": "theorem.20.6"
+  },
+  "d11:20:hilbert-bilinear-bridge": {
+    "pdf_page": 100,
+    "printed_page": "93",
+    "pdf_destination": "corollary.20.7"
+  },
+  "d11:20:lp-dual-sigmafinite-local": {
+    "pdf_page": 100,
+    "printed_page": "93",
+    "pdf_destination": "lemma.20.8"
+  },
+  "d11:20:functional-visible-sigmafinite-support": {
+    "pdf_page": 100,
+    "printed_page": "93",
+    "pdf_destination": "lemma.20.9"
+  },
+  "d11:20:lp-dual-arbitrary-measure": {
+    "pdf_page": 101,
+    "printed_page": "94",
+    "pdf_destination": "theorem.20.10"
+  },
+  "d11:20:lone-dual-sigmafinite": {
+    "pdf_page": 101,
+    "printed_page": "94",
+    "pdf_destination": "corollary.20.11"
+  },
+  "d11:20:local-null-variant": {
+    "pdf_page": 101,
+    "printed_page": "94",
+    "pdf_destination": "definition.20.12"
+  },
+  "d11:20:local-null-sigmafinite-bridge": {
+    "pdf_page": 101,
+    "printed_page": "95",
+    "pdf_destination": "proposition.20.13"
+  },
+  "d11:20:local-null-endpoint-specialization": {
+    "pdf_page": 102,
+    "printed_page": "95",
+    "pdf_destination": "theorem.20.14"
+  },
+  "d11:20:endpoint-surjectivity-failure": {
+    "pdf_page": 103,
+    "printed_page": "96",
+    "pdf_destination": "example.20.15"
+  },
+  "d11:20:linfinity-dual-boundary": {
+    "pdf_page": 103,
+    "printed_page": "96",
+    "pdf_destination": "example.20.16"
+  },
+  "ch:d11-21": {
+    "pdf_page": 104,
+    "printed_page": "97",
+    "pdf_destination": "chapter.21"
+  },
+  "d11:21:lch-group-interface": {
+    "pdf_page": 104,
+    "printed_page": "97",
+    "pdf_destination": "definition.21.1"
+  },
+  "d11:21:haar-definition": {
+    "pdf_page": 104,
+    "printed_page": "97",
+    "pdf_destination": "definition.21.2"
+  },
+  "d11:21:compact-covering-ratios": {
+    "pdf_page": 104,
+    "printed_page": "97",
+    "pdf_destination": "lemma.21.3"
+  },
+  "d11:21:compact-content-cluster": {
+    "pdf_page": 105,
+    "printed_page": "98",
+    "pdf_destination": "construction.21.4"
+  },
+  "d11:21:compact-content-radon-measure": {
+    "pdf_page": 105,
+    "printed_page": "98",
+    "pdf_destination": "construction.21.5"
+  },
+  "d11:21:haar-existence": {
+    "pdf_page": 105,
+    "printed_page": "99",
+    "pdf_destination": "theorem.21.6"
+  },
+  "d11:21:haar-positive-open": {
+    "pdf_page": 106,
+    "printed_page": "99",
+    "pdf_destination": "lemma.21.7"
+  },
+  "d11:21:haar-translation-integral": {
+    "pdf_page": 106,
+    "printed_page": "99",
+    "pdf_destination": "proposition.21.8"
+  },
+  "d11:21:compact-translate-integral-continuity": {
+    "pdf_page": 106,
+    "printed_page": "99",
+    "pdf_destination": "lemma.21.9"
+  },
+  "d11:21:compact-kernel-ratio-identity": {
+    "pdf_page": 106,
+    "printed_page": "100",
+    "pdf_destination": "lemma.21.10"
+  },
+  "d11:21:haar-uniqueness": {
+    "pdf_page": 107,
+    "printed_page": "100",
+    "pdf_destination": "theorem.21.11"
+  },
+  "d11:21:haar-inversion": {
+    "pdf_page": 107,
+    "printed_page": "100",
+    "pdf_destination": "proposition.21.12"
+  },
+  "d11:21:haar-finite-iff-compact": {
+    "pdf_page": 108,
+    "printed_page": "101",
+    "pdf_destination": "theorem.21.13"
+  },
+  "d11:21:modular-function": {
+    "pdf_page": 108,
+    "printed_page": "101",
+    "pdf_destination": "definition.21.14"
+  },
+  "d11:21:modular-properties": {
+    "pdf_page": 108,
+    "printed_page": "101",
+    "pdf_destination": "theorem.21.15"
+  },
+  "d11:21:unimodular-cases": {
+    "pdf_page": 108,
+    "printed_page": "101",
+    "pdf_destination": "corollary.21.16"
+  },
+  "d11:21:left-right-density": {
+    "pdf_page": 109,
+    "printed_page": "102",
+    "pdf_destination": "theorem.21.17"
+  },
+  "d11:21:haar-examples-and-nonunimodular": {
+    "pdf_page": 109,
+    "printed_page": "102",
+    "pdf_destination": "example.21.18"
+  },
+  "ch:d11-22": {
+    "pdf_page": 111,
+    "printed_page": "104",
+    "pdf_destination": "chapter.22"
+  },
+  "d11:22:hausdorff-scale-content": {
+    "pdf_page": 111,
+    "printed_page": "104",
+    "pdf_destination": "definition.22.1"
+  },
+  "d11:22:hausdorff-outer-measure": {
+    "pdf_page": 111,
+    "printed_page": "104",
+    "pdf_destination": "theorem.22.2"
+  },
+  "d11:22:metric-outer-borel": {
+    "pdf_page": 111,
+    "printed_page": "105",
+    "pdf_destination": "theorem.22.3"
+  },
+  "d11:22:zero-dimension-counting": {
+    "pdf_page": 112,
+    "printed_page": "105",
+    "pdf_destination": "theorem.22.4"
+  },
+  "d11:22:isometry-similarity": {
+    "pdf_page": 112,
+    "printed_page": "105",
+    "pdf_destination": "theorem.22.5"
+  },
+  "d11:22:lipschitz-zero-cases": {
+    "pdf_page": 112,
+    "printed_page": "105",
+    "pdf_destination": "proposition.22.6"
+  },
+  "d11:22:holder-image-bound": {
+    "pdf_page": 113,
+    "printed_page": "106",
+    "pdf_destination": "theorem.22.7"
+  },
+  "d11:22:exponent-threshold": {
+    "pdf_page": 113,
+    "printed_page": "106",
+    "pdf_destination": "theorem.22.8"
+  },
+  "d11:22:dimension-definition": {
+    "pdf_page": 113,
+    "printed_page": "106",
+    "pdf_destination": "definition.22.9"
+  },
+  "d11:22:countable-stability": {
+    "pdf_page": 113,
+    "printed_page": "106",
+    "pdf_destination": "theorem.22.10"
+  },
+  "d11:22:euclidean-lebesgue-normalization": {
+    "pdf_page": 114,
+    "printed_page": "107",
+    "pdf_destination": "theorem.22.11"
+  },
+  "d11:22:euclidean-dimension": {
+    "pdf_page": 114,
+    "printed_page": "107",
+    "pdf_destination": "theorem.22.12"
+  },
+  "d11:22:hausdorff-nonsigmafinite": {
+    "pdf_page": 114,
+    "printed_page": "107",
+    "pdf_destination": "example.22.13"
+  },
+  "d11:22:cantor-holder-surjection": {
+    "pdf_page": 114,
+    "printed_page": "107",
+    "pdf_destination": "lemma.22.14"
+  },
+  "d11:22:cantor-dimension": {
+    "pdf_page": 115,
+    "printed_page": "108",
+    "pdf_destination": "theorem.22.15"
+  },
+  "d11:22:cantor-exact-mass": {
+    "pdf_page": 115,
+    "printed_page": "108",
+    "pdf_destination": "theorem.22.16"
+  },
+  "d11:22:content-not-measure": {
+    "pdf_page": 115,
+    "printed_page": "108",
+    "pdf_destination": "example.22.17"
+  },
+  "ch:d11-23": {
+    "pdf_page": 117,
+    "printed_page": "110",
+    "pdf_destination": "chapter.23"
+  },
+  "d11:23:vector-lattice-stone": {
+    "pdf_page": 117,
+    "printed_page": "110",
+    "pdf_destination": "definition.23.1"
+  },
+  "d11:23:elementary-integral": {
+    "pdf_page": 117,
+    "printed_page": "110",
+    "pdf_destination": "definition.23.2"
+  },
+  "d11:23:elementary-monotone-properties": {
+    "pdf_page": 117,
+    "printed_page": "110",
+    "pdf_destination": "lemma.23.3"
+  },
+  "d11:23:generated-ring-algebra": {
+    "pdf_page": 118,
+    "printed_page": "111",
+    "pdf_destination": "definition.23.4"
+  },
+  "d11:23:sigma-ring-extension": {
+    "pdf_page": 118,
+    "printed_page": "111",
+    "pdf_destination": "lemma.23.5"
+  },
+  "d11:23:undergraph-content": {
+    "pdf_page": 118,
+    "printed_page": "111",
+    "pdf_destination": "lemma.23.6"
+  },
+  "d11:23:undergraph-outer-measure": {
+    "pdf_page": 119,
+    "printed_page": "112",
+    "pdf_destination": "construction.23.7"
+  },
+  "d11:23:level-cylinder-representation": {
+    "pdf_page": 119,
+    "printed_page": "112",
+    "pdf_destination": "construction.23.8"
+  },
+  "d11:23:localized-sigma-ring-uniqueness": {
+    "pdf_page": 120,
+    "printed_page": "113",
+    "pdf_destination": "lemma.23.9"
+  },
+  "d11:23:daniell-stone-representation": {
+    "pdf_page": 120,
+    "printed_page": "113",
+    "pdf_destination": "theorem.23.10"
+  },
+  "d11:23:order-continuity-necessary": {
+    "pdf_page": 120,
+    "printed_page": "114",
+    "pdf_destination": "proposition.23.11"
+  },
+  "d11:23:unit-implies-finite-unique": {
+    "pdf_page": 121,
+    "printed_page": "114",
+    "pdf_destination": "corollary.23.12"
+  },
+  "d11:23:dini-elementary-examples": {
+    "pdf_page": 121,
+    "printed_page": "114",
+    "pdf_destination": "theorem.23.13"
+  },
+  "d11:23:riemann-lebesgue-bridge": {
+    "pdf_page": 121,
+    "printed_page": "114",
+    "pdf_destination": "corollary.23.14"
+  },
+  "d11:23:positivity-without-order-continuity": {
+    "pdf_page": 122,
+    "printed_page": "115",
+    "pdf_destination": "example.23.15"
+  },
+  "d11:23:sigma-algebra-nonuniqueness": {
+    "pdf_page": 122,
+    "printed_page": "115",
+    "pdf_destination": "example.23.16"
+  }
+}

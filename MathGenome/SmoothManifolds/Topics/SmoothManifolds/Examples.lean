@@ -1,0 +1,6 @@
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Examples.GenusTwoAtlas
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Examples.GenusTwoOrientation
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Examples.GenusTwoSurface
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Examples.PolarCoordinates
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Examples.RealProjectiveSpace
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Examples.SpheresAndTori

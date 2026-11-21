@@ -1,0 +1,72 @@
+{
+  "title": "Advanced Commutative Algebra",
+  "scope": "both parts, chapters 1 through 9",
+  "paper_sha256": "f22c8abed62d9a9cdbf60440395781bdc15389e6ea253fded3c2ac0f902c6eb0",
+  "pdf_sha256": "399101b322496f65a80a1d386ae7bf7d8d091d7609de8dd3a1d5aa5adf53372c",
+  "original_latex_archive_sha256": "856707e515a7f72eed75d53cde32da2006f35325f8d5d25f6d63421b4b29636f",
+  "original_latex_files": {
+    "commutative-algebra.tex": "6074334eb8cb5f818bb2c49c08699e3af31fec4ece8a7367ca0daa881162e156",
+    "chapters/01-differentials.tex": "16fd46d02b478b4eaf5c39cfdd4c9138102055c4bb87435be36aca312ec7bf15",
+    "chapters/02-lifting.tex": "7c6cb46d7f6cb03b2c65eb5cfe95ddd8312e427f79c756ff1d22be2830aa1277",
+    "chapters/03-smooth.tex": "52c4a71b38fe985b2ed8ea08b0d6abad2a593fcf69238e7a0bc75938605f7dc9",
+    "chapters/04-etale.tex": "60961451d37be1a88f1c2ec3166cb6597294a3235150b54cba6c34218881b87c",
+    "chapters/05-regular-koszul.tex": "2de75974762255489c6b504981db0cbe7962027011a02199d20bcc581e5cd062",
+    "chapters/06-depth.tex": "179bb9974f9067d33852e717445364c76c2142e2c33ae41be4345b4202e5ae46",
+    "chapters/07-cohen-macaulay.tex": "5dc42f1370a066ded50301b7e977e015e922b76322454c7d0fb516dc6a60c4a3",
+    "chapters/08-normality.tex": "47ed9d1cba992013040a704a4270b3cbd5b59861aaae9012bba81e35915ebaca",
+    "chapters/09-gorenstein.tex": "c78d198f056b70fed99cb77a411abed1b73ce9484ed801dd96039ddc84ac51ed"
+  },
+  "chapter_ranges_in_paper": {
+    "chapters/01-differentials.tex": [
+      137,
+      475
+    ],
+    "chapters/02-lifting.tex": [
+      476,
+      927
+    ],
+    "chapters/03-smooth.tex": [
+      928,
+      1516
+    ],
+    "chapters/04-etale.tex": [
+      1517,
+      2093
+    ],
+    "chapters/05-regular-koszul.tex": [
+      2097,
+      2613
+    ],
+    "chapters/06-depth.tex": [
+      2614,
+      3222
+    ],
+    "chapters/07-cohen-macaulay.tex": [
+      3223,
+      4036
+    ],
+    "chapters/08-normality.tex": [
+      4037,
+      4379
+    ],
+    "chapters/09-gorenstein.tex": [
+      4380,
+      4875
+    ]
+  },
+  "source_map_tsv_sha256": "5d55a30de528e3ad2089dd5b6a2772e6fcf1a8bca77b887fa3908d46eee5c122",
+  "source_map_json_sha256": "1e14c39c562941806bf1fd35aa96bc56e5d02dcde92fcec41b05839c6c150190",
+  "scope_ledger_sha256": "45775b6bc987d710516ce4f61ed7ca150996e814c3d4cde76a758f02c343c11f",
+  "chapters": 9,
+  "indexed_results": 156,
+  "pdf_physical_pages": 79,
+  "mathgenome": "0.21.0",
+  "mathgenome_git_head": "fe726ab3f0d22340f5d6a0e94d2152484649bdcb",
+  "environment_id": "8c1ec2921bc120b6a01ddc66971da5b2737119faa53367bec783d2bbae944095",
+  "lean": "4.35.0",
+  "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "release_manifest_sha256": "b8ce04691bb467533c0ba58bac1d8f3782b720248a0264236952ac883689f48c",
+  "verification_sha256": "a1363ed04f9edd04b2af9bde4c3e6a8454f351218713b59a29c007e546bda28a",
+  "lake_manifest_sha256": "b58fbf1daa4f8c5eca3be6a54b552a3098b66dff95f4e081fb350f98b462c9bc",
+  "current_pointer_sha256": "9dde0f6058b9aa656ab159e1cb95034011168aad655b0f1e8f812430327f6cf9"
+}

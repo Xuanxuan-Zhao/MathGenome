@@ -1,0 +1,2718 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[letterpaper,margin=1.13in]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem,booktabs,xcolor}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!54!black,citecolor=teal!55!black,urlcolor=blue!54!black]{hyperref}
+\usepackage{bookmark,cleveref}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\allowdisplaybreaks[1]
+\setlength{\emergencystretch}{2em}
+\setcounter{tocdepth}{1}
+\hypersetup{pdftitle={Fourier Analysis, Distributions, Sobolev Spaces, and Approximation},
+pdfauthor={MathGenome},pdfsubject={P1-02 Unified Mathematical Notes}}
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\centering
+\vspace*{0.17\textheight}
+{\large\scshape MathGenome\par}
+\vspace{2em}
+{\Huge\bfseries Fourier Analysis, Distributions, Sobolev Spaces, and Approximation\par}
+\vspace{1.8em}
+{\Large Unified mathematical notes\par}
+\vfill
+{\large P1-02 \enspace\textbullet\enspace U1--U5\par}
+\vspace{0.5em}
+{7 November 2026\par}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+\chapter*{Scope and conventions}
+\addcontentsline{toc}{chapter}{Scope and conventions}
+These notes develop five related subjects in a single sequence. Orthogonal expansions and polynomial approximation come first. Maximal estimates and convolution provide the real-variable tools for singular integrals. The Euclidean Fourier transform then connects those operators to multipliers and tempered distributions. Ordinary distributions supply weak derivatives, and the final chapter uses the resulting Sobolev calculus to construct extensions, traces, and compact embeddings.
+
+\paragraph{Normalization.}
+On \(\mathbb R^d\) integration is against Lebesgue measure and
+\[
+ \widehat f(\xi)=\int_{\mathbb R^d} f(x)e^{-2\pi i x\cdot\xi}\,dx,\qquad
+ \check g(x)=\int_{\mathbb R^d}g(\xi)e^{2\pi i x\cdot\xi}\,d\xi
+\]
+when the integrals are defined. Euclidean convolution is \(f*g(x)=\int f(x-y)g(y)\,dy\). The circle of period \(T>0\) has probability Haar measure, represented by \(dt/T\) on a fundamental interval. Its modes are \(e^{2\pi i nt/T}\). A finite cyclic group likewise has probability counting measure. Sums over frequency indices in inversion and Parseval then use ordinary counting. Distribution pairings are bilinear. Hilbert inner products use complex conjugation when appropriate.
+
+\paragraph{Representatives and domains.}
+A statement about an \(L^p\) class is interpreted up to equality almost everywhere unless a continuous representative, a pointwise convolution, a trace, or another representative is explicitly constructed. The coordinate dimension is a positive integer in derivative, ball, and boundary estimates. Sobolev spaces are based on distribution derivatives with their zero-order norm included. Connectedness is stated where it is used. Each assertion gives its own endpoint and regularity hypotheses.
+
+\paragraph{Prerequisites and references.}
+The background is the usual measure and integration theory, elementary complex analysis, basic functional analysis, and Euclidean calculus. In particular, we use Fubini--Tonelli, \(L^p\) duality and density, regularity of Lebesgue and finite Borel measures, Hahn--Banach, the uniform boundedness principle, the Hilbert projection theorem, the three-lines lemma, and Euclidean differentiability and change-of-variables theorems under their usual hypotheses. Folland, Rudin, and the existing MathGenome analysis notes give compatible versions of these prerequisites. The accompanying result map gives the exact book and manuscript locations for the writing checklist.
+
+{\small\tableofcontents}
+\mainmatter
+\chapter[Orthogonal expansions]
+{Orthogonal expansions, periodic Fourier series, and approximation}
+\label{p102:u1}
+
+For this chapter, the complex inner product is linear in its first variable.
+For a family of nonnegative numbers indexed by a set $I$, its sum means the
+supremum of the sums over finite subsets of $I$. A vector sum over $I$
+means a limit over the directed set of finite subsets ordered by inclusion.
+
+\section{Orthogonal expansion in a Hilbert space}
+
+\begin{theorem}[Bessel, reconstruction, and Parseval]
+\label{p102:AN-13-C04-R01}
+Let $H$ be a real or complex Hilbert space, and let $(u_i)_{i\in I}$ be an
+orthonormal family. For $x\in H$,
+\[
+  \sum_{i\in I} |\langle x,u_i\rangle|^2\le \|x\|^2.
+\]
+The map $a\mapsto\sum_{i\in I}a_i u_i$ is an isometric isomorphism from
+$\ell^2(I)$ onto the closed linear span $M$ of the family. If $M=H$, its
+inverse is $x\mapsto(\langle x,u_i\rangle)_{i\in I}$. In particular,
+\[
+ x=\sum_i\langle x,u_i\rangle u_i,\qquad
+ \langle x,y\rangle
+ =\sum_i\langle x,u_i\rangle\,\overline{\langle y,u_i\rangle},
+ \qquad
+ \|x\|^2=\sum_i|\langle x,u_i\rangle|^2.
+\]
+The middle series is absolutely summable. These assertions include
+arbitrary index sets and the zero Hilbert space.
+\end{theorem}
+
+\begin{proof}
+For finite $F\subset I$, $s_F=\sum_{i\in F}\langle x,u_i\rangle u_i$
+satisfies $\langle x-s_F,u_i\rangle=0$ for $i\in F$. Hence
+$\|x\|^2=\|x-s_F\|^2+\sum_{i\in F}|\langle x,u_i\rangle|^2$.
+Taking the supremum gives Bessel's inequality.
+
+For $a\in\ell^2(I)$ and $\epsilon>0$, choose finite $F_0$ whose sum of
+$|a_i|^2$ is within $\epsilon^2$ of the total. Every finite sum of
+$|a_i|^2$ outside $F_0$ is at most $\epsilon^2$. If $F,G\supset F_0$, the
+norm squared of the difference of the corresponding vector sums equals
+the sum over $F\mathbin{\triangle} G$, so the net is Cauchy. Completeness
+gives the sum and continuity of the norm gives the isometry. Its image
+contains the finite span. A convergent sequence of image points has
+Cauchy coefficients in $\ell^2(I)$, hence coefficients with a limit there,
+so the image is closed. Completeness of $\ell^2(I)$ follows by taking coordinate
+limits of a Cauchy sequence and applying the Cauchy bound to each finite
+sum before taking the supremum. Thus the image is $M$. Continuity of the
+inner product gives the claimed inverse, and applying the inner product
+to two finite expansions and passing to the limit gives the middle
+identity. Finite Cauchy--Schwarz gives absolute summability. Each vector
+of coefficients has countable support since
+$\{i:|a_i|\ge 1/k\}$ is finite for every positive integer $k$. An
+enumeration of that support gives the usual norm-convergent series.
+\end{proof}
+
+For the Hilbert-space statements see \cite[Section~5.5, Theorem~5.27 and
+Proposition~5.30]{folland} and \cite[Sections~11.2--11.6]{apostol}.
+The Fourier conventions below use the same inner-product convention.
+
+\section{The circle and its positive summability kernels}
+
+Fix $T>0$. Write $\mathbb T_T=\mathbb R/T\mathbb Z$ and use the probability
+measure $dm_T(t)=dt/T$ on any fundamental interval. A change of variables
+and periodicity show that this measure is translation invariant. It is
+therefore normalized Haar measure. Put
+\begin{align*}
+ e_k(t)&=\exp(2\pi i k t/T),&
+ \widehat f(k)&=\int_{\mathbb T_T} f(t)\overline{e_k(t)}\,dm_T(t),\\
+ (f*g)(t)&=\int_{\mathbb T_T} f(t-s)g(s)\,dm_T(s).
+\end{align*}
+The coefficient integral uses any length-$T$ interval and depends only
+on the $L^1$ class. The substitution $v=2\pi t/T$ transports Haar measure
+to $dv/(2\pi)$ and transports $e_k$ to $\exp(ikv)$. We may consequently
+prove kernel estimates in angular coordinates and transport them to
+every $T$.
+
+We use the density of continuous functions in $L^p(\mathbb T_T)$ for
+$1\le p<\infty$. Here is the measure argument. For a measurable set $A$
+and $\eta>0$, regularity of Lebesgue measure on the circle supplies a
+compact $K\subset A$ and an open $O\supset A$ with $m_T(O\setminus K)<\eta$
+up to a null modification. The function
+$d(t,O^c)/(d(t,O^c)+d(t,K))$, with the empty-set cases handled by constant
+functions, is continuous, equals one on $K$, and vanishes on $O^c$.
+Its $L^p$ distance from $\mathbf 1_A$ is at most $\eta^{1/p}$.
+Approximation by simple functions proves density. This argument also
+applies to completed Haar measure because completion changes representatives
+only on null sets.
+
+\begin{proposition}[Dirichlet kernel and localization]
+\label{p102:U1-01}
+The symmetric Fourier sum $S_N f$ equals $f*D_N$, where
+\[
+ D_N(v)=\sum_{k=-N}^{N}e^{ikv}
+       =\frac{\sin((N+1/2)v)}{\sin(v/2)} .
+\]
+The quotient extends at $v=0$ with value $2N+1$. If $f,g\in L^1$
+agree almost everywhere in a neighborhood of $x$, then
+$S_N f(x)-S_N g(x)\to0$.
+\end{proposition}
+
+\begin{proof}
+By definition $S_N f$ sums $\widehat f(k)e_k$ over $-N\le k\le N$.
+Expansion of the finite sum and translation invariance prove the
+convolution identity. The geometric sum proves the quotient formula.
+For localization, write the convolution at $x$ using $f-g$. Its
+integrand vanishes almost everywhere for $|v|<\delta$ for some
+$\delta>0$. The remaining function
+$(f-g)(x-Tv/(2\pi))/\sin(v/2)$ is $L^1$ on $[-\pi,\pi]$.
+For any $L^1$ function on this interval its integrals against
+$e^{i\lambda v}$ tend to zero as $|\lambda|\to\infty$. Integrating the
+exponential proves the assertion for interval indicators, and regularity
+gives density of finite interval step functions in $L^1$. Apply this to
+$\lambda=N+1/2$ and its negative. Integer frequencies in the same
+argument give the periodic Riemann--Lebesgue lemma. See
+\cite[Section~3.1.3]{grafakos} and
+\cite[Chapters~2--3]{stein-shakarchi}.
+\end{proof}
+
+\begin{theorem}[Fej\'er means]
+\label{p102:AN-06-C01-S02}
+For $N\ge0$, the Ces\`aro mean
+$\sigma_N f=(N+1)^{-1}\sum_{j=0}^N S_j f$ equals $f*F_N$, where
+\[
+ F_N(v)=\frac1{N+1}\left|\sum_{j=0}^N e^{ijv}\right|^2
+       =\sum_{|k|\le N}\left(1-\frac{|k|}{N+1}\right)e^{ikv}.
+\]
+The kernels are nonnegative, have mass one, and their mass outside
+each neighborhood of zero tends to zero. The means converge uniformly
+to $f$ for continuous $f$, and converge in $L^p$ for $f\in L^p$ and
+$1\le p<\infty$.
+\end{theorem}
+
+\begin{proof}
+Counting pairs $(j,\ell)$ with $j-\ell=k$ proves the kernel expansion.
+The constant coefficient proves mass one. For $\delta\le |v|\le\pi$,
+the geometric sum bounds $F_N(v)$ by
+$((N+1)\sin^2(\delta/2))^{-1}$. For continuous $f$, split
+\[
+ \sigma_N f(x)-f(x)
+    =\int_{\mathbb T_T}(f(x-y)-f(x))F_N(y)\,dm_T(y)
+\]
+into small $y$, where uniform continuity bounds the difference
+uniformly in $x$, and the complement, where it is bounded by
+$2\|f\|_\infty$ and the kernel mass tends to zero. For finite $p$,
+Jensen's inequality for the probability measure $F_N\,dm_T$ and
+Tonelli give $\|\sigma_N g\|_p\le\|g\|_p$. Approximate $f$ by a
+continuous $g$ and use
+$\|\sigma_N f-f\|_p\le 2\|f-g\|_p+\|\sigma_N g-g\|_p$.
+The estimate includes $p=1$.
+\end{proof}
+
+The theorem proves density of trigonometric polynomials in the uniform
+norm and in each finite $L^p$ norm. It gives another proof of the
+periodic Riemann--Lebesgue lemma since
+$|\widehat f(k)-\widehat P(k)|\le\|f-P\|_1$ and $\widehat P$ has finite
+support. It also shows that if all coefficients of an $L^1$ class
+vanish, that class is zero. If its coefficients are absolutely
+summable, their uniformly convergent Fourier series is a continuous
+representative. Integrating the series termwise and using uniqueness
+proves equality almost everywhere. At a continuity point of any given
+representative it agrees with that representative, because points
+where the two agree are dense in each neighborhood. See
+\cite[Sections~1.2.4 and 3.1.3]{grafakos} and
+\cite[Sections~11.14--11.15]{apostol}.
+
+\begin{theorem}[The Fourier Hilbert basis of $\mathbb T_T$]
+\label{p102:AN-06-C01-R03}
+The characters $(e_k)_{k\in\mathbb Z}$ form a Hilbert basis of
+$L^2(\mathbb T_T;\mathbb C)$. For every $a\in\mathbb R$,
+\begin{align*}
+ \widehat f(k)&=\frac1T\int_a^{a+T} f(t)e^{-2\pi i k t/T}\,dt,\\
+ S_N f&\longrightarrow f\ \text{in }L^2,\qquad
+ \|f\|_2^2=\sum_{k\in\mathbb Z}|\widehat f(k)|^2.
+\end{align*}
+For real $f$, the real basis is
+$1,\sqrt 2\cos(2\pi k t/T),\sqrt 2\sin(2\pi k t/T)$, $k\ge1$.
+\end{theorem}
+
+\begin{proof}
+Direct integration gives $\langle e_j,e_k\rangle=\mathbf 1_{j=k}$.
+Fej\'er density gives closed span equal to $L^2$, so the abstract
+Hilbert theorem applies. The intervals $[-N,N]\cap\mathbb Z$ are
+cofinal among finite frequency sets. If $f$ is real, then
+$\widehat f(-k)=\overline{\widehat f(k)}$. The real coefficients of
+the normalized cosine and sine are respectively
+$\sqrt 2\,\operatorname{Re}\widehat f(k)$ and
+$-\sqrt 2\,\operatorname{Im}\widehat f(k)$. Indeed
+$e_k=\cos(2\pi k t/T)+i\sin(2\pi k t/T)$, so the paired terms are
+$2\operatorname{Re}\widehat f(k)\cos(2\pi k t/T)
+ -2\operatorname{Im}\widehat f(k)\sin(2\pi k t/T)$.
+Orthogonality follows from the same change of basis, and the
+expansions give completeness in real $L^2$.
+\end{proof}
+
+For the Fourier basis and Parseval see \cite[Section~8.3, Theorem~8.20]{folland}
+and \cite[Section~3.2, Propositions~3.2.6--3.2.7]{grafakos}.
+
+\begin{theorem}[Abel means and Poisson recovery]
+\label{p102:U1-04}
+For $0\le r<1$, the Abel sum
+$A_r f=\sum_{k\in\mathbb Z}r^{|k|}\widehat f(k)e_k$
+of $f\in L^1(\mathbb T_T)$ converges absolutely and uniformly in the
+space variable. It equals convolution with
+\[
+ P_r(v)=\frac{1-r^2}{1-2r\cos v+r^2}.
+\]
+As $r\uparrow1$, the means converge uniformly for continuous $f$ and
+in norm for $f\in L^p$, $1\le p<\infty$. They converge to the
+Lebesgue value at every Lebesgue point of an $L^1$ class.
+\end{theorem}
+
+\begin{proof}
+Summing the two geometric series gives $P_r$ and its uniformly
+convergent expansion. Coefficients are bounded by $\|f\|_1$, so
+termwise convolution is valid. The kernel has constant coefficient
+one, is nonnegative, is even, and is nonincreasing on $[0,\pi]$.
+It tends uniformly to zero off any neighborhood of zero. The
+uniform and $L^p$ convergence proofs for Fej\'er kernels therefore
+apply verbatim with $P_r$.
+
+For recovery at a Lebesgue point $x$ with value $L$, use angular
+coordinates and write
+$H(s)=\int_{-s}^{s}|f(x-Tv/(2\pi))-L|\,dv$.
+Given $\eta>0$, choose $\delta>0$ with $H(s)\le\eta s$ for
+$0\le s\le\delta$. Since $H$ is absolutely continuous and $H(0)=0$,
+\[
+ \int_0^\delta P_r(s)\,dH(s)
+ =P_r(\delta)H(\delta)-\int_0^\delta P_r'(s)H(s)\,ds
+ \le\eta\int_0^\delta P_r(s)\,ds\le\eta\pi.
+\]
+Outside that interval in radius, use the uniform kernel bound and
+integrability of $f(x-Tv/(2\pi))-L$. Divide by $2\pi$, take the upper
+limit in $r$, and then let $\eta$ tend to zero.
+\end{proof}
+
+See \cite[Chapter~2, Section~5.3]{stein-shakarchi} and
+\cite[Section~8.4]{folland} for Abel summation.
+
+\section{Pointwise convergence and a counterexample}
+
+\begin{theorem}[Dini and Dirichlet--Jordan]
+\label{p102:U1-02}
+Let $f\in L^1(\mathbb T_T)$ and fix a point $x$. In angular
+coordinates set $f_\pm(v)=f(x\pm Tv/(2\pi))$ for $v>0$.
+Each of the following separate conditions implies $S_N f(x)\to L$.
+\begin{enumerate}
+\item For some $\delta>0$, the symmetric Dini condition holds
+  \[
+   \int_0^\delta\frac{|f_+(v)+f_-(v)-2L|}{v}\,dv<\infty .
+  \]
+  In particular, the separate Dini conditions
+  $\int_0^\delta |f_\pm(v)-a_\pm|\,dv/v<\infty$ suffice with
+  $L=(a_++a_-)/2$.
+\item On $(0,\delta)$ both $f_\pm$ have representatives of bounded
+  variation with right limits $a_\pm$ at zero, and $L=(a_++a_-)/2$.
+\end{enumerate}
+Under the symmetric condition, if both one-sided limits exist then
+their average is $L$.
+\end{theorem}
+
+\begin{proof}
+Subtract the constant $L$ and pair $v$ with $-v$.
+The resulting integral is $(2\pi)^{-1}$ times
+\[
+ \int_0^\pi
+   \bigl(f_+(v)+f_-(v)-2L\bigr)
+      \frac{\sin((N+1/2)v)}{\sin(v/2)}\,dv .
+\]
+For the Dini condition the amplitude divided by $\sin(v/2)$ is
+integrable on $(0,\pi)$, by $\sin(v/2)\ge v/\pi$ there. The
+oscillatory integral tends to zero by Riemann--Lebesgue. If both
+one-sided limits exist and their average differs from $L$, the
+symmetric residual is bounded away from zero near zero, which
+contradicts the Dini integrability.
+
+For the bounded-variation condition, the contribution away from a
+small neighborhood of zero tends to zero by the same lemma.
+On the small neighborhood, $1/\sin(v/2)-2/v$ extends continuously
+at zero with value zero. Its product with the residual is integrable,
+so its contribution also tends to zero. For either one-sided residual
+$h(v)=f_\pm(v)-a_\pm$, take a right-continuous representative on
+$(0,\delta)$, which changes it only at a countable set. Its
+Lebesgue--Stieltjes measure $\nu$ on $(0,\delta)$ has finite total
+variation and satisfies $h(v)=\nu((0,v])$. For a complex residual
+use the real and imaginary Stieltjes measures and combine them.
+For $0<\eta<\delta$ and $\lambda=N+1/2$,
+\[
+ \int_0^\eta h(v)\frac{\sin(\lambda v)}{v}\,dv
+  =\int_{(0,\eta]}
+       \left(\int_s^\eta \frac{\sin(\lambda v)}v\,dv\right)d\nu(s).
+\]
+Fubini is valid for each fixed $\lambda$ since the integrand in
+$v$ is bounded by $\lambda$. The inner integral is bounded
+uniformly in its endpoints and $\lambda>0$. In the scaled variable,
+the portion below $1$ is bounded by $1$, and integration by parts
+above $1$ bounds every integral of $\sin u/u$ by $3$. Hence the
+small-neighborhood contribution is at most $4|\nu|((0,\eta])$,
+which tends to zero with $\eta$. This proves the Jordan conclusion
+separately from Dini.
+\end{proof}
+
+\begin{theorem}[Divergence for a continuous function]
+\label{p102:U1-03}
+At any prescribed $x\in\mathbb T_T$ there is a real continuous
+function $f$ for which $(S_N f(x))_{N\ge0}$ is unbounded.
+\end{theorem}
+
+\begin{proof}
+The linear functional $f\mapsto S_N f(x)$ on the real Banach space
+$C(\mathbb T_T)$ has norm $\|D_N\|_1$. The upper bound is the
+convolution estimate. For the lower bound use the continuous test
+function specified by
+\[
+ f(x-Tv/(2\pi))=\frac{D_N(v)}{|D_N(v)|+\eta}.
+\]
+Pass to the limit $\eta\downarrow0$ by dominated convergence. In angular
+coordinates, $\sin(v/2)\le v/2$ for $0<v\le\pi$, whence
+\[
+ \int_0^\pi |D_N(v)|\,dv\ge
+   2\int_0^{(N+1/2)\pi}\frac{|\sin u|}{u}\,du .
+\]
+Each full interval $[j\pi,(j+1)\pi]$, $j\ge1$, contributes at least
+$2/((j+1)\pi)$ to the latter integral before the factor $2$.
+The norms are thus unbounded. Uniform boundedness gives a single
+continuous $f$ on which the values are unbounded.
+\end{proof}
+
+For these two theorems compare \cite[Section~8.5]{folland},
+\cite[Section~3.4]{grafakos}, and \cite[Chapter~3, Section~2]{stein-shakarchi}.
+The pointwise counterexample is compatible with both the uniform
+convergence of Ces\`aro means and convergence in $L^2$ of ordinary sums.
+
+\section{Finite cyclic Fourier analysis}
+
+\begin{theorem}[Cyclic inversion, Parseval, and convolution]
+\label{p102:U1-05}
+For $m\ge1$, write $G=\mathbb Z/m\mathbb Z$. Give each point
+measure $1/m$ and put $\chi_k(j)=\exp(2\pi i kj/m)$ for $j,k\in G$.
+With
+\[
+ a_k(f)=\frac1m\sum_{j\in G} f(j)\overline{\chi_k(j)},\qquad
+ (f*g)(j)=\frac1m\sum_{\ell\in G}f(j-\ell)g(\ell),
+\]
+one has
+\begin{align*}
+ f(j)&=\sum_{k\in G}a_k(f)\chi_k(j),&
+ a_k(f*g)&=a_k(f)a_k(g),\\
+ \frac1m\sum_{j\in G}|f(j)|^2&=\sum_{k\in G}|a_k(f)|^2.
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+Changing either integer representative by a multiple of $m$
+does not change the character. For $k\ne\ell$, the ratio in
+$m^{-1}\sum_j\chi_{k-\ell}(j)$ is a nontrivial $m$th root of unity,
+so the sum is zero. For $k=\ell$ it is one. The $m$ orthonormal
+characters form a basis of the $m$-dimensional function space.
+Inversion and Parseval follow. For the convolution identity, interchange the
+finite sums and set $u=j-\ell$. Then
+$\overline{\chi_k(j)}=\overline{\chi_k(u)}\overline{\chi_k(\ell)}$,
+which factors the sum. When $m=1$ the character is the constant
+one and the same formulas reduce to scalar identities.
+\end{proof}
+
+The embedding $j\mapsto Tj/m$ identifies $G$ with the corresponding
+subgroup of $\mathbb T_T$. Restriction sends $e_k$ to $\chi_{k\bmod m}$.
+Thus sampled frequencies are residue classes, whereas the normalized
+continuous integral retains all integer frequencies. In each
+case the forward transform is an average and the inverse is a sum.
+See \cite[Chapter~7, Sections~1--2]{stein-shakarchi}.
+
+\section{Uniform density and rational approximation}
+
+\begin{lemma}[Bernstein polynomials]
+\label{p102:bernstein-polynomials}
+If $f\in C([0,1];\mathbb R)$ or $C([0,1];\mathbb C)$, then
+\[
+ B_n f(x)=\sum_{k=0}^n f(k/n)\binom nk x^k(1-x)^{n-k}
+\]
+converges to $f$ uniformly as $n\to\infty$.
+\end{lemma}
+
+\begin{proof}
+For $n\ge1$, the weights are a probability distribution on $k$.
+The binomial identities give mean $x$ and variance $x(1-x)/n$
+for $k/n$, by applying the identities for $k$ and $k(k-1)$.
+For $\delta>0$, split the weighted difference at
+$|k/n-x|=\delta$. The small part is at most the modulus of
+continuity at $\delta$, and the other part is bounded by
+$2\|f\|_\infty/(4n\delta^2)$ by the variance estimate. The bounds
+are uniform in $x$. Choose $\delta$ first and then let $n$ increase.
+\end{proof}
+
+\begin{theorem}[Algebraic and trigonometric uniform approximation]
+\label{p102:AN-13-C02-R01}
+For a real compact interval, algebraic polynomials are uniformly
+dense in continuous real- or complex-valued functions. On every
+$\mathbb T_T$, trigonometric polynomials are uniformly dense in
+continuous real- or complex-valued functions.
+\end{theorem}
+
+\begin{proof}
+An affine change of variable reduces a nondegenerate interval to
+$[0,1]$, and on a singleton use the constant value. The interval
+statement follows from the preceding lemma. Fej\'er approximation
+proves the circle statement. For real functions its real kernels
+give real-valued polynomials, which may be written in sines and
+cosines by pairing positive and negative frequencies.
+\end{proof}
+
+\begin{theorem}[Real and complex Stone--Weierstrass]
+\label{p102:AN-13-C03-R01}
+Let $K$ be compact Hausdorff. A real subalgebra of $C(K;\mathbb R)$
+containing the constants and separating points is uniformly dense.
+For a complex subalgebra of $C(K;\mathbb C)$, the analogous conclusion
+holds if it is also closed under conjugation.
+\end{theorem}
+
+\begin{proof}
+In the real case let $B$ be the uniform closure of the algebra.
+Continuity of addition and multiplication in the uniform norm shows
+that $B$ is again an algebra. For $b\in B$, the preceding polynomial
+approximation on $[-\|b\|_\infty,\|b\|_\infty]$ applied to absolute
+value shows $|b|\in B$. Thus $B$ is closed under pairwise maxima
+and minima by their formulas in terms of $b+c$ and $|b-c|$.
+
+Let $f\in C(K;\mathbb R)$ and $\epsilon>0$. For each $x,y\in K$
+choose $b_{x,y}\in B$ with values $f(x),f(y)$ at those points.
+Use an affine function of a separator, or a constant when $x=y$.
+For fixed $x$, the open sets on which $b_{x,y}>f-\epsilon$ cover
+$K$ as $y$ varies. Take finitely many and form the maximum $b_x$.
+Then $b_x>f-\epsilon$ everywhere and $b_x(x)=f(x)$. The open sets
+where $b_x<f+\epsilon$ cover $K$ as $x$ varies. A finite minimum
+of the corresponding $b_x$ lies between $f-\epsilon$ and
+$f+\epsilon$ on $K$. This proves $f\in B$. For empty $K$ the
+space has only the zero function.
+
+For the complex case, real and imaginary parts of each algebra
+element lie in the algebra by conjugation and complex scalar
+multiplication. Its real-valued elements form a real subalgebra
+that separates points, since a complex separator differs in
+at least one part. Approximate the two parts separately and add
+the approximations with the factor $i$.
+\end{proof}
+
+\begin{theorem}[Runge approximation with specified spherical poles]
+\label{p102:AN-13-C02-R02}
+Let $K\subset\mathbb C$ be compact and $f$ holomorphic on an open
+neighborhood $V$ of $K$. Suppose $A\subset\widehat{\mathbb C}\setminus K$
+meets every connected component of the spherical complement.
+Then for every $\epsilon>0$ there is a rational function $R$
+finite on $K$ whose spherical poles belong to $A$ and with
+$\sup_{z\in K}|f(z)-R(z)|<\epsilon$.
+\end{theorem}
+
+\begin{proof}
+For empty $K$ use $R=0$ and the zero uniform norm. Otherwise take
+a finite union $Q$ of closed grid squares with $K$ in its interior
+and $Q\subset V$. Such a union is obtained by first choosing
+$\rho>0$ with the closed $\rho$-neighborhood of $K$ in $V$, then
+choosing grid squares of diameter less than $\rho/4$ that meet the
+closed $\rho/2$-neighborhood. Every selected square lies in $V$,
+and the open $\rho/2$-neighborhood is inside the union. The oriented
+sum $\Gamma$ of square boundaries cancels all shared sides. Its
+remaining sides have positive distance from $K$. For points of
+the interior away from grid lines, Cauchy's formula in the square
+containing the point and Cauchy's theorem in the other squares
+give
+\[
+ f(z)=\frac{1}{2\pi i}\int_\Gamma\frac{f(\zeta)}{\zeta-z}\,d\zeta .
+\]
+The right-hand side is continuous off $\Gamma$, so the identity
+extends to $K$ by taking limits from interior points off grid lines.
+Uniform continuity of the integrands on each side times $K$ makes
+Riemann sums uniformly convergent on $K$. Hence it suffices to
+approximate the restrictions of the simple kernels at poles
+$\zeta\notin K$ by permitted rational restrictions.
+
+Let $B$ be the closed subalgebra of $C(K;\mathbb C)$ generated by
+the restrictions of rational functions whose spherical poles lie in
+$A$. Those restrictions already form a unital algebra, so $B$ is
+their uniform closure. For finite $b\notin K$ write $r_b(z)=(z-b)^{-1}$.
+The set of such $b$ with $r_b\in B$ is relatively closed because
+$b\mapsto r_b$ is continuous in the uniform norm. It is relatively
+open since for $|c-b|<\operatorname{dist}(b,K)$ the series
+\[
+ r_c=\sum_{j=0}^{\infty}(c-b)^j r_b^{\,j+1}
+\]
+converges uniformly. Every component of the spherical complement
+is open and path connected, since open sets in the sphere are
+locally path connected. If a path passes through $\infty$, choose
+a coordinate disk around $\infty$ contained in that component and
+replace the portion between first entrance and last exit from a
+smaller disk by a path in its punctured neighborhood. Thus the
+finite part of a component is connected. A component containing
+a finite allowed pole supplies a point with $r_b\in B$. If the
+only chosen pole is $\infty$, then $B$ contains the polynomials,
+and for $|b|>\sup_{z\in K}|z|$ the uniformly convergent expansion
+$r_b(z)=-\sum_{j\ge0}z^j/b^{j+1}$ supplies the required point in
+the exterior component. Openness and closedness now give $r_b\in B$
+throughout the finite complement. The contour approximation puts
+$f|_K$ in $B$, yielding the required rational approximant.
+\end{proof}
+
+In this theorem a rational function means its meromorphic extension
+to the sphere. After a polynomial numerator and nonzero denominator
+are reduced by their common factor, a cancelled root contributes
+no pole. At infinity the reduced numerator degree must exceed the
+denominator degree to give a pole. Thus the pole condition includes
+infinity precisely when it is a permitted location and the function
+has an actual pole there. This is the convention in the published
+D12 spherical theorem, including disconnected $V$ and empty $K$.
+Complex differentiability on the open neighborhood and holomorphy
+there are equivalent descriptions of the same hypothesis. For this
+result compare \cite[Chapter~VIII, Section~1, Theorem~1.7]{conway}
+and \cite[Chapter~15]{d12}. For the density arguments see
+\cite[Section~4.7, Theorems~4.45 and 4.51]{folland},
+\cite[Sections~11.14--11.15]{apostol}, and
+\cite[Chapters~1 and 10]{devore-lorentz}.
+
+\section{Best approximation and error estimates}
+
+\begin{theorem}[Best polynomial approximation and alternation]
+\label{p102:U1-06}
+Let $a<b$, $f\in C([a,b];\mathbb R)$ and $n\ge0$. There is a unique
+real polynomial $p$ of degree at most $n$ minimizing
+$\|f-p\|_\infty$. If $E=\|f-p\|_\infty>0$, then $p$ is a minimizer
+if and only if there are $n+2$ ordered points
+$a\le x_0<\cdots<x_{n+1}\le b$ and $\sigma\in\{-1,1\}$ with
+$f(x_j)-p(x_j)=\sigma(-1)^j E$.
+\end{theorem}
+
+\begin{proof}
+Choose a minimizing sequence. Its polynomial norms are bounded,
+and bounded sets in this finite-dimensional subspace of $C([a,b])$
+have compact closure. A convergent subsequence gives existence.
+If $E=0$, any minimizer agrees with $f$ on the interval and hence
+with the given polynomial. Suppose $E>0$ and let
+$E_\pm=\{x:f(x)-p(x)=\pm E\}$. If there are $n+2$ alternating
+extrema, a polynomial $p'$ with smaller error has $p'-p$ strictly
+positive at positive extrema and strictly negative at negative
+extrema. It then has at least $n+1$ distinct zeros, impossible.
+
+For necessity assume that there is no alternating sequence of
+$n+2$ points. The union of the two compact extreme sets is nonempty.
+Starting at its leftmost point, mark the leftmost later point of
+the opposite sign whenever one exists. The marked sequence has
+at most $n+1$ points. Between two consecutive marked points, all
+extrema before the next mark have the previous sign. The last
+extremum of that sign before the next mark exists and lies strictly
+to its left, since the two compact extreme sets are disjoint and
+positively separated when both are nonempty. Pick a separator in
+each resulting gap. A polynomial $q$ with exactly these simple
+roots and an appropriate leading sign has the sign of $f-p$ on
+the extreme sets and has degree at most $n$. In the one-sign
+case take a nonzero constant. Let $m>0$ be the minimum of $|q|$
+on the extreme sets and $M=\|q\|_\infty$. By compactness and
+continuity choose a neighborhood of the extreme sets on which
+$q$ and $f-p$ have the same sign, $|q|\ge m/2$, and
+$|f-p|\ge E/2$. The compact complement has a uniform slack
+$|f-p|\le E-\delta$ for some $\delta>0$ if it is nonempty.
+For sufficiently small $\tau>0$ with $\tau M<E/2$ and
+$\tau M<\delta$ in the nonempty case, the error of $p+\tau q$
+is at most $E-\tau m/2$ on the neighborhood and strictly less than
+$E$ uniformly on its complement. This contradicts minimality.
+
+If $p,p'$ are both minimizers, their midpoint is a minimizer by
+convexity of the norm. In the positive-error case apply necessity
+to the midpoint. At each of its alternating extreme points both
+errors must equal the same signed $E$, since each is in $[-E,E]$
+and their average is an endpoint. Thus $p-p'$ vanishes at $n+2$
+points and is identically zero.
+\end{proof}
+
+\begin{theorem}[Bernstein and Markov derivative estimates]
+\label{p102:U1-07}
+For a trigonometric polynomial $P$ of degree at most $n$ on
+$\mathbb T_T$ and an algebraic polynomial $p$ of degree at most $n$,
+\[
+ \|P'\|_\infty\le (2\pi/T)n\|P\|_\infty,\qquad
+ \|p'\|_{C([a,b])}\le \frac{2n^2}{b-a}\|p\|_{C([a,b])}\quad(a<b).
+\]
+Both estimates hold for real or complex coefficients.
+\end{theorem}
+
+\begin{proof}
+Reduce first to a real trigonometric polynomial with angular
+period $2\pi$ and $n\ge1$. Suppose $|P'(v_0)|>n\|P\|_\infty$.
+Choose $M>\|P\|_\infty$ with $nM<|P'(v_0)|$.
+There is $C(v)=M\cos(n(v-v_0)+\theta)$ with
+$C(v_0)=P(v_0)$ and $C'(v_0)$ having the sign of $P'(v_0)$.
+Indeed $|P(v_0)|<M$ permits the two phase choices with opposite
+nonzero sine. At the $2n$ consecutive extrema of $C$ on the
+circle, $P-C$ has alternating strict signs. Every gap contains a
+zero. In the gap containing $v_0$, the derivative of $P-C$ at
+$v_0$ has the sign of $C'(v_0)$, giving a local crossing opposite
+to the crossing required by the endpoint signs. The intermediate
+value theorem then gives a further zero on each side of $v_0$
+in that gap. Thus $P-C$ has at least $2n+2$ distinct zeros on
+the circle. A nonzero trigonometric polynomial of degree $n$
+has at most $2n$ such zeros because multiplication by $e^{inv}$
+gives an algebraic polynomial in $e^{iv}$ of degree at most $2n$.
+The strict endpoint signs rule out the zero polynomial. This
+proves Bernstein's bound.
+
+For Markov reduce to $[-1,1]$. Applying Bernstein to $P(v)=p(\cos v)$
+gives $|p'(x)|\sqrt{1-x^2}\le n\|p\|_\infty$. Set
+$y=\cos(\pi/(2n))$. For $|x|\le y$ this already gives $n^2$,
+since $\sin(\pi/(2n))\ge1/n$. For $x\in[y,1]$ interpolate at
+$x_k=\cos(k\pi/n)$, $0\le k\le n$, and write $\ell_k$ for the
+fundamental Lagrange polynomials. We claim
+$(-1)^k\ell_k'(x)\ge0$ on this interval. For $k=0$ all factors
+of its numerator are positive there. For $k\ge1$ the denominator
+has sign $(-1)^k$, while the derivative of the numerator has
+the sign of
+\[
+ 1-(1-x)\sum_{\substack{1\le j\le n\\j\ne k}}\frac1{x-x_j}.
+\]
+The full sum, with all $1\le j\le n$, multiplied by $1-x$ is
+decreasing for $x\in[y,1)$. To bound it at $x=y$, write the node
+polynomial as a positive multiple of
+$w(x)=(x^2-1)U_{n-1}(x)
+     =-\sqrt{1-x^2}\sin(n\arccos x)$, where
+$U_{n-1}(\cos v)=\sin(nv)/\sin v$ is the polynomial obtained
+by the sine recurrence. At $y$ the polynomial is negative
+and $w'(y)=y/\sqrt{1-y^2}\ge0$. Its logarithmic derivative
+$w'/w=-(1-x)^{-1}+\sum_{j=1}^n(x-x_j)^{-1}$ is therefore
+nonpositive at $y$, proving the bound on the full sum. The
+claimed sign follows, with $x=1$ by continuity. The interpolant
+to the alternating node values is $T_n(x)=\cos(n\arccos x)$.
+Consequently
+\[
+ |p'(x)|\le\|p\|_\infty\sum_k|\ell_k'(x)|
+       =\|p\|_\infty T_n'(x)\le n^2\|p\|_\infty .
+\]
+The final inequality follows from
+$T_n'(\cos v)=n\sin(nv)/\sin v$ and
+$|\sin(nv)|\le n|\sin v|$, the latter by summing the geometric
+progression for $\sin(nv)/\sin v$. Reflection handles the left
+end. Affine scaling gives the interval factor. The case $n=0$
+is immediate. For complex coefficients at a point where the
+derivative is nonzero, multiply by a unimodular scalar that makes
+that derivative real and positive and take real parts. This
+preserves its magnitude at the point and does not increase the
+supremum norm, proving both complex inequalities.
+\end{proof}
+
+\begin{theorem}[Jackson estimates and the classical periodic inverse]
+\label{p102:U1-08}
+For $f\in C(\mathbb T_T)$, let $E_n(f)$ denote best uniform approximation error by
+trigonometric polynomials of degree at most $n$ on $\mathbb T_T$.
+Let $\omega(f,\delta)$ be the supremum of $|f(x)-f(y)|$ over
+points at distance at most $\delta$ on the circle. For $n\ge1$,
+\[
+ E_n(f)\le C\,\omega(f,T/n).
+\]
+For $0<\alpha<1$, the error satisfies $E_n(f)=O(n^{-\alpha})$
+if and only if $f$ is H\"older continuous of order $\alpha$.
+For $f\in C([a,b])$ on an interval $a<b$, with algebraic polynomials and the ordinary distance,
+the direct estimate is $E_n(f)\le C\,\omega(f,(b-a)/n)$.
+\end{theorem}
+
+\begin{proof}
+Work first in angular coordinates. For $m\ge1$ normalize
+\[
+ Q_m(v)=\left|\sum_{k=0}^{m-1}e^{ikv}\right|^4,\qquad
+ J_m=Q_m\left/\int_{\mathbb T_{2\pi}} Q_m\,dm_{2\pi}\right. .
+\]
+The kernel is nonnegative, even, and a trigonometric polynomial
+of degree at most $2m-2$. For $0<|v|\le\pi$ the geometric sum
+and the bound on the sum of $m$ unit vectors give
+$Q_m(v)\le C\min(m^4,|v|^{-4})$. For $|v|\le 1/m$,
+the sine quotient has magnitude at least $c m$, by the sine
+bounds near zero. Thus $\int Q_m\,dm_{2\pi}\ge c' m^3$.
+Integrating $|v|Q_m(v)$ separately below and above $1/m$
+gives $\int |v|J_m(v)\,dm_{2\pi}(v)\le C/m$.
+Subdivide an arc of length $|v|$ into at most $1+m|v|$
+pieces of length at most $1/m$. It follows that
+\[
+ \|f-f*J_m\|_\infty\le
+  \omega(f,1/m)\int(1+m|v|)J_m(v)\,dm_{2\pi}(v)
+  \le C'\omega(f,1/m).
+\]
+Choose $m=\lfloor n/2\rfloor+1$ and transport the estimate to
+$\mathbb T_T$. The arc length corresponding to $1/m$ is
+$T/(2\pi m)\le T/n$. The convolution is a polynomial of
+degree at most $n$. This proves the direct estimate and the
+implication from H\"older continuity.
+
+Conversely choose polynomials $P_j$ of degree at most $2^j$
+with $\|P_j-f\|_\infty\le A2^{-\alpha j}$, increasing $A$
+to cover finitely many low frequencies and a choice within
+the infimum. Put $Q_j=P_j-P_{j-1}$ for $j\ge1$. Then
+$\|Q_j\|_\infty\le C_\alpha A2^{-\alpha j}$ and Bernstein gives
+$\|Q_j'\|_\infty\le C_{\alpha,T} A2^{(1-\alpha)j}$.
+For arc distance $0<h\le T/2$, choose $J\ge1$ with
+$T2^{-J-1}<h\le T2^{-J}$. Summing
+$h\|Q_j'\|_\infty$ for $1\le j\le J$ gives a bound
+$C_{\alpha,T}Ah^\alpha$, since the geometric sum has ratio
+$2^{1-\alpha}>1$. The high-frequency tail
+$2\|f-P_J\|_\infty$ has the same bound. The increment of $P_0$
+is bounded by $h\|P_0'\|_\infty$ and hence by a constant times
+$h^\alpha$. The entire increment is $O(h^\alpha)$.
+
+For $a<b$, let $c=(a+b)/2$, $d=(b-a)/2$, and put
+$F(v)=f(c+d\cos v)$. This is even and $2\pi$-periodic.
+Its modulus satisfies $\omega(F,s)\le\omega(f,ds)$ since
+cosine is $1$-Lipschitz with respect to circle distance.
+The even kernel $J_m$ gives an even approximant, hence a finite
+cosine sum. Each $\cos(kv)=T_k(\cos v)$ is a polynomial in
+$\cos v$ of degree $k$. Substitution gives an algebraic
+polynomial on $[a,b]$ with the same uniform error. Use the
+angular estimate with step $1/m$ and $d/m\le(b-a)/n$.
+On a singleton constant approximation is exact.
+\end{proof}
+
+The alternation criterion is the one for real approximation on a
+real interval. The periodic inverse statement uses
+$0<\alpha<1$ because its derivative series involves the factor
+$2^{1-\alpha}$. The direct algebraic estimate only uses the
+cosine change of variable. The converse at algebraic endpoints
+requires different smoothness scales and is treated separately
+in the approximation literature. See \cite[Chapter~3, Sections~1--6,
+Chapter~4, Section~1, and Chapters~7--8]{devore-lorentz} and
+\cite[Section~3.11(i)]{dlmf}.
+\chapter[Convolution and singular integrals]{Convolution, maximal estimates, and singular integrals}
+\label{p102:chapter-u2}
+
+Write \(dx\) for Lebesgue measure on \(\mathbb R^d\), \(d\geq1\), and use its completion when working with almost-everywhere equivalence classes. A measurable function for the completion has a Borel representative: approximate its real and imaginary parts by simple functions, replace each completed measurable level set by a Borel set differing by a null set, and take the limit outside the resulting countable union of null sets. Integrals, norms, and almost-everywhere identities computed with these representatives agree. We use \(1/\infty=0\). On the circle \(\mathbb T_T=\mathbb R/T\mathbb Z\), convolution uses the probability Haar measure \(d\mu_T=dt/T\) on any fundamental interval.
+
+\section{Convolution and approximation}
+
+\begin{theorem}[Young's inequality]
+\label{p102:AN-06-C02-R01}
+If \(1\le p,q,r\le\infty\), \(1+1/r=1/p+1/q\), \(f\in L^p(\mathbb R^d)\), and \(g\in L^q(\mathbb R^d)\), then
+\[
+(f*g)(x)=\int_{\mathbb R^d} f(x-y)g(y)\,dy
+\]
+exists absolutely almost everywhere, defines a measurable class independent of the representatives, and satisfies \(\|f*g\|_r\le\|f\|_p\|g\|_q\). The same proof works on \(\mathbb T_T\) with its Haar measure. See \cite[\S1.2.3]{grafakos} and \cite[\S10.5]{leoni}.
+\end{theorem}
+
+\begin{proof}
+If \(r=\infty\), Hölder with conjugate exponents \(p,q\) gives the bound at every point for which the formula is evaluated using measurable representatives, since translations preserve the relevant norms. Suppose \(r<\infty\). Then \(p,q\le r\). Factor the absolute integrand as
+\[
+ \bigl(|f(x-y)|^{p}|g(y)|^q\bigr)^{1/r}
+ |f(x-y)|^{1-p/r}|g(y)|^{1-q/r}.
+\]
+Use Hölder with reciprocal exponents \(1/r,1/p-1/r,1/q-1/r\), whose sum is one. A zero reciprocal means the corresponding factor is identically one, including at zeros of the base. Thus
+\[
+ \int |f(x-y)g(y)|\,dy\le
+ \left(\int |f(x-y)|^p|g(y)|^qdy\right)^{1/r}
+ \|f\|_p^{1-p/r}\|g\|_q^{1-q/r}.
+\]
+If either norm is zero, the conclusion follows directly by translation invariance. Otherwise raise to the \(r\)-th power and apply Tonelli in \(x,y\). The double integral on the right is \(\|f\|_p^p\|g\|_q^q\). Hence the absolute integral is finite almost everywhere and has the stated \(L^r\) bound. Measurability follows from the measurable joint integrand, first for Borel representatives and then in the completion. Changing either representative alters the integrand only on a null set of \(y\) for each fixed \(x\), by translation and reflection invariance. The circle proof uses the corresponding Haar invariances.
+\end{proof}
+
+\begin{theorem}[Approximate identities]
+\label{p102:AN-06-C02-R02}
+Suppose \(k_\varepsilon\in L^1(\mathbb R^d)\),
+\(\int k_\varepsilon=1\), \(\sup_\varepsilon\|k_\varepsilon\|_1=A<\infty\), and
+\(\int_{|y|>\delta}|k_\varepsilon(y)|\,dy\to0\) for each \(\delta>0\).
+Then \(k_\varepsilon*f\to f\) in \(L^p\) for \(1\le p<\infty\). If the given representative of \(f\) is bounded and uniformly continuous, the convergence is uniform over \(\mathbb R^d\). These conclusions also hold on the circle, with the distance to the identity used in the tail condition. The kernels may be complex or change sign. See \cite[\S1.2.4]{grafakos}.
+\end{theorem}
+
+\begin{proof}
+Translations \(\tau_y f=f(\,\cdot-y)\) are isometries. For a continuous compactly supported function they converge to the identity in \(L^p\) by uniform continuity and a common compact support for small shifts. By density they do so for every finite \(p\). On the circle the argument uses density of continuous functions, which follows by approximating measurable sets by compact and open sets and separating them by continuous functions. Minkowski's integral inequality and \(\int k_\varepsilon=1\) give
+\[
+ \|k_\varepsilon*f-f\|_p
+ \le \int |k_\varepsilon(y)|\,\|\tau_y f-f\|_p\,dy.
+\]
+For \(|y|\le\delta\) the integral is bounded by \(A\sup_{|y|\le\delta}\|\tau_y f-f\|_p\). The remaining integral is at most \(2\|f\|_p\int_{|y|>\delta}|k_\varepsilon|\). First choose \(\delta\) and then let \(\varepsilon\) tend to zero. For the bounded uniformly continuous representative the convolution exists everywhere and the same estimate holds pointwise with the modulus of uniform continuity on the small ball and \(2\|f\|_\infty\) outside. This gives the supremum over actual points.
+\end{proof}
+
+\begin{corollary}[Fej\'er recovery in finite norms]
+\label{p102:fejer-lp}
+With the kernel and normalization of Theorem~\ref{p102:AN-06-C01-S02}, the Fej\'er means of each \(f\in L^p(\mathbb T_T)\), \(1\le p<\infty\), converge in \(L^p\). In particular, trigonometric polynomials are dense in each of these spaces.
+\end{corollary}
+\begin{proof}
+The kernel is nonnegative, has mass one, and its mass outside each neighborhood of the identity tends to zero. Apply Theorem~\ref{p102:AN-06-C02-R02}. The convolution is a finite trigonometric polynomial because the kernel is one.
+\end{proof}
+
+\begin{corollary}[Uniqueness and absolutely convergent inversion on the circle]
+\label{p102:AN-06-C01-S03}
+Two \(L^1(\mathbb T_T)\) classes with the same Fourier coefficients are equal. If the coefficients of \(f\in L^1\) are absolutely summable, their Fourier series converges absolutely and uniformly, yields a continuous representative, and equals the chosen representative at each of its continuity points.
+\end{corollary}
+\begin{proof}
+The difference of the two classes has identically zero Fej\'er means and so vanishes in \(L^1\). With summable coefficients the Weierstrass test gives uniform convergence, and termwise integration gives exactly those coefficients. Uniqueness identifies the class. For the last assertion, every open arc has positive measure, so a full-measure set of equality accumulates at each point. Passing to that point through the set of equality proves the claim wherever the chosen representative is continuous.
+\end{proof}
+
+\section{Maximal functions and real interpolation}
+
+\begin{definition}[Distribution functions and weak norms]
+\label{p102:U2-01}
+For a measurable \(h\), let \(D_h(t)=\mu\{|h|>t\}\) for \(t>0\).
+For \(0<q<\infty\) put \(\|h\|_{q,\infty}=\sup_{t>0}tD_h(t)^{1/q}\).
+At \(q=\infty\) use the essential supremum norm. For any \(q>0\), Tonelli applied to \(|h(x)|^q=\int_0^{|h(x)|}qt^{q-1}\,dt\) gives the layer-cake identity
+\[
+ \|h\|_q^q=\int_0^\infty qt^{q-1}D_h(t)\,dt.
+\]
+For the weak endpoint arguments we also use, for \(0<\delta<1\) and \(0<\mu(E)<\infty\),
+\[
+ \left(\frac1{\mu(E)}\int_E|h|^\delta\right)^{1/\delta}
+ \le (1-\delta)^{-1/\delta}\,\frac{\|h\|_{1,\infty}}{\mu(E)}.
+\]
+Indeed, integrate \(\delta t^{\delta-1}\min(\mu(E),\|h\|_{1,\infty}/t)\), splitting at \(\|h\|_{1,\infty}/\mu(E)\). See \cite[\S\S1.3.1 and 1.4.1--1.4.2]{grafakos}.
+\end{definition}
+
+\begin{theorem}[Diagonal Marcinkiewicz interpolation]
+\label{p102:AN-06-C04-R02}
+Let \(1\le p_0<p_1\le\infty\) on sigma-finite measure spaces, and suppose the same sublinear operator \(T\) is defined on \(L^{p_0}+L^{p_1}\), with
+\(\|Tf\|_{p_j,\infty}\le M_j\|f\|_{p_j}\). Sublinearity here means \(|T(f+g)|\le |Tf|+|Tg|\) almost everywhere and absolute homogeneity. If \(p_0<p<p_1\), then \(T\) is bounded on \(L^p\), with a bound in terms of the exponents and endpoint bounds.
+\end{theorem}
+\begin{proof}
+For \(f\in L^p\), the portions above and below any positive threshold belong to \(L^{p_0}\) and \(L^{p_1}\), respectively. For \(p_1<\infty\), write \(f=f_>+f_\le\) at threshold \(t\), so
+\[
+ D_{Tf}(t)\le (2M_0/t)^{p_0}\!\int_{\{|f|>t\}}\!|f|^{p_0}
+           +(2M_1/t)^{p_1}\!\int_{\{|f|\le t\}}\!|f|^{p_1}.
+\]
+After multiplication by \(pt^{p-1}\), integrate and apply Tonelli. The inner integrals are \(\int_0^{|f(x)|}t^{p-p_0-1}\,dt\) and \(\int_{|f(x)|}^\infty t^{p-p_1-1}\,dt\) on \(\{|f|>0\}\). This yields
+\[
+ \|Tf\|_p^p\le p\left(\frac{(2M_0)^{p_0}}{p-p_0}
+                    +\frac{(2M_1)^{p_1}}{p_1-p}\right)\|f\|_p^p.
+\]
+For \(p_1=\infty\) and \(M_1>0\), split at \(t/(2M_1)\), so the bounded portion contributes at most \(t/2\) pointwise almost everywhere. The first integral now runs up to \(2M_1|f(x)|\) and gives \(p(2M_0)^{p_0}(2M_1)^{p-p_0}\|f\|_p^p/(p-p_0)\). One may use any positive upper bound for \(M_1\) when it is zero. These estimates use only the chosen two endpoint bounds and compatibility on their sum.
+\end{proof}
+
+\begin{theorem}[Hardy--Littlewood maximal estimates]
+\label{p102:AN-06-C03-R01}
+For \(f\in L^1_{\mathrm{loc}}(\mathbb R^d)\), put
+\[
+ M_cf(x)=\sup_{r>0}\frac1{|B(x,r)|}\int_{B(x,r)}|f|,
+ \qquad
+ M_uf(x)=\sup_{B\ni x}\frac1{|B|}\int_B|f|,
+\]
+where \(B\) runs over open Euclidean balls. Both functions are measurable, \(M_c\le M_u\le 2^dM_c\), and for \(f\in L^1,\lambda>0\),
+\[
+ |\{M_cf>\lambda\}|\le 3^d\|f\|_1/\lambda,\qquad
+ |\{M_uf>\lambda\}|\le 6^d\|f\|_1/\lambda.
+\]
+The maximal functions depend only on the almost-everywhere class. See \cite[\S2.1.1]{grafakos} and \cite[Chapter I]{stein}.
+\end{theorem}
+\begin{proof}
+For a fixed radius, the centered integral is continuous in the center because the indicators of balls with convergent centers converge off their limiting sphere, and \(|f|\) is integrable on a common bounded ball. Thus \(M_c\) has open strict superlevel sets. The corresponding set for \(M_u\) is a union of open balls. A ball of radius \(r\) containing \(x\) lies inside \(B(x,2r)\), proving comparison. Changing \(f\) on a null set changes none of the averages.
+
+Cover a compact subset of \(\{M_cf>\lambda\}\) by a finite family of witnessing balls. In decreasing order of radius, retain a ball if it is disjoint from all balls already retained. Every rejected ball meets a retained ball of at least its radius, hence lies in its triple dilation. The compact subset has measure bounded by \(3^d\sum_i |B_i|<3^d\|f\|_1/\lambda\) using the disjoint retained balls. Inner regularity gives the bound on the open set, and comparison gives the uncentered bound.
+\end{proof}
+
+\begin{corollary}[Strong maximal estimates]
+\label{p102:AN-06-C03-R02}
+For either maximal operator, \(\|Mf\|_p\le C_{d,p}\|f\|_p\) when \(1<p<\infty\), and \(\|Mf\|_\infty\le\|f\|_\infty\).
+\end{corollary}
+\begin{proof}
+Local integrability follows from Hölder on each bounded ball. The essential supremum controls each average. The operators are sublinear on \(L^1+L^\infty\), and the finite \(p\) estimate follows from Theorem~\ref{p102:AN-06-C04-R02} with endpoints \(1,\infty\).
+\end{proof}
+
+\begin{theorem}[Lebesgue points]
+\label{p102:AN-06-C03-R03}
+For \(f\in L^1_{\mathrm{loc}}(\mathbb R^d)\), almost every \(x\) satisfies
+\[
+ \lim_{r\downarrow0}\frac1{|B(x,r)|}\int_{B(x,r)}|f(y)-f(x)|\,dy=0.
+\]
+The same points give convergence of the ball averages to \(f(x)\), also for any family of balls containing \(x\) with radii tending to zero. See \cite[\S2.1.3]{grafakos} and \cite[\S3.4]{folland}.
+\end{theorem}
+\begin{proof}
+For \(f\in L^1\) define \(Df(x)\) as the limsup of the averages in the statement. It is measurable, using rational radii since the averages are continuous in each positive radius. For \(g\in C_c(\mathbb R^d)\), continuity gives \(Dg(x)=0\) everywhere. The triangle inequality gives
+\(Df(x)\le M_c(f-g)(x)+|f(x)-g(x)|\). Hence the measure of \(\{Df>\eta\}\) is at most \(2(3^d+1)\|f-g\|_1/\eta\) by the weak bound and Markov's inequality. Approximate \(f\) in \(L^1\) and take countably many positive \(\eta\). For locally integrable \(f\), apply the result to \(f1_{B(0,N)}\) and then use the equality of all sufficiently small averages when \(|x|<N\). A ball \(B(z,r)\ni x\) lies inside \(B(x,2r)\), with volume ratio \(2^d\). This transfers the same oscillation estimate to these balls. The convergence of the averages follows by the triangle inequality.
+\end{proof}
+
+\section{Dyadic decomposition and singular operators}
+
+\begin{theorem}[Calder\'on--Zygmund decomposition]
+\label{p102:U2-02}
+For \(f\in L^1(\mathbb R^d)\) and \(\lambda>0\) there are pairwise disjoint half-open dyadic cubes \(Q\) with
+\[
+ \lambda<\frac{1}{|Q|}\int_Q|f|\le2^d\lambda,\qquad
+ \sum_Q|Q|\le\|f\|_1/\lambda .
+\]
+One has \(f=g+\sum_Q b_Q\), where \(g=f\) off their union and \(g=f_Q=|Q|^{-1}\int_Q f\) on \(Q\), and \(b_Q=(f-f_Q)1_Q\). In particular,
+\[
+ \|g\|_\infty\le2^d\lambda,\quad \|g\|_1\le\|f\|_1,\quad
+ \int b_Q=0,\quad \sum_Q\|b_Q\|_1\le2\|f\|_1.
+\]
+The sum converges in \(L^1\). If \(f\in L^2\), it converges in \(L^2\) as well. See \cite[\S5.3.1]{grafakos}.
+\end{theorem}
+\begin{proof}
+Take the maximal dyadic cubes with average of \(|f|\) exceeding \(\lambda\). Every eligible cube has a maximal ancestor because sufficiently large cube averages are bounded by \(\|f\|_1/|Q|\). Dyadic nesting gives disjointness, and the parent average gives the upper bound. Summing the lower bound gives the measure estimate. At each Lebesgue point of \(f\) outside the union the nested dyadic cubes through the point have averages tending to \(|f(x)|\). For this transfer, contain each cube in a ball of radius \(\sqrt d\) times its sidelength about the point and use the fixed volume ratio and the oscillation estimate. Thus \(|f|\le\lambda\) there. The remaining \(L^1\) conclusions follow by integration on disjoint cubes. For \(L^2\), one has \(\int_Q|f-f_Q|^2=\int_Q|f|^2-|Q||f_Q|^2\le\int_Q|f|^2\), so disjointness makes finite partial sums Cauchy in \(L^2\).
+\end{proof}
+
+\begin{theorem}[A convolution singular-integral theorem]
+\label{p102:U2-03}
+Let \(T\) be a bounded linear operator on \(L^2(\mathbb R^d)\) with kernel \(K\in L^1_{\mathrm{loc}}(\mathbb R^d\setminus\{0\})\). Assume that for \(b\in L^2\) with compact support,
+\[
+ Tb(x)=\int K(x-y)b(y)\,dy\quad\text{for almost every }x\notin\operatorname{supp} b.
+\]
+Assume also the uniform integral difference bound
+\[
+ \sup_{h\ne0}\int_{|z|>2|h|}|K(z-h)-K(z)|\,dz\le A .
+\]
+Then \(T\) has a compatible weak \((1,1)\) extension and bounded extensions on every \(L^p\), \(1<p<\infty\). The bounds depend only on \(d,p,A\) and \(\|T\|_{2\to2}\). A continuously differentiable kernel with \(|\nabla K(z)|\le B|z|^{-d-1}\) satisfies the difference assumption. See \cite[\S5.3.2]{grafakos}.
+\end{theorem}
+\begin{proof}
+Apply Theorem~\ref{p102:U2-02} first to \(f\in L^1\cap L^2\). Enlarge each bad cube to a ball \(E_Q\) centered at its center \(c_Q\) with radius twice its diameter, and set \(E=\bigcup_Q E_Q\). Then \(|E|\le C_d\|f\|_1/\lambda\). The good term satisfies \(\|g\|_2^2\le2^d\lambda\|f\|_1\), so the \(L^2\) estimate controls \(|\{|Tg|>\lambda/2\}|\) by \(C_d\|T\|_{2\to2}^2\|f\|_1/\lambda\). For \(x\notin E_Q\), cancellation gives
+\[
+ Tb_Q(x)=\int_Q [K(x-y)-K(x-c_Q)]b_Q(y)\,dy.
+\]
+The difference condition and Tonelli give \(\int_{E_Q^c}|Tb_Q|\le A\|b_Q\|_1\). Use \(L^2\) convergence of finite bad sums and take an almost-everywhere convergent subsequence of their images. Fatou gives
+\(\int_{E^c}|T\sum_Q b_Q|\le2A\|f\|_1\). Markov's inequality yields the weak bound.
+
+For clarity about compatibility, approximate in \(L^1\) by \(L^1\cap L^2\). The weak bound on differences gives convergence in measure to a uniquely defined class. Indeed, a subsequence of successive differences can be chosen so that their superlevel sets at heights \(2^{-j}\) have summable measures. Borel--Cantelli then gives almost-everywhere convergence of that subsequence, and the difference bound identifies the limit of the full approximating sequence in measure. The extension is linear and the weak bound persists by Fatou for strict superlevel sets. It agrees on the intersection, so it and the original \(L^2\) action give one operator on the sum \(L^1+L^2\). Interpolation proves the strong bounds below \(2\).
+
+The adjoint on \(L^2\) has off-support kernel \(K^*(z)=\overline{K(-z)}\). To see this, pair compactly supported smooth functions with separated supports, apply Fubini in the off-support formula, and identify the resulting locally integrable representative away from the support. Compactly supported \(L^2\) inputs follow by approximating in \(L^2\) within a bounded neighborhood of their support, or directly by testing against smooth functions supported a positive distance away, where the absolute double integral is finite. Reflection shows that \(K^*\) obeys the same difference estimate. Its strong bounds below \(2\) give those of \(T\) above \(2\) by dual testing on \(L^2\cap L^{p'}\), which is dense in \(L^{p'}\). All extensions therefore agree on their common initial classes and, by simultaneous truncation in support and size, on overlaps. Finally the segment from \(z\) to \(z-h\) stays in \(\{|w|>|z|/2\}\) when \(|z|>2|h|\). Integrating the bound \(2^{d+1}B|h||z|^{-d-1}\) proves the last assertion.
+\end{proof}
+
+\begin{theorem}[Riesz potentials]
+\label{p102:U2-04}
+For \(0<\alpha<d\), let \(I_\alpha f(x)=\int |x-y|^{\alpha-d}f(y)\,dy\). If \(1<p<d/\alpha\) and \(1/q=1/p-\alpha/d\), then \(\|I_\alpha f\|_q\le C_{d,\alpha,p}\|f\|_p\). For \(p=1\), \(\|I_\alpha f\|_{d/(d-\alpha),\infty}\le C_{d,\alpha}\|f\|_1\). The integrals exist absolutely almost everywhere and define the same class for equal input classes. See \cite[Chapter V, \S1]{stein} and \cite{hedberg}.
+\end{theorem}
+\begin{proof}
+Estimate the potential of \(|f|\). Inside radius \(R\), split into shells with outer radii \(2^{-j}R\) and sum the bounds \(C_{d,\alpha}(2^{-j}R)^\alpha M_cf(x)\). Outside \(R\), Hölder gives \(C_{d,\alpha,p}R^{\alpha-d/p}\|f\|_p\) for \(p>1\), since \((d-\alpha)p'>d\). For \(p=1\) use the kernel supremum \(R^{\alpha-d}\). For \(0<M_cf(x)<\infty\), balance at \(R=(\|f\|_p/M_cf(x))^{p/d}\). This gives
+\[
+ I_\alpha |f|(x)\le C\|f\|_p^{\alpha p/d} (M_cf(x))^{1-\alpha p/d}.
+\]
+If the input norm vanishes the claim is immediate. If \(M_cf(x)=0\), all centered balls see zero mass and \(f=0\) almost everywhere. The points where \(M_cf=\infty\) form a null set by the maximal estimates. Raise the displayed inequality to \(q\) and integrate for \(p>1\), using \(q(1-\alpha p/d)=p\). For \(p=1\) apply the weak \((1,1)\) bound to the corresponding strict superlevel set, yielding the weak \(q=d/(d-\alpha)\) estimate. Absolute existence and representative independence now follow, as a changed null set contributes no mass to the integral.
+\end{proof}
+
+\begin{theorem}[Maximal truncation and principal values]
+\label{p102:U2-05}
+Suppose \(K\) is continuously differentiable away from zero, homogeneous of degree \(-d\), and has mean zero on the unit sphere, with \(|\nabla K(z)|\le B|z|^{-d-1}\). For smooth compactly supported inputs let \(T\) be the principal-value convolution and assume it is bounded on \(L^2\). For \(T_\varepsilon f(x)=\int_{|x-y|>\varepsilon}K(x-y)f(y)\,dy\) and \(T_*f=\sup_{\varepsilon>0}|T_\varepsilon f|\), one has \(\|T_*f\|_p\le C_p\|f\|_p\) for \(1<p<\infty\). For each such \(p\), the principal value exists almost everywhere, equals the \(L^p\) extension from Theorem~\ref{p102:U2-03}, and \(T_\varepsilon f\to Tf\) in \(L^p\) as \(\varepsilon\downarrow0\). See \cite[\S\S5.2.1 and 5.3.4]{grafakos}.
+\end{theorem}
+\begin{proof}
+Homogeneity and the spherical cancellation give zero integral on each annulus. At a smooth input, subtracting its value at the center inside a unit ball leaves an integrand bounded there by \(C|z|^{1-d}\). This gives the original principal value and its off-support formula. For a compactly supported \(L^2\) input, approximate it in \(L^2\) by smooth functions supported in successively smaller bounded neighborhoods of its support. Away from the support the integral formulas converge against smooth tests supported a positive distance away, using boundedness of \(K\) there. The \(L^2\) limit yields the off-support formula required in Theorem~\ref{p102:U2-03}. That theorem now supplies the weak endpoint and the strong extensions.
+
+For a smooth compactly supported \(f\), fix \(x,\varepsilon>0\) and \(B_0=B(x,\varepsilon/2)\). Decompose \(f=f_1+f_2\) with \(f_1=f1_{B(x,\varepsilon)}\). For \(y\in B_0\), the off-support formula and the derivative estimate give, almost everywhere in \(y\),
+\[
+ |T_\varepsilon f(x)-Tf_2(y)|
+ \le C\varepsilon\int_{|u-x|>\varepsilon}|u-x|^{-d-1}|f(u)|\,du
+ \le C M_cf(x).
+\]
+The last step sums the shell bounds \(C2^{-j}M_cf(x)\) on \(2^j\varepsilon<|u-x|\le2^{j+1}\varepsilon\). For \(0<\delta<1\), take the \(\delta\)-power of
+\(|T_\varepsilon f(x)|\le |Tf(y)|+|Tf_1(y)|+CM_cf(x)\) and average on \(B_0\). Use \((a+b+c)^\delta\le a^\delta+b^\delta+c^\delta\), the weak \((1,1)\) bound on \(Tf_1\), and the estimate following Definition~\ref{p102:U2-01}. Since \(\|f_1\|_1/|B_0|\le 2^dM_cf(x)\), this proves the Cotlar bound
+\[
+ T_*f(x)\le C_\delta\bigl[(M_c(|Tf|^\delta)(x))^{1/\delta}+M_cf(x)\bigr].
+\]
+The first term is \(L^p\) bounded by the maximal estimate at \(p/\delta>1\) and the strong \(L^p\) bound for \(T\). This proves the maximal bound on smooth compactly supported inputs.
+
+For arbitrary \(f\in L^p\), the kernel cut off at radius \(\varepsilon\) belongs to \(L^{p'}\), so Hölder gives absolute convergence and uniform convergence of \(T_\varepsilon f_n\) to \(T_\varepsilon f\) at each fixed radius when \(f_n\to f\) in \(L^p\). The truncations are continuous in positive radius because their differences are integrals over shrinking shells with null limiting sphere. A rational supremum therefore suffices, and Fatou gives the same maximal bound for \(f\). To prove existence, let
+\(\mathcal O f=\lim_{\eta\downarrow0}\sup_{0<\varepsilon,\rho<\eta}|T_\varepsilon f-T_\rho f|\), again using rational radii. For smooth compactly supported \(g\), \(\mathcal O g=0\), and \(\mathcal O f\le2T_*(f-g)\). The maximal bound and approximation show that \(|\{\mathcal O f>\gamma\}|=0\) for every \(\gamma>0\). This yields an almost-everywhere limit. For smooth \(g\), dominated convergence with dominating function \(2T_*g\) gives \(L^p\) convergence to \(Tg\). For general \(f\), bound the two errors \(T_\varepsilon(f-g)\) and \(T(f-g)\) uniformly in \(L^p\), then approximate. The norm limit identifies the pointwise limit by an almost-everywhere convergent subsequence.
+\end{proof}
+\chapter{Euclidean Fourier analysis and multipliers}
+\label{p102:chapter-u3}
+
+Use an orthonormal identification of a finite-dimensional real inner-product space with \(\mathbb R^d\), equipped with standard volume. This identification preserves the integrals and the Euclidean pairing. For \(f\in L^1\), set
+\[
+ \widehat f(\xi)=\int_{\mathbb R^d}e^{-2\pi i x\cdot\xi}f(x)\,dx,
+ \qquad
+ \check f(x)=\int_{\mathbb R^d}e^{2\pi i x\cdot\xi}f(\xi)\,d\xi.
+\]
+The integrals for Hilbert-valued functions are Bochner integrals. For \(d=0\), these transforms are the identity on the one-point space of mass one. The Euclidean kernel theorems below assume \(d\ge1\).
+
+\section{Inversion, Plancherel, and distributional Fourier transform}
+
+\begin{proposition}[Riemann--Lebesgue lemma]
+\label{p102:AN-06-C01-S01}
+For \(f\in L^1(\mathbb R^d)\), the integral \(\widehat f\) is continuous, bounded by \(\|f\|_1\), and tends to zero at infinity when \(d\ge1\). If \(f\in L^1(\mathbb T_T)\), its Fourier coefficients tend to zero as \(|n|\to\infty\). See \cite[\S\S2.2.4 and 3.3.1]{grafakos}.
+\end{proposition}
+\begin{proof}
+Dominated convergence proves continuity. For \(u\in C_c^\infty\), choose \(j\) with \(|\xi_j|\ge|\xi|/\sqrt d\). Integration by parts gives \(2\pi i\xi_j\widehat u=\widehat{\partial_j u}\), hence decay bounded by \(C_u/|\xi|\). Approximate \(f\) in \(L^1\) and use uniform control of the transform of the difference. For the circle, take a representative on a fundamental interval, extend it by zero to \(g\) on the line, and use \(c_n=T^{-1}\widehat g(n/T)\).
+\end{proof}
+
+\begin{proposition}[Convolution and Fourier multiplication]
+\label{p102:AN-06-C02-S01}
+For \(f,g\in L^1(\mathbb R^d)\), \(f*g\in L^1\), and
+\(\widehat{f*g}(\xi)=\widehat f(\xi)\widehat g(\xi)\) at every \(\xi\) for the continuous Fourier representatives. See \cite[\S8.3]{folland}.
+\end{proposition}
+\begin{proof}
+The \(L^1\) bound is Theorem~\ref{p102:AN-06-C02-R01}. The integral of \(|f(x-y)g(y)|\) in \(x,y\) is \(\|f\|_1\|g\|_1\), so Fubini applies with the Fourier factor. Substituting \(z=x-y\) splits the exponential into the two stated factors.
+\end{proof}
+
+\begin{definition}
+The Schwartz space \(\mathcal S(\mathbb R^d)\) consists of the smooth complex functions with finite seminorms
+\[
+ p_{N,k}(\varphi)=\max_{|\beta|\le k}\sup_x(1+|x|)^N|\partial^\beta\varphi(x)|
+ \qquad(N,k\in\mathbb N).
+\]
+Its topology is that of these seminorms. They give the same topology as the coordinate monomial seminorms: each \(|x^\alpha|\le(1+|x|)^{|\alpha|}\), and the expansion of \((1+\sum_j|x_j|)^N\) bounds \((1+|x|)^N\) by a finite linear combination of absolute monomials. The continuous complex-linear dual \(\mathcal S'\) is paired bilinearly with \(\mathcal S\).
+\end{definition}
+
+\begin{lemma}[Gaussian normalization and Schwartz estimates]
+\label{p102:fourier-gaussian}
+The functions \(G_t(x)=t^{-d/2}e^{-\pi|x|^2/t}\), \(t>0\), have mass one and \(\widehat G_t(\xi)=e^{-\pi t|\xi|^2}\). Fourier transformation and its positive-sign counterpart map \(\mathcal S\) continuously to itself.
+\end{lemma}
+\begin{proof}
+Squaring \(\int_\mathbb R e^{-\pi u^2}du\) and using plane polar coordinates gives one. With \(F(\xi)=\widehat{e^{-\pi x^2}}(\xi)\) in one dimension, differentiate under the integral and integrate by parts, using \((e^{-\pi x^2})'=-2\pi x e^{-\pi x^2}\). This yields \(F'=-2\pi\xi F\), \(F(0)=1\). Products and dilation give the \(d\)-dimensional identities. For \(\varphi\in\mathcal S\), differentiation under the integral and integration by parts give
+\[
+ \partial_\xi^\beta\widehat\varphi=\widehat{(-2\pi i x)^\beta\varphi},
+ \qquad
+ (2\pi i\xi)^\alpha\widehat\varphi=\widehat{\partial^\alpha\varphi}.
+\]
+Thus each monomial-weighted derivative of \(\widehat\varphi\) is uniformly bounded by a finite sum of \(L^1\) norms of polynomial-weighted derivatives of \(\varphi\). These in turn are controlled by finitely many \(p_{N,k}\) after extracting the integrable weight \((1+|x|)^{-d-1}\). The same argument with the opposite sign gives the positive-sign estimate.
+\end{proof}
+
+\begin{theorem}[Fourier inversion]
+\label{p102:AN-06-C01-R01}
+For \(f\in L^1\) with \(\widehat f\in L^1\), the continuous function \(\check{\widehat f}\) equals \(f\) almost everywhere and equals a chosen representative at each of its continuity points. The two Fourier transforms with opposite signs are continuous inverse maps of \(\mathcal S\). See \cite[\S2.2]{grafakos} and \cite[\S8.3]{folland}.
+\end{theorem}
+\begin{proof}
+By the Gaussian calculation and Fubini,
+\[
+ (G_t*f)(x)=\int_{\mathbb R^d}e^{2\pi i x\cdot\xi}e^{-\pi t|\xi|^2}\widehat f(\xi)\,d\xi.
+\]
+For Fubini use \(\|f\|_1\int e^{-\pi t|\xi|^2}d\xi<\infty\). When \(\widehat f\in L^1\), the right-hand side converges uniformly to the continuous function \(\check{\widehat f}\) by dominated convergence. On the left, \(G_t\) is an approximate identity: its mass is one and the integral outside a fixed ball is the Gaussian tail outside a ball of radius proportional to \(t^{-1/2}\). Hence \(G_t*f\to f\) in \(L^1\) and along a sequence almost everywhere. This identifies the uniform limit. At a continuity point \(x\), the part of \(\int G_t(y)(f(x-y)-f(x))\,dy\) on \(|y|<\delta\) is bounded by the pointwise oscillation on this ball. On the complement use \(\sup_{|y|\ge\delta}G_t(y)\|f\|_1+|f(x)|\int_{|y|\ge\delta}G_t\), which tends to zero for fixed \(\delta\). This proves the pointwise assertion. The Schwartz estimates ensure integrability of both sides and both transforms. Apply inversion with both signs to obtain mutually inverse continuous maps on \(\mathcal S\).
+\end{proof}
+
+\begin{theorem}[Plancherel and compatibility]
+\label{p102:AN-06-C01-R02}
+For any complex Hilbert space \(H\), the Fourier transform extends uniquely to a complex-linear isometric isomorphism on \(L^2(\mathbb R^d;H)\), preserving inner products and with inverse the positive-sign transform. On \(L^1\cap L^2\) it agrees almost everywhere with the Bochner integral formula. See \cite[\S2.2.4]{grafakos}.
+\end{theorem}
+\begin{proof}
+For scalar \(f,g\in\mathcal S\), apply the inverse integral to \(g\) and Fubini to get
+\[
+ \int f(x)\overline{g(x)}\,dx
+ =\int \widehat f(\xi)\overline{\widehat g(\xi)}\,d\xi .
+\]
+The absolute double integral is bounded by \(\|f\|_1\|\widehat g\|_1\). For finite-rank \(H\)-valued Schwartz functions, use a common finite-dimensional orthonormal basis of the ranges and sum the identity. To see density in \(L^2(\mathbb R^d;H)\), approximate strongly measurable Bochner functions by simple functions with supports of finite measure, then approximate their scalar indicators by smooth compactly supported functions. The integral transforms are inverse on the finite-rank dense subspace by scalar inversion, and therefore remain inverse on the completions. For \(f\in L^1\cap L^2\), a single finite-rank smooth sequence approximates it in both norms. One may first cut off in support and size, then approximate the resulting bounded functions on finite measure sets by simple functions in both norms, then approximate the scalar indicators in both norms by smooth cutoffs. The integral transforms converge uniformly by the \(L^1\) estimate, while the \(L^2\) transforms converge in norm and along a subsequence almost everywhere. The limits agree.
+\end{proof}
+
+\begin{theorem}[Fourier transformation of tempered distributions]
+\label{p102:AN-11-C03-R01}
+The formula \(\langle\widehat U,\varphi\rangle=\langle U,\widehat\varphi\rangle\) defines a continuous linear automorphism of \(\mathcal S'\) with inverse the analogous positive-sign formula. It is continuous for both the weak dual topology of pointwise testing and the strong dual topology of uniform testing on bounded subsets of \(\mathcal S\). In the distributional sense,
+\[
+ \widehat{\partial_j U}=2\pi i\xi_j\widehat U,
+ \qquad \widehat{x_j U}=-(2\pi i)^{-1}\partial_{\xi_j}\widehat U.
+\]
+For \(f\in L^1\) or \(f\in L^2\), the corresponding integral or Plancherel transform induces exactly this distributional transform. See \cite[\S\S2.2--2.3]{grafakos}, \cite[\S\S10.4 and 10.7]{leoni}, and \cite[Chapter 7]{rudin}.
+\end{theorem}
+\begin{proof}
+The Schwartz estimates show that transposition is well defined. The two transforms on tests are inverse, so their transposes are inverse. Pointwise continuity follows by testing at \(\widehat\varphi\), and strong continuity follows from \(\sup_{\varphi\in B}|\langle\widehat U,\varphi\rangle|=\sup_{\psi\in\widehat B}|\langle U,\psi\rangle|\) since a continuous linear map takes bounded sets to bounded sets. Apply the same argument to the inverse. For the derivative identity use \(\partial_{x_j}\widehat\varphi(x)=\widehat{-2\pi i\xi_j\varphi}(x)\), and the distributional negative derivative on tests. For the multiplication identity use \(\widehat{\partial_{\xi_j}\varphi}(x)=2\pi i x_j\widehat\varphi(x)\). The \(L^1\) compatibility follows by Fubini, with absolute majorant \(|f(x)||\varphi(\xi)|\). For \(L^2\), pass to the limit from Schwartz functions, using Hölder on the two test pairings and Plancherel.
+\end{proof}
+
+\section{Complex interpolation and Hausdorff--Young}
+
+\begin{theorem}[Riesz--Thorin with endpoints]
+\label{p102:AN-06-C04-R01}
+Let \(T\) be a complex-linear operator on the simple functions of finite measure support on a sigma-finite measure space, with values in measurable classes on a sigma-finite target. Suppose \(\|Tf\|_{q_j}\le M_j\|f\|_{p_j}\) there, \(1\le p_j,q_j\le\infty\), \(j=0,1\). Define \(1/p_\theta=(1-\theta)/p_0+\theta/p_1\) and \(1/q_\theta=(1-\theta)/q_0+\theta/q_1\) for \(0<\theta<1\). Then
+\[
+ \|Tf\|_{q_\theta}\le M_0^{1-\theta}M_1^\theta\|f\|_{p_\theta}.
+\]
+If \(p_\theta<\infty\), this gives a unique bounded extension. When \(p_0=p_1=\infty\), the full \(L^\infty\) result holds for a common operator already defined there with the two endpoint bounds. See \cite[\S1.3.2]{grafakos}.
+\end{theorem}
+\begin{proof}
+Normalize a nonzero simple \(f\) and a finite measure support simple test \(g\) by \(\|f\|_{p_\theta}=\|g\|_{q_\theta'}=1\). On each nonzero level of \(f\), define
+\[
+ f_z=\operatorname{sgn}(f)|f|^{p_\theta((1-z)/p_0+z/p_1)}
+\]
+when \(p_\theta<\infty\), using real logarithms of the positive levels, and set \(f_z=0\) on its zero set. If \(p_\theta=\infty\), use \(f_z=f\). Build \(g_z\) by the same rule with exponents \(q_\theta',q_0',q_1'\), using \(g_z=g\) when \(q_\theta'=\infty\). At a vertical boundary \(z=j+it\), the powers give \(\|f_z\|_{p_j},\|g_z\|_{q_j'}\le1\). For finite endpoint exponent, the defining integral is the normalizing integral. For infinite endpoint exponent the modulus equals one on nonzero levels, or is bounded by one for the constant family. The test pairing uses no conjugation, so \(F(z)=\int(Tf_z)g_z\) is entire and bounded on the closed strip. Indeed, expand \(f_z,g_z\) in their finite support levels. Their coefficients are finite exponentials whose moduli are bounded in the strip. The fixed integrals in the expansion are finite by the endpoint bound and the finite measures of the test levels.
+
+On \(z=j+it\), Hölder gives \(|F(z)|\le M_j\). For positive upper bounds \(M_j+\eta\), divide by \((M_0+\eta)^{1-z}(M_1+\eta)^z\) to obtain a bounded analytic function with modulus at most one on the two vertical lines. Multiply it by \(e^{\varepsilon(z^2-1)}\) and apply the maximum-modulus principle to rectangles of increasing height: the multiplier has modulus at most one on the vertical boundaries and tends uniformly to zero along the horizontal boundaries. At \(z=\theta\), let \(\varepsilon,\eta\downarrow0\). This proves the interpolation bound against \(g\).
+
+Finite-support simple tests recover the full \(L^q\) norm for \(1\le q\le\infty\). To see this, first restrict the measurable output to a finite-measure set on which its magnitude is bounded. For \(1<q<\infty\) test with the conjugate phase times the \((q-1)\)-st power of its magnitude, normalized in \(L^{q'}\). For \(q=1\) use the conjugate phase. For \(q=\infty\), test on a finite-measure portion of each strict positive superlevel set with the conjugate phase divided by the set's measure. Each test may be approximated by simple functions on its finite support, and the phase tests for \(q'= \infty\) admit uniform approximation. Increase the bounded output supports by sigma-finiteness and truncation. This gives the claimed norm bound. Density gives the extension for finite \(p_\theta\). If both input exponents are infinite and the same action is already given on all \(L^\infty\), for any such \(f\) directly interpolate its output norms using Hölder to obtain \(\|Tf\|_{q_\theta}\le\|Tf\|_{q_0}^{1-\theta}\|Tf\|_{q_1}^\theta\). The infinite output exponent cases follow by factoring out its essential supremum, and when both outputs are infinite the two bounds give their geometric mean. This proof accounts for the compatible action at the infinite input endpoint.
+\end{proof}
+
+\begin{corollary}[Hausdorff--Young]
+\label{p102:AN-06-C04-S01}
+If \(1\le p\le2\), the Fourier transform extends to a map \(L^p\to L^{p'}\) of norm at most one, agreeing with the integral transform on \(L^1\cap L^p\) and with the distributional transform. See \cite[\S2.2.4]{grafakos}.
+\end{corollary}
+\begin{proof}
+Interpolate the \(L^1\to L^\infty\) integral estimate and the \(L^2\) isometry, which agree on their common simple initial class. The endpoints are the original bounds. Approximate in both norms on \(L^1\cap L^p\) by truncation and simple functions, and use the uniform \(L^1\) bound and a subsequence for the finite \(p'\) norm convergence. Compatibility with distributions follows by Hölder on Schwartz tests and density, with the pairing identity already proved on \(L^1\cap L^p\).
+\end{proof}
+
+\section{Poisson summation and finite measures}
+
+\begin{theorem}[Poisson summation on a cubical lattice]
+\label{p102:U3-01}
+For \(\varphi\in\mathcal S(\mathbb R^d)\) and \(T>0\),
+\[
+ \sum_{k\in\mathbb Z^d}\varphi(x+Tk)
+ =T^{-d}\sum_{m\in\mathbb Z^d}\widehat\varphi(m/T)e^{2\pi i m\cdot x/T}.
+\]
+Both series converge absolutely and locally uniformly, and the right series is globally uniformly convergent. See \cite[Chapter 5, \S3]{stein-shakarchi} and \cite[\S7.2]{hormander}.
+\end{theorem}
+\begin{proof}
+On a bounded set in \(x\), \(|x+Tk|\ge T|k|-C\). The Schwartz bounds with any exponent greater than \(d\) give absolute local uniform convergence, also after differentiation. The periodized function is continuous and \(T\)-periodic in each coordinate. Integrate termwise against \(e^{-2\pi i m\cdot x/T}\) on a fundamental cube with density \(T^{-d}\), and translate each tile by \(Tk\). The exponential is unchanged and the coefficient is \(T^{-d}\widehat\varphi(m/T)\). The Fourier series with these coefficients converges absolutely and uniformly by the Schwartz bounds for \(\widehat\varphi\). For uniqueness on the product torus, use the products of the one-dimensional Fej\'er kernels: they have mass one, and the mass outside a product neighborhood tends to zero by the union bound over its \(d\) coordinates. The proof of uniform approximate-identity recovery therefore applies, and equal coefficients give equal Fej\'er polynomials and the same continuous limit. This identifies the two series.
+\end{proof}
+
+\begin{theorem}[Uniqueness for finite measures]
+\label{p102:U3-02}
+If \(\nu\) is a finite signed or complex Borel measure on \(\mathbb R^d\), its Fourier--Stieltjes transform
+\(\widehat\nu(\xi)=\int e^{-2\pi i x\cdot\xi}\,d\nu(x)\) is bounded and continuous. Equal transforms of two such measures imply equality of the measures. See \cite[\S8.6]{folland}.
+\end{theorem}
+\begin{proof}
+Use total variation for the bound and dominated convergence. For the difference of two measures whose transforms agree, Fourier inversion of a Schwartz test and Fubini give \(\int\varphi\,d\nu=\int \widehat\varphi(\xi)\widehat\nu(-\xi)\,d\xi=0\). The absolute bound for the interchange is \(|\nu|(\mathbb R^d)\|\widehat\varphi\|_1\). Smooth compactly supported functions are uniformly dense in \(C_0(\mathbb R^d)\), by cutting off and then mollifying. Finite Borel measures on this Euclidean space are regular, so the \(C_0\) pairings determine them, proving uniqueness.
+\end{proof}
+
+
+\section{Principal-value transforms and periodic convergence}
+
+\begin{theorem}[Hilbert and Riesz transforms]
+\label{p102:U3-03}
+On \(\mathbb R^d\), \(d\ge1\), put
+\[
+ c_d=\frac{\Gamma((d+1)/2)}{\pi^{(d+1)/2}},\qquad
+ K_j(x)=c_d\frac{x_j}{|x|^{d+1}},\qquad 1\le j\le d .
+\]
+The principal-value convolution with \(K_j\) has \(L^2\) multiplier \(-i\xi_j/|\xi|\), with any value assigned at the null frequency \(0\). It has a weak \((1,1)\) extension and strong \(L^p\) bounds for \(1<p<\infty\). For \(1<p<\infty\) the principal values converge almost everywhere and in norm to that extension. In dimension one the kernel is \(1/(\pi x)\) and the multiplier is \(-i\,\operatorname{sgn}\xi\). See \cite[\S5.1]{grafakos} and \cite[Chapter III, \S1]{stein}.
+\end{theorem}
+\begin{proof}
+For \(0<a<b<\infty\) define the integrable kernel
+\[
+ K_{j,a,b}=-\frac1{2\pi}\int_a^b t^{-1/2}\partial_jG_t\,dt .
+\]
+The \(L^1\) norm of \(\partial_jG_t\) is a fixed constant times \(t^{-1/2}\), which justifies the Fourier interchange on each finite \(t\)-interval. Its multiplier is
+\[
+ -i\xi_j\int_a^b t^{-1/2}e^{-\pi t|\xi|^2}\,dt .
+\]
+For \(\xi\ne0\), the whole positive integral is \(1/|\xi|\) by the one-dimensional Gaussian integral, so the multipliers are uniformly bounded by one and converge to the claimed multiplier. In physical space,
+\[
+ K_{j,a,b}(x)=x_j\int_a^b t^{-(d+3)/2}e^{-\pi|x|^2/t}\,dt .
+\]
+At \(x\ne0\), substitution \(u=\pi|x|^2/t\) gives its limit \(K_j(x)\) and the bound \(|K_{j,a,b}(x)|\le|K_j(x)|\). Each kernel is odd. In its pairing with a Schwartz function \(\psi\), use the odd part \((\psi(x)-\psi(-x))/2\). This part is \(O(|x|)\) at zero and rapidly decreasing at infinity, so the bound by \(|K_j|\) makes dominated convergence applicable. The limiting pairing is exactly the principal-value pairing, using the same odd-part identity on every symmetric truncation. For smooth compactly supported \(f\), pair its convolution against a smooth compactly supported test and use the Schwartz test \(\psi(z)=\int f(x-z)\varphi(x)\,dx\) in the preceding argument. The kernel pairing is the convolution principal value because the annular cancellation gives a locally uniform bound for the integrable remainder near zero. Plancherel gives \(L^2\) convergence of the same convolutions to the stated multiplier by frequency dominated convergence. Thus the principal-value operator agrees with the bounded \(L^2\) action. Each \(K_j\) is smooth, homogeneous of degree \(-d\), has mean zero on the sphere, and obeys the derivative bound of Theorem~\ref{p102:U2-05}. Theorems~\ref{p102:U2-03} and \ref{p102:U2-05} now yield the endpoint bound and principal-value conclusions in their respective ranges.
+\end{proof}
+
+\begin{theorem}[Periodic conjugation and norm convergence]
+\label{p102:U3-04}
+For \(1<p<\infty\) the periodic conjugate operator with multipliers
+\(-i\operatorname{sgn}(n)\), taking the value zero at \(n=0\), is bounded on \(L^p(\mathbb T_T)\). The symmetric Fourier partial sums \(S_N f\) converge to \(f\) in \(L^p\) for all such \(p\). See \cite[\S4.1]{grafakos}.
+\end{theorem}
+\begin{proof}
+For a trigonometric polynomial, multiply the nonzero \(n\)-th coefficient by \(-i\operatorname{sgn}(n)r^{|n|}\), \(0<r<1\). This is convolution, for probability Haar measure, by
+\[
+ Q_r(t)=2\sum_{n\ge1}r^n\sin(2\pi nt/T)
+       =\frac{2r\sin(2\pi t/T)}{1-2r\cos(2\pi t/T)+r^2}.
+\]
+As \(r\uparrow1\), \(Q_r(t)\to\cot(\pi t/T)\) off the origin on the circle. These kernels are odd and \(|Q_r(t)|\le C_T/|t|\) on \(0<|t|\le T/2\), since the denominator is at least \(2r(1-\cos(2\pi t/T))\). Subtract \(f(x)\) in the convolution. The difference is \(O(|t|)\) near zero for polynomials, so dominated convergence identifies the multiplier operator with the periodic principal value of \(\cot(\pi t/T)\).
+
+On \((-T/2,T/2)\), the difference \(T^{-1}\cot(\pi t/T)-1/(\pi t)\) extends as a bounded function at zero. Its convolution on a period has \(L^p\) bound by the integral of its absolute value over the interval, from Minkowski and periodic translation invariance. For the remaining kernel \(1/(\pi t)\), extend the periodic representative to \([-T,2T]\) and put it equal to zero outside. Call the resulting \(L^p(\mathbb R)\) function \(F\). Its norm is \(3^{1/p}\) times the unnormalized norm on a period. For \(x\in(0,T)\) and \(|t|<T/2\), \(F(x-t)\) equals the periodic representative. Thus the local principal value equals the real-line Hilbert transform of \(F\) minus the integral over \(|t|\ge T/2\). The latter is bounded by \(2\|F\|_1/(\pi T)\) on this interval. The real-line estimate and Hölder on the support of \(F\) control the two terms in the periodic \(L^p\) norm. This proves a bound on trigonometric polynomials, which extends by Corollary~\ref{p102:fejer-lp}.
+
+Let \(P_0\) be the mean projection, let \(H\) denote the conjugate operator, and set \(P_{\ge0}=(I+iH+P_0)/2\). Its multiplier is the indicator of \(n\ge0\), including the correct value one at zero. Modulation by \(e^{2\pi i kt/T}\) is an \(L^p\) isometry and shifts \(P_{\ge0}\) to \(P_{\ge k}\). Therefore \(S_N=P_{\ge-N}-P_{\ge N+1}\) on polynomials and the partial sums have a uniform \(L^p\) bound. The Fourier coefficient functionals are continuous on \(L^p\) by Hölder on probability Haar measure, so these extensions agree with the usual finite Fourier sums for all \(f\). The sums stabilize on trigonometric polynomials, and approximation with the uniform bound yields norm convergence.
+\end{proof}
+
+\section{Dyadic multipliers and square functions}
+
+\begin{theorem}[Classical Mihlin multiplier theorem]
+\label{p102:U3-05}
+Let \(N=\lfloor d/2\rfloor+1\). Suppose \(m\in C^N(\mathbb R^d\setminus\{0\})\) and
+\[
+ |\partial^\alpha m(\xi)|\le A|\xi|^{-|\alpha|}
+ \qquad (|\alpha|\le N,\ \xi\ne0).
+\]
+The \(L^2\) multiplier \(T_m f=\mathcal F^{-1}(m\widehat f)\) extends to a bounded operator on \(L^p\) for every \(1<p<\infty\), with norm bounded by \(C_{d,p}A\). The value at the origin is immaterial. See \cite[\S6.2.3]{grafakos}.
+\end{theorem}
+\begin{proof}
+Choose a real smooth radial cutoff \(\chi\), equal to one for \(|\xi|\le1\) and zero for \(|\xi|\ge2\). Put \(\eta(\xi)=\chi(\xi)-\chi(2\xi)\), so that \(\sum_{j\in\mathbb Z}\eta(2^{-j}\xi)=1\) for \(\xi\ne0\) by telescoping. The supports are scaled annuli with bounded overlap. Define
+\[
+ a_j(\xi)=m(2^j\xi)\eta(\xi),\quad L_j=\check a_j,\quad K_j(x)=2^{jd}L_j(2^j x).
+\]
+On the fixed annulus, the chain and product rules bound all derivatives of \(a_j\) and \(\xi_k a_j\) up to order \(N\) by \(C_dA\), uniformly in \(j\). They have compact support. Plancherel and the differentiation identities give
+\[
+ \|(1+|\cdot|)^N L_j\|_2+
+ \|(1+|\cdot|)^N\nabla L_j\|_2\le C_d A .
+\]
+Indeed, each monomial-weighted term is the inverse Fourier transform of the corresponding derivative of \(a_j\) or of \(2\pi i\xi_k a_j\), up to constant powers of \(2\pi i\). This identity follows by integration by parts for the compactly supported \(C^N\) functions. Cauchy--Schwarz, \(N>d/2\), and integration of the weight in polar coordinates yield
+\[
+ \|L_j\|_1+\|\nabla L_j\|_1\le C A,\qquad
+ \int_{|x|>R}|L_j(x)|\,dx\le C A R^{-(N-d/2)}
+ \quad(R\ge1).
+\]
+The kernel \(K_j\) has multiplier \(m(\xi)\eta(2^{-j}\xi)\). For a finite set \(J\) of scales the sum of these multipliers is uniformly bounded on \(L^2\) by bounded overlap. For a shift \(h\ne0\) and \(2^j|h|\le1\), the translation difference for \(K_j\) is at most \(C A 2^j|h|\) in \(L^1\), by integrating the derivative along the translation segment. For \(2^j|h|>1\), on \(|x|>2|h|\) both \(|x|\) and \(|x-h|\) exceed \(|h|\), giving the bound \(C A(2^j|h|)^{-(N-d/2)}\) on the integral of the difference there. The sums over the two scale ranges are geometric. Thus every finite sum \(\sum_{j\in J}K_j\) satisfies the integral kernel condition of Theorem~\ref{p102:U2-03} with the same bound. Its off-support representation holds since the sum kernel is integrable and bounded, and convolution agrees with its \(L^2\) Fourier multiplier by approximation. Apply Theorem~\ref{p102:U2-03} to obtain uniform \(L^p\) bounds.
+
+For the increasing finite scale intervals \([-M,M]\), the multipliers converge to \(m\) almost everywhere and remain uniformly bounded. Thus their operators converge in \(L^2\) on \(L^2\) inputs. For \(f\in L^2\cap L^p\), an almost-everywhere subsequence and Fatou yield the \(L^p\) estimate for \(T_mf\). Density gives the claimed extension.
+\end{proof}
+
+\begin{lemma}[Random-sign moment bounds]
+For a finite complex sequence \(a_j\) and independent equiprobable signs \(\varepsilon_j\), if \(0<q<\infty\), then
+\[
+ c_q\Big(\sum_j|a_j|^2\Big)^{q/2}
+ \le \mathbb E\Big|\sum_j\varepsilon_j a_j\Big|^q
+ \le C_q\Big(\sum_j|a_j|^2\Big)^{q/2}.
+\]
+\end{lemma}
+\begin{proof}
+For real coefficients, \(\mathbb E e^{t\sum\varepsilon_j a_j}=\prod_j\cosh(ta_j)\le e^{t^2\sigma^2/2}\) where \(\sigma^2=\sum a_j^2\). The inequality \(\cosh u\le e^{u^2/2}\) follows termwise from \((2k)!\ge 2^k k!\). Markov's inequality optimized over \(t\) yields a Gaussian tail bound, and layer cake yields the upper moment bound. Apply the real estimate to real and imaginary parts for complex coefficients and bound \((u+v)^q\le\max(1,2^{q-1})(u^q+v^q)\). For the lower bound write \(X=\sum\varepsilon_j a_j\) and \(\sigma^2=\sum|a_j|^2=\mathbb E|X|^2\). The upper fourth moment bound gives \(\mathbb E|X|^4\le C_4\sigma^4\). If \(\sigma>0\), the contribution of \(\{|X|<\sigma/\sqrt2\}\) to the second moment is at most \(\sigma^2/2\), while on its complement Cauchy--Schwarz bounds the contribution by \(C_4^{1/2}\sigma^2\mathbb P(|X|\ge\sigma/\sqrt2)^{1/2}\). The latter event therefore has probability at least \(1/(4C_4)\). Integrating on that event gives the lower estimate. The zero sequence is immediate.
+\end{proof}
+
+\begin{theorem}[Basic Littlewood--Paley inequality]
+\label{p102:U3-06}
+Let \(\eta\) be a real smooth annular partition as in Theorem~\ref{p102:U3-05}, and put \(P_j f=\mathcal F^{-1}(\eta(2^{-j}\cdot)\widehat f)\), interpreted by bounded extension. For \(1<p<\infty\),
+\[
+ c_{d,p,\eta}\|f\|_p\le
+ \left\|\left(\sum_{j\in\mathbb Z}|P_j f|^2\right)^{1/2}\right\|_p
+ \le C_{d,p,\eta}\|f\|_p .
+\]
+See \cite[\S6.1.1]{grafakos} and \cite[\S10.8]{leoni}.
+\end{theorem}
+\begin{proof}
+For every finite \(J\) and choice of signs, the symbol
+\(\sum_{j\in J}\varepsilon_j\eta(2^{-j}\xi)\) satisfies the Mihlin bounds uniformly. Each nonzero term at a given \(\xi\) has \(2^j\) comparable to \(|\xi|\), and only boundedly many terms are nonzero. Apply Theorem~\ref{p102:U3-05}, integrate the random-sign moment estimate in \(x\), and interchange the finite sign average and integral. This bounds the \(L^p\) norm of the square function on \(J\) by \(C\|f\|_p\), uniformly in \(J\). Monotone convergence gives the upper bound for all scales. The same proof works for the family \(\widetilde P_j\) from a real smooth annular cutoff \(\widetilde\eta\) equal to one on \(\operatorname{supp}\eta\), since the only requirements for the upper bound were bounded overlap and the uniform scaled derivative bounds.
+
+For Schwartz \(f,g\), the identity \(\sum_j\eta(2^{-j}\xi)\widetilde\eta(2^{-j}\xi)=1\) away from zero and Plancherel give
+\[
+ \int f\overline g=\sum_j\int P_j f\,\overline{\widetilde P_j g}.
+\]
+The frequency interchange follows by bounded overlap and integrability of \(|\widehat f\widehat g|\). The physical-space series is absolutely summable after integration by Cauchy--Schwarz in \(j\), Hölder in \(x\), and the two upper bounds. Hence
+\[
+ |\langle f,g\rangle|
+ \le C\left\|\left(\sum_j|P_j f|^2\right)^{1/2}\right\|_p\|g\|_{p'}.
+\]
+Take the supremum over Schwartz tests of norm one, using density in \(L^{p'}\). For general \(f\), approximate by Schwartz functions in \(L^p\). The \(\ell^2\) triangle inequality gives that the difference of the two square-function magnitudes is dominated by the square function of the input difference, which tends to zero in \(L^p\) by the upper bound. The lower estimate passes to the limit.
+\end{proof}
+\chapter{Distributions and weak Sobolev calculus}
+\label{ch:p102-u4}
+
+In this chapter \(\Omega\subset\mathbb R^d\) is open and \(d\geq1\). A compact subset of \(\Omega\) is always compact in the ambient Euclidean space and contained in \(\Omega\). Test functions may be real or complex. Distribution pairings are bilinear. Thus a complex regular distribution is \(T_f(\phi)=\int f\phi\), without complex conjugation. The Euclidean coordinates are used for all multi-indices. Our distribution notation and support conventions follow \cite[Chapter~10]{leoni}, \cite[Chapters~I--IV]{hormander}, and \cite[Chapter~6]{rudin}.
+
+\section{Test functions and the inductive-limit topology}
+
+\begin{definition}[Test functions and distributions]
+\label{p102:AN-11-C01-R01}
+For a compact \(K\subset\Omega\), let \(\mathcal D_K(\Omega)\) be the space of smooth functions on \(\Omega\) supported in \(K\). Put
+\[
+ q_m(\phi)=\max_{|\alpha|\leq m}\sup_{x\in K}|\partial^\alpha\phi(x)|,\qquad m\geq 0.
+\]
+For \(K=\varnothing\) the seminorms are zero. The space \(\mathcal D(\Omega)=C_c^\infty(\Omega)\) carries the finest locally convex topology for which every inclusion of \(\mathcal D_K(\Omega)\) is continuous. Its continuous linear dual is \(\mathcal D'(\Omega)\).
+\end{definition}
+
+Here and below a compact support can be enclosed in an open relatively compact set. To construct a smooth cutoff equal to one on that support, cover it by finitely many small Euclidean balls with doubled closures in the desired open set. Smooth bumps equal to one on the smaller balls and zero outside the larger ones can be combined by \(1-\prod_i(1-\chi_i)\). A compactly supported smooth function on an open subset extends smoothly by zero to the larger open set, since a neighborhood of each point outside the smaller set misses its support.
+
+\begin{proposition}[Strict LF description]
+Every fixed-support space is Fr\'echet. If \(K_j\subset\operatorname{int}K_{j+1}\) exhausts \(\Omega\) by interiors, the topology of \(\mathcal D(\Omega)\) is the locally convex inductive limit of \(\mathcal D_{K_j}(\Omega)\), with closed topological embeddings.
+\end{proposition}
+\begin{proof}
+Extend fixed-support functions by zero to \(\mathbb R^d\). In a Cauchy sequence for the \(q_m\), every derivative converges uniformly on \(\mathbb R^d\) to a continuous function vanishing off \(K\). For each coordinate direction, the fundamental theorem of calculus for the approximating derivatives passes to the limit on any bounded segment. The limit of a derivative of order \(m+1\) is therefore the corresponding derivative of the limit of order \(m\). Induction gives a smooth limit with support in \(K\), with convergence for each \(q_m\). The countable seminorms separate points, and \(\sum_{m\geq0}2^{-m-1}\min(1,q_m(\phi-\psi))\) is a compatible metric.
+
+An exhaustion can be obtained from the compact sets \(\{x: |x|\leq j,\ \mathrm{dist}(x,\Omega^c)\geq j^{-1}\}\), taking distance from the empty complement as infinite. Compactness gives cofinality in the set of compact subsets of \(\Omega\). The inclusions of fixed-support spaces preserve the seminorms and have closed image, since vanishing off the smaller compact set is tested by continuous evaluations. The two final locally convex topologies agree by cofinality. For clarity, this topology can be described using all seminorms on \(\mathcal D(\Omega)\) whose restrictions to every \(\mathcal D_{K_j}\) are continuous. The global supremum seminorms \(q_m\) have this property, so the topology induced on each stage agrees with its own topology. The empty open set gives the zero space.
+\end{proof}
+
+\begin{theorem}[Local order criterion]
+\label{p102:AN-11-C01-R02}
+A linear functional \(T\) on \(\mathcal D(\Omega)\) is a distribution exactly when for every compact \(K\subset\Omega\) there are \(C_K\geq0\) and an integer \(m_K\geq0\) such that
+\[
+ |T(\phi)|\leq C_K q_{m_K}(\phi)\qquad(\phi\in\mathcal D_K(\Omega)).
+\]
+\end{theorem}
+\begin{proof}
+For a continuous functional, a neighborhood given by finitely many seminorms in each fixed-support space maps into the open unit disk. The seminorms are increasing, so one seminorm suffices. Homogeneity gives the bound, including the case in which that seminorm vanishes. Conversely \(\phi\mapsto |T(\phi)|\) is one of the defining seminorms of the inductive limit. The orders on different compact sets can differ.
+
+For comparison with iterated Fr\'echet derivatives, a coordinate derivative of order \(k\) is the evaluation of the \(k\)-linear derivative on coordinate vectors. Conversely, expansion in coordinates on \(k\) unit vectors bounds its operator norm by \(d^k\) times the largest coordinate derivative. These inequalities identify the two fixed-support topologies. A continuous real-linear map from real tests to \(\mathbb C\) extends complex-linearly by \(T(\phi+i\psi)=T(\phi)+iT(\psi)\), uniquely and with a fixed-support bound. This gives the correspondence with the complex test convention.
+\end{proof}
+
+\section{Differentiation, localization, and regularization}
+
+\begin{proposition}[Regular distributions and derivatives]
+\label{p102:AN-11-C02-R01}
+For \(f\in L^1_{\mathrm{loc}}(\Omega)\), \(T_f\) is a distribution and depends injectively on the almost-everywhere class of \(f\). For every multi-index \(\alpha\),
+\[
+ (\partial^\alpha T)(\phi)=(-1)^{|\alpha|}T(\partial^\alpha\phi).
+\]
+If \(f\in C^{|\alpha|}(\Omega)\), then \(\partial^\alpha T_f=T_{\partial^\alpha f}\).
+\end{proposition}
+\begin{proof}
+The fixed-support estimate is \(q_0(\phi)\int_K|f|\). For injectivity, fix a relatively compact open \(U\) and use a cutoff \(\chi\) equal to one on a neighborhood of \(\overline U\). If \(T_f=0\), then for a nonnegative smooth compactly supported approximate identity \(\rho_\epsilon\) the convolution \((\chi f)*\rho_\epsilon\) vanishes on \(U\) for small \(\epsilon\), because it pairs \(f\) with tests supported where \(\chi=1\). The convolution tends to \(\chi f\) in \(L^1(\mathbb R^d)\). Indeed translation continuity holds first for compactly supported continuous functions by uniform continuity and then for every \(L^1\) class by density. Integrating the translation error against \(\rho_\epsilon\) proves convergence. Hence \(f=0\) almost everywhere on \(U\), and a countable exhaustion gives the assertion.
+
+The order estimate of the derivative follows from \(q_m(\partial^\alpha\phi)\leq q_{m+|\alpha|}(\phi)\). The test derivatives commute, so iterating first derivatives gives the multi-index formula, including order zero. For \(C^{|\alpha|}\) functions, choose a cutoff equal to one near the test support, extend the resulting compactly supported functions by zero, and integrate by parts on coordinate lines using Fubini. Every derivative of the cutoff vanishes on a neighborhood of the test support. This gives precisely the claimed ordinary derivative with its sign.
+\end{proof}
+
+\begin{proposition}[Multipliers, restrictions, and support]
+\label{p102:AN-11-C02-R03}
+For \(a\in C^\infty(\Omega)\), the product \(aT\) is defined by \((aT)(\phi)=T(a\phi)\), and \(\partial_j(aT)=(\partial_j a)T+a\partial_jT\). For an open \(V\subset\Omega\), restriction is the transpose of zero extension on tests. The support of a distribution is relatively closed and is the complement of the largest open set on which it vanishes.
+\end{proposition}
+\begin{proof}
+Leibniz's formula bounds \(q_m(a\phi)\) by a constant depending on \(m\) and on the derivatives of \(a\) on \(K\), times \(q_m(\phi)\). Zero extension from \(V\) preserves every fixed-support seminorm. Thus both operations come from continuous maps on tests. Transposing continuous maps preserves weak dual continuity and also strong dual continuity, since continuous linear maps carry bounded sets to bounded sets. The identity for a derivative follows by applying \(T\) to \(a\partial_j\phi=\partial_j(a\phi)-(\partial_j a)\phi\).
+
+The union of all open sets of local vanishing is itself a set of vanishing. A test supported in that union has compact support covered by finitely many of the open sets. Choose finitely many smaller bumps inside those sets, with a sum positive on a neighborhood of the support. Dividing the bumps by their sum on that neighborhood and multiplying by the test writes it as a sum of tests supported in the respective open sets. Every summand is annihilated. This argument also proves that tests agreeing on a neighborhood of \(\operatorname{supp}T\) have the same value under \(T\). The support of \(aT\) lies in \(\operatorname{supp}a\cap\operatorname{supp}T\), restriction is compatible with further restriction, and taking a derivative cannot enlarge support. All three facts follow directly from the local definitions.
+\end{proof}
+
+\begin{theorem}[Local convolution with a smooth kernel]
+\label{p102:AN-11-C02-R02}
+If \(T\in\mathcal D'(\Omega)\) and \(\rho\in\mathcal D(\mathbb R^d)\), then
+\[
+ U_\rho=\{x:x-\operatorname{supp}\rho\subset\Omega\},\qquad
+ (T*\rho)(x)=T_y\bigl(\rho(x-y)\bigr)
+\]
+defines a smooth function on \(U_\rho\), with \(\partial^\alpha(T*\rho)=T*(\partial^\alpha\rho)\). If \(\int\rho=1\) and \(\rho_\epsilon(x)=\epsilon^{-d}\rho(x/\epsilon)\), then \(T*\rho_\epsilon\to T\) on tests, locally in \(\Omega\).
+\end{theorem}
+\begin{proof}
+The condition on \(x\) is open because \(x-\operatorname{supp}\rho\) is compact. On a small closed ball about \(x_0\in U_\rho\), the shifted supports are contained in a common compact subset of \(\Omega\). For any fixed number of \(y\)-derivatives, Taylor's formula in \(x\) gives a remainder \(O(|h|^2)\) uniformly on that compact set, since the next two derivatives are bounded there. Consequently the difference quotient converges in each fixed-support seminorm. Applying the order estimate for \(T\) proves differentiability, and repeating the argument proves the formula at every order.
+
+For \(\phi\) supported in a relatively compact \(U\subset\Omega\), all the supports in \(y\) arising for \(x\) in \(\operatorname{supp}\phi\) lie in a common compact for small \(\epsilon\). The identity
+\[
+ \int (T*\rho_\epsilon)(x)\phi(x)\,dx
+ =T_y\!\left(\int \rho_\epsilon(x-y)\phi(x)\,dx\right)
+ =T(\check\rho_\epsilon*\phi),\qquad \check\rho(x)=\rho(-x),
+\]
+follows by Riemann sums. In fact the smooth integrand in the fixed-support space is continuous with respect to each seminorm on the compact region of integration. The Riemann sums converge uniformly after each \(y\)-derivative, and \(T\) may be applied using its fixed finite order. For every derivative of \(\phi\), the difference between its convolution with \(\check\rho_\epsilon\) and itself is bounded by \(\|\rho\|_1\) times its modulus of uniform continuity at scale \(\epsilon \sup_{\operatorname{supp}\rho}|z|\). This proves convergence in the fixed-support topology and hence the test limit. The same computation for locally integrable \(T_f\) gives the ordinary integral formula wherever the translated support is admissible.
+\end{proof}
+
+\section{Compact support, point support, and convolution of distributions}
+
+\begin{proposition}[The Schwartz restriction map]
+\label{p102:U4-01}
+The whole-space test inclusion \(\mathcal D(\mathbb R^d)\to\mathcal S(\mathbb R^d)\) is continuous and has dense image. The transpose gives an injective, continuous restriction \(\mathcal S'\to\mathcal D'\), both for pointwise convergence on tests and for the strong dual topologies.
+\end{proposition}
+\begin{proof}
+On each fixed compact the polynomial weights in a Schwartz seminorm are bounded, and the seminorm uses only finitely many derivatives. The inductive-limit property yields continuity. Let \(\chi\in\mathcal D\) equal one near the unit ball and set \(\chi_R(x)=\chi(x/R)\). For \(\phi\in\mathcal S\), the seminorms of \((1-\chi_R)\phi\) go to zero. In the term without derivatives of \(\chi_R\), the supremum is over \(|x|\geq R\) and is bounded by \(R^{-1}\) times a seminorm with one extra power of \(1+|x|\). Every other Leibniz term has the same tail and a uniformly bounded factor \(R^{-|\beta|}\partial^\beta\chi(x/R)\). This proves density. Weak continuity of the transpose is immediate from each individual test. For a bounded set \(B\) of tests, its image is bounded in \(\mathcal S\) by continuity. Taking the supremum over \(B\) in the restriction pairing then gives strong continuity. Density gives injectivity. This is compatible with the bilinear convention for Fourier transforms in the preceding chapter.
+\end{proof}
+
+\begin{theorem}[Compact support gives a global finite-order estimate]
+\label{p102:U4-02}
+A distribution \(S\) with compact support \(A\subset\Omega\) extends canonically to \(C^\infty(\Omega)\) by \(S(f)=S(\chi f)\), where \(\chi=1\) near \(A\). Its value is bounded by finitely many derivative suprema on a fixed compact set. On \(\mathbb R^d\) this extension restricts to a tempered distribution.
+\end{theorem}
+\begin{proof}
+Choose \(\chi\) compactly supported in \(\Omega\). The product of \(f\) with the difference of two such cutoffs vanishes near \(A\), so is annihilated by the support proposition. The fixed-support estimate for \(\chi f\), followed by Leibniz's formula, gives \(C\max_{|\alpha|\leq m}\sup_K|\partial^\alpha f|\) for a compact \(K\) containing the cutoff support. This seminorm bound gives continuity for the smooth topology and, on the whole space, for the Schwartz topology. The extensions agree on tests by the support property.
+\end{proof}
+
+\begin{theorem}[Distributions supported at a point]
+\label{p102:U4-03}
+If the support of \(S\) is contained in \(\{a\}\subset\Omega\), then for some integer \(m\geq0\)
+\[
+ S=\sum_{|\alpha|\leq m}c_\alpha\,\partial^\alpha\delta_a,\qquad
+ \delta_a(\phi)=\phi(a).
+\]
+For a fixed \(m\) the coefficients are unique.
+\end{theorem}
+\begin{proof}
+Choose \(m\) from the finite-order estimate for tests in a fixed neighborhood of \(a\). If all derivatives of \(\phi\) through order \(m\) vanish at \(a\), Taylor's formula gives
+\(\sup_{|x-a|\leq c\epsilon}|\partial^\beta\phi(x)|=o(\epsilon^{m-|\beta|})\) for \(|\beta|\leq m\); at order \(m\) this is continuity. Choose a fixed smooth cutoff equal to one near the origin and replace \(x\) in it by \((x-a)/\epsilon\). The support condition permits multiplication of \(\phi\) by this cutoff. Each product derivative of order \(k\leq m\) is \(o(\epsilon^{m-k})\) by Leibniz's formula, since a derivative of order \(j\) on the cutoff is \(O(\epsilon^{-j})\). Thus \(S(\phi)=0\). For each \(\alpha\), the function \((x-a)^\alpha/\alpha!\) multiplied by a cutoff equal to one near \(a\) has exactly the corresponding unit jet through order \(m\). Subtract these jet terms from \(\phi\) and use annihilation of the remainder. Finally \(\partial^\alpha\delta_a(\phi)=(-1)^{|\alpha|}\partial^\alpha\phi(a)\) gives the claimed coefficients and their uniqueness. The zero distribution is covered by zero coefficients.
+\end{proof}
+
+\begin{theorem}[Convolution with a compactly supported distribution]
+\label{p102:U4-04}
+Let \(S,T\in\mathcal D'(\mathbb R^d)\) and \(A=\operatorname{supp}S\) compact. Define
+\[
+ (T*S)(\phi)=T_x\bigl(S_y(\phi(x+y))\bigr),
+\]
+where the inner value uses the canonical smooth extension of \(S\). This is a distribution, is symmetric on this class of pairs, and satisfies
+\[
+ \operatorname{supp}(T*S)\subset \operatorname{supp}T+A,\qquad
+ \partial^\alpha(T*S)=(\partial^\alpha T)*S=T*(\partial^\alpha S).
+\]
+For smooth compactly supported kernels this agrees with the regularization formula.
+\end{theorem}
+\begin{proof}
+For \(\operatorname{supp}\phi\subset K\), write the inner test with a fixed cutoff around \(A\). Differentiation in \(x\) is justified in that fixed-support topology by the same Taylor estimates as in local regularization. Its value vanishes off \(K-A\), since for each such \(x\) the inner function vanishes on a neighborhood of \(A\). Thus the outer test is smooth with support in the compact \(K-A\). If \(S\) has order at most \(n\) for its cutoff, the outer derivatives through order \(m\) are bounded by a constant times \(q_{m+n}(\phi)\). Applying the local order estimate for \(T\) proves continuity. A closed set plus a compact set is closed, as is seen by taking a convergent sequence of sums and extracting a convergent subsequence of the compact terms. If \(K\) is disjoint from \(\operatorname{supp}T+A\), the outer test is annihilated by \(T\), which gives the support assertion.
+
+To justify exchanging the two distributions, choose compactly supported cutoffs \(\chi(y)=1\) near \(A\) and \(\eta(x)=1\) near \(K-A\). For all \(y\) in a sufficiently small neighborhood of \(A\), the compact set \(K-y\) lies in the open region where \(\eta=1\), by compactness and continuity of subtraction. Hence both orders of applying the distributions to \(\eta(x)\chi(y)\phi(x+y)\) recover the respective original pairings. For a smooth function of two variables supported inside a rectangular box, both iterated functionals agree on finite sums of separated tests. These finite sums are dense in the fixed-support smooth topology after enclosing the box in a larger box. Indeed extend the function periodically on the larger box, on whose boundary it is identically zero near each face. Integrating by parts arbitrarily many times gives Fourier coefficients decreasing faster than every power. The series converges uniformly after each derivative to the function by uniqueness of Fourier coefficients, and its finite sums are separated in the two variable groups. Multiplication by fixed separated cutoffs restores compact support without changing the limit. The order estimates show that both iterated functionals commute with this limit. Cutoff independence then gives symmetry. Differentiation in either variable has the same effect on \(\phi(x+y)\). Applying the distribution derivative formula and moving the derivative in the canonical smooth extension proves the two derivative identities. Derivatives of a cutoff equal to one near the relevant support contribute zero.
+
+If \(S=T_\rho\) with \(\rho\) smooth and compactly supported, the inner value is \(\int\rho(y)\phi(x+y)\,dy=(\check\rho*\phi)(x)\). The identity with the smooth regularization is precisely the integral identity of the previous theorem. For integrable representatives with at least one compact support, Fubini gives the usual function convolution by the same pairing, whenever the factors are locally integrable and the other factor is evaluated only on the resulting bounded sets.
+\end{proof}
+
+\section{Integer-order Sobolev spaces}
+
+\begin{definition}[Weak derivatives and the Sobolev norm]
+\label{p102:AN-11-C04-R01}
+For \(m\in\mathbb N_0\) and \(1\leq p\leq\infty\), the space \(W^{m,p}(\Omega)\) consists of \(u\in L^p(\Omega)\) such that \(\partial^\alpha T_u=T_{v_\alpha}\) for some \(v_\alpha\in L^p(\Omega)\) for every \(|\alpha|\leq m\). Set \(D^\alpha u=v_\alpha\), including \(D^0u=u\), and equip the space with \(\sum_{|\alpha|\leq m}\|D^\alpha u\|_p\). Finite-product norms give equivalent conventions.
+\end{definition}
+
+Representatives of the derivatives are unique by the injection of regular distributions. To prove completeness, view \(u\) as the tuple of its derivatives in a finite product of \(L^p\) spaces. The image is given by the closed equations
+\[
+ \int v_\alpha\phi=(-1)^{|\alpha|}\int v_0\,\partial^\alpha\phi
+ \qquad(\phi\in\mathcal D(\Omega)).
+\]
+Both sides depend continuously on the tuple by H\"older's inequality on the compact test support, including \(p=1,\infty\). The image is a closed subspace of a Banach space. This also treats \(m=0\) and the empty open set.
+
+\begin{theorem}[Meyers--Serrin approximation and zero extension]
+\label{p102:AN-11-C04-R03}
+For \(1\leq p<\infty\), \(C^\infty(\Omega)\cap W^{m,p}(\Omega)\) is dense in \(W^{m,p}(\Omega)\). On \(\mathbb R^d\) one can take approximants in \(C_c^\infty(\mathbb R^d)\). Define \(W_0^{m,p}(\Omega)\) as the norm closure of \(C_c^\infty(\Omega)\). For this subspace, zero extension into \(W^{m,p}(\mathbb R^d)\) commutes with every weak derivative of order at most \(m\) and preserves the chosen norm.
+\end{theorem}
+\begin{proof}
+On the whole space first multiply by \(\chi_R\) as above. For each derivative, the term \((1-\chi_R)D^\alpha u\) tends to zero in \(L^p\) by the tail of an integrable function. Terms with a positive-order derivative of \(\chi_R\) are bounded in \(L^p\) by \(C R^{-|\beta|}\|D^{\alpha-\beta}u\|_p\). The distribution product rule justifies this computation. A compactly supported \(W^{m,p}\) function can then be convolved with a smooth approximate identity. The weak differentiation formula follows by testing and Fubini, and the \(L^p\) convergence of each derivative follows by integrating translation continuity, proved by density of continuous compactly supported functions as for \(L^1\).
+
+On an arbitrary \(\Omega\), take a compact exhaustion \(K_j\subset\operatorname{int}K_{j+1}\) and cutoffs \(\eta_j\) equal to one near \(K_j\), supported in \(\operatorname{int}K_{j+1}\), between zero and one. Since \(\eta_{j+1}=1\) on the support of \(\eta_j\), the differences \(\theta_j=\eta_j-\eta_{j-1}\), with \(\eta_0=0\), are nonnegative and sum locally finitely to one. The supports for \(j\geq2\) avoid a neighborhood of \(K_{j-1}\). Each \(\theta_j u\) has compact support in \(\Omega\) and extends by zero to \(W^{m,p}(\mathbb R^d)\): test the weak product formula with a cutoff equal to one near its support to eliminate the artificial boundary. Convolve separately, choosing radii so small that the enlarged supports are still compact in \(\Omega\), avoid \(K_{j-2}\) when \(j\geq3\), and have error at most \(\varepsilon 2^{-j}\) in \(W^{m,p}\). The sum of the smoothed terms is locally finite and smooth. The sum of the errors converges in the Banach space \(W^{m,p}(\Omega)\), with norm at most \(\varepsilon\). Locally the difference from \(u\) is exactly that error by the partition identity. This proves density without assuming any regularity of \(\partial\Omega\).
+
+For zero extension, begin with compactly supported smooth tests, for which the derivative and norm assertions follow by inspection. Extend by continuity to their norm closure, and identify the result with the zero extension of the \(L^p\) class using convergence of the zero-order term. The higher derivatives are the limits of the corresponding zero extensions in \(L^p\).
+\end{proof}
+
+\begin{theorem}[Poincar\'e inequality in a finite slab]
+\label{p102:AN-11-C04-S01}
+Suppose \(\Omega\) lies in the slab \(a<x\cdot e<b\) for a unit vector \(e\) and finite \(a<b\). For \(1\leq p<\infty\) and \(u\in W_0^{1,p}(\Omega)\),
+\[
+ \|u\|_{L^p(\Omega)}\leq (b-a)\|\partial_e u\|_{L^p(\Omega)}
+ \leq (b-a)\big\||\nabla u|\big\|_{L^p(\Omega)}.
+\]
+Consequently the gradient norm is equivalent to the full \(W^{1,p}\) norm on this closed subspace. For \(p=2\), the real or complex inner product \(\langle u,v\rangle_\nabla=\int_\Omega\sum_{j=1}^d D_ju\,\overline{D_jv}\) makes \(W_0^{1,2}(\Omega)\) a Hilbert space, with linearity in the first variable.
+\end{theorem}
+\begin{proof}
+For a compactly supported smooth function extend by zero and use orthogonal coordinates \((z,t)\) along \(e\). The fundamental theorem of calculus gives \(|u(z,t)|\leq\int_a^b|\partial_eu(z,s)|\,ds\) on the slab. H\"older in \(s\), then integration in \(t\) over an interval of length \(b-a\), gives the stated constant; for \(p=1\) this is directly the integral bound. Integrate in \(z\) and pass to the closure. Finally each coordinate derivative is bounded pointwise by the gradient length, and the gradient length is at most the sum of the coordinate derivative lengths. At \(p=2\), conjugate symmetry and sesquilinearity follow from the scalar integral, and the slab inequality makes the quadratic form positive definite. A Cauchy sequence for its norm is Cauchy in the full Sobolev norm. Its limit belongs to the closed zero-boundary subspace and convergence holds in the gradient norm, which proves completeness.
+\end{proof}
+
+\section{Absolute continuity on lines, difference quotients, and composition}
+
+\begin{theorem}[Line representatives and interior difference quotients]
+\label{p102:U4-05}
+A locally integrable \(u\) whose \(j\)-th weak derivative is locally integrable has, on almost every line in direction \(e_j\), a representative locally absolutely continuous on the components of the intersection with \(\Omega\). Its line derivative is the weak derivative almost everywhere. The converse holds if the line derivatives together give locally integrable functions. For relatively compact open \(V\Subset\Omega\), \(1\leq p<\infty\), and \(0<|h|<\operatorname{dist}(V,\Omega^c)\),
+\[
+ \|[u(\cdot+he_j)-u]/h\|_{L^p(V)}
+ \leq \|\partial_j u\|_{L^p(V+B(0,|h|))}
+\]
+whenever the line segment lies in the indicated neighborhood. Conversely, if \(1<p<\infty\), \(u\in L^p_{\rm loc}(\Omega)\), and those quotients are uniformly bounded in \(L^p(V)\) for small \(h\) for every relatively compact \(V\), the weak derivative is locally in \(L^p\). A common bound along an exhaustion yields the corresponding global \(L^p\) derivative bound.
+\end{theorem}
+\begin{proof}
+For \(d=1\) the following interval argument applies without a transverse variable. In higher dimensions, on a coordinate box \(Q=Q'\times I\Subset\Omega\), test the weak identity with \(a(z)b(t)\). For each \(b\), Fubini and injectivity of regular distributions in the transverse variables give, for almost every \(z\),
+\(\int_I u(z,t)b'(t)\,dt=-\int_I v_j(z,t)b(t)\,dt\).
+One can take a single exceptional set for all \(b\). Exhaust \(I\) by compact intervals and take a countable \(C^1\)-dense set of tests for each interval. Such a set exists by the separability of \(C^1\) on compact intervals, and both pairings are continuous in that norm on each line with integrable \(u,v_j\). Subtract the absolutely continuous primitive of \(v_j\) on a compact subinterval. The resulting one-dimensional distribution has zero derivative and is constant there. To see this, every compactly supported test with zero integral is the derivative of a compactly supported smooth function, and subtracting a fixed test of integral one reduces every test to that case. Thus the primitive plus a constant is the required representative. A countable coordinate-box cover and agreement almost everywhere on overlaps give the line statement on components. Conversely integrate by parts on the lines for compactly supported tests in a box, and use a finite partition to extend the identity to any test.
+
+For the estimate, integrate \(v_j\) along each segment and use Minkowski's integral inequality followed by translation. The boundary of the indicated ball can be discarded in the segment parameter integral. In the reverse direction choose \(h_k\to0\) and extract a weakly convergent subsequence on \(V\) by reflexivity of \(L^p(V)\). For a test in \(V\), changing variables in the quotient pairing gives the negative quotient of the test in the limit, by uniform convergence on a fixed compact support. Hence the weak limit represents \(\partial_j u\) on \(V\). Uniqueness of regular representatives patches these limits, and weak lower semicontinuity plus exhaustion proves the global bound when the bounds are uniform. The argument uses reflexivity in the reverse direction and leaves the forward \(p=1\) estimate intact.
+\end{proof}
+
+\subsection{Differentiability and area for Lipschitz graphs}
+
+\begin{theorem}[Rademacher's theorem in Euclidean space]
+\label{p102:u4-rademacher}
+Let \(U\subset\mathbb R^m\) be open, \(m\geq1\), and let
+\(f:U\to\mathbb R^k\) be locally Lipschitz. Then \(f\) is Fr\'echet
+differentiable almost everywhere. Its derivative agrees almost
+everywhere with the matrix of its weak first derivatives. Where
+\(f\) is \(L\)-Lipschitz on a neighborhood, this matrix has operator
+norm at most \(L\) almost everywhere in that neighborhood.
+\end{theorem}
+\begin{proof}
+Fix a unit direction \(v\). In orthonormal coordinates \((z,t)\)
+with last axis \(v\), cover \(U\) by countably many product boxes
+on each of which \(f\) is Lipschitz. The restriction to any compact
+vertical interval in a box is absolutely continuous. The
+one-dimensional absolute continuity theorem gives its derivative
+almost everywhere and permits integration by parts against a
+test on that interval. This is the compact-interval version proved
+in \cite[Chapter~12, the AC fundamental theorem]{d11}, applied
+componentwise. The set on which the directional derivative exists
+is measurable: in testing the Cauchy criterion for the difference
+quotient at zero, rational nonzero increments suffice by continuity
+away from zero. Its value is measurable as a limit of difference
+quotients, with value zero where the limit does not exist.
+Thus Fubini gives a derivative \(a_v(x)\) at almost every \(x\).
+Its magnitude on each box is bounded by the Lipschitz constant
+there. For a test \(\phi\) supported in the box the line integrations
+by parts give
+\[
+ \int a_v(x)\phi(x)\,dx
+   =-\int f(x)\sum_{i=1}^m v_i\partial_i\phi(x)\,dx .
+\]
+Orthogonal changes of coordinates preserve Lebesgue measure,
+and a smooth partition on the test support gives this identity
+for every \(\phi\in C_c^\infty(U)\). In particular the coordinate
+derivatives are represented by \(a_{e_i}\).
+
+Let \(\mathcal V\) be a countable dense subset of the unit sphere
+containing the coordinate vectors. By the injectivity of regular
+distributions in Proposition~\ref{p102:AN-11-C02-R01},
+\(a_v=\sum_i v_i a_{e_i}\) almost everywhere for each \(v\).
+Outside one null set these identities and the directional limits
+hold simultaneously for all \(v\in\mathcal V\). At such an \(x\),
+let \(A\) have columns \(a_{e_i}(x)\). On a neighborhood of \(x\)
+where \(f\) is \(L\)-Lipschitz, the directional limits give
+\(|Av|\leq L\) for \(v\in\mathcal V\), hence \(\|A\|\leq L\)
+by density.
+
+Given \(\varepsilon>0\), choose \(\eta>0\) such that
+\((L+\|A\|)\eta<\varepsilon/2\), and choose finitely many
+vectors \(v_1,\ldots,v_N\) in \(\mathcal V\) that form an
+\(\eta\)-net of the sphere. There is a common \(r_0>0\) such
+that the ball of radius \(r_0\) about \(x\) lies in the Lipschitz
+neighborhood and
+\[
+ |f(x+rv_j)-f(x)-rAv_j|\leq (\varepsilon/2)r
+ \qquad(0<r<r_0,\ 1\leq j\leq N).
+\]
+For any \(h\) of length \(r\) in that range choose
+\(|h/r-v_j|<\eta\). Replacing \(rv_j\) by \(h\) adds at most
+\((L+\|A\|)\eta r\) to the error. Therefore
+\(|f(x+h)-f(x)-Ah|\leq\varepsilon|h|\) for every such \(h\).
+This proves Fr\'echet differentiability at \(x\) with derivative
+\(A\), and proves the claimed agreement and bound.
+\end{proof}
+
+In the next theorem \(\mathcal H^m\) has Euclidean normalization:
+its restriction to each isometric \(m\)-plane is ordinary
+\(m\)-dimensional Lebesgue measure. Equivalently it is the
+coefficient-one Hausdorff measure of \cite[Chapter~22]{d11}
+multiplied by the constant \(c_m\) in that chapter's Euclidean
+normalization theorem. The same chapter proves Borel
+measurability, isometric invariance, and the diameter-cover bound
+\(\mathcal H^m(g(B))\leq L^m\mathcal H^m(B)\) for \(L\)-Lipschitz
+maps. We use counting measure when \(m=0\).
+
+\begin{theorem}[Area of a Lipschitz graph]
+\label{p102:u4-lipschitz-graph-area}
+Let \(U\subset\mathbb R^m\) be open, \(m\geq1\), and
+\(\gamma:U\to\mathbb R\) Lipschitz. Put
+\(\Gamma(x)=(x,\gamma(x))\) and \(J(x)=\sqrt{1+|\nabla\gamma(x)|^2}\),
+using the almost-everywhere derivative. For every Lebesgue
+measurable \(B\subset U\),
+\[
+ \mathcal H^m(\Gamma(B))=\int_B J(x)\,dx .
+\]
+Consequently, for every nonnegative measurable \(w\) on the graph,
+or every integrable \(w\),
+\[
+ \int_{\Gamma(U)} w\,d\mathcal H^m
+   =\int_U w(\Gamma(x))J(x)\,dx .
+\]
+For the epigraph side \(t>\gamma(x)\), the outward unit normal
+is \(\nu(\Gamma(x))=(\nabla\gamma(x),-1)/J(x)\) almost everywhere.
+For a measurable vector field on the graph, its normal flux
+is integrable exactly when the integrand on the right is
+integrable, and then
+\[
+ \int_{\Gamma(U)} F\cdot\nu\,d\mathcal H^m
+   =\int_U F(\Gamma(x))\cdot(\nabla\gamma(x),-1)\,dx .
+\]
+For a graph over \(\mathbb R^0\) the formulas use the unit mass
+on the base point, \(J=1\), and outward normal \(-1\) on the
+upper-ray side.
+\end{theorem}
+\begin{proof}
+Write \(a(x)\) for a Borel representative of \(\nabla\gamma\).
+It may be chosen by coordinate difference quotients as in
+Theorem~\ref{p102:u4-rademacher}. For a constant \(a\in\mathbb R^m\)
+define \(L_a x=(x,a\cdot x)\). The singular lengths of this
+linear map have product \(\sqrt{\det(I+aa^\top)}
+=\sqrt{1+|a|^2}\), since the matrix of inner products is
+\(I+aa^\top\). More explicitly, composing \(L_a\) with
+orthonormal coordinates on its image plane produces an invertible
+matrix \(M\) with \(M^\top M=I+aa^\top\), so
+\(|\det M|=\sqrt{1+|a|^2}\). Thus Euclidean normalization and
+the linear change-of-variables theorem
+\cite[Chapter~9, Linear Jacobian]{d11} give
+\[
+ \mathcal H^m(L_a(S))=\sqrt{1+|a|^2}\,|S|
+ \qquad\text{for Borel }S\subset U .
+\]
+
+Fix \(0<\varepsilon<1/2\). For \(a\in\mathbb Q^m\) and
+\(j\geq1\), take the set of all \(x\in U\) with
+\(|a(x)-a|<\varepsilon/2\) such that
+\[
+ |\gamma(y)-\gamma(x)-a\cdot(y-x)|
+    \leq\varepsilon |y-x|
+ \quad\text{for all }y\in U\text{ with }|y-x|<1/j.
+\]
+The second condition is equivalent to testing it on the rational
+points of \(U\), by continuity in \(y\), so the set is Borel.
+At each differentiability point where \(a(x)\) equals the
+derivative, a rational \(a\) can be chosen within
+\(\varepsilon/2\) of \(a(x)\), and differentiability supplies
+the condition for a sufficiently large \(j\). Intersect each
+set with a countable grid of half-open cubes of diameter less
+than \(1/j\). Enumerate the resulting pieces and subtract all
+earlier pieces from each one. This gives countably many disjoint
+Borel pieces whose union has null complement in \(U\).
+
+For \(x,y\) in one piece with chosen vector \(a\), the graph
+increment differs from \(L_a(y-x)\) by a vector of norm at most
+\(\varepsilon|y-x|\leq\varepsilon|L_a(y-x)|\). The map sending
+\(L_a x\) to \(\Gamma(x)\) on this piece has Lipschitz constant
+at most \(1+\varepsilon\), and its inverse has constant at most
+\((1-\varepsilon)^{-1}\). For a Borel subset \(S\) of the piece
+the diameter-cover bound in both directions yields
+\[
+ (1-\varepsilon)^m\sqrt{1+|a|^2}\,|S|
+ \leq\mathcal H^m(\Gamma(S))
+ \leq(1+\varepsilon)^m\sqrt{1+|a|^2}\,|S| .
+\]
+On the same piece the difference of
+\(\sqrt{1+|a|^2}\) and \(J(x)\) is bounded by \(|a-a(x)|\),
+by the reverse triangle inequality for \((1,a)\) and
+\((1,a(x))\). Since \(J(x)\geq1\), this gives
+\((1-\varepsilon)J(x)\leq\sqrt{1+|a|^2}\leq(1+\varepsilon)J(x)\).
+Substitution in the two bounds gives
+\[
+ (1-\varepsilon)^{m+1}\int_S J(x)\,dx
+ \leq\mathcal H^m(\Gamma(S))
+ \leq(1+\varepsilon)^{m+1}\int_S J(x)\,dx .
+\]
+
+The graph is relatively closed in \(U\times\mathbb R\), and
+\(\Gamma(S)\) is its intersection with the inverse image of
+\(S\) under horizontal projection. Hence all Borel pieces of
+the base give Borel pieces of the graph. The unused null set
+has null graph image because \(\Gamma\) is Lipschitz. Add the
+bounds for the intersections of a Borel \(B\) with the
+disjoint pieces, then let \(\varepsilon\) decrease to zero.
+The lower bound also gives the assertion if the integral is
+infinite. A Lebesgue measurable \(B\) differs from a Borel
+set by a subset of a Borel null set. The image of that subset
+is null for the complete Hausdorff measure, so the formula
+extends to such \(B\). The integral identity follows first
+for indicators and then by monotone approximation and
+decomposition into positive and negative parts. Horizontal
+projection is Lipschitz, so preimages under \(\Gamma\) of
+Hausdorff-null subsets of the graph are Lebesgue null; this
+also gives the identity for functions measurable for the
+completed measures.
+
+At a differentiability point, the graph has tangent plane
+given by the image of \(L_{a(x)}\), by the first-order remainder
+for \(\gamma\) and the bound \(|y-x|\leq|\Gamma(y)-\Gamma(x)|\).
+Every direction in that plane is approached along graph chords
+over a straight base line. Thus the plane is intrinsic to the
+graph, and agrees wherever two differentiable charts overlap.
+The vector \((a(x),-1)\) is orthogonal to that plane. It points
+outward because it is the gradient of the differentiable defining
+function \((x,t)\mapsto\gamma(x)-t\), which is negative on the
+epigraph side and positive on the exterior side. The positive
+normal direction therefore points to the same side in
+overlapping charts. Its length is \(J(x)\). The exceptional base
+set has null graph image, as above. Substitution in the
+integral identity cancels \(J\) and proves the flux formula.
+In dimension zero the base and its graph are either empty
+or singletons, and the statements follow from counting measure.
+\end{proof}
+
+\begin{theorem}[Weak chain and product rules and coordinate pullback]
+\label{p102:U4-06}
+For \(1\leq p\leq\infty\), a \(C^1\) scalar map with bounded derivative and \(F(0)=0\) satisfies the chain rule on \(W^{1,p}\). For complex values one may use its real differential. Real truncations that fix zero satisfy their chain rules, with the derivative set to zero on the cutoff levels. For a nonzero value at zero, the same conclusion holds if the domain has finite measure, or if \(p=\infty\). Products of two bounded \(W^{1,p}\) functions obey the product rule. If \(g:V\to U\) is a bi-Lipschitz homeomorphism between open sets, pullback \(u\mapsto u\circ g\) maps \(W^{1,p}(U)\) boundedly into \(W^{1,p}(V)\), with
+\[
+ D(u\circ g)(x)=(Du)(g(x))Dg(x)\quad\text{almost everywhere}.
+\]
+A smooth diffeomorphism also acts on ordinary distributions by transposing the smooth change-of-variables formula.
+\end{theorem}
+\begin{proof}
+On almost every coordinate line apply the one-dimensional absolutely continuous chain and product rules. An absolutely continuous real function has derivative zero almost everywhere on any fixed level. At points of differentiability with nonzero derivative, that level point is isolated within the level set on the line, and the isolated points form a countable set. Applying this to the cutoff levels gives the truncation identity. The derivative bounds and \(F(0)=0\) yield integrability of both the function and its gradient, and the line characterization gives the weak identities.
+
+For the coordinate assertion use the measure distortion bound \(|g^{-1}(E)|\leq C_d\operatorname{Lip}(g^{-1})^d |E|\), first for outer measure by cube covers and then for measurable sets. Lipschitz maps send null sets to null sets by the same argument. Applying the bound to level sets gives the needed \(L^p\) change estimate and the analogous essential-supremum estimate. For smooth \(u\), Theorem~\ref{p102:u4-rademacher} applies to \(g\) and the locally Lipschitz \(u\circ g\). The classical chain rule at differentiability points of \(g\) gives the displayed derivative, and the theorem identifies it with the weak derivative. For general \(u\), fix a relatively compact open subset of \(V\). A cutoff in \(U\) equal to one near the image of its closure, followed by convolution, approximates \(u\) locally in \(W^{1,p}\) for finite \(p\), and locally in \(W^{1,1}\) for \(p=\infty\). The change estimate and the a.e. bound on \(Dg\) give convergence of both sides in the respective local norms. The weak closed equations pass to the limit. The resulting formula and the change estimate then give the global \(W^{1,p}\) bound, also for \(p=\infty\). This is an order-one assertion, which is the order used for Lipschitz boundary charts.
+
+For smooth \(g\), define \(g^*T(\phi)=T((\phi\circ g^{-1})|\det Dg^{-1}|)\). The transported support is compact in \(U\). Each fixed-support derivative is bounded by a finite seminorm of \(\phi\), by the classical chain rule and bounds on the inverse chart over that compact. Thus this is continuous on tests. Ordinary change of variables identifies the pullback of \(T_f\) with \(T_{f\circ g}\), and the determinant chain rule gives compatibility with composition.
+\end{proof}
+
+\begin{theorem}[Negative order and divergence representation]
+\label{p102:U4-07}
+For \(1<p<\infty\), write \(p'=p/(p-1)\) and define \(W^{-1,p'}(\Omega)\) as the continuous linear dual of \(W_0^{1,p}(\Omega)\). Every element has a representation
+\[
+ f=f_0+\sum_{j=1}^d \partial_j f_j,\qquad f_0,\ldots,f_d\in L^{p'}(\Omega),
+\]
+as a distribution. The dual norm is equivalent to the infimum of the finite product norm of such representing tuples.
+\end{theorem}
+\begin{proof}
+The map \(J:u\mapsto(u,D_1u,\ldots,D_du)\) is an isometry into the finite product of \(L^p\) spaces with the sum norm, and its image is closed by completeness. Extend a continuous functional from this image by Hahn--Banach, preserving the norm. Scalar \(L^p\) duality on the Lebesgue space gives a tuple \((f_0,-f_1,\ldots,-f_d)\) representing that extension. In the complex case the bilinear pairing is obtained from the usual duality formula by conjugating the representing coefficients when needed. Testing the tuple on \(Ju\) gives \(\int f_0u-\sum_j\int f_jD_ju\), which is the asserted distribution on smooth compactly supported functions. Conversely this formula defines a bounded functional on the whole zero-boundary space by H\"older's inequality. The product dual norm for the sum norm is the maximum of the coefficient norms; Hahn--Banach gives a tuple with this maximum equal to the original norm, and each representing tuple bounds the norm from above. Other finite product norms are equivalent. The density defining \(W_0^{1,p}\) gives uniqueness of the functional associated with the represented distribution.
+\end{proof}
+
+\section{The zero-dimensional conventions}
+
+In dimension zero the Euclidean space is a singleton with unit Lebesgue mass. Its only open subsets are the empty set and the singleton. On the singleton every scalar function is smooth with compact support, the test topology is the scalar norm topology, and every distribution is a multiple of evaluation. The only multi-index is the zero multi-index. Consequently the local order, regular distribution, support, and point-support statements reduce to scalar multiplication and evaluation. Convolution on the full singleton is scalar multiplication and a normalized mollifier is the constant one. Both the fixed-support and Schwartz spaces are the scalar field with the same topology. For every \(m,p\), the spaces \(W^{m,p}\) and \(W_0^{m,p}\) are the scalar \(L^p\) space, with the zero-order term in the norm, and the negative-order dual is represented by \(f_0\) alone. On the empty open set the corresponding spaces are zero. The direction, difference quotient, and finite-slab gradient statements require a positive-dimensional direction.
+\chapter[Sobolev embeddings and traces]{Sobolev embeddings, compactness, and boundary values}
+\label{p102:unit-u5}
+For an open set \(G\subset\mathbb R^d\), the norm on \(W^{1,p}(G)\) is
+\(\|u\|_{L^p(G)}+\|\nabla u\|_{L^p(G)}\). Any equivalent product norm gives
+the same space. The gradient length is Euclidean. Constants in estimates
+may depend on the indicated exponents and the fixed domain. We use the
+weak-derivative, slicing, change-of-variables, and density results of U4.
+
+\section{Lipschitz graph extension}
+
+\begin{definition}
+A bounded Lipschitz open set has, near each boundary point and after
+a rigid motion, a neighborhood where the boundary is a graph
+\(x_d=\gamma(x')\) of a Lipschitz function and the open set lies on
+the side \(x_d>\gamma(x')\). The chart can be taken in the form
+\(\Phi(x',t)=(x',\gamma(x')+t)\) on a product of a tangential ball
+and an interval \((-a,a)\). A Lipschitz domain is a connected
+Lipschitz open set. In dimension one the bounded Lipschitz open sets
+are finite unions of bounded intervals with distinct endpoints.
+\end{definition}
+The chart and its inverse are Lipschitz. Lebesgue measure is preserved
+by the shear, by Fubini on each vertical line. The graph map from
+\(\mathbb R^{d-1}\) to the boundary is bi-Lipschitz, and surface
+measure \(\sigma=\mathcal H^{d-1}\) in the chart is comparable to
+tangential Lebesgue measure. The latter assertion also follows directly
+from the Lipschitz distortion estimate for Hausdorff measure, applied to
+the graph map and the projection.
+
+\begin{lemma}[Reflection and extension]\label{p102:u5-integer-extension}
+For \(1\le p\le\infty\), a bounded Lipschitz open set \(\Omega\)
+admits a bounded linear extension \(E:W^{1,p}(\Omega)\to
+W^{1,p}(\mathbb R^d)\), with support in a fixed bounded set.
+For \(p<\infty\) the restrictions of \(C_c^\infty(\mathbb R^d)\)
+are dense in \(W^{1,p}(\Omega)\).
+\end{lemma}
+\begin{proof}
+Write \(H=\mathbb R^{d-1}\times(0,\infty)\). Reflect a half-space
+function evenly by \(v^e(x',t)=v(x',|t|)\).
+For almost every \(x'\), the vertical representative is absolutely
+continuous on compact intervals, extends to zero height, and has
+derivative in \(L^p\) on almost every finite interval. For \(p=1\)
+the endpoint follows from integrability of the derivative on the whole
+interval. Its even reflection is absolutely continuous across \(0\),
+with derivative \(\operatorname{sgn}(t)\partial_t v(x',|t|)\).
+Tangential derivatives reflect evenly, as follows by integration by
+parts on tangential slices for almost every \(t\). Fubini gives the weak
+derivative identities and the norm bound, including the essential
+supremum case.
+
+Choose finitely many boundary charts with smaller, relatively compact
+cylinders symmetric about the flattened boundary plane \(t=0\), whose
+images cover the boundary. A smooth partition on a
+neighborhood of \(\overline\Omega\) has boundary pieces supported in
+these smaller images and an interior piece supported away from the
+boundary. For each boundary piece \(\chi u\), pull back by \(\Phi\);
+the weak chain rule under bi-Lipschitz coordinate changes and the
+Jacobian bound give its \(W^{1,p}\) norm bound. On the positive
+half-cylinder this piece vanishes in a neighborhood of the artificial
+side and top. Extend it by zero on the rest of \(H\), where testing
+across the artificial boundary gives no boundary term, and reflect.
+Its support and the reflection stay in the full cylinder. Push forward
+by \(\Phi\) and set the piece to zero outside the full chart. The
+interior piece extends by zero, by the same test argument. The sum
+equals \(u\) on \(\Omega\), and the finitely many multiplier, reflection,
+and coordinate bounds give the asserted linear estimate. For
+\(p=\infty\), the coordinate rule can equivalently be checked on the
+locally Lipschitz representatives and then by the essential bounds for
+their gradients. For finite \(p\), convolution of \(Eu\) with a
+smooth compactly supported approximate identity converges in
+\(W^{1,p}(\mathbb R^d)\), because both \(Eu\) and its weak derivatives
+converge in \(L^p\). The convolution has compact support. Restricting
+gives the density assertion.
+\end{proof}
+
+\section{First-order Sobolev and Morrey estimates}
+
+\begin{theorem}[Subcritical first-order Sobolev embedding]
+\label{p102:AN-11-C04-R02}
+Let \(d\ge2\), \(1\le p<d\), and \(p^*=dp/(d-p)\). Then
+\[
+ \|u\|_{L^{p^*}(\mathbb R^d)}\le C_{d,p}\|\nabla u\|_{L^p(\mathbb R^d)}
+ \qquad (u\in W^{1,p}(\mathbb R^d)).
+\]
+The full \(W^{1,p}\) norm controls \(L^{p^*}\) on a bounded
+Lipschitz open set. On \(W_0^{1,p}(G)\) for an arbitrary open \(G\),
+the gradient estimate alone holds, by zero extension.
+\end{theorem}
+\begin{proof}
+For \(u\in C_c^\infty(\mathbb R^d)\), let
+\(A_j(\widehat x_j)=\int_{\mathbb R}|\partial_j u(x)|\,dx_j\).
+The one-dimensional fundamental theorem gives \(|u(x)|\le A_j(\widehat
+x_j)\) for each \(j\). For nonnegative \(A_j\) one has the product inequality
+\[
+ \int_{\mathbb R^d}\prod_{j=1}^d A_j(\widehat x_j)^{1/(d-1)}\,dx
+ \le \prod_{j=1}^d\left(\int_{\mathbb R^{d-1}} A_j\right)^{1/(d-1)} .
+\]
+For \(d=2\) this is Fubini. For the induction step, integrate in \(x_d\)
+and use H\"older with \(d-1\) equal exponents for \(j<d\). This produces
+\(B_j=\int A_j\,dx_d\) for \(j<d\), each missing \(x_j\) among the
+remaining \(d-1\) coordinates. Apply H\"older with exponents \(d-1\)
+and \((d-1)/(d-2)\) to separate \(A_d^{1/(d-1)}\); the integral
+of \(\prod_{j<d}B_j^{1/(d-2)}\) is bounded by the induction hypothesis.
+The product inequality yields the \(p=1\) gradient estimate by
+arithmetic-geometric mean.
+
+For \(1<p<d\) apply the estimate just proved to \(|u|^\gamma\) with
+\(\gamma=p(d-1)/(d-p)>1\). This compactly supported \(C^1\)
+function may also be approximated in \(C^1\) by convolution.
+The identities
+\(\gamma d/(d-1)=p^*\) and \((\gamma-1)p/(p-1)=p^*\) give
+\[
+ \|u\|_{p^*}^{\gamma}\le C_d\gamma\,
+ \|\nabla u\|_p \|u\|_{p^*}^{\gamma-1}.
+\]
+If \(u\ne0\), divide by the last power. Absolute values handle complex
+scalars using \(|\nabla |u||\le|\nabla u|\) almost everywhere.
+Approximate an arbitrary whole-space \(u\) in \(W^{1,p}\) by smooth
+compactly supported functions and pass through an almost-everywhere
+subsequence and Fatou. The domain estimates follow respectively from
+Lemma~\ref{p102:u5-integer-extension} and from zero extension of the
+defining \(C_c^\infty(G)\) approximants for \(W_0^{1,p}(G)\). The latter
+extension retains exactly the \(L^p\) norm of the gradient.
+\end{proof}
+
+\begin{theorem}[Critical and supercritical integer embeddings]
+\label{p102:AN-11-C04-R04}
+Let \(\Omega\) be bounded Lipschitz. If \(d\ge2\), then
+\(W^{1,d}(\Omega)\) embeds continuously in \(L^q(\Omega)\) for every
+finite \(q\ge1\). If \(d<p<\infty\), its \(W^{1,p}\) functions have
+unique continuous representatives on \(\overline\Omega\), with
+\(C^{0,1-d/p}\) norm controlled by the Sobolev norm. For \(p=\infty\)
+there is a Lipschitz representative and the corresponding norm bound.
+For \(d=p=1\) the representative on each closed component interval
+is absolutely continuous, with supremum norm controlled by
+\(W^{1,1}\).
+\end{theorem}
+\begin{proof}
+In the critical case \(d\ge2\), choose \(p_0<d\) so that
+\(dp_0/(d-p_0)\ge q\). The finite measure of \(\Omega\) gives the
+bounded inclusion \(W^{1,d}(\Omega)\subset W^{1,p_0}(\Omega)\), and
+Theorem~\ref{p102:AN-11-C04-R02} applies.
+
+For \(d<p<\infty\), a smooth whole-space function satisfies, for any
+cube \(Q\) of side \(r\) and any \(x\in Q\),
+\[
+ |u(x)-u_Q|
+ \le \frac1{|Q|}\int_Q|u(x)-u(y)|\,dy
+ \le C_d\int_{B(x,\sqrt d\,r)}
+              \frac{|\nabla u(z)|}{|z-x|^{d-1}}\,dz .
+\]
+To obtain the last inequality, enlarge the integral over \(Q\) to
+the ball, write \(y=x+\rho\theta\), and use
+\(|u(x+\rho\theta)-u(x)|\le\int_0^\rho|\nabla u(x+t\theta)|\,dt\).
+Interchanging the \(t,\rho\) integrals bounds the remaining \(\rho\)
+factor by a constant times \(r^d\), which cancels the averaging factor.
+H\"older now bounds the right side by
+\(C_{d,p} r^{1-d/p}\|\nabla u\|_p\), since
+\((d-1)p/(p-1)<d\). Use one cube of side comparable to \(|x-y|\)
+containing \(x\) and \(y\) and compare both values to its average.
+For the supremum norm use cubes of side one and
+\(|u_Q|\le \|u\|_p\). Smooth whole-space approximations are thus
+Cauchy in the supremum norm with controlled H\"older seminorm.
+The resulting representative agrees almost everywhere with the
+Sobolev class, and the inequality passes to the limit. Apply
+Lemma~\ref{p102:u5-integer-extension} and restrict to \(\overline
+\Omega\). Uniqueness follows because two continuous representatives
+agree on the dense subset of \(\Omega\) where the two agree
+almost everywhere. For \(p=\infty\), mollify the whole-space extension.
+The functions have uniformly bounded supremum and gradients. The
+segment estimate and local uniform subsequential convergence give the
+Lipschitz representative. In dimension one the one-dimensional
+slicing and fundamental theorem give
+\(\sup_{[a,b]}|u|\le (b-a)^{-1}\|u\|_1+\|u'\|_1\). There are
+finitely many component intervals, so the largest of these constants
+suffices.
+\end{proof}
+
+\begin{theorem}[Rellich compactness and the strict H\"older endpoint]
+\label{p102:AN-11-C05-R02}
+Let \(\Omega\) be bounded Lipschitz and \(1\le p<\infty\).
+For \(p<d\), the inclusion into \(L^q(\Omega)\) is compact for
+\(1\le q<p^*\). For \(p\ge d\), it is compact for every finite
+\(q\ge1\). For \(p>d\) the inclusion into
+\(C^{0,\beta}(\overline\Omega)\) is compact whenever
+\(0\le\beta<1-d/p\), with \(\beta=0\) denoting the supremum norm.
+\end{theorem}
+\begin{proof}
+Extend a bounded sequence to functions \(v_j\) supported in a common
+bounded set and bounded in \(W^{1,p}(\mathbb R^d)\). For smooth
+functions, integrating the derivative along segments and applying
+Minkowski gives
+\(\|v_j(\cdot+h)-v_j\|_p\le |h|\|\nabla v_j\|_p\).
+Density extends the estimate to the sequence. If \(\eta_\varepsilon\)
+is a smooth probability kernel supported in the ball of radius
+\(\varepsilon\), then
+\(\|\eta_\varepsilon*v_j-v_j\|_p\le C\varepsilon\) uniformly.
+At fixed \(\varepsilon\), the convolved functions and their first
+derivatives are uniformly bounded by H\"older applied to
+\(\eta_\varepsilon\) and its derivatives. Their supports lie in a common
+compact set, so Arzel\`a--Ascoli gives relative compactness in
+the supremum norm and hence in \(L^p\). A finite \(\delta\)-net
+for the convolved family and the uniform approximation give total
+boundedness of the original family in \(L^p\).
+On restriction, finite measure handles \(q\le p\). For \(q>p\),
+interpolate the \(L^p\) differences with their bounded \(L^r\) norms
+for an allowed \(r>q\). Use \(r=p^*\) in the subcritical case
+and any sufficiently large finite \(r\) in the other cases.
+
+For \(p>d\), put \(\alpha=1-d/p\). The uniform \(C^{0,\alpha}\)
+bound gives a uniformly convergent subsequence. For any difference \(w\)
+of its terms, optimizing
+\[
+ \frac{|w(x)-w(y)|}{|x-y|^\beta}
+ \le \min\{2\|w\|_\infty |x-y|^{-\beta},
+                     [w]_{C^{0,\alpha}}|x-y|^{\alpha-\beta}\}
+\]
+bounds \([w]_{C^{0,\beta}}\) by
+\(C\|w\|_\infty^{1-\beta/\alpha}[w]_{C^{0,\alpha}}^{\beta/\alpha}\).
+This proves convergence in the claimed norms.
+\end{proof}
+
+The strict endpoint restrictions reflect concentration. At an interior
+point \(x_0\), choose a nonzero bump \(\phi\) and let
+\(u_r(x)=r^{1-d/p}\phi((x-x_0)/r)\) for small \(r>0\).
+Its gradient norm is fixed. If \(p<d\) its \(L^{p^*}\) norm is
+also fixed while \(u_r\to0\) almost everywhere, so the \(L^{p^*}\)
+inclusion is not compact. If \(p>d\) then \(u_r\to0\) uniformly
+while a pair of scaled points gives a fixed positive lower bound
+for its \(C^{0,1-d/p}\) seminorm. In \(d=p=1\) fixed-height shrinking
+bumps similarly disprove compactness in the supremum norm.
+
+\begin{theorem}[Mean-zero Poincar\'e inequality]\label{p102:U5-01}
+On a bounded connected Lipschitz domain \(\Omega\), for
+\(1\le p<\infty\),
+\[
+ \|u-u_\Omega\|_p\le C_{\Omega,p}\|\nabla u\|_p,
+ \qquad u_\Omega=|\Omega|^{-1}\int_\Omega u .
+\]
+\end{theorem}
+\begin{proof}
+Failure would give a sequence of mean-zero functions with \(L^p\)
+norm one and gradient norms tending to zero. By the preceding
+compactness theorem a subsequence converges strongly in \(L^p\)
+to a function \(u\) of mean zero and norm one. Testing the
+derivatives shows \(\nabla u=0\) weakly. On every ball compactly
+contained in \(\Omega\), mollification makes \(u\) constant on smaller
+concentric balls because the classical gradients vanish there.
+Letting the mollifier scale tend to zero gives a constant almost
+everywhere on each such ball. Constants agree on overlaps of
+positive measure. The unions of overlapping chains of these balls
+are open, and connectedness yields just one chain class. Hence \(u\)
+is constant almost everywhere, contradicting mean zero and norm one.
+\end{proof}
+
+\section{First-order Gagliardo--Nirenberg interpolation}
+
+\begin{theorem}[A classical first-order interpolation family]
+\label{p102:U5-02}
+Let \(1\le p,r\le\infty\) and suppose
+\(u\in W^{1,p}(\mathbb R^d)\cap L^r(\mathbb R^d)\).
+The following ranges are allowed.
+\begin{itemize}
+\item If \(p<d\), let \(q\) lie between \(r\) and \(p^*\), including both endpoints.
+\item If \(p=d\ge2\), assume \(r\le q<\infty\).
+\item If \(p>d\), or \(p=d=1\), assume \(r<\infty\) and \(r\le q\le\infty\).
+\end{itemize}
+Then
+\[
+ \|u\|_q\le C\|\nabla u\|_p^a\|u\|_r^{1-a},
+ \qquad
+ \frac1q=a\left(\frac1p-\frac1d\right)+\frac{1-a}{r}.
+\]
+Here \(1/\infty=0\), \(0\le a\le1\), and at \(a=0,1\) omit the
+factor with zero exponent. On a bounded Lipschitz open set the same ranges give
+\[
+ \|u\|_{L^q(\Omega)}
+ \le C_\Omega
+   \bigl(\|\nabla u\|_{L^p(\Omega)}+\|u\|_{L^p(\Omega)}\bigr)^a
+   \|u\|_{L^r(\Omega)}^{1-a}.
+\]
+\end{theorem}
+\begin{proof}
+The exponent equation follows by the dilation \(u(x)\mapsto u(\lambda x)\).
+For \(p<d\) the estimate is ordinary interpolation between \(L^r\) and
+the Sobolev endpoint \(L^{p^*}\). When \(p>d\), let
+\(\beta=1-d/p>0\). The point-to-cube estimate used for Morrey gives
+for every \(R>0\)
+\[
+ |u(x)|\le C \bigl(R^{-d/r}\|u\|_r+R^\beta\|\nabla u\|_p\bigr).
+\]
+Choose \(R\) so the two terms agree. If either norm vanishes then the
+inequality follows directly, since vanishing gradient makes an
+integrable whole-space function constant and hence zero. The result
+at \(q=\infty\) has \(a=(d/r)/(\beta+d/r)\). Interpolation with
+\(L^r\) gives the other \(q\)'s. For \(p=\infty\) use the pointwise
+Lipschitz estimate in place of the kernel estimate. For \(d=p=1\)
+the whole-line fundamental theorem gives
+\(\|u\|_\infty\le\|u'\|_1\), by the compactly supported case
+and density. Interpolation gives the full range in dimension one.
+
+In the critical case \(d=p\ge2\), first take a smooth compactly
+supported \(u\), put \(k=d/(d-1)\), and define \(q_j=r+jk\).
+Apply the \(W^{1,1}\) gradient bound to \(|u|^\gamma\) with
+\(\gamma=q_{j+1}/k>1\). H\"older gives
+\[
+ \|u\|_{q_{j+1}}^\gamma\le
+ C_d\gamma\|\nabla u\|_d\|u\|_{q_j}^{\gamma-1}.
+\]
+Starting at \(q_0=r\), induction gives exponent \(1-r/q_j\) at
+each \(q_j\), since \(k(\gamma-1)=q_j\).
+Interpolate between consecutive exponents to get all finite
+\(q\ge r\). To extend the finite-\(p\) inequalities, apply cutoffs
+and convolution simultaneously in \(W^{1,p}\) and \(L^r\), and
+pass to the limit by Fatou or the almost-everywhere supremum bound.
+For \(p=\infty\), convolution preserves the bounds on \(\|\nabla
+u\|_\infty\) and \(\|u\|_r\) and converges locally almost everywhere.
+The domain extension in Lemma~\ref{p102:u5-integer-extension} also
+satisfies \(\|Eu\|_r\le C\|u\|_{L^r(\Omega)}\), by the same
+cutoffs, changes of variables, and reflection applied to the
+zero-order norm. Its gradient satisfies
+\(\|\nabla Eu\|_p\le C\|u\|_{W^{1,p}(\Omega)}\).
+Apply the whole-space result and restrict.
+\end{proof}
+
+The estimate at \(p=d\ge2\) has no whole-space \(L^\infty\) endpoint.
+The concentrating functions below have bounded gradients and \(L^r\)
+norms, while their maxima tend to infinity. For references and other
+derivative orders see \cite[Sections 12.5 and 13.3]{leoni}
+and \cite[Chapter 5]{adams}.
+
+\section{Critical exponential integrability}
+
+\begin{lemma}[Symmetric rearrangement for Sobolev functions of bounded support]
+\label{p102:u5-polya-szego}
+Let \(1<p<\infty\) and \(f\in W^{1,p}(\mathbb R^d)\) be nonnegative
+and zero almost everywhere outside a ball centered at the origin.
+Then its symmetric decreasing rearrangement \(f^\ast\) belongs to
+\(W^{1,p}(\mathbb R^d)\) and
+\[
+ |\{f^\ast>s\}|=|\{f>s\}|\quad(s>0),\qquad
+ \|\nabla f^\ast\|_p\le\|\nabla f\|_p .
+\]
+Here the rearrangement is characterized up to null sets by its positive
+superlevel sets being centered balls of the prescribed measures.
+\end{lemma}
+\begin{proof}
+Let \(H=\{x:x\cdot e<c\}\), where \(|e|=1\) and \(c>0\), and write
+\(s_H\) for reflection in its boundary. The polarization \(P_Hg\) puts
+the larger of \(g(x),g(s_Hx)\) on the side \(H\) and the smaller on the
+other side. Pairing \(x\in H\) with \(s_Hx\) shows that polarization
+preserves all superlevel measures and the \(L^p\) norm. For \(x\in H\),
+\(|s_Hx|^2-|x|^2=4c(c-x\cdot e)>0\). Thus a function vanishing
+outside a centered ball still vanishes outside that same ball after
+polarization. Max and min of two real numbers are Lipschitz in the
+maximum norm of the pair. Applied to each reflected pair, this gives
+\(\|P_Hg-P_Hh\|_p^p\le 2\|g-h\|_p^p\).
+
+For smooth compactly supported \(g\), the two pieces of \(P_Hg\)
+are Lipschitz and agree on the plane. Their combination is Lipschitz:
+for two points on opposite sides, split their connecting segment at
+the plane and add the bounds on its two lengths. Its weak derivative
+is the almost-everywhere derivative, by absolute continuity on lines
+and Theorem~\ref{p102:u4-rademacher}. At almost every \(x\in H\) the two
+gradients on the pair are either unchanged or interchanged with the
+orthogonal differential of \(s_H\). On the equality set the two
+gradients used in the max and min agree almost everywhere, because
+the weak derivative of \(g-g\circ s_H\) vanishes on its zero level
+by the line argument of Theorem~\ref{p102:U4-06}. Thus integrating
+over reflected pairs preserves the integral of \(|\nabla g|^p\).
+For a general nonnegative \(g\) of bounded support, approximate by
+convolution with nonnegative smooth approximate identities in
+\(W^{1,p}\). Continuity of \(P_H\) in \(L^p\), weak subsequence
+compactness in \(L^p(\mathbb R^d;\mathbb R^d)\), and testing the
+weak derivatives against compactly supported smooth functions give
+\(P_Hg\in W^{1,p}\) with \(\|\nabla P_Hg\|_p\le\|\nabla g\|_p\).
+For the subsequence, \(L^{p'}(\mathbb R^d;\mathbb R^d)\) is separable
+for \(p'=p/(p-1)\); rational step functions on rational cubes give
+a countable dense family. From a bounded sequence select a diagonal
+subsequence converging on this family. Its limits extend to a
+bounded functional on \(L^{p'}\), and \(L^{p'}\) duality
+\cite[Section D11.20]{d11} identifies the weak limit in \(L^p\).
+The vector version follows by applying scalar duality to coordinates
+and using the Euclidean pairing. Weak lower semicontinuity of the
+norm follows from its supremum over the dual unit ball.
+
+Let \(K\) be the \(L^p\)-closure of all finite polarizations of \(f\),
+including \(f\). Every function in the orbit has common bounded
+support and the same uniform \(W^{1,p}\) bound. This orbit is
+relatively compact in \(L^p\). Indeed the translation estimate
+\(\|g(\cdot+h)-g\|_p\le |h|\|\nabla g\|_p\) follows by integrating
+along segments for smooth \(g\) and then by convolution approximation.
+It gives uniform \(L^p\) approximation of the orbit by convolution
+with any fixed smooth approximate identity at a sufficiently small
+scale. At each fixed scale the convolved functions have common
+bounded support and are uniformly bounded and equicontinuous by
+H\"older's inequality applied to the kernel and its translated
+differences. Arzel\`a--Ascoli on that support gives a finite net in
+the uniform norm and hence in \(L^p\) (see \cite{d10}, the compact
+metric space form of Arzel\`a--Ascoli). Letting the scale tend to zero
+proves total boundedness, so \(K\) is compact. Every \(v\in K\) is
+nonnegative, has the same support bound, and satisfies
+\(\|\nabla v\|_p\le\|\nabla f\|_p\), by the same weak-limit argument.
+For \(s>0\), each function \(\min(1,j(g-s)_+)\) has the same integral
+on the orbit. Its integral is continuous for strong \(L^p\) convergence
+on the fixed ball, since the scalar function is Lipschitz and the
+ball has finite volume. Letting \(j\) tend to infinity by monotone
+convergence proves \(|\{v>s\}|=|\{f>s\}|\) for every \(s>0\).
+In particular this step includes levels of positive measure.
+
+Choose \(v\in K\) maximizing \(g\mapsto\int e^{-|x|^2}g(x)\,dx\),
+a continuous functional on \(K\). For every such \(H\) one has
+\(P_Hv\in K\) by continuity of polarization and the orbit definition.
+The gain in the functional under polarization is
+\[
+ \int_H\bigl(e^{-|x|^2}-e^{-|s_Hx|^2}\bigr)
+          \bigl(v(s_Hx)-v(x)\bigr)_+\,dx .
+\]
+The weight difference is strictly positive throughout \(H\), so
+maximality implies \(v(x)\ge v(s_Hx)\) almost everywhere in \(H\).
+For a fixed \(s>0\), put \(E=\{v>s\}\) and let \(B\) be the centered
+ball of volume \(|E|\), including the empty ball if \(|E|=0\).
+If \(E\) differs from \(B\) on a set of positive measure, there are
+density points \(x\) of \(B\setminus E\) and \(y\) of \(E\setminus B\)
+with \(|x|<|y|\), by Theorem~\ref{p102:AN-06-C03-R03} applied to
+indicators and the nullity of the sphere. Their perpendicular
+bisector is the boundary of a half-space \(H\) of the indicated form
+containing \(x\) and the origin in its interior. Its reflection sends
+\(x\) to \(y\). In a sufficiently small ball around \(x\) contained
+in \(H\), more than half the points lie outside \(E\) and more than
+half have reflections in \(E\). The positive-measure intersection
+contradicts the ordering of \(v\) and \(v\circ s_H\) there. Therefore
+\(E=B\) up to a null set. Applying this to the countable positive
+rational levels determines \(v=f^\ast\) almost everywhere and
+gives a radially nonincreasing representative. The energy bound
+for \(v\in K\) proves the inequality.
+\end{proof}
+This polarization proof follows the approach in \cite{vanschaftingen}.
+Its bounded-support form is sufficient for zero extensions below.
+
+\begin{lemma}[A one-dimensional exponential estimate]
+\label{p102:u5-moser-1d}
+Let \(d\ge2\), \(b=(d-1)/d\), and let \(w:[0,\infty)\to[0,\infty)\)
+be locally absolutely continuous with \(w(0)=0\) and
+\(\int_0^\infty |w'|^d\,dt\le1\). Then
+\[
+ \int_0^\infty \exp\!\left(w(t)^{1/b}-t\right)\,dt\le C_d .
+\]
+\end{lemma}
+\begin{proof}
+H\"older gives \(w(t)\le t^b\). Put \(F(t)=t-w(t)^{1/b}\ge0\)
+and \(A_K=\{t:F(t)\le K\}\) for \(K>0\).
+At \(t\in A_K\) with \(t>K\), the energy used up to \(t\) is at least
+\[
+ \frac{w(t)^d}{t^{d-1}}\ge (1-K/t)^{d-1},
+ \qquad
+ \int_t^\infty |w'|^d\le (d-1)K/t.
+\]
+Suppose \(t,t+\ell\in A_K\) and \(\ell\ge2K\). Concavity of
+\(s^b\) gives
+\[
+ w(t+\ell)-w(t)\ge (t+\ell-K)^b-t^b
+ \ge \tfrac b2\ell(t+\ell)^{-1/d}.
+\]
+The upper bound from H\"older on \([t,t+\ell]\) is
+\(((d-1)K/t)^{1/d}\ell^b\). Comparing \(d\)-th powers shows
+\(\ell/(t+\ell)\le c_dK/t\). If \(t\ge2(c_d+1)K\), this implies
+\(\ell\le2c_dK\). Thus the part of \(A_K\) above
+\(2(c_d+1)K\) has diameter at most \(\max(2,2c_d)K\),
+by applying the estimate to every ordered pair in that part.
+Together with the initial interval this gives \(|A_K|\le C_dK\).
+Finally \(e^{-F(t)}=\int_{F(t)}^\infty e^{-K}\,dK\), so Tonelli
+and the level-set bound give the claim.
+\end{proof}
+
+\begin{theorem}[Sharp Trudinger--Moser inequality]\label{p102:U5-03}
+Let \(\Omega\subset\mathbb R^d\) be a nonempty bounded open set,
+\(d\ge2\), let \(\sigma_{d-1}=|\mathbb S^{d-1}|\), and put
+\(\alpha_d=d\,\sigma_{d-1}^{1/(d-1)}\).
+For \(u\in W_0^{1,d}(\Omega)\) with \(\|\nabla u\|_d\le1\),
+\[
+ \int_\Omega \exp\!\left(\alpha_d |u|^{d/(d-1)}\right)\,dx
+ \le C_d|\Omega|.
+\]
+If \(\alpha>\alpha_d\), the analogous supremum over this unit ball
+is infinite on every such \(\Omega\).
+\end{theorem}
+\begin{proof}
+Extend \(u\) by zero and replace it by its absolute value. Use the
+symmetric decreasing rearrangement \(v\) of that whole-space function.
+Zero extension belongs to \(W^{1,d}(\mathbb R^d)\) by approximation
+with \(C_c^\infty(\Omega)\). The absolute-value operation decreases
+the gradient norm, by applying the scalar chain rule first to
+\((|z|^2+\epsilon^2)^{1/2}-\epsilon\) and taking a weak derivative
+limit as \(\epsilon\downarrow0\). The maps have differential of norm
+at most one. Lemma~\ref{p102:u5-polya-szego} now gives
+equimeasurability and the required gradient bound.
+
+Let \(R\) satisfy \(|B(0,R)|=|\Omega|\). All positive superlevel
+balls of \(v\) have radius at most \(R\). Its radial profile is
+locally absolutely continuous on \((0,\infty)\). To see this,
+convolve \(v\) with radial smooth approximate identities and
+restrict to an annulus \(a<|x|<b\), \(0<a<b<\infty\).
+Convergence in \(W^{1,d}\), together with the polar-coordinate
+formula and the weight \(r^{d-1}\) bounded above and away from zero
+there, gives convergence of the smooth profiles and their radial
+derivatives in \(W^{1,d}(a,b)\). The one-dimensional line result
+identifies their limit as an absolutely continuous profile and
+gives \(\nabla v=v'(r)x/r\) almost everywhere there. Since the
+profile vanishes almost everywhere for \(r>R\), its value at \(R\)
+is zero. Set
+\[
+ t=d\log(R/r),\qquad
+ w(t)=(\sigma_{d-1}d^{d-1})^{1/d}v(r).
+\]
+The polar measure satisfies
+\(\sigma_{d-1}r^{d-1}|dr|=|\Omega|e^{-t}\,dt\).
+The derivative substitution \(dt/dr=-d/r\) gives
+\(\int_0^\infty |w'|^d\,dt=\int_{B(0,R)}|\nabla v|^d\le1\),
+and \(w(0)=0\). Moreover \(w^{d/(d-1)}=\alpha_d v^{d/(d-1)}\).
+Equimeasurability first for \(\exp(\alpha_d |u|^{d/(d-1)})-1\)
+and then addition of \(|\Omega|\) show that the desired integral
+equals the rearranged ball integral. It is bounded by
+Lemma~\ref{p102:u5-moser-1d} times \(|\Omega|\).
+
+For sharpness take a closed ball strictly inside \(\Omega\), use its
+radius in the same substitution, and prescribe
+\[
+ w_L(t)=
+ \begin{cases}
+ L^{-1/d}t,&0\le t\le L,\\
+ L^{(d-1)/d},&t\ge L.
+ \end{cases}
+\]
+The resulting radial function, extended by zero, is continuous,
+piecewise Lipschitz for each fixed \(L\), and lies in \(W_0^{1,d}\)
+by smoothing inside \(\Omega\). The substitution gives gradient norm
+one. In the central ball \(t\ge L\), the exponential integral at
+coefficient \(\alpha\) is the ball's original volume times
+\(\exp((\alpha/\alpha_d-1)L)\). This tends to infinity if
+\(\alpha>\alpha_d\).
+\end{proof}
+This identifies both the normalization and the sharp threshold of
+\cite{moser}. In particular the concentrating sequence also has
+bounded \(L^r\) norms for finite \(r\) by the exponential estimate,
+or by direct integration against \(e^{-t}\).
+
+\section{Gagliardo spaces and fractional embedding}
+
+\begin{definition}[Fractional Sobolev norm]\label{p102:U5-04}
+Let \(0<s<1\), \(1\le p<\infty\), and let \(G\subset\mathbb R^d\)
+be open. Define
+\[
+ \begin{aligned}
+ [u]_{s,p;G}^p
+ &=\int_G\int_G\frac{|u(x)-u(y)|^p}{|x-y|^{d+sp}}\,dy\,dx,\\
+ W^{s,p}(G)&=\{u\in L^p(G):[u]_{s,p;G}<\infty\}.
+ \end{aligned}
+\]
+The norm is \(\|u\|_p+[u]_{s,p;G}\). The diagonal is assigned
+zero in the integrand.
+\end{definition}
+
+\begin{proposition}
+The space \(W^{s,p}(G)\) is Banach. On \(\mathbb R^d\),
+\(C_c^\infty(\mathbb R^d)\) is dense. With the Fourier convention of U3,
+every \(u\in L^2(\mathbb R^d)\) satisfies the equality of
+nonnegative extended integrals
+\[
+ [u]_{s,2;\mathbb R^d}^{\,2}
+ =\kappa_{d,s}\int_{\mathbb R^d}|\xi|^{2s}|\widehat u(\xi)|^2\,d\xi,
+ \qquad
+ \kappa_{d,s}=
+ \int_{\mathbb R^d}\frac{|e^{2\pi i h_1}-1|^2}{|h|^{d+2s}}\,dh
+ \in(0,\infty).
+\]
+\end{proposition}
+\begin{proof}
+The map \(u\mapsto(u,(u(x)-u(y))/|x-y|^{d/p+s})\) is an isometry
+into a product of \(L^p\) spaces with sum norm. If both components
+converge there, take almost-everywhere subsequences in both spaces.
+The first component determines the limit of the second at almost
+every pair, proving closedness.
+
+For density take a compact smooth cutoff \(\chi_R(x)=\chi(x/R)\)
+equal to one on the ball of radius \(R\). For the difference
+\((1-\chi_R)u\), expand its increment into a bounded factor
+tending to zero times \(u(x)-u(y)\), and a term bounded by
+\[
+ C |u(y)|\min\{1,|x-y|/R\}.
+\]
+The first term converges to zero by dominated convergence in the
+seminorm integral. The \(p\)-th power integral of the second is
+at most \(CR^{-sp}\|u\|_p^p\), by splitting \(|x-y|\) at \(R\).
+The \(L^p\) norm also tends to zero. For mollification observe that
+\(D_su(x,h)=(u(x+h)-u(x))/|h|^{d/p+s}\) belongs to
+\(L^p(dx\,dh)\). Translation in \(x\) is strongly continuous in this
+product space. Minkowski applied to
+\(\eta_\varepsilon*_x D_su-D_su\) proves convergence in the
+seminorm, and the ordinary \(L^p\) convergence holds as well.
+Mollifying after cutoff gives compactly supported smooth approximants.
+
+For the identity write the seminorm as the \(h\)-integral of
+\(\|u(\cdot+h)-u\|_2^2/|h|^{d+2s}\).
+Plancherel and Tonelli turn it into the integral of
+\(|\widehat u(\xi)|^2\) times
+\(\int |e^{2\pi i h\cdot\xi}-1|^2|h|^{-d-2s}\,dh\).
+At \(\xi=0\) this inner integral is zero. Otherwise rotate the
+direction of \(\xi\) to \(e_1\) and rescale \(h\) by \(|\xi|\).
+The integral defining \(\kappa_{d,s}\) is finite because its
+numerator is \(O(|h|^2)\) near zero and bounded at infinity.
+It is strictly positive because the numerator is nonzero on
+an open set. In particular \(W^{s,2}(\mathbb R^d)\) is the
+Bessel-potential \(H^s\) space with equivalent norms, by comparing
+\(1+|\xi|^{2s}\) with \((1+4\pi^2|\xi|^2)^s\).
+\end{proof}
+
+\begin{theorem}[Fractional extension, embedding, and compactness]
+\label{p102:U5-05}
+For \(0<s<1\), \(1\le p<\infty\), a bounded Lipschitz open set
+\(\Omega\) admits a bounded linear \(W^{s,p}\) extension with
+support in a fixed bounded set. If \(sp<d\) and
+\(p_s^*=dp/(d-sp)\), then
+\[
+ \|u\|_{L^{p_s^*}(\mathbb R^d)}
+ \le C_{d,s,p}[u]_{s,p;\mathbb R^d}
+ \qquad (u\in W^{s,p}(\mathbb R^d)).
+\]
+On \(\Omega\) the full norm controls \(L^{p_s^*}\), and the
+inclusion into \(L^q\) is compact for \(1\le q<p_s^*\).
+If \(sp=d\) the inclusion on \(\Omega\) is continuous and compact
+for every finite \(q\ge1\). If \(sp>d\), it is continuous into
+\(C^{0,s-d/p}(\overline\Omega)\) and compact in each strictly
+smaller H\"older exponent, including the supremum norm.
+\end{theorem}
+\begin{proof}
+A bounded Lipschitz multiplier acts boundedly on \(W^{s,p}\).
+Indeed expand the increment of the product, and for the term
+involving the multiplier difference integrate the kernel against
+\(\min\{1,|x-y|\}^p\), whose weighted integral is finite.
+A bi-Lipschitz change of variables preserves the seminorm up to a
+constant, since distances are comparable and the two Jacobians
+are bounded. A piece vanishing within distance \(\delta>0\) of
+an artificial edge can be set to zero across that edge with extra
+seminorm to the \(p\)-th power bounded by
+\(C\delta^{-sp}\|u\|_p^p\). For even reflection across the flat
+boundary the cross-half-space denominator contains
+\(\bigl(|x'-y'|^2+(t+u)^2\bigr)^{(d+sp)/2}\) for heights \(t,u>0\).
+Since \(t+u\ge |t-u|\), those integrals are bounded by the
+same-side seminorm. The cutoff, pullback, reflection and pushforward
+construction of Lemma~\ref{p102:u5-integer-extension}, with these
+bounds at every step, proves the extension assertion.
+
+For the whole-space embedding take smooth compactly supported \(u\).
+Set \(a_k=|\{x:|u(x)|>2^k\}|\) and \(\theta=sp/d\in(0,1)\).
+If \(a_k>0\), the ball about \(x\) with volume \(2a_k\) contains
+at least \(a_k\) of the complement of the \(k\)-th level set.
+The integral of \(|x-y|^{-d-sp}\) over that part is therefore at
+least \(c_{d,s,p}a_k^{-\theta}\). On the other hand, for each
+ordered pair \(x,y\),
+\[
+ \sum_{\substack{k:\ |u(x)|>2^{k+1}\\ |u(y)|\le2^k}}2^{kp}
+ \le C_p\bigl||u(x)|-|u(y)|\bigr|^p .
+\]
+If the set of indices is nonempty, each such \(2^k\) is less
+than the difference on the right, so the geometric series
+proves the inequality. Integrate these bounds to obtain
+\[
+ T=\sum_k 2^{kp}a_{k+1}a_k^{-\theta}
+ \le C [u]_{s,p}^{\,p},
+\]
+where a term with \(a_k=0\) is zero. Define
+\(b_k=2^{kp}a_k^{1-\theta}\) and \(S=\sum_k b_k\). The sums are
+finite for the current \(u\), by boundedness and compact support.
+The identity
+\[
+ b_{k+1}
+ =2^p(2^{kp}a_{k+1}a_k^{-\theta})^{1-\theta}b_k^\theta
+\]
+and H\"older for the sum give \(S\le2^pT^{1-\theta}S^\theta\).
+This bounds \(S\) by a constant times \(T\), with \(S=0\)
+immediate. A dyadic partition of the range gives
+\[
+ \|u\|_{p_s^*}^p
+ \le C\left(\sum_k 2^{kp_s^*}a_k\right)^{1-\theta}
+ \le C\sum_k b_k .
+\]
+The last inequality uses subadditivity of \(t^{1-\theta}\).
+Density and Fatou now prove the embedding for all \(u\).
+Restriction after extension gives the domain version.
+
+For compactness let \(v_j\) be bounded extensions with common
+bounded support. A smooth probability kernel supported in
+\(|h|\le\varepsilon\) and bounded by \(C\varepsilon^{-d}\)
+gives by Jensen
+\[
+ \|\eta_\varepsilon*v_j-v_j\|_p^p
+ \le C\varepsilon^{-d}\int_{|h|\le\varepsilon}
+     \|v_j(\cdot-h)-v_j\|_p^p\,dh
+ \le C\varepsilon^{sp}[v_j]_{s,p}^{\,p}.
+\]
+The convolved family is compact in \(L^p\) after passage to its
+closure, by the same support and derivative bounds used in
+the integer compactness proof. Thus the original sequence has an
+\(L^p\)-convergent subsequence. Interpolation with its bounded
+\(L^{p_s^*}\) norm, or the finite measure of \(\Omega\) for \(q\le p\),
+gives the strict subcritical compact range. For \(sp=d\),
+splitting the defining integral into \(|h|<1\) and \(|h|\ge1\)
+gives \([v]_{s',p}\le C([v]_{s,p}+\|v\|_p)\) for every \(0<s'<s\).
+Choose \(s'\) sufficiently close to \(s\) for each finite \(q\)
+and apply the preceding embedding and compactness.
+
+Finally if \(sp>d\), Jensen on a ball \(B\) of radius \(r\) gives
+\[
+ \frac{1}{|B|}\int_B |v-v_B|^p
+ \le |B|^{-2}\int_{B\times B}|v(x)-v(y)|^p\,dy\,dx
+ \le C r^{sp-d}[v]_{s,p}^{\,p}.
+\]
+For a Lebesgue point, telescope the means over concentric balls
+of radii \(r, r/2,r/4,\ldots\). Each difference of consecutive
+means is bounded by \(C(r2^{-j})^{s-d/p}[v]_{s,p}\), by
+H\"older and the displayed bound. The sum converges. For two
+Lebesgue points at distance \(r\), compare their radius-\(r\)
+means to the mean on one containing ball of radius \(3r\) using
+the same oscillation estimate. This gives the H\"older bound and
+extension from the dense set of Lebesgue points. A radius-one
+mean bounds the supremum in terms of \(\|v\|_p+[v]_{s,p}\).
+Arzel\`a--Ascoli and the strict-exponent interpolation argument
+from integer compactness prove the last compactness assertion.
+\end{proof}
+For related formulations and further boundary conditions see
+\cite[Sections 2--3 and 5--8]{dnpv} and
+\cite[Chapter 7]{adams}.
+
+\section{Half-space traces and explicit lifting}
+
+Throughout this section \(1\le p<\infty\). First let \(d\ge2\),
+\(m=d-1\), and \(H=\mathbb R^m\times(0,\infty)\).
+For \(v\in W^{1,p}(H)\) the trace on the flat face is the
+\(L^p(\mathbb R^m)\) limit of the horizontal slices as \(t\downarrow0\).
+Here and below the slices use the representative that is continuous
+as an \(L^p\)-valued function of positive height. To obtain it,
+slicing, the fundamental theorem, and Minkowski give, for almost
+every pair of heights \(a,b>0\),
+\[
+ \|v(\cdot,b)-v(\cdot,a)\|_p
+ \le \int_{\min(a,b)}^{\max(a,b)}\|\partial_t v(\cdot,t)\|_p\,dt .
+\]
+On bounded height intervals the right side is an absolutely continuous
+modulus. Completeness supplies the continuous representative and
+the limit \(g\) at zero. A subsequence converging almost everywhere
+identifies \(g\) with the vertical boundary value for almost every
+\(x'\). Integrating the estimate
+\(\|g\|_p\le \|v(\cdot,t)\|_p+\int_0^t
+\|\partial_t v(\cdot,a)\|_p\,da\) over \(0<t<1\) gives
+\(\|g\|_p\le C\|v\|_{W^{1,p}(H)}\).
+
+\begin{lemma}[Exact flat trace and lift]\label{p102:u5-flat-trace}
+For \(1<p<\infty\) put \(s=1-1/p\). The flat trace is bounded into
+\(W^{s,p}(\mathbb R^m)\) and has a bounded linear right inverse.
+For \(p=1\) the trace is onto \(L^1(\mathbb R^m)\), with a bounded
+norm estimate for a preimage.
+\end{lemma}
+\begin{proof}
+First suppose \(p>1\), let \(a(t)=\|\partial_t v(\cdot,t)\|_p\), and
+take \(h\in\mathbb R^m\), \(r=|h|\). Compare \(g\) and its translate
+to the corresponding slices at height \(r\), then translate within
+that slice. For almost every \(r\) and every direction this gives
+\[
+ \|g(\cdot+h)-g\|_p
+ \le 2\int_0^r a(t)\,dt+r\|\nabla' v(\cdot,r)\|_p .
+\]
+Polar integration in \(h\), using \(sp=p-1\), bounds the trace
+seminorm to the \(p\)-th power by a constant times
+\[
+ \int_0^\infty r^{-p}\left(\int_0^r a(t)\,dt\right)^p\,dr
+ +\int_0^\infty\|\nabla'v(\cdot,r)\|_p^p\,dr.
+\]
+The first integral is at most \((p/(p-1))^p\|a\|_p^p\).
+Indeed for bounded \(a\) supported away from zero and infinity,
+integration by parts with \(A(r)=\int_0^r a(t)\,dt\)
+turns it into \(\frac{p}{p-1}\int A^{p-1}a r^{1-p}\,dr\);
+the boundary terms vanish. H\"older and division give the
+estimate, and monotone truncation of \(a\ge0\) removes the
+support and boundedness restrictions.
+
+To lift \(g\), fix \(\eta\in C_c^\infty(\mathbb R^m)\) of integral one
+supported in the unit ball, and choose a smooth height cutoff \(\chi\)
+equal to one near zero and vanishing at large height. Set
+\[
+ (L g)(x',t)=\chi(t)(\eta_t*g)(x'),\qquad
+ \eta_t(h)=t^{-m}\eta(h/t).
+\]
+For each of the \(m+1\) derivatives before the height cutoff, the
+differentiated kernel has zero integral, is supported in \(|h|\le t\),
+and is bounded by \(Ct^{-m-1}\). For the height derivative this follows
+by differentiating the scaling formula and the constant integral.
+Subtracting \(g(x')\) in the convolution and applying H\"older
+therefore bounds the \(p\)-th power of the derivative's \(L^p\) norm
+by
+\[
+ C t^{-p-m}\int_{|h|\le t}\|g(\cdot-h)-g\|_p^p\,dh.
+\]
+Integrate in \(t\), reverse the nonnegative integrals, and use
+\(\int_{|h|}^\infty t^{-p-m}\,dt
+=C|h|^{-m-(p-1)}\). This is the exact fractional weight.
+The \(L^p\) norm of \(Lg\) and the extra cutoff derivative are
+bounded by \(C\|g\|_p\) by Young's inequality and the fixed
+height support. For positive \(t\) the smooth-kernel formula
+gives the weak derivatives, and the estimates place them in
+\(L^p(H)\). The approximate identity gives trace \(g\). The
+formula is linear.
+
+For \(p=1\) the earlier \(L^1\) trace bound applies. If \(g\ne0\),
+pick \(g_j\in C_c^\infty(\mathbb R^m)\) with
+\(\|g-g_j\|_1\le 2^{-j}\|g\|_1\), \(j\ge1\).
+Choose \(t_j>0\) decreasing at least geometrically to zero, small
+enough that
+\[
+ t_j\bigl(\|g_j\|_{W^{1,1}(\mathbb R^m)}
+             +\|g_{j+1}\|_{W^{1,1}(\mathbb R^m)}\bigr)
+ \le 2^{-j}\|g\|_1 .
+\]
+On \(t_{j+1}\le t\le t_j\) interpolate linearly between the values
+\(g_{j+1}\) and \(g_j\), then interpolate from \(g_1\) at \(t_1\)
+to zero at \(2t_1\). The integrals of the function and its
+tangential gradient are bounded by the displayed geometric sum
+and the top layer. The normal derivative has integral at most
+\(\|g_1\|_1+\sum_j\|g_{j+1}-g_j\|_1\le C\|g\|_1\).
+Testing on compact subsets of \(H\) crosses only finitely many
+layer boundaries, where the interpolants agree, so these are the
+weak derivatives. The slices converge in \(L^1\) to \(g\).
+The zero input has the zero preimage. The heights and approximants
+in this argument can depend on the input.
+\end{proof}
+
+\begin{lemma}[Flat zero trace and zero extension]\label{p102:u5-flat-zero}
+A function \(v\in W^{1,p}(H)\) has zero trace if and only if its
+zero extension through the flat face lies in \(W^{1,p}(\mathbb R^d)\).
+In that case \(v\) is a \(W^{1,p}(H)\) limit of \(C_c^\infty(H)\).
+\end{lemma}
+\begin{proof}
+For zero trace, the absolutely continuous vertical representatives
+extend by zero through \(t=0\) and have derivative equal to the
+zero extension of the old derivative. Integration on vertical lines
+gives the normal weak derivative. The tangential identities follow
+by testing each tangential slice and integrating in height. Conversely
+a whole-space weak derivative gives vertical absolute continuity
+across \(0\). Vanishing on the lower half-space then gives zero
+boundary value. To prove the density assertion, translate the
+whole-space zero extension upward by \(\varepsilon\). It vanishes
+below height \(\varepsilon\) and converges in \(W^{1,p}\) by
+translation continuity of the function and of each derivative.
+Cut off at large distance and mollify at radius less than
+\(\varepsilon/2\); the support stays inside \(H\).
+These operations yield an arbitrarily accurate smooth compact
+approximation after restriction.
+\end{proof}
+
+\section{Boundary charts and the zero-trace kernel}
+\label{p102:U5-06}
+
+For \(d\ge2\), let \(\sigma=\mathcal H^{d-1}|_{\partial\Omega}\).
+For \(0<s<1\) the boundary space \(W^{s,p}(\partial\Omega)\)
+may be defined by the sum of the \(L^p(\sigma)\) norm and the
+\(p\)-th root of
+\[
+ \int_{\partial\Omega}\int_{\partial\Omega}
+ \frac{|g(x)-g(y)|^p}{|x-y|^{d-1+sp}}\,d\sigma(y)\,d\sigma(x).
+\]
+We use the Euclidean normalization of \(\mathcal H^{d-1}\) in
+Theorem~\ref{p102:u4-lipschitz-graph-area}. The norm is equivalently
+defined by a finite boundary partition, pulling
+each localized part back to its graph base and extending it by zero
+on the rest of \(\mathbb R^{d-1}\). To see this, on each chart
+compare distances under its bi-Lipschitz graph map and use the
+upper and lower bounds on the surface density from that theorem.
+Multiplication by a smooth partition factor costs at
+most a constant times the \(L^p\) norm in the fractional increment,
+because \(\min\{1,|x-y|\}^p\) is integrable against the local
+fractional kernel in dimension \(d-1\). The localized support
+has positive distance from the complement of the chart, so
+interactions across the artificial edge cost at most a constant
+times the \(L^p\) norm, as in the fractional extension proof.
+This bounds each pullback by the intrinsic norm. Conversely
+push each localized part forward and use the same local comparison
+and artificial-edge bound. Sum the finitely many parts to bound
+the intrinsic norm by the sum of chart norms. In particular the
+space is independent of the choice of boundary charts.
+
+\begin{theorem}[Ordinary trace on bounded Lipschitz open sets]
+\label{p102:AN-11-C05-R01}
+For \(1\le p<\infty\) and bounded Lipschitz \(\Omega\),
+there is a bounded linear trace
+\(\operatorname{Tr}:W^{1,p}(\Omega)\to L^p(\partial\Omega,\sigma)\)
+which equals restriction for restrictions of globally smooth
+functions. Its kernel is \(W_0^{1,p}(\Omega)\). A function has zero
+trace exactly when its zero extension to \(\mathbb R^d\)
+belongs to \(W^{1,p}\). The trace is onto \(L^1(\partial\Omega,\sigma)\)
+when \(p=1\). In dimension one, \(\sigma=\mathcal H^0\) is counting
+measure and the trace is given by the endpoint values.
+The bounded linear bulk extension is that of
+Lemma~\ref{p102:u5-integer-extension}.
+\end{theorem}
+
+\begin{theorem}[Exact trace and bounded linear right inverse]
+\label{p102:AN-11-C05-R03}
+For \(d\ge2\), bounded Lipschitz \(\Omega\) and \(1<p<\infty\),
+the same trace takes values in \(W^{1-1/p,p}(\partial\Omega)\)
+continuously and onto. It has a bounded linear right inverse
+from this boundary space to \(W^{1,p}(\Omega)\).
+\end{theorem}
+\begin{proof}[Proof of both trace theorems]
+For \(d\ge2\), flatten each localized boundary piece and use the
+ordinary flat trace bound, and for \(p>1\) the fractional bound in
+Lemma~\ref{p102:u5-flat-trace}. Smooth restrictions are dense by
+Lemma~\ref{p102:u5-integer-extension}. On a smooth restriction
+the flat vertical limit is the physical boundary value of the
+localized function. Summing the returned local traces gives the
+physical boundary value since the partition sums to one on the
+boundary. Approximation by smooth restrictions in \(W^{1,p}\)
+and the local \(L^p\) bounds then give a single trace independent
+of the chosen partition and charts. The boundary norm equivalence
+shows that the resulting
+\(L^p\) trace has the claimed fractional norm bound. The same
+approximation proves that multiplication by a smooth cutoff
+commutes with trace.
+
+For lifting, decompose the boundary datum by the fixed partition
+and pull it back to the graph bases. Each part is supported compactly
+inside its base. Extend it by zero on \(\mathbb R^{d-1}\).
+For \(p>1\) the norm comparison above justifies applying \(L\)
+from Lemma~\ref{p102:u5-flat-trace}. Multiply \(Lg\) by a fixed
+smooth cutoff supported in the chart, equal to one near the
+localized boundary support at height zero. This operation preserves
+the trace of the localized datum. Push forward, set the result
+to zero across the artificial chart edges, and add the finitely
+many lifts. The local bounds and fixed cutoffs prove a bounded
+linear right inverse. For \(p=1\) apply the variable-height
+construction in that lemma and the same cutoff and pushforward.
+It yields a preimage of bounded norm for each \(L^1\) datum.
+The partition sums to one on the boundary, so the lifts recover
+the original datum.
+
+Each \(C_c^\infty(\Omega)\) function has zero trace, so continuity
+gives one inclusion of the kernel. Conversely, localize a
+zero-trace function by the partition. Each flattened piece
+has zero flat trace. Lemma~\ref{p102:u5-flat-zero} gives
+flat smooth approximants with positive separation from the
+flat face. A fixed cutoff equal to one on the support of the
+original piece keeps the approximants away from the artificial
+chart edges while preserving convergence. Push forward. The
+pushforwards are \(W^{1,p}(\Omega)\) with compact support inside
+\(\Omega\), since their flat supports are separated from the
+boundary and the chart is bi-Lipschitz. They can be mollified
+in physical coordinates at radii smaller than their distance
+to \(\partial\Omega\), giving actual \(C_c^\infty(\Omega)\)
+approximants. The interior piece is treated by the same physical
+mollification. Summing proves the reverse inclusion. Zero
+extension of the approximants is isometric for the function
+and gradient norms, giving the whole-space zero extension
+when trace vanishes. Conversely if the zero extension is in
+\(W^{1,p}\), localize and flatten on both sides of the graph.
+It vanishes in the lower half, and the flat zero-trace criterion
+forces every local trace to vanish.
+
+For \(d=1\), each component interval has the absolutely continuous
+representative from the one-dimensional fundamental theorem. The
+endpoint bound follows from the integral-average bound for that
+representative, and the trace agrees with evaluation at each
+endpoint with counting measure. A piecewise affine function on
+each interval lifts the finitely many endpoint values. When both
+values are zero, extension by zero retains absolute continuity
+on compact intervals across both endpoints. To approximate inside
+a component \((a,b)\), first compress this extended function
+slightly toward \((a+b)/2\) using a linear dilation and set it
+to zero outside the compressed interval. Continuity of dilations
+on \(L^p\), also for the derivative with its scale factor, proves
+\(W^{1,p}\) convergence. Then mollify at a radius smaller than
+the separation from the original endpoints. Conversely absolute
+continuity across an endpoint of the zero extension forces its
+value there to vanish. Summing over the finitely many components
+gives the one-dimensional assertions.
+\end{proof}
+
+The boundary proofs use the first-order Lipschitz geometry throughout.
+For precise trace-space formulations see
+\cite[Theorems 18.7, 18.18, 18.27--18.28, 18.34 and 18.40]{leoni}
+and \cite[Chapters 5 and 7]{adams}.
+\backmatter
+\begin{thebibliography}{99}
+\bibitem{grafakos} Loukas Grafakos, \emph{Classical Fourier Analysis}, 3rd ed., Springer, 2014. \href{https://doi.org/10.1007/978-1-4939-1194-3}{Book record} and \href{https://grafakos.missouri.edu/CFA.html}{author's errata}.
+\bibitem{leoni} Giovanni Leoni, \emph{A First Course in Sobolev Spaces}, 2nd ed., American Mathematical Society, 2017. \url{https://doi.org/10.1090/gsm/181}.
+\bibitem{stein-shakarchi} Elias M. Stein and Rami Shakarchi, \emph{Fourier Analysis: An Introduction}, Princeton Lectures in Analysis I, Princeton University Press, 2003.
+\bibitem{devore-lorentz} Ronald A. DeVore and George G. Lorentz, \emph{Constructive Approximation}, Springer, 1993, reprinted 2010.
+\bibitem{hormander} Lars H\"ormander, \emph{The Analysis of Linear Partial Differential Operators I: Distribution Theory and Fourier Analysis}, 2nd ed., Springer, 1990.
+\bibitem{adams} Robert A. Adams and John J. F. Fournier, \emph{Sobolev Spaces}, 2nd ed., Academic Press, 2003.
+\bibitem{stein} Elias M. Stein, \emph{Singular Integrals and Differentiability Properties of Functions}, Princeton University Press, 1970.
+\bibitem{folland} Gerald B. Folland, \emph{Real Analysis: Modern Techniques and Their Applications}, 2nd ed., Wiley, 1999.
+\bibitem{rudin} Walter Rudin, \emph{Functional Analysis}, 2nd ed., McGraw--Hill, 1991.
+\bibitem{apostol} Tom M. Apostol, \emph{Mathematical Analysis}, 2nd ed., Addison--Wesley, 1974.
+\bibitem{conway} John B. Conway, \emph{Functions of One Complex Variable I}, 2nd ed., Springer, 1978.
+\bibitem{evans} Lawrence C. Evans, \emph{Partial Differential Equations}, 2nd ed., American Mathematical Society, 2010.
+\bibitem{hedberg} Lars Inge Hedberg, \emph{On certain convolution inequalities}, Proceedings of the American Mathematical Society 36 (1972), 505--510. \url{https://doi.org/10.2307/2039187}.
+\bibitem{dnpv} Eleonora Di Nezza, Giampiero Palatucci, and Enrico Valdinoci, \emph{Hitchhiker's guide to the fractional Sobolev spaces}, Bulletin des Sciences Math\'ematiques 136 (2012), 521--573. \url{https://arxiv.org/abs/1104.4345}.
+\bibitem{moser} J\"urgen Moser, \emph{A sharp form of an inequality by N. Trudinger}, Indiana University Mathematics Journal 20 (1971), 1077--1092. \url{https://doi.org/10.1512/iumj.1971.20.20101}.
+\bibitem{vanschaftingen} Jean Van Schaftingen, \emph{Explicit approximation of the symmetric rearrangement by polarizations}, Archiv der Mathematik 93 (2009), 181--190. \url{https://arxiv.org/abs/0902.0637}.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions, \S 3.11, \emph{Approximation Techniques}. \url{https://dlmf.nist.gov/3.11}.
+\bibitem{d03} MathGenome, \emph{Single-Variable Analysis}, D03 unified notes, MathGenome v0.8.0.
+\bibitem{d10} MathGenome, \emph{Point-Set Topology}, D10 unified notes, MathGenome v0.8.0.
+\bibitem{d11} MathGenome, \emph{Real Analysis and Measure}, D11 unified notes, MathGenome v0.8.0.
+\bibitem{d12} MathGenome, \emph{Complex Analysis}, D12 unified notes, MathGenome v0.8.0. Theorem D12.15.04 gives Runge approximation with specified poles.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,319 @@
+\chapter{Field extensions and algebraic elements}\label{chap:M07.12}
+All fields in this chapter are commutative and have distinct zero and one. All maps preserve one. In a tower, each scalar action is induced by the displayed inclusions. We use polynomial division, the root bound, Gauss's lemma, and quotient-ring descent proved in Entries~\ref{K07.11.field_division}, \ref{K07.11.root_bound}, \ref{K07.11.gauss_fraction_irreducible}, and \ref{K07.09.quotient_lift}. Linear independence, basis extension, and dimension mean the corresponding vector-space theorems of D05.
+
+% Topic grouping: Extensions, evaluation, and degree
+\KEntry{K07.12.extension_definition}{Field extensions and structure maps}
+\begin{definition}
+An extension $L/K$ is a specified unital homomorphism $\iota:K\to L$. Its image is identified with $K$ when inclusions are written. A $K$-embedding is an injective field map commuting with the specified structure maps.
+\end{definition}
+\begin{proof}
+The kernel of $\iota$ is an ideal of the field $K$. If it contained $a\ne0$, it would contain $a^{-1}a=1$, contrary to $\iota(1)=1\ne0$. Thus $\iota$ is injective. Scalar multiplication $a\cdot x=\iota(a)x$ satisfies the vector-space laws by distributivity and multiplicativity of $\iota$. Different embeddings can give different extension data on the same two abstract fields.
+\end{proof}
+
+\KEntry{K07.12.degree_definition}{Extension degree}
+\begin{definition}
+The degree $[L:K]$ is the cardinal dimension of the $K$-vector space $L$. The extension is finite if this dimension is a natural number. A finite extension of an infinite field still has infinitely many elements. Natural-number dimension formulas below carry their stated finiteness hypotheses.
+\end{definition}
+
+\KEntry{K07.12.adjoin_definition}{Generated fields and composita}
+\begin{definition}
+For $S\subseteq L$, define $K(S)$ to be the intersection of all subfields of $L$ containing $K\cup S$. Write $K(\alpha)$ when $S=\{\alpha\}$. For intermediate fields $E,F$, their compositum $EF$ is the smallest subfield of $L$ containing both.
+\end{definition}
+\begin{proposition}
+$K(S)$ is an intermediate field, contains $S$, and $K(S)\subseteq E$ if and only if $S\subseteq E$. The compositum is the supremum in the intermediate-field lattice; the infimum is intersection.
+\end{proposition}
+\begin{proof}
+The family intersected is nonempty because it contains $L$. Every member contains $0,1,K$ and is closed under subtraction, multiplication, and inversion of nonzero elements. These properties pass to the intersection. If $S\subseteq E$, then $E$ is one of the fields intersected, giving $K(S)\subseteq E$. The converse follows from $S\subseteq K(S)$. Apply the same argument to $S=E\cup F$ to obtain the least upper bound. Notice that generating a field allows inverses, whereas generating a ring need not do so.
+\end{proof}
+
+\KEntry{K07.12.algebraic_definition}{Algebraic and transcendental elements}
+\begin{definition}
+An element $\alpha\in L$ is algebraic over $K$ if $f(\alpha)=0$ for some nonzero $f\in K[X]$; otherwise it is transcendental. The extension is algebraic when every element is algebraic. The base field is part of each assertion: an indeterminate $t$ is transcendental over $K$ but algebraic over $K(t)$.
+\end{definition}
+
+\KEntry{K07.12.finite_algebraic}{Finite extensions are algebraic}
+\begin{proposition}
+If $[L:K]=n<\infty$, every $\alpha\in L$ is annihilated by a nonzero polynomial of degree at most $n$.
+\end{proposition}
+\begin{proof}
+The $n+1$ vectors $1,\alpha,\ldots,\alpha^n$ are dependent in an $n$-dimensional space. A nontrivial relation among them supplies the required polynomial. The converse for arbitrary algebraic extensions will fail: the algebraic closure of $\Q$ contains roots of $X^m-2$ of arbitrarily large degree, since Eisenstein's criterion at $2$ makes these polynomials irreducible.
+\end{proof}
+
+\KEntry{K07.12.minpoly_existence}{Minimal polynomial existence and uniqueness}
+\begin{theorem}
+For algebraic $\alpha\in L/K$ there is a unique monic irreducible polynomial $m_{\alpha,K}\in K[X]$ annihilating $\alpha$. It has positive degree.
+\end{theorem}
+\begin{proof}
+Choose an annihilating nonzero polynomial of least degree and divide by its leading coefficient to obtain a monic polynomial $m$. No nonzero constant annihilates an element of a field, so $\deg m>0$. If $m=uv$ with both factors of smaller positive degree, then $u(\alpha)v(\alpha)=0$ forces one factor to vanish, contradicting minimality. If $g$ is any other monic irreducible annihilator, divide $g=qm+r$ with $\deg r<\deg m$. Evaluation forces $r(\alpha)=0$, so $r=0$. Irreducibility of $g$ makes its divisor $m$ an associate of $g$, and monicity makes them equal. This also proves uniqueness without choosing a preferred overfield.
+\end{proof}
+
+\KEntry{K07.12.minpoly_divisibility}{The evaluation kernel}
+\begin{proposition}
+For algebraic $\alpha$ and $f\in K[X]$, $f(\alpha)=0$ if and only if $m_{\alpha,K}\mid f$. Consequently evaluation has kernel $(m_{\alpha,K})$.
+\end{proposition}
+\begin{proof}
+Divide $f=qm+r$ with $\deg r<\deg m$. If $f(\alpha)=0$, then $r(\alpha)=0$, and minimality gives $r=0$. Conversely every multiple of $m$ vanishes. The multiples form exactly the principal ideal $(m)$.
+\end{proof}
+
+\KEntry{K07.12.adjoin_root}{Adjoining a root}
+\begin{theorem}
+If $f\in K[X]$ is irreducible, $A=K[X]/(f)$ is a field, the constant map embeds $K$ into $A$, and $\theta=X+(f)$ satisfies $f(\theta)=0$.
+\end{theorem}
+\begin{proof}
+A nonzero class $g+(f)$ has $f\nmid g$. Since $f$ is irreducible, $\gcd(f,g)=1$. The Euclidean algorithm gives $uf+vg=1$, so $v+(f)$ is its inverse. No nonzero constant lies in $(f)$ because $\deg f>0$. Substituting the class of $X$ in $f$ gives its zero class. Thus this construction does not presuppose a root in an existing ambient field.
+\end{proof}
+
+\KEntry{K07.12.power_basis}{Power bases and representatives}
+\begin{theorem}
+If $d=\deg m_{\alpha,K}$, then $1,\alpha,\ldots,\alpha^{d-1}$ is a $K$-basis of $K(\alpha)$. Each element has a unique polynomial representative of degree less than $d$.
+\end{theorem}
+\begin{proof}
+Evaluation identifies $K[X]/(m)$ with $K[\alpha]$ by the kernel theorem. The quotient is a field by irreducibility, so $K[\alpha]=K(\alpha)$. Division by $m$ gives representatives of degree less than $d$. A linear relation among their powers would be a nonzero polynomial of smaller degree vanishing at $\alpha$, which is impossible. Spanning and independence prove both the basis claim and coefficient uniqueness.
+\end{proof}
+
+\KEntry{K07.12.simple_degree}{Simple degree}
+\begin{corollary}
+For algebraic $\alpha$, $[K(\alpha):K]=\deg m_{\alpha,K}$. An arbitrary $\alpha\in L$ is algebraic if and only if $K(\alpha)/K$ is finite. Its simple degree is $1$ exactly when $\alpha\in K$.
+\end{corollary}
+\begin{proof}
+The first assertion is the cardinality of the power basis. Finiteness implies algebraicity by Entry~\ref{K07.12.finite_algebraic}; the converse follows from that basis. A one-dimensional field extension is spanned by $1$, so every element is in $K$. Conversely $\alpha\in K$ gives $K(\alpha)=K$.
+\end{proof}
+
+\KEntry{K07.12.simple_classification}{Classification of simple extensions}
+\begin{theorem}
+For algebraic $\alpha$, evaluation gives $K[X]/(m_{\alpha,K})\simeq_K K(\alpha)$. For transcendental $\alpha$, it gives $K(X)\simeq_K K(\alpha)$, with $X$ mapped to $\alpha$.
+\end{theorem}
+\begin{proof}
+The algebraic case was proved above. In the transcendental case evaluation on $K[X]$ is injective. Every nonzero polynomial has nonzero value, so $u/v\mapsto u(\alpha)/v(\alpha)$ is well-defined on the fraction field: $uv'=u'v$ implies equality after evaluation. Its kernel is zero and its image is a subfield containing $K,\alpha$. Every rational expression in $\alpha$ has this form; hence the image is exactly $K(\alpha)$. The images of $K$ and $X$ determine either isomorphism uniquely.
+\end{proof}
+
+\KEntry{K07.12.tower_law}{The tower law}
+\begin{theorem}
+For $K\subseteq E\subseteq L$, if $(e_i)_{i\in I}$ is a $K$-basis of $E$ and $(u_j)_{j\in J}$ is an $E$-basis of $L$, then $(e_i u_j)_{(i,j)\in I\times J}$ is a $K$-basis of $L$. Thus $[L:K]=[L:E][E:K]$ as cardinals, and as positive integers when both factors are finite.
+\end{theorem}
+\begin{proof}
+Expand any $x\in L$ as a finite sum $\sum_j a_j u_j$ and each $a_j$ as a finite $K$-linear combination of the $e_i$. This gives spanning. A finite relation $\sum_{i,j}c_{ij}e_i u_j=0$ first forces $\sum_i c_{ij}e_i=0$ for each $j$ by $E$-independence of the $u_j$, then forces every $c_{ij}=0$. The indexing product gives cardinal multiplication. No infinite sum occurs in this proof.
+\end{proof}
+
+\KEntry{K07.12.finite_generation}{Finite algebraic generation}
+\begin{theorem}
+$L/K$ is finite if and only if $L=K(\alpha_1,\ldots,\alpha_r)$ for finitely many algebraic elements. If their degrees over $K$ are $d_i$, then $[L:K]\leq\prod_i d_i$.
+\end{theorem}
+\begin{proof}
+A finite basis of $L/K$ generates $L$ as a field, and its elements are algebraic. Conversely set $E_i=K(\alpha_1,\ldots,\alpha_i)$. The polynomial $m_{\alpha_i,K}$ still annihilates $\alpha_i$ over $E_{i-1}$, so its new minimal polynomial divides it. Thus $[E_i:E_{i-1}]\leq d_i$. Multiplying these finite degrees proves the assertion. An empty generating list gives degree $1$.
+\end{proof}
+
+\KEntry{K07.12.degree_divisibility}{Intermediate degrees}
+\begin{corollary}
+For finite $L/K$ and intermediate $E$, the degrees $[E:K]$ and $[L:E]$ are positive divisors of $[L:K]$. Prime degree permits no proper intermediate field.
+\end{corollary}
+\begin{proof}
+A $K$-independent family in $E$ is independent in $L$, so $E/K$ is finite. A finite $K$-spanning family for $L$ also spans it over $E$, so $L/E$ is finite. The tower product proves divisibility. A degree-$1$ extension is equality; a prime total degree therefore forces one endpoint. A divisor need not occur: Entry~\ref{K07.15.degree_obstruction} proves that a degree-$4$ root field of $X^4-X-1$ has no degree-$2$ intermediate field.
+\end{proof}
+
+\KEntry{K07.12.algebraic_tower}{Transitivity of algebraicity}
+\begin{theorem}
+If $E/K$ and $L/E$ are algebraic, then $L/K$ is algebraic.
+\end{theorem}
+\begin{proof}
+For $\alpha\in L$ choose a nonzero annihilator over $E$ and let $E_0/K$ be generated by its finitely many coefficients. Those coefficients are algebraic, so $E_0/K$ is finite. The same polynomial makes $E_0(\alpha)/E_0$ finite. The tower law makes $E_0(\alpha)/K$ finite, so $\alpha$ is algebraic over $K$. Omitting algebraicity of $E/K$ would be false: $t\in K(t)$ satisfies $X-t$ over $K(t)$ but is transcendental over $K$.
+\end{proof}
+
+\KEntry{K07.12.relative_algebraic_closure}{Algebraic elements form a field}
+\begin{theorem}
+The elements of $L$ algebraic over $K$ form an intermediate field, the largest algebraic intermediate extension of $L/K$.
+\end{theorem}
+\begin{proof}
+For algebraic $a,b$, the extension $K(a,b)/K$ is finite by finite generation. All its elements, including $a-b,ab$ and $a^{-1}$ when $a\ne0$, are algebraic. It contains $0,1,K$, proving field closure. Every algebraic intermediate field consists of these elements and is therefore contained in this one. This relative algebraic closure is not necessarily algebraically closed: the elements of $\Q$ algebraic over $\Q$ are just $\Q$.
+\end{proof}
+
+\KEntry{K07.12.compositum_degree_bound}{Degrees of composita}
+\begin{theorem}
+For finite $E/K,F/K$ in a common field, $EF/K$ is finite and $[EF:K]\leq[E:K][F:K]$. Equality holds exactly when a $K$-basis of $E$ remains independent over $F$, the finite-extension meaning of linear disjointness.
+\end{theorem}
+\begin{proof}
+Let $W$ be the $F$-linear span of $E$ in the overfield. Products of elements of $E$ remain in $E$, so $W$ is a finite-dimensional $F$-subalgebra. For $0\ne w\in W$, multiplication by $w$ is injective on $W$, hence surjective by the finite-dimensional injective--surjective theorem of D05. It has $1$ in its image, so $w^{-1}\in W$. Hence $W=EF$. A $K$-basis of $E$ spans $EF$ over $F$, giving the bound; equality is equivalent to its independence. Changing the $K$-basis multiplies it by an invertible $K$-matrix, also invertible over $F$, so the condition is basis independent. Trivial intersection is weaker: the two distinct cubic root fields in the $S_3$ splitting field of $X^3-2$ have intersection $\Q$ and compositum degree $6<9$; their degrees and distinctness are proved in Entry~\ref{K07.14.cubic_splitting_example}.
+\end{proof}
+% Topic grouping: Embeddings, splitting fields, and algebraic closures
+\KEntry{K07.12.simple_embeddings}{Simple embeddings and conjugate roots}
+\begin{theorem}
+Let $\alpha$ be algebraic over $K$ and let $\Omega$ be a field over $K$. Sending an embedding to its value at $\alpha$ is a bijection from $\Hom_K(K(\alpha),\Omega)$ to the roots of $m_{\alpha,K}$ in $\Omega$. More generally, for an isomorphism $\sigma:K\to K'$, a root $\beta$ of the coefficient-mapped polynomial $\sigma(m_{\alpha,K})$ determines a unique isomorphism $K(\alpha)\to K'(\beta)$ extending $\sigma$.
+\end{theorem}
+\begin{proof}
+Any such map must send $g(\alpha)$ to $\sigma(g)(\beta)$ and must send inverses to inverses, so it is unique. This formula is well-defined because the evaluation kernel is $(m_{\alpha,K})$, transported to $(\sigma(m_{\alpha,K}))$. It induces a nonzero homomorphism between the quotient fields, hence an embedding, whose image is the field generated by $K'$ and $\beta$. Conversely applying an embedding to $m(\alpha)=0$ gives the required root. Algebraicity cannot be omitted: the image of a transcendental element must itself be transcendental, whereas every element is formally a root of the zero polynomial.
+\end{proof}
+
+\KEntry{K07.12.embedding_extension}{Extension of algebraic embeddings}
+\begin{theorem}\label{thm:field-extension-embedding}
+Let $L/E$ be algebraic and let $\sigma:E\to\Omega$ be an embedding into an algebraically closed field. Then $\sigma$ extends to an embedding $L\to\Omega$. Algebraic closedness may be replaced by the hypothesis that, for every $a\in L$, the coefficient-mapped polynomial $\sigma(m_{a,E})$ splits in $\Omega$.
+\end{theorem}
+\begin{proof}
+First, if $M/E$ is intermediate and $\tau:M\to\Omega$ extends $\sigma$, then for $a\in L$, the polynomial $m_{a,M}$ divides $m_{a,E}$ in $M[X]$. Its coefficient image under $\tau$ therefore divides $\sigma(m_{a,E})$. If the latter splits, the nonconstant former has a root $b\in\Omega$. The simple-embedding theorem, applied to the isomorphism $M\to\tau(M)$, extends $\tau$ to $M(a)$ by $a\mapsto b$. This is the explicit one-element extension lemma.
+
+Order the pairs $(M,\tau)$ by extension of both field and map. They form a set, since $M\subseteq L$ and maps have graphs in $L\times\Omega$. The pair $(E,\sigma)$ exists. A chain has the upper bound obtained by union: any two elements lie in one chain member, so field operations and all map identities are consistent there. Zorn's lemma gives a maximal pair. If its field were not $L$, the one-element lemma would strictly extend it, a contradiction. The asserted full extension follows. This proves existence with the prescribed restriction, not just existence of an unrelated embedding.
+\end{proof}
+
+\KEntry{K07.12.splitting_definition}{Splitting fields}
+\begin{definition}
+For $0\ne f\in K[X]$, a splitting field is an extension $L/K$ in which $f$ is a product of linear factors and $L$ is generated by its roots. A nonzero constant has splitting field $K$. A field merely containing all the roots can be strictly larger than the splitting field.
+\end{definition}
+
+\KEntry{K07.12.splitting_existence_uniqueness}{Existence and uniqueness of splitting fields}
+\begin{theorem}
+Every nonzero polynomial has a finite splitting field. Two splitting fields are isomorphic over the base. An isomorphism of base fields extends to an isomorphism of splitting fields of the coefficient-mapped polynomials.
+\end{theorem}
+\begin{proof}
+Induct on the degree $n$. Constants require no extension. For positive degree, choose an irreducible factor, adjoin a root $a$, and divide off $X-a$. By induction the remaining degree-$n-1$ polynomial splits in a finite extension of $K(a)$. The field generated over $K$ by all these roots is finite and is a splitting field.
+
+For uniqueness, enumerate the finitely many distinct roots generating a splitting field $L$. Starting from the given base isomorphism, extend its map one generator at a time into a second splitting field $L'$. At each stage the relevant minimal polynomial divides the original polynomial over the current field; after mapping coefficients it divides a polynomial already split in $L'$, so the one-element extension lemma applies. The resulting embedding sends a complete factorization of $f$ to a complete factorization of its mapped polynomial. Every root in $L'$ must consequently be the image of one of the roots in $L$. Their images generate $L'$, so the embedding is surjective. Repeated roots cause no difficulty because the complete factorization retains their multiplicities.
+\end{proof}
+
+\KEntry{K07.12.splitting_degree_bound}{Factorial bounds}
+\begin{theorem}
+If $f\ne0$ has degree $n$ and splitting field $L/K$, then $[L:K]\leq n!$. If $f$ is separable, $[L:K]$ divides $n!$.
+\end{theorem}
+\begin{proof}
+In the preceding induction the first root has degree at most $n$, and the remaining splitting field over it has degree at most $(n-1)!$. The tower law gives the bound, including $n=0$. For separable $f$, Entry~\ref{K07.14.splitting_criterion} proves that $L/K$ is Galois. Its automorphisms act faithfully on the $n$ roots by Entry~\ref{K07.14.polynomial_root_action}, so $[L:K]=|\Gal(L/K)|$ divides $|S_n|=n!$ by Lagrange's theorem. Those later proofs use only the degree bound's finiteness, not this divisibility assertion.
+\end{proof}
+
+\KEntry{K07.12.algebraic_closure}{Algebraic closures}
+\begin{theorem}
+Every field $K$ has an algebraic extension $\overline K/K$ that is algebraically closed. Two algebraic closures are $K$-isomorphic. If $\Omega$ is algebraically closed over $K$, the elements of $\Omega$ algebraic over $K$ form an algebraic closure of $K$.
+\end{theorem}
+\begin{proof}
+Here is a construction that avoids presupposing an algebraically closed ambient field. For each nonconstant monic $f\in K[X]$ introduce an indeterminate $T_f$ and in the polynomial ring $A=K[T_f:f]$ take the ideal $I$ generated by $f(T_f)$. This ideal is proper. Otherwise a finite sum $1=\sum h_i f_i(T_{f_i})$ would involve only finitely many variables. Successively adjoining roots of the finitely many $f_i$, and assigning arbitrary values to any other variables in the $h_i$, would define an evaluation homomorphism sending the right side to $0$ and $1$ to $1$, a contradiction. By the maximal-ideal existence theorem (Entry~\ref{K07.09.maximal_existence}, proved there by Zorn), choose a maximal ideal containing $I$. The field quotient $K_1$ contains $K$ and a root of every nonconstant $K$-polynomial. It is algebraic over $K$: its ring generators each satisfy their defining monic polynomial, and each element is a polynomial in finitely many such generators, hence lies in a finite extension.
+
+Repeat this construction with $K_i$ in place of $K$, identifying each injective image with a nested copy. The union $K_\infty=\bigcup_{i\geq0}K_i$ is a field algebraic over $K$ by transitivity. A polynomial over the union has finitely many coefficients, all in some $K_i$, and therefore has a root in $K_{i+1}$. Repeatedly dividing off a root proves that every polynomial splits. Thus $K_\infty$ is algebraically closed.
+
+For uniqueness, the embedding-extension theorem extends the identity on $K$ to an embedding $\overline K\to\overline K'$. Its image is algebraically closed. Every element of $\overline K'$ is algebraic over $K$, hence over that image; its minimal polynomial over an algebraically closed field is linear. Thus it belongs to the image, proving surjectivity. Finally let $B$ be the relative algebraic closure in $\Omega$. A root in $\Omega$ of a polynomial over $B$ is algebraic over the field generated by its finitely many coefficients; that field is algebraic over $K$. Transitivity makes the root algebraic over $K$, hence in $B$. The same division induction makes $B$ algebraically closed, and it is algebraic by its definition.
+\end{proof}
+
+% Topic grouping: Separability, primitive elements, and normality
+\KEntry{K07.12.separable_definition}{Separability}
+\begin{definition}
+A nonzero polynomial over $K$ is separable when its roots in a splitting field are all simple. An algebraic element is separable over $K$ when its minimal polynomial is separable. An algebraic extension is separable when each of its elements is separable.
+\end{definition}
+\begin{proposition}
+These definitions are independent of the chosen splitting field. An algebraic element is separable if and only if it is a root of some separable $K$-polynomial.
+\end{proposition}
+\begin{proof}
+A base-preserving isomorphism of splitting fields maps a complete linear factorization to another, preserving each root's multiplicity. This proves independence. If $\alpha$ is a root of a separable $f$, its minimal polynomial divides $f$ and therefore has no repeated root. Conversely the minimal polynomial itself supplies such an $f$.
+\end{proof}
+
+\KEntry{K07.12.derivative_criterion}{The derivative criterion}
+\begin{theorem}
+For $0\ne f\in K[X]$, $f$ is separable if and only if $\gcd(f,f')=1$. For irreducible $f$, this is equivalent to $f'\ne0$. In characteristic $p>0$, $f'=0$ if and only if $f=g(X^p)$ for some $g\in K[X]$.
+\end{theorem}
+\begin{proof}
+In a splitting field write $f=(X-a)^r h$ with $h(a)\ne0$. Differentiation shows $f'(a)=0$ exactly when $r>1$. Thus a repeated root is equivalent to a common root of $f,f'$. A nonconstant gcd gives a common root in an algebraic closure; conversely the minimal polynomial of a common root divides both polynomials. This proves the gcd criterion over $K$. If $f$ is irreducible, a nonconstant gcd means $f\mid f'$, and since a nonzero derivative has degree below $\deg f$, this happens exactly when $f'=0$. In characteristic $p$, the coefficient of $X^{i-1}$ in $f'$ is $ia_i$; it vanishes for all $i$ exactly when $a_i=0$ for every exponent not divisible by $p$. This is precisely the asserted substitution form. Nonzero derivative is not sufficient for a reducible polynomial: $(X-1)^2$ in characteristic zero has nonzero derivative and a repeated root.
+\end{proof}
+
+\KEntry{K07.12.characteristic_zero_separability}{Characteristic-zero separability}
+\begin{corollary}
+Every irreducible polynomial over a characteristic-zero field is separable; every algebraic extension of such a field is separable.
+\end{corollary}
+\begin{proof}
+The leading derivative coefficient of a degree-$d>0$ polynomial is $d a_d\ne0$. Apply the irreducible derivative criterion to each minimal polynomial. The assertion does not make a repeated-factor polynomial separable.
+\end{proof}
+
+\KEntry{K07.12.inseparability}{Inseparability in characteristic \texorpdfstring{$p$}{p}}
+\begin{proposition}
+Over $K=\F_p(t)$, $X^p-t$ is irreducible. A root $u$ generates an extension of degree $p$ but is its unique distinct root in an algebraic closure, and $K(u)$ has only one $K$-embedding there. More generally, each monic irreducible over a characteristic-$p$ field has a unique expression $g(X^{p^r})$, with $r\geq0$ and $g$ monic irreducible separable.
+\end{proposition}
+\begin{proof}
+In $\F_p[t][X]$ the polynomial is Eisenstein at the prime $t$, so Gauss's lemma proves irreducibility over $\F_p(t)$. Its degree is $p$, and in an algebraic closure $X^p-t=(X-u)^p$. The simple-embedding theorem counts one embedding. For the general statement repeatedly extract the substitution $X\mapsto X^p$ whenever the derivative vanishes. Degree decreases, so this terminates. Every extracted polynomial is irreducible, since any factorization would give one of the original polynomial after substitution. At termination its derivative is nonzero, so it is separable. The maximal common power of $p$ dividing all exponents with nonzero coefficients determines $r$ uniquely, and the coefficients then determine $g$. This example is normal (its minimal polynomial splits) but inseparable.
+\end{proof}
+
+\KEntry{K07.12.perfect_fields}{Perfect fields}
+\begin{theorem}
+The following are equivalent: every irreducible $K$-polynomial is separable; every algebraic extension of $K$ is separable. Such a field is called perfect. Characteristic-zero fields and finite fields are perfect. In characteristic $p>0$, perfection is equivalent to surjectivity of $a\mapsto a^p$ on $K$.
+\end{theorem}
+\begin{proof}
+Minimal polynomials prove one implication of the equivalence. For the other, adjoin a root of any irreducible polynomial and apply separability to that element. Characteristic zero was handled above. In characteristic $p$, the power map respects addition and multiplication by the binomial theorem and is injective because $(a-b)^p=0$ implies $a=b$.
+
+If it is surjective and an irreducible polynomial had zero derivative, write it as $\sum b_i X^{pi}$. Choose $c_i^p=b_i$; then it equals $(\sum c_i X^i)^p$, contradicting irreducibility. Conversely, assume every irreducible is separable and let $a\in K$. Any root $u$ of $X^p-a$ has minimal polynomial dividing $(X-u)^p$ in an algebraic closure. Separability forces its minimal polynomial to have degree $1$, so $u\in K$ and $a=u^p$. On a finite field the injective Frobenius map is surjective, giving perfection.
+\end{proof}
+
+\KEntry{K07.12.embedding_count}{Counting embeddings}
+\begin{theorem}\label{thm:embedding-count}
+For finite $E/K$ and algebraically closed $\Omega$ over $K$, the number of $K$-embeddings $E\to\Omega$ is at most $[E:K]$. Equality holds if and only if $E/K$ is separable.
+\end{theorem}
+\begin{proof}
+Choose a tower $K=E_0\subseteq E_1\subseteq\cdots\subseteq E_r=E$ with $E_i=E_{i-1}(a_i)$. For every embedding of $E_{i-1}$, the simple-embedding theorem says its extensions are counted by distinct roots of the coefficient-mapped minimal polynomial of $a_i$. There are at most $[E_i:E_{i-1}]$ such roots; existence holds because $\Omega$ is algebraically closed. Induction and the tower law prove the upper bound.
+
+If $E/K$ is separable, each $a_i$ has a separable $K$-minimal polynomial. Its minimal polynomial over $E_{i-1}$ divides that polynomial, hence is separable. Transporting coefficients preserves separability, so every embedding has exactly $[E_i:E_{i-1}]$ extensions. The count is the full tower product.
+
+Conversely, if some $a\in E$ is inseparable over $K$, it has $s<d=[K(a):K]$ conjugate roots. There are $s$ embeddings of $K(a)$, and the already proved upper bound, applied after transporting each base embedding, bounds its extensions to $E$ by $[E:K(a)]$. Thus the total is at most $s[E:K(a)]<[E:K]$. This contradiction establishes the converse. This proof does not assume separability is already known to be closed under field operations.
+\end{proof}
+
+\KEntry{K07.12.separable_towers}{Separability in towers and generated fields}
+\begin{theorem}
+For algebraic $K\subseteq E\subseteq L$, separability of $L/K$ implies separability of $E/K$ and $L/E$. If both steps are separable, so is $L/K$. A field generated over $K$ by separable algebraic elements is separable.
+\end{theorem}
+\begin{proof}
+Restriction to $E$ is immediate. Raising the base replaces a minimal polynomial by a divisor, which preserves separability.
+
+If $a_1,\ldots,a_r$ are separable over $K$, the root-count proof just given has the full number of extensions at each step, because each new minimal polynomial divides a separable $K$-polynomial. Hence the finite field they generate has as many embeddings as its degree; the converse part of the count theorem says all its elements are separable. Each element of a field generated by arbitrarily many separable elements uses only finitely many generators, proving the last assertion.
+
+For a finite tower with both steps separable, each embedding of $E/K$ has exactly $[L:E]$ extensions: transport the finite separable extension $L/E$ along that base embedding and apply the count theorem. Multiplication gives $[L:E][E:K]=[L:K]$ embeddings, proving transitivity. For an arbitrary algebraic tower and $a\in L$, let $f=m_{a,E}$. Its finitely many coefficients generate a finite separable $E_0/K$. Regard $f$ as a polynomial over $E_0$. It is separable there: a repeated root over an algebraic closure would remain repeated over $E$, whereas $f$ is separable over $E$. Its irreducible factor annihilating $a$ is separable, so $E_0(a)/E_0$ is separable. Apply the finite transitivity result to $E_0(a)/E_0/K$. This makes $a$ separable over $K$.
+\end{proof}
+
+\begin{lemma}\label{lem:finite-multiplicative-cyclic}
+Every finite subgroup $H$ of the multiplicative group of a field is cyclic.
+\end{lemma}
+\begin{proof}
+Let $e$ be the least common multiple of the element orders of $H$. For each prime power $\ell^a$ exactly dividing $e$, some element has order divisible by $\ell^a$; an appropriate power has order exactly $\ell^a$. Multiplying these elements for the distinct primes gives an element of order $e$: commuting elements of coprime orders have product order the product, as follows by raising a purported relation to each coprime factor. Every member of $H$ is a root of $X^e-1$, so the root bound gives $|H|\leq e$. The element of order $e$ lies in $H$, so $e\leq|H|$. Equality proves it generates $H$.
+\end{proof}
+
+\KEntry{K07.12.primitive_element}{The primitive element theorem}
+\begin{theorem}
+Every finite separable extension $E/K$ is simple. In particular every finite characteristic-zero extension, and every finite extension of a finite field, is simple.
+\end{theorem}
+\begin{proof}
+If $K$ is finite, $E$ is a finite set by expansion in a finite basis. Its nonzero elements form a cyclic group by Lemma~\ref{lem:finite-multiplicative-cyclic}. A generator $a$ has every nonzero element among its powers, so $E=K(a)$.
+
+Suppose $K$ is infinite. For $E=K(a,b)$ separable, there are exactly $n=[E:K]$ embeddings $\sigma_1,\ldots,\sigma_n$ into an algebraic closure. For distinct $i,j$, at least one of the values at $a,b$ differs. The equation $\sigma_i(a+cb)=\sigma_j(a+cb)$ excludes at most one $c\in K$: if the $b$-values agree it excludes none, and otherwise it determines a unique $c$ in the closure. Avoiding finitely many values is possible in infinite $K$. Then $a+cb$ has at least $n$ distinct conjugates, so its degree is at least $n$. Its field is a subfield of $E$, hence has degree at most $n$, forcing equality and $E=K(a+cb)$. Induct on a finite generating list. Perfectness supplies separability in the stated special cases.
+\end{proof}
+\begin{example}
+Finiteness alone is insufficient. With independent indeterminates $s,t$ over $\F_p$, put $E=\F_p(s,t)$ and $K=\F_p(s^p,t^p)$. The monomials $s^i t^j$, $0\leq i,j<p$, are independent over $K$: after clearing denominators in $\F_p[s^p,t^p]$, exponents in different residue classes modulo $p$ cannot cancel. They span because $s,t$ each satisfy a degree-$p$ polynomial, so $[E:K]=p^2$. Every $x\in E$ has $x^p\in K$, hence $[K(x):K]\leq p$ and $E$ is not simple.
+\end{example}
+
+\begin{remark}
+The algebraic closure $\overline{\Q}$ is algebraic over $\Q$ but is not simple. Indeed it contains a root of $X^m-2$ for every positive $m$; Eisenstein's criterion at $2$ makes that root have degree $m$. Consequently $\overline{\Q}/\Q$ cannot have finite degree. On the other hand, every simple algebraic extension $\Q(a)/\Q$ is finite by Entry~\ref{K07.12.simple_degree}. Thus no single algebraic element generates $\overline{\Q}$. This explicitly excludes infinite algebraic extensions from the finite primitive-element theorem.
+\end{remark}
+
+\KEntry{K07.12.finite_intermediate_criterion}{Finitely many intermediate fields}
+\begin{theorem}
+A finite extension $E/K$ is simple if and only if it has only finitely many intermediate fields.
+\end{theorem}
+\begin{proof}
+Suppose $E=K(a)$. For intermediate $M$, let $f_M=m_{a,M}\in M[X]\subseteq E[X]$. It is a monic divisor of $m_{a,K}$ in $E[X]$, so there are finitely many possibilities by unique factorization. Its coefficients generate a field $M_0$ over $K$ contained in $M$. Since $a$ satisfies $f_M$ over $M_0$, $[E:M_0]\leq\deg f_M=[E:M]$. The reverse inequality follows from $M_0\subseteq M$ and the tower law; equality forces $M_0=M$. Thus $f_M$ determines $M$, proving finiteness.
+
+Conversely, if $K$ is finite, the multiplicative cyclic argument proves simplicity. If $K$ is infinite and only finitely many intermediate fields occur, among the infinitely many fields $K(a+cb)$, $c\in K$, two with distinct $c,d$ must be equal. Their common field contains $(c-d)b$ and hence $b,a$. It is $K(a,b)$. Starting from any finite generating list, this observation combines two generators at a time and proves simplicity without an extra separability assumption.
+\end{proof}
+
+\KEntry{K07.12.normal_definition}{Normal extensions}
+\begin{definition}
+An algebraic extension $L/K$ is normal when every irreducible polynomial over $K$ with a root in $L$ splits in $L$.
+\end{definition}
+\begin{proposition}
+This is equivalent to requiring that every $m_{a,K}$, $a\in L$, split in $L$.
+\end{proposition}
+\begin{proof}
+Apply the definition to each minimal polynomial for one direction. For the other, an irreducible $f$ with root $a$ is a scalar multiple of $m_{a,K}$, by minimal-polynomial divisibility and irreducibility. Splitting is unchanged by a nonzero scalar.
+\end{proof}
+
+\KEntry{K07.12.normal_characterizations}{Normality, splitting fields, and embeddings}
+\begin{theorem}
+For algebraic $L/K$ inside an algebraic closure $\Omega$, normality is equivalent to every $K$-embedding $L\to\Omega$ having image $L$. A finite extension is normal if and only if it is a splitting field of a polynomial over $K$. Normal $L/K$ remains normal over any intermediate base.
+\end{theorem}
+\begin{proof}
+If $L/K$ is normal, an embedding sends each $a$ to a root of $m_{a,K}$ and hence into $L$. It actually maps the finite set of roots of each $m_{a,K}$ bijectively to itself, since it is injective there; each $a$ therefore has a preimage, proving the image is all $L$, even if the extension is infinite. Conversely, a root $b$ of $m_{a,K}$ gives an embedding $K(a)\to\Omega$ sending $a$ to $b$. Extend it to $L$. Image invariance implies $b\in L$, proving normality.
+
+For finite normal $L/K$, take a finite generating list and multiply its minimal polynomials. They all split in $L$ and their roots generate exactly $L$. Conversely an embedding of a splitting field permutes the finite root set and hence preserves the generated field, proving normality by the first equivalence. Finally, an embedding fixing an intermediate $M$ also fixes $K$, so preserves $L$; apply the same equivalence to $L/M$.
+\end{proof}
+\begin{example}
+Normality does not pass to every lower intermediate extension: $\Q(\sqrt[3]{2})/\Q$ inside its splitting field is not normal. Nor is it transitive in arbitrary towers: $\Q\subset\Q(\sqrt2)\subset\Q(\sqrt[4]{2})$ has two quadratic normal steps, but the total field is real and lacks the nonreal roots of $X^4-2$.
+\end{example}
+
+

@@ -1,0 +1,13 @@
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.AbstractTubular
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.BundleGluing
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.BundleMetrics
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.BundleOperations
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.BundleTubularGlobalization
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.ConstantRankBundles
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.Covectors
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.Frames
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.MetricSplittings
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.QuotientBundles
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.SectionExtension
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.Tensors
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch05.TubularLocalGeometry

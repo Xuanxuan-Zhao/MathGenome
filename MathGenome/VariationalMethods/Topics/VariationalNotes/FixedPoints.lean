@@ -1,0 +1,9 @@
+import MathGenome.Internal.VariationalMethods.VariationalNotes.FixedPoints.Brouwer
+import MathGenome.Internal.VariationalMethods.VariationalNotes.FixedPoints.Contraction
+import MathGenome.Internal.VariationalMethods.VariationalNotes.FixedPoints.FineTriangulations
+import MathGenome.Internal.VariationalMethods.VariationalNotes.FixedPoints.FiniteBoundaryExamples
+import MathGenome.Internal.VariationalMethods.VariationalNotes.FixedPoints.InfiniteBoundaryExample
+import MathGenome.Internal.VariationalMethods.VariationalNotes.FixedPoints.Schaefer
+import MathGenome.Internal.VariationalMethods.VariationalNotes.FixedPoints.Schauder
+import MathGenome.Internal.VariationalMethods.VariationalNotes.FixedPoints.SimplexGeometry
+import MathGenome.Internal.VariationalMethods.VariationalNotes.FixedPoints.Sperner

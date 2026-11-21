@@ -1,0 +1,10 @@
+import MathGenome.Internal.MultivariableAnalysis.D04.C10.AreaIntegral
+import MathGenome.Internal.MultivariableAnalysis.D04.C10.GraphArea
+import MathGenome.Internal.MultivariableAnalysis.D04.C10.MobiusEmbedding
+import MathGenome.Internal.MultivariableAnalysis.D04.C10.MobiusNonorientability
+import MathGenome.Internal.MultivariableAnalysis.D04.C10.NegligibleSeams
+import MathGenome.Internal.MultivariableAnalysis.D04.C10.PatchGeometryGram
+import MathGenome.Internal.MultivariableAnalysis.D04.C10.Reparametrization
+import MathGenome.Internal.MultivariableAnalysis.D04.C10.RuledAreas
+import MathGenome.Internal.MultivariableAnalysis.D04.C10.SphereAreaFlux
+import MathGenome.Internal.MultivariableAnalysis.D04.C10.SurfaceAssembly

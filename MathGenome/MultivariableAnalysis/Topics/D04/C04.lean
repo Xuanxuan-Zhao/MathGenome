@@ -1,0 +1,11 @@
+import MathGenome.Internal.MultivariableAnalysis.D04.C04.ConstantRank
+import MathGenome.Internal.MultivariableAnalysis.D04.C04.Contraction
+import MathGenome.Internal.MultivariableAnalysis.D04.C04.ImplicitFunction
+import MathGenome.Internal.MultivariableAnalysis.D04.C04.InjectiveGlobalInverse
+import MathGenome.Internal.MultivariableAnalysis.D04.C04.InverseCounterexamples
+import MathGenome.Internal.MultivariableAnalysis.D04.C04.InverseFunction
+import MathGenome.Internal.MultivariableAnalysis.D04.C04.InverseStability
+import MathGenome.Internal.MultivariableAnalysis.D04.C04.MatrixInversion
+import MathGenome.Internal.MultivariableAnalysis.D04.C04.QuantitativeInverseBall
+import MathGenome.Internal.MultivariableAnalysis.D04.C04.RegularLevel
+import MathGenome.Internal.MultivariableAnalysis.D04.C04.SubmersionImmersion

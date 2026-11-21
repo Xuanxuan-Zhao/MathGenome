@@ -1,0 +1,144 @@
+{
+  "paper_sha256": "4d32cf2bcc6276554e4d78c9beac68f56bb39729faf48aebdb1660d61402c0eb",
+  "pdf_sha256": "da2d504cd9fd1fd14e57c6f148f3c62e6714ee326231b136937b7822ff8bdd61",
+  "source_map_sha256": "70b6f2f105db4109cfe75f85070c7afba724de4edf7468ddc3c4828a918a3318",
+  "verified_sources": {
+    "unpublished-input-01": "7dbea0c0f9d8345532ced2ff8644e2222a31f8f7ca1c61e3c924fc39aebd5994",
+    "unpublished-input-02": "7779c9e00c2ae1962d9c36c420cb920043e6b50c4a05965eb90a5d4266ffeef5",
+    "unpublished-input-03": "6dffcfc6a36e530575dfa20db3275003d1827810dd3b41dc11322349401aa4dc",
+    "unpublished-input-04": "0a60b27adc0a387664e0a93db4d87b816a5f499500aa1dae741f5411c4a8b6c5",
+    "P2-07_Discrete_Markov_Chains_and_Martingales_Notes.tex": "423924752f45384fdbc3ba55e8fd0b328ba8ab04ab9b4c6ab0dd887f437591ea",
+    "parts/ch01.tex": "481ba52cfe12f00977460ece581721e05e0420aa416be3eeadb2da34c7798aea",
+    "parts/ch02.tex": "fd28c456b45a51e7ca23ecc04a033bacdc248004d2c39a586203a48189fd0d96",
+    "parts/ch03.tex": "b1f5dd7f0844e49021020cbc9955bd7564ab2255e9c99d0458afc0b95d4aca05",
+    "parts/ch04.tex": "c8e9aff5b42063cce08a6d9df1450ab7cd846b61ec09e41f9fb0ec7b3b2c21f4",
+    "parts/ch05.tex": "2ee0fa6949c1592e4566f0808ff3c6130984d8c2b232fbf5306c9c2defa12fb8",
+    "parts/ch06.tex": "08bc67c1a928522216c3ffe11563c02db54b1eee9ccbc6ae10d2c77558048e99",
+    "parts/ch07.tex": "fa85f28adbf3c1420b8c02d06e02e2c2227ec6874cb4823ff8805eeed9d8d1d8",
+    "provenance/components/ProbabilityFoundations/delivery/paper.tex [parts/p05.tex]": "e2cb2bbf96625ebe5e16bd9d3e28b5bd87be096589f12f26c07bad3defafcd12",
+    "provenance/components/ProbabilityFoundations/delivery/paper.tex [parts/p03.tex]": "289db951cdf41aa6e7c644933b85545dc2e1444513ec9943da2dca52936ce3fe",
+    "provenance/components/ProbabilityFoundations/delivery/paper.tex [parts/p01.tex]": "05cb75380bc5df94fcfc4142cc9cce19789584abea37dc85efc17ca83c04d99f",
+    "provenance/components/ProbabilityFoundations/delivery/paper.tex [parts/p08.tex]": "6d33fa7ad91078cd3fc0bff040f80f82fbc9b4fe0b07dc98c722410bc3403077",
+    "provenance/components/ExtremalOptimization/delivery/paper.tex [parts/ch05.tex]": "b13dec0e499392d403368c3a291a65ac05be17fd5cb8a002d85e998ed26d16da",
+    "docs/sources/d05-notes.tex": "81d4236233819191fe3c01375bf1199bf121789beb6fafc957955548e5396a1f",
+    "unpublished-input-19": "e1ad062335888a0e88780deeeffb60bd202c09ce500601e3441d321c3201a8ef",
+    "output/pdf/P2-07_Discrete_Markov_Chains_and_Martingales_Notes.pdf": "da2d504cd9fd1fd14e57c6f148f3c62e6714ee326231b136937b7822ff8bdd61"
+  },
+  "resolved_upstream_sources": {
+    "provenance/components/ProbabilityFoundations/delivery/paper.tex [parts/p03.tex]": {
+      "historical_sha256": "c8572524aa9cdd75e94ea8813299a9131f84eb88cb5712104d70cdd56feb25a6",
+      "accepted_paper": "provenance/components/ProbabilityFoundations/delivery/paper.tex",
+      "accepted_paper_sha256": "9d92ac07a5ef852cffe2b137acae9c3a2bf5b586d148d36b00fa21d76bcf1b69",
+      "accepted_chapter_sha256": "289db951cdf41aa6e7c644933b85545dc2e1444513ec9943da2dca52936ce3fe",
+      "locators": [
+        {
+          "anchor": "thm:prob-condexp-laws",
+          "historical_line": 79,
+          "accepted_chapter_line": 79,
+          "accepted_paper_line": 868
+        },
+        {
+          "anchor": "thm:prob-condexp-pullout",
+          "historical_line": 111,
+          "accepted_chapter_line": 111,
+          "accepted_paper_line": 900
+        },
+        {
+          "anchor": "thm:prob-cond-jensen",
+          "historical_line": 151,
+          "accepted_chapter_line": 151,
+          "accepted_paper_line": 940
+        },
+        {
+          "anchor": "thm:prob-condexp-contraction",
+          "historical_line": 198,
+          "accepted_chapter_line": 198,
+          "accepted_paper_line": 987
+        },
+        {
+          "anchor": "thm:prob-condexp-ui",
+          "historical_line": 273,
+          "accepted_chapter_line": 275,
+          "accepted_paper_line": 1064
+        }
+      ]
+    },
+    "provenance/components/ProbabilityFoundations/delivery/paper.tex [parts/p01.tex]": {
+      "historical_sha256": "be6ac4140f50dce846b2a9a48bce01c4947b5c913d02323b2b13670b27dfe6d8",
+      "accepted_paper": "provenance/components/ProbabilityFoundations/delivery/paper.tex",
+      "accepted_paper_sha256": "9d92ac07a5ef852cffe2b137acae9c3a2bf5b586d148d36b00fa21d76bcf1b69",
+      "accepted_chapter_sha256": "05cb75380bc5df94fcfc4142cc9cce19789584abea37dc85efc17ca83c04d99f",
+      "locators": [
+        {
+          "anchor": "thm:prob-ui",
+          "historical_line": 238,
+          "accepted_chapter_line": 238,
+          "accepted_paper_line": 342
+        },
+        {
+          "anchor": "thm:prob-vitali",
+          "historical_line": 275,
+          "accepted_chapter_line": 275,
+          "accepted_paper_line": 379
+        }
+      ]
+    },
+    "provenance/components/ProbabilityFoundations/delivery/paper.tex [parts/p08.tex]": {
+      "historical_sha256": "0dfad79a11768ff39f70b7d9186b1fc4c686bdbc8ec925cc7c3a930d295ad7e4",
+      "accepted_paper": "provenance/components/ProbabilityFoundations/delivery/paper.tex",
+      "accepted_paper_sha256": "9d92ac07a5ef852cffe2b137acae9c3a2bf5b586d148d36b00fa21d76bcf1b69",
+      "accepted_chapter_sha256": "6d33fa7ad91078cd3fc0bff040f80f82fbc9b4fe0b07dc98c722410bc3403077",
+      "locators": [
+        {
+          "anchor": "thm:etemadi",
+          "historical_line": 70,
+          "accepted_chapter_line": 70,
+          "accepted_paper_line": 2789
+        }
+      ]
+    }
+  },
+  "chapter_ranges_in_paper": {
+    "parts/ch01.tex": [
+      88,
+      282
+    ],
+    "parts/ch02.tex": [
+      283,
+      651
+    ],
+    "parts/ch03.tex": [
+      652,
+      1104
+    ],
+    "parts/ch04.tex": [
+      1105,
+      1548
+    ],
+    "parts/ch05.tex": [
+      1549,
+      1729
+    ],
+    "parts/ch06.tex": [
+      1730,
+      2177
+    ],
+    "parts/ch07.tex": [
+      2178,
+      2377
+    ]
+  },
+  "chapters": 7,
+  "groups": 43,
+  "original_contracts": 29,
+  "pdf_pages": 37,
+  "results_by_kind": {
+    "definition": 4,
+    "proposition": 8,
+    "example": 3,
+    "theorem": 37,
+    "lemma": 2
+  },
+  "proofs": 47,
+  "published_source_map_sha256": "d68d089fcb22cfd4f5c86d2bf95a7250ae1d8665c91357d434aa2b75589b4ecf"
+}

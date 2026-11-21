@@ -1,0 +1,81 @@
+{
+  "paper_sha256": "57909de9745304bb7dd060d240b506e8832b04a893aef4bbae603625d73b4bc4",
+  "pdf_sha256": "ac450f3c66f4af1a4e62b90458022274f3144fdc9ecaa8735c5a3dd4be2790fd",
+  "source_map_sha256": "eafe886728817acd2898816d70d11953f99053050f80448028957edcc7f94732",
+  "verified_sources": {
+    "unpublished-input-01": "6a0c8c370f188bab111920b8aadb1820bb2975de4537b0cd80b584f86e09fb23",
+    "unpublished-input-02": "a734b2f300546994aadcbbe2accc47787dacf576877e3db45de10634675877df",
+    "unpublished-input-03": "6a2019309f0081b24bb58ef781a21c85d2d83ee5840f22a1046ffdcadbab8c31",
+    "P2-05_Extremal_Methods_and_Optimization_Notes.tex": "2216566cc94bd231a6fe0889fb6445dc1117bd0b4b3dbe212edd7844cc86b1ac",
+    "parts/ch01.tex": "e3040165cd11e41ae961b20ba0a6de0280a3e893ee7e6f1e396e09acd8c49855",
+    "parts/ch02.tex": "a649324fca43a3b3276278c16aa796b1fdf787cddec1a94c3bb088af9bccf833",
+    "parts/ch03.tex": "43e73dd1a5566b33dabcf3caf406a8245ea2f181c392948f295a2cea2279e390",
+    "parts/ch04.tex": "0ceff7ba97d37c31fff87ef3347f9495f936d1296a168c91b968974b85a4657a",
+    "parts/ch05.tex": "b13dec0e499392d403368c3a291a65ac05be17fd5cb8a002d85e998ed26d16da",
+    "parts/ch06.tex": "8fcf36104074923900fc2c8eedd11e23c1fe5b3d360844196f11a75a04f30006",
+    "parts/ch07.tex": "de4cf9643c4d702f3bd81634f84ba8efe2db113e967a4ee777d9d0259444a492",
+    "parts/ch08.tex": "0f6c9a9f08ad337d0957da27dd06acc1d2d8ef51456715e3442cfec84791fe9c",
+    "parts/ch09.tex": "1cc8939f1acd4871880683d0bc89b297bcc3c3bde0387d1ef05d796dfaacbf87",
+    "provenance/components/VariationalMethods/delivery/paper.tex [parts/v01.tex]": "e663c473dd14eae6af332e41f99c2662f07b52863d9ca4869b6b4236d077f7a9",
+    "provenance/components/VariationalMethods/delivery/paper.tex [parts/v05.tex]": "0baabad0701058f0db4ec95f12dbba00daa230cb946384efd6ec0bbba1c98cd0",
+    "unpublished-input-16": "c2ea410d464472db008c67a432329fd7b996aa03933615930b3334583ab11425",
+    "unpublished-input-17": "d93dc8ad039d1d2a769f287e1755ae326b16c11dfcc259bda65542e4d8fbe38d",
+    "unpublished-input-18": "05eb877662cbe23a2f59e983d5796c5e52a685d7ef6056574941d331e5394908",
+    "unpublished-input-19": "067a9f83dccac5ed8925533b138a5011a7772cf5db7a0dc7369aba42484d1302",
+    "unpublished-input-20": "32b241993d957572a597ce69acce124f1346defcc08ebc9e17cf1fc03dafcc9f",
+    "unpublished-input-21": "e1ad062335888a0e88780deeeffb60bd202c09ce500601e3441d321c3201a8ef",
+    "output/pdf/P2-05_Extremal_Methods_and_Optimization_Notes.pdf": "ac450f3c66f4af1a4e62b90458022274f3144fdc9ecaa8735c5a3dd4be2790fd"
+  },
+  "chapter_ranges_in_paper": {
+    "parts/ch01.tex": [
+      81,
+      270
+    ],
+    "parts/ch02.tex": [
+      271,
+      634
+    ],
+    "parts/ch03.tex": [
+      635,
+      734
+    ],
+    "parts/ch04.tex": [
+      735,
+      915
+    ],
+    "parts/ch05.tex": [
+      916,
+      1264
+    ],
+    "parts/ch06.tex": [
+      1265,
+      1439
+    ],
+    "parts/ch07.tex": [
+      1440,
+      1668
+    ],
+    "parts/ch08.tex": [
+      1669,
+      2005
+    ],
+    "parts/ch09.tex": [
+      2006,
+      2469
+    ]
+  },
+  "chapters": 9,
+  "groups": 50,
+  "original_contracts": 22,
+  "pdf_pages": 39,
+  "results_by_kind": {
+    "theorem": 43,
+    "lemma": 5,
+    "proposition": 4,
+    "remark": 1,
+    "corollary": 2,
+    "definition": 2,
+    "example": 1
+  },
+  "published_source_map_sha256": "f20485e2067d3e238ff1e247a6c1af62f477de11c0c3fbf4b045bc1c2324e709"
+}

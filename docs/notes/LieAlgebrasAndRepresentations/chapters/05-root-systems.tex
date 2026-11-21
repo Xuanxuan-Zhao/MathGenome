@@ -1,0 +1,537 @@
+\chapter{Root Systems and Weyl Groups}
+\label{ch:root-systems}
+
+\section{Positive roots and chambers}
+
+\begin{definition}[Finite root systems]\label{res:E01}
+A reduced crystallographic root system in a Euclidean space \(E\)
+is a finite spanning subset \(R\subset E\setminus\{0\}\) such that
+\[
+ s_\alpha(R)=R,\qquad
+ \langle\beta,\alpha^\vee\rangle
+ =\frac{2(\beta,\alpha)}{(\alpha,\alpha)}\in\mathbb Z,\qquad
+ R\cap\mathbb R\alpha=\{\alpha,-\alpha\}.
+\]
+The coroots \(2\alpha/(\alpha,\alpha)\) form another root system,
+the dual one. Orthogonal irreducible components are unique.
+The rank two possibilities are \(A_1\sqcup A_1,A_2,B_2,G_2\),
+with respectively \(4,6,8,12\) roots.
+\end{definition}
+\begin{proof}
+The coroot reflection is the same orthogonal reflection, and
+\[
+ \frac{2(\alpha^\vee,\beta^\vee)}
+      {(\alpha^\vee,\alpha^\vee)}
+ =\frac{2(\alpha,\beta)}{(\beta,\beta)}.
+\]
+This proves the dual assertions and double duality.
+For two independent roots making angle \(\theta\),
+the product of the two integral Cartan numbers is
+\(4\cos^2\theta\), a nonnegative integer less than \(4\).
+The nonorthogonal cases give the squared length ratios
+\(1,2,3\), and the acute angles \(60,45,30\) degrees.
+To see that the rank two list is exhaustive, take two adjacent
+root rays making the smallest positive angle. Reflection in
+their perpendicular lines repeats this sector around the
+circle. The angle restrictions give \(2,3,4,6\) pairs of
+opposite rays. No extra root ray can occur inside a sector,
+by its minimality; a second length on a ray is excluded by
+reducedness. Integrality fixes equal lengths in \(A_2\)
+and the alternating ratios \(2,3\) in \(B_2,G_2\).
+The coordinate models below verify their existence.
+Uniqueness of the orthogonal decomposition will also follow
+from the simple-root basis proved next: it is the decomposition
+of its graph into connected components.
+\end{proof}
+
+\begin{theorem}[Simple roots]\label{res:E02}
+Choose \(v\in E\) off the root hyperplanes and put
+\(R^+=\{\alpha:(v,\alpha)>0\}\). The positive roots that are
+not sums of two positive roots form a basis
+\(\Pi=\{\alpha_1,\ldots,\alpha_r\}\) of \(E\).
+Every root is an integral combination of \(\Pi\), with all
+coefficients nonnegative or all nonpositive.
+The simple reflections \(s_i=s_{\alpha_i}\) generate the Weyl
+group \(W=\langle s_\alpha:\alpha\in R\rangle\), and
+\(R=W\Pi\).
+\end{theorem}
+\begin{proof}
+If a positive root is decomposable, split it into two positive
+roots and repeat. The values of \((v,-)\) on \(R^+\) form a
+finite set of positive numbers, so the process terminates.
+Thus every positive root is a sum of simple ones.
+Distinct simple roots have nonpositive inner product: if
+\((\alpha,\beta)>0\), inspection of the four rank two systems
+gives \(\alpha-\beta\) or \(\beta-\alpha\) as a root, making
+one of the two simple roots decomposable.
+For linear independence, split a nonzero relation into
+\(u=\sum_{i\in I}a_i\alpha_i=\sum_{j\in J}b_j\alpha_j\),
+where \(I,J\) are disjoint and all coefficients positive.
+Then \(u\ne0\), as pairing with \(v\) shows, whereas
+\((u,u)=\sum a_ib_j(\alpha_i,\alpha_j)\le0\), a contradiction.
+This proves the basis and the sign assertion.
+
+If \(\beta=\sum n_i\alpha_i\) is positive and not simple,
+some \((\beta,\alpha_i)>0\), since
+\((\beta,\beta)=\sum n_i(\beta,\alpha_i)>0\).
+The root \(s_i\beta=\beta-
+\langle\beta,\alpha_i^\vee\rangle\alpha_i\)
+has smaller height. It cannot be negative unless \(\beta\)
+is a multiple of \(\alpha_i\), because all other coefficients
+are unchanged. In the latter case reducedness makes it simple.
+Thus repeated simple reflections take any root to a simple
+root, proving \(R=W_0\Pi\) for \(W_0=\langle s_i\rangle\).
+For \(\beta=w\alpha_i\), \(s_\beta=ws_iw^{-1}\in W_0\),
+so \(W_0=W\).
+One also obtains the useful lowering assertion:
+if \(\beta>0\) is not simple, then \(\beta-\alpha_i\)
+is a positive root for some \(i\). Indeed the root string
+through \(\beta\) in the direction just chosen contains that
+root. These string assertions in an abstract root system
+can equivalently be checked in its rank two subsystem.
+\end{proof}
+
+\begin{theorem}[Chambers, length, and a fundamental domain]\label{res:E03}
+The Weyl group acts simply transitively on the chambers in
+\(E\setminus\bigcup_{\alpha\in R}\alpha^\perp\).
+The chamber for \(\Pi\) is
+\(C=\{x:(x,\alpha_i)>0\ \forall i\}\).
+For \(w\in W\) its shortest simple-reflection word has length
+\[
+ \ell(w)=|\{\alpha>0:w\alpha<0\}|.
+\]
+Every \(W\)-orbit has exactly one point in \(\overline C\).
+\end{theorem}
+\begin{proof}
+The chamber corresponding to a sign choice is an intersection
+of open half spaces, hence convex. The positive-root
+expansions show that the walls of \(C\) are precisely the
+simple-root hyperplanes. A generic segment between two
+chambers crosses one wall at a time. Reflection in that wall
+takes one adjacent chamber to the other, so \(W\) is transitive.
+
+We give the word argument establishing freeness, rather than
+assuming it in the gallery argument. A simple reflection
+permutes \(R^+\setminus\{\alpha_i\}\): coefficients outside
+\(\alpha_i\) remain nonnegative, and only \(\alpha_i\)
+can change sign. Suppose \(u=s_{i_1}\cdots s_{i_m}\)
+and \(u\alpha<0\) for a positive root \(\alpha\).
+Follow \(\alpha\) through this word from right to left.
+At the first sign change the positive root must equal the
+simple root being reflected. If the suffix before that step
+is \(v\), then \(v\alpha=\alpha_{i_k}\) and
+\(s_\alpha=v^{-1}s_{i_k}v\). Thus \(us_\alpha\)
+has an expression obtained by deleting the \(k\)-th letter.
+In a shortest expression \(w=us_i\), this implies
+\(u\alpha_i>0\), for otherwise two letters could be deleted.
+Counting the positive roots sent negative gives
+\(N(us_i)=N(u)+1\) in that case. Induction shows that every
+shortest word has length \(N(w)\).
+If \(wC=C\), it sends no positive root negative, hence its
+shortest word has length zero and \(w=1\).
+
+Existence of a representative in \(\overline C\) follows
+by continuity from transitivity on chambers, or by reflecting
+successively across a wall on whose negative side the point lies.
+For uniqueness we record a consequence of a reduced word
+\(w=s_{i_1}\cdots s_{i_m}\). Each
+\(\gamma_k=s_{i_1}\cdots s_{i_{k-1}}\alpha_{i_k}\)
+is positive, by the preceding deletion argument. For dominant
+\(\lambda\),
+\[
+ \lambda-w\lambda
+ =\sum_{k=1}^m
+   \langle\lambda,\alpha_{i_k}^\vee\rangle\gamma_k
+ \quad\text{belongs to }\sum_i\mathbb R_{\ge0}\alpha_i.
+\]
+If \(\mu=w\lambda\) is also dominant, applying the same
+assertion to \(w^{-1}\) and \(\mu\) puts \(\mu-\lambda\)
+in that same pointed cone. Their sum is zero, so
+\(\lambda=\mu\).
+\end{proof}
+
+\section{Dynkin classification}
+
+\begin{proposition}[Cartan matrices and reconstruction]\label{res:E04}
+Let \(a_{ij}=\langle\alpha_j,\alpha_i^\vee\rangle\).
+Then \(a_{ii}=2\), \(a_{ij}\in\mathbb Z_{\le0}\) for
+\(i\ne j\), and \(a_{ij}a_{ji}\in\{0,1,2,3\}\).
+The matrix \(\operatorname{diag}((\alpha_i,\alpha_i))A\)
+is symmetric positive definite. The Dynkin graph joins \(i,j\)
+by \(a_{ij}a_{ji}\) edges, with its arrow pointing toward
+the shorter root. It determines the root system up to
+isometry and one positive scale on each irreducible component.
+\end{proposition}
+\begin{proof}
+The angle and simple-root arguments already give the stated
+entries and products. Symmetrization is twice the Gram matrix.
+On a connected component the ratio of adjacent squared lengths
+is \(a_{ji}/a_{ij}\), so the graph determines every length
+relative to one chosen length. It therefore determines the
+Gram matrix of a basis. The induced isometry identifies
+the simple reflections, and Theorem~\ref{res:E02} then
+identifies all roots as their orbits.
+Orthogonal graph components give invariant orthogonal
+subspaces and \(W\) is the product of their Weyl groups.
+This also proves the uniqueness of the irreducible decomposition.
+\end{proof}
+
+\begin{theorem}[Exhaustion of finite Dynkin diagrams]\label{res:E05}
+The connected finite reduced crystallographic diagrams are
+\[
+ A_n\ (n\ge1),\quad B_n,C_n\ (n\ge2),\quad D_n\ (n\ge4),
+ \quad E_6,E_7,E_8,F_4,G_2,
+\]
+with \(B_2=C_2\) up to exchanging the two root lengths.
+\end{theorem}
+\begin{proof}
+Normalize the simple roots to squared length \(2\).
+Their symmetric Gram matrix \(M\) has diagonal entries \(2\)
+and off-diagonal entries \(-\sqrt m\), where
+\(m=a_{ij}a_{ji}\). Every principal submatrix is positive
+definite. A cycle is impossible: on its vertices the vector
+with all entries \(1\) has quadratic value at most zero.
+A vertex with four neighbors is impossible: put \(2\) at
+the center and \(1\) at its four neighbors; again the
+quadratic value is at most zero.
+Thus the graph is a tree of valence at most three.
+
+There cannot be two trivalent vertices. Take the path joining
+two consecutive ones and retain two neighboring leaves at
+each end. Give all vertices on the path value \(2\) and
+the four leaves value \(1\). For single edges its quadratic
+value is zero; heavier edges can only decrease it.
+A triple edge cannot have any attached vertex: the
+three-vertex path with edge products \(3,1\) has determinant
+\(8-2(3+1)=0\). Hence a triple edge gives just \(G_2\).
+
+A trivalent vertex and a double edge cannot coexist.
+Retain the path from that vertex to the nearest double edge,
+two additional leaves at the trivalent end, and the vertex
+just beyond the double edge. Eliminate the two leaves by
+Schur complement: each subtracts \(1/2\) from the central
+diagonal, leaving \(1\). Eliminating the last vertex across
+the double edge subtracts \(2/2=1\) from the other end.
+The remaining chain has endpoint diagonals \(1\), all interior
+diagonals \(2\), and off-diagonals \(-1\), so its all-ones
+vector has quadratic value zero. If the double edge is
+incident to the trivalent vertex, these two endpoint
+subtractions occur on the same diagonal, leaving the
+one-by-one zero matrix instead. Two double edges are
+excluded by the same endpoint elimination along
+the path between them; if they share a vertex,
+both subtractions again leave one zero diagonal.
+
+It remains to classify simply laced trees with at most
+one branch and chains with one double edge.
+A simple chain is \(A_n\).
+For a branch with arms of lengths \(a\le b\le c\),
+the inverse endpoint entry of the length \(a\) chain
+matrix is \(a/(a+1)\); this follows by the determinant
+recurrence \(d_m=2d_{m-1}-d_{m-2}\), \(d_m=m+1\).
+Its Schur complement at the branch is positive precisely when
+\[
+ \frac1{a+1}+\frac1{b+1}+\frac1{c+1}>1.
+\]
+Thus \(a=1\); if \(b=1\) one gets \(D_{c+3}\), and if
+\(b=2\), one gets \(c=2,3,4\), namely \(E_6,E_7,E_8\).
+No \(b\ge3\) is possible.
+For a double edge separating chains of \(p,q\ge1\) vertices,
+the determinant is
+\[
+ (p+1)(q+1)-2pq=2-(p-1)(q-1).
+\]
+Positivity gives \(p=1\) or \(q=1\), the diagrams \(B_n,C_n\),
+or \(p=q=2\), the diagram \(F_4\).
+The two orientations of \(F_4\) are interchanged by reversing
+the chain. These cases exhaust all graphs and orientations.
+Their actual root systems are constructed next, so the list
+has neither missing cases nor merely formal candidates.
+\end{proof}
+
+\begin{theorem}[Coordinate constructions]\label{res:E06}
+Every diagram in Theorem~\ref{res:E05} is realized by a root
+system. The classical systems are
+\[
+\begin{array}{c|l|r}
+\text{type}&\text{roots}&|R|\\\hline
+A_n&\varepsilon_i-\varepsilon_j\text{ in }\sum x_i=0
+ &(n+1)n\\
+B_n&\pm\varepsilon_i,\ \pm\varepsilon_i\pm\varepsilon_j&2n^2\\
+C_n&\pm2\varepsilon_i,\ \pm\varepsilon_i\pm\varepsilon_j&2n^2\\
+D_n&\pm\varepsilon_i\pm\varepsilon_j&2n(n-1).
+\end{array}
+\]
+The exceptional cardinalities are
+\[
+ |G_2|=12,\quad |F_4|=48,\quad
+ |E_6|=72,\quad |E_7|=126,\quad |E_8|=240.
+\]
+\end{theorem}
+\begin{proof}
+Signed coordinate permutations verify the reflection axioms
+for the classical lists. Their simple bases are
+\(\varepsilon_i-\varepsilon_{i+1}\), with the final root
+\(\varepsilon_n\) in \(B_n\), \(2\varepsilon_n\) in \(C_n\),
+and with the two final roots
+\(\varepsilon_{n-1}-\varepsilon_n,\varepsilon_{n-1}+\varepsilon_n\)
+in \(D_n\). For \(A_n\) use \(n+1\) coordinates.
+The dot products give the indicated graphs.
+
+In \(\sum_{i=1}^3x_i=0\), take the \(G_2\) roots
+\[
+ \{\varepsilon_i-\varepsilon_j:i\ne j\}
+ \ \cup\
+ \{\pm(2\varepsilon_i-\varepsilon_j-\varepsilon_k):
+                       \{i,j,k\}=\{1,2,3\}\}.
+\]
+A short reflection interchanges two coordinates.
+The reflection in \(2\varepsilon_1-\varepsilon_2-\varepsilon_3\)
+sends each short root to a short root and permutes the six
+displayed long roots; inserting
+\(x\mapsto x-(x,\alpha)\alpha/3\) verifies this directly.
+The simple roots can be
+\(\varepsilon_1-\varepsilon_2\) and
+\(-2\varepsilon_1+\varepsilon_2+\varepsilon_3\),
+with Cartan products \(3\).
+
+In \(\mathbb R^4\), take
+\[
+ F_4=\{\pm\varepsilon_i\}\cup
+ \{\pm\varepsilon_i\pm\varepsilon_j:i<j\}\cup
+ \{\tfrac12(\pm\varepsilon_1\pm\varepsilon_2
+                    \pm\varepsilon_3\pm\varepsilon_4)\}.
+\]
+The three parts have \(8,24,16\) members.
+Signed permutations preserve the list. Reflection in a
+half root preserves the long roots; on the short roots it
+either negates that root, fixes it, or interchanges a
+coordinate root with a half root. This follows by the
+possible inner products \(0,\pm\tfrac12,\pm1\);
+for long roots the nonzero inner product is \(\pm1\).
+These computations prove both reflection invariance and
+integrality. One simple basis is
+\[
+ \varepsilon_2-\varepsilon_3,\quad
+ \varepsilon_3-\varepsilon_4,\quad
+ \varepsilon_4,\quad
+ \tfrac12(\varepsilon_1-\varepsilon_2-\varepsilon_3-\varepsilon_4).
+\]
+Its expansion coefficients for \(x\) are
+\(x_1+x_2,\ 2x_1+x_2+x_3,\
+3x_1+x_2+x_3+x_4,\ 2x_1\).
+For every displayed root they are integers of one sign;
+this also verifies directly that this is a simple basis.
+
+For \(E_8\), let
+\[
+ L=\{z\in\mathbb Z^8:\textstyle\sum z_i\text{ even}\}
+ \cup
+ \{z+(\tfrac12,\ldots,\tfrac12):z\in\mathbb Z^8,\
+                                      \textstyle\sum z_i\text{ even}\}.
+\]
+This is an integral even lattice. Its norm \(2\) vectors are
+the \(112\) vectors \(\pm\varepsilon_i\pm\varepsilon_j\)
+and the \(128\) half-coordinate vectors with an even
+number of minus signs. For a norm \(2\) vector \(\alpha\),
+the map \(x\mapsto x-(x,\alpha)\alpha\) preserves \(L\)
+and norm. It therefore preserves precisely this root list.
+Take the basis
+\[
+\begin{split}
+ \alpha_1&=\tfrac12(\varepsilon_1+\varepsilon_8
+                         -\varepsilon_2-\cdots-\varepsilon_7),\\
+ \alpha_2&=\varepsilon_1+\varepsilon_2,\qquad
+ \alpha_3=\varepsilon_2-\varepsilon_1,\\
+ \alpha_4&=\varepsilon_3-\varepsilon_2,\quad
+ \alpha_5=\varepsilon_4-\varepsilon_3,\quad
+ \alpha_6=\varepsilon_5-\varepsilon_4,\quad
+ \alpha_7=\varepsilon_6-\varepsilon_5,\quad
+ \alpha_8=\varepsilon_7-\varepsilon_6 .
+\end{split}
+\]
+Its graph has arms \(1,2,4\).
+Here is an explicit way to check simplicity, without relying
+only on a drawing. For \(x=\sum c_i\alpha_i\), recover
+\[
+\begin{aligned}
+c_1&=2x_8,&c_8&=x_7+x_8,&c_7&=x_6+x_7+2x_8,\\
+c_6&=x_5+x_6+x_7+3x_8,&
+c_5&=x_4+x_5+x_6+x_7+4x_8,\\
+c_4&=x_3+x_4+x_5+x_6+x_7+5x_8,&
+c_2&=(x_1+x_2+c_4)/2,&c_3&=c_2+x_8-x_1 .
+\end{aligned}
+\]
+For a half root the parity condition makes these integers,
+all nonnegative when \(x_8=1/2\), and all nonpositive
+when \(x_8=-1/2\). For an integral root, the same formulas
+with its two nonzero coordinates give one sign throughout.
+This proves simplicity and the \(E_8\) graph.
+
+Intersect with \(x_7+x_8=0\) to obtain \(E_7\),
+with basis \(\alpha_1,\ldots,\alpha_7\).
+There are \(60+2\) integral roots and \(64\) half roots.
+Intersect further with \(x_6=x_7=-x_8\) to obtain \(E_6\),
+with basis \(\alpha_1,\ldots,\alpha_6\).
+There are \(40\) integral roots and \(32\) half roots.
+The intersections are root systems because the reflection
+in a vector of the subspace preserves that subspace.
+Their graphs have arms \(1,2,3\) and \(1,2,2\), respectively.
+\end{proof}
+
+\section{Lattices and useful dominant elements}
+
+\begin{proposition}[Root and weight lattices]\label{res:E07}
+Set
+\[
+ Q=\sum_i\mathbb Z\alpha_i,\quad
+ Q^\vee=\sum_i\mathbb Z\alpha_i^\vee,\quad
+ P=(Q^\vee)^*,\quad P^\vee=Q^*.
+\]
+Then \(Q\subset P\), \(Q^\vee\subset P^\vee\), and
+the fundamental weights \(\omega_i\), characterized by
+\(\langle\omega_i,\alpha_j^\vee\rangle=\delta_{ij}\),
+form a basis of \(P\).
+Dominant integral weights are precisely
+\(\sum_i n_i\omega_i\), \(n_i\in\mathbb Z_{\ge0}\).
+Each real orbit has a unique dominant representative.
+Moreover \([P:Q]=\det A\).
+\end{proposition}
+\begin{proof}
+The simple coroots are a basis of the coroot lattice:
+the proof of Theorem~\ref{res:E02} applies to the dual
+root system. Taking dual bases proves the assertion about
+fundamental weights. Integral Cartan pairings put every root
+in \(P\), and the dual argument gives the other inclusion.
+The inequalities for the closed positive chamber are
+exactly the nonnegativity of the fundamental-weight
+coefficients. Orbit uniqueness is Theorem~\ref{res:E03}.
+Finally the simple roots have coordinate columns \(A\)
+in the fundamental-weight basis, so the index is the
+absolute determinant, which is positive by symmetrization.
+For example these determinants are \(n+1,2,2,4,3,2,1,1,1\)
+for \(A_n,B_n,C_n,D_n,E_6,E_7,E_8,F_4,G_2\).
+They can be computed by the chain recurrence and branch
+Schur complements in Theorem~\ref{res:E05}.
+\end{proof}
+
+\begin{proposition}[The longest element and finite weight sets]\label{res:E08}
+There is a unique \(w_0\in W\) carrying \(R^+\) to \(-R^+\).
+It satisfies \(w_0^2=1\) and \(\ell(w_0)=|R^+|\).
+The element
+\[
+ \rho=\tfrac12\sum_{\alpha>0}\alpha
+\]
+satisfies \(\langle\rho,\alpha_i^\vee\rangle=1\).
+Similarly \(\rho^\vee=\frac12\sum_{\alpha>0}\alpha^\vee\)
+satisfies \(\langle\alpha_i,\rho^\vee\rangle=1\).
+For a finite-dimensional \(\mathfrak g\)-module its
+\(\mathfrak h\)-weights are integral, their multiplicities
+are \(W\)-invariant, and their set is saturated in the sense
+that, if \(\mu\) occurs and \(n=\langle\mu,\alpha^\vee\rangle
+\ge0\), then \(\mu-j\alpha\) occurs for \(0\le j\le n\).
+\end{proposition}
+\begin{proof}
+The negative chamber is a chamber; simple transitivity gives
+\(w_0\), and its square stabilizes the positive chamber.
+The length formula proves maximality and the value stated.
+A simple reflection permutes the positive roots other
+than \(\alpha_i\), so \(s_i\rho=\rho-\alpha_i\).
+Comparing with the reflection formula gives its pairing \(1\).
+Apply the same argument to the dual system.
+
+The action of \(\mathfrak h\) is diagonalizable on a finite
+module by Theorem~\ref{res:C07}. Restriction to every root
+triple and the \(\mathfrak{sl}_2\) classification give
+integer coroot eigenvalues. The finite direct sum of
+weight spaces in a coset \(\mu+\mathbb Z\alpha\)
+decomposes into \(\mathfrak{sl}_2\) strings.
+Each string is symmetric about zero and contains every
+intermediate weight of the same parity. Thus the endpoints
+are exchanged by \(s_\alpha\), with their multiplicities,
+and a string containing the eigenvalue \(n\ge0\)
+contains \(n,n-2,\ldots,-n\).
+This proves both multiplicity invariance and saturation.
+\end{proof}
+
+\begin{theorem}[Highest roots and the principal triple]\label{res:E09}
+For a simple \(\mathfrak g\), there is a unique highest root
+\(\theta\), and every root is at most \(\theta\) in the
+simple-root order. Choose simple triples \(e_i,f_i,h_i\).
+If \(2\rho^\vee=\sum_i c_i h_i\), then
+\[
+ e=\sum_i e_i,\qquad h=2\rho^\vee,\qquad f=\sum_i c_i f_i
+\]
+form an \(\mathfrak{sl}_2\)-triple.
+For \(m>0\), let \(r_m\) be the number of positive roots of
+height \(m\), and let \(r_0=r\). Define the exponents by
+giving \(m\) multiplicity \(r_m-r_{m+1}\). Then
+\[
+ \mathfrak g|_{\langle e,h,f\rangle}
+       \simeq\bigoplus_{i=1}^r L_{2m_i},\qquad
+ \sum_i m_i=|R^+|.
+\]
+Here \(L_a\) has highest weight \(a\) and dimension \(a+1\).
+The Coxeter number used in this volume is
+\(h_R=1+\operatorname{ht}\theta=1+\max m_i\).
+\end{theorem}
+\begin{proof}
+Choose a maximal positive root \(\theta\).
+Its root vector is killed by all positive root operators.
+By PBW, the submodule of the adjoint module generated by
+that vector is spanned by negative root monomials applied
+to it: move positive factors right and Cartan factors
+to the middle. All its weights are therefore at most
+\(\theta\). Since the adjoint module of a simple algebra
+is simple, this submodule is all of \(\mathfrak g\).
+Thus every root is at most \(\theta\); a second maximal root
+must equal it. This argument uses PBW, not the highest-weight
+classification of Chapter~7.
+
+Distinct simple positive and negative root spaces bracket
+to zero, whereas \([e_i,f_i]=h_i\). Therefore
+\([e,f]=h\). The identities
+\(\alpha_i(2\rho^\vee)=2\) give the other two triple
+relations. In the adjoint module the \(h\)-weights are
+twice the root heights, with zero space \(\mathfrak h\).
+All simple \(\mathfrak{sl}_2\)-summands consequently have
+even highest weight. Each contributes one dimension to
+zero weight and one to each positive even weight up to
+its highest weight. Hence there are \(r\) summands and
+the number of summands with highest weight exactly \(2m\)
+is \(r_m-r_{m+1}\). Summing their contributions to positive
+weights gives \(\sum m_i=|R^+|\).
+There are no trivial summands since \(r_0=r_1=r\).
+The top nonzero weight is \(2\operatorname{ht}\theta\),
+proving the assertion about the largest exponent.
+\end{proof}
+
+For reference the complete height calculation is summarized here:
+\[
+\begin{array}{c|l|c}
+ R&\{m_i\}&h_R\\ \hline
+ A_n&1,2,\ldots,n&n+1\\
+ B_n,C_n&1,3,\ldots,2n-1&2n\\
+ D_n&1,3,\ldots,2n-3,\ n-1&2n-2\\
+ G_2&1,5&6\\
+ F_4&1,5,7,11&12\\
+ E_6&1,4,5,7,8,11&12\\
+ E_7&1,5,7,9,11,13,17&18\\
+ E_8&1,7,11,13,17,19,23,29&30
+\end{array}
+\]
+These entries can be checked without a representation formula:
+use the coordinate lists of Theorem~\ref{res:E06}, expand each
+positive root in the indicated basis, and form
+\(\sum_{\alpha>0}t^{\operatorname{ht}\alpha}\).
+For each row it equals
+\(\sum_{m\text{ in the middle column}}(t+\cdots+t^m)\);
+the explicit coefficient-recovery formulas there also cover
+the exceptional systems. In type \(D_n\), the exponent \(n-1\)
+has multiplicity two when \(n\) is even.
+The definition of \(h_R\) here does not silently identify it
+with the order of a product of simple reflections.
+
+The diagram and lattice arguments follow
+\cite[Sections 9--13]{humphreys} and
+\cite[Sections 21--23 and 32]{etingof}.

@@ -1,0 +1,11 @@
+import MathGenome.AdvancedCommutativeAlgebra.Topics.AdvCommAlg.CohenMacaulay
+import MathGenome.AdvancedCommutativeAlgebra.Topics.AdvCommAlg.Depth
+import MathGenome.AdvancedCommutativeAlgebra.Topics.AdvCommAlg.Differentials
+import MathGenome.AdvancedCommutativeAlgebra.Topics.AdvCommAlg.Etale
+import MathGenome.AdvancedCommutativeAlgebra.Topics.AdvCommAlg.FormalLifting
+import MathGenome.AdvancedCommutativeAlgebra.Topics.AdvCommAlg.Gorenstein
+import MathGenome.AdvancedCommutativeAlgebra.Topics.AdvCommAlg.Homological
+import MathGenome.AdvancedCommutativeAlgebra.Topics.AdvCommAlg.Koszul
+import MathGenome.AdvancedCommutativeAlgebra.Topics.AdvCommAlg.Normality
+import MathGenome.AdvancedCommutativeAlgebra.Topics.AdvCommAlg.RegularSequence
+import MathGenome.AdvancedCommutativeAlgebra.Topics.AdvCommAlg.Smooth

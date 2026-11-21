@@ -1,0 +1,11 @@
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch08.DistributionTests
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch08.FreeProperQuotient
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch08.FreeProperSlices
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch08.Frobenius
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch08.GlobalLeaves
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch08.IrrationalLeaf
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch08.IrrationalOrbitLeaf
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch08.IrrationalSlopeDistribution
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch08.LeafStructures
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch08.PlaqueChainCountability
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Ch08.PlaqueOverlap

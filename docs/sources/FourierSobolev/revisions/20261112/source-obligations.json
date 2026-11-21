@@ -1,0 +1,1375 @@
+{
+  "complete": true,
+  "format": "source-obligations-1",
+  "obligations": [
+    {
+      "document": "notes/001/INPUT_LOCK.json",
+      "end_line": 38,
+      "id": "DOC-input-lock",
+      "kind": "context",
+      "start_line": 1,
+      "statement": "Source provenance only: hashes for the original root TeX, five chapter files and PDF; the inlined paper hash; chapter-to-paper line ranges U1:63–789, U2:790–1012, U3:1013–1272, U4:1273–1705, U5:1706–2693; and document/page counts. No additional mathematical assertion is prescribed."
+    },
+    {
+      "document": "notes/001/PROJECT_SCOPE.txt",
+      "end_line": 2,
+      "id": "DOC-project-scope",
+      "kind": "context",
+      "start_line": 1,
+      "statement": "Scope instruction: the existing complete U1–U5 manuscript is one project, and the full inlined manuscript determines the mathematics. The source map is an advisory index rather than a required number of Lean goals. Historical MathGenome v0.8.0 reuse leads do not certify matches against this run’s pinned MathGenome v0.9.0 and Mathlib. These are routing/version instructions, not additional mathematical obligations."
+    },
+    {
+      "document": "notes/001/SOURCE_MAP.json",
+      "end_line": 1950,
+      "id": "DOC-source-map",
+      "kind": "context",
+      "start_line": 1,
+      "statement": "The complete 65-entry result map provides manuscript locations, historical contracts, references and reuse leads. It is advisory context, explicitly not an additional mathematical source or mandatory task count. Its historical version pins and proof-route suggestions do not override the full manuscript, and it gives no additional agreed result or scope restriction."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 45,
+      "id": "GLOBAL-frontmatter",
+      "kind": "context",
+      "start_line": 1,
+      "statement": "Typesetting declarations, title, date, front matter, chapter names, labels and subject roadmap are nonmathematical presentation/context, with no separate result to formalize."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 56,
+      "id": "GLOBAL-normalizations",
+      "kind": "definition",
+      "start_line": 47,
+      "statement": "Use Lebesgue measure on R^d, Fourier transform Ff(ξ)=∫f(x)e^(−2πi x·ξ)dx and positive-sign inverse transform F⁻¹g(x)=∫g(ξ)e^(2πi x·ξ)dξ when defined, and convolution f*g(x)=∫f(x−y)g(y)dy. On the circle R/TZ, T>0, use probability Haar measure dt/T and characters e^(2πint/T); on finite cyclic groups use probability counting measure, with ordinary counting in inverse frequency sums and Parseval. Distribution pairings are bilinear and Hilbert inner products use complex conjugation. Lp objects are almost-everywhere classes unless an actual representative is specified; Sobolev norms include the zero-order norm. Derivative, ball and boundary estimates use positive integer dimension unless a separate zero-dimensional convention is given; connectedness and endpoints are imposed only where stated."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 62,
+      "id": "GLOBAL-prerequisites",
+      "kind": "context",
+      "start_line": 58,
+      "statement": "The notes assume ordinary measure/integration theory, elementary complex analysis, basic functional analysis and Euclidean calculus, including the listed standard prerequisite theorems under their usual hypotheses. References and the table of contents are contextual; the passage does not restate those prerequisites as new project results."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 70,
+      "id": "U1-sum-conventions",
+      "kind": "definition",
+      "start_line": 67,
+      "statement": "In U1 the complex inner product is linear in its first variable. A nonnegative sum over an arbitrary set I is the supremum of finite subsums; a vector sum over I is the limit of finite-subset partial sums directed by inclusion."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 93,
+      "id": "U1-bessel",
+      "kind": "result",
+      "start_line": 74,
+      "statement": "For every real or complex Hilbert space H, any index set I, any orthonormal family (u_i) indexed by I and every x∈H, ∑_{i∈I}|⟨x,u_i⟩|²≤‖x‖². Include arbitrary I and the zero Hilbert space."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 93,
+      "id": "U1-l2-reconstruction",
+      "kind": "construction",
+      "start_line": 74,
+      "statement": "For an arbitrary orthonormal family (u_i) in a real or complex Hilbert space H, let M be its closed linear span. For every a∈ℓ²(I), the finite-subset net ∑_{i∈F}a_i u_i converges, and a↦∑_i a_i u_i is a linear isometric isomorphism ℓ²(I)→M. If M=H, its inverse is x↦(⟨x,u_i⟩)_i. The construction includes arbitrary index sets and the zero space."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 93,
+      "id": "U1-parseval",
+      "kind": "result",
+      "start_line": 74,
+      "statement": "For a complete orthonormal family (u_i)_{i∈I} in a real or complex Hilbert space H, for all x,y∈H one has x=∑_i⟨x,u_i⟩u_i in norm, ⟨x,y⟩=∑_i⟨x,u_i⟩overline(⟨y,u_i⟩), and ‖x‖²=∑_i|⟨x,u_i⟩|². The inner-product series is absolutely summable. Sums are finite-subset nets when I is arbitrary, including the zero Hilbert space."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 139,
+      "id": "U1-circle-fourier",
+      "kind": "definition",
+      "start_line": 126,
+      "statement": "For every T>0 construct the circle T_T=R/TZ with normalized Haar measure m_T represented by dt/T on any length-T interval. Set e_k(t)=exp(2πikt/T), f̂(k)=∫_{T_T} f(t)overline(e_k(t))dm_T(t) for f∈L¹, and (f*g)(t)=∫_{T_T}f(t−s)g(s)dm_T(s). The measure is translation invariant, coefficients are independent of fundamental interval and L¹ representative, and v=2πt/T transports m_T to dv/(2π) and e_k to exp(ikv)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 151,
+      "id": "U1-continuous-lp-density",
+      "kind": "result",
+      "start_line": 141,
+      "statement": "For every T>0 and 1≤p<∞, continuous functions on T_T are dense in Lp(T_T). The assertion also holds for completed Haar measure."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 163,
+      "id": "U1-localization",
+      "kind": "result",
+      "start_line": 153,
+      "statement": "For T>0, f,g∈L¹(T_T) and x∈T_T, if f and g agree almost everywhere in a neighborhood of x, then S_N f(x)−S_N g(x)→0 as N→∞."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 168,
+      "id": "U1-dirichlet-formula",
+      "kind": "result",
+      "start_line": 153,
+      "statement": "For every T>0, integer N≥0 and f∈L¹(T_T), define S_N f(t)=∑_{k=−N}^N f̂(k)e_k(t). Then S_N f=f*D_N, where in angular coordinates D_N(v)=∑_{k=−N}^N exp(ikv)=sin((N+1/2)v)/sin(v/2) when the denominator is nonzero, with continuous value 2N+1 at v=0 and the corresponding periodic extension."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 195,
+      "id": "U1-fejer",
+      "kind": "result",
+      "start_line": 183,
+      "statement": "For T>0 and N≥0, the Cesàro means σ_Nf=(N+1)⁻¹∑_{j=0}^N S_jf equal f*F_N. In angular coordinates F_N(v)=(N+1)⁻¹|∑_{j=0}^N e^(ijv)|²=∑_{|k|≤N}(1−|k|/(N+1))e^(ikv). Each F_N is nonnegative with Haar integral one; its mass outside every neighborhood of zero tends to zero. For every continuous real- or complex-valued f the means converge uniformly to f; for every f∈Lp(T_T), 1≤p<∞, they converge to f in Lp."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 228,
+      "id": "U1-absolute-periodic-inversion",
+      "kind": "result",
+      "start_line": 216,
+      "statement": "If f∈L¹(T_T) has ∑_{k∈Z}|f̂(k)|<∞, its Fourier series converges absolutely and uniformly to a continuous representative of f, equal almost everywhere to f and equal to any chosen representative at every point where that representative is continuous."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 228,
+      "id": "U1-fourier-density",
+      "kind": "result",
+      "start_line": 216,
+      "statement": "Trigonometric polynomials on T_T are dense in C(T_T) in uniform norm and in Lp(T_T) for every 1≤p<∞, for every T>0."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 228,
+      "id": "U1-periodic-riemann-lebesgue",
+      "kind": "result",
+      "start_line": 216,
+      "statement": "For every T>0 and f∈L¹(T_T), f̂(k)→0 as |k|→∞."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 228,
+      "id": "U1-periodic-uniqueness",
+      "kind": "result",
+      "start_line": 216,
+      "statement": "For f∈L¹(T_T), if every Fourier coefficient vanishes then f=0 as an almost-everywhere class; equivalently equal Fourier coefficients determine equal L¹ classes."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 241,
+      "id": "U1-complex-fourier-basis",
+      "kind": "result",
+      "start_line": 230,
+      "statement": "For every T>0, the characters (e_k)_{k∈Z} are a Hilbert basis of L²(T_T;C). For every f∈L² and every a∈R, f̂(k)=T⁻¹∫_a^(a+T)f(t)e^(−2πikt/T)dt, the symmetric sums S_Nf converge to f in L², and ‖f‖²_2=∑_{k∈Z}|f̂(k)|²."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 241,
+      "id": "U1-real-fourier-basis",
+      "kind": "result",
+      "start_line": 230,
+      "statement": "For every T>0 the real functions 1 and, for integers k≥1, √2 cos(2πkt/T), √2 sin(2πkt/T), form a Hilbert basis of real L²(T_T)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 274,
+      "id": "U1-abel-poisson",
+      "kind": "result",
+      "start_line": 262,
+      "statement": "For every T>0, 0≤r<1 and f∈L¹(T_T), A_rf=∑_{k∈Z}r^|k| f̂(k)e_k converges absolutely and uniformly in the space variable (with r^0=1, also at r=0), and equals convolution by P_r(v)=(1−r²)/(1−2r cos v+r²). As r↑1, A_rf→f uniformly for continuous f, in Lp for every f∈Lp and 1≤p<∞, and to the Lebesgue value at every Lebesgue point of any L¹ class."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 323,
+      "id": "U1-dini",
+      "kind": "result",
+      "start_line": 305,
+      "statement": "Let T>0, f∈L¹(T_T), x∈T_T and f_±(v)=f(x±Tv/(2π)) for v>0. If for some δ>0 and L one has ∫_0^δ |f_+(v)+f_−(v)−2L|dv/v<∞, then S_Nf(x)→L. In particular, separate Dini conditions ∫_0^δ |f_±(v)−a_±|dv/v<∞ imply convergence to (a_++a_−)/2. Under the symmetric Dini condition, if both one-sided limits exist, their average equals L."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 323,
+      "id": "U1-dirichlet-jordan",
+      "kind": "result",
+      "start_line": 305,
+      "statement": "Let T>0, f∈L¹(T_T) and x∈T_T. Set f_±(v)=f(x±Tv/(2π)), v>0. If for some δ>0 both f_± have representatives of bounded variation on (0,δ) with right limits a_± at zero, then S_Nf(x)→(a_++a_−)/2. This is a separate sufficient condition from the Dini condition."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 370,
+      "id": "U1-continuous-divergence",
+      "kind": "example",
+      "start_line": 366,
+      "statement": "For every T>0 and every prescribed x∈T_T there exists a real-valued continuous f on T_T for which (S_Nf(x))_{N≥0} is unbounded."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 414,
+      "id": "U1-cyclic-fourier",
+      "kind": "result",
+      "start_line": 399,
+      "statement": "For every integer m≥1, let G=Z/mZ with point mass 1/m, χ_k(j)=exp(2πikj/m), a_k(f)=m⁻¹∑_{j∈G} f(j)overline(χ_k(j)), and (f*g)(j)=m⁻¹∑_{ℓ∈G}f(j−ℓ)g(ℓ). Characters and formulas are well defined on residue classes. For all f,g:G→C, f(j)=∑_{k∈G}a_k(f)χ_k(j), a_k(f*g)=a_k(f)a_k(g), and m⁻¹∑_j|f(j)|²=∑_k|a_k(f)|². Include m=1."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 434,
+      "id": "U1-cyclic-circle-embedding",
+      "kind": "result",
+      "start_line": 429,
+      "statement": "For T>0 and m≥1, j↦Tj/m identifies Z/mZ with its corresponding subgroup of T_T. Restriction of a circle character e_k to this subgroup is χ_(k mod m), so sampling identifies integer frequencies modulo m; both forward transforms use normalized averages and inverse transforms use counting sums."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 445,
+      "id": "U1-bernstein-polynomials",
+      "kind": "construction",
+      "start_line": 438,
+      "statement": "For every real- or complex-valued f∈C([0,1]), the Bernstein polynomials B_nf(x)=∑_{k=0}^n f(k/n) binom(n,k)x^k(1−x)^(n−k), n≥1, converge uniformly to f as n→∞."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 473,
+      "id": "U1-uniform-approximation",
+      "kind": "result",
+      "start_line": 458,
+      "statement": "On every real compact interval (including a singleton), algebraic polynomials with real, respectively complex, coefficients are uniformly dense in real-, respectively complex-valued continuous functions. On every circle T_T, T>0, real-, respectively complex-valued trigonometric polynomials are uniformly dense in the corresponding continuous functions."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 481,
+      "id": "U1-stone-weierstrass-complex",
+      "kind": "result",
+      "start_line": 475,
+      "statement": "For every compact Hausdorff space K, any complex subalgebra of C(K;C) containing all constants, separating points, and closed under complex conjugation is uniformly dense in C(K;C). Include empty K."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 481,
+      "id": "U1-stone-weierstrass-real",
+      "kind": "result",
+      "start_line": 475,
+      "statement": "For every compact Hausdorff space K, any real subalgebra of C(K;R) containing all constants and separating points is uniformly dense in C(K;R). Include empty K."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 518,
+      "id": "U1-runge",
+      "kind": "result",
+      "start_line": 510,
+      "statement": "Let K⊆C be compact (possibly empty), f holomorphic on an open neighborhood V of K (V need not be connected), and A⊆Ĉ∖K meet every connected component of the spherical complement Ĉ∖K. For every ε>0 there exists a rational function R finite on K whose actual spherical poles all belong to A and with sup_{z∈K}|f(z)−R(z)|<ε (zero uniform norm for empty K). Infinity is permitted as a pole only if it belongs to A."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 578,
+      "id": "U1-spherical-pole-convention",
+      "kind": "definition",
+      "start_line": 569,
+      "statement": "In the Runge statement a rational function is its meromorphic extension to the Riemann sphere. Use a polynomial numerator and nonzero denominator reduced by their common factor; cancelled roots are not poles, finite poles are zeros of the reduced denominator, and infinity is an actual pole exactly when the reduced numerator degree exceeds the denominator degree. This convention covers disconnected holomorphic neighborhoods and empty K; complex differentiability on the open neighborhood is equivalent to holomorphy there."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 595,
+      "id": "U1-best-approximation",
+      "kind": "result",
+      "start_line": 587,
+      "statement": "Let a<b, f∈C([a,b];R) and integer n≥0. There exists a unique real polynomial p of degree at most n minimizing ‖f−p‖∞. For any such degree-bounded p with E=‖f−p‖∞>0, p is a minimizer if and only if there exist n+2 ordered points a≤x_0<⋯<x_(n+1)≤b and σ∈{−1,1} such that f(x_j)−p(x_j)=σ(−1)^j E. Uniqueness includes the zero-error case."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 648,
+      "id": "U1-bernstein-derivative",
+      "kind": "result",
+      "start_line": 639,
+      "statement": "For every T>0, integer n≥0 and real- or complex-coefficient trigonometric polynomial P of degree at most n on T_T, ‖P′‖∞≤(2π/T)n‖P‖∞."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 648,
+      "id": "U1-markov-derivative",
+      "kind": "result",
+      "start_line": 639,
+      "statement": "For every a<b, integer n≥0 and real- or complex-coefficient algebraic polynomial p of degree at most n, ‖p′‖_(C([a,b]))≤(2n²/(b−a))‖p‖_(C([a,b]))."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 725,
+      "id": "U1-best-error-modulus",
+      "kind": "definition",
+      "start_line": 712,
+      "statement": "For f∈C(T_T), E_n(f) is the infimum of uniform errors over trigonometric polynomials of degree at most n; ω(f,δ)=sup{|f(x)−f(y)|:circle distance(x,y)≤δ}. For f∈C([a,b]), define E_n using algebraic polynomials and ω using ordinary distance."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 725,
+      "id": "U1-jackson-interval",
+      "kind": "result",
+      "start_line": 712,
+      "statement": "There exists an absolute constant C such that for every a<b, real- or complex-valued f∈C([a,b]) and integer n≥1, the best uniform algebraic-polynomial error obeys E_n(f)≤C ω(f,(b−a)/n)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 725,
+      "id": "U1-jackson-periodic",
+      "kind": "result",
+      "start_line": 712,
+      "statement": "There exists an absolute constant C such that for every T>0, f∈C(T_T) and integer n≥1, E_n(f)≤C ω(f,T/n). For every 0<α<1, E_n(f)=O(n^(−α)) as n→∞ if and only if f is Hölder continuous of order α on the circle. Apply to real- or complex-valued functions."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 789,
+      "id": "U1-final-scope-remarks",
+      "kind": "context",
+      "start_line": 781,
+      "statement": "Scope/citation commentary: the alternation theorem concerns real approximation on a real interval; the stated periodic inverse has 0<α<1. The direct algebraic estimate is claimed, while an algebraic endpoint converse uses other smoothness scales and is deferred to the literature. No additional algebraic converse or α=1 periodic inverse is asserted."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 793,
+      "id": "U2-001",
+      "kind": "definition",
+      "start_line": 793,
+      "statement": "Chapter conventions: on R^d the dimension d is at least 1; dx is Lebesgue measure, completed for almost-everywhere classes; 1/infinity = 0. For T>0 the circle T_T = R/TZ uses probability Haar measure dmu_T = dt/T on any fundamental interval for convolution."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 793,
+      "id": "U2-002",
+      "kind": "result",
+      "start_line": 793,
+      "statement": "Every complex-valued function measurable for completed Lebesgue measure on R^d has a Borel representative equal almost everywhere. Integrals, norms and almost-everywhere identities computed using these representatives agree with those for the completed-measurable functions."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 804,
+      "id": "U2-003",
+      "kind": "result",
+      "start_line": 797,
+      "statement": "Young's inequality: if 1 <= p,q,r <= infinity, 1 + 1/r = 1/p + 1/q, f in L^p(R^d), and g in L^q(R^d), then (f*g)(x) = integral_{R^d} f(x-y)g(y)dy exists absolutely almost everywhere, defines a measurable almost-everywhere class independently of the chosen representatives, and satisfies ||f*g||_r <= ||f||_p ||g||_q. The identical assertion holds on T_T with probability Haar measure."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 827,
+      "id": "U2-004",
+      "kind": "result",
+      "start_line": 821,
+      "statement": "Approximate identities: suppose k_epsilon in L^1(R^d), integral k_epsilon = 1, sup_epsilon ||k_epsilon||_1 = A < infinity, and integral_{|y|>delta}|k_epsilon(y)|dy tends to 0 for every delta>0 as epsilon tends to 0. For every f in L^p(R^d), 1 <= p < infinity, k_epsilon*f tends to f in L^p. For any given bounded uniformly continuous representative f the convergence is uniform over R^d. The same assertions hold on T_T, using distance to the identity in the tail condition. Kernels may be complex-valued or sign-changing."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 841,
+      "id": "U2-005",
+      "kind": "result",
+      "start_line": 838,
+      "statement": "With the Fejer kernel and probability-Haar normalization of Theorem p102:AN-06-C01-S02, the Fejer means of every f in L^p(T_T), 1 <= p < infinity, converge to f in L^p. Trigonometric polynomials are dense in every such L^p(T_T)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 849,
+      "id": "U2-006",
+      "kind": "result",
+      "start_line": 846,
+      "statement": "Two L^1(T_T) almost-everywhere classes having the same Fourier coefficients are equal."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 849,
+      "id": "U2-007",
+      "kind": "result",
+      "start_line": 846,
+      "statement": "If f in L^1(T_T) has absolutely summable Fourier coefficients, its Fourier series converges absolutely and uniformly, defines a continuous representative of its class, and agrees with a chosen representative of f at every continuity point of that chosen representative."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 860,
+      "id": "U2-008",
+      "kind": "definition",
+      "start_line": 856,
+      "statement": "For a measurable h on a measure space, define D_h(t) = mu({|h|>t}) for t>0. For 0<q<infinity define ||h||_{q,infinity} = sup_{t>0} t D_h(t)^(1/q). For q=infinity the weak norm is the essential-supremum norm."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 863,
+      "id": "U2-009",
+      "kind": "result",
+      "start_line": 860,
+      "statement": "For every measurable h and every q>0 the layer-cake identity is ||h||_q^q = integral_0^infinity q t^(q-1) D_h(t)dt (allowing infinite values)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 868,
+      "id": "U2-010",
+      "kind": "result",
+      "start_line": 864,
+      "statement": "For every measurable h, 0<delta<1, and measurable E with 0<mu(E)<infinity, ((1/mu(E)) integral_E |h|^delta)^(1/delta) <= (1-delta)^(-1/delta) ||h||_{1,infinity}/mu(E)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 876,
+      "id": "U2-011",
+      "kind": "result",
+      "start_line": 872,
+      "statement": "Diagonal Marcinkiewicz interpolation: let 1 <= p_0 < p_1 <= infinity on sigma-finite source and target measure spaces. Suppose the same operator T is defined on L^{p_0}+L^{p_1}, is sublinear in the sense |T(f+g)| <= |Tf|+|Tg| almost everywhere and absolute homogeneity, and satisfies ||Tf||_{p_j,infinity} <= M_j ||f||_{p_j} at j=0,1. For every p_0<p<p_1, T is bounded on L^p, with a bound depending only on the exponents and the two endpoint bounds."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 898,
+      "id": "U2-012",
+      "kind": "definition",
+      "start_line": 891,
+      "statement": "For f in L^1_loc(R^d), define the centered and uncentered Hardy-Littlewood maximal functions by M_c f(x) = sup_{r>0} |B(x,r)|^(-1) integral_{B(x,r)} |f| and M_u f(x) = sup_{B containing x} |B|^(-1) integral_B |f|, where the latter supremum is over open Euclidean balls."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 905,
+      "id": "U2-013",
+      "kind": "result",
+      "start_line": 891,
+      "statement": "For f in L^1_loc(R^d), M_c f and M_u f are measurable, depend only on the almost-everywhere class of f, and satisfy M_c f <= M_u f <= 2^d M_c f. For f in L^1(R^d) and lambda>0, |{M_c f>lambda}| <= 3^d ||f||_1/lambda and |{M_u f>lambda}| <= 6^d ||f||_1/lambda."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 915,
+      "id": "U2-014",
+      "kind": "result",
+      "start_line": 912,
+      "statement": "For either Hardy-Littlewood maximal operator M and 1<p<infinity, ||Mf||_p <= C_{d,p} ||f||_p for all f in L^p(R^d); for f in L^infinity(R^d), ||Mf||_infinity <= ||f||_infinity."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 927,
+      "id": "U2-015",
+      "kind": "result",
+      "start_line": 920,
+      "statement": "Lebesgue points: for every f in L^1_loc(R^d), almost every x satisfies lim_{r downarrow 0} |B(x,r)|^(-1) integral_{B(x,r)} |f(y)-f(x)|dy = 0. At these same points the ball averages converge to f(x), also for every family of balls containing x whose radii tend to zero."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 948,
+      "id": "U2-016",
+      "kind": "result",
+      "start_line": 935,
+      "statement": "Calderon-Zygmund decomposition: for f in L^1(R^d) and lambda>0 there is a family of pairwise disjoint half-open dyadic cubes Q such that lambda < |Q|^(-1) integral_Q |f| <= 2^d lambda and sum_Q |Q| <= ||f||_1/lambda. Define f_Q = |Q|^(-1) integral_Q f, let g=f off the union and g=f_Q on Q, and let b_Q=(f-f_Q)1_Q. Then f=g+sum_Q b_Q, ||g||_infinity <= 2^d lambda, ||g||_1 <= ||f||_1, integral b_Q=0 for every Q, and sum_Q ||b_Q||_1 <= 2||f||_1. The sum of bad terms converges in L^1, and also in L^2 if f belongs to L^2."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 964,
+      "id": "U2-017",
+      "kind": "result",
+      "start_line": 953,
+      "statement": "A convolution singular-integral theorem: let T be bounded linear on L^2(R^d), and K in L^1_loc(R^d minus {0}), with Tb(x)=integral K(x-y)b(y)dy for almost every x outside supp b whenever b is a compactly supported L^2 function. Assume sup_{h nonzero} integral_{|z|>2|h|} |K(z-h)-K(z)|dz <= A. Then T has a compatible weak (1,1) extension and bounded extensions on every L^p, 1<p<infinity. Their bounds depend only on d,p,A and ||T||_{2 to 2}; compatibility includes agreement with the original L^2 action and agreement of the extensions on overlapping domains."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 964,
+      "id": "U2-018",
+      "kind": "result",
+      "start_line": 953,
+      "statement": "If K is continuously differentiable away from zero and |gradient K(z)| <= B |z|^(-d-1), it satisfies the uniform integral-difference condition sup_{h nonzero} integral_{|z|>2|h|} |K(z-h)-K(z)|dz <= A for some finite A (depending on d and B)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 981,
+      "id": "U2-019",
+      "kind": "definition",
+      "start_line": 978,
+      "statement": "For 0<alpha<d define the Riesz potential I_alpha f(x) = integral_{R^d} |x-y|^(alpha-d) f(y)dy wherever the integral is defined."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 981,
+      "id": "U2-020",
+      "kind": "result",
+      "start_line": 978,
+      "statement": "For 0<alpha<d, 1<p<d/alpha, and 1/q=1/p-alpha/d, every f in L^p(R^d) satisfies ||I_alpha f||_q <= C_{d,alpha,p} ||f||_p. For f in L^1(R^d), ||I_alpha f||_{d/(d-alpha),infinity} <= C_{d,alpha} ||f||_1. In both ranges the defining integrals exist absolutely almost everywhere and give the same output class for equal input classes."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 993,
+      "id": "U2-021",
+      "kind": "definition",
+      "start_line": 990,
+      "statement": "For a kernel K define its truncated convolution T_epsilon f(x) = integral_{|x-y|>epsilon} K(x-y)f(y)dy, and maximal truncation T_*f = sup_{epsilon>0} |T_epsilon f|."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 993,
+      "id": "U2-022",
+      "kind": "result",
+      "start_line": 990,
+      "statement": "Maximal truncation and principal values: suppose K is continuously differentiable away from zero, homogeneous of degree -d, has mean zero on the unit sphere, and satisfies |gradient K(z)| <= B|z|^(-d-1). Let T be its principal-value convolution on smooth compactly supported inputs and assume it is bounded on L^2. Then ||T_*f||_p <= C_p||f||_p for every 1<p<infinity. For f in each such L^p, the principal value exists almost everywhere, agrees with the L^p extension from the convolution singular-integral theorem p102:U2-03, and T_epsilon f tends to Tf in L^p as epsilon decreases to zero."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1016,
+      "id": "U3-001",
+      "kind": "construction",
+      "start_line": 1016,
+      "statement": "Identify a finite-dimensional real inner-product space orthonormally with R^d equipped with standard volume. This identification preserves the integrals and the Euclidean pairing."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1022,
+      "id": "U3-002",
+      "kind": "definition",
+      "start_line": 1016,
+      "statement": "For f in L^1(R^d) define hat f(xi)=integral_{R^d} exp(-2 pi i x dot xi)f(x)dx and check f(x)=integral_{R^d} exp(2 pi i x dot xi)f(xi)dxi. For Hilbert-valued functions these are Bochner integrals. In dimension d=0 both transforms are the identity on the one-point measure space of mass one. The Euclidean kernel theorems below assume d>=1."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1029,
+      "id": "U3-003",
+      "kind": "result",
+      "start_line": 1026,
+      "statement": "Riemann-Lebesgue on Euclidean space: for f in L^1(R^d), its integral Fourier transform is continuous and satisfies |hat f(xi)| <= ||f||_1 for every xi. If d>=1, hat f tends to zero at infinity."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1029,
+      "id": "U3-004",
+      "kind": "result",
+      "start_line": 1026,
+      "statement": "For f in L^1(T_T), its Fourier coefficients tend to zero as |n| tends to infinity."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1038,
+      "id": "U3-005",
+      "kind": "result",
+      "start_line": 1034,
+      "statement": "For f,g in L^1(R^d), convolution f*g belongs to L^1 and hat(f*g)(xi)=hat f(xi)hat g(xi) for every xi, using the continuous Fourier representatives."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1050,
+      "id": "U3-006",
+      "kind": "definition",
+      "start_line": 1043,
+      "statement": "The Schwartz space S(R^d) consists of smooth complex-valued functions phi with finite seminorms p_{N,k}(phi)=max_{|beta|<=k} sup_x (1+|x|)^N |partial^beta phi(x)| for N,k in N, and is given the topology of these seminorms. The tempered-distribution space S-prime is its continuous complex-linear dual, paired bilinearly with S."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1049,
+      "id": "U3-007",
+      "kind": "result",
+      "start_line": 1049,
+      "statement": "The Schwartz seminorms p_{N,k}(phi)=max_{|beta|<=k} sup_x (1+|x|)^N |partial^beta phi(x)| generate the same topology as the coordinate-monomial seminorms sup_x |x^alpha partial^beta phi(x)|."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1055,
+      "id": "U3-008",
+      "kind": "result",
+      "start_line": 1052,
+      "statement": "Gaussian normalization: for every t>0, G_t(x)=t^(-d/2) exp(-pi |x|^2/t) has integral one, and hat G_t(xi)=exp(-pi t|xi|^2)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1055,
+      "id": "U3-009",
+      "kind": "result",
+      "start_line": 1052,
+      "statement": "The negative-sign Fourier transformation and the positive-sign Fourier transformation both map S(R^d) continuously into itself."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1069,
+      "id": "U3-010",
+      "kind": "result",
+      "start_line": 1066,
+      "statement": "Fourier inversion: if f in L^1(R^d) and hat f in L^1(R^d), then the continuous function check(hat f) equals f almost everywhere and agrees with a chosen representative at every continuity point of that representative. The opposite-sign Fourier transforms are continuous inverse maps of S(R^d)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1081,
+      "id": "U3-011",
+      "kind": "result",
+      "start_line": 1078,
+      "statement": "Plancherel and compatibility: for every complex Hilbert space H, the Fourier transform extends uniquely to a complex-linear isometric isomorphism on L^2(R^d;H), preserves inner products, and has the positive-sign transform as inverse. On L^1 intersect L^2 it agrees almost everywhere with the Bochner integral transform."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1099,
+      "id": "U3-012",
+      "kind": "definition",
+      "start_line": 1091,
+      "statement": "The distributional Fourier transform of U in S-prime is defined by <hat U,phi>=<U,hat phi>; its inverse is defined analogously with the positive-sign transform. The weak dual topology is pointwise testing on S, and the strong dual topology is uniform testing on bounded subsets of S."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1099,
+      "id": "U3-013",
+      "kind": "result",
+      "start_line": 1091,
+      "statement": "The formula <hat U,phi>=<U,hat phi> defines a continuous linear automorphism of S-prime, with inverse the analogous positive-sign formula, continuous for both weak and strong dual topologies. Distributionally, hat(partial_j U)=2 pi i xi_j hat U and hat(x_j U)=-(2 pi i)^(-1) partial_{xi_j} hat U. For f in L^1 or in L^2, the integral or Plancherel transform, respectively, induces exactly this distributional transform."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1113,
+      "id": "U3-014",
+      "kind": "result",
+      "start_line": 1106,
+      "statement": "Riesz-Thorin with endpoints: let T be complex-linear on simple functions of finite measure support on a sigma-finite source measure space, with values in measurable classes on a sigma-finite target. Assume ||Tf||_{q_j} <= M_j||f||_{p_j} there for 1<=p_j,q_j<=infinity, j=0,1. For 0<theta<1 define 1/p_theta=(1-theta)/p_0+theta/p_1 and 1/q_theta=(1-theta)/q_0+theta/q_1. Then ||Tf||_{q_theta} <= M_0^(1-theta)M_1^theta ||f||_{p_theta}. If p_theta<infinity this gives a unique bounded extension. If p_0=p_1=infinity, the full L^infinity-domain assertion holds for a common operator already defined on all L^infinity and satisfying the endpoint bounds."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1129,
+      "id": "U3-015",
+      "kind": "result",
+      "start_line": 1126,
+      "statement": "Hausdorff-Young: for every 1<=p<=2 the Fourier transform extends to a map L^p(R^d) to L^{p-prime}(R^d) of norm at most one, agrees with the integral transform on L^1 intersect L^p, and agrees with the distributional transform."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1144,
+      "id": "U3-016",
+      "kind": "result",
+      "start_line": 1136,
+      "statement": "Poisson summation on a cubical lattice: for phi in S(R^d), T>0, and every x, sum_{k in Z^d} phi(x+Tk) = T^(-d) sum_{m in Z^d} hat phi(m/T) exp(2 pi i m dot x/T). Both series converge absolutely and locally uniformly in x, and the series on the right converges globally uniformly."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1153,
+      "id": "U3-017",
+      "kind": "definition",
+      "start_line": 1149,
+      "statement": "For a finite signed or complex Borel measure nu on R^d its Fourier-Stieltjes transform is hat nu(xi)=integral exp(-2 pi i x dot xi)dnu(x)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1153,
+      "id": "U3-018",
+      "kind": "result",
+      "start_line": 1149,
+      "statement": "The Fourier-Stieltjes transform of every finite signed or complex Borel measure on R^d is bounded and continuous. Two such measures with equal Fourier-Stieltjes transforms are equal."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1169,
+      "id": "U3-019",
+      "kind": "definition",
+      "start_line": 1161,
+      "statement": "For d>=1 and 1<=j<=d define c_d=Gamma((d+1)/2)/pi^((d+1)/2) and the Riesz kernel K_j(x)=c_d x_j/|x|^(d+1) away from zero. In dimension one this is the Hilbert kernel 1/(pi x)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1169,
+      "id": "U3-020",
+      "kind": "result",
+      "start_line": 1161,
+      "statement": "Hilbert and Riesz transforms: principal-value convolution with K_j(x)=Gamma((d+1)/2) pi^(-(d+1)/2) x_j/|x|^(d+1), d>=1 and 1<=j<=d, has L^2 multiplier -i xi_j/|xi|, with arbitrary value at the null frequency 0. It has a weak (1,1) extension and strong L^p bounds for every 1<p<infinity. For every such p its principal-value truncations converge almost everywhere and in L^p norm to that extension. In dimension one the multiplier is -i sgn(xi), and the kernel is 1/(pi x)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1190,
+      "id": "U3-021",
+      "kind": "result",
+      "start_line": 1186,
+      "statement": "Periodic conjugation and norm convergence: for every 1<p<infinity, the periodic conjugate operator with Fourier multipliers -i sgn(n), taking value zero at n=0, is bounded on L^p(T_T). For every f in L^p(T_T) in that range the symmetric Fourier partial sums S_N f converge to f in L^p."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1214,
+      "id": "U3-022",
+      "kind": "result",
+      "start_line": 1206,
+      "statement": "Classical Mihlin multiplier theorem: let d>=1 and N=floor(d/2)+1. If m in C^N(R^d minus {0}) satisfies |partial^alpha m(xi)| <= A|xi|^(-|alpha|) for all |alpha|<=N and xi nonzero, the L^2 multiplier T_m f=F^(-1)(m hat f) extends boundedly to every L^p(R^d), 1<p<infinity, with operator norm at most C_{d,p}A. The value of m at zero is immaterial."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1216,
+      "id": "U3-023",
+      "kind": "definition",
+      "start_line": 1216,
+      "statement": "The Littlewood–Paley datum is a real smooth annular partition η: for ξ≠0, ∑_{j∈ℤ}η(2^(−j)ξ)=1, and the scaled annular supports have bounded overlap. The standard construction is η(ξ)=χ(ξ)−χ(2ξ), with a real smooth radial cutoff χ with 0 ≤ χ ≤ 1, equal to 1 for |ξ| ≤ 1 and to 0 for |ξ| ≥ 2."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1243,
+      "id": "U3-024",
+      "kind": "result",
+      "start_line": 1236,
+      "statement": "Random-sign moment bounds: for every 0<q<infinity there exist positive constants c_q,C_q such that for every finite complex sequence (a_j) and independent equiprobable signs epsilon_j, c_q (sum_j |a_j|^2)^(q/2) <= E|sum_j epsilon_j a_j|^q <= C_q (sum_j |a_j|^2)^(q/2)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1257,
+      "id": "U3-025",
+      "kind": "definition",
+      "start_line": 1248,
+      "statement": "For the standard annular partition η(ξ)=χ(ξ)−χ(2ξ) built from a real smooth radial cutoff χ with 0 ≤ χ ≤ 1, equal to 1 for |ξ| ≤ 1 and to 0 for |ξ| ≥ 2, define P_j f=F^(-1)(η(2^(-j) dot) hat f) for j in Z, interpreted on L^p, 1<p<infinity, by bounded extension. The square function is (sum_{j in Z} |P_j f|^2)^(1/2)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1257,
+      "id": "U3-026",
+      "kind": "result",
+      "start_line": 1248,
+      "statement": "Basic Littlewood–Paley inequality: take η(ξ)=χ(ξ)−χ(2ξ) for a real smooth radial cutoff χ with 0 ≤ χ ≤ 1, equal to 1 for |ξ| ≤ 1 and to 0 for |ξ| ≥ 2. Its operators P_j f=F^(-1)(η(2^(-j) dot)hat f), interpreted by bounded extension, satisfy c_{d,p,η} ||f||_p <= ||(sum_{j in Z}|P_j f|^2)^(1/2)||_p <= C_{d,p,η} ||f||_p for every 1<p<infinity and f in L^p(R^d), with positive constants depending only on the indicated parameters."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1276,
+      "id": "U4-01",
+      "kind": "definition",
+      "start_line": 1273,
+      "statement": "Chapter conventions: Ω is an open subset of ℝ^d with d≥1 except for the separately stated zero-dimensional conventions. Compact subsets are ambient Euclidean compact sets contained in Ω. Test functions may be real or complex, distribution pairings are bilinear (T_f(φ)=∫_Ω fφ with no conjugation), and multi-indices use Euclidean coordinates. The cited references specify notation and support conventions."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1287,
+      "id": "U4-02",
+      "kind": "definition",
+      "start_line": 1280,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For each compact K⊂Ω, D_K(Ω) is the vector space of smooth functions on Ω supported in K, with seminorms q_m(φ)=max_{|α|≤m} sup_{x∈K}|∂^αφ(x)| for every integer m≥0. For K=∅ all these seminorms are zero. D(Ω)=C_c^∞(Ω) has the finest locally convex topology making every inclusion D_K(Ω)→D(Ω) continuous. D′(Ω) is its continuous linear dual."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1289,
+      "id": "U4-03",
+      "kind": "construction",
+      "start_line": 1289,
+      "statement": "For an open Ω⊆ℝ^d and a compact K⊂Ω, there is a relatively compact open neighborhood of K contained in Ω. For every open neighborhood O of K with O⊆Ω, there exists a smooth compactly supported cutoff χ in O equal to one on a neighborhood of K. The source supplies a finite-ball bump construction; the obligation is the cutoff construction and its stated support and value properties."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1289,
+      "id": "U4-04",
+      "kind": "result",
+      "start_line": 1289,
+      "statement": "For open Ω⊆ℝ^d, d≥1: A compactly supported smooth function on an open subset of a larger open set extends smoothly by zero to the larger open set."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1293,
+      "id": "U4-05",
+      "kind": "result",
+      "start_line": 1291,
+      "statement": "For open Ω⊆ℝ^d, d≥1: Every fixed-support space D_K(Ω) with the seminorm topology is Fréchet. For any compact exhaustion K_j⊂int K_{j+1} with Ω=⋃_j int K_j, the topology of D(Ω) is the locally convex inductive limit of D_{K_j}(Ω), and the stage inclusions are closed topological embeddings."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1306,
+      "id": "U4-06",
+      "kind": "result",
+      "start_line": 1300,
+      "statement": "For open Ω⊆ℝ^d, d≥1: A linear functional T on D(Ω) belongs to D′(Ω) if and only if for every compact K⊂Ω there exist C_K≥0 and an integer m_K≥0 such that |T(φ)|≤C_K q_{m_K}(φ) for every φ∈D_K(Ω). The constants and orders may depend on K."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1322,
+      "id": "U4-07",
+      "kind": "result",
+      "start_line": 1315,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For every f∈L^1_loc(Ω), T_f(φ)=∫_Ω fφ defines a distribution. The resulting map from almost-everywhere classes in L^1_loc(Ω) to D′(Ω) is injective."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1322,
+      "id": "U4-08",
+      "kind": "construction",
+      "start_line": 1315,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For T∈D′(Ω) and every multi-index α, its distribution derivative is the distribution defined by (∂^αT)(φ)=(−1)^{|α|}T(∂^αφ). If f∈C^{|α|}(Ω), then ∂^αT_f=T_{∂^αf}; order zero is included."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1332,
+      "id": "U4-09",
+      "kind": "construction",
+      "start_line": 1329,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For a∈C^∞(Ω) and T∈D′(Ω), define aT by (aT)(φ)=T(aφ). This is a distribution and satisfies the coordinate Leibniz identity ∂_j(aT)=(∂_ja)T+a∂_jT for every coordinate j."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1332,
+      "id": "U4-10",
+      "kind": "construction",
+      "start_line": 1329,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For open V⊂Ω, the restriction of T∈D′(Ω) to V is the distribution obtained by transposing zero extension D(V)→D(Ω) on tests."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1332,
+      "id": "U4-11",
+      "kind": "definition",
+      "start_line": 1329,
+      "statement": "For open Ω⊆ℝ^d, d≥1: The support of T∈D′(Ω) is the complement in Ω of the largest open subset on which T vanishes. Such a largest open vanishing set exists, so the support is relatively closed in Ω."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1347,
+      "id": "U4-12",
+      "kind": "construction",
+      "start_line": 1339,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For T∈D′(Ω) and ρ∈D(ℝ^d), put U_ρ={x∈ℝ^d : x−supp ρ⊂Ω} and (T*ρ)(x)=T_y(ρ(x−y)). This defines a smooth function on the open set U_ρ and, for every multi-index α, ∂^α(T*ρ)=T*(∂^αρ) there."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1347,
+      "id": "U4-13",
+      "kind": "result",
+      "start_line": 1339,
+      "statement": "For open Ω⊆ℝ^d, d≥1: If ρ∈D(ℝ^d) has ∫ρ=1 and ρ_ε(x)=ε^{−d}ρ(x/ε) for ε>0, then for every T∈D′(Ω), the smooth regularizations T*ρ_ε converge to T on tests locally in Ω as ε→0: each test support is eventually in the admissible regularization region and ∫(T*ρ_ε)(x)φ(x)dx→T(φ). No positivity or symmetry of ρ is assumed."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1365,
+      "id": "U4-14",
+      "kind": "result",
+      "start_line": 1362,
+      "statement": "For open Ω⊆ℝ^d, d≥1: The inclusion D(ℝ^d)→S(ℝ^d) is continuous with dense image. Its transpose is an injective continuous restriction map S′(ℝ^d)→D′(ℝ^d), both for pointwise convergence on tests and for the strong dual topologies."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1373,
+      "id": "U4-15",
+      "kind": "construction",
+      "start_line": 1370,
+      "statement": "For open Ω⊆ℝ^d, d≥1: If S∈D′(Ω) has compact support A⊂Ω, then it extends canonically to C^∞(Ω) by S(f)=S(χf), where χ∈D(Ω) is one on a neighborhood of A. This value is independent of χ and agrees with S on tests. There exist a fixed compact K⊂Ω, C≥0 and an integer m≥0 such that |S(f)|≤C max_{|α|≤m}sup_{x∈K}|∂^α f(x)| for every f∈C^∞(Ω). In the whole-space case this extension restricts to a tempered distribution."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1386,
+      "id": "U4-16",
+      "kind": "construction",
+      "start_line": 1378,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For a∈Ω, the Dirac distribution is δ_a(φ)=φ(a). Its multi-index derivatives use the distribution derivative convention."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1386,
+      "id": "U4-17",
+      "kind": "result",
+      "start_line": 1378,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For every S∈D′(Ω) with supp S⊂{a}⊂Ω, there exist an integer m≥0 and scalars c_α for |α|≤m such that S=∑_{|α|≤m}c_α∂^αδ_a. For any fixed m, these coefficients are unique (and the zero distribution is included)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1404,
+      "id": "U4-18",
+      "kind": "construction",
+      "start_line": 1392,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For S,T∈D′(ℝ^d) with A=supp S compact, define (T*S)(φ)=T_x(S_y(φ(x+y))), using the canonical extension of compactly supported S to smooth functions in the inner pairing. This is a well-defined distribution."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1404,
+      "id": "U4-19",
+      "kind": "result",
+      "start_line": 1392,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For two distributions on ℝ^d of which at least one is compactly supported, convolution is symmetric. With A=supp S compact, supp(T*S)⊂supp T+A and, for every multi-index α, ∂^α(T*S)=(∂^αT)*S=T*(∂^αS). For a smooth compactly supported kernel, this convolution agrees with the smooth regularization formula."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1418,
+      "id": "U4-20",
+      "kind": "definition",
+      "start_line": 1415,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For m∈ℕ_0 and 1≤p≤∞, W^{m,p}(Ω) consists of u∈L^p(Ω) for which, for every multi-index |α|≤m, there is v_α∈L^p(Ω) satisfying ∂^αT_u=T_{v_α}. Write D^αu=v_α, with D^0u=u, and use the norm ∑_{|α|≤m}||D^αu||_p. Other finite-product norms are equivalent norm conventions."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1425,
+      "id": "U4-21",
+      "kind": "result",
+      "start_line": 1420,
+      "statement": "For open Ω⊆ℝ^d, d≥1: The weak derivatives defining W^{m,p}(Ω) are unique as almost-everywhere classes. For every m∈ℕ_0 and 1≤p≤∞, W^{m,p}(Ω) is complete in the stated norm: its derivative-tuple realization is the closed subspace of the finite product of L^p spaces specified by ∫v_αφ=(−1)^{|α|}∫v_0∂^αφ for every test φ and every |α|≤m. This includes m=0 and the empty open set."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1430,
+      "id": "U4-22",
+      "kind": "result",
+      "start_line": 1427,
+      "statement": "For m∈ℕ_0 and 1≤p<∞ on any open Ω⊂ℝ^d, C^∞(Ω)∩W^{m,p}(Ω) is dense in W^{m,p}(Ω). For Ω=ℝ^d the approximants may be chosen in C_c^∞(ℝ^d). No boundary regularity is assumed."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1430,
+      "id": "U4-23",
+      "kind": "definition",
+      "start_line": 1427,
+      "statement": "For open Ω⊆ℝ^d, d≥1: Define W_0^{m,p}(Ω) to be the norm closure of C_c^∞(Ω) in W^{m,p}(Ω), using the Sobolev norm with its zero-order term."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1430,
+      "id": "U4-24",
+      "kind": "result",
+      "start_line": 1427,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For m∈ℕ_0 and 1≤p<∞, zero extension maps W_0^{m,p}(Ω) into W^{m,p}(ℝ^d), preserves the stated sum norm, and commutes with every weak derivative of order at most m."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1447,
+      "id": "U4-25",
+      "kind": "result",
+      "start_line": 1439,
+      "statement": "For open Ω⊆ℝ^d, d≥1: If Ω is contained in the slab a<x·e<b for a unit vector e and finite real numbers a<b, then for every 1≤p<∞ and u∈W_0^{1,p}(Ω), ||u||_{L^p(Ω)}≤(b−a)||∂_e u||_{L^p(Ω)}≤(b−a)|| |∇u| ||_{L^p(Ω)}. Consequently the gradient norm is equivalent to the full W^{1,p} norm on this closed zero-boundary subspace."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1447,
+      "id": "U4-26",
+      "kind": "construction",
+      "start_line": 1439,
+      "statement": "Let d≥1, Ω⊆ℝ^d be open and contained in the finite slab a<x·e<b, with e a unit vector and finite real a<b. Then W_0^{1,2}(Ω) is a real or complex Hilbert space for the gradient inner product ⟨u,v⟩_∇=∫_Ω∑_{j=1}^d D_ju overline(D_jv), with linearity in the first variable."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1462,
+      "id": "U4-27",
+      "kind": "result",
+      "start_line": 1454,
+      "statement": "For open Ω⊆ℝ^d, d≥1: If u∈L^1_loc(Ω) and its j-th weak derivative belongs to L^1_loc(Ω), then on almost every line in direction e_j, u has a representative locally absolutely continuous on each component of the line’s intersection with Ω; the line derivative equals the weak derivative almost everywhere. Conversely, such line representatives give the weak derivative if their line derivatives define locally integrable functions."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1462,
+      "id": "U4-28",
+      "kind": "result",
+      "start_line": 1454,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For relatively compact open V⊂⊂Ω, 1≤p<∞ and 0<|h|<dist(V,Ω^c), the forward interior difference quotient estimate is ||[u(·+he_j)−u]/h||_{L^p(V)}≤||∂_ju||_{L^p(V+B(0,|h|))}, whenever the segments lie in the indicated neighborhood, for u having the weak derivative/line representatives of the theorem (and with finite right side whenever an L^p bound is asserted)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1462,
+      "id": "U4-29",
+      "kind": "result",
+      "start_line": 1454,
+      "statement": "For open Ω⊆ℝ^d, d≥1: For 1<p<∞, if u∈L^p_loc(Ω) and, for each relatively compact open V⊂⊂Ω, the quotients [u(·+he_j)−u]/h are uniformly bounded in L^p(V) for sufficiently small nonzero h, then ∂_ju∈L^p_loc(Ω). If a common bound C holds along an exhaustion, then the global derivative belongs to L^p(Ω) with ||∂_ju||_{L^p(Ω)}≤C. The reverse implication is restricted to 1<p<∞."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1481,
+      "id": "U4-30",
+      "kind": "result",
+      "start_line": 1473,
+      "statement": "Let U⊂ℝ^m be open with m≥1, and f:U→ℝ^k locally Lipschitz. Then f is Fréchet differentiable almost everywhere, and its derivative agrees almost everywhere with the matrix of its weak first derivatives. On any neighborhood on which f is L-Lipschitz, that derivative matrix has operator norm at most L almost everywhere."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1546,
+      "id": "U4-31",
+      "kind": "definition",
+      "start_line": 1538,
+      "statement": "Hausdorff measure H^m uses Euclidean normalization: on every isometric m-plane it restricts to ordinary m-dimensional Lebesgue measure. Equivalently multiply the coefficient-one Hausdorff measure of the cited Chapter 22 by its Euclidean normalization constant c_m. For m=0 use counting measure."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1546,
+      "id": "U4-32",
+      "kind": "result",
+      "start_line": 1538,
+      "statement": "The Hausdorff measure used for the graph theorem is Borel measurable and isometrically invariant, and for every L-Lipschitz map g it satisfies the diameter-cover estimate H^m(g(B))≤L^m H^m(B). These properties are explicitly supplied by the cited prerequisite chapter."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1557,
+      "id": "U4-33",
+      "kind": "construction",
+      "start_line": 1548,
+      "statement": "For U⊂ℝ^m open, m≥1, and Lipschitz γ:U→ℝ, set Γ(x)=(x,γ(x)) and J(x)=sqrt(1+|∇γ(x)|^2), using the almost-everywhere derivative. For every Lebesgue measurable B⊂U, H^m(Γ(B))=∫_B J(x)dx."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1563,
+      "id": "U4-34",
+      "kind": "result",
+      "start_line": 1548,
+      "statement": "Let U⊆ℝ^m be open, m≥1, γ:U→ℝ be Lipschitz, Γ(x)=(x,γ(x)) and J(x)=sqrt(1+|∇γ(x)|²). For every nonnegative measurable w on Γ(U), or every integrable w, ∫_{Γ(U)}w dℋ^m=∫_U w(Γ(x))J(x)dx. Hausdorff measure is Euclidean normalized; the statement includes completed measurable functions and sets."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1572,
+      "id": "U4-35",
+      "kind": "construction",
+      "start_line": 1550,
+      "statement": "Let U⊆ℝ^m be open, m≥1, γ:U→ℝ be Lipschitz, Γ(x)=(x,γ(x)) and J(x)=sqrt(1+|∇γ(x)|²). On the boundary of the epigraph t>γ(x), the outward unit normal is ν(Γ(x))=(∇γ(x),−1)/J(x) almost everywhere. For every measurable vector field F on Γ(U), its normal flux F·ν is ℋ^m-integrable if and only if x↦F(Γ(x))·(∇γ(x),−1) is Lebesgue integrable on U, and then ∫_{Γ(U)}F·ν dℋ^m=∫_U F(Γ(x))·(∇γ(x),−1)dx."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1576,
+      "id": "U4-36",
+      "kind": "result",
+      "start_line": 1573,
+      "statement": "For a graph Γ over ℝ^0, the base U is empty or a singleton, base and graph measures are counting measures (unit mass on the point), J=1, and the outward normal of the upper-ray side is −1. Thus for every B⊆U, ℋ^0(Γ(B))=|B|, and integration of w over the graph equals integration of w∘Γ over the base. Normal flux is integrable exactly when its corresponding base integrand is, and ∫_{Γ(U)}Fν dℋ^0=∫_U(−F(Γ(x)))dx, including the empty-base case."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1682,
+      "id": "U4-37",
+      "kind": "result",
+      "start_line": 1675,
+      "statement": "For 1≤p≤∞ and u∈W^{1,p}(Ω), a C^1 scalar map F with bounded derivative and F(0)=0 gives F∘u∈W^{1,p}(Ω) and the weak chain rule D(F∘u)=DF(u)Du almost everywhere. For complex values the differential may be interpreted as the real differential. If F(0)≠0, the same conclusion holds when Ω has finite measure or p=∞."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1682,
+      "id": "U4-38",
+      "kind": "result",
+      "start_line": 1675,
+      "statement": "Real truncation maps that fix zero preserve W^{1,p}(Ω), 1≤p≤∞, and obey their weak chain rules, with the derivative of the truncation set to zero on each cutoff level."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1682,
+      "id": "U4-39",
+      "kind": "result",
+      "start_line": 1675,
+      "statement": "For 1≤p≤∞, the product of two bounded W^{1,p}(Ω) functions belongs to W^{1,p}(Ω) and obeys D_j(uv)=uD_jv+vD_ju almost everywhere for every coordinate j."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1682,
+      "id": "U4-40",
+      "kind": "result",
+      "start_line": 1675,
+      "statement": "If g:V→U is a bi-Lipschitz homeomorphism between open sets and 1≤p≤∞, the pullback u↦u∘g maps W^{1,p}(U) boundedly into W^{1,p}(V) and satisfies D(u∘g)(x)=(Du)(g(x))Dg(x) almost everywhere. This asserts order-one Sobolev regularity, including p=1 and p=∞."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1688,
+      "id": "U4-41",
+      "kind": "construction",
+      "start_line": 1675,
+      "statement": "A smooth diffeomorphism g:V→U acts on ordinary distributions by transposing smooth change of variables: (g^*T)(φ)=T((φ∘g^{-1})|det Dg^{-1}|) for T∈D′(U), φ∈D(V). This defines a distribution on V, agrees with T_{f∘g} when T=T_f, and is compatible with composition of diffeomorphisms."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1698,
+      "id": "U4-42",
+      "kind": "definition",
+      "start_line": 1691,
+      "statement": "For 1<p<∞, write p′=p/(p−1) and define W^{−1,p′}(Ω) as the continuous linear dual of W_0^{1,p}(Ω)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1698,
+      "id": "U4-43",
+      "kind": "result",
+      "start_line": 1691,
+      "statement": "Every f∈W^{−1,p′}(Ω), 1<p<∞, admits the distribution representation f=f_0+∑_{j=1}^d ∂_j f_j with f_0,…,f_d∈L^{p′}(Ω). Its dual norm is equivalent to the infimum, over all such representations, of the chosen finite-product norm of (f_0,…,f_d)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1705,
+      "id": "U4-44",
+      "kind": "definition",
+      "start_line": 1703,
+      "statement": "Zero-dimensional conventions: ℝ^0 is a singleton carrying unit Lebesgue mass, its open subsets are ∅ and the singleton, and the only multi-index is the zero multi-index. The direction, difference-quotient and finite-slab gradient assertions require a positive-dimensional direction."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1705,
+      "id": "U4-45",
+      "kind": "result",
+      "start_line": 1705,
+      "statement": "On the zero-dimensional singleton, every scalar function is smooth and compactly supported; the full fixed-support test topology and the Schwartz topology are the scalar norm topology; every distribution is a scalar multiple of evaluation. The local-order, regular-distribution, support and point-support assertions reduce to scalar multiplication and evaluation. Whole-space convolution is scalar multiplication and the normalized mollifier is the constant one. The empty-support test stage is the zero space, by the test-space definition."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1705,
+      "id": "U4-46",
+      "kind": "result",
+      "start_line": 1705,
+      "statement": "In dimension zero, for every allowed m,p, W^{m,p} and W_0^{m,p} on the singleton are its scalar L^p space, retaining the zero-order norm term; the negative-order dual is represented by f_0 alone. On the empty open set all the corresponding spaces are zero."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1712,
+      "id": "U5-001",
+      "kind": "definition",
+      "start_line": 1708,
+      "statement": "For an open G ⊂ ℝ^d, W^{1,p}(G) uses distributional first derivatives and the norm ‖u‖_{L^p(G)} + ‖∇u‖_{L^p(G)}, with Euclidean gradient length. Equivalent product norms define the same space. Coordinate dimensions in derivative, ball and boundary estimates are positive integers; constants in this chapter may depend on the stated exponents and the fixed domain, and L^p statements are modulo almost-everywhere equality unless a representative or trace is constructed (scope conventions, lines 54–57)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1725,
+      "id": "U5-002",
+      "kind": "definition",
+      "start_line": 1716,
+      "statement": "A bounded Lipschitz open set Ω ⊂ ℝ^d has, near every boundary point and after a rigid motion, boundary x_d=γ(x′) for a Lipschitz γ, with Ω locally on the side x_d>γ(x′). A chart may be chosen as Φ(x′,t)=(x′,γ(x′)+t) on a tangential ball times (−a,a). A Lipschitz domain means a connected Lipschitz open set. In d=1, bounded Lipschitz open sets are finite unions of bounded intervals with distinct endpoints."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1732,
+      "id": "U5-003",
+      "kind": "result",
+      "start_line": 1726,
+      "statement": "For the Lipschitz graph charts just defined, Φ and Φ^{-1} are Lipschitz, the shear Φ preserves Lebesgue measure, the graph map x′↦(x′,γ(x′)) is bi-Lipschitz onto its boundary graph, and surface measure σ=ℋ^{d−1} in the chart is comparable above and below to tangential Lebesgue measure."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1740,
+      "id": "U5-004",
+      "kind": "result",
+      "start_line": 1734,
+      "statement": "Reflection and extension: for every 1≤p≤∞ and bounded Lipschitz open set Ω ⊂ ℝ^d there exists a bounded linear E:W^{1,p}(Ω)→W^{1,p}(ℝ^d) with (Eu)|_Ω=u almost everywhere; the supports of all Eu lie in one fixed bounded set. For p<∞, restrictions to Ω of C_c^∞(ℝ^d) functions are dense in W^{1,p}(Ω)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1788,
+      "id": "U5-005",
+      "kind": "result",
+      "start_line": 1782,
+      "statement": "Subcritical first-order Sobolev inequality: if d≥2, 1≤p<d and p*=dp/(d−p), then every u∈W^{1,p}(ℝ^d) satisfies ‖u‖_{L^{p*}(ℝ^d)} ≤ C_{d,p} ‖∇u‖_{L^p(ℝ^d)}."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1792,
+      "id": "U5-006",
+      "kind": "result",
+      "start_line": 1784,
+      "statement": "For d≥2, 1≤p<d and p*=dp/(d−p), on every bounded Lipschitz open set Ω the full W^{1,p}(Ω) norm controls ‖u‖_{L^{p*}(Ω)}. For every arbitrary open G ⊂ ℝ^d and u∈W_0^{1,p}(G), the gradient-only inequality ‖u‖_{L^{p*}(G)} ≤ C_{d,p}‖∇u‖_{L^p(G)} holds, using zero extension."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1834,
+      "id": "U5-007",
+      "kind": "result",
+      "start_line": 1830,
+      "statement": "Critical integer embedding: if Ω is a bounded Lipschitz open set and d≥2, W^{1,d}(Ω) embeds continuously into L^q(Ω) for every finite q≥1; thus ‖u‖_{L^q(Ω)} ≤ C_{Ω,d,q}‖u‖_{W^{1,d}(Ω)}."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1841,
+      "id": "U5-008",
+      "kind": "result",
+      "start_line": 1832,
+      "statement": "Supercritical integer embedding and one-dimensional critical case: for bounded Lipschitz Ω ⊂ ℝ^d and d<p<∞, each u∈W^{1,p}(Ω) has a unique continuous representative on Ω̄ and its full C^{0,1−d/p}(Ω̄) norm is bounded by C‖u‖_{W^{1,p}(Ω)}. At p=∞ there is a Lipschitz representative with the corresponding supremum-plus-Lipschitz norm bound. If d=p=1, the representative is absolutely continuous on each closed component interval and its supremum norm is controlled by the W^{1,1}(Ω) norm."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1891,
+      "id": "U5-009",
+      "kind": "result",
+      "start_line": 1883,
+      "statement": "Rellich compactness: let Ω ⊂ ℝ^d be bounded Lipschitz and 1≤p<∞. If p<d, W^{1,p}(Ω)→L^q(Ω) is compact for every 1≤q<p*=dp/(d−p). If p≥d it is compact into L^q(Ω) for every finite q≥1. If p>d it is compact into C^{0,β}(Ω̄) for every 0≤β<1−d/p, where β=0 means the supremum norm."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1935,
+      "id": "U5-010",
+      "kind": "example",
+      "start_line": 1927,
+      "statement": "Endpoint noncompactness by concentration: for d≥1 and 1≤p<∞, at any interior x₀ of a nonempty bounded Lipschitz open Ω, choose a nonzero smooth compactly supported bump φ and put u_r(x)=r^{1−d/p}φ((x−x₀)/r) for sufficiently small r>0. This family is bounded in W^{1,p} and its Lp gradient norm is fixed. If p<d, its L^{p*} norm is fixed and nonzero while u_r→0 almost everywhere, so W^{1,p}(Ω)→L^{p*}(Ω) is not compact. If p>d, u_r→0 uniformly while its C^{0,1−d/p} seminorm has a fixed positive lower bound, so compactness fails at that Hölder endpoint. For d=p=1, fixed-height shrinking bumps similarly disprove compactness into the supremum norm."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1944,
+      "id": "U5-011",
+      "kind": "result",
+      "start_line": 1937,
+      "statement": "Mean-zero Poincaré inequality: for a bounded connected Lipschitz domain Ω and every 1≤p<∞, every u∈W^{1,p}(Ω) satisfies ‖u−u_Ω‖_{L^p(Ω)} ≤ C_{Ω,p}‖∇u‖_{L^p(Ω)}, where u_Ω=|Ω|^{-1}∫_Ωu."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1979,
+      "id": "U5-012",
+      "kind": "result",
+      "start_line": 1962,
+      "statement": "Whole-space first-order Gagliardo–Nirenberg family: let 1≤p,r≤∞ and u∈W^{1,p}(ℝ^d)∩L^r(ℝ^d). If p<d, q may lie between r and p*=dp/(d−p), with both endpoints included and either order of r and p*. If p=d≥2, require r≤q<∞. If p>d or p=d=1, require r<∞ and r≤q≤∞. With 1/∞=0, for 0≤a≤1 satisfying 1/q=a(1/p−1/d)+(1−a)/r, one has ‖u‖_q ≤ C‖∇u‖_p^a‖u‖_r^{1−a}. At a=0 or a=1 the factor with zero exponent is omitted."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 1986,
+      "id": "U5-013",
+      "kind": "result",
+      "start_line": 1964,
+      "statement": "Domain first-order Gagliardo–Nirenberg family: on every bounded Lipschitz open set Ω, for u∈W^{1,p}(Ω)∩L^r(Ω), under exactly the same p,r,q,a ranges as the whole-space family (p<d: q between r and p*=dp/(d−p), endpoints included; p=d≥2: r≤q<∞; p>d or p=d=1: r<∞ and r≤q≤∞; 1≤p,r≤∞; 0≤a≤1 and 1/q=a(1/p−1/d)+(1−a)/r), ‖u‖_{L^q(Ω)} ≤ C_Ω(‖∇u‖_{L^p(Ω)}+‖u‖_{L^p(Ω)})^a ‖u‖_{L^r(Ω)}^{1−a}. Use 1/∞=0 and omit any zero-exponent factor."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2034,
+      "id": "U5-014",
+      "kind": "result",
+      "start_line": 2030,
+      "statement": "The p=d≥2 whole-space first-order interpolation estimate has no L^∞ endpoint: the concentrating sequence used below has bounded L^d gradient norms and bounded L^r norms for each finite r, while its maxima tend to infinity, so such bounds do not yield a uniform L^∞ bound."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2050,
+      "id": "U5-015",
+      "kind": "definition",
+      "start_line": 2038,
+      "statement": "For a nonnegative function of bounded support, its symmetric decreasing rearrangement f* is characterized up to null sets by requiring, for every s>0, the positive superlevel set {f*>s} to be the centered ball having measure |{f>s}|."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2050,
+      "id": "U5-016",
+      "kind": "result",
+      "start_line": 2038,
+      "statement": "Symmetric rearrangement for Sobolev functions of bounded support: for 1<p<∞ and nonnegative f∈W^{1,p}(ℝ^d) that is zero almost everywhere outside a ball centered at the origin, its symmetric decreasing rearrangement f* belongs to W^{1,p}(ℝ^d), has |{f*>s}|=|{f>s}| for every s>0, and satisfies ‖∇f*‖_p≤‖∇f‖_p."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2153,
+      "id": "U5-017",
+      "kind": "result",
+      "start_line": 2145,
+      "statement": "One-dimensional exponential estimate: if d≥2, b=(d−1)/d, and w:[0,∞)→[0,∞) is locally absolutely continuous, w(0)=0 and ∫_0^∞|w′(t)|^d dt≤1, then ∫_0^∞exp(w(t)^{1/b}−t)dt≤C_d."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2191,
+      "id": "U5-018",
+      "kind": "result",
+      "start_line": 2180,
+      "statement": "Sharp Trudinger–Moser inequality: let Ω⊂ℝ^d be any nonempty bounded open set, d≥2, σ_{d−1}=|S^{d−1}| and α_d=d σ_{d−1}^{1/(d−1)}. Every u∈W_0^{1,d}(Ω) with ‖∇u‖_d≤1 satisfies ∫_Ω exp(α_d |u|^{d/(d−1)})dx≤C_d|Ω|. For every α>α_d the supremum of the same exponential integral with α in place of α_d over this gradient unit ball is infinite on every such Ω."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2250,
+      "id": "U5-019",
+      "kind": "example",
+      "start_line": 2247,
+      "statement": "Concentrating-sequence example: for d≥2 and any nonempty bounded open Ω⊆ℝ^d, there is a family supported in an interior ball, belonging to W_0^{1,d}(Ω), with gradient Ld norm one, whose maxima tend to infinity and whose Lr norms remain bounded for every finite r≥1. Its zero extensions give the whole-space counterexample stated at lines2030–2032. The full supercritical-exponential sharpness conclusion is recorded in U5-018; no particular formula or proof witness is required for this example."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2266,
+      "id": "U5-020",
+      "kind": "definition",
+      "start_line": 2254,
+      "statement": "Fractional Sobolev spaces: for 0<s<1, 1≤p<∞ and open G⊂ℝ^d, set [u]_{s,p;G}^p=∫_G∫_G |u(x)−u(y)|^p/|x−y|^{d+sp}dy dx, assigning zero to the diagonal integrand. Define W^{s,p}(G)={u∈L^p(G):[u]_{s,p;G}<∞}, with norm ‖u‖_{L^p(G)}+[u]_{s,p;G}."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2270,
+      "id": "U5-021",
+      "kind": "result",
+      "start_line": 2268,
+      "statement": "For every 0<s<1, 1≤p<∞ and open G⊂ℝ^d, W^{s,p}(G) is Banach. For G=ℝ^d, C_c^∞(ℝ^d) is dense in W^{s,p}(ℝ^d)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2281,
+      "id": "U5-022",
+      "kind": "result",
+      "start_line": 2268,
+      "statement": "Fourier characterization of the fractional L^2 seminorm: with the convention f̂(ξ)=∫_{ℝ^d} f(x)e^{−2πi x·ξ}dx and its L^2 extension, for every integer d≥1, 0<s<1 and every u∈L^2(ℝ^d), equality holds as nonnegative extended integrals: [u]_{s,2;ℝ^d}²=κ_{d,s}∫_{ℝ^d}|ξ|^{2s}|û(ξ)|²dξ, where κ_{d,s}=∫_{ℝ^d}|e^{2πi h₁}−1|²/|h|^{d+2s}dh is finite and strictly positive."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2319,
+      "id": "U5-023",
+      "kind": "result",
+      "start_line": 2317,
+      "statement": "For every integer d≥1 and 0<s<1, W^{s,2}(ℝ^d) is the Bessel-potential H^s(ℝ^d) space with equivalent full norms. With the Fourier normalization of the manuscript, the Fourier weights 1+|ξ|^{2s} and (1+4π²|ξ|²)^s are comparable, identifying the fractional seminorm characterization with the Bessel-potential norm."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2326,
+      "id": "U5-024",
+      "kind": "result",
+      "start_line": 2322,
+      "statement": "Fractional extension: for every 0<s<1 and 1≤p<∞, every bounded Lipschitz open set Ω⊂ℝ^d admits a bounded linear extension E:W^{s,p}(Ω)→W^{s,p}(ℝ^d) with (Eu)|_Ω=u almost everywhere and support of all Eu in one fixed bounded set."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2332,
+      "id": "U5-025",
+      "kind": "result",
+      "start_line": 2324,
+      "statement": "Fractional whole-space subcritical embedding: for 0<s<1, 1≤p<∞ and sp<d, put p_s*=dp/(d−sp). Every u∈W^{s,p}(ℝ^d) satisfies ‖u‖_{L^{p_s*}(ℝ^d)}≤C_{d,s,p}[u]_{s,p;ℝ^d}."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2334,
+      "id": "U5-026",
+      "kind": "result",
+      "start_line": 2324,
+      "statement": "Fractional subcritical domain embedding and compactness: for 0<s<1, 1≤p<∞, sp<d and bounded Lipschitz Ω⊂ℝ^d, the full W^{s,p}(Ω) norm controls the L^{p_s*}(Ω) norm, p_s*=dp/(d−sp), and W^{s,p}(Ω)→L^q(Ω) is compact for every 1≤q<p_s*."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2338,
+      "id": "U5-027",
+      "kind": "result",
+      "start_line": 2324,
+      "statement": "Fractional critical and supercritical domain embeddings: for 0<s<1, 1≤p<∞ and bounded Lipschitz Ω⊂ℝ^d, if sp=d then W^{s,p}(Ω)→L^q(Ω) is continuous and compact for every finite q≥1. If sp>d then W^{s,p}(Ω) embeds continuously into C^{0,s−d/p}(Ω̄), through its continuous representative, and compactly into C^{0,β}(Ω̄) for every 0≤β<s−d/p, including β=0 as the supremum norm."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2460,
+      "id": "U5-028",
+      "kind": "construction",
+      "start_line": 2441,
+      "statement": "Flat trace and slice representative: throughout the half-space section 1≤p<∞, d≥2, m=d−1, H=ℝ^m×(0,∞). For v∈W^{1,p}(H), there is a representative of the horizontal slices that is continuous in positive height as an L^p(ℝ^m)-valued function, and its L^p limit g as t↓0 defines the flat trace. For almost every a,b>0, ‖v(·,b)−v(·,a)‖_p≤∫_{min(a,b)}^{max(a,b)}‖∂_t v(·,t)‖_p dt. The trace agrees with the vertical boundary value for almost every x′, and obeys ‖g‖_p≤C‖v‖_{W^{1,p}(H)}. The resulting trace is linear."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2467,
+      "id": "U5-029",
+      "kind": "result",
+      "start_line": 2462,
+      "statement": "Exact flat trace and lift: for d≥2, m=d−1, H=ℝ^m×(0,∞), 1<p<∞ and s=1−1/p, the flat trace W^{1,p}(H)→W^{s,p}(ℝ^m) is bounded and has a bounded linear right inverse. At p=1 the flat trace is onto L^1(ℝ^m); for every g∈L^1(ℝ^m) there exists v∈W^{1,1}(H) with trace g and ‖v‖_{W^{1,1}(H)}≤C‖g‖_1. No linear choice of that p=1 preimage is asserted."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2545,
+      "id": "U5-030",
+      "kind": "result",
+      "start_line": 2541,
+      "statement": "Flat zero trace criterion: for 1≤p<∞, d≥2 and H=ℝ^{d−1}×(0,∞), a v∈W^{1,p}(H) has zero flat trace if and only if its zero extension through the flat face belongs to W^{1,p}(ℝ^d). In this case v is a W^{1,p}(H) limit of functions from C_c^∞(H)."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2575,
+      "id": "U5-031",
+      "kind": "definition",
+      "start_line": 2567,
+      "statement": "Boundary fractional space: for bounded Lipschitz Ω⊂ℝ^d with d≥2, set σ=ℋ^{d−1}|_{∂Ω} in the Euclidean Hausdorff-measure normalization. For 0<s<1 and 1≤p<∞, W^{s,p}(∂Ω) consists of L^p(σ) functions with finite double-integral seminorm [g]_{s,p;∂Ω}^p=∫_{∂Ω}∫_{∂Ω}|g(x)−g(y)|^p/|x−y|^{d−1+sp}dσ(y)dσ(x). Its norm is ‖g‖_{L^p(σ)}+[g]_{s,p;∂Ω}."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2593,
+      "id": "U5-032",
+      "kind": "result",
+      "start_line": 2575,
+      "statement": "The intrinsic W^{s,p}(∂Ω) norm for bounded Lipschitz Ω⊂ℝ^d, d≥2, 0<s<1 and 1≤p<∞ is equivalent to the norm obtained using a finite smooth boundary partition, pulling each localized datum back to its Lipschitz graph base and extending by zero to the rest of ℝ^{d−1}, then summing the resulting W^{s,p}(ℝ^{d−1}) norms. In particular the boundary space is independent of the choice of Lipschitz boundary charts."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2608,
+      "id": "U5-033",
+      "kind": "result",
+      "start_line": 2595,
+      "statement": "Ordinary trace theorem: for every bounded Lipschitz open set Ω⊂ℝ^d and 1≤p<∞, there is a bounded linear Tr:W^{1,p}(Ω)→L^p(∂Ω,σ) which agrees with boundary restriction for restrictions of globally smooth functions. Here σ=ℋ^{d−1}|_{∂Ω} for d≥2; in d=1, σ=ℋ^0 is counting measure and Tr is evaluation at the finitely many endpoints. No connectedness is required."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2605,
+      "id": "U5-034",
+      "kind": "result",
+      "start_line": 2597,
+      "statement": "For the ordinary trace on any bounded Lipschitz open Ω⊂ℝ^d and every 1≤p<∞, ker(Tr)=W_0^{1,p}(Ω), and a u∈W^{1,p}(Ω) has zero trace if and only if its zero extension to ℝ^d belongs to W^{1,p}(ℝ^d). At p=1, Tr is onto L^1(∂Ω,σ). These assertions include d=1 with counting measure at the endpoints of every interval component."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2616,
+      "id": "U5-035",
+      "kind": "result",
+      "start_line": 2610,
+      "statement": "Exact bounded-domain trace and lifting: for d≥2, every bounded Lipschitz open Ω⊂ℝ^d and every 1<p<∞, the same ordinary trace is a continuous surjection Tr:W^{1,p}(Ω)→W^{1−1/p,p}(∂Ω). It admits a bounded linear right inverse L:W^{1−1/p,p}(∂Ω)→W^{1,p}(Ω), so Tr(Lg)=g for every boundary datum and ‖Lg‖_{W^{1,p}(Ω)}≤C‖g‖_{W^{1−1/p,p}(∂Ω)}."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2693,
+      "id": "U5-036",
+      "kind": "context",
+      "start_line": 2690,
+      "statement": "The chapter closes with references for first-order Lipschitz boundary geometry and precise trace-space formulations (Leoni and Adams); these citation-only remarks add no mathematical obligation."
+    },
+    {
+      "document": "paper.tex",
+      "end_line": 2718,
+      "id": "GLOBAL-bibliography",
+      "kind": "context",
+      "start_line": 2694,
+      "statement": "Back matter and bibliography give publication details and URLs, not additional mathematical obligations. Other citation-only paragraphs and organizational headings throughout the manuscript likewise supply context for the inventoried mathematics."
+    }
+  ],
+  "source_digest": "e6a0b5f2952ff57434dbfe0b6626d4cea440416b8eb4c62534e09a46c207a2c5"
+}

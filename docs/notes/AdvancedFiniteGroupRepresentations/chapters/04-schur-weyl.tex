@@ -1,0 +1,543 @@
+\chapter{Schur--Weyl Duality}
+
+Let \(V\) be a complex vector space of dimension \(d\), and put
+\(X=V^{\otimes n}\). The two actions on \(X\) exchange the tensor
+positions and change the vectors in all positions simultaneously.
+Their images in \(\operatorname{End}(X)\) are each other's centralizers.
+We first prove the two centralizer identities, then determine the
+summands and their characters.
+
+\section{Commuting actions and centralizers}
+
+\begin{proposition}[The two tensor actions]
+\label{res:D01}
+The symmetric group \(S_n\) and the group \(\operatorname{GL}(V)\)
+act linearly on \(X\) by
+\begin{align*}
+ P_\sigma(v_1\otimes\cdots\otimes v_n)
+   &=v_{\sigma^{-1}(1)}\otimes\cdots\otimes v_{\sigma^{-1}(n)},\\
+ G_g(v_1\otimes\cdots\otimes v_n)
+   &=gv_1\otimes\cdots\otimes gv_n .
+\end{align*}
+They commute. Thus the images
+\[
+ A=\operatorname{im}\bigl(\mathbb C[S_n]\longrightarrow
+                         \operatorname{End}(X)\bigr),\qquad
+ B=\operatorname{span}_{\mathbb C}\{G_g:g\in\operatorname{GL}(V)\}
+\]
+are commuting subalgebras of \(\operatorname{End}(X)\).
+\end{proposition}
+
+\begin{proof}
+The displayed expressions are multilinear in the input vectors.
+Under successive permutations \(\tau\) and \(\sigma\), the input
+at output position \(i\) comes from \(\tau^{-1}\sigma^{-1}(i)\).
+This proves \(P_\sigma P_\tau=P_{\sigma\tau}\), and the identity
+permutation acts as the identity. The group law
+\(G_gG_h=G_{gh}\) holds in every position. The two orders of action
+give \(gv_{\sigma^{-1}(i)}\) at position \(i\), so they agree on
+the spanning pure tensors. Extending the permutation action
+linearly gives the algebra map defining \(A\). Products of the
+generators of \(B\) are again generators, and \(G_1\) is its identity.
+
+For \(n=0\) we have \(X=\mathbb C\) with both actions trivial.
+For \(d=0<n\) we have \(X=0\), whose endomorphism algebra is the
+zero algebra. We use the unique element of that algebra as its
+identity. These conventions apply throughout this chapter.
+The actions agree with those of \cite[\S\S4.18--4.19]{etingof}.
+\end{proof}
+
+\begin{lemma}[Endomorphisms as tensors]
+\label{res:D02}
+The map
+\[
+ \Phi\colon\operatorname{End}(V)^{\otimes n}\longrightarrow
+                 \operatorname{End}(X),\qquad
+ T_1\otimes\cdots\otimes T_n\longmapsto
+ \bigl(v_1\otimes\cdots\otimes v_n\mapsto T_1v_1\otimes\cdots\otimes T_nv_n\bigr)
+\]
+is an algebra isomorphism. It identifies conjugation by \(P_\sigma\)
+with permutation of the tensor positions in the source.
+Consequently \(\operatorname{End}_{A}(X)\) corresponds to the
+\(S_n\)-invariant tensors.
+\end{lemma}
+
+\begin{proof}
+For \(d,n\geq1\), choose a basis \(v_1,\ldots,v_d\) of \(V\)
+and let \(E_{ab}\) send \(v_b\) to \(v_a\) and all other basis
+vectors to zero. With \(\mathbf a,\mathbf b\in\{1,\ldots,d\}^n\),
+\(E_{a_1b_1}\otimes\cdots\otimes E_{a_nb_n}\) maps to the matrix
+unit in the tensor basis taking the word \(\mathbf b\) to
+\(\mathbf a\). Thus \(\Phi\) takes a basis to a basis.
+Composition of pure tensor operators is multiplication position
+by position, and the tensor of the identities is the identity.
+Evaluation of \(P_\sigma\Phi(T_1\otimes\cdots\otimes T_n)P_{\sigma^{-1}}\)
+on a pure tensor gives \(T_{\sigma^{-1}(i)}\) at position \(i\).
+An operator commutes with \(A\) exactly when it commutes with
+every \(P_\sigma\), which proves the invariance criterion.
+For \(n=0\) the map is the scalar identification, and for \(d=0<n\)
+both vector spaces are zero. This is the comparison used in
+\cite[Theorem 4.55]{etingof}.
+\end{proof}
+
+\begin{theorem}[The first centralizer identity]
+\label{res:D03}
+The centralizer of \(A\) in \(\operatorname{End}(X)\) is \(B\).
+\end{theorem}
+
+\begin{proof}
+For \(n=0\) the two algebras and the ambient endomorphism algebra
+are \(\mathbb C\), and for \(d=0<n\) all are zero. Suppose \(d,n\geq1\)
+and set \(W=\operatorname{End}(V)\). In \(W^{\otimes n}\) every
+invariant tensor is its own average over \(S_n\). Since pure
+tensors span, the invariant tensors are spanned by sums of
+permutations of pure tensors. For \(T_1,\ldots,T_n\in W\),
+multilinearity gives
+\begin{equation*}
+ \sum_{J\subseteq\{1,\ldots,n\}} (-1)^{n-|J|}
+      \biggl(\sum_{j\in J}T_j\biggr)^{\otimes n}
+  =\sum_{\sigma\in S_n}
+         T_{\sigma(1)}\otimes\cdots\otimes T_{\sigma(n)} .
+\end{equation*}
+Indeed a word in indices using exactly the set \(I\) occurs on the
+left with coefficient \(\sum_{J\supseteq I}(-1)^{n-|J|}\).
+This coefficient is zero for a proper subset \(I\) and is one for
+the full set. A word of length \(n\) using the full set uses each
+index once. The invariant tensors are therefore spanned by the
+powers \(T^{\otimes n}\), since these powers are invariant.
+
+For any \(T\in W\), the determinant of \(T+tI\) is a monic
+polynomial of degree \(d\). There exist \(n+1\) distinct
+\(t_0,\ldots,t_n\) for which \(T+t_jI\) is invertible.
+The vector-valued polynomial \(t\mapsto(T+tI)^{\otimes n}\)
+has degree at most \(n\). The scalar Lagrange interpolation
+formula, applied in each coordinate, expresses its value at
+zero as a linear combination of its values at the chosen
+points. Under \(\Phi\) those values are generators of \(B\).
+Lemma~\ref{res:D02} now gives the required centralizer.
+Compare \cite[Lemma 4.56 and Proposition 4.58]{etingof}.
+\end{proof}
+
+\begin{theorem}[The second centralizer and the tensor decomposition]
+\label{res:D04}
+Write
+\[
+ L_\lambda(V)=\operatorname{Hom}_{S_n}(S^\lambda,X),
+ \qquad (g\cdot f)(u)=G_g f(u)
+ \quad (g\in\operatorname{GL}(V)).
+\]
+Evaluation is an isomorphism of \(S_n\times\operatorname{GL}(V)\)
+representations
+\[
+ \bigoplus_{\lambda\vdash n} S^\lambda\otimes L_\lambda(V)
+        \longrightarrow X .
+\]
+Every nonzero \(L_\lambda(V)\) is irreducible for
+\(\operatorname{GL}(V)\), and these nonzero modules are mutually
+nonisomorphic. The centralizer of \(B\) is \(A\).
+\end{theorem}
+
+\begin{proof}
+By Maschke and Schur \cite[Chapter 8]{algebra-core} and the
+classification in \ref{res:A07}, \(X\) is a direct sum of copies
+of the \(S^\lambda\). On a copy of \(S^\lambda\), evaluation
+from \(S^\lambda\otimes\operatorname{Hom}_{S_n}(S^\lambda,S^\lambda)\)
+is scalar evaluation and hence an isomorphism. The Hom spaces
+between different simple modules vanish. Applying these facts to
+each copy proves the evaluation isomorphism. Postcomposition
+defines the asserted action on \(L_\lambda(V)\) because \(G_g\)
+commutes with \(S_n\). Evaluation is equivariant for both actions.
+
+Put \(R=\mathbb C[S_n]\). We first identify its full image on
+the simple modules. The action map
+\[
+ R\longrightarrow \prod_{\lambda\vdash n}\operatorname{End}(S^\lambda)
+\]
+is injective because any element that annihilates every simple
+module annihilates the semisimple left regular module and hence
+annihilates \(1\) in that module. The multiplicity of \(S^\lambda\)
+in the regular module is \(\dim S^\lambda\). Indeed evaluation
+at \(1\) identifies \(\operatorname{Hom}_R(R,S^\lambda)\) with
+\(S^\lambda\), and computing the same Hom space with the
+regular module decomposed into simple summands gives the
+multiplicity by Schur. It follows that
+\(\dim R=\sum_{\lambda}(\dim S^\lambda)^2\), so the injective
+action map is an isomorphism.
+
+Across the summands \(S^\lambda\otimes L_\lambda(V)\) with
+\(L_\lambda(V)\ne0\), this identifies \(A\) with the product of the
+independent full matrix blocks \(\operatorname{End}(S^\lambda)\).
+Each block acts on the first factor and by the identity on the
+second. In particular \(A\) contains the projectors to these
+summands. An operator commuting with \(A\) preserves every
+summand because it commutes with those projectors. In a basis
+\((u_i)\) of \(S^\lambda\), commuting with each diagonal matrix
+unit makes the operator preserve every \(u_i\otimes L_\lambda(V)\).
+Commuting with each off-diagonal matrix unit identifies the
+operators on these spaces with one common
+\(T\in\operatorname{End}(L_\lambda(V))\). Conversely
+\(I\otimes T\) commutes with the entire first block. By
+Theorem~\ref{res:D03}, \(B\) is the product of these independent
+second-factor blocks.
+
+An operator commuting with \(B\) preserves the same summands
+because \(B\) also contains their projectors. Applying the matrix
+unit argument to the second factor shows that the new centralizer
+is \(A\). Since the linear span of the group on \(L_\lambda(V)\)
+is the full matrix algebra, a nonzero invariant subspace contains
+the image of each of its vectors under all linear maps, so it is the
+whole space. A group intertwiner between two such spaces intertwines
+the whole span \(B\), whose projector onto one summand is the
+identity there and zero on the other. It must be zero.
+If \(X=0\), the evaluation and centralizer identities are between
+zero spaces or algebras. The block argument gives the
+double centralizer conclusion of
+\cite[Theorems 4.54 and 4.57 and Corollary 4.59]{etingof}.
+\end{proof}
+
+\section{The length bound and the group algebra kernel}
+
+\begin{theorem}[The exact length bound]
+\label{res:D05}
+For \(\lambda\vdash n\), \(L_\lambda(V)\) is nonzero if and only
+if the number of nonzero parts \(\ell(\lambda)\) is at most \(d\).
+\end{theorem}
+
+\begin{proof}
+For a set \(C\) of positions let \(b_C\in\mathbb C[S_n]\) be the
+sum of the permutations of \(C\), weighted by their signs and
+extended by the identity off \(C\). If \(|C|>d\), each basis
+tensor in \(X\) has a repeated basis vector among those positions.
+The transposition of these two positions fixes that tensor.
+Pairing permutations of \(C\) that differ on the right by this
+transposition shows that \(b_C\) sends the tensor to zero.
+The same conclusion holds if there are no basis tensors because
+\(X=0\).
+
+If \(\ell(\lambda)>d\), take \(C\) to be the first column of a
+tableau \(t\) of shape \(\lambda\). The polytabloid \(e_t\) in
+\ref{res:A04} transforms
+by the sign under each permutation of \(C\), so
+\(b_C e_t=|C|!\,e_t\). An equivariant map from \(S^\lambda\) to
+\(X\) sends this multiple to zero.
+The scalar is nonzero, and \(e_t\) generates \(S^\lambda\), so
+the map itself is zero.
+
+Suppose \(\ell(\lambda)\leq d\). For a tabloid \(\{t\}\), take the
+tensor with the \(i\)-th basis vector of \(V\) at every position whose
+label belongs to row \(i\) of \(t\). This construction is unchanged
+by reordering entries within a row. Distinct tabloids give
+distinct tensor basis words, since the word recovers each row's
+label set. Formula \ref{res:D01} for the left action shows that
+relabeling the tabloid permutes tensor positions equivariantly.
+These words span the subspace of \(X\) of content \(\lambda\)
+in the chosen basis, and the tabloid map identifies that subspace
+with \(M^\lambda\). It therefore restricts to an injection
+of \(S^\lambda\) by \ref{res:A04}. The empty shape for \(n=0\)
+gives the empty word, a basis of \(X=\mathbb C\).
+The length criterion also appears in
+\cite[Theorem 4.63]{etingof}, where it follows from the character.
+\end{proof}
+
+\begin{corollary}[The alternating generator of the kernel]
+\label{res:D06}
+In the full matrix block decomposition of \(\mathbb C[S_n]\),
+the kernel of its action on \(X\) is the sum of the blocks with
+\(\ell(\lambda)>d\). For \(n>d\) this is the two-sided ideal
+generated by the alternating sum \(b_{\{1,\ldots,d+1\}}\).
+For \(n\leq d\) the action of the group algebra is injective.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{res:D04} identifies the action with the product of
+the blocks with \(L_\lambda(V)\ne0\). Theorem~\ref{res:D05}
+identifies those omitted. For \(n>d\), the pairing argument
+of Theorem~\ref{res:D05} shows that the indicated alternating
+sum acts as zero on \(X\). In each omitted block choose a
+tableau \(t\) with \(1,\ldots,d+1\) in its first column.
+The alternating sum sends \(e_t\) to \((d+1)!\,e_t\), so its
+projection to that block is nonzero. Central block projectors
+separate the block components of the two-sided ideal.
+A nonzero matrix \(T\) generates the entire two-sided ideal in a
+full matrix algebra, since \(E_{ia}TE_{bj}=T_{ab}E_{ij}\) for
+a nonzero entry \(T_{ab}\). The ideal is therefore exactly
+the sum of all omitted blocks. For \(d=0<n\) the alternating
+generator on one position is the unit, as required.
+For \(n\leq d\) all partitions of \(n\) have length at most \(d\).
+\end{proof}
+
+\section{Characters and dimensions}
+
+\begin{proposition}[The trace along permutation cycles]
+\label{res:D07}
+For \(g\in\operatorname{GL}(V)\) and \(\sigma\in S_n\),
+\[
+ \operatorname{tr}_X(P_\sigma G_g)
+       =\prod_{c\text{ a cycle of }\sigma}
+                   \operatorname{tr}_V(g^{|c|}).
+\]
+If \(\chi^\lambda\) is the character of \(S^\lambda\), then
+\begin{equation}
+\label{eq:schur-weyl-trace-average}
+ \operatorname{tr}_{L_\lambda(V)}(g)
+ =\frac{1}{n!}\sum_{\sigma\in S_n}
+     \chi^\lambda(\sigma^{-1})
+     \prod_{c\text{ a cycle of }\sigma}\operatorname{tr}_V(g^{|c|}).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For \(d,n\geq1\), let \(g_{ab}\) be the matrix entry in output
+row \(a\) and input column \(b\). For a basis word with index
+\(\mathbf i\), the corresponding diagonal matrix entry of
+\(P_\sigma G_g\) is \(\prod_j g_{i_{\sigma(j)},i_j}\).
+Summing over the indices divides into independent sums over the
+cycles. On a cycle \((j_1,\ldots,j_k)\) the factors are
+\(g_{i_{j_2},i_{j_1}}\cdots g_{i_{j_1},i_{j_k}}\), whose sum is
+\(\operatorname{tr}_V(g^k)\) by the definition of matrix
+multiplication and trace. For \(n=0\) the trace and the empty
+product equal one. For \(d=0<n\) they both equal zero.
+
+Using the evaluation decomposition of Theorem~\ref{res:D04},
+the same trace is
+\(\sum_{\mu\vdash n}\chi^\mu(\sigma)\operatorname{tr}_{L_\mu(V)}(g)\).
+Finite-group character orthogonality
+\cite[Chapter 8]{algebra-core} gives
+\(\frac{1}{n!}\sum_\sigma\chi^\lambda(\sigma^{-1})\chi^\mu(\sigma)
+=\delta_{\lambda\mu}\). To see the inverse in this formula,
+every \(S_n\)-representation can be made unitary by averaging a
+positive definite Hermitian form, so the character on the inverse
+is the complex conjugate. Multiplying the decomposition by
+\(\chi^\lambda(\sigma^{-1})\) and averaging yields
+\eqref{eq:schur-weyl-trace-average}. See \cite[\S4.21]{etingof}.
+\end{proof}
+
+\begin{theorem}[Weyl character and dimension]
+\label{res:D08}
+For invertible \(g=\operatorname{diag}(x_1,\ldots,x_d)\),
+\(\operatorname{tr}_{L_\lambda(V)}(g)=s_\lambda(x_1,\ldots,x_d)\),
+giving the polynomial character on the diagonal.
+If \(\ell(\lambda)\leq d\), pad \(\lambda\) with zeros to length
+\(d\). Then
+\[
+ \dim L_\lambda(V)=
+    \prod_{1\leq i<j\leq d}\frac{\lambda_i-\lambda_j+j-i}{j-i}.
+\]
+For \(\ell(\lambda)>d\) the dimension is zero.
+\end{theorem}
+
+\begin{proof}
+On the diagonal, \(\operatorname{tr}_V(g^k)=p_k(x)\).
+Each permutation is conjugate to its inverse because the two
+have the same cycle lengths (\ref{res:A01}). The cycle
+class \(\nu\) has \(n!/z_\nu\) elements. Grouping terms in
+\eqref{eq:schur-weyl-trace-average} yields
+\[
+ \operatorname{tr}_{L_\lambda(V)}(g)
+    =\sum_{\nu\vdash n}\frac{\chi^\lambda(\nu)}{z_\nu}p_\nu(x)
+    =s_\lambda(x)
+\]
+by the Frobenius characteristic identity \ref{res:C05}. This
+also gives the polynomial extension of the diagonal character.
+For too many rows the semistandard model \ref{res:C04}
+has an empty set of fillings with entries from \(1,\ldots,d\),
+in agreement with Theorem~\ref{res:D05}.
+
+For \(d\geq1\) and \(\ell(\lambda)\leq d\), use the
+alternant ratio in \ref{res:C04}. Write \(b_j=\lambda_j+d-j\)
+and \(a_j=d-j\), both strictly decreasing sequences.
+Set \(x_i=t^{d-i}\) for real \(t>1\). The numerator matrix
+has entries \((t^{b_j})^{d-i}\), a Vandermonde matrix with rows
+indexed by decreasing powers. The denominator is the same
+matrix with \(b_j\) replaced by \(a_j\). Thus the ratio is
+\(\prod_{i<j}(t^{b_i}-t^{b_j})/(t^{a_i}-t^{a_j})\).
+Each factor tends to \((b_i-b_j)/(a_i-a_j)\) as \(t\to1\),
+by dividing both differences by \(t-1\). The Schur polynomial
+is continuous at \((1,\ldots,1)\), where the trace is the
+dimension. This gives the formula. For \(d=0\), the only
+permitted shape is empty and its space is \(\mathbb C\).
+For the empty shape every factor is one, and for \(d=0,1\)
+the product has no factors. These are the formulas of
+\cite[Theorem 4.63]{etingof}.
+\end{proof}
+
+\begin{example}[Symmetric and exterior powers]
+\label{res:D09}
+For \(n\geq1\) the row shape and column shape give, respectively,
+\[
+ L_{(n)}(V)\cong\operatorname{Sym}^n V,\qquad
+ L_{(1^n)}(V)\cong\bigwedge^n V.
+\]
+The zero-degree conventions give \(\mathbb C\) in both cases.
+If \(d=2\) and \(n=3\), the tensor decomposition has dimensions
+\(8=4+2\cdot2\), with no summand from the shape \((1,1,1)\).
+\end{example}
+
+\begin{proof}
+By \ref{res:A07} the two simple \(S_n\)-modules are the
+trivial and sign representations. Evaluating their intertwining
+maps at \(1\) identifies their multiplicity spaces with the
+invariant and alternating subspaces, respectively. For
+\(\epsilon=1\) or \(\epsilon=\operatorname{sgn}\), set
+\[
+ Q_\epsilon=\frac{1}{n!}\sum_{\sigma\in S_n}\epsilon(\sigma)P_\sigma .
+\]
+Reindexing the sum by left or right multiplication gives
+\(P_\tau Q_\epsilon=Q_\epsilon P_\tau=\epsilon(\tau)Q_\epsilon\).
+Also \(Q_\epsilon\) restricts to the identity on the vectors
+transforming by \(\epsilon\). Its kernel is the subspace
+spanned by \(v-\epsilon(\sigma)P_\sigma v\), since it kills
+these differences and \(v-Q_\epsilon v\) is their average.
+Thus it identifies the isotypic subspace with the corresponding
+quotient. For \(\epsilon=1\) that quotient is the symmetric
+power by the multilinear definition. For the sign it is the exterior
+power. An alternating multilinear map kills the signed
+permutation differences, by exchanging adjacent positions.
+Conversely in the quotient a transposition gives the sign rule and
+a tensor with two equal positions is its own negative, hence
+zero. These properties give precisely the universal
+alternating multilinear map. Both identifications commute
+with the diagonal \(\operatorname{GL}(V)\) action.
+
+When \(d=2,n=3\), Theorem~\ref{res:D05} leaves only the
+shapes \((3)\) and \((2,1)\). Their Specht dimensions are
+\(1,2\) (the standard basis or the hook-length formula
+\ref{res:B08}). Theorem~\ref{res:D08} gives multiplicity-space
+dimensions \(4,2\). This proves the dimension check and
+recovers the symmetric and alternating cases of
+\cite[Example 4.60]{etingof}.
+\end{proof}
+
+\section{Lie algebra and polynomial representations}
+
+\begin{corollary}[The Lie algebra action]
+\label{res:D10}
+For \(T\in\mathfrak{gl}(V)=\operatorname{End}(V)\) with the
+commutator bracket, let
+\[
+ \mathcal D(T)=\sum_{i=1}^n
+       I^{\otimes(i-1)}\otimes T\otimes I^{\otimes(n-i)}
+       \quad\text{acting on }X.
+\]
+The induced action of its universal enveloping algebra has
+image \(B\). In particular its action has the same centralizer
+\(A\), and the nonzero multiplicity spaces in
+Theorem~\ref{res:D04} are irreducible and mutually
+nonisomorphic as \(\mathfrak{gl}(V)\)-modules.
+\end{corollary}
+
+\begin{proof}
+On distinct positions the summand operators commute.
+On a common position their commutator acts by \([T,U]\).
+This gives \([\mathcal D(T),\mathcal D(U)]=\mathcal D([T,U])\).
+Extending the linear map to the tensor algebra and imposing
+the defining commutator relations yields a unital algebra map
+from the universal enveloping algebra. Write \(B'\) for its image.
+
+For \(d,n\geq1\), \(\mathcal D(T)\) is the coefficient of \(t\)
+in \((I+tT)^{\otimes n}\). Choose \(n+1\) distinct \(t\)'s
+where \(I+tT\) is invertible. Interpolation at these points
+expresses that coefficient as a linear combination of operators
+in \(B\). This gives \(B'\subseteq B\).
+
+Every invertible complex matrix is a product of exponentials.
+Gaussian elimination expresses an invertible matrix as a
+product of coordinate shears, invertible diagonal matrices
+and coordinate swaps. A shear \(I+aE_{ij}\) for \(i\ne j\)
+is \(\exp(aE_{ij})\), and an invertible diagonal matrix is
+the exponential of the diagonal matrix of chosen scalar
+logarithms. On two coordinates a swap matrix is a product of
+three shears and a diagonal matrix, as seen from
+\[
+ \begin{pmatrix}1&1\\0&1\end{pmatrix}
+ \begin{pmatrix}1&0\\-1&1\end{pmatrix}
+ \begin{pmatrix}1&1\\0&1\end{pmatrix}
+ \begin{pmatrix}-1&0\\0&1\end{pmatrix}
+     =\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+The summands defining \(\mathcal D(T)\) commute, so multiplying
+their absolutely convergent exponential series gives
+\(\exp(\mathcal D(T))=(\exp T)^{\otimes n}\). The exponential
+belongs to \(B'\) because its finite sums belong to the unital
+subalgebra \(B'\), and every finite-dimensional linear subspace
+is closed. Hence \(G_g\in B'\) for every \(g\in\operatorname{GL}(V)\).
+This proves \(B=B'\). For \(n=0\), the derived operators vanish
+and the unital image is the scalar algebra, and for \(d=0<n\)
+both images are zero. The centralizer and simplicity assertions
+now follow from the block argument of Theorem~\ref{res:D04},
+also proving the Lie algebra version in
+\cite[Theorems 4.55 and 4.57]{etingof}.
+\end{proof}
+
+\begin{theorem}[Polynomial representations of the general linear group]
+\label{res:D11}
+A finite-dimensional representation of \(\operatorname{GL}(V)\)
+is called polynomial if its matrix entries in a basis are
+polynomials in the matrix entries of \(g\). Every such
+representation splits into homogeneous degrees. At any fixed
+degree \(n\), the representations are completely reducible with
+simple modules exactly \(L_\lambda(V)\) for \(\lambda\vdash n\)
+with \(\ell(\lambda)\leq d\).
+\end{theorem}
+
+\begin{proof}
+First suppose \(d\geq1\) and let \(W\) carry a polynomial
+representation \(\rho\). The scalar subgroup gives a finite
+expansion \(\rho(tI)=\sum_{k=0}^{N}t^k P_k\) for \(t\ne0\).
+Comparing coefficients in the polynomial identity
+\(\rho(tI)\rho(sI)=\rho(tsI)\) for \(t,s\ne0\) gives
+\(P_iP_j=0\) for distinct \(i,j\) and \(P_i^2=P_i\).
+Their sum is \(I_W\) by setting \(t=1\), so their images form a
+direct sum. Each \(P_k\) commutes with \(\rho(g)\), as follows
+by comparing coefficients in the commutation identity for
+scalar matrices. On \(W_k=\operatorname{im}P_k\) we have
+\(\rho(tg)|_{W_k}=t^k\rho(g)|_{W_k}\). The matrix entries of the
+restricted action are polynomials obtained by a fixed linear
+inclusion and projection. Decomposing them by degree and
+comparing coefficients of \(t\) shows that only the terms of
+degree \(k\) contribute on \(\operatorname{GL}(V)\). This gives
+the homogeneous degree decomposition.
+
+Suppose that \(\rho\) is homogeneous of degree \(n\).
+The matrix entries of \(G_g\) on the tensor basis are the
+products \(\prod_j g_{a_jb_j}\). Every monomial of total degree
+\(n\) occurs in this way, including the constant at \(n=0\).
+If \(\sum_j c_jG_{g_j}=0\) in \(B\), each of these monomials
+has weighted sum zero over the \(g_j\). Every entry of \(\rho\)
+is a linear combination of the monomials, so
+\(\sum_j c_j\rho(g_j)=0\). Thus \(G_g\mapsto\rho(g)\) extends
+to a well-defined linear map from \(B\) to
+\(\operatorname{End}(W)\). It respects multiplication because
+the group actions do, and sends \(G_1\) to the identity.
+This makes \(W\) a \(B\)-module. Conversely every
+\(L_\lambda(V)\ne0\) has a homogeneous polynomial action of
+degree \(n\): use the evaluation isomorphism to embed it in
+\(X\) by tensoring with a fixed nonzero vector of \(S^\lambda\).
+Composition with a fixed linear left inverse reads off
+its matrix entries from those of \(G_g\).
+
+By Theorems~\ref{res:D04} and \ref{res:D05}, \(B\) is the
+product of the full matrix algebras on these spaces. Its
+central projectors split every module into its parts for the
+single blocks. To see the structure for one block
+\(\operatorname{Mat}_{m}(\mathbb C)\), take a basis of the image
+of \(E_{11}\) in a module. For each basis vector \(w\), the
+vectors \(E_{i1}w\) form a copy of the standard module by the
+matrix unit multiplication rule. These vectors for all \(w\)
+are independent, as applying \(E_{1i}\) recovers the
+coefficients of the \(i\)-th part. They span since
+\(\sum_i E_{i1}E_{1i}=1\). Therefore the simple modules of \(B\)
+are exactly the standard modules of the occurring blocks and
+every module is a direct sum of them. Restricting to the group
+gives the required result. For \(d=0\), the general linear
+group is trivial and the only polynomials in the empty set of
+matrix entries are constants. All nonzero representations
+have degree zero, where the unique simple module is
+\(L_{\varnothing}(0)=\mathbb C\).
+\end{proof}
+
+This is the matrix-entry polynomial case of
+\cite[Theorem 4.66(i)]{etingof}. The later algebraic-group topic
+treats rational representations (allowing \(\det^{-1}\)),
+determinant twists, and algebraic Peter--Weyl
+\cite[Theorem 4.66(ii)]{etingof}.

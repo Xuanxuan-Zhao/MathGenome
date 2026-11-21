@@ -1,0 +1,51 @@
+\chapter*{Purpose, scope and reading conventions}
+\addcontentsline{toc}{chapter}{Purpose, scope and reading conventions}
+These notes organize a single-variable undergraduate analysis course by mathematical
+content rather than by copying the chapter order of one textbook. The primary
+comparison sources are Zorich I and II, Rudin, Apostol and Pugh. Tao's first
+analysis volume supplies a second foundational viewpoint; Olver is used only
+for bounded real-variable asymptotic supplements. The source register explains
+the selected scope and the original-source locations.
+
+The stable identifiers \texttt{K03.xx.name} refer to the accompanying knowledge
+registry. They identify mathematical content, not Lean declarations or a prescribed
+number of formalization tasks. A definition, a counterexample, a representation
+comparison and a theorem are different kinds of content. The main text retains
+the fourteen original core modules and five explicit supplements. Five records
+only route material to another direction: Riemann--Lebesgue and Stieltjes--measure
+interfaces, advanced asymptotics, general special functions, and general Fourier
+transform theory. Those routing records assert no unproved theorem and are not
+prerequisites of the proved D03 content.
+
+We use the standard complete ordered real field and its complex extension, along
+with elementary set theory and finite arithmetic. These are declared shared
+foundations, not newly proposed axioms for a Lean project. Consequences used by
+analysis, including completeness arguments and convergence criteria, are proved
+in the text. A separate construction of the reals by cuts or rational Cauchy
+sequences is not required to use this interface. We do not assume Lebesgue
+integration, general multidimensional change of variables, complex contour
+integration or a general ODE existence theorem in order to prove one-variable
+results.
+
+Unless stated otherwise, an interval is an interval in $\R$, a scalar belongs to
+$\R$ or $\C$, and derivatives use real increments. An exact mean-value equality
+with one intermediate point is a real-valued statement; complex-valued functions
+have a norm estimate instead. The domains of logarithms, real powers and inverse
+functions, endpoint continuity, integrability and directions of limits are part
+of each assertion. A total integral expression in a future formal library never
+replaces an integrability hypothesis.
+
+The elementary functions are built from general series and power-series results;
+the logarithm is first the inverse of the exponential. Its integral formula is
+then a comparison theorem. For this reason the exposition places general series
+before the elementary-function chapter. A few applications refer forward to
+later established functions or integration rules; these applications are not
+used to prove the foundational series or completeness results. The companion
+audit records the prerequisite choices and actual review limits.
+
+The mathematical prose and proofs are newly written syntheses. Source references
+identify comparison material; they do not mean that every theorem or exercise in
+every book has been included. Distinct useful hypotheses are kept distinct, and
+the generality of a comparison bridge is not imposed on the underlying theory.
+In particular, refinement and unrestricted mesh versions of a Stieltjes integral
+are genuinely different for some jump integrators.

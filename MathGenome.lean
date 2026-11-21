@@ -1,0 +1,32 @@
+import MathGenome.Internal.Formalized
+import MathGenome.Foundations
+import MathGenome.LinearAlgebra
+import MathGenome.AbstractAlgebra
+import MathGenome.SingleVariableAnalysis
+
+import MathGenome.MultivariableAnalysis
+import MathGenome.PointSetTopology
+import MathGenome.RealAnalysis
+import MathGenome.ComplexAnalysis
+import MathGenome.ODEDynamics
+import MathGenome.FunctionalAnalysis
+import MathGenome.FourierSobolev
+import MathGenome.AlgebraCore
+import MathGenome.SmoothManifolds
+import MathGenome.ProbabilityFoundations
+import MathGenome.VariationalMethods
+import MathGenome.LinearPDE
+import MathGenome.TopologyRiemannianGeometry
+import MathGenome.ElementaryNumberTheory
+import MathGenome.FiniteCombinatorics
+import MathGenome.ExtremalOptimization
+import MathGenome.NumericalAnalysis
+import MathGenome.DiscreteMarkovMartingales
+import MathGenome.AdvancedCommutativeAlgebra
+import MathGenome.AdvancedHomologicalAlgebra
+import MathGenome.AdvancedFieldTheory
+import MathGenome.AdvancedFiniteGroupRepresentations
+import MathGenome.LieAlgebrasAndRepresentations
+import MathGenome.LinearAlgebraSupplement
+import MathGenome.GroupTheorySupplement
+/-! MathGenome v0.3.0: audited D05, D07 and D03 extensions over fixed Mathlib. -/

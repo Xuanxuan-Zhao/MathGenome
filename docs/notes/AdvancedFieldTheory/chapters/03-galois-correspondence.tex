@@ -1,0 +1,413 @@
+\chapter{The Infinite Galois Correspondence}
+\label{ch:galois-correspondence}
+
+Throughout Sections~\ref{sec:fixed-fields}--\ref{sec:normal-quotients},
+let \(L/K\) be Galois, let \(G=\operatorname{Gal}(L/K)\) carry the Krull
+topology, and let \(G_M=\operatorname{Gal}(L/M)\) for an intermediate
+field \(M\). For a subgroup \(H\leq G\) we write
+\[
+  L^H=\{x\in L : h(x)=x\text{ for every }h\in H\}.
+\]
+This is a field between \(K\) and \(L\), since every \(h\) preserves
+addition, multiplication, and inverses of nonzero elements. We keep
+the notation \(Q_E=\operatorname{Gal}(E/K)\) and
+\(r_E:G\to Q_E\) for a finite Galois intermediate field \(E\).
+The finite fixed-field theorem applied in \(E\) will control both
+the restriction of \(L^H\) to \(E\) and the closure of \(H\) in \(G\).
+
+\section{Fixed fields and closure}
+\label{sec:fixed-fields}
+
+\begin{proposition}[The fixed field of the full group]
+\label{res:C01}
+For a Galois extension \(L/K\), the full group
+\(G=\operatorname{Gal}(L/K)\) has fixed field \(K\). More precisely,
+if \(x\in L\setminus K\), then there is a finite Galois intermediate
+field \(E\) containing \(x\) and an element of \(Q_E\) moving \(x\)
+that is the restriction of an element of \(G\).
+\end{proposition}
+
+\begin{proof}
+Choose \(E\) by \ref{res:F03}. The finite fixed-field theorem
+of \ref{res:F01} gives \(E^{Q_E}=K\), so some \(\tau\in Q_E\)
+satisfies \(\tau(x)\ne x\). Surjectivity of \(r_E\) in \ref{res:F07}
+provides \(g\in G\) with \(g|_E=\tau\). Therefore \(g(x)\ne x\).
+All elements of \(K\) are fixed by the definition of \(G\).
+\cite[Proposition 7.9]{milne}
+\end{proof}
+
+\begin{proposition}[Recovery of an intermediate field]
+\label{res:C02}
+For every intermediate field \(M\), the subgroup \(G_M\) is closed
+and \(L^{G_M}=M\).
+\end{proposition}
+
+\begin{proof}
+For \(x\in M\), the stabilizer of \(x\) in \(G\) is the inverse
+image of \(\{x\}\) under evaluation at \(x\). Evaluation is continuous
+to the discrete space \(L\) by \ref{res:T03}, so the stabilizer is
+closed. Their intersection over \(x\in M\) is \(G_M\). By \ref{res:F02}
+the extension \(L/M\) is Galois, and \ref{res:C01} with base field \(M\)
+gives \(L^{G_M}=M\).
+\cite[Proposition 7.12(a)]{milne}
+\end{proof}
+
+\begin{lemma}[Fixed fields on a finite layer]
+\label{res:C03}
+For any subgroup \(H\leq G\) and any finite Galois intermediate field
+\(E\), one has
+\[
+  L^H\cap E=E^{r_E(H)}
+  \qquad\text{and}\qquad
+  r_E(H)=\operatorname{Gal}\bigl(E/(L^H\cap E)\bigr).
+\]
+\end{lemma}
+
+\begin{proof}
+Each element \(h\in H\) preserves \(E\) because \(E/K\) is normal.
+For \(x\in E\) the condition \(h(x)=x\) for every \(h\in H\)
+is therefore the condition that each restricted automorphism in
+\(r_E(H)\) fix \(x\). This proves the first equality. The image
+\(r_E(H)\) is a subgroup of the finite Galois group \(Q_E\).
+Apply the finite correspondence of \ref{res:F01} to that subgroup
+and the intermediate field \(E^{r_E(H)}\) to obtain the second equality.
+\cite[Tag 0BML]{stacks}
+\end{proof}
+
+\begin{theorem}[Closure and the infinite Galois correspondence]
+\label{res:C04}
+For any subgroup \(H\leq G\),
+\[
+    G_{L^H}=\overline H,
+    \qquad L^{\overline H}=L^H .
+\]
+Consequently the assignments \(M\mapsto G_M\) and \(H\mapsto L^H\)
+give inverse inclusion-reversing bijections between the intermediate
+fields of \(L/K\) and the closed subgroups of \(G\).
+\end{theorem}
+
+\begin{proof}
+The group \(G_{L^H}\) is closed by \ref{res:C02} and contains \(H\),
+so it contains \(\overline H\). If \(g\in G_{L^H}\), then \(r_E(g)\)
+fixes every element of \(L^H\cap E\). By \ref{res:C03} this says that
+\(r_E(g)\in r_E(H)\). This is true for every finite Galois intermediate
+field \(E\), so the finite-projection closure criterion \ref{res:T07}
+gives \(g\in\overline H\). We have proved the first equality. In
+particular \(\overline H\) is a subgroup, and \ref{res:C02} applied
+to \(M=L^H\) gives the second equality.
+
+For a closed subgroup \(H\), the first equality now reads
+\(G_{L^H}=H\). This and \ref{res:C02} prove that the assignments
+are inverse. Enlarging an intermediate field imposes more pointwise
+fixing conditions on its subgroup. Enlarging a subgroup imposes
+more conditions on its fixed field. Thus the two inverses reverse
+inclusion.
+\cite[Proposition 7.12 and Theorem 7.13(a)]{milne}
+\cite[Theorem 2.11.3]{rz}
+\cite[Tag 0BML]{stacks}
+\end{proof}
+
+\begin{corollary}[Lattice operations and conjugation]
+\label{res:C05}
+For a family of intermediate fields \((M_i)_{i\in I}\), let
+\(\bigvee_i M_i\) be their compositum in \(L\), and put \(H_i=G_{M_i}\).
+Then
+\[
+  G_{\bigvee_i M_i}=\bigcap_i H_i,
+  \qquad
+  G_{\bigcap_i M_i}
+     =\overline{\left\langle\bigcup_i H_i\right\rangle}.
+\]
+An empty compositum is taken to be \(K\), and an empty intersection
+of intermediate fields is \(L\). For \(g\in G\) one also has
+\[
+  G_{g(M)}=gG_Mg^{-1},
+  \qquad
+  L^{gHg^{-1}}=g(L^H)\quad\text{for every }H\leq G.
+\]
+\end{corollary}
+
+\begin{proof}
+Fixing all \(M_i\) pointwise is equivalent to fixing the field they
+generate pointwise, which proves the first lattice equality. Write
+\(J=\langle\bigcup_i H_i\rangle\). An element of \(L\) is fixed by \(J\)
+exactly when it is fixed by all the \(H_i\), because a product of
+automorphisms fixing an element and their inverses still fixes the
+element. Thus \(L^J=\bigcap_i L^{H_i}=\bigcap_i M_i\) by
+\ref{res:C02}. Apply \ref{res:C04} to \(J\).
+
+An automorphism \(a\in G\) fixes all elements \(g(m)\), \(m\in M\),
+exactly when \(g^{-1}ag\) fixes every \(m\in M\). This proves the
+first conjugation formula. For the second, write a candidate element
+as \(g(x)\). Since \(ghg^{-1}(g(x))=g(h(x))\), it is fixed by all
+the conjugates of \(H\) exactly when \(x\) is fixed by \(H\).
+\cite[Theorem 7.13(c) and Remark 7.14]{milne}
+\end{proof}
+
+\section{Finite intermediate fields and cosets}
+
+\begin{theorem}[Open subgroups and finite extensions]
+\label{res:C06}
+For an intermediate field \(M\), the subgroup \(G_M\) is open if
+and only if \(M/K\) is finite. More generally, a closed subgroup
+of \(G\) is open if and only if it has finite index.
+\end{theorem}
+
+\begin{proof}
+If \(M/K\) is finite, a finite \(K\)-basis \(S\) for \(M\) generates
+\(M\) as a field over \(K\). The subgroup \(G_M\) is then the
+pointwise stabilizer of \(S\), which is open by \ref{res:T01}.
+Conversely, if \(G_M\) is open, it contains the subgroup \(N_E=G_E\)
+for some finite Galois intermediate field \(E\), by the neighborhood
+basis of \ref{res:T02}. Taking fixed fields and applying \ref{res:C02}
+gives \(M=L^{G_M}\subseteq L^{G_E}=E\). The inclusion makes \(M\)
+a \(K\)-subspace of the finite-dimensional space \(E\), so \(M/K\)
+is finite.
+
+If \(H\leq G\) is open, its left cosets are open and form a disjoint
+cover of the compact space \(G\) by \ref{res:T06}. A finite subcover
+must contain all cosets, so the index is finite. If \(H\) is closed
+of finite index, its complement is the finite union of its other
+left cosets. Each is closed because left translation is a
+homeomorphism. Thus \(H\) is open.
+\cite[Theorem 7.13(b)]{milne}
+\cite[Sections 2.1 and 2.11]{rz}
+\end{proof}
+
+\begin{proposition}[Cosets as embeddings]
+\label{res:C07}
+The restriction of automorphisms induces a bijection of sets
+\[
+  G/G_M \longrightarrow \operatorname{Emb}_K(M,L),
+  \qquad gG_M\longmapsto g|_M ,
+\]
+where \(G/G_M\) denotes the set of left cosets. In particular, if
+\(M/K\) is finite, then
+\[
+    [G:G_M]=[M:K].
+\]
+\end{proposition}
+
+\begin{proof}
+The equality \(g|_M=g'|_M\) holds if and only if
+\(g^{-1}g'\in G_M\), so the map is well-defined and injective.
+Every \(K\)-embedding \(M\to L\) extends to an element of \(G\)
+by \ref{res:F05}, giving surjectivity. For finite \(M/K\), it is
+separable by \ref{res:F02}. Choose a primitive element \(x\) by
+the finite preliminaries \ref{res:F01}. Its minimal polynomial
+over \(K\) has degree \([M:K]\), has distinct roots, and splits
+in \(L\) by normality. Each root gives exactly one \(K\)-embedding
+of \(K(x)=M\) into \(L\), proving the count. This identifies the
+degree with the coset index for every finite intermediate field,
+including those for which \(G_M\) is not normal.
+\cite[Proposition 7.4 and Theorem 7.13(b)]{milne}
+\cite[Chapters 12 and 14]{d07}
+\end{proof}
+
+\section{Normal subgroups and topological quotients}
+\label{sec:normal-quotients}
+
+\begin{corollary}[Normality in the correspondence]
+\label{res:C08}
+Let \(H\) be a closed subgroup of \(G\) with fixed field \(M\).
+Then \(H\) is normal in \(G\) if and only if \(M/K\) is Galois.
+The open normal subgroups correspond precisely to the finite
+Galois intermediate extensions of \(K\).
+\end{corollary}
+
+\begin{proof}
+By \ref{res:C04}, \(H=G_M\). For every \(g\in G\), the conjugate
+\(gG_Mg^{-1}\) equals \(G_{g(M)}\) by \ref{res:C05}.
+By injectivity of the field-to-subgroup correspondence,
+this equals \(G_M\) exactly when \(g(M)=M\). By \ref{res:F06},
+stability under all \(g\) is equivalent to the Galois condition
+on \(M/K\). An open subgroup is closed, since its complement is a
+union of open cosets, so the openness condition can be added
+using \ref{res:C06}.
+\cite[Theorem 7.13(c)--(d)]{milne}
+\cite[Tag 0BML]{stacks}
+\end{proof}
+
+\begin{theorem}[The profinite exact sequence]
+\label{res:C09}
+Suppose \(M/K\) is Galois. The inclusion and restriction maps form
+a short exact sequence of profinite topological groups
+\[
+  1\longrightarrow G_M\longrightarrow G
+   \xrightarrow{\ r_M\ }\operatorname{Gal}(M/K)
+   \longrightarrow 1 .
+\]
+In particular the induced map
+\[
+    G/G_M \longrightarrow \operatorname{Gal}(M/K),
+    \qquad gG_M\longmapsto g|_M ,
+\]
+is a topological group isomorphism for the quotient topology on
+the left and the Krull topology on the right.
+\end{theorem}
+
+\begin{proof}
+The subgroup \(G_M\) is closed and normal by \ref{res:C02}
+and \ref{res:C08}. Its own Krull topology as \(\operatorname{Gal}(L/M)\)
+is exactly the topology induced by its inclusion into \(G\), by
+\ref{res:T08}. The restriction \(r_M\) is continuous by \ref{res:T03},
+and \ref{res:F07} identifies its kernel as \(G_M\) and proves
+surjectivity. Hence it factors as a bijective homomorphism through
+the group quotient. The factor is continuous by the definition
+of the quotient topology. Its domain is compact as a continuous
+image of \(G\), and \(\operatorname{Gal}(M/K)\) is Hausdorff by
+\ref{res:T06}. A continuous bijection from a compact space to
+a Hausdorff space is a homeomorphism, since it sends closed sets
+to compact and hence closed sets. The inclusion is a topological
+embedding, and the restriction is a quotient map by this homeomorphism.
+All three groups are profinite by \ref{res:T06}, applied to
+the Galois extensions \(L/M\), \(L/K\), and \(M/K\).
+\cite[Theorem 7.13(d)]{milne}
+\cite[Theorem 2.11.3]{rz}
+\cite[Tag 0BMM]{stacks}
+\end{proof}
+
+\section{Restriction after a base change}
+
+\begin{theorem}[Galois base change in a common overfield]
+\label{res:C10}
+Let \(E\) and \(M\) be extensions of \(K\) in a common overfield,
+and suppose \(E/K\) is Galois. Then \(EM/M\) and \(E/(E\cap M)\)
+are Galois, and restriction is an isomorphism of topological groups
+\[
+  \operatorname{Gal}(EM/M)
+     \longrightarrow \operatorname{Gal}\bigl(E/(E\cap M)\bigr),
+     \qquad g\longmapsto g|_E .
+\]
+\end{theorem}
+
+\begin{proof}
+The extension \(E/(E\cap M)\) is Galois by \ref{res:F02}.
+By \ref{res:F04}, \(E\) is the directed union of its finite
+Galois intermediate fields \(E_i\) over \(K\). Each \(E_i\)
+is the splitting field of a finite collection of separable
+polynomials over \(K\): take minimal polynomials of a finite
+set of field generators and use normality to put all their
+roots in \(E_i\). Over \(M\) the same polynomials remain separable,
+and their roots generate \(E_iM\) over \(M\). Hence \(E_iM/M\)
+is finite Galois. The union of the \(E_iM\) is a field containing
+both \(E\) and \(M\), and it is contained in \(EM\), so it equals
+\(EM\). The converse direction of \ref{res:F04} now proves
+that \(EM/M\) is Galois.
+
+Every \(g\in\operatorname{Gal}(EM/M)\) is a \(K\)-automorphism and
+sends \(E\) into \(E\) by normality of \(E/K\): for \(x\in E\),
+the element \(g(x)\) is a root of the \(K\)-minimal polynomial of
+\(x\), and all those roots already belong to \(E\). The same applies
+to \(g^{-1}\), so \(g|_E\) is an automorphism fixing \(E\cap M\).
+The restriction homomorphism is injective because \(E\) and \(M\)
+generate \(EM\). For a finite subset \(S\subseteq E\), the inverse
+image of its pointwise stabilizer in the target is its pointwise
+stabilizer in the source, which is open by \ref{res:T01}.
+Thus the homomorphism is continuous at the identity and hence
+everywhere.
+
+Let \(H\) denote its image. The source is compact and the target
+is Hausdorff by \ref{res:T06}, so \(H\) is closed. An element of
+\(E\) is fixed by \(H\) exactly when it is fixed by every
+element of \(\operatorname{Gal}(EM/M)\). By \ref{res:C01},
+the latter group fixes precisely \(M\) in \(EM\). It follows that
+\(E^H=E\cap M\). Apply \ref{res:C04} to the Galois extension
+\(E/(E\cap M)\) and its closed subgroup \(H\) to obtain
+\(H=\operatorname{Gal}(E/(E\cap M))\). Restriction is now a
+continuous bijection from compact to Hausdorff as in \ref{res:C09},
+and therefore is a homeomorphism.
+\cite[Proposition 7.15]{milne}
+\cite[Chapter 14, finite base change]{d07}
+\end{proof}
+
+\section{Fixed fields of compact groups and realization}
+
+\begin{theorem}[Fixed fields of faithful compact actions]
+\label{res:C11}
+Let \(G\) be a compact topological group acting faithfully by field
+automorphisms on a field \(E\). Suppose the stabilizer of every
+element of \(E\) is open in \(G\). Put \(K=E^G\). Then \(E/K\)
+is Galois, and the homomorphism induced by the action
+\[
+ G \longrightarrow \operatorname{Gal}(E/K)
+\]
+is an isomorphism of topological groups, with the Krull topology
+on the right.
+\end{theorem}
+
+\begin{proof}
+The orbit of \(a\in E\) is in bijection with the left cosets of its
+stabilizer. These cosets are open and cover the compact space \(G\).
+A finite subcover therefore accounts for every coset, so every
+orbit is finite.
+
+For a finite set \(S\subseteq E\), let \(E_S\) be the field generated
+over \(K\) by all the \(G\)-orbits of elements of \(S\). The
+generator set is finite and \(G\)-stable. Hence \(G\) acts on
+\(E_S\) through a finite group \(H_S\) of field automorphisms:
+the action on the generator set determines the restriction to
+the whole field. The fixed field of \(H_S\) in \(E_S\) is exactly
+\(K\), since an element of \(E_S\) fixed by \(H_S\) is fixed by
+all of \(G\). Artin's finite fixed-field theorem, in
+\cite[Chapter 14, Artin's fixed-field theorem]{d07} and
+\cite[Corollary 3.11]{milne}, now gives that \(E_S/K\) is
+finite Galois and that \(H_S=\operatorname{Gal}(E_S/K)\).
+In particular the restricted action of \(G\) fills this entire
+finite Galois group.
+
+The fields \(E_S\) are directed since \(E_{S\cup T}\) contains
+both \(E_S\) and \(E_T\), and their union is \(E\). The converse
+in \ref{res:F04} makes \(E/K\) Galois. Any finite Galois
+intermediate field is generated by finitely many elements over
+\(K\), so it is contained in some \(E_S\).
+
+The homomorphism \(G\to\operatorname{Gal}(E/K)\) is injective
+by faithfulness. It is continuous because the inverse image of
+a basic pointwise stabilizer on a finite set is an intersection
+of finitely many open stabilizers in \(G\), using
+\ref{res:T01}. Its image is dense: given an automorphism of
+\(E/K\) and any finite set \(S\) on which to match it, take its
+restriction to \(E_S\). The equality
+\(H_S=\operatorname{Gal}(E_S/K)\) provides an element of \(G\)
+with that restriction. This meets each Krull neighborhood of the
+given automorphism. The image is also compact, hence closed in
+the Hausdorff group of \ref{res:T06}. It is therefore the whole
+group. A continuous bijection from compact to Hausdorff is a
+homeomorphism, as in \ref{res:C09}.
+\cite[Proposition 7.10]{milne}
+\end{proof}
+
+\Needspace{16\baselineskip}
+\begin{corollary}[Tate's realization theorem]
+\label{res:C12}
+Every profinite group \(G\) is isomorphic, as a topological
+group, to \(\operatorname{Gal}(E/K)\) for some Galois extension
+\(E/K\). The fields can be constructed in any specified
+characteristic.
+\end{corollary}
+
+\begin{proof}
+Let \(X\) be the disjoint union of the sets \(G/U\) over the open
+normal subgroups \(U\) of \(G\). Such subgroups have finite
+index by compactness. The left translation action on \(X\) is
+faithful: the kernel on \(G/U\) is \(U\), and the intersection
+of the open normal subgroups is trivial. Indeed, in an inverse
+limit presentation of \(G\), the finite-coordinate kernels
+are open and normal and separate points. Every point of \(X\)
+has open stabilizer, because \(U\) fixes each point of the
+corresponding component.
+
+Choose a field \(k\) of the desired characteristic and put
+\(E=k(t_x:x\in X)\), the rational function field in independent
+indeterminates indexed by \(X\). The rule
+\(t_x\mapsto t_{g x}\) permutes the variables and extends
+to a \(k\)-automorphism for each \(g\in G\). These
+automorphisms form a faithful action. A rational function
+involves only finitely many variables. Its stabilizer contains
+the intersection of their point stabilizers, an open subgroup,
+and is therefore open as a union of cosets of that subgroup.
+Apply \ref{res:C11} to this action, with \(K=E^G\).
+The construction specifies \(K\) as a fixed field of \(E\).
+\cite[Proposition 7.27]{milne}
+\end{proof}

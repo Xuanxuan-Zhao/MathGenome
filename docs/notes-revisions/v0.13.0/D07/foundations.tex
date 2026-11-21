@@ -1,0 +1,130 @@
+\chapter{Foundations and conventions}
+\label{chap:foundations}
+\section{Declared prior mathematics}
+We use elementary logic, sets, maps, equivalence relations, quotients of sets,
+induction and finite counting. The axiom of choice, in the form of Zorn's
+lemma, is available when constructing bases or algebraic closures. A finite
+set has its usual natural-number cardinality. Infinite cardinalities are
+not replaced by a default natural number.
+
+The systems $\N,\Z,\Q,\R,\C$ and elementary arithmetic are prior
+foundations. We use the well-ordering of $\N$, integer division with
+remainder, and the usual ordered-field properties of $\R$. Algebraic
+statements about divisibility, principal ideals and polynomial factorization
+are established in the relevant chapters. The elementary integer facts
+needed before those chapters have the following independent proofs.
+
+\begin{theorem}[Integer arithmetic]\label{thm:integer-arithmetic}
+Integers $a,b$, not both zero, have a positive gcd $d$ expressible as
+$d=xa+yb$ with $x,y\in\Z$. A positive prime dividing a product
+divides one factor. Every positive integer has a unique factorization
+into positive primes, up to their order.
+\end{theorem}
+\begin{proof}
+The positive integer linear combinations of $a,b$ form a nonempty
+subset of $\N$: one of $a,-a,b,-b$ is positive. Choose its least
+member $d=xa+yb$. Divide $a=qd+r$ with $0\le r<d$. The remainder
+is another integer combination of $a,b$, so minimality forces $r=0$.
+Division of $b$ gives the same conclusion. Every common divisor of
+$a,b$ divides $d$, proving the gcd and Bezout assertions. For $a=b=0$
+use gcd zero. If a positive prime $p$ does not divide $a$, its gcd
+with $a$ is one, since a positive divisor of $p$ is one or $p$.
+A Bezout equation $xp+ya=1$, multiplied by $b$, shows that
+$p\mid ab$ then implies $p\mid b$. This proves the prime-product
+assertion. Strong induction factors every integer $n>1$: if it is
+not prime, write it as the product of two positive integers strictly
+between one and $n$, and factor each. For uniqueness, a prime in one
+factorization divides a prime in the other by repeated application
+of the product assertion, so they are equal. Cancel the common
+nonzero factor and induct. The integer one has the empty
+factorization; no positive-prime factorization is assigned to zero.
+\end{proof}
+
+The D05 linear-algebra foundation comprises vector spaces over a field,
+bases, linear maps, subspaces, quotients, finite-dimensional dimension
+identities, matrices, determinants, characteristic polynomials and trace.
+Its fixed mathematical source is the completed D05 unified notes; its
+accepted formal library is MathGenome v0.1.1. We recall the particular
+facts needed below so that a proof invoking one has a precise meaning.
+
+\begin{theorem}[Linear-algebra foundation]\label{thm:linear-foundation}
+Let $K$ be a field.
+\begin{enumerate}[label=(\roman*)]
+\item Every linearly independent subset of a vector space extends to a
+basis. Consequently every subspace has a linear complement and every
+surjective linear map admits a linear section.
+\item For $T:V\to W$, the induced map $V/\ker T\to\im T$ is a linear
+isomorphism. In finite dimension,
+$\dim V=\dim\ker T+\dim\im T$.
+\item For $U\leq V$ in finite dimension,
+$\dim V=\dim U+\dim(V/U)$; a proper subspace has smaller dimension.
+An endomorphism is injective if and only if it is surjective.
+\item For finite square matrices, $\det(AB)=\det A\det B$,
+$\Tr(AB)=\Tr(BA)$, and determinants and traces are invariant under
+change of basis. Trace is additive on block diagonal matrices.
+\item A nonzero finite-dimensional vector space over an
+algebraically closed field has the usual eigenvalue property: for every
+$T\in\End_K(V)$ with $V\ne0$, some $\lambda\in K$ makes
+$T-\lambda\id$ noninjective.
+\end{enumerate}
+\end{theorem}
+These are declared prior results, not new assertions left for an abstract
+algebra proof to establish. For clarity, the last item follows from the
+nonconstant characteristic polynomial: choose a root $\lambda$ and use
+$\det(T-\lambda I)=0$. The general basis assertion also has a short
+set-theoretic construction. Order independent supersets of a given
+independent set by inclusion. A union of a chain is independent because
+each finite linear relation lies in one member of the chain. Zorn gives
+a maximal independent set; a vector outside its span could be adjoined,
+so it spans. Extending a subspace basis gives a complement and the
+corresponding projection.
+
+We distinguish an algebraically closed field in algebraic statements from
+the analytic realization $\C$. Its algebraic closedness is proved internally by the algebraic
+fundamental theorem of algebra in Appendix~\ref{app:algebraic-fta}.
+That proof uses the abstract algebraic-closure construction, finite Galois
+theory and the real intermediate value theorem; it does not assume
+complex algebraic closedness or the transcendence appendix. The intermediate value theorem and Rolle's
+theorem for real polynomials are declared prior real-calculus facts;
+they are used to count real roots in the explicit Galois examples.
+Geometric applications use the usual Euclidean coordinate distance,
+equations of lines and circles, and the circle-area formula $\pi r^2$;
+the constructions needed beyond those formulas are proved explicitly.
+The circle-squaring application uses the
+special transcendence theorem proved in Appendix~\ref{app:pi-transcendence}.
+That appendix uses the elementary exponential, Euler's identity and the
+real fundamental theorem of calculus, all declared prior analytic facts;
+it does not take a transcendence theorem as a premise. These analytic
+ingredients are kept distinct from the algebraic constructibility criterion.
+
+\section{Notation that changes mathematical meaning}
+Groups are multiplicative unless additive notation is stated. For
+permutations, $(\sigma\tau)(x)=\sigma(\tau(x))$. Subgroups use the
+inherited identity. Quotient-group operations require normality.
+All rings in the main unqualified track are associative with a two-sided
+identity. The zero ring is permitted; a field or domain is nontrivial.
+Ring homomorphisms preserve the identity. A noncommutative quotient by
+an ideal requires a two-sided ideal. A prime or maximal ideal is proper.
+
+A polynomial is a formal finite coefficient sequence, not its evaluation
+function. Its zero degree is $-\infty$ when a degree with a bottom value
+is needed; statements involving an ordinary natural-number degree specify
+the zero case separately. A factorization is unique up to units and order
+until a normalization is imposed.
+
+An extension $L/K$ includes a chosen embedding and scalar action. Several
+extensions in a tower use compatible embeddings. Finite degree means
+finite vector-space dimension, not a finite underlying set. A splitting
+field or algebraic closure is unique up to an appropriate isomorphism,
+not literal equality of unrelated types.
+
+\section{How to read a proof dependency}
+References to labels in these notes carry the exact statement and
+hypotheses at that label. Use of a prior linear-algebra fact means
+Theorem~\ref{thm:linear-foundation} or an explicitly identified D05
+result. Standard set-theoretic constructions use the first section of
+this chapter. All other algebraic prerequisites are developed in the
+manuscript. A result stated later may be cited earlier only as a
+forward reference in exposition; its proof must not depend back on the
+result that invokes it. The accompanying dependency review checks that
+such references do not form a proof cycle.

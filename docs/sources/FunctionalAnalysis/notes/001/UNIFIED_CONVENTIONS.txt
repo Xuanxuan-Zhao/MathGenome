@@ -1,0 +1,22 @@
+D16 expanded Functional Analysis -- unified conventions
+
+Work over R or C where stated. Hilbert inner products are conjugate-linear in
+the first argument and linear in the second. X' is the continuous scalar-linear
+dual; the antidual is separate. Banach transposes and Hilbert adjoints must not
+be conflated. Form equations use conjugate-linear testing and linear unknowns.
+Unbounded operators include exact domains, adjoint domains and product domains.
+Resolvents are (lambda I - A)^(-1), unitary groups exp(itA). Fourier transforms
+use the explicitly stated 2pi convention; the Weyl chapter also spells out its
+angular-frequency normalization. Preserve arbitrary-measure versus sigma-finite,
+nonseparable versus separable, empty/zero cases, positivity notions and endpoint
+compatibilities. The manuscript's precise stated hypotheses take precedence.
+
+Use native Mathlib and the fixed MathGenome v0.8.0 public interfaces where their
+actual types match; prove representation bridges explicitly. Existing D16 code
+is supplied as unaccepted source, including independent Specs. It must pass the
+normal checks; no historical acceptance is transferred. Do not weaken the new
+mathematics to fit an old interface. Correct equivalent proofs are allowed.
+
+Authorized dimensional clarification at fa2:p4:maximal: only the negative strong-L1 endpoint is a positive-dimensional statement. Euclidean dimension zero remains included in the maximal definition, affirmative estimates and differentiation; its volume is the unit point mass. See AUTHORIZED_SOURCE_ERRATA.txt.
+
+Authorized local boundary corrections 20261105-six-boundary-errata are in AUTHORIZED_SOURCE_ERRATA.txt. There is no blanket d>=1 or T>0 convention: apply only each identified clause's actual scope. Retain affirmative zero-dimensional results and unrelated fixed-initial-data evolution cases. Valid equivalent proofs remain allowed; proof-internal point-mass additivity/nonzero-mean divergence are not extra principal results.

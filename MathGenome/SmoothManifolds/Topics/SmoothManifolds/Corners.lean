@@ -1,0 +1,5 @@
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Corners.FaceOrientations
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Corners.LocalAndResolvedGeometry
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Corners.Products
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Corners.Stokes
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Corners.StructureAndFaces

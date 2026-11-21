@@ -1,0 +1,196 @@
+\chapter{Witt theory of quadratic spaces}
+\label{ch:la01-witt}
+
+Throughout this chapter \(k\) is a field with
+\(\operatorname{char} k\ne 2\), and the ambient quadratic spaces are
+finite dimensional and nondegenerate. For a quadratic form \(q\) we
+use the symmetric bilinear form
+\[
+  B(x,y)=\frac{q(x+y)-q(x)-q(y)}{2},
+  \qquad q(x)=B(x,x).
+\]
+Nondegeneracy means that \(B\) has zero radical. An isometry is a
+linear isomorphism preserving \(q\), equivalently \(B\). We write
+\(\perp\) for an orthogonal direct sum and \(\langle a\rangle\) for
+the line with form \(x\mapsto ax^2\). These conventions agree with
+the polarization and diagonalization of the archived notes
+\cite[11.polarization and 11.diagonal\_congruence]{d05}.
+
+For a subspace \(U\subseteq V\), write
+\(U^\perp=\{x\in V:B(x,U)=0\}\).
+When the restriction to \(U\) is nondegenerate, the decomposition
+\(V=U\perp U^\perp\) is the symmetric case of the projection argument
+in \cite[11.nondegenerate]{d05}. In fact, for \(v\in V\), the
+restriction \(B(v,-)|_U\) has a unique representative \(u\in U\)
+under \(U\cong U^*\) via \(B|_U\). Thus \(v-u\in U^\perp\).
+The restriction to \(U^\perp\) is nondegenerate because a vector
+orthogonal to both summands belongs to the radical of \(V\).
+
+\section{Isotropic vectors and hyperbolic planes}
+
+A nonzero vector \(e\) is \emph{isotropic} if \(q(e)=0\).
+A space is \emph{anisotropic} when its only vector of value zero is
+the zero vector, so the zero space is anisotropic. A subspace \(T\)
+is \emph{totally isotropic} if \(q|_T=0\); by polarization this is
+equivalent to \(B|_{T\times T}=0\). The hyperbolic plane \(H\) is
+\(k^2\) with \(q_H(x,y)=xy\), equivalently
+\(\langle 1\rangle\perp\langle -1\rangle\) by the invertible
+change \((s,t)\mapsto(s+t,s-t)\).
+
+\begin{lemma}[LA01-C06.01. Splitting a hyperbolic plane]
+\label{lem:la01-hyperbolic-splitting}
+If \(e\in V\) is isotropic, there is an isotropic vector \(f\)
+with \(2B(e,f)=1\). Then \(P=ke+kf\) is isometric to \(H\) and
+\(V=P\perp P^\perp\) with \(P^\perp\) nondegenerate.
+\end{lemma}
+
+\begin{proof}
+Nondegeneracy and \(e\ne 0\) give a vector pairing nontrivially
+with \(e\). Scale it to \(f_0\) with \(2B(e,f_0)=1\), and put
+\(f=f_0-q(f_0)e\). The identities
+\[
+  2B(e,f)=1,\qquad
+  q(f)=q(f_0)-2q(f_0)B(e,f_0)+q(f_0)^2q(e)=0
+\]
+show that \(e,f\) are independent and \(q(se+tf)=st\).
+Their Gram matrix has diagonal zero and off-diagonal entries
+\(1/2\), so the restriction to \(P\) is nondegenerate. Apply the
+orthogonal splitting for a nondegenerate restriction.
+\end{proof}
+
+\section{Reflections and cancellation}
+
+\begin{lemma}[LA01-C06.02. Moving vectors of the same nonzero value]
+\label{lem:la01-reflections}
+For \(w\in V\) with \(q(w)\ne 0\), the reflection
+\[
+  s_w(x)=x-\frac{2B(x,w)}{q(w)}\,w
+\]
+is an isometry. If \(u,v\in V\) satisfy
+\(q(u)=q(v)=a\ne 0\), an isometry sending \(u\) to \(v\)
+can be chosen as a product of at most two reflections.
+\end{lemma}
+
+\begin{proof}
+The orthogonal decomposition \(V=kw\perp(kw)^\perp\) shows
+that \(s_w\) negates the \(kw\) coordinate and fixes
+\((kw)^\perp\). It is therefore an involution and preserves \(q\).
+If \(q(u-v)\ne 0\), then \(2B(u,u-v)=q(u-v)\), so
+\(s_{u-v}(u)=v\). Otherwise
+\[
+  q(u+v)=2q(u)+2q(v)-q(u-v)=4a\ne 0.
+\]
+In this case \(2B(u,u+v)=q(u+v)\), so \(s_{u+v}(u)=-v\).
+The reflection \(s_v\) sends \(-v\) to \(v\). This second case
+also works when \(u=v\).
+\end{proof}
+
+\begin{theorem}[LA01-C06.03. Witt cancellation]
+\label{thm:la01-witt-cancellation}
+Let \(U,V,W\) be nondegenerate quadratic spaces. If
+\(U\perp W\cong V\perp W\), then \(U\cong V\).
+The same conclusion holds when the copies of \(W\) are
+replaced by two isometric nondegenerate spaces.
+\end{theorem}
+
+\begin{proof}
+First let \(W=ke\) with \(q(e)=a\ne 0\). For an isometry
+\(F:U\perp W\to V\perp W\), the vectors \(F(e)\) and the
+specified \(e\) in the target both have value \(a\).
+By Lemma~\ref{lem:la01-reflections} there is a target isometry
+\(s\) sending \(F(e)\) to the target \(e\). The isometry \(sF\)
+then carries the orthogonal complement of the source line to
+the orthogonal complement of the target line. These
+complements are \(U\) and \(V\).
+
+For arbitrary \(W\), take an orthogonal basis by
+\cite[11.diagonal\_congruence]{d05}. Nondegeneracy makes every
+diagonal coefficient nonzero. Cancel the lines one at a time
+by the preceding argument. When \(W=0\), the given isometry is
+already the desired isometry. For two isometric copies of
+\(W\), identify them by their given isometry before cancelling.
+\end{proof}
+
+\section{Witt decomposition and Witt index}
+
+\begin{theorem}[LA01-C06.04. Witt decomposition and uniqueness]
+\label{thm:la01-witt-decomposition}
+There is an isometry
+\[
+  V\cong H^{\perp r}\perp A
+\]
+for an integer \(r\ge 0\) and an anisotropic space \(A\). The
+integer \(r\) and the isometry class of \(A\) depend only on \(V\).
+We call \(A\) the anisotropic part and \(r\) the Witt index.
+Here \(H^{\perp 0}=0\).
+\end{theorem}
+
+\begin{proof}
+If \(V\) is anisotropic, take \(r=0\). Otherwise split off a
+hyperbolic plane by Lemma~\ref{lem:la01-hyperbolic-splitting} and
+repeat in its nondegenerate complement. The dimension drops by
+two at each step, so this process ends with an anisotropic
+remainder, possibly zero.
+
+For another decomposition \(H^{\perp s}\perp A'\), assume
+\(r\le s\) after exchanging the two decompositions if needed.
+Witt cancellation (Theorem~\ref{thm:la01-witt-cancellation})
+gives \(A\cong H^{\perp(s-r)}\perp A'\). If \(s-r>0\), the
+right side has a nonzero isotropic vector, contradicting
+anisotropy of \(A\). Thus \(r=s\) and \(A\cong A'\).
+\end{proof}
+
+\begin{proposition}[LA01-C06.05. Totally isotropic subspaces and the Witt index]
+\label{prop:la01-witt-index}
+Let \(T\subseteq V\) be totally isotropic of dimension \(m\).
+There is an orthogonal sum of \(m\) hyperbolic planes in \(V\)
+whose chosen first isotropic basis vectors span \(T\).
+Consequently \(m\le r\), and \(r\) is the maximum dimension of a
+totally isotropic subspace. Every totally isotropic subspace
+maximal by inclusion has dimension \(r\).
+\end{proposition}
+
+\begin{proof}
+For \(m=0\) take the empty sum. For \(m>0\), choose
+\(e\in T\setminus\{0\}\) and use
+Lemma~\ref{lem:la01-hyperbolic-splitting} to write
+\(V=P\perp P^\perp\) with \(P=ke+kf\) and \(2B(e,f)=1\).
+For \(t\in T\), total isotropy gives \(B(t,e)=0\). The vector
+\[
+  t-2B(t,f)e
+\]
+also pairs to zero with \(f\), so it lies in \(T\cap P^\perp\).
+Thus \(T=ke\oplus(T\cap P^\perp)\). Apply the induction
+hypothesis to this \((m-1)\)-dimensional subspace inside the
+nondegenerate space \(P^\perp\). This produces the claimed \(m\)
+planes, with a nondegenerate orthogonal complement \(C\).
+
+Decompose \(C\) by Theorem~\ref{thm:la01-witt-decomposition}.
+Uniqueness gives \(r=m\) plus the Witt index of \(C\), hence
+\(m\le r\). The span of one isotropic coordinate vector in each
+of the \(r\) planes in a Witt decomposition has dimension \(r\).
+If \(T\) is maximal by inclusion, \(C\) is anisotropic, since an
+isotropic line in \(C\) could be adjoined orthogonally to \(T\).
+Then the Witt index of \(C\) is zero and \(m=r\).
+\end{proof}
+
+For the general theory, see \cite[Ch.~II, Secs.~7--8]{witt-source}.
+
+\begin{example}[LA01-C06.06. A Witt index that increases after extending scalars]
+\label{ex:la01-witt-base-change}
+On \(\mathbb{Q}^4\) take \(q(x,y,u,v)=xy+u^2-2v^2\).
+The last two coordinates form a nondegenerate plane with no
+nonzero isotropic vector. Indeed, \(u^2=2v^2\) with \(v\ne 0\)
+would make \(2\) a rational square: writing \(u/v=a/b\) in
+lowest terms would give \(a^2=2b^2\), forcing both \(a\) and
+\(b\) even. If \(v=0\), then \(u=0\). The displayed form is
+therefore \(H\) plus an anisotropic plane, and its Witt index
+over \(\mathbb{Q}\) is \(1\).
+
+Over \(\mathbb{Q}(\sqrt{2})\) the change
+\((u,v)\mapsto(u+\sqrt{2}v,u-\sqrt{2}v)\) is invertible and
+turns \(u^2-2v^2\) into a product of the two new coordinates.
+That plane becomes hyperbolic, so the Witt index after extension
+is \(2\). Both computations use
+Theorem~\ref{thm:la01-witt-decomposition}.
+\end{example}

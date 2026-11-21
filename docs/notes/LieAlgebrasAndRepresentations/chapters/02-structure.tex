@@ -1,0 +1,509 @@
+\chapter{Solvability, nilpotence, and semisimplicity}
+\label{ch:structure}
+
+\section{Common invariant vectors}
+
+Throughout this chapter the Lie algebras and the spaces acted on
+are finite dimensional. Engel's theorem is valid over any field.
+Lie's theorem and the structure theorems that follow it use
+characteristic zero.
+
+\begin{theorem}[Engel]\label{res:B01}
+Let \(0\ne V\) and let \(\mathfrak a\subseteq\mathfrak{gl}(V)\)
+be a Lie subalgebra every element of which is a nilpotent
+endomorphism. There exists \(0\ne v\in V\) with \(\mathfrak a v=0\).
+There is a basis in which all elements of \(\mathfrak a\) are
+strictly upper triangular.
+
+A finite-dimensional Lie algebra \(\mathfrak g\) is nilpotent
+if and only if \(\operatorname{ad}x\) is nilpotent for every
+\(x\in\mathfrak g\).
+\end{theorem}
+
+\begin{proof}
+Induct on \(\dim\mathfrak a\) to prove the common-kernel
+assertion for every representation by nilpotent operators.
+The zero algebra is immediate. Choose a maximal proper
+subalgebra \(\mathfrak b\) of a nonzero \(\mathfrak a\).
+For \(b\in\mathfrak b\), nilpotence of \(b\) on \(V\)
+implies nilpotence of \(\operatorname{ad}b\) on
+\(\operatorname{End}(V)\): if \(b^N=0\), expand
+\((L_b-R_b)^{2N-1}\) and use commutativity of \(L_b,R_b\).
+Its induced action on \(\mathfrak a/\mathfrak b\) is
+therefore nilpotent. The acting image has dimension at most
+\(\dim\mathfrak b<\dim\mathfrak a\), so induction gives
+an \(x\notin\mathfrak b\) with
+\([\mathfrak b,x]\subseteq\mathfrak b\).
+The subspace \(\mathfrak b+kx\) is a subalgebra.
+Maximality implies it is all of \(\mathfrak a\); hence
+\(\mathfrak b\) is an ideal of codimension one.
+
+Induction on \(\mathfrak b\) acting on \(V\) gives
+\(W=\{v:\mathfrak b v=0\}\ne0\).
+For \(v\in W\) and \(b\in\mathfrak b\),
+\(b(xv)=x(bv)+[b,x]v=0\), so \(W\) is \(x\)-stable.
+The nilpotent operator \(x|_W\) has a nonzero kernel.
+A vector in that kernel is killed by all of \(\mathfrak a\).
+Applying the assertion on successive quotients by the
+resulting one-dimensional invariant subspaces gives a full
+flag on which every diagonal action is zero. This is the
+strict triangularization.
+
+If \(\gamma_{c+1}\mathfrak g=0\), each
+\((\operatorname{ad}x)^c\) is zero. Conversely, apply strict
+triangularization to the adjoint image on \(\mathfrak g\).
+The product of \(\dim\mathfrak g\) strictly upper triangular
+operators is zero. Such products span the iterated brackets
+defining the lower central series, so that series terminates.
+\end{proof}
+
+\begin{lemma}[The cyclic-space calculation]\label{supp:cyclic-weight}
+Assume characteristic zero. Let \(\mathfrak b\) be an ideal
+of \(\mathfrak b+kx\), and suppose \(0\ne v\in V\) satisfies
+\(bv=\lambda(b)v\) for all \(b\in\mathfrak b\).
+The space \(W=k[x]v\) is stable under both \(x\) and
+\(\mathfrak b\), and each \(b\) has the constant diagonal
+\(\lambda(b)\) on \(W\). Moreover,
+\(\lambda([x,\mathfrak b])=0\), and the entire common
+\(\lambda\)-eigenspace of \(\mathfrak b\) is \(x\)-stable.
+\end{lemma}
+
+\begin{proof}
+For every \(b\), induction on \(j\), using
+\(bx^jv=x(bx^{j-1}v)+[b,x]x^{j-1}v\), gives
+\[
+ bx^jv-\lambda(b)x^jv
+       \in\operatorname{span}(v,xv,\ldots,x^{j-1}v).
+\]
+The induction is simultaneous for all \(b\), since
+\([b,x]\in\mathfrak b\).
+Let \(m\) be the first integer for which \(x^mv\)
+depends on earlier powers. The first \(m\) powers form
+a basis of \(W\), proving stability and the diagonal claim.
+Since the trace of a commutator on the invariant space \(W\)
+is zero,
+\[
+ 0=\operatorname{tr}_W[x,b]=m\lambda([x,b]).
+\]
+Characteristic zero gives the asserted vanishing.
+If \(w\) is any common \(\lambda\)-eigenvector, then
+\(b(xw)=\lambda(b)xw+[b,x]w=\lambda(b)xw\).
+This proves stability of the full eigenspace.
+\end{proof}
+
+\begin{theorem}[Lie's theorem]\label{res:B02}
+Let \(k\) be algebraically closed of characteristic zero.
+A nonzero representation of a solvable Lie algebra
+\(\mathfrak a\) has a common eigenvector. Every such
+representation admits a common upper triangular basis.
+In particular, its irreducible representations are
+one dimensional.
+\end{theorem}
+
+\begin{proof}
+Induct on \(\dim\mathfrak a\). For a nonzero solvable
+algebra, \([\mathfrak a,\mathfrak a]\ne\mathfrak a\);
+a hyperplane \(\mathfrak b\) containing the derived algebra
+is an ideal. Write \(\mathfrak a=\mathfrak b+kx\).
+Induction gives a common \(\mathfrak b\)-eigenvector and
+its character \(\lambda\).
+By Lemma~\ref{supp:cyclic-weight}, the common eigenspace
+\(V_\lambda\ne0\) is \(x\)-stable. Algebraic closure
+supplies an eigenvector of \(x|_{V_\lambda}\).
+It is a common eigenvector of \(\mathfrak a\).
+Now induct on \(\dim V\), applying the assertion to the
+quotient by its eigenline. Lifting the quotient flag
+produces a common triangular basis. An irreducible
+module must equal its invariant eigenline.
+\end{proof}
+
+One consequence needed later is worth proving now. If
+\(\mathfrak r\) is a solvable ideal of an arbitrary
+\(\mathfrak g\), and \(V\) is an irreducible
+\(\mathfrak g\)-module over an algebraically closed
+characteristic-zero field, then \(\mathfrak r\) acts by
+scalars and \([\mathfrak g,\mathfrak r]\) acts by zero.
+Indeed, choose a common \(\mathfrak r\)-eigenvector.
+For every \(x\in\mathfrak g\), the cyclic-space lemma for
+\(\mathfrak r+kx\) proves
+\(\lambda([x,\mathfrak r])=0\) and stability of the same
+nonzero eigenspace. It is consequently a
+\(\mathfrak g\)-submodule, and therefore is all of \(V\).
+
+\section{Jordan decomposition and the trace criterion}
+
+\begin{proposition}[Jordan decomposition and derivations]
+\label{res:B03}
+Over a characteristic-zero field every \(A\in\operatorname{End}(V)\)
+has a unique decomposition
+\[
+ A=A_s+A_n,\qquad [A_s,A_n]=0,
+\]
+where \(A_s\) is semisimple after scalar extension and
+\(A_n\) is nilpotent. Both are polynomials in \(A\).
+Every \(A\)-stable subspace is stable under both parts.
+If \(A=D\) is a derivation of a Lie algebra, then both
+\(D_s,D_n\) are derivations.
+\end{proposition}
+
+\begin{proof}
+Over a splitting field, decompose \(V=\bigoplus V_\lambda\)
+into generalized eigenspaces. Choose, by the Chinese
+remainder theorem, \(P(t)\) with
+\(P(t)\equiv\lambda\pmod{(t-\lambda)^N}\) for every
+eigenvalue, where \(N\) is large enough.
+Then \(P(A)\) is \(\lambda\) times the identity on
+\(V_\lambda\), and \(A-P(A)\) is nilpotent there.
+The polynomial can be uniquely chosen modulo the minimal
+polynomial of \(A\); its interpolation data are Galois
+invariant. In characteristic zero the splitting field is
+separable, so this representative has coefficients in \(k\).
+
+For uniqueness, a second commuting decomposition commutes
+with \(A\), hence with its polynomial parts. The difference
+of the two semisimple parts then equals the opposite
+difference of the nilpotent parts. The former is
+semisimple (simultaneously diagonalize the commuting
+semisimple operators), while the latter is nilpotent
+(expand a sufficiently high power of commuting nilpotents).
+Both differences are therefore zero. Polynomial expressions
+also prove the assertion about invariant subspaces.
+
+Suppose \(D\) is a derivation. For generalized eigenvectors
+\(u\in V_\lambda,v\in V_\mu\), the derivation rule gives
+\[
+ (D-\lambda-\mu)^N[u,v]
+ =\sum_{i+j=N}\binom Ni[(D-\lambda)^iu,(D-\mu)^jv].
+\]
+For large \(N\) every term is zero, so
+\([V_\lambda,V_\mu]\subseteq V_{\lambda+\mu}\).
+Consequently
+\[
+ D_s[u,v]=(\lambda+\mu)[u,v]
+          =[D_su,v]+[u,D_sv].
+\]
+By bilinearity this holds everywhere. Thus \(D_s\) is a
+derivation, and so is \(D_n=D-D_s\). The identities descend
+from the splitting field.
+\end{proof}
+
+\begin{theorem}[Cartan's trace criterion]\label{res:B04}
+For a Lie subalgebra \(\mathfrak a\subseteq\mathfrak{gl}(V)\)
+over a characteristic-zero field, the following are equivalent:
+\[
+ \mathfrak a\text{ is solvable},\qquad
+ \operatorname{tr}(xy)=0
+ \quad(x\in[\mathfrak a,\mathfrak a],\ y\in\mathfrak a).
+ \tag{2.1}\label{eq:trace-criterion}
+\]
+In particular, with
+\(K_{\mathfrak g}(x,y)=
+\operatorname{tr}_{\mathfrak g}(\operatorname{ad}x\operatorname{ad}y)\),
+an abstract algebra is solvable if and only if
+\(K_{\mathfrak g}([\mathfrak g,\mathfrak g],\mathfrak g)=0\).
+\end{theorem}
+
+\begin{proof}
+Extension to an algebraic closure preserves traces,
+brackets, and vanishing of a term of the derived series.
+We may therefore assume \(k\) algebraically closed.
+For the forward implication apply Lie's theorem:
+derived matrices are strictly upper triangular and the
+other matrices upper triangular, so their product has zero
+diagonal.
+
+Conversely, fix \(x\in[\mathfrak a,\mathfrak a]\), with
+distinct eigenvalues \(\lambda_1,\ldots,\lambda_m\) and
+generalized eigenspace dimensions \(d_1,\ldots,d_m\).
+Let \(E\) be their finite-dimensional rational span in \(k\)
+and choose any rational linear map \(b:E\to\mathbb Q\).
+Let \(B\) act by \(b(\lambda_i)\) on the generalized
+\(\lambda_i\)-eigenspace of \(x\). We claim
+\[
+ \operatorname{ad}B=R(\operatorname{ad}x)
+ \quad\text{for a polynomial }R\text{ with }R(0)=0.
+ \tag{2.2}\label{eq:cartan-polynomial}
+\]
+Indeed, \(\operatorname{ad}x_s\) has eigenvalues
+\(\lambda_i-\lambda_j\) on the corresponding Hom blocks.
+Interpolation gives a polynomial \(Q\) with
+\(Q(\lambda_i-\lambda_j)=b(\lambda_i)-b(\lambda_j)\)
+and \(Q(0)=0\). Thus
+\(\operatorname{ad}B=Q(\operatorname{ad}x_s)\).
+The identity
+\((\operatorname{ad}x)_s=\operatorname{ad}x_s\)
+follows by separating the commuting diagonalizable and
+nilpotent operators
+\(\operatorname{ad}x_s,\operatorname{ad}x_n\).
+By Jordan decomposition, the former is \(P(\operatorname{ad}x)\),
+where \(P(0)=0\), since zero is an eigenvalue on the identity
+endomorphism. Set \(R=Q\circ P\) to obtain
+\eqref{eq:cartan-polynomial}.
+
+Write \(x=\sum_j[y_j,z_j]\) in \(\mathfrak a\).
+Because \(R\) has no constant term,
+\([B,y_j]=R(\operatorname{ad}x)y_j\) belongs to
+\([\mathfrak a,\mathfrak a]\). Cyclicity of trace and
+\eqref{eq:trace-criterion} give
+\[
+ \sum_i d_i b(\lambda_i)\lambda_i
+ =\operatorname{tr}(Bx)
+ =\sum_j\operatorname{tr}([B,y_j]z_j)=0.
+\]
+Apply the rational linear functional \(b\) to this
+identity in \(E\). It yields
+\(\sum_i d_i b(\lambda_i)^2=0\) in \(\mathbb Q\).
+Each \(d_i\) is a positive integer, so all
+\(b(\lambda_i)=0\). As every rational linear functional
+has this property, \(E=0\). Hence every eigenvalue of
+\(x\) is zero and \(x\) is nilpotent.
+
+Engel's theorem now makes \([\mathfrak a,\mathfrak a]\)
+nilpotent, hence solvable. Its abelian quotient proves
+solvability of \(\mathfrak a\).
+For the abstract assertion apply the matrix criterion
+to the adjoint image \(\mathfrak g/Z(\mathfrak g)\);
+the missing kernel is central and therefore solvable.
+\end{proof}
+
+\section{The radical and semisimple structure}
+
+\begin{theorem}[The radical and the Killing criterion]\label{res:B05}
+The sum of all solvable ideals is a solvable ideal
+\(\operatorname{rad}\mathfrak g\), and
+\(\mathfrak g/\operatorname{rad}\mathfrak g\) has no nonzero
+solvable ideal. In characteristic zero,
+\(\operatorname{rad}\mathfrak g=0\) if and only if the Killing
+form is nondegenerate. Such an algebra is called semisimple.
+\end{theorem}
+
+\begin{proof}
+For solvable ideals \(I,J\), the quotient
+\((I+J)/I\simeq J/(I\cap J)\) is solvable, so \(I+J\)
+is solvable. A finite-dimensional sum is already a finite
+sum, proving the first assertion. A solvable ideal in the
+quotient lifts to a solvable extension of the radical,
+so must be zero.
+
+Trace cyclicity gives symmetry and invariance of the Killing
+form:
+\[
+ K([x,y],z)=K(x,[y,z]).
+ \tag{2.3}\label{eq:killing-invariant}
+\]
+Its kernel \(I\) is an ideal. For any ideal \(J\) and
+\(x,y\in J\), the action of \(x,y\) on \(\mathfrak g/J\)
+is zero, so a block triangular trace calculation gives
+\[
+ K_J(x,y)=K_{\mathfrak g}(x,y).
+ \tag{2.4}\label{eq:killing-ideal}
+\]
+If \(\mathfrak g\) is semisimple, \(K_I=0\).
+The trace criterion makes \(I\) solvable; hence \(I=0\).
+
+Conversely, suppose \(K_{\mathfrak g}\) is nondegenerate
+and the radical is nonzero. Its last nonzero derived term
+is a nonzero abelian ideal \(A\) of \(\mathfrak g\).
+For \(a\in A,y\in\mathfrak g\),
+\(\operatorname{ad}a\operatorname{ad}y\) sends
+\(\mathfrak g\) into \(A\) and kills \(A\):
+\(\operatorname{ad}y\) preserves \(A\), and
+\([a,A]=0\). Its square is zero, so its trace is zero.
+Thus \(A\) lies in the Killing kernel, a contradiction.
+\end{proof}
+
+This also proves that scalar extension preserves
+semisimplicity: its Killing matrix is the same matrix
+over the larger field and remains invertible. We shall
+use this consequence when passing from real algebras
+to their complexifications.
+
+\begin{theorem}[Simple-ideal decomposition]\label{res:B06}
+A finite-dimensional characteristic-zero semisimple algebra
+is a direct sum of nonabelian simple ideals. Every ideal
+has an ideal complement, namely its Killing orthogonal
+complement. Its center is zero and
+\([\mathfrak g,\mathfrak g]=\mathfrak g\).
+Every ideal is a sum of a subset of its simple ideals.
+\end{theorem}
+
+\begin{proof}
+If \(I\) is an ideal, invariance shows that \(I^\perp\)
+is an ideal. Set \(J=I\cap I^\perp\). By
+\eqref{eq:killing-ideal}, its Killing form is zero,
+since \(J\subseteq I^\perp\) and \(J\subseteq I\).
+Thus \(J\) is solvable, and semisimplicity forces \(J=0\).
+Nondegeneracy and dimensions then give
+\(\mathfrak g=I\oplus I^\perp\).
+The two ideals commute because their bracket lies in
+their zero intersection.
+
+Take a minimal nonzero ideal and split it off.
+An ideal of this summand is an ideal of the full direct
+sum, so minimality makes the summand simple; it cannot
+be abelian. Iterating decreases dimension and gives the
+decomposition. A simple nonabelian algebra is perfect,
+since its derived algebra is a nonzero ideal, and its
+center is zero. These assertions pass to direct sums.
+
+Write \(\mathfrak g=\bigoplus_i\mathfrak g_i\) and let
+\(I\) be any ideal. Its projection to \(\mathfrak g_i\)
+is either zero or all of that simple algebra. In the
+latter case
+\([\mathfrak g_i,I]=
+[\mathfrak g_i,\operatorname{pr}_i I]=\mathfrak g_i\),
+so \(\mathfrak g_i\subseteq I\). Removing these
+summands leaves zero. This proves the final assertion
+and uniqueness of the complementary sum.
+\end{proof}
+
+\begin{theorem}[Inner derivations and abstract Jordan decomposition]
+\label{res:B07}
+Every derivation of a characteristic-zero semisimple
+\(\mathfrak g\) is inner. Each \(x\in\mathfrak g\) has a
+unique expression
+\[
+ x=x_s+x_n,\qquad [x_s,x_n]=0,
+\]
+where \(\operatorname{ad}x_s\) is semisimple and
+\(\operatorname{ad}x_n\) is nilpotent. If \([x,y]=0\),
+then \([x_s,y]=[x_n,y]=0\).
+\end{theorem}
+
+\begin{proof}
+Inside \(\operatorname{Der}\mathfrak g\), the adjoint
+image is an ideal, because
+\([D,\operatorname{ad}x]=\operatorname{ad}(Dx)\).
+On derivations use the invariant trace form
+\(B(D,E)=\operatorname{tr}_{\mathfrak g}(DE)\).
+Its restriction to \(\operatorname{ad}\mathfrak g\)
+is the nondegenerate Killing form. Hence
+\[
+ \operatorname{Der}\mathfrak g
+ =\operatorname{ad}\mathfrak g\oplus
+   (\operatorname{ad}\mathfrak g)^\perp.
+\]
+The second summand is an ideal by invariance.
+It commutes with the first, since their intersection
+is zero. For \(D\) in this complement,
+\(\operatorname{ad}(Dx)=[D,\operatorname{ad}x]=0\).
+The center is zero, so \(Dx=0\) for all \(x\), and
+the complement vanishes.
+
+Apply Proposition~\ref{res:B03} to
+\(\operatorname{ad}x\) on \(\mathfrak g\).
+Both matrix Jordan parts are derivations, so are
+\(\operatorname{ad}x_s,\operatorname{ad}x_n\)
+for uniquely determined elements. Their sum and
+commutator identify \(x=x_s+x_n\) and
+\([x_s,x_n]=0\), using injectivity of the adjoint
+map. Matrix uniqueness gives uniqueness here.
+If \([x,y]=0\), then \(\operatorname{ad}y\)
+commutes with \(\operatorname{ad}x\) and its
+polynomial parts. Hence the two asserted brackets
+are central, and therefore zero.
+\end{proof}
+
+\begin{theorem}[Characteristic radical and nilradical]\label{res:B08}
+In characteristic zero the radical and the largest nilpotent
+ideal \(\operatorname{nilrad}\mathfrak g\) are preserved by
+every derivation. More precisely,
+\[
+ D(\operatorname{rad}\mathfrak g)
+       \subseteq\operatorname{nilrad}\mathfrak g
+ \quad(D\in\operatorname{Der}\mathfrak g),\qquad
+ [\mathfrak g,\operatorname{rad}\mathfrak g]
+       \subseteq\operatorname{nilrad}\mathfrak g.
+ \tag{2.5}\label{eq:nilrad-characteristic}
+\]
+The nilradical consists exactly of those \(x\) in the
+radical for which \(\operatorname{ad}_{\mathfrak g}x\)
+is nilpotent.
+\end{theorem}
+
+\begin{proof}
+We first establish the useful equality
+\[
+ \operatorname{rad}\mathfrak g
+     =[\mathfrak g,\mathfrak g]^\perp
+ \tag{2.6}\label{eq:rad-perp}
+\]
+under the Killing form. Over an algebraic closure,
+choose a composition series of the adjoint module.
+The consequence of Lie's theorem proved after
+Theorem~\ref{res:B02} says that the radical acts
+by a scalar on each simple quotient. A commutator
+has zero trace on each quotient. Thus
+\(K(\operatorname{rad}\mathfrak g,
+[\mathfrak g,\mathfrak g])=0\).
+For the reverse containment let
+\(J=[\mathfrak g,\mathfrak g]^\perp\).
+It is an ideal by invariance. If \(a,b,c\in J\),
+then \([a,b]\in[\mathfrak g,\mathfrak g]\), so
+\(K([a,b],c)=0\). By \eqref{eq:killing-ideal},
+the trace criterion makes \(J\) solvable.
+It therefore lies in the radical.
+The same argument proves the equality over \(k\):
+one inclusion is checked after extension, and for
+the other \(J\) is already defined over \(k\).
+In particular this equality shows that the radical
+commutes with scalar extension.
+
+For a derivation \(D\), the identity
+\([D,\operatorname{ad}x]=\operatorname{ad}(Dx)\)
+and trace cyclicity give
+\[
+ K(Dx,y)+K(x,Dy)=
+ \operatorname{tr}[D,\operatorname{ad}x\operatorname{ad}y]=0.
+\]
+Since \(D\) preserves the derived algebra,
+\eqref{eq:rad-perp} proves \(D\mathfrak r\subseteq\mathfrak r\),
+where \(\mathfrak r=\operatorname{rad}\mathfrak g\).
+
+Over an algebraic closure, triangularize the action of
+\(\mathfrak r\) on \(\mathfrak g\). Let \(\mathfrak n\)
+be the subspace on which all its diagonal characters
+vanish. Equivalently,
+\[
+ \mathfrak n=\{x\in\mathfrak r:
+             \operatorname{ad}_{\mathfrak g}x
+             \text{ is nilpotent}\}.
+\]
+For any derivation \(D\), the semidirect algebra
+\(kD\ltimes\mathfrak r\) is solvable and acts on
+\(\mathfrak g\) through \(D\) and
+\(\operatorname{ad}\mathfrak r\). Lie's theorem
+triangularizes this whole action. Its commutators,
+in particular
+\([D,\operatorname{ad}x]=\operatorname{ad}(Dx)\)
+for \(x\in\mathfrak r\), are strictly upper
+triangular. Thus \(D\mathfrak r\subseteq\mathfrak n\).
+Taking \(D=\operatorname{ad}y\) shows that
+\(\mathfrak n\) is an ideal. Engel applied to its
+adjoint action on itself makes it nilpotent.
+
+If \(A\) is any nilpotent ideal, it is solvable,
+so lies in \(\mathfrak r\). For \(a\in A\),
+\(\operatorname{ad}a\) sends \(\mathfrak g\) into
+\(A\), and its further powers send \(A\) down
+the lower central series of \(A\).
+It is nilpotent on \(\mathfrak g\), so \(A\subseteq
+\mathfrak n\). This proves maximality.
+Finally \(D\mathfrak n\subseteq D\mathfrak r
+\subseteq\mathfrak n\).
+
+Over a nonclosed field, define \(\mathfrak n\) by
+the same nilpotent-adjoint condition. The preceding
+triangular calculation after scalar extension proves
+that its \(k\)-rational elements form a subspace and
+an ideal, and proves all the stated derivation
+inclusions there. Engel and the maximality argument
+are already valid over \(k\). Hence the conclusion
+descends without choosing eigenvalues in \(k\).
+\end{proof}
+
+The trace criterion, rather than a representation
+classification, supplied every semisimple fact used
+in this chapter. The complete reducibility of arbitrary
+finite-dimensional representations is a separate
+theorem, proved next.

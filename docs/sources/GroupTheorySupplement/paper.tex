@@ -1,0 +1,1004 @@
+\documentclass[11pt,oneside,openany]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{hyperref}
+
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome ALG-02 core supplement}
+\fi
+
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\definecolor{palegreen}{HTML}{F0F4EF}
+\hypersetup{
+  colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Group Theory},
+  pdfsubject={Chief factors, extensions and group cohomology, and profinite completion},
+  pdfauthor={MathGenome},bookmarksnumbered=true
+}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{9pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{4pt}{24pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries\color{ink}}{\thesubsection}{0.7em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\fancypagestyle{plain}{%
+  \fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \thispdfpagelabel{Cover}
+  \begin{flushleft}
+    \vspace*{0.65in}
+    {\large\scshape\color{deepgreen}MathGenome\par}
+    \vspace{0.32in}
+    {\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+    \vspace{0.45in}
+    {\color{ink}\fontsize{34}{39}\selectfont\bfseries
+       Group Theory\par}
+    \vspace{0.30in}
+    {\color{deepgreen}\Large
+       Chief Series, Extensions,\\[3pt] and Profinite Completion\par}
+    \vfill
+    {\large Supplementary lecture notes\par}
+    \vspace{0.12in}
+    {\normalsize ALG-02 \enspace\textperiodcentered\enspace MathGenome v0.22.0 reference baseline\par}
+    \vspace*{0.48in}
+  \end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+{\small\tableofcontents}
+\chapter*{Scope and reading guide}
+\addcontentsline{toc}{chapter}{Scope and reading guide}
+\markboth{Scope and reading guide}{}
+
+These notes supplement the group theory in \emph{Abstract Algebra}
+with finite chief series, extension classes, and profinite completion.
+The guide traces the six core modules of ALG-02 through the existing
+proofs and the three chapters of this volume.
+
+{\setlength{\fboxsep}{0.8em}\setlength{\fboxrule}{0.35pt}%
+\noindent\fcolorbox{rulegreen}{palegreen}{%
+\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+\textbf{Result keys.} \texttt{GR02-C02.01} belongs to module
+\texttt{ALG-02-C02}. The source map records the PDF and \TeX\
+locations and proof dependencies. Keys beginning with \texttt{K07}
+refer to the released D07 notes.
+\end{minipage}}\par}
+
+\section*{The six core modules}
+
+\paragraph{C01 \enspace Groups, quotients, and actions.}
+D07, groups K07.01--02 and K07.04--05, develops generators, cyclic
+and permutation groups, quotient groups and the isomorphism theorems,
+and orbit--stabilizer and counting arguments \cite{d07}.
+
+\paragraph{C02 \enspace Finite groups and series.}
+Cauchy, Sylow, and composition series are in K07.06, solvability
+in K07.15, and nilpotence in K07.18. Chapter~\ref{ch:gr02-chief} adds
+chief factors and their comparison as groups with an ambient action.
+
+\paragraph{C03 \enspace Abelian and free groups.}
+D07, K07.07, proves the finitely generated abelian structure theorem.
+K07.01 gives free groups and presentations. For Nielsen--Schreier
+and the finite-index rank formula, see \cite[Results B04--B05]{geomgroup}.
+
+\paragraph{C04 \enspace Extensions and group cohomology.}
+D07, K07.04, treats the semidirect product and the splitting test.
+See \cite[Results A02--A03, A05, and A10]{homalg} for the bar
+constructions and the cohomological five-term sequence.
+Chapter~\ref{ch:gr02-extensions} develops classification,
+Schur multipliers, and universal central extensions.
+
+\paragraph{C05 \enspace Finite quotients and inverse limits.}
+For the Galois constructions and the finite-field case
+\(\operatorname{Gal}(\overline{\mathbb F}_q/\mathbb F_q)
+\cong\widehat{\mathbb Z}\), see \cite[Results T04--T06 and E06]{field}.
+Chapter~\ref{ch:gr02-profinite} constructs the completion of an
+arbitrary abstract group.
+
+\paragraph{C06 \enspace Combinatorial and geometric methods.}
+\emph{Geometric Group Theory} covers Cayley and Schreier graphs, word
+problems, tree actions, and growth, with the hypotheses of each
+algorithm and comparison spelled out \cite[Chs.~1--3 and~6]{geomgroup}.
+
+\mainmatter
+\chapter{Chief series of finite groups}
+\label{ch:gr02-chief}
+
+The composition series in D07 have simple factors and require
+normality of each term in its successor
+\cite[entries K07.06.composition\_series\_definition and
+K07.06.jordan\_holder\_extension]{d07}. Here we refine the normal
+subgroups of a fixed ambient group \(G\). Their successive quotients
+carry the conjugation action of \(G\), which the factor comparison
+will preserve.
+
+\section{Chief factors and conjugation}
+
+\begin{definition}[GR02-C02.01. Chief series and chief factors]
+\label{def:gr02-chief-series}
+Let \(G\) be a finite group. A chief series is a strictly increasing
+chain
+\[
+  1=N_0<N_1<\cdots<N_r=G
+\]
+of normal subgroups of \(G\) such that no normal subgroup of \(G\)
+lies strictly between \(N_{i-1}\) and \(N_i\), for \(1\le i\le r\).
+The quotients \(N_i/N_{i-1}\) are the chief factors, and the integer
+\(r\) is the length. The chain of length zero is allowed for \(G=1\).
+
+A \(G\)-group is a group equipped with an action of \(G\) by
+automorphisms. When \(K\le L\) are both normal in \(G\), the
+natural \(G\)-group structure on \(L/K\) is
+\[
+  g\cdot(xK)=(gxg^{-1})K \qquad (g\in G,\ x\in L).
+\]
+A \(G\)-isomorphism of two such factors is a group isomorphism
+which intertwines the two actions of the same ambient \(G\).
+\end{definition}
+
+The formula is well defined since conjugation by \(g\) preserves both
+\(K\) and \(L\). The action restricted to \(L\) induces every inner
+automorphism of \(L/K\), so a \(G\)-invariant subgroup is normal in
+\(L/K\). For the trivial group, the list of factors is empty.
+
+\begin{proposition}[GR02-C02.02. Existence and the minimal normal criterion]
+\label{prop:gr02-chief-existence}
+Every finite group has a chief series. A strictly increasing chain as
+in Definition~\ref{def:gr02-chief-series}, with all its terms normal in
+\(G\), is a chief series precisely when \(N_i/N_{i-1}\) is a minimal
+nontrivial normal subgroup of \(G/N_{i-1}\) for each \(i\).
+\end{proposition}
+\begin{proof}
+The finite poset of normal subgroups of \(G\) has a maximal chain
+from \(1\) to \(G\). Such a chain admits no refinement by a normal
+subgroup of \(G\). Normal subgroups of \(G/N_{i-1}\) contained in
+\(N_i/N_{i-1}\) correspond under the quotient map to normal
+subgroups of \(G\) between \(N_{i-1}\) and \(N_i\)
+\cite[entry K07.04.correspondence\_theorem]{d07}. The endpoints of
+the interval correspond to the trivial subgroup and the whole
+factor. This proves the criterion in both directions.
+\end{proof}
+
+\section{Uniqueness and the solvable case}
+
+\begin{theorem}[GR02-C02.03. Equivariant Jordan--H\"older uniqueness for chief factors]
+\label{thm:gr02-chief-uniqueness}
+Any two chief series of a finite group \(G\) have the same length
+and the same multiset of \(G\)-isomorphism classes of factors.
+\end{theorem}
+\begin{proof}
+Keep \(G\) fixed throughout. For every normal subgroup \(N\) of
+\(G\), consider saturated chains from \(1\) to \(N\) in the poset
+of normal subgroups of \(G\). Here saturated means that consecutive
+terms admit no intermediate term in this poset. Such chains exist
+by finiteness, and their factors all carry the \(G\)-action of
+Definition~\ref{def:gr02-chief-series}.
+
+We compare the multisets of factors of these chains by induction on
+\(|N|\). The case \(N=1\) has an empty multiset. Let \(A\) and \(B\)
+be the penultimate terms of two chains ending at a nontrivial
+\(N\). If \(A=B\), induction compares the two chains up to \(A\)
+and the top factor \(N/A\) is common to both. If \(A\ne B\), neither
+contains the other by maximality. The product \(AB\) is normal in
+\(G\) and strictly contains \(A\), so \(AB=N\). Put \(L=A\cap B\).
+The quotient maps give isomorphisms
+\[
+  A/L \longrightarrow N/B,\quad aL\longmapsto aB,
+  \qquad
+  B/L \longrightarrow N/A,\quad bL\longmapsto bA.
+\]
+In each case the indicated intersection is the kernel before
+passing to the quotient, and \(AB=N\) gives surjectivity.
+Conjugating representatives by any \(g\in G\) commutes with both
+maps, so these are \(G\)-isomorphisms.
+
+There is no proper nontrivial \(G\)-invariant subgroup of \(N/B\),
+since its inverse image in \(N\) would be normal in \(G\) and
+strictly between \(B\) and \(N\). The same holds for \(N/A\).
+By the two isomorphisms, \(L<A\) and \(L<B\) are therefore saturated
+steps in the poset. Extend one saturated chain from \(1\) to \(L\)
+first by \(A\) and then by \(N\), or first by \(B\) and then by \(N\).
+Induction within \(A\) and \(B\) compares the original chains with
+these two chains, including the common top step on each side.
+The two constructed chains share all factors through \(L\), and
+their last two factors match in reverse order by the displayed
+\(G\)-isomorphisms. This finishes the induction. Taking \(N=G\)
+proves the theorem.
+\end{proof}
+
+This is the descending comparison used for ordinary composition
+series in D07 with the ambient conjugation retained at every step
+\cite[entry K07.06.jordan\_holder\_extension]{d07}. The ordinary
+group-isomorphism comparison for chief factors is also stated in
+\cite[Theorem~5.9]{chief-source}.
+
+\begin{corollary}[GR02-C02.04. Chief factors of finite solvable groups]
+\label{cor:gr02-chief-solvable}
+A finite group \(G\) is solvable if and only if it has a chief
+series with elementary abelian factors. If \(G\) is solvable, every
+chief factor is the additive group of a nonzero finite-dimensional
+\(\mathbb F_p\)-vector space for some prime \(p\) depending on the
+factor, and its \(G\)-action is linear over that field.
+\end{corollary}
+\begin{proof}
+Assume \(G\) solvable. Passage to subgroups and quotients preserves
+solvability by \cite[entry K07.15.solvable\_closure]{d07}. Hence the
+chief factor \(D=N_i/N_{i-1}\) is solvable. Its derived subgroup
+\([D,D]\) is characteristic in \(D\), hence is preserved by
+conjugation by \(G\). Since \(D\) is nontrivial and solvable,
+\([D,D]\) is proper. Minimality forces \([D,D]=1\), so \(D\) is
+abelian. Choose a prime \(p\) dividing the order of some nonidentity
+element of \(D\). A power of that element has order \(p\), and
+\[
+  D[p]=\{x\in D : x^p=1\}
+\]
+is a nontrivial characteristic subgroup because \(D\) is abelian.
+Minimality now gives \(D[p]=D\). An abelian group of exponent \(p\)
+has its usual \(\mathbb F_p\)-vector space structure by repeated
+addition, and each group automorphism respects this scalar action.
+
+Conversely, if the factors of a chief series are elementary
+abelian then they are solvable. Closure under extensions makes
+each term in the series solvable, starting at \(1\). This includes
+the chain of length zero for \(G=1\).
+\end{proof}
+
+\begin{example}[GR02-C02.05. The two kinds of series in the alternating group]
+\label{ex:gr02-chief-a4}
+In \(A_4\), let
+\[
+  V=\{1,(12)(34),(13)(24),(14)(23)\},\qquad
+  U=\langle(12)(34)\rangle .
+\]
+The subgroup \(V\) is elementary abelian of order \(4\), since the
+product of two distinct double transpositions in \(V\) is the
+third. It is normal in \(A_4\) since conjugation preserves cycle
+type. Conjugation by \((123)\) permutes the three nonidentity
+elements of \(V\) cyclically. Consequently every nontrivial
+normal subgroup of \(A_4\) contained in \(V\) equals \(V\).
+As \(A_4/V\) has order \(3\), \(1<V<A_4\) is a chief series.
+Its factors are \(V\) and \(C_3\). The action on \(V\) factors
+through \(A_4/V\) and permutes its three nonzero vectors, while
+the conjugation action on the factor \(A_4/V\) is trivial.
+
+The longer chain \(1<U<V<A_4\) is a composition series since
+adjacent terms are normal and the factors have prime orders
+\(2,2,3\). The subgroup \(U\) is moved to another subgroup by
+\((123)\), so this chain fails the ambient normality condition
+in Definition~\ref{def:gr02-chief-series}. See also
+\cite[Examples~5.2 and 5.7]{chief-source}.
+\end{example}
+\chapter{Group extensions and the Schur multiplier}
+\label{ch:gr02-extensions}
+
+The semidirect product and its internal criterion are established
+in \cite[K07.04.semidirect\_product and K07.04.semidirect\_recognition]{d07}.
+Here an extension of \(Q\) by \(N\) comes with a specified
+inclusion \(N\hookrightarrow E\) and quotient map \(p:E\to Q\).
+We identify \(N\) with its image. A splitting is a homomorphism
+\(s:Q\to E\) with \(ps=\operatorname{id}_Q\). Its image \(H\) is a
+complement, meaning \(NH=E\) and \(N\cap H=\{1\}\). Conversely the
+inverse of \(p|_H\) is a splitting for every complement. All groups
+in this chapter are discrete, and the abelian kernel \(A\) in a
+cohomology group is written additively. Integral group homology
+uses the trivial coefficient action unless otherwise specified.
+
+\section{Factor systems and outer actions}
+
+\begin{proposition}[GR02-C04.01. Factor systems for a general kernel]
+\label{prop:gr02-factor-system}
+Choose a set-theoretic section \(s:Q\to E\) with \(s(1)=1\).
+Define \(\alpha_q\in\operatorname{Aut}(N)\) by conjugation by \(s(q)\),
+and put \(f(q,r)=s(q)s(r)s(qr)^{-1}\in N\). Then
+\begin{align*}
+ \alpha_q\alpha_r &=\operatorname{Inn}(f(q,r))\,\alpha_{qr},\\
+ f(q,r)f(qr,t)&=\alpha_q(f(r,t))f(q,rt).
+\end{align*}
+Here \(\operatorname{Inn}(n)(x)=nxn^{-1}\). If \(s'(q)=b(q)s(q)\)
+with \(b(1)=1\), the new data are
+\[
+ \alpha'_q=\operatorname{Inn}(b(q))\alpha_q,\qquad
+ f'(q,r)=b(q)\alpha_q(b(r))f(q,r)b(qr)^{-1}.
+\]
+In particular \(q\mapsto[\alpha_q]\) is a homomorphism
+to \(\operatorname{Out}(N)=\operatorname{Aut}(N)/\operatorname{Inn}(N)\)
+independent of the section. Conversely, data satisfying the two
+identities and the normalizations
+\(\alpha_1=\operatorname{id}_N\), \(f(q,1)=f(1,q)=1\)
+give an extension on \(N\times Q\) with product
+\[
+ (n,q)(m,r)=\bigl(n\,\alpha_q(m)f(q,r),qr\bigr).
+\]
+\end{proposition}
+
+\begin{proof}
+Conjugation by \(s(q)s(r)=f(q,r)s(qr)\) gives the first identity.
+Expanding \((s(q)s(r))s(t)=s(q)(s(r)s(t))\) and cancelling \(s(qrt)\)
+on the right gives the second. Substitution of \(b(q)s(q)\) gives
+the displayed change of section. The inner automorphisms form a
+normal subgroup of \(\operatorname{Aut}(N)\), since conjugating
+\(\operatorname{Inn}(n)\) by any automorphism \(\beta\) gives
+\(\operatorname{Inn}(\beta(n))\). Thus the first identity and the
+change of section give the outer homomorphism.
+
+For the converse, if \(u\in N\), the two associations of
+\((n,q)(m,r)(u,t)\) have first coordinates
+\[
+ n\alpha_q(m) f(q,r)\alpha_{qr}(u) f(qr,t)
+ \quad\text{and}\quad
+ n\alpha_q(m)\alpha_q\alpha_r(u)\alpha_q(f(r,t))f(q,rt).
+\]
+They agree by the two identities, and the second coordinates both
+equal \(qrt\). The normalizations give the identity \((1,1)\).
+A right inverse to \((n,q)\) can be found with second coordinate
+\(q^{-1}\) by solving \(\alpha_q(m)=n^{-1}f(q,q^{-1})^{-1}\).
+A left inverse with that second coordinate is obtained by solving
+\(m\alpha_{q^{-1}}(n)f(q^{-1},q)=1\).
+Associativity makes the two inverses equal. Projection is a
+surjective homomorphism with kernel \(N\times\{1\}\).
+For the original extension the coordinate map
+\((n,q)\mapsto ns(q)\) is bijective and respects the product.
+\end{proof}
+
+When \(N=A\) is abelian, \(\alpha_q\) is independent of the lift of
+\(q\) and is an ordinary action of \(Q\) on \(A\). An equivalence
+between extensions with fixed kernel and quotient is a homomorphism
+of middle groups inducing the identity on \(A\) and on \(Q\).
+Such a map is injective because its kernel lies in \(A\). For
+surjectivity, first lift the quotient coordinate of a target
+element and then adjust the lift by an element of \(A\).
+
+\section{Abelian kernels and low-degree cohomology}
+
+We use the inhomogeneous bar differential from
+\cite[A02 and A03]{homalg}, with the left \(Q\)-module structure on
+\(A\). For \(a:Q\to A\), the two-coboundary is
+\[
+ (\delta a)(q,r)=a(q)+q\cdot a(r)-a(qr).
+\]
+A two-cocycle \(c\) satisfies
+\[
+ c(q,r)+c(qr,t)=q\cdot c(r,t)+c(q,rt).
+\]
+It is normalized if \(c(1,q)=c(q,1)=0\). The normalized
+cocycles give the same \(H^2\) classes as all inhomogeneous
+cocycles. Indeed the identity with \(q=1\) shows
+\(c(1,r)=c(1,1)\), and with \(t=1\) shows \(c(q,1)=q\cdot c(1,1)\).
+Subtract the coboundary of the constant cochain with value
+\(c(1,1)\) to normalize. If two normalized cocycles differ by
+\(\delta a\), evaluating at \((1,r)\) gives \(a(1)=0\).
+
+\begin{theorem}[GR02-C04.02. Abelian-kernel extensions and \(H^2\)]
+\label{thm:gr02-h2-extensions}
+Fix a left \(Q\)-action on \(A\). Equivalence classes of extensions
+of \(Q\) by \(A\) inducing that action correspond bijectively to
+\(H^2(Q,A)\). The zero class corresponds to the split extensions.
+\end{theorem}
+
+\begin{proof}
+By Proposition~\ref{prop:gr02-factor-system}, a normalized
+section gives a normalized cocycle \(c\), and changing the section
+adds a coboundary. An extension equivalence preserves the cocycle
+of the transported section. Conversely, a normalized cocycle
+defines an extension by the product
+\[
+ (x,q)(y,r)=(x+q\cdot y+c(q,r),qr)
+\]
+on \(A\times Q\), by the converse in the same proposition.
+Its canonical section \(q\mapsto(0,q)\) recovers \(c\), and the
+conjugation action on \(A\) is the given action. If
+\(c'=c+\delta a\), then \((x,q)\mapsto(x+a(q),q)\) carries the
+product for \(c'\) to the product for \(c\) and fixes the two
+end groups. Hence the constructions are inverse on classes.
+
+A homomorphic section has cocycle zero. If the class is zero,
+choose \(a\) with \(c+\delta a=0\); after the corresponding change
+of section its cocycle is zero, so the section is homomorphic.
+By the internal criterion this is precisely the semidirect product
+for the fixed action.
+\end{proof}
+
+\begin{theorem}[GR02-C04.03. Complements and \(H^1\)]
+\label{thm:gr02-h1-complements}
+For a split extension with abelian kernel \(A\), choose a reference
+splitting \(s_0\). The \(A\)-conjugacy classes of complements to
+\(A\) in \(E\) are in bijection with \(H^1(Q,A)\), with the class
+of \(s_0(Q)\) corresponding to zero.
+\end{theorem}
+
+\begin{proof}
+Identify \(E=A\rtimes Q\) by \(s_0\). A section is the graph
+of a function \(z:Q\to A\), and the semidirect product rule
+makes it a homomorphism precisely when
+\(z(qr)=z(q)+q\cdot z(r)\); this also implies \(z(1)=0\).
+Every complement determines its unique splitting by projection.
+Conjugating the graph by \((a,1)\) changes \(z(q)\) to
+\(z(q)+a-q\cdot a\). As \(a\) varies these changes are exactly
+the one-coboundaries, since they are the negatives of
+\(q\mapsto q\cdot a-a\). The description of \(H^1\) in
+\cite[A03]{homalg} now gives the bijection.
+\end{proof}
+
+The extension correspondence and the choice of reference
+splitting are also treated in \cite{conrad-extensions} and
+\cite[Theorems 23.3 and 24.3]{lassueur}. The cohomological
+Lyndon--Hochschild--Serre sequence is proved in
+\cite[A05]{homalg}. The next section constructs the low-degree
+homological sequence directly on bar chains.
+
+\begin{example}[GR02-C04.04. Two extensions of \(C_2\) by \(C_2\)]
+\label{ex:gr02-c2-extensions}
+Give \(A=C_2\) the trivial action of \(Q=C_2=\{1,t\}\).
+A normalized cocycle is determined by \(c(t,t)\), which can
+take either value in \(C_2\). Indeed, the identity holds whenever
+an argument is \(1\), and the triple \((t,t,t)\) gives just
+\(c(t,t)=c(t,t)\). Normalized coboundaries have
+\((\delta a)(t,t)=2a(t)=0\). The class \(c(t,t)=0\) gives
+\(C_2\times C_2\). In the other class the lift \((0,t)\) has
+square \((1,1_Q)\), where \(1\) in the first coordinate denotes
+the nonzero element of \(A=\mathbb Z/2\mathbb Z\).
+It has order four and generates the middle group \(C_4\).
+Thus even extensions with trivial action on the kernel can
+represent different cohomology classes.
+\end{example}
+
+\section{The Hopf formula}
+
+For groups \(U,V\) contained in a group \(E\), the notation
+\([U,V]\) denotes the subgroup generated by
+\([u,v]=uvu^{-1}v^{-1}\) for \(u\in U\) and \(v\in V\).
+In particular \([E,E]\) is the commutator subgroup. The integral
+bar complex from \cite[A10]{homalg}, on trivial coefficients,
+identifies \(H_1(K;\mathbb Z)\) with the abelianization of \(K\):
+in degree one the generators \([k]\) are cycles and the
+boundaries are \([l]-[kl]+[k]\). They impose exactly the relation
+that \(k\mapsto[k]\) is a homomorphism to an abelian group.
+
+\begin{proposition}[GR02-C04.05. The homological five-term sequence]
+\label{prop:gr02-homological-five-term}
+For an extension \(1\to N\to E\xrightarrow{p}Q\to 1\), there is
+a natural exact sequence
+\[
+ H_2(E;\mathbb Z)\longrightarrow H_2(Q;\mathbb Z)
+ \xrightarrow{d^2_{2,0}}N/[E,N]\longrightarrow
+ H_1(E;\mathbb Z)\longrightarrow H_1(Q;\mathbb Z)\longrightarrow 0.
+\]
+The maps between the homologies of \(E\) and \(Q\) are induced by
+\(p\). The map from \(N/[E,N]\) is induced by inclusion.
+\end{proposition}
+
+\begin{proof}
+Let \(C_\bullet(G)\) denote the integral normalized bar chains
+with trivial coefficients, with any tuple containing \(1\) taken
+as zero. The unnormalized integral bar chains compute group homology
+by \cite[A10]{homalg}. To check normalization in the degrees at issue,
+let \(D_\bullet\) be the subcomplex spanned by tuples containing \(1\).
+It is a subcomplex because the two faces removing a chosen identity
+cancel, and the other faces still contain it. Here \(D_0=0\) and
+\(d[1\mid1]=[1]\) kills \(H_1(D)\). A generator of \(D_2\) has
+boundary \([1]\). Modulo boundaries from \(D_3\) all generators of
+\(D_2\) equal \([1\mid1]\), since
+\[
+ d[1\mid1\mid g]=[1\mid g]-[1\mid1],
+ \qquad
+ d[g\mid1\mid1]=[1\mid1]-[g\mid1].
+\]
+A cycle in \(D_2\) has coefficient sum zero, so \(H_2(D)=0\).
+The quotient by \(D_\bullet\) thus has the same homology through
+degree two. Projection is surjective on normalized chains in every degree. Put
+\(J_\bullet=\ker(C_\bullet(E)\to C_\bullet(Q))\). Since \(J_0=0\),
+its first homology is \(J_1/dJ_2\).
+
+The group \(J_1\) is generated by differences \([nx]-[x]\), where
+\(n\in N\) and \(x\in E\). Indeed, choose a representative \(s(q)\)
+for each fiber, with \(s(1)=1\). Then \([e]-[s(p(e))]\) is a basis
+of \(J_1\) as \(e\) ranges over the elements other than the chosen
+representatives. Sending this basis element to the class of
+\(e\,s(p(e))^{-1}\) defines \(\rho:J_1\to N/[E,N]\), written
+additively in the target. It sends every \([nx]-[x]\) to the class
+of \(n\), so it is independent of the representatives. Likewise
+\(J_2\) is generated by \([na\mid mb]-[a\mid b]\), with \(n,m\in N\):
+choose a reference lift for each nonzero base pair and a degenerate
+reference lift for a pair mapping to zero. On applying \(d\), the
+three differences have \(\rho\)-values equal to the class of \(m\),
+minus the class of \(n(ama^{-1})\), and the class of \(n\),
+respectively. Their sum is zero.
+
+Conversely, the boundary of \([n\mid x]-[1\mid x]\) identifies
+\([nx]-[x]\) with \([n]\) in \(H_1(J)\). The boundary of
+\([n\mid m]-[1\mid1]\) gives \([nm]=[n]+[m]\). The boundary of
+\([x\mid n]-[x\mid1]\) gives \([xnx^{-1}]=[n]\) by the first identity.
+Thus \(n\mapsto[n]\) descends to \(N/[E,N]\) and is inverse to
+\(\rho\). Both maps are natural by their formulas on differences.
+The homology sequence of
+\(0\to J_\bullet\to C_\bullet(E)\to C_\bullet(Q)\to0\) yields the
+asserted sequence. The map from \(H_1(J)\) is induced by inclusion,
+and the maps from \(H_i(E)\) to \(H_i(Q)\) are induced by \(p\).
+
+To identify the connecting map with the transgression, filter the
+bar complex of \(E\) by the number of entries projecting
+nontrivially to \(Q\). In filtration degree \(i\), the bottom row
+on the first page is \(C_i(Q)\): a tuple of length \(i+1\) with
+one entry in \(N\) has filtration-preserving boundary the
+difference of two lifts of the same base tuple. These differences
+identify every pair of lifts. Indeed, a multiplication by \(N\)
+can be moved through successive adjacent positions by inserting
+the multiplier in \(N\), and then removed at the end of the
+tuple. The bottom-row differential therefore projects to the bar
+differential of \(Q\).
+
+In filtration degree zero, the first-page term in total degree one
+is \(H_1(N)\). The incoming first differential comes from
+chains with precisely one nontrivial projected entry in degree
+two and boundary in filtration zero, modulo boundaries.
+The chain \([x\mid n]-[xnx^{-1}\mid x]\) has boundary
+\([n]-[xnx^{-1}]\) in filtration zero, so these classes impose
+conjugation. Conversely any such chain is in \(J_2\), and the
+calculation with \(\rho\) shows that its boundary in filtration
+zero maps to zero in \(N/[E,N]\). Thus the second-page target
+is exactly \(N/[E,N]\).
+
+For a base two-cycle \(z\), choose any lift \(\widetilde z\).
+Write \(d\widetilde z\) as a sum of differences \([nx]-[x]\) and
+add the chains \([n\mid x]-[1\mid x]\) with the same coefficients
+to \(\widetilde z\). The new boundary is in filtration zero and
+is the corresponding sum of \([n]\)'s. Its class is both the
+connecting map of the short exact sequence and the second
+differential \(d^2_{2,0}\) of the filtered bar complex. This fixes
+the transgression sign for \(d[a\mid b]=[b]-[ab]+[a]\).
+For the spectral-sequence presentation, see \cite[Section 6.8.3]{weibel}.
+\end{proof}
+
+\begin{theorem}[GR02-C04.06. Hopf's formula for the Schur multiplier]
+\label{thm:gr02-hopf-formula}
+For a free presentation \(1\to R\to F\to G\to 1\), the Schur
+multiplier \(H_2(G;\mathbb Z)\) identifies naturally with
+\[
+       (R\cap[F,F])/[F,R].
+\]
+The natural identification compares different free presentations.
+\end{theorem}
+
+\begin{proof}
+Fix a free basis \(S\) of \(F\). Its Cayley graph with edges
+\(g\to gs\) for \(s\in S\) is a tree by the reduced-word normal
+form \cite[K07.01.free\_group\_universal\_property]{d07}.
+The augmented chain sequence
+over \(\mathbb Z[F]\) has the form
+\[
+ 0\to \bigoplus_{s\in S}\mathbb Z[F]\to\mathbb Z[F]\to\mathbb Z\to0 .
+\]
+Its boundary sends the edge \(g\to gs\) to \(gs-g\).
+Every \(g-1\) is a path boundary, giving exactness at vertices.
+A nonzero edge chain has finite support, and in the forest on
+those edges a leaf has nonzero boundary coefficient. This proves
+injectivity. Thus the sequence is a free resolution of the
+trivial left coefficient module, and the Tor description
+\cite[A10]{homalg} gives \(H_2(F;\mathbb Z)=0\).
+
+Proposition~\ref{prop:gr02-homological-five-term} identifies
+\(H_2(G;\mathbb Z)\) with the kernel of \(R/[F,R]\to F/[F,F]\),
+which is the displayed quotient. For a map of free presentations,
+the exact sequence is natural. A map between the quotient groups
+can be lifted by choosing images of free generators. If two lifts
+are chosen, their values differ elementwise by elements of the
+target relation subgroup. Those differences are central modulo
+commutators with the target free group, so both maps have the
+same values on commutators in that quotient. Hence the induced map
+on the displayed kernel is independent of the lift. Applied to
+the identity of \(G\), naturality gives the canonical comparison
+between presentations. See \cite[Theorem 6.8.8]{weibel}.
+\end{proof}
+
+\begin{example}[GR02-C04.07. Multipliers of cyclic groups and their products]
+\label{ex:gr02-multiplier-cyclic-product}
+For \(C_m\), take \(F\) free on one generator. As \([F,F]=1\),
+Theorem~\ref{thm:gr02-hopf-formula} gives \(H_2(C_m;\mathbb Z)=0\).
+For \(C_m\times C_n\) with \(m,n\geq 1\), present it with free
+generators \(x,y\) and relations \(x^m,y^n,[x,y]\). Let \(R\)
+be the normal closure of the relations. The quotient
+\(D=F/[F,R]\) has central image of \(R\), which contains
+\([D,D]\) because \(F/R\) is abelian. Its commutator subgroup is
+generated by \(z=[x,y]\) in \(D\). In fact \(F'\) is normally
+generated by \([x,y]\), since adjoining that relation makes
+the generators commute, and its image in \(D\) is central.
+The relations \(x^m,y^n\) have central image, so
+\(z^m=z^n=1\), by the commutator rules for central commutators.
+For example \([ab,y]=a[b,y]a^{-1}[a,y]=[b,y][a,y]\) in \(D\).
+
+Put \(d=\gcd(m,n)\). If \(d>1\), map \(x,y\) to \(I+E_{12}\)
+and \(I+E_{23}\) in the upper unitriangular \(3\times3\) matrices
+over \(\mathbb Z/d\mathbb Z\), where \(E_{ij}\) is a matrix unit.
+Their \(m\)-th and \(n\)-th powers, respectively, are identities.
+Their commutator is \(I+E_{13}\), which is central in this matrix
+group and has order \(d\). The image of \(R\) is central because
+its normal generators have central images, so the map kills
+\([F,R]\). Hence \(z\) has order at least \(d\), and its order
+divides \(d\). When \(d=1\) the latter already gives \(z=1\).
+The Hopf formula, with \(F'\subseteq R\), now gives
+\[
+          H_2(C_m\times C_n;\mathbb Z)\cong C_{\gcd(m,n)} .
+\]
+\end{example}
+
+\section{The universal central extension}
+
+A central extension of \(G\) is an extension with kernel
+in the center of its middle group. It is universal if it
+admits a unique homomorphism over \(G\) to every central
+extension of \(G\). A group is perfect if it equals its
+commutator subgroup.
+
+\begin{theorem}[GR02-C04.08. Universal central extensions of perfect groups]
+\label{thm:gr02-universal-central-extension}
+A group \(G\) has a universal central extension if and only if
+it is perfect. When \(G\) is perfect and \(F/R\cong G\) is any
+free presentation, the map
+\[
+       [F,F]/[F,R]\longrightarrow G
+\]
+is the universal central extension. Its source is perfect,
+and its kernel is \(H_2(G;\mathbb Z)\).
+\end{theorem}
+
+\begin{proof}
+Suppose \(G\) is perfect, and write \(D=F/[F,R]\) and
+\(\overline R\) for the image of \(R\). That image is central.
+Since \([F,F]\) maps onto \(G\), the subgroup
+\(U=[F,F]/[F,R]=[D,D]\) maps onto \(G\), with central kernel
+\((R\cap[F,F])/[F,R]\). Theorem~\ref{thm:gr02-hopf-formula}
+identifies this kernel. In addition \(D=U\overline R\), so
+every commutator of \(D\) is a commutator of elements of \(U\).
+It follows that \(U=[D,D]=[U,U]\).
+
+Given a central extension \(E\to G\), lift the free generators
+of \(F\) to \(E\), obtaining a homomorphism \(F\to E\) over
+\(G\). Its images of the elements of \(R\) lie in the central
+kernel, so the map kills \([F,R]\). Restriction yields a
+homomorphism \(U\to E\) over \(G\). If two such homomorphisms
+are given, their pointwise quotient lies in the central kernel
+and is a homomorphism into that abelian group. It must be
+trivial because \(U\) is perfect. This proves universality.
+
+Conversely, if \(U\to G\) is universal, the split central
+extension \(U/[U,U]\times G\to G\) admits two maps over \(G\)
+from \(U\), by using either the zero map or the abelianization
+map in the first coordinate. Uniqueness implies \(U=[U,U]\).
+Surjectivity then forces \(G\) to be perfect.
+See \cite[Theorem 6.9.5]{weibel}.
+\end{proof}
+
+For the stable elementary group \(E(R)\), the application in
+\cite[B12]{ktheory} identifies \(K_2(R)\) with the corresponding
+integral second homology.
+\chapter{Finite quotients and profinite completion}
+\label{ch:gr02-profinite}
+
+A finite quotient can distinguish two elements of an infinite group.
+The profinite completion puts all of these quotients into one
+topological group. The compatible-tuple construction and the product
+topology also occur in the Krull-topology comparison in
+\emph{Advanced Field Theory} \cite[Results T04--T06]{field}. Here the
+indexing objects are the finite-index normal subgroups of an arbitrary
+abstract group.
+
+\section{The inverse limit of finite quotients}
+
+\begin{definition}[GR02-C05.01. The profinite completion]
+\label{def:gr02-completion}
+For an abstract group \(G\), let
+\[
+  \mathcal N(G)=\{N\trianglelefteq G:[G:N]<\infty\}.
+\]
+This set includes \(G\), which gives the trivial quotient. For
+\(M,N\in\mathcal N(G)\) with \(M\subseteq N\), the transition
+homomorphism \(q_{M,N}\colon G/M\to G/N\) sends \(gM\) to \(gN\).
+The \emph{profinite completion} of \(G\) is
+\[
+  \widehat G
+  =\left\{(x_N)_{N\in\mathcal N(G)}\in\prod_{N\in\mathcal N(G)}G/N
+          :q_{M,N}(x_M)=x_N\text{ if }M\subseteq N\right\}.
+\]
+We use coordinatewise multiplication and the subspace topology of the
+product of finite discrete groups. Write \(p_N\) for coordinate
+projection and \(\eta_G(g)=(gN)_N\) for the canonical map.
+\end{definition}
+
+The intersection \(M\) of any finite collection of members of
+\(\mathcal N(G)\) lies in \(\mathcal N(G)\), since \(G/M\) embeds into
+the product of the corresponding finite quotients. In particular a
+common refinement lies below each prescribed finite collection under
+inclusion. The transition maps compose because each simply passes to
+a larger subgroup. Thus these quotients form a cofiltered inverse
+system \cite[Definition 1.2.1 and Section 1.2]{profinite-source}.
+
+\begin{proposition}[GR02-C05.02. Topology, density, and kernel]
+\label{prop:gr02-completion-topology}
+The group \(\widehat G\) is compact, Hausdorff, and totally
+disconnected. Each \(p_N\) is a continuous surjection, and the kernels
+\(\ker p_N\) form a neighborhood basis at the identity consisting of
+clopen normal subgroups. The image of \(\eta_G\) is dense and
+\[
+     \ker\eta_G=\bigcap_{N\in\mathcal N(G)}N .
+\]
+\end{proposition}
+
+\begin{proof}
+The product of the finite discrete groups is a compact Hausdorff
+topological group. Each compatibility condition defines a closed
+subgroup, as it is the preimage of the diagonal in
+\((G/N)\times(G/N)\) under a continuous group homomorphism. Their
+intersection is therefore a compact Hausdorff topological group.
+Two distinct tuples have different values in some finite discrete
+coordinate, so the clopen fibers of that projection separate them.
+This proves total disconnectedness.
+
+Every \(p_N\) is surjective because \(p_N\eta_G\) is the quotient
+map. Basic neighborhoods of the identity constrain finitely many
+coordinates to be \(1\); the kernel of \(p_M\), for the intersection
+\(M\) of those subgroups, lies in the given neighborhood. Each
+\(\ker p_N\) is clopen and normal. To approximate any
+\(x\in\widehat G\) in a neighborhood prescribing \(x_{N_1},\ldots,x_{N_t}\),
+take \(M=N_1\cap\cdots\cap N_t\) and choose \(g\in G\) with
+\(gM=x_M\). Compatibility gives \(p_{N_i}\eta_G(g)=x_{N_i}\) for all
+\(i\), so every such neighborhood meets \(\eta_G(G)\).
+The asserted kernel follows from the formula for \(\eta_G\).
+\end{proof}
+
+For a finite \(G\), the coordinate at \(N=\{1\}\) determines all
+other coordinates. Thus \(\eta_G\) is an isomorphism onto the
+completion, with \(G\) given the discrete topology.
+
+\begin{theorem}[GR02-C05.03. Universal property]
+\label{thm:gr02-completion-universal}
+Let \(P\) be a profinite group, regarded as a topological inverse
+limit of finite discrete groups. Each abstract group homomorphism
+\(f\colon G\to P\) has a unique continuous extension
+\(\widehat f\colon\widehat G\to P\) satisfying
+\(\widehat f\eta_G=f\).
+\end{theorem}
+
+\begin{proof}
+Write \(P=\varprojlim_i P_i\) with projections \(\pi_i\). For each
+\(i\), the kernel \(N_i=\ker(\pi_i f)\) has finite index in \(G\),
+since \(G/N_i\) is isomorphic to a subgroup of \(P_i\).
+The induced homomorphism \(G/N_i\to P_i\) composed with \(p_{N_i}\)
+gives a continuous map \(h_i\colon\widehat G\to P_i\) extending
+\(\pi_i f\). For each transition map in the system of the \(P_i\),
+the two required coordinate maps agree on \(\eta_G(G)\), by the
+compatibility of the coordinates of \(f(g)\). Their equalizer is
+closed because the codomain is Hausdorff. Proposition~%
+\ref{prop:gr02-completion-topology} therefore implies that they
+agree everywhere. The maps \(h_i\) consequently define a
+homomorphism to \(P\), continuous in the inverse-limit topology.
+On \(\eta_G(G)\) its coordinates are those of \(f\).
+Two continuous extensions into the Hausdorff group \(P\) agree on
+the same dense subset and are equal.
+\end{proof}
+
+Taking \(P=\widehat H\) and composing a group homomorphism
+\(G\to H\) with \(\eta_H\) gives its induced continuous homomorphism
+on completions. Identities and composition are preserved by
+the uniqueness in Theorem~\ref{thm:gr02-completion-universal}.
+See \cite[Proposition 3.1.2]{profinite-source} for this comparison.
+
+\begin{proposition}[GR02-C05.04. A cofinal family of finite quotients]
+\label{prop:gr02-completion-cofinal}
+If \(\mathcal D\subseteq\mathcal N(G)\) has the property that each
+\(N\in\mathcal N(G)\) contains some \(D\in\mathcal D\), restriction
+induces a topological group isomorphism
+\[
+       \widehat G \longrightarrow
+       \varprojlim_{D\in\mathcal D}G/D .
+\]
+\end{proposition}
+
+\begin{proof}
+For \(D_1,D_2\in\mathcal D\), the condition applied to
+\(D_1\cap D_2\) gives a member of \(\mathcal D\) contained in both.
+Given a compatible tuple on \(\mathcal D\), define its \(N\)-coordinate
+as \(q_{D,N}(x_D)\) from any \(D\subseteq N\) in \(\mathcal D\).
+Two choices have a common refinement in \(\mathcal D\), which
+shows that this coordinate is independent of the choice.
+If \(M\subseteq N\), choosing \(D\subseteq M\) computes both
+coordinates and proves their compatibility. Each coordinate of
+this extension is a continuous group homomorphism since it is
+given by one projection followed by a finite quotient map.
+The extension and restriction recover the original coordinates
+in both directions.
+\end{proof}
+
+\begin{example}[GR02-C05.05. The integers and finite fields]
+\label{ex:gr02-completion-integers}
+The finite-index subgroups of \(\mathbb Z\) are \(n\mathbb Z\) for
+positive integers \(n\). The coordinates of the completion are
+therefore the compatible residue classes in
+\(\varprojlim_n\mathbb Z/n\mathbb Z\), with transition from \(m\)
+to \(n\) when \(n\mid m\). One obtains the same limit using
+the quotients by \(j!\mathbb Z\), since every positive integer
+divides some factorial. Proposition~\ref{prop:gr02-completion-cofinal}
+identifies the two topologies as well as the groups.
+
+The absolute Galois group of \(\mathbb F_q\) is topologically
+isomorphic to this completion, with \(x\mapsto x^q\) corresponding
+to \(\eta_{\mathbb Z}(1)\). This is the residue comparison proved
+in \emph{Advanced Field Theory} \cite[Result E06]{field}.
+\end{example}
+
+\section{Residual finiteness and three examples}
+
+\begin{proposition}[GR02-C05.06. Residual finiteness and injectivity]
+\label{prop:gr02-residual-finiteness}
+An abstract group \(G\) is \emph{residually finite} if for each
+\(g\ne 1\) some homomorphism to a finite group has nonidentity
+value on \(g\). This is equivalent to \(\eta_G\) being injective.
+In a residually finite group every finite subset maps injectively
+to a single finite quotient.
+\end{proposition}
+
+\begin{proof}
+A homomorphism to a finite group factors through the finite quotient
+by its kernel. Conversely each quotient by \(N\in\mathcal N(G)\)
+provides such a homomorphism. Thus residual finiteness is equivalent
+to the intersection in Proposition~\ref{prop:gr02-completion-topology}
+being trivial. Given a finite subset, choose a finite quotient
+that detects \(x^{-1}y\) for each pair of distinct elements \(x,y\)
+in it. The intersection of the finitely many kernels gives one
+finite quotient in which all these pairs remain distinct.
+For a subset of size at most one the trivial quotient suffices.
+\end{proof}
+
+\begin{proposition}[GR02-C05.07. Finitely generated abelian groups]
+\label{prop:gr02-abelian-residual}
+Every finitely generated abelian group is residually finite.
+\end{proposition}
+
+\begin{proof}
+By the structure theorem \cite[K07.07.fg\_abelian\_extension]{d07},
+such a group is isomorphic to \(\mathbb Z^r\oplus A\) with \(A\)
+finite abelian. For a nonzero element with nonzero \(A\)-component,
+projection to \(A\) detects it. Otherwise at least one integer
+coordinate \(a\) is nonzero. Project to that coordinate and reduce
+modulo \(|a|+1\), so that the residue of \(a\) is nonzero.
+\end{proof}
+
+\begin{theorem}[GR02-C05.08. Free groups]
+\label{thm:gr02-free-residual}
+A free group on any set of generators is residually finite.
+\end{theorem}
+
+\begin{proof}
+By the reduced-word description of the free group
+\cite[Result A01]{geomgroup}, a nonidentity element has a nonempty
+reduced word \(w=s_{\ell}^{\varepsilon_{\ell}}\cdots
+s_1^{\varepsilon_1}\), where each \(\varepsilon_i\) is \(1\) or
+\(-1\) and each \(s_i\) is a generator. Use permutations acting
+on the left, so the rightmost letter acts first. On
+\(X=\{0,\ldots,\ell\}\), prescribe part of the permutation
+\(\sigma_s\) for each generator \(s\) that occurs in \(w\):
+\[
+   \sigma_s(i-1)=i\quad\text{if }s_i=s,\ \varepsilon_i=1,\qquad
+   \sigma_s(i)=i-1\quad\text{if }s_i=s,\ \varepsilon_i=-1.
+\]
+Two different steps for \(s\) could prescribe the same domain
+only at a shared vertex of consecutive steps, with signs
+\(-1,1\) in step order. Two different steps could prescribe the
+same range only at a shared vertex with signs \(1,-1\).
+Either would put adjacent inverse letters in \(w\).
+Thus each prescription is a bijection between two subsets of \(X\).
+Their complements have equal finite cardinalities, so choose a
+bijection between the complements to extend it to a permutation.
+For generators absent from the word, take the identity.
+
+By the free-group universal property these assignments define a
+homomorphism to the finite permutation group of \(X\).
+For each \(i\), the letter \(s_i^{\varepsilon_i}\) moves
+\(i-1\) to \(i\) by construction. The image of \(w\) consequently
+moves \(0\) to \(\ell\ne 0\). This finite quotient (taking the
+image of the homomorphism if necessary) detects \(w\).
+The construction uses only the letters present in the word.
+\end{proof}
+
+Completing these partial permutations amounts to completing the
+labelled path to a finite covering graph, as in
+\cite[Theorem 3.2.1, first proof]{profinite-source}.
+
+\begin{example}[GR02-C05.09. The additive rationals]
+\label{ex:gr02-rationals-completion}
+If \(f\colon(\mathbb Q,+)\to H\) has finite target of order \(n\),
+then for every \(x\in\mathbb Q\)
+\[
+   f(x)=f(x/n)^n=1.
+\]
+The last equality follows from Lagrange's theorem in \(H\).
+All the finite quotients are therefore trivial and so is
+\(\widehat{\mathbb Q}\). Its canonical map still has dense image,
+as in Proposition~\ref{prop:gr02-completion-topology}.
+\end{example}
+
+\backmatter
+{\raggedright
+\begin{thebibliography}{99}
+
+\bibitem{d07}
+MathGenome, \emph{Abstract Algebra} (D07), revised lecture notes,
+archived in MathGenome v0.22.0. Entries have keys beginning with
+\texttt{K07}.
+
+\bibitem{homalg}
+MathGenome, \emph{Advanced Homological Algebra}, Chapter~6,
+Results A02, A03, A05, and A10. Companion lecture notes.
+
+\bibitem{field}
+MathGenome, \emph{Advanced Field Theory}, Chapters~2--4.
+Companion lecture notes.
+
+\bibitem{geomgroup}
+MathGenome, \emph{Geometric Group Theory}, Chapters~1--3 and~6.
+Companion lecture notes.
+
+\bibitem{ktheory}
+MathGenome, \emph{Algebraic K-Theory}, Chapter~2, Result B12.
+Companion lecture notes.
+
+\bibitem{chief-source}
+K. Conrad, \href{https://kconrad.math.uconn.edu/blurbs/grouptheory/subgpseries2.pdf}{\emph{Subgroup Series II}},
+Section~5.
+
+\bibitem{conrad-extensions}
+B. Conrad, \href{https://math.stanford.edu/~conrad/210BPage/handouts/gpext.pdf}{\emph{Group Cohomology and Group Extensions}},
+Math~210B, Stanford University.
+
+\bibitem{lassueur}
+C. Lassueur, \href{https://classueur.github.io/maths/teaching/TUKL/SS21/COHOMSS21/CGSS21/COHOM_SS21.pdf}{\emph{Cohomology of Groups}},
+Summer 2021, Chapters~7 and~9.
+
+\bibitem{weibel}
+C. A. Weibel, \href{https://www.cambridge.org/core/books/an-introduction-to-homological-algebra/AAA3F16482097015CD12D4376D505282}{\emph{An Introduction to Homological Algebra}},
+Cambridge University Press, 1994, Sections~6.8--6.9.
+
+\bibitem{profinite-source}
+G. Wilkes, \href{https://www.dpmms.cam.ac.uk/~grw46/LectureNotes2021.pdf}{\emph{Profinite Groups and Group Cohomology}},
+Cambridge Part III, Lent 2021, Chapters~1--3.
+
+\end{thebibliography}
+}
+\end{document}
+

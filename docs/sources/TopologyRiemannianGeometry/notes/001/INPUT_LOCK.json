@@ -1,0 +1,42 @@
+{
+  "source_hashes": {
+    "unpublished-input-01": "f09ffa2b1aa17dc938210459d9f18437e9489bbcebedcdf6c28c0afa6c60c1c1",
+    "unpublished-input-02": "ee84285616b4493212f04acf78a066a7610d1e834a3d281393f9e15f3e2575d6",
+    "unpublished-input-03": "1b5e1f11505da2c8bb7b580b6d75b3c06edbbe4cf68ffc7f1bc4c3acadcd5c5a",
+    "P2-02_Topology_and_Riemannian_Geometry_Notes.tex": "bcdb11b412e37114e17168dec6e08353032309c8276c65c0d5ad0277717e21f3",
+    "parts/foundations.tex": "66c06b8f5435a7697a94188b14b03abbb9d8e9eeeff46c32c3fe4337a6c43cb2",
+    "parts/homology.tex": "71e01aaa53846e272ebb8148a605c06b33da7ed538299a57f391e13b749a4183",
+    "parts/geometry-local.tex": "dd03906f88e1e2c8751a4a70211300e7064fcc427e65690f8ba025c2e059df9b",
+    "parts/geometry-global.tex": "4fb208561d4d6322e2d4accc4ad4ca5bf94c6e8e498458b971f2c10b0eb2aa37",
+    "output/pdf/P2-02_Topology_and_Riemannian_Geometry_Notes.pdf": "b27591acc9464f0100edfe8398fa8940cc02efc0664aa56da057bb4563753a8a",
+    "provenance/components/AlgebraCore/delivery/paper.tex [parts/ch11.tex]": "5c2f5654fcd62f2db6f2ab4927713d60e0775e704f05ec3fa9b14a45a4312fb5"
+  },
+  "source_map_sha256": "123b0bba5ac671e24f50eb330c53bc55bb984f89a1c0a3338700e226016b7021",
+  "paper_sha256": "e02b7b2eb1f36337e9ad1b920d9fb4be69112e831ca575b3c672328fabfa1738",
+  "chapter_ranges_in_paper": {
+    "parts/foundations.tex": [
+      108,
+      1427
+    ],
+    "parts/homology.tex": [
+      1428,
+      2955
+    ],
+    "parts/geometry-local.tex": [
+      2957,
+      3955
+    ],
+    "parts/geometry-global.tex": [
+      3956,
+      5142
+    ]
+  },
+  "source_map_entries": 61,
+  "original_obligations": 29,
+  "numbered_results": 88,
+  "pdf_pages": 70,
+  "chapter_physical_pages": 63,
+  "mathgenome_git_head": "dc84748863c7095a4671ea2b0ae65e07328977c0",
+  "environment_id": "119816fbaf2f279b861c204adaafed12e841ca529d1d2174e5fb006b28f8fe5d",
+  "published_source_map_sha256": "c9f22bff0a14683041fb4c996ae93d638e6503b71677be43fd7e74acf5e5673f"
+}

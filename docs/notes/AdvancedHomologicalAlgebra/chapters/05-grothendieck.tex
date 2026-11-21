@@ -1,0 +1,557 @@
+\chapter[Cartan--Eilenberg Resolutions and Grothendieck Spectral Sequences]%
+  {Cartan--Eilenberg Resolutions\\and Grothendieck Spectral Sequences}
+\label{ch:grothendieck}
+
+An injective model computes a total right derived functor. To compute its
+cohomology in stages, we resolve each term of a complex while also resolving
+its cycles, boundaries, and cohomology. The two filtrations of the resulting
+double complex then give distinct first pages. Throughout the right-derived
+construction, \(p\) is horizontal cochain degree and \(q\) is vertical
+resolution degree. The unsigned horizontal and vertical differentials
+commute, and the total differential is \(d_h+(-1)^p d_v\).
+
+\section{Simultaneous resolutions}
+
+For a cochain complex \(K^\bullet\) in an abelian category, write
+\[
+ B^pK=\operatorname{im}(K^{p-1}\to K^p),\qquad
+ Z^pK=\ker(K^p\to K^{p+1}),\qquad
+ H^pK=Z^pK/B^pK .
+\]
+A Cartan--Eilenberg injective resolution is a double complex \(I^{p,q}\)
+with \(q\ge0\) and \(p\) bounded below, augmented by a map
+\(K^\bullet\to I^{\bullet,0}\) killed by \(d_v\). Its columns
+\(I^{p,\bullet}\) and the columns \(B_h^p I\), \(Z_h^p I\), \(H_h^p I\)
+obtained by taking horizontal boundaries, cycles, and cohomology are
+injective resolutions of \(K^p,B^pK,Z^pK,H^pK\), respectively. Each
+augmentation is the one induced by the given map from \(K^\bullet\).
+The signed totalization uses the convention of Proposition~\ref{res:B01}.
+This definition is \cite[Tag 015H]{stacks-derived}.
+
+\begin{lemma}[Exactness for horizontal invariants]
+\label{res:G07}
+Suppose \(i:U^\bullet\to V^\bullet\) is injective in each degree and that
+\[
+      U^p/B^pU\longrightarrow V^p/B^pV
+\]
+is injective for all \(p\). Put \(W^\bullet=\operatorname{coker}(i)\).
+Taking boundaries, cycles, cohomology, or quotients by boundaries of
+\(0\to U^\bullet\to V^\bullet\to W^\bullet\to0\) gives a short exact
+sequence in each degree. In this chapter an injection satisfying
+these two tests is called admissible.
+\end{lemma}
+
+\begin{proof}
+Identify \(U^\bullet\) with its image and write \(q:V^\bullet\to W^\bullet\)
+for the quotient. Generalized elements and lifts along epimorphisms
+are used as in the paragraph on subobjects in Chapter~\ref{ch:filtrations}.
+A lift can be taken after epic pullback. Image membership tested after
+such a pullback implies image membership before it.
+
+The image of \(B^pV\) under \(q\) is \(B^pW\): a representative of
+a boundary in \(W^p\) is a differential of a locally lifted
+predecessor in \(W^{p-1}\), and that predecessor in turn lifts to
+\(V^{p-1}\). The kernel on \(B^pV\) is \(U^p\cap B^pV\). This
+intersection equals \(B^pU\) by the injectivity hypothesis on
+quotients. Thus boundaries form a short exact sequence.
+
+For the quotient sequence, the first map is monic by hypothesis.
+The last map is epic since the composite \(V^p\to W^p\to W^p/B^pW\)
+is epic. If a class in \(V^p/B^pV\) maps to zero, lift it to a
+representative \(v\) in \(V^p\). Its image \(qv\) belongs to \(B^pW\).
+Lift \(qv\) to a boundary \(b\) in \(B^pV\); then \(v-b\) belongs
+to \(U^p\) and represents the original class. The composite from
+\(U^p/B^pU\) is zero, so this gives precisely the kernel.
+
+For cycles, a lift \(v\in V^p\) of a cycle in \(W^p\) has
+\(d_Vv\in U^{p+1}\cap B^{p+1}V=B^{p+1}U\). Lift that boundary to
+\(u\in U^p\) with \(d_Uu=d_Vv\). Then \(v-u\) is a cycle lifting
+the given one. The kernel on cycles consists of cycles in the
+subobject \(U^p\), and they are precisely \(Z^pU\) because the
+inclusion in degree \(p+1\) is monic. The first map on cycles is
+monic because the inclusion in degree \(p\) is monic.
+
+Finally \(H^pU\to H^pV\) is monic by the already proved quotient
+injection, and \(H^pV\to H^pW\) is epic by the cycle lift. If a
+cohomology class maps to zero, lift it to a cycle \(v\) in \(V^p\).
+Then \(qv\) is a boundary and lifts to a boundary \(b\) in \(V^p\).
+The difference \(v-b\) belongs to \(Z^pU\) and gives the original
+class. Conversely classes coming from \(U^\bullet\) map to zero.
+All maps used are restrictions or induced quotient maps of the
+given complex maps, so the short exact sequences have the asserted
+natural maps.
+\end{proof}
+
+\begin{theorem}[Existence of a Cartan--Eilenberg resolution]
+\label{res:G01}
+In an abelian category with enough injectives, every bounded-below
+cochain complex admits a Cartan--Eilenberg injective resolution.
+If \(K^p=0\) for \(p<L\), the resolution can be chosen with
+\(I^{p,q}=0\) for \(p<L\).
+\end{theorem}
+
+\begin{proof}
+Choose injective objects \(E_B^p,E_H^p\) and monomorphisms
+\(j_B^p:B^pK\to E_B^p\) and \(j_H^p:H^pK\to E_H^p\).
+Choose the target to be zero when the source is zero. Form the complex
+\[
+   J^p=E_B^p\oplus E_H^p\oplus E_B^{p+1},
+   \qquad d_J^p(b,h,b')=(b',0,0).
+\]
+The first summand is the boundary object and the first two summands
+form the cycle object in degree \(p\). By injectivity extend
+\(j_B^p\) from \(B^pK\) to a map \(u^p:K^p\to E_B^p\). Also extend
+the composite \(Z^pK\twoheadrightarrow H^pK\xrightarrow{j_H^p}E_H^p\)
+to a map \(v^p:K^p\to E_H^p\). The third component \(w^p\) is
+\(K^p\twoheadrightarrow B^{p+1}K\xrightarrow{j_B^{p+1}}E_B^{p+1}\).
+The map \((u^p,v^p,w^p)\) is a chain map. On the image of \(d_K^p\),
+the first component in degree \(p+1\) is \(j_B^{p+1}\), while the
+second and third vanish. On applying \(d_J^p\), the third component
+of the input becomes exactly this first component.
+
+On \(K^p/B^pK\), the last two components give a map to
+\(E_H^p\oplus E_B^{p+1}\). On the subobject \(H^pK\) the first of
+these components is \(j_H^p\), and on the quotient \(B^{p+1}K\) the
+second is \(j_B^{p+1}\). Consequently the map on \(K^p/B^pK\) is
+injective by the short exact sequences of these subobjects and
+quotients. The map on \(K^p\) is injective by the same argument with
+subobject \(B^pK\). We have constructed an admissible injection
+\(K^\bullet\to J^\bullet\). It respects both short exact sequences
+\[
+ 0\to B^pK\to Z^pK\to H^pK\to0,\qquad
+ 0\to Z^pK\to K^p\to B^{p+1}K\to0 .
+\]
+In \(J\) these become split sequences. This is the simultaneous
+injective horseshoe construction for the two sequences, with the
+same embedded boundary used on both sides of each differential.
+
+Set \(K_0=K\). Iterate the construction with \(K_q\to J_q\)
+and \(K_{q+1}=\operatorname{coker}(K_q\to J_q)\). The vertical
+maps of \(I^{p,q}=J_q^p\) are induced by the quotient and embedding
+\(J_q\twoheadrightarrow K_{q+1}\hookrightarrow J_{q+1}\). These
+are chain maps for \(d_h\), and successive vertical maps compose
+to zero. The construction gives short exact sequences with terms
+\(K_q,J_q,K_{q+1}\) on horizontal terms and on all three horizontal
+invariants by Lemma~\ref{res:G07}. Thus the augmented
+vertical complexes are exact, and their terms in nonnegative
+vertical degrees are injective finite sums or direct summands of
+injectives. This proves all the simultaneous resolution conditions.
+For \(p<L\) the first two possible summands of \(J^p\) vanish.
+The third vanishes too because \(B^{p+1}K=0\) for \(p+1\le L\).
+The same lower bound holds for the quotient at every step.
+Compare \cite[Tag 015I]{stacks-derived} and the projective
+construction in \cite[Section 5.7]{weibel}.
+\end{proof}
+
+\section{Comparison and totalization}
+
+\begin{lemma}[Extension into a split row]
+\label{res:G08}
+A horizontal row of a Cartan--Eilenberg injective resolution has the
+extension property along admissible injections of complexes.
+Moreover, in the augmented vertical resolution, the inclusion of
+each vertical kernel into its row is admissible.
+\end{lemma}
+
+\begin{proof}
+In a fixed row, the short exact sequences for cycles and boundaries
+split because the subobjects \(B_h^p I\) and \(Z_h^p I\) are injective.
+With a choice of splitting the row has the form used in
+Theorem~\ref{res:G01}. It is the degreewise product of stalks on
+injective cohomology objects and two-term complexes on injective
+boundary objects, with identity as the only nonzero differential in
+each two-term complex. Only three factors can contribute in a given
+degree, so the product exists in the category of complexes using
+only finite products in the abelian category. A map to a stalk of
+an injective \(E\) in degree \(p\) is a map \(U^p/B^pU\to E\). A
+map to the two-term identity complex in degrees \(p-1,p\) is
+determined by its degree \(p\) component \(U^p\to E\), with its
+degree \(p-1\) component obtained by precomposing with \(d_U^{p-1}\).
+Both components extend along the corresponding monomorphisms into
+\(V\). Taking the product of these extensions proves the claim.
+
+For a vertical degree \(q\ge0\), put
+\(T_q=\ker(d_v:I^{\bullet,q}\to I^{\bullet,q+1})\), so \(T_q\)
+is also the previous vertical image. At \(q=0\) this uses the
+augmentation from \(K\). Exactness of the augmented boundary
+resolutions shows that
+\[
+  T_q^p\cap B_h^p(I^{\bullet,q})
+    = \operatorname{im}\bigl(d_v:B_h^p(I^{\bullet,q-1})
+                           \to B_h^p(I^{\bullet,q})\bigr)
+    = B^p T_q ,
+\]
+with \(B^pK\) and its augmentation in place of the previous row at
+\(q=0\). For the last equality, take the horizontal boundary of
+the image of the previous vertical map and use that its
+horizontal differential is induced from the previous row.
+This equality of subobjects says exactly that
+\(T_q^p/B^pT_q\to I^{p,q}/B_h^p(I^{\bullet,q})\) is injective.
+The inclusion is thus admissible.
+\end{proof}
+
+\begin{theorem}[Comparison and injective totalization]
+\label{res:G02}
+Let \(I\) and \(J\) be Cartan--Eilenberg resolutions of bounded-below
+complexes \(K\) and \(L\). Every map \(f:K\to L\) lifts to a map
+of double complexes \(I\to J\). Any two lifts of \(f\) are
+vertically homotopic through maps of horizontal complexes.
+The comparison of total complexes is compatible with the
+augmentations, which are quasi-isomorphisms. Each total complex is
+bounded below and termwise injective. For an additive functor \(U\)
+between abelian categories, there is a natural chain isomorphism
+\[
+        U(\operatorname{Tot}I)\simeq\operatorname{Tot}(U I)
+\]
+preserving the two split filtrations from the diagonal sums.
+\end{theorem}
+
+\begin{proof}
+First extend the composite \(K\to L\to J^{\bullet,0}\)
+along \(K\hookrightarrow I^{\bullet,0}\) using
+Lemma~\ref{res:G08}. Given the comparison
+on row \(q\) preserving the preceding vertical image, it induces
+a map on the quotient of that row by its vertical kernel. The
+quotient is the next vertical kernel. Compose its induced map
+with the inclusion into the next row of \(J\) and extend along
+the admissible inclusion into the next row of \(I\). This constructs
+the lift with all vertical squares commuting. Each extension is
+a map of horizontal complexes.
+
+Let \(a,b:I\to J\) be two lifts. We construct horizontal chain
+maps \(s^q:I^{\bullet,q}\to J^{\bullet,q-1}\) with \(s^0=0\).
+In degree zero, \(a^0-b^0\) vanishes on \(K\), so it factors
+through the first vertical image of \(I\). Extend this factor to
+the whole first row with target \(J^{\bullet,0}\) to obtain \(s^1\).
+At the next step consider
+\[
+      a^q-b^q-d_v^J s^q .
+\]
+Its composite with \(d_v^I\) from row \(q-1\) is zero. Indeed,
+commutation with \(d_v\) and the preceding step make this
+composite \(d_v^Jd_v^J s^{q-1}\). The residual map therefore
+factors through the next vertical image, and extends to a map
+\(s^{q+1}\) by the extension property. This gives
+\(a-b=d_v^J s+s\,d_v^I\). On total complexes the homotopy sends
+the component of bidegree \((p,q)\) to \((-1)^p s^q\).
+In \(D_J((-1)^p s)+((-1)^p s)D_I\) the horizontal terms cancel
+since \(s\) commutes with \(d_h\) and a horizontal step changes
+the sign. The two vertical terms have the product of two
+factors \((-1)^p\), leaving \(d_v^J s+s\,d_v^I\).
+
+Every vertical resolution has cohomology only in degree zero
+with the given augmentation from \(K^p\) or \(L^p\). Its total
+augmentation is a quasi-isomorphism by Theorem~\ref{res:B04}.
+In degree \(n\) the total complex has summands only for
+\(L_0\le p\le n\) and \(q=n-p\), for a fixed lower bound \(L_0\).
+Thus finite direct sums of injectives give degreewise injectivity.
+For two resolutions of the same complex, lifts of the identity
+in both directions have composites vertically homotopic to the
+identities by the preceding uniqueness proof. Finally an additive
+functor preserves finite biproducts and signs. The canonical
+biproduct isomorphism commutes with both component differentials
+and the inclusions defining the row and column filtrations. This
+proves the assertion about \(U\). See \cite[Tags 015J and 015K]{stacks-derived}.
+\end{proof}
+
+\section{The two hypercohomology spectral sequences}
+
+\begin{theorem}[Two filtrations for a total right derived functor]
+\label{res:G03}
+Let \(F:\mathcal A\to\mathcal B\) be left exact between abelian
+categories, with \(\mathcal A\) having enough injectives. For a bounded-below
+complex \(K^\bullet\), there are spectral sequences with
+\[
+ {}_{\mathrm c}E_1^{p,q}=R^qF(K^p),
+       \qquad
+ {}_{\mathrm r}E_2^{p,q}=R^pF(H^qK).
+\]
+Both converge to \(H^{p+q}(RF(K))\) with finite filtrations in
+each target degree. On the first page of the column sequence,
+\(d_1\) is induced by \(d_K\). The column sequence is natural in
+chain maps from \(E_1\) onward. The row sequence is natural in
+chain maps from \(E_2\) onward and descends from that page,
+together with its filtered target, to \(D^+(\mathcal A)\).
+\end{theorem}
+
+\begin{proof}
+Choose a Cartan--Eilenberg resolution \(K\to I\). The
+quasi-isomorphism \(K\to\operatorname{Tot}I\) is a bounded-below
+injective replacement by Theorem~\ref{res:G02}. Thus
+\(\operatorname{Tot}(FI)\simeq F(\operatorname{Tot}I)\) computes
+\(RF(K)\) by Theorem~\ref{res:R06}. The double complex has finite
+diagonals and the same lower bound. Apply Theorems~\ref{res:S01}
+and~\ref{res:B04}, and transport the filtrations on total
+cohomology via this comparison.
+
+In the column filtration, Proposition~\ref{res:B03} identifies
+the first page in bidegree \((p,q)\) with the cohomology of
+\(F(I^{p,\bullet})\) in degree \(q\). The augmented column is an
+injective resolution of \(K^p\), so this is \(R^qF(K^p)\) by
+Theorem~\ref{res:R09}. The unsigned horizontal differential
+is a chain map of these resolutions lifting \(d_K^p\), so the
+induced first differential is \(R^qF(d_K^p)\).
+
+For the row filtration, in every fixed vertical degree the
+horizontal row is split into stalks and identity pairs as in
+Lemma~\ref{res:G08}. Additivity of \(F\)
+preserves the two splitting sequences and their differentials.
+Therefore
+\[
+ {}_{\mathrm r}E_1^{p,q}
+    \simeq H_h^q(FI^{\bullet,p})
+    \simeq F(H_h^q I^{\bullet,p}).
+\]
+The second identification can be defined by the maps on the
+split kernel, image, and quotient. It is natural in horizontal
+chain maps and independent of a splitting. In the signed
+interchange coordinates of Proposition~\ref{res:B03}, the
+first differential is \(F\) of the induced vertical map on
+\(H_h^q I^{\bullet,p}\). In the original coordinates it has the
+additional factor \((-1)^q\). The vertical cohomology of
+\(F(H_h^q I^{\bullet,*})\) computes \(R^pF(H^qK)\) by the
+simultaneous resolution condition. This gives the row second page.
+
+For a chain map, take a lift between the double resolutions.
+It preserves each filtration because it preserves both indices.
+Two lifts differ by a vertical homotopy commuting with the
+horizontal differentials. In each column this is a homotopy
+after applying \(F\), so the induced column map on \(E_1\) is
+independent of the lift. On the horizontal cohomology of each
+row it gives a homotopy in the vertical direction and hence the
+same row map on \(E_2\). The maps on later pages are induced
+iteratively by homology. The total homotopy gives equality on
+underlying cohomology. Both lifted maps preserve the filtrations,
+so their restrictions to the filtration steps coincide as well.
+Lifting identities and composites then proves naturality.
+In particular, different choices of the double resolution
+are compared by lifts of the identity, inverse on the pages
+in question and on both filtered targets.
+
+For the row sequence a quasi-isomorphism of bounded-below complexes
+induces isomorphisms on \(H^q K\) and therefore on \(E_2\).
+Finite convergence and Corollary~\ref{res:S03} give an isomorphism
+on the filtered target. Thus the row construction inverts
+quasi-isomorphisms on the stated pages and admits a unique
+descended functor by the localization universal property.
+For compatibility with homotopy classes, use the cylinder
+\(K\oplus\operatorname{Cone}(\mathrm{id}_K)\), whose projection to
+\(K\) is a quasi-isomorphism by Proposition~\ref{res:K03}. With cone
+coordinates \((a,b)\) and differential \((da+b,-db)\), its two
+inclusions send \(x\) to \((x,(0,0))\) and \((x,(x,0))\).
+They induce the same row maps because each is a section of
+the projection. If \(g-f=dh+hd\), the map
+\((x,(a,b))\mapsto f(x)+(g-f)(a)+h(b)\) is a chain map to the
+common target of \(f,g\). The homotopy identity checks the
+chain map property on the second cone coordinate. Its
+restrictions are \(f\) and \(g\), proving compatibility.
+The column first page uses the terms of \(K\) and its
+functoriality statement is for complexes. These are the two computations in
+\cite[Tags 015J and 015K]{stacks-derived}.
+\end{proof}
+
+\section{A composition of right derived functors}
+
+\begin{theorem}[Grothendieck spectral sequence]
+\label{res:G04}
+Let \(F:\mathcal A\to\mathcal B\) and \(G:\mathcal B\to\mathcal C\)
+be left exact between abelian categories. Suppose \(\mathcal A\) and
+\(\mathcal B\) have enough injectives and \(F(I)\) is \(G\)-acyclic
+for every injective \(I\) of \(\mathcal A\). For \(X\in D^+(\mathcal A)\)
+there is a natural cohomological spectral sequence
+\[
+      E_2^{p,q}=R^pG\bigl(H^q(RF(X))\bigr)
+      \quad\Longrightarrow\quad
+      H^{p+q}\bigl(R(G\circ F)(X)\bigr)
+\]
+with differential of bidegree \((r,1-r)\) on page \(r\).
+The target filtration is finite in each degree.
+\end{theorem}
+
+\begin{proof}
+Choose a bounded-below injective model \(I^\bullet\) of \(X\).
+Then \(F(I^\bullet)\) is a bounded-below representative of \(RF(X)\).
+The acyclicity hypothesis means that every term of this representative
+computes its own derived \(G\): its higher \(R^iG\) vanish, and
+the degree-zero comparison is the isomorphism given by left exactness.
+The acyclic-complex comparison of Theorem~\ref{res:R08} identifies
+\(G(F(I^\bullet))\) with \(RG(F(I^\bullet))\) in the derived category.
+This is the component of the canonical composition map of
+Theorem~\ref{res:R12},
+\[
+           R(G\circ F)(X)\longrightarrow RG(RF(X)).
+\]
+It is an isomorphism natural in \(X\).
+
+Apply the row sequence of Theorem~\ref{res:G03} to the functor \(G\)
+and the bounded-below complex \(F(I^\bullet)\). Its second page is
+the one displayed above, and it converges to \(H^*(RG(RF(X)))\).
+Pull back its finite filtration along the canonical composition
+isomorphism. Since the row construction from \(E_2\) onward is
+functorial on the derived category, the choice of \(I^\bullet\)
+or of a resolution for \(F(I^\bullet)\) gives the same comparisons
+from the stated page onward. The filtration is finite because
+the resolution degree is nonnegative and the horizontal degree
+has a fixed lower bound. See \cite[Tags 015M and 015N]{stacks-derived}
+and \cite[Section 5.8]{weibel}.
+\end{proof}
+
+\begin{corollary}[Object case, edge maps, and low degrees]
+\label{res:G05}
+Under the hypotheses of Theorem~\ref{res:G04}, an object \(A\) of
+\(\mathcal A\), placed in degree zero, gives a first-quadrant sequence
+\[
+      E_2^{p,q}=R^pG(R^qF(A))
+       \quad\Longrightarrow\quad R^{p+q}(G\circ F)(A).
+\]
+The natural edge maps in total degree \(n\ge0\) have the form
+\[
+ R^nG(F(A))\ \longrightarrow\ R^n(G\circ F)(A)\
+                    \longrightarrow\ G(R^nF(A)).
+\]
+In degrees one and two they occur in the exact sequence
+\[
+\begin{split}
+ 0\longrightarrow R^1G(F(A))
+ &\longrightarrow R^1(G\circ F)(A)
+ \longrightarrow G(R^1F(A))\\
+ &\xrightarrow{d_2^{0,1}} R^2G(F(A))
+ \longrightarrow R^2(G\circ F)(A).
+\end{split}
+\]
+\end{corollary}
+
+\begin{proof}
+Write \(Y=RF(A[0])\). It has cohomology in nonnegative degrees,
+with \(H^0Y=F(A)\) and \(H^qY=R^qF(A)\) by
+Theorem~\ref{res:R09}. This gives the quadrant assertion.
+The first edge map is induced by the canonical map
+\[
+       F(A)[0]\simeq\tau_{\le0}Y\longrightarrow Y
+\]
+after applying \(RG\), taking \(H^n\), and identifying the
+target via Theorem~\ref{res:G04}. The row sequence on \(F(A)[0]\)
+has only its \(q=0\) row at \(E_2\). Its map to the sequence for
+\(Y\) is the identity on the second-page term in bidegree
+\((n,0)\). On cohomology it factors through the highest possibly
+nonzero filtration step \(F^nH^n\), identifying the map as
+\(E_2^{n,0}\twoheadrightarrow E_\infty^{n,0}
+  \simeq F^nH^n\hookrightarrow H^n\).
+
+For the second edge map use
+\[
+      Y\ \longleftarrow\ \tau_{\le n}Y\
+               \longrightarrow H^n(Y)[-n].
+\]
+The left arrow induces an isomorphism on \(H^nRG\): its
+truncation triangle has third term \(\tau_{\ge n+1}Y\), and
+choosing a bounded-below injective model in degrees at least
+\(n+1\) by Theorem~\ref{res:R01} shows its \(RG\) has zero cohomology
+in degrees \(n-1,n\). Take the inverse isomorphism on
+\(H^nRG\) and then the map to
+\(H^nRG(H^n(Y)[-n])=G(H^n(Y))\).
+By row functoriality the two arrows are the identity on the
+\(E_2^{0,n}\) term, and the sequence for \(H^n(Y)[-n]\) has
+only its \(q=n\) row at \(E_2\). In total degree \(n\) its
+only term has filtration index zero. Thus the resulting map
+is the edge map
+\(H^n\twoheadrightarrow E_\infty^{0,n}\hookrightarrow E_2^{0,n}\).
+This description also proves naturality of both edges.
+
+In total degree one the graded pieces are
+\(E_\infty^{1,0}=E_2^{1,0}\) and
+\(E_\infty^{0,1}=\ker(d_2^{0,1})\). The only differential
+that can enter \((2,0)\) from page two onward is \(d_2^{0,1}\);
+none can leave \((2,0)\). Hence \(E_\infty^{2,0}\) is the
+cokernel of this differential and injects into total degree two.
+These identifications give exactness at all intervening terms
+and no terminal surjectivity assertion. This is the filtration
+argument of Theorem~\ref{res:S05} in the present sequence.
+See \cite[Tag 015N]{stacks-derived} and
+\cite[Theorem 5.8.3]{weibel}.
+\end{proof}
+
+\section{The homological dual}
+
+\begin{theorem}[Grothendieck spectral sequence for left derivation]
+\label{res:G06}
+Let \(F:\mathcal A\to\mathcal B\) and \(G:\mathcal B\to\mathcal C\)
+be right exact between abelian categories. Suppose \(\mathcal A\) and
+\(\mathcal B\) have enough projectives and \(L_iG(F(P))=0\) for
+\(i>0\) and projective \(P\) of \(\mathcal A\). For an object \(A\)
+there is a natural first-quadrant homological spectral sequence
+\[
+      E^2_{p,q}=L_pG(L_qF(A))
+       \quad\Longrightarrow\quad L_{p+q}(G\circ F)(A).
+\]
+More generally, for a derived object represented by a bounded-above
+cochain complex \(X\), use homological grading \(H_j=H^{-j}\).
+The second page is \(L_pG(H_q(LF(X)))\) and the target is
+\(H_{p+q}(L(G\circ F)(X))\). The differential has bidegree
+\((-r,r-1)\) and the target filtration is increasing and finite
+in each degree.
+\end{theorem}
+
+\begin{proof}
+Pass to the opposite abelian categories. The opposite functors
+are left exact and the opposite source and intermediate
+categories have enough injectives. Start with the chain indices
+\(K_j=X^{-j}\), with differential \(\partial_j:K_j\to K_{j-1}\).
+Viewing \(K_j\) in the opposite category gives the degree \(j\)
+term of a cochain complex with differential \(\partial_{j+1}^{\mathrm{op}}\).
+The chain lower bound becomes a cochain lower bound there.
+Reversing arrows interchanges kernels with cokernels and
+carries the degree \(j\) chain homology to degree \(j\)
+cohomology in the opposite category. Projective resolutions
+become injective resolutions. After reversing back, these
+are the bounded-above projective models of
+Theorem~\ref{res:R07}. The right acyclicity hypothesis of
+Theorem~\ref{res:G04} is exactly the displayed vanishing,
+with the degree-zero comparison supplied by right exactness.
+
+Under arrow reversal the canonical comparison becomes
+\[
+              LG(LF(X))\longrightarrow L(G\circ F)(X).
+\]
+On a bounded-above projective model it is the canonical
+derived comparison for applying \(G\) to a termwise
+\(G\)-acyclic complex, hence an isomorphism also by
+Theorem~\ref{res:R08}. Applying Theorem~\ref{res:G04}
+in the opposite categories and reversing the arrows gives
+the specified pages and target. A cohomological differential
+from bidegree \((p,q)\) to \((p+r,q-r+1)\) becomes a homological
+differential from the latter bidegree to the former. Equivalently,
+the resulting page differential has bidegree \((-r,r-1)\).
+The signed total in the opposite categories dualizes termwise
+to \(d_h+(-1)^p d_v\) with both indices lowered. This agrees with
+the chain convention of Chapter~\ref{ch:double-complexes}.
+
+For the filtration, a decreasing subobject \(F^p\) of a target
+in the opposite category becomes a quotient of the target in
+the original category. Define the increasing step of index \(p-1\)
+to be the kernel of that quotient. Reversing the short exact
+sequence of successive decreasing steps identifies the
+quotient of the increasing steps of indices \(p,p-1\) with the
+reversed \(p\)-th graded piece. Finiteness follows from
+finiteness in the opposite category. The object \(A[0]\) has
+the nonnegative resolution degrees in both axes, giving the
+first quadrant and the claimed object formula.
+
+In particular, for \(A[0]\) the right-derived edge maps of
+Corollary~\ref{res:G05} reverse to
+\[
+ G(L_nF(A))\longrightarrow L_n(G\circ F)(A)
+                     \longrightarrow L_nG(F(A)).
+\]
+The five-term sequence reverses to
+\[
+\begin{split}
+ L_2(G\circ F)(A)\longrightarrow L_2G(F(A))
+ &\xrightarrow{d_2}G(L_1F(A))
+ \longrightarrow L_1(G\circ F)(A)\\
+ &\longrightarrow L_1G(F(A))\longrightarrow0 .
+\end{split}
+\]
+Here \(d_2\) goes from \((2,0)\) to \((0,1)\). This is the
+homological case of \cite[Corollary 5.8.4]{weibel}.
+\end{proof}

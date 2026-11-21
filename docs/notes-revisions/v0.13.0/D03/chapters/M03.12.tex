@@ -1,0 +1,158 @@
+\chapter{Sequences and series of functions}
+\SourceRef{Rudin, Chapter 7, especially Theorems 7.8--7.17; Apostol, Chapter 9; Zorich II, Sections 16.1--16.3. Scalars are real or complex; all derivatives below use real increments.}
+
+\KEntry{K03.12.pointwise}{Pointwise convergence}
+\begin{definition}
+For functions $f_n:E\to\K$, $\K=\R$ or $\C$, pointwise convergence to $f:E\to\K$ means
+\[\forall x\in E\ \forall\eps>0\ \exists N\ \forall n\geq N:\quad\abs{f_n(x)-f(x)}<\eps.\]
+The index may depend on $x$. The pointwise limit is unique by uniqueness of scalar limits at each point. On the empty set the assertion is vacuous and the unique empty function is the limit.
+\end{definition}
+
+\KEntry{K03.12.uniform}{Uniform and locally uniform convergence}
+\begin{definition}
+Uniform convergence on $E$, written $f_n\to f$ uniformly, means
+\[\forall\eps>0\ \exists N\ \forall n\geq N\ \forall x\in E:\quad\abs{f_n(x)-f(x)}<\eps.\]
+It implies pointwise convergence by retaining any fixed $x$. On an open set $U\subset\R$, locally uniform convergence means uniform convergence on each compact subset of $U$. Uniform convergence on $U$ implies locally uniform convergence by restriction.
+\end{definition}
+
+\KEntry{K03.12.sup_norm}{The supremum criterion}
+\begin{theorem}
+For nonempty $E$, define $e_n=\sup_{x\in E}\abs{f_n(x)-f(x)}\in[0,\infty]$. Then uniform convergence is equivalent to $e_n\to0$, which in particular makes $e_n$ finite eventually. For $E=\varnothing$ set $e_n=0$ by convention. No boundedness of $f$ or of the individual $f_n$ is needed, only eventual boundedness of their differences.
+\end{theorem}
+\begin{proof}
+If $e_n<\eps$, every pointwise error is $<\eps$. Conversely uniform errors $<\eps/2$ imply $e_n\leq\eps/2<\eps$. These implications prove the equivalence, including the stated convention for the empty set.
+\end{proof}
+
+\KEntry{K03.12.cauchy}{Uniform Cauchy criterion}
+\begin{theorem}
+A scalar function sequence on any set $E$ converges uniformly if and only if for each $\eps>0$ there is $N$ such that $\abs{f_n(x)-f_m(x)}<\eps$ for every $m,n\geq N$ and $x\in E$.
+\end{theorem}
+\begin{proof}
+Uniform convergence gives the assertion by the triangle inequality with error $\eps/2$. Conversely, for each fixed $x$, scalar completeness produces $f(x)=\lim_m f_m(x)$. Apply the uniform Cauchy bound with $\eps/2$ and let $m\to\infty$ to obtain $\abs{f_n(x)-f(x)}\leq\eps/2<\eps$ for all $x$ and $n\geq N$. The same $N$ works everywhere.
+\end{proof}
+
+\KEntry{K03.12.continuity}{Continuity of uniform limits}
+\begin{theorem}
+A uniform limit on a metric domain of continuous scalar functions is continuous. On an open real domain locally uniform convergence also suffices.
+\end{theorem}
+\begin{proof}
+Fix $x$ and $\eps>0$. Select $n$ with $\sup_E\abs{f-f_n}<\eps/3$, then a neighborhood of $x$ on which $\abs{f_n(y)-f_n(x)}<\eps/3$. The triangle inequality bounds $\abs{f(y)-f(x)}$ by the sum of these three errors. In the locally uniform case put a small compact interval around $x$ inside the open domain and apply this argument there. Uniform convergence is sufficient, not necessary: on $[0,1]$ the continuous triangles of \KRef{K03.12.integral_failure} converge pointwise to the continuous zero function, but their heights are unbounded.
+\end{proof}
+
+\KEntry{K03.12.dini}{Dini's theorem}
+\begin{theorem}
+Let $K$ be compact and $f_n,f:K\to\R$ continuous. If $f_n(x)\uparrow f(x)$ for every $x$, or $f_n(x)\downarrow f(x)$ for every $x$, then convergence is uniform.
+\end{theorem}
+\begin{proof}
+For increasing convergence put $g_n=f-f_n\geq0$. For fixed $\eps>0$, the open sets $U_n=\{x:g_n(x)<\eps\}$ increase and cover $K$. A finite subcover, and hence its largest index $N$, covers $K$. Thus $0\leq g_n(x)<\eps$ for $n\geq N$ and every $x$. Replace $f_n,f$ by their negatives in the decreasing case. Continuity of the limit is essential: $x^n$ on $[0,1]$ decreases pointwise to the discontinuous function in \KRef{K03.12.pointwise_discontinuous} and is not uniformly convergent.
+\end{proof}
+
+\KEntry{K03.12.interchange_limits}{Interchanging a sequence limit and a domain limit}
+\begin{theorem}
+Let $E\subset\R$, let $c$ be an accumulation point approached through $E$, and let $f_n:E\to\K$ converge uniformly to $f$. Suppose $b_n=\lim_{x\to c,\,x\in E}f_n(x)$ exists for every $n$. Then $b_n$ converges to a scalar $b$, the domain limit of $f$ exists, and
+\[\lim_{x\to c,\,x\in E}\lim_n f_n(x)=b=\lim_n\lim_{x\to c,\,x\in E}f_n(x).\]
+The same proof applies to a specified one-sided or infinite approach; uniformity on a fixed approach neighborhood suffices.
+\end{theorem}
+\begin{proof}
+Uniform Cauchy convergence gives $\abs{f_n(x)-f_m(x)}<\eps$ on $E$ for large $m,n$. Taking the domain limit gives $\abs{b_n-b_m}\leq\eps$, so $b_n\to b$ by completeness. Choose $n$ with $\sup_E\abs{f-f_n}<\eps/3$ and $\abs{b_n-b}<\eps/3$. Near $c$ in the specified approach, $\abs{f_n(x)-b_n}<\eps/3$. Their sum bounds $\abs{f(x)-b}$ and proves the required domain limit.
+\end{proof}
+
+\KEntry{K03.12.integration}{Uniform convergence and the Riemann integral}
+\begin{theorem}
+If $f_n$ are Riemann integrable on $[a,b]$ and converge uniformly to $f$, then $f$ is Riemann integrable, and
+\[\abs{\int_a^b f-\int_a^b f_n}\leq(b-a)\sup_{[a,b]}\abs{f-f_n}\longrightarrow0.\]
+\end{theorem}
+\begin{proof}
+For real functions, let $e_n=\sup\abs{f-f_n}$. For a partition $P$,
+\[U(f,P)-L(f,P)\leq U(f_n,P)-L(f_n,P)+2e_n(b-a).\]
+Choose $n$ making the second term $<\eps/2$, then a partition making the first $<\eps/2$. The Darboux criterion proves integrability of $f$. Apply the integral norm bound to $f-f_n$ to obtain the estimate. For complex functions apply the real argument to both components; the scalar integral norm bound of \KRef{K03.08.order} gives the same displayed constant. For $a=b$ all integrals are zero.
+\end{proof}
+
+\KEntry{K03.12.differentiation}{Uniform convergence of derivatives}
+\begin{theorem}
+Suppose $a<b$, $f_n:[a,b]\to\K$ are continuous and differentiable on $(a,b)$, $f_n(x_0)$ converges at one $x_0\in[a,b]$, and $f_n'\to g$ uniformly on $(a,b)$. Then $f_n$ converge uniformly to a continuous $f$, differentiable in $(a,b)$, with $f'=g$. Continuity of the individual derivatives is not assumed.
+\end{theorem}
+\begin{proof}
+The norm mean value inequality \KRef{K03.05.mean_inequality} gives
+\[\abs{(f_n-f_m)(x)}\leq\abs{(f_n-f_m)(x_0)}+(b-a)\sup_{(a,b)}\abs{f_n'-f_m'}.\]
+Uniform Cauchy convergence follows, and its limit $f$ is continuous. Fix an interior $x$ and $\eta>0$. Choose $N$ with $\sup\abs{f_n'-g}<\eta$ for $n\geq N$. For $m,n\geq N$, the same mean value inequality on the interval from $x$ to $x+h$ yields
+\[\abs{\frac{(f_m-f_n)(x+h)-(f_m-f_n)(x)}h}\leq2\eta.\]
+Pass $m\to\infty$ at fixed nonzero $h$ to replace $f_m$ by $f$. Fix one $n\geq N$; differentiability of $f_n$ gives, for small $h$, a difference between its quotient and $f_n'(x)$ less than $\eta$. Since $\abs{f_n'(x)-g(x)}<\eta$, the quotient of $f$ differs from $g(x)$ by at most $4\eta$. Let $\eta\downarrow0$. This proves the derivative assertion. Endpoint derivatives require their own one-sided assumptions and are not included here.
+\end{proof}
+
+\KEntry{K03.12.series}{Three convergence conditions for function series}
+\begin{definition}
+The pointwise or uniform convergence of $\sum_{n\geq0}u_n$ means the corresponding convergence of $S_N=\sum_{n=0}^Nu_n$. Uniform convergence of $\sum\abs{u_n}$ is a stronger assertion; a summable bound $\sum\sup_E\abs{u_n}<\infty$ is stronger still.
+\end{definition}
+\begin{example}
+The scalar alternating harmonic series, viewed as constant functions, converges uniformly but not absolutely. To separate the latter two conditions, let $E=\N$, and let $u_n(k)=1/n$ for $k=n\geq1$, zero otherwise. Then the uniform tail of $\sum\abs{u_n}$ is $1/(N+1)\to0$, but $\sum_n\sup_E\abs{u_n}=\sum1/n$ diverges. Thus the predicates cannot be identified.
+\end{example}
+
+\KEntry{K03.12.m_test}{Weierstrass' majorant test}
+\begin{theorem}
+If $\abs{u_n(x)}\leq M_n$ on $E$, $M_n\geq0$, and $\sum M_n<\infty$, then $\sum u_n$ and $\sum\abs{u_n}$ converge uniformly on $E$; the original series is absolutely convergent at every point.
+\end{theorem}
+\begin{proof}
+Every finite tail of either series has magnitude at most $\sum_{n=p}^qM_n$, uniformly in $x$. The numerical Cauchy criterion makes this arbitrarily small. Apply the uniform Cauchy criterion, and the numerical comparison theorem at each point.
+\end{proof}
+
+\KEntry{K03.12.uniform_dirichlet}{Uniform Dirichlet test}
+\begin{theorem}
+Suppose $A_N(x)=\sum_{n=0}^Na_n(x)$ satisfies $\abs{A_N(x)}\leq M$ for all $x,N$. If real $b_n(x)$ is monotone in $n$ for each $x$ and tends uniformly to zero, then $\sum a_n(x)b_n(x)$ converges uniformly.
+\end{theorem}
+\begin{proof}
+For each $x$ a real monotone sequence tending to zero has constant sign and variation on $[p,q]$ equal to $\abs{b_p(x)}-\abs{b_q(x)}$. In the tail form of summation by parts, $\abs{T_n(x)}\leq2M$. Therefore
+\[\abs{\sum_{n=p}^q a_n(x)b_n(x)}\leq2M\abs{b_p(x)}.\]
+The right side tends uniformly to zero. Apply the uniform Cauchy criterion. The direction of monotonicity may depend on $x$.
+\end{proof}
+
+\KEntry{K03.12.uniform_abel}{Uniform Abel test}
+\begin{theorem}
+If $\sum a_n(x)$ converges uniformly and real $b_n(x)$ is monotone in $n$ at each point, with $\abs{b_n(x)}\leq M$ for all $x,n$, then $\sum a_n(x)b_n(x)$ converges uniformly.
+\end{theorem}
+\begin{proof}
+For large $p$, every $T_n(x)=\sum_{j=p}^na_j(x)$ has magnitude $<\eta$, uniformly for $n\geq p$ and $x$. Summation by parts bounds a product tail by
+\[\eta\left(\abs{b_q(x)}+\sum_{n=p}^{q-1}\abs{b_n(x)-b_{n+1}(x)}\right)\leq3M\eta.\]
+Use uniform Cauchy convergence; if $M=0$ the assertion is immediate. This proof does not require uniform convergence of $b_n$ to its pointwise limit.
+\end{proof}
+
+\KEntry{K03.12.termwise_integration}{Termwise integration}
+\begin{theorem}
+If each $u_n$ is Riemann integrable on $[a,b]$ and $\sum u_n$ converges uniformly there to $f$, then
+\[\int_a^b f(x)\dd x=\sum_{n=0}^\infty\int_a^bu_n(x)\dd x.\]
+\end{theorem}
+\begin{proof}
+Finite sums $S_N$ are integrable and their integrals are the corresponding finite sums of integrals by linearity. Apply \KRef{K03.12.integration} to $S_N\to f$. Its conclusion also proves convergence of the numerical series of integrals, rather than assuming it.
+\end{proof}
+
+\KEntry{K03.12.termwise_differentiation}{Termwise differentiation}
+\begin{theorem}
+Let $u_n$ be continuous on $[a,b]$ and differentiable inside. If $\sum u_n(x_0)$ converges for one $x_0\in[a,b]$ and $\sum u_n'$ converges uniformly on $(a,b)$, then $\sum u_n$ converges uniformly and its sum satisfies $f'(x)=\sum u_n'(x)$ inside.
+\end{theorem}
+\begin{proof}
+Apply \KRef{K03.12.differentiation} to the finite partial sums. Their derivatives are exactly the finite sums of derivatives by the finite linearity rule, and their values at $x_0$ converge by hypothesis. All hypotheses of that theorem are thus verified.
+\end{proof}
+
+\KEntry{K03.12.pointwise_discontinuous}{A discontinuous pointwise limit}
+\begin{example}
+On $[0,1]$, $f_n(x)=x^n$ tends to $f(x)=0$ for $x<1$, $f(1)=1$. The geometric decay proved in \KRef{K03.11.geometric_p} proves the pointwise claim. For each fixed $n$, values $x<1$ arbitrarily close to $1$ make $x^n$ arbitrarily close to $1$, so $\sup_{[0,1]}\abs{f_n-f}=1$. Convergence is not uniform, and the limit is discontinuous at $1$.
+\end{example}
+
+\KEntry{K03.12.integral_failure}{Moving triangles and failure of integral interchange}
+\begin{example}
+For $n\geq2$, define on $[0,1]$
+\[f_n(x)=\begin{cases}n^2x,&0\leq x\leq1/n,\\ n(2-nx),&1/n\leq x\leq2/n,\\0,&2/n\leq x\leq1.\end{cases}\]
+The formulas agree at the joins, so $f_n$ is continuous. At $x=0$ it is zero; for fixed $x>0$ it is eventually zero because $2/n<x$. Thus $f_n\to0$ pointwise. Direct integration of the two affine pieces gives $1/2+1/2=1$ for every $n$, whereas the integral of the limit is zero. Also $f_n(1/n)=n$, so the convergence is not uniform.
+\end{example}
+
+\KEntry{K03.12.derivative_failure}{Uniform function convergence need not control derivatives}
+\begin{example}
+After the trigonometric construction in \KRef{K03.07.sin_cos}, take $f_n(x)=\sin(nx)/n$ on $\R$. Its supremum norm is at most $1/n$, so it converges uniformly to zero. But $f_n'(x)=\cos(nx)$, and at $x=\pi$ these values are $(-1)^n$, which do not converge. Thus the derivatives do not even converge pointwise everywhere.
+\end{example}
+
+\KEntry{K03.12.whole_line_failure}{Local uniformity need not be global}
+\begin{example}
+With exp constructed by \KRef{K03.07.exp_construction}, let $P_N(x)=\sum_{n=0}^Nx^n/n!$. For each $A>0$, the ratio of consecutive numerical bounds $A^n/n!$ is $A/(n+1)\to0$; the M-test proves uniform convergence on $[-A,A]$. On $x\geq0$ all omitted terms are nonnegative, so
+\[\exp(x)-P_N(x)\geq x^{N+1}/(N+1)!,\]
+which is unbounded as $x\to\infty$ for every fixed $N$. There is therefore no uniform convergence on $\R$. This is a downstream example; the M-test and general power-series theory do not use exp.
+\end{example}

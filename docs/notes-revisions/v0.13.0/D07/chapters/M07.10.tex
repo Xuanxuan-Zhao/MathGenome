@@ -1,0 +1,335 @@
+\chapter{Divisibility and factorization in domains}\label{chap:M07.10}
+
+Throughout this chapter a domain is commutative and nontrivial.
+% Topic grouping: Divisibility and cancellation
+\KEntry{K07.10.divisibility}{Divisibility}
+Write $a\mid b$ if $b=ac$ for some $c\in R$. Then $a\mid0$ for every
+$a$, and $0\mid b$ exactly when $b=0$. Divisibility is reflexive and
+transitive, since $a=a1$ and $b=ac$, $d=be$ imply $d=a(ce)$.
+A unit divides every element. Conversely an element dividing $1$ is a
+unit. The relation depends on the ring; for example $2\mid1$ in $\Q$
+and not in $\Z$.
+
+\KEntry{K07.10.associates}{Associates}
+Elements $a,b$ are associates if $a=ub$ for a unit $u$.
+This is an equivalence relation: use $1$, $u^{-1}$ and products of units
+for reflexivity, symmetry and transitivity. Associates divide each other.
+Conversely, if $a=bc$ and $b=ad$ and $a\ne0$, then
+$a=acd$ gives $cd=1$, so $c$ is a unit. If $a=0$, mutual divisibility
+forces $b=0$. Thus
+\[
+ a\text{ and }b\text{ are associates}
+ \quad\Longleftrightarrow\quad a\mid b,\ b\mid a
+ \quad\Longleftrightarrow\quad (a)=(b).
+\]
+In $\Z$ the ambiguity is sign; in $F[X]$ it is multiplication by a
+nonzero constant.
+
+\KEntry{K07.10.gcd_lcm}{Greatest common divisors and least common multiples}
+A gcd $d$ of $a,b$ divides both and is divisible by every common
+divisor. An lcm is divisible by both and divides every common multiple.
+If two gcds exist each divides the other, so they are associates;
+the same argument applies to lcms. These definitions are divisibility
+conditions, not assertions about a numerical order on $R$.
+We allow the normalized conventions $\gcd(0,0)=0$ and
+$\lcm(a,0)=0$. For $a\ne0$, a gcd of $a,0$ is $a$ up to units.
+Not every domain has gcds for every pair.
+
+\KEntry{K07.10.prime_irreducible}{Prime and irreducible elements}
+An irreducible is a nonzero nonunit $p$ such that $p=ab$ forces $a$ or
+$b$ to be a unit. A prime element is a nonzero nonunit $p$ with
+$p\mid ab\Rightarrow p\mid a$ or $p\mid b$.
+The latter condition is equivalent to primality of $(p)$, by the
+principal-ideal divisibility criterion. The nonzero requirement for an
+element is retained even though the zero \emph{ideal} can be prime.
+Aluffi includes zero among prime elements; his convention must be
+restricted to nonzero elements before comparing the next theorem.
+
+\KEntry{K07.10.prime_implies_irreducible}{Prime implies irreducible}
+\begin{proposition}\label{prop:prime-implies-irreducible}
+A prime element of a domain is irreducible.
+\end{proposition}
+\begin{proof}
+If $p=ab$, primality gives, say, $a=pc$. Then $p=pcb$, and
+cancellation of $p\ne0$ gives $cb=1$, making $b$ a unit.
+The other alternative gives a unit $a$.
+\end{proof}
+
+\KEntry{K07.10.irreducible_nonprime}{An irreducible which is not prime}
+In $R=\Z[\sqrt{-5}]$, complex conjugation gives the multiplicative
+integer norm $N(a+b\sqrt{-5})=a^2+5b^2$. Its value is $1$ precisely
+at $1,-1$, which are therefore the units: a unit must have norm a
+positive integer dividing $1$, and norm $1$ gives inverse by conjugation.
+If $3=uv$ with nonunits, the positive norms multiply to $9$ and each
+exceeds $1$, so both would be $3$. But $a^2+5b^2=3$ has no integral
+solution: $b\ne0$ makes the left side at least $5$, while $b=0$ would
+require $a^2=3$. Thus $3$ is irreducible. Nevertheless
+\[
+ (2+\sqrt{-5})(2-\sqrt{-5})=9,
+\]
+and neither factor is divisible by $3$, since divisibility by the
+integer $3$ requires both integer coordinates to be divisible by $3$.
+So $3$ is not prime.
+
+% Topic grouping: Euclidean division and principal ideals
+\KEntry{K07.10.euclidean_definition}{Euclidean domains}
+A Euclidean domain has a well-founded size relation on remainders with
+the property that for $b\ne0$ there exist $q,r$ with
+$a=qb+r$ and either $r=0$ or $r$ smaller than $b$.
+A function to $\N$ with strict decrease is a familiar sufficient
+description. The relation, quotient and remainder data are additional
+structure; a class name alone is not an algorithm or a complexity bound.
+The integers are Euclidean using absolute value and ordinary division.
+A field is Euclidean with every nonzero division having remainder zero.
+
+\KEntry{K07.10.euclidean_algorithm}{The extended Euclidean algorithm}
+\begin{theorem}\label{thm:euclidean-algorithm}
+Repeated Euclidean division terminates. Its last nonzero remainder is
+a gcd of the two inputs, and is an $R$-linear combination of them.
+\end{theorem}
+\begin{proof}
+Start with $r_{-1}=a,r_0=b$, and for a nonzero current divisor write
+$r_{i-1}=q_{i+1}r_i+r_{i+1}$. Nonzero successive remainders strictly
+decrease, so well-foundedness forbids an infinite run. If the last
+nonzero remainder is $d=r_k$, then $r_{k-1}=q_{k+1}d$.
+Backward substitution shows $d$ divides every preceding remainder,
+including $a,b$. Conversely a common divisor of $a,b$ divides
+$r_{i+1}=r_{i-1}-q_{i+1}r_i$ inductively, hence divides $d$.
+The same recurrence, starting with coefficient pairs $(1,0),(0,1)$,
+expresses every $r_i$ as $x_i a+y_i b$.
+If $b=0$, take $d=a$; if both inputs vanish, take $d=0$.
+\end{proof}
+Quotients are not generally unique for a chosen Euclidean function.
+For example $5=2\cdot2+1=3\cdot2-1$ in $\Z$ has two remainders of
+absolute value smaller than $2$. A chosen nonnegative remainder convention
+selects one; the abstract definition does not.
+
+\KEntry{K07.10.pid_definition}{Principal ideal domains}
+A PID is a domain in which every ideal has one generator.
+A principal ideal ring need not be a domain: the ideals of $\Z/4\Z$
+are $0,(2)$ and the whole ring, but $2\cdot2=0$ there.
+The ideal list follows from the correspondence with ideals of $\Z$
+containing $(4)$, whose nonnegative generators are the divisors of $4$.
+
+\KEntry{K07.10.euclidean_pid}{Euclidean implies PID}
+\begin{theorem}\label{thm:euclidean-implies-pid}
+Every Euclidean domain is a PID.
+\end{theorem}
+\begin{proof}
+The zero ideal is generated by zero. In a nonzero ideal $I$, choose a
+nonzero element $d$ minimal for the well-founded size relation restricted
+to $I\setminus\{0\}$. For $a\in I$, divide $a=qd+r$.
+The remainder belongs to $I$ and if nonzero would be smaller than $d$.
+Thus $r=0$ and $a\in(d)$. The reverse inclusion follows from $d\in I$.
+\end{proof}
+
+\KEntry{K07.10.bezout}{Bezout identities}
+If $(a,b)=(d)$, then $d$ divides $a,b$, and any common divisor $c$
+has $(a,b)\subseteq(c)$, hence divides $d$. Thus $d$ is a gcd.
+Also $d\in(a,b)$ means $d=xa+yb$.
+This proves gcd existence and Bezout identities in a PID, with
+the all-zero case $d=0$ included.
+
+The converse assertion that gcd $1$ always yields a Bezout identity is
+false. In $\Z[X]$, a divisor of $2$ must be a constant polynomial,
+by additivity of degrees in a domain; a common divisor of $2,X$ must
+then divide the coefficient $1$ of $X$, so is a unit. Hence their gcd
+is $1$. But $2f+Xg$ always has even constant coefficient and cannot
+equal $1$. The degree argument used here is proved in
+Proposition~\ref{prop:polynomial-degree}.
+
+\KEntry{K07.10.pid_prime_maximal}{Primes and irreducibles in a PID}
+\begin{proposition}\label{prop:pid-primes}
+In a PID every nonzero prime ideal is maximal. For a nonzero element
+$p$, being irreducible, being prime, and having $(p)$ maximal are equivalent.
+\end{proposition}
+\begin{proof}
+If $(p)$ is a nonzero prime ideal and $(p)\subseteq(d)$, write $p=dc$.
+Primality gives $d\in(p)$, making the ideals equal, or $c=pe$, making
+$p=dpe$ and hence $de=1$. In the latter case $(d)=R$.
+For irreducible $p$, any containing ideal $(d)$ again gives $p=dc$,
+so $d$ or $c$ is a unit. The former gives $(d)=R$ and the latter
+$(d)=(p)$; thus $(p)$ is maximal.
+Maximal ideals are prime by Proposition~\ref{prop:maximal-quotient},
+and prime elements are irreducible by
+Proposition~\ref{prop:prime-implies-irreducible}.
+\end{proof}
+The nonzero restriction on the ideal is needed: $(0)$ in $\Z$ is prime
+and not maximal.
+
+\begin{lemma}\label{lem:pid-acc}
+Ascending chains of ideals in a PID stabilize. Every nonempty collection
+of ideals has a maximal member.
+\end{lemma}
+\begin{proof}
+For $I_1\subseteq I_2\subseteq\cdots$, the union is an ideal $(a)$.
+Its generator lies in some $I_n$, forcing all later ideals to equal
+the union. If a nonempty collection had no maximal member, successive
+choices of strictly larger members would produce a nonstabilizing
+ascending chain, a contradiction.
+\end{proof}
+
+% Topic grouping: Unique factorization
+\KEntry{K07.10.ufd_definition}{The factorization requirement}
+A UFD is a domain in which every nonzero nonunit has a finite factorization
+into irreducibles, unique up to reordering and replacing corresponding
+factors by associates. Equivalently one may write a leading unit times
+chosen representatives of irreducibles. Zero is not given a prime
+factorization. Units correspond to empty lists of nonunit factors.
+A field is a UFD since every nonzero element is a unit.
+
+\begin{lemma}\label{lem:prime-factorization-unique}
+In a domain, factorizations into prime elements are unique up to units
+and order.
+\end{lemma}
+\begin{proof}
+If $u p_1\cdots p_m=v q_1\cdots q_n$, primality of $p_1$ makes it
+divide a factor on the right: apply the binary prime condition repeatedly,
+noting a nonunit prime cannot divide the unit $v$.
+Say $p_1\mid q_j$. Irreducibility of $q_j$ makes the quotient a unit,
+so $q_j$ is associate to $p_1$. Move that factor first and cancel the
+nonzero prime, absorbing its unit into $v$. Induct on $m$.
+If $m=0$, a nonempty product on the other side cannot be a unit:
+if a product is a unit each factor divides $1$ and is a unit.
+Thus $n=0$, completing the induction and proving equality of lengths.
+\end{proof}
+
+\KEntry{K07.10.pid_ufd}{PID implies UFD}
+\begin{theorem}\label{thm:pid-implies-ufd}
+Every PID is a UFD. Consequently every Euclidean domain is a UFD.
+\end{theorem}
+\begin{proof}
+Suppose a nonzero nonunit lacks an irreducible factorization.
+Among the principal ideals generated by such elements choose a maximal
+one, using Lemma~\ref{lem:pid-acc}, say $(a)$.
+The element $a$ is not irreducible, so $a=bc$ with both factors nonunits.
+Both are nonzero. The inclusions $(a)\subsetneq(b),(c)$ are strict:
+equality with $(b)$ would make $a,b$ associates and cancellation would
+make $c$ a unit. By maximality both $b,c$ have irreducible
+factorizations, giving one for $a$, a contradiction.
+Thus existence holds. Proposition~\ref{prop:pid-primes} makes these
+irreducibles prime, and Lemma~\ref{lem:prime-factorization-unique} proves
+uniqueness.
+\end{proof}
+
+\KEntry{K07.10.ufd_prime_irreducible}{Irreducibles are prime in a UFD}
+Let $p$ be irreducible in a UFD and suppose $ab=pc$.
+If $a$ or $b$ is zero then $p$ divides that factor. Otherwise all
+nonzero factors in the equation have irreducible factorizations
+(units contribute empty lists). Uniqueness says $p$ is associate to a
+factor occurring in $a$ or $b$, so it divides that factor.
+Thus $p$ is prime. The reverse implication was already proved, giving
+prime if and only if irreducible in a UFD.
+
+\KEntry{K07.10.ufd_gcd}{Prime-exponent arithmetic}
+Choose one representative for each associate class of primes appearing
+in nonzero $a,b$, and write
+$a=u\prod p^{e_p}$, $b=v\prod p^{f_p}$, using exponent zero when absent.
+The element $\prod p^{\min(e_p,f_p)}$ is a gcd and
+$\prod p^{\max(e_p,f_p)}$ an lcm. Indeed divisibility of nonzero
+elements is exactly coordinatewise comparison of prime exponents,
+as follows by factorizing the quotient and using uniqueness.
+These formulas verify both universal divisibility conditions.
+Since $\min(e,f)+\max(e,f)=e+f$, the product of gcd and lcm is
+associated to $ab$. If an input is zero, the conventions stated earlier
+give the same association, both products being zero. Literal equality
+requires compatible choices of units; association does not.
+
+\KEntry{K07.10.nonufd_domain}{Failure of unique factorization}
+In $\Z[\sqrt{-5}]$ the identity
+\[
+ 6=2\cdot3=(1+\sqrt{-5})(1-\sqrt{-5})
+\]
+gives two irreducible factorizations. For $2$, a nonunit factorization
+would require norm $2$ factors, impossible by $a^2+5b^2=2$.
+Irreducibility of $3$ was proved above. Each of the last two factors has
+norm $6$; a nonunit split would require norms $2$ and $3$, both
+impossible. The only units are $\pm1$, so no factor $2$ or $3$ is
+associate to a factor with nonzero $\sqrt{-5}$ coordinate.
+This is a domain but not a UFD. Merely writing two different products
+would not suffice without these irreducibility and nonassociation checks.
+
+\KEntry{K07.10.ufd_not_pid}{A UFD which is not a PID}
+The polynomial theorem proved below in
+Theorem~\ref{thm:polynomial-ufd} makes $\Z[X]$ a UFD.
+Its ideal $(2,X)$ is proper, since its elements have even constant
+coefficient. If generated by $h$, the divisibility $h\mid2$ forces
+$h$ constant. Its integer value divides $2$, so it is $\pm1$ or $\pm2$.
+The first alternatives generate the whole ring; the latter cannot divide
+$X$, whose coefficient of $X$ is $1$. This contradiction proves that
+$(2,X)$ is not principal.
+
+% Topic grouping: A PID which is not Euclidean
+\KEntry{K07.10.pid_not_euclidean}{The ring of discriminant minus nineteen}
+Let $\omega=(1+\sqrt{-19})/2$ and $R=\Z[\omega]$.
+Then $\omega^2-\omega+5=0$ and
+\[
+ N(a+b\omega)=(a+b\omega)(a+b\bar\omega)=a^2+ab+5b^2
+ =(a+b/2)^2+19b^2/4 .
+\]
+This is a multiplicative, positive integer norm on nonzero elements.
+If $b\ne0$, its value is at least $5$; hence its only value-$1$
+elements, and its only units, are $\pm1$.
+
+\begin{lemma}\label{lem:dedekind-hasse-sufficient}
+Suppose a domain has a positive integer-valued norm $N$ such that,
+whenever $a,b\ne0$ and $b\nmid a$, some $s,t\in R$ satisfy
+$0<N(sa-tb)<N(b)$. Then it is a PID.
+\end{lemma}
+\begin{proof}
+In a nonzero ideal choose $b\ne0$ of minimum positive norm.
+For $a$ in the ideal not divisible by $b$, the asserted $sa-tb$ is
+a nonzero element of smaller norm in that ideal, a contradiction.
+Thus the ideal equals $(b)$.
+\end{proof}
+We verify this criterion, including the small denominators. For
+$z=a_0/b_0\notin R$ in the fraction field write
+\[
+ z=\frac{a+b\sqrt{-19}}{c},\qquad
+ a,b,c\in\Z,\ c>0,\ \gcd(a,b,c)=1 .
+\]
+Such a representation follows by rationalizing and clearing rational
+denominators, then dividing their common gcd. We have $c>1$, since
+$\Z[\sqrt{-19}]\subset R$. It suffices to find $s,t\in R$ with
+$0<N(zs-t)<1$, because multiplication by $b_0$ gives the criterion.
+
+If $c\ge5$, choose $x,y,h\in\Z$ with $ax+by+ch=1$.
+Write $ay-19bx=cq+r$, with $|r|\le c/2$, taking a nearest multiple.
+Set $s=y+x\sqrt{-19}$, $t=q-h\sqrt{-19}$. Then
+$zs-t=(r+\sqrt{-19})/c$, and its norm is $(r^2+19)/c^2$.
+For $c\ge6$ this is at most $1/4+19/36<1$; for $c=5$,
+integrality gives $|r|\le2$, so it is at most $23/25<1$.
+It is nonzero.
+If $c=2$, $a,b$ have opposite parity: both even contradict the gcd,
+and both odd would give $z\in R$. With $s=1$ and
+$t=((a-1)+b\sqrt{-19})/2\in R$, the difference is $1/2$.
+If $c=3$, the number $A=a^2+19b^2$ is nonzero modulo $3$,
+since $a^2+b^2\equiv0\pmod3$ forces both divisible by $3$.
+Write $A=3q+r$, $r=1,2$, and take
+$s=a-b\sqrt{-19}$, $t=q$. The difference is $r/3$.
+If $c=4$ and $a,b$ have opposite parity, $A$ is odd; write
+$A=4q+r$, $r=1,3$, and use the same $s,t$, giving $r/4$.
+If both are odd, $A\equiv4\pmod8$; write $A=8q+4$ and use
+$s=(a-b\sqrt{-19})/2\in R$, $t=q$, giving $1/2$.
+Both even are impossible. Each listed nonzero real difference has norm
+strictly between zero and one. Thus $R$ is a PID.
+
+To exclude every Euclidean structure, call a nonzero nonunit $u$ a
+universal side divisor if for every $x\in R$, $u\mid x-\varepsilon$
+for some $\varepsilon$ equal to zero or a unit.
+In any Euclidean nonfield, a minimal nonzero nonunit $u$ has this
+property: dividing $x$ by $u$ leaves zero or a smaller element, which
+by minimality must be a unit.
+In our ring, apply the property to $x=2$. Since the units are $\pm1$,
+$u$ divides $1,2$, or $3$, and cannot divide $1$. Multiplicativity of
+the norm forces $N(u)$ to divide $4$ or $9$.
+There are no norm $2$ or $3$ elements, so $N(u)=4$ or $9$.
+Norm $4$ forces $u=\pm2$. For norm $9$, $|b|\ge2$ is impossible;
+for $b=\pm1$ the equation $a^2\pm a+5=9$ has no integral solution
+(it would require the nonsquare discriminant $17$).
+Thus norm $9$ forces $u=\pm3$.
+But none of $\omega,\omega-1,\omega+1$ is divisible by $2$ or by $3$:
+its $\omega$ coefficient is $1$. Taking $x=\omega$ therefore
+contradicts the universal-side-divisor property.
+The ring is not Euclidean for any well-founded Euclidean function,
+not merely for its displayed norm.

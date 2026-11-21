@@ -1,0 +1,128 @@
+\chapter{Actions, orbits, and counting}\label{chap:M07.05}
+
+\KEntry{K07.05.action_definition}{Left actions}
+An action of $G$ on $X$ is a map $(g,x)\mapsto g\cdot x$ such that $1\cdot x=x$ and $(gh)\cdot x=g\cdot(h\cdot x)$. Each $g$ acts bijectively, since action by $g^{-1}$ is a two-sided inverse by these equations. An action on the empty set is allowed. We call an action faithful if equality of the acting maps forces equality in $G$, free if only $1$ fixes any specified point, and transitive if $X$ is nonempty and every point can be moved to every other. These conditions are not part of the action axioms: a nontrivial group acting trivially on one point is transitive but neither faithful nor free.
+
+\KEntry{K07.05.permutation_representation}{Actions as homomorphisms to permutations}
+\begin{proposition}\label{prop:actions-permutations}
+Actions on $X$ are equivalent to homomorphisms $\rho:G\to S_X$. The kernel consists of elements fixing every point, and faithfulness is equivalent to injectivity of $\rho$.
+\end{proposition}
+\begin{proof}
+Given an action, set $\rho(g)(x)=g\cdot x$. The inverse map is action by $g^{-1}$, so this is a permutation. The action laws give $\rho(1)=\id$ and $\rho(gh)=\rho(g)\rho(h)$. Conversely, from such a homomorphism define $g\cdot x=\rho(g)(x)$; the homomorphism equations give precisely the action laws. These constructions recover the original function in either direction. A permutation is identity exactly when it fixes all points, proving the kernel assertion. Finally faithfulness says exactly that $\rho(g)=\rho(h)$ implies $g=h$, the definition of injection. For the empty set the representation is trivial and is faithful only when $G$ is trivial.
+\end{proof}
+
+\KEntry{K07.05.orbit_stabilizer_definitions}{Orbits and stabilizers}
+\begin{definition}
+Set $\Orb(x)=\{g\cdot x:g\in G\}$ and $\Stab(x)=\{g:g\cdot x=x\}$.
+\end{definition}
+\begin{proposition}\label{prop:orbits-stabilizers}
+Stabilizers are subgroups, the relation of belonging to the same orbit partitions $X$, and $\Stab(g\cdot x)=g\Stab(x)g^{-1}$.
+\end{proposition}
+\begin{proof}
+The identity fixes $x$; if $h,k$ fix $x$, then $hk$ does, and applying $h^{-1}$ to $h\cdot x=x$ proves that $h^{-1}$ does. Thus the stabilizer is a subgroup. The orbit relation is reflexive by $1$, symmetric by $g^{-1}$, and transitive by multiplication in $G$. Equivalence classes partition a set, and the class at $x$ is exactly its orbit. Lastly $h$ fixes $g\cdot x$ exactly when $g^{-1}hg$ fixes $x$, by acting on the equality with $g^{-1}$. This is exactly the claimed conjugation relation.
+\end{proof}
+
+\KEntry{K07.05.orbit_stabilizer_equivalence}{Orbit--stabilizer without finiteness}
+\begin{theorem}\label{thm:orbit-coset-bijection}
+For any $x\in X$, the map $g\Stab(x)\mapsto g\cdot x$ is a bijection from $G/\Stab(x)$ to $\Orb(x)$.
+\end{theorem}
+\begin{proof}
+The equation $g\cdot x=h\cdot x$ is equivalent, by action of $h^{-1}$, to $h^{-1}g\in\Stab(x)$, which is the equality criterion for the two left cosets. This proves well-definedness and injectivity simultaneously. Every orbit element has the form $g\cdot x$, proving surjectivity. This is a set bijection; the stabilizer need not be normal and the orbit is not asserted to be a quotient group.
+\end{proof}
+
+\KEntry{K07.05.orbit_stabilizer_counting}{Orbit--stabilizer counting}
+\begin{corollary}\label{cor:orbit-stabilizer-count}
+For finite $G$, each orbit is finite and
+\[
+ |\Orb(x)|=[G:\Stab(x)],\qquad
+ |\Orb(x)|\,|\Stab(x)|=|G|.
+\]
+If $X$ is finite, $|X|$ is the sum of its orbit sizes.
+\end{corollary}
+\begin{proof}
+An orbit is the image of the finite set $G$ under $g\mapsto g\cdot x$, so is finite. The bijection in Theorem~\ref{thm:orbit-coset-bijection} and Lagrange give the two formulas. Proposition~\ref{prop:orbits-stabilizers} partitions $X$ into orbits, so finite additivity of cardinality proves the final sum. Finiteness of $G$ alone does not imply finiteness of $X$ or of the number of orbits.
+\end{proof}
+
+\KEntry{K07.05.coset_action_kernel}{Coset actions and the normal core}
+\begin{theorem}\label{thm:coset-action-core}
+The action $g\cdot(xH)=gxH$ is transitive, the stabilizer of $H$ is $H$, and its kernel is
+\[
+ \operatorname{core}_G(H)=\bigcap_{x\in G}xHx^{-1}.
+\]
+This is the largest normal subgroup contained in $H$. Every nonempty transitive $G$-set is equivariantly isomorphic to a coset space.
+\end{theorem}
+\begin{proof}
+Replacing $x$ by $xh$ does not change $gxH$, so the action is well-defined. Identity and multiplication follow from those of $G$, and $x$ sends $H$ to $xH$, proving transitivity. The equality $gH=H$ holds exactly when $g\in H$. An element $g$ fixes every $xH$ precisely when $x^{-1}gx\in H$ for every $x$, which is the displayed intersection condition. This intersection is normal, since conjugation permutes its intersectands, and is contained in $H$ by taking $x=1$. If $K$ is normal and contained in $H$, then $K=xKx^{-1}\subseteq xHx^{-1}$ for each $x$, so it lies in the intersection. Finally choose $a$ in a nonempty transitive $G$-set. Theorem~\ref{thm:orbit-coset-bijection} maps $G/\Stab(a)$ bijectively onto its orbit, now the whole set. It is equivariant because the value at $g(h\Stab(a))$ is $gh\cdot a=g\cdot(h\cdot a)$.
+\end{proof}
+
+\KEntry{K07.05.conjugation_action}{The conjugation action}
+The formula $g\cdot x=gxg^{-1}$ acts on the underlying set of $G$: $1x1=x$ and $g(hxh^{-1})g^{-1}=(gh)x(gh)^{-1}$ verify the two laws. Its orbits are the conjugacy classes. Its stabilizer at $x$ is
+$C_G(x)=\{g:gx=xg\}$, by multiplying $gxg^{-1}=x$ on the right by $g$. Its points fixed by every group element form $Z(G)$, since this is precisely the condition of commuting with every $g$.
+
+\KEntry{K07.05.centralizers_normalizers}{Centralizers and normalizers}
+\begin{proposition}\label{prop:centralizers-normalizers}
+For $S\subseteq G$, the sets
+\[
+ C_G(S)=\{g:gs=sg\text{ for all }s\in S\},\quad
+ N_G(S)=\{g:gSg^{-1}=S\}
+\]
+are subgroups with $C_G(S)\leq N_G(S)$. For $H\leq G$, $H\leq N_G(H)$, $H$ is normal in $N_G(H)$, and $H$ is normal in $G$ exactly when $N_G(H)=G$.
+\end{proposition}
+\begin{proof}
+If $g,h$ commute with every $s$, then $ghs=gsh=sgh$; multiplying $gs=sg$ by $g^{-1}$ on both sides also gives $g^{-1}s=sg^{-1}$. Together with the identity these prove centralizer closure. The identity normalizes $S$; if $g,h$ do, then $(gh)S(gh)^{-1}=g(hSh^{-1})g^{-1}=S$. From $gSg^{-1}=S$ one obtains $g^{-1}Sg=S$, proving inverse closure. A centralizing $g$ fixes each element of $S$ under conjugation and hence normalizes the set, proving inclusion. An element $h\in H$ conjugates $H$ into itself by subgroup closure; applying $h^{-1}$ proves equality, hence $H\leq N_G(H)$. The normalizer definition then proves normality in that ambient subgroup and its equality criterion for normality in $G$.
+\end{proof}
+
+\KEntry{K07.05.conjugacy_counting}{Counting conjugates}
+\begin{proposition}\label{prop:conjugacy-count}
+For finite $G$, the conjugacy class of $x$ has size $[G:C_G(x)]$. The number of conjugate subgroups of $H$ is $[G:N_G(H)]$.
+\end{proposition}
+\begin{proof}
+Apply Corollary~\ref{cor:orbit-stabilizer-count} to conjugation on elements, whose stabilizer was just computed as $C_G(x)$. Conjugation also acts on the set of subgroups: $g\cdot H=gHg^{-1}$ is a subgroup because conjugation is an automorphism, and the action laws follow by composing these automorphisms. Its stabilizer consists exactly of $g$ with $gHg^{-1}=H$, namely $N_G(H)$. A second application of orbit--stabilizer gives the subgroup formula.
+\end{proof}
+
+\KEntry{K07.05.class_equation}{The class equation}
+\begin{theorem}\label{thm:class-equation}
+For finite $G$ and one representative $x_i$ of each noncentral conjugacy class,
+\[
+ |G|=|Z(G)|+\sum_i[G:C_G(x_i)].
+\]
+Equivalently one sums the cardinalities of the noncentral classes themselves.
+\end{theorem}
+\begin{proof}
+The conjugation orbits partition $G$. An orbit has one element precisely when that element commutes with every $g$, hence precisely when it lies in the center. Remove those singleton orbits; the remaining orbits are exactly the noncentral conjugacy classes. Adding their sizes and substituting Proposition~\ref{prop:conjugacy-count} proves the formula. Using the classes instead of representatives changes no term and makes the statement independent of a choice.
+\end{proof}
+
+\KEntry{K07.05.burnside}{Burnside's orbit-counting theorem}
+\begin{theorem}\label{thm:burnside}
+For a finite group acting on a finite set,
+\[
+ |G|\,|X/G|=\sum_{g\in G}|\{x:g\cdot x=x\}|.
+\]
+Thus $|X/G|$ is the sum on the right divided by the positive integer $|G|$. Faithfulness is unnecessary.
+\end{theorem}
+\begin{proof}
+Count $T=\{(g,x)\in G\times X:g\cdot x=x\}$ first by $g$, giving the right-hand side. Counting by $x$ gives $\sum_x|\Stab(x)|$. If $x,y$ are in one orbit their stabilizers are conjugate by Proposition~\ref{prop:orbits-stabilizers}, so have equal size. The contribution from that orbit is $|\Orb(x)|\,|\Stab(x)|=|G|$ by Corollary~\ref{cor:orbit-stabilizer-count}. Summing over the orbits gives the left-hand side. For $X=\varnothing$ both counts vanish. Since every group has an identity, $|G|>0$, and division is an exact integer quotient. No scalar field or characteristic hypothesis enters this count.
+\end{proof}
+
+\KEntry{K07.05.action_examples_checked}{Which symmetries are being counted?}
+Label the square's vertices by $\Z/4\Z$. Its rotations act by $r(i)=i+1$, and reflection $s(i)=-i$ extends them to $D_8$. These formulas satisfy $r^4=s^2=1$, $srs=r^{-1}$ and define the intended vertex actions. The stabilizer of vertex $0$ in $D_8$ is $\{1,s\}$: the rotation $r^j$ fixes $0$ only for $j=0$, and $r^js$ fixes $0$ only for $j=0$. In the rotation subgroup the stabilizer is trivial.
+
+For $q$ labelled colors, a coloring is a function $c:\Z/4\Z\to\{1,\ldots,q\}$ and the action is $(g\cdot c)(i)=c(g^{-1}i)$. Its action law follows from $(gh)^{-1}=h^{-1}g^{-1}$ by substitution. A stabilizer consists exactly of those symmetries preserving each vertex's color, not every symmetry preserving the underlying square. A constant coloring has the whole group as stabilizer; a coloring with one red vertex and three blue vertices has the vertex stabilizer just computed.
+
+A coloring is fixed by $g$ exactly when its colors are constant on every cycle of $g$ on vertices. Hence it has $q^{c(g)}$ choices, where $c(g)$ counts also fixed-point cycles. Rotations have cycle counts $4,1,2,1$, giving $(q^4+q^2+2q)/4$ orbits. The four reflections consist of two with cycle count three and two with cycle count two; the full group gives $(q^4+2q^3+3q^2+2q)/8$. For three colors these numbers are $24$ and $21$. Thus adding reflections really changes the equivalence relation being counted. Each formula follows from Theorem~\ref{thm:burnside}, with its acting group and fixed-point sets now explicitly specified.
+
+\KEntry{K07.05.averaging_bridge}{Averaging linear actions}
+\begin{theorem}\label{thm:group-average}
+Let $K$ be a field, $E$ a $K$-vector space and $G$ finite. Suppose the linear operators $\rho(g)$ satisfy $\rho(gh)=\rho(g)\rho(h)$. Write $m=|G|\cdot1_K$ and explicitly define $a=m^{-1}$ when $m\ne0$, and $a=0$ when $m=0$. Put
+\[
+ P=a\sum_{g\in G}\rho(g).
+\]
+The image of $P$ consists of vectors fixed by every $\rho(h)$. If $|G|\cdot1_K\ne0$, then $P$ fixes every fixed vector, $P^2=P$, and its image is exactly the fixed subspace.
+\end{theorem}
+\begin{proof}
+Linearity and the multiplicativity assumption give, for each $h$,
+\[
+ \rho(h)P=a\sum_g\rho(hg)=a\sum_u\rho(u)=P,
+\]
+since $g\mapsto hg$ permutes $G$. Thus $Pv$ is fixed for every $v$. If $v$ is fixed, $Pv=a\sum_gv=amv=v$ under the nonzero assumption. Applying this equality to the already fixed vector $Pv$ proves $P^2v=Pv$. Every fixed vector is its own image, proving the equality of subspaces. Finiteness of the group, not dimension of $E$, makes the sum meaningful. When the characteristic divides $|G|$, our explicit convention sets $a=0$ and hence $P=0$; a nonzero trivial representation then has fixed vectors which $P$ does not fix. This is also the totalized inverse convention used by Lean; ordinary field notation alone would not define $0^{-1}$. The invariance calculation itself still holds. This is the finite average used for the D05 symmetrizers; it neither changes Burnside's integral hypotheses nor proves the distinct invariant-complement assertion of Maschke by itself.
+\end{proof}

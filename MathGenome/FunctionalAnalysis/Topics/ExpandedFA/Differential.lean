@@ -1,0 +1,5 @@
+import MathGenome.Internal.FunctionalAnalysis.ExpandedFA.Differential.ChainMeanValue
+import MathGenome.Internal.FunctionalAnalysis.ExpandedFA.Differential.Definitions
+import MathGenome.Internal.FunctionalAnalysis.ExpandedFA.Differential.DirectionalBoundary
+import MathGenome.Internal.FunctionalAnalysis.ExpandedFA.Differential.ImplicitFunction
+import MathGenome.Internal.FunctionalAnalysis.ExpandedFA.Differential.InverseFunction

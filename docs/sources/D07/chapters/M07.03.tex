@@ -1,0 +1,83 @@
+\chapter{Cosets, index, and finite counting}\label{chap:M07.03}
+
+\KEntry{K07.03.cosets_partition}{Left and right cosets}
+For $H\leq G$, write $gH=\{gh:h\in H\}$ and $Hg=\{hg:h\in H\}$.
+\begin{proposition}\label{prop:coset-partition}
+The relation $x\sim y$ if $x^{-1}y\in H$ is an equivalence relation whose classes are left cosets. Two left cosets are equal or disjoint, and they partition $G$. The right-coset relation is $yx^{-1}\in H$.
+\end{proposition}
+\begin{proof}
+Reflexivity follows from $1\in H$. Symmetry follows by taking inverses; transitivity follows from $(x^{-1}y)(y^{-1}z)=x^{-1}z$. Moreover $x^{-1}y\in H$ means exactly $y=xh$ for some $h\in H$. Thus the classes are $xH$. Equivalence classes partition a set: if two share $z$, symmetry and transitivity show every point of either equivalent to every point of the other, hence they are equal. For right cosets, the formulas $xx^{-1}=1$, $(yx^{-1})^{-1}=xy^{-1}$, and $(zy^{-1})(yx^{-1})=zx^{-1}$ verify the three relation laws; its class at $x$ is $Hx$. No normality is involved in these set-theoretic assertions.
+\end{proof}
+
+\KEntry{K07.03.coset_bijections}{The cardinality of a coset}
+\begin{proposition}\label{prop:coset-bijections}
+Every left and right coset of $H$ is in bijection with $H$. The spaces of left and right cosets are in bijection.
+\end{proposition}
+\begin{proof}
+The map $h\mapsto gh$ has inverse $x\mapsto g^{-1}x$ on $gH$, and $h\mapsto hg$ has inverse $x\mapsto xg^{-1}$ on $Hg$. Inversion sends the set $gH$ to $Hg^{-1}$. Since inversion is an involution, equal left cosets have equal right-coset images, and this gives mutually inverse maps between the two coset spaces. These maps need not be homomorphisms: a coset space need not be a group.
+\end{proof}
+
+\KEntry{K07.03.lagrange}{Lagrange's theorem}
+\begin{theorem}\label{thm:lagrange}
+If $G$ is finite, then $|G|=|H|[G:H]$ for every subgroup $H$, where $[G:H]$ is the number of left cosets. Both $|H|$ and $[G:H]$ divide $|G|$.
+\end{theorem}
+\begin{proof}
+Proposition~\ref{prop:coset-partition} partitions $G$ into $[G:H]$ disjoint sets, each with $|H|$ elements by Proposition~\ref{prop:coset-bijections}. Counting this partition gives the formula. These are positive integers because $1\in H$ and there is at least one coset, so it also proves the divisibilities. For infinite groups one must use cardinalities, rather than silently dividing integers. In Mathlib, natural cardinality and index use zero for an infinite set or coset space; that encoding does not supply a positive denominator.
+\end{proof}
+
+\KEntry{K07.03.index_tower}{Multiplying indices}
+\begin{proposition}\label{prop:index-tower}
+If $K\leq H\leq G$, there is a set bijection
+\[
+ G/K\ \cong\ (G/H)\times(H/K).
+\]
+It depends on chosen representatives. For finite indices it gives $[G:K]=[G:H][H:K]$, hence $[G:H]\mid[G:K]$.
+\end{proposition}
+\begin{proof}
+Choose one representative $t_C\in G$ for each left coset $C\in G/H$. Define $(C,hK)\mapsto t_ChK$. Changing $h$ by right multiplication by an element of $K$ leaves its image coset unchanged. Every $g$ has a unique selected $C=gH$ and can be written $t_Ch$ with $h\in H$, proving surjectivity. If $t_ChK=t_Dh'K$, these cosets lie in the same $H$-coset, so $C=D$. Cancelling $t_C=t_D$ then gives $hK=h'K$. This proves injectivity. Counting the product when both factors are finite gives the stated integer formula even when $G$ itself is infinite. The construction uses no group operation on either coset space.
+\end{proof}
+
+\KEntry{K07.03.finite_element_orders}{Orders of elements in a finite group}
+\begin{corollary}\label{cor:finite-element-order}
+For finite $G$, $\operatorname{ord}(x)$ divides $|G|$ and $x^{|G|}=1$. If $|G|=p$ is prime, every nonidentity element generates $G$ and $G\cong C_p$.
+\end{corollary}
+\begin{proof}
+The subgroup $\langle x\rangle$ is finite, so Theorem~\ref{thm:cyclic-models} identifies its cardinality with the finite order of $x$. Lagrange gives divisibility, and Proposition~\ref{prop:order-divisibility} then gives the power identity. If $|G|=p$ and $x\ne1$, its order is a divisor of $p$ different from one, hence equals $p$. Its generated subgroup has the full cardinality of $G$, so equals $G$; the cyclic model theorem finishes the proof.
+\end{proof}
+
+\KEntry{K07.03.hom_fiber_counting}{Fibres and kernel counting}
+\begin{proposition}\label{prop:hom-fibres}
+For a group homomorphism $f:G\to H$, every nonempty fibre is a coset of $\ker f$. If $G$ is finite, then $|G|=|\ker f|\,|\im f|$; if $f$ is surjective, the image factor is $|H|$.
+\end{proposition}
+\begin{proof}
+Choose $a$ in the fibre over $h$. Then $f(x)=h=f(a)$ holds exactly when $f(a^{-1}x)=1$, or $x\in a\ker f$. Since the kernel is normal, this is also the appropriate right coset, though only the left description is needed. Fibres over different image points are disjoint and cover $G$. Each is in bijection with the kernel by Proposition~\ref{prop:coset-bijections}. For finite $G$, counting these fibres proves the formula. Surjectivity identifies the set of nonempty fibres with all target elements.
+\end{proof}
+
+\KEntry{K07.03.subgroup_product_counting}{Products of subgroups as sets}
+\begin{proposition}\label{prop:subgroup-product}
+For finite $H,K\leq G$,
+\[
+ |HK|=\frac{|H||K|}{|H\cap K|}.
+\]
+Every member of $HK$ has exactly $|H\cap K|$ representations $hk$. For arbitrary subgroups, $HK$ is a subgroup if and only if $HK=KH$. Normality of either factor in $G$ implies this equality.
+\end{proposition}
+\begin{proof}
+Fix $hk\in HK$. Its representations $h'k'=hk$ are parametrized by $t\in H\cap K$ through $h'=ht$, $k'=t^{-1}k$: indeed $t=h^{-1}h'=kk'^{-1}$ is forced, and these formulas reconstruct a representation for each $t$. Thus the multiplication map $H\times K\to HK$ has fibres of the stated positive size; counting proves the formula.
+
+If $HK$ is a subgroup, it equals its inverse set, which is $KH$. Conversely suppose $HK=KH$. In a product $h_1k_1h_2k_2$, write $k_1h_2=h_3k_3$ using $KH=HK$; the result is in $HK$. Its inverse set is $KH=HK$, and it contains $1$, proving the subgroup laws. If $H$ is normal, $kh=(khk^{-1})k\in HK$, so $KH\subseteq HK$, and $hk=k(k^{-1}hk)\in KH$ proves the reverse inclusion. If $K$ is normal, $hk=(hkh^{-1})h\in KH$ and $kh=h(h^{-1}kh)\in HK$, again proving equality. Without normality the product set need not be a subgroup.
+\end{proof}
+
+\begin{lemma}\label{lem:index-two-preliminary}
+A subgroup of index two in any group is normal.
+\end{lemma}
+\begin{proof}
+For $g\in H$, both $gH$ and $Hg$ are $H$. If $g\notin H$, the left partition has just $H$ and $gH$, so $gH=G\setminus H$. The right partition also has two classes, by Proposition~\ref{prop:coset-bijections}, so $Hg=G\setminus H$. Thus $gH=Hg$ for every $g$, and multiplying this equality by $g^{-1}$ gives $gHg^{-1}=H$, the normality condition.
+\end{proof}
+
+\KEntry{K07.03.lagrange_converse_failure}{Why the converse to Lagrange fails}
+\begin{example}\label{ex:A4-no-six}
+The group $A_4$ has order twelve but has no subgroup of order six.
+\end{example}
+\begin{proof}
+The order is $4!/2=12$ by Theorem~\ref{thm:alternating-basic}. If $H$ had order six, it would have index two by Lagrange and be normal by Lemma~\ref{lem:index-two-preliminary}. The quotient map to $A_4/H$, which has two elements, sends every three-cycle $c$ to the identity: its image has order dividing two by Corollary~\ref{cor:finite-element-order}, and dividing three because $f(c)^3=f(c^3)=1$. An integer dividing both two and three is one. Since three-cycles generate $A_4$, Proposition~\ref{prop:hom-generators} makes the quotient map trivial, contradicting its surjectivity onto two elements. Thus divisibility by the group order is not sufficient for a subgroup of that order. The positive prime and prime-power existence statements will be proved in Chapter~\ref{chap:M07.06}, rather than inferred from a false converse.
+\end{proof}

@@ -1,0 +1,436 @@
+\chapter{The proper Riemann integral}
+\SourceRef{Zorich I, Section 6.1, PDF pp. 351--363, for mesh-tagged sums; Rudin, Chapter 6, for Darboux sums with integrator $x$; Apostol, Section 7.26, PDF pp. 182--185, for countable covers and oscillation; Tao I, Chapter 11, for step-function bounds}
+The basic real definition is bounded Darboux integration on a compact
+nondegenerate interval. Integrability is a separate predicate, not a consequence
+of writing an integral symbol or assigning a default value to nonintegrable data.
+
+\KEntry{K03.08.partitions}{Partitions and tags}
+\begin{definition}
+For $a<b$, a partition is $P=(a=x_0<x_1<\cdots<x_n=b)$.
+Its mesh is $|P|=\max_i\Delta x_i$, where $\Delta x_i=x_i-x_{i-1}$.
+A tagging chooses $\xi_i\in[x_{i-1},x_i]$, and its sum is
+$S(f;P,\xi)=\sum_i f(\xi_i)\Delta x_i$. A refinement inserts partition
+points. Two partitions have the common refinement formed by their union.
+For $[a,a]$ we use the empty sum, equal to zero, and no positive mesh.
+\end{definition}
+
+\KEntry{K03.08.darboux_sums}{Upper and lower sums}
+\begin{definition}
+For bounded $f:[a,b]\to\R$, set
+\[M_i=\sup_{[x_{i-1},x_i]}f,\quad m_i=\inf_{[x_{i-1},x_i]}f,\quad
+ U(f,P)=\sum_iM_i\Delta x_i,\quad L(f,P)=\sum_im_i\Delta x_i.
+\]
+\end{definition}
+\begin{lemma}
+Refinement increases $L$ and decreases $U$. For arbitrary $P,Q$,
+$L(f,P)\le U(f,Q)$, and every tagged sum for $P$ lies between its
+lower and upper sums.
+\end{lemma}
+\begin{proof}
+On a subinterval inserted into an old cell, its infimum is at least the old
+infimum and its supremum at most the old supremum. Multiplication by the
+positive new lengths and their additivity gives the refinement inequalities.
+For the common refinement $R$, $L(P)\le L(R)\le U(R)\le U(Q)$.
+The last assertion is the termwise inequality $m_i\le f(\xi_i)\le M_i$.
+\end{proof}
+
+\KEntry{K03.08.integral}{The integrability predicate}
+\begin{definition}
+The lower and upper integrals are
+\[\underline{I}(f)=\sup_P L(f,P),\qquad
+\overline{I}(f)=\inf_P U(f,P).
+\]
+Boundedness ensures that these are finite and $\underline I\le\overline I$.
+The function is Riemann integrable if they are equal; their common value
+is $\int_a^bf$. A complex function is integrable if its real and imaginary
+parts are, and its integral is their componentwise integral.
+\end{definition}
+For comparison with step-function definitions, a partition provides step
+minorants and majorants with constants $m_i,M_i$ on the open cells,
+assigning the finitely many endpoints their actual values. Their integrals
+are $L(P),U(P)$. Conversely, for a finite step minorant $s\le f$, refine
+at its finitely many breaks. Off those breaks its constants are bounded by
+the infima of $f$ on the open cells. Shrinking the cells adjacent to breaks
+changes a sum by at most a fixed bound times their total length. Consequently
+$\int s\le\underline I(f)$ on letting that length tend to zero. The same
+argument for majorants gives $\overline I(f)\le\int t$ for $t\ge f$.
+Taking suprema and infima, together with the partition-provided bounds,
+proves equality of the two definitions. Endpoint values have zero contribution
+because finitely many neighboring lengths can be made arbitrarily small;
+this is a proof of the comparison, not an identification of notation.
+
+\KEntry{K03.08.criterion}{The Darboux criterion}
+\begin{theorem}
+A bounded real function is integrable if and only if for each $\eps>0$
+some partition $P$ satisfies $U(f,P)-L(f,P)<\eps$.
+\end{theorem}
+\begin{proof}
+If $\underline I=\overline I=I$, choose $P,Q$ with
+$U(P)<I+\eps/2$ and $L(Q)>I-\eps/2$. Their common refinement
+has gap less than $\eps$. Conversely every such partition gives
+$0\le\overline I-\underline I\le U(P)-L(P)<\eps$, hence equality.
+\end{proof}
+
+\KEntry{K03.08.tagged_equivalence}{Equivalence with all fine tagged sums}
+\begin{theorem}
+For bounded real $f$, Darboux integrability with value $I$ is equivalent to:
+for every $\eps>0$ there is $\delta>0$ such that
+$|S(f;Q,\xi)-I|<\eps$ for every tagging of every $Q$ with $|Q|<\delta$.
+The analogous statement for complex functions is equivalent componentwise.
+\end{theorem}
+\begin{proof}
+Let $|f|\le M$ and fix $P$ with Darboux gap $<\eps/2$.
+If $P$ has $m$ interior points, cells of $Q$ whose interiors contain
+such a point have total length at most $m|Q|$; even counting cells
+touching such points gives the harmless bound $2m|Q|$.
+Every other $Q$ cell lies in a single $P$ cell. Insert the $P$ points
+into $Q$ and compare sums: the good terms are unchanged, while the total
+change on the exceptional cells has magnitude at most $4Mm|Q|$.
+The refined tagged sum is between $L(P)$ and $U(P)$, as is $I$.
+Thus $|S(Q,\xi)-I|\le\eps/2+4Mm|Q|$. Choose $\delta$ to make the
+second term $<\eps/2$; if $M m=0$ it is already zero.
+
+Conversely suppose all fine sums approach $I$. Choose a fine $Q$ such that
+every sum differs from $I$ by less than $\eps/4$. In each cell choose a
+tag with value within $\eps/(8(b-a))$ of its supremum and, independently,
+a tag equally close to its infimum. Such tags exist by the definition of
+supremum, without assuming extrema are attained. The two sums differ by
+at most $\eps/2$, and together approximate $U(Q),L(Q)$ with total error
+at most $\eps/4$. Hence $U(Q)-L(Q)<\eps$. The criterion proves
+integrability, and the first direction plus uniqueness of a limit proves
+the value is $I$. For complex values use $|\Re z|,|\Im z|\le|z|$ in one
+direction and $|z|\le|\Re z|+|\Im z|$ in the other.
+\end{proof}
+
+\KEntry{K03.08.cauchy}{Cauchy criterion for sums}
+\begin{theorem}
+For bounded scalar $f$, a common fine-mesh limit exists if and only if
+for every $\eps>0$ all two tagged sums of mesh below some $\delta$
+differ in norm by less than $\eps$.
+\end{theorem}
+\begin{proof}
+A common limit implies the assertion by the triangle inequality.
+Conversely choose any sequence of tagged partitions with meshes tending
+to zero (uniform partitions suffice). Their sums are a Cauchy sequence,
+so scalar completeness gives a limit $I$. Given $\eps$, choose the
+threshold for mutual distance $\eps/2$, then one of these sums below that
+threshold and within $\eps/2$ of $I$. Every sum of mesh below the same
+threshold is within $\eps$ of $I$. The preceding equivalence identifies
+this limit with the Darboux integral.
+\end{proof}
+
+\KEntry{K03.08.continuous}{Continuous scalar functions}
+\begin{theorem}
+Every continuous real or complex function on $[a,b]$ is integrable.
+\end{theorem}
+\begin{proof}
+Compactness gives boundedness and uniform continuity. For real $f$, choose
+$\delta$ so that $|f(x)-f(y)|<\eps/(b-a)$ when $|x-y|<\delta$.
+Any partition of mesh below $\delta$ then has each oscillation
+$M_i-m_i\le\eps/(b-a)$, and hence gap at most $\eps$.
+Apply the criterion with a smaller input tolerance for a strict bound.
+For complex $f$, its two continuous real components are integrable.
+\end{proof}
+
+\KEntry{K03.08.monotone}{Monotone, step and piecewise continuous functions}
+\begin{theorem}
+Bounded monotone real functions, finite step functions, and functions
+continuous on each of finitely many open cells with finite one-sided
+boundary limits are integrable, provided all assigned boundary values are finite.
+\end{theorem}
+\begin{proof}
+For increasing $f$ and a uniform partition of mesh $(b-a)/n$,
+\[U-L=\frac{b-a}{n}\sum_{i=1}^n(f(x_i)-f(x_{i-1}))
+=\frac{b-a}{n}(f(b)-f(a))\longrightarrow0.
+\]
+Decreasing functions follow on changing sign. A step function has zero
+oscillation outside cells touching its finitely many breaks; their total
+length is at most twice the number of breaks times the mesh, making the
+gap tend to zero. A function in the last class extends continuously to
+each closed cell using its one-sided limits. Those finitely many continuous
+pieces are integrable by the previous theorem, and changing finitely many
+endpoint values has zero effect by \KRef{K03.08.finite_changes}.
+Combining their partitions proves integrability on the whole interval;
+the same partition argument proves the additivity used here.
+\end{proof}
+
+\KEntry{K03.08.linearity}{Linearity and splitting intervals}
+\begin{theorem}
+Finite scalar linear combinations of integrable functions are integrable
+and their integrals are the same combinations. For $c\in[a,b]$, a bounded
+function is integrable on $[a,b]$ if and only if both restrictions to
+$[a,c]$ and $[c,b]$ are, and then
+$\int_a^bf=\int_a^cf+\int_c^bf$.
+\end{theorem}
+\begin{proof}
+For real functions the oscillation inequality
+$\osc(\alpha f+\beta g,J)\le|\alpha|\osc(f,J)+|\beta|\osc(g,J)$,
+on common refinements of their small-gap partitions, proves integrability.
+Every tagged sum is linear, so its limit is linear. For splitting, insert
+$c$ into a partition. Its Darboux gap is the sum of the two nonnegative
+restricted gaps. Small whole gaps therefore give small restricted gaps;
+conversely combine two small-gap partitions. Tagged sums for partitions
+containing $c$ split exactly, and their limits give the asserted equality.
+Complex versions follow by components and complex scalar multiplication.
+\end{proof}
+
+\KEntry{K03.08.order}{Order, modulus and norm estimates}
+\begin{theorem}
+For integrable real $f\le g$, $\int f\le\int g$. For integrable real
+or complex $f$, $|f|$ is integrable and
+\[\left|\int_a^bf\right|\le\int_a^b|f|\le(b-a)\sup_{[a,b]}|f|.
+\]
+\end{theorem}
+\begin{proof}
+All paired tagged sums preserve a real pointwise inequality, so their
+limits preserve it. For real values $||u|-|v||\le|u-v|$ bounds the
+Darboux gap for $|f|$ by that for $f$. For complex values the oscillation
+of $|f|$ is at most the sum of those of the two components, so common
+partitions prove its integrability as well. Put $z=\int f$. If $z\ne0$,
+choose $\lambda=\bar z/|z|$. Then
+$|z|=\int\Re(\lambda f)\le\int|f|$; if $z=0$ the assertion follows
+from positivity. Comparing $|f|$ with its supremum proves the last bound.
+\end{proof}
+
+\KEntry{K03.08.products}{Products and continuous composition}
+\begin{theorem}
+Products of bounded integrable scalar functions are integrable. If $f$ is
+real integrable and $\Phi$ is continuous on a compact interval containing
+its range, then $\Phi\circ f$ is integrable. In particular $1/f$ is
+integrable when $|f|\ge d>0$.
+\end{theorem}
+\begin{proof}
+If $|f|\le A$, $|g|\le B$, then
+$\osc(fg,J)\le A\osc(g,J)+B\osc(f,J)$; take common small-gap
+partitions. Complex products reduce to four real products.
+For composition let $|\Phi|\le H$. Given $\eta>0$, uniform continuity
+provides $d>0$ such that $|u-v|<d$ gives
+$|\Phi(u)-\Phi(v)|<\eta$. On cells with $\osc(f,J)<d$ the new
+oscillation is at most $\eta$. The total length of the remaining cells
+is at most $(U(f,P)-L(f,P))/d$. Thus the composition gap is at most
+$\eta(b-a)+2H(U-L)/d$, which can be made arbitrarily small in that order.
+For reciprocals, even when the range crosses both signs, use
+$|1/u-1/v|\le|u-v|/d^2$ directly on the actual range. The same estimate
+works for a complex reciprocal with modulus at least $d$.
+\end{proof}
+
+\KEntry{K03.08.finite_changes}{Finite changes}
+\begin{theorem}
+If bounded $f,g$ differ at only finitely many points and $f$ is integrable,
+then $g$ is integrable with the same integral.
+\end{theorem}
+\begin{proof}
+It suffices to treat $h=g-f$, supported on $N$ points, with $|h|\le M$.
+Only partition cells touching those points contribute nonzero oscillation;
+their total length is at most $2N|P|$. Thus the Darboux gap is at most
+$4MN|P|\to0$, and every tagged sum has magnitude at most
+$2MN|P|\to0$. Hence $h$ is integrable with value zero, proving the
+claim by linearity, componentwise if necessary. This argument also
+justifies all finite endpoint assignments in step-function comparisons.
+\end{proof}
+
+\KEntry{K03.08.uniform_stability}{Uniform limits preserve integrability}
+\begin{theorem}
+If integrable $f_n:[a,b]\to\K$ converge uniformly to $f$, then $f$ is
+bounded and integrable, and
+$\int f_n\to\int f$ with error at most $(b-a)\|f_n-f\|_\infty$.
+\end{theorem}
+\begin{proof}
+A uniform error at most one from any bounded $f_N$ bounds $f$.
+In the real case,
+$U(f,P)-L(f,P)\le U(f_N,P)-L(f_N,P)+2(b-a)\|f-f_N\|_\infty$.
+First choose $N$ with small uniform error and then a small-gap partition
+for $f_N$. This proves integrability; the norm estimate of the previous
+entry gives convergence of integrals. Apply the argument to components
+for complex values, and then use the complex integral norm estimate for
+the same final error bound.
+\end{proof}
+
+\KEntry{K03.08.zero_covers}{Length-zero sets using countable covers}
+\begin{definition}
+$E\subset\R$ has length zero if, for each $\eps>0$, it is covered by
+countably many open bounded intervals $I_j$ with $\sum_j|I_j|<\eps$.
+Subsets of length-zero sets have length zero.
+\end{definition}
+\begin{theorem}
+Countable unions of length-zero sets have length zero. No nondegenerate
+interval has length zero.
+\end{theorem}
+\begin{proof}
+For $E=\bigcup_{n\ge1}E_n$, cover $E_n$ with intervals of total length
+less than $\eps2^{-n-1}$. Enumerate the pairs of indices in the resulting
+countable family. Finite sums of lengths are bounded by the sum of the
+row bounds, so the total is less than $\eps$.
+If a countable open cover covers $[c,d]$, compactness supplies a finite
+subcover. Its total length is at least $d-c$: sort all its endpoints
+together with $c,d$; each resulting cell inside $[c,d]$ is covered by
+at least one interval, and summing its length counts at most the total
+length of the covering intervals. Thus $[c,d]$ cannot have length zero
+when $c<d$. Every nondegenerate interval contains such a compact interval.
+\end{proof}
+
+\KEntry{K03.08.zero_vs_content}{Countable length zero versus finite content}
+\begin{example}
+Enumerate $\Q\cap[0,1]=\{r_n:n\ge1\}$. Intervals centered at $r_n$
+of length $\eps2^{-n-1}$ cover this set with total length less than
+$\eps$, so it has length zero. However, any finite interval cover of it
+has total length at least one. Indeed the union of the closures of those
+finitely many intervals is closed and contains a dense subset of $[0,1]$,
+hence contains all of $[0,1]$. The elementary finite-length inequality
+just proved gives the lower bound one. Thus countable-cover length zero
+cannot be replaced by arbitrarily small finite-cover content.
+\end{example}
+
+\KEntry{K03.08.cantor_set}{The middle-thirds set}
+\begin{construction}
+Let $C_0=[0,1]$, and obtain $C_{n+1}$ by deleting the open middle third
+of each component of $C_n$. Put $C=\bigcap_{n\ge0}C_n$.
+\end{construction}
+\begin{proof}[Compactness, perfection, empty interior and length zero]
+$C_n$ consists of $2^n$ disjoint closed intervals of length $3^{-n}$.
+They are nested, so $C$ is closed in $[0,1]$, compact and nonempty
+(it contains $0,1$). Every component endpoint remains in all later sets.
+For $x\in C$ and every $n$, the component of $C_n$ containing $x$ has
+two endpoints in $C$, at least one different from $x$, at distance at most
+$3^{-n}$. Hence $x$ is a limit point of $C$: the set is perfect.
+If an open interval were contained in $C$, it would be contained in every
+$C_n$, impossible once its length exceeds $3^{-n}$, since a connected
+interval cannot cross the gaps between distinct components. Thus the
+interior is empty. The total length of the $C_n$ components is $(2/3)^n$.
+Enlarge their finitely many closed intervals slightly to open intervals,
+adding less than any prescribed further length. Choosing $n$ large
+produces arbitrarily small open covers, so $C$ has length zero.
+Equivalently, $C$ consists of numbers admitting a ternary expansion using
+only digits $0,2$: membership chooses a left or right component at each
+stage, whose nested intervals shrink to that digit expansion, and conversely
+such digits always select surviving components. At a deleted endpoint
+use the expansion with only $0,2$, for example $1/3=0.0222\ldots_3$;
+the alternative $0.1000\ldots_3$ is not the membership convention.
+\end{proof}
+
+\KEntry{K03.08.oscillation_criterion}{The discontinuity criterion}
+\begin{theorem}[Lebesgue criterion, proved with interval covers]
+A bounded real function on $[a,b]$ is Riemann integrable if and only if
+its set of discontinuities has length zero.
+\end{theorem}
+\begin{proof}
+For $x\in[a,b]$ define its relative oscillation by
+\[\omega(x)=\inf_{r>0}\osc(f,(x-r,x+r)\cap[a,b]).\]
+It is zero exactly when $f$ is continuous at $x$: continuity makes all
+nearby values close, and conversely oscillation below $\eps$ bounds
+$|f(y)-f(x)|$ for all sufficiently close $y$. The set
+$E_\alpha=\{x:\omega(x)\ge\alpha\}$ is closed, since a neighborhood
+with oscillation less than $\alpha$ also supplies such a neighborhood
+at every sufficiently close point. It is consequently compact.
+The discontinuity set is $D=\bigcup_{n\ge1}E_{1/n}$.
+
+Suppose $f$ integrable. Choose a partition with gap below $\alpha\eta$.
+Every $x\in E_\alpha$ in the interior of a cell forces that cell's
+oscillation at least $\alpha$. The total length of these bad cells
+is therefore below $\eta$. Their interiors cover $E_\alpha$ except
+possibly for finitely many partition endpoints. Enlarge the bad cells
+and cover those endpoints by tiny open intervals, adding less than $\eta$
+to total length. Since $\eta$ is arbitrary, $E_\alpha$ has length zero,
+and the countable-union theorem makes $D$ length zero.
+
+Conversely suppose $D$ length zero and $|f|\le M$.
+Choose $\alpha>0$ and cover the compact $E_\alpha\subset D$ by finitely
+many open intervals of total length $<\eta$; let their union be $G$.
+For every $x\notin E_\alpha$ select a relative open neighborhood $V_x$
+on which oscillation is $<\alpha$. Together with $G$ these cover $[a,b]$.
+There is a mesh $\delta>0$ such that every cell of mesh below $\delta$
+is contained in one member of this cover. To see this elementary cover
+fact, choose about each point a ball whose doubled radius lies in one
+cover member, take finitely many of the smaller balls covering the compact
+interval, and use the least of their radii. A cell of smaller length
+meeting a selected smaller ball lies in its doubled ball.
+On cells contained in a $V_x$ the oscillation is $<\alpha$.
+All other cells lie in $G$, and their total length is at most $\eta$:
+their disjoint interiors form a subset of the finite union of covering
+intervals, so the finite endpoint length calculation applies.
+Hence $U-L\le\alpha(b-a)+2M\eta$. Choose $\alpha$ and then $\eta$
+arbitrarily small. The Darboux criterion proves integrability.
+This argument constructed no Lebesgue integral and used no measure-theoretic
+convergence theorem.
+\end{proof}
+
+\KEntry{K03.08.dirichlet}{The rational indicator}
+\begin{example}
+Let $D(x)=1$ on rational $x\in[0,1]$ and $D(x)=0$ otherwise.
+Every nondegenerate interval contains both a rational and an irrational:
+Archimedean rational density gives the first, and translating a sufficiently
+small nonzero irrational multiple into a rational subinterval gives the
+second. Thus every Darboux cell has supremum one and infimum zero.
+For every partition $U(D,P)=1$, $L(D,P)=0$, so $D$ is not integrable.
+It is discontinuous at every point for the same density reason.
+\end{example}
+
+\KEntry{K03.08.thomae}{Thomae's function}
+\begin{example}
+For a reduced fraction $p/q\in[0,1]$ with $q>0$ set $T(p/q)=1/q$,
+and put $T(x)=0$ on irrationals. It is continuous at every irrational,
+discontinuous at every rational, and integrable with integral zero.
+\end{example}
+\begin{proof}
+For fixed $N$, only finitely many reduced fractions in $[0,1]$ have
+$q\le N$, since $0\le p\le q$. Near an irrational $x$, choose a
+neighborhood avoiding this finite set; then $0\le T<1/N$ there, proving
+continuity. At a rational $p/q$, irrational points approaching it have
+value zero, different from $1/q$, so continuity fails (one-sided at
+endpoints). For an integral proof independent of the discontinuity criterion,
+put tiny intervals around the finitely many rationals of denominator
+$\le N$ and choose a partition for which all cells touching them have
+total length less than $\eta$. On every other cell $T\le1/N$.
+Thus $U(T,P)\le\eta+1/N$. Every cell contains an irrational, so
+$L(T,P)=0$. Let $N\to\infty$ and $\eta\downarrow0$ to obtain the result.
+\end{proof}
+
+\KEntry{K03.08.countable_changes}{Countable modifications can fail}
+\begin{example}
+The zero function is integrable with value zero, while the rational
+indicator is not integrable. They differ exactly on the countable set
+$\Q\cap[0,1]$, which has length zero. Thus equality off a length-zero
+set does not by itself preserve Riemann integrability. If both functions
+are already bounded and Riemann integrable, such equality does imply
+equal integrals: their difference $h$ is zero off a length-zero set;
+at every continuity point of $h$, density of that complement forces
+$h=0$. Alternatively, cover its level sets by the oscillation argument.
+For a direct value proof, every cell has a point outside the zero set,
+so one can choose tags there to make all sums for $h$ equal zero; the
+all-tagged limit then equals zero. The distinction is the separate
+existence hypothesis on both integrals.
+\end{example}
+
+\KEntry{K03.08.oriented}{Orientation and finite-dimensional values}
+\begin{definition}
+For $a>b$ define $\int_a^bf=-\int_b^af$, requiring integrability on
+$[b,a]$; define $\int_a^af=0$. For a finite-vector function
+$f=(f_1,\ldots,f_d)$, integrability means integrability of every component,
+and $\int f=(\int f_1,\ldots,\int f_d)$.
+\end{definition}
+\begin{proposition}
+Interval additivity holds for arbitrary ordered triples whenever $f$ is
+integrable on the compact interval containing them. For Euclidean norm,
+$\|\int_a^bf\|\le\int_{\min(a,b)}^{\max(a,b)}\|f\|$.
+\end{proposition}
+\begin{proof}
+Sort the three points; ordinary additivity on the resulting adjacent
+intervals and the sign convention prove every ordering. The norm of $f$
+is integrable because its oscillation is bounded by the sum of component
+oscillations. If $z=\int f\ne0$, the real linear functional
+$v\mapsto\langle z/\|z\|,v\rangle$ has norm one and takes value
+$\|z\|$ at $z$. Componentwise linearity and the pointwise bound by
+$\|f\|$ prove the estimate; the case $z=0$ is immediate. Complex
+vectors use the real part of the Hermitian pairing in the same argument.
+\end{proof}
+
+\KEntry{K03.08.bridge_lebesgue}{Outgoing interface to D11}
+\begin{remark}
+This is a routing-only record, outside the proved D03 scope. The future
+D11 interface must specify its Lebesgue integral and prove that a bounded
+Riemann-integrable function on a compact interval is Lebesgue integrable
+with the same oriented value. No such assertion is assumed as a lemma
+in these notes, and no matching formal-library declaration is claimed.
+The countable-cover criterion proved above is an elementary D03 theorem;
+it does not silently supply the full Lebesgue integral or this comparison.
+\end{remark}

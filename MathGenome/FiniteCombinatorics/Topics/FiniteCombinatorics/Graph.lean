@@ -1,0 +1,2 @@
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.Foundations
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.MultigraphFoundation

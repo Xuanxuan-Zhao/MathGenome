@@ -1,0 +1,3 @@
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Degree.Properties
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Degree.RegularFibers
+import MathGenome.Internal.SmoothManifolds.SmoothManifolds.Degree.SphereNonextension

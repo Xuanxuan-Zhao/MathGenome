@@ -1,0 +1,1976 @@
+{
+  "package": "P1-05",
+  "notes_language": "en",
+  "chapter_count": 9,
+  "pdf_page_count": 54,
+  "mathematical_chapter_pages": 49,
+  "mathematical_chapter_physical_pages": [
+    5,
+    53
+  ],
+  "row_count": 54,
+  "numbered_proof_count": 90,
+  "counts_by_chapter": {
+    "1": 6,
+    "2": 5,
+    "3": 4,
+    "4": 5,
+    "5": 5,
+    "6": 11,
+    "7": 6,
+    "8": 7,
+    "9": 5
+  },
+  "source_textbooks": {
+    "Kallenberg": {
+      "bibliography": {
+        "file": "docs/notes/ProbabilityFoundations/P1-05_Probability_Notes.tex",
+        "line": 3360,
+        "key": "Kallenberg"
+      }
+    },
+    "Durrett": {
+      "bibliography": {
+        "file": "docs/notes/ProbabilityFoundations/P1-05_Probability_Notes.tex",
+        "line": 3363,
+        "key": "Durrett"
+      }
+    },
+    "Billingsley": {
+      "bibliography": {
+        "file": "docs/notes/ProbabilityFoundations/P1-05_Probability_Notes.tex",
+        "line": 3366,
+        "key": "Billingsley"
+      }
+    }
+  },
+  "scope_documents": [
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "06ac53f5665374499bcc39ea6d22f2efdd4bacb6b77e70598cf31a5043b0fe89"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "0326c3f90209a73036f1180e3facc1b9dadd7f5ebc088719e8857239f81e8475"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "4d3cfd480604fefab62e203f514e5365539882e8b7acd86a7f3b5f58bdc2e2c4"
+    }
+  ],
+  "notes_files": [
+    {
+      "path": "P1-05_Probability_Notes.tex",
+      "sha256": "6e1d669e24383c9841c3fee75d6b105b7d0e5d0cad769276e36b40098eb1de16"
+    },
+    {
+      "path": "parts/p01.tex",
+      "sha256": "05cb75380bc5df94fcfc4142cc9cce19789584abea37dc85efc17ca83c04d99f"
+    },
+    {
+      "path": "parts/p02.tex",
+      "sha256": "8a08af3eb067531a8d83ffd84ae0c7ea1575fef116336cc7651c136df142a26a"
+    },
+    {
+      "path": "parts/p03.tex",
+      "sha256": "289db951cdf41aa6e7c644933b85545dc2e1444513ec9943da2dca52936ce3fe"
+    },
+    {
+      "path": "parts/p04.tex",
+      "sha256": "d4cb1e30becf4c08c01b79124cca3c70556f0cd7a067e10b6d81e1f902d05b97"
+    },
+    {
+      "path": "parts/p05.tex",
+      "sha256": "e2cb2bbf96625ebe5e16bd9d3e28b5bd87be096589f12f26c07bad3defafcd12"
+    },
+    {
+      "path": "parts/p06.tex",
+      "sha256": "03242ff06c3774bb08a0634bf1656768b674bed2b2a1554fb329da467ec477a1"
+    },
+    {
+      "path": "parts/p07.tex",
+      "sha256": "99c716533505a48f85aacc3d3833822e56620ebcc71181bff9f893ab50e81f79"
+    },
+    {
+      "path": "parts/p08.tex",
+      "sha256": "6d33fa7ad91078cd3fc0bff040f80f82fbc9b4fe0b07dc98c722410bc3403077"
+    },
+    {
+      "path": "parts/p09.tex",
+      "sha256": "948fdc1b29df7b2547a9fa091eb4a3ee764485be774f6e4065928eb01b02402d"
+    }
+  ],
+  "pdf": {
+    "path": "output/pdf/P1-05_Probability_Notes.pdf",
+    "sha256": "ca3fda62bf1934f91572ef2bc2ac8a0c4e56826da47a0e1b97ef1c360264e7f9"
+  },
+  "legacy_results": {
+    "PRO-01-C01.R01": [
+      "P01.01"
+    ],
+    "PRO-01-C01.R02": [
+      "P01.01"
+    ],
+    "PRO-01-C01.R03": [
+      "P01.04"
+    ],
+    "PRO-01-C02.R01": [
+      "P02.01"
+    ],
+    "PRO-01-C02.R02": [
+      "P02.02",
+      "P05.03"
+    ],
+    "PRO-01-C02.R03": [
+      "P02.02"
+    ],
+    "PRO-01-C02.R04": [
+      "P02.03"
+    ],
+    "PRO-01-C03.R01": [
+      "P03.01"
+    ],
+    "PRO-01-C03.R02": [
+      "P03.01"
+    ],
+    "PRO-01-C03.R03": [
+      "P03.02"
+    ],
+    "PRO-01-C03.R04": [
+      "P03.02",
+      "P03.03"
+    ],
+    "PRO-01-C04.R01": [
+      "P04.02"
+    ],
+    "PRO-01-C04.R02": [
+      "P04.02"
+    ],
+    "PRO-01-C04.R03": [
+      "P04.03"
+    ],
+    "PRO-01-C04.R04": [
+      "P04.04"
+    ],
+    "PRO-01-C05.R01": [
+      "P01.02"
+    ],
+    "PRO-01-C05.R02": [
+      "P01.02"
+    ],
+    "PRO-01-C05.R03": [
+      "P02.01",
+      "P02.02"
+    ],
+    "PRO-01-D01.R01": [
+      "P05.02"
+    ],
+    "PRO-01-D01.R02": [
+      "P05.02"
+    ],
+    "PRO-02-C01.R01": [
+      "P07.01"
+    ],
+    "PRO-02-C01.R02": [
+      "P07.02"
+    ],
+    "PRO-02-C01.R03": [
+      "P07.01"
+    ],
+    "PRO-02-C01.R04": [
+      "P07.03"
+    ],
+    "PRO-02-C02.R01": [
+      "P08.01"
+    ],
+    "PRO-02-C02.R02": [
+      "P08.02"
+    ],
+    "PRO-02-C02.R03": [
+      "P08.04"
+    ],
+    "PRO-02-C03.R01": [
+      "P09.01"
+    ],
+    "PRO-02-C03.R02": [
+      "P09.02"
+    ],
+    "PRO-02-C03.R03": [
+      "P09.03"
+    ],
+    "PRO-02-C04.R01": [
+      "P06.05"
+    ],
+    "PRO-02-C04.R02": [
+      "P06.05",
+      "P06.09"
+    ],
+    "PRO-02-C04.R03": [
+      "P06.06",
+      "P06.09"
+    ],
+    "PRO-02-C04.R04": [
+      "P06.05"
+    ],
+    "PRO-02-C05.R01": [
+      "P06.03"
+    ],
+    "PRO-02-C05.R02": [
+      "P06.02"
+    ],
+    "PRO-02-C05.R03": [
+      "P06.03"
+    ],
+    "PRO-02-C05.R04": [
+      "P06.07"
+    ]
+  },
+  "results": [
+    {
+      "id": "P01.01",
+      "title": "Probability spaces and monotone events",
+      "source": "parts/p01.tex",
+      "source_line": 13,
+      "label": "p01-01",
+      "number": "1.1",
+      "printed_page": "1",
+      "pdf_destination": "section.1.1",
+      "pdf_physical_page": 5,
+      "scope_contract": "概率空间、随机变量与随机元素、事件指示函数、概率的单调连续性和并集界",
+      "textbook_locations": "D §§1.1–1.2；K ch. 1",
+      "legacy_ids": [
+        "PRO-01-C01.R01",
+        "PRO-01-C01.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "source_line": 29,
+          "label": "thm:prob-continuity",
+          "number": "1.2",
+          "printed_page": "1",
+          "pdf_destination": "proposition.1.2",
+          "pdf_physical_page": 5
+        }
+      ]
+    },
+    {
+      "id": "P01.02",
+      "title": "Laws, projections, and transfer of integrals",
+      "source": "parts/p01.tex",
+      "source_line": 55,
+      "label": "p01-02",
+      "number": "1.2",
+      "printed_page": "1",
+      "pdf_destination": "section.1.2",
+      "pdf_physical_page": 5,
+      "scope_contract": "定律、推前复合和积分转移。非负及可积两版，联合分布与边缘投影",
+      "textbook_locations": "K 1.24 p. 23、4.1–4.3 pp. 83–84；D §§1.2、1.7",
+      "legacy_ids": [
+        "PRO-01-C05.R01",
+        "PRO-01-C05.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "source_line": 68,
+          "label": "thm:prob-transfer",
+          "number": "1.5",
+          "printed_page": "2",
+          "pdf_destination": "proposition.1.5",
+          "pdf_physical_page": 6
+        }
+      ]
+    },
+    {
+      "id": "P01.03",
+      "title": "Determining classes and distribution functions",
+      "source": "parts/p01.tex",
+      "source_line": 99,
+      "label": "p01-03",
+      "number": "1.3",
+      "printed_page": "2",
+      "pdf_destination": "section.1.3",
+      "pdf_physical_page": 6,
+      "scope_contract": "π–λ／单调类唯一性在联合律的应用，实 CDF 的存在唯一性、多维联合 CDF 决定律",
+      "textbook_locations": "K 1.1 p. 10、1.18 p. 20、2.14 p. 42、4.3 pp. 83–84；D §1.2",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "source_line": 102,
+          "label": "lem:prob-pi-lambda",
+          "number": "1.6",
+          "printed_page": "2",
+          "pdf_destination": "lemma.1.6",
+          "pdf_physical_page": 6
+        },
+        {
+          "kind": "theorem",
+          "source_line": 130,
+          "label": "thm:prob-cdf",
+          "number": "1.7",
+          "printed_page": "2",
+          "pdf_destination": "theorem.1.7",
+          "pdf_physical_page": 6
+        }
+      ]
+    },
+    {
+      "id": "P01.04",
+      "title": "Tail integrals and probability bounds",
+      "source": "parts/p01.tex",
+      "source_line": 169,
+      "label": "p01-04",
+      "number": "1.4",
+      "printed_page": "3",
+      "pdf_destination": "section.1.4",
+      "pdf_physical_page": 7,
+      "scope_contract": "尾积分和截断矩、Markov、Chebyshev、指数 Markov",
+      "textbook_locations": "D §§1.4–1.6、2.2；K ch. 4",
+      "legacy_ids": [
+        "PRO-01-C01.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 172,
+          "label": "thm:prob-tail",
+          "number": "1.8",
+          "printed_page": "3",
+          "pdf_destination": "theorem.1.8",
+          "pdf_physical_page": 7
+        },
+        {
+          "kind": "corollary",
+          "source_line": 200,
+          "label": "thm:prob-markov",
+          "number": "1.9",
+          "printed_page": "3",
+          "pdf_destination": "corollary.1.9",
+          "pdf_physical_page": 7
+        }
+      ]
+    },
+    {
+      "id": "P01.05",
+      "title": "Uniform integrability and the Vitali criterion",
+      "source": "parts/p01.tex",
+      "source_line": 223,
+      "label": "p01-05",
+      "number": "1.5",
+      "printed_page": "4",
+      "pdf_destination": "section.1.5",
+      "pdf_physical_page": 8,
+      "scope_contract": "一致可积的有限测度判据和 Vitali，依概率收敛与 \\(L^1\\) 收敛的精确关系",
+      "textbook_locations": "K 5.10–5.12 pp. 106–108；D §4.6.1–3 pp. 244–245",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 237,
+          "label": "thm:prob-ui",
+          "number": "1.10",
+          "printed_page": "4",
+          "pdf_destination": "theorem.1.10",
+          "pdf_physical_page": 8
+        },
+        {
+          "kind": "theorem",
+          "source_line": 274,
+          "label": "thm:prob-vitali",
+          "number": "1.11",
+          "printed_page": "4",
+          "pdf_destination": "theorem.1.11",
+          "pdf_physical_page": 8
+        }
+      ]
+    },
+    {
+      "id": "P01.06",
+      "title": "Integral convergence and completion",
+      "source": "parts/p01.tex",
+      "source_line": 308,
+      "label": "p01-06",
+      "number": "1.6",
+      "printed_page": "5",
+      "pdf_destination": "section.1.6",
+      "pdf_physical_page": 9,
+      "scope_contract": "非负／可积积分的收敛工具及完备化版本",
+      "textbook_locations": "K 1.21–1.23、1.27–1.29；D §§1.4–1.6",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "source_line": 313,
+          "label": "thm:prob-integral-convergence",
+          "number": "1.12",
+          "printed_page": "5",
+          "pdf_destination": "proposition.1.12",
+          "pdf_physical_page": 9
+        },
+        {
+          "kind": "proposition",
+          "source_line": 345,
+          "label": "thm:prob-completed-version",
+          "number": "1.13",
+          "printed_page": "5",
+          "pdf_destination": "proposition.1.13",
+          "pdf_physical_page": 9
+        }
+      ]
+    },
+    {
+      "id": "P02.01",
+      "title": "Independence, generators, and joint laws",
+      "source": "parts/p02.tex",
+      "source_line": 9,
+      "label": "p02-01",
+      "number": "2.1",
+      "printed_page": "6",
+      "pdf_destination": "section.2.1",
+      "pdf_physical_page": 10,
+      "scope_contract": "σ-代数／随机元素族的相互独立，生成 π 系统判据，联合律与有限乘积律等价",
+      "textbook_locations": "K 4.6–4.12 pp. 87–89；D §2.1 pp. 43–55",
+      "legacy_ids": [
+        "PRO-01-C02.R01",
+        "PRO-01-C05.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 26,
+          "label": "thm:prob-independent-laws",
+          "number": "2.2",
+          "printed_page": "6",
+          "pdf_destination": "theorem.2.2",
+          "pdf_physical_page": 10
+        }
+      ]
+    },
+    {
+      "id": "P02.02",
+      "title": "Independent constructions, grouping, and integrals",
+      "source": "parts/p02.tex",
+      "source_line": 74,
+      "label": "p02-02",
+      "number": "2.2",
+      "printed_page": "7",
+      "pdf_destination": "section.2.2",
+      "pdf_physical_page": 11,
+      "scope_contract": "可测变换、互不相交分组保独立，独立积分和乘积期望分解",
+      "textbook_locations": "K 1.29、4.6–4.12；D §2.1",
+      "legacy_ids": [
+        "PRO-01-C02.R02",
+        "PRO-01-C02.R03",
+        "PRO-01-C05.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 77,
+          "label": "thm:prob-independent-grouping",
+          "number": "2.4",
+          "printed_page": "7",
+          "pdf_destination": "theorem.2.4",
+          "pdf_physical_page": 11
+        },
+        {
+          "kind": "corollary",
+          "source_line": 107,
+          "label": "thm:prob-factorization",
+          "number": "2.5",
+          "printed_page": "7",
+          "pdf_destination": "corollary.2.5",
+          "pdf_physical_page": 11
+        }
+      ]
+    },
+    {
+      "id": "P02.03",
+      "title": "The Borel--Cantelli lemmas",
+      "source": "parts/p02.tex",
+      "source_line": 140,
+      "label": "p02-03",
+      "number": "2.3",
+      "printed_page": "8",
+      "pdf_destination": "section.2.3",
+      "pdf_physical_page": 12,
+      "scope_contract": "第一、第二 Borel–Cantelli。第二条保留两两独立的经典加强",
+      "textbook_locations": "D 2.3.1、2.3.7、2.3.9 pp. 68–72；K 4.18 p. 92",
+      "legacy_ids": [
+        "PRO-01-C02.R04"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 146,
+          "label": "thm:prob-borel-cantelli",
+          "number": "2.6",
+          "printed_page": "8",
+          "pdf_destination": "theorem.2.6",
+          "pdf_physical_page": 12
+        }
+      ]
+    },
+    {
+      "id": "P02.04",
+      "title": "Almost sure, probability, and moment convergence",
+      "source": "parts/p02.tex",
+      "source_line": 191,
+      "label": "p02-04",
+      "number": "2.4",
+      "printed_page": "8",
+      "pdf_destination": "section.2.4",
+      "pdf_physical_page": 12,
+      "scope_contract": "几乎处处、依概率、\\(L^p\\) 收敛的关系及子列刻画",
+      "textbook_locations": "K 5.1–5.9 pp. 102–106；D §2.3",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 194,
+          "label": "thm:prob-convergence-modes",
+          "number": "2.7",
+          "printed_page": "8",
+          "pdf_destination": "theorem.2.7",
+          "pdf_physical_page": 12
+        }
+      ]
+    },
+    {
+      "id": "P02.05",
+      "title": "Kolmogorov and Hewitt--Savage zero--one laws",
+      "source": "parts/p02.tex",
+      "source_line": 244,
+      "label": "p02-05",
+      "number": "2.5",
+      "printed_page": "9",
+      "pdf_destination": "section.2.5",
+      "pdf_physical_page": 13,
+      "scope_contract": "Kolmogorov 尾 σ-代数零一律；i.i.d. 序列的 Hewitt–Savage 零一律",
+      "textbook_locations": "K 4.13、4.15 pp. 90–91；D 2.5.3–4 pp. 81–82",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 247,
+          "label": "thm:prob-tail-zero-one",
+          "number": "2.9",
+          "printed_page": "9",
+          "pdf_destination": "theorem.2.9",
+          "pdf_physical_page": 13
+        },
+        {
+          "kind": "theorem",
+          "source_line": 268,
+          "label": "thm:prob-hewitt-savage",
+          "number": "2.10",
+          "printed_page": "9",
+          "pdf_destination": "theorem.2.10",
+          "pdf_physical_page": 13
+        }
+      ]
+    },
+    {
+      "id": "P03.01",
+      "title": "Existence and uniqueness",
+      "source": "parts/p03.tex",
+      "source_line": 13,
+      "label": "p03-01",
+      "number": "3.1",
+      "printed_page": "10",
+      "pdf_destination": "section.3.1",
+      "pdf_physical_page": 14,
+      "scope_contract": "任意子 σ-代数下实值 \\(L^1\\) 条件期望的存在与 a.e. 唯一性；非负扩展版",
+      "textbook_locations": "K 8.1 pp. 164–166；D §4.1",
+      "legacy_ids": [
+        "PRO-01-C03.R01",
+        "PRO-01-C03.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 30,
+          "label": "thm:prob-condexp-exists",
+          "number": "3.2",
+          "printed_page": "10",
+          "pdf_destination": "theorem.3.2",
+          "pdf_physical_page": 14
+        }
+      ]
+    },
+    {
+      "id": "P03.02",
+      "title": "Linearity, the tower law, and measurable factors",
+      "source": "parts/p03.tex",
+      "source_line": 75,
+      "label": "p03-02",
+      "number": "3.2",
+      "printed_page": "11",
+      "pdf_destination": "section.3.2",
+      "pdf_physical_page": 15,
+      "scope_contract": "线性、正性、单调性、固定点、塔式法则与取出可测因子",
+      "textbook_locations": "K 8.1 pp. 164–166；D §4.1",
+      "legacy_ids": [
+        "PRO-01-C03.R03",
+        "PRO-01-C03.R04"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "source_line": 78,
+          "label": "thm:prob-condexp-laws",
+          "number": "3.3",
+          "printed_page": "11",
+          "pdf_destination": "proposition.3.3",
+          "pdf_physical_page": 15
+        },
+        {
+          "kind": "theorem",
+          "source_line": 110,
+          "label": "thm:prob-condexp-pullout",
+          "number": "3.4",
+          "printed_page": "11",
+          "pdf_destination": "theorem.3.4",
+          "pdf_physical_page": 15
+        }
+      ]
+    },
+    {
+      "id": "P03.03",
+      "title": "Conditional Jensen and contraction",
+      "source": "parts/p03.tex",
+      "source_line": 147,
+      "label": "p03-03",
+      "number": "3.3",
+      "printed_page": "11",
+      "pdf_destination": "section.3.3",
+      "pdf_physical_page": 15,
+      "scope_contract": "条件 Jensen、绝对值控制和 \\(L^p\\) 收缩",
+      "textbook_locations": "K 8.1 pp. 164–166；D §4.1",
+      "legacy_ids": [
+        "PRO-01-C03.R04"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 150,
+          "label": "thm:prob-cond-jensen",
+          "number": "3.5",
+          "printed_page": "11",
+          "pdf_destination": "theorem.3.5",
+          "pdf_physical_page": 15
+        },
+        {
+          "kind": "corollary",
+          "source_line": 197,
+          "label": "thm:prob-condexp-contraction",
+          "number": "3.6",
+          "printed_page": "12",
+          "pdf_destination": "corollary.3.6",
+          "pdf_physical_page": 16
+        }
+      ]
+    },
+    {
+      "id": "P03.04",
+      "title": "Conditional limits, variance, and uniform integrability",
+      "source": "parts/p03.tex",
+      "source_line": 215,
+      "label": "p03-04",
+      "number": "3.4",
+      "printed_page": "12",
+      "pdf_destination": "section.3.4",
+      "pdf_physical_page": 16,
+      "scope_contract": "条件单调／支配收敛、条件方差与全方差公式、固定 \\(L^1\\) 变量的条件期望族 UI",
+      "textbook_locations": "K 8.1–8.4 pp. 164–167",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 218,
+          "label": "thm:prob-condexp-convergence",
+          "number": "3.7",
+          "printed_page": "12",
+          "pdf_destination": "theorem.3.7",
+          "pdf_physical_page": 16
+        },
+        {
+          "kind": "proposition",
+          "source_line": 254,
+          "label": "thm:prob-cond-variance",
+          "number": "3.8",
+          "printed_page": "12",
+          "pdf_destination": "proposition.3.8",
+          "pdf_physical_page": 16
+        },
+        {
+          "kind": "proposition",
+          "source_line": 274,
+          "label": "thm:prob-condexp-ui",
+          "number": "3.9",
+          "printed_page": "13",
+          "pdf_destination": "proposition.3.9",
+          "pdf_physical_page": 17
+        }
+      ]
+    },
+    {
+      "id": "P04.01",
+      "title": "Standard Borel coding and measurable factorization",
+      "source": "parts/p04.tex",
+      "source_line": 3,
+      "label": "p04-01",
+      "number": "4.1",
+      "printed_page": "14",
+      "pdf_destination": "section.4.1",
+      "pdf_physical_page": 18,
+      "scope_contract": "标准 Borel 编码与 Doob–Dynkin；原 σ(X) 与完备化上的版本",
+      "textbook_locations": "K 1.8 pp. 14–15、1.14 p. 18",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 7,
+          "label": "thm:standard-borel-coding",
+          "number": "4.1",
+          "printed_page": "14",
+          "pdf_destination": "theorem.4.1",
+          "pdf_physical_page": 18
+        },
+        {
+          "kind": "theorem",
+          "source_line": 22,
+          "label": "thm:doob-dynkin",
+          "number": "4.2",
+          "printed_page": "15",
+          "pdf_destination": "theorem.4.2",
+          "pdf_physical_page": 19
+        }
+      ]
+    },
+    {
+      "id": "P04.02",
+      "title": "Kernel integration and composition",
+      "source": "parts/p04.tex",
+      "source_line": 31,
+      "label": "p04-02",
+      "number": "4.2",
+      "printed_page": "15",
+      "pdf_destination": "section.4.2",
+      "pdf_physical_page": 19,
+      "scope_contract": "概率核、核积分的可测性、半直积与复合、单位核与结合律",
+      "textbook_locations": "K 3.1–3.3 pp. 56–59",
+      "legacy_ids": [
+        "PRO-01-C04.R01",
+        "PRO-01-C04.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 37,
+          "label": "thm:kernel-measure",
+          "number": "4.4",
+          "printed_page": "15",
+          "pdf_destination": "theorem.4.4",
+          "pdf_physical_page": 19
+        },
+        {
+          "kind": "proposition",
+          "source_line": 53,
+          "label": "prop:kernel-composition",
+          "number": "4.5",
+          "printed_page": "16",
+          "pdf_destination": "proposition.4.5",
+          "pdf_physical_page": 20
+        }
+      ]
+    },
+    {
+      "id": "P04.03",
+      "title": "Existence of regular conditional laws",
+      "source": "parts/p04.tex",
+      "source_line": 71,
+      "label": "p04-03",
+      "number": "4.3",
+      "printed_page": "16",
+      "pdf_destination": "section.4.3",
+      "pdf_physical_page": 20,
+      "scope_contract": "给定任意可测第一坐标与标准 Borel 第二坐标的概率联合律，存在正则条件律。覆盖随机变量仅 a.e. 可测的联合律版本及对任意子 σ-代数的条件分布",
+      "textbook_locations": "K 3.4 pp. 60–61、8.5 pp. 168–169",
+      "legacy_ids": [
+        "PRO-01-C04.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 73,
+          "label": "thm:disintegration",
+          "number": "4.6",
+          "printed_page": "16",
+          "pdf_destination": "theorem.4.6",
+          "pdf_physical_page": 20
+        },
+        {
+          "kind": "corollary",
+          "source_line": 92,
+          "label": "cor:conditional-law",
+          "number": "4.7",
+          "printed_page": "17",
+          "pdf_destination": "corollary.4.7",
+          "pdf_physical_page": 21
+        }
+      ]
+    },
+    {
+      "id": "P04.04",
+      "title": "Uniqueness, conditional independence, and gluing",
+      "source": "parts/p04.tex",
+      "source_line": 104,
+      "label": "p04-04",
+      "number": "4.4",
+      "printed_page": "17",
+      "pdf_destination": "section.4.4",
+      "pdf_physical_page": 21,
+      "scope_contract": "正则条件律的同一零测集唯一性，条件积分公式，条件独立的乘积分解与抽样后拼接",
+      "textbook_locations": "K 8.5、8.9–8.14、8.16–8.20 pp. 168–177",
+      "legacy_ids": [
+        "PRO-01-C04.R04"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 106,
+          "label": "thm:kernel-conditional-integration",
+          "number": "4.8",
+          "printed_page": "17",
+          "pdf_destination": "theorem.4.8",
+          "pdf_physical_page": 21
+        },
+        {
+          "kind": "proposition",
+          "source_line": 137,
+          "label": "prop:conditional-gluing",
+          "number": "4.10",
+          "printed_page": "18",
+          "pdf_destination": "proposition.4.10",
+          "pdf_physical_page": 22
+        }
+      ]
+    },
+    {
+      "id": "P04.05",
+      "title": "Measurable randomization and transfer",
+      "source": "parts/p04.tex",
+      "source_line": 154,
+      "label": "p04-05",
+      "number": "4.5",
+      "printed_page": "18",
+      "pdf_destination": "section.4.5",
+      "pdf_physical_page": 22,
+      "scope_contract": "分位数实现、核的可测随机化与转移",
+      "textbook_locations": "K 4.19–4.22 pp. 93–94、8.17–8.20 pp. 175–177",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 156,
+          "label": "thm:kernel-randomization",
+          "number": "4.11",
+          "printed_page": "18",
+          "pdf_destination": "theorem.4.11",
+          "pdf_physical_page": 22
+        },
+        {
+          "kind": "corollary",
+          "source_line": 171,
+          "label": "cor:conditional-sampling",
+          "number": "4.12",
+          "printed_page": "19",
+          "pdf_destination": "corollary.4.12",
+          "pdf_physical_page": 23
+        }
+      ]
+    },
+    {
+      "id": "P05.01",
+      "title": "The Ionescu--Tulcea extension",
+      "source": "parts/p05.tex",
+      "source_line": 3,
+      "label": "p05-01",
+      "number": "5.1",
+      "printed_page": "20",
+      "pdf_destination": "section.5.1",
+      "pdf_physical_page": 24,
+      "scope_contract": "Ionescu–Tulcea。任意可测值域的初始律和给定转移核产生唯一可数路径律",
+      "textbook_locations": "K 8.24 pp. 180–181",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 7,
+          "label": "thm:ionescu-tulcea",
+          "number": "5.1",
+          "printed_page": "20",
+          "pdf_destination": "theorem.5.1",
+          "pdf_physical_page": 24
+        }
+      ]
+    },
+    {
+      "id": "P05.02",
+      "title": "Consistent finite-dimensional laws",
+      "source": "parts/p05.tex",
+      "source_line": 42,
+      "label": "p05-02",
+      "number": "5.2",
+      "printed_page": "21",
+      "pdf_destination": "section.5.2",
+      "pdf_physical_page": 25,
+      "scope_contract": "一致有限维边缘和 Kolmogorov 扩张。任意指标集、各坐标标准 Borel，乘积 σ-代数上存在且唯一",
+      "textbook_locations": "K 8.23 pp. 179–180；D A.3 p. 464",
+      "legacy_ids": [
+        "PRO-01-D01.R01",
+        "PRO-01-D01.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "source_line": 50,
+          "label": "lem:countable-cylinder-reduction",
+          "number": "5.2",
+          "printed_page": "21",
+          "pdf_destination": "lemma.5.2",
+          "pdf_physical_page": 25
+        },
+        {
+          "kind": "theorem",
+          "source_line": 59,
+          "label": "thm:kolmogorov-extension",
+          "number": "5.3",
+          "printed_page": "21",
+          "pdf_destination": "theorem.5.3",
+          "pdf_physical_page": 25
+        }
+      ]
+    },
+    {
+      "id": "P05.03",
+      "title": "Independent products and the cylinder sigma-algebra",
+      "source": "parts/p05.tex",
+      "source_line": 68,
+      "label": "p05-03",
+      "number": "5.3",
+      "printed_page": "22",
+      "pdf_destination": "section.5.3",
+      "pdf_physical_page": 26,
+      "scope_contract": "任意指标集的独立乘积实现；有限维分布决定圆柱律",
+      "textbook_locations": "K 8.25 p. 181、4.1–4.3 pp. 83–84；D 2.1.21 p. 53",
+      "legacy_ids": [
+        "PRO-01-C02.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 70,
+          "label": "thm:independent-product",
+          "number": "5.4",
+          "printed_page": "22",
+          "pdf_destination": "theorem.5.4",
+          "pdf_physical_page": 26
+        }
+      ]
+    },
+    {
+      "id": "P05.04",
+      "title": "Increment moments and continuous modifications",
+      "source": "parts/p05.tex",
+      "source_line": 83,
+      "label": "p05-04",
+      "number": "5.4",
+      "printed_page": "22",
+      "pdf_destination": "section.5.4",
+      "pdf_physical_page": 26,
+      "scope_contract": "一维紧时间区间上 Kolmogorov–Chentsov。完备可分度量值域，增量 \\(p\\) 阶矩界 \\(C\\lvert t-s\\rvert^{1+\\beta}\\) 给出任意指数 \\(0<\\gamma<\\beta/p\\) 的 Hölder 修改",
+      "textbook_locations": "K 4.23–4.24 pp. 95–96；D §7.1",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 87,
+          "label": "thm:kolmogorov-chentsov",
+          "number": "5.6",
+          "printed_page": "22",
+          "pdf_destination": "theorem.5.6",
+          "pdf_physical_page": 26
+        }
+      ]
+    },
+    {
+      "id": "P05.05",
+      "title": "Borel laws of continuous paths",
+      "source": "parts/p05.tex",
+      "source_line": 123,
+      "label": "p05-05",
+      "number": "5.5",
+      "printed_page": "24",
+      "pdf_destination": "section.5.5",
+      "pdf_physical_page": 28,
+      "scope_contract": "连续路径的 Borel σ-代数由稠密可数取值生成，连续路径律由有限维分布确定。区分修改和不可分辨",
+      "textbook_locations": "B §§7–8 pp. 80–86；K 4.23–4.24",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 125,
+          "label": "thm:path-borel",
+          "number": "5.7",
+          "printed_page": "24",
+          "pdf_destination": "theorem.5.7",
+          "pdf_physical_page": 28
+        },
+        {
+          "kind": "corollary",
+          "source_line": 144,
+          "label": "cor:continuous-path-law",
+          "number": "5.8",
+          "printed_page": "24",
+          "pdf_destination": "corollary.5.8",
+          "pdf_physical_page": 28
+        }
+      ]
+    },
+    {
+      "id": "P06.01",
+      "title": "Borel laws and determining tests",
+      "source": "parts/p06.tex",
+      "source_line": 12,
+      "label": "p06-01",
+      "number": "6.1",
+      "printed_page": "25",
+      "pdf_destination": "section.6.1",
+      "pdf_physical_page": 29,
+      "scope_contract": "有界连续测试函数决定概率律；度量空间上开／闭集逼近与连续集",
+      "textbook_locations": "B 1.1–1.3 pp. 7–9；K §23.2",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "source_line": 19,
+          "label": "prop:p06-regularity",
+          "number": "6.1",
+          "printed_page": "25",
+          "pdf_destination": "proposition.6.1",
+          "pdf_physical_page": 29
+        }
+      ]
+    },
+    {
+      "id": "P06.02",
+      "title": "Portmanteau and determining classes",
+      "source": "parts/p06.tex",
+      "source_line": 56,
+      "label": "p06-02",
+      "number": "6.2",
+      "printed_page": "25",
+      "pdf_destination": "section.6.2",
+      "pdf_physical_page": 29,
+      "scope_contract": "Portmanteau。弱收敛、闭集上界、开集下界、连续集收敛及半连续测试；实 CDF 连续点判据",
+      "textbook_locations": "B 2.1–2.4 pp. 16–19、§3；K 5.25 pp. 116–117",
+      "legacy_ids": [
+        "PRO-02-C05.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 62,
+          "label": "thm:p06-portmanteau",
+          "number": "6.3",
+          "printed_page": "25",
+          "pdf_destination": "theorem.6.3",
+          "pdf_physical_page": 29
+        },
+        {
+          "kind": "proposition",
+          "source_line": 99,
+          "label": "prop:p06-small-cells",
+          "number": "6.4",
+          "printed_page": "26",
+          "pdf_destination": "proposition.6.4",
+          "pdf_physical_page": 30
+        },
+        {
+          "kind": "proposition",
+          "source_line": 118,
+          "label": "prop:p06-determining-class",
+          "number": "6.5",
+          "printed_page": "26",
+          "pdf_destination": "proposition.6.5",
+          "pdf_physical_page": 30
+        }
+      ]
+    },
+    {
+      "id": "P06.03",
+      "title": "Continuous and varying maps",
+      "source": "parts/p06.tex",
+      "source_line": 150,
+      "label": "p06-03",
+      "number": "6.3",
+      "printed_page": "27",
+      "pdf_destination": "section.6.3",
+      "pdf_physical_page": 31,
+      "scope_contract": "Borel 拓扑空间上的固定连续映射定理；度量空间上的 a.s. 连续映射和可变映射定理",
+      "textbook_locations": "固定连续映射用 P01.02；度量空间版本见 B 2.7 p. 21、K 5.27–5.28 pp. 117–118",
+      "legacy_ids": [
+        "PRO-02-C05.R01",
+        "PRO-02-C05.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 153,
+          "label": "thm:p06-continuous-mapping",
+          "number": "6.6",
+          "printed_page": "27",
+          "pdf_destination": "theorem.6.6",
+          "pdf_physical_page": 31
+        },
+        {
+          "kind": "theorem",
+          "source_line": 175,
+          "label": "thm:p06-mapping",
+          "number": "6.7",
+          "printed_page": "27",
+          "pdf_destination": "theorem.6.7",
+          "pdf_physical_page": 31
+        },
+        {
+          "kind": "corollary",
+          "source_line": 206,
+          "label": "cor:p06-mixtures",
+          "number": "6.8",
+          "printed_page": "27",
+          "pdf_destination": "corollary.6.8",
+          "pdf_physical_page": 31
+        }
+      ]
+    },
+    {
+      "id": "P06.04",
+      "title": "Perturbations, Slutsky, and moments",
+      "source": "parts/p06.tex",
+      "source_line": 230,
+      "label": "p06-04",
+      "number": "6.4",
+      "printed_page": "27",
+      "pdf_destination": "section.6.4",
+      "pdf_physical_page": 31,
+      "scope_contract": "同一空间中的概率扰动、Slutsky、converging together。弱收敛配合 UI 得期望／矩收敛",
+      "textbook_locations": "B 3.1–3.2 pp. 27–29、3.4–3.6 pp. 30–32；K 5.29 p. 118",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 233,
+          "label": "thm:p06-together",
+          "number": "6.9",
+          "printed_page": "27",
+          "pdf_destination": "theorem.6.9",
+          "pdf_physical_page": 31
+        },
+        {
+          "kind": "corollary",
+          "source_line": 263,
+          "label": "cor:p06-slutsky",
+          "number": "6.10",
+          "printed_page": "28",
+          "pdf_destination": "corollary.6.10",
+          "pdf_physical_page": 32
+        },
+        {
+          "kind": "proposition",
+          "source_line": 282,
+          "label": "prop:p06-moments",
+          "number": "6.11",
+          "printed_page": "28",
+          "pdf_destination": "proposition.6.11",
+          "pdf_physical_page": 32
+        }
+      ]
+    },
+    {
+      "id": "P06.05",
+      "title": "Tightness and the forward Prokhorov theorem",
+      "source": "parts/p06.tex",
+      "source_line": 321,
+      "label": "p06-05",
+      "number": "6.5",
+      "printed_page": "29",
+      "pdf_destination": "section.6.5",
+      "pdf_physical_page": 33,
+      "scope_contract": "单个律紧性、族的一致紧性。任意度量空间上的 Prokhorov 正向及紧序列的共同子列",
+      "textbook_locations": "B 5.1 pp. 59–60；K §23.2",
+      "legacy_ids": [
+        "PRO-02-C04.R01",
+        "PRO-02-C04.R02",
+        "PRO-02-C04.R04"
+      ],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "source_line": 332,
+          "label": "lem:p06-compact-base",
+          "number": "6.12",
+          "printed_page": "29",
+          "pdf_destination": "lemma.6.12",
+          "pdf_physical_page": 33
+        },
+        {
+          "kind": "theorem",
+          "source_line": 368,
+          "label": "thm:p06-prokhorov-forward",
+          "number": "6.13",
+          "printed_page": "29",
+          "pdf_destination": "theorem.6.13",
+          "pdf_physical_page": 33
+        }
+      ]
+    },
+    {
+      "id": "P06.06",
+      "title": "The reverse Prokhorov theorem",
+      "source": "parts/p06.tex",
+      "source_line": 442,
+      "label": "p06-06",
+      "number": "6.6",
+      "printed_page": "30",
+      "pdf_destination": "section.6.6",
+      "pdf_physical_page": 34,
+      "scope_contract": "可分完备度量下 Prokhorov 逆向。相对序列弱紧性蕴含一致紧性，度量化后与相对弱紧等价",
+      "textbook_locations": "B 5.2 pp. 60–61；K §23.2",
+      "legacy_ids": [
+        "PRO-02-C04.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 445,
+          "label": "thm:p06-prokhorov-reverse",
+          "number": "6.14",
+          "printed_page": "30",
+          "pdf_destination": "theorem.6.14",
+          "pdf_physical_page": 34
+        }
+      ]
+    },
+    {
+      "id": "P06.07",
+      "title": "The Skorokhod representation",
+      "source": "parts/p06.tex",
+      "source_line": 488,
+      "label": "p06-07",
+      "number": "6.7",
+      "printed_page": "30",
+      "pdf_destination": "section.6.7",
+      "pdf_physical_page": 34,
+      "scope_contract": "Skorokhod 表示。度量空间内极限律集中于可分 Borel 子集即可，保留 Polish 常用推论",
+      "textbook_locations": "B 6.7 pp. 70–71；K 5.31 pp. 119–120",
+      "legacy_ids": [
+        "PRO-02-C05.R04"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 491,
+          "label": "thm:p06-skorokhod",
+          "number": "6.15",
+          "printed_page": "30",
+          "pdf_destination": "theorem.6.15",
+          "pdf_physical_page": 34
+        }
+      ]
+    },
+    {
+      "id": "P06.08",
+      "title": "Weak convergence and products",
+      "source": "parts/p06.tex",
+      "source_line": 553,
+      "label": "p06-08",
+      "number": "6.8",
+      "printed_page": "31",
+      "pdf_destination": "section.6.8",
+      "pdf_physical_page": 35,
+      "scope_contract": "有限乘积律和可分度量值域的可数乘积。乘积拓扑下的弱收敛等价于有限维分布弱收敛",
+      "textbook_locations": "B 2.8 p. 23；K 5.30 pp. 118–119",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "source_line": 556,
+          "label": "prop:p06-finite-products",
+          "number": "6.16",
+          "printed_page": "31",
+          "pdf_destination": "proposition.6.16",
+          "pdf_physical_page": 35
+        },
+        {
+          "kind": "theorem",
+          "source_line": 585,
+          "label": "thm:p06-countable-products",
+          "number": "6.17",
+          "printed_page": "31",
+          "pdf_destination": "theorem.6.17",
+          "pdf_physical_page": 35
+        }
+      ]
+    },
+    {
+      "id": "P06.09",
+      "title": "The Prokhorov and bounded Lipschitz metrics",
+      "source": "parts/p06.tex",
+      "source_line": 617,
+      "label": "p06-09",
+      "number": "6.9",
+      "printed_page": "32",
+      "pdf_destination": "section.6.9",
+      "pdf_physical_page": 36,
+      "scope_contract": "Prokhorov 度量与有界 Lipschitz 度量。可分时均刻画弱收敛",
+      "textbook_locations": "B §6(iii)–(iv) p. 72；有界 Lipschitz 为连续测试的补充证明",
+      "legacy_ids": [
+        "PRO-02-C04.R02",
+        "PRO-02-C04.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 635,
+          "label": "thm:p06-weak-metrics",
+          "number": "6.18",
+          "printed_page": "32",
+          "pdf_destination": "theorem.6.18",
+          "pdf_physical_page": 36
+        }
+      ]
+    },
+    {
+      "id": "P06.10",
+      "title": "Couplings and completeness of the law space",
+      "source": "parts/p06.tex",
+      "source_line": 702,
+      "label": "p06-10",
+      "number": "6.10",
+      "printed_page": "33",
+      "pdf_destination": "section.6.10",
+      "pdf_physical_page": 37,
+      "scope_contract": "Strassen–Dudley 耦合与 Polish 概率律空间的可分、完备性",
+      "textbook_locations": "B 6.8–6.9 pp. 72–77",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "source_line": 710,
+          "label": "lem:p06-finite-transport",
+          "number": "6.19",
+          "printed_page": "33",
+          "pdf_destination": "lemma.6.19",
+          "pdf_physical_page": 37
+        },
+        {
+          "kind": "theorem",
+          "source_line": 750,
+          "label": "thm:p06-strassen",
+          "number": "6.20",
+          "printed_page": "33",
+          "pdf_destination": "theorem.6.20",
+          "pdf_physical_page": 37
+        },
+        {
+          "kind": "theorem",
+          "source_line": 791,
+          "label": "thm:p06-polish-laws",
+          "number": "6.21",
+          "printed_page": "34",
+          "pdf_destination": "theorem.6.21",
+          "pdf_physical_page": 38
+        }
+      ]
+    },
+    {
+      "id": "P06.11",
+      "title": "Tightness on continuous path space",
+      "source": "parts/p06.tex",
+      "source_line": 841,
+      "label": "p06-11",
+      "number": "6.11",
+      "printed_page": "34",
+      "pdf_destination": "section.6.11",
+      "pdf_physical_page": 38,
+      "scope_contract": "\\(C([0,T],\\mathbb R^d)\\) 中初值紧性与模连续性判据，以及紧性加有限维收敛推出弱收敛",
+      "textbook_locations": "B 7.1–7.5 pp. 80–85",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 856,
+          "label": "thm:p06-path-tightness",
+          "number": "6.22",
+          "printed_page": "35",
+          "pdf_destination": "theorem.6.22",
+          "pdf_physical_page": 39
+        },
+        {
+          "kind": "theorem",
+          "source_line": 891,
+          "label": "thm:p06-path-weak",
+          "number": "6.23",
+          "printed_page": "35",
+          "pdf_destination": "theorem.6.23",
+          "pdf_physical_page": 39
+        }
+      ]
+    },
+    {
+      "id": "P07.01",
+      "title": "Characteristic functions and moments",
+      "source": "parts/p07.tex",
+      "source_line": 4,
+      "label": "p07-01",
+      "number": "7.1",
+      "printed_page": "36",
+      "pdf_destination": "section.7.1",
+      "pdf_physical_page": 40,
+      "scope_contract": "特征函数归一、连续、正定与共轭对称；卷积和独立和；有限矩下微分与二阶展开",
+      "textbook_locations": "D §3.3、3.3.18、3.3.20 pp. 134–135；K 6.1–6.2、6.9",
+      "legacy_ids": [
+        "PRO-02-C01.R01",
+        "PRO-02-C01.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "source_line": 16,
+          "label": "prop:cf-basic",
+          "number": "7.1",
+          "printed_page": "36",
+          "pdf_destination": "proposition.7.1",
+          "pdf_physical_page": 40
+        },
+        {
+          "kind": "proposition",
+          "source_line": 38,
+          "label": "prop:cf-moment",
+          "number": "7.2",
+          "printed_page": "36",
+          "pdf_destination": "proposition.7.2",
+          "pdf_physical_page": 40
+        }
+      ]
+    },
+    {
+      "id": "P07.02",
+      "title": "Inversion and uniqueness",
+      "source": "parts/p07.tex",
+      "source_line": 83,
+      "label": "p07-02",
+      "number": "7.2",
+      "printed_page": "37",
+      "pdf_destination": "section.7.2",
+      "pdf_physical_page": 41,
+      "scope_contract": "特征函数唯一性、实轴区间反演的端点半质量、可积特征函数的连续有界密度",
+      "textbook_locations": "D 3.3.11、3.3.14 pp. 128–131；K 6.3",
+      "legacy_ids": [
+        "PRO-02-C01.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 105,
+          "label": "thm:cf-inversion",
+          "number": "7.3",
+          "printed_page": "37",
+          "pdf_destination": "theorem.7.3",
+          "pdf_physical_page": 41
+        }
+      ]
+    },
+    {
+      "id": "P07.03",
+      "title": "The continuity theorem",
+      "source": "parts/p07.tex",
+      "source_line": 171,
+      "label": "p07-03",
+      "number": "7.3",
+      "printed_page": "38",
+      "pdf_destination": "section.7.3",
+      "pdf_physical_page": 42,
+      "scope_contract": "Lévy 连续性。逐点极限在零点连续时恢复唯一概率律，并有弱收敛",
+      "textbook_locations": "D 3.3.17 pp. 132–134；K 6.3、6.23 pp. 127–128、144",
+      "legacy_ids": [
+        "PRO-02-C01.R04"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 174,
+          "label": "thm:levy-cont",
+          "number": "7.4",
+          "printed_page": "38",
+          "pdf_destination": "theorem.7.4",
+          "pdf_physical_page": 42
+        },
+        {
+          "kind": "corollary",
+          "source_line": 204,
+          "label": "cor:laplace-cont",
+          "number": "7.5",
+          "printed_page": "38",
+          "pdf_destination": "corollary.7.5",
+          "pdf_physical_page": 42
+        }
+      ]
+    },
+    {
+      "id": "P07.04",
+      "title": "Projections and Gaussian vectors",
+      "source": "parts/p07.tex",
+      "source_line": 229,
+      "label": "p07-04",
+      "number": "7.4",
+      "printed_page": "38",
+      "pdf_destination": "section.7.4",
+      "pdf_physical_page": 42,
+      "scope_contract": "Cramér–Wold，允许退化的有限维高斯律和边缘／线性映射判据",
+      "textbook_locations": "K 6.5 p. 129、ch. 14；D 3.10.5–7 p. 200",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 232,
+          "label": "thm:cramer-wold",
+          "number": "7.6",
+          "printed_page": "38",
+          "pdf_destination": "theorem.7.6",
+          "pdf_physical_page": 42
+        },
+        {
+          "kind": "theorem",
+          "source_line": 245,
+          "label": "thm:gaussian-vector",
+          "number": "7.7",
+          "printed_page": "39",
+          "pdf_destination": "theorem.7.7",
+          "pdf_physical_page": 43
+        }
+      ]
+    },
+    {
+      "id": "P07.05",
+      "title": "Positive definite functions",
+      "source": "parts/p07.tex",
+      "source_line": 280,
+      "label": "p07-05",
+      "number": "7.5",
+      "printed_page": "39",
+      "pdf_destination": "section.7.5",
+      "pdf_physical_page": 43,
+      "scope_contract": "Euclidean Bochner 的归一化版本。连续正定且 \\(\\phi(0)=1\\) 时得到唯一概率律",
+      "textbook_locations": "P07.01–03；K 6.23 p. 144",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 283,
+          "label": "thm:bochner",
+          "number": "7.8",
+          "printed_page": "39",
+          "pdf_destination": "theorem.7.8",
+          "pdf_physical_page": 43
+        }
+      ]
+    },
+    {
+      "id": "P07.06",
+      "title": "From Gaussian marginals to Wiener measure",
+      "source": "parts/p07.tex",
+      "source_line": 329,
+      "label": "p07-06",
+      "number": "7.6",
+      "printed_page": "40",
+      "pdf_destination": "section.7.6",
+      "pdf_physical_page": 44,
+      "scope_contract": "从一致高斯边缘到 Wiener 律的一次完整接口验证",
+      "textbook_locations": "K ch. 14 p. 297 起；D §7.1；B §8 pp. 86–90",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 332,
+          "label": "thm:wiener",
+          "number": "7.9",
+          "printed_page": "40",
+          "pdf_destination": "theorem.7.9",
+          "pdf_physical_page": 44
+        }
+      ]
+    },
+    {
+      "id": "P08.01",
+      "title": "Weak laws and truncation",
+      "source": "parts/p08.tex",
+      "source_line": 10,
+      "label": "p08-01",
+      "number": "8.1",
+      "printed_page": "41",
+      "pdf_destination": "section.8.1",
+      "pdf_physical_page": 45,
+      "scope_contract": "不相关变量的方差弱律，i.i.d. 的截断弱律及 \\(L^1\\) 弱律。弱尾假设 \\(nP(\\lvert X\\rvert>n)\\to0\\) 时围绕截断均值收敛",
+      "textbook_locations": "D 2.2.3、2.2.6、2.2.11–14 pp. 57–65；K 6.17 pp. 138–139 对照",
+      "legacy_ids": [
+        "PRO-02-C02.R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "source_line": 13,
+          "label": "prop:weak-var",
+          "number": "8.1",
+          "printed_page": "41",
+          "pdf_destination": "proposition.8.1",
+          "pdf_physical_page": 45
+        },
+        {
+          "kind": "theorem",
+          "source_line": 24,
+          "label": "thm:truncated-wlln",
+          "number": "8.2",
+          "printed_page": "41",
+          "pdf_destination": "theorem.8.2",
+          "pdf_physical_page": 45
+        }
+      ]
+    },
+    {
+      "id": "P08.02",
+      "title": "The first-moment strong law",
+      "source": "parts/p08.tex",
+      "source_line": 67,
+      "label": "p08-02",
+      "number": "8.2",
+      "printed_page": "42",
+      "pdf_destination": "section.8.2",
+      "pdf_physical_page": 46,
+      "scope_contract": "Etemadi 强大数定律。两两独立、同分布、\\(\\mathbb E\\lvert X\\rvert<\\infty\\)；i.i.d. 平均有有限 a.s. 极限蕴含一阶绝对矩有限",
+      "textbook_locations": "D 2.3.8、2.4.1 pp. 70、76–78；K 5.22",
+      "legacy_ids": [
+        "PRO-02-C02.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 70,
+          "label": "thm:etemadi",
+          "number": "8.3",
+          "printed_page": "42",
+          "pdf_destination": "theorem.8.3",
+          "pdf_physical_page": 46
+        }
+      ]
+    },
+    {
+      "id": "P08.03",
+      "title": "Maximal inequality and variance summability",
+      "source": "parts/p08.tex",
+      "source_line": 120,
+      "label": "p08-03",
+      "number": "8.3",
+      "printed_page": "42",
+      "pdf_destination": "section.8.3",
+      "pdf_physical_page": 46,
+      "scope_contract": "Kolmogorov 最大不等式，独立中心化平方可积级数的 a.s. 与 \\(L^2\\) 收敛",
+      "textbook_locations": "D 2.5.5–2.5.8 pp. 84–85；K 5.15–5.16 pp. 109–110",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 123,
+          "label": "thm:kolm-max",
+          "number": "8.4",
+          "printed_page": "42",
+          "pdf_destination": "theorem.8.4",
+          "pdf_physical_page": 46
+        },
+        {
+          "kind": "corollary",
+          "source_line": 146,
+          "label": "cor:series-variance",
+          "number": "8.5",
+          "printed_page": "43",
+          "pdf_destination": "corollary.8.5",
+          "pdf_physical_page": 47
+        }
+      ]
+    },
+    {
+      "id": "P08.04",
+      "title": "Kronecker's lemma and weighted strong laws",
+      "source": "parts/p08.tex",
+      "source_line": 165,
+      "label": "p08-04",
+      "number": "8.4",
+      "printed_page": "43",
+      "pdf_destination": "section.8.4",
+      "pdf_physical_page": 47,
+      "scope_contract": "Kronecker 引理和 Kolmogorov 方差判据强律",
+      "textbook_locations": "D 2.5.9 及 §2.5；K 5.21–5.22 p. 112 起",
+      "legacy_ids": [
+        "PRO-02-C02.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "source_line": 168,
+          "label": "lem:kronecker",
+          "number": "8.6",
+          "printed_page": "43",
+          "pdf_destination": "lemma.8.6",
+          "pdf_physical_page": 47
+        },
+        {
+          "kind": "corollary",
+          "source_line": 186,
+          "label": "cor:variance-slln",
+          "number": "8.7",
+          "printed_page": "43",
+          "pdf_destination": "corollary.8.7",
+          "pdf_physical_page": 47
+        }
+      ]
+    },
+    {
+      "id": "P08.05",
+      "title": "Kolmogorov's three-series theorem",
+      "source": "parts/p08.tex",
+      "source_line": 204,
+      "label": "p08-05",
+      "number": "8.5",
+      "printed_page": "43",
+      "pdf_destination": "section.8.5",
+      "pdf_physical_page": 47,
+      "scope_contract": "Kolmogorov 三系定理，独立实变量级数的充要条件",
+      "textbook_locations": "K 5.18 pp. 111–112；D Theorem 2.5.8、Example 3.4.12 p. 150",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 207,
+          "label": "thm:three-series",
+          "number": "8.8",
+          "printed_page": "43",
+          "pdf_destination": "theorem.8.8",
+          "pdf_physical_page": 47
+        }
+      ]
+    },
+    {
+      "id": "P08.06",
+      "title": "Marcinkiewicz--Zygmund strong laws",
+      "source": "parts/p08.tex",
+      "source_line": 255,
+      "label": "p08-06",
+      "number": "8.6",
+      "printed_page": "44",
+      "pdf_destination": "section.8.6",
+      "pdf_physical_page": 48,
+      "scope_contract": "Marcinkiewicz–Zygmund 强律，i.i.d. 实变量 \\(0<p<2\\)。一阶以上保留中心化，一阶以下给未中心化版本",
+      "textbook_locations": "K 5.23 pp. 113–114",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 258,
+          "label": "thm:mz-strong",
+          "number": "8.9",
+          "printed_page": "44",
+          "pdf_destination": "theorem.8.9",
+          "pdf_physical_page": 48
+        }
+      ]
+    },
+    {
+      "id": "P08.07",
+      "title": "The empirical distribution function",
+      "source": "parts/p08.tex",
+      "source_line": 319,
+      "label": "p08-07",
+      "number": "8.7",
+      "printed_page": "45",
+      "pdf_destination": "section.8.7",
+      "pdf_physical_page": 49,
+      "scope_contract": "实变量 Glivenko–Cantelli。所有分布函数，包括带原子情形",
+      "textbook_locations": "D 2.4.9 pp. 79–80；K 5.24 p. 115",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 322,
+          "label": "thm:gc",
+          "number": "8.10",
+          "printed_page": "45",
+          "pdf_destination": "theorem.8.10",
+          "pdf_physical_page": 49
+        }
+      ]
+    },
+    {
+      "id": "P09.01",
+      "title": "The independent identically distributed central limit theorem",
+      "source": "parts/p09.tex",
+      "source_line": 4,
+      "label": "p09-01",
+      "number": "9.1",
+      "printed_page": "46",
+      "pdf_destination": "section.9.1",
+      "pdf_physical_page": 50,
+      "scope_contract": "i.i.d. 有限方差标量 CLT，含零方差；有限维版本允许奇异协方差",
+      "textbook_locations": "D 3.4.1 p. 144、§3.10 p. 196 起；K 6.10",
+      "legacy_ids": [
+        "PRO-02-C03.R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 7,
+          "label": "thm:iid-clt",
+          "number": "9.1",
+          "printed_page": "46",
+          "pdf_destination": "theorem.9.1",
+          "pdf_physical_page": 50
+        }
+      ]
+    },
+    {
+      "id": "P09.02",
+      "title": "Lindeberg's condition for independent rows",
+      "source": "parts/p09.tex",
+      "source_line": 45,
+      "label": "p09-02",
+      "number": "9.2",
+      "printed_page": "46",
+      "pdf_destination": "section.9.2",
+      "pdf_physical_page": 50,
+      "scope_contract": "Lindeberg–Feller 正向，独立三角阵列、行内中心化、有限行总方差 \\(s_n^2>0\\)，归一化后 Lindeberg 成立",
+      "textbook_locations": "D 3.4.10 p. 148；K 6.13 p. 135",
+      "legacy_ids": [
+        "PRO-02-C03.R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 57,
+          "label": "thm:lindeberg",
+          "number": "9.2",
+          "printed_page": "47",
+          "pdf_destination": "theorem.9.2",
+          "pdf_physical_page": 51
+        }
+      ]
+    },
+    {
+      "id": "P09.03",
+      "title": "The Feller converse and the Lyapunov criterion",
+      "source": "parts/p09.tex",
+      "source_line": 84,
+      "label": "p09-03",
+      "number": "9.3",
+      "printed_page": "47",
+      "pdf_destination": "section.9.3",
+      "pdf_physical_page": 51,
+      "scope_contract": "Feller 逆向和 Lyapunov 充分条件",
+      "textbook_locations": "K 6.13 p. 135；D Exercise 3.4.12 p. 152",
+      "legacy_ids": [
+        "PRO-02-C03.R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 87,
+          "label": "thm:feller",
+          "number": "9.3",
+          "printed_page": "47",
+          "pdf_destination": "theorem.9.3",
+          "pdf_physical_page": 51
+        },
+        {
+          "kind": "corollary",
+          "source_line": 117,
+          "label": "cor:lyapunov",
+          "number": "9.4",
+          "printed_page": "47",
+          "pdf_destination": "corollary.9.4",
+          "pdf_physical_page": 51
+        }
+      ]
+    },
+    {
+      "id": "P09.04",
+      "title": "The Poisson limit for independent rare events",
+      "source": "parts/p09.tex",
+      "source_line": 131,
+      "label": "p09-04",
+      "number": "9.4",
+      "printed_page": "48",
+      "pdf_destination": "section.9.4",
+      "pdf_physical_page": 52,
+      "scope_contract": "独立 Bernoulli 稀有事件 Poisson 极限，\\(\\max_j p_{nj}\\to0\\)、\\(\\sum_j p_{nj}\\to\\lambda\\ge0\\)",
+      "textbook_locations": "D 3.6.1 p. 167；K 6.7 p. 130",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "source_line": 134,
+          "label": "thm:rare-poisson",
+          "number": "9.5",
+          "printed_page": "48",
+          "pdf_destination": "theorem.9.5",
+          "pdf_physical_page": 52
+        }
+      ]
+    },
+    {
+      "id": "P09.05",
+      "title": "Berry--Esseen and smoothing",
+      "source": "parts/p09.tex",
+      "source_line": 156,
+      "label": "p09-05",
+      "number": "9.5",
+      "printed_page": "48",
+      "pdf_destination": "section.9.5",
+      "pdf_physical_page": 52,
+      "scope_contract": "经典 i.i.d. Berry–Esseen。正方差及有限三阶绝对中心矩，给出普适常数与 \\(n^{-1/2}\\) 的 Kolmogorov 距离界",
+      "textbook_locations": "D 3.4.17–19 pp. 157–160 及序言 p. iv",
+      "legacy_ids": [],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "source_line": 167,
+          "label": "lem:esseen-smoothing",
+          "number": "9.6",
+          "printed_page": "48",
+          "pdf_destination": "lemma.9.6",
+          "pdf_physical_page": 52
+        },
+        {
+          "kind": "theorem",
+          "source_line": 244,
+          "label": "thm:berry-esseen",
+          "number": "9.7",
+          "printed_page": "49",
+          "pdf_destination": "theorem.9.7",
+          "pdf_physical_page": 53
+        }
+      ]
+    }
+  ]
+}

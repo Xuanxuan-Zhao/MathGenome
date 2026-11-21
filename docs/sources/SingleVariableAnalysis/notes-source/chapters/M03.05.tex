@@ -1,0 +1,176 @@
+\chapter{Mean values, extrema, and convexity}
+Exact mean-value equalities in this chapter concern real-valued functions. For complex-valued functions the conclusion is instead a norm estimate. Every use of a closed segment includes continuity at both endpoints.
+\SourceRef{Zorich I, 5.3--5.4; Apostol, 5.9--5.12}
+
+\KEntry{K03.05.fermat}{Fermat's necessary condition}
+\begin{theorem}
+If a real function has a local maximum or minimum at an interior point $a$ and has a finite derivative there, then $f'(a)=0$.
+\end{theorem}
+\begin{proof}
+At a maximum, for sufficiently small $h>0$ the difference quotient is nonpositive, while for $h<0$ it is nonnegative. The common finite limit is therefore both nonpositive and nonnegative. Apply this argument to $-f$ at a minimum. Interior location and existence of the derivative matter: $f(x)=x$ has an endpoint minimum on $[0,1]$ with right derivative $1$, and $|x|$ has an interior minimum with no derivative.
+\end{proof}
+
+\KEntry{K03.05.rolle}{Rolle's theorem}
+\begin{theorem}
+For $a<b$, if $f:[a,b]\to\R$ is continuous, differentiable on $(a,b)$, and $f(a)=f(b)$, some $c\in(a,b)$ satisfies $f'(c)=0$.
+\end{theorem}
+\begin{proof}
+The function attains both extreme values by \KRef{K03.03.extreme_values}. If constant, every interior point works. Otherwise some value differs from the common endpoint value, so either a maximum or a minimum is attained at an interior point. Fermat's theorem applies there.
+\end{proof}
+
+\KEntry{K03.05.lagrange}{The real mean value theorem}
+\begin{theorem}
+If real $f$ is continuous on $[a,b]$, $a<b$, and differentiable inside, then
+\[ f(b)-f(a)=f'(c)(b-a)\quad\text{for some }c\in(a,b). \]
+\end{theorem}
+\begin{proof}
+Apply Rolle's theorem to $F(t)=f(t)-f(a)-(f(b)-f(a))(t-a)/(b-a)$, whose endpoint values are zero. Its zero derivative at an interior point is exactly the required formula. For a complex counterexample take $f(t)=\cos t+i\sin t$ on $[0,2\pi]$ after module 07: the endpoint difference is zero but $f'(t)=-\sin t+i\cos t$ always has modulus one. Thus the scalar equality cannot be asserted for this target.
+\end{proof}
+
+\KEntry{K03.05.cauchy}{Cauchy's mean value theorem}
+\begin{theorem}
+For $a<b$, if real $f,g$ are continuous on $[a,b]$ and differentiable on $(a,b)$, then some $c\in(a,b)$ satisfies
+\[ (f(b)-f(a))g'(c)=(g(b)-g(a))f'(c). \]
+If $g'$ is nowhere zero inside, then $g(b)\ne g(a)$ and this gives
+\[ \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(c)}{g'(c)}. \]
+\end{theorem}
+\begin{proof}
+The function $H(t)=(f(b)-f(a))g(t)-(g(b)-g(a))f(t)$ has equal endpoint values; Rolle gives $H'(c)=0$. If $g(b)=g(a)$, Rolle applied to $g$ would give a zero derivative, contradicting the additional hypothesis. Both denominators in the ratio formula are then nonzero.
+\end{proof}
+
+\KEntry{K03.05.mean_inequality}{The scalar and complex mean inequality}
+\begin{theorem}
+Let $f:[x,y]\to\K$ be continuous, differentiable inside, and satisfy $|f'(t)|\le M$ for all interior $t$, where $x<y$ and $M\ge0$. Then
+\[ |f(y)-f(x)|\le M(y-x). \]
+\end{theorem}
+\begin{proof}
+If $v=f(y)-f(x)=0$ the result is immediate. Otherwise set $u=v/|v|$ and $F(t)=\RePart(\bar u f(t))$. For real scalars this is simply a choice of sign. Then $F$ is real, $F(y)-F(x)=|v|$, and $|F'(t)|\le|f'(t)|\le M$. The real mean value theorem gives $|v|=F'(c)(y-x)\le M(y-x)$. A fixed projection was used throughout, without requiring a complex derivative vector to equal the secant vector at any point.
+\end{proof}
+
+\KEntry{K03.05.monotonicity}{Derivatives and monotonicity}
+\begin{theorem}
+Let real $f$ be continuous on an interval $I$ and differentiable at every interior point. If $f'\ge0$ inside then $f$ is nondecreasing; if $f'>0$ inside it is strictly increasing. Reversing the derivative signs gives decreasing versions. A nondecreasing differentiable function necessarily has $f'\ge0$, but strict increase does not force $f'>0$ everywhere.
+\end{theorem}
+\begin{proof}
+For any $x<y$ in $I$, apply \KRef{K03.05.lagrange} on $[x,y]$ to obtain $f(y)-f(x)=f'(c)(y-x)$ and the required sign. For necessity, all difference quotients of a nondecreasing function at an interior point are nonnegative, including negative increments, so their limit is nonnegative. The strictly increasing function $x^3$ has derivative zero at zero. Endpoint continuity cannot be discarded: on $[0,1]$ set $f(0)=2$, $f(x)=x$ for $x>0$. Its interior derivative is positive, but it is not nondecreasing on the stated closed interval.
+\end{proof}
+
+\KEntry{K03.05.zero_derivative}{Zero derivatives and constants}
+\begin{corollary}
+A scalar function continuous on an interval and differentiable inside, with derivative zero at every interior point, is constant. Two such functions with the same derivative differ by a constant. On a domain consisting of several interval components the constants may differ between components.
+\end{corollary}
+\begin{proof}
+Apply \KRef{K03.05.mean_inequality} with $M=0$ to any segment in the interval. Apply this to $f-g$ for equal derivatives. On $(-2,-1)\cup(1,2)$ the function equal to zero on the first component and one on the second has zero derivative everywhere on its domain but is not globally constant.
+\end{proof}
+
+\KEntry{K03.05.root_uniqueness}{Existence and uniqueness of roots}
+\begin{proposition}
+If real $f$ is continuous on $[a,b]$ and $f(a)f(b)<0$, it has a root in $(a,b)$. If it is also strictly monotone, that root is unique. In particular interior differentiability with $f'>0$ or $f'<0$ suffices for uniqueness.
+\end{proposition}
+\begin{proof}
+Zero is strictly between the endpoint values, so \KRef{K03.03.intermediate_values} gives an interior root. A strictly monotone function cannot take the value zero at two different points. The derivative condition implies strict monotonicity by the preceding theorem. Existence alone is insufficient: $f(x)=x(x^2-1)$ has roots $-1,0,1$ while its values at $-2$ and $2$ have opposite signs.
+\end{proof}
+
+\KEntry{K03.05.derivative_sign_test}{The first derivative sign test}
+\begin{proposition}
+Suppose real $f$ is continuous at interior $a$, differentiable on a punctured neighborhood, and $f'>0$ just to the left of $a$, $f'<0$ just to the right. Then $a$ is a strict local maximum. Reversed signs yield a strict local minimum.
+\end{proposition}
+\begin{proof}
+On a short segment $[x,a]$ with $x<a$, endpoint continuity and interior differentiability give $f(a)-f(x)=f'(c)(a-x)>0$. On $[a,x]$ to the right the corresponding difference $f(x)-f(a)$ is negative. Negation gives the minimum test. A stationary point alone is insufficient: $f(x)=x^3$ has $f'(0)=0$ but increases through zero.
+\end{proof}
+
+\KEntry{K03.05.second_test}{The second derivative test}
+\begin{theorem}
+Suppose $f$ is differentiable in a neighborhood of $a$, $f'$ is differentiable at $a$, and $f'(a)=0$. If $f''(a)>0$ then $a$ is a strict local minimum; if $f''(a)<0$ it is a strict local maximum.
+\end{theorem}
+\begin{proof}
+When $f''(a)>0$, the quotient $(f'(a+h)-f'(a))/h$ is positive for all sufficiently small $h\ne0$. Thus $f'$ is negative to the left and positive to the right; use \KRef{K03.05.derivative_sign_test}. Negation gives the other case. If $f''(a)=0$ there is no conclusion: $x^4$, $-x^4$, and $x^3$ at zero give a minimum, a maximum, and neither, respectively.
+\end{proof}
+
+\KEntry{K03.05.darboux}{The intermediate value property of derivatives}
+\begin{theorem}
+If real $f$ is differentiable on an open interval and $u<v$ are in it, then $f'$ takes every value between $f'(u)$ and $f'(v)$ at a point of $[u,v]$, and every strictly intermediate value at a point of $(u,v)$.
+\end{theorem}
+\begin{proof}
+Suppose $f'(u)<\lambda<f'(v)$ and put $F(t)=f(t)-\lambda t$. Its derivative at $u$ is negative, so a point just to the right has value less than $F(u)$. Its derivative at $v$ is positive, so a point just to the left has value less than $F(v)$. The continuous function $F$ attains a minimum on $[u,v]$, and neither endpoint can be a minimizer. Fermat gives $F'(c)=0$, hence $f'(c)=\lambda$, at an interior point. For reversed endpoint derivative order apply this argument to $-f$; endpoint values themselves are already attained. No continuity of $f'$ was assumed. In particular a nowhere-zero derivative on an interval has a constant sign, since opposite signs would force a zero.
+\end{proof}
+
+\KEntry{K03.05.lhopital_zero}{L'Hopital's rule with zero limits}
+\begin{theorem}
+Fix a one-sided endpoint approach along an open interval $J$, including an approach to $+\infty$ or $-\infty$. Let real $f,g$ be differentiable on $J$, let $g'$ be nowhere zero there, and suppose $f,g\to0$. If $f'/g'\to L\in\overline\R$ along that approach, then $g$ is eventually nonzero and $f/g\to L$.
+\end{theorem}
+\begin{proof}
+By Darboux, $g'$ has a constant sign, so $g$ is strictly monotone. A strictly monotone function tending to zero at the selected endpoint cannot vanish at an interior point: its subsequent values in the direction of approach would all lie strictly on one side of zero and be bounded away from zero. Thus $g\ne0$ on $J$.
+Suppose $L$ is finite. Restrict to an approach neighborhood where $|f'/g'-L|<\eps$. For two distinct points $x,t$ there, Cauchy's theorem gives
+\[ \left|\frac{f(x)-f(t)}{g(x)-g(t)}-L\right|<\eps. \]
+The denominator is nonzero by strict monotonicity. Keep $x$ fixed and let $t$ tend to the endpoint within that neighborhood. Since $f(t),g(t)\to0$ and $g(x)\ne0$, it follows that $|f(x)/g(x)-L|\le\eps$. Choosing $\eps$ smaller than any prescribed output error proves the finite limit. If $L=+\infty$, choose instead a neighborhood with $f'/g'>A$ for any fixed real $A$. The same mean value argument and limit give $f(x)/g(x)\ge A$. Since $A$ is arbitrary the quotient tends to $+\infty$. Reverse inequalities treat $-\infty$.
+\end{proof}
+
+\KEntry{K03.05.lhopital_infinite}{L'Hopital's rule with an unbounded denominator}
+\begin{theorem}
+Under the same specified endpoint and real differentiability conditions, suppose $g'$ is nowhere zero, $|g|\to\infty$, and $f'/g'\to L\in\overline\R$. Then $f/g\to L$. No limit assumption on $f$ is needed.
+\end{theorem}
+\begin{proof}
+Eventually $g\ne0$. For finite $L$, restrict to a neighborhood where the derivative ratio differs from $L$ by $<\eps$, and fix one point $t$ in that neighborhood. Cauchy's theorem on the segment joining $t$ to a point $x$ closer to the endpoint gives
+\[ \left|\frac{f(x)-f(t)}{g(x)-g(t)}-L\right|<\eps. \]
+Here $g(x)\ne g(t)$ by Rolle's theorem and $g'\ne0$. Hence
+\[ \left|\frac{f(x)}{g(x)}-L\right|\le\eps\left|1-\frac{g(t)}{g(x)}\right|+\frac{|f(t)-Lg(t)|}{|g(x)|}. \]
+The second term tends to zero and the factor of $\eps$ tends to one. Arbitrarily small $\eps$ proves the result. If $L=+\infty$, the corresponding increment ratio is greater than any chosen $A$ once $t,x$ lie sufficiently far into the approach. The identity
+\[ \frac{f(x)}{g(x)}=\frac{f(x)-f(t)}{g(x)-g(t)}\left(1-\frac{g(t)}{g(x)}\right)+\frac{f(t)}{g(x)} \]
+has a positive factor tending to one. Thus the lower limit of $f/g$ is at least $A$ for every real $A$ (or use a larger positive $A$ for any desired threshold), giving $+\infty$. Negating $f$ treats $-\infty$.
+\end{proof}
+
+\KEntry{K03.05.convexity}{Convexity and secant slopes}
+\begin{definition}
+A real function on an interval is convex if
+\[ f((1-t)x+ty)\le(1-t)f(x)+tf(y)\quad(x,y\in I,\ 0\le t\le1). \]
+It is strictly convex if the inequality is strict whenever $x\ne y$ and $0<t<1$. Concavity means convexity of $-f$.
+\end{definition}
+\begin{proposition}
+Convexity is equivalent to the ordered secant inequalities, for every $x<y<z$ in the interval,
+\[ \frac{f(y)-f(x)}{y-x}\le\frac{f(z)-f(x)}{z-x}\le\frac{f(z)-f(y)}{z-y}. \]
+\end{proposition}
+\begin{proof}
+Write $y=(1-t)x+tz$ with $t=(y-x)/(z-x)$. Subtracting $f(x)$ from the convexity inequality and dividing by $y-x>0$ yields the first secant inequality; subtracting instead from $f(z)$ yields the second. Conversely the first secant inequality rearranges to the convexity inequality for each strict interior combination. The cases $t=0,1$ and $x=y$ are equalities.
+\end{proof}
+
+\KEntry{K03.05.convex_derivative}{Convexity and derivatives}
+\begin{theorem}
+For differentiable real $f$ on an open interval, convexity is equivalent to $f'$ being nondecreasing, and equivalent to every tangent supporting the graph:
+\[ f(y)\ge f(x)+f'(x)(y-x)\quad(x,y\in I). \]
+If $f$ is twice differentiable, convexity is equivalent to $f''\ge0$.
+\end{theorem}
+\begin{proof}
+For convex $f$, let the near endpoint of a secant tend to $x$ or $y$ in the inequalities above. For $x<y$ this gives $f'(x)\le(f(y)-f(x))/(y-x)\le f'(y)$. Thus $f'$ is nondecreasing and, considering both orders of $x,y$, the tangent inequality holds. Conversely if $f'$ is nondecreasing, the mean value theorem on $[x,y]$ gives the tangent inequality: when $y>x$ its intermediate derivative is at least $f'(x)$, and when $y<x$ it is at most $f'(x)$ and the negative factor reverses the inequality. If every tangent supports, apply the two inequalities based at $z=(1-t)x+ty$, multiply by $1-t$ and $t$, and add; the linear terms cancel, giving convexity. Finally $f''\ge0$ makes $f'$ nondecreasing by \KRef{K03.05.monotonicity}. Conversely a differentiable nondecreasing $f'$ has derivative $f''\ge0$ by the necessity part of that result.
+\end{proof}
+
+\KEntry{K03.05.convex_onesided}{One-sided derivatives of finite convex functions}
+\begin{theorem}
+A finite convex function on an open interval is continuous and has finite one-sided derivatives at every interior point, with $f'_-(x)\le f'_+(x)$. Every $p\in[f'_-(x),f'_+(x)]$ is a supporting slope:
+\[ f(y)\ge f(x)+p(y-x)\quad(y\in I). \]
+\end{theorem}
+\begin{proof}
+Fix $u<u_1<v_1<v$ in the interval. For $u_1\le x<y\le v_1$, the secant inequalities repeatedly give
+\[ \frac{f(u_1)-f(u)}{u_1-u}\le\frac{f(y)-f(x)}{y-x}\le\frac{f(v)-f(v_1)}{v-v_1}. \]
+Thus $f$ is Lipschitz on $[u_1,v_1]$, with constant the maximum of the moduli of these two fixed finite slopes. Such segments cover the interval, proving continuity. At fixed $x$, right secants $(f(x+h)-f(x))/h$ are nondecreasing as $h>0$ increases, so their limit as $h\downarrow0$ is their infimum; nearby external secants give finite upper and lower bounds. Left secants have a finite supremum giving $f'_-(x)$. Every left secant is at most every right secant by convexity, giving $f'_-(x)\le f'_+(x)$. For $y>x$, its secant is at least $f'_+(x)\ge p$. For $y<x$, its secant toward $x$ is at most $f'_-(x)\le p$; multiplication by $y-x<0$ gives the same supporting inequality. These arguments also identify all supporting slopes, since their one-sided limits force $f'_-(x)\le p\le f'_+(x)$.
+\end{proof}
+
+\KEntry{K03.05.jensen}{Finite Jensen inequality}
+\begin{theorem}
+If $f$ is convex, $w_j\ge0$, $\sum_{j=1}^m w_j=1$, and $x_j\in I$, then
+\[ f\left(\sum_{j=1}^m w_jx_j\right)\le\sum_{j=1}^m w_jf(x_j). \]
+If $f$ is strictly convex, equality holds precisely when all $x_j$ with positive weights are equal.
+\end{theorem}
+\begin{proof}
+Discard zero weights. The one-weight case is equality. For $m>1$ write the average as $(1-w_m)y+w_mx_m$, where $y=(\sum_{j<m}w_jx_j)/(1-w_m)$. Convexity followed by the induction hypothesis for $y$ proves the inequality. If all positively weighted inputs agree, equality is immediate. If two such inputs are distinct, combine just those two into their weighted average. Strict convexity makes their contribution strictly larger than the function at that combined average; Jensen applied to the remaining list then gives a strict total inequality. This proves the converse equality statement without any unstated condition on zero weights.
+\end{proof}
+
+\KEntry{K03.05.inequalities}{Exponential, logarithmic, and arithmetic--geometric inequalities}
+\begin{proposition}
+After module 07, $\exp x\ge1+x$ for real $x$, $\log x\le x-1$ for $x>0$, and, for positive $a_j$ and weights $w_j\ge0$ summing to one,
+\[ \prod_{j=1}^m a_j^{w_j}\le\sum_{j=1}^m w_ja_j. \]
+Equality in the first two inequalities occurs at $x=0$ and $x=1$, respectively; equality in the weighted inequality occurs exactly when all positively weighted $a_j$ coincide.
+\end{proposition}
+\begin{proof}
+The elementary formulas give $(\exp x)''=\exp x>0$, so its tangent at zero supports the graph and gives $\exp x\ge1+x$. Strictness for $x\ne0$ follows because the derivative $\exp x$ is strictly increasing: the mean value secant from zero has slope strictly above $1$ to the right and strictly below $1$ to the left. Substitute $x=\log u$ to obtain $u\ge1+\log u$, with equality only at $u=1$. Also $(\log x)''=-1/x^2<0$, so $-\log$ is strictly convex, using the same strict secant argument. Jensen for $-\log$ gives $\log(\sum w_ja_j)\ge\sum w_j\log a_j$. Apply the increasing exponential and its addition and real-power identities to get the displayed inequality. Strict Jensen gives the equality condition.
+\end{proof}

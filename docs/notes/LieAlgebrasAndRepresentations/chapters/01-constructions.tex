@@ -1,0 +1,432 @@
+\chapter{Constructions and enveloping algebras}
+\label{ch:constructions}
+
+\section{Brackets, quotients, and representations}
+
+We work over a field \(k\). Statements involving factorials or exponential
+series will explicitly assume characteristic zero. All tensor products
+in this chapter are over \(k\). An associative algebra is unital, and a
+module over it is a unital left module.
+
+\begin{definition}[Lie algebras and their quotients]\label{res:A01}
+A Lie algebra is a vector space \(\mathfrak g\) with a bilinear operation
+\([x,y]\) satisfying
+\[
+ [x,x]=0,\qquad
+ [x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0.
+\]
+A linear subspace is a subalgebra if it is closed under brackets; it is
+an ideal \(I\) if \([\mathfrak g,I]\subseteq I\). A homomorphism preserves
+brackets. For an ideal, the quotient has the bracket
+\([x+I,y+I]=[x,y]+I\). If \(f:\mathfrak g\to\mathfrak h\) is a
+homomorphism, it induces an isomorphism
+\(\mathfrak g/\ker f\longrightarrow\operatorname{im}f\).
+\end{definition}
+
+\begin{proof}
+Bilinearity and \([x+y,x+y]=0\) imply \([x,y]=-[y,x]\), including in
+characteristic two; the alternating identity itself remains part of the
+definition. If \(x\) and \(y\) are replaced by \(x+a,y+b\), with
+\(a,b\in I\), the bracket changes by
+\([a,y]+[x,b]+[a,b]\in I\). Thus the quotient bracket is well defined.
+Its alternating and Jacobi identities are images of the identities
+in \(\mathfrak g\). The kernel of a homomorphism is an ideal, its image
+is a subalgebra, and \(x+\ker f\mapsto f(x)\) is well defined, injective,
+surjective onto the image, and bracket preserving.
+\end{proof}
+
+An associative algebra \(A\) becomes a Lie algebra under
+\([a,b]=ab-ba\). Expansion gives its Jacobi identity: each of the six
+ordered triple products occurs once with each sign. In particular,
+\(\mathfrak{gl}(V)=\operatorname{End}_k(V)\) is a Lie algebra.
+
+\begin{proposition}[Central and derived series]\label{res:A02}
+Set
+\[
+ D^0\mathfrak g=\mathfrak g,\quad
+ D^{r+1}\mathfrak g=[D^r\mathfrak g,D^r\mathfrak g],\qquad
+ \gamma _1\mathfrak g=\mathfrak g,\quad
+ \gamma _{r+1}\mathfrak g=[\mathfrak g,\gamma _r\mathfrak g].
+\]
+Here brackets of subspaces mean their linear span. All these subspaces
+are ideals. They define solvability and nilpotence by eventual
+vanishing, respectively. Subalgebras and quotients of a solvable
+(respectively nilpotent) algebra have the same property. An extension
+of solvable algebras is solvable.
+
+The upper central series \(Z_0=0\),
+\(Z_{r+1}/Z_r=Z(\mathfrak g/Z_r)\) reaches \(\mathfrak g\) if and only
+if \(\mathfrak g\) is nilpotent. Moreover,
+\[
+ [\gamma_i\mathfrak g,\gamma_j\mathfrak g]
+ \subseteq\gamma_{i+j}\mathfrak g.
+\]
+\end{proposition}
+
+\begin{proof}
+Jacobi in the form
+\([x,[a,b]]=[[x,a],b]+[a,[x,b]]\) shows that the bracket of two
+ideals is an ideal; it proves the assertion about both series by
+induction. For a homomorphism \(f\), induction gives
+\(f(D^r\mathfrak g)=D^r(f\mathfrak g)\) and similarly for \(\gamma_r\).
+The analogous inclusions for a subalgebra suffice. If an ideal \(I\)
+and the quotient are solvable, some \(D^r\mathfrak g\) lies in \(I\),
+and then \(D^{r+s}\mathfrak g\subseteq D^s I\).
+
+For the last inclusion, induct on \(i\). The case \(i=1\) is the
+definition. Jacobi gives
+\[
+ [[\mathfrak g,\gamma_i],\gamma_j]
+ \subseteq[\mathfrak g,[\gamma_i,\gamma_j]]
+       +[\gamma_i,[\mathfrak g,\gamma_j]]
+ \subseteq\gamma_{i+j+1}.
+\]
+If \(\gamma_{c+1}=0\), induction shows
+\(\gamma_{c+1-r}\subseteq Z_r\), starting with
+\(\gamma_c\subseteq Z_1\). Thus \(Z_c=\mathfrak g\).
+Conversely, \(Z_c=\mathfrak g\) implies
+\(\gamma_{r+1}\subseteq Z_{c-r}\), by induction on \(r\), so
+\(\gamma_{c+1}=0\).
+\end{proof}
+
+Nilpotence implies solvability, since \(D^r\mathfrak g\subseteq
+\gamma_{r+1}\mathfrak g\). It does not follow merely from an extension
+of two nilpotent algebras: \([h,e]=e\) gives a two-dimensional
+counterexample.
+
+\begin{proposition}[Actions, derivations, and semidirect products]
+\label{res:A03}
+A representation is a linear map
+\(\rho:\mathfrak g\to\mathfrak{gl}(M)\) satisfying
+\[
+ \rho([x,y])=\rho(x)\rho(y)-\rho(y)\rho(x).
+\]
+The map \(\operatorname{ad}x:y\mapsto[x,y]\) is a representation and
+has kernel \(Z(\mathfrak g)\). A derivation of a Lie algebra
+\(\mathfrak n\) is a linear map \(d\) with
+\(d[a,b]=[da,b]+[a,db]\). Derivations form a Lie subalgebra of
+\(\mathfrak{gl}(\mathfrak n)\).
+
+If \(\theta:\mathfrak g\to\operatorname{Der}(\mathfrak n)\) is a
+representation, then
+\[
+ [(x,a),(y,b)]
+   =([x,y],\,\theta(x)b-\theta(y)a+[a,b])
+ \tag{1.1}\label{eq:semidirect}
+\]
+makes \(\mathfrak g\oplus\mathfrak n\) a Lie algebra, denoted
+\(\mathfrak g\ltimes\mathfrak n\). For an abelian \(\mathfrak n=M\),
+the Jacobi identity in this formula is equivalent to the
+representation identity.
+\end{proposition}
+
+\begin{proof}
+Jacobi is exactly the assertion that \(\operatorname{ad}x\) is a
+derivation and that \([\operatorname{ad}x,\operatorname{ad}y]
+=\operatorname{ad}[x,y]\). Its kernel is the stated center.
+Expanding \(de[a,b]-ed[a,b]\) cancels the two mixed terms and proves
+that \([d,e]\) is a derivation.
+
+For \eqref{eq:semidirect}, check Jacobi according to the number of
+entries in each summand. Three entries from one summand give that
+summand's Jacobi identity. Two from \(\mathfrak g\) and one from
+\(\mathfrak n\) give
+\(\theta([x,y])a-[\theta(x),\theta(y)]a=0\). One from
+\(\mathfrak g\) and two from \(\mathfrak n\) give the derivation
+identity for \(\theta(x)\). These cases exhaust the expansion.
+When \(\mathfrak n\) is abelian, the last condition is automatic,
+and the second case is necessary as well as sufficient.
+\end{proof}
+
+\section{The universal enveloping algebra}
+
+\begin{theorem}[Construction and universal property]\label{res:A04}
+Let \(T(\mathfrak g)=\bigoplus_{r\geq0}\mathfrak g^{\otimes r}\).
+The quotient
+\[
+ U(\mathfrak g)=T(\mathfrak g)/
+  \bigl(x\otimes y-y\otimes x-[x,y]\mid x,y\in\mathfrak g\bigr)
+\]
+has a canonical Lie map \(\iota:\mathfrak g\to U(\mathfrak g)\).
+Every Lie map \(\mathfrak g\to A\), with \(A\) associative, extends
+uniquely to an algebra map \(U(\mathfrak g)\to A\).
+Representations of \(\mathfrak g\) and left \(U(\mathfrak g)\)-modules
+are consequently equivalent, with the same linear morphisms.
+\end{theorem}
+
+\begin{proof}
+The tensor algebra extends a linear map \(f:\mathfrak g\to A\)
+uniquely by
+\(x_1\otimes\cdots\otimes x_r\mapsto f(x_1)\cdots f(x_r)\).
+It annihilates the displayed ideal exactly when
+\(f([x,y])=[f(x),f(y)]\). The quotient therefore has the universal
+property. Its generators force uniqueness. Taking
+\(A=\operatorname{End}_k(M)\) yields the module correspondence.
+A linear map commutes with every \(\iota(x)\) if and only if it
+commutes with all products and their sums, so the morphisms also
+agree. The two constructions leave the underlying action unchanged
+and are inverse.
+\end{proof}
+
+\begin{theorem}[Poincare--Birkhoff--Witt]\label{res:A05}
+Fix a totally ordered basis \((x_i)\) of \(\mathfrak g\). The ordered
+monomials
+\[
+ 1,\qquad x_{i_1}\cdots x_{i_r}\quad
+ (r\geq1,\ i_1\leq\cdots\leq i_r)
+\]
+form a basis of \(U(\mathfrak g)\). In particular, \(\iota\) is
+injective. For the word-length filtration \(F_rU\),
+\[
+ S(\mathfrak g)\ \xrightarrow{\ \sim\ }\operatorname{gr}U(\mathfrak g)
+\]
+is the natural graded algebra isomorphism. In characteristic zero
+the symmetrization map
+\[
+ \operatorname{sym}(y_1\cdots y_r)
+ =\frac1{r!}\sum_{\sigma\in S_r}y_{\sigma(1)}\cdots y_{\sigma(r)}
+ \tag{1.2}\label{eq:symmetrization}
+\]
+is a filtered vector-space isomorphism \(S(\mathfrak g)\to U(\mathfrak g)\);
+it is equivariant for the adjoint action, but in general is not an
+algebra homomorphism.
+\end{theorem}
+
+\begin{proof}
+In a word, replace a descending adjacent pair \(yx\) by
+\(xy+[y,x]\), expressing the bracket in the chosen basis.
+Order terms first by word length and then, at fixed length, by
+number of inversions. Each replacement produces one word with
+one fewer inversion and terms of smaller length. Thus every
+reduction terminates.
+
+We verify independence of the first replacement. Disjoint
+replacements commute. An overlapping pair can only occur in
+a strictly descending triple \(zyx\). Reducing its left pair or
+its right pair and then moving the remaining length-three
+letters to \(xyz\) leaves a difference of shorter terms
+\[
+ [y,x]z-z[y,x]+y[z,x]-[z,x]y+[z,y]x-x[z,y].
+\]
+After reducing each commutator of two basis-linear expressions,
+this becomes
+\[
+ [[y,x],z]+[y,[z,x]]+[[z,y],x]=0.
+\]
+Induction on length and inversion number therefore gives a unique
+normal form. More explicitly, to compare two first reductions,
+commute them when disjoint, use this overlap calculation when
+adjacent, and normalize all shorter resulting terms by the
+induction hypothesis. Applying this comparison successively
+compares any two finite reduction sequences.
+
+The normal-form map kills each defining relation with any prefix
+and suffix. It consequently kills their linear combinations,
+which are exactly the generated two-sided ideal. Conversely,
+each reduction changes a word by a defining relation. Thus the
+normal forms identify the quotient with the vector space having
+the ordered words as basis. In particular, no linear combination
+of the length-one words vanishes.
+
+The relation becomes commutativity in top degree, so it defines
+the map from \(S(\mathfrak g)\) to \(\operatorname{gr}U\).
+Both sides have the same ordered monomial basis in each degree,
+which proves bijectivity. In \eqref{eq:symmetrization}, every
+permuted product has the same top symbol. Thus symmetrization
+induces the identity on the associated graded spaces.
+Injectivity and surjectivity now follow by induction on the
+finite filtration degree of an element. The formula is
+symmetric and multilinear, so is well defined on \(S^r\).
+Applying \(\operatorname{ad}x\) to a product differentiates its
+factors; averaging commutes with this operation and proves
+equivariance.
+\end{proof}
+
+This argument works for a free Lie algebra over a commutative
+coefficient ring when an ordered module basis is supplied.
+The characteristic-zero assumption is needed for
+symmetrization, not for the ordered basis theorem. See
+\cite[Sections 17.3--17.4]{humphreys} and
+\cite[Section 13]{etingof}.
+
+\begin{proposition}[Tensor, dual, and Hopf structures]\label{res:A06}
+The enveloping algebra has algebra maps
+\[
+ \Delta(x)=x\otimes1+1\otimes x,\qquad \epsilon(x)=0
+\]
+and a linear anti-automorphism \(S\) with \(S(x)=-x\).
+They satisfy coassociativity, the counit identities, and
+\(m(S\otimes1)\Delta=m(1\otimes S)\Delta=\eta\epsilon\).
+For representations \(M,N\),
+\[
+ x(m\otimes n)=(xm)\otimes n+m\otimes(xn),\qquad
+ (x\phi)(m)=-\phi(xm)
+ \tag{1.3}\label{eq:tensor-dual-action}
+\]
+give the tensor and dual representations. On
+\(\operatorname{Hom}_k(M,N)\), the corresponding action is
+\((x f)(m)=x f(m)-f(xm)\).
+\end{proposition}
+
+\begin{proof}
+The primitive assignment for \(\Delta\) preserves brackets:
+the two tensor factors commute, and the remaining two
+commutators are \([x,y]\otimes1+1\otimes[x,y]\).
+The universal property constructs \(\Delta\); it also constructs
+\(\epsilon\). The assignment \(x\mapsto-x\) is a Lie map to
+\(U^{\mathrm{op}}\), so constructs \(S:U\to U^{\mathrm{op}}\).
+The two maps \(U\to U^{\otimes3}\) in coassociativity agree on
+every generator; the counit identities are checked the same way.
+For the antipode identity, the assertion holds on \(1\) and on
+each generator. If it holds for \(a,b\), multiplicativity of
+\(\Delta\), anti-multiplicativity of \(S\), and the two preceding
+identities give it for \(ab\):
+\[
+ \sum S(a_{(1)}b_{(1)})a_{(2)}b_{(2)}
+ =\sum S(b_{(1)})\Big(\sum S(a_{(1)})a_{(2)}\Big)b_{(2)}
+ =\epsilon(a)\epsilon(b)1.
+\]
+Linearity and generation prove it on \(U\).
+The first formula in \eqref{eq:tensor-dual-action} is induced
+by \(\Delta\), and the second by \(S\).
+Alternatively, direct commutator expansion gives the
+representation identities and shows that evaluation and
+composition are equivariant. Identifying \(M^*\otimes N\)
+with \(\operatorname{Hom}_k(M,N)\) when \(M\) is finite
+dimensional gives the last formula.
+\end{proof}
+
+\section{Free Lie algebras and the BCH product}
+
+\begin{theorem}[The free Lie algebra]\label{res:A07}
+For a vector space \(V\) there is a Lie algebra \(L(V)\) and a
+linear map \(V\to L(V)\) through which every linear map from \(V\)
+to a Lie algebra extends uniquely to a Lie homomorphism.
+Moreover,
+\[
+ U(L(V))\simeq T(V),
+\]
+and the resulting inclusion identifies \(L(V)\) with the Lie
+subalgebra of \(T(V)\) generated by \(V\).
+\end{theorem}
+
+\begin{proof}
+Take the free nonassociative algebra on \(V\): its degree \(r\)
+part is the sum of copies of \(V^{\otimes r}\) indexed by binary
+bracketings. Quotient by the ideal generated by alternation
+and Jacobi, including all their substitutions and bracket
+contexts. Evaluation of a bracketed expression shows the
+universal property. No relations on \(V\) are forced, since a
+linear map \(V\to V\) with abelian target extends.
+
+For every associative \(A\), a map \(U(L(V))\to A\) is a Lie map
+\(L(V)\to A\), hence a linear map \(V\to A\). Construct the
+corresponding maps between \(U(L(V))\) and \(T(V)\); both
+composites fix their algebra generators \(V\), so are identities.
+PBW embeds \(L(V)\) in its enveloping algebra. Its image is
+generated under brackets by \(V\), by the nonassociative
+construction, proving the last assertion.
+\end{proof}
+
+\begin{theorem}[Primitive elements and formal BCH]\label{res:A08}
+Suppose \(\operatorname{char}k=0\), and complete \(T(V)\) by tensor
+degree. Its elements of positive degree that are primitive for
+\(\Delta\) are exactly the degree-completed free Lie algebra
+\(\widehat{L(V)}\). Exponentiation and logarithm give mutually
+inverse correspondences between primitive elements and
+group-like elements with constant term \(1\). Consequently,
+\[
+ \operatorname{BCH}(X,Y)=\log(\exp X\exp Y)
+ =X+Y+\tfrac12[X,Y]
+   +\tfrac1{12}[X,[X,Y]]+\tfrac1{12}[Y,[Y,X]]+\cdots
+ \tag{1.4}\label{eq:formal-bch}
+\]
+is a formal Lie series. It satisfies
+\(\operatorname{BCH}(\operatorname{BCH}(X,Y),Z)
+=\operatorname{BCH}(X,\operatorname{BCH}(Y,Z))\).
+\end{theorem}
+
+\begin{proof}
+First consider an ordinary, noncompleted enveloping algebra.
+Let \(p\) be primitive, and take its highest PBW symbol
+\(\bar p\in S^r(L(V))\). The PBW coproduct says that this
+symbol is primitive in the symmetric algebra.
+In a polynomial algebra over a characteristic-zero field,
+the only primitive polynomials are linear: in
+\(q(s+t)=q(s)+q(t)\), the coefficient of a single \(t_i\)
+is \(\partial q/\partial s_i\), and therefore is constant.
+All second derivatives vanish, so \(q\) has degree at most
+one. A polynomial uses only finitely many variables, and the
+argument applies to it even when the basis is infinite.
+Thus \(r\leq1\), so \(p\in k+L(V)\). Comparing constant terms
+in the primitive identity removes the scalar.
+
+The tensor grading and the coproduct are compatible. A
+primitive element of the completion has each homogeneous
+tensor component primitive. Each such component is an
+ordinary polynomial in \(T(V)=U(L(V))\), so the preceding
+argument puts it in \(L(V)\). Conversely, generators are
+primitive, brackets of primitives are primitive, and degreewise
+limits preserve the identity. This proves the assertion
+about completed primitives.
+
+The series for \(\exp p\) and \(\log(1+a)\) are well defined:
+in each tensor degree only finitely many summands contribute.
+Their usual inverse identities are formal identities in one
+variable. If \(p\) is primitive, then
+\[
+ \Delta(\exp p)=\exp(p\otimes1+1\otimes p)
+              =\exp p\otimes\exp p
+\]
+because the two summands commute. If \(g\) is group-like,
+\(\Delta g=(g\otimes1)(1\otimes g)\), again with commuting
+factors, and hence
+\(\Delta\log g=\log g\otimes1+1\otimes\log g\).
+These computations prove the correspondence.
+
+The product of two group-like elements is group-like.
+Therefore its logarithm is a Lie series. Expanding the
+associative series through degree three yields the displayed
+coefficients in \eqref{eq:formal-bch}. Exponentiating the two
+claimed associativity expressions gives
+\(\exp X\exp Y\exp Z\) on both sides. Applying the formal
+logarithm proves their equality. Substitution is legitimate
+because each substituted argument has positive degree.
+\end{proof}
+
+\begin{theorem}[Finite BCH on a nilpotent algebra]\label{res:A09}
+Let \(\mathfrak n\) be nilpotent of class at most \(c\) over a
+characteristic-zero field, so \(\gamma_{c+1}\mathfrak n=0\).
+The evaluation of \eqref{eq:formal-bch} is a finite polynomial
+product \(x*y\) on \(\mathfrak n\). It is associative, with unit
+\(0\) and inverse \(-x\). Lie homomorphisms preserve this
+product. If \(D\) is a derivation, then
+\[
+ D(x*y)=d(\operatorname{BCH})_{(x,y)}(Dx,Dy).
+ \tag{1.5}\label{eq:bch-derivation}
+\]
+\end{theorem}
+
+\begin{proof}
+A homogeneous Lie monomial of degree \(r\) is a linear
+combination of brackets of length \(r\), which lie in
+\(\gamma_r\mathfrak n\) by Proposition~\ref{res:A02}.
+Terms of degree greater than \(c\) therefore vanish.
+Evaluate the universal formal associativity identity:
+all terms of bracket length at most \(c\) form finite sums,
+and the others evaluate to zero. This gives associativity.
+The formal identities \(\exp0=1\) and
+\(\exp x\exp(-x)=1\) give the unit and inverse.
+
+Every Lie homomorphism preserves every finite nested bracket,
+so preserves the polynomial. A derivation differentiates a
+nested bracket by applying \(D\) to one argument at a time,
+by induction on bracket length. Applying this to each term
+of the finite BCH polynomial is exactly its polynomial
+directional derivative, which proves \eqref{eq:bch-derivation}.
+\end{proof}
+
+The construction here is algebraic: it does not use the
+integration of an arbitrary Lie algebra into a global Lie
+group. That distinction will matter when enlarging a
+solvable algebra in the proof of Ado's theorem.

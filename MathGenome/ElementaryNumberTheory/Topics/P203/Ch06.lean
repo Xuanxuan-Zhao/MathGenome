@@ -1,0 +1,7 @@
+import MathGenome.Internal.ElementaryNumberTheory.P203.Ch06.FundamentalPellSolution
+import MathGenome.Internal.ElementaryNumberTheory.P203.Ch06.NegativePellSolutions
+import MathGenome.Internal.ElementaryNumberTheory.P203.Ch06.PellConvergentNorm
+import MathGenome.Internal.ElementaryNumberTheory.P203.Ch06.PellExamples
+import MathGenome.Internal.ElementaryNumberTheory.P203.Ch06.PellSigns
+import MathGenome.Internal.ElementaryNumberTheory.P203.Ch06.PellUnits
+import MathGenome.Internal.ElementaryNumberTheory.P203.Ch06.SquareRootReturnPoints

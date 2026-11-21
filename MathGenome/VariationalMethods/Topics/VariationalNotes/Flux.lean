@@ -1,0 +1,12 @@
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.ConstitutiveRelation
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.DirichletDuality
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.IntegralConjugacy
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.IntegralRegularity
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.LpDuality
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.ObstacleDistribution
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.ObstacleMinimizer
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.PowerEnergy
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.PowerWeakEquation
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.PrimalAttainment
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.QuadraticForms
+import MathGenome.Internal.VariationalMethods.VariationalNotes.Flux.WeakDivergence

@@ -1,0 +1,1830 @@
+{
+  "bibliography_first_physical_page": 45,
+  "chapter_ranges": [
+    {
+      "chapter": 1,
+      "first_group": "W01",
+      "first_physical_page": 4,
+      "last_group": "W08",
+      "last_physical_page": 6,
+      "title_tex": "Floating-Point Models and Error Enclosures"
+    },
+    {
+      "chapter": 2,
+      "first_group": "W09",
+      "first_physical_page": 7,
+      "last_group": "W15",
+      "last_physical_page": 9,
+      "title_tex": "Conditioning and Backward Error"
+    },
+    {
+      "chapter": 3,
+      "first_group": "W16",
+      "first_physical_page": 10,
+      "last_group": "W19",
+      "last_physical_page": 11,
+      "title_tex": "Stability, Consistency, and Convergence"
+    },
+    {
+      "chapter": 4,
+      "first_group": "W20",
+      "first_physical_page": 12,
+      "last_group": "W35",
+      "last_physical_page": 19,
+      "title_tex": "Factorizations and Least Squares"
+    },
+    {
+      "chapter": 5,
+      "first_group": "W36",
+      "first_physical_page": 20,
+      "last_group": "W45",
+      "last_physical_page": 24,
+      "title_tex": "Spectral Perturbation and Low-Rank Approximation"
+    },
+    {
+      "chapter": 6,
+      "first_group": "W46",
+      "first_physical_page": 25,
+      "last_group": "W54",
+      "last_physical_page": 29,
+      "title_tex": "Polynomial Interpolation and Approximation"
+    },
+    {
+      "chapter": 7,
+      "first_group": "W55",
+      "first_physical_page": 30,
+      "last_group": "W61",
+      "last_physical_page": 35,
+      "title_tex": "Numerical Differentiation and Quadrature"
+    },
+    {
+      "chapter": 8,
+      "first_group": "W62",
+      "first_physical_page": 36,
+      "last_group": "W72",
+      "last_physical_page": 39,
+      "title_tex": "Bracketing, Fixed Points, and Certified Stopping"
+    },
+    {
+      "chapter": 9,
+      "first_group": "W73",
+      "first_physical_page": 40,
+      "last_group": "W78",
+      "last_physical_page": 44,
+      "title_tex": "Local and Semilocal Newton Methods"
+    }
+  ],
+  "group_count": 78,
+  "inputs": [
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "1e193b0e22ce003b9802d874a58f6a152c7d6e0bb8d1f96802d7062ef80b39d0"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "c8f250c27cfdcd551e2e83f974bbeb4f70edb2c2eeed0993ad6a5b50e84c4c62"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "6c9deb88d4053cf3a94996dc600a20cad024e43afb68846ac0562d3eb857975c"
+    },
+    {
+      "path": "P2-06_Foundations_of_Numerical_Analysis_Notes.tex",
+      "sha256": "cffa3dec57f2dc0b33971ec6c595faa79482975a2a6f34eef9bd74f6f993bf93"
+    },
+    {
+      "path": "parts/ch01.tex",
+      "sha256": "b579ced361b5f48b21cb8e885513c7d4e50716d5979c1df753fe6620b05fabb3"
+    },
+    {
+      "path": "parts/ch02.tex",
+      "sha256": "543d48f7dc7575a403bb7759bbca4d5937c79608a6bfc562530dd7d38473002d"
+    },
+    {
+      "path": "parts/ch03.tex",
+      "sha256": "e6b1d4e8e7abd689cae025ffee28293ce7cf3589b7116f76cdbebda3bc1b1a8e"
+    },
+    {
+      "path": "parts/ch04.tex",
+      "sha256": "855ddea2e4cd84bd3d323dbb39123a2388f2ef3e8cfd3d733f96b39affd03941"
+    },
+    {
+      "path": "parts/ch05.tex",
+      "sha256": "8dcd73c6678c997e196384f350389c429cd3b9b64063f842f1bc1c3be945a903"
+    },
+    {
+      "path": "parts/ch06.tex",
+      "sha256": "d5de0d9343212d971000b4e0342e507eb2459c0766a8bc5749eb2e57e9aa35a5"
+    },
+    {
+      "path": "parts/ch07.tex",
+      "sha256": "a7f76ab25fa6f4762993fbdbb9e744d69e0f264c36a6817ac98a1d70289d8d97"
+    },
+    {
+      "path": "parts/ch08.tex",
+      "sha256": "c1e9732186cdb4d934f23023ce50a116d05a62986555c88469b63952ea7a4d3b"
+    },
+    {
+      "path": "parts/ch09.tex",
+      "sha256": "e21c122cf7888127d06310ac30039be37f827dcb566a2a81cb3b381f13eec182"
+    }
+  ],
+  "latex": {
+    "path": "P2-06_Foundations_of_Numerical_Analysis_Notes.tex",
+    "sha256": "a033c8c54fb955a30573ec7880a0a8a9497dabb752e6cab015b384d5aad67c3f"
+  },
+  "mathematical_body_pages": 41,
+  "notes_language": "en",
+  "numbered_environment_counts": {
+    "corollary": 3,
+    "definition": 5,
+    "example": 1,
+    "lemma": 3,
+    "proposition": 13,
+    "theorem": 57
+  },
+  "original_contract_count": 50,
+  "package": "P2-06",
+  "pdf": {
+    "path": "P2-06_Foundations_of_Numerical_Analysis_Notes.pdf",
+    "sha256": "1c474fd0c9aa12e2d172036c4e22190f8afdf097687c5f3df752f823c2d72d16"
+  },
+  "pdf_physical_pages": 45,
+  "pins": {
+    "lean": "4.35.0",
+    "mathgenome": "v0.8.0",
+    "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+  },
+  "prior_proof_references": [
+    {
+      "anchors": {
+        "K03.03.intermediate_values": 58
+      },
+      "path": "docs/sources/SingleVariableAnalysis/notes-source/chapters/M03.03.tex",
+      "role": "Sign bracket and bisection.",
+      "sha256": "6dbeff7f2afcffaa77143b7ad6dc8009cfa5f0c212339ef287f803415247737f"
+    },
+    {
+      "anchors": {
+        "K03.05.lagrange": 21,
+        "K03.05.rolle": 13
+      },
+      "path": "docs/sources/SingleVariableAnalysis/notes-source/chapters/M03.05.tex",
+      "role": "Rolle and real mean-value estimates in interpolation and root finding.",
+      "sha256": "80db8feab6cae7d1ebaeaac4e46dc8dc8a130ef637f8606391befed016efaa67"
+    },
+    {
+      "anchors": {
+        "K03.06.integral": 50,
+        "K03.06.lagrange": 27
+      },
+      "path": "docs/sources/SingleVariableAnalysis/notes-source/chapters/M03.06.tex",
+      "role": "Taylor bounds in Peano kernels, difference formulas, and local Newton.",
+      "sha256": "23aa70b7abf4d108724f4fe22223811c8154a61becffd2e0d83d1336b3e9678d"
+    },
+    {
+      "anchors": {
+        "K03.16.bernstein": 63
+      },
+      "path": "docs/sources/SingleVariableAnalysis/notes-source/chapters/M03.16.tex",
+      "role": "Bernstein approximation bridge for Hölder data.",
+      "sha256": "1156e6fc11301242fbb9cf04f2b7e335a009aeabe6983c26fc551bcb0e2f8663"
+    },
+    {
+      "anchors": {
+        "segment_mean_value_bound": 66
+      },
+      "path": "MathGenome/Internal/MultivariableAnalysis/D04/C02/SegmentMeanValue.lean",
+      "role": "Comparison with the Euclidean segment estimate.",
+      "sha256": "a1aa1d6c1b7d81c66b7e8a940c6a042b3f22cacd99a78be7f9c7118ac84a3ecc"
+    },
+    {
+      "anchors": {
+        "13.complex_spectral": 2209,
+        "13.real_spectral": 2217,
+        "14.frobenius": 2588,
+        "14.least_squares": 2505,
+        "14.low_rank": 2569,
+        "14.normal_equations": 2518,
+        "14.operator_norm": 2547,
+        "14.polar": 2602,
+        "14.positive_root": 2425,
+        "14.qr_cholesky": 2611,
+        "14.singular_values": 2435,
+        "14.svd": 2441,
+        "14.svd_pseudoinverse": 2528
+      },
+      "path": "docs/sources/d05-notes.tex",
+      "role": "Exact spectral and matrix interfaces underlying Chapters 4 and 5.",
+      "sha256": "81d4236233819191fe3c01375bf1199bf121789beb6fafc957955548e5396a1f"
+    },
+    {
+      "anchors": {
+        "K07.09.crt_finite_integer": 243
+      },
+      "path": "docs/sources/D07/chapters/M07.09.tex",
+      "role": "Finite Chinese remainder theorem for Hermite residues.",
+      "sha256": "be4afe4a8acec6985daab48f86ed306a458c050c27eaa786855f9d77e254a007"
+    },
+    {
+      "anchors": {
+        "banach_contraction": 14
+      },
+      "path": "MathGenome/Internal/PointSetTopology/D10Topology/Ch14/Banach.lean",
+      "role": "Established contraction result, with the metric argument also supplied in W66.",
+      "sha256": "f29d4bda5441e9b8d8d2deb443f3226c9601cd7414e8813be75ea2bdd2d527db"
+    },
+    {
+      "anchors": {
+        "p205:W42": 255
+      },
+      "published_notes": {
+        "file": "provenance/components/ExtremalOptimization/delivery/paper.tex",
+        "historical_fragment": "parts/ch08.tex"
+      },
+      "role": "Doubly stochastic decomposition in W43.",
+      "sha256": "0f6c9a9f08ad337d0957da27dd06acc1d2d8ef51456715e3442cfec84791fe9c"
+    }
+  ],
+  "proof_environment_count": 76,
+  "results": [
+    {
+      "canonical_latex_line": 96,
+      "chapter": 1,
+      "file": "parts/ch01.tex",
+      "id": "W01",
+      "number": "1.1",
+      "pdf_destination": "definition.1.1",
+      "physical_page": 4,
+      "printed_page": 1,
+      "proof_start_lines": [
+        37
+      ],
+      "source_contract": "NUM-01-C01.R01",
+      "sources_and_reuse": "Higham §§2.1–2.3，Driscoll–Braun 浮点章",
+      "statement_label": "p206:W01",
+      "statement_line": 11,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "有限浮点格式、最近舍入与适用范围"
+    },
+    {
+      "canonical_latex_line": 141,
+      "chapter": 1,
+      "explanatory_text_after_line": 66,
+      "file": "parts/ch01.tex",
+      "id": "W02",
+      "number": "1.3",
+      "pdf_destination": "definition.1.3",
+      "physical_page": 4,
+      "printed_page": 1,
+      "proof_start_lines": [],
+      "source_contract": "NUM-01-C01.R02",
+      "sources_and_reuse": "Higham §2.2",
+      "statement_label": "p206:W02",
+      "statement_line": 56,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "模型中的基本运算与融合乘加"
+    },
+    {
+      "canonical_latex_line": 159,
+      "chapter": 1,
+      "file": "parts/ch01.tex",
+      "id": "W03",
+      "number": "1.4",
+      "pdf_destination": "proposition.1.4",
+      "physical_page": 5,
+      "printed_page": 2,
+      "proof_start_lines": [
+        83
+      ],
+      "source_contract": "NUM-01-C02.R01",
+      "sources_and_reuse": "Higham §§2.1–2.3",
+      "statement_label": "p206:W03",
+      "statement_line": 74,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "单轮误差及区间包络"
+    },
+    {
+      "canonical_latex_line": 179,
+      "chapter": 1,
+      "file": "parts/ch01.tex",
+      "id": "W04",
+      "number": "1.5",
+      "pdf_destination": "theorem.1.5",
+      "physical_page": 5,
+      "printed_page": 2,
+      "proof_start_lines": [
+        102
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Higham §1.7、§2.5 定理 2.5",
+      "statement_label": "p206:W04",
+      "statement_line": 94,
+      "supplement_id": "S01",
+      "supporting_labels": [],
+      "working_title_zh": "渐进下溢、Sterbenz 引理与取消有效数字"
+    },
+    {
+      "canonical_latex_line": 213,
+      "chapter": 1,
+      "file": "parts/ch01.tex",
+      "id": "W05",
+      "number": "1.6",
+      "pdf_destination": "proposition.1.6",
+      "physical_page": 5,
+      "printed_page": 2,
+      "proof_start_lines": [
+        137
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Higham §2.3 的舍入方向，端点论证在本稿闭合",
+      "statement_label": "p206:W05",
+      "statement_line": 128,
+      "supplement_id": "S02",
+      "supporting_labels": [],
+      "working_title_zh": "定向区间算术的包含性"
+    },
+    {
+      "canonical_latex_line": 235,
+      "chapter": 1,
+      "file": "parts/ch01.tex",
+      "id": "W06",
+      "number": "1.7",
+      "pdf_destination": "lemma.1.7",
+      "physical_page": 6,
+      "printed_page": 3,
+      "proof_start_lines": [
+        159
+      ],
+      "source_contract": "NUM-01-C02.R02",
+      "sources_and_reuse": "Higham §3.1 引理 3.1",
+      "statement_label": "p206:W06",
+      "statement_line": 150,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "有正负指数的累积 \\(\\gamma_n\\) 界"
+    },
+    {
+      "canonical_latex_line": 252,
+      "chapter": 1,
+      "file": "parts/ch01.tex",
+      "id": "W07",
+      "number": "1.8",
+      "pdf_destination": "theorem.1.8",
+      "physical_page": 6,
+      "printed_page": 3,
+      "proof_start_lines": [
+        182
+      ],
+      "source_contract": "NUM-01-C02.R03",
+      "sources_and_reuse": "Higham §3.1",
+      "statement_label": "p206:W07",
+      "statement_line": 167,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "点积的按项舍入轨迹"
+    },
+    {
+      "canonical_latex_line": 284,
+      "chapter": 1,
+      "file": "parts/ch01.tex",
+      "id": "W08",
+      "number": "1.9",
+      "pdf_destination": "theorem.1.9",
+      "physical_page": 6,
+      "printed_page": 3,
+      "proof_start_lines": [
+        215
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Higham §§3.1、4.2 与矩阵乘法讨论",
+      "statement_label": "p206:W08",
+      "statement_line": 199,
+      "supplement_id": "S03",
+      "supporting_labels": [],
+      "working_title_zh": "成对求和、求和条件数及矩阵乘法误差"
+    },
+    {
+      "canonical_latex_line": 325,
+      "chapter": 2,
+      "explanatory_text_after_line": 23,
+      "file": "parts/ch02.tex",
+      "id": "W09",
+      "number": "2.1",
+      "pdf_destination": "definition.2.1",
+      "physical_page": 7,
+      "printed_page": 4,
+      "proof_start_lines": [],
+      "source_contract": "NUM-01-C03.R01",
+      "sources_and_reuse": "Higham §§1.5–1.6，D04",
+      "statement_label": "p206:W09",
+      "statement_line": 10,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "映射的绝对、相对条件数"
+    },
+    {
+      "canonical_latex_line": 355,
+      "chapter": 2,
+      "file": "parts/ch02.tex",
+      "id": "W10",
+      "number": "2.2",
+      "pdf_destination": "theorem.2.2",
+      "physical_page": 7,
+      "printed_page": 4,
+      "proof_start_lines": [
+        54
+      ],
+      "source_contract": "NUM-01-C03.R03",
+      "sources_and_reuse": "Higham §7.4，M1",
+      "statement_label": "p206:W10",
+      "statement_line": 40,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "Neumann 级数与逆扰动"
+    },
+    {
+      "canonical_latex_line": 385,
+      "chapter": 2,
+      "file": "parts/ch02.tex",
+      "id": "W11",
+      "number": "2.3",
+      "pdf_destination": "theorem.2.3",
+      "physical_page": 8,
+      "printed_page": 5,
+      "proof_start_lines": [
+        88
+      ],
+      "source_contract": "NUM-01-C03.R02",
+      "sources_and_reuse": "Higham 第 7 章",
+      "statement_label": "p206:W11",
+      "statement_line": 70,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "线性方程的条件数与扰动界"
+    },
+    {
+      "canonical_latex_line": 415,
+      "chapter": 2,
+      "explanatory_text_after_line": 113,
+      "file": "parts/ch02.tex",
+      "id": "W12",
+      "number": "2.4",
+      "pdf_destination": "definition.2.4",
+      "physical_page": 8,
+      "printed_page": 5,
+      "proof_start_lines": [],
+      "source_contract": "NUM-01-C04.R01",
+      "sources_and_reuse": "Higham §§1.5–1.6、7.1–7.2",
+      "statement_label": "p206:W12",
+      "statement_line": 100,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "前向与后向误差的数学定义"
+    },
+    {
+      "canonical_latex_line": 440,
+      "chapter": 2,
+      "file": "parts/ch02.tex",
+      "id": "W13",
+      "number": "2.5",
+      "pdf_destination": "theorem.2.5",
+      "physical_page": 8,
+      "printed_page": 5,
+      "proof_start_lines": [
+        138
+      ],
+      "source_contract": "NUM-01-C04.R02",
+      "sources_and_reuse": "Higham §§1.5–1.6、7.8，D04，M2",
+      "statement_label": "p206:W13",
+      "statement_line": 124,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "后向稳定和条件数的前向界"
+    },
+    {
+      "canonical_latex_line": 480,
+      "chapter": 2,
+      "file": "parts/ch02.tex",
+      "id": "W14",
+      "number": "2.6",
+      "pdf_destination": "theorem.2.6",
+      "physical_page": 9,
+      "printed_page": 6,
+      "proof_start_lines": [
+        176
+      ],
+      "source_contract": "NUM-01-C04.R03",
+      "sources_and_reuse": "Higham §§7.1、7.8",
+      "statement_label": "p206:W14",
+      "statement_line": 165,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "线性系统残差与前后向证书"
+    },
+    {
+      "canonical_latex_line": 500,
+      "chapter": 2,
+      "file": "parts/ch02.tex",
+      "id": "W15",
+      "number": "2.7",
+      "pdf_destination": "theorem.2.7",
+      "physical_page": 9,
+      "printed_page": 6,
+      "proof_start_lines": [
+        204
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Higham §7.1 定理 7.1、§7.2 定理 7.3",
+      "statement_label": "p206:W15",
+      "statement_line": 184,
+      "supplement_id": "S04",
+      "supporting_labels": [],
+      "working_title_zh": "联合矩阵和右端的精确后向误差"
+    },
+    {
+      "canonical_latex_line": 555,
+      "chapter": 3,
+      "explanatory_text_after_line": 36,
+      "file": "parts/ch03.tex",
+      "id": "W16",
+      "number": "3.1",
+      "pdf_destination": "definition.3.1",
+      "physical_page": 10,
+      "printed_page": 7,
+      "proof_start_lines": [],
+      "source_contract": "NUM-01-C05.R01",
+      "sources_and_reuse": "Trefethen §4.2，P1-01 半群材料",
+      "statement_label": "p206:W16",
+      "statement_line": 14,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "有限时域一致性、稳定性和收敛的定义"
+    },
+    {
+      "canonical_latex_line": 589,
+      "chapter": 3,
+      "file": "parts/ch03.tex",
+      "id": "W17",
+      "number": "3.2",
+      "pdf_destination": "theorem.3.2",
+      "physical_page": 10,
+      "printed_page": 7,
+      "proof_start_lines": [
+        63
+      ],
+      "source_contract": "NUM-01-C05.R02",
+      "sources_and_reuse": "Trefethen §4.2 的离散传播框架",
+      "statement_label": "p206:W17",
+      "statement_line": 48,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "离散误差递推与有限时域传播"
+    },
+    {
+      "canonical_latex_line": 630,
+      "chapter": 3,
+      "file": "parts/ch03.tex",
+      "id": "W18",
+      "number": "3.3",
+      "pdf_destination": "theorem.3.3",
+      "physical_page": 11,
+      "printed_page": 8,
+      "proof_start_lines": [
+        94
+      ],
+      "source_contract": "NUM-01-C05.R03",
+      "sources_and_reuse": "Trefethen §4.2，M3",
+      "statement_label": "p206:W18",
+      "statement_line": 88,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "有限时域强收敛推出最终小步长稳定"
+    },
+    {
+      "canonical_latex_line": 657,
+      "chapter": 3,
+      "file": "parts/ch03.tex",
+      "id": "W19",
+      "number": "3.5",
+      "pdf_destination": "theorem.3.5",
+      "physical_page": 11,
+      "printed_page": 8,
+      "proof_start_lines": [
+        125
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Trefethen §4.2，M3",
+      "statement_label": "p206:W19",
+      "statement_line": 115,
+      "supplement_id": "S05",
+      "supporting_labels": [],
+      "working_title_zh": "小步长稳定与轨道一致性推出收敛"
+    },
+    {
+      "canonical_latex_line": 701,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W20",
+      "number": "4.1",
+      "pdf_destination": "theorem.4.1",
+      "physical_page": 12,
+      "printed_page": 9,
+      "proof_start_lines": [
+        29
+      ],
+      "source_contract": "NUM-02-C01.R01",
+      "sources_and_reuse": "Golub–Van Loan §§3.2–3.4，Higham §9.1",
+      "statement_label": "p206:W20",
+      "statement_line": 17,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "带行主元的精确 LU"
+    },
+    {
+      "canonical_latex_line": 776,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W21",
+      "number": "4.2",
+      "pdf_destination": "theorem.4.2",
+      "physical_page": 13,
+      "printed_page": 10,
+      "proof_start_lines": [
+        106
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Higham 第 8 章",
+      "statement_label": "p206:W21",
+      "statement_line": 91,
+      "supplement_id": "S06",
+      "supporting_labels": [
+        "p206:subtracttrace"
+      ],
+      "working_title_zh": "三角求解的逐项后向误差"
+    },
+    {
+      "canonical_latex_line": 805,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W22",
+      "number": "4.3",
+      "pdf_destination": "theorem.4.3",
+      "physical_page": 13,
+      "printed_page": 10,
+      "proof_start_lines": [
+        137
+      ],
+      "source_contract": "NUM-02-C01.R03",
+      "sources_and_reuse": "Higham §§9.1–9.4",
+      "statement_label": "p206:W22",
+      "statement_line": 121,
+      "supplement_id": null,
+      "supporting_labels": [
+        "p206:subtracttrace"
+      ],
+      "working_title_zh": "顺序 Doolittle 的舍入后向界"
+    },
+    {
+      "canonical_latex_line": 848,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W23",
+      "number": "4.4",
+      "pdf_destination": "theorem.4.4",
+      "physical_page": 14,
+      "printed_page": 11,
+      "proof_start_lines": [
+        183
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Higham §§9.3–9.4",
+      "statement_label": "p206:W23",
+      "statement_line": 163,
+      "supplement_id": "S07",
+      "supporting_labels": [],
+      "working_title_zh": "部分主元增长与线性求解的组合证书"
+    },
+    {
+      "canonical_latex_line": 904,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W24",
+      "number": "4.5",
+      "pdf_destination": "theorem.4.5",
+      "physical_page": 14,
+      "printed_page": 11,
+      "proof_start_lines": [
+        228
+      ],
+      "source_contract": "NUM-02-C01.R02",
+      "sources_and_reuse": "Higham §10.1，Golub–Van Loan §4.2，D05",
+      "statement_label": "p206:W24",
+      "statement_line": 220,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "正定 Cholesky 存在唯一"
+    },
+    {
+      "canonical_latex_line": 929,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W25",
+      "number": "4.6",
+      "pdf_destination": "theorem.4.6",
+      "physical_page": 15,
+      "printed_page": 12,
+      "proof_start_lines": [
+        252
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Golub–Van Loan §4.2，Higham 第 10 章",
+      "statement_label": "p206:W25",
+      "statement_line": 244,
+      "supplement_id": "S08",
+      "supporting_labels": [],
+      "working_title_zh": "半正定 Cholesky 的零主元"
+    },
+    {
+      "canonical_latex_line": 956,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W26",
+      "number": "4.7",
+      "pdf_destination": "theorem.4.7",
+      "physical_page": 15,
+      "printed_page": 12,
+      "proof_start_lines": [
+        289
+      ],
+      "source_contract": "NUM-02-C01.R04",
+      "sources_and_reuse": "Higham §§10.1–10.3",
+      "statement_label": "p206:W26",
+      "statement_line": 271,
+      "supplement_id": null,
+      "supporting_labels": [
+        "p206:subtracttrace"
+      ],
+      "working_title_zh": "实 Cholesky 计算成功时的后向界"
+    },
+    {
+      "canonical_latex_line": 1007,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W27",
+      "number": "4.8",
+      "pdf_destination": "theorem.4.8",
+      "physical_page": 15,
+      "printed_page": 12,
+      "proof_start_lines": [
+        330
+      ],
+      "source_contract": "NUM-02-C02.R01",
+      "sources_and_reuse": "Golub–Van Loan §§5.1–5.2，D05",
+      "statement_label": "p206:W27",
+      "statement_line": 322,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "满列秩的精确薄 QR"
+    },
+    {
+      "canonical_latex_line": 1028,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W28",
+      "number": "4.9",
+      "pdf_destination": "theorem.4.9",
+      "physical_page": 16,
+      "printed_page": 13,
+      "proof_start_lines": [
+        352
+      ],
+      "source_contract": "NUM-02-C02.R02",
+      "sources_and_reuse": "Higham §20.1，D05",
+      "statement_label": "p206:W28",
+      "statement_line": 343,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "最小二乘的法方程"
+    },
+    {
+      "canonical_latex_line": 1051,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W29",
+      "number": "4.10",
+      "pdf_destination": "corollary.4.10",
+      "physical_page": 16,
+      "printed_page": 13,
+      "proof_start_lines": [
+        372
+      ],
+      "source_contract": "NUM-02-C02.R03",
+      "sources_and_reuse": "Golub–Van Loan §5.3，D05",
+      "statement_label": "p206:W29",
+      "statement_line": 367,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "QR 形式的最小二乘解"
+    },
+    {
+      "canonical_latex_line": 1064,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W30",
+      "number": "4.11",
+      "pdf_destination": "theorem.4.11",
+      "physical_page": 16,
+      "printed_page": 13,
+      "proof_start_lines": [
+        392
+      ],
+      "source_contract": "NUM-02-C02.R04",
+      "sources_and_reuse": "Golub–Van Loan §5.1，Higham §19.1",
+      "statement_label": "p206:W30",
+      "statement_line": 380,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "无首项相消的精确 Householder 反射"
+    },
+    {
+      "canonical_latex_line": 1090,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W31",
+      "number": "4.12",
+      "pdf_destination": "theorem.4.12",
+      "physical_page": 16,
+      "printed_page": 13,
+      "proof_start_lines": [
+        421
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Golub–Van Loan §§5.1–5.3，Higham §§19.1、20.1，D05",
+      "statement_label": "p206:W31",
+      "statement_line": 405,
+      "supplement_id": "S09",
+      "supporting_labels": [],
+      "working_title_zh": "Householder 逐列构造 QR 与法方程平方条件数"
+    },
+    {
+      "canonical_latex_line": 1131,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W32",
+      "number": "4.13",
+      "pdf_destination": "theorem.4.13",
+      "physical_page": 17,
+      "printed_page": 14,
+      "proof_start_lines": [
+        476
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Higham §19.3 定理 19.4",
+      "statement_label": "p206:W32",
+      "statement_line": 446,
+      "supplement_id": "S10",
+      "supporting_labels": [],
+      "working_title_zh": "指定实 Householder QR 的逐步舍入误差"
+    },
+    {
+      "canonical_latex_line": 1257,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W33",
+      "number": "4.14",
+      "pdf_destination": "theorem.4.14",
+      "physical_page": 18,
+      "printed_page": 15,
+      "proof_start_lines": [
+        588
+      ],
+      "source_contract": "NUM-02-C02.R05",
+      "sources_and_reuse": "Higham §§19.1–19.3，D05 平方根谱构造",
+      "statement_label": "p206:W33",
+      "statement_line": 572,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "QR 残差与正交缺陷证书"
+    },
+    {
+      "canonical_latex_line": 1299,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W34",
+      "number": "4.15",
+      "pdf_destination": "theorem.4.15",
+      "physical_page": 19,
+      "printed_page": 16,
+      "proof_start_lines": [
+        626
+      ],
+      "source_contract": "NUM-02-C02.R06",
+      "sources_and_reuse": "Higham §§20.1–20.3，D05",
+      "statement_label": "p206:W34",
+      "statement_line": 614,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "满列秩最小二乘解的导数"
+    },
+    {
+      "canonical_latex_line": 1335,
+      "chapter": 4,
+      "file": "parts/ch04.tex",
+      "id": "W35",
+      "number": "4.16",
+      "pdf_destination": "theorem.4.16",
+      "physical_page": 19,
+      "printed_page": 16,
+      "proof_start_lines": [
+        657
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Golub–Van Loan §5.5，D05",
+      "statement_label": "p206:W35",
+      "statement_line": 650,
+      "supplement_id": "S11",
+      "supporting_labels": [],
+      "working_title_zh": "秩亏最小二乘和最小范数解"
+    },
+    {
+      "canonical_latex_line": 1378,
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "id": "W36",
+      "number": "5.1",
+      "pdf_destination": "theorem.5.1",
+      "physical_page": 20,
+      "printed_page": 17,
+      "proof_start_lines": [
+        26
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Golub–Van Loan §8.1，D05",
+      "statement_label": "p206:W36",
+      "statement_line": 17,
+      "supplement_id": "S12",
+      "supporting_labels": [],
+      "working_title_zh": "Courant–Fischer 极值原理"
+    },
+    {
+      "canonical_latex_line": 1400,
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "id": "W37",
+      "number": "5.2",
+      "pdf_destination": "theorem.5.2",
+      "physical_page": 20,
+      "printed_page": 17,
+      "proof_start_lines": [
+        46
+      ],
+      "source_contract": "NUM-02-C03.R01",
+      "sources_and_reuse": "Golub–Van Loan §§8.1–8.2，D05",
+      "statement_label": "p206:W37",
+      "statement_line": 39,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "Hermitian Weyl 特征值扰动"
+    },
+    {
+      "canonical_latex_line": 1416,
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "id": "W38",
+      "number": "5.3",
+      "pdf_destination": "theorem.5.3",
+      "physical_page": 20,
+      "printed_page": 17,
+      "proof_start_lines": [
+        69
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Golub–Van Loan §§7.2、8.1–8.2，D05",
+      "statement_label": "p206:W38",
+      "statement_line": 54,
+      "supplement_id": "S13",
+      "supporting_labels": [],
+      "working_title_zh": "Gershgorin 圆盘与 Hermitian 残差证书"
+    },
+    {
+      "canonical_latex_line": 1453,
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "id": "W39",
+      "number": "5.4",
+      "pdf_destination": "theorem.5.4",
+      "physical_page": 21,
+      "printed_page": 18,
+      "proof_start_lines": [
+        107
+      ],
+      "source_contract": "NUM-02-C03.R02",
+      "sources_and_reuse": "Golub–Van Loan §7.2.2 定理 7.2.2",
+      "statement_label": "p206:W39",
+      "statement_line": 91,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "Bauer–Fike 对角化扰动界"
+    },
+    {
+      "canonical_latex_line": 1499,
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "id": "W40",
+      "number": "5.5",
+      "pdf_destination": "theorem.5.5",
+      "physical_page": 22,
+      "printed_page": 19,
+      "proof_start_lines": [
+        145
+      ],
+      "source_contract": "NUM-02-C03.R03",
+      "sources_and_reuse": "Golub–Van Loan §2.4、第 8 章，D05",
+      "statement_label": "p206:W40",
+      "statement_line": 138,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "奇异值的算子范数扰动"
+    },
+    {
+      "canonical_latex_line": 1525,
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "id": "W41",
+      "number": "5.6",
+      "pdf_destination": "theorem.5.6",
+      "physical_page": 22,
+      "printed_page": 19,
+      "proof_start_lines": [
+        170
+      ],
+      "source_contract": "NUM-02-C03.R04",
+      "sources_and_reuse": "Golub–Van Loan §2.4，D05",
+      "statement_label": "p206:W41",
+      "statement_line": 163,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "谱范数下的最优低秩近似"
+    },
+    {
+      "canonical_latex_line": 1544,
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "id": "W42",
+      "number": "5.7",
+      "pdf_destination": "theorem.5.7",
+      "physical_page": 22,
+      "printed_page": 19,
+      "proof_start_lines": [
+        188
+      ],
+      "source_contract": "NUM-02-C03.R05",
+      "sources_and_reuse": "Golub–Van Loan §2.4，D05",
+      "statement_label": "p206:W42",
+      "statement_line": 182,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "Frobenius 范数下的最优低秩近似"
+    },
+    {
+      "canonical_latex_line": 1575,
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "id": "W43",
+      "number": "5.8",
+      "pdf_destination": "theorem.5.8",
+      "physical_page": 22,
+      "printed_page": 19,
+      "proof_start_lines": [
+        226
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Hoffman–Wielandt 原文，P2-05 W42",
+      "statement_label": "p206:W43",
+      "statement_line": 213,
+      "supplement_id": "S14",
+      "supporting_labels": [],
+      "working_title_zh": "Hoffman–Wielandt 与 Frobenius 奇异值扰动"
+    },
+    {
+      "canonical_latex_line": 1633,
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "id": "W44",
+      "number": "5.9",
+      "pdf_destination": "theorem.5.9",
+      "physical_page": 24,
+      "printed_page": 21,
+      "proof_start_lines": [
+        283
+      ],
+      "source_contract": "NUM-02-C03.R06",
+      "sources_and_reuse": "Golub–Van Loan 第 7–8 章",
+      "statement_label": "p206:W44",
+      "statement_line": 271,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "幂迭代的方向收敛"
+    },
+    {
+      "canonical_latex_line": 1663,
+      "chapter": 5,
+      "file": "parts/ch05.tex",
+      "id": "W45",
+      "number": "5.10",
+      "pdf_destination": "corollary.5.10",
+      "physical_page": 24,
+      "printed_page": 21,
+      "proof_start_lines": [
+        317
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Golub–Van Loan 第 7–8 章",
+      "statement_label": "p206:W45",
+      "statement_line": 302,
+      "supplement_id": "S15",
+      "supporting_labels": [],
+      "working_title_zh": "逆迭代与固定移位"
+    },
+    {
+      "canonical_latex_line": 1700,
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "id": "W46",
+      "number": "6.1",
+      "pdf_destination": "proposition.6.1",
+      "physical_page": 25,
+      "printed_page": 22,
+      "proof_start_lines": [
+        26
+      ],
+      "source_contract": "NUM-03-C01.R01",
+      "sources_and_reuse": "Stoer–Bulirsch §2.1.1，M5",
+      "statement_label": "p206:W46",
+      "statement_line": 12,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "Lagrange 基和插值构造"
+    },
+    {
+      "canonical_latex_line": 1721,
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "id": "W47",
+      "number": "6.2",
+      "pdf_destination": "theorem.6.2",
+      "physical_page": 25,
+      "printed_page": 22,
+      "proof_start_lines": [
+        39
+      ],
+      "source_contract": "NUM-03-C01.R02",
+      "sources_and_reuse": "Stoer–Bulirsch §2.1.1，M5",
+      "statement_label": "p206:W47",
+      "statement_line": 33,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "次数约束下的插值存在唯一"
+    },
+    {
+      "canonical_latex_line": 1742,
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "id": "W48",
+      "number": "6.3",
+      "pdf_destination": "theorem.6.3",
+      "physical_page": 25,
+      "printed_page": 22,
+      "proof_start_lines": [
+        73
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Stoer–Bulirsch §2.1.3",
+      "statement_label": "p206:W48",
+      "statement_line": 54,
+      "supplement_id": "S16",
+      "supporting_labels": [],
+      "working_title_zh": "Newton 差商与嵌套求值"
+    },
+    {
+      "canonical_latex_line": 1784,
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "id": "W49",
+      "number": "6.4",
+      "pdf_destination": "proposition.6.4",
+      "physical_page": 26,
+      "printed_page": 23,
+      "proof_start_lines": [
+        112,
+        136
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Berrut–Trefethen §2，M5",
+      "statement_label": "p206:W49",
+      "statement_line": 96,
+      "supplement_id": "S17",
+      "supporting_labels": [],
+      "working_title_zh": "重心插值的两种恒等式"
+    },
+    {
+      "canonical_latex_line": 1835,
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "id": "W50",
+      "number": "6.6",
+      "pdf_destination": "theorem.6.6",
+      "physical_page": 27,
+      "printed_page": 24,
+      "proof_start_lines": [
+        159
+      ],
+      "source_contract": "NUM-03-C01.R03",
+      "sources_and_reuse": "Stoer–Bulirsch §2.1.4，D03",
+      "statement_label": "p206:W50",
+      "statement_line": 147,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "实插值余项"
+    },
+    {
+      "canonical_latex_line": 1857,
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "id": "W51",
+      "number": "6.7",
+      "pdf_destination": "theorem.6.7",
+      "physical_page": 27,
+      "printed_page": 24,
+      "proof_start_lines": [
+        187
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Stoer–Bulirsch §2.1.5，D03",
+      "statement_label": "p206:W51",
+      "statement_line": 169,
+      "supplement_id": "S18",
+      "supporting_labels": [
+        "p206:repeated-rolle"
+      ],
+      "working_title_zh": "Hermite 插值与重节点余项"
+    },
+    {
+      "canonical_latex_line": 1904,
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "id": "W52",
+      "number": "6.8",
+      "pdf_destination": "theorem.6.8",
+      "physical_page": 27,
+      "printed_page": 24,
+      "proof_start_lines": [
+        230
+      ],
+      "source_contract": "NUM-03-C01.R04",
+      "sources_and_reuse": "Trefethen 第 15 章",
+      "statement_label": "p206:W52",
+      "statement_line": 216,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "Lebesgue 常数与近最佳逼近"
+    },
+    {
+      "canonical_latex_line": 1932,
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "id": "W53",
+      "number": "6.9",
+      "pdf_destination": "theorem.6.9",
+      "physical_page": 28,
+      "printed_page": 25,
+      "proof_start_lines": [
+        257
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Trefethen 第 15 章，D03，M6",
+      "statement_label": "p206:W53",
+      "statement_line": 244,
+      "supplement_id": "S19",
+      "supporting_labels": [],
+      "working_title_zh": "Chebyshev 节点、极小节点积与一致误差"
+    },
+    {
+      "canonical_latex_line": 2027,
+      "chapter": 6,
+      "file": "parts/ch06.tex",
+      "id": "W54",
+      "number": "6.10",
+      "pdf_destination": "theorem.6.10",
+      "physical_page": 29,
+      "printed_page": 26,
+      "proof_start_lines": [
+        350
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Trefethen 第 15 章，M3",
+      "statement_label": "p206:W54",
+      "statement_line": 339,
+      "supplement_id": "S20",
+      "supporting_labels": [],
+      "working_title_zh": "等距节点的无界 Lebesgue 常数与发散见证"
+    },
+    {
+      "canonical_latex_line": 2077,
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "id": "W55",
+      "number": "7.1",
+      "pdf_destination": "theorem.7.1",
+      "physical_page": 30,
+      "printed_page": 27,
+      "proof_start_lines": [
+        29
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Stoer–Bulirsch §3.2 定理 3.2.3，D03",
+      "statement_label": "p206:W55",
+      "statement_line": 12,
+      "supplement_id": "S21",
+      "supporting_labels": [],
+      "working_title_zh": "Peano 核余项"
+    },
+    {
+      "canonical_latex_line": 2121,
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "id": "W56",
+      "number": "7.2",
+      "pdf_destination": "theorem.7.2",
+      "physical_page": 31,
+      "printed_page": 28,
+      "proof_start_lines": [
+        70
+      ],
+      "source_contract": "NUM-03-C04.R01",
+      "sources_and_reuse": "Stoer–Bulirsch §§3.1–3.2",
+      "statement_label": "p206:W56",
+      "statement_line": 56,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "复合中点和梯形公式的误差"
+    },
+    {
+      "canonical_latex_line": 2157,
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "id": "W57",
+      "number": "7.3",
+      "pdf_destination": "theorem.7.3",
+      "physical_page": 31,
+      "printed_page": 28,
+      "proof_start_lines": [
+        103
+      ],
+      "source_contract": "NUM-03-C04.R02",
+      "sources_and_reuse": "Stoer–Bulirsch §§3.1–3.2",
+      "statement_label": "p206:W57",
+      "statement_line": 92,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "复合 Simpson 误差"
+    },
+    {
+      "canonical_latex_line": 2204,
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "id": "W58",
+      "number": "7.4",
+      "pdf_destination": "theorem.7.4",
+      "physical_page": 32,
+      "printed_page": 29,
+      "proof_start_lines": [
+        160
+      ],
+      "source_contract": "NUM-03-C04.R03",
+      "sources_and_reuse": "Stoer–Bulirsch §3.6，Gautschi §4.1",
+      "statement_label": "p206:W58",
+      "statement_line": 139,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "一般正测度的 Gaussian 求积"
+    },
+    {
+      "canonical_latex_line": 2282,
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "id": "W59",
+      "number": "7.5",
+      "pdf_destination": "theorem.7.5",
+      "physical_page": 32,
+      "printed_page": 29,
+      "proof_start_lines": [
+        244
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Gautschi §4.1，Stoer–Bulirsch §3.6",
+      "statement_label": "p206:W59",
+      "statement_line": 217,
+      "supplement_id": "S22",
+      "supporting_labels": [],
+      "working_title_zh": "Gaussian 求积的光滑余项与 Jacobi 计算接口"
+    },
+    {
+      "canonical_latex_line": 2372,
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "id": "W60",
+      "number": "7.6",
+      "pdf_destination": "theorem.7.6",
+      "physical_page": 34,
+      "printed_page": 31,
+      "proof_start_lines": [
+        327
+      ],
+      "source_contract": "NUM-03-C04.R04",
+      "sources_and_reuse": "Driscoll–Braun §5.5，D03",
+      "statement_label": "p206:W60",
+      "statement_line": 307,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "差分的截断与取样误差平衡"
+    },
+    {
+      "canonical_latex_line": 2424,
+      "chapter": 7,
+      "file": "parts/ch07.tex",
+      "id": "W61",
+      "number": "7.7",
+      "pdf_destination": "proposition.7.7",
+      "physical_page": 35,
+      "printed_page": 32,
+      "proof_start_lines": [
+        377
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Stoer–Bulirsch §3.4，Driscoll–Braun 差分框架",
+      "statement_label": "p206:W61",
+      "statement_line": 359,
+      "supplement_id": "S23",
+      "supporting_labels": [],
+      "working_title_zh": "Richardson 消去首项误差"
+    },
+    {
+      "canonical_latex_line": 2472,
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "id": "W62",
+      "number": "8.1",
+      "pdf_destination": "theorem.8.1",
+      "physical_page": 36,
+      "printed_page": 33,
+      "proof_start_lines": [
+        19
+      ],
+      "source_contract": "NUM-09-C01.R01",
+      "sources_and_reuse": "Persson §2.1，D03",
+      "statement_label": "p206:W62",
+      "statement_line": 14,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "变号区间的根存在性"
+    },
+    {
+      "canonical_latex_line": 2486,
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "id": "W63",
+      "number": "8.2",
+      "pdf_destination": "theorem.8.2",
+      "physical_page": 36,
+      "printed_page": 33,
+      "proof_start_lines": [
+        43
+      ],
+      "source_contract": "NUM-09-C01.R02",
+      "sources_and_reuse": "Persson §2.1，D03",
+      "statement_label": "p206:W63",
+      "statement_line": 28,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "二分不变式与收敛"
+    },
+    {
+      "canonical_latex_line": 2520,
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "id": "W64",
+      "number": "8.3",
+      "pdf_destination": "proposition.8.3",
+      "physical_page": 37,
+      "printed_page": 34,
+      "proof_start_lines": [
+        78
+      ],
+      "source_contract": "NUM-09-C01.R03",
+      "sources_and_reuse": "Persson §2.1，Driscoll–Braun §4.1",
+      "statement_label": "p206:W64",
+      "statement_line": 62,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "二分停机步数与符号证书"
+    },
+    {
+      "canonical_latex_line": 2557,
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "id": "W65",
+      "number": "8.4",
+      "pdf_destination": "theorem.8.4",
+      "physical_page": 37,
+      "printed_page": 34,
+      "proof_start_lines": [
+        115
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Persson §§2.1、2.3；本稿直接推导",
+      "statement_label": "p206:W65",
+      "statement_line": 99,
+      "supplement_id": "S24",
+      "supporting_labels": [],
+      "working_title_zh": "有保护的区间内求根"
+    },
+    {
+      "canonical_latex_line": 2588,
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "id": "W66",
+      "number": "8.5",
+      "pdf_destination": "theorem.8.5",
+      "physical_page": 38,
+      "printed_page": 35,
+      "proof_start_lines": [
+        140
+      ],
+      "source_contract": "NUM-09-C03.R01",
+      "sources_and_reuse": "Stoer–Bulirsch §5.2，D10，M4",
+      "statement_label": "p206:W66",
+      "statement_line": 130,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "Banach 不动点与 Picard 迭代"
+    },
+    {
+      "canonical_latex_line": 2614,
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "id": "W67",
+      "number": "8.6",
+      "pdf_destination": "corollary.8.6",
+      "physical_page": 38,
+      "printed_page": 35,
+      "proof_start_lines": [
+        162
+      ],
+      "source_contract": "NUM-09-C03.R02",
+      "sources_and_reuse": "Stoer–Bulirsch §5.2，M4",
+      "statement_label": "p206:W67",
+      "statement_line": 156,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "闭不变域上的收缩"
+    },
+    {
+      "canonical_latex_line": 2629,
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "id": "W68",
+      "number": "8.7",
+      "pdf_destination": "proposition.8.7",
+      "physical_page": 38,
+      "printed_page": 35,
+      "proof_start_lines": [
+        181
+      ],
+      "source_contract": "NUM-09-C03.R03",
+      "sources_and_reuse": "Stoer–Bulirsch §5.2，M4",
+      "statement_label": "p206:W68",
+      "statement_line": 171,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "扰动后的不动点误差"
+    },
+    {
+      "canonical_latex_line": 2653,
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "id": "W69",
+      "number": "8.8",
+      "pdf_destination": "proposition.8.8",
+      "physical_page": 38,
+      "printed_page": 35,
+      "proof_start_lines": [
+        203
+      ],
+      "source_contract": "NUM-09-C05.R01",
+      "sources_and_reuse": "Stoer–Bulirsch §5.2，D10，M4",
+      "statement_label": "p206:W69",
+      "statement_line": 195,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "收缩迭代先验和后验误差"
+    },
+    {
+      "canonical_latex_line": 2669,
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "id": "W70",
+      "number": "8.9",
+      "pdf_destination": "proposition.8.9",
+      "physical_page": 39,
+      "printed_page": 36,
+      "proof_start_lines": [
+        220
+      ],
+      "source_contract": "NUM-09-C05.R02",
+      "sources_and_reuse": "Driscoll–Braun §4.2，M4",
+      "statement_label": "p206:W70",
+      "statement_line": 211,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "不动点残差的停机证书"
+    },
+    {
+      "canonical_latex_line": 2686,
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "id": "W71",
+      "number": "8.10",
+      "pdf_destination": "theorem.8.10",
+      "physical_page": 39,
+      "printed_page": 36,
+      "proof_start_lines": [
+        242
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Stoer–Bulirsch §5.2 的扰动框架，本稿直接推导",
+      "statement_label": "p206:W71",
+      "statement_line": 228,
+      "supplement_id": "S25",
+      "supporting_labels": [],
+      "working_title_zh": "带逐步误差的收缩迭代"
+    },
+    {
+      "canonical_latex_line": 2719,
+      "chapter": 8,
+      "file": "parts/ch08.tex",
+      "id": "W72",
+      "number": "8.11",
+      "pdf_destination": "proposition.8.11",
+      "physical_page": 39,
+      "printed_page": 36,
+      "proof_start_lines": [
+        270
+      ],
+      "source_contract": "NUM-09-C05.R03",
+      "sources_and_reuse": "Driscoll–Braun §4.1.1，D03",
+      "statement_label": "p206:W72",
+      "statement_line": 261,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "标量根残差与反斜率证书"
+    },
+    {
+      "canonical_latex_line": 2754,
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "id": "W73",
+      "number": "9.1",
+      "pdf_destination": "theorem.9.1",
+      "physical_page": 40,
+      "printed_page": 37,
+      "proof_start_lines": [
+        24
+      ],
+      "source_contract": "NUM-09-C02.R01",
+      "sources_and_reuse": "Stoer–Bulirsch §§5.2–5.3，Persson §§2.3–2.4，D03",
+      "statement_label": "p206:W73",
+      "statement_line": 11,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "简单零点附近的 Newton 二次收敛"
+    },
+    {
+      "canonical_latex_line": 2783,
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "id": "W74",
+      "number": "9.2",
+      "pdf_destination": "proposition.9.2",
+      "physical_page": 40,
+      "printed_page": 37,
+      "proof_start_lines": [
+        55
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Persson §2.4",
+      "statement_label": "p206:W74",
+      "statement_line": 40,
+      "supplement_id": "S26",
+      "supporting_labels": [],
+      "working_title_zh": "多重零点与修正 Newton"
+    },
+    {
+      "canonical_latex_line": 2821,
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "id": "W75",
+      "number": "9.3",
+      "pdf_destination": "theorem.9.3",
+      "physical_page": 41,
+      "printed_page": 38,
+      "proof_start_lines": [
+        98,
+        168
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Persson §2.3，Driscoll–Braun §4.4，第 6 章差商",
+      "statement_label": "p206:W75",
+      "statement_line": 78,
+      "supplement_id": "S27",
+      "supporting_labels": [],
+      "working_title_zh": "割线法的局部收敛阶"
+    },
+    {
+      "canonical_latex_line": 2923,
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "id": "W76",
+      "number": "9.5",
+      "pdf_destination": "theorem.9.5",
+      "physical_page": 42,
+      "printed_page": 39,
+      "proof_start_lines": [
+        195
+      ],
+      "source_contract": null,
+      "sources_and_reuse": "Stoer–Bulirsch §5.3，Ferreira–Svaiter 命题 6",
+      "statement_label": "p206:W76",
+      "statement_line": 180,
+      "supplement_id": "S28",
+      "supporting_labels": [
+        "p206:newton-segment"
+      ],
+      "working_title_zh": "Banach 空间局部 Newton 桥接"
+    },
+    {
+      "canonical_latex_line": 2959,
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "id": "W77",
+      "number": "9.6",
+      "pdf_destination": "theorem.9.6",
+      "physical_page": 43,
+      "printed_page": 40,
+      "proof_start_lines": [
+        252
+      ],
+      "source_contract": "NUM-09-C02.R02",
+      "sources_and_reuse": "Ferreira–Svaiter 定理 1、命题 5–9、推论 10–12",
+      "statement_label": "p206:W77",
+      "statement_line": 216,
+      "supplement_id": null,
+      "supporting_labels": [
+        "p206:newton-segment"
+      ],
+      "working_title_zh": "Newton–Kantorovich 半局部存在、误差与唯一性"
+    },
+    {
+      "canonical_latex_line": 3077,
+      "chapter": 9,
+      "file": "parts/ch09.tex",
+      "id": "W78",
+      "number": "9.7",
+      "pdf_destination": "proposition.9.7",
+      "physical_page": 44,
+      "printed_page": 41,
+      "proof_start_lines": [
+        347
+      ],
+      "source_contract": "NUM-09-C02.R03",
+      "sources_and_reuse": "Ferreira–Svaiter 定理 1 的退化补证",
+      "statement_label": "p206:W78",
+      "statement_line": 334,
+      "supplement_id": null,
+      "supporting_labels": [],
+      "working_title_zh": "标量主控的退化常数"
+    }
+  ],
+  "source_correction": {
+    "head_ref": "eb391e45905f47e44576f07b264e1d47fbe1c318a5f225dcfdeebdc06fce52aa",
+    "original_latex_sha256": "d7f6030cf7b73162b0cf10e11ae60a8ab762554e438b3448675501f1be428aeb",
+    "original_pdf_sha256": "e21d3ea9297a9d37ad858ab30071f7fa236c5b7ffd42b654338726e8c408e989"
+  },
+  "supplement_count": 28,
+  "title": "Foundations of Numerical Analysis: Error, Stability, and Certified Algorithms",
+  "verified_internal_pdf_links": 158
+}

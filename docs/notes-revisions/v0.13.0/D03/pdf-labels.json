@@ -1,0 +1,1647 @@
+{
+  "shared-foundations": {
+    "pdf_page": 13,
+    "printed_page": "1",
+    "pdf_destination": "chapter*.3"
+  },
+  "K03.01.real_interface": {
+    "pdf_page": 14,
+    "printed_page": "2",
+    "pdf_destination": "section.1.1"
+  },
+  "K03.01.archimedean": {
+    "pdf_page": 14,
+    "printed_page": "2",
+    "pdf_destination": "section.1.2"
+  },
+  "K03.01.sup_inf": {
+    "pdf_page": 15,
+    "printed_page": "3",
+    "pdf_destination": "section.1.3"
+  },
+  "K03.01.positive_roots": {
+    "pdf_page": 15,
+    "printed_page": "3",
+    "pdf_destination": "section.1.4"
+  },
+  "K03.01.sequence_limit": {
+    "pdf_page": 15,
+    "printed_page": "3",
+    "pdf_destination": "section.1.5"
+  },
+  "K03.01.unique_limit": {
+    "pdf_page": 16,
+    "printed_page": "4",
+    "pdf_destination": "section.1.6"
+  },
+  "K03.01.limit_algebra": {
+    "pdf_page": 16,
+    "printed_page": "4",
+    "pdf_destination": "section.1.7"
+  },
+  "K03.01.squeeze": {
+    "pdf_page": 16,
+    "printed_page": "4",
+    "pdf_destination": "section.1.8"
+  },
+  "K03.01.monotone": {
+    "pdf_page": 16,
+    "printed_page": "4",
+    "pdf_destination": "section.1.9"
+  },
+  "K03.01.nested_intervals": {
+    "pdf_page": 17,
+    "printed_page": "5",
+    "pdf_destination": "section.1.10"
+  },
+  "K03.01.subsequence": {
+    "pdf_page": 17,
+    "printed_page": "5",
+    "pdf_destination": "section.1.11"
+  },
+  "K03.01.bolzano": {
+    "pdf_page": 17,
+    "printed_page": "5",
+    "pdf_destination": "section.1.12"
+  },
+  "K03.01.cauchy": {
+    "pdf_page": 17,
+    "printed_page": "5",
+    "pdf_destination": "section.1.13"
+  },
+  "K03.01.limsup": {
+    "pdf_page": 18,
+    "printed_page": "6",
+    "pdf_destination": "section.1.14"
+  },
+  "K03.01.limsup_rules": {
+    "pdf_page": 18,
+    "printed_page": "6",
+    "pdf_destination": "section.1.15"
+  },
+  "K03.01.cesaro": {
+    "pdf_page": 18,
+    "printed_page": "6",
+    "pdf_destination": "section.1.16"
+  },
+  "K03.01.stolz": {
+    "pdf_page": 19,
+    "printed_page": "7",
+    "pdf_destination": "section.1.17"
+  },
+  "K03.01.standard_limits": {
+    "pdf_page": 19,
+    "printed_page": "7",
+    "pdf_destination": "section.1.18"
+  },
+  "K03.01.e_sequence": {
+    "pdf_page": 19,
+    "printed_page": "7",
+    "pdf_destination": "section.1.19"
+  },
+  "K03.01.counterexamples": {
+    "pdf_page": 20,
+    "printed_page": "8",
+    "pdf_destination": "section.1.20"
+  },
+  "K03.02.relative_limit": {
+    "pdf_page": 21,
+    "printed_page": "9",
+    "pdf_destination": "section.2.1"
+  },
+  "K03.02.one_sided": {
+    "pdf_page": 21,
+    "printed_page": "9",
+    "pdf_destination": "section.2.2"
+  },
+  "K03.02.sequential": {
+    "pdf_page": 22,
+    "printed_page": "10",
+    "pdf_destination": "section.2.3"
+  },
+  "K03.02.algebra": {
+    "pdf_page": 22,
+    "printed_page": "10",
+    "pdf_destination": "section.2.4"
+  },
+  "K03.02.squeeze": {
+    "pdf_page": 22,
+    "printed_page": "10",
+    "pdf_destination": "section.2.5"
+  },
+  "K03.02.cauchy": {
+    "pdf_page": 23,
+    "printed_page": "11",
+    "pdf_destination": "section.2.6"
+  },
+  "K03.02.oscillation": {
+    "pdf_page": 23,
+    "printed_page": "11",
+    "pdf_destination": "section.2.7"
+  },
+  "K03.02.big_o": {
+    "pdf_page": 23,
+    "printed_page": "11",
+    "pdf_destination": "section.2.8"
+  },
+  "K03.02.equivalence": {
+    "pdf_page": 24,
+    "printed_page": "12",
+    "pdf_destination": "section.2.9"
+  },
+  "K03.02.o_algebra": {
+    "pdf_page": 24,
+    "printed_page": "12",
+    "pdf_destination": "section.2.10"
+  },
+  "K03.02.equivalence_replacement": {
+    "pdf_page": 24,
+    "printed_page": "12",
+    "pdf_destination": "section.2.11"
+  },
+  "K03.02.growth_scale": {
+    "pdf_page": 25,
+    "printed_page": "13",
+    "pdf_destination": "section.2.12"
+  },
+  "K03.02.path_dependence": {
+    "pdf_page": 25,
+    "printed_page": "13",
+    "pdf_destination": "section.2.13"
+  },
+  "K03.02.domain_zeros": {
+    "pdf_page": 25,
+    "printed_page": "13",
+    "pdf_destination": "section.2.14"
+  },
+  "K03.03.continuity": {
+    "pdf_page": 26,
+    "printed_page": "14",
+    "pdf_destination": "section.3.1"
+  },
+  "K03.03.continuity_algebra": {
+    "pdf_page": 26,
+    "printed_page": "14",
+    "pdf_destination": "section.3.2"
+  },
+  "K03.03.local_bounds": {
+    "pdf_page": 27,
+    "printed_page": "15",
+    "pdf_destination": "section.3.3"
+  },
+  "K03.03.closed_preimage": {
+    "pdf_page": 27,
+    "printed_page": "15",
+    "pdf_destination": "section.3.4"
+  },
+  "K03.03.compact_interval": {
+    "pdf_page": 27,
+    "printed_page": "15",
+    "pdf_destination": "section.3.5"
+  },
+  "K03.03.extreme_values": {
+    "pdf_page": 28,
+    "printed_page": "16",
+    "pdf_destination": "section.3.6"
+  },
+  "K03.03.intermediate_values": {
+    "pdf_page": 28,
+    "printed_page": "16",
+    "pdf_destination": "section.3.7"
+  },
+  "K03.03.interval_images": {
+    "pdf_page": 28,
+    "printed_page": "16",
+    "pdf_destination": "section.3.8"
+  },
+  "K03.03.monotone_limits": {
+    "pdf_page": 29,
+    "printed_page": "17",
+    "pdf_destination": "section.3.9"
+  },
+  "K03.03.inverse_continuity": {
+    "pdf_page": 29,
+    "printed_page": "17",
+    "pdf_destination": "section.3.10"
+  },
+  "K03.03.uniform_continuity": {
+    "pdf_page": 29,
+    "printed_page": "17",
+    "pdf_destination": "section.3.11"
+  },
+  "K03.03.heine_cantor": {
+    "pdf_page": 30,
+    "printed_page": "18",
+    "pdf_destination": "section.3.12"
+  },
+  "K03.03.lipschitz": {
+    "pdf_page": 30,
+    "printed_page": "18",
+    "pdf_destination": "section.3.13"
+  },
+  "K03.03.extension": {
+    "pdf_page": 30,
+    "printed_page": "18",
+    "pdf_destination": "section.3.14"
+  },
+  "K03.03.fixed_point": {
+    "pdf_page": 30,
+    "printed_page": "18",
+    "pdf_destination": "section.3.15"
+  },
+  "K03.03.counterexamples": {
+    "pdf_page": 31,
+    "printed_page": "19",
+    "pdf_destination": "section.3.16"
+  },
+  "K03.04.derivative": {
+    "pdf_page": 32,
+    "printed_page": "20",
+    "pdf_destination": "section.4.1"
+  },
+  "K03.04.one_sided": {
+    "pdf_page": 32,
+    "printed_page": "20",
+    "pdf_destination": "section.4.2"
+  },
+  "K03.04.peano": {
+    "pdf_page": 33,
+    "printed_page": "21",
+    "pdf_destination": "section.4.3"
+  },
+  "K03.04.linear_rules": {
+    "pdf_page": 33,
+    "printed_page": "21",
+    "pdf_destination": "section.4.4"
+  },
+  "K03.04.product": {
+    "pdf_page": 33,
+    "printed_page": "21",
+    "pdf_destination": "section.4.5"
+  },
+  "K03.04.chain": {
+    "pdf_page": 34,
+    "printed_page": "22",
+    "pdf_destination": "section.4.6"
+  },
+  "K03.04.inverse": {
+    "pdf_page": 34,
+    "printed_page": "22",
+    "pdf_destination": "section.4.7"
+  },
+  "K03.04.higher": {
+    "pdf_page": 34,
+    "printed_page": "22",
+    "pdf_destination": "section.4.8"
+  },
+  "K03.04.leibniz": {
+    "pdf_page": 35,
+    "printed_page": "23",
+    "pdf_destination": "section.4.9"
+  },
+  "K03.04.elementary_rules": {
+    "pdf_page": 35,
+    "printed_page": "23",
+    "pdf_destination": "section.4.10"
+  },
+  "K03.04.modulus": {
+    "pdf_page": 36,
+    "printed_page": "24",
+    "pdf_destination": "section.4.11"
+  },
+  "K03.04.noncontinuous_derivative": {
+    "pdf_page": 36,
+    "printed_page": "24",
+    "pdf_destination": "section.4.12"
+  },
+  "K03.04.unbounded_derivative": {
+    "pdf_page": 36,
+    "printed_page": "24",
+    "pdf_destination": "section.4.13"
+  },
+  "K03.04.geometric": {
+    "pdf_page": 37,
+    "printed_page": "25",
+    "pdf_destination": "section.4.14"
+  },
+  "K03.05.fermat": {
+    "pdf_page": 38,
+    "printed_page": "26",
+    "pdf_destination": "section.5.1"
+  },
+  "K03.05.rolle": {
+    "pdf_page": 38,
+    "printed_page": "26",
+    "pdf_destination": "section.5.2"
+  },
+  "K03.05.lagrange": {
+    "pdf_page": 38,
+    "printed_page": "26",
+    "pdf_destination": "section.5.3"
+  },
+  "K03.05.cauchy": {
+    "pdf_page": 39,
+    "printed_page": "27",
+    "pdf_destination": "section.5.4"
+  },
+  "K03.05.mean_inequality": {
+    "pdf_page": 39,
+    "printed_page": "27",
+    "pdf_destination": "section.5.5"
+  },
+  "K03.05.monotonicity": {
+    "pdf_page": 39,
+    "printed_page": "27",
+    "pdf_destination": "section.5.6"
+  },
+  "K03.05.zero_derivative": {
+    "pdf_page": 40,
+    "printed_page": "28",
+    "pdf_destination": "section.5.7"
+  },
+  "K03.05.root_uniqueness": {
+    "pdf_page": 40,
+    "printed_page": "28",
+    "pdf_destination": "section.5.8"
+  },
+  "K03.05.derivative_sign_test": {
+    "pdf_page": 40,
+    "printed_page": "28",
+    "pdf_destination": "section.5.9"
+  },
+  "K03.05.second_test": {
+    "pdf_page": 40,
+    "printed_page": "28",
+    "pdf_destination": "section.5.10"
+  },
+  "K03.05.darboux": {
+    "pdf_page": 41,
+    "printed_page": "29",
+    "pdf_destination": "section.5.11"
+  },
+  "K03.05.lhopital_zero": {
+    "pdf_page": 41,
+    "printed_page": "29",
+    "pdf_destination": "section.5.12"
+  },
+  "K03.05.lhopital_infinite": {
+    "pdf_page": 41,
+    "printed_page": "29",
+    "pdf_destination": "section.5.13"
+  },
+  "K03.05.convexity": {
+    "pdf_page": 42,
+    "printed_page": "30",
+    "pdf_destination": "section.5.14"
+  },
+  "K03.05.convex_derivative": {
+    "pdf_page": 42,
+    "printed_page": "30",
+    "pdf_destination": "section.5.15"
+  },
+  "K03.05.convex_onesided": {
+    "pdf_page": 43,
+    "printed_page": "31",
+    "pdf_destination": "section.5.16"
+  },
+  "K03.05.jensen": {
+    "pdf_page": 43,
+    "printed_page": "31",
+    "pdf_destination": "section.5.17"
+  },
+  "K03.05.inequalities": {
+    "pdf_page": 44,
+    "printed_page": "32",
+    "pdf_destination": "section.5.18"
+  },
+  "K03.11.partial_sums": {
+    "pdf_page": 45,
+    "printed_page": "33",
+    "pdf_destination": "section.6.1"
+  },
+  "K03.11.necessary": {
+    "pdf_page": 45,
+    "printed_page": "33",
+    "pdf_destination": "section.6.2"
+  },
+  "K03.11.nonnegative": {
+    "pdf_page": 45,
+    "printed_page": "33",
+    "pdf_destination": "section.6.3"
+  },
+  "K03.11.comparison": {
+    "pdf_page": 46,
+    "printed_page": "34",
+    "pdf_destination": "section.6.4"
+  },
+  "K03.11.geometric_p": {
+    "pdf_page": 46,
+    "printed_page": "34",
+    "pdf_destination": "section.6.5"
+  },
+  "K03.11.ratio": {
+    "pdf_page": 46,
+    "printed_page": "34",
+    "pdf_destination": "section.6.6"
+  },
+  "K03.11.root": {
+    "pdf_page": 47,
+    "printed_page": "35",
+    "pdf_destination": "section.6.7"
+  },
+  "K03.11.condensation": {
+    "pdf_page": 47,
+    "printed_page": "35",
+    "pdf_destination": "section.6.8"
+  },
+  "K03.11.alternating": {
+    "pdf_page": 47,
+    "printed_page": "35",
+    "pdf_destination": "section.6.9"
+  },
+  "K03.11.summation_parts": {
+    "pdf_page": 48,
+    "printed_page": "36",
+    "pdf_destination": "section.6.10"
+  },
+  "K03.11.dirichlet": {
+    "pdf_page": 48,
+    "printed_page": "36",
+    "pdf_destination": "section.6.11"
+  },
+  "K03.11.abel": {
+    "pdf_page": 48,
+    "printed_page": "36",
+    "pdf_destination": "section.6.12"
+  },
+  "K03.11.absolute": {
+    "pdf_page": 48,
+    "printed_page": "36",
+    "pdf_destination": "section.6.13"
+  },
+  "K03.11.rearrange_absolute": {
+    "pdf_page": 49,
+    "printed_page": "37",
+    "pdf_destination": "section.6.14"
+  },
+  "K03.11.rearrange_conditional": {
+    "pdf_page": 49,
+    "printed_page": "37",
+    "pdf_destination": "section.6.15"
+  },
+  "K03.11.cauchy_product": {
+    "pdf_page": 49,
+    "printed_page": "37",
+    "pdf_destination": "section.6.16"
+  },
+  "K03.11.product_failure": {
+    "pdf_page": 50,
+    "printed_page": "38",
+    "pdf_destination": "section.6.17"
+  },
+  "K03.11.double_series": {
+    "pdf_page": 50,
+    "printed_page": "38",
+    "pdf_destination": "section.6.18"
+  },
+  "K03.11.products": {
+    "pdf_page": 50,
+    "printed_page": "38",
+    "pdf_destination": "section.6.19"
+  },
+  "K03.11.product_absolute": {
+    "pdf_page": 51,
+    "printed_page": "39",
+    "pdf_destination": "section.6.20"
+  },
+  "K03.11.cesaro": {
+    "pdf_page": 51,
+    "printed_page": "39",
+    "pdf_destination": "section.6.21"
+  },
+  "K03.11.acceleration": {
+    "pdf_page": 51,
+    "printed_page": "39",
+    "pdf_destination": "section.6.22"
+  },
+  "K03.12.pointwise": {
+    "pdf_page": 53,
+    "printed_page": "41",
+    "pdf_destination": "section.7.1"
+  },
+  "K03.12.uniform": {
+    "pdf_page": 53,
+    "printed_page": "41",
+    "pdf_destination": "section.7.2"
+  },
+  "K03.12.sup_norm": {
+    "pdf_page": 53,
+    "printed_page": "41",
+    "pdf_destination": "section.7.3"
+  },
+  "K03.12.cauchy": {
+    "pdf_page": 54,
+    "printed_page": "42",
+    "pdf_destination": "section.7.4"
+  },
+  "K03.12.continuity": {
+    "pdf_page": 54,
+    "printed_page": "42",
+    "pdf_destination": "section.7.5"
+  },
+  "K03.12.dini": {
+    "pdf_page": 54,
+    "printed_page": "42",
+    "pdf_destination": "section.7.6"
+  },
+  "K03.12.interchange_limits": {
+    "pdf_page": 54,
+    "printed_page": "42",
+    "pdf_destination": "section.7.7"
+  },
+  "K03.12.integration": {
+    "pdf_page": 55,
+    "printed_page": "43",
+    "pdf_destination": "section.7.8"
+  },
+  "K03.12.differentiation": {
+    "pdf_page": 55,
+    "printed_page": "43",
+    "pdf_destination": "section.7.9"
+  },
+  "K03.12.series": {
+    "pdf_page": 56,
+    "printed_page": "44",
+    "pdf_destination": "section.7.10"
+  },
+  "K03.12.m_test": {
+    "pdf_page": 56,
+    "printed_page": "44",
+    "pdf_destination": "section.7.11"
+  },
+  "K03.12.uniform_dirichlet": {
+    "pdf_page": 56,
+    "printed_page": "44",
+    "pdf_destination": "section.7.12"
+  },
+  "K03.12.uniform_abel": {
+    "pdf_page": 56,
+    "printed_page": "44",
+    "pdf_destination": "section.7.13"
+  },
+  "K03.12.termwise_integration": {
+    "pdf_page": 57,
+    "printed_page": "45",
+    "pdf_destination": "section.7.14"
+  },
+  "K03.12.termwise_differentiation": {
+    "pdf_page": 57,
+    "printed_page": "45",
+    "pdf_destination": "section.7.15"
+  },
+  "K03.12.pointwise_discontinuous": {
+    "pdf_page": 57,
+    "printed_page": "45",
+    "pdf_destination": "section.7.16"
+  },
+  "K03.12.integral_failure": {
+    "pdf_page": 57,
+    "printed_page": "45",
+    "pdf_destination": "section.7.17"
+  },
+  "K03.12.derivative_failure": {
+    "pdf_page": 58,
+    "printed_page": "46",
+    "pdf_destination": "section.7.18"
+  },
+  "K03.12.whole_line_failure": {
+    "pdf_page": 58,
+    "printed_page": "46",
+    "pdf_destination": "section.7.19"
+  },
+  "K03.13.power_series": {
+    "pdf_page": 59,
+    "printed_page": "47",
+    "pdf_destination": "section.8.1"
+  },
+  "K03.13.radius": {
+    "pdf_page": 59,
+    "printed_page": "47",
+    "pdf_destination": "section.8.2"
+  },
+  "K03.13.ratio_radius": {
+    "pdf_page": 59,
+    "printed_page": "47",
+    "pdf_destination": "section.8.3"
+  },
+  "K03.13.compact_uniform": {
+    "pdf_page": 60,
+    "printed_page": "48",
+    "pdf_destination": "section.8.4"
+  },
+  "K03.13.endpoints": {
+    "pdf_page": 60,
+    "printed_page": "48",
+    "pdf_destination": "section.8.5"
+  },
+  "K03.13.termwise": {
+    "pdf_page": 60,
+    "printed_page": "48",
+    "pdf_destination": "section.8.6"
+  },
+  "K03.13.uniqueness": {
+    "pdf_page": 61,
+    "printed_page": "49",
+    "pdf_destination": "section.8.7"
+  },
+  "K03.13.products": {
+    "pdf_page": 61,
+    "printed_page": "49",
+    "pdf_destination": "section.8.8"
+  },
+  "K03.13.composition": {
+    "pdf_page": 61,
+    "printed_page": "49",
+    "pdf_destination": "section.8.9"
+  },
+  "K03.13.analyticity": {
+    "pdf_page": 62,
+    "printed_page": "50",
+    "pdf_destination": "section.8.10"
+  },
+  "K03.13.identity": {
+    "pdf_page": 62,
+    "printed_page": "50",
+    "pdf_destination": "section.8.11"
+  },
+  "K03.13.binomial": {
+    "pdf_page": 63,
+    "printed_page": "51",
+    "pdf_destination": "section.8.12"
+  },
+  "K03.13.abel": {
+    "pdf_page": 63,
+    "printed_page": "51",
+    "pdf_destination": "section.8.13"
+  },
+  "K03.13.tauber": {
+    "pdf_page": 64,
+    "printed_page": "52",
+    "pdf_destination": "section.8.14"
+  },
+  "K03.13.abel_not_converse": {
+    "pdf_page": 65,
+    "printed_page": "53",
+    "pdf_destination": "section.8.15"
+  },
+  "K03.13.standard_series": {
+    "pdf_page": 65,
+    "printed_page": "53",
+    "pdf_destination": "section.8.16"
+  },
+  "K03.07.exp_construction": {
+    "pdf_page": 66,
+    "printed_page": "54",
+    "pdf_destination": "section.9.1"
+  },
+  "K03.07.exp_addition": {
+    "pdf_page": 66,
+    "printed_page": "54",
+    "pdf_destination": "section.9.2"
+  },
+  "K03.07.exp_properties": {
+    "pdf_page": 67,
+    "printed_page": "55",
+    "pdf_destination": "section.9.3"
+  },
+  "K03.07.log_construction": {
+    "pdf_page": 67,
+    "printed_page": "55",
+    "pdf_destination": "section.9.4"
+  },
+  "K03.07.log_derivative": {
+    "pdf_page": 67,
+    "printed_page": "55",
+    "pdf_destination": "section.9.5"
+  },
+  "K03.07.real_powers": {
+    "pdf_page": 68,
+    "printed_page": "56",
+    "pdf_destination": "section.9.6"
+  },
+  "K03.07.sin_cos": {
+    "pdf_page": 68,
+    "printed_page": "56",
+    "pdf_destination": "section.9.7"
+  },
+  "K03.07.trig_properties": {
+    "pdf_page": 68,
+    "printed_page": "56",
+    "pdf_destination": "section.9.8"
+  },
+  "K03.07.pi_period": {
+    "pdf_page": 69,
+    "printed_page": "57",
+    "pdf_destination": "section.9.9"
+  },
+  "K03.07.trig_inverses": {
+    "pdf_page": 69,
+    "printed_page": "57",
+    "pdf_destination": "section.9.10"
+  },
+  "K03.07.tan": {
+    "pdf_page": 70,
+    "printed_page": "58",
+    "pdf_destination": "section.9.11"
+  },
+  "K03.07.hyperbolic": {
+    "pdf_page": 70,
+    "printed_page": "58",
+    "pdf_destination": "section.9.12"
+  },
+  "K03.07.euler": {
+    "pdf_page": 70,
+    "printed_page": "58",
+    "pdf_destination": "section.9.13"
+  },
+  "K03.07.elementary_derivatives": {
+    "pdf_page": 71,
+    "printed_page": "59",
+    "pdf_destination": "section.9.14"
+  },
+  "K03.07.elementary_domains": {
+    "pdf_page": 71,
+    "printed_page": "59",
+    "pdf_destination": "section.9.15"
+  },
+  "K03.07.standard_limits": {
+    "pdf_page": 71,
+    "printed_page": "59",
+    "pdf_destination": "section.9.16"
+  },
+  "K03.07.construction_bridges": {
+    "pdf_page": 72,
+    "printed_page": "60",
+    "pdf_destination": "section.9.17"
+  },
+  "K03.08.partitions": {
+    "pdf_page": 73,
+    "printed_page": "61",
+    "pdf_destination": "section.10.1"
+  },
+  "K03.08.darboux_sums": {
+    "pdf_page": 73,
+    "printed_page": "61",
+    "pdf_destination": "section.10.2"
+  },
+  "K03.08.integral": {
+    "pdf_page": 74,
+    "printed_page": "62",
+    "pdf_destination": "section.10.3"
+  },
+  "K03.08.criterion": {
+    "pdf_page": 74,
+    "printed_page": "62",
+    "pdf_destination": "section.10.4"
+  },
+  "K03.08.tagged_equivalence": {
+    "pdf_page": 74,
+    "printed_page": "62",
+    "pdf_destination": "section.10.5"
+  },
+  "K03.08.cauchy": {
+    "pdf_page": 75,
+    "printed_page": "63",
+    "pdf_destination": "section.10.6"
+  },
+  "K03.08.continuous": {
+    "pdf_page": 75,
+    "printed_page": "63",
+    "pdf_destination": "section.10.7"
+  },
+  "K03.08.monotone": {
+    "pdf_page": 75,
+    "printed_page": "63",
+    "pdf_destination": "section.10.8"
+  },
+  "K03.08.linearity": {
+    "pdf_page": 76,
+    "printed_page": "64",
+    "pdf_destination": "section.10.9"
+  },
+  "K03.08.order": {
+    "pdf_page": 76,
+    "printed_page": "64",
+    "pdf_destination": "section.10.10"
+  },
+  "K03.08.products": {
+    "pdf_page": 76,
+    "printed_page": "64",
+    "pdf_destination": "section.10.11"
+  },
+  "K03.08.finite_changes": {
+    "pdf_page": 77,
+    "printed_page": "65",
+    "pdf_destination": "section.10.12"
+  },
+  "K03.08.uniform_stability": {
+    "pdf_page": 77,
+    "printed_page": "65",
+    "pdf_destination": "section.10.13"
+  },
+  "K03.08.zero_covers": {
+    "pdf_page": 77,
+    "printed_page": "65",
+    "pdf_destination": "section.10.14"
+  },
+  "K03.08.zero_vs_content": {
+    "pdf_page": 78,
+    "printed_page": "66",
+    "pdf_destination": "section.10.15"
+  },
+  "K03.08.cantor_set": {
+    "pdf_page": 78,
+    "printed_page": "66",
+    "pdf_destination": "section.10.16"
+  },
+  "K03.08.oscillation_criterion": {
+    "pdf_page": 78,
+    "printed_page": "66",
+    "pdf_destination": "section.10.17"
+  },
+  "K03.08.dirichlet": {
+    "pdf_page": 79,
+    "printed_page": "67",
+    "pdf_destination": "section.10.18"
+  },
+  "K03.08.thomae": {
+    "pdf_page": 79,
+    "printed_page": "67",
+    "pdf_destination": "section.10.19"
+  },
+  "K03.08.countable_changes": {
+    "pdf_page": 80,
+    "printed_page": "68",
+    "pdf_destination": "section.10.20"
+  },
+  "K03.08.oriented": {
+    "pdf_page": 80,
+    "printed_page": "68",
+    "pdf_destination": "section.10.21"
+  },
+  "K03.08.bridge_lebesgue": {
+    "pdf_page": 80,
+    "printed_page": "68",
+    "pdf_destination": "section.10.22"
+  },
+  "K03.09.primitive": {
+    "pdf_page": 81,
+    "printed_page": "69",
+    "pdf_destination": "section.11.1"
+  },
+  "K03.09.uniqueness": {
+    "pdf_page": 81,
+    "printed_page": "69",
+    "pdf_destination": "section.11.2"
+  },
+  "K03.09.accumulation": {
+    "pdf_page": 82,
+    "printed_page": "70",
+    "pdf_destination": "section.11.3"
+  },
+  "K03.09.ftc_first": {
+    "pdf_page": 82,
+    "printed_page": "70",
+    "pdf_destination": "section.11.4"
+  },
+  "K03.09.ftc_second": {
+    "pdf_page": 82,
+    "printed_page": "70",
+    "pdf_destination": "section.11.5"
+  },
+  "K03.09.continuous_primitive": {
+    "pdf_page": 82,
+    "printed_page": "70",
+    "pdf_destination": "section.11.6"
+  },
+  "K03.09.parts": {
+    "pdf_page": 83,
+    "printed_page": "71",
+    "pdf_destination": "section.11.7"
+  },
+  "K03.09.substitution": {
+    "pdf_page": 83,
+    "printed_page": "71",
+    "pdf_destination": "section.11.8"
+  },
+  "K03.09.monotone_substitution": {
+    "pdf_page": 83,
+    "printed_page": "71",
+    "pdf_destination": "section.11.9"
+  },
+  "K03.09.mean_value": {
+    "pdf_page": 84,
+    "printed_page": "72",
+    "pdf_destination": "section.11.10"
+  },
+  "K03.09.second_mean_value": {
+    "pdf_page": 84,
+    "printed_page": "72",
+    "pdf_destination": "section.11.11"
+  },
+  "K03.09.elementary_primitives": {
+    "pdf_page": 85,
+    "printed_page": "73",
+    "pdf_destination": "section.11.12"
+  },
+  "K03.09.trig_substitution": {
+    "pdf_page": 85,
+    "printed_page": "73",
+    "pdf_destination": "section.11.13"
+  },
+  "K03.09.algebraic_substitution": {
+    "pdf_page": 86,
+    "printed_page": "74",
+    "pdf_destination": "section.11.14"
+  },
+  "K03.09.holder": {
+    "pdf_page": 86,
+    "printed_page": "74",
+    "pdf_destination": "section.11.15"
+  },
+  "K03.09.minkowski": {
+    "pdf_page": 86,
+    "printed_page": "74",
+    "pdf_destination": "section.11.16"
+  },
+  "K03.09.partial_fractions": {
+    "pdf_page": 87,
+    "printed_page": "75",
+    "pdf_destination": "section.11.17"
+  },
+  "K03.09.area_length": {
+    "pdf_page": 87,
+    "printed_page": "75",
+    "pdf_destination": "section.11.18"
+  },
+  "K03.09.derivative_not_integrable": {
+    "pdf_page": 88,
+    "printed_page": "76",
+    "pdf_destination": "section.11.19"
+  },
+  "K03.06.taylor_polynomial": {
+    "pdf_page": 89,
+    "printed_page": "77",
+    "pdf_destination": "section.12.1"
+  },
+  "K03.06.peano": {
+    "pdf_page": 89,
+    "printed_page": "77",
+    "pdf_destination": "section.12.2"
+  },
+  "K03.06.lagrange": {
+    "pdf_page": 90,
+    "printed_page": "78",
+    "pdf_destination": "section.12.3"
+  },
+  "K03.06.cauchy": {
+    "pdf_page": 90,
+    "printed_page": "78",
+    "pdf_destination": "section.12.4"
+  },
+  "K03.06.integral": {
+    "pdf_page": 91,
+    "printed_page": "79",
+    "pdf_destination": "section.12.5"
+  },
+  "K03.06.uniform_bound": {
+    "pdf_page": 91,
+    "printed_page": "79",
+    "pdf_destination": "section.12.6"
+  },
+  "K03.06.leading_term": {
+    "pdf_page": 92,
+    "printed_page": "80",
+    "pdf_destination": "section.12.7"
+  },
+  "K03.06.composition": {
+    "pdf_page": 92,
+    "printed_page": "80",
+    "pdf_destination": "section.12.8"
+  },
+  "K03.06.reference_expansions": {
+    "pdf_page": 92,
+    "printed_page": "80",
+    "pdf_destination": "section.12.9"
+  },
+  "K03.06.smooth_flat": {
+    "pdf_page": 93,
+    "printed_page": "81",
+    "pdf_destination": "section.12.10"
+  },
+  "K03.06.smooth_not_analytic": {
+    "pdf_page": 94,
+    "printed_page": "82",
+    "pdf_destination": "section.12.11"
+  },
+  "K03.06.error_notation": {
+    "pdf_page": 94,
+    "printed_page": "82",
+    "pdf_destination": "section.12.12"
+  },
+  "K03.10.one_endpoint": {
+    "pdf_page": 95,
+    "printed_page": "83",
+    "pdf_destination": "section.13.1"
+  },
+  "K03.10.several_endpoints": {
+    "pdf_page": 95,
+    "printed_page": "83",
+    "pdf_destination": "section.13.2"
+  },
+  "K03.10.cauchy": {
+    "pdf_page": 96,
+    "printed_page": "84",
+    "pdf_destination": "section.13.3"
+  },
+  "K03.10.nonnegative": {
+    "pdf_page": 96,
+    "printed_page": "84",
+    "pdf_destination": "section.13.4"
+  },
+  "K03.10.comparison": {
+    "pdf_page": 96,
+    "printed_page": "84",
+    "pdf_destination": "section.13.5"
+  },
+  "K03.10.absolute": {
+    "pdf_page": 97,
+    "printed_page": "85",
+    "pdf_destination": "section.13.6"
+  },
+  "K03.10.p_test": {
+    "pdf_page": 97,
+    "printed_page": "85",
+    "pdf_destination": "section.13.7"
+  },
+  "K03.10.integral_test": {
+    "pdf_page": 97,
+    "printed_page": "85",
+    "pdf_destination": "section.13.8"
+  },
+  "K03.10.dirichlet": {
+    "pdf_page": 98,
+    "printed_page": "86",
+    "pdf_destination": "section.13.9"
+  },
+  "K03.10.abel": {
+    "pdf_page": 98,
+    "printed_page": "86",
+    "pdf_destination": "section.13.10"
+  },
+  "K03.10.parts": {
+    "pdf_page": 99,
+    "printed_page": "87",
+    "pdf_destination": "section.13.11"
+  },
+  "K03.10.substitution": {
+    "pdf_page": 99,
+    "printed_page": "87",
+    "pdf_destination": "section.13.12"
+  },
+  "K03.10.principal_value": {
+    "pdf_page": 99,
+    "printed_page": "87",
+    "pdf_destination": "section.13.13"
+  },
+  "K03.10.pv_counterexample": {
+    "pdf_page": 100,
+    "printed_page": "88",
+    "pdf_destination": "section.13.14"
+  },
+  "K03.10.oscillatory_example": {
+    "pdf_page": 100,
+    "printed_page": "88",
+    "pdf_destination": "section.13.15"
+  },
+  "K03.10.tail_bounds": {
+    "pdf_page": 100,
+    "printed_page": "88",
+    "pdf_destination": "section.13.16"
+  },
+  "K03.10.endpoint_counterexample": {
+    "pdf_page": 101,
+    "printed_page": "89",
+    "pdf_destination": "section.13.17"
+  },
+  "K03.14.proper_definition": {
+    "pdf_page": 102,
+    "printed_page": "90",
+    "pdf_destination": "section.14.1"
+  },
+  "K03.14.proper_continuity": {
+    "pdf_page": 102,
+    "printed_page": "90",
+    "pdf_destination": "section.14.2"
+  },
+  "K03.14.proper_derivative": {
+    "pdf_page": 103,
+    "printed_page": "91",
+    "pdf_destination": "section.14.3"
+  },
+  "K03.14.moving_endpoints": {
+    "pdf_page": 103,
+    "printed_page": "91",
+    "pdf_destination": "section.14.4"
+  },
+  "K03.14.proper_order": {
+    "pdf_page": 104,
+    "printed_page": "92",
+    "pdf_destination": "section.14.5"
+  },
+  "K03.14.uniform_improper": {
+    "pdf_page": 104,
+    "printed_page": "92",
+    "pdf_destination": "section.14.6"
+  },
+  "K03.14.uniform_comparison": {
+    "pdf_page": 104,
+    "printed_page": "92",
+    "pdf_destination": "section.14.7"
+  },
+  "K03.14.uniform_dirichlet": {
+    "pdf_page": 105,
+    "printed_page": "93",
+    "pdf_destination": "section.14.8"
+  },
+  "K03.14.improper_continuity": {
+    "pdf_page": 105,
+    "printed_page": "93",
+    "pdf_destination": "section.14.9"
+  },
+  "K03.14.improper_derivative": {
+    "pdf_page": 105,
+    "printed_page": "93",
+    "pdf_destination": "section.14.10"
+  },
+  "K03.14.parameter_order": {
+    "pdf_page": 106,
+    "printed_page": "94",
+    "pdf_destination": "section.14.11"
+  },
+  "K03.14.local_uniform": {
+    "pdf_page": 106,
+    "printed_page": "94",
+    "pdf_destination": "section.14.12"
+  },
+  "K03.14.failure": {
+    "pdf_page": 107,
+    "printed_page": "95",
+    "pdf_destination": "section.14.13"
+  },
+  "K03.14.boundary_terms": {
+    "pdf_page": 107,
+    "printed_page": "95",
+    "pdf_destination": "section.14.14"
+  },
+  "K03.15.variation": {
+    "pdf_page": 108,
+    "printed_page": "96",
+    "pdf_destination": "section.15.1"
+  },
+  "K03.15.variation_rules": {
+    "pdf_page": 108,
+    "printed_page": "96",
+    "pdf_destination": "section.15.2"
+  },
+  "K03.15.monotone": {
+    "pdf_page": 109,
+    "printed_page": "97",
+    "pdf_destination": "section.15.3"
+  },
+  "K03.15.jordan": {
+    "pdf_page": 109,
+    "printed_page": "97",
+    "pdf_destination": "section.15.4"
+  },
+  "K03.15.one_sided": {
+    "pdf_page": 109,
+    "printed_page": "97",
+    "pdf_destination": "section.15.5"
+  },
+  "K03.15.regulated": {
+    "pdf_page": 109,
+    "printed_page": "97",
+    "pdf_destination": "section.15.6"
+  },
+  "K03.15.bv_riemann": {
+    "pdf_page": 110,
+    "printed_page": "98",
+    "pdf_destination": "section.15.7"
+  },
+  "K03.15.cantor_function": {
+    "pdf_page": 110,
+    "printed_page": "98",
+    "pdf_destination": "section.15.8"
+  },
+  "K03.15.continuous_variation": {
+    "pdf_page": 111,
+    "printed_page": "99",
+    "pdf_destination": "section.15.9"
+  },
+  "K03.15.c1_variation": {
+    "pdf_page": 111,
+    "printed_page": "99",
+    "pdf_destination": "section.15.10"
+  },
+  "K03.15.rectifiable": {
+    "pdf_page": 112,
+    "printed_page": "100",
+    "pdf_destination": "section.15.11"
+  },
+  "K03.15.rs_sums": {
+    "pdf_page": 112,
+    "printed_page": "100",
+    "pdf_destination": "section.15.12"
+  },
+  "K03.15.rs_darboux": {
+    "pdf_page": 112,
+    "printed_page": "100",
+    "pdf_destination": "section.15.13"
+  },
+  "K03.15.rs_existence": {
+    "pdf_page": 113,
+    "printed_page": "101",
+    "pdf_destination": "section.15.14"
+  },
+  "K03.15.rs_algebra": {
+    "pdf_page": 113,
+    "printed_page": "101",
+    "pdf_destination": "section.15.15"
+  },
+  "K03.15.rs_ordinary": {
+    "pdf_page": 114,
+    "printed_page": "102",
+    "pdf_destination": "section.15.16"
+  },
+  "K03.15.rs_density": {
+    "pdf_page": 114,
+    "printed_page": "102",
+    "pdf_destination": "section.15.17"
+  },
+  "K03.15.rs_parts": {
+    "pdf_page": 114,
+    "printed_page": "102",
+    "pdf_destination": "section.15.18"
+  },
+  "K03.15.rs_jump": {
+    "pdf_page": 115,
+    "printed_page": "103",
+    "pdf_destination": "section.15.19"
+  },
+  "K03.15.rs_common_jumps": {
+    "pdf_page": 115,
+    "printed_page": "103",
+    "pdf_destination": "section.15.20"
+  },
+  "K03.15.rs_mesh_bridge": {
+    "pdf_page": 116,
+    "printed_page": "104",
+    "pdf_destination": "section.15.21"
+  },
+  "K03.15.rs_mesh_counterexample": {
+    "pdf_page": 116,
+    "printed_page": "104",
+    "pdf_destination": "section.15.22"
+  },
+  "K03.15.rs_uniform": {
+    "pdf_page": 116,
+    "printed_page": "104",
+    "pdf_destination": "section.15.23"
+  },
+  "K03.15.stieltjes_measure_bridge": {
+    "pdf_page": 117,
+    "printed_page": "105",
+    "pdf_destination": "section.15.24"
+  },
+  "K03.16.sup_space": {
+    "pdf_page": 118,
+    "printed_page": "106",
+    "pdf_destination": "section.16.1"
+  },
+  "K03.16.complete": {
+    "pdf_page": 118,
+    "printed_page": "106",
+    "pdf_destination": "section.16.2"
+  },
+  "K03.16.equicontinuity": {
+    "pdf_page": 119,
+    "printed_page": "107",
+    "pdf_destination": "section.16.3"
+  },
+  "K03.16.ascoli": {
+    "pdf_page": 119,
+    "printed_page": "107",
+    "pdf_destination": "section.16.4"
+  },
+  "K03.16.ascoli_hypotheses": {
+    "pdf_page": 120,
+    "printed_page": "108",
+    "pdf_destination": "section.16.5"
+  },
+  "K03.16.piecewise_linear": {
+    "pdf_page": 120,
+    "printed_page": "108",
+    "pdf_destination": "section.16.6"
+  },
+  "K03.16.bernstein": {
+    "pdf_page": 120,
+    "printed_page": "108",
+    "pdf_destination": "section.16.7"
+  },
+  "K03.16.bernstein_convergence": {
+    "pdf_page": 121,
+    "printed_page": "109",
+    "pdf_destination": "section.16.8"
+  },
+  "K03.16.weierstrass": {
+    "pdf_page": 121,
+    "printed_page": "109",
+    "pdf_destination": "section.16.9"
+  },
+  "K03.16.lattice": {
+    "pdf_page": 121,
+    "printed_page": "109",
+    "pdf_destination": "section.16.10"
+  },
+  "K03.16.stone_real": {
+    "pdf_page": 122,
+    "printed_page": "110",
+    "pdf_destination": "section.16.11"
+  },
+  "K03.16.stone_complex": {
+    "pdf_page": 122,
+    "printed_page": "110",
+    "pdf_destination": "section.16.12"
+  },
+  "K03.16.smooth_density": {
+    "pdf_page": 123,
+    "printed_page": "111",
+    "pdf_destination": "section.16.13"
+  },
+  "K03.16.approximate_identity": {
+    "pdf_page": 123,
+    "printed_page": "111",
+    "pdf_destination": "section.16.14"
+  },
+  "K03.16.nowhere_differentiable": {
+    "pdf_page": 123,
+    "printed_page": "111",
+    "pdf_destination": "section.16.15"
+  },
+  "module:M03.18": {
+    "pdf_page": 125,
+    "printed_page": "113",
+    "pdf_destination": "chapter.17"
+  },
+  "K03.18.beta_definition": {
+    "pdf_page": 125,
+    "printed_page": "113",
+    "pdf_destination": "section.17.1"
+  },
+  "K03.18.beta_recurrence": {
+    "pdf_page": 125,
+    "printed_page": "113",
+    "pdf_destination": "section.17.2"
+  },
+  "eq:beta-integer": {
+    "pdf_page": 125,
+    "printed_page": "113",
+    "pdf_destination": "equation.17.1"
+  },
+  "K03.18.gamma_definition": {
+    "pdf_page": 126,
+    "printed_page": "114",
+    "pdf_destination": "section.17.3"
+  },
+  "K03.18.gamma_recurrence": {
+    "pdf_page": 126,
+    "printed_page": "114",
+    "pdf_destination": "section.17.4"
+  },
+  "K03.18.gamma_euler_limit": {
+    "pdf_page": 126,
+    "printed_page": "114",
+    "pdf_destination": "section.17.5"
+  },
+  "eq:gamma-euler": {
+    "pdf_page": 126,
+    "printed_page": "114",
+    "pdf_destination": "equation.17.2"
+  },
+  "K03.18.gamma_regular": {
+    "pdf_page": 127,
+    "printed_page": "115",
+    "pdf_destination": "section.17.6"
+  },
+  "K03.18.gamma_logconvex": {
+    "pdf_page": 127,
+    "printed_page": "115",
+    "pdf_destination": "section.17.7"
+  },
+  "K03.18.bohr_mollerup": {
+    "pdf_page": 127,
+    "printed_page": "115",
+    "pdf_destination": "section.17.8"
+  },
+  "K03.18.beta_gamma": {
+    "pdf_page": 128,
+    "printed_page": "116",
+    "pdf_destination": "section.17.9"
+  },
+  "K03.18.wallis": {
+    "pdf_page": 128,
+    "printed_page": "116",
+    "pdf_destination": "section.17.10"
+  },
+  "K03.18.gaussian": {
+    "pdf_page": 129,
+    "printed_page": "117",
+    "pdf_destination": "section.17.11"
+  },
+  "K03.18.dirichlet_integral": {
+    "pdf_page": 129,
+    "printed_page": "117",
+    "pdf_destination": "section.17.12"
+  },
+  "K03.18.other_special_functions": {
+    "pdf_page": 130,
+    "printed_page": "118",
+    "pdf_destination": "section.17.13"
+  },
+  "module:M03.17": {
+    "pdf_page": 131,
+    "printed_page": "119",
+    "pdf_destination": "chapter.18"
+  },
+  "K03.17.asymptotic_scale": {
+    "pdf_page": 131,
+    "printed_page": "119",
+    "pdf_destination": "section.18.1"
+  },
+  "K03.17.coefficient_unique": {
+    "pdf_page": 131,
+    "printed_page": "119",
+    "pdf_destination": "section.18.2"
+  },
+  "K03.17.operations": {
+    "pdf_page": 132,
+    "printed_page": "120",
+    "pdf_destination": "section.18.3"
+  },
+  "K03.17.flat_remainder": {
+    "pdf_page": 132,
+    "printed_page": "120",
+    "pdf_destination": "section.18.4"
+  },
+  "K03.17.divergent_asymptotic": {
+    "pdf_page": 132,
+    "printed_page": "120",
+    "pdf_destination": "section.18.5"
+  },
+  "K03.17.bernoulli": {
+    "pdf_page": 133,
+    "printed_page": "121",
+    "pdf_destination": "section.18.6"
+  },
+  "K03.17.euler_maclaurin": {
+    "pdf_page": 133,
+    "printed_page": "121",
+    "pdf_destination": "section.18.7"
+  },
+  "K03.17.em_bound": {
+    "pdf_page": 134,
+    "printed_page": "122",
+    "pdf_destination": "section.18.8"
+  },
+  "K03.17.harmonic": {
+    "pdf_page": 134,
+    "printed_page": "122",
+    "pdf_destination": "section.18.9"
+  },
+  "K03.17.stirling": {
+    "pdf_page": 134,
+    "printed_page": "122",
+    "pdf_destination": "section.18.10"
+  },
+  "K03.17.laplace_local": {
+    "pdf_page": 135,
+    "printed_page": "123",
+    "pdf_destination": "section.18.11"
+  },
+  "K03.17.watson": {
+    "pdf_page": 136,
+    "printed_page": "124",
+    "pdf_destination": "section.18.12"
+  },
+  "K03.17.oscillatory_bound": {
+    "pdf_page": 136,
+    "printed_page": "124",
+    "pdf_destination": "section.18.13"
+  },
+  "K03.17.scope_boundary": {
+    "pdf_page": 136,
+    "printed_page": "124",
+    "pdf_destination": "section.18.14"
+  },
+  "module:M03.19": {
+    "pdf_page": 137,
+    "printed_page": "125",
+    "pdf_destination": "chapter.19"
+  },
+  "K03.19.periodic_setup": {
+    "pdf_page": 137,
+    "printed_page": "125",
+    "pdf_destination": "section.19.1"
+  },
+  "K03.19.orthogonality": {
+    "pdf_page": 137,
+    "printed_page": "125",
+    "pdf_destination": "section.19.2"
+  },
+  "K03.19.finite_projection": {
+    "pdf_page": 138,
+    "printed_page": "126",
+    "pdf_destination": "section.19.3"
+  },
+  "K03.19.bessel": {
+    "pdf_page": 138,
+    "printed_page": "126",
+    "pdf_destination": "section.19.4"
+  },
+  "K03.19.riemann_lebesgue": {
+    "pdf_page": 138,
+    "printed_page": "126",
+    "pdf_destination": "section.19.5"
+  },
+  "K03.19.dirichlet_kernel": {
+    "pdf_page": 139,
+    "printed_page": "127",
+    "pdf_destination": "section.19.6"
+  },
+  "K03.19.local_convergence": {
+    "pdf_page": 139,
+    "printed_page": "127",
+    "pdf_destination": "section.19.7"
+  },
+  "K03.19.jordan": {
+    "pdf_page": 140,
+    "printed_page": "128",
+    "pdf_destination": "section.19.8"
+  },
+  "K03.19.coefficient_decay": {
+    "pdf_page": 140,
+    "printed_page": "128",
+    "pdf_destination": "section.19.9"
+  },
+  "K03.19.c1_uniform": {
+    "pdf_page": 141,
+    "printed_page": "129",
+    "pdf_destination": "section.19.10"
+  },
+  "K03.19.fejer_kernel": {
+    "pdf_page": 141,
+    "printed_page": "129",
+    "pdf_destination": "section.19.11"
+  },
+  "K03.19.fejer": {
+    "pdf_page": 142,
+    "printed_page": "130",
+    "pdf_destination": "section.19.12"
+  },
+  "K03.19.uniqueness": {
+    "pdf_page": 142,
+    "printed_page": "130",
+    "pdf_destination": "section.19.13"
+  },
+  "K03.19.parseval": {
+    "pdf_page": 142,
+    "printed_page": "130",
+    "pdf_destination": "section.19.14"
+  },
+  "K03.19.examples": {
+    "pdf_page": 143,
+    "printed_page": "131",
+    "pdf_destination": "section.19.15"
+  },
+  "K03.19.normalization_bridge": {
+    "pdf_page": 143,
+    "printed_page": "131",
+    "pdf_destination": "section.19.16"
+  },
+  "K03.19.fourier_boundary": {
+    "pdf_page": 144,
+    "printed_page": "132",
+    "pdf_destination": "section.19.17"
+  }
+}

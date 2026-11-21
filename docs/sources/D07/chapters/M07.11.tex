@@ -1,0 +1,773 @@
+\chapter{Polynomials, factorization, and algebraic constructions}\label{chap:M07.11}
+
+% Topic grouping: Formal coefficients and universal evaluation
+\KEntry{K07.11.polynomial_definition}{Formal polynomials}
+A polynomial over a unital ring $R$ is a sequence $(a_i)_{i\in\N}$
+with finite support: only finitely many $a_i$ are nonzero. Its
+coefficient of index $i$ is $a_i$. Equality of polynomials means equality
+of every coefficient. The constant polynomial $C(a)$ has coefficient
+$a$ at index zero and zero elsewhere; $X$ has coefficient $1$ at index
+one and zero elsewhere. Thus
+\[
+ f=\sum_{i=0}^n C(a_i)X^i
+\]
+is a formal expression for its coefficient sequence, independent of
+trailing zero coefficients. The map $C$ is injective because its
+coefficient of index zero is its argument. A formal polynomial has not
+yet been identified with any function on $R$.
+
+\KEntry{K07.11.polynomial_arithmetic}{The polynomial ring}
+Define addition coefficientwise, additive inverse coefficientwise, and
+multiplication by convolution:
+\[
+ (f+g)_n=f_n+g_n,\qquad (fg)_n=\sum_{i+j=n}f_i g_j.
+\]
+These sequences still have finite support: supports of sums lie in
+unions, and the support of a product lies in the set of pairwise sums
+of support indices. The additive abelian-group laws follow coefficient
+by coefficient. Both coefficients of $(fg)h=f(gh)$ are
+$\sum_{i+j+k=n}f_i g_j h_k$, with the same order of factors, so
+associativity in $R$ proves associativity here. Distributivity follows
+by distributing each finite coefficient sum. The sequence $C(1)$ is
+an identity, since only its coefficient of index zero contributes.
+Consequently these operations make $R[X]$ a ring, and $C$ a unital
+ring homomorphism. If $R$ is commutative, interchanging $i,j$ in the
+product sum proves commutativity. Even if $R$ is not commutative,
+$X C(a)=C(a)X$, since both have their sole possible nonzero
+coefficient $a$ at index one; distributing gives $Xf=fX$ for all $f$.
+
+\KEntry{K07.11.degree_conventions}{Degree and the zero polynomial}
+For $f\ne0$ its degree is the largest index with nonzero coefficient,
+and its leading coefficient $\operatorname{lc}(f)$ is that coefficient.
+Set $\deg0=-\infty$ and $\operatorname{lc}(0)=0$; use
+$-\infty+n=-\infty$. The natural degree agrees with the degree of a
+nonzero polynomial, but is assigned the value zero at the zero
+polynomial. Thus a statement about natural degrees of nonzero products
+needs the stated nonvanishing hypotheses. Mathlib represents degree by
+$\operatorname{WithBot}(\N)$ and calls the separate natural-valued
+operation $\operatorname{natDegree}$.
+
+A polynomial is monic if its leading coefficient is $1$. In a
+nontrivial ring a monic polynomial is nonzero. In the zero ring the
+zero polynomial is monic because $0=1$; this is why the division
+theorems below explicitly require a nontrivial coefficient ring.
+The constant polynomial $C(a)$ with $a\ne0$ has degree zero, including
+when $a$ is a nonunit.
+
+\KEntry{K07.11.degree_arithmetic}{Degree calculations}
+\begin{proposition}\label{prop:polynomial-degree}
+For polynomials over a commutative ring,
+\[
+ \deg(f+g)\le\max(\deg f,\deg g),\qquad
+ \deg(fg)\le\deg f+\deg g.
+\]
+If $f,g\ne0$ and $\operatorname{lc}(f)\operatorname{lc}(g)\ne0$,
+then $fg\ne0$, its degree is $\deg f+\deg g$, and its leading
+coefficient is the product of the leading coefficients.
+In particular a polynomial ring over a domain is a domain.
+\end{proposition}
+\begin{proof}
+Above the maximum of the two support bounds both summands vanish.
+If $m=\deg f$ and $n=\deg g$, every coefficient of $fg$ above $m+n$
+vanishes, because in each summand either $i>m$ or $j>n$. At index
+$m+n$, the only possibly nonzero summand has $i=m,j=n$ and is
+$\operatorname{lc}(f)\operatorname{lc}(g)$. Its nonvanishing gives
+the equality assertion. If a factor is zero, the inequalities follow
+from the convention for $-\infty$. In a domain two nonzero leading
+coefficients have nonzero product, so two nonzero polynomials cannot
+have zero product.
+\end{proof}
+The condition on leading coefficients also holds if one is a unit.
+With zero divisors the product degree can drop: in $(\Z/4\Z)[X]$,
+$(2X)^2=0$, although both factors have degree one.
+
+\KEntry{K07.11.evaluation_universal}{The universal property of evaluation}
+\begin{theorem}\label{thm:polynomial-evaluation}
+Let $\varphi:R\to S$ be a unital ring homomorphism, and let $s\in S$
+commute with every $\varphi(a)$, $a\in R$. There is exactly one
+unital ring homomorphism $\Phi:R[X]\to S$ such that
+$\Phi(C(a))=\varphi(a)$ and $\Phi(X)=s$. It is
+\[
+ \Phi\left(\sum_i C(a_i)X^i\right)=\sum_i\varphi(a_i)s^i.
+\]
+\end{theorem}
+\begin{proof}
+The finite sum defines a function of the coefficient sequence and
+preserves addition and one. Its value on a product is
+$\sum_{i,j}\varphi(a_i)\varphi(b_j)s^{i+j}$.
+Since $s^i$ commutes with $\varphi(b_j)$, this is
+$\sum_{i,j}(\varphi(a_i)s^i)(\varphi(b_j)s^j)$, the product
+of the two evaluations. The required images of constants and $X$
+follow directly. Any homomorphism with those images must send the
+finite expression for a polynomial to the displayed sum, proving
+uniqueness.
+\end{proof}
+For commutative $S$ the commuting condition is automatic. It cannot be
+discarded for a noncommutative target, because $XC(a)=C(a)X$ would
+force it. Ordinary evaluation $f(a)$ uses $\varphi=\id_R$ in a
+commutative ring. Substitution $f(g)$ uses target $R[X]$.
+
+\KEntry{K07.11.coefficient_map}{Changing the coefficient ring}
+A unital homomorphism $\varphi:R\to S$ induces a unital homomorphism
+$\varphi_*:R[X]\to S[X]$ by applying $\varphi$ to every coefficient.
+Indeed convolution and finite sums commute with $\varphi$; alternatively
+apply Theorem~\ref{thm:polynomial-evaluation} to $C\varphi$ and $X$.
+It sends $C(a)$ to $C(\varphi(a))$ and fixes $X$.
+If $\varphi$ is injective, a coefficient is zero precisely when its
+image is zero, so $\varphi_*$ is injective and preserves degree and
+leading coefficients. A noninjective map may kill a leading
+coefficient: $2X+1$ becomes $1$ on reducing modulo $2$.
+
+For an ideal $I$ of a commutative ring let
+$I[X]=\{f:\text{every coefficient of }f\text{ belongs to }I\}$.
+The coefficient formulas show that it is an ideal. The map
+$R[X]\to(R/I)[X]$ is onto: lift the finitely many coefficients of
+each target polynomial and set all others to zero. Its kernel is
+exactly $I[X]$. The first isomorphism theorem therefore gives
+\begin{equation}\label{eq:polynomial-coefficient-quotient}
+ R[X]/I[X]\ \cong\ (R/I)[X].
+\end{equation}
+In particular $I[X]$ is also the ideal generated by the constants
+$C(a)$ for $a\in I$: one inclusion follows from the ideal property,
+and the other follows by writing $f=\sum C(a_i)X^i$.
+
+\KEntry{K07.11.polynomial_units}{Units and nilpotent coefficients}
+\begin{proposition}\label{prop:polynomial-units}
+Over a commutative domain, the units of $R[X]$ are precisely the
+constant polynomials whose coefficients are units of $R$.
+Over any commutative ring, $f=\sum a_iX^i$ is a unit if and only if
+$a_0$ is a unit and every $a_i$ with $i>0$ is nilpotent.
+\end{proposition}
+\begin{proof}
+In a domain $fg=1$ gives $\deg f+\deg g=0$, so both degrees are zero;
+the constant coefficients multiply to one. Conversely a unit constant
+has its constant inverse.
+
+In general, if $fg=1$, evaluation at zero gives $a_0g(0)=1$.
+For each prime ideal $P$, the image of $f$ in $(R/P)[X]$ is a unit
+over a domain, so all its positive-degree coefficients vanish.
+Thus each $a_i$, $i>0$, belongs to every prime ideal, and
+Lemma~\ref{lem:nilpotent-prime-separation} makes it nilpotent.
+This implication also holds in the zero ring, whose elements are
+all nilpotent.
+
+Conversely suppose $a_0$ is a unit and choose exponents
+$e_i\ge1$ with $a_i^{e_i}=0$ for the finitely many positive
+coefficients. The ideal $J$ they generate satisfies $J^N=0$ for
+$N=1+\sum_i(e_i-1)$: expanding a product of $N$ generators,
+some generator occurs at least $e_i$ times. Write
+$f=C(a_0)(1+h)$, where all coefficients of $h$ belong to $J$.
+The coefficients of $h^N$ are sums of products from $J^N$, so
+$h^N=0$. Consequently
+$(1+h)\sum_{j=0}^{N-1}(-h)^j=1$ gives a polynomial inverse for $f$.
+If there are no positive coefficients, use $N=1$ and $h=0$.
+\end{proof}
+For example $1+2X$ is a nonconstant unit in $(\Z/4\Z)[X]$,
+with inverse $1-2X$. The domain hypothesis in the first assertion
+is therefore substantial.
+
+% Topic grouping: Division, roots, and multiplicities
+\KEntry{K07.11.monic_division}{Division by a monic polynomial}
+\begin{theorem}\label{thm:monic-polynomial-division}
+Let $R$ be a nontrivial commutative ring and $g\in R[X]$ monic.
+Every $f$ has unique $q,r$ such that
+\[
+ f=qg+r,\qquad \deg r<\deg g.
+\]
+The same conclusion holds when the leading coefficient of $g$ is a
+unit.
+\end{theorem}
+\begin{proof}
+First assume $g$ monic, of degree $m$. If $f=0$ or $\deg f<m$,
+take $q=0,r=f$. Otherwise write $n=\deg f$ and $a=\operatorname{lc}(f)$.
+The polynomial $f-C(a)X^{n-m}g$ has degree less than $n$: terms
+above $n$ are zero and the coefficient of index $n$ cancels.
+Inducting on the nonnegative degree produces its quotient and
+remainder; adding $C(a)X^{n-m}$ to the quotient gives the required
+identity for $f$. This induction terminates because a strictly
+decreasing sequence of natural numbers terminates.
+
+If $qg+r=q'g+r'$ and $q-q'\ne0$, the monic leading coefficient
+gives
+$\deg((q-q')g)=\deg(q-q')+m\ge m$ by
+Proposition~\ref{prop:polynomial-degree}. But
+$(q-q')g=r'-r$ has degree less than $m$, a contradiction.
+Thus $q=q'$ and then $r=r'$.
+For unit leading coefficient $u$, divide by the monic polynomial
+$u^{-1}g$ and absorb $u^{-1}$ into the quotient.
+\end{proof}
+When $g=1$ the remainder must be zero. Over $\Z$, division of $X$
+by the constant polynomial $2$ with remainder degree less than zero
+would require $X=2q$, impossible at its coefficient of index one.
+Thus nonzero divisors alone do not suffice over a coefficient ring.
+
+\KEntry{K07.11.field_division}{Division over a field}
+\begin{corollary}\label{thm:polynomial-division}
+For a field $F$, a nonzero $g\in F[X]$, and any $f\in F[X]$,
+there are unique $q,r$ with $f=qg+r$ and
+$r=0$ or $\deg r<\deg g$.
+\end{corollary}
+\begin{proof}
+The nonzero leading coefficient of $g$ is a unit, so apply the preceding
+theorem. Its degree condition includes $r=0$ through $\deg0=-\infty$.
+\end{proof}
+This gives an algorithm using only field operations: cancel the
+highest term until the remainder degree is small. A nonzero constant
+divisor has remainder zero; no assertion of division by zero is made.
+
+\KEntry{K07.11.field_polynomial_pid}{Polynomial rings over fields}
+\begin{theorem}\label{thm:field-polynomial-pid}
+For a field $F$, $F[X]$ is Euclidean with degree as the decreasing
+quantity for nonzero remainders. Consequently it is a PID and a UFD.
+Conversely, if $R$ is a commutative ring and $R[X]$ is a PID in the
+domain sense, then $R$ is a field.
+\end{theorem}
+\begin{proof}
+The polynomial ring is a domain by Proposition~\ref{prop:polynomial-degree},
+and division with remainder supplies the Euclidean condition.
+Theorems~\ref{thm:euclidean-implies-pid} and~\ref{thm:pid-implies-ufd}
+give the two consequences.
+
+For the converse, the injective constants map embeds $R$ in the
+domain $R[X]$, so $R$ is a domain. Evaluation at zero is onto with
+kernel $(X)$: a polynomial has zero constant coefficient precisely
+when it is $X$ times the polynomial formed by shifting its other
+coefficients down by one. Hence $R[X]/(X)\cong R$ is a domain,
+so $(X)$ is prime. It is a nonzero proper ideal, since $X\ne0$
+and evaluation at zero sends it to zero but sends $1$ to $1$.
+In a PID every nonzero prime ideal is maximal by
+Proposition~\ref{prop:pid-primes}. Thus its quotient $R$ is a field
+by Proposition~\ref{prop:maximal-quotient}.
+\end{proof}
+
+\KEntry{K07.11.factor_remainder}{The factor and remainder theorems}
+\begin{proposition}\label{prop:factor-remainder}
+Let $R$ be commutative and $a\in R$. The remainder of $f$ on division
+by $X-C(a)$ is $C(f(a))$, and
+$f(a)=0$ if and only if $X-C(a)$ divides $f$.
+If $R$ is a domain, $X-C(a)$ is prime and irreducible.
+\end{proposition}
+\begin{proof}
+In a nontrivial ring the divisor is monic of degree one, so the remainder
+is a constant $C(b)$. Evaluation of
+$f=q(X-C(a))+C(b)$ at $a$ gives $b=f(a)$. The factor equivalence
+follows, in one direction by this formula and in the other by evaluating
+a product. In the zero ring every assertion of equality and divisibility
+here holds directly; no division theorem is needed.
+
+For a domain evaluation $R[X]\to R$ is onto and has kernel
+$(X-C(a))$ by the factor equivalence. The quotient is the domain $R$,
+so the generated ideal is prime. The generator is nonzero and nonunit
+by its degree, and the prime-ideal test makes it a prime element.
+Proposition~\ref{prop:prime-implies-irreducible} proves irreducibility.
+\end{proof}
+
+\KEntry{K07.11.root_bound}{The number of roots}
+\begin{theorem}\label{thm:polynomial-root-bound}
+A nonzero polynomial of degree $n$ over a domain has at most $n$
+distinct roots. More strongly the sum of its root multiplicities is
+at most $n$.
+\end{theorem}
+\begin{proof}
+If $a$ is a root, write $f=(X-a)g$ by the factor theorem.
+Then $g\ne0$ and $\deg g=n-1$ by the degree formula.
+If $b\ne a$ is another root, $0=f(b)=(b-a)g(b)$ and cancellation
+gives $g(b)=0$. Thus repeatedly removing distinct roots decreases
+degree each time and cannot remove more than $n$ factors.
+This argument also proves finiteness: if more than $n$ distinct roots
+existed, choose $n+1$ of them and obtain a negative degree for a
+nonzero quotient.
+
+For multiplicities, remove $X-a$ as often as possible at each root;
+each removal lowers degree by one, so the process stops. Removing a
+factor at $a$ leaves the multiplicity at a different $b$ unchanged.
+Indeed $X-b$ is prime by Proposition~\ref{prop:factor-remainder} and
+does not divide $X-a$, since its value at $b$ is $b-a\ne0$.
+Repeated prime cancellation therefore says
+$(X-b)^k\mid(X-a)g$ if and only if $(X-b)^k\mid g$.
+The total number of removed linear factors is consequently the sum
+of the original multiplicities, and degree bounds it by $n$.
+\end{proof}
+The zero polynomial is excluded: it vanishes at every element, and
+every power of every linear polynomial divides it. A library convention
+may give the root multiset of zero or a numerical zero multiplicity a
+default value; that convention is not this finite-root theorem.
+
+\KEntry{K07.11.multiplicity_derivative}{Formal derivatives and repeated roots}
+For a nonzero polynomial over a field the multiplicity of $a$ is the
+largest $m\ge0$ for which $(X-a)^m\mid f$. This maximum exists by
+the degree bound on such divisors. Thus
+$f=(X-a)^m g$ with $g(a)\ne0$: otherwise the factor theorem would
+increase $m$.
+
+Define the formal derivative by
+$f'=\sum_{i\ge1} i a_i X^{i-1}$, where the integer $i$ acts by
+repeated addition. It is additive. For monomials, the identity
+$(X^{i+j})'=(i+j)X^{i+j-1}$ equals the sum from differentiating
+the two factors. Distributing a finite product of sums proves
+$(fg)'=f'g+fg'$ for arbitrary polynomials.
+Induction gives
+\[
+ f'=m(X-a)^{m-1}g+(X-a)^m g'\qquad(m\ge1).
+\]
+If $m=1$, evaluation at $a$ is $g(a)\ne0$; if $m\ge2$ it is zero.
+Therefore a root has multiplicity greater than one exactly when
+$f(a)=f'(a)=0$. If $f(a)\ne0$, the multiplicity is zero, so the
+same pair of equalities characterizes multiplicity at least two.
+This uses no analytic limiting operation. In characteristic $p$,
+$(X^p)'=pX^{p-1}=0$ although $X^p$ is nonconstant. The zero
+polynomial has no largest multiplicity and is excluded.
+
+\KEntry{K07.11.low_degree_irreducible}{Small degrees}
+Every degree-one polynomial over a field is irreducible: a factorization
+has degrees summing to one, so one factor has degree zero and is a unit.
+For degree two or three, a reducible polynomial is a product of two
+positive-degree polynomials, and their degrees force one to have degree
+one. Such a factor is a nonzero scalar multiple of $X-a$ for some
+field element $a$, giving a root. Conversely a root gives a linear
+factor and a quotient of positive degree, so gives reducibility.
+Hence in these two degrees irreducibility is equivalent to having no
+root. In higher degrees this test fails: $(X^2+1)^2$ has no rational
+root, since a rational square is nonnegative, but it is reducible in
+$\Q[X]$.
+
+\KEntry{K07.11.rational_root}{The rational root test}
+Let $0\ne f=a_nX^n+\cdots+a_0\in\Z[X]$, $a_n\ne0$.
+If $r/s$ is a root, with $\gcd(r,s)=1$ and $s\ne0$, then
+$r\mid a_0$ and $s\mid a_n$.
+There is no root if $n=0$. For $n\ge1$, multiply the root equation
+by $s^n$:
+\[
+ a_nr^n+a_{n-1}r^{n-1}s+\cdots+a_0s^n=0.
+\]
+It follows that $r\mid a_0s^n$ and $s\mid a_nr^n$.
+Coprimality gives $\gcd(r,s^n)=\gcd(s,r^n)=1$:
+a prime dividing one of those gcds would divide both $r$ and $s$,
+using prime divisibility of a power. Bezout's identity then cancels
+the respective coprime factor, proving both divisibilities.
+If $r=0$, reduced form forces $s=\pm1$, the equation says $a_0=0$,
+and the same conclusions hold, including $0\mid0$.
+For a monic polynomial $s\mid1$, so every rational root is an integer.
+
+% Topic grouping: Content, Gauss's lemma, and irreducibility tests
+\KEntry{K07.11.content_primitive}{Content and primitive polynomials}
+Assume $R$ is a UFD. The content $c(f)$ is a gcd of the finitely many
+coefficients of $f$, determined up to multiplication by a unit.
+Set $c(0)=0$. A nonzero polynomial is primitive if its coefficients
+have unit gcd, or equivalently no prime element divides all its
+coefficients. Indeed a nonunit common divisor has a prime factor,
+and a common prime is itself a nonunit common divisor.
+For $f\ne0$, divide all coefficients by $c(f)$ to obtain
+\[
+ f=C(c(f))f_0.
+\]
+This $f_0$ is primitive. To see this precisely, for a prime $p$ write
+$v_p(a)$ for its exponent in a nonzero element and $v_p(0)=+\infty$.
+The exponent of $p$ in the gcd of a finite collection not all zero is
+the minimum of its coefficient exponents. Division by their gcd
+subtracts that minimum, leaving minimum zero for every prime.
+This also constructs the gcd from unique factorization.
+The primitive part $f_0$ depends on the chosen associate of the content.
+No primitive part of zero is needed in these arguments; conventions
+that assign a value there do not make zero primitive.
+Every monic polynomial is primitive because a divisor of all
+coefficients must divide its leading coefficient $1$.
+
+\KEntry{K07.11.gauss_content}{Products and content}
+\begin{theorem}\label{thm:gauss-content}
+Over a UFD the product of two primitive polynomials is primitive.
+For arbitrary polynomials,
+\[
+ c(fg)\ \text{is associated to}\ c(f)c(g).
+\]
+\end{theorem}
+\begin{proof}
+Suppose primitive $f,g$ had nonprimitive product. A prime $p$ would
+divide all coefficients of $fg$. In $(R/(p))[X]$ their images would
+have zero product. The coefficient ring $R/(p)$ is a domain, since
+$p$ is prime; its polynomial ring is a domain. Therefore one image
+is zero, meaning $p$ divides all coefficients of one factor,
+contrary to primitivity.
+
+For nonzero $f,g$ write $f=C(a)f_0$, $g=C(b)g_0$ with
+$a=c(f),b=c(g)$ and primitive $f_0,g_0$. Their product $h=f_0g_0$
+is primitive. For each prime $p$ the minimum exponent among the
+coefficients of $C(ab)h$ equals
+$v_p(a)+v_p(b)+0$. Thus its content has exactly the prime
+exponents of $ab$, proving association by unique factorization.
+If one factor is zero, both compared contents are zero and the
+assertion holds directly.
+\end{proof}
+The invariant assertion is association. Literal equality requires a
+chosen multiplicative normalization of associates, for instance
+nonnegative integer gcds over $\Z$ or monic gcds over a field;
+an arbitrary selection of associates need not be multiplicative.
+
+\KEntry{K07.11.gauss_fraction_irreducible}{Gauss's lemma over the fraction field}
+\begin{lemma}\label{lem:primitive-scalar}
+Let $K=\Frac(R)$ for a UFD $R$. Every nonzero $A\in K[X]$ has
+the form $uA_0$, where $u\in K^\times$ and $A_0\in R[X]$ is
+primitive. If $h\in R[X]$ is primitive and $t\in K^\times$
+satisfies $th\in R[X]$, then $t\in R$. If $th$ is primitive
+as well, $t$ is a unit of $R$.
+\end{lemma}
+\begin{proof}
+There are only finitely many coefficients of $A$. Multiplying their
+nonzero denominators gives $d\ne0$ with $dA\in R[X]$.
+Extracting its content gives $dA=cA_0$, hence $A=(c/d)A_0$.
+
+Write $t=r/s$ with $r,s\ne0$ and with their common prime factors
+cancelled, so $\gcd(r,s)$ is a unit. Integrality of each coefficient
+$r h_i/s$ says $s\mid rh_i$. If a prime $p$ divided $s$, its
+full exponent in $s$ would have to occur in $h_i$, since it does
+not occur in $r$. In particular $p$ would divide every $h_i$,
+contrary to primitivity. Thus $s$ is a unit and $t\in R$.
+The content of $th$ is then associated to $t$, by the coefficient
+exponent calculation above. If $th$ is primitive, this makes $t$
+a unit.
+\end{proof}
+
+\begin{theorem}\label{thm:gauss-fraction}
+A primitive polynomial in $R[X]$, for $R$ a UFD, is irreducible
+over $R$ if and only if its image in $\Frac(R)[X]$ is irreducible.
+More generally, any factorization of a nonzero $f\in R[X]$ into two
+positive-degree factors over the fraction field can be rescaled into
+such a factorization over $R$.
+\end{theorem}
+\begin{proof}
+For a factorization $f=AB$ over $K$, write $A=uA_0$, $B=vB_0$
+as in the lemma. The product $A_0B_0$ is primitive, and
+$f=(uv)A_0B_0$ is integral. The lemma gives $uv\in R$, so
+$f=((uv)A_0)B_0$ is the required integral factorization.
+Nonzero scalar rescaling preserves both degrees.
+If $f$ is primitive, the same lemma says $uv$ is a unit of $R$.
+
+For a primitive polynomial of positive degree, a nonunit constant
+factor over $R$ would divide all coefficients, which is impossible.
+Thus reducibility over $R$ is equivalent to a factorization into
+two positive-degree factors. The same equivalence holds over the
+field $K$, by the description of its polynomial units.
+The rescaling result proves one direction; the coefficient embedding
+and degree preservation prove the other. A primitive constant is
+a unit in both rings, so is irreducible in neither. These cases
+exhaust primitive polynomials.
+\end{proof}
+In particular the theorem applies to monic polynomials. Without
+primitivity it fails: $2X+2$ is reducible over $\Z$ because of its
+nonunit content, but is a degree-one irreducible over $\Q$.
+
+\KEntry{K07.11.polynomial_ufd}{Unique factorization is inherited}
+\begin{theorem}\label{thm:polynomial-ufd}
+For a commutative domain $R$, the ring $R$ is a UFD if and only if
+$R[X]$ is a UFD. Hence a polynomial ring in finitely many variables
+over a UFD is a UFD.
+\end{theorem}
+\begin{proof}
+First suppose $R$ is a UFD and put $K=\Frac(R)$.
+Factor a nonzero $f\in R[X]$ as its content times a primitive
+polynomial $f_0$. The content factors into primes in $R$.
+The field polynomial ring $K[X]$ is a UFD by
+Theorem~\ref{thm:field-polynomial-pid}. Factor $f_0$ there, and
+rescale each positive-degree irreducible factor to a primitive
+polynomial in $R[X]$ using Lemma~\ref{lem:primitive-scalar}.
+Their product is primitive, so its scalar multiplier in $f_0$ is a
+unit of $R$, again by that lemma. Each rescaled factor is irreducible
+in $R[X]$ by Theorem~\ref{thm:gauss-fraction}. If $f_0$ is constant,
+it is already a unit. We have proved factorization existence in all
+cases.
+
+We next show all factors just used are prime in $R[X]$, which will
+give uniqueness. A constant prime $p$ remains prime, since
+$R[X]/(C(p))\cong(R/(p))[X]$ by
+\eqref{eq:polynomial-coefficient-quotient}; here $(C(p))=(p)[X]$
+by the finite coefficient expression. The quotient is a domain.
+
+Let $h\in R[X]$ be primitive and irreducible of positive degree.
+It is prime in $K[X]$, since that ring is a PID. If $h\mid ab$
+in $R[X]$, it therefore divides $a$ or $b$ in $K[X]$.
+Suppose $a=hQ$. If $a=0$, divisibility in $R[X]$ is immediate.
+Otherwise write $Q=tQ_0$ with $Q_0$ primitive. The product
+$hQ_0$ is primitive and $a=t(hQ_0)$ is integral, so the scalar
+lemma gives $t\in R$. Thus $a=h(tQ_0)$ in $R[X]$.
+The case for $b$ is identical. Hence $h$ is prime in $R[X]$.
+All irreducible factors in our existence factorization are therefore
+prime. Cancellation of a prime from two factorizations, followed by
+induction, proves uniqueness up to units and permutation exactly as
+in Lemma~\ref{lem:prime-factorization-unique}.
+
+Conversely suppose $R[X]$ is a UFD. A nonzero constant $a$ factors
+there into irreducibles. Degree additivity in a domain forces all
+factors to be constants. A constant is a polynomial unit exactly
+when its coefficient is a unit of $R$; and a factorization of a
+nonzero constant in $R[X]$ must have constant factors. Consequently
+a constant is irreducible in $R[X]$ exactly when its coefficient
+is irreducible in $R$. Existence and uniqueness for the polynomial
+factorization of $C(a)$ give existence and uniqueness in $R$.
+Finally iterate the one-variable result to obtain finitely many
+variables, starting with the zero-variable ring $R$.
+\end{proof}
+
+\KEntry{K07.11.reduction_irreducibility}{Reduction modulo a prime}
+\begin{proposition}\label{prop:irreducible-reduction}
+Let $\varphi:R\to S$ be a unital homomorphism between domains.
+If $f\in R[X]$ is monic and $\varphi_*(f)$ is irreducible in
+$S[X]$, then $f$ is irreducible in $R[X]$.
+In particular a monic integer polynomial with irreducible reduction
+modulo a prime $p$ is irreducible over both $\Z$ and $\Q$.
+\end{proposition}
+\begin{proof}
+The image is a nonunit of positive degree, so the same holds for the
+monic $f$. If $f=gh$ with both factors nonunits, their nonzero
+leading coefficients multiply to $1$. They are therefore units.
+A factor of degree zero would then be a unit, so both degrees are
+positive. If $u=\operatorname{lc}(g)$, replace the factors by
+$u^{-1}g$ and $uh$ to make both monic. Their images under
+$\varphi_*$ remain monic of the same positive degrees, contradicting
+irreducibility of $\varphi_*(f)$.
+For reduction modulo $p$, take $S=\F_p$ and use Gauss's lemma for
+the monic, hence primitive, integer polynomial.
+\end{proof}
+Outside the monic case both primitivity and degree preservation matter:
+$2X+2$ reduces to the degree-one irreducible $2X+2$ modulo $3$,
+but is reducible over $\Z$ because it is not primitive. For a
+primitive nonmonic polynomial a reduction test is valid if its
+leading coefficient survives; a positive-degree factorization then
+retains the degrees of both factors, since their leading-coefficient
+product survives in a domain. The converse test fails: $X^2+1$ is
+irreducible over $\Q$ but reduces to $(X+1)^2$ modulo $2$.
+
+\KEntry{K07.11.eisenstein}{Eisenstein's criterion}
+\begin{theorem}\label{thm:eisenstein}
+Let $R$ be a domain, $P$ a prime ideal, and $f\in R[X]$ monic
+of positive degree $n$. Suppose every nonleading coefficient belongs
+to $P$ and the constant coefficient does not belong to $P^2$.
+Then $f$ is irreducible in $R[X]$.
+If $R$ is a UFD, the same holds for a primitive nonmonic $f$
+whose leading coefficient is outside $P$. In either case, when
+$R$ is a UFD, $f$ is also irreducible over $\Frac(R)$.
+\end{theorem}
+\begin{proof}
+Suppose first $f$ is monic and has a factorization into nonunits.
+As in the reduction proposition, the factors may be made monic
+and have positive degrees, say $f=gh$. Reduce coefficients modulo
+$P$ to the domain $D=R/P$. We obtain
+$\bar g\bar h=X^n$, with degrees preserved. Embed $D$ in its
+fraction field $L$. In the UFD $L[X]$, the polynomial $X$ is
+prime and the only irreducible factor of $X^n$. Thus the monic
+positive-degree factors are $\bar g=X^i$, $\bar h=X^j$ with
+$i,j>0$. To justify this use of uniqueness, factor either factor
+in $L[X]$ and compare its irreducible factors with the product of
+$n$ copies of $X$; its scalar factor is $1$ by monicity.
+Both constant coefficients are consequently zero in $D$, so the
+constant coefficients of $g,h$ belong to $P$. Their product,
+the constant coefficient of $f$, belongs to $P^2$, a contradiction.
+
+In the nonmonic case primitivity rules out any nonunit constant factor.
+The leading coefficient outside $P$ means that in a proper
+positive-degree factorization both leading coefficients are outside
+$P$, since $P$ is prime. Degrees again survive reduction, and over
+$L$ the product is a nonzero scalar times $X^n$. Unique
+factorization makes each positive-degree factor a scalar times a
+positive power of $X$. The identical constant-coefficient argument
+gives the contradiction. Finally Gauss's lemma applies to the
+primitive polynomial, including the monic case.
+\end{proof}
+For $R=\Z$ and $P=(p)$ this says that $p$ divides all nonleading
+coefficients, $p$ does not divide the leading coefficient, and $p^2$
+does not divide the constant coefficient, together with primitivity
+if the leading coefficient is not $1$. For instance $X^n-p$ is
+irreducible over $\Q$ for every $n\ge1$.
+
+\KEntry{K07.11.shift_irreducibility}{A change of variable}
+For a commutative ring, $a\in R$, and $u\in R^\times$, substitution
+$X\mapsto uX+a$ defines a ring automorphism fixing constants.
+Its inverse substitutes $u^{-1}(X-a)$: either composite fixes
+constants and sends $X$ to $X$, and is therefore the identity by
+Theorem~\ref{thm:polynomial-evaluation}. An automorphism preserves
+units and all factorizations, so preserves irreducibility in both
+directions. In particular shifts $X\mapsto X+a$ preserve it.
+For example
+\[
+ (X+1)^4+1=X^4+4X^3+6X^2+4X+2
+\]
+is Eisenstein at $2$, since its constant coefficient is not divisible
+by $4$. It is irreducible in $\Q[X]$, so the inverse shift proves
+$X^4+1$ irreducible there. A successful shift can make a criterion
+applicable without changing the factorization question.
+
+% Topic grouping: Quotients, functions, and the boundary of the chapter
+\KEntry{K07.11.irreducible_quotient}{Adjoining a root by a quotient}
+\begin{theorem}\label{thm:irreducible-polynomial-quotient}
+For a field $F$ and a nonconstant $f\in F[X]$, the quotient
+$F[X]/(f)$ is a field if and only if $f$ is irreducible.
+In this quotient the class $\alpha$ of $X$ satisfies $f(\alpha)=0$,
+where the coefficients are mapped to their constant classes.
+\end{theorem}
+\begin{proof}
+In the PID $F[X]$, a nonzero nonunit $f$ is irreducible exactly
+when $(f)$ is maximal by Proposition~\ref{prop:pid-primes}.
+The maximal-quotient criterion proves the equivalence.
+The quotient map agrees with evaluation at $\alpha$ on constants
+and on $X$, hence everywhere by the universal property; its value
+at $f$ is zero because $f\in(f)$.
+
+One can see the obstruction for a reducible $f$ explicitly.
+Write $f=gh$ with both factors of positive degree less than $\deg f$.
+Neither class is zero: if $g=af$ with $a\ne0$, degree additivity
+would give $\deg g\ge\deg f$, and $a=0$ would give $g=0$.
+The same applies to $h$. Their classes are nonzero and have zero
+product, so the quotient has zero divisors.
+\end{proof}
+The restrictions distinguish two boundary cases. If $f=0$, the
+quotient is $F[X]$, which is a domain but not a field because $X$
+is a nonunit. If $f$ is a nonzero constant, it is a unit and its
+quotient is the zero ring, which is not a field under our convention.
+For example $\R[X]/(X^2+1)$ is a field: its generator $\alpha$
+satisfies $\alpha^2=-1$, and the map $a+b\alpha\mapsto a+bi$
+identifies it with $\C$. The normal forms and injectivity in this
+example follow from the next theorem, or directly from division
+by $X^2+1$ and equality of real and imaginary parts.
+
+\KEntry{K07.11.quotient_normal_form}{Normal forms and dimension}
+\begin{theorem}\label{thm:polynomial-quotient-basis}
+Let $0\ne f\in F[X]$ have degree $n$. Every class in $F[X]/(f)$
+has a unique representative of degree less than $n$.
+The classes of $1,X,\ldots,X^{n-1}$ form an $F$-basis, interpreted
+as the empty basis if $n=0$. Thus the quotient has dimension $n$;
+if $|F|=q$, it has $q^n$ elements.
+\end{theorem}
+\begin{proof}
+Divide a representative $g$ by $f$ to get $g=af+r$ with
+$\deg r<n$. Thus $g$ and $r$ represent the same class.
+If two such remainders differ by $bf$, their difference has
+degree less than $n$. A nonzero $b$ would make the product have
+degree at least $n$, so $b=0$ and the remainders are equal.
+The scalar action on the quotient is multiplication by constant
+classes, and the vector-space identities follow from ring
+distributivity and the constants homomorphism. Each normal form
+is a unique sum $\sum_{i=0}^{n-1}a_iX^i$, proving spanning
+and independence of the asserted classes. Coordinate uniqueness
+identifies the underlying set with $F^n$, proving both dimension
+and the finite cardinality formula. For $n=0$ the only remainder
+is zero, so the quotient is a one-element vector space and
+$q^0=1$ is consistent.
+\end{proof}
+If $f=0$, no finite degree $n$ can be assigned by this theorem,
+and $F[X]$ instead has the infinite basis $1,X,X^2,\ldots$.
+An irreducible $f$ gives a field extension of degree $\deg f$;
+irreducibility is unnecessary for the vector-space and counting
+assertions.
+
+\KEntry{K07.11.polynomial_function}{A polynomial and its function}
+Let $F$ be a finite field with $q$ elements. For $a\ne0$,
+multiplication by $a$ permutes the $q-1$ nonzero elements.
+The product $P$ of these elements is nonzero, and comparison of
+the products before and after the permutation gives
+$P=a^{q-1}P$. Cancellation yields $a^{q-1}=1$.
+It follows also at $a=0$ that $a^q-a=0$ for all $a\in F$.
+However $X^q-X$ is a nonzero formal polynomial: $q\ge2$, and its
+coefficient of index $q$ is $1$ while its coefficient of index one
+is $-1$. Hence evaluation to the ring of functions $F\to F$ is
+not injective. This proof uses only the field axioms and the finite
+set of nonzero elements, and does not presuppose finite-field
+classification.
+
+Over an infinite domain, evaluation on all elements is injective.
+If $f,g$ define the same function, $f-g$ vanishes everywhere.
+A nonzero $f-g$ has at most $\deg(f-g)$ roots by
+Theorem~\ref{thm:polynomial-root-bound}, contradicting infinitude.
+Thus $f=g$. The distinction is between formal coefficient equality
+and equality of a particular evaluation function; even where these
+coincide they are different definitions.
+
+\KEntry{K07.11.multivariate_boundary}{Several indeterminates}
+A polynomial in $m$ commuting indeterminates over a commutative ring
+has finite support on exponent vectors $\N^m$. Its monomials are
+$X_1^{i_1}\cdots X_m^{i_m}$; coefficient addition and convolution
+give the same ring-law proofs as in one variable.
+For two variables the correspondence
+\[
+ \sum_{i,j}a_{ij}X^iY^j
+ \longleftrightarrow
+ \sum_j\left(\sum_i a_{ij}X^i\right)Y^j
+\]
+is a ring isomorphism $R[X,Y]\cong(R[X])[Y]$.
+Finite support in one description is precisely finite support
+in the other, and both product coefficients are
+$\sum_{i+i'=k,\ j+j'=\ell}a_{ij}b_{i'j'}$.
+This verifies the isomorphism, rather than treating the symbols
+as an unexplained identification.
+Total degree uses the sum of the exponent coordinates; degree
+in $X$ or $Y$ uses one coordinate. For $X+Y^2$ these degrees
+are respectively $2,1,2$. A lexicographic leading monomial with
+$X>Y$ is $X$, and is not a total-degree assertion.
+
+By Theorem~\ref{thm:polynomial-ufd}, $F[X,Y]$ is a UFD for a field
+$F$, but it is not a PID. The ideal $(X,Y)$ is proper, because
+evaluation at $(0,0)$ kills it but not $1$.
+The elements $X,Y$ are prime: quotienting by $X$ gives the domain
+$F[Y]$, and quotienting by $Y$ gives $F[X]$.
+They are not associates, since $X$ does not divide $Y$, as is
+seen by setting $X=0$. If $(X,Y)=(h)$, the nonzero $h$ divides
+both $X$ and $Y$. Unique factorization and the primality of $X$
+force such a common divisor to be a unit. This would make the
+ideal the whole ring, a contradiction.
+
+Division by an arbitrary list has no unrestricted analogue of the
+unique univariate remainder. For example, order monomials
+lexicographically with $X>Y$, and use the divisors
+$g_1=XY-1$, $g_2=Y^2-1$. Starting with $XY^2$, cancellation
+using $g_1$ gives
+$XY^2-Yg_1=Y$; cancellation using $g_2$ gives
+$XY^2-Xg_2=X$. Neither monomial $X$ nor $Y$ is divisible
+by the leading monomials $XY$ or $Y^2$, so both are terminal
+remainders under such a division rule, yet they differ.
+Indeed $X-Y=Yg_1-Xg_2$ lies in the ideal.
+Monomial orders, suitable generating sets, termination,
+and uniqueness in multivariable algorithms belong to the
+bounded transition toward D22; the one-variable division proof
+does not silently provide those assertions.
+
+\KEntry{K07.11.linear_algebra_bridge}{Operators and their polynomials}
+Let $V$ be a vector space over a field $F$ and $T\in\End_F(V)$.
+The map $a\mapsto a\id_V$ is a unital homomorphism to
+$\End_F(V)$, with scalar maps commuting with $T$.
+Theorem~\ref{thm:polynomial-evaluation} therefore defines $f(T)$,
+with $(fg)(T)=f(T)g(T)$. Its kernel
+\[
+ I_T=\{f\in F[X]:f(T)=0\}
+\]
+is an ideal. If $I_T\ne0$, its unique monic generator is the
+minimal polynomial $\mu_T$. Existence follows from the PID
+property and scaling a nonzero generator to be monic; uniqueness
+follows because generators differ by a unit, and two monic
+associates are equal. The generator property proves
+\[
+ f(T)=0\quad\Longleftrightarrow\quad \mu_T\mid f.
+\]
+In particular it proves minimality of degree among nonzero
+annihilating polynomials, since a nonzero multiple has at least
+the generator's degree.
+
+If $\dim_FV=d<\infty$, the D05 dimension theorem gives
+$\dim_F\End_F(V)=d^2$, by the matrix units in a chosen basis.
+Thus $\id,T,\ldots,T^{d^2}$ are linearly dependent, giving
+a nonzero polynomial in $I_T$ and hence existence of $\mu_T$.
+The characteristic polynomial is
+$\chi_T(X)=\det(XI-[T])$, independent of basis because
+$XI-P^{-1}[T]P=P^{-1}(XI-[T])P$ and determinants multiply.
+We reuse the D05 Cayley--Hamilton theorem, with its
+finite-dimensional hypothesis: $\chi_T(T)=0$.
+The generator property just proved then gives
+$\mu_T\mid\chi_T$ and $\deg\mu_T\le d$.
+These are applications of the canonical D05 determinant and
+Cayley--Hamilton results, not a second proof of them here.
+For $V=0$, $\End_F(V)$ is the zero ring, $I_T=F[X]$,
+and both polynomials are $1$ with degree zero.
+For an infinite-dimensional space a minimal polynomial need
+not exist: on the space with basis $e_0,e_1,\ldots$, the shift
+$Te_i=e_{i+1}$ has $f(T)e_0=\sum a_ie_i\ne0$ for every
+nonzero polynomial $f$.
+Chapter~\ref{chap:M07.16} will express finite-dimensional operator
+classification through the same $F[X]$-action, using only these
+basic D05 facts and the PID structure theorem proved there.

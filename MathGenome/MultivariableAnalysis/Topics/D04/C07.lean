@@ -1,0 +1,14 @@
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.AffineComposition
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.ContinuousSandwich
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.ContinuousSubstitution
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.CoordinateCharts
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.CoordinateSeamsVolumes
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.FiniteSheetCounting
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.ImproperSubstitution
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.LinearVolume
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.Localization
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.NullPreservation
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.OneCoordinate
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.Orientation
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.RegionSubstitution
+import MathGenome.Internal.MultivariableAnalysis.D04.C07.RiemannSubstitution

@@ -1,0 +1,12 @@
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.CantorIntersection
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.CauchyBasics
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.CompactEquivalences
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.CompletionUniversal
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.LebesgueUniformContinuity
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.MetricComparison
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.MetricCompletion
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.MetricConventions
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.MetricTopology
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.PrecompactCompletion
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.TotalBoundedPermanence
+import MathGenome.Internal.PointSetTopology.D10Topology.Ch09.TotalBoundedSequences

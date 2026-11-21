@@ -1,0 +1,7 @@
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Classes.BellSeries
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Classes.Catalan
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Classes.Foundations
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Classes.LabelledCycles
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Classes.LabelledSets
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Classes.Sequences
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Classes.SumProduct

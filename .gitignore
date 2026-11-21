@@ -1,0 +1,14 @@
+.lake/
+__pycache__/
+*.pyc
+.venv/
+/catalog/mathgenome-*-declarations.zip
+*.olean
+*.ilean
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc

@@ -1,0 +1,202 @@
+\chapter{Groups, maps, and generators}\label{chap:M07.01}
+
+The operation, rather than the names of the elements, is the essential datum of a group. We begin with multiplicative notation. Additive notation will be used for abelian examples; its identity and inverse are written $0$ and $-x$. Integer division, Bezout's identity and unique positive prime factorization are available from the proved arithmetic foundation, Theorem~\ref{thm:integer-arithmetic}; later uses of these arithmetic facts do not presuppose PID or group classification.
+
+\KEntry{K07.01.group_definition}{Groups and abelian groups}
+\begin{definition}
+A group is a set $G$ equipped with a map $G\times G\to G$, written $(x,y)\mapsto xy$, an element $1$, and inverses $x^{-1}$, such that
+\[
+ (xy)z=x(yz),\qquad 1x=x=x1,\qquad xx^{-1}=1=x^{-1}x.
+\]
+It is abelian if $xy=yx$ for all $x,y$. The one-element group is allowed. The empty set is not a group, since it has no identity. Closure is part of the assertion that multiplication takes values in $G$.
+\end{definition}
+
+\KEntry{K07.01.elementary_group_laws}{Cancellation and inverses}
+\begin{proposition}\label{prop:group-basic-laws}
+The identity and each inverse are unique. Left and right multiplication by a fixed element are bijections. Both cancellation laws hold, and
+\[
+ (xy)^{-1}=y^{-1}x^{-1},\qquad (x^{-1})^{-1}=x.
+\]
+\end{proposition}
+\begin{proof}
+If $e,e'$ are identities, $e=ee'=e'$. If $u,v$ are two-sided inverses of $x$, then $u=u(xv)=(ux)v=v$. Multiplication by $a^{-1}$ on the left is inverse to multiplication by $a$ on the left; the two right multiplication maps are also inverse. Applying these inverse maps proves cancellation. The products $(xy)(y^{-1}x^{-1})$ and $(y^{-1}x^{-1})(xy)$ both equal $1$, so uniqueness proves the first inverse formula. Since $x$ is an inverse of $x^{-1}$, it proves the second.
+\end{proof}
+
+\KEntry{K07.01.integer_power_laws}{Powers with integer exponents}
+For $n>0$ let $x^n$ be the product of $n$ copies of $x$; set $x^0=1$ and $x^{-n}=(x^{-1})^n$.
+\begin{proposition}\label{prop:integer-powers}
+For $m,n\in\Z$,
+\[
+ x^{m+n}=x^mx^n,\quad (x^m)^n=x^{mn},\quad x^{-n}=(x^n)^{-1}.
+\]
+If $xy=yx$, then $(xy)^n=x^ny^n$ for every integer $n$.
+\end{proposition}
+\begin{proof}
+Associativity and induction on $n$ give $x^{m+n}=x^mx^n$ for nonnegative exponents. For $r,s\geq0$, cancellation of $\min(r,s)$ adjacent pairs in $x^r(x^{-1})^s$ leaves $x^{r-s}$ with the stated convention. This proves the sum law when the exponents have opposite signs. When both are negative, apply the nonnegative law to $x^{-1}$. In particular $x^nx^{-n}=1=x^{-n}x^n$, proving the inverse formula. Induction gives $(x^m)^n=x^{mn}$ for $n\geq0$ using the sum law, and applying the inverse formula gives it for $n<0$. If $x,y$ commute, moving $y$ past $x$ in each inductive multiplication proves the last formula for $n\geq0$. Their inverses commute as well: taking inverses of $xy=yx$ gives $y^{-1}x^{-1}=x^{-1}y^{-1}$. Applying the nonnegative formula to the inverses proves the negative case. Without commutativity the last assertion need not hold.
+\end{proof}
+
+\KEntry{K07.01.subgroup_definition_test}{Subgroups and useful tests}
+\begin{definition}
+A subgroup $H\leq G$ contains $1$ and is closed under multiplication and inverses, with the operations inherited from $G$.
+\end{definition}
+\begin{proposition}\label{prop:subgroup-test}
+A subset $H$ is a subgroup if and only if it is nonempty and $xy^{-1}\in H$ whenever $x,y\in H$. Replacing $xy^{-1}$ by $x^{-1}y$ gives another equivalent test.
+\end{proposition}
+\begin{proof}
+Subgroups satisfy both tests. Conversely, choose $a\in H$. The first test gives $1=aa^{-1}\in H$, then $y^{-1}=1y^{-1}\in H$, and then $xy=x(y^{-1})^{-1}\in H$. Under the second test, $a^{-1}a=1$, $x^{-1}1=x^{-1}$, and $(x^{-1})^{-1}y=xy$ provide the three closure assertions. Associativity is inherited, so in either case these data give a group with the ambient identity. An identity of this group cannot be different, by uniqueness in Proposition~\ref{prop:group-basic-laws}.
+\end{proof}
+
+\KEntry{K07.01.finite_subgroup_test}{Finite multiplicatively closed subsets}
+\begin{proposition}\label{prop:finite-subgroup-test}
+A finite nonempty multiplicatively closed subset $S$ of a group is a subgroup.
+\end{proposition}
+\begin{proof}
+For $a\in S$, multiplication by $a$ maps $S$ injectively to $S$, and is therefore surjective. There is $b\in S$ with $ab=a$; cancellation in $G$ gives $b=1$, so $1\in S$. Surjectivity now supplies $c\in S$ with $ac=1$, whence $c=a^{-1}$. This applies to every $a\in S$. Together with the given multiplicative closure it proves the claim. Finiteness matters: the strictly positive integers are nonempty and closed under addition but are not an additive subgroup of $\Z$.
+\end{proof}
+
+\KEntry{K07.01.subgroup_lattice}{Intersections and generated subgroups}
+\begin{proposition}\label{prop:generated-minimal}
+Any intersection of subgroups is a subgroup; the empty intersection is $G$. For $S\subseteq G$, define
+\[
+ \langle S\rangle=\bigcap_{S\subseteq H\leq G}H.
+\]
+Then $\langle S\rangle\leq H$ if and only if $S\subseteq H$, and $\langle\varnothing\rangle=\{1\}$. The join of $H,K$ is $\langle H\cup K\rangle$.
+\end{proposition}
+\begin{proof}
+The identity belongs to each intersectand, and multiplication and inverses preserve membership in each; this proves the intersection assertion, including the empty family. There is at least one subgroup containing $S$, namely $G$. Consequently $S\subseteq\langle S\rangle$. If $S\subseteq H$, its defining intersection is contained in $H$, proving the asserted equivalence. The least subgroup containing no prescribed elements is $\{1\}$. Finally a subgroup contains both $H$ and $K$ exactly when it contains their union, so the displayed join has the defining least-upper-bound property. A union is different: if neither of two subgroups contains the other, choose $h\in H\setminus K$, $k\in K\setminus H$. The product $hk$ lies in neither, since membership in $H$ would imply $k\in H$, and membership in $K$ would imply $h\in K$. Thus their union is not a subgroup.
+\end{proof}
+
+\KEntry{K07.01.generated_words}{Words and induction on generation}
+\begin{proposition}\label{prop:generated-words}
+The elements of $\langle S\rangle$ are precisely the finite products of elements of $S$ and their inverses, including the empty product. A property holds throughout $\langle S\rangle$ if it holds on $S$, holds at $1$, and is preserved by products and inverses.
+\end{proposition}
+\begin{proof}
+Let $W$ be the set of such products. It contains $1$ and $S$; concatenating products and reversing a product while inverting its factors keep it in $W$. Thus $W$ is a subgroup. Every subgroup containing $S$ contains all these products. The minimality characterization in Proposition~\ref{prop:generated-minimal} gives $W=\langle S\rangle$. For the induction assertion, the subset of elements satisfying the property contains the generators and is closed under precisely the operations used to build these words; induction on word length proves that it contains $W$. Neither finiteness nor commutativity of $S$ has been assumed.
+\end{proof}
+
+\KEntry{K07.01.homomorphism_definition}{Homomorphisms}
+\begin{definition}
+A group homomorphism $f:G\to H$ satisfies $f(xy)=f(x)f(y)$. In Lean this map is packaged as a monoid homomorphism, which also records identity preservation.
+\end{definition}
+\begin{proposition}\label{prop:hom-identity-inverse}
+A multiplicative map between groups satisfies $f(1)=1$ and $f(x^{-1})=f(x)^{-1}$.
+\end{proposition}
+\begin{proof}
+The equality $f(1)=f(1)^2$ and cancellation give $f(1)=1$. Applying $f$ to $xx^{-1}=1=x^{-1}x$ shows that $f(x^{-1})$ is a two-sided inverse of $f(x)$. Proposition~\ref{prop:group-basic-laws} identifies that inverse. A multiplicative map between arbitrary monoids need not preserve the identity, so this deduction uses the group hypotheses.
+\end{proof}
+
+\KEntry{K07.01.hom_preserves_powers}{What a homomorphism preserves}
+\begin{proposition}\label{prop:hom-powers}
+A group homomorphism preserves division $x/y=xy^{-1}$ and every integer power: $f(x^n)=f(x)^n$ for $n\in\Z$.
+\end{proposition}
+\begin{proof}
+For $n=0$ use Proposition~\ref{prop:hom-identity-inverse}. Induction and multiplicativity prove the formula for $n\geq0$. For $n=-m<0$, apply that formula to $x^{-1}$ and use preservation of inverses. Applying multiplicativity and preservation of inverses to $xy^{-1}$ gives the division identity.
+\end{proof}
+
+\KEntry{K07.01.kernel_image}{Kernels, images, and normality}
+\begin{definition}
+For a group homomorphism $f:G\to H$, set $\ker f=\{x:f(x)=1\}$ and $\im f=\{f(x):x\in G\}$. A subgroup $N\leq G$ is called normal if $gng^{-1}\in N$ for all $n\in N,g\in G$; write $N\mathrel{\triangleleft}G$.
+\end{definition}
+\begin{proposition}\label{prop:kernel-image}
+The kernel and image are subgroups, and the kernel is normal.
+\end{proposition}
+\begin{proof}
+Both contain the appropriate identity. If $x,y\in\ker f$, then $f(xy^{-1})=f(x)f(y)^{-1}=1$. If $u=f(x)$ and $v=f(y)$, then $uv^{-1}=f(xy^{-1})$ belongs to the image. The subgroup test proves closure. For $n\in\ker f$ and $g\in G$,
+$f(gng^{-1})=f(g)1f(g)^{-1}=1$, proving normality.
+\end{proof}
+
+\KEntry{K07.01.isomorphism_definition}{Isomorphisms and their inverses}
+\begin{definition}
+An isomorphism is a bijective group homomorphism. We write $G\cong H$ when one exists.
+\end{definition}
+\begin{proposition}\label{prop:isomorphism-inverse}
+A homomorphism is an isomorphism if and only if it has a homomorphic two-sided inverse. Isomorphism is an equivalence relation.
+\end{proposition}
+\begin{proof}
+If $f$ is bijective, its set inverse $u$ satisfies, for $a,b\in H$,
+$f(u(a)u(b))=ab=f(u(ab))$. Injectivity gives $u(ab)=u(a)u(b)$. Thus its inverse is homomorphic. A map with a two-sided inverse is bijective by the definitions of injection and surjection. The identity map is a homomorphism; the inverse just constructed proves symmetry; the composite of two bijective homomorphisms is again bijective and multiplicative, proving transitivity. The maps, not merely a matching of cardinalities, are essential: the cyclic group of order four will not be isomorphic to the product of two groups of order two.
+\end{proof}
+
+\KEntry{K07.01.injective_kernel}{Injectivity and the kernel}
+\begin{proposition}\label{prop:injective-kernel}
+A group homomorphism is injective if and only if its kernel is $\{1\}$, and is surjective if and only if its image is the whole target. Between finite groups of equal order, either injectivity or surjectivity makes it an isomorphism.
+\end{proposition}
+\begin{proof}
+Injectivity and $f(1)=1$ force every element of the kernel to equal $1$. Conversely, if $f(x)=f(y)$, then $f(y^{-1}x)=1$; triviality of the kernel gives $x=y$. The image condition is exactly the definition of surjection. For finite sets of the same cardinality an injection or surjection is bijective, and Proposition~\ref{prop:isomorphism-inverse} applies. No commutativity is required.
+\end{proof}
+
+\KEntry{K07.01.hom_on_generators}{Maps are determined by generators}
+\begin{proposition}\label{prop:hom-generators}
+Homomorphisms agreeing on $S$ agree on $\langle S\rangle$. Moreover $f(\langle S\rangle)=\langle f(S)\rangle$.
+\end{proposition}
+\begin{proof}
+Agreement is preserved under multiplication and inverses by the homomorphism identities, and holds at $1$, so Proposition~\ref{prop:generated-words} proves the first assertion. Each word in $S$ maps to the corresponding word in $f(S)$; every word in $f(S)$ can be lifted factor by factor to a word in $S$. These two inclusions prove the second assertion. This uses only finitely many factors in each word, even when $S$ is infinite.
+\end{proof}
+
+\KEntry{K07.01.arithmetic_examples}{Arithmetic groups}
+The additive groups of $\Z,\Q,\R,\C$ satisfy the group axioms by their ordinary arithmetic laws and are abelian. If $F$ is a field, its nonzero elements are closed under multiplication, contain $1$, and have inverses, giving the abelian group $F^\times$. The symbol $F^\times$ does not include $0$.
+
+For $n\geq1$, integer congruence is compatible with addition, so $\Z/n\Z$ is an additive group generated by $[1]$. The representatives $0,\ldots,n-1$ are unique by division with remainder. A residue $[a]$ has a multiplicative inverse if and only if $\gcd(a,n)=1$: Bezout's identity constructs an inverse in one direction; from $ab\equiv1\pmod n$, every common divisor of $a,n$ divides $1$, proving the other. These units form a multiplicative group, since inverses and products of invertible elements are invertible. When $n=1$, both the additive group and unit group are trivial, and this criterion remains valid. For $n>1$, the collection of all residue classes is not a multiplicative group because $[0]$ has no inverse.
+
+For modulus zero the congruence relation is equality, since $0\mid a-b$ exactly when $a=b$. Thus $\Z/0\Z=\Z$ under the canonical identification; this case has infinitely many additive elements and is excluded from the finite representative list above.
+
+\KEntry{K07.01.matrix_transformation_examples}{Matrices and transformations}
+For a field $F$, the invertible $n\times n$ matrices form $\GL_n(F)$: matrix multiplication is associative, the identity matrix belongs, the product inverse is $B^{-1}A^{-1}$, and inverses remain invertible. By determinant multiplicativity from foundational D05 linear algebra, the determinant-one matrices form a subgroup $\operatorname{SL}_n(F)$: the identity has determinant one, products preserve this value, and $\det A^{-1}=(\det A)^{-1}$. For $n\geq2$ noncommutativity occurs, for example through elementary matrices over any field.
+
+The bijections of any set $X$ form a group under composition, including the empty set, for which the unique map is its own identity and inverse. A family of geometric isometries containing the identity and closed under composition and inverse is therefore a subgroup of the bijections. Invertibility is material: all linear endomorphisms form a monoid, with the zero endomorphism preventing a group structure on a nonzero space.
+
+\KEntry{K07.01.dihedral_quaternion_models}{Two concrete nonabelian families}
+For a regular $n$-gon with $n\geq3$, write $r$ for rotation through $2\pi/n$ and $s$ for reflection in a symmetry axis through a vertex. Then
+\[
+ r^n=s^2=1,\qquad srs=r^{-1}.
+\]
+Reflection reverses the direction of rotation, proving the last formula geometrically. Each word in $r,s$ reduces using $sr=r^{-1}s$ to $r^i$ or $r^is$, with $0\leq i<n$. These $2n$ motions are distinct: rotations are orientation preserving, reflections orientation reversing, and the image of a fixed vertex distinguishes the $n$ motions within either family. Every symmetry sends an adjacent ordered pair of vertices to an adjacent ordered pair. There are $2n$ such choices. Once the images of vertices $0,1$ are given, the image of the next vertex is forced: it is the neighbor of the image of $1$ different from the image of $0$. Continuing around the cycle determines the vertex permutation; for a triangle this also says to choose its unique remaining vertex. A planar isometry fixing three noncollinear vertices is the identity, since distances to these three points uniquely determine any point of the plane. Thus the images of the adjacent ordered pair determine the symmetry, proving the upper bound $2n$ and exhaustion by the listed motions. Denote this group by $D_{2n}$. The convention $D_n$ for the same group in some texts must not be substituted silently.
+
+There is a fully associative model for the quaternion group inside $\GL_2(\C)$. Put
+\[
+ I=\begin{pmatrix}i&0\\0&-i\end{pmatrix},\quad
+ J=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\quad K=IJ.
+\]
+Direct multiplication gives $I^2=J^2=K^2=-E$, $JI=-IJ$, and $IJK=-E$, where $E$ is the identity matrix. The eight distinct matrices $\{\pm E,\pm I,\pm J,\pm K\}$ are closed under multiplication by these relations, and each has its inverse in the set. Thus they form a group $Q_8$ of order eight; associativity is inherited from matrices. Writing $1,i,j,k$ for $E,I,J,K$ gives the familiar quaternion notation. Since $IJ\ne JI$, this group is nonabelian.
+
+\KEntry{K07.01.free_group_universal_property}{The free group on a set}
+\begin{theorem}\label{thm:free-group}
+For every set $S$ there is a group $F(S)$ and a map $j:S\to F(S)$ such that every function $f:S\to H$ to a group extends uniquely to a homomorphism $F(S)\to H$. Its elements have unique reduced signed-word representatives.
+\end{theorem}
+\begin{proof}
+Use the alphabet $S\times\{+1,-1\}$, with involution $a\mapsto\bar a$ reversing the sign. A reduced word is a finite string with no adjacent $a\bar a$. Include the empty word. On the set $W$ of reduced words define $L_a$ by prefixing $a$, except that if the first letter is $\bar a$, delete that first letter instead. The resulting word is reduced. Direct examination of the first letter shows $L_{\bar a}L_a=L_aL_{\bar a}=\id_W$: after prefixing $a$ it is removed, and after deleting $\bar a$ the newly exposed first letter cannot be $a$, since the old word was reduced.
+
+Let $F(S)$ be the subgroup of the permutations of $W$ generated by $L_{(s,+1)}$. Each element is a finite product $L_{a_1}\cdots L_{a_m}$. Adjacent opposite letters in this expression cancel. Repeated cancellation terminates because length decreases, and gives a reduced string $b_1\cdots b_t$. The permutation represented by this reduced string sends the empty word to precisely $b_1\cdots b_t$: evaluating the product from right to left prefixes each letter without cancellation. Thus two reduced strings representing the same permutation are identical, because they have the same value at the empty word. This proves uniqueness without assuming a rewriting theorem.
+
+Assign $a=(s,+1)$ the value $f(s)$ and $\bar a$ the inverse value. Define the value of a reduced word to be the product of these values in order. A product of permutations is represented by concatenation followed by adjacent inverse cancellations. Each cancellation leaves the evaluated product in $H$ unchanged. Unique reduced representatives therefore make this evaluation well-defined and multiplicative. It sends $L_{(s,+1)}$ to $f(s)$. Uniqueness follows from Proposition~\ref{prop:hom-generators}. For $S=\varnothing$ there is only the empty word and the group is trivial.
+\end{proof}
+
+Before introducing relations we record the quotient construction needed for their meaning. It will also organize later isomorphism theorems.
+\begin{lemma}\label{lem:normal-quotient-preliminary}
+If $N\mathrel{\triangleleft}G$, the left cosets $gN$ form a group with $(gN)(hN)=ghN$. The projection $\pi:G\to G/N$ is a surjective homomorphism with kernel $N$. A homomorphism $f:G\to H$ descends uniquely through $\pi$ if and only if $N\subseteq\ker f$.
+\end{lemma}
+\begin{proof}
+Equality $gN=g'N$ is equivalent to $g'=gn$ for some $n\in N$: either membership in the first coset or multiplication by $n^{-1}$ proves the two directions. This criterion is an equivalence relation, so the cosets partition $G$. If $g'=gn$ and $h'=hm$, then $g'h'=gh(h^{-1}nh)m\in ghN$, since normality puts $h^{-1}nh$ in $N$. Thus multiplication is independent of representatives. Associativity follows from that in $G$; $N$ is its identity, and $g^{-1}N$ is a two-sided inverse of $gN$. The map $g\mapsto gN$ is multiplicative and surjective, and $gN=N$ exactly when $g\in N$.
+
+If $N\subseteq\ker f$, define $\bar f(gN)=f(g)$. Replacing $g$ by $gn$ leaves $f(g)$ unchanged, so this is well-defined and multiplicative. It is unique because every coset has a representative. Conversely a factorization gives $f(n)=\bar f(N)=1$ for each $n\in N$.
+\end{proof}
+
+\KEntry{K07.01.presentations}{Generators and relations}
+\begin{definition}
+For $R\subseteq F(S)$, its normal closure $\langle\!\langle R\rangle\!\rangle$ is the intersection of all normal subgroups of $F(S)$ containing $R$. The group with presentation $\langle S\mid R\rangle$ is $F(S)/\langle\!\langle R\rangle\!\rangle$.
+\end{definition}
+\begin{proposition}\label{prop:presentation-universal}
+A function $S\to H$ induces a homomorphism $\langle S\mid R\rangle\to H$ if and only if every relator evaluates to $1$. The induced homomorphism is unique.
+\end{proposition}
+\begin{proof}
+Intersections of normal subgroups are normal: conjugation preserves each intersectand. Thus the quotient exists by Lemma~\ref{lem:normal-quotient-preliminary}. Extend the function uniquely to $u:F(S)\to H$ by Theorem~\ref{thm:free-group}. If it kills $R$, its normal kernel contains the normal closure by the defining intersection. The quotient lemma gives the induced map. If a map is induced, it kills every relator since all lie in the quotient kernel. Uniqueness follows first from uniqueness on the free group and then from surjectivity of its quotient projection. These statements prove the meaning of a presentation; proving that a proposed concrete group has exactly this presentation additionally requires an isomorphism, not just a check that its generators obey the listed relations.
+\end{proof}
+
+\KEntry{K07.01.automorphism_groups}{Automorphisms and conjugation}
+\begin{proposition}\label{prop:inner-automorphisms}
+The automorphisms of $G$ form a group $\Aut(G)$ under composition. The map $g\mapsto c_g$, $c_g(x)=gxg^{-1}$, is a homomorphism with kernel
+$Z(G)=\{z:zx=xz\text{ for every }x\in G\}$, and its image $\operatorname{Inn}(G)$ is isomorphic to $G/Z(G)$.
+\end{proposition}
+\begin{proof}
+Identity, composite and inverse are homomorphisms by Proposition~\ref{prop:isomorphism-inverse}, proving the automorphism group assertions. The formula $c_g(xy)=c_g(x)c_g(y)$ and inverse $c_{g^{-1}}$ show that $c_g$ is an automorphism. Computing $c_gc_h(x)=ghx(gh)^{-1}$ proves multiplicativity in $g$. Its kernel consists exactly of elements commuting with every $x$, so $Z(G)$ is normal by Proposition~\ref{prop:kernel-image}. The quotient lemma induces $gZ(G)\mapsto c_g$, onto the inner automorphisms. Equality $c_g=c_h$ is equivalent to $c_{h^{-1}g}=\id$, hence to $h^{-1}g\in Z(G)$, and hence to equality of cosets. Thus the induced map is bijective and an isomorphism. Outer automorphisms may exist: a nontrivial abelian group has only the identity inner automorphism, whereas $x\mapsto-x$ is a nonidentity automorphism of $(\Z,+)$.
+\end{proof}

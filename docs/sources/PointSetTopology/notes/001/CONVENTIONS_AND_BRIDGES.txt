@@ -1,0 +1,80 @@
+D10 — CANONICAL CONVENTIONS, DEDUPLICATION AND PROOF INTERFACES
+2026-11-02
+
+1. One mathematical object, several source presentations
+Topologies, bases/subbases, neighborhoods and closure operators are related by
+proved equivalences in01; they are not separate competing primitive structures.
+Initial constructions (products/subspaces) and final constructions (sums/quotients)
+receive their actual universal properties in03. A set bijection is not silently
+called a homeomorphism.
+
+2. Separation
+Regular and normal do not include T1; T3=regular+T1, T4=normal+T1. Compact does not
+include Hausdorff. Tychonoff means completely regular+Hausdorff. Munkres/Willard/
+Kelley/Steen-Seebach do not share every terminology convention. Concrete
+hypotheses, rather than a matching T-number, control the translation.
+
+3. Convergence and filter order
+Ordinary convergence filters are proper. A filter converges when it contains the
+neighborhood filter. Moore-Smith subnets use monotone cofinal index maps;04 proves
+the interface to eventual-cofinal maps used by Kelley. Sequence/closure/continuity
+tests use their stated first-countable or metric hypotheses. General compactness
+uses open covers/FIP/nets/ultrafilters as proved, not a universal sequence test.
+Lean's filter-order notation must be checked explicitly at formalization.
+
+4. Metric/uniform interfaces
+Completeness belongs to a specified metric/uniformity. Complete metrizability is
+a topology-level existence property. A pseudometric completion first identifies
+zero-distance points. Chapter12 proves arbitrary uniform pseudometric
+representation, countable-base metrization and separated uniform completion,
+with the dense uniformly continuous extension property and uniqueness.
+The empty uniform space has the unique degenerate entourage family; ordinary
+proper convergence filters on the empty set do not exist.
+
+5. Compactification/properness
+One-point construction handles compact and empty spaces, distinguishing a compact
+extension from a dense compactification. Stone-Cech is for Tychonoff spaces with
+compact Hausdorff targets. Proper is compact-preimage proper. The equivalence
+with closed maps having compact fibres is used only with the theorem's LCH
+Hausdorff target hypotheses.
+
+6. Function-space interfaces
+Pointwise, uniform, compact convergence and compact-open are distinct until
+proved equal in the specified setting. Joint evaluation/composition includes
+local compactness conditions;18 gives evaluation failure on Q.
+Ascoli sufficiency/necessity scopes and metric-target relative compactness are
+explicit. Pointwise boundedness replaces pointwise compactness only in the
+finite-dimensional real/complex target cases actually proved.
+
+7. Approximation and fixed points
+The real closed algebra becomes a lattice by a proved polynomial absolute-value
+approximation, avoiding circular use of Stone-Weierstrass. Complex algebras need
+conjugation invariance. C0 approximation uses the one-point extension and a
+nowhere-vanishing hypothesis. Banach includes quantitative contraction estimates;
+Brouwer uses a proved triangulation/Sperner argument and applies to every
+nonempty compact convex finite-dimensional set, including lower-dimensional sets.
+
+8. Examples and alternate representations
+An example is identified by its set, topology and proved properties. The
+topologist's sine closure, a graph with just one added point, and different
+double-origin constructions are not interchanged by name. STE chart entries
+are checked in the canonical conventions. The Cantor product, ternary compact
+set, characterization and continuous-surjection model have explicit bridges.
+
+9. Deduplication
+Use one substantive result and its actual specializations, not one theorem per
+textbook notation. Keep useful corollaries, bridges and counterexamples. The atlas
+reuses existing proof labels rather than repeating those proofs. No optional
+maximal generalization is required merely for publication; all adopted source
+results retain their complete stated conditions and conclusions.
+
+10. Existing library reuse
+REUSE_CANDIDATES.json records exact inspected source modules/declaration starts
+in the fixed Lean4.35.0/Mathlib56a005855ea1/MathGenome0.4.1 environment. They are
+candidates, not elaboration-checked formal bindings. Brouwerian algebra and the
+antichain Sperner theorem are not the Brouwer fixed-point theorem or the simplex
+labeling lemma. No matching interface for the latter two has been certified by
+this preparation. The explicit mathematical proofs remain in17.
+
+PROOF_REFERENCE_MAP.json records only explicit notes-proof citations. It is not
+a complete formal dependency graph and does not prescribe worker scheduling.

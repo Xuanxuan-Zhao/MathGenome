@@ -1,0 +1,490 @@
+\chapter{Cohomology, Levi Decomposition, and Ado}
+\label{ch:cohomology-levi-ado}
+
+An extension remembers an action as well as a kernel. Throughout the first
+section, \(\mathfrak g\) is a Lie algebra over a field \(k\), and \(M\) is
+a specified left \(\mathfrak g\)-module. The Chevalley--Eilenberg convention is
+\[
+ (db)(x,y)=x b(y)-y b(x)-b([x,y]).
+\]
+We use the exterior-power complex, its coefficient long exact sequence,
+and its comparison with \(\operatorname{Ext}_{U(\mathfrak g)}\) proved in
+\cite[Chapter 6, A06--A08]{homological}. In particular, all coefficient
+modules in an application of Whitehead's lemmas below are finite dimensional.
+
+\section{Extensions and deformations}
+
+\begin{theorem}[Abelian extensions with a specified action]\label{res:I01}
+Equivalence classes of extensions
+\[
+ 0\longrightarrow M\longrightarrow E\longrightarrow\mathfrak g
+ \longrightarrow0
+\]
+whose kernel is abelian and whose induced action on it is the given one
+are parametrized by \(H^2(\mathfrak g,M)\). Equivalence induces the identity
+on both \(M\) and \(\mathfrak g\). Central extensions are the special case
+of the trivial action. An extension has a Lie algebra section if and only
+if its class is zero.
+\end{theorem}
+\begin{proof}
+Choose a linear section \(s\). The error
+\(\omega(x,y)=[s(x),s(y)]-s([x,y])\) lies in \(M\).
+Under the resulting identification \(E=\mathfrak g\oplus M\), the bracket is
+\[
+ [(x,m),(y,n)]=([x,y],\,xn-ym+\omega(x,y)).
+ \tag{9.1}\label{eq:abelian-extension}
+\]
+Jacobi on three elements of \(\mathfrak g\) has \(M\)-component
+\[
+ x\omega(y,z)-y\omega(x,z)+z\omega(x,y)
+ -\omega([x,y],z)+\omega([x,z],y)-\omega([y,z],x).
+\]
+Thus it is precisely \(d\omega=0\). Jacobi with one entry in \(M\)
+is the module identity, and with two entries in \(M\) it is zero.
+Consequently every \(2\)-cocycle produces an extension by
+\eqref{eq:abelian-extension}.
+
+Changing the section to \(s+b\) changes \(\omega\) to \(\omega+db\).
+Conversely any linear equivalence of extensions has the form
+\((x,m)\mapsto(x,m+b(x))\). Substitution in \eqref{eq:abelian-extension}
+shows that it preserves brackets exactly when the two cocycles differ
+by the corresponding coboundary. This proves both directions of the
+classification. The section \(x\mapsto(x,0)\) is a Lie section exactly
+when \(\omega=0\); changing sections proves the last assertion.
+See \cite[Section 7.6]{weibel} and \cite[Proposition 48.3]{etingof}.
+\end{proof}
+
+\begin{proposition}[First-order bracket deformations]\label{res:I02}
+Fix a bracket \(\mu(x,y)=[x,y]\). Alternating brackets
+\(\mu+t c\) on \(\mathfrak g\otimes_k k[t]/(t^2)\), up to changes of
+coordinates \(1+t a\), are classified by
+\(H^2(\mathfrak g,\mathfrak g)\), for the adjoint action.
+\end{proposition}
+\begin{proof}
+The coefficient of \(t\) in Jacobi is
+\[
+ \sum_{\mathrm{cyc}}\bigl([c(x,y),z]+c([x,y],z)\bigr)=-dc(x,y,z).
+\]
+It vanishes exactly when \(c\) is a cocycle. Pulling back the bracket
+by \(T=1+t a\), with inverse \(1-t a\), replaces \(c\) by
+\[
+ c(x,y)+[a(x),y]+[x,a(y)]-a([x,y])=c(x,y)+da(x,y).
+\]
+Every allowed change of coordinates has this form. Hence its orbits
+are exactly cocycles modulo coboundaries. The action of the kernel
+\(t\mathfrak g\) is adjoint; it is not the trivial action of a central
+extension. This also recovers the assertion from
+Theorem~\ref{res:I01}. Compare \cite[Proposition 48.5]{etingof}.
+\end{proof}
+
+\begin{proposition}[Obstructions and formal rigidity]\label{res:I03}
+Suppose \(k\) has characteristic zero. A bracket
+\(\mu_t=\sum_{i=0}^{N-1}t^i c_i\), where \(c_0=\mu\), that satisfies
+Jacobi modulo \(t^N\) extends modulo \(t^{N+1}\) exactly when the class
+of
+\[
+ O_N(x,y,z)=
+ \sum_{\substack{i+j=N\\i,j>0}}
+ \sum_{\mathrm{cyc}}c_i(c_j(x,y),z)
+ \tag{9.2}\label{eq:lie-obstruction}
+\]
+vanishes in \(H^3(\mathfrak g,\mathfrak g)\). In particular
+\(H^2(\mathfrak g,\mathfrak g)=0\) implies that every one-parameter
+formal deformation is formally equivalent to the constant bracket.
+\end{proposition}
+\begin{proof}
+The terms involving the unknown \(c_N\) are \(-dc_N\), by the
+calculation in Proposition~\ref{res:I02}. The equation to solve is
+therefore \(dc_N=O_N\).
+Here is the closure check on the obstruction. On alternating maps use
+the insertion operation
+\[
+ (f\circ h)(x_1,\ldots,x_{p+q+1})
+ =\sum_{\sigma\in\operatorname{Sh}(q+1,p)}
+ \operatorname{sgn}(\sigma)
+ f\bigl(h(x_{\sigma(1)},\ldots,x_{\sigma(q+1)}),
+          x_{\sigma(q+2)},\ldots,x_{\sigma(p+q+1)}\bigr),
+\]
+where \(f\) has arity \(p+1\) and \(h\) has arity \(q+1\).
+Its commutator
+\([f,h]_{\mathrm{NR}}=f\circ h-(-1)^{pq}h\circ f\)
+satisfies graded Jacobi. In fact, for \(\ell\) of arity
+\(r+1\), the shuffle expansion gives the associator identity
+\[
+ (f\circ h)\circ \ell-f\circ(h\circ \ell)
+   =(-1)^{qr}\bigl((f\circ \ell)\circ h-f\circ(\ell\circ h)\bigr).
+\]
+On each side the nested-block terms cancel. The remaining terms
+correspond to disjoint input sets for the two insertions.
+Reordering those blocks swaps \(q+1\) and \(r+1\) inputs,
+and their outputs occupy two slots of the alternating map \(f\).
+Moving each output past the other block before the final slot
+exchange gives the additional signs
+\((-1)^{q+1}\), \((-1)^{r+1}\) and \(-1\); their product
+with \((-1)^{(q+1)(r+1)}\) is \((-1)^{qr}\).
+Expanding the three nested commutators in graded Jacobi pairs
+these associators with precisely this sign, so they cancel.
+For a binary alternating \(\nu\), its Jacobiator is
+\(\tfrac12[\nu,\nu]_{\mathrm{NR}}=\nu\circ\nu\).
+The same associator identity with \(f=h=\ell=\nu\) gives
+\([\nu,[\nu,\nu]_{\mathrm{NR}}]_{\mathrm{NR}}=0\).
+Apply this to the truncated polynomial \(\mu_t\). Its Jacobiator has
+no coefficients below \(N\); the coefficient of \(t^N\) in this
+identity is \([\mu,O_N]_{\mathrm{NR}}=0\), which is \(dO_N=0\),
+up to the fixed overall sign in the exterior-complex convention.
+Thus the displayed equation is solvable exactly when its cohomology
+class vanishes. Altering a proposed \(c_N\) by a coboundary changes
+coordinates and not the obstruction class.
+
+For the rigidity assertion, suppose the first nonzero coefficient is
+\(t^m c_m\). It is a \(2\)-cocycle. Write \(c_m=da_m\), and pull back
+by \(1-t^m a_m\) to kill it without changing lower coefficients.
+Repeat at degrees \(m+1,m+2,\ldots\). The product of these changes
+converges in the \(t\)-adic topology: each coefficient is altered
+only finitely often, and the constant term remains the identity,
+so its inverse exists by formal recursion. The limiting change
+removes every positive coefficient.
+This proves formal, not analytic-convergence, rigidity.
+See \cite[Section 48.1]{etingof} and \cite[Sections 1 and 3]{fialowski}.
+\end{proof}
+
+\section{Whitehead's second lemma and Levi factors}
+
+\begin{theorem}[Second Whitehead lemma for trivial coefficients]\label{res:I04}
+If \(\mathfrak g\) is finite dimensional and semisimple over a
+characteristic-zero field, then \(H^2(\mathfrak g,k)=0\).
+\end{theorem}
+\begin{proof}
+The Killing form \(B\) is nondegenerate by Theorem~\ref{res:B05}.
+Given an alternating \(2\)-cocycle \(\omega\), define \(D\) uniquely by
+\(\omega(x,y)=B(Dx,y)\). Alternation says that \(D\) is skew-adjoint
+for \(B\). Pairing
+\(D[x,y]-[Dx,y]-[x,Dy]\) with \(z\), using invariance of \(B\),
+and using skew-adjointness, gives
+\[
+ \omega([x,y],z)+\omega([y,z],x)+\omega([z,x],y)=0.
+\]
+Thus \(D\) is a derivation. By Theorem~\ref{res:B07}, \(D=\operatorname{ad}a\).
+It follows that
+\(\omega(x,y)=B(a,[x,y])=d\ell(x,y)\) for
+\(\ell(x)=-B(a,x)\). Every cocycle is a coboundary.
+This is the trivial-coefficient case of
+\cite[Corollary 7.8.12]{weibel}.
+\end{proof}
+
+\begin{theorem}[Second Whitehead lemma with coefficients]\label{res:I05}
+For a finite-dimensional semisimple characteristic-zero Lie algebra
+\(\mathfrak g\) and a finite-dimensional module \(M\),
+\[
+ H^2(\mathfrak g,M)=0.
+\]
+Every abelian extension of \(\mathfrak g\) by such a specified module
+has a Lie algebra section.
+\end{theorem}
+\begin{proof}
+By Weyl's theorem, Theorem~\ref{res:C05}, \(M\) is a finite direct
+sum of simple modules. The exterior-complex differential respects
+this finite direct sum. A nontrivial simple summand has zero
+cohomology in every degree by the Casimir homotopy in
+Theorem~\ref{res:C03}; a trivial simple summand is covered by
+Theorem~\ref{res:I04}. Thus degree two vanishes for their direct sum.
+The extension assertion follows from Theorem~\ref{res:I01}.
+This argument retains finite-dimensionality and does not claim
+that all higher cohomology with trivial coefficients vanishes.
+See \cite[Corollary 7.8.12]{weibel}.
+\end{proof}
+
+\begin{theorem}[Levi decomposition]\label{res:I06}
+Let \(\mathfrak g\) be a finite-dimensional Lie algebra over a
+characteristic-zero field, with solvable radical \(\mathfrak r\).
+There is a semisimple subalgebra \(\mathfrak s\) such that
+\[
+ \mathfrak g=\mathfrak s\ltimes\mathfrak r,\qquad
+ \mathfrak s\xrightarrow{\;\sim\;}\mathfrak g/\mathfrak r.
+\]
+\end{theorem}
+\begin{proof}
+Induct on \(\dim\mathfrak r\). If it is zero, take \(\mathfrak s=\mathfrak g\).
+Otherwise take the last nonzero term \(\mathfrak a\) of the derived
+series of \(\mathfrak r\); if \(\mathfrak r\) is abelian, take
+\(\mathfrak a=\mathfrak r\). This is a nonzero abelian characteristic
+ideal of \(\mathfrak r\), hence an ideal of \(\mathfrak g\).
+The radical of \(\mathfrak g/\mathfrak a\) is
+\(\mathfrak r/\mathfrak a\): the latter is solvable, and the quotient
+by it is semisimple. Induction gives a Levi subalgebra
+\(\overline{\mathfrak s}\) in this quotient.
+
+Let \(E\) be its inverse image in \(\mathfrak g\).
+Then \(0\to\mathfrak a\to E\to\overline{\mathfrak s}\to0\)
+is an abelian extension, with its actual adjoint action on
+\(\mathfrak a\). By Theorem~\ref{res:I05} its class is zero.
+A Lie section has image \(\mathfrak s\).
+Its intersection with \(\mathfrak r\) is zero because
+\(\overline{\mathfrak s}\cap(\mathfrak r/\mathfrak a)=0\) and the
+section has no intersection with \(\mathfrak a\).
+Moreover its map to \(\mathfrak g/\mathfrak r\) is surjective,
+so dimensions give the required vector-space direct sum.
+The radical is an ideal, so this is the stated semidirect product.
+See \cite[Theorem 7.8.13]{weibel} and
+\cite[Theorem 48.9]{etingof}.
+\end{proof}
+
+\begin{theorem}[Conjugacy of Levi factors; reductive algebras]\label{res:I07}
+Any two Levi factors are conjugate by
+\(\exp(\operatorname{ad}z)\) for an element \(z\) of the nilradical
+\(\mathfrak n\). The exponential is a finite sum.
+A finite-dimensional characteristic-zero Lie algebra whose radical
+is its center is the direct sum of a semisimple algebra and its center.
+\end{theorem}
+\begin{proof}
+Fix one Levi factor \(\mathfrak s\) and write the second as
+\(\{x+f(x):x\in\mathfrak s\}\), where \(f:\mathfrak s\to\mathfrak r\)
+is linear. By Theorem~\ref{res:B08},
+\([\mathfrak g,\mathfrak r]\subseteq\mathfrak n\).
+Modulo \(\mathfrak n\), therefore,
+\(\mathfrak g/\mathfrak n=\mathfrak s\oplus(\mathfrak r/\mathfrak n)\)
+has central second summand. Since \(\mathfrak s=[\mathfrak s,\mathfrak s]\),
+the homomorphism into that central summand is zero. Thus \(f\)
+already takes values in \(\mathfrak n\).
+
+Write \(\gamma_1\mathfrak n=\mathfrak n\) and
+\(\gamma_{j+1}\mathfrak n=[\mathfrak n,\gamma_j\mathfrak n]\).
+Suppose a conjugate second factor has discrepancy in
+\(\gamma_j\mathfrak n\). In
+\(\gamma_j\mathfrak n/\gamma_{j+1}\mathfrak n\) the equation for its
+bracket is
+\[
+ f([x,y])=x f(y)-y f(x);
+\]
+the additional term \([f(x),f(y)]\) belongs to
+\(\gamma_{2j}\mathfrak n\subseteq\gamma_{j+1}\mathfrak n\).
+By Theorem~\ref{res:C04} there is \(v_j\in\gamma_j\mathfrak n\)
+such that \(f(x)=[x,v_j]\) modulo \(\gamma_{j+1}\mathfrak n\).
+Conjugating the second factor by \(\exp(\operatorname{ad}v_j)\)
+changes the discrepancy by \([v_j,x]\), and kills it modulo
+\(\gamma_{j+1}\mathfrak n\). Higher exponential terms have values
+in that next term as well.
+
+The lower central series terminates. Also
+\(\operatorname{ad}v_j\) is nilpotent on all of \(\mathfrak g\):
+its first application lands in the nilpotent ideal \(\mathfrak n\),
+and its subsequent applications follow that ideal's lower central
+series. Thus all the exponentials used are finite. Their product
+is \(\exp(\operatorname{ad}z)\) for \(z\in\mathfrak n\), by the
+finite BCH identity of Theorem~\ref{res:A09}. It sends the
+second factor to the first.
+
+For the last assertion, Levi decomposition writes the algebra as
+\(\mathfrak s\ltimes Z(\mathfrak g)\). The action on the center is
+zero, hence the sum is direct. Conversely such a direct sum has
+exactly its abelian central summand as radical. This is the
+meaning of \emph{reductive} used here; it is not an assertion that
+every representation of a reductive algebra is completely reducible.
+The conjugacy statement expands the Malcev observation following
+\cite[Theorem 7.8.13]{weibel}.
+\end{proof}
+
+\section{Finite faithful representations}
+
+\begin{proposition}[A derivation-stable nilpotent truncation]\label{res:I08}
+Every finite-dimensional nilpotent Lie algebra \(\mathfrak n\)
+has a finite-dimensional faithful representation by nilpotent
+operators. The construction can be made compatible with every
+derivation of \(\mathfrak n\).
+\end{proposition}
+\begin{proof}
+Choose a basis adapted to the lower central series. Give a basis
+element weight \(j\) if it belongs to
+\(\gamma_j\mathfrak n\) but not to \(\gamma_{j+1}\mathfrak n\).
+For an ordered PBW monomial give its weight as the sum of the
+weights of its factors. Let \(F_{\geq N}U(\mathfrak n)\) be the span
+of monomials of weight at least \(N\).
+
+This is a two-sided ideal. In fact, inserting a new factor and
+reordering by PBW either preserves the sum of weights or replaces
+two factors by a bracket. The latter has weight at least their
+sum because
+\([\gamma_i\mathfrak n,\gamma_j\mathfrak n]\subseteq
+\gamma_{i+j}\mathfrak n\). No resulting term has smaller weight.
+Every derivation \(\delta\) preserves each \(\gamma_j\mathfrak n\),
+as follows by induction from the derivation identity. Its extension
+to \(U(\mathfrak n)\), obtained by applying it in every factor, also
+never decreases weight. Thus it preserves this ideal.
+
+The quotient \(V_N=U(\mathfrak n)/F_{\geq N}\) is finite dimensional:
+the positive integer weights bound each exponent in a monomial of
+weight less than \(N\). If \(\gamma_{c+1}\mathfrak n=0\), take
+\(N>c\). The distinct PBW vectors \(1\) and all the individual
+basis vectors survive and remain independent. Hence left
+multiplication \(L_x\) is faithful on \(\mathfrak n\), since
+\(L_x(1)=x\). It raises weight by at least one, so \(L_x^N=0\).
+Finally every \(\delta\) acts on \(V_N\), kills \(1\), and satisfies
+\([D_\delta,L_x]=L_{\delta x}\).
+This is a PBW proof of the faithful nilpotent-module conclusion
+of \cite[Proposition 50.5 and Corollary 50.7]{etingof}.
+\end{proof}
+
+\begin{proposition}[A reductive--nilpotent enlargement]\label{res:I09}
+Every finite-dimensional complex Lie algebra embeds into an algebra
+\[
+ \widehat{\mathfrak g}=\mathfrak k\ltimes\mathfrak n,\qquad
+ \mathfrak k=\mathfrak s\oplus\mathfrak t,
+\]
+where \(\mathfrak s\) is semisimple, \(\mathfrak t\) is abelian
+and acts semisimply, and \(\mathfrak n\) is nilpotent.
+The central toral actions introduced in the construction have
+integer weights in a chosen basis of \(\mathfrak t\).
+\end{proposition}
+\begin{proof}
+We give an entirely Lie-algebraic version of the reduction in
+\cite[Proposition 50.3]{etingof}. Inductively maintain a decomposition
+\(\mathfrak k\ltimes\mathfrak a\), with \(\mathfrak a\) solvable,
+\(\mathfrak k=\mathfrak s\oplus\mathfrak t\) reductive, and
+\(\mathfrak t\) acting diagonally on \(\mathfrak a\).
+Such an algebra starts the induction: take a Levi factor for
+\(\mathfrak k=\mathfrak s\), and \(\mathfrak a=\mathfrak r\).
+Weyl's theorem makes the initial \(\mathfrak k\)-module
+\(\mathfrak a\) completely reducible. More generally, a module
+on which the center acts diagonally is a direct sum of its central
+weight spaces; on each, Weyl's theorem for \(\mathfrak s\)
+gives complete reducibility.
+
+Let \(\mathfrak n_0\) be the nilradical of \(\mathfrak a\).
+Use the nonnegative integer \(q=\dim(\mathfrak a/\mathfrak n_0)\)
+as decreasing measure. If \(q=0\), we are done.
+Every derivation of \(\mathfrak a\) acts trivially on
+\(\mathfrak a/\mathfrak n_0\), by Theorem~\ref{res:B08}.
+Complete reducibility therefore supplies a
+\(\mathfrak k\)-invariant element \(d\in\mathfrak a\)
+whose image in that quotient is nonzero. Choose a linear
+functional \(\chi\) on \(\mathfrak a/\mathfrak n_0\) with
+\(\chi(d)=1\), and regard it as a functional on \(\mathfrak a\).
+It is a character because
+\([\mathfrak a,\mathfrak a]\subseteq\mathfrak n_0\).
+
+Decompose \(\mathfrak a=\bigoplus_\beta\mathfrak a_{[\beta]}\)
+into generalized eigenspaces of \(D=\operatorname{ad}d\).
+The derivation identity gives
+\[
+ [\mathfrak a_{[\beta]},\mathfrak a_{[\gamma]}]
+ \subseteq\mathfrak a_{[\beta+\gamma]}.
+ \tag{9.3}\label{eq:additive-generalized-weights}
+\]
+Indeed \((D-(\beta+\gamma))^m[x,y]\) is the binomial sum of brackets
+of \((D-\beta)^i x\) and \((D-\gamma)^{m-i}y\), and is zero for
+large \(m\). The finitely many eigenvalues generate a free
+abelian subgroup \(\Gamma\subset\mathbb C\); choose a
+\(\mathbb Z\)-basis \(\alpha_1,\ldots,\alpha_m\).
+Write \(\beta=\sum_j b_{\beta j}\alpha_j\), with integers
+\(b_{\beta j}\).
+An abelian algebra \(\mathfrak t_1=\mathbb C^m\) acts on
+\(\mathfrak a_{[\beta]}\) by
+\((z_j)\mapsto\sum_j b_{\beta j}z_j\).
+Equation~\eqref{eq:additive-generalized-weights} proves that these
+operators are derivations. They commute with \(\mathfrak k\),
+because \(d\) is \(\mathfrak k\)-invariant.
+
+For \(\alpha=(\alpha_1,\ldots,\alpha_m)\in\mathfrak t_1\),
+the action of \(\alpha\) is the semisimple part \(S\) of \(D\).
+Both \(\mathfrak n_0\) and \(\ker\chi\) are stable under
+\(\mathfrak t_1\). For the first, \(D\)-stability gives a
+decomposition into generalized eigenspaces; for the second,
+\(D\) acts trivially on \(\mathfrak a/\mathfrak n_0\), so that
+only weight zero occurs in this quotient.
+Also \(\mathfrak t_1\) kills \(d\), since \(D d=0\).
+
+In \((\mathfrak k\oplus\mathfrak t_1)\ltimes\mathfrak a\), put
+\[
+ y=d-\alpha,\qquad
+ \mathfrak a'=\ker\chi\oplus\mathbb C y.
+\]
+It is an ideal complementary to
+\(\mathfrak k'=\mathfrak k\oplus\mathfrak t_1\).
+For example \([y,x]=(D-S)x\) for \(x\in\ker\chi\), and this
+lies in \(\mathfrak n_0\), since both \(D\) and \(S\) act
+trivially on \(\mathfrak a/\mathfrak n_0\).
+All other required brackets follow from the stability just proved.
+The new algebra contains the old \(\mathfrak k\ltimes\mathfrak a\);
+we have only adjoined \(\mathfrak t_1\).
+
+The ideal \(\mathfrak m=\mathfrak n_0+\mathbb C y\) of
+\(\mathfrak a'\) is nilpotent. To check this carefully, every
+\(x\in\mathfrak n_0\) acts nilpotently on \(\mathfrak a'\):
+its first bracket lands in \(\mathfrak n_0\), where repeated
+bracketing terminates. The element \(y\) acts on \(\ker\chi\)
+by the nilpotent operator \(D-S\) and kills itself.
+Lie's theorem simultaneously upper triangularizes the adjoint
+representation of the solvable algebra \(\mathfrak m\) on
+\(\mathfrak a'\). Its diagonal characters vanish on
+\(\mathfrak n_0\) and on \(y\), by the two nilpotency observations,
+so every element has zero diagonal. Engel's theorem gives the
+claim. Hence the new nilradical contains \(\mathfrak m\), and
+\[
+ \dim(\mathfrak a'/\operatorname{nilrad}\mathfrak a')
+ \leq \dim(\mathfrak a/\mathfrak n_0)-1.
+\]
+
+Finally the central torus of \(\mathfrak k'\) acts diagonally
+on \(\mathfrak a'\): it does so on the old generalized
+eigenspace blocks, and it kills the extra line \(\mathbb C y\).
+Its new weights are the integers \(b_{\beta j}\).
+Thus complete reducibility needed in the next step is still
+available. The integer \(q\) decreases until it is zero.
+This proves the enlargement without assuming that arbitrary
+modules of a reductive algebra are semisimple, or assuming an
+integration theorem for an algebraic group.
+\end{proof}
+
+\begin{proposition}[The semidirect-product representation]\label{res:I10}
+If \(\mathfrak k\) is a finite-dimensional complex reductive algebra
+and it acts by derivations on a finite-dimensional nilpotent
+algebra \(\mathfrak n\), then \(\mathfrak k\ltimes\mathfrak n\)
+has a finite-dimensional faithful module.
+\end{proposition}
+\begin{proof}
+Take \(V_N\) from Proposition~\ref{res:I08}. The formula
+\[
+ (a,x)\longmapsto D_a+L_x
+\]
+is a representation: \([D_a,D_b]=D_{[a,b]}\),
+\([D_a,L_y]=L_{a y}\), and \([L_x,L_y]=L_{[x,y]}\)
+give exactly the semidirect-product bracket.
+If \(D_a+L_x\) is zero, applying it to \(1\) gives \(x=0\).
+Its restriction to the surviving copy of \(\mathfrak n\)
+then says that \(a\) acts as the zero derivation on \(\mathfrak n\).
+
+To detect this possible remaining kernel, take a faithful module
+\(W\) of \(\mathfrak k=\mathfrak s\oplus\mathfrak t\).
+The adjoint module of \(\mathfrak s\) is faithful because its center
+is zero. If \(t_1,\ldots,t_m\) is a basis of \(\mathfrak t\),
+let \(t_j\) act on \(\mathbb C^m\) by the diagonal matrix with
+its only nonzero entry \(1\) in position \(j\); let \(\mathfrak s\)
+act trivially on that summand and \(\mathfrak t\) trivially on
+the adjoint summand. Their direct sum is the required \(W\).
+Inflate it along the projection
+\(\mathfrak k\ltimes\mathfrak n\to\mathfrak k\).
+On \(V_N\oplus W\), the kernel condition first gives \(x=0\)
+and then \(a=0\). This also covers \(\mathfrak n=0\) and pure
+reductive direct factors; no faithfulness of the action of
+\(\mathfrak k\) on \(\mathfrak n\) has been presumed.
+Compare the final construction in \cite[Theorem 50.8]{etingof}.
+\end{proof}
+
+\begin{theorem}[Ado over the complex and real fields]\label{res:I11}
+Every finite-dimensional complex or real Lie algebra admits an
+injective homomorphism into \(\mathfrak{gl}(V)\) for a
+finite-dimensional vector space over the same field.
+\end{theorem}
+\begin{proof}
+Over \(\mathbb C\), embed into the enlargement of
+Proposition~\ref{res:I09}, apply Proposition~\ref{res:I10},
+and restrict the faithful representation to the original subalgebra.
+For a real algebra, apply the complex assertion to
+\(\mathfrak g\otimes_{\mathbb R}\mathbb C\) and regard its
+representation as a real vector space. The original map
+\(\mathfrak g\to\mathfrak g\otimes_{\mathbb R}\mathbb C\)
+is injective, so its action remains faithful. The zero algebra
+may act on the zero-dimensional space, or trivially on a line.
+The arbitrary characteristic-zero version is proved in
+Proposition~\ref{res:J02}, with its descent step included there.
+\end{proof}

@@ -1,0 +1,74 @@
+{
+  "source_hashes": {
+    "P1-04_Manifolds_Notes.tex": "03073d7b27cf7400432984bedff9264afcc8593a56902a77ecf19b6ac8e31fd8",
+    "parts/ch01.tex": "382ebb171cd6d8e70d24c7d5937a2394f54adbc2de8d4be7aa3e923572e912a1",
+    "parts/ch02.tex": "e88010986ddc006946f94fa6837396d342b1f58467126e116a2daa0d1a1e6206",
+    "parts/ch03.tex": "e6adcf164e30d8270283e1fd0c8863e6c53df735beba202a56aac12df8694bec",
+    "parts/ch04.tex": "75cdafc3602bf34c2c923a2e15e955fd13f3cca05ed9a2be6e5226ea4dba3d58",
+    "parts/ch05.tex": "ccc811cd1b9281dd1e4cec5094aaeb42c5b46eba6ab9b012df8189ea653c6d39",
+    "parts/ch06.tex": "4f95d356eb19a483c1f3ef136cc9f9dab8557cd027d3b97e7c5800fe5346c408",
+    "parts/ch07.tex": "f7dd04f1a73c521ea9dc774371aa48c69d68050c634453cc3bd0499611bfc839",
+    "parts/ch08.tex": "ae8d473c653854163651e79f25bb3242d2e3693d540731e7a107f0f4698bb863",
+    "parts/ch09.tex": "efce5ca9d0d67dd76c1d92df977fb2643a92099f5a1786d7739e3eff5384df4a",
+    "parts/ch10.tex": "0fe8bc5bfe342499afbb824bfee9496c30b30cb830921437fb7d3cf51925dc90",
+    "parts/ch11.tex": "a23069705afcd04a628870eaa47b526d55da9dfebcec9ed8c629033bdfd74852",
+    "parts/ch12.tex": "27447293bfe6dad65b337e90e278d27ed0b20d873295e551097df39ec9f9d1fb",
+    "output/pdf/P1-04_Manifolds_Notes.pdf": "d32c630a7623b53918f2620117b7db80af8c616536ad14bfc2d389f28f9c373a"
+  },
+  "source_map_sha256": "3f146582b75eaabdd1d94acec67df54185a00f78dede6ac91dd3d0bfb6fce50a",
+  "paper_sha256": "beab7a388b54c61d6785b0cf35a134c13599d239077278c18889743e57fea31f",
+  "chapter_ranges_in_paper": {
+    "parts/ch01.tex": [
+      61,
+      389
+    ],
+    "parts/ch02.tex": [
+      390,
+      665
+    ],
+    "parts/ch03.tex": [
+      666,
+      1138
+    ],
+    "parts/ch04.tex": [
+      1139,
+      1261
+    ],
+    "parts/ch05.tex": [
+      1262,
+      1343
+    ],
+    "parts/ch06.tex": [
+      1344,
+      1447
+    ],
+    "parts/ch07.tex": [
+      1448,
+      1608
+    ],
+    "parts/ch08.tex": [
+      1609,
+      1695
+    ],
+    "parts/ch09.tex": [
+      1696,
+      1780
+    ],
+    "parts/ch10.tex": [
+      1781,
+      2180
+    ],
+    "parts/ch11.tex": [
+      2181,
+      2608
+    ],
+    "parts/ch12.tex": [
+      2609,
+      2797
+    ]
+  },
+  "source_map_entries": 74,
+  "pdf_pages": 63,
+  "mathematical_pages": 58,
+  "published_source_map_sha256": "a4c07b9dce042ecd16beaa009d1691d82615fc140e3a54616ce72da547842f72"
+}

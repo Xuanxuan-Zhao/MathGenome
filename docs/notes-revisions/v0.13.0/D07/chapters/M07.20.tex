@@ -1,0 +1,346 @@
+\chapter{Further theory of field extensions}\label{chap:M07.20}
+
+The fields in this chapter are commutative. Every degree used as an integer is finite. Algebraic extensions explicitly allowed to be infinite and finitely generated transcendental extensions retain their stated scope. We fix compatible inclusions in an algebraic closure whenever conjugates or embeddings are compared. A count of distinct embeddings is different from the degree in positive characteristic. The earlier construction of splitting fields and algebraic closures, Entries~\ref{K07.12.splitting_existence_uniqueness} and~\ref{K07.12.algebraic_closure}, is algebraic and does not use the fundamental theorem of algebra.
+
+We use the proved D05 results on trace and determinant of an operator, characteristic-polynomial coefficients, restriction of scalars in a chosen basis, and cyclic vectors: \texttt{K05.04.trace}, \texttt{K05.05.operator\_det}, \texttt{K05.05.det\_product}, \texttt{K05.05.triangular\_block}, \texttt{K05.08.coefficients}, and \texttt{K05.10.cyclic\_test}. Uses of these linear-algebra theorems are identified below. No assertion about an inseparable field trace is imported from a formula that assumes a separable Galois ambient field.
+
+\KEntry{K07.20.purely_inseparable}{Purely inseparable extensions}
+\begin{definition}
+In characteristic $p>0$, an algebraic extension $L/K$ is purely inseparable if each $a\in L$ satisfies $a^{p^r}\in K$ for some integer $r\geq0$. In characteristic zero the term means $L=K$.
+\end{definition}
+\begin{proposition}
+For an algebraic element $a$ in characteristic $p$, the following are equivalent: its minimal polynomial has just one distinct root in an algebraic closure; $a^{p^r}\in K$ for some $r$; its minimal polynomial is $X^{p^t}-a^{p^t}$, where $t$ is the least nonnegative exponent for which $a^{p^t}\in K$. In particular a finite purely inseparable degree is a power of $p$. A purely inseparable element that is also separable belongs to the base field. Purely inseparable extensions have a unique embedding over a specified embedding of their base into an algebraically closed field.
+\end{proposition}
+\begin{proof}
+Write the irreducible minimal polynomial as $g(X^{p^t})$, where $g$ is irreducible separable, by Entry~\ref{K07.12.inseparability}. In an algebraically closed field the map $x\mapsto x^{p^t}$ is bijective: existence follows by adjoining a root, and uniqueness follows from $(x-y)^{p^t}=x^{p^t}-y^{p^t}$. Thus the number of distinct roots is $\deg g$. If there is only one, $g=X-b$ and $a^{p^t}=b\in K$. Conversely, if $a^{p^r}\in K$, then the minimal polynomial divides $X^{p^r}-a^{p^r}=(X-a)^{p^r}$, so has only one distinct root and the preceding argument gives the asserted binomial form. Its degree is $p^t$; a smaller exponent with the power in $K$ would contradict minimal degree, and the converse determines the least exponent.
+
+If $L/K$ is finite, choose finitely many field generators and adjoin them successively. Each is purely inseparable over the preceding field, so each simple degree is a power of $p$. The tower law gives the degree claim. A separable minimal polynomial with just one distinct root has degree one. Finally an extension of a base embedding exists by Entry~\ref{K07.12.embedding_extension}; its value at any $a$ is the unique root of the transported equation $X^{p^r}-a^{p^r}$, so two such extensions agree at every element.
+\end{proof}
+\begin{example}
+$\F_p(t^{1/p})/\F_p(t)$ has degree $p$, although its only base embedding into an algebraic closure is the inclusion. Pure inseparability does not imply trivial degree.
+\end{example}
+
+\KEntry{K07.20.separability_p_power}{A separability criterion using the Frobenius power}
+\begin{theorem}
+Let $a$ be algebraic over a field $K$ of characteristic $p>0$. Then $a$ is separable over $K$ if and only if $K(a^p)=K(a)$.
+\end{theorem}
+\begin{proof}
+If $a$ is separable over $K$, it remains separable over $K(a^p)$ because its new minimal polynomial divides a separable $K$-polynomial. It is also purely inseparable over $K(a^p)$, being a root of $X^p-a^p$. The preceding proposition makes $a\in K(a^p)$.
+
+Conversely suppose $K(a)=K(a^p)$. Write $a$ as a rational expression in $a^p$ with coefficients in $K$. Taking $p$th powers shows that $a^p$ is a rational expression in $a^{p^2}$ with coefficients in $K$; the denominator remains nonzero. Therefore $K(a)=K(a^{p^2})$, and induction gives $K(a)=K(a^{p^r})$ for all $r$. Write the minimal polynomial of $a$ as $g(X^{p^r})$ with $g$ separable irreducible. Then $a^{p^r}$ is separable over $K$. The field it generates is separable by Entry~\ref{K07.12.separable_towers}, and it is $K(a)$, so $a$ is separable.
+\end{proof}
+
+\KEntry{K07.20.separable_part}{The separable part of an algebraic extension}
+\begin{theorem}
+Let $L/K$ be algebraic. The set $S$ of elements of $L$ separable over $K$ is a subfield, $S/K$ is separable, and $L/S$ is purely inseparable. It is the unique intermediate field with these two properties. If $L/K$ is finite, so is $S/K$, and in positive characteristic one common exponent $p^r$ sends every element of $L$ into $S$.
+\end{theorem}
+\begin{proof}
+The field generated by any finite set of separable elements is separable by Entry~\ref{K07.12.separable_towers}. Thus sums, products, differences and inverses of nonzero separable elements are separable, proving that $S$ is a field and is separable over $K$.
+
+In characteristic zero every algebraic element is separable, so $S=L$. In characteristic $p$, write the minimal polynomial of $a\in L$ as $g(X^{p^r})$ with $g$ separable. Then $a^{p^r}$ is separable over $K$ and lies in $S$. This proves pure inseparability over $S$. If $T/K$ is separable and $L/T$ purely inseparable, then $T\subseteq S$. Every $a\in S$ is separable over $T$ because its minimal polynomial over $T$ divides its separable polynomial over $K$; it is also purely inseparable over $T$. Hence $a\in T$, proving $S=T$.
+
+For finite $L/K$, every intermediate field is finite by the tower theorem. Choose a finite generating list $a_1,\ldots,a_m$ for $L/S$ and an exponent $r$ with $a_i^{p^r}\in S$ for all $i$. Every element of $L=S(a_1,\ldots,a_m)$ is a rational expression in these generators. Raising it to the $p^r$th power raises its coefficients to powers still in $S$ and sends every generator to $S$; nonzero denominators remain nonzero. Thus $x^{p^r}\in S$ for all $x\in L$.
+\end{proof}
+\begin{remark}
+The theorem puts the separable step below the purely inseparable step. It does not assert a decomposition in the reverse order.
+\end{remark}
+
+\KEntry{K07.20.separable_inseparable_degrees}{Separable and inseparable degrees}
+\begin{theorem}
+For finite $L/K$, let $s(L/K)$ be the number of $K$-embeddings into an algebraic closure and let $S$ be its separable part. Then
+\[
+s(L/K)=[S:K],\qquad [L:K]=s(L/K)i(L/K),\qquad i(L/K)=[L:S].
+\]
+In characteristic $p$, $i(L/K)$ is a power of $p$; in characteristic zero it is one. For every finite tower $K\subseteq M\subseteq L$,
+\[
+s(L/K)=s(L/M)s(M/K),\qquad i(L/K)=i(L/M)i(M/K).
+\]
+\end{theorem}
+\begin{proof}
+Restriction gives a bijection between embeddings of $L$ and embeddings of $S$: each embedding of $S$ extends to $L$, and the extension is unique because $L/S$ is purely inseparable. Since $S/K$ is finite separable, Entry~\ref{K07.12.embedding_count} counts $[S:K]$ such embeddings. The tower law and the preceding propositions prove the first assertions.
+
+For multiplicativity fix an algebraic closure $\Omega$ containing $L$; it is also algebraic over $K$. Every $K$-embedding $\tau:M\to\Omega$ extends to a $K$-embedding $\widetilde\tau:\Omega\to\Omega$ by the algebraic embedding-extension theorem. Its image is algebraically closed, since it is isomorphic to $\Omega$. Also $\Omega$ is algebraic over this image, because the image contains $K$. An algebraically closed field has no proper algebraic extension: the minimal polynomial of any algebraic element must be linear. Consequently $\widetilde\tau$ is onto and is an automorphism. Composing with $\widetilde\tau^{-1}$ bijects the embeddings of $L$ restricting to $\tau$ with the embeddings of $L$ fixing $M$. Every restriction fiber therefore has $s(L/M)$ elements. Counting the $s(M/K)$ fibers proves multiplicativity of $s$. Divide the ordinary tower-degree identity by this equality to obtain multiplicativity of $i$.
+\end{proof}
+
+\KEntry{K07.20.multiplication_trace_norm}{Trace and norm for every finite extension}
+\begin{definition}
+For a finite extension $L/K$ of degree $n$ and $a\in L$, let $m_a:L\to L$ be multiplication by $a$. Define
+\[
+\Tr_{L/K}(a)=\Tr_K(m_a),\qquad \Nm_{L/K}(a)=\det_K(m_a),\qquad
+\chi_{a,L/K}(T)=\det_K(TI-m_a).
+\]
+These definitions apply without separability. The determinants and trace are basis independent by the cited D05 operator results.
+\end{definition}
+\begin{proposition}
+Trace is $K$-linear, norm is multiplicative, and for $c\in K$,
+\[
+\Tr(c)=nc,\quad \Nm(c)=c^n,\quad
+\Tr(ca)=c\Tr(a),\quad \Nm(ca)=c^n\Nm(a).
+\]
+The norm of $a$ is zero exactly when $a=0$; hence it restricts to a homomorphism $L^\times\to K^\times$.
+\end{proposition}
+\begin{proof}
+The identities $m_{a+b}=m_a+m_b$, $m_{ca}=c m_a$, $m_{ab}=m_a m_b$, and $m_c=cI$ reduce every displayed formula to trace linearity and determinant multiplicativity/scaling in D05. If $a\ne0$, $m_a^{-1}=m_{a^{-1}}$, so its determinant is nonzero. If $a=0$, its multiplication matrix is zero on a vector space of positive dimension $n\geq1$, so its determinant is zero. These arguments use no conjugate-counting assumption.
+\end{proof}
+
+\KEntry{K07.20.characteristic_minpoly}{Minimal-polynomial formulas with multiplicities}
+\begin{theorem}
+Let $L/K$ have degree $n$, and let the monic minimal polynomial of $a\in L$ be
+\[f_a(T)=T^d+c_{d-1}T^{d-1}+\cdots+c_0.\]
+Then $d\mid n$ and, writing $r=n/d$,
+\[
+\chi_{a,L/K}=f_a^r,\qquad \Tr_{L/K}(a)=-r c_{d-1},\qquad
+\Nm_{L/K}(a)=(-1)^n c_0^r.
+\]
+\end{theorem}
+\begin{proof}
+Put $E=K(a)$. Its power basis has $d$ elements by Entry~\ref{K07.12.power_basis}, and the tower law gives $n=rd$. Choose an $E$-basis $u_1,\ldots,u_r$ of $L$. The subspaces $Eu_j$ give a direct sum of $K$-spaces, each stable under multiplication by $a$. On each, the basis $u_j,au_j,\ldots,a^{d-1}u_j$ gives the companion matrix of $f_a$. The companion characteristic polynomial is $f_a$, as proved in D05, Entry~\texttt{K05.10.companion}. The characteristic polynomial of the block diagonal matrix is therefore $f_a^r$. Its coefficient of $T^{n-1}$ is $r c_{d-1}$ and its constant coefficient is $c_0^r$. The trace/determinant coefficient identities, D05~\texttt{K05.08.coefficients}, give the formulas including their signs.
+\end{proof}
+\begin{example}
+For $L=K(u)$ with $u^p=t\in K$ and $X^p-t$ irreducible in characteristic $p$, multiplication trace is identically zero, while $\Nm(u)=(-1)^{p+1}t=t$ in $K$. A sum over the single distinct embedding would give $u$, which need not belong to $K$; it is not the field trace.
+\end{example}
+
+\KEntry{K07.20.trace_norm_towers}{Trace and norm in arbitrary finite towers}
+\begin{theorem}
+For finite $K\subseteq M\subseteq L$ and $a\in L$,
+\[
+\Tr_{L/K}(a)=\Tr_{M/K}(\Tr_{L/M}(a)),\qquad
+\Nm_{L/K}(a)=\Nm_{M/K}(\Nm_{L/M}(a)).
+\]
+\end{theorem}
+\begin{proof}
+Choose an $M$-basis of $L$ and a $K$-basis of $M$. If multiplication by $a$ has $M$-matrix $A=(a_{ij})$, its $K$-matrix has blocks equal to the $K$-matrices of multiplication by the entries $a_{ij}$ on $M$. The trace is the sum of its diagonal-block traces, namely $\sum_i\Tr_{M/K}(a_{ii})=\Tr_{M/K}(\sum_i a_{ii})$. This is the trace identity.
+
+For completeness we prove the restriction-of-scalars determinant identity used for norm. For every $r\times r$ matrix $A$ over $M$, write $R(A)$ for its block $K$-matrix and put $d=[M:K]$. We claim
+\[\det_K R(A)=\Nm_{M/K}(\det_M A).\]
+If $A$ is singular, a nonzero $M$-kernel vector is also a nonzero $K$-kernel vector for the same map; both sides are zero. If $A$ is invertible, Gaussian elimination over $M$ expresses it as a product of elementary matrices: adding a multiple of one row to another, interchanging two rows, and multiplying a row by a nonzero scalar. This follows by selecting a nonzero pivot, moving it to the diagonal, scaling it to one, eliminating its column, and inducting on the remaining size; invertibility ensures a pivot remains at each stage.
+
+For a row-addition matrix, $R(A)$ is block triangular with identity diagonal blocks after putting the affected two blocks in their natural order, so its determinant is one, equal to the norm of its $M$-determinant. A row interchange exchanges two blocks of $d$ basis vectors, giving sign $(-1)^{d^2}=(-1)^d=\Nm_{M/K}(-1)$. A diagonal row scaling by $c$ has block determinant $\det_K(m_c)=\Nm_{M/K}(c)$. Thus the identity holds on every elementary generator. Since $R(AB)=R(A)R(B)$ and both determinant and norm are multiplicative, it holds on their products. Apply it to $A=m_a$ as an $M$-linear map to obtain the norm tower law. Neither argument requires the tower to be separable.
+\end{proof}
+
+\KEntry{K07.20.embedding_trace_norm}{Embedding formulas and the inseparable multiplicity}
+\begin{theorem}
+Let $L/K$ be finite with distinct embeddings $\sigma_1,\ldots,\sigma_s$ into an algebraic closure, and let $i=i(L/K)$. For every $a\in L$,
+\[
+\Tr_{L/K}(a)=i\sum_{j=1}^s\sigma_j(a),\qquad
+\Nm_{L/K}(a)=\left(\prod_{j=1}^s\sigma_j(a)\right)^i.
+\]
+The equalities hold in the common closure, with their left sides in $K$. In particular, for separable $L/K$ these are the ordinary sum and product over all $n=[L:K]$ embeddings; for inseparable $L/K$ trace is identically zero.
+\end{theorem}
+\begin{proof}
+Let $E=K(a)$ have degree $d$, and let the minimal polynomial be $g(T^e)$ with $g$ separable, where $e=p^t$ in characteristic $p$ and $e=1$ in characteristic zero. Let its $d_s=\deg g$ distinct roots be $\beta_1,\ldots,\beta_{d_s}$. Each has multiplicity $e$, and $d=d_s e$. By the restriction-fiber argument in Entry~\ref{K07.20.separable_inseparable_degrees}, each embedding of $E$ extends to exactly $s(L/E)$ embeddings of $L$. Hence each value $\beta_k$ occurs $s/d_s$ times in the embedding list of $a$.
+
+The already proved characteristic polynomial is $f_a^{n/d}$, so each distinct $\beta_k$ occurs among its roots with multiplicity $e n/d=n/d_s$. Its trace is therefore $(n/d_s)\sum_k\beta_k$ and its determinant is $\prod_k\beta_k^{n/d_s}$, by the characteristic-polynomial coefficient identities. Since $i=n/s$, these are exactly the stated formulas. If $L/K$ is inseparable, $i$ is a positive power of $p$ greater than one; as a scalar it is zero in the field, proving the trace assertion. Zero values cause no difficulty in the product formula.
+\end{proof}
+
+\KEntry{K07.20.trace_pairing}{Nondegenerate trace and trace-dual bases}
+\begin{theorem}
+For a finite extension $L/K$, the pairing $B(x,y)=\Tr_{L/K}(xy)$ is nondegenerate if and only if $L/K$ is separable. In the separable case trace is onto $K$, every $K$-linear functional has a unique form $x\mapsto\Tr(bx)$, and every ordered basis $a_1,\ldots,a_n$ has a unique trace-dual basis $b_1,\ldots,b_n$ satisfying
+\[
+\Tr(a_i b_j)=\delta_{ij},\qquad x=\sum_{i=1}^n\Tr(xb_i)a_i.
+\]
+\end{theorem}
+\begin{proof}
+If $L/K$ is inseparable, the preceding theorem makes its trace identically zero, so its trace pairing on the nonzero space $L$ is degenerate. Suppose it is separable. The trace is the sum of its $n$ distinct embeddings. Linear independence of distinct embeddings, proved before Entry~\ref{K07.14.artin_fixed_field}, says that this sum, whose coefficients are all one, cannot be the zero function. Choose $z\in L$ with $\Tr(z)\ne0$. Scaling $z$ by an element of $K$ shows trace is onto. For $b\ne0$, take $x=z/b$; then $\Tr(bx)\ne0$, proving nondegeneracy.
+
+The map $L\to\Hom_K(L,K)$ sending $b$ to $B(b,-)$ is therefore injective. Both spaces have dimension $n$ by D05 dual-space dimension, so it is an isomorphism. If $\lambda_j$ is the coordinate functional of $a_j$, it equals $B(b_j,-)$ for a unique $b_j$. This gives both displayed formulas. To see that the $b_j$ form a basis, a relation $\sum c_j b_j=0$ gives $c_i=0$ after pairing with $a_i$. They are $n$ independent elements of an $n$-dimensional space, hence a basis. This also proves uniqueness.
+\end{proof}
+\begin{example}
+Trace can be onto even when $\Tr(1)=0$: in $\F_{q^p}/\F_q$ the latter value is $p=0$, while the extension is separable and the theorem makes its trace nonzero. A proposed proof using only $\Tr(1)$ would fail here.
+\end{example}
+
+\KEntry{K07.20.trace_discriminant}{The discriminant of a field basis}
+\begin{theorem}
+For finite separable $L/K$ of degree $n$ and a list $a=(a_1,\ldots,a_n)$ in $L$, set
+\[D(a)=\det(\Tr_{L/K}(a_i a_j))_{i,j=1}^n.\]
+Then $D(a)\ne0$ if and only if the list is a $K$-basis. If $a'_j=\sum_i a_i P_{ij}$, then $D(a')=\det(P)^2D(a)$. If $\sigma_1,\ldots,\sigma_n$ are the embeddings into a closure, then
+\[D(a)=\det(\sigma_i(a_j))^2.\]
+For a primitive element $u$, the discriminant of its power basis is the polynomial discriminant of its minimal polynomial. For $L=\F_{q^n}$ this embedding determinant is the Moore determinant $\det(a_j^{q^{i-1}})$.
+\end{theorem}
+\begin{proof}
+If the list is dependent, choose a nonzero coefficient vector $c$ with $\sum c_i a_i=0$; pairing with every $a_j$ makes the trace Gram matrix singular. If it is a basis and its Gram matrix kills $c$, the vector $x=\sum c_i a_i$ pairs to zero with every basis vector and hence with every element of $L$. Nondegeneracy gives $x=0$, so $c=0$. This proves the criterion. Bilinearity gives the change matrix $P^{\mathsf T}BP$, whose determinant is the stated square multiple.
+
+The embedding formula gives $\Tr(a_i a_j)=\sum_k\sigma_k(a_i)\sigma_k(a_j)$. Hence the Gram matrix is $A^{\mathsf T}A$ for $A=(\sigma_i(a_j))$, proving its determinant formula by D05 determinant multiplicativity. For the power basis, $A$ is the Vandermonde matrix on the distinct conjugates of $u$; its determinant squared is $\prod_{i<j}(\sigma_i(u)-\sigma_j(u))^2$, exactly the polynomial discriminant in Entry~\ref{K07.14.discriminant}. Finite-field embeddings are the successive $q$-powers by Entry~\ref{K07.13.galois_group}, giving the final assertion.
+\end{proof}
+\begin{remark}
+For an inseparable finite extension the entire trace Gram matrix is zero. The nonzero discriminant criterion is therefore a separable assertion, not a test that all field extensions automatically satisfy.
+\end{remark}
+
+\KEntry{K07.20.normal_basis}{Normal bases for finite Galois extensions}
+\begin{theorem}
+If $L/K$ is finite Galois, there is $a\in L$ such that $(\sigma(a))_{\sigma\in G}$ is a $K$-basis of $L$, where $G=\Gal(L/K)$. In particular, for $L=\F_{q^n}$ over $\F_q$, there is a basis $a,a^q,\ldots,a^{q^{n-1}}$. No restriction that the characteristic be prime to $[L:K]$ is required.
+\end{theorem}
+\begin{proof}
+First suppose $K$ is infinite. Put $|G|=n$ and choose a $K$-basis $b_1,\ldots,b_n$. The matrix $A=(\sigma(b_j))_{\sigma,j}$ is invertible over $L$: a linear relation among its rows, with coefficients in $L$, gives the corresponding relation among the functions $\sigma$ on every $b_j$ and then on every $K$-linear combination. Independence of the distinct embeddings forces every row coefficient to be zero.
+
+Introduce independent variables $Y_g$ indexed by $g\in G$, and form the group determinant
+\[D(Y)=\det(Y_{\sigma\tau})_{\sigma,\tau\in G}\in L[Y_g:g\in G].\]
+This is not the zero polynomial: putting $Y_e=1$ and all other $Y_g=0$ gives a permutation matrix, since each row has exactly one nonzero entry, at $\tau=\sigma^{-1}$. Substitute $Y_g=\sum_j g(b_j)X_j$. This substitution is an invertible linear change of the $n$ variables because $A$ is invertible, so the resulting polynomial $P(X)$ over $L$ is nonzero.
+
+A nonzero polynomial over $L$ cannot vanish at every point of $K^n$ when $K$ is infinite. To verify this with its coefficient field stated correctly, induct on $n$. A nonzero univariate polynomial over $L$ has only finitely many roots, so cannot vanish on infinite $K$. For more variables, view the polynomial as a polynomial in its last variable, choose a nonzero coefficient polynomial, and by induction choose the first $n-1$ coordinates in $K$ making that coefficient nonzero. The resulting nonzero univariate polynomial has a nonvanishing value at some last coordinate in $K$.
+
+Choose $x_j\in K$ with $P(x)\ne0$ and put $a=\sum_j b_jx_j$. The matrix $(\sigma\tau(a))_{\sigma,\tau}$ is then invertible. If $\sum_\tau c_\tau\tau(a)=0$ with $c_\tau\in K$, applying every $\sigma$ makes this invertible matrix kill the column $(c_\tau)$, so all coefficients vanish. There are $n$ conjugates, so they form the desired basis.
+
+Now suppose $K$ is finite, say $K=\F_q$. Then $L$ is finite, has $q^n$ elements, and its Galois group consists of the distinct powers $1,T,\ldots,T^{n-1}$ of $T(x)=x^q$. Treat $T$ as a $K$-linear operator. The polynomial $X^n-1$ annihilates it. No nonzero polynomial of degree less than $n$ can annihilate it, since that would be a nontrivial linear relation among these distinct embedding functions. Thus its operator minimal polynomial is $X^n-1$. Its characteristic polynomial has degree $n$ and is divisible by its minimal polynomial by Cayley--Hamilton, so is also $X^n-1$. D05's cyclic-vector theorem, \texttt{K05.10.cyclic\_test}, supplies a vector $a$ for which $a,Ta,\ldots,T^{n-1}a$ is a basis. This is the required normal basis. Both cases include $n=1$; one may simply take $a=1$ there.
+\end{proof}
+\begin{remark}
+A normal generator need not be a generator of $L^\times$, and a multiplicative primitive element need not be normal. Existence of a primitive normal element is a stronger theorem, not proved by intersecting two nonempty sets. The proof above deliberately makes no such claim.
+\end{remark}
+
+\KEntry{K07.20.hilbert90_multiplicative}{Multiplicative Hilbert 90}
+\begin{theorem}
+Let $L/K$ be cyclic Galois of finite degree $n$, generated by $\sigma$. For $a\in L^\times$,
+\[\Nm_{L/K}(a)=1\quad\Longleftrightarrow\quad a=b/\sigma(b)\text{ for some }b\in L^\times.\]
+\end{theorem}
+\begin{proof}
+A quotient $b/\sigma(b)$ has norm one because the product over the powers of $\sigma$ telescopes and $\sigma^n=1$. Conversely assume the norm is one. Put $c_0=1$ and $c_j=a\sigma(a)\cdots\sigma^{j-1}(a)$ for $1\leq j\leq n$. Then $c_n=1$ and $a\sigma(c_j)=c_{j+1}$. The function
+\[B(x)=\sum_{j=0}^{n-1}c_j\sigma^j(x)\]
+is not identically zero by independence of the distinct embeddings; its coefficient $c_0$ is one. Choose $x$ with $b=B(x)\ne0$. Reindexing yields
+\[a\sigma(b)=\sum_{j=1}^n c_j\sigma^j(x)=\sum_{j=0}^{n-1}c_j\sigma^j(x)=b,\]
+where the last terms agree because $c_n=1$ and $\sigma^n(x)=x$. Thus $a=b/\sigma(b)$.
+\end{proof}
+\begin{example}
+For $\Q(i)/\Q$, norm one means $a^2+b^2=1$ for a number $a+bi$. Writing a nonzero $s+ti$ divided by its conjugate gives
+\[a=\frac{s^2-t^2}{s^2+t^2},\qquad b=\frac{2st}{s^2+t^2}\quad(s,t\in\Q,\ (s,t)\ne(0,0)).\]
+Hilbert 90 proves that all rational points on this circle occur: apply the theorem to the norm-one element, then expand the quotient. Its denominator is nonzero because a sum of two rational squares vanishes only when both vanish.
+\end{example}
+
+\KEntry{K07.20.hilbert90_additive}{Additive Hilbert 90 without division by the degree}
+\begin{theorem}
+Under the same finite cyclic Galois hypotheses,
+\[\Tr_{L/K}(a)=0\quad\Longleftrightarrow\quad a=b-\sigma(b)\text{ for some }b\in L.\]
+In particular this holds when the characteristic divides $n$.
+\end{theorem}
+\begin{proof}
+Trace is invariant under $\sigma$ by its embedding-sum formula, so $\Tr(b-\sigma(b))=0$. The $K$-linear map $D=1-\sigma$ has kernel exactly $K$, because $\sigma$ generates the Galois group and its fixed field is $K$. Its image has dimension $n-1$ by rank-nullity. The trace is a nonzero, hence surjective, map to the one-dimensional space $K$ by Entry~\ref{K07.20.trace_pairing}; its kernel also has dimension $n-1$. The already proved inclusion $\im D\subseteq\ker\Tr$ must therefore be equality. Nothing here divides by $n$.
+\end{proof}
+\begin{corollary}
+For $L=\F_{q^n}$ over $K=\F_q$,
+\[\Tr_{L/K}(a)=0\quad\Longleftrightarrow\quad a=b^q-b\text{ for some }b\in L.\]
+For nonzero $a\in L$, $\Nm_{L/K}(a)=1$ if and only if $a=c^{q-1}$ for some $c\in L^\times$.
+\end{corollary}
+\begin{proof}
+Use $\sigma(b)=b^q$. Replacing $b$ by $-b$ changes the sign in the additive formula. The multiplicative formula gives $b^{1-q}$; replace $b$ by $c^{-1}$ to obtain $c^{q-1}$.
+\end{proof}
+
+\KEntry{K07.20.artin_schreier}{Cyclic extensions of degree equal to the characteristic}
+\begin{theorem}
+Let $K$ have characteristic $p>0$ and write $\wp(u)=u^p-u$. For $a\in K$, the polynomial $X^p-X-a$ either splits into $p$ distinct linear factors over $K$ (exactly when $a\in\wp(K)$), or is irreducible and a root generates a cyclic Galois extension of degree $p$. Conversely every cyclic Galois extension of degree $p$ has this form.
+
+For $a,b\notin\wp(K)$, the two resulting extensions inside a common algebraic closure are equal, equivalently are $K$-isomorphic, if and only if
+\[b=c a+\wp(u)\quad\text{for some }c\in\F_p^\times,\ u\in K.\]
+\end{theorem}
+\begin{proof}
+If $\theta$ is one root, all roots are $\theta+c$ for $c\in\F_p$: they satisfy the equation, are distinct, and exhaust its degree. Its derivative is $-1$, so it is separable, and its splitting field is $K(\theta)$. The Galois group maps injectively to the additive group $\F_p$ by $\tau\mapsto\tau(\theta)-\theta$. The map is a homomorphism because every automorphism fixes $\F_p$. This group has order one or $p$. If $\theta\notin K$, the extension is nontrivial, so its degree is $p$ by the finite Galois theorem and the original monic degree-$p$ polynomial is its minimal polynomial. If $\theta\in K$, all roots are already in $K$, and $a=\wp(\theta)$. This proves the dichotomy over every characteristic-$p$ field, with no finiteness or perfection assumption on $K$.
+
+Conversely let $L/K$ be cyclic Galois of degree $p$ and choose a generator $\sigma$. The trace of $-1$ is $-p=0$. Additive Hilbert 90 gives a $\theta$ with $\theta-\sigma(\theta)=-1$, that is, $\sigma(\theta)=\theta+1$. The $p$ powers of $\sigma$ give distinct conjugates $\theta+j$, so $\theta$ has degree $p$ and generates $L$. Moreover
+\[\sigma(\theta^p-\theta)=(\theta+1)^p-(\theta+1)=\theta^p-\theta,\]
+so $a=\wp(\theta)\in K$. The generated extension is nontrivial, hence $a\notin\wp(K)$.
+
+For the parameter assertion, suppose $K(\theta)=K(\eta)=L$ with $\wp(\theta)=a$, $\wp(\eta)=b$. Choose $\sigma$ with $\sigma(\theta)=\theta+1$. There is $c\in\F_p$ with $\sigma(\eta)=\eta+c$. Since $\eta$ generates the nontrivial extension, $c\ne0$. Thus $u=\eta-c\theta$ is fixed by $\sigma$ and lies in $K$, giving $b=ca+\wp(u)$. Conversely, if this relation holds, $\eta=c\theta+u$ is a root of the second polynomial and generates the same field because $c\ne0$. Both root fields are normal, so any $K$-embedding of one into the common closure has that same image; consequently $K$-isomorphism is equivalent to equality there.
+\end{proof}
+\begin{remark}
+Kummer theory in Entry~\ref{K07.15.kummer_converse} requires an invertible degree and appropriate roots of unity. Artin--Schreier uses an additive translation and supplies the missing cyclic degree-$p$ case in characteristic $p$.
+\end{remark}
+
+\KEntry{K07.20.finite_artin_schreier}{The absolute-trace criterion over a finite field}
+\begin{theorem}
+Let $q=p^r$ and $a\in\F_q$. Then $X^p-X-a$ is irreducible over $\F_q$ if and only if $\Tr_{\F_q/\F_p}(a)\ne0$. If the trace is zero it splits into $p$ distinct linear factors in $\F_q$. In the irreducible case its splitting field is $\F_{q^p}$ and has cyclic Galois group of order $p$.
+\end{theorem}
+\begin{proof}
+Apply additive Hilbert 90 to the cyclic extension $\F_q/\F_p$, whose generator is $x\mapsto x^p$. Its trace-zero set is exactly $\wp(\F_q)$. The preceding dichotomy proves all but the field identification, and finite-field uniqueness identifies the degree-$p$ extension with $\F_{q^p}$ over $\F_q$.
+
+One can also see the irreducible orbit directly. If $\wp(\theta)=a$, then repeated $p$th powering gives
+\[\theta^q-\theta=a+a^p+\cdots+a^{p^{r-1}}=\Tr_{\F_q/\F_p}(a).\]
+This trace is an element $t\in\F_p$. Therefore the successive $q$-powers of $\theta$ are $\theta,\theta+t,\ldots$; when $t\ne0$ their orbit has exactly $p$ elements. This is precisely its irreducible degree by Entry~\ref{K07.13.frobenius_roots}.
+\end{proof}
+\begin{example}
+Over $\F_2$, $X^2+X+1$ is irreducible because the absolute trace of $1$ is $1$. Over $\F_4$ it splits because that absolute trace is $1+1^2=0$. For higher powers, the no-root/irreducible dichotomy is false: over $\F_4$, the polynomial $X^4-X-1$ has no root because $x^4=x$ for every $x\in\F_4$. Nevertheless it factors into two irreducible quadratics. To verify this, $X^4+X+1$ is irreducible over $\F_2$: it has no linear root and substitution modulo the only irreducible quadratic $X^2+X+1$ gives remainder $1$. Its roots lie in $\F_{16}$ and generate that field over $\F_2$. Since $\F_4\subset\F_{16}$ and the tower degree is two, their minimal polynomials over $\F_4$ have degree two. Distinct Frobenius orbits partition its four roots into two such factors. Thus replacing $p$ by $p^2$ destroys the no-root criterion.
+\end{example}
+
+\KEntry{K07.20.cyclotomic_finite_factors}{Cyclotomic factors over finite fields}
+\begin{theorem}
+Let $\gcd(m,q)=1$, with $m>1$, and let $d$ be the multiplicative order of $q$ modulo $m$. Over $\F_q$, the reduction of $\Phi_m$ is a product of $\varphi(m)/d$ distinct monic irreducibles, all of degree $d$. Its splitting field is $\F_{q^d}$. More generally, if a nonzero element $a$ in a finite extension of $\F_q$ has multiplicative order $m>1$, its degree over $\F_q$ is $\operatorname{ord}_m(q)$. The element of order one is $1$, of degree one, and $\Phi_1=X-1$.
+\end{theorem}
+\begin{proof}
+The degree of $a$ is the length of its orbit under $x\mapsto x^q$ by Entry~\ref{K07.13.frobenius_roots}. The equality $a^{q^j}=a$ is equivalent, since $a\ne0$, to $m\mid q^j-1$. The least positive such $j$ is $d$, proving the element statement.
+
+For completeness the reduced cyclotomic polynomial still has exactly the primitive $m$th roots as its roots. Reduce the monic identity $X^m-1=\prod_{e\mid m}\Phi_e(X)$ from Entry~\ref{K07.15.cyclotomic_polynomials}. Since $p=\operatorname{char}\F_q$ does not divide $m$, its derivative $mX^{m-1}$ is relatively prime to it. The product is therefore squarefree in the closure. Induct on the divisors of $m$: the factors with proper index account exactly for roots of orders proper divisors of $m$, leaving those of exact order $m$ in $\Phi_m$. The group of $m$th roots is cyclic of order $m$, so there are $\varphi(m)$ primitive ones. Every such root has Frobenius orbit length $d$ by the preceding paragraph. The minimal polynomials are precisely these disjoint orbit products, giving the number and degrees of the factors. A primitive root belongs to $\F_{q^d}$, and all the $m$th roots are its powers. It generates a degree-$d$ field and contains all the roots, so the splitting field is exactly that field.
+\end{proof}
+\begin{example}
+$\Phi_5=X^4+X^3+X^2+X+1$ is irreducible over $\F_2$, because $2$ has order four modulo five. Over $\F_4$ it has two quadratic factors, because $4$ has order two modulo five. The coprimality condition matters: in characteristic $p$, $X^{pm}-1=(X^m-1)^p$, so multiplicities must first be separated from the prime-to-$p$ part.
+\end{example}
+
+\KEntry{K07.20.constant_field_factorization}{Factoring an irreducible polynomial after extending constants}
+\begin{theorem}
+Let $k\geq1$ and let $f\in\F_q[X]$ be monic irreducible of degree $n\geq1$. In a common algebraic closure, over $\F_{q^k}$ it factors into exactly $\gcd(n,k)$ distinct monic irreducibles, each of degree $n/\gcd(n,k)$. Consequently it remains irreducible if and only if $\gcd(n,k)=1$.
+\end{theorem}
+\begin{proof}
+Its roots are the $n$ distinct elements $a,a^q,\ldots,a^{q^{n-1}}$. Label them by $\Z/n\Z$ so that $q$-Frobenius adds one. Frobenius over the new constants is $q^k$-powering and adds $k$ to this set of indices. Its orbits are the cosets of the subgroup generated by $k$, so there are $\gcd(n,k)$ orbits, each of length $n/\gcd(n,k)$.
+
+Each orbit product has coefficients fixed by $q^k$-powering. In the algebraic closure the elements so fixed are exactly the roots of $X^{q^k}-X$, namely $\F_{q^k}$ by Entry~\ref{K07.13.existence}. Thus the products have coefficients in the new base. For a root in an orbit, its degree over $\F_{q^k}$ is its $q^k$-Frobenius orbit length by Entry~\ref{K07.13.frobenius_roots}. Hence its monic orbit product is its minimal polynomial, not just a factor with the right coefficients. The orbits partition the roots and $f$ is squarefree, proving the complete factorization assertion.
+\end{proof}
+
+\KEntry{K07.20.polynomial_order}{Orders of finite-field polynomials}
+\begin{theorem}
+For $f\in\F_q[X]$ of positive degree with $f(0)\ne0$, the least positive integer $e$ for which $f\mid X^e-1$ exists; call it $\operatorname{ord}(f)$. One has $f\mid X^h-1$ exactly when $e\mid h$. For irreducible $g$ this order equals the multiplicative order of any root.
+
+Write $f=c\prod_{j=1}^r g_j^{b_j}$ with distinct monic irreducibles, $c\ne0$, and $b_j\geq1$. Let $p=\operatorname{char}\F_q$, let $e_j=\operatorname{ord}(g_j)$ and $e=\lcm_j e_j$, and let $t$ be least with $p^t\geq\max_j b_j$. Then
+\[\operatorname{ord}(f)=e p^t.\]
+\end{theorem}
+\begin{proof}
+In the finite ring $A=\F_q[X]/(f)$, the residue of $X$ is a unit: $\gcd(X,f)=1$, so Bezout supplies its inverse. Its order in the finite group $A^\times$ is exactly the least positive $e$ with $f\mid X^e-1$. The order-of-an-element divisibility criterion proves the assertion for general $h$. For irreducible $g$, the quotient is the finite field generated by a root, so the same calculation gives the root-order interpretation. In particular $e_j\mid q^{\deg g_j}-1$, and each $e_j$ is prime to $p$.
+
+For any $h\geq1$ write $h=p^u v$ with $p\nmid v$. Then
+\[X^h-1=(X^v-1)^{p^u}.\]
+The derivative of $X^v-1$ is relatively prime to that polynomial, so its irreducible factors have multiplicity one. A given $g_j$ divides $X^v-1$ if and only if $e_j\mid v$. Therefore $f\mid X^h-1$ is equivalent to $e_j\mid v$ and $b_j\leq p^u$ for all $j$. Equivalently $e\mid v$ and $u\geq t$. Because $p\nmid e$, the least such $h$ is $e p^t$, as asserted.
+\end{proof}
+\begin{example}
+Over $\F_2$, $g=X^2+X+1$ has order three, while $g^3$ has order twelve: the least power of two at least three is four. Its order need not divide $2^6-1$ although its degree is six. The often used divisibility by $q^{\deg f}-1$ is an irreducible-polynomial assertion, not a rule for all polynomials.
+\end{example}
+
+\KEntry{K07.20.primitive_count}{Primitive-polynomial counts and an order test}
+\begin{theorem}
+The number of monic primitive degree-$n$ polynomials over $\F_q$ is
+\[\frac{\varphi(q^n-1)}{n}\qquad(n\geq1).\]
+A monic degree-$n$ polynomial $f$ with $f(0)\ne0$ is primitive if and only if $\operatorname{ord}(f)=q^n-1$. Thus this order condition itself forces irreducibility.
+\end{theorem}
+\begin{proof}
+The cyclic group $\F_{q^n}^\times$ has $\varphi(q^n-1)$ generators. A generator $a$ generates the whole field as well, since the field $\F_q(a)$ contains all its powers and hence all nonzero elements. Its degree is therefore $n$. Each monic minimal polynomial of such an element has exactly $n$ distinct conjugate roots, all primitive by Entry~\ref{K07.13.primitive_polynomials}. These disjoint root sets partition the primitive elements, proving the count, including $q=2,n=1$ where the unique primitive polynomial is $X-1$.
+
+A primitive polynomial has a root of order $q^n-1$, so the preceding order theorem gives that order. Conversely suppose the order is $q^n-1$. In the irreducible factorization of $f$, no repeated factor can occur: the order formula would then give a factor $p$ in its order, whereas $q^n-1$ is prime to $p$. If there were at least two distinct factors of degrees $d_1,\ldots,d_r$, their orders would be at most $q^{d_j}-1$. Thus
+\[\operatorname{ord}(f)\leq\prod_{j=1}^r(q^{d_j}-1)<q^{\sum_jd_j}-1=q^n-1,\]
+a contradiction. The strict inequality follows first for two positive degrees from $(q^a-1)(q^b-1)=q^{a+b}-q^a-q^b+1<q^{a+b}-1$, and then by induction. Consequently $f$ is irreducible. Its roots have order $q^n-1$, so it is primitive by definition.
+\end{proof}
+\begin{remark}
+These statements use multiplicative primitivity. They do not say that a primitive polynomial supplies a normal basis, and they have no connection with primitive coefficient content in Gauss's lemma.
+\end{remark}
+
+\KEntry{K07.20.finite_transcendence_bases}{Transcendence degree for finitely generated extensions}
+\begin{theorem}
+Let $L/K$ be a finitely generated field extension. There are algebraically independent elements $a_1,\ldots,a_r$ over $K$ such that $L/K(a_1,\ldots,a_r)$ is finite algebraic. Every such independent tuple has the same length, called $\operatorname{trdeg}_K L$. If $E/L$ is finite algebraic, then $E/K$ is finitely generated and $\operatorname{trdeg}_K E=\operatorname{trdeg}_K L$.
+\end{theorem}
+\begin{proof}
+Choose field generators $b_1,\ldots,b_m$ of $L/K$, and a maximal independent subtuple $a$ among them. Each omitted generator $b$ is algebraic over $K(a)$. Indeed, a nonzero polynomial relation between $a$ and $b$ exists by maximality; viewing it as a polynomial in $b$ gives a nonzero polynomial after substituting $a$, because the independent $a$ cannot annihilate a nonzero coefficient polynomial. Thus finitely many algebraic adjunctions give a finite extension over $K(a)$.
+
+Here is the exchange bound ensuring uniqueness. If a field $M$ is algebraic over $K(c_1,\ldots,c_s)$, it cannot contain $s+1$ independent elements over $K$. We first verify the one-element exchange. If $x$ is transcendental over a field $B$ but algebraic over $B(y)$, a polynomial equation, after clearing denominators, gives $P(y,x)=0$ for a nonzero $P(Y,X)\in B[Y,X]$. It depends on $Y$, since $x$ is transcendental over $B$. Also $P(Y,x)$ is a nonzero polynomial in $Y$, since its nonzero coefficient polynomials in $X$ do not vanish at $x$. Consequently $y$ is algebraic over $B(x)$.
+
+Suppose now independent $x_1,\ldots,x_{s+1}$ belonged to $M$. At a stage when $M$ is algebraic over the field generated by $x_1,\ldots,x_j$ and some $s-j$ remaining $c$'s, the next $x_{j+1}$ is transcendental over $K(x_1,\ldots,x_j)$ and algebraic over that field with all remaining $c$'s adjoined. Choose a minimal subset of them making it algebraic, and choose $y$ in that nonempty subset. With $B$ the field generated by the earlier $x$'s and the other members of the chosen subset, $x_{j+1}$ is transcendental over $B$ but algebraic over $B(y)$. Exchange makes $y$ algebraic over $B(x_{j+1})$. Therefore one can replace $y$ by $x_{j+1}$ in the full generating list and $M$ remains algebraic over the new field: first adjoin the algebraic $y$, then use the old algebraicity and its transitivity. After $s$ replacements, $M$ is algebraic over $K(x_1,\ldots,x_s)$, contradicting independence of $x_{s+1}$. This proves the bound.
+
+If $L$ is finite algebraic over fields on two independent tuples of lengths $r,s$, apply the bound to each tuple inside $L$ to obtain $r\leq s$ and $s\leq r$. Their lengths agree. Finally a finite extension $E/L$ is finitely generated over $K$ by a basis of $E/L$ and a finite generating list for $L/K$. For a transcendence tuple $a$ of $L/K$, the extension $E/K(a)$ is finite by the tower law. The same tuple is independent in $E$, so its length is also the transcendence degree of $E$.
+\end{proof}
+\begin{example}
+$\operatorname{trdeg}_K K(t_1,\ldots,t_r)=r$. Adjoining roots of finitely many polynomial equations does not change this number, although it can change the finite degree above the rational function field.
+\end{example}
+
+\KEntry{K07.20.generic_group_any_characteristic}{The generic symmetric group over every characteristic}
+\begin{theorem}
+For every integer $n\geq1$, any field $K$ and independent indeterminates $s_1,\ldots,s_n$, the polynomial
+\[T^n-s_1T^{n-1}+s_2T^{n-2}-\cdots+(-1)^n s_n\]
+over $K(s_1,\ldots,s_n)$ is separable, has splitting-field degree $n!$, and has Galois group $S_n$. The characteristic-zero nonsolvability conclusion of Entry~\ref{K07.15.generic_unsolvability} is unchanged; no characteristic-$p$ radical equivalence is being appended to it.
+\end{theorem}
+\begin{proof}
+Take independent $x_1,\ldots,x_n$ and let $L=K(x_1,\ldots,x_n)$. The faithful permutation action of $S_n$ has a fixed field $F$ with $[L:F]=n!$ by Entry~\ref{K07.14.artin_fixed_field}. Let $e_i$ be the elementary symmetric polynomials and put $E=K(e_1,\ldots,e_n)\subseteq F$. The polynomial $\prod_j(T-x_j)$ has coefficients in $E$, distinct roots, and splitting field $L$, so $[L:E]\leq n!$ by Entry~\ref{K07.12.splitting_degree_bound}. The tower law and $[L:F]=n!$ force $E=F$ and equality of degrees. Its automorphism group contains the given $S_n$ and has at most $n!$ elements, hence equals it.
+
+We must also check that the coefficient tuple is genuinely unrestricted. Since $L/E$ is finite and $\operatorname{trdeg}_K L=n$, the preceding theorem gives $\operatorname{trdeg}_K E=n$. If the $n$ elements $e_i$ were dependent, a maximal independent subtuple of them would have length less than $n$ and would make $E$ finite algebraic over its generated field by the same extraction proof, a contradiction. Thus the $e_i$ are independent. The coefficient-field isomorphism sending $s_i$ to $e_i$ transports the displayed polynomial and splitting field to the construction just proved. None of these steps divides by $n!$, so the theorem includes characteristics dividing $n!$.
+\end{proof}

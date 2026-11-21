@@ -1,0 +1,28 @@
+import MathGenome.AbstractAlgebra.Groups
+import MathGenome.AbstractAlgebra.CyclicGroupsAndPermutations
+import MathGenome.AbstractAlgebra.CosetsAndLagrange
+import MathGenome.AbstractAlgebra.QuotientGroups
+import MathGenome.AbstractAlgebra.GroupActions
+import MathGenome.AbstractAlgebra.SylowAndFiniteGroups
+import MathGenome.AbstractAlgebra.AbelianGroups
+import MathGenome.AbstractAlgebra.Rings
+import MathGenome.AbstractAlgebra.IdealsAndQuotients
+import MathGenome.AbstractAlgebra.Factorization
+import MathGenome.AbstractAlgebra.Polynomials
+import MathGenome.AbstractAlgebra.FieldExtensions
+import MathGenome.AbstractAlgebra.FiniteFields
+import MathGenome.AbstractAlgebra.GaloisTheory
+import MathGenome.AbstractAlgebra.RadicalsAndConstructibility
+import MathGenome.AbstractAlgebra.ModulesAndCanonicalForms
+import MathGenome.AbstractAlgebra.Representations
+import MathGenome.AbstractAlgebra.NilpotentGroups
+import MathGenome.AbstractAlgebra.PolynomialApplications
+import MathGenome.AbstractAlgebra.FurtherFieldTheory
+import MathGenome.AbstractAlgebra.CharactersAndInduction
+import MathGenome.AbstractAlgebra.CommutativeAlgebra
+import MathGenome.AbstractAlgebra.DivisionAlgebras
+import MathGenome.AbstractAlgebra.IntegerArithmetic
+import MathGenome.AbstractAlgebra.FundamentalTheoremOfAlgebra
+import MathGenome.AbstractAlgebra.PiTranscendence
+
+/-! Complete audited D07 scope, including shared arithmetic and both appendices. -/

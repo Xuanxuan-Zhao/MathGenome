@@ -1,0 +1,358 @@
+\chapter{Asymptotic expansions and summation estimates}
+\label{module:M03.17}
+\SourceRef{Zorich I, Appendix D; Zorich II, chapter 19; selected real-variable
+parts of Olver, chapters 1, 3 and 8}
+
+\KEntry{K03.17.asymptotic_scale}{Scales and finite expansions}
+\begin{definition}
+Along a specified limit, an asymptotic scale is a family $\phi_0,\phi_1,\ldots$
+of eventually nonzero scalar functions such that $\phi_{j+1}=o(\phi_j)$.
+An expansion through index $m$ means the finite assertion
+\[
+ f=\sum_{j=0}^{m}a_j\phi_j+o(\phi_m).
+\]
+An all-orders expansion means this assertion for every finite $m$, with
+consistent coefficients. It does not assert convergence of an infinite sum.
+\end{definition}
+For $j<k$, $\phi_k/\phi_j$ is a finite product of adjacent ratios tending to
+zero and hence tends to zero. The domain and direction of the limit are part
+of the definition; a two-sided real power scale often needs $|x|$ in estimates.
+
+\KEntry{K03.17.coefficient_unique}{Uniqueness does not determine the function}
+\begin{proposition}
+The coefficients of an expansion in a fixed asymptotic scale are unique.
+Functions can nevertheless have the same all-orders expansion.
+\end{proposition}
+\begin{proof}
+Subtract two expansions of the same function and let $j$ be the least index
+with unequal coefficients. Divide by $\phi_j$. All terms of larger index
+tend to zero, as does the remainder divided by $\phi_j$; the nonzero constant
+difference at index $j$ cannot tend to zero. This is a contradiction.
+Uniqueness concerns coefficients of a given function, not uniqueness of that
+function; \KRef{K03.17.flat_remainder} gives the latter distinction.
+\end{proof}
+
+\KEntry{K03.17.operations}{Arithmetic with controlled remainders}
+\begin{proposition}
+Finite asymptotic expansions can be added and multiplied by retaining the
+resulting remainders. Division is valid after an eventually nonzero leading
+term has been factored out. Closure of an arbitrary scale under multiplication
+or composition is not automatic.
+\end{proposition}
+\begin{proof}
+Write $f=P+r$, $g=Q+s$, where $P,Q$ are the stated finite sums. The exact
+identities
+\[
+ f+g=P+Q+r+s,\qquad fg=PQ+Ps+Qr+rs
+\]
+reduce every truncation to the $O/o$ multiplication rules. For example, if
+$f=\sum_{j=0}^m a_jt^j+o(t^m)$ and
+$g=\sum_{j=0}^m b_jt^j+o(t^m)$ as $t\to0$, then $P,Q=O(1)$;
+the coefficient at $t^k$ is $\sum_{j=0}^ka_jb_{k-j}$ for $k\leq m$, and
+the discarded finite polynomial terms of degree $>m$ and the three remainder
+terms are $o(t^m)$. For a nonzero leading coefficient, divide first by the
+leading scale factor and write the remaining denominator as $a(1+u)$,
+$a\ne0$, $u\to0$. The finite identity
+\[
+ \frac1{1+u}=\sum_{j=0}^{m}(-u)^j+
+ \frac{(-u)^{m+1}}{1+u}
+\]
+both proves eventual invertibility and controls the quotient remainder.
+Composition requires the inner variable to approach the expansion point and
+its range to remain in the outer domain. For instance $u(t)=O(t)$ and an outer
+remainder $o(u^m)$ imply a remainder $o(t^m)$ by the defining epsilon bound,
+including points with $u=0$ after the remainder is assigned its correct value.
+For a nonpower scale one must keep its product scales or explicitly justify
+their order before dropping terms.
+\end{proof}
+
+\KEntry{K03.17.flat_remainder}{Beyond all powers}
+\begin{example}
+The function $e^{-1/x^2}$ for $x\ne0$, extended by zero at $0$, is
+$o(|x|^m)$ for every nonnegative integer $m$, but is positive off $0$.
+Thus its all-orders power expansion is the zero expansion without the function
+being zero on a neighborhood.
+\end{example}
+\begin{proof}
+Put $u=1/x^2$. For an integer $r>m/2$, the exponential series gives
+$e^u\geq u^r/r!$ for $u>0$, so
+$u^{m/2}e^{-u}\leq r!u^{m/2-r}\to0$. This proves the claimed estimates.
+The full smooth-flat construction, including all derivatives at zero, is
+\KRef{K03.06.smooth_flat}; no analyticity inference is made here.
+\end{proof}
+
+\KEntry{K03.17.divergent_asymptotic}{A divergent series that is asymptotically correct}
+\begin{example}
+For $x>0$ let $F(x)=\int_0^\infty e^{-t}/(1+xt)\dd t$. For every integer
+$N\geq1$,
+\[
+ F(x)=\sum_{k=0}^{N-1}(-1)^kk!x^k+R_N(x),\qquad
+ |R_N(x)|\leq N!x^N.
+\]
+The associated infinite power series has radius zero.
+\end{example}
+\begin{proof}
+The integral is absolutely convergent by comparison with $e^{-t}$. Insert
+the exact finite geometric identity into its integrand. Each moment is
+$\Gamma(k+1)=k!$, and the remainder has absolute value at most
+$x^N\int_0^\infty t^Ne^{-t}\dd t=N!x^N$, since $1+xt\geq1$.
+For fixed $x\ne0$, consecutive absolute power-series terms have ratio
+$(k+1)|x|\to\infty$, so they do not even tend to zero. The finite estimates
+remain valid and, using one extra term, give an all-orders asymptotic expansion.
+\end{proof}
+
+\KEntry{K03.17.bernoulli}{Bernoulli polynomials and their convention}
+\begin{definition}
+Set $B_0(x)=1$. Recursively, $B_n$ is the unique polynomial satisfying
+$B_n'=nB_{n-1}$ and $\int_0^1B_n(x)\dd x=0$ for $n\geq1$.
+Write $B_n=B_n(0)$ for the Bernoulli number. In particular,
+$B_1(x)=x-1/2$, so $B_1=-1/2$.
+\end{definition}
+\begin{proof}[Construction and identities]
+Integrate the already constructed polynomial $nB_{n-1}$ and choose the unique
+constant giving zero average. This proves existence and uniqueness. It gives
+$B_2(x)=x^2-x+1/6$ and $B_4(x)=x^4-2x^3+x^2-1/30$ by coefficient comparison.
+For $n\geq2$,
+$B_n(1)-B_n(0)=n\int_0^1B_{n-1}=0$.
+The polynomials $(-1)^nB_n(1-x)$ satisfy the same derivative and average
+recursion, so uniqueness gives $B_n(1-x)=(-1)^nB_n(x)$.
+Consequently $B_n(0)=0$ for odd $n\geq3$.
+
+Induction on $n$, by differentiating and then evaluating at $x=0$, gives
+$B_n(x+1)-B_n(x)=nx^{n-1}$; the case $n=1$ is direct and the endpoint
+identity fixes the induction constant for $n\geq2$. Telescoping therefore
+proves the finite power-sum formula
+\[
+ \sum_{k=0}^{N-1}k^p=
+ \frac{B_{p+1}(N)-B_{p+1}(0)}{p+1}\quad(p\geq0).
+\]
+For $p=0$ interpret the summands as $1$, including the $k=0$ term.
+\end{proof}
+
+\KEntry{K03.17.euler_maclaurin}{Euler--Maclaurin with an actual remainder}
+\begin{theorem}
+Let integers $a<b$, $m\geq1$, and $f\in C^{2m}([a,b],\R\text{ or }\C)$.
+Then
+\begin{align*}
+ \frac{f(a)}2+\sum_{a<k<b}f(k)+\frac{f(b)}2
+ &=\int_a^b f(x)\dd x+
+ \sum_{r=1}^m\frac{B_{2r}}{(2r)!}
+ \bigl(f^{(2r-1)}(b)-f^{(2r-1)}(a)\bigr)\\
+ &\quad-\frac1{(2m)!}\int_a^b
+ B_{2m}(\{x\})f^{(2m)}(x)\dd x,
+\end{align*}
+where $\{x\}=x-\lfloor x\rfloor$.
+\end{theorem}
+\begin{proof}
+Integrating $(x-k-1/2)f'(x)$ by parts on $[k,k+1]$ gives
+\[
+ \frac{f(k)+f(k+1)}2-\int_k^{k+1}f
+ =\int_k^{k+1}B_1(x-k)f'(x)\dd x.
+\]
+Sum over the unit intervals. Put
+$T_j=\int_a^b B_j(\{x\})f^{(j)}(x)\dd x/j!$.
+For $1\leq j<2m$, integrate by parts on each unit interval and sum.
+The equality $B_{j+1}(1)=B_{j+1}(0)$ cancels internal boundary terms, yielding
+\[
+ T_j=\frac{B_{j+1}}{(j+1)!}
+ \bigl(f^{(j)}(b)-f^{(j)}(a)\bigr)-T_{j+1}.
+\]
+Odd Bernoulli numbers beyond $B_1$ vanish. Starting from $T_1$ and applying
+this identity successively leaves exactly the even-index corrections and
+$-T_{2m}$ in the theorem. The periodic polynomials have at most finitely
+many relevant junctions on $[a,b]$; their endpoint values at those junctions
+do not change their proper Riemann integrals. The stated regularity permits
+every integration by parts used above.
+\end{proof}
+
+\KEntry{K03.17.em_bound}{A useful finite error bound}
+\begin{corollary}
+With $M_{2m}=\max_{0\leq t\leq1}|B_{2m}(t)|$, the absolute remainder is
+at most
+\[
+ \frac{M_{2m}}{(2m)!}\int_a^b|f^{(2m)}(x)|\dd x.
+\]
+\end{corollary}
+\begin{proof}
+Take the absolute value inside the remainder integral and use the uniform
+polynomial bound $M_{2m}$. This finite bound supplies no convergence
+claim for an infinite Euler--Maclaurin series.
+\end{proof}
+
+\KEntry{K03.17.harmonic}{Euler's constant and harmonic corrections}
+\begin{proposition}
+There is a real constant $\gamma$ such that
+\[
+ H_n=\log n+\gamma+\frac1{2n}-\frac1{12n^2}
+       +\frac1{120n^4}+O(n^{-6}),\qquad H_n=\sum_{k=1}^n\frac1k.
+\]
+More generally each fixed number of Bernoulli corrections has a controlled
+inverse-power remainder.
+\end{proposition}
+\begin{proof}
+Integral comparison gives $H_n\geq\log(n+1)>\log n$ and
+$\log(1+1/n)>1/(n+1)$; hence $H_n-\log n$ is positive decreasing and has
+a limit $\gamma$. Apply Euler--Maclaurin to $f(x)=1/x$ on $[n,M]$.
+Its $(j)$th derivative is $(-1)^jj!x^{-j-1}$. The endpoint-half sum is
+$H_M-H_n+1/(2n)-1/(2M)$. Sending $M\to\infty$ gives
+\[
+ H_n=\log n+\gamma+\frac1{2n}
+ -\sum_{r=1}^m\frac{B_{2r}}{2r\,n^{2r}}+E_m(n),
+ \qquad |E_m(n)|\leq\frac{M_{2m}}{2m\,n^{2m}}.
+\]
+The bound follows by integrating $x^{-2m-1}$ and justifies the improper
+limit of the remainder. Taking the formula with $m=3$, and absorbing its
+last correction and remainder into $O(n^{-6})$, proves the displayed
+formula, since $B_2=1/6$ and $B_4=-1/30$. In general one more correction
+than those displayed gives the desired order of error.
+\end{proof}
+
+\KEntry{K03.17.stirling}{Stirling's formula, including the constant}
+\begin{theorem}
+As $n\to\infty$ through positive integers,
+\[
+ n!=\sqrt{2\pi n}(n/e)^n\exp(O(1/n))
+     \sim\sqrt{2\pi n}(n/e)^n.
+\]
+\end{theorem}
+\begin{proof}
+Put $s_n=\log(n!)-(n+1/2)\log n+n$. A direct subtraction gives
+\[
+ s_{n+1}-s_n=1-(n+1/2)\log(1+1/n)
+            =-\frac1{12n^2}+O(n^{-3}).
+\]
+The last equality follows from the finite Taylor expansion of $\log(1+u)$
+with a bounded fourth derivative on $[0,1/2]$; the finitely many smaller
+indices do not matter. Thus $\sum|s_{n+1}-s_n|$ converges and its tail is
+$O(1/n)$ by the $p$-series integral bound. Write $s_n=c+O(1/n)$ and
+$A=e^c>0$. Exponentiation gives
+$n!=A n^{n+1/2}e^{-n}\exp(O(1/n))$.
+
+To determine $A$, form $c_n=\binom{2n}{n}/4^n$. The preceding formula yields
+$\sqrt n\,c_n\to\sqrt2/A$. Independently, the Wallis calculation
+\KRef{K03.18.wallis} gives $\sqrt n\,c_n\to1/\sqrt\pi$.
+Uniqueness of a finite limit gives $A=\sqrt{2\pi}$. This identifies the
+normalization rather than hiding it in an unspecified multiplicative constant.
+The logarithmic $O(1/n)$ error also implies a relative $1+O(1/n)$ error,
+by the mean-value bound for $e^u$ near zero.
+\end{proof}
+
+\KEntry{K03.17.laplace_local}{An interior Laplace minimum}
+\begin{theorem}
+Let $a<b$, let $\phi\in C^2([a,b],\R)$ have a unique global minimum at
+$x_0\in(a,b)$, and suppose $d=\phi''(x_0)>0$. For continuous scalar $g$,
+\[
+ \sqrt\lambda\,e^{\lambda\phi(x_0)}
+ \int_a^b e^{-\lambda\phi(x)}g(x)\dd x
+ \longrightarrow g(x_0)\sqrt{\frac{2\pi}{d}}
+ \quad(\lambda\to+\infty).
+\]
+The assertion includes $g(x_0)=0$; it is a normalized limit rather than an
+invalid asymptotic equivalence to zero.
+\end{theorem}
+\begin{proof}
+Fermat gives $\phi'(x_0)=0$. Taylor--Peano gives
+$q(x_0+h):=\phi(x_0+h)-\phi(x_0)=dh^2/2+o(h^2)$.
+Choose $r>0$ with $[x_0-r,x_0+r]\subset(a,b)$ and
+$q(x_0+h)\geq c h^2$ there for some $c>0$, for instance $c=d/4$.
+On the complementary compact set uniqueness of the minimum gives
+$q\geq\eta>0$. If $M=\max|g|$, its normalized contribution is at most
+$\sqrt\lambda M(b-a)e^{-\lambda\eta}\to0$.
+
+In the local integral substitute $y=\sqrt\lambda(x-x_0)$. The normalized
+integrand becomes
+$g(x_0+y/\sqrt\lambda)e^{-\lambda q(x_0+y/\sqrt\lambda)}$ on
+$|y|\leq r\sqrt\lambda$, bounded in absolute value by $Me^{-cy^2}$.
+For fixed $R$, the defining $o(h^2)$ bound is uniform for
+$|h|\leq R/\sqrt\lambda$ and proves uniform convergence on $[-R,R]$ to
+$g(x_0)e^{-dy^2/2}$. The tails outside this fixed interval are bounded by
+$M\int_{|y|>R}e^{-cy^2}\dd y$, uniformly in large $\lambda$.
+They tend to zero as $R\to\infty$, by the Gaussian integral and a linear
+substitution. First choose $R$ for the tails, then $\lambda$ for the proper
+integrals. This proves convergence to
+$g(x_0)\int_\R e^{-dy^2/2}\dd y=g(x_0)\sqrt{2\pi/d}$.
+The argument uses explicit proper convergence and tails, not an unstated
+dominated-convergence theorem.
+\end{proof}
+\begin{corollary}[A quantitative source variant]
+If additionally $\phi$ is $C^3$ near $x_0$ and $g$ is locally Lipschitz there,
+the normalized expression equals
+$g(x_0)\sqrt{2\pi/d}+O(\lambda^{-1/2})$.
+\end{corollary}
+\begin{proof}
+In the preceding variables,
+$|\lambda q(x_0+y/\sqrt\lambda)-dy^2/2|
+ \leq C|y|^3/\sqrt\lambda$ and
+$|g(x_0+y/\sqrt\lambda)-g(x_0)|\leq L|y|/\sqrt\lambda$.
+Both exponents are at least $c'y^2$ after reducing $r$.
+The elementary inequality $|e^{-u}-e^{-v}|\leq|u-v|e^{-\min(u,v)}$
+therefore bounds the local difference by
+$C'\lambda^{-1/2}(|y|+|y|^3)e^{-c'y^2}$.
+Its integral is finite, by substitution $t=c'y^2$ and Gamma moments.
+The omitted Gaussian and exterior tails are exponentially small in
+$\lambda$, proving the error estimate. These stronger hypotheses are not
+attached to the weaker normalized-limit theorem.
+\end{proof}
+
+\KEntry{K03.17.watson}{A real Watson lemma with tail conditions}
+\begin{theorem}
+Let $N\geq1$, $\alpha>0$. Suppose $q$ is locally Riemann integrable on
+$(0,\infty)$ and, for $0<t\leq\delta$,
+\[
+ q(t)=\sum_{k=0}^{N-1}a_kt^{\alpha+k-1}
+             +O(t^{\alpha+N-1}).
+\]
+Suppose also $|q(t)|\leq C e^{ct}$ for all sufficiently large $t$.
+Then, as $\lambda\to+\infty$,
+\[
+ \int_0^\infty e^{-\lambda t}q(t)\dd t
+ =\sum_{k=0}^{N-1}\frac{a_k\Gamma(\alpha+k)}{\lambda^{\alpha+k}}
+       +O(\lambda^{-\alpha-N}).
+\]
+\end{theorem}
+\begin{proof}
+The local expansion bounds $q$ by a constant times $t^{\alpha-1}$ near zero,
+so the integral there converges absolutely. The growth bound controls the
+infinite tail for $\lambda>c$. On $[\delta,A]$ local integrability gives a
+finite absolute integral, bounded after damping by
+$e^{-\lambda\delta}\int_\delta^A|q|$. On $[A,\infty)$ the bound is
+$Ce^{-(\lambda-c)A}/(\lambda-c)$. Thus the whole tail beyond $\delta$ is
+exponentially small for large $\lambda$; so are the tails of each of the
+finitely many power monomials beyond $\delta$.
+
+The local remainder contributes at most
+\[
+ C'\int_0^\delta e^{-\lambda t}t^{\alpha+N-1}\dd t
+ \leq C'\Gamma(\alpha+N)\lambda^{-\alpha-N}.
+\]
+For each retained monomial, substitute $u=\lambda t$ in its full improper
+integral to obtain $\Gamma(\alpha+k)\lambda^{-\alpha-k}$.
+Adding the finite contributions and the controlled tails proves the formula.
+The global growth condition is what prevents a formally correct local
+expansion from being misused for an uncontrolled infinite integral.
+\end{proof}
+
+\KEntry{K03.17.oscillatory_bound}{An elementary oscillatory estimate}
+\begin{proposition}
+For $h\in C^1([a,b],\C)$ and nonzero real $\lambda$,
+\[
+ \left|\int_a^b h(x)e^{i\lambda x}\dd x\right|
+ \leq\frac{|h(a)|+|h(b)|+\int_a^b|h'(x)|\dd x}{|\lambda|}.
+\]
+\end{proposition}
+\begin{proof}
+Real-parameter differentiation of the established complex exponential gives
+$(e^{i\lambda x})'=i\lambda e^{i\lambda x}$. Integration by parts yields
+the boundary term $[h(x)e^{i\lambda x}/(i\lambda)]_a^b$ and the remaining
+integral $-(i\lambda)^{-1}\int h'e^{i\lambda x}$. Take absolute values and
+use $|e^{i\lambda x}|=1$.
+\end{proof}
+
+\KEntry{K03.17.scope_boundary}{What this asymptotic supplement does not assert}
+\begin{remark}[Routing record]
+General stationary phase, steepest descent, Stokes transitions, WKB and uniform
+Airy/Bessel approximations require additional D12/D13/D24 foundations and
+estimates. This record routes those subjects and contains no claimed proof of
+their general theories. All statements proved in this chapter are finite
+real-variable estimates with explicit remainders or tail control.
+\end{remark}

@@ -1,0 +1,355 @@
+\chapter{Elementary functions from power series}
+This chapter uses the general series results of modules 11--13 as prior logical
+ingredients, irrespective of the printed chapter order. Those general results
+use factorials, finite algebra and completeness, and do not use the exponential
+or logarithm constructed here. Throughout, derivatives of complex-valued
+functions of a real parameter use real increments.
+\SourceRef{Rudin, Chapter 8, PDF pp. 183--191; Zorich I, Sections 5.5 and 5.6.5. The series-first route is fixed here; integral and differential-equation descriptions are comparisons}
+
+\KEntry{K03.07.exp_construction}{The exponential series}
+\begin{construction}
+For $z\in\C$ define
+\[E(z)=\sum_{n=0}^{\infty}\frac{z^n}{n!},\qquad 0!=1.
+\]
+Its restriction to $\R$ will also be written $\exp$.
+\end{construction}
+\begin{proof}
+For $|z|\le R$, the absolute values are bounded by $R^n/n!$.
+When $n+1\ge2R$, successive terms of this majorant have ratio at most
+$1/2$, so its tail is bounded by a geometric tail. Thus the series converges
+absolutely everywhere and uniformly on every disk $|z|\le R$ by the
+uniform majorant argument of \KRef{K03.12.m_test}. The differentiated
+series on a real interval is $\sum_{n\ge1}x^{n-1}/(n-1)!$ and obeys the
+same bound. The general termwise theorem \KRef{K03.13.termwise} therefore
+gives $E'(x)=E(x)$. This reasoning is about a previously established general
+power-series theorem, not a definition of differentiation by formal symbols.
+\end{proof}
+
+\KEntry{K03.07.exp_addition}{Addition law}
+\begin{theorem}
+For $z,w\in\C$, $E(z+w)=E(z)E(w)$, $E(0)=1$, and
+$E(-z)=1/E(z)$.
+\end{theorem}
+\begin{proof}
+The absolute Cauchy-product theorem \KRef{K03.11.cauchy_product} applies
+because both factorial series converge absolutely. Its coefficient of total
+degree $n$ is
+\[\sum_{k=0}^n\frac{z^kw^{n-k}}{k!(n-k)!}
+=\frac1{n!}\sum_{k=0}^n\binom nkz^kw^{n-k}
+=\frac{(z+w)^n}{n!}.
+\]
+The constant value is read from the series. Setting $w=-z$ gives
+$E(z)E(-z)=1$, proving both nonvanishing and the reciprocal formula.
+\end{proof}
+
+\KEntry{K03.07.exp_properties}{The real exponential}
+\begin{theorem}
+The real function $\exp$ is positive, differentiable with derivative itself,
+strictly increasing, and maps $\R$ bijectively onto $(0,\infty)$. Its limits
+at $-\infty$ and $+\infty$ are $0$ and $+\infty$, respectively.
+\end{theorem}
+\begin{proof}
+For $x\ge0$ the series has nonnegative terms and $E(x)\ge1+x>0$.
+For $x<0$, $E(x)=1/E(-x)>0$. The derivative proved above is consequently
+positive, so the mean value theorem makes $E$ strictly increasing.
+The bound $E(x)\ge1+x$ proves divergence to $+\infty$; the reciprocal law
+proves the limit at $-\infty$. Continuity and the intermediate value theorem
+then show that each positive number is assumed exactly once.
+\end{proof}
+
+\KEntry{K03.07.log_construction}{The inverse logarithm}
+\begin{definition}
+For $y>0$, $\log y$ is the unique real $x$ such that $E(x)=y$.
+\end{definition}
+\begin{proposition}
+The logarithm is continuous and strictly increasing on $(0,\infty)$,
+$\log1=0$, and $\log(uv)=\log u+\log v$ for $u,v>0$.
+\end{proposition}
+\begin{proof}
+The inverse-continuity theorem \KRef{K03.03.inverse_continuity} applies to
+the continuous strictly increasing surjection just proved. Alternatively,
+if $x=\log y$, the images of $x-\eps$ and $x+\eps$ enclose $y$ and trap
+the inverse of every sufficiently close positive number between these two
+points. Finally $E(\log u+\log v)=uv$ by addition, and inverse uniqueness
+proves the product formula. In particular $\log(1/u)=-\log u$.
+\end{proof}
+
+\KEntry{K03.07.log_derivative}{Derivative and integral comparison for logarithm}
+\begin{theorem}
+For $x>0$, $\log'(x)=1/x$. After the fundamental theorem in module 09,
+\[\log x=\int_1^x\frac{\dd t}{t}\quad(x>0)
+\]
+with oriented integration.
+\end{theorem}
+\begin{proof}
+The inverse derivative rule applies because $E'(\log x)=E(\log x)=x\ne0$;
+it gives the asserted reciprocal derivative. On every compact interval in
+$(0,\infty)$, $1/t$ is continuous, so \KRef{K03.09.ftc_first} makes the
+accumulation integral a primitive. Its difference from $\log$ has derivative
+zero, hence is constant on $(0,\infty)$. Both functions vanish at $1$.
+Only this comparison uses integration; the construction of $\log$ does not.
+\end{proof}
+
+\KEntry{K03.07.real_powers}{Real powers and roots}
+\begin{definition}
+For $x>0$ and $\alpha\in\R$, put $x^\alpha=E(\alpha\log x)$.
+\end{definition}
+\begin{proposition}
+For positive bases,
+\[x^{\alpha+\beta}=x^\alpha x^\beta,\quad
+(xy)^\alpha=x^\alpha y^\alpha,\quad (x^\alpha)^\beta=x^{\alpha\beta}.
+\]
+This agrees with integer powers and with the positive algebraic root
+interpretation of rational powers.
+\end{proposition}
+\begin{proof}
+The first two laws follow from exponential addition and logarithm products;
+the third follows from $\log(E(\alpha\log x))=\alpha\log x$.
+For integers the first law, $x^1=x$, and $x^0=1$ give the familiar positive
+and negative powers. If $q\ge1$ and $p\in\Z$, then
+$(x^{p/q})^q=x^p$ and $x^{p/q}>0$, so uniqueness of the positive $q$th
+root from \KRef{K03.01.positive_roots} proves agreement.
+For $\alpha>0$ the limit at $x\downarrow0$ is $0$, since $\log x\to-\infty$;
+thus $0^\alpha=0$ is a continuous extension. For $\alpha<0$ the limit is
+$+\infty$. No definition of $0^0$ follows. Negative bases admit integer
+powers, and rational powers with odd reduced denominator by real roots;
+there is no real-valued extension for all real exponents at a negative base.
+\end{proof}
+
+\KEntry{K03.07.sin_cos}{Sine and cosine series}
+\begin{construction}
+For real or complex $z$ define
+\[S(z)=\sum_{n=0}^{\infty}\frac{(-1)^nz^{2n+1}}{(2n+1)!},\qquad
+C(z)=\sum_{n=0}^{\infty}\frac{(-1)^nz^{2n}}{(2n)!}.
+\]
+Write $\sin=S$ and $\cos=C$. On real inputs $S'=C$ and $C'=-S$.
+\end{construction}
+\begin{proof}
+Absolute values of either series are subseries of $\sum |z|^n/n!$;
+on $|z|\le R$ the same majorant proves uniform convergence. Their
+differentiated real series are the displayed cosine and negative sine
+series, with the same compact majorants. Termwise differentiation yields
+the formulas, with $S(0)=0$ and $C(0)=1$.
+\end{proof}
+
+\KEntry{K03.07.trig_properties}{Trigonometric identities and bounds}
+\begin{theorem}
+Sine is odd, cosine is even, and for real $x,y$,
+\begin{align*}
+S(x+y)&=S(x)C(y)+C(x)S(y),\\
+C(x+y)&=C(x)C(y)-S(x)S(y),\\
+S(x)^2+C(x)^2&=1.
+\end{align*}
+Consequently $|S(x)|,|C(x)|\le1$, $|S(x)|\le|x|$, and
+$|C(x)-1|\le x^2/2$.
+\end{theorem}
+\begin{proof}
+Parity follows term by term. To prove the addition formulas without assuming
+geometric trigonometry, fix $y$ and subtract the proposed expressions from
+$S(x+y)$ and $C(x+y)$, calling the differences $u(x),v(x)$.
+The derivative formulas give $u'=v$, $v'=-u$, and $u(0)=v(0)=0$.
+Hence $(u^2+v^2)'=0$, and its initial value zero implies $u=v=0$.
+Likewise $(S^2+C^2)'=2SC-2CS=0$, with value one at zero.
+The norm bounds follow, and the mean value inequality gives $|S(x)|\le|x|$.
+For the sharper cosine estimate, put $h(x)=x^2/2-1+C(x)$ for $x\ge0$.
+Then $h'=x-S(x)\ge0$, so $1-C(x)\le x^2/2$; evenness handles $x<0$.
+\end{proof}
+
+\KEntry{K03.07.pi_period}{Pi, periods and quadrants}
+\begin{construction}
+Let $c$ be the first positive zero of $C$ and define $\pi=2c$.
+Then $S(c)=1$, $C(c)=0$, sine and cosine have period $2\pi$,
+and their first-quadrant ranges are $S([0,c])=[0,1]$ and
+$C([0,c])=[0,1]$ with strict increase and decrease, respectively.
+\end{construction}
+\begin{proof}
+Continuity makes $C>0$ on some $[0,\delta]$, and then $S$ increases there,
+with $S(\delta)>0$. If $C$ had no positive zero, continuity would force
+$C>0$ everywhere on $(0,\infty)$. Thus $S(x)\ge S(\delta)>0$ for
+$x\ge\delta$ and $C'(x)=-S(x)\le-S(\delta)$; the mean value theorem
+would make $C$ negative for large $x$, a contradiction. A zero exists.
+The zero set in a compact interval from $\delta$ to any such zero is
+nonempty and closed, hence has a minimum $c>0$. On $(0,c)$, $C>0$,
+so $S$ is positive and strictly increasing. The identity gives $S(c)=1$.
+Since $C'=-S<0$ on $(0,c]$, the range statements follow.
+Addition gives $S(x+c)=C(x)$, $C(x+c)=-S(x)$; applying these twice gives
+$S(x+2c)=-S(x)$, $C(x+2c)=-C(x)$ and four times gives period $4c=2\pi$.
+These relations and parity describe all quadrants: sine increases on
+$[-c,c]$, decreases on $[c,3c]$, and cosine decreases on $[0,2c]$,
+with translated intervals giving all other monotonicity intervals.
+They also show that the zeros of sine are $k\pi$ and those of cosine
+$c+k\pi$ ($k\in\Z$). There is no common positive period below $2\pi$:
+a common period must have sine zero and cosine one, which these quadrant
+signs allow only at even multiples of $\pi$.
+This analytic definition does not assume a circle-length definition of $\pi$.
+\end{proof}
+
+\KEntry{K03.07.trig_inverses}{Principal inverse trigonometric functions}
+\begin{definition}
+$\arcsin:[-1,1]\to[-\pi/2,\pi/2]$ is the inverse of sine on that range;
+$\arccos:[-1,1]\to[0,\pi]$ is the inverse of cosine there.
+$\arctan:\R\to(-\pi/2,\pi/2)$ is the inverse of tangent on that interval.
+\end{definition}
+\begin{proof}[Existence and derivative formulas]
+The preceding strict monotonicity and endpoint values prove the first two
+bijections and inverse continuity. On $(-\pi/2,\pi/2)$ cosine is positive;
+the quotient rule gives $(S/C)'=1/C^2>0$. At the endpoints its limits are
+$-\infty,+\infty$ because the numerator tends to $-1,1$ and the
+denominator to $0$ through positive values. Thus tangent is a continuous
+strictly increasing surjection, establishing the third inverse.
+For $|x|<1$, inverse differentiation and the sign of the appropriate sine
+or cosine give
+\[(\arcsin x)'=\frac1{\sqrt{1-x^2}},\qquad
+(\arccos x)'=-\frac1{\sqrt{1-x^2}}.
+\]
+For all $x\in\R$, $(\arctan x)'=1/(1+x^2)$ because
+$C(\arctan x)^{-2}=1+x^2$. At $x=\pm1$ the first two inverse functions
+remain continuous, but their finite one-sided derivatives do not exist:
+the interior derivative magnitudes tend to infinity and the mean value
+theorem on a one-sided secant gives the same divergence of slopes.
+\end{proof}
+
+\KEntry{K03.07.tan}{Tangent and poles}
+\begin{proposition}
+$\tan x=S(x)/C(x)$ is defined exactly for
+$x\notin\{\pi/2+k\pi:k\in\Z\}$, has period $\pi$, and derivative
+$1/C(x)^2$. At each pole $p=\pi/2+k\pi$, the left and right limits
+are $+\infty$ and $-\infty$.
+\end{proposition}
+\begin{proof}
+The zero description for $C$ proves the domain. Both numerator and
+denominator change sign after $\pi$, proving periodicity.
+The quotient rule gives $(C^2+S^2)/C^2=1/C^2$.
+At $\pi/2$, sine tends to $1$ while cosine is positive on the left and
+negative on the right. Periodicity translates these one-sided limits to
+every pole. A pole is excluded from the domain; the limits are not values.
+\end{proof}
+
+\KEntry{K03.07.hyperbolic}{Hyperbolic functions and their real inverses}
+\begin{definition}
+Put $\sinh x=(E(x)-E(-x))/2$, $\cosh x=(E(x)+E(-x))/2$ and
+$\tanh x=\sinh x/\cosh x$ for $x\in\R$.
+\end{definition}
+\begin{proposition}
+$\cosh^2x-\sinh^2x=1$, $(\sinh)'=\cosh$, $(\cosh)'=\sinh$,
+and $(\tanh)'=1/\cosh^2$. The respective principal inverses are
+\begin{align*}
+\operatorname{arsinh}y&=\log(y+\sqrt{y^2+1})&& (y\in\R),\\
+\operatorname{arcosh}y&=\log(y+\sqrt{y^2-1})&& (y\ge1),\\
+\operatorname{artanh}y&=\tfrac12\log\frac{1+y}{1-y}&& (|y|<1),
+\end{align*}
+with ranges $\R,[0,\infty),\R$. Their derivatives on the interiors
+of these domains are $(1+y^2)^{-1/2}$, $(y^2-1)^{-1/2}$,
+and $(1-y^2)^{-1}$.
+\end{proposition}
+\begin{proof}
+Expanding the squares and using $E(x)E(-x)=1$ proves the identity;
+differentiation proves the three derivative formulas. Since $\cosh x>0$,
+$\sinh$ increases strictly and tends to both real infinities. Cosine
+hyperbolic decreases to $1$ on $(-\infty,0]$ and increases from $1$ on
+$[0,\infty)$. The quotient expression
+$\tanh x=(E(2x)-1)/(E(2x)+1)$ gives strict increase and limits $\pm1$.
+Solving each equation using $u=E(x)>0$ gives the displayed logarithms;
+for example $2y=u-u^{-1}$ has the unique positive root
+$u=y+\sqrt{y^2+1}$. For cosh select $u\ge1$ to fix the nonnegative branch.
+Inverse differentiation gives the stated derivatives from the identity,
+with the positive square root on the chosen branch. At $y=1$ arcosh
+is continuous with infinite right derivative; no finite derivative is claimed.
+\end{proof}
+
+\KEntry{K03.07.euler}{Imaginary inputs and Euler's identity}
+\begin{theorem}
+For real $t$, $E(it)=C(t)+iS(t)$, $|E(it)|=1$, and
+$\overline{E(z)}=E(\bar z)$ for every $z\in\C$. For fixed $z\in\C$,
+the real-parameter derivative of $E(tz)$ is $zE(tz)$.
+\end{theorem}
+\begin{proof}
+Absolute convergence permits separating the even and odd terms in $E(it)$,
+which gives the identity. The squared modulus is $C^2+S^2=1$.
+Conjugation commutes with finite partial sums and limits, giving the second
+identity. Uniform convergence of the differentiated series on bounded real
+$t$-intervals gives
+$\sum_{n\ge1}nz^nt^{n-1}/n!=zE(tz)$ componentwise. This asserts a real
+parameter derivative; it does not invoke complex differentiability theory.
+\end{proof}
+
+\KEntry{K03.07.elementary_derivatives}{A derivative table with domains}
+\begin{proposition}
+For $x>0$ and $\alpha\in\R$,
+\[(x^\alpha)'=\alpha x^{\alpha-1},\qquad
+(a^x)'=(\log a)a^x\quad(a>0).
+\]
+Together with the formulas proved above this gives the derivatives of the
+elementary functions on their stated domains. In particular, $\sec=1/\cos$
+has derivative $\sec\tan$ where $\cos\ne0$, and $\cot=\cos/\sin$ has
+derivative $-1/\sin^2$ where $\sin\ne0$.
+\end{proposition}
+\begin{proof}
+The chain rule gives $(E(\alpha\log x))'=E(\alpha\log x)\alpha/x$,
+equal to $\alpha x^{\alpha-1}$ by the power laws. The second formula is
+the chain rule for $E(x\log a)$. The reciprocal and quotient rules give
+the last two formulas. Thus every entry follows from an actual derivative
+calculation with its denominator condition, rather than a formal table
+applied across zeros or branch endpoints.
+\end{proof}
+
+\KEntry{K03.07.elementary_domains}{Domains and exceptional points}
+\begin{definition}
+In these notes $\log$ has real domain $(0,\infty)$, $x^\alpha$ initially
+has $x>0$, $\sqrt{x}$ is the nonnegative root for $x\ge0$, and the three
+inverse trigonometric ranges are exactly those fixed above. Reciprocal
+trigonometric functions exclude their denominator zeros.
+\end{definition}
+\begin{example}
+The equation $\sin y=x$ has a unique solution in $[-\pi/2,\pi/2]$, but
+not a unique real solution without that restriction: for $|x|<1$ both
+$\arcsin x$ and $\pi-\arcsin x$ solve it, along with their $2\pi$
+translates. Also $(\sqrt{x})'=1/(2\sqrt{x})$ holds for $x>0$;
+the right quotient at zero is $1/\sqrt{h}\to+\infty$.
+These computations explain the exclusions. A complex logarithm and its
+branches require a different domain theory and are outside this chapter.
+\end{example}
+
+\KEntry{K03.07.standard_limits}{Reference limits}
+\begin{theorem}
+As $h\to0$ through real nonzero values,
+\[\frac{\sin h}{h}\to1,\qquad\frac{E(h)-1}{h}\to1,\qquad
+\frac{\log(1+h)}h\to1\quad(1+h>0).
+\]
+More generally, if $u\to0$, $1+u>0$, and $v u\to L\in\R$, then
+$(1+u)^v\to E(L)$, provided at zeros $u=0$ the expression is interpreted
+as $1$ and the asserted product limit is consistent there.
+\end{theorem}
+\begin{proof}
+The three quotients are derivative quotients at $0,0,1$, respectively,
+whose derivatives have been proved to be one. For the last assertion,
+at nonzero $u$,
+$v\log(1+u)=(vu)\log(1+u)/u\to L$.
+At zeros the exponent is zero; if zeros accumulate, existence of the
+product limit forces $L=0$ along that subsequence. Continuity of $E$
+completes the proof, including this case.
+In particular $\lim_{h\to0}(1+h)^{1/h}=E(1)$ on the positive-base
+domain, by taking $u=h$ and $v=1/h$ for nonzero $h$.
+\end{proof}
+
+\KEntry{K03.07.construction_bridges}{Sequence, differential equation and integral comparisons}
+\begin{theorem}
+For every fixed $x\in\R$,
+\[\lim_{n\to\infty}(1+x/n)^n=E(x).
+\]
+On an interval containing zero, $E$ is the unique differentiable scalar
+solution of $y'=y$, $y(0)=1$. The integral logarithm agrees with the
+inverse logarithm.
+\end{theorem}
+\begin{proof}
+For all sufficiently large $n$, $1+x/n>0$. If $x\ne0$, then
+$n\log(1+x/n)=x\,\log(1+x/n)/(x/n)\to x$ by the preceding limit;
+exponentiating proves the sequence assertion. For $x=0$ every term is one.
+For the equation, existence is $E'=E$, $E(0)=1$. If $y$ is another
+real or complex solution, the real derivative of $y(t)E(-t)$ is
+$y'(t)E(-t)-y(t)E(-t)=0$. The zero-derivative theorem, componentwise
+for complex values, gives $y(t)E(-t)=1$ on the interval.
+Finally the integral comparison is precisely the primitive-uniqueness
+argument of \KRef{K03.07.log_derivative}. These are proved identifications,
+not simultaneous definitions that would create a circular construction.
+\end{proof}

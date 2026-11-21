@@ -1,0 +1,68 @@
+D12 UNIFIED CONVENTIONS AND PROOF BOUNDARIES
+
+1. Omega denotes an open subset of C. A domain is nonempty, open and connected.
+   Empty and disconnected variants are explicitly stated when used. Do not
+   replace connectedness by path connectedness without the open-plane bridge.
+2. Holomorphic means complex differentiable at every point. Real C1, complex
+   differentiability at a point, and a local convergent complex power series
+   start as distinct notions. Goursat/Cauchy/Taylor prove the relevant equivalence.
+3. A conformal map is locally holomorphic with nonzero derivative; a conformal
+   equivalence is a global biholomorphism. Injectivity and nonzero derivative
+   are not silently interchangeable before the local multiplicity theorem.
+4. A path is a continuous map on a compact real interval, with piecewise C1
+   regularity for the basic contour integral. A finite cycle is an integral
+   linear combination of closed piecewise C1 paths. Constant/degenerate paths
+   have zero integral. Integral depends on traversal, not only trace. Rectifiable
+   extensions use the proved BV/Stieltjes bridge, not an unjustified derivative.
+5. ind(Gamma,a)=(2 pi i)^(-1) integral_Gamma dz/(z-a). Points stay off the trace.
+   Homotopy and zero index on the complement are distinct hypotheses; prove the
+   respective Cauchy formulations and their implications. Do not assume Jordan
+   separation for arbitrary self-intersecting paths.
+6. Taylor/Laurent expansion domains, radii, compact subannuli and zero/pole
+   multiplicities are explicit. Identically zero and constant maps are separate.
+7. Scalar meromorphic functions exclude identically infinity. Holomorphic maps
+   into the sphere may include that constant. Infinity chart is w=1/z; residue
+   of a differential at infinity includes the Jacobian minus sign.
+8. Finite normality in H(Omega) uses locally uniform ordinary complex convergence.
+   Spherical normality in meromorphic maps allows the constant infinity. The
+   constants n demonstrate why local boundedness is not equivalent to the latter.
+9. Harmonic initially means real-valued C2 with Laplacian zero. Prove mean-value,
+   regularity, conjugate and holomorphic bridges. Harmonic conjugate differential
+   is -u_y dx+u_x dy. Global conjugates require zero periods.
+10. Use continuous subharmonic comparison functions in the chosen Perron class.
+    Bounded domains and continuous boundary data are explicit. Boundary
+    attainment requires barriers/regularity; RMT alone supplies no boundary map.
+11. Plane Runge pole sets meet every component of the spherical complement.
+    At infinity a pole means polynomial terms. Exhaustions and compact tails
+    are proved. Products have locally finite divisors with exact multiplicities.
+12. General-domain Weierstrass uses a valid boundary-factor construction; do not
+    exponentiate an ML primitive unless every noncontractible period is controlled.
+13. Germs have representatives near their basepoint. Monodromy requires actual
+    continuation along every path of the homotopy, or all paths in the simply
+    connected-domain corollary. A local homeomorphism is not automatically a
+    covering. Supply the path/homotopy lifting bridges actually used.
+14. Riemann surfaces are Hausdorff, second countable, connected complex
+    one-manifolds. Chart independence, compact-map degree and branching are
+    proved. Future D23 and D22 are ownership links, not available proof axioms.
+15. Lattice Lambda=Z omega1+Z omega2 with Im(omega2/omega1) nonzero; normalize
+    orientation positive when using oriented boundary integrals. Weierstrass
+    p(z)=1/z^2+sum_{lambda!=0}((z-lambda)^(-2)-lambda^(-2));
+    g2=60 sum lambda^(-4), g3=140 sum lambda^(-6), so
+    p'^2=4p^3-g2 p-g3. Absolute convergence/reindexing and true periods are proved.
+16. Cubic coordinates [Z:X:Y] satisfy Y^2 Z=4 X^3-g2 X Z^2-g3 Z^3. Torus map
+    z -> [1:p(z):p'(z)], lattice class -> [0:0:1]. Prove nonsingularity,
+    infinity charts, holomorphic inverse and group-law comparison, not a set
+    bijection alone. No converse uniformization of arbitrary cubics is claimed.
+17. Bloch/Schottky/Picard need actual proofs, separate from locally bounded
+    Montel. Use any safe proved universal constant; no historical sharpness claim.
+18. Selected scope is recorded in UNIFIED_RESULT_LEDGER.json. Gamma/zeta and
+    complex ODE application branches, full Jordan/prime-end boundary theory,
+    general surface uniformization/RR/duality and full modular forms are deferred.
+    This is not a claim to reproduce every result in five books.
+19. Adopted main results retain all hypotheses and conclusions. Equivalent valid
+    proofs and exact previously proved prerequisites are permitted. Unused
+    source-route helper steps are not new deliverables; a necessary lemma must
+    still be proved or matched to a precise legitimate prior foundation.
+20. Original prose/proofs, consistent notation and exact source comparison only;
+    do not copy textbook exposition. Source theorem omissions, exercises and
+    names are not proof certificates. Record discovered errors and resolved gaps.

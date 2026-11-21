@@ -1,0 +1,12 @@
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.ChartIndependentTangentSpaces
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.EmbeddedManifoldCharts
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.EuclideanSmoothCutoffs
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.FiniteCompactPartition
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.GraphTransitionsAndIntrinsicBoundary
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.ImmersionsEmbeddingsAndExamples
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.LocalGraphAndAmbientInverse
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.MetricTopFormsAndDensities
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.OrientationsAndChartSigns
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.OutwardFirstBoundaryOrientation
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.RegularLevelsAndGraphs
+import MathGenome.Internal.MultivariableAnalysis.D04.C14.SmoothApproximationInC1

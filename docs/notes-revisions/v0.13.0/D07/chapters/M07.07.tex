@@ -1,0 +1,150 @@
+\chapter{Finite abelian groups and their invariants}\label{chap:M07.07}
+
+We now use additive notation. In the reading order of these notes the elementary PID-module chapter precedes this one: its structure theorem is proved independently of finite abelian classification. This permits us to reuse existence, while giving explicit intrinsic invariants and uniqueness arguments here. Write $C_n=\Z/n\Z$ additively for $n\geq1$. A product with no factors is the zero group.
+
+\KEntry{K07.07.primary_subgroups}{Torsion and primary subgroups}
+\begin{proposition}\label{prop:abelian-primary-subgroups}
+For an abelian group $A$, its torsion elements form the characteristic subgroup
+\[
+ T(A)=\{a:na=0\text{ for some integer }n>0\}.
+\]
+For a prime $p$, the subgroup
+$A_{(p)}=\{a:p^ka=0\text{ for some }k\geq0\}$ is characteristic. If $A$ is finite, it is the unique Sylow $p$-subgroup.
+\end{proposition}
+\begin{proof}
+If $na=0$ and $mb=0$ with $n,m>0$, then $nm(a+b)=0$ by the additive distributive laws; $n(-a)=0$ as well. The zero element is killed by one, proving subgroup closure for $T(A)$. For the primary subgroup, $p^ia=p^jb=0$ implies $p^{\max(i,j)}(a+b)=0$, and the same exponent kills a negative. Every homomorphism commutes with integer multiples by Proposition~\ref{prop:hom-powers} in additive notation. Therefore an automorphism carries either subgroup into itself, and its inverse gives equality, proving characteristicity.
+
+For finite $A$, every element of $A_{(p)}$ has $p$-power order, so Proposition~\ref{prop:pgroup-characterization} makes this a $p$-group. Every $p$-subgroup of $A$ lies in it, because Lagrange kills each element by the subgroup's $p$-power order. Thus $A_{(p)}$ is maximal among $p$-subgroups and is Sylow by Proposition~\ref{prop:sylow-definition}. All subgroups of an abelian group are normal, so Corollary~\ref{cor:sylow-normal} gives uniqueness. These subgroup assertions use commutativity; the collection of finite-order elements of an arbitrary nonabelian group is not asserted to be a subgroup.
+\end{proof}
+
+\KEntry{K07.07.primary_decomposition}{Canonical primary decomposition}
+\begin{theorem}\label{thm:abelian-primary-decomposition}
+If $|A|=N=\prod_p p^{a_p}$ is finite, addition gives an isomorphism
+\[
+ \prod_{p\mid N} A_{(p)}\longrightarrow A,
+ \qquad (x_p)_p\longmapsto\sum_p x_p,
+\]
+and $|A_{(p)}|=p^{a_p}$. The components are intrinsic, even though their subsequent cyclic splittings need not be.
+\end{theorem}
+\begin{proof}
+The component cardinalities follow from Proposition~\ref{prop:abelian-primary-subgroups} and the Sylow definition. Suppose first $N>1$. For each prime $p\mid N$, put $N_p=N/p^{a_p}$. Bezout's identity chooses $b_p$ with $b_pN_p\equiv1\pmod{p^{a_p}}$; set $e_p=b_pN_p$. Then $e_p$ is one modulo $p^{a_p}$ and zero modulo every other prime-power factor of $N$. Consequently $\sum_p e_p\equiv1\pmod N$, because pairwise coprime integers dividing an integer have product dividing it. Lagrange gives $Na=0$ for $a\in A$. Thus
+$a=\sum_p e_pa$, and each $e_pa$ is killed by $p^{a_p}$, proving surjectivity of the addition map.
+
+For injectivity suppose $\sum_px_p=0$. Every $x_p$ is killed by $p^{a_p}$ since it belongs to a subgroup of that order. Applying the integer $e_q$ kills every $x_p$ with $p\ne q$ and fixes $x_q$, so $x_q=0$ for every $q$. The map is additive because the group is abelian, completing the isomorphism proof. If $N=1$, $A=0$ and the empty product maps isomorphically to it. The original definition of each component uses only annihilation by integer powers, so it is independent of the decomposition.
+\end{proof}
+
+\KEntry{K07.07.primary_cyclic_existence}{Existence of cyclic prime-power factors}
+\begin{theorem}\label{thm:abelian-elementary-existence}
+Every finite abelian $p$-group is isomorphic to a finite product $C_{p^{e_1}}\times\cdots\times C_{p^{e_r}}$ with each $e_i\geq1$. For an arbitrary finite abelian group, combine these factors over its primary components. The trivial group uses the empty product.
+\end{theorem}
+\begin{proof}
+An abelian group has its canonical $\Z$-module structure by integer multiples. A finite group is finitely generated, for its entire finite underlying set is a generating set. The integers form a PID by integer division (the PID result of Chapter~\ref{chap:M07.10}). Apply the proved PID structure existence theorem, Theorem~\ref{thm:pid-structure-existence}, to this $\Z$-module. It gives a free part and finitely many quotients $\Z/(q_i^{e_i})$ with positive exponents after trivial factors are removed. Irreducibles of $\Z$ are associates of positive primes, so signs in the $q_i$ do not change their principal ideals or quotients. A nonzero free part would contain a copy of the infinite group $\Z$, impossible in a finite group; it is therefore absent. The quotients are exactly $C_{q_i^{e_i}}$. Each factor embeds in the product, so its order divides $|A|$ by Lagrange. For a $p$-group this forces $q_i=p$. Theorem~\ref{thm:abelian-primary-decomposition} then gives the general case. This argument uses only the independently proved module existence theorem, not a presupposed group-classification uniqueness assertion.
+\end{proof}
+
+\KEntry{K07.07.torsion_count_invariants}{Counting elements killed by prime powers}
+\begin{proposition}\label{prop:primary-torsion-counts}
+Let $p$ be prime and let $(e_i)_{i=1}^r$ be a finite list of positive integers. For $A=\prod_iC_{p^{e_i}}$, set $A[p^k]=\{a:p^ka=0\}$ for $k\geq0$. Then
+\[
+ |A[p^k]|=p^{s_k},\qquad s_k=\sum_i\min(k,e_i).
+\]
+For $k\geq1$, $s_k-s_{k-1}=\#\{i:e_i\geq k\}$. Hence the counts recover the multiset of exponents.
+\end{proposition}
+\begin{proof}
+In $C_{p^e}$ a residue $t$ is killed by $p^k$ exactly when $p^e\mid p^kt$. If $k\geq e$, all $p^e$ residues work. If $k<e$, the condition is $p^{e-k}\mid t$, with exactly $p^k$ residues satisfying it. Thus a factor contributes $p^{\min(k,e)}$ choices, and product counting proves the formula. The difference $\min(k,e)-\min(k-1,e)$ is one if $e\geq k$ and zero otherwise. Adding these differences proves the displayed recovery formula. The number of occurrences of $k$ itself is
+$(s_k-s_{k-1})-(s_{k+1}-s_k)$, so all multiplicities are recovered. At $k=0$ the subgroup is $\{0\}$, of size one; for the empty list every $s_k$ is zero, consistently recovering no factors.
+\end{proof}
+
+\KEntry{K07.07.primary_cyclic_uniqueness}{Uniqueness of elementary divisors}
+\begin{theorem}\label{thm:abelian-elementary-uniqueness}
+If two products of cyclic $p$-groups with positive exponents are isomorphic, their exponent multisets agree. For arbitrary finite abelian groups the multiset of prime-power cyclic orders is uniquely determined up to reordering, with the prime attached to each exponent.
+\end{theorem}
+\begin{proof}
+An additive isomorphism commutes with multiplication by every integer, so restricts to a bijection of the subgroups killed by $p^k$. Their cardinalities agree for every $k$. Since powers of the integer $p>1$ are distinct, the exponents $s_k$ in Proposition~\ref{prop:primary-torsion-counts} agree, and its difference formulas force equality of every exponent multiplicity. For different primes first restrict the isomorphism to $A_{(p)}$, which is intrinsic by Proposition~\ref{prop:abelian-primary-subgroups}; apply the $p$-group argument to each such restriction. Positivity is essential to literal multiset uniqueness: factors $C_{p^0}=C_1$ could otherwise be inserted arbitrarily. The theorem determines orders of abstract factors, not preferred cyclic subgroups inside $A$.
+\end{proof}
+
+\KEntry{K07.07.classification_data_conversion}{Two normalized descriptions of one classification}
+\begin{proposition}\label{prop:abelian-data-conversion}
+Elementary divisors and increasing invariant factors are equivalent normalized data. From $2\leq d_1\mid\cdots\mid d_r$, take the positive prime powers in the factorizations of the $d_i$. Conversely, for each prime sort its positive exponents increasingly, pad on the left by zeros to a common maximum length, and multiply prime powers columnwise. These operations are inverse after deleting all-one columns.
+\end{proposition}
+\begin{proof}
+Starting with prime-exponent lists, padding with zeros produces a nondecreasing list for each prime. If $d_i$ is the product in column $i$, every prime exponent in $d_i$ is at most the exponent in $d_{i+1}$, so $d_i\mid d_{i+1}$. Removing a zero exponent removes only a factor of order one. Conversely, in a chain $d_1\mid\cdots\mid d_r$, the valuations at each prime are nondecreasing, so their zeros precede their positive terms. Since $d_1\geq2$, some prime divides $d_1$ and hence all $r$ terms. Thus the maximum length of a positive-exponent list is exactly $r$; padding recovers precisely the original valuations. Unique prime factorization recovers the $d_i$. If there were no nontrivial factors, both procedures produce the empty list.
+
+These data conversions preserve the isomorphism type of the group: whenever $a,b$ are coprime, the map $C_{ab}\to C_a\times C_b$, $[x]_{ab}\mapsto([x]_a,[x]_b)$ is a homomorphism, injective because $a,b\mid x$ implies $ab\mid x$, and bijective since both sides have $ab$ elements. Repeated application separates or recombines the prime powers in each column. Arbitrary grouping would not suffice: grouping elementary divisors $2,4,3$ as $6,4$ fails the divisibility-chain condition, while the prescribed alignment gives $2,12$.
+\end{proof}
+
+\KEntry{K07.07.invariant_factor_existence}{Existence of invariant factors}
+\begin{theorem}\label{thm:abelian-invariant-existence}
+Every finite abelian group is isomorphic to $C_{d_1}\times\cdots\times C_{d_r}$ with $2\leq d_1\mid\cdots\mid d_r$. The zero group uses $r=0$.
+\end{theorem}
+\begin{proof}
+Take a prime-power decomposition by Theorem~\ref{thm:abelian-elementary-existence}, and perform the conversion in Proposition~\ref{prop:abelian-data-conversion}. Its columnwise CRT isomorphisms prove that the resulting product is isomorphic to the original group; its valuation comparison proves the divisibility chain. All-one factors have been removed. We use increasing divisibility; the decreasing list in Dummit--Foote must be reversed to compare it with this convention.
+\end{proof}
+
+\KEntry{K07.07.invariant_factor_uniqueness}{Uniqueness of invariant factors}
+\begin{theorem}\label{thm:abelian-invariant-uniqueness}
+If two lists $2\leq d_1\mid\cdots\mid d_r$ and $2\leq e_1\mid\cdots\mid e_s$ give isomorphic products of cyclic groups, then $r=s$ and $d_i=e_i$ for all $i$.
+\end{theorem}
+\begin{proof}
+Separate both products into prime-power cyclic factors by the CRT part of Proposition~\ref{prop:abelian-data-conversion}. Theorem~\ref{thm:abelian-elementary-uniqueness} identifies the resulting multisets of prime-labelled exponents. Applying the inverse conversion, whose inverse property was proved, recovers the same length and same chain from each. This proves uniqueness of the normalized lists. The condition $d_i>1$ is needed to forbid inserting arbitrary trivial factors.
+\end{proof}
+
+\KEntry{K07.07.classification_isomorphism_test}{Isomorphism tests and insufficient invariants}
+\begin{corollary}\label{cor:abelian-isomorphism-test}
+Two finite abelian groups are isomorphic exactly when their normalized elementary-divisor data agree, equivalently when their invariant-factor lists agree.
+\end{corollary}
+\begin{proof}
+Equality of either data list constructs an isomorphism through the common product model, using existence. Conversely an isomorphism forces equality by the two uniqueness theorems. Equal cardinality is weaker: $C_4$ has an element of order four whereas $C_2\times C_2$ does not. Even order and exponent together are insufficient. For prime $p$, the groups $C_{p^2}\times C_{p^2}$ and $C_{p^2}\times C_p\times C_p$ both have order $p^4$ and exponent $p^2$, but their subgroups killed by $p$ have sizes $p^2$ and $p^3$ by Proposition~\ref{prop:primary-torsion-counts}. An isomorphism cannot change those sizes.
+\end{proof}
+
+\KEntry{K07.07.cardinality_exponent_rank}{Order, exponent, and minimum generators}
+\begin{proposition}\label{prop:abelian-basic-invariants}
+For the normalized product $A=\prod_{i=1}^rC_{d_i}$, its order is $\prod_i d_i$. Its exponent, the least positive integer killing every element, is $d_r$ if $r>0$ and one if $r=0$. The minimum number of generators is $r$. Consequently $A$ is cyclic if and only if $r\leq1$, equivalently if its exponent equals its order.
+\end{proposition}
+\begin{proof}
+Product counting gives the cardinality. Each $d_i$ divides $d_r$, so $d_r$ kills every coordinate; a generator in the last coordinate has order $d_r$, forcing every annihilating positive integer to be a multiple of it. For the zero group every positive integer kills all elements, and the least is one. The coordinate generators give an upper bound of $r$. For $r>0$ choose a prime $p\mid d_1$; it divides all $d_i$. The quotient $A/pA$ is $C_p^r$: in each $C_{d_i}$ the multiples of $p$ have index $p$, as the residue map modulo $p$ shows. If $k$ elements generated $A$, their images would generate this quotient. Sums of these $k$ images with coefficients in $\{0,\ldots,p-1\}$ give at most $p^k$ values, whereas the quotient has $p^r$ elements. Thus $k\geq r$. The zero group needs zero generators. This proves the minimum. A cyclic group needs at most one generator; for $r\geq2$, $\prod_i d_i>d_r$, while for $r=0,1$ order and exponent agree, proving the final equivalences.
+\end{proof}
+
+\KEntry{K07.07.enumerate_abelian_groups}{Counting abelian groups of a given order}
+\begin{theorem}\label{thm:abelian-partition-count}
+If $n=\prod_p p^{a_p}>0$, the number of abelian isomorphism types of order $n$ is $\prod_p P(a_p)$, where $P(a)$ counts partitions of $a$ into positive integers and $P(0)=1$.
+\end{theorem}
+\begin{proof}
+A $p$-primary product has order $p^{\sum_i e_i}$, so its positive exponent multiset with sum $a_p$ is exactly a partition of $a_p$. Existence realizes every such partition. Uniqueness makes different partitions nonisomorphic and ensures that every $p$-primary type occurs exactly once. Primary decomposition permits independent choices for distinct primes and recombines them into a group of order $n$; uniqueness again forbids identifying different choices. Multiplication of the finite numbers of choices gives the formula. For $n=1$ there are no prime choices, the product equals one, and its group is the zero group.
+\end{proof}
+
+\KEntry{K07.07.fg_abelian_extension}{The finitely generated extension}
+\begin{theorem}\label{thm:fg-abelian-structure}
+Every finitely generated abelian group is isomorphic to
+\[
+ \Z^r\oplus C_{d_1}\oplus\cdots\oplus C_{d_s},\qquad
+ r\geq0,\quad 2\leq d_1\mid\cdots\mid d_s,
+\]
+with unique $r$ and unique finite list $(d_i)$. Its torsion subgroup is the finite part and its quotient by torsion is $\Z^r$. It is finite exactly when $r=0$.
+\end{theorem}
+\begin{proof}
+Apply Theorem~\ref{thm:pid-structure-existence} to the canonical $\Z$-module. It gives a finite free part and a finite collection of prime-power quotients; their finite group is put in invariant-factor form by Theorem~\ref{thm:abelian-invariant-existence}. In this product, a torsion element must have all its integer coordinates zero, since a positive multiple of a nonzero integer is nonzero. Every element of the finite part is killed by its order, so that part is precisely $T(A)$. Projection to the integer coordinates therefore identifies $A/T(A)$ with $\Z^r$.
+
+An isomorphism preserves torsion by its intrinsic definition, hence identifies the finite parts, whose invariant factors are unique by Theorem~\ref{thm:abelian-invariant-uniqueness}. It also identifies the torsion-free quotients. For $\Z^r$, quotient by its double subgroup has exactly $2^r$ elements, by coordinate residues modulo two. Thus $\Z^r\cong\Z^{r'}$ forces $2^r=2^{r'}$, hence $r=r'$. This proves all uniqueness assertions without using finite cardinality for the free part. If $r=0$ the product is finite; if $r>0$ its first integer coordinate already supplies infinitely many distinct elements.
+\end{proof}
+
+Finite generation is essential: the additive group $\Q$ is not finitely generated. A finite list of rational numbers has a common positive denominator $d$, so every integer linear combination belongs to $d^{-1}\Z$. The rational number $1/(2d)$ does not belong to that subgroup, because an equation $1/(2d)=m/d$ would imply $1=2m$ for an integer $m$.
+
+\KEntry{K07.07.fg_torsion_finite}{When torsion implies finiteness}
+\begin{corollary}\label{cor:fg-torsion-finite}
+A finitely generated torsion abelian group is finite, equivalently its free rank is zero.
+\end{corollary}
+\begin{proof}
+The torsion description in Theorem~\ref{thm:fg-abelian-structure} forces the integer part to vanish and proves the conclusion. There is also a direct finite bound: if generators $a_1,\ldots,a_t$ have finite orders $n_1,\ldots,n_t$, every group element is $\sum_i k_i a_i$ because the group is abelian; reduce $k_i$ modulo $n_i$ to obtain at most $\prod_i n_i$ possibilities. Finite generation is necessary: the direct sum of infinitely many copies of $C_p$ has every element killed by $p$, but has infinitely many different coordinate generators. The elementary theorem stated here concerns abelian groups: rearranging a word into one power of each generator used commutativity. Asking whether a finitely generated torsion group must be finite without this hypothesis is the different Burnside problem, outside the scope of this proof; no assertion about its answer is being used.
+\end{proof}
+
+\KEntry{K07.07.integer_presentations_smith_bridge}{Integer matrices and presented abelian groups}
+\begin{theorem}\label{thm:integer-abelian-presentation}
+For an integer matrix defining $B:\Z^m\to\Z^n$, unimodular changes of bases give a diagonal map with positive nonzero entries $d_1\mid\cdots\mid d_r$ and all other entries zero. Consequently
+\[
+ \coker B\cong\Z^{n-r}\oplus\bigoplus_{i=1}^r\Z/d_i\Z,
+\]
+where factors with $d_i=1$ are zero and may be deleted.
+\end{theorem}
+\begin{proof}
+The integer specialization of the independently proved presentation theorem, Corollary~\ref{cor:integer-presentation-cokernel}, provides the diagonalization by unimodular matrices. Concretely, if $D=PBQ$ with $P,Q$ invertible over $\Z$, then $\im D=P(\im B)$ because $Q$ is surjective. Thus $v+\im B\mapsto Pv+\im D$ is a well-defined additive isomorphism, with inverse induced by $P^{-1}$. For the diagonal map, its image consists of tuples with coordinate $i$ a multiple of $d_i$ for $i\leq r$ and zero for $i>r$. Coordinate reduction gives exactly the displayed quotient; its kernel is that image, proving the formula by the first isomorphism theorem. A unit diagonal entry $d_i=1$ cancels a generator--relation pair in the cokernel, while zero or unused target rows give free generators. The signs of nonzero diagonal entries can be made positive by multiplying basis elements by $-1$. These operations use invertibility over $\Z$, equivalently determinant $\pm1$, not arbitrary rational basis changes, which could alter the group. Full module classification remains in Chapter~\ref{chap:M07.16}; this is its concrete integer specialization and the bridge to D05 integer canonical forms.
+\end{proof}

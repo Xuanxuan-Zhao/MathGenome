@@ -1,0 +1,7 @@
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch09.ArgumentPrinciple
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch09.Hurwitz
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch09.LogarithmicDerivative
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch09.PerturbationZeros
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch09.PolynomialRoots
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch09.Rouche
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch09.UnivalentLimits

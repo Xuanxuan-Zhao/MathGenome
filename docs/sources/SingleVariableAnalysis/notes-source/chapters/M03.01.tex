@@ -1,0 +1,185 @@
+\chapter{Sequences and completeness}
+Throughout this chapter indices start at $1$, and $\K$ denotes $\R$ or $\C$. Statements involving order apply to real numbers. The proofs use completeness at identifiable points; no logarithm or exponential is needed for the sequence tests.
+\SourceRef{Zorich I, 3.1; Rudin, Chapter 3; Tao, Chapter 6}
+
+\KEntry{K03.01.real_interface}{The scalar foundation}
+\begin{definition}
+We use one complete ordered field $\R$: every nonempty subset bounded above has a least upper bound. We use $\C=\R^2$ with its usual field operations, conjugation, and modulus $|u+iv|=(u^2+v^2)^{1/2}$. The field laws, order laws, finite sums and products, natural-number induction, elementary set theory, and metric axioms are shared foundations. In particular the triangle inequality and $|zw|=|z||w|$ are available scalar algebra. Completeness of $\C$ as a metric space will be proved below, rather than separately postulated.
+\end{definition}
+The nonnegative square root in this interface agrees with the completeness construction in \KRef{K03.01.positive_roots}; uniqueness there makes the notations compatible. Constructing the real field itself belongs to the preceding direction of study.
+
+\KEntry{K03.01.archimedean}{Archimedean bounds and rational density}
+\begin{theorem}
+For every $x\in\R$ some $n\in\N$ satisfies $n>x$. If $x<y$, some $q\in\Q$ satisfies $x<q<y$.
+\end{theorem}
+\begin{proof}
+If $\N$ had a supremum $s$, then $s-1$ would not be an upper bound. Choose $n>s-1$; then $n+1>s$, a contradiction. To obtain density choose $n$ with $n(y-x)>1$. There is an integer $m$ with $nx<m\le nx+1$: indeed choose an integer $N>|nx|+1$ and take the least member of the nonempty finite set of integers in $[-N,N]$ greater than $nx$. Its predecessor is at most $nx$. Consequently $x<m/n\le x+1/n<y$.
+\end{proof}
+In particular $1/n\to0$ directly from its defining inequality, and rational approximations with arbitrarily small prescribed errors exist.
+
+\KEntry{K03.01.sup_inf}{Suprema and infima}
+\begin{definition}
+An upper bound of $A\subset\R$ is a number $b$ with $a\le b$ for every $a\in A$. Its least upper bound is $\sup A$. The complete-field foundation asserts its existence when $A$ is nonempty and bounded above. Define $\inf A=-\sup(-A)$ for nonempty sets bounded below. In $\overline\R=\R\cup\{-\infty,+\infty\}$ we set $\sup\varnothing=-\infty$, $\inf\varnothing=+\infty$, and assign infinite bounds to unbounded sets. These conventions do not assert that an empty set has a real supremum.
+\end{definition}
+\begin{proposition}
+If $s=\sup A\in\R$ and $\eps>0$, some $a\in A$ satisfies $s-\eps<a\le s$. If $t=\inf A\in\R$, some $a\in A$ satisfies $t\le a<t+\eps$.
+\end{proposition}
+\begin{proof}
+Otherwise $s-\eps$ would be a smaller upper bound. Apply this conclusion to $-A$ for the infimum assertion.
+\end{proof}
+
+\KEntry{K03.01.positive_roots}{Positive integer roots}
+\begin{construction}
+For $a\ge0$ and integer $m\ge1$ there is exactly one $r\ge0$ with $r^m=a$; write $r=a^{1/m}$.
+\end{construction}
+\begin{proof}
+For $a=0$ take $r=0$. For $a>0$, let $S=\{t\ge0:t^m\le a\}$ and $r=\sup S$. The set contains a positive number, for $0<t<\min(1,a)$ gives $t^m\le t<a$, and is bounded above by $a+1$. Thus $r>0$. For $u,v\in[0,r+1]$ the factorization of $u^m-v^m$ gives
+\[ |u^m-v^m|\le m(r+1)^{m-1}|u-v|. \]
+If $r^m<a$, choose $0<h<1$ with $m(r+1)^{m-1}h<a-r^m$. Then $(r+h)^m<a$, contradicting the upper-bound property of $r$. If $r^m>a$, choose $0<h<\min(1,r)$ with $m(r+1)^{m-1}h<r^m-a$. Then $(r-h)^m>a$. Since $t\mapsto t^m$ is strictly increasing on $[0,\infty)$ by its factorization, $r-h$ is an upper bound of $S$, again a contradiction. The same strict increase proves uniqueness. For a positive base $a$, rational powers $a^{p/q}=(a^{1/q})^p$, with integer $p$ and positive integer $q$, use these roots, and negative $p$ uses the reciprocal. Their exponent laws and independence of the fraction representation follow by raising to common positive integer powers and using uniqueness. At base zero, positive rational exponents extend with value zero; no negative-power law is asserted there.
+\end{proof}
+
+\KEntry{K03.01.sequence_limit}{Convergence of a sequence}
+\begin{definition}
+A sequence $a:\N\to\K$ converges to $L\in\K$ if
+\[ (\forall\eps>0)(\exists N\in\N)(\forall n\ge N)\quad |a_n-L|<\eps. \]
+Write $a_n\to L$. For real sequences $a_n\to+\infty$ means that for every real $B$ eventually $a_n>B$; $-\infty$ is defined with the reverse inequality. These are not finite scalar limits. An assertion holding for all $n\ge N$ for some $N$ holds \emph{eventually}.
+\end{definition}
+
+\KEntry{K03.01.unique_limit}{Uniqueness, boundedness, and finite prefixes}
+\begin{proposition}
+A convergent scalar sequence has exactly one limit and is bounded. Changing or deleting finitely many terms does not change its limit.
+\end{proposition}
+\begin{proof}
+If $L\ne M$ were limits, take $\eps=|L-M|/3$ and a common tail. There $|L-M|\le|L-a_n|+|a_n-M|<2|L-M|/3$, impossible. On a tail with $|a_n-L|<1$, $|a_n|\le |L|+1$; taking the maximum with the finitely many earlier moduli proves boundedness. Each limit condition concerns only a tail, so finitely many changes are irrelevant.
+\end{proof}
+
+\KEntry{K03.01.limit_algebra}{Algebra and order of limits}
+\begin{theorem}
+If $a_n\to a$, $b_n\to b$, and $c\in\K$, then $a_n+b_n\to a+b$, $ca_n\to ca$, $a_nb_n\to ab$, and $|a_n|\to|a|$. If $b\ne0$, eventually $b_n\ne0$ and $a_n/b_n\to a/b$. For real sequences, eventual $a_n\le b_n$ implies $a\le b$.
+\end{theorem}
+\begin{proof}
+The estimates for sums and scaling are $|(a_n+b_n)-(a+b)|\le|a_n-a|+|b_n-b|$ and $|ca_n-ca|=|c||a_n-a|$. If $|a_n|\le C$, then $|a_nb_n-ab|\le C|b_n-b|+|b||a_n-a|$. The reverse triangle inequality gives $||a_n|-|a||\le|a_n-a|$. If $b\ne0$, eventually $|b_n|\ge |b|/2$, and
+\[ \left|\frac1{b_n}-\frac1b\right|\le\frac{2|b_n-b|}{|b|^2}. \]
+These estimates tend to zero and give the quotient by multiplication. Finally if $a>b$, tails with $|a_n-a|,|b_n-b|<(a-b)/3$ contradict $a_n\le b_n$. Strict inequalities need not survive: $0<1/n$ but both limits are zero.
+\end{proof}
+
+\KEntry{K03.01.squeeze}{Squeeze and absolute estimates}
+\begin{theorem}
+If real $a_n\le b_n\le c_n$ eventually and $a_n,c_n\to L$, then $b_n\to L$. If $|z_n-L|\le d_n$ eventually and $d_n\to0$, then $z_n\to L$.
+\end{theorem}
+\begin{proof}
+On a common sufficiently late tail $L-\eps<a_n\le b_n\le c_n<L+\eps$. The second assertion follows directly from $d_n<\eps$ on a tail.
+\end{proof}
+
+\KEntry{K03.01.monotone}{Monotone convergence}
+\begin{theorem}
+A nondecreasing real sequence bounded above converges to the supremum of its range. If unbounded above it tends to $+\infty$. A nonincreasing sequence has the dual conclusions with the infimum and $-\infty$.
+\end{theorem}
+\begin{proof}
+If $s$ is the supremum, choose $N$ with $s-\eps<a_N\le s$. For $n\ge N$, $s-\eps<a_n\le s$. If unbounded above, choose $a_N>B$ and use monotonicity for every later term. Negation of the sequence proves the decreasing assertions.
+\end{proof}
+
+\KEntry{K03.01.nested_intervals}{Nested closed intervals}
+\begin{theorem}
+For nonempty closed bounded intervals $I_n=[a_n,b_n]$ with $I_{n+1}\subset I_n$, the intersection is nonempty. If $b_n-a_n\to0$, it contains exactly one point.
+\end{theorem}
+\begin{proof}
+Let $s=\sup_n a_n$, which exists since $a_n\le b_1$. For each fixed $j$, all $a_n\le b_j$: this follows from nesting for $n\ge j$, and from $a_n\le a_j$ for $n<j$. Thus $a_j\le s\le b_j$. If $s,t$ both lie in every interval, $|s-t|\le b_n-a_n\to0$, so $s=t$. Without shrinking lengths, $I_n=[0,1]$ has a whole interval as intersection.
+\end{proof}
+
+\KEntry{K03.01.subsequence}{Subsequences}
+\begin{definition}
+A subsequence has the form $a_{n_j}$ where $n_1<n_2<\cdots$ are positive integers. A limit of a convergent subsequence is a subsequential limit of $a_n$.
+\end{definition}
+\begin{proposition}
+If $a_n\to L$, then every subsequence tends to $L$.
+\end{proposition}
+\begin{proof}
+Induction gives $n_j\ge j$. A tail estimate for $a_n$ therefore applies whenever $j$ is at least its threshold.
+\end{proof}
+
+\KEntry{K03.01.bolzano}{Bolzano--Weierstrass}
+\begin{theorem}
+Every bounded real or complex sequence has a convergent subsequence.
+\end{theorem}
+\begin{proof}
+Enclose a real sequence in a closed bounded interval. Bisect the interval and retain a closed half containing infinitely many terms; at least one half does, since two finite collections cannot contain infinitely many indices. Repeat. The retained intervals are nested with lengths tending to zero, so have a unique common point $L$. Choose recursively $n_j>n_{j-1}$ with $a_{n_j}$ in the $j$th interval. Its distance from $L$ is at most that interval's length. For a complex sequence first choose a subsequence whose real parts converge, and then a subsequence of that subsequence whose imaginary parts converge. The real-part limit persists, and $|u+iv|\le |u|+|v|$ proves convergence to the pair of limits.
+\end{proof}
+
+\KEntry{K03.01.cauchy}{The Cauchy criterion}
+\begin{theorem}
+A scalar sequence converges in $\R$ or $\C$ if and only if it is Cauchy, meaning that for every $\eps>0$ eventually $|a_n-a_m|<\eps$ for all $m,n$ on the same tail.
+\end{theorem}
+\begin{proof}
+Convergence implies the assertion by the triangle inequality with two errors $<\eps/2$. A Cauchy sequence has a bounded tail by fixing one term after the threshold for $\eps=1$, and hence is bounded. Choose a subsequence tending to $L$ by \KRef{K03.01.bolzano}. Given $\eps>0$, choose the Cauchy threshold for $\eps/2$, and a subsequence term beyond it within $\eps/2$ of $L$. Every term after the threshold is then within $\eps$ of $L$. This also proves metric completeness of $\C$.
+\end{proof}
+The rational version fails: rational numbers within $1/n$ of $\sqrt2$ form a Cauchy sequence, but their unique real limit is irrational. Irrationality follows because $p^2=2q^2$ for relatively prime integers would force both $p$ and $q$ even.
+
+\KEntry{K03.01.limsup}{Upper and lower limits}
+\begin{definition}
+For a real sequence put $U_N=\sup_{n\ge N}a_n$ and $L_N=\inf_{n\ge N}a_n$ in $\overline\R$. Define
+\[ \limsup a_n=\inf_N U_N,\qquad \liminf a_n=\sup_N L_N. \]
+For bounded sequences these are real numbers, $U_N$ decreases to the former, and $L_N$ increases to the latter.
+\end{definition}
+\begin{proposition}
+For a bounded real sequence, $\limsup a_n$ and $\liminf a_n$ are subsequential limits, and every subsequential limit lies between them.
+\end{proposition}
+\begin{proof}
+Write $u=\lim U_N$. Recursively choose $n_j\ge\max(j,n_{j-1}+1)$ with $a_{n_j}>U_{\max(j,n_{j-1}+1)}-1/j\ge u-1/j$, using supremum approximation. Also $a_{n_j}\le U_j\to u$, so squeeze gives the desired subsequence. Apply this to $-a_n$ for the infimum. For any subsequential limit $v$, fixing $N$ and passing to the limit in $L_N\le a_{n_j}\le U_N$ gives $L_N\le v\le U_N$; then let $N\to\infty$.
+\end{proof}
+
+\KEntry{K03.01.limsup_rules}{Limsup rules and convergence}
+\begin{theorem}
+For a bounded real sequence, $a_n\to L$ if and only if $\liminf a_n=\limsup a_n=L$. For bounded real sequences $a,b$,
+\[ \liminf a+\liminf b\le\liminf(a+b)\le\limsup(a+b)\le\limsup a+\limsup b. \]
+Moreover $\limsup(-a)=-\liminf a$.
+\end{theorem}
+\begin{proof}
+Convergence places all sufficiently late tail bounds in $[L-\eps,L+\eps]$. Conversely equality of the two limits traps $a_n$ between tails arbitrarily close to $L$. On every tail the infimum of $a+b$ is at least the sum of the two infima, and the supremum is at most the sum of the two suprema; passage to limits proves the displayed bounds. Negation interchanges upper and lower bounds. Equalities in the sum bounds need not hold: $a_n=(-1)^n$, $b_n=-a_n$ give $\limsup(a+b)=0<2=\limsup a+\limsup b$.
+\end{proof}
+
+\KEntry{K03.01.cesaro}{Arithmetic averages}
+\begin{theorem}
+If $a_n\to L$ in $\K$, then $n^{-1}\sum_{j=1}^n a_j\to L$.
+\end{theorem}
+\begin{proof}
+For $j\ge N$ arrange $|a_j-L|<\eps/2$. Then for $n\ge N$ the modulus of the averaged error is at most
+\[ \frac1n\sum_{j<N}|a_j-L|+\frac{n-N+1}{n}\frac\eps2. \]
+The first term tends to zero. The converse fails for $a_n=(-1)^n$: its partial sums have modulus at most $1$, so its averages tend to zero, although its even and odd subsequences have distinct limits.
+\end{proof}
+
+\KEntry{K03.01.stolz}{Stolz--Cesaro with unbounded denominator}
+\begin{theorem}
+Let $b_n$ be real, strictly increasing, and tend to $+\infty$. If $a_n\in\K$ and
+\[ \frac{a_{n+1}-a_n}{b_{n+1}-b_n}\longrightarrow L\in\K, \]
+then $a_n/b_n\to L$.
+\end{theorem}
+\begin{proof}
+Set $c_n=a_n-Lb_n$. Given $\eps>0$, choose $N$ so that $|c_{j+1}-c_j|\le\eps(b_{j+1}-b_j)$ for $j\ge N$. Telescoping yields $|c_n|\le|c_N|+\eps(b_n-b_N)$ for $n>N$. Eventually $b_n>0$, and division shows $\limsup |c_n/b_n|\le\eps$. Since $\eps$ is arbitrary, the quotient tends to zero. Strict increase supplied the positive weights; no decreasing-denominator variant has been asserted.
+\end{proof}
+
+\KEntry{K03.01.standard_limits}{Reference sequences without logarithms}
+\begin{example}
+If $|q|<1$, then $q^n\to0$. Also $n^{1/n}\to1$, and $n^k/r^n\to0$ for fixed integer $k\ge0$ and $r>1$.
+\end{example}
+\begin{proof}
+For $0<|q|<1$ write $1/|q|=1+d$, $d>0$. Induction gives $(1+d)^n\ge1+nd$, so $|q|^n\le(1+nd)^{-1}\to0$; $q=0$ is immediate. For each $\eps>0$ the binomial formula gives $(1+\eps)^n\ge\binom n2\eps^2>n$ for sufficiently large $n$. Root monotonicity gives $1\le n^{1/n}<1+\eps$. Finally write $r=1+d$ and take $m=k+1$. For $n\ge2m$,
+\[ r^n\ge\binom nm d^m\ge \frac{(n/2)^m d^m}{m!},\qquad 0\le\frac{n^k}{r^n}\le\frac{2^m m!}{d^m n}. \]
+Every bound used here is algebraic.
+\end{proof}
+
+\KEntry{K03.01.e_sequence}{The classical sequence for the exponential constant}
+\begin{construction}
+The sequence $u_n=(1+1/n)^n$ converges to a finite positive number. After the power-series construction of $\exp$, this limit equals $\exp(1)$.
+\end{construction}
+\begin{proof}
+The finite binomial formula writes
+\[ u_n=\sum_{j=0}^n\frac1{j!}\prod_{\ell=0}^{j-1}(1-\ell/n). \]
+For a fixed $j\le n$ every factor is nonnegative and nondecreasing as $n$ increases; the new term at $n+1$ is positive. Thus $u_n$ increases. It is bounded by $\sum_{j=0}^n1/j!\le 1+\sum_{j=1}^n2^{1-j}<3$, since $j!\ge2^{j-1}$ for $j\ge1$. Monotone convergence gives a limit $u\ge2$.
+For the comparison use the later definition $\exp(1)=\sum_{j=0}^\infty1/j!$ in \KRef{K03.07.exp_construction}. For fixed $J$, the first $J+1$ terms of the displayed binomial sum tend to $\sum_{j=0}^J1/j!$. All remaining terms are nonnegative and their sum is at most $\sum_{j>J}1/j!\le\sum_{j>J}2^{1-j}$, uniformly in $n$. Letting first $n$ and then $J$ tend to infinity identifies $u$. This last paragraph is a comparison after the series construction, not a prerequisite for it.
+\end{proof}
+
+\KEntry{K03.01.counterexamples}{Boundary cases for sequences}
+\begin{example}
+The bounded sequence $(-1)^n$ diverges because its even and odd subsequences tend to $1$ and $-1$. The sequence $n$ has no finite limit because it is unbounded, but tends to $+\infty$ since $n>B$ eventually for every $B$. Rational approximations to $\sqrt2$ within $1/n$ converge in $\R$ and are Cauchy in $\Q$, yet have no rational limit, as proved in \KRef{K03.01.cauchy}. Thus boundedness alone, existence of one convergent subsequence, and the Cauchy property without a complete target are different conditions.
+\end{example}

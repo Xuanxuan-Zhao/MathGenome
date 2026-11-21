@@ -1,0 +1,17 @@
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.AbsolutelyContinuousContours
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.ArclengthFactorization
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.ContourStieltjesMeasure
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.IntervalChains
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.MonotoneReparameterization
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.PC1MonotoneChainRule
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.PC1MonotoneSubstitution
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.PathOperations
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.PathsChains
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.PiecewiseC1Length
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.PolygonalConnectivity
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.PrimitiveConstruction
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.PrimitivePeriodCriterion
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.PrimitiveStieltjesEndpoint
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.RectifiableStieltjes
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.RectifiableTraceNull
+import MathGenome.Internal.ComplexAnalysis.D12Complex.Ch03.TrianglePrimitiveCriterion

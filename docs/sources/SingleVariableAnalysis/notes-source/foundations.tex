@@ -1,0 +1,38 @@
+\chapter*{Declared shared foundations}
+\addcontentsline{toc}{chapter}{Declared shared foundations}
+\label{shared-foundations}
+The set-theoretic language consists of functions, subsets, finite and countable
+families, the usual natural numbers with induction, and elementary finite sums
+and products. We use countable choices when choosing a sequence of witnesses
+from nonempty sets. Finite binomial identities and factorial arithmetic are part
+of elementary algebra and can also be established by induction. For example,
+$(1+t)^n=\sum_{k=0}^n\binom nk t^k$ follows by multiplying the $n$th identity by
+$(1+t)$ and using Pascal's relation. No convergence assertion is encoded in this
+finite identity.
+
+The scalar interface is a complete ordered field $\R$: every nonempty real set
+bounded above has a supremum. Its complex extension is $\C=\R+i\R$ with
+$\abs{x+iy}=\sqrt{x^2+y^2}$. Real inequalities concern real quantities. The
+triangle inequality for complex scalars follows by squaring and using the finite
+real Cauchy--Schwarz inequality. That inequality itself follows from
+$\sum_j(u_j-tv_j)^2\geq0$: minimizing the quadratic in $t$ gives
+$(\sum_j u_jv_j)^2\leq(\sum_j u_j^2)(\sum_jv_j^2)$, with the zero-denominator
+case immediate. Complex finite Cauchy--Schwarz follows by choosing the phase of
+the complex inner product and applying the same real estimate, or by expanding
+$\sum_j\abs{u_j-tv_j}^2\geq0$ with complex $t$.
+
+A metric has nonnegative symmetric distances, distance zero exactly at equal
+points, and the triangle inequality. Open and closed sets, metric completeness
+and compactness by finite subcovers have their usual definitions; the compactness
+and completeness results actually needed below are proved. Compactness does not
+mean mere boundedness in an arbitrary metric space. For the rare finite-dimensional
+algebraic application we may reuse the accepted field arithmetic and polynomial
+factorization interfaces of the fixed mathematical library. This does not import
+a theorem about infinite sums or analytic integrals.
+
+All other results invoked by a stable D03 identifier are proved or constructed
+within the notes. In particular a Gaussian integral is not justified by an
+unprepared polar-coordinate theorem: the text uses Wallis integrals and a
+one-variable Gamma limit. Likewise uniform convergence of proper truncations
+and explicit tail bounds replace an implicit appeal to a Lebesgue dominated
+convergence or Fubini theorem.

@@ -1,0 +1,288 @@
+\chapter{Quotient rings and the Chinese remainder theorem}\label{chap:M07.09}
+
+% Topic grouping: Descent and isomorphisms
+\KEntry{K07.09.quotient_construction}{Quotient operations}
+\begin{theorem}\label{thm:quotient-ring-construction}
+If $I$ is a two-sided ideal of a ring $R$, its additive cosets form a
+ring $R/I$ with $[a]+[b]=[a+b]$, $[a][b]=[ab]$, and $1=[1]$.
+Conversely, these coset operations on an additive subgroup are
+well-defined only if that subgroup is two-sided.
+\end{theorem}
+\begin{proof}
+The additive quotient is an abelian group. If $a'=a+i$ and $b'=b+j$,
+then $a'b'-ab=aj+ib+ij\in I$, proving representative independence of
+multiplication; addition follows from additive-subgroup closure.
+Associativity, distributivity and the identity follow by taking the
+class of each corresponding identity in $R$. Conversely, if $[i]=[0]$
+for $i$ in the subgroup, well-defined multiplication gives
+$[ri]=[r][0]=[0]$ and $[ir]=[0][r]=[0]$ for all $r$. These are exactly
+the two absorption conditions.
+\end{proof}
+
+\KEntry{K07.09.quotient_projection}{The natural projection}
+\begin{proposition}\label{prop:quotient-projection}
+The map $\pi:R\to R/I$, $\pi(a)=[a]$, is a surjective unital ring
+homomorphism with kernel $I$. Moreover
+$[a]=[b]$ if and only if $a-b\in I$.
+\end{proposition}
+\begin{proof}
+Coset equality has the stated additive meaning. In particular $[a]=0$
+exactly when $a\in I$. The operation formulas show that $\pi$ preserves
+addition, multiplication and $1$, and every coset has a representative.
+\end{proof}
+This also completes the assertion that every two-sided ideal is a kernel.
+
+\KEntry{K07.09.quotient_trivial}{Trivial and zero-ideal quotients}
+$R/I$ is trivial if and only if $I=R$: triviality says $[1]=[0]$,
+equivalently $1\in I$, equivalently $I=R$.
+The map $R/(0)\to R$ sending $[a]$ to $a$ is well-defined because
+$[a]=[b]$ now means $a=b$; its inverse is the natural projection.
+Both preserve operations by the quotient formulas. Thus properness is
+unnecessary for constructing a quotient, but precisely guarantees that
+the quotient is nontrivial.
+
+\KEntry{K07.09.quotient_lift}{Universal factorization}
+\begin{theorem}\label{thm:ring-quotient-universal}
+For a unital ring homomorphism $f:R\to S$, there is a homomorphism
+$\bar f:R/I\to S$ with $\bar f\pi=f$ if and only if $I\subseteq\ker f$.
+When it exists it is unique and satisfies $\bar f([a])=f(a)$.
+\end{theorem}
+\begin{proof}
+If a factorization exists, $i\in I$ gives $f(i)=\bar f(0)=0$.
+Conversely, $a-b\in I$ implies $f(a)-f(b)=0$, so the proposed formula
+is well-defined. Applying $f$ to the quotient operation formulas shows
+it is a unital homomorphism. Surjectivity of $\pi$ forces uniqueness.
+\end{proof}
+
+\KEntry{K07.09.first_isomorphism}{The first isomorphism theorem}
+\begin{theorem}\label{thm:ring-first-isomorphism}
+A unital ring homomorphism $f:R\to S$ induces an isomorphism
+$R/\ker f\cong\im f$, taking $[a]$ to $f(a)$. If $f$ is onto,
+the target is $S$.
+\end{theorem}
+\begin{proof}
+The preceding theorem constructs this homomorphism with codomain
+restricted to $\im f$. It is surjective by definition of image.
+Its zero class consists of the $a$ with $f(a)=0$, precisely $\ker f$,
+so its kernel as a quotient map is zero. The zero-kernel test makes it
+injective, and the inverse of a bijective homomorphism is a homomorphism.
+\end{proof}
+
+\KEntry{K07.09.second_isomorphism}{The second isomorphism theorem}
+Let $A$ be a unital subring of $R$ and $I$ a two-sided ideal.
+The set $A+I$ is a unital subring: subtraction preserves it, and
+$(a+i)(b+j)=ab+(aj+ib+ij)\in A+I$.
+The intersection $A\cap I$ is a two-sided ideal of $A$.
+The restriction $A\to(A+I)/I$, $a\mapsto[a]$, is onto, since
+$[a+i]=[a]$, and has kernel $A\cap I$.
+Theorem~\ref{thm:ring-first-isomorphism} therefore gives
+\begin{equation}\label{eq:ring-second-iso}
+ A/(A\cap I)\ \cong\ (A+I)/I.
+\end{equation}
+Here $I$ on the right is regarded as an ideal of $A+I$.
+For a nonunital subring the same formulas and proof give a nonunital
+isomorphism; they do not turn it into a unital subring.
+
+\KEntry{K07.09.third_isomorphism}{The third isomorphism theorem}
+For two-sided ideals $I\subseteq J$, the subset
+$J/I=\{[j]:j\in J\}$ is an ideal of $R/I$: differences are represented
+by differences in $J$, and multiplication by $[r]$ on either side
+uses absorption in $J$. The map $R/I\to R/J$, $[a]_I\mapsto[a]_J$,
+is well-defined and onto, with kernel $J/I$.
+The first isomorphism theorem proves
+\[
+ (R/I)/(J/I)\ \cong\ R/J.
+\]
+No commutativity has been used.
+
+\KEntry{K07.09.ideal_correspondence}{The ideal correspondence}
+\begin{theorem}\label{thm:ideal-correspondence}
+For a surjective unital ring homomorphism $f:R\to S$, taking inverse
+image is an inclusion-preserving bijection from two-sided ideals of $S$
+to two-sided ideals of $R$ containing $\ker f$. Its inverse is taking
+image. In particular ideals of $R/I$ correspond to ideals above $I$.
+\end{theorem}
+\begin{proof}
+Inverse images preserve subtraction and both absorptions; they contain
+$\ker f$. If $J$ is an ideal above the kernel, then $f(J)$ is an ideal:
+to multiply $f(j)$ by $s\in S$, choose $r$ with $f(r)=s$ and use
+$rj,jr\in J$. Further $f^{-1}(f(J))=J$: an equality $f(x)=f(j)$
+gives $x-j\in\ker f\subseteq J$. Surjectivity gives
+$f(f^{-1}(H))=H$ for an ideal $H$ of $S$.
+Both operations preserve inclusion, proving the claimed ordered bijection.
+\end{proof}
+Without surjectivity an image need not be an ideal of the target:
+the image of $\Z\hookrightarrow\Q$ is not an ideal of $\Q$.
+The ideal generated by an image is a different operation.
+
+% Topic grouping: Prime and maximal ideals
+Until the end of this chapter rings are commutative.
+\KEntry{K07.09.prime_ideal}{Prime ideals}
+A prime ideal $P$ is proper and satisfies
+$ab\in P\Rightarrow a\in P$ or $b\in P$.
+Equivalently, for ideals $I,J$, $IJ\subseteq P$ implies
+$I\subseteq P$ or $J\subseteq P$. To prove this direction choose
+$a\in I\setminus P$, if possible; for every $b\in J$ the product lies
+in $P$, so $b\in P$. Conversely apply the ideal version to $(a),(b)$.
+Their product is $(ab)$, since every summand $(ra)(sb)$ is a multiple
+of $ab$, and every multiple $t ab=(ta)b$ belongs to the product.
+
+\KEntry{K07.09.maximal_ideal}{Maximal ideals}
+A maximal ideal is a proper ideal $M$ with no ideal strictly between
+$M$ and $R$. In a noncommutative ring this must be distinguished from
+a maximal \emph{left} ideal. The quotient-field statements below are
+commutative statements.
+
+\KEntry{K07.09.prime_quotient}{Domains as prime quotients}
+\begin{proposition}\label{prop:prime-quotient}
+$P$ is prime if and only if $R/P$ is an integral domain.
+\end{proposition}
+\begin{proof}
+Properness is exactly nontriviality of $R/P$. Also
+$[a][b]=0$ is equivalent to $ab\in P$, and $[a]=0$ is equivalent
+to $a\in P$. Translating the zero-product condition gives precisely
+the prime-ideal condition.
+\end{proof}
+In particular $R$ is a domain if and only if $(0)$ is prime.
+
+\KEntry{K07.09.maximal_quotient}{Fields as maximal quotients}
+\begin{proposition}\label{prop:maximal-quotient}
+$M$ is maximal if and only if $R/M$ is a field.
+\end{proposition}
+\begin{proof}
+The ideal correspondence identifies ideals of $R/M$ with those between
+$M$ and $R$. If $M$ is proper, the quotient is nontrivial.
+Consequently maximality is equivalent to its having only zero and whole
+ideals, which is the field criterion
+of Proposition~\ref{prop:field-ideal-criterion}.
+\end{proof}
+
+\KEntry{K07.09.maximal_prime_nonconverse}{Prime does not mean maximal}
+A field is a domain, so the two quotient criteria prove that maximal
+ideals are prime. The zero ideal of $\Z$ is prime but not maximal,
+since $\Z$ is a domain and not a field. A nonzero example is $(X)$ in
+$\Z[X]$: evaluation at $0$ is onto $\Z$ with kernel $(X)$, so
+$\Z[X]/(X)\cong\Z$ is a domain and not a field.
+The kernel assertion follows directly from coefficients:
+$f=f(0)+Xg$, where $g$ shifts the positive-index coefficients down
+by one, so $f(0)=0$ exactly when $f$ is a multiple of $X$.
+Equivalently $(X)\subsetneq(2,X)\subsetneq\Z[X]$.
+The first inclusion is strict because the constant $2$ is not in $(X)$;
+the second because a member $2f+Xg$ has even constant coefficient.
+
+\KEntry{K07.09.maximal_existence}{Existence of maximal ideals}
+\begin{theorem}\label{thm:maximal-ideal-existence}
+Every proper ideal is contained in a maximal ideal.
+\end{theorem}
+\begin{proof}
+Order the proper ideals above a fixed proper $I$ by inclusion.
+An empty chain has upper bound $I$. A nonempty chain has its union
+as an ideal upper bound. That union is proper: otherwise it contains
+$1$, which belongs to a single member, contradicting its properness.
+Zorn's lemma gives a maximal member. Any larger proper ideal would still
+contain $I$, so this member is maximal among all proper ideals.
+\end{proof}
+This uses choice and is not an algorithm to find a maximal ideal.
+
+\KEntry{K07.09.contraction}{Inverse images}
+If $f:R\to S$ is unital and $P\subset S$ prime, $f^{-1}(P)$ is proper
+because $f(1)=1\notin P$. If $ab$ maps into $P$, one of $f(a),f(b)$
+does, proving primality. If $f$ is onto and $M$ is maximal, the ideal
+correspondence or the isomorphism
+$R/f^{-1}(M)\cong S/M$ proves maximality of its inverse image.
+Surjectivity cannot be omitted: under $\Z\hookrightarrow\Q$, the
+maximal ideal $(0)$ of $\Q$ contracts to the nonmaximal $(0)$ of $\Z$.
+For nonunital maps even properness of a prime inverse image can fail.
+
+% Topic grouping: Simultaneous congruences
+\KEntry{K07.09.comaximal}{Comaximality}
+Ideals $I,J$ are comaximal when $I+J=R$, equivalently when
+$i+j=1$ for some $i\in I,j\in J$.
+Distinct maximal ideals are comaximal: if $J\not\subseteq I$, maximality
+of $I$ forces $I+J=R$; if $J\subseteq I$, maximality of $J$ would give
+$J=I$, since $I$ is proper. For principal ideals this is the existence
+of a Bezout identity, a stronger condition than merely having gcd $1$
+in an arbitrary domain.
+
+\KEntry{K07.09.product_intersection}{Comaximal products}
+\begin{proposition}\label{prop:comaximal-product-intersection}
+Comaximal ideals satisfy $IJ=I\cap J$. For a finite pairwise comaximal
+family, its product equals its intersection.
+\end{proposition}
+\begin{proof}
+The product is always contained in the intersection. If $x\in I\cap J$
+and $i+j=1$ as above, then $x=xi+xj\in IJ$, using commutativity.
+For the finite assertion, if $I_1+I_j=R$, choose
+$a_j\in I_1,b_j\in I_j$ with $a_j+b_j=1$.
+Expanding $\prod_{j=2}^m(a_j+b_j)=1$ gives
+$1\in I_1+I_2\cdots I_m$: all terms except $\prod b_j$ have a factor
+in $I_1$. Induction now applies the binary result to $I_1$ and the
+product of the others.
+\end{proof}
+
+\KEntry{K07.09.crt_binary}{The binary Chinese remainder theorem}
+\begin{theorem}\label{thm:crt-binary}
+For comaximal ideals $I,J$, the map
+$r\mapsto([r]_I,[r]_J)$ induces
+\[
+ R/(IJ)\ \cong\ R/I\times R/J.
+\]
+If $i+j=1$ with $i\in I,j\in J$, then $aj+bi$ represents the inverse
+image of $([a]_I,[b]_J)$.
+\end{theorem}
+\begin{proof}
+The displayed map is a unital homomorphism by coordinatewise
+operations, with kernel $I\cap J$. Since $j\equiv1\pmod I$ and
+$i\equiv1\pmod J$, its value at $aj+bi$ is the required pair.
+It is therefore onto. Apply the first isomorphism theorem and
+Proposition~\ref{prop:comaximal-product-intersection}.
+\end{proof}
+Without comaximality surjectivity can fail: with $I=J=(2)$ in $\Z$,
+the image consists only of equal pairs of residues.
+
+\KEntry{K07.09.crt_finite_integer}{Finite and integer CRT}
+\begin{theorem}\label{thm:crt-finite}
+For a finite pairwise comaximal family $I_1,\ldots,I_m$,
+\[
+ R/\bigcap_i I_i\ \cong\prod_i R/I_i,\qquad
+ \bigcap_iI_i=\prod_i I_i.
+\]
+\end{theorem}
+\begin{proof}
+For $m=0$ both sides are trivial: the intersection and empty ideal
+product are $R$, and the empty ring product has one element.
+For $m=1$ the assertion is the identity map. For larger $m$, the proof
+of the preceding proposition makes $I_1$ comaximal with
+$I_2\cdots I_m$. Apply the binary CRT, then the induction isomorphism
+to the second factor. Every resulting coordinate map is reduction
+modulo the corresponding $I_i$, so this is the claimed natural map.
+\end{proof}
+For pairwise coprime positive integers $n_i$, the integer Bezout identity
+makes $(n_i)+(n_j)=\Z$. Their ideal product is $(\prod_i n_i)$.
+Thus any residues $a_i$ have a simultaneous solution, unique modulo
+$N=\prod_i n_i$. More explicitly let $N_i=N/n_i$.
+Since $N_i,n_i$ are coprime, choose $t_i$ with
+$t_iN_i\equiv1\pmod{n_i}$. Then
+$\sum_i a_it_iN_i$ has every prescribed residue: all other summands
+vanish in that coordinate. This is the D08 integer CRT as a specialization
+of one ring theorem, not a separate unrelated construction.
+
+% Topic grouping: A prime-separation lemma
+\begin{lemma}\label{lem:nilpotent-prime-separation}
+For a commutative ring, an element belongs to every prime ideal if
+and only if it is nilpotent.
+\end{lemma}
+\begin{proof}
+If $x^n=0$, repeated primality forces $x$ into any prime ideal.
+Conversely suppose no power of $x$ is zero. The multiplicative set
+$S=\{1,x,x^2,\ldots\}$ avoids $0$. Zorn's lemma gives an ideal $P$
+maximal among ideals disjoint from $S$: the zero ideal belongs to this
+partially ordered set and bounds its empty chain; nonempty chain unions remain disjoint,
+since an element in the union lies in one member.
+If $ab\in P$ but $a,b\notin P$, both $P+(a)$ and $P+(b)$ meet $S$.
+Write $x^r=p+ua$, $x^s=q+vb$ with $p,q\in P$.
+Multiplication gives $x^{r+s}\in P$, a contradiction. Thus $P$ is
+prime, and $x\notin P$ because $x\in S$. This proves the contrapositive.
+The zero ring causes no exception: it has no prime ideals and its
+single element is nilpotent.
+\end{proof}

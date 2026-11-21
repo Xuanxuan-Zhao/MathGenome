@@ -1,0 +1,198 @@
+\chapter{A special transcendence theorem for the circle application}
+\label{app:pi-transcendence}
+This appendix closes the transcendence input used in the circle-squaring
+application. Its algebraic ingredients are the characteristic-zero
+splitting-field and fixed-field theorems proved earlier. Its analytic
+ingredients are the elementary complex exponential, its addition and
+derivative laws, Euler's identity $e^{i\pi}=-1$, the real fundamental
+theorem of calculus applied to complex-valued functions componentwise,
+and the elementary integral estimate on a real interval. Thus it does
+not take a transcendence theorem as a premise. Real and complex
+analysis underlying these elementary laws remain declared prior
+foundations, just as the usual meaning of $\pi$ does.
+The argument is the classical factorial-polynomial method of Lindemann;
+for historical context, see Randy K. Schwartz, \emph{Pi is Transcendental:
+Von Lindemann's Proof Made Accessible to Today's Undergraduates}
+(2 February 2006), available through the university-hosted
+\href{https://home.agh.edu.pl/rudol/Pi_TranscendentalLindemann.pdf}{expository paper}.
+The proof below states all polynomial, integrality and estimate steps
+used here, rather than taking that exposition as an unproved premise.
+
+\section{An integer power-sum lemma}
+\begin{lemma}\label{lem:integer-power-sums}
+Let $Q(T)=\prod_{j=1}^m(T-\gamma_j)$ be a monic polynomial in
+$\Z[T]$, with its complex roots listed with multiplicity. For every
+integer $r\ge0$, $s_r=\sum_{j=1}^m\gamma_j^r$ is an integer.
+Consequently $\sum_j A(\gamma_j)\in\Z$ for $A\in\Z[T]$.
+\end{lemma}
+\begin{proof}
+The case $r=0$ gives $s_0=m$. Write
+$U(t)=\prod_j(1-\gamma_jt)=1+c_1t+\cdots+c_mt^m$, where
+the $c_j$ are integer coefficients of the reversed polynomial $Q$.
+Differentiating the product gives the formal identity
+\[
+ -tU'(t)=U(t)\sum_{r\ge1}s_rt^r.
+\]
+No convergence is being assumed: for any coefficient of degree at
+most $d$, replace each $(1-\gamma_jt)^{-1}$ by the finite geometric
+sum through degree $d$ and compute modulo $t^{d+1}$; multiplication
+and the product rule give exactly this identity in those degrees.
+Equating the coefficient of $t^r$ yields
+\[
+ s_r+c_1s_{r-1}+\cdots+c_{\min(m,r-1)}s_{r-\min(m,r-1)}
+       =-r c_r,
+\]
+where $c_r=0$ for $r>m$. Induction proves $s_r\in\Z$ for every
+$r$. Expand $A$ as a finite integer linear combination of powers to
+obtain the last assertion.
+\end{proof}
+
+\section{A relation among exponentials cannot have this form}
+\begin{lemma}\label{lem:lindemann-special-relation}
+Suppose $\beta_1,\ldots,\beta_m$ are nonzero complex numbers,
+listed with multiplicities, such that
+$P(X)=\prod_j(X-\beta_j)\in\Q[X]$. For every positive integer
+$k$, the equality
+\[
+ k+\sum_{j=1}^m e^{\beta_j}=0
+\]
+is impossible.
+\end{lemma}
+\begin{proof}
+Choose a positive integer $a$ divisible by the denominators of all
+coefficients of $P$. Set $\gamma_j=a\beta_j$ and
+\[
+ Q(T)=a^mP(T/a)=\prod_j(T-\gamma_j)\in\Z[T].
+\]
+To check integrality explicitly, if the coefficient of $X^{m-r}$
+in $P$ is $b_r$, the corresponding coefficient in $Q$ is $a^rb_r$,
+an integer for $r\ge1$. Its constant coefficient $Q(0)$ is
+nonzero, since none of the $\beta_j$ is zero.
+
+Let $p$ be a prime not dividing the fixed nonzero integer
+$kaQ(0)$. There are arbitrarily large such primes: otherwise the
+finitely many primes in their union with the prime divisors of
+$kaQ(0)$ would contain every prime, contrary to Euclid's proof
+(a prime divisor of one plus their product is new). Put
+\[
+ H_p(T)=T^{p-1}Q(T)^p,\qquad N=(m+1)p-1,
+ \qquad f_p(x)=\frac{H_p(ax)}{(p-1)!},\qquad
+ F_p(x)=\sum_{r=0}^{N} f_p^{(r)}(x).
+\]
+The polynomial $H_p$ has integer coefficients and degree $N$.
+For any integer-coefficient polynomial $H$, its $r$th derivative is
+$r!$ times an integer-coefficient polynomial: this follows by
+differentiating a monomial and using
+$\frac{d^r}{dT^r}T^d=r!\binom dr T^{d-r}$.
+For $r\ge p$, the integer $r!/(p-1)!$ is divisible by $p$.
+
+At $x=0$, derivatives with $r<p-1$ vanish, because $f_p$ has a
+factor $x^{p-1}$. The derivative at order $p-1$ equals
+$a^{p-1}Q(0)^p$. All derivatives of order $r\ge p$ at zero are
+integers divisible by $p$, by the preceding derivative formula.
+It follows that
+\[
+ F_p(0)\in\Z,\qquad
+ F_p(0)\equiv a^{p-1}Q(0)^p\pmod p.                 \tag{1}
+\]
+At each $\beta_j$, the multiplicity of its corresponding root
+$\gamma_j$ in $H_p$ is at least $p$. Hence
+$f_p^{(r)}(\beta_j)=0$ for $r<p$. For every $r\ge p$, the chain
+rule and derivative formula give an integer-coefficient polynomial
+$A_{p,r}$, independent of $j$, with
+\[
+ f_p^{(r)}(\beta_j)
+   =\frac{a^rH_p^{(r)}(\gamma_j)}{(p-1)!}
+   =p A_{p,r}(\gamma_j).
+\]
+Summing over $j$ and applying Lemma~\ref{lem:integer-power-sums}
+shows
+\[
+ \sum_{j=1}^m F_p(\beta_j)\in p\Z.                \tag{2}
+\]
+Thus the quantity
+\[
+ J_p=kF_p(0)+\sum_jF_p(\beta_j)
+\]
+is an integer, and by (1)--(2) it is congruent modulo $p$ to
+$ka^{p-1}Q(0)^p$, which is nonzero. In particular $|J_p|\ge1$.
+
+We obtain the opposite conclusion analytically. Polynomial
+differentiation telescopes to $F_p'-F_p=-f_p$. On the straight
+segment $z=t\beta_j$, real differentiation gives
+\[
+ \frac{d}{dt}\bigl(e^{-t\beta_j}F_p(t\beta_j)\bigr)
+       =-\beta_j e^{-t\beta_j}f_p(t\beta_j).
+\]
+Apply the real fundamental theorem of calculus to its real and
+imaginary parts, then multiply by $e^{\beta_j}$, to find
+\[
+ e^{\beta_j}F_p(0)-F_p(\beta_j)
+   =\beta_j\int_0^1 e^{(1-t)\beta_j}f_p(t\beta_j)\,dt.
+\]
+If the purported exponential relation held, summing this equation
+would therefore give
+\[
+ -J_p=\sum_j\beta_j\int_0^1
+           e^{(1-t)\beta_j}f_p(t\beta_j)\,dt.       \tag{3}
+\]
+Choose $R\ge1$ bounding all $|a t\beta_j|$ for $0\le t\le1$
+and all $|\gamma_j|$. Since $H_p(T)=T^{p-1}\prod_j(T-\gamma_j)^p$,
+on these finitely many segments
+\[
+ |f_p(t\beta_j)|
+ \le \frac{R^{p-1}(2R)^{mp}}{(p-1)!}
+ \le \frac{C^p}{(p-1)!},\qquad C=R(2R)^m.
+\]
+Furthermore $|e^{(1-t)\beta_j}|\le e^{|\beta_j|}$. The integral
+estimate in (3) gives
+\[
+ |J_p|\le
+ \left(\sum_j|\beta_j|e^{|\beta_j|}\right)
+       \frac{C^p}{(p-1)!}\longrightarrow0.
+\]
+Indeed the ratio of consecutive terms $C^p/(p-1)!$ is $C/p$,
+eventually at most $1/2$, so these terms tend to zero, also along
+the arbitrarily large allowed primes. This contradicts $|J_p|\ge1$.
+\end{proof}
+
+\section{Transcendence of pi}
+\begin{theorem}\label{thm:pi-transcendental}
+The real number $\pi$ is transcendental over $\Q$.
+\end{theorem}
+\begin{proof}
+Suppose otherwise and let $\alpha=i\pi$. The number $i$ is
+algebraic because $i^2+1=0$, so closure of algebraic elements under
+multiplication makes $\alpha$ algebraic. It is nonzero. Let
+$\alpha_1=\alpha,\alpha_2,\ldots,\alpha_n$ be its conjugates
+over $\Q$ in $\C$, and let $L$ be the splitting field of its
+minimal polynomial in $\C$. Characteristic zero makes $L/\Q$
+finite Galois; its fixed field is $\Q$. Its automorphisms permute
+the conjugates.
+
+Euler's identity gives $1+e^{\alpha_1}=0$, so
+\[
+ 0=\prod_{j=1}^n(1+e^{\alpha_j})
+   =\sum_{S\subseteq\{1,\ldots,n\}}
+       \exp\!\left(\sum_{j\in S}\alpha_j\right).
+\]
+The second equality is the finite distributive expansion and the
+addition law of the exponential. List the nonzero subset sums,
+with their multiplicities, as $\beta_1,\ldots,\beta_m$. Let $k$
+be the number of zero subset sums. The empty subset ensures
+$k\ge1$, and the singleton $\{1\}$ ensures $m\ge1$. Thus
+$k+\sum_je^{\beta_j}=0$.
+
+Every automorphism of $L/\Q$ permutes subsets of the conjugates,
+preserves whether a sum is zero, and hence permutes the multiset
+of the nonzero $\beta_j$. Therefore every coefficient of
+$P(X)=\prod_j(X-\beta_j)$ is fixed by the Galois group and lies
+in $\Q$. All the hypotheses of
+Lemma~\ref{lem:lindemann-special-relation} now hold, a contradiction.
+\end{proof}
+In particular $\sqrt\pi$ is transcendental: if it were algebraic,
+its square would be algebraic. The constructibility theorem proves
+that every coordinate constructible from rational unit data is
+algebraic. A square of area $\pi$ times the unit square would have
+side length $\sqrt\pi$; this gives the promised circle-squaring
+obstruction with its transcendence premise proved here.

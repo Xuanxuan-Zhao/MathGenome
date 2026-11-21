@@ -1,0 +1,14 @@
+import MathGenome.Internal.AlgebraCore.P103.Ch09.CliffordInertia
+import MathGenome.Internal.AlgebraCore.P103.Ch09.CliffordRestriction
+import MathGenome.Internal.AlgebraCore.P103.Ch09.Coinduction
+import MathGenome.Internal.AlgebraCore.P103.Ch09.FrobeniusCharacters
+import MathGenome.Internal.AlgebraCore.P103.Ch09.FrobeniusHom
+import MathGenome.Internal.AlgebraCore.P103.Ch09.InducedCharacter
+import MathGenome.Internal.AlgebraCore.P103.Ch09.InductionModels
+import MathGenome.Internal.AlgebraCore.P103.Ch09.InductionStages
+import MathGenome.Internal.AlgebraCore.P103.Ch09.MackeyDecomposition
+import MathGenome.Internal.AlgebraCore.P103.Ch09.MackeyIrreducibility
+import MathGenome.Internal.AlgebraCore.P103.Ch09.ProjectionFormula
+import MathGenome.Internal.AlgebraCore.P103.Ch09.RationalInductionCriterion
+import MathGenome.Internal.AlgebraCore.P103.Ch09.S3InductionExample
+import MathGenome.Internal.AlgebraCore.P103.Ch09.VirtualCharacterRing

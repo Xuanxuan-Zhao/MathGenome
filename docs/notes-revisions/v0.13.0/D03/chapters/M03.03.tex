@@ -1,0 +1,143 @@
+\chapter{Continuity, compactness, and intervals}
+Metric terminology in this chapter is relative to the stated domain. An open set in $E$ is an intersection of $E$ with an ambient open set; closed sets are their complements. Compactness means that every relative open cover has a finite subcover.
+\SourceRef{Zorich I, Chapter 4; Rudin, Chapter 4; Tao, Chapter 9; Pugh, 2.2}
+
+\KEntry{K03.03.continuity}{Continuity at a point}
+\begin{definition}
+For metric $E$ and $f:E\to\K$, continuity at $a\in E$ means that for every $\eps>0$ some $\delta>0$ satisfies $|f(x)-f(a)|<\eps$ whenever $x\in E$ and $d(x,a)<\delta$. A function is continuous if it is continuous at every point. If $a$ accumulates $E$, this is equivalent to the relative punctured limit $f(x)\to f(a)$. At an isolated point the condition holds automatically.
+\end{definition}
+\begin{proposition}
+Continuity at $a$ is equivalent to $f(x_n)\to f(a)$ for every sequence $x_n\to a$ in $E$.
+\end{proposition}
+\begin{proof}
+The forward implication inserts sufficiently late sequence terms into a continuity neighborhood. If continuity fails, choose $\eps_0>0$ and $x_n$ with $d(x_n,a)<1/n$ and $|f(x_n)-f(a)|\ge\eps_0$, contradicting sequential continuity. This argument includes sequences equal to $a$ and isolated points.
+\end{proof}
+
+\KEntry{K03.03.continuity_algebra}{Operations on continuous functions}
+\begin{proposition}
+Finite scalar linear combinations and products of continuous scalar functions are continuous. Quotients are continuous where the denominator is nonzero. Composites of continuous functions with compatible domains are continuous, including metric intermediate spaces.
+\end{proposition}
+\begin{proof}
+Apply the sequential continuity criterion to any converging input sequence and then \KRef{K03.01.limit_algebra}. For composition, continuity of the inner map first gives convergence to its actual value, and continuity of the outer map then gives convergence of the composite. The reciprocal estimate in that algebra theorem requires precisely a nonzero value at the point under consideration.
+\end{proof}
+
+\KEntry{K03.03.local_bounds}{Local boundedness, signs, and denominators}
+\begin{proposition}
+If $f$ is continuous at $a$, then on a relative neighborhood $|f(x)|\le|f(a)|+1$. If $f(a)\ne0$, on a possibly smaller neighborhood $|f(x)|\ge|f(a)|/2$. For real $f$ with $f(a)>0$, $f(x)>f(a)/2>0$ locally.
+\end{proposition}
+\begin{proof}
+Use continuity with $\eps=1$ for the first bound, and with $\eps=|f(a)|/2$ and the reverse triangle inequality for the second. For the positive real case $f(x)>f(a)-f(a)/2$. In particular a denominator continuous and nonzero at $a$ stays nonzero nearby.
+\end{proof}
+
+\KEntry{K03.03.closed_preimage}{Open and closed preimages}
+\begin{theorem}
+A map between metric subspaces is continuous if and only if every relative open set has relative open preimage, and if and only if every relative closed set has relative closed preimage.
+\end{theorem}
+\begin{proof}
+For a continuous map and $x\in f^{-1}(U)$ with $U$ open, choose a target ball about $f(x)$ lying in $U$, then a source ball mapped into it. Thus every point of $f^{-1}(U)$ has a neighborhood there. Conversely the preimage of the target ball of radius $\eps$ around $f(a)$ is an open set containing $a$, so contains a source ball witnessing continuity. The closed formulation is equivalent because $f^{-1}(Y\setminus F)=E\setminus f^{-1}(F)$.
+\end{proof}
+
+\KEntry{K03.03.compact_interval}{Compactness and sequential compactness}
+\begin{theorem}
+In a metric space, compactness is equivalent to sequential compactness: every sequence has a subsequence converging to a point of the space. A subset of $\R$ (or $\C$) is compact exactly when it is closed and bounded. In particular every closed bounded interval is compact.
+\end{theorem}
+\begin{proof}
+First suppose a metric space $K$ is compact. If a sequence had no convergent subsequence, then for every $x\in K$ some ball about $x$ would contain only finitely many sequence indices. Indeed infinitely many indices in every ball would let us choose increasing indices in balls of radii $1/j$, yielding a subsequence tending to $x$. These balls cover $K$; a finite subcover would imply that the sequence has only finitely many indices, a contradiction.
+Conversely suppose $K$ is sequentially compact. For each $\eta>0$ it is covered by finitely many $\eta$-balls: otherwise choose recursively points at pairwise distance at least $\eta$, a sequence without any convergent subsequence. Given an open cover, there is some $\delta>0$ such that every relative $\delta$-ball is contained in one cover member. If not, choose $x_n$ whose relative $1/n$-ball is contained in no member. A subsequence tends to $x$; a cover member containing $x$ contains a relative ball of radius $r>0$ about $x$. For sufficiently late terms, $d(x_n,x)<r/2$ and $1/n<r/2$, a contradiction. Choose finitely many $\delta/2$-balls covering $K$, and for each center a cover member containing its $\delta$-ball. These members give a finite subcover.
+Now a closed bounded scalar set is sequentially compact by \KRef{K03.01.bolzano}, since a sequence limit remains in a closed set: if it were outside, the open complement would eventually contain the sequence. Conversely a compact scalar set is bounded by a finite subcover of the balls centered at zero with positive integer radii. It is closed because any point in its closure is a limit of a sequence in the set (choose distances $<1/n$); sequential compactness gives a subsequence with limit in the set, and uniqueness identifies this point with the original limit. The empty set satisfies all assertions directly.
+\end{proof}
+
+\KEntry{K03.03.extreme_values}{Continuous images and extreme values}
+\begin{theorem}
+The continuous image of a compact set is compact. Hence a continuous real function on a nonempty compact set attains its maximum and minimum, and a continuous scalar function on a compact set is bounded.
+\end{theorem}
+\begin{proof}
+Pull an open cover of the image back to the domain and use a finite subcover there. For a scalar target compactness gives boundedness and closedness by \KRef{K03.03.compact_interval}. For real $f$ the nonempty bounded image has a supremum $s$. Select image points in $(s-1/n,s]$; they tend to $s$, which belongs to the image by closedness. Negate $f$ to obtain a minimum. Nonemptiness is required for attainment. On $(0,1)$, $f(x)=x$ attains neither bound; on $\R$, $f(x)=x$ is continuous and unbounded.
+\end{proof}
+
+\KEntry{K03.03.intermediate_values}{The intermediate value theorem}
+\begin{theorem}
+If $f:[a,b]\to\R$ is continuous and $a\le b$, every value between $f(a)$ and $f(b)$ occurs.
+\end{theorem}
+\begin{proof}
+The case $a=b$ and the endpoint values are immediate. For a strictly intermediate $v$ suppose first $f(a)<v<f(b)$. Let $S=\{x\in[a,b]:f(x)\le v\}$ and $c=\sup S$. Continuity near $b$ gives $c<b$, and $a\le c$. Choose points of $S$ tending to $c$ by supremum approximation; continuity gives $f(c)\le v$. If $f(c)<v$, continuity and $c<b$ give a point of $S$ strictly beyond $c$, impossible. Thus $f(c)=v$. When the endpoint order is reversed apply the result to $-f$. No differentiability has been used.
+\end{proof}
+
+\KEntry{K03.03.interval_images}{Intervals and connectedness}
+\begin{definition}
+A subset $E$ of a metric space is connected if it cannot be written as the disjoint union of two nonempty relatively open subsets. A real set is an interval if it contains every point between any two of its points; this convention includes the empty set and singletons.
+\end{definition}
+\begin{theorem}
+A real set is connected if and only if it is an interval. Continuous images of connected spaces are connected; consequently continuous real functions map intervals to intervals.
+\end{theorem}
+\begin{proof}
+If a real set contains $x<y$ but omits $z\in(x,y)$, its intersections with $(-\infty,z)$ and $(z,\infty)$ disconnect it. Conversely suppose an interval $I$ were disconnected as $U\cup V$ and take $u\in U$, $v\in V$, relabeling so $u<v$. The function equal to $0$ on $U$ and $1$ on $V$ is continuous, since each point has a relative neighborhood in one piece. Its restriction to $[u,v]\subset I$ contradicts \KRef{K03.03.intermediate_values}. Finally a separation of a continuous image pulls back to a separation of its domain by open preimages. This proves the image assertion, also obtainable by applying the intermediate value theorem separately to every segment in the domain.
+\end{proof}
+
+\KEntry{K03.03.monotone_limits}{One-sided limits and jumps of monotone functions}
+\begin{theorem}
+For a nondecreasing real function on an interval and an interior point $x$,
+\[ f(x-)=\sup_{t<x}f(t),\qquad f(x+)=\inf_{t>x}f(t) \]
+exist and are finite, with $f(x-)\le f(x)\le f(x+)$. At an interval endpoint the available one-sided limit exists in $\overline\R$. Interior discontinuities are jumps and there are at most countably many. The decreasing version follows by negation.
+\end{theorem}
+\begin{proof}
+For the left formula, values to the left are bounded above by $f(x)$ and bounded below on a sufficiently short left neighborhood by a fixed interior value. If $L$ is their supremum choose $t_0<x$ with $f(t_0)>L-\eps$; then $L-\eps<f(t)\le L$ whenever $t_0<t<x$. The right formula is the infimum argument. At endpoints the same argument applies, using arbitrary finite bounds when a supremum or infimum is infinite. At an interior point continuity is equivalent to equality of both one-sided limits with $f(x)$, so a discontinuity has $f(x-)<f(x+)$. Assign to each such point a rational in the nonempty interval $(f(x-),f(x+))$, choosing the first one in a fixed enumeration. For $x<y$, monotonicity gives $f(x+)\le f(y-)$: choose $t$ between $x$ and $y$ to bound both limits. The assigned rational intervals are therefore disjoint, making the assignment injective. At most two included endpoints can add discontinuities, so the total remains countable.
+\end{proof}
+
+\KEntry{K03.03.inverse_continuity}{Continuous monotone inverses}
+\begin{theorem}
+A continuous strictly monotone real function $f$ on an interval $I$ is a bijection onto an interval $J=f(I)$ and has a continuous inverse $J\to I$.
+\end{theorem}
+\begin{proof}
+Strict monotonicity gives injectivity, and \KRef{K03.03.interval_images} gives the interval image. Suppose $f$ increases, $y_0=f(x_0)$, and fix $\eps>0$. If $I$ contains points at least $\eps$ below $x_0$, its interval property provides $u\in I$ with $x_0-\eps<u<x_0$; choose such a $u$ and require $|y-y_0|<y_0-f(u)$. This forces $f^{-1}(y)>u>x_0-\eps$. If no such points exist the lower bound is automatic. Treat the upper side with $v\in(x_0,x_0+\eps)$ whenever needed and require $|y-y_0|<f(v)-y_0$. The minimum of the available positive bounds gives inverse continuity, also at endpoints of $J$. Negation treats decreasing $f$.
+For the domain $I=[0,1)\cup\{2\}$, define $f(x)=x$ for $x<1$ and $f(2)=1$. This is continuous and strictly increasing on that domain, but its inverse on $[0,1]$ is discontinuous at $1$, since $f^{-1}(1)=2$ while $f^{-1}(1-1/n)\to1$. The interval hypothesis has content.
+\end{proof}
+
+\KEntry{K03.03.uniform_continuity}{Uniform continuity}
+\begin{definition}
+A scalar function on a metric set $E$ is uniformly continuous if
+\[ (\forall\eps>0)(\exists\delta>0)(\forall x,y\in E)\quad d(x,y)<\delta\Longrightarrow |f(x)-f(y)|<\eps. \]
+Thus $\delta$ depends on $\eps$, but not on a chosen base point. Uniform continuity implies continuity by fixing $y=a$. Its failure is equivalent to existence of $\eps_0>0$ and pairs $x_n,y_n$ with $d(x_n,y_n)\to0$ and $|f(x_n)-f(y_n)|\ge\eps_0$: choose distances $<1/n$ from the negated definition, and use the definition to prove the reverse implication.
+\end{definition}
+
+\KEntry{K03.03.heine_cantor}{Heine--Cantor}
+\begin{theorem}
+A continuous scalar function on a compact metric set is uniformly continuous.
+\end{theorem}
+\begin{proof}
+Otherwise take the pairs in \KRef{K03.03.uniform_continuity}. A subsequence $x_{n_j}$ tends to some $x$ by compactness. Since $d(y_{n_j},x)\le d(y_{n_j},x_{n_j})+d(x_{n_j},x)$, the paired subsequence tends to $x$ too. Continuity makes both image subsequences tend to $f(x)$, contradicting their fixed separation. A Lipschitz bound does not follow, as the square-root example below shows.
+\end{proof}
+
+\KEntry{K03.03.lipschitz}{Lipschitz and Holder estimates}
+\begin{proposition}
+If $|f(x)-f(y)|\le C d(x,y)^\alpha$ for all $x,y\in E$, with fixed $C\ge0$ and $0<\alpha\le1$, then $f$ is uniformly continuous. The case $\alpha=1$ is Lipschitz continuity; $0<\alpha<1$ is Holder continuity.
+\end{proposition}
+\begin{proof}
+If $C=0$ the function is constant. Otherwise choose $\delta=(\eps/C)^{1/\alpha}$ using the positive real power of module 07 (or any smaller positive number whose $\alpha$ power is small enough). Then the displayed bound is $<\eps$ whenever $d(x,y)<\delta$. In the common algebraic case $\alpha=1/m$ this already uses only integer roots. Such an estimate does not imply differentiability: $|x|$ is $1$-Lipschitz by the reverse triangle inequality but its two difference quotients at zero are $1$ and $-1$.
+\end{proof}
+
+\KEntry{K03.03.extension}{Extension to the closure}
+\begin{theorem}
+A uniformly continuous function $f:E\to\K$ on a subset of a metric space extends uniquely to a continuous function $\bar f:\overline E\to\K$. This extension is uniformly continuous.
+\end{theorem}
+\begin{proof}
+The empty case is immediate. For $x\in\overline E$ choose $x_n\in E$ tending to $x$. Such a sequence is Cauchy; uniform continuity makes $f(x_n)$ Cauchy, hence convergent in the complete scalar target. Define $\bar f(x)$ as its limit. If $y_n\to x$ is another choice, $d(x_n,y_n)\to0$, so uniform continuity gives $|f(x_n)-f(y_n)|\to0$ and the definition is independent of choice. Constant sequences show agreement on $E$.
+Given $\eps>0$, choose $\delta>0$ for $f$ with output error $<\eps/2$. If $x,y\in\overline E$ and $d(x,y)<\delta/3$, approximating sequences $x_n,y_n\in E$ eventually satisfy $d(x_n,y_n)<\delta$. Passing to limits gives $|\bar f(x)-\bar f(y)|\le\eps/2<\eps$. Hence the extension is uniformly continuous. Every continuous extension must take at $x$ the limit along $x_n\to x$, proving uniqueness.
+\end{proof}
+
+\KEntry{K03.03.fixed_point}{The contraction principle}
+\begin{theorem}
+Let $(X,d)$ be a nonempty complete metric space, and $T:X\to X$ satisfy $d(Tx,Ty)\le qd(x,y)$ with $0\le q<1$. Starting at any $x_0\in X$, put $x_{n+1}=Tx_n$. There is a unique fixed point $p$, and
+\[ d(x_n,p)\le \frac{q^n}{1-q}d(x_1,x_0),\qquad d(x_n,p)\le\frac{d(x_{n+1},x_n)}{1-q}. \]
+The first bound uses $q^0=1$, also when $q=0$.
+\end{theorem}
+\begin{proof}
+Induction gives $d(x_{j+1},x_j)\le q^jd(x_1,x_0)$. For $m>n$, summing yields $d(x_m,x_n)\le q^n d(x_1,x_0)/(1-q)$, so the sequence is Cauchy and converges to $p\in X$. Lipschitz continuity gives $Tx_n\to Tp$, while $Tx_n=x_{n+1}\to p$, hence $Tp=p$. Taking $m\to\infty$ proves the first bound. Applying the same geometric estimate starting at $x_n$ proves the second. If $r$ is another fixed point, $d(p,r)\le qd(p,r)$ forces equality to zero. The condition $T:X\to X$ is essential for all iterates and their complete limit to lie in the specified space.
+\end{proof}
+
+\KEntry{K03.03.counterexamples}{Separating the continuity conditions}
+\begin{example}
+The function $1/x$ is continuous on $(0,1)$ but unbounded and not uniformly continuous: for $x_n=1/(n+1)$, $y_n=1/(n+2)$ the input distances tend to zero and the image distances equal $1$. The continuous function $x^2$ on $\R$ is not uniformly continuous, since $x_n=n$, $y_n=n+1/n$ have input distance $1/n$ and image distance $2+1/n^2$. On $[0,1]$, $\sqrt{x}$ is uniformly continuous because
+\[ |\sqrt x-\sqrt y|^2\le |x-y|: \quad x\ge y\Longrightarrow (\sqrt x-\sqrt y)^2\le(\sqrt x-\sqrt y)(\sqrt x+\sqrt y). \]
+It is not Lipschitz, since $|\sqrt h-0|/|h-0|=1/\sqrt h$ is unbounded as $h\downarrow0$. Finally the step function $f(x)=0$ for $x<0$, $f(x)=1$ for $x\ge0$ is bounded but discontinuous at zero, as the sequence $-1/n$ shows. These computations separate boundedness, continuity, uniform continuity, and Lipschitz continuity.
+\end{example}

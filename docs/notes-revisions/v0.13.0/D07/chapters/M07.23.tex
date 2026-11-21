@@ -1,0 +1,211 @@
+\chapter{Division rings and real division algebras}
+\label{chap:M07.23}
+The word ring in this chapter retains associativity and an identity, but
+commutativity is not assumed. The underlying division rings are nonzero.
+This distinction is essential: the earlier finite-domain argument assumed
+commutativity, whereas the finite-division-ring theorem below proves it.
+
+\KEntry{K07.23.centralizers}{Centers, centralizers and dimensions over a division ring}
+\begin{definition}
+A division ring $D$ is a nonzero associative unital ring in which every
+nonzero element has a two-sided multiplicative inverse. Its center is
+$Z(D)=\{a:ax=xa\text{ for every }x\in D\}$. For $x\in D$ its
+centralizer is $C_D(x)=\{a:ax=xa\}$.
+\end{definition}
+Both sets are division subrings. Closure under addition and multiplication
+follows by distributing the commuting identities. If $ax=xa$ and $a\ne0$,
+multiply this identity on both sides by $a^{-1}$ to obtain
+$a^{-1}x=xa^{-1}$. The same argument for every $x$ treats the center.
+The center is commutative, hence a field. A subring containing $1$ in a
+finite division ring is itself a division ring: multiplication by a
+nonzero element is injective on the finite subring, hence surjective, and
+its inverse therefore lies in that subring.
+
+For later counting, let $E$ be a division subring of a finite division
+ring $D$. Regard $D$ as a left $E$-space. Choose a maximal left-linearly
+independent list $v_1,\ldots,v_r$, which exists by finiteness. If a vector
+$v$ is not in its span, a relation
+$a v+\sum a_i v_i=0$ with $a\ne0$ would express $v$ as an old linear
+combination after multiplication by $a^{-1}$ on the left. Thus adjoining
+$v$ would preserve independence, contradicting maximality. The list
+spans and its coordinate expression is unique by independence. Consequently
+$|D|=|E|^r$. This argument uses the side of scalar multiplication consistently;
+it does not assume that $E$ is commutative.
+
+If $F\subseteq Z(D)$ is a finite field with $q$ elements and $E$ contains
+$F$, the same argument over the field $F$ gives $|E|=q^d$ and
+$|D|=q^n$, where $n=dr$. In particular $d\mid n$; if $E\ne D$, then
+$d<n$ since $r=1$ would force $D=Ev_1$ and, as $1\in D$, $v_1\in E$.
+
+\KEntry{K07.23.finite_division_ring}{Wedderburn's finite-division-ring theorem}
+\begin{theorem}
+Every finite division ring is commutative, and hence is a finite field.
+\end{theorem}
+\begin{proof}
+Let the center have $q$ elements and $|D|=q^n$. If $n=1$, $D=Z(D)$.
+Suppose $n>1$. Apply the class equation to the multiplicative group
+$D^\times$. Its central elements are exactly $Z(D)^\times$: commuting
+with all nonzero elements is equivalent to commuting with all elements.
+For a representative $x_i$ of a noncentral conjugacy class its group
+centralizer is $C_D(x_i)^\times$. By
+\ref{K07.23.centralizers}, $|C_D(x_i)|=q^{d_i}$ with
+$d_i\mid n$ and $d_i<n$. Orbit--stabilizer therefore gives
+\[
+ q^n-1=(q-1)+\sum_i\frac{q^n-1}{q^{d_i}-1}.
+\]
+Use the integer cyclotomic factorization established in
+\ref{K07.15.cyclotomic_polynomials}. Since $d_i$ is a proper divisor of
+$n$, cancellation of the factors indexed by divisors of $d_i$ shows that
+$\Phi_n(q)$ divides each displayed quotient, and it also divides
+$q^n-1$. It follows that $\Phi_n(q)$ divides $q-1$.
+
+On the other hand, in $\C$ the roots of $\Phi_n$ are the primitive
+$n$th roots $\zeta$. None equals $1$ when $n>1$. Each has absolute value
+one and
+\[
+ |q-\zeta|^2=(q-1)^2+2q(1-\operatorname{Re}\zeta)>(q-1)^2.
+\]
+The strict inequality holds because a unit complex number with real part
+one is one. Hence
+$|\Phi_n(q)|=\prod_\zeta |q-\zeta|>(q-1)^{\varphi(n)}\ge q-1$;
+the last inequality uses $q\ge2$ and $\varphi(n)\ge1$.
+A nonzero integer of that absolute value cannot divide the positive
+integer $q-1$. This contradiction proves $n=1$.
+\end{proof}
+No classification of finite simple groups, primitive-prime-divisor theorem,
+or prior commutativity of the centralizers is used.
+
+\KEntry{K07.23.algebraically_closed_center}{Algebraic division rings over an algebraically closed central field}
+\begin{lemma}
+Let $K$ be algebraically closed and embedded in the center of a division
+ring $D$. If each element of $D$ is algebraic over $K$, then $D=K$.
+More generally, for any central field $K$ and algebraic $x\in D$, the
+subring $K[x]$ is a finite field extension of $K$.
+\end{lemma}
+\begin{proof}
+Evaluation $K[X]\to D$ is a ring homomorphism because the coefficients
+are central. Its kernel is nonzero by algebraicity and prime because
+$D$ has no zero divisors. Its monic generator $m_x$ is irreducible:
+a nontrivial factorization would evaluate to a product zero and yield an
+annihilator of smaller degree. Polynomial division proves
+$K[x]\simeq K[X]/(m_x)$, a finite field extension of degree $\deg m_x$.
+If $K$ is algebraically closed, $m_x$ is linear, so $x\in K$.
+Applying this to every $x$ proves the first assertion.
+\end{proof}
+In particular this lemma concerns algebraicity over a \emph{central}
+field. Merely containing a copy of an algebraically closed field does not
+force a division ring to equal it.
+
+\KEntry{K07.23.quaternion_algebra}{Hamilton's quaternion algebra and its norm}
+Define $\mathbb H=\C\oplus\C j$ as a real vector space, with pair
+multiplication
+\[
+ (z,w)(z',w')=(zz'-w\overline{w'},\;zw'+w\overline{z'}).
+\]
+The map
+\[
+ (z,w)\longmapsto
+ \begin{pmatrix}z&w\\-\overline w&\overline z\end{pmatrix}
+\]
+is injective and preserves this multiplication, as entry-by-entry matrix
+multiplication verifies. Thus the product is associative and distributive,
+and $(1,0)$ is its identity. In the notation
+$i=(\sqrt{-1},0)$, $j=(0,1)$, $k=(0,\sqrt{-1})$,
+$i^2=j^2=k^2=-1$, $ij=k=-ji$. The four elements $1,i,j,k$ form a
+real basis because the two complex coordinates are independent real
+two-dimensional coordinates.
+
+Put $\overline{(z,w)}=(\overline z,-w)$ and
+$N(z,w)=|z|^2+|w|^2$. Direct multiplication on either side gives
+$u\overline u=\overline u u=N(u)1$. Thus a nonzero $u$ has inverse
+$\overline u/N(u)$, and $\mathbb H$ is a division ring. Its matrix
+determinant is $N(u)$; multiplicativity of the determinant proves
+$N(uv)=N(u)N(v)$. For $u=a+bi+cj+dk$ the norm is
+$a^2+b^2+c^2+d^2$. Finally $ui=iu$ forces $c=d=0$, and then
+$uj=ju$ forces $b=0$. Its center is exactly $\R$. This constructs
+the algebra itself, rather than identifying it solely by a multiplication
+table with unverified associativity.
+
+\KEntry{K07.23.frobenius}{Frobenius's real algebraic division-ring theorem}
+\begin{theorem}
+Suppose $D$ is an associative division ring with a specified central
+embedding $\R\hookrightarrow D$, and every element of $D$ is algebraic
+over $\R$. Then $D$ is isomorphic as a real algebra to exactly one of
+$\R$, $\C$, $\mathbb H$. In particular the result holds for every
+finite-dimensional associative real division algebra.
+\end{theorem}
+\begin{proof}
+The algebraic fundamental theorem of algebra proved in
+Appendix~\ref{app:algebraic-fta} implies that an irreducible real
+polynomial has degree one or two: factor it into complex linear factors;
+each nonreal root and its conjugate give a real quadratic factor, whereas
+a real root gives a real linear factor. Each element of $D$ therefore
+has minimal polynomial of degree at most two by
+\ref{K07.23.algebraically_closed_center}. If $D\ne\R$, choose
+$x\notin\R$. Its monic quadratic is $X^2+bX+c$, with negative
+discriminant since it has no real root. Setting
+$i=(x+b/2)/\sqrt{c-b^2/4}$ gives $i^2=-1$ and a subfield
+$C=\R(i)\simeq\C$.
+
+Let $D_+$ be the centralizer of $i$. It is a division subring and $C$
+is central in it. Every one of its elements is algebraic over $C$, since
+an annihilating real polynomial is also a complex-coefficient polynomial.
+The preceding lemma applied to the algebraically closed field $C$ proves
+$D_+=C$.
+
+The real-linear map $T(y)=iyi^{-1}$ satisfies $T^2=1$ because
+$i^2=-1$ is central. Hence
+\[
+ D=D_+\oplus D_-,\qquad
+ D_-=\{y:iy=-yi\},\qquad
+ y=\tfrac12(y+T(y))+\tfrac12(y-T(y)).
+\]
+The intersection is zero since the characteristic is zero. If $D_-=0$,
+then $D=C$. Otherwise choose nonzero $j\in D_-$. For $z=a+bi\in C$
+we have $jz=\overline z j$. For any $y\in D_-$, the element
+$yj^{-1}$ commutes with $i$: both $y$ and $j^{-1}$ anticommute with
+$i$. It therefore belongs to $C$. Thus $D_-=Cj$.
+
+The element $j^2$ commutes with $i$, so it belongs to $C$. It also
+commutes with $j$, while $jz=\overline z j$ shows that a complex
+scalar commuting with $j$ is real. Thus $j^2=r\in\R$ and $r\ne0$.
+It cannot be positive: if $r=s^2$ with $s>0$, the central factorization
+$(j-s)(j+s)=0$ in a division ring would give $j=\pm s$, contrary
+to $j\in D_-\setminus\{0\}$. Consequently $r<0$. Replacing $j$
+by $j/\sqrt{-r}$ gives $j^2=-1$ without changing $Cj$.
+
+Every element has a unique form $z+w j$, and its multiplication is
+exactly the pair multiplication in \ref{K07.23.quaternion_algebra}:
+use $jz'=\overline{z'}j$ and $j^2=-1$ to expand the product.
+The resulting bijective real-linear multiplicative map
+$\mathbb H\to D$ proves the assertion. These three real algebras have
+different dimensions $1,2,4$ and hence are pairwise nonisomorphic.
+If $D$ was assumed finite-dimensional, every element is algebraic by
+linear dependence of $1,x,x^2,\ldots$; thus it satisfies the theorem's
+stated hypothesis.
+\end{proof}
+Associativity and the central embedding are essential. The theorem does
+not classify nonassociative real division algebras such as the octonions.
+The argument also explains why algebraicity alone already implies finite
+dimension in this particular real setting.
+
+\KEntry{K07.23.real_schur}{The real form of Schur's endomorphism alternative}
+\begin{corollary}
+For a nonzero finite-dimensional irreducible real representation $V$ of
+any group $G$, the algebra $\End_G(V)$ is isomorphic as a real algebra
+to $\R$, $\C$ or $\mathbb H$.
+\end{corollary}
+\begin{proof}
+The kernel and image of a nonzero equivariant endomorphism are invariant.
+Irreducibility gives zero kernel and full image, and its inverse is
+equivariant by multiplying the intertwining equation by the inverse.
+Thus the endomorphism algebra is a division ring; the identity is nonzero
+because $V\ne0$. It is a real-linear subspace of the finite-dimensional
+algebra $\End_\R(V)$, so it is finite-dimensional. Scalar real maps
+are central, with an injective scalar embedding since $V\ne0$.
+Apply \ref{K07.23.frobenius}.
+\end{proof}
+No finiteness of $G$ is needed in this corollary. It replaces the false
+real-field conclusion that every irreducible commutant consists only of
+real scalar maps; the scalar version of Schur's lemma required an
+algebraically closed field in the earlier representation chapter.

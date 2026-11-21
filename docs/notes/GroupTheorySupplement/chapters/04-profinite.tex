@@ -1,0 +1,244 @@
+\chapter{Finite quotients and profinite completion}
+\label{ch:gr02-profinite}
+
+A finite quotient can distinguish two elements of an infinite group.
+The profinite completion puts all of these quotients into one
+topological group. The compatible-tuple construction and the product
+topology also occur in the Krull-topology comparison in
+\emph{Advanced Field Theory} \cite[Results T04--T06]{field}. Here the
+indexing objects are the finite-index normal subgroups of an arbitrary
+abstract group.
+
+\section{The inverse limit of finite quotients}
+
+\begin{definition}[GR02-C05.01. The profinite completion]
+\label{def:gr02-completion}
+For an abstract group \(G\), let
+\[
+  \mathcal N(G)=\{N\trianglelefteq G:[G:N]<\infty\}.
+\]
+This set includes \(G\), which gives the trivial quotient. For
+\(M,N\in\mathcal N(G)\) with \(M\subseteq N\), the transition
+homomorphism \(q_{M,N}\colon G/M\to G/N\) sends \(gM\) to \(gN\).
+The \emph{profinite completion} of \(G\) is
+\[
+  \widehat G
+  =\left\{(x_N)_{N\in\mathcal N(G)}\in\prod_{N\in\mathcal N(G)}G/N
+          :q_{M,N}(x_M)=x_N\text{ if }M\subseteq N\right\}.
+\]
+We use coordinatewise multiplication and the subspace topology of the
+product of finite discrete groups. Write \(p_N\) for coordinate
+projection and \(\eta_G(g)=(gN)_N\) for the canonical map.
+\end{definition}
+
+The intersection \(M\) of any finite collection of members of
+\(\mathcal N(G)\) lies in \(\mathcal N(G)\), since \(G/M\) embeds into
+the product of the corresponding finite quotients. In particular a
+common refinement lies below each prescribed finite collection under
+inclusion. The transition maps compose because each simply passes to
+a larger subgroup. Thus these quotients form a cofiltered inverse
+system \cite[Definition 1.2.1 and Section 1.2]{profinite-source}.
+
+\begin{proposition}[GR02-C05.02. Topology, density, and kernel]
+\label{prop:gr02-completion-topology}
+The group \(\widehat G\) is compact, Hausdorff, and totally
+disconnected. Each \(p_N\) is a continuous surjection, and the kernels
+\(\ker p_N\) form a neighborhood basis at the identity consisting of
+clopen normal subgroups. The image of \(\eta_G\) is dense and
+\[
+     \ker\eta_G=\bigcap_{N\in\mathcal N(G)}N .
+\]
+\end{proposition}
+
+\begin{proof}
+The product of the finite discrete groups is a compact Hausdorff
+topological group. Each compatibility condition defines a closed
+subgroup, as it is the preimage of the diagonal in
+\((G/N)\times(G/N)\) under a continuous group homomorphism. Their
+intersection is therefore a compact Hausdorff topological group.
+Two distinct tuples have different values in some finite discrete
+coordinate, so the clopen fibers of that projection separate them.
+This proves total disconnectedness.
+
+Every \(p_N\) is surjective because \(p_N\eta_G\) is the quotient
+map. Basic neighborhoods of the identity constrain finitely many
+coordinates to be \(1\); the kernel of \(p_M\), for the intersection
+\(M\) of those subgroups, lies in the given neighborhood. Each
+\(\ker p_N\) is clopen and normal. To approximate any
+\(x\in\widehat G\) in a neighborhood prescribing \(x_{N_1},\ldots,x_{N_t}\),
+take \(M=N_1\cap\cdots\cap N_t\) and choose \(g\in G\) with
+\(gM=x_M\). Compatibility gives \(p_{N_i}\eta_G(g)=x_{N_i}\) for all
+\(i\), so every such neighborhood meets \(\eta_G(G)\).
+The asserted kernel follows from the formula for \(\eta_G\).
+\end{proof}
+
+For a finite \(G\), the coordinate at \(N=\{1\}\) determines all
+other coordinates. Thus \(\eta_G\) is an isomorphism onto the
+completion, with \(G\) given the discrete topology.
+
+\begin{theorem}[GR02-C05.03. Universal property]
+\label{thm:gr02-completion-universal}
+Let \(P\) be a profinite group, regarded as a topological inverse
+limit of finite discrete groups. Each abstract group homomorphism
+\(f\colon G\to P\) has a unique continuous extension
+\(\widehat f\colon\widehat G\to P\) satisfying
+\(\widehat f\eta_G=f\).
+\end{theorem}
+
+\begin{proof}
+Write \(P=\varprojlim_i P_i\) with projections \(\pi_i\). For each
+\(i\), the kernel \(N_i=\ker(\pi_i f)\) has finite index in \(G\),
+since \(G/N_i\) is isomorphic to a subgroup of \(P_i\).
+The induced homomorphism \(G/N_i\to P_i\) composed with \(p_{N_i}\)
+gives a continuous map \(h_i\colon\widehat G\to P_i\) extending
+\(\pi_i f\). For each transition map in the system of the \(P_i\),
+the two required coordinate maps agree on \(\eta_G(G)\), by the
+compatibility of the coordinates of \(f(g)\). Their equalizer is
+closed because the codomain is Hausdorff. Proposition~%
+\ref{prop:gr02-completion-topology} therefore implies that they
+agree everywhere. The maps \(h_i\) consequently define a
+homomorphism to \(P\), continuous in the inverse-limit topology.
+On \(\eta_G(G)\) its coordinates are those of \(f\).
+Two continuous extensions into the Hausdorff group \(P\) agree on
+the same dense subset and are equal.
+\end{proof}
+
+Taking \(P=\widehat H\) and composing a group homomorphism
+\(G\to H\) with \(\eta_H\) gives its induced continuous homomorphism
+on completions. Identities and composition are preserved by
+the uniqueness in Theorem~\ref{thm:gr02-completion-universal}.
+See \cite[Proposition 3.1.2]{profinite-source} for this comparison.
+
+\begin{proposition}[GR02-C05.04. A cofinal family of finite quotients]
+\label{prop:gr02-completion-cofinal}
+If \(\mathcal D\subseteq\mathcal N(G)\) has the property that each
+\(N\in\mathcal N(G)\) contains some \(D\in\mathcal D\), restriction
+induces a topological group isomorphism
+\[
+       \widehat G \longrightarrow
+       \varprojlim_{D\in\mathcal D}G/D .
+\]
+\end{proposition}
+
+\begin{proof}
+For \(D_1,D_2\in\mathcal D\), the condition applied to
+\(D_1\cap D_2\) gives a member of \(\mathcal D\) contained in both.
+Given a compatible tuple on \(\mathcal D\), define its \(N\)-coordinate
+as \(q_{D,N}(x_D)\) from any \(D\subseteq N\) in \(\mathcal D\).
+Two choices have a common refinement in \(\mathcal D\), which
+shows that this coordinate is independent of the choice.
+If \(M\subseteq N\), choosing \(D\subseteq M\) computes both
+coordinates and proves their compatibility. Each coordinate of
+this extension is a continuous group homomorphism since it is
+given by one projection followed by a finite quotient map.
+The extension and restriction recover the original coordinates
+in both directions.
+\end{proof}
+
+\begin{example}[GR02-C05.05. The integers and finite fields]
+\label{ex:gr02-completion-integers}
+The finite-index subgroups of \(\mathbb Z\) are \(n\mathbb Z\) for
+positive integers \(n\). The coordinates of the completion are
+therefore the compatible residue classes in
+\(\varprojlim_n\mathbb Z/n\mathbb Z\), with transition from \(m\)
+to \(n\) when \(n\mid m\). One obtains the same limit using
+the quotients by \(j!\mathbb Z\), since every positive integer
+divides some factorial. Proposition~\ref{prop:gr02-completion-cofinal}
+identifies the two topologies as well as the groups.
+
+The absolute Galois group of \(\mathbb F_q\) is topologically
+isomorphic to this completion, with \(x\mapsto x^q\) corresponding
+to \(\eta_{\mathbb Z}(1)\). This is the residue comparison proved
+in \emph{Advanced Field Theory} \cite[Result E06]{field}.
+\end{example}
+
+\section{Residual finiteness and three examples}
+
+\begin{proposition}[GR02-C05.06. Residual finiteness and injectivity]
+\label{prop:gr02-residual-finiteness}
+An abstract group \(G\) is \emph{residually finite} if for each
+\(g\ne 1\) some homomorphism to a finite group has nonidentity
+value on \(g\). This is equivalent to \(\eta_G\) being injective.
+In a residually finite group every finite subset maps injectively
+to a single finite quotient.
+\end{proposition}
+
+\begin{proof}
+A homomorphism to a finite group factors through the finite quotient
+by its kernel. Conversely each quotient by \(N\in\mathcal N(G)\)
+provides such a homomorphism. Thus residual finiteness is equivalent
+to the intersection in Proposition~\ref{prop:gr02-completion-topology}
+being trivial. Given a finite subset, choose a finite quotient
+that detects \(x^{-1}y\) for each pair of distinct elements \(x,y\)
+in it. The intersection of the finitely many kernels gives one
+finite quotient in which all these pairs remain distinct.
+For a subset of size at most one the trivial quotient suffices.
+\end{proof}
+
+\begin{proposition}[GR02-C05.07. Finitely generated abelian groups]
+\label{prop:gr02-abelian-residual}
+Every finitely generated abelian group is residually finite.
+\end{proposition}
+
+\begin{proof}
+By the structure theorem \cite[K07.07.fg\_abelian\_extension]{d07},
+such a group is isomorphic to \(\mathbb Z^r\oplus A\) with \(A\)
+finite abelian. For a nonzero element with nonzero \(A\)-component,
+projection to \(A\) detects it. Otherwise at least one integer
+coordinate \(a\) is nonzero. Project to that coordinate and reduce
+modulo \(|a|+1\), so that the residue of \(a\) is nonzero.
+\end{proof}
+
+\begin{theorem}[GR02-C05.08. Free groups]
+\label{thm:gr02-free-residual}
+A free group on any set of generators is residually finite.
+\end{theorem}
+
+\begin{proof}
+By the reduced-word description of the free group
+\cite[Result A01]{geomgroup}, a nonidentity element has a nonempty
+reduced word \(w=s_{\ell}^{\varepsilon_{\ell}}\cdots
+s_1^{\varepsilon_1}\), where each \(\varepsilon_i\) is \(1\) or
+\(-1\) and each \(s_i\) is a generator. Use permutations acting
+on the left, so the rightmost letter acts first. On
+\(X=\{0,\ldots,\ell\}\), prescribe part of the permutation
+\(\sigma_s\) for each generator \(s\) that occurs in \(w\):
+\[
+   \sigma_s(i-1)=i\quad\text{if }s_i=s,\ \varepsilon_i=1,\qquad
+   \sigma_s(i)=i-1\quad\text{if }s_i=s,\ \varepsilon_i=-1.
+\]
+Two different steps for \(s\) could prescribe the same domain
+only at a shared vertex of consecutive steps, with signs
+\(-1,1\) in step order. Two different steps could prescribe the
+same range only at a shared vertex with signs \(1,-1\).
+Either would put adjacent inverse letters in \(w\).
+Thus each prescription is a bijection between two subsets of \(X\).
+Their complements have equal finite cardinalities, so choose a
+bijection between the complements to extend it to a permutation.
+For generators absent from the word, take the identity.
+
+By the free-group universal property these assignments define a
+homomorphism to the finite permutation group of \(X\).
+For each \(i\), the letter \(s_i^{\varepsilon_i}\) moves
+\(i-1\) to \(i\) by construction. The image of \(w\) consequently
+moves \(0\) to \(\ell\ne 0\). This finite quotient (taking the
+image of the homomorphism if necessary) detects \(w\).
+The construction uses only the letters present in the word.
+\end{proof}
+
+Completing these partial permutations amounts to completing the
+labelled path to a finite covering graph, as in
+\cite[Theorem 3.2.1, first proof]{profinite-source}.
+
+\begin{example}[GR02-C05.09. The additive rationals]
+\label{ex:gr02-rationals-completion}
+If \(f\colon(\mathbb Q,+)\to H\) has finite target of order \(n\),
+then for every \(x\in\mathbb Q\)
+\[
+   f(x)=f(x/n)^n=1.
+\]
+The last equality follows from Lagrange's theorem in \(H\).
+All the finite quotients are therefore trivial and so is
+\(\widehat{\mathbb Q}\). Its canonical map still has dense image,
+as in Proposition~\ref{prop:gr02-completion-topology}.
+\end{example}

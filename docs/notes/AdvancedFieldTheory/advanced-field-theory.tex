@@ -1,0 +1,162 @@
+\documentclass[11pt,oneside,openany]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{hyperref}
+
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome Advanced Field Theory}
+\fi
+
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\hypersetup{
+  colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Advanced Field Theory},
+  pdfsubject={Infinite Galois Theory},
+  pdfauthor={MathGenome},bookmarksnumbered=true
+}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{9pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{4pt}{25pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries\color{ink}}{\thesubsection}{0.7em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\fancypagestyle{plain}{%
+  \fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\thispdfpagelabel{Cover}
+\begin{flushleft}
+\vspace*{0.65in}
+{\large\scshape\color{deepgreen}MathGenome\par}
+\vspace{0.35in}
+{\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+\vspace{0.43in}
+{\color{ink}\fontsize{36}{42}\selectfont\bfseries
+Advanced\\[4pt] Field Theory\par}
+\vspace{0.32in}
+{\color{deepgreen}\Large Infinite Galois Theory\par}
+\vfill
+{\large Mathematical lecture notes\par}
+\vspace{0.10in}
+{\normalsize MathGenome v0.21.0 dependency baseline\par}
+\vspace*{0.45in}
+\end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+\tableofcontents
+
+\chapter*{Scope and conventions}
+\addcontentsline{toc}{chapter}{Scope and conventions}
+
+The finite Galois correspondence describes an extension through the
+subgroups of its automorphism group. For an arbitrary algebraic Galois
+extension, the information about any particular element still sits in a
+finite Galois subextension. The Krull topology records simultaneous
+agreement on these finite parts. We use it to identify the full group
+with an inverse limit and to determine precisely which subgroups are
+recovered from their fixed fields. A faithful compact group action in
+the opposite direction constructs a Galois extension, and in particular
+realizes any profinite group over a suitable field.
+
+Throughout, a Galois extension is algebraic, normal, and separable.
+In the general argument \(L/K\) is Galois and
+\(G=\operatorname{Gal}(L/K)\). For an intermediate field \(E\) write
+\(G_E=\operatorname{Gal}(L/E)\) for its pointwise stabilizer.
+If \(E/K\) is Galois, write \(Q_E=\operatorname{Gal}(E/K)\) and
+\(r_E:G\to Q_E\) for restriction. For finite Galois stages
+\(E\subseteq E'\) the transition map \(r_{E',E}\) goes from
+\(Q_{E'}\) to \(Q_E\). The finite groups carry the discrete topology.
+We use left cosets in \(G/G_E\) when discussing arbitrary \(E\).
+
+The first chapter recalls the finite field-extension tools from
+\cite[Chapters 12--14]{d07} and proves the extension and restriction
+facts needed in the infinite case. The next chapter constructs the
+topology and glues compatible automorphisms. The third treats closed
+subgroups, open subgroups and closed normal quotients. The last computes
+the absolute Galois group of a finite field, tracking the arithmetic
+Frobenius \(x\mapsto x^q\) through every restriction. The source map
+records the references and proof dependencies of the numbered results,
+together with the relevant interfaces at the fixed Lean baseline.
+
+\mainmatter
+\input{chapters/01-finite-subextensions}
+\input{chapters/02-krull-topology}
+\input{chapters/03-galois-correspondence}
+\input{chapters/04-finite-fields}
+
+\backmatter
+\begin{thebibliography}{9}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\bibitem{milne}
+James S.~Milne.
+\emph{Fields and Galois Theory}, version 5.10, September 2022.
+\href{https://www.jmilne.org/math/CourseNotes/ft.html}{Author's notes}.
+
+\bibitem{rz}
+Luis Ribes and Pavel Zalesskii.
+\emph{Profinite Groups}, second edition.
+Ergebnisse der Mathematik und ihrer Grenzgebiete, volume 40.
+Springer, 2010.
+
+\bibitem{ln}
+Rudolf Lidl and Harald Niederreiter.
+\emph{Introduction to Finite Fields and Their Applications},
+revised edition. Cambridge University Press, 1994.
+
+\bibitem{stacks}
+The Stacks Project Authors.
+\emph{The Stacks Project}, Chapter 9, Fields, especially
+\href{https://stacks.math.columbia.edu/tag/0BMI}{Section 9.22}.
+Tags in the text identify the individual statements.
+
+\bibitem{d07}
+MathGenome.
+\emph{Abstract Algebra} (D07), accepted notes and formalization,
+particularly Chapters 12--14. MathGenome v0.21.0.
+
+\bibitem{d10}
+MathGenome.
+\emph{Point-Set Topology: Unified Notes} (D10), Chapter~5.
+Accepted revision included in MathGenome v0.22.0.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,1437 @@
+{
+  "base:sets": {
+    "pdf_page": 6,
+    "printed_page": "v",
+    "pdf_destination": "foundation.1"
+  },
+  "base:real": {
+    "pdf_page": 6,
+    "printed_page": "v",
+    "pdf_destination": "foundation.2"
+  },
+  "base:linear": {
+    "pdf_page": 6,
+    "printed_page": "v",
+    "pdf_destination": "foundation.3"
+  },
+  "base:ordinals": {
+    "pdf_page": 6,
+    "printed_page": "v",
+    "pdf_destination": "foundation.4"
+  },
+  "ch:d10-01": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "chapter.1"
+  },
+  "d10:01:topology": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "definition.1.1"
+  },
+  "d10:01:generated": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "proposition.1.2"
+  },
+  "d10:01:order-topology": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "definition.1.3"
+  },
+  "d10:01:ordered-spaces": {
+    "pdf_page": 8,
+    "printed_page": "1",
+    "pdf_destination": "proposition.1.4"
+  },
+  "d10:01:basis": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "theorem.1.5"
+  },
+  "d10:01:subbasis": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "proposition.1.6"
+  },
+  "d10:01:neighborhood": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "definition.1.7"
+  },
+  "d10:01:local-tests": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "proposition.1.8"
+  },
+  "d10:01:closure-def": {
+    "pdf_page": 9,
+    "printed_page": "2",
+    "pdf_destination": "definition.1.9"
+  },
+  "d10:01:closure-test": {
+    "pdf_page": 9,
+    "printed_page": "3",
+    "pdf_destination": "theorem.1.10"
+  },
+  "d10:01:closure-laws": {
+    "pdf_page": 10,
+    "printed_page": "3",
+    "pdf_destination": "theorem.1.11"
+  },
+  "d10:01:kuratowski": {
+    "pdf_page": 10,
+    "printed_page": "3",
+    "pdf_destination": "theorem.1.12"
+  },
+  "d10:01:examples": {
+    "pdf_page": 10,
+    "printed_page": "3",
+    "pdf_destination": "example.1.13"
+  },
+  "d10:01:closure-cautions": {
+    "pdf_page": 10,
+    "printed_page": "4",
+    "pdf_destination": "example.1.14"
+  },
+  "ch:d10-02": {
+    "pdf_page": 12,
+    "printed_page": "5",
+    "pdf_destination": "chapter.2"
+  },
+  "d10:02:maps": {
+    "pdf_page": 12,
+    "printed_page": "5",
+    "pdf_destination": "definition.2.1"
+  },
+  "d10:02:continuity-tests": {
+    "pdf_page": 12,
+    "printed_page": "5",
+    "pdf_destination": "theorem.2.2"
+  },
+  "d10:02:restriction": {
+    "pdf_page": 12,
+    "printed_page": "5",
+    "pdf_destination": "proposition.2.3"
+  },
+  "d10:02:embedding": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "theorem.2.4"
+  },
+  "d10:02:characteristic": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "proposition.2.5"
+  },
+  "d10:02:pasting": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "theorem.2.6"
+  },
+  "d10:02:locally-finite-closed": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "lemma.2.7"
+  },
+  "d10:02:locally-finite-pasting": {
+    "pdf_page": 13,
+    "printed_page": "6",
+    "pdf_destination": "theorem.2.8"
+  },
+  "d10:02:cautions": {
+    "pdf_page": 13,
+    "printed_page": "7",
+    "pdf_destination": "example.2.9"
+  },
+  "d10:02:open-closed-examples": {
+    "pdf_page": 14,
+    "printed_page": "7",
+    "pdf_destination": "example.2.10"
+  },
+  "ch:d10-03": {
+    "pdf_page": 15,
+    "printed_page": "8",
+    "pdf_destination": "chapter.3"
+  },
+  "d10:03:subspace": {
+    "pdf_page": 15,
+    "printed_page": "8",
+    "pdf_destination": "theorem.3.1"
+  },
+  "d10:03:interior-caution": {
+    "pdf_page": 15,
+    "printed_page": "8",
+    "pdf_destination": "remark.3.2"
+  },
+  "d10:03:initial": {
+    "pdf_page": 15,
+    "printed_page": "8",
+    "pdf_destination": "theorem.3.3"
+  },
+  "d10:03:product": {
+    "pdf_page": 15,
+    "printed_page": "9",
+    "pdf_destination": "definition.3.4"
+  },
+  "d10:03:product-universal": {
+    "pdf_page": 16,
+    "printed_page": "9",
+    "pdf_destination": "theorem.3.5"
+  },
+  "d10:03:product-subspaces": {
+    "pdf_page": 16,
+    "printed_page": "9",
+    "pdf_destination": "theorem.3.6"
+  },
+  "d10:03:product-closure": {
+    "pdf_page": 16,
+    "printed_page": "9",
+    "pdf_destination": "proposition.3.7"
+  },
+  "d10:03:product-cautions": {
+    "pdf_page": 16,
+    "printed_page": "9",
+    "pdf_destination": "example.3.8"
+  },
+  "d10:03:sum": {
+    "pdf_page": 17,
+    "printed_page": "10",
+    "pdf_destination": "theorem.3.9"
+  },
+  "d10:03:final": {
+    "pdf_page": 17,
+    "printed_page": "10",
+    "pdf_destination": "theorem.3.10"
+  },
+  "d10:03:quotient": {
+    "pdf_page": 17,
+    "printed_page": "10",
+    "pdf_destination": "definition.3.11"
+  },
+  "d10:03:quotient-universal": {
+    "pdf_page": 17,
+    "printed_page": "10",
+    "pdf_destination": "theorem.3.12"
+  },
+  "d10:03:quotient-restriction": {
+    "pdf_page": 17,
+    "printed_page": "10",
+    "pdf_destination": "proposition.3.13"
+  },
+  "d10:03:restriction-failure": {
+    "pdf_page": 18,
+    "printed_page": "11",
+    "pdf_destination": "example.3.14"
+  },
+  "d10:03:quotient-product-failure": {
+    "pdf_page": 18,
+    "printed_page": "11",
+    "pdf_destination": "example.3.15"
+  },
+  "ch:d10-04": {
+    "pdf_page": 19,
+    "printed_page": "12",
+    "pdf_destination": "chapter.4"
+  },
+  "d10:04:nets": {
+    "pdf_page": 19,
+    "printed_page": "12",
+    "pdf_destination": "definition.4.1"
+  },
+  "d10:04:subnet-calculus": {
+    "pdf_page": 19,
+    "printed_page": "12",
+    "pdf_destination": "lemma.4.2"
+  },
+  "d10:04:cluster-subnet": {
+    "pdf_page": 19,
+    "printed_page": "12",
+    "pdf_destination": "theorem.4.3"
+  },
+  "d10:04:subnet-interface": {
+    "pdf_page": 20,
+    "printed_page": "13",
+    "pdf_destination": "proposition.4.4"
+  },
+  "d10:04:closure-net": {
+    "pdf_page": 20,
+    "printed_page": "13",
+    "pdf_destination": "theorem.4.5"
+  },
+  "d10:04:continuity-net": {
+    "pdf_page": 20,
+    "printed_page": "13",
+    "pdf_destination": "theorem.4.6"
+  },
+  "d10:04:filters": {
+    "pdf_page": 20,
+    "printed_page": "13",
+    "pdf_destination": "definition.4.7"
+  },
+  "d10:04:filter-facts": {
+    "pdf_page": 20,
+    "printed_page": "13",
+    "pdf_destination": "proposition.4.8"
+  },
+  "d10:04:filter-cluster": {
+    "pdf_page": 21,
+    "printed_page": "14",
+    "pdf_destination": "theorem.4.9"
+  },
+  "d10:04:continuity-filter": {
+    "pdf_page": 21,
+    "printed_page": "14",
+    "pdf_destination": "theorem.4.10"
+  },
+  "d10:04:filter-net": {
+    "pdf_page": 21,
+    "printed_page": "14",
+    "pdf_destination": "theorem.4.11"
+  },
+  "d10:04:finer-subnet": {
+    "pdf_page": 21,
+    "printed_page": "14",
+    "pdf_destination": "lemma.4.12"
+  },
+  "d10:04:product-convergence": {
+    "pdf_page": 22,
+    "printed_page": "15",
+    "pdf_destination": "theorem.4.13"
+  },
+  "d10:04:first-countable-sequences": {
+    "pdf_page": 22,
+    "printed_page": "15",
+    "pdf_destination": "theorem.4.14"
+  },
+  "d10:04:sequence-failure": {
+    "pdf_page": 22,
+    "printed_page": "15",
+    "pdf_destination": "example.4.15"
+  },
+  "ch:d10-05": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "chapter.5"
+  },
+  "d10:05:compact": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "definition.5.1"
+  },
+  "d10:05:fip": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "theorem.5.2"
+  },
+  "d10:05:compact-heredity": {
+    "pdf_page": 23,
+    "printed_page": "16",
+    "pdf_destination": "theorem.5.3"
+  },
+  "d10:05:compact-image": {
+    "pdf_page": 24,
+    "printed_page": "17",
+    "pdf_destination": "theorem.5.4"
+  },
+  "d10:05:compact-hausdorff": {
+    "pdf_page": 24,
+    "printed_page": "17",
+    "pdf_destination": "theorem.5.5"
+  },
+  "d10:05:compact-bijection": {
+    "pdf_page": 24,
+    "printed_page": "17",
+    "pdf_destination": "corollary.5.6"
+  },
+  "d10:05:tube": {
+    "pdf_page": 24,
+    "printed_page": "17",
+    "pdf_destination": "lemma.5.7"
+  },
+  "d10:05:finite-product": {
+    "pdf_page": 24,
+    "printed_page": "17",
+    "pdf_destination": "theorem.5.8"
+  },
+  "d10:05:ultrafilter": {
+    "pdf_page": 25,
+    "printed_page": "18",
+    "pdf_destination": "definition.5.9"
+  },
+  "d10:05:ultrafilter-alternative": {
+    "pdf_page": 25,
+    "printed_page": "18",
+    "pdf_destination": "theorem.5.10"
+  },
+  "d10:05:ultrafilter-extension": {
+    "pdf_page": 25,
+    "printed_page": "18",
+    "pdf_destination": "theorem.5.11"
+  },
+  "d10:05:ultranet": {
+    "pdf_page": 25,
+    "printed_page": "18",
+    "pdf_destination": "proposition.5.12"
+  },
+  "d10:05:compact-convergence": {
+    "pdf_page": 25,
+    "printed_page": "18",
+    "pdf_destination": "theorem.5.13"
+  },
+  "d10:05:tychonoff": {
+    "pdf_page": 26,
+    "printed_page": "19",
+    "pdf_destination": "theorem.5.14"
+  },
+  "d10:05:choice-strength": {
+    "pdf_page": 26,
+    "printed_page": "19",
+    "pdf_destination": "proposition.5.15"
+  },
+  "d10:05:interval": {
+    "pdf_page": 27,
+    "printed_page": "20",
+    "pdf_destination": "theorem.5.16"
+  },
+  "d10:05:compact-variants": {
+    "pdf_page": 27,
+    "printed_page": "20",
+    "pdf_destination": "definition.5.17"
+  },
+  "d10:05:countable-compactness": {
+    "pdf_page": 27,
+    "printed_page": "20",
+    "pdf_destination": "theorem.5.18"
+  },
+  "d10:05:variant-counterexamples": {
+    "pdf_page": 28,
+    "printed_page": "21",
+    "pdf_destination": "example.5.19"
+  },
+  "d10:05:heine-borel": {
+    "pdf_page": 28,
+    "printed_page": "21",
+    "pdf_destination": "corollary.5.20"
+  },
+  "d10:05:cautions": {
+    "pdf_page": 28,
+    "printed_page": "21",
+    "pdf_destination": "example.5.21"
+  },
+  "ch:d10-06": {
+    "pdf_page": 29,
+    "printed_page": "22",
+    "pdf_destination": "chapter.6"
+  },
+  "d10:06:connected": {
+    "pdf_page": 29,
+    "printed_page": "22",
+    "pdf_destination": "definition.6.1"
+  },
+  "d10:06:separation-tests": {
+    "pdf_page": 29,
+    "printed_page": "22",
+    "pdf_destination": "proposition.6.2"
+  },
+  "d10:06:permanence": {
+    "pdf_page": 29,
+    "printed_page": "22",
+    "pdf_destination": "theorem.6.3"
+  },
+  "d10:06:product": {
+    "pdf_page": 29,
+    "printed_page": "23",
+    "pdf_destination": "theorem.6.4"
+  },
+  "d10:06:intervals": {
+    "pdf_page": 30,
+    "printed_page": "23",
+    "pdf_destination": "theorem.6.5"
+  },
+  "d10:06:linear-continuum": {
+    "pdf_page": 30,
+    "printed_page": "23",
+    "pdf_destination": "proposition.6.6"
+  },
+  "d10:06:components": {
+    "pdf_page": 30,
+    "printed_page": "23",
+    "pdf_destination": "definition.6.7"
+  },
+  "d10:06:component-partition": {
+    "pdf_page": 30,
+    "printed_page": "23",
+    "pdf_destination": "theorem.6.8"
+  },
+  "d10:06:sine-curve": {
+    "pdf_page": 31,
+    "printed_page": "24",
+    "pdf_destination": "example.6.9"
+  },
+  "d10:06:local-definitions": {
+    "pdf_page": 31,
+    "printed_page": "24",
+    "pdf_destination": "definition.6.10"
+  },
+  "d10:06:local-characterization": {
+    "pdf_page": 31,
+    "printed_page": "24",
+    "pdf_destination": "theorem.6.11"
+  },
+  "d10:06:local-quotients": {
+    "pdf_page": 31,
+    "printed_page": "24",
+    "pdf_destination": "proposition.6.12"
+  },
+  "d10:06:local-products": {
+    "pdf_page": 31,
+    "printed_page": "25",
+    "pdf_destination": "proposition.6.13"
+  },
+  "d10:06:local-limitations": {
+    "pdf_page": 32,
+    "printed_page": "25",
+    "pdf_destination": "remark.6.14"
+  },
+  "d10:06:quasicomponent": {
+    "pdf_page": 32,
+    "printed_page": "25",
+    "pdf_destination": "definition.6.15"
+  },
+  "d10:06:quasicomponent-compact": {
+    "pdf_page": 32,
+    "printed_page": "25",
+    "pdf_destination": "theorem.6.16"
+  },
+  "d10:06:zero-dimensional": {
+    "pdf_page": 32,
+    "printed_page": "26",
+    "pdf_destination": "corollary.6.17"
+  },
+  "d10:06:filtered-continua": {
+    "pdf_page": 33,
+    "printed_page": "26",
+    "pdf_destination": "theorem.6.18"
+  },
+  "d10:06:irreducible-continuum": {
+    "pdf_page": 33,
+    "printed_page": "26",
+    "pdf_destination": "corollary.6.19"
+  },
+  "d10:06:continuum-scope": {
+    "pdf_page": 33,
+    "printed_page": "26",
+    "pdf_destination": "remark.6.20"
+  },
+  "ch:d10-07": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "chapter.7"
+  },
+  "d10:07:axioms": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "definition.7.1"
+  },
+  "d10:07:shrinking": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "proposition.7.2"
+  },
+  "d10:07:hierarchy": {
+    "pdf_page": 34,
+    "printed_page": "27",
+    "pdf_destination": "proposition.7.3"
+  },
+  "d10:07:heredity-products": {
+    "pdf_page": 34,
+    "printed_page": "28",
+    "pdf_destination": "theorem.7.4"
+  },
+  "d10:07:compact-normal": {
+    "pdf_page": 35,
+    "printed_page": "28",
+    "pdf_destination": "theorem.7.5"
+  },
+  "d10:07:metric-normal": {
+    "pdf_page": 35,
+    "printed_page": "28",
+    "pdf_destination": "proposition.7.6"
+  },
+  "d10:07:urysohn": {
+    "pdf_page": 36,
+    "printed_page": "29",
+    "pdf_destination": "theorem.7.7"
+  },
+  "d10:07:t4-tychonoff": {
+    "pdf_page": 36,
+    "printed_page": "29",
+    "pdf_destination": "corollary.7.8"
+  },
+  "d10:07:zero-sets": {
+    "pdf_page": 36,
+    "printed_page": "29",
+    "pdf_destination": "proposition.7.9"
+  },
+  "d10:07:approximate-extension": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "lemma.7.10"
+  },
+  "d10:07:tietze-bounded": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "theorem.7.11"
+  },
+  "d10:07:tietze-real": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "theorem.7.12"
+  },
+  "d10:07:finite-coordinate-extension": {
+    "pdf_page": 37,
+    "printed_page": "30",
+    "pdf_destination": "corollary.7.13"
+  },
+  "d10:07:normal-scope": {
+    "pdf_page": 38,
+    "printed_page": "31",
+    "pdf_destination": "remark.7.14"
+  },
+  "ch:d10-08": {
+    "pdf_page": 39,
+    "printed_page": "32",
+    "pdf_destination": "chapter.8"
+  },
+  "d10:08:definitions": {
+    "pdf_page": 39,
+    "printed_page": "32",
+    "pdf_destination": "definition.8.1"
+  },
+  "d10:08:first-countable-sequences": {
+    "pdf_page": 39,
+    "printed_page": "32",
+    "pdf_destination": "theorem.8.2"
+  },
+  "d10:08:second-implications": {
+    "pdf_page": 39,
+    "printed_page": "32",
+    "pdf_destination": "theorem.8.3"
+  },
+  "d10:08:permanence": {
+    "pdf_page": 40,
+    "printed_page": "33",
+    "pdf_destination": "proposition.8.4"
+  },
+  "d10:08:basis-extraction": {
+    "pdf_page": 40,
+    "printed_page": "33",
+    "pdf_destination": "proposition.8.5"
+  },
+  "d10:08:metric-equivalence": {
+    "pdf_page": 40,
+    "printed_page": "33",
+    "pdf_destination": "theorem.8.6"
+  },
+  "d10:08:regular-lindelof-normal": {
+    "pdf_page": 41,
+    "printed_page": "34",
+    "pdf_destination": "theorem.8.7"
+  },
+  "d10:08:lindelof-subspace-failure": {
+    "pdf_page": 41,
+    "printed_page": "34",
+    "pdf_destination": "example.8.8"
+  },
+  "d10:08:cocountable": {
+    "pdf_page": 41,
+    "printed_page": "34",
+    "pdf_destination": "example.8.9"
+  },
+  "d10:08:fan": {
+    "pdf_page": 41,
+    "printed_page": "34",
+    "pdf_destination": "example.8.10"
+  },
+  "d10:08:sorgenfrey-line": {
+    "pdf_page": 41,
+    "printed_page": "34",
+    "pdf_destination": "example.8.11"
+  },
+  "d10:08:jones": {
+    "pdf_page": 42,
+    "printed_page": "35",
+    "pdf_destination": "lemma.8.12"
+  },
+  "d10:08:sorgenfrey-plane": {
+    "pdf_page": 42,
+    "printed_page": "35",
+    "pdf_destination": "example.8.13"
+  },
+  "d10:08:implication-scope": {
+    "pdf_page": 42,
+    "printed_page": "35",
+    "pdf_destination": "remark.8.14"
+  },
+  "ch:d10-09": {
+    "pdf_page": 43,
+    "printed_page": "36",
+    "pdf_destination": "chapter.9"
+  },
+  "d10:09:metric": {
+    "pdf_page": 43,
+    "printed_page": "36",
+    "pdf_destination": "definition.9.1"
+  },
+  "d10:09:metric-topology": {
+    "pdf_page": 43,
+    "printed_page": "36",
+    "pdf_destination": "proposition.9.2"
+  },
+  "d10:09:equivalences": {
+    "pdf_page": 43,
+    "printed_page": "36",
+    "pdf_destination": "definition.9.3"
+  },
+  "d10:09:metric-comparison": {
+    "pdf_page": 43,
+    "printed_page": "36",
+    "pdf_destination": "proposition.9.4"
+  },
+  "d10:09:complete-definition": {
+    "pdf_page": 44,
+    "printed_page": "37",
+    "pdf_destination": "definition.9.5"
+  },
+  "d10:09:cauchy-basics": {
+    "pdf_page": 44,
+    "printed_page": "37",
+    "pdf_destination": "proposition.9.6"
+  },
+  "d10:09:complete-examples": {
+    "pdf_page": 44,
+    "printed_page": "37",
+    "pdf_destination": "example.9.7"
+  },
+  "d10:09:cantor-intersection": {
+    "pdf_page": 44,
+    "printed_page": "37",
+    "pdf_destination": "theorem.9.8"
+  },
+  "d10:09:completion": {
+    "pdf_page": 45,
+    "printed_page": "38",
+    "pdf_destination": "theorem.9.9"
+  },
+  "d10:09:completion-universal": {
+    "pdf_page": 45,
+    "printed_page": "38",
+    "pdf_destination": "theorem.9.10"
+  },
+  "d10:09:total-bounded": {
+    "pdf_page": 46,
+    "printed_page": "39",
+    "pdf_destination": "definition.9.11"
+  },
+  "d10:09:total-bounded-basics": {
+    "pdf_page": 46,
+    "printed_page": "39",
+    "pdf_destination": "proposition.9.12"
+  },
+  "d10:09:compact-equivalences": {
+    "pdf_page": 46,
+    "printed_page": "39",
+    "pdf_destination": "theorem.9.13"
+  },
+  "d10:09:precompact-completion": {
+    "pdf_page": 46,
+    "printed_page": "39",
+    "pdf_destination": "corollary.9.14"
+  },
+  "d10:09:lebesgue": {
+    "pdf_page": 47,
+    "printed_page": "40",
+    "pdf_destination": "theorem.9.15"
+  },
+  "d10:09:metric-scope": {
+    "pdf_page": 47,
+    "printed_page": "40",
+    "pdf_destination": "remark.9.16"
+  },
+  "ch:d10-10": {
+    "pdf_page": 48,
+    "printed_page": "41",
+    "pdf_destination": "chapter.10"
+  },
+  "d10:10:evaluation-embedding": {
+    "pdf_page": 48,
+    "printed_page": "41",
+    "pdf_destination": "theorem.10.1"
+  },
+  "d10:10:tychonoff-cube": {
+    "pdf_page": 48,
+    "printed_page": "41",
+    "pdf_destination": "theorem.10.2"
+  },
+  "d10:10:compact-point-separation": {
+    "pdf_page": 49,
+    "printed_page": "42",
+    "pdf_destination": "proposition.10.3"
+  },
+  "d10:10:product-metric": {
+    "pdf_page": 49,
+    "printed_page": "42",
+    "pdf_destination": "theorem.10.4"
+  },
+  "d10:10:urysohn-metrization": {
+    "pdf_page": 49,
+    "printed_page": "42",
+    "pdf_destination": "theorem.10.5"
+  },
+  "d10:10:hilbert-cube-universal": {
+    "pdf_page": 50,
+    "printed_page": "43",
+    "pdf_destination": "corollary.10.6"
+  },
+  "d10:10:embedding-distances": {
+    "pdf_page": 50,
+    "printed_page": "43",
+    "pdf_destination": "remark.10.7"
+  },
+  "d10:10:complete-gdelta": {
+    "pdf_page": 50,
+    "printed_page": "43",
+    "pdf_destination": "theorem.10.8"
+  },
+  "d10:10:open-gdelta-complete": {
+    "pdf_page": 51,
+    "printed_page": "44",
+    "pdf_destination": "corollary.10.9"
+  },
+  "d10:10:metrization-scope": {
+    "pdf_page": 51,
+    "printed_page": "44",
+    "pdf_destination": "remark.10.10"
+  },
+  "ch:d10-11": {
+    "pdf_page": 52,
+    "printed_page": "45",
+    "pdf_destination": "chapter.11"
+  },
+  "d10:11:local-compactness": {
+    "pdf_page": 52,
+    "printed_page": "45",
+    "pdf_destination": "definition.11.1"
+  },
+  "d10:11:compact-shrinking": {
+    "pdf_page": 52,
+    "printed_page": "45",
+    "pdf_destination": "lemma.11.2"
+  },
+  "d10:11:exhaustion": {
+    "pdf_page": 52,
+    "printed_page": "45",
+    "pdf_destination": "proposition.11.3"
+  },
+  "d10:11:rationals": {
+    "pdf_page": 53,
+    "printed_page": "46",
+    "pdf_destination": "example.11.4"
+  },
+  "d10:11:proper": {
+    "pdf_page": 53,
+    "printed_page": "46",
+    "pdf_destination": "definition.11.5"
+  },
+  "d10:11:proper-perfect": {
+    "pdf_page": 53,
+    "printed_page": "46",
+    "pdf_destination": "theorem.11.6"
+  },
+  "d10:11:proper-calculus": {
+    "pdf_page": 53,
+    "printed_page": "46",
+    "pdf_destination": "proposition.11.7"
+  },
+  "d10:11:proper-boundary": {
+    "pdf_page": 53,
+    "printed_page": "46",
+    "pdf_destination": "example.11.8"
+  },
+  "d10:11:one-point": {
+    "pdf_page": 54,
+    "printed_page": "47",
+    "pdf_destination": "theorem.11.9"
+  },
+  "d10:11:compactification": {
+    "pdf_page": 54,
+    "printed_page": "47",
+    "pdf_destination": "definition.11.10"
+  },
+  "d10:11:proper-infinity": {
+    "pdf_page": 54,
+    "printed_page": "47",
+    "pdf_destination": "proposition.11.11"
+  },
+  "d10:11:evaluation-embedding": {
+    "pdf_page": 55,
+    "printed_page": "48",
+    "pdf_destination": "definition.11.12"
+  },
+  "d10:11:stone-cech": {
+    "pdf_page": 55,
+    "printed_page": "48",
+    "pdf_destination": "theorem.11.13"
+  },
+  "d10:11:beta-consequences": {
+    "pdf_page": 55,
+    "printed_page": "48",
+    "pdf_destination": "corollary.11.14"
+  },
+  "d10:11:compactification-scope": {
+    "pdf_page": 56,
+    "printed_page": "49",
+    "pdf_destination": "remark.11.15"
+  },
+  "ch:d10-12": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "chapter.12"
+  },
+  "d10:12:uniformity": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "definition.12.1"
+  },
+  "d10:12:entourage-calculus": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "lemma.12.2"
+  },
+  "d10:12:uniform-topology": {
+    "pdf_page": 57,
+    "printed_page": "50",
+    "pdf_destination": "theorem.12.3"
+  },
+  "d10:12:closed-entourages": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "lemma.12.4"
+  },
+  "d10:12:uniform-continuity": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "definition.12.5"
+  },
+  "d10:12:continuity-calculus": {
+    "pdf_page": 58,
+    "printed_page": "51",
+    "pdf_destination": "proposition.12.6"
+  },
+  "d10:12:subspace-product": {
+    "pdf_page": 59,
+    "printed_page": "52",
+    "pdf_destination": "proposition.12.7"
+  },
+  "d10:12:pseudometric": {
+    "pdf_page": 59,
+    "printed_page": "52",
+    "pdf_destination": "definition.12.8"
+  },
+  "d10:12:countable-pseudometrics": {
+    "pdf_page": 59,
+    "printed_page": "52",
+    "pdf_destination": "proposition.12.9"
+  },
+  "d10:12:dyadic-chains": {
+    "pdf_page": 60,
+    "printed_page": "53",
+    "pdf_destination": "lemma.12.10"
+  },
+  "d10:12:pseudometric-representation": {
+    "pdf_page": 60,
+    "printed_page": "53",
+    "pdf_destination": "theorem.12.11"
+  },
+  "d10:12:uniformizable": {
+    "pdf_page": 61,
+    "printed_page": "54",
+    "pdf_destination": "corollary.12.12"
+  },
+  "d10:12:cauchy": {
+    "pdf_page": 61,
+    "printed_page": "54",
+    "pdf_destination": "definition.12.13"
+  },
+  "d10:12:cauchy-cluster": {
+    "pdf_page": 61,
+    "printed_page": "54",
+    "pdf_destination": "lemma.12.14"
+  },
+  "d10:12:compact-complete-tb": {
+    "pdf_page": 61,
+    "printed_page": "54",
+    "pdf_destination": "theorem.12.15"
+  },
+  "d10:12:complete-subspace-product": {
+    "pdf_page": 62,
+    "printed_page": "55",
+    "pdf_destination": "proposition.12.16"
+  },
+  "d10:12:metric-completeness": {
+    "pdf_page": 62,
+    "printed_page": "55",
+    "pdf_destination": "proposition.12.17"
+  },
+  "d10:12:pseudometric-completion": {
+    "pdf_page": 62,
+    "printed_page": "55",
+    "pdf_destination": "theorem.12.18"
+  },
+  "d10:12:dense-extension": {
+    "pdf_page": 63,
+    "printed_page": "56",
+    "pdf_destination": "lemma.12.19"
+  },
+  "d10:12:uniform-completion": {
+    "pdf_page": 63,
+    "printed_page": "56",
+    "pdf_destination": "theorem.12.20"
+  },
+  "d10:12:separated-quotient": {
+    "pdf_page": 64,
+    "printed_page": "57",
+    "pdf_destination": "proposition.12.21"
+  },
+  "d10:12:completion-scope": {
+    "pdf_page": 64,
+    "printed_page": "57",
+    "pdf_destination": "remark.12.22"
+  },
+  "ch:d10-13": {
+    "pdf_page": 66,
+    "printed_page": "59",
+    "pdf_destination": "chapter.13"
+  },
+  "d10:13:function-topologies": {
+    "pdf_page": 66,
+    "printed_page": "59",
+    "pdf_destination": "definition.13.1"
+  },
+  "d10:13:topology-comparison": {
+    "pdf_page": 66,
+    "printed_page": "59",
+    "pdf_destination": "proposition.13.2"
+  },
+  "d10:13:strict-comparisons": {
+    "pdf_page": 67,
+    "printed_page": "60",
+    "pdf_destination": "example.13.3"
+  },
+  "d10:13:uniform-complete": {
+    "pdf_page": 67,
+    "printed_page": "60",
+    "pdf_destination": "proposition.13.4"
+  },
+  "d10:13:functorial-maps": {
+    "pdf_page": 68,
+    "printed_page": "61",
+    "pdf_destination": "proposition.13.5"
+  },
+  "d10:13:evaluation-exponential": {
+    "pdf_page": 68,
+    "printed_page": "61",
+    "pdf_destination": "theorem.13.6"
+  },
+  "d10:13:composition": {
+    "pdf_page": 68,
+    "printed_page": "61",
+    "pdf_destination": "theorem.13.7"
+  },
+  "d10:13:quotient-product": {
+    "pdf_page": 68,
+    "printed_page": "61",
+    "pdf_destination": "corollary.13.8"
+  },
+  "d10:13:equicontinuity": {
+    "pdf_page": 69,
+    "printed_page": "62",
+    "pdf_destination": "definition.13.9"
+  },
+  "d10:13:equicontinuous-closure": {
+    "pdf_page": 69,
+    "printed_page": "62",
+    "pdf_destination": "lemma.13.10"
+  },
+  "d10:13:finite-sampling": {
+    "pdf_page": 69,
+    "printed_page": "62",
+    "pdf_destination": "lemma.13.11"
+  },
+  "d10:13:ascoli": {
+    "pdf_page": 69,
+    "printed_page": "62",
+    "pdf_destination": "theorem.13.12"
+  },
+  "d10:13:classical-ascoli": {
+    "pdf_page": 70,
+    "printed_page": "63",
+    "pdf_destination": "corollary.13.13"
+  },
+  "d10:13:ascoli-boundaries": {
+    "pdf_page": 70,
+    "printed_page": "63",
+    "pdf_destination": "remark.13.14"
+  },
+  "d10:13:ascoli-nonlch": {
+    "pdf_page": 71,
+    "printed_page": "64",
+    "pdf_destination": "example.13.15"
+  },
+  "ch:d10-14": {
+    "pdf_page": 72,
+    "printed_page": "65",
+    "pdf_destination": "chapter.14"
+  },
+  "d10:14:category-definitions": {
+    "pdf_page": 72,
+    "printed_page": "65",
+    "pdf_destination": "definition.14.1"
+  },
+  "d10:14:category-equivalences": {
+    "pdf_page": 72,
+    "printed_page": "65",
+    "pdf_destination": "proposition.14.2"
+  },
+  "d10:14:category-boundaries": {
+    "pdf_page": 72,
+    "printed_page": "66",
+    "pdf_destination": "example.14.3"
+  },
+  "d10:14:nested-closed": {
+    "pdf_page": 73,
+    "printed_page": "66",
+    "pdf_destination": "lemma.14.4"
+  },
+  "d10:14:baire-metric": {
+    "pdf_page": 73,
+    "printed_page": "66",
+    "pdf_destination": "theorem.14.5"
+  },
+  "d10:14:baire-lch": {
+    "pdf_page": 73,
+    "printed_page": "66",
+    "pdf_destination": "theorem.14.6"
+  },
+  "d10:14:baire-subspaces": {
+    "pdf_page": 73,
+    "printed_page": "66",
+    "pdf_destination": "proposition.14.7"
+  },
+  "d10:14:countable-dense": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "corollary.14.8"
+  },
+  "d10:14:baire-one": {
+    "pdf_page": 74,
+    "printed_page": "67",
+    "pdf_destination": "theorem.14.9"
+  },
+  "d10:14:local-uniform-boundedness": {
+    "pdf_page": 74,
+    "printed_page": "68",
+    "pdf_destination": "proposition.14.10"
+  },
+  "d10:14:banach": {
+    "pdf_page": 75,
+    "printed_page": "68",
+    "pdf_destination": "theorem.14.11"
+  },
+  "d10:14:iterate-contraction": {
+    "pdf_page": 75,
+    "printed_page": "68",
+    "pdf_destination": "corollary.14.12"
+  },
+  "d10:14:fixed-point-stability": {
+    "pdf_page": 75,
+    "printed_page": "69",
+    "pdf_destination": "proposition.14.13"
+  },
+  "d10:14:contraction-boundaries": {
+    "pdf_page": 76,
+    "printed_page": "69",
+    "pdf_destination": "example.14.14"
+  },
+  "ch:d10-15": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "chapter.15"
+  },
+  "d10:15:locally-finite": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "definition.15.1"
+  },
+  "d10:15:closure-sums": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "lemma.15.2"
+  },
+  "d10:15:normal": {
+    "pdf_page": 77,
+    "printed_page": "70",
+    "pdf_destination": "theorem.15.3"
+  },
+  "d10:15:metric-sigma": {
+    "pdf_page": 78,
+    "printed_page": "71",
+    "pdf_destination": "lemma.15.4"
+  },
+  "d10:15:michael": {
+    "pdf_page": 78,
+    "printed_page": "71",
+    "pdf_destination": "lemma.15.5"
+  },
+  "d10:15:metric-paracompact": {
+    "pdf_page": 79,
+    "printed_page": "72",
+    "pdf_destination": "theorem.15.6"
+  },
+  "d10:15:finite-partition": {
+    "pdf_page": 79,
+    "printed_page": "72",
+    "pdf_destination": "theorem.15.7"
+  },
+  "d10:15:shrinking": {
+    "pdf_page": 79,
+    "printed_page": "72",
+    "pdf_destination": "lemma.15.8"
+  },
+  "d10:15:partition-definition": {
+    "pdf_page": 79,
+    "printed_page": "72",
+    "pdf_destination": "definition.15.9"
+  },
+  "d10:15:partition": {
+    "pdf_page": 79,
+    "printed_page": "72",
+    "pdf_destination": "theorem.15.10"
+  },
+  "d10:15:patching": {
+    "pdf_page": 80,
+    "printed_page": "73",
+    "pdf_destination": "corollary.15.11"
+  },
+  "d10:15:compact-atlas-embedding": {
+    "pdf_page": 80,
+    "printed_page": "73",
+    "pdf_destination": "corollary.15.12"
+  },
+  "d10:15:perfect-normal": {
+    "pdf_page": 80,
+    "printed_page": "73",
+    "pdf_destination": "lemma.15.13"
+  },
+  "d10:15:nagata-smirnov": {
+    "pdf_page": 80,
+    "printed_page": "74",
+    "pdf_destination": "theorem.15.14"
+  },
+  "d10:15:smirnov": {
+    "pdf_page": 81,
+    "printed_page": "74",
+    "pdf_destination": "theorem.15.15"
+  },
+  "ch:d10-16": {
+    "pdf_page": 82,
+    "printed_page": "75",
+    "pdf_destination": "chapter.16"
+  },
+  "d10:16:dini": {
+    "pdf_page": 82,
+    "printed_page": "75",
+    "pdf_destination": "lemma.16.1"
+  },
+  "d10:16:absolute-polynomial": {
+    "pdf_page": 82,
+    "printed_page": "75",
+    "pdf_destination": "lemma.16.2"
+  },
+  "d10:16:closed-lattice": {
+    "pdf_page": 82,
+    "printed_page": "75",
+    "pdf_destination": "lemma.16.3"
+  },
+  "d10:16:stone-weierstrass-real": {
+    "pdf_page": 83,
+    "printed_page": "76",
+    "pdf_destination": "theorem.16.4"
+  },
+  "d10:16:polynomial": {
+    "pdf_page": 83,
+    "printed_page": "76",
+    "pdf_destination": "corollary.16.5"
+  },
+  "d10:16:stone-weierstrass-complex": {
+    "pdf_page": 83,
+    "printed_page": "76",
+    "pdf_destination": "theorem.16.6"
+  },
+  "d10:16:conjugation-needed": {
+    "pdf_page": 83,
+    "printed_page": "76",
+    "pdf_destination": "example.16.7"
+  },
+  "d10:16:c0": {
+    "pdf_page": 84,
+    "printed_page": "77",
+    "pdf_destination": "definition.16.8"
+  },
+  "d10:16:c0-extension": {
+    "pdf_page": 84,
+    "printed_page": "77",
+    "pdf_destination": "lemma.16.9"
+  },
+  "d10:16:stone-weierstrass-c0": {
+    "pdf_page": 84,
+    "printed_page": "77",
+    "pdf_destination": "theorem.16.10"
+  },
+  "ch:d10-17": {
+    "pdf_page": 85,
+    "printed_page": "78",
+    "pdf_destination": "chapter.17"
+  },
+  "d10:17:simplex": {
+    "pdf_page": 85,
+    "printed_page": "78",
+    "pdf_destination": "definition.17.1"
+  },
+  "d10:17:subdivision": {
+    "pdf_page": 85,
+    "printed_page": "78",
+    "pdf_destination": "lemma.17.2"
+  },
+  "d10:17:incidence": {
+    "pdf_page": 86,
+    "printed_page": "79",
+    "pdf_destination": "lemma.17.3"
+  },
+  "d10:17:sperner": {
+    "pdf_page": 86,
+    "printed_page": "79",
+    "pdf_destination": "theorem.17.4"
+  },
+  "d10:17:brouwer-simplex": {
+    "pdf_page": 87,
+    "printed_page": "80",
+    "pdf_destination": "theorem.17.5"
+  },
+  "d10:17:projection": {
+    "pdf_page": 87,
+    "printed_page": "80",
+    "pdf_destination": "lemma.17.6"
+  },
+  "d10:17:brouwer-convex": {
+    "pdf_page": 87,
+    "printed_page": "80",
+    "pdf_destination": "theorem.17.7"
+  },
+  "d10:17:no-retraction": {
+    "pdf_page": 88,
+    "printed_page": "81",
+    "pdf_destination": "corollary.17.8"
+  },
+  "d10:17:fixed-point-boundaries": {
+    "pdf_page": 88,
+    "printed_page": "81",
+    "pdf_destination": "remark.17.9"
+  },
+  "ch:d10-18": {
+    "pdf_page": 89,
+    "printed_page": "82",
+    "pdf_destination": "chapter.18"
+  },
+  "d10:18:cantor-model": {
+    "pdf_page": 89,
+    "printed_page": "82",
+    "pdf_destination": "theorem.18.1"
+  },
+  "d10:18:clopen-partitions": {
+    "pdf_page": 89,
+    "printed_page": "82",
+    "pdf_destination": "lemma.18.2"
+  },
+  "d10:18:cantor-characterization": {
+    "pdf_page": 90,
+    "printed_page": "83",
+    "pdf_destination": "theorem.18.3"
+  },
+  "d10:18:cantor-surjection": {
+    "pdf_page": 90,
+    "printed_page": "83",
+    "pdf_destination": "theorem.18.4"
+  },
+  "d10:18:peano": {
+    "pdf_page": 91,
+    "printed_page": "84",
+    "pdf_destination": "corollary.18.5"
+  },
+  "d10:18:sierpinski": {
+    "pdf_page": 91,
+    "printed_page": "84",
+    "pdf_destination": "example.18.6"
+  },
+  "d10:18:discrete": {
+    "pdf_page": 91,
+    "printed_page": "84",
+    "pdf_destination": "example.18.7"
+  },
+  "d10:18:k-topology": {
+    "pdf_page": 91,
+    "printed_page": "84",
+    "pdf_destination": "example.18.8"
+  },
+  "d10:18:two-origins": {
+    "pdf_page": 91,
+    "printed_page": "84",
+    "pdf_destination": "example.18.9"
+  },
+  "d10:18:fortissimo": {
+    "pdf_page": 92,
+    "printed_page": "85",
+    "pdf_destination": "example.18.10"
+  },
+  "d10:18:ordinal-compact": {
+    "pdf_page": 92,
+    "printed_page": "85",
+    "pdf_destination": "lemma.18.11"
+  },
+  "d10:18:omega-one": {
+    "pdf_page": 92,
+    "printed_page": "85",
+    "pdf_destination": "example.18.12"
+  },
+  "d10:18:rational-incomplete": {
+    "pdf_page": 93,
+    "printed_page": "86",
+    "pdf_destination": "example.18.13"
+  },
+  "d10:18:evaluation-failure": {
+    "pdf_page": 94,
+    "printed_page": "87",
+    "pdf_destination": "proposition.18.14"
+  },
+  "app:d10-sources": {
+    "pdf_page": 95,
+    "printed_page": "88",
+    "pdf_destination": "chapter*.6"
+  },
+  "app:d10-verification": {
+    "pdf_page": 97,
+    "printed_page": "90",
+    "pdf_destination": "chapter*.9"
+  }
+}

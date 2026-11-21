@@ -1,0 +1,58 @@
+{
+  "source_map_sha256": "28adb689aeb552425734a885a8f37de0f1b22627b09e379da425eff406b07481",
+  "source_sha256": {
+    "P2-03_Elementary_Number_Theory_Notes.tex": "c8c5bf3d0ca4e8e0431c1991dac945f3d64f0dc6ef346dc24d7fd42515c64b93",
+    "chapters/01-integers.tex": "115d9cde3751b425f03ce4956cd11f99c166bbe7dfdf4c8e076efc55cefcd0d0",
+    "chapters/02-congruences.tex": "41dca1ad7e36abc1aa496d42ed349e0e597c2b236933ed3f1143eb85a84410eb",
+    "chapters/03-arithmetic-functions.tex": "c3e994276e2903aa19eda9ba25fe099cf2546f96d46badfea0af2f162f5d38bf",
+    "chapters/04-diophantine.tex": "7e968a3624821292ef17df533bbcf46ea0fb21586e4d8a388c27abdcfb2533a2",
+    "chapters/05-continued-fractions.tex": "5cec9eb89468b9273d929556b7861a997aa3c6fc4ea85d1bb0a954b91fa2da12",
+    "chapters/06-pell.tex": "b54785cd0d12da179f018652682249f1f412a41d16691e8d7b0f4155d1cba699",
+    "output/pdf/P2-03_Elementary_Number_Theory_Notes.pdf": "daf4a4b3723d5a0ea0bf5c07068edc3178d18f632410d194294b39912c20d87a"
+  },
+  "paper_sha256": "0577904c95675d4a9eac1d741f72e16dc84b9e20895575c7ae5d74b8adb1a999",
+  "pdf_sha256": "daf4a4b3723d5a0ea0bf5c07068edc3178d18f632410d194294b39912c20d87a",
+  "chapter_ranges_in_paper": {
+    "chapters/01-integers.tex": [
+      77,
+      347
+    ],
+    "chapters/02-congruences.tex": [
+      348,
+      857
+    ],
+    "chapters/03-arithmetic-functions.tex": [
+      858,
+      1397
+    ],
+    "chapters/04-diophantine.tex": [
+      1398,
+      1999
+    ],
+    "chapters/05-continued-fractions.tex": [
+      2000,
+      2589
+    ],
+    "chapters/06-pell.tex": [
+      2590,
+      2771
+    ]
+  },
+  "chapters": 6,
+  "pdf_pages": 43,
+  "groups": 42,
+  "original_contracts": 17,
+  "numbered_results": 57,
+  "results_by_kind": {
+    "lemma": 9,
+    "theorem": 43,
+    "proposition": 1,
+    "corollary": 4
+  },
+  "resolved_reference_labels": 43,
+  "local_proof_closure_labels": [
+    "lem:nt-dirichlet-characters",
+    "lem:nt-dirichlet-positive-series",
+    "nt:dirichlet-primes"
+  ]
+}

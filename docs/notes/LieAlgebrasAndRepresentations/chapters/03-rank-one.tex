@@ -1,0 +1,452 @@
+\chapter{Rank one, Casimir, and complete reducibility}
+\label{ch:rank-one}
+
+\section{The rank-one calculation}
+
+Write \(\mathfrak{sl}_2(k)\) with basis
+\[
+ e=\begin{pmatrix}0&1\\0&0\end{pmatrix},\qquad
+ f=\begin{pmatrix}0&0\\1&0\end{pmatrix},\qquad
+ h=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+\]
+Thus \([h,e]=2e,[h,f]=-2f,[e,f]=h\). In characteristic
+zero this algebra is simple: an ideal is stable under
+\(\operatorname{ad}h\), whose three distinct eigenspaces
+are \(ke,kf,kh\). Polynomial projections onto these
+eigenspaces show that a nonzero ideal contains one of
+the basis vectors. Its brackets with the others then
+give all three.
+
+\begin{theorem}[Simple \(\mathfrak{sl}_2\)-modules]\label{res:C01}
+Over an algebraically closed characteristic-zero field
+the nonzero finite-dimensional simple
+\(\mathfrak{sl}_2\)-modules are exactly \(L_n\),
+\(n\in\mathbb Z_{\geq0}\). They have basis
+\(v_0,\ldots,v_n\) on which
+\[
+ hv_j=(n-2j)v_j,\quad
+ fv_j=v_{j+1},\quad
+ ev_j=j(n-j+1)v_{j-1},
+ \tag{3.1}\label{eq:sl2-basis}
+\]
+where \(v_{-1}=v_{n+1}=0\). They can be realized on
+the degree-\(n\) homogeneous polynomials in \(X,Y\) by
+\[
+ e=X\partial_Y,\qquad f=Y\partial_X,\qquad
+ h=X\partial_X-Y\partial_Y.
+\]
+\end{theorem}
+
+\begin{proof}
+Choose an \(h\)-eigenvector in a simple module. The
+relation with \(e\) shows that every nonzero successive
+\(e\)-image has its eigenvalue increased by \(2\).
+There are only finitely many eigenvalues, so the last
+nonzero image is a vector \(v\) with
+\(ev=0,hv=\lambda v\).
+Commuting \(h\) and \(e\) past powers of \(f\) gives
+\[
+ hf^jv=(\lambda-2j)f^jv,\qquad
+ ef^jv=j(\lambda-j+1)f^{j-1}v.
+ \tag{3.2}\label{eq:sl2-ladder}
+\]
+For the second formula, use
+\([e,f^j]=\sum_{a=0}^{j-1}f^a h f^{j-1-a}\);
+on \(v\) its coefficient is
+\(\sum_{a=0}^{j-1}(\lambda-2(j-1-a))
+=j(\lambda-j+1)\).
+
+PBW with the order \(f,h,e\) says that the vectors
+\(f^jv\) span the generated submodule, hence the whole
+simple module. Their distinct \(h\)-eigenvalues make
+the nonzero ones independent. Let \(n\) be the final
+index with \(f^nv\ne0\). Applying \(e\) to
+\(f^{n+1}v=0\) gives
+\((n+1)(\lambda-n)f^nv=0\), so \(\lambda=n\).
+This proves \eqref{eq:sl2-basis} and uniqueness.
+
+Conversely the three polynomial operators satisfy
+the displayed brackets. Set
+\[
+ v_j=f^jX^n=\frac{n!}{(n-j)!}X^{n-j}Y^j.
+\]
+Direct differentiation gives
+\eqref{eq:sl2-basis}. A nonzero submodule contains an
+\(h\)-eigenvector: the distinct-eigenvalue projections
+are polynomials in \(h\). Each eigenline is \(kv_j\);
+applying \(e^j\), whose coefficient is nonzero,
+gives \(v_0\), and applying \(f\) gives every \(v_j\).
+Thus the module is simple. This argument includes
+\(n=0\), the trivial one-dimensional module.
+\end{proof}
+
+\section{Central operators and cohomology}
+
+We now return to an arbitrary characteristic-zero field
+and a finite-dimensional semisimple Lie algebra
+\(\mathfrak g\). Its modules in this section are
+finite dimensional. No root decomposition or highest
+weight classification is needed for complete
+reducibility.
+
+\begin{theorem}[The module-dependent Casimir]\label{res:C02}
+Let \(M\) be a nontrivial simple \(\mathfrak g\)-module.
+There is a central element \(C_M\in U(\mathfrak g)\)
+which annihilates the trivial module and acts
+invertibly on \(M\).
+
+More explicitly, let
+\(\mathfrak h=\rho(\mathfrak g)\subseteq\operatorname{End}_k(M)\).
+The trace form
+\(B_M(x,y)=\operatorname{tr}_M(xy)\) is nondegenerate
+on \(\mathfrak h\). Lift \(\mathfrak h\) to the
+complementary ideal of \(\ker\rho\) in \(\mathfrak g\).
+For a basis \(a_i\) and its \(B_M\)-dual basis \(a^i\)
+of that ideal, one may take
+\[
+ C_M=\sum_i a_i a^i.
+ \tag{3.3}\label{eq:module-casimir}
+\]
+Its trace on \(M\) is \(\dim\mathfrak h\).
+If \(k\) is algebraically closed, it acts as the
+nonzero scalar \(\dim\mathfrak h/\dim M\).
+\end{theorem}
+
+\begin{proof}
+The image \(\mathfrak h\) is semisimple by
+Theorem~\ref{res:B06}. The radical \(I\) of its
+invariant trace form is an ideal. On \(I\), the
+trace pairing in the faithful representation on
+\(M\) is zero. In particular it vanishes on
+\([I,I]\times I\), so the matrix trace criterion
+shows that \(I\) is solvable. Semisimplicity of
+\(\mathfrak h\) gives \(I=0\).
+
+The element \(\sum_i a_i\otimes a^i\) is independent
+of the dual basis: under the identification of one
+factor with its dual by \(B_M\), it corresponds to
+the identity endomorphism. Invariance of \(B_M\)
+makes this tensor invariant under the diagonal
+adjoint action. Concretely, if
+\([x,a_i]=\sum_j b_{ji}a_j\), then
+\([x,a^j]=-\sum_i b_{ji}a^i\), and the two sums
+in its derivative cancel. Multiplication of the
+tensor gives
+\([x,C_M]=0\).
+The other ideal \(\ker\rho\) commutes with its
+complement, so \(C_M\) is central in the entire
+\(U(\mathfrak g)\).
+
+Each \(a_i\) kills the trivial module, hence so
+does \(C_M\). On \(M\),
+\[
+ \operatorname{tr}_M C_M
+ =\sum_i B_M(a_i,a^i)=\dim\mathfrak h\ne0.
+ \tag{3.4}\label{eq:casimir-trace}
+\]
+Thus its action is a nonzero module endomorphism.
+Its kernel and image are submodules of the simple
+module \(M\), so it is invertible. Over an
+algebraically closed field Schur's lemma makes
+it scalar, and \eqref{eq:casimir-trace} gives the
+value. Over a general field invertibility, rather
+than a scalar formula, is all that is asserted.
+\end{proof}
+
+\begin{theorem}[Casimir contraction of nontrivial simple coefficients]
+\label{res:C03}
+For a nontrivial finite-dimensional simple
+\(\mathfrak g\)-module \(M\),
+\[
+ H^q(\mathfrak g,M)=0\qquad(q\geq0).
+\]
+The vanishing is induced by a nullhomotopy for the
+central Casimir action on a free resolution of the
+trivial module.
+\end{theorem}
+
+\begin{proof}
+Use the Chevalley--Eilenberg free resolution
+\[
+ P_q=U(\mathfrak g)\otimes\bigwedge^q\mathfrak g
+       \longrightarrow k.
+ \tag{3.5}\label{eq:ce-resolution}
+\]
+Its differential, freeness, and exactness are
+proved in \cite[Chapter 6, A06--A07]{homological}:
+the PBW filtration identifies the associated graded
+resolution with the Koszul resolution, and the
+finite-degree lifting argument proves exactness.
+Thus its use here has a previously established
+proof dependency.
+
+Multiplication by \(C_M\) is a \(U(\mathfrak g)\)-linear
+chain endomorphism of \(P_\bullet\), because it is
+central; it induces zero on \(k\).
+We give the comparison homotopy explicitly at the
+lifting level. Put \(h_{-1}=0\). Suppose \(h_i\)
+has been chosen below degree \(q\) so that
+\[
+ C_M=d h_i+h_{i-1}d
+\]
+there. The map
+\(C_M-h_{q-1}d:P_q\to P_q\) has image in
+\(\ker d\): applying \(d\), using the already
+constructed equation in degree \(q-1\), and using
+\(d^2=0\), gives zero. At degree zero the same
+statement uses the augmentation. Exactness of
+\eqref{eq:ce-resolution} and projectivity of the
+free \(P_q\) lift this map through
+\(d:P_{q+1}\to\ker d\). Choose that lift as \(h_q\).
+Induction constructs a homotopy in all degrees.
+
+Apply \(\operatorname{Hom}_{U(\mathfrak g)}(-,M)\).
+For a cochain \(f:P_q\to M\), define
+\(Hf=f h_{q-1}\).
+Then
+\[
+ (\delta H+H\delta)f=f C_M=C_M f,
+\]
+the final equality following from \(U\)-linearity.
+Thus the cochain map induced by the invertible
+endomorphism \(C_M:M\to M\) is nullhomotopic.
+It is an isomorphism on cohomology and also zero
+on cohomology; hence every cohomology group is zero.
+This proof is the central-action argument of
+\cite[Theorem 7.8.9]{weibel}, with its comparison
+homotopy made explicit.
+\end{proof}
+
+\begin{theorem}[Whitehead's first lemma]\label{res:C04}
+For every finite-dimensional \(\mathfrak g\)-module \(M\),
+\[
+ H^1(\mathfrak g,M)=0.
+ \tag{3.6}\label{eq:whitehead-first}
+\]
+Equivalently, every linear map \(a:\mathfrak g\to M\)
+satisfying
+\[
+ a([x,y])=x\,a(y)-y\,a(x)
+\]
+has the form \(a(x)=xm\) for some \(m\in M\).
+\end{theorem}
+
+\begin{proof}
+The low-degree Chevalley--Eilenberg formulas identify
+one-cocycles and one-coboundaries exactly as in the
+statement; see \cite[Chapter 6, A08]{homological}.
+If \(M\) is simple and nontrivial, apply
+Theorem~\ref{res:C03}. A simple trivial module is \(k\),
+and
+\[
+ H^1(\mathfrak g,k)=
+ \operatorname{Hom}_k(\mathfrak g/[\mathfrak g,\mathfrak g],k)=0
+\]
+by perfectness from Theorem~\ref{res:B06}.
+For arbitrary \(M\), induct along a composition
+series. For \(0\to U\to M\to Q\to0\), the cochain
+complexes form a degreewise short exact sequence,
+since \(\operatorname{Hom}_k(\bigwedge^q\mathfrak g,-)\)
+is exact over a field. The cohomology exact sequence
+contains
+\(H^1(\mathfrak g,U)\to H^1(\mathfrak g,M)
+\to H^1(\mathfrak g,Q)\).
+Both outer terms vanish by induction, proving the
+assertion.
+\end{proof}
+
+\begin{theorem}[Weyl complete reducibility]\label{res:C05}
+Every submodule of a finite-dimensional
+\(\mathfrak g\)-module has a \(\mathfrak g\)-invariant
+complement. Consequently every such module is a
+finite direct sum of simple modules.
+\end{theorem}
+
+\begin{proof}
+Let \(0\to W\to V\xrightarrow{p}Q\to0\), and choose
+a \(k\)-linear section \(s:Q\to V\).
+Its equivariance defect is
+\[
+ a(x)=\rho_V(x)s-s\rho_Q(x)\in\operatorname{Hom}_k(Q,W),
+ \tag{3.7}\label{eq:splitting-cocycle}
+\]
+since applying \(p\) gives zero. The Hom module has
+the action \(x\cdot t=\rho_W(x)t-t\rho_Q(x)\).
+Expanding \eqref{eq:splitting-cocycle} at \([x,y]\)
+and using the representation identities gives
+\(a([x,y])=x\cdot a(y)-y\cdot a(x)\);
+the two mixed products cancel.
+Whitehead's first lemma supplies \(t:Q\to W\) with
+\(a(x)=x\cdot t\).
+The adjusted section \(s-t\) has zero defect and
+still satisfies \(p(s-t)=1\). Its image is the
+desired invariant complement. Split off a simple
+submodule, and repeat on the smaller complement;
+finite dimension terminates the process.
+\end{proof}
+
+This proof distinguishes two statements often both
+called semisimplicity: Theorem~\ref{res:B06} concerns
+simple ideals of the algebra, whereas
+Theorem~\ref{res:C05} concerns arbitrary modules over
+it. Nor does the theorem apply to an arbitrary
+reductive algebra with no condition on the action of
+its center. A central generator can act by a
+nonzero nilpotent Jordan block.
+
+\section{Rank-one consequences and functorial Jordan decomposition}
+
+\begin{theorem}[Clebsch--Gordan, duals, and invariant forms]
+\label{res:C06}
+Over an algebraically closed characteristic-zero field,
+every finite-dimensional \(\mathfrak{sl}_2\)-module is
+a direct sum of the \(L_n\), and
+\[
+ L_m\otimes L_n\simeq
+ \bigoplus_{j=0}^{\min(m,n)}L_{m+n-2j}.
+ \tag{3.8}\label{eq:clebsch-gordan}
+\]
+Each \(L_n\) is self-dual and has, up to a scalar,
+a unique nonzero invariant bilinear form. It is
+nondegenerate, symmetric for even \(n\), and
+alternating for odd \(n\).
+\end{theorem}
+
+\begin{proof}
+Simplicity of \(\mathfrak{sl}_2\), the Killing
+criterion, and Weyl's theorem give complete
+reducibility; Theorem~\ref{res:C01} identifies its
+simple summands.
+Record the \(h\)-weights by
+\(\chi_n(t)=t^n+t^{n-2}+\cdots+t^{-n}\).
+The coefficient of \(t^{m+n-2s}\) in
+\(\chi_m\chi_n\) counts pairs
+\((a,b)\) with \(0\leq a\leq m,0\leq b\leq n,a+b=s\).
+If \(m\leq n\), this number is
+\[
+ \min(m,s)-\max(0,s-n)+1
+\]
+when the interval is nonempty, and zero otherwise.
+The same count results from
+\(\sum_{j=0}^{m}\chi_{m+n-2j}\): its \(j\)-th
+term contributes exactly when
+\(j\leq s\leq m+n-j\). Hence
+\(\chi_m\chi_n=\sum_{j=0}^{\min(m,n)}
+\chi_{m+n-2j}\).
+The characters \(\chi_r\) are linearly independent,
+because a nontrivial finite linear relation has a
+largest exponent with a nonzero coefficient.
+Complete reducibility therefore gives
+\eqref{eq:clebsch-gordan}.
+
+In the basis \eqref{eq:sl2-basis}, define
+\[
+ B(v_i,v_j)=
+ \begin{cases}(-1)^i,&i+j=n,\\0,&i+j\ne n.\end{cases}
+ \tag{3.9}\label{eq:sl2-form}
+\]
+For \(h\), invariance
+\(B(hv_i,v_j)+B(v_i,hv_j)=0\) follows from the
+weights. For \(f\), its only possible nonzero
+case is \(i+j=n-1\), and the two terms are
+\((-1)^{i+1}+(-1)^i=0\).
+For \(e\), its only possible case is \(i+j=n+1\);
+the coefficients \(i(n-i+1)\) and
+\(j(n-j+1)\) are then equal, and the signs
+are opposite. Thus \(B\) is invariant.
+Its antidiagonal entries are nonzero, so it
+identifies \(L_n\) with \(L_n^*\).
+Any invariant form must be antidiagonal by \(h\),
+and the \(f\)-equations force successive entries
+to change sign. Thus it is a scalar multiple
+of \eqref{eq:sl2-form}.
+Finally
+\(B(v_j,v_i)=(-1)^n B(v_i,v_j)\).
+For odd \(n\) its diagonal is zero, giving the
+alternating assertion.
+\end{proof}
+
+\begin{theorem}[Representations preserve Jordan decomposition]
+\label{res:C07}
+Let \(k\) have characteristic zero and let
+\(\rho:\mathfrak g\to\operatorname{End}_k(V)\)
+be finite dimensional, with \(\mathfrak g\) semisimple.
+For the abstract Jordan decomposition of
+Theorem~\ref{res:B07},
+\[
+ \rho(x_s)=\rho(x)_s,\qquad
+ \rho(x_n)=\rho(x)_n.
+ \tag{3.10}\label{eq:representation-jordan}
+\]
+In particular, each toral subalgebra of \(\mathfrak g\) acts semisimply on \(V\).
+Over an algebraically closed field, the restriction of \(\rho\) to such a
+subalgebra gives a decomposition of \(V\) into simultaneous weight spaces.
+\end{theorem}
+
+\begin{proof}
+First take an algebraically closed field and a
+simple nonzero \(V\), and put
+\(\mathfrak a=\rho(\mathfrak g)\).
+It is semisimple. Its normalizer in
+\(\operatorname{End}(V)\) acts by derivations on
+\(\mathfrak a\). Since all such derivations are
+inner, every normalizing operator is \(z+c\),
+with \(z\in\mathfrak a\) and \(c\) centralizing
+\(\mathfrak a\). Schur's lemma makes \(c\)
+a scalar.
+
+Let \(y\in\mathfrak a\). Its matrix semisimple
+part \(y_s\) normalizes \(\mathfrak a\):
+\(\operatorname{ad}y\) preserves \(\mathfrak a\),
+so its polynomial semisimple part does also,
+and that part is \(\operatorname{ad}y_s\), by
+the commuting semisimple/nilpotent calculation
+used in the trace criterion. Write \(y_s=z+c\)
+as above. Since \(\mathfrak a\) is perfect,
+\(\operatorname{tr}y=\operatorname{tr}z=0\).
+Nilpotents have zero trace, so
+\(\operatorname{tr}y_s=\operatorname{tr}y=0\).
+It follows that \((\dim V)c=0\), hence \(c=0\).
+Thus \(y_s\) and \(y_n=y-y_s\) actually belong
+to \(\mathfrak a\). Their adjoint operators
+on \(\mathfrak a\) are semisimple and nilpotent,
+respectively: on the ambient endomorphism
+space they have these properties, and
+restriction to an invariant subspace preserves
+them. They are therefore the abstract Jordan
+parts in \(\mathfrak a\).
+
+The kernel of \(\rho\) is a direct ideal
+summand of \(\mathfrak g\), by
+Theorem~\ref{res:B06}. The adjoint action is
+block diagonal for this splitting, so abstract
+Jordan decomposition commutes with projection
+onto the complementary summand. The preceding
+paragraph proves \eqref{eq:representation-jordan}
+on \(V\).
+For an arbitrary \(V\), Weyl's theorem writes
+it as a sum of simple modules. Jordan parts
+of block diagonal matrices are the sums of
+the parts on their blocks, proving the same
+formula.
+
+For a nonclosed field, extend to an algebraic
+closure. The two sides of
+\eqref{eq:representation-jordan} are scalar
+extensions of their \(k\)-linear operators,
+by the polynomial and uniqueness construction
+of Jordan decomposition. Their equality
+therefore descends.
+
+Finally a toral algebra is abelian with
+semisimple adjoint action for each element.
+The formula just proved makes its representing
+operators semisimple. Commuting semisimple
+operators over an algebraically closed field
+are simultaneously diagonalizable: diagonalize
+one generator, observe that its eigenspaces
+are stable under all the others, and repeat
+inside those eigenspaces. The simultaneous
+eigenvalues are linear functionals on the
+toral algebra and give its weight spaces.
+\end{proof}

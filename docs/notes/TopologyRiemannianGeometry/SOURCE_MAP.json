@@ -1,0 +1,2702 @@
+{
+  "bibliography_first_physical_page": 70,
+  "books": {
+    "Hatcher": {
+      "bibliography": {
+        "file": "docs/notes/TopologyRiemannianGeometry/P2-02_Topology_and_Riemannian_Geometry_Notes.tex",
+        "line": 5148,
+        "key": "Hatcher"
+      }
+    },
+    "LeeRM": {
+      "bibliography": {
+        "file": "docs/notes/TopologyRiemannianGeometry/P2-02_Topology_and_Riemannian_Geometry_Notes.tex",
+        "line": 5158,
+        "key": "LeeRM"
+      }
+    },
+    "LeeSM": {
+      "bibliography": {
+        "file": "docs/notes/TopologyRiemannianGeometry/P2-02_Topology_and_Riemannian_Geometry_Notes.tex",
+        "line": 5156,
+        "key": "LeeSM"
+      }
+    },
+    "MKP": {
+      "bibliography": {
+        "file": "docs/notes/TopologyRiemannianGeometry/P2-02_Topology_and_Riemannian_Geometry_Notes.tex",
+        "line": 5150,
+        "key": "MKP"
+      }
+    },
+    "MT": {
+      "bibliography": {
+        "file": "docs/notes/TopologyRiemannianGeometry/P2-02_Topology_and_Riemannian_Geometry_Notes.tex",
+        "line": 5152,
+        "key": "MT"
+      }
+    },
+    "Weibel": {
+      "bibliography": {
+        "file": "docs/notes/TopologyRiemannianGeometry/P2-02_Topology_and_Riemannian_Geometry_Notes.tex",
+        "line": 5154,
+        "key": "Weibel"
+      }
+    },
+    "dC": {
+      "bibliography": {
+        "file": "docs/notes/TopologyRiemannianGeometry/P2-02_Topology_and_Riemannian_Geometry_Notes.tex",
+        "line": 5160,
+        "key": "dC"
+      }
+    }
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "first_physical_page": 6,
+      "group_count": 7,
+      "last_physical_page": 10,
+      "part": 1,
+      "title_latex": "Fundamental Groups and Covering Spaces"
+    },
+    {
+      "chapter": 2,
+      "first_physical_page": 11,
+      "group_count": 6,
+      "last_physical_page": 16,
+      "part": 1,
+      "title_latex": "Cell Structures and Approximation"
+    },
+    {
+      "chapter": 3,
+      "first_physical_page": 17,
+      "group_count": 5,
+      "last_physical_page": 21,
+      "part": 1,
+      "title_latex": "Singular Chains, Excision, and Gluing"
+    },
+    {
+      "chapter": 4,
+      "first_physical_page": 22,
+      "group_count": 9,
+      "last_physical_page": 29,
+      "part": 1,
+      "title_latex": "Chain Models and Cohomological Operations"
+    },
+    {
+      "chapter": 5,
+      "first_physical_page": 30,
+      "group_count": 8,
+      "last_physical_page": 40,
+      "part": 1,
+      "title_latex": "Orientation, Duality, and Comparison"
+    },
+    {
+      "chapter": 6,
+      "first_physical_page": 42,
+      "group_count": 10,
+      "last_physical_page": 49,
+      "part": 2,
+      "title_latex": "Metrics, Connections, and Geodesics"
+    },
+    {
+      "chapter": 7,
+      "first_physical_page": 50,
+      "group_count": 5,
+      "last_physical_page": 54,
+      "part": 2,
+      "title_latex": "Curvature and Isometric Immersions"
+    },
+    {
+      "chapter": 8,
+      "first_physical_page": 55,
+      "group_count": 6,
+      "last_physical_page": 61,
+      "part": 2,
+      "title_latex": "Jacobi Fields, Cut Points, and Comparison"
+    },
+    {
+      "chapter": 9,
+      "first_physical_page": 62,
+      "group_count": 5,
+      "last_physical_page": 69,
+      "part": 2,
+      "title_latex": "Complete Models and Global Consequences"
+    }
+  ],
+  "families": {
+    "G01": {
+      "label": "p202:G01",
+      "line": 4,
+      "number": "6.1",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-metric-distance",
+          "number": "6.1",
+          "pdf_destination": "theorem.6.1",
+          "physical_pdf_page": 42,
+          "printed_pdf_page": "38",
+          "proof_end_line": 55,
+          "proof_line": 26,
+          "statement_line": 12,
+          "title_latex": "Existence, pullback, and length distance"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C01-R01"
+      ],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.6.1",
+      "physical_pdf_page": 42,
+      "planned_proof_route": "用 P1‑04 的丛度量和分区统一构造。紧含坐标球上给范数双界；对离开坐标球的路径用第一次出界的长度下界，保障距离的局部下界。",
+      "planned_scope": "度量存在、浸入拉回与局部等距；分段 \\(C^1\\) 曲线长度、分支上的距离及拓扑一致。",
+      "printed_pdf_page": "38",
+      "source_locators": "LR Ch. 2，2.4、2.47、2.55；dC Ch. 1 §2。",
+      "title_latex": "Riemannian metrics and their distance"
+    },
+    "G02": {
+      "label": "p202:G02",
+      "line": 280,
+      "number": "6.7",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-green",
+          "number": "6.7",
+          "pdf_destination": "theorem.6.7",
+          "physical_pdf_page": 45,
+          "printed_pdf_page": "41",
+          "proof_end_line": 338,
+          "proof_line": 316,
+          "statement_line": 290,
+          "title_latex": "Scalar intrinsic differential and integral formulas"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.6.7",
+      "physical_pdf_page": 45,
+      "planned_proof_route": "在坐标中给 \\(\\sqrt{\\det g}\\) 与密度换元，证明 \\(\\Delta_g=\\operatorname{tr}_g\\nabla^2\\) 及散度坐标式。无边界取紧支撑；紧带光滑边界保留外法向通量。",
+      "planned_scope": "无需全局取向的黎曼密度，定向时的体积形式，梯度、Hessian、散度、Laplace–Beltrami 及 Green 公式。",
+      "printed_pdf_page": "41",
+      "source_locators": "LR Ch. 2 pp. 28–33、2.41–2.46、Ch. 5 Prop. 5.16；P1‑04 chs. 9–10。",
+      "title_latex": "Volume, divergence, and the scalar Laplacian"
+    },
+    "G03": {
+      "label": "p202:G03",
+      "line": 914,
+      "number": "7.5",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-models",
+          "number": "7.8",
+          "pdf_destination": "theorem.7.8",
+          "physical_pdf_page": 54,
+          "printed_pdf_page": "50",
+          "proof_end_line": 994,
+          "proof_line": 940,
+          "statement_line": 916,
+          "title_latex": "The three simply connected curvature models"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.7.5",
+      "physical_pdf_page": 54,
+      "planned_proof_route": "欧氏和球面直接构造，双曲取双曲面及一个坐标模型的显式等距。用 G14/G15 的 Gauss 公式或直接曲率校核符号。",
+      "planned_scope": "欧氏、球面、双曲模型的度量与常截面曲率；适当的等距和典型测地线。",
+      "printed_pdf_page": "50",
+      "source_locators": "LR Ch. 3、Ch. 5 pp. 136–140、Ch. 8；dC Ch. 8。",
+      "title_latex": "Euclidean, spherical, and hyperbolic models"
+    },
+    "G04": {
+      "label": "p202:G04",
+      "line": 62,
+      "number": "6.2",
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "label": "prop:p202-pullback-connection",
+          "number": "6.2",
+          "pdf_destination": "proposition.6.2",
+          "physical_pdf_page": 43,
+          "printed_pdf_page": "39",
+          "proof_end_line": 107,
+          "proof_line": 87,
+          "statement_line": 71,
+          "title_latex": "Local connection calculus"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C01-R02"
+      ],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.6.2",
+      "physical_pdf_page": 43,
+      "planned_proof_route": "由局部标架和 Leibniz 规则推出变换式；验证拉回与参数变换，处理双参数曲面上沿两方向的导数。",
+      "planned_scope": "联络、联络矩阵变换、拉回联络、向量／张量沿曲线协变导数，度量相容与挠率。",
+      "printed_pdf_page": "39",
+      "source_locators": "LR Ch. 4，4.24、4.37–4.38；dC Ch. 2 §2。",
+      "title_latex": "Connections, pullbacks, and differentiation along curves"
+    },
+    "G05": {
+      "label": "p202:G05",
+      "line": 130,
+      "number": "6.3",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-levi-civita",
+          "number": "6.3",
+          "pdf_destination": "theorem.6.3",
+          "physical_pdf_page": 44,
+          "printed_pdf_page": "40",
+          "proof_end_line": 176,
+          "proof_line": 151,
+          "statement_line": 132,
+          "title_latex": "Levi--Civita and the Koszul formula"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C01-R02"
+      ],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.6.3",
+      "physical_pdf_page": 44,
+      "planned_proof_route": "由无挠和度量相容推 Koszul，反向验证右边对首参、末参均为 \\(C^\\infty\\) 线性，第二参满足 Leibniz；正定度量识别唯一向量，局部自动粘合。",
+      "planned_scope": "Levi–Civita 联络存在唯一、Koszul 公式和 Christoffel 表达，等距保持该联络。",
+      "printed_pdf_page": "40",
+      "source_locators": "LR Ch. 5，5.10–5.11；dC Ch. 2 §3。",
+      "title_latex": "The Levi--Civita connection"
+    },
+    "G06": {
+      "label": "p202:G06",
+      "line": 178,
+      "number": "6.4",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-parallel",
+          "number": "6.4",
+          "pdf_destination": "theorem.6.4",
+          "physical_pdf_page": 44,
+          "printed_pdf_page": "40",
+          "proof_end_line": 209,
+          "proof_line": 191,
+          "statement_line": 180,
+          "title_latex": "Parallel transport and its inverse"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C01-R03"
+      ],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.6.4",
+      "physical_pdf_page": 44,
+      "planned_proof_route": "对路径分段选标架，线性连续系数 ODE，端点用单侧导数和唯一性拼接。证明基点初值可在任意子区间端点取。",
+      "planned_scope": "任意光滑联络沿紧参数区间的分段 \\(C^1\\) 路径唯一平行移动，逆向为逆；度量联络保内积。",
+      "printed_pdf_page": "40",
+      "source_locators": "LR Ch. 4，4.31–4.35 及勘误；dC Ch. 2 §2。",
+      "title_latex": "Parallel transport on compact intervals"
+    },
+    "G07": {
+      "label": "p202:G07",
+      "line": 216,
+      "number": "6.5",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-geodesic-ivp",
+          "number": "6.5",
+          "pdf_destination": "theorem.6.5",
+          "physical_pdf_page": 45,
+          "printed_pdf_page": "41",
+          "proof_end_line": 248,
+          "proof_line": 228,
+          "statement_line": 218,
+          "title_latex": "Geodesic spray and smooth dependence"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C01-R04"
+      ],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.6.5",
+      "physical_pdf_page": 45,
+      "planned_proof_route": "将局部二阶方程变为切丛上的光滑喷射，按联络坐标变换粘合；由实际流域给光滑依赖，保留非完整流的生存域。",
+      "planned_scope": "测地线初值、唯一极大区间、实际生存域上的光滑依赖、仿射重参数化、速度恒定。",
+      "printed_pdf_page": "41",
+      "source_locators": "LR Ch. 4 Thm. 4.27、Ch. 5；dC Ch. 3 §2；D13 chs. 3–6。",
+      "title_latex": "The geodesic initial-value problem"
+    },
+    "G08": {
+      "label": "p202:G08",
+      "line": 250,
+      "number": "6.6",
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "label": "prop:p202-exp-local",
+          "number": "6.6",
+          "pdf_destination": "proposition.6.6",
+          "physical_pdf_page": 45,
+          "printed_pdf_page": "41",
+          "proof_end_line": 278,
+          "proof_line": 264,
+          "statement_line": 252,
+          "title_latex": "The exponential map near the zero section"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C01-R04",
+        "GEO-07-C03-R03"
+      ],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.6.6",
+      "physical_pdf_page": 45,
+      "planned_proof_route": "用流缩放和微分零向量验证；应用逆函数定理，保留 \\(t v\\) 位于定义域的条件。正规坐标的中心结论来自直线测地线。",
+      "planned_scope": "指数映射的开定义域与光滑性，\\(d(\\exp_p)_0=\\mathrm{id}\\)，正规坐标及中心 \\(\\Gamma=0\\)。",
+      "printed_pdf_page": "41",
+      "source_locators": "LR Ch. 5，5.19、5.24；dC Ch. 3 §2。",
+      "title_latex": "Exponential maps and normal coordinates"
+    },
+    "G09": {
+      "label": "p202:G09",
+      "line": 407,
+      "number": "6.9",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-gauss-normal",
+          "number": "6.9",
+          "pdf_destination": "theorem.6.9",
+          "physical_pdf_page": 47,
+          "printed_pdf_page": "43",
+          "proof_end_line": 490,
+          "proof_line": 425,
+          "statement_line": 409,
+          "title_latex": "Gauss lemma and short minimizing geodesics"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C03-R03"
+      ],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.6.9",
+      "physical_pdf_page": 47,
+      "planned_proof_route": "由径向变分的内积导数证明径向等距与切向正交；按竞逐路径是否离开正常球分别给长度下界。凸性需用带参数 IFT 和局部平方距离的正 Hessian，保留唯一性只到重参数。",
+      "planned_scope": "Gauss 引理、径向测地线的唯一最短性、统一正规邻域及足够小的凸正规邻域。",
+      "printed_pdf_page": "43",
+      "source_locators": "LR Ch. 6，6.9、6.11、6.14–6.17；dC Ch. 3 §§2–4。",
+      "title_latex": "The Gauss lemma and convex normal neighborhoods"
+    },
+    "G10": {
+      "label": "p202:G10",
+      "line": 343,
+      "number": "6.8",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-first-variation",
+          "number": "6.8",
+          "pdf_destination": "theorem.6.8",
+          "physical_pdf_page": 46,
+          "printed_pdf_page": "42",
+          "proof_end_line": 396,
+          "proof_line": 370,
+          "statement_line": 349,
+          "title_latex": "The first variation of energy and length"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C02-R03"
+      ],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.6.8",
+      "physical_pdf_page": 46,
+      "planned_proof_route": "用无挠交换双参数导数及度量相容分部；长度版使用正速度，能量版允许常值；按分段端点保留动量跳跃项。",
+      "planned_scope": "长度／能量第一变分，固定端点的临界性与测地线；自由端点边界项；分段最短曲线经定速重参数无折角。",
+      "printed_pdf_page": "42",
+      "source_locators": "LR Ch. 6，6.3–6.4；dC Ch. 9 §2；P1‑06 V07.01、V07.02。",
+      "title_latex": "First variation and corners"
+    },
+    "G11": {
+      "label": "p202:G11",
+      "line": 497,
+      "number": "6.10",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-hopf-rinow",
+          "number": "6.10",
+          "pdf_destination": "theorem.6.10",
+          "physical_pdf_page": 48,
+          "printed_pdf_page": "44",
+          "proof_end_line": 575,
+          "proof_line": 513,
+          "statement_line": 499,
+          "title_latex": "Hopf--Rinow"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C03-R01",
+        "GEO-07-C03-R02"
+      ],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.6.10",
+      "physical_pdf_page": 48,
+      "planned_proof_route": "度量完备给有限时端的曲线位置极限；在紧含坐标球中用定速给速度界及 ODE 给加速度界，从而得到切丛极限并延续。逆向沿正规球与距离等式延伸最短径向线，借指数映射的紧闭球像证明紧性。将测地线存在与确实最短分别证明。",
+      "planned_scope": "连通有限维无边界黎曼流形上 Hopf–Rinow 的度量完备、测地完备、闭有界集紧等价。在这些完备条件成立时，任意两点有最短测地线。",
+      "printed_pdf_page": "44",
+      "source_locators": "LR Ch. 6，6.18–6.23；dC Ch. 7 §§2–3。",
+      "title_latex": "Completeness and Hopf--Rinow"
+    },
+    "G12": {
+      "label": "p202:G12",
+      "line": 584,
+      "number": "7.1",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-curvature-symmetry",
+          "number": "7.1",
+          "pdf_destination": "theorem.7.1",
+          "physical_pdf_page": 50,
+          "printed_pdf_page": "46",
+          "proof_end_line": 650,
+          "proof_line": 608,
+          "statement_line": 589,
+          "title_latex": "Curvature symmetries and commutators"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C02-R01"
+      ],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.7.1",
+      "physical_pdf_page": 50,
+      "planned_proof_route": "用 Leibniz 检查三输入函数线性；借挠率为零、度量相容、Jacobi 恒等式或正规坐标推导，并说明张量式从所选点推广。",
+      "planned_scope": "曲率作为张量、四阶对称性、第一与第二 Bianchi、张量上的协变导数交换式。",
+      "printed_pdf_page": "46",
+      "source_locators": "LR Ch. 7，7.12–7.14；dC Ch. 4 §§2–4。",
+      "title_latex": "The curvature tensor and Bianchi identities"
+    },
+    "G13": {
+      "label": "p202:G13",
+      "line": 655,
+      "number": "7.2",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-sectional-recovery",
+          "number": "7.2",
+          "pdf_destination": "theorem.7.2",
+          "physical_pdf_page": 51,
+          "printed_pdf_page": "47",
+          "proof_end_line": 710,
+          "proof_line": 671,
+          "statement_line": 657,
+          "title_latex": "Recovery and contraction of curvature"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-flat",
+          "number": "7.3",
+          "pdf_destination": "theorem.7.3",
+          "physical_pdf_page": 51,
+          "printed_pdf_page": "47",
+          "proof_end_line": 757,
+          "proof_line": 719,
+          "statement_line": 712,
+          "title_latex": "Local Euclidean geometry and flatness"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.7.2",
+      "physical_pdf_page": 51,
+      "planned_proof_route": "以极化和 Bianchi 恢复张量；追踪收缩索引。局部平直构造平行标架及坐标，展开相容微分方程与局部光滑流；二维单列。",
+      "planned_scope": "截面曲率恢复曲率张量、Ricci 与标量、缩并 Bianchi、连通 \\(n\\ge3\\) 的 Schur；\\(R=0\\) 等价局部欧氏。",
+      "printed_pdf_page": "47",
+      "source_locators": "LR Ch. 7，7.10、7.15–7.19、Ch. 8 pp. 250–256；dC Chs. 4、8。",
+      "title_latex": "Sectional, Ricci, and scalar curvature"
+    },
+    "G14": {
+      "label": "p202:G14",
+      "line": 762,
+      "number": "7.3",
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "label": "prop:p202-gauss-weingarten",
+          "number": "7.4",
+          "pdf_destination": "proposition.7.4",
+          "physical_pdf_page": 52,
+          "printed_pdf_page": "48",
+          "proof_end_line": 800,
+          "proof_line": 785,
+          "statement_line": 771,
+          "title_latex": "Gauss and Weingarten decompositions"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.7.3",
+      "physical_pdf_page": 52,
+      "planned_proof_route": "通过拉回丛分解环境协变导数，证明切部为诱导度量的 Levi–Civita，建立形算子与第二基本形式的配对。",
+      "planned_scope": "等距浸入的切法分解、第二基本形式、形算子、法联络、Gauss–Weingarten 公式。",
+      "printed_pdf_page": "48",
+      "source_locators": "LR Ch. 8 pp. 225–239；dC Ch. 6 §§2–3。",
+      "title_latex": "The tangent and normal connections of an immersion"
+    },
+    "G15": {
+      "label": "p202:G15",
+      "line": 802,
+      "number": "7.4",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-gauss-codazzi-ricci",
+          "number": "7.5",
+          "pdf_destination": "theorem.7.5",
+          "physical_pdf_page": 52,
+          "printed_pdf_page": "48",
+          "proof_end_line": 850,
+          "proof_line": 824,
+          "statement_line": 804,
+          "title_latex": "Curvature equations in arbitrary codimension"
+        },
+        {
+          "kind": "corollary",
+          "label": "cor:p202-egregium",
+          "number": "7.6",
+          "pdf_destination": "corollary.7.6",
+          "physical_pdf_page": 53,
+          "printed_pdf_page": "49",
+          "proof_end_line": 872,
+          "proof_line": 862,
+          "statement_line": 852,
+          "title_latex": "The intrinsic meaning of Gaussian curvature"
+        },
+        {
+          "kind": "proposition",
+          "label": "prop:p202-volume-variation",
+          "number": "7.7",
+          "pdf_destination": "proposition.7.7",
+          "physical_pdf_page": 53,
+          "printed_pdf_page": "49",
+          "proof_end_line": 908,
+          "proof_line": 889,
+          "statement_line": 874,
+          "title_latex": "Mean curvature and first variation of volume"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-local.tex",
+      "pdf_destination": "section.7.4",
+      "physical_pdf_page": 52,
+      "planned_proof_route": "将环境曲率按切法分量及形算子展开，核对 \\(\\mathbb R^3\\) 曲面 \\(K=\\det S\\)。由诱导度量变分取迹，拆为切向散度和法向平均曲率，保留紧支撑／边界项及平均曲率归一。",
+      "planned_scope": "一般余维的 Gauss、Codazzi 与 Ricci 法丛曲率方程，曲面的 Theorema Egregium，平均曲率与体积第一变分。",
+      "printed_pdf_page": "48",
+      "source_locators": "LR Ch. 8 尤其 8.2、8.5、8.18、8.27–8.34；dC Ch. 6 §3。",
+      "title_latex": "Gauss, Codazzi, and Ricci equations"
+    },
+    "G16": {
+      "label": "p202:G16",
+      "line": 18,
+      "number": "8.1",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-jacobi-variation",
+          "number": "8.1",
+          "pdf_destination": "theorem.8.1",
+          "physical_pdf_page": 55,
+          "printed_pdf_page": "51",
+          "proof_end_line": 68,
+          "proof_line": 34,
+          "statement_line": 20,
+          "title_latex": "Linearized geodesic equation"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C02-R02"
+      ],
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "section.8.1",
+      "physical_pdf_page": 55,
+      "planned_proof_route": "用交换式和无挠联络微分测地条件；反向变动初值点与速度，按所需紧参数段使用实际光滑流域。",
+      "planned_scope": "Jacobi 方程、线性初值存在唯一、Jacobi 场与局部测地变分互相实现，切向和法向分解。",
+      "printed_pdf_page": "51",
+      "source_locators": "LR Ch. 10，10.1–10.9；dC Ch. 5 §§2–3。",
+      "title_latex": "The Jacobi equation and geodesic variations"
+    },
+    "G17": {
+      "label": "p202:G17",
+      "line": 74,
+      "number": "8.2",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-exp-jacobi",
+          "number": "8.2",
+          "pdf_destination": "theorem.8.2",
+          "physical_pdf_page": 56,
+          "printed_pdf_page": "52",
+          "proof_end_line": 101,
+          "proof_line": 89,
+          "statement_line": 76,
+          "title_latex": "Exponential differential"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C02-R02"
+      ],
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "section.8.2",
+      "physical_pdf_page": 56,
+      "planned_proof_route": "变分初速度 \\(v+s w\\)，辨别固定起点与变起点、\\(t>0\\) 与零时刻；用非零 Jacobi 场的双零条件。",
+      "planned_scope": "\\(J_w(t)=d(\\exp_p)_{t v}(t w)\\) 的精确缩放；共轭点、多重度和指数微分退化等价。",
+      "printed_pdf_page": "52",
+      "source_locators": "LR Ch. 10，10.10、10.20–10.21；dC Ch. 5 §3。",
+      "title_latex": "The differential of the exponential and conjugate points"
+    },
+    "G18": {
+      "label": "p202:G18",
+      "line": 108,
+      "number": "8.3",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-second-variation",
+          "number": "8.3",
+          "pdf_destination": "theorem.8.3",
+          "physical_pdf_page": 56,
+          "printed_pdf_page": "52",
+          "proof_end_line": 146,
+          "proof_line": 129,
+          "statement_line": 110,
+          "title_latex": "Second variation of energy"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-index-lemma",
+          "number": "8.4",
+          "pdf_destination": "theorem.8.4",
+          "physical_pdf_page": 57,
+          "printed_pdf_page": "53",
+          "proof_end_line": 188,
+          "proof_line": 159,
+          "statement_line": 148,
+          "title_latex": "Index lemma",
+          "canonical_latex_line": 4103,
+          "canonical_proof_line": 4114
+        },
+        {
+          "kind": "corollary",
+          "label": "cor:p202-no-interior-conjugate",
+          "number": "8.5",
+          "pdf_destination": "corollary.8.5",
+          "physical_pdf_page": 57,
+          "printed_pdf_page": "53",
+          "proof_end_line": 220,
+          "proof_line": 197,
+          "statement_line": 190,
+          "title_latex": "A minimizing segment has no interior conjugate point"
+        }
+      ],
+      "original_contract_ids": [
+        "GEO-07-C02-R03"
+      ],
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "section.8.3",
+      "physical_pdf_page": 56,
+      "planned_proof_route": "保留移动端点加速度项，固定端点时消失。用 Jacobi 标架或分部推指数引理，非零变分场才有严格不等式。内部共轭点之后构造负方向；共轭恰在终点单独区分。",
+      "planned_scope": "二阶能量变分、指数型、无共轭点时的指数引理及最短性必要条件。",
+      "printed_pdf_page": "52",
+      "source_locators": "LR Ch. 10，10.22–10.29；dC Ch. 9 §2；P1‑06 V07.05。",
+      "title_latex": "Second variation, the index lemma, and minimality"
+    },
+    "G19": {
+      "label": "p202:G19",
+      "line": 231,
+      "number": "8.4",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-cut-polar",
+          "number": "8.6",
+          "pdf_destination": "theorem.8.6",
+          "physical_pdf_page": 58,
+          "printed_pdf_page": "54",
+          "proof_end_line": 315,
+          "proof_line": 263,
+          "statement_line": 247,
+          "title_latex": "Cut-point criterion and polar domain"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "section.8.4",
+      "physical_pdf_page": 57,
+      "planned_proof_route": "沿单位径向跟踪最短区间，通过初速度紧性证明端点判据。分别处理共轭与割点，证明唯一非共轭时的指数局部逆。",
+      "planned_scope": "完备流形上的割时间、割点的共轭或多条最短两分、远离起点与割集的距离光滑性。",
+      "printed_pdf_page": "53",
+      "source_locators": "LR Ch. 10，10.32–10.37 及勘误；dC Ch. 13 §2。",
+      "title_latex": "Cut time and the regular domain of distance"
+    },
+    "G20": {
+      "label": "p202:G20",
+      "line": 321,
+      "number": "8.5",
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "label": "prop:p202-model-polar",
+          "number": "8.7",
+          "pdf_destination": "proposition.8.7",
+          "physical_pdf_page": 59,
+          "printed_pdf_page": "55",
+          "proof_end_line": 360,
+          "proof_line": 348,
+          "statement_line": 334,
+          "title_latex": "Constant-curvature polar metric"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-rauch",
+          "number": "8.8",
+          "pdf_destination": "theorem.8.8",
+          "physical_pdf_page": 59,
+          "printed_pdf_page": "55",
+          "proof_end_line": 418,
+          "proof_line": 383,
+          "statement_line": 362,
+          "title_latex": "Rauch comparison for fields vanishing initially"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "section.8.5",
+      "physical_pdf_page": 59,
+      "planned_proof_route": "解标量初值定义 \\(s_\\kappa\\)。先在双边均无共轭时以平行标架匹配终端方向，借指数引理比较归一化场的对数长度导数。以初始范数比 1 积分，按连续性排除较低曲率一侧先共轭。初始导数为零时用唯一性。",
+      "planned_scope": "常曲率 \\(\\kappa\\) 的模型 Jacobi 场和极坐标度量；基本 Rauch 比较。对同维的两条单位速度测地线，逐时对任意单位法向 \\(u,\\bar u\\) 有 \\(K(\\dot\\gamma,u)\\le\\bar K(\\dot{\\bar\\gamma},\\bar u)\\)，且较高曲率一侧到比较时刻无共轭点，则起点为零、初始导数等长的法向 Jacobi 场满足 \\(\\lvert J(t)\\rvert\\ge\\lvert\\bar J(t)\\rvert\\)。",
+      "printed_pdf_page": "55",
+      "source_locators": "LR Ch. 11，Prop. 11.3、Thm. 11.9；dC Ch. 10 Rauch。",
+      "title_latex": "Constant-curvature Jacobi fields and Rauch comparison"
+    },
+    "G21": {
+      "label": "p202:G21",
+      "line": 426,
+      "number": "8.6",
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "label": "lem:p202-cut-null",
+          "number": "8.9",
+          "pdf_destination": "lemma.8.9",
+          "physical_pdf_page": 60,
+          "printed_pdf_page": "56",
+          "proof_end_line": 447,
+          "proof_line": 433,
+          "statement_line": 428,
+          "title_latex": "The cut locus has volume zero"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-bishop-gromov",
+          "number": "8.10",
+          "pdf_destination": "theorem.8.10",
+          "physical_pdf_page": 60,
+          "printed_pdf_page": "56",
+          "proof_end_line": 533,
+          "proof_line": 466,
+          "statement_line": 449,
+          "title_latex": "Bishop--Gromov volume comparison"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "section.8.6",
+      "physical_pdf_page": 60,
+      "planned_proof_route": "用割点前的极坐标微分同胚。有限割时间图在极坐标测度下为零，分块用光滑指数映射送零集到零集。迹 Riccati 不等式与初始归一给体积密度除以 \\(s_k^{n-1}\\) 的单调性，按割时间逐方向截断，再从球面比积分到球体积比。",
+      "planned_scope": "割集体积为零及极坐标积分。连通完备 \\(n\\ge2\\) 流形、\\(\\operatorname{Ric}\\ge(n-1)k g\\) 时，\\(\\operatorname{Vol} B(p,r)/V_k^n(r)\\) 随 \\(r>0\\) 不增，在 \\(k>0\\) 时取 \\(r<\\pi/\\sqrt{k}\\) 并可取端点极限；\\(V_k^n\\) 为同维单连通常曲率模型的球体积。",
+      "printed_pdf_page": "56",
+      "source_locators": "LR Ch. 10，10.32–10.34、Ch. 11 Thm. 11.19；dC Ch. 13 §2 对照割点。",
+      "title_latex": "Polar volume and Bishop--Gromov comparison"
+    },
+    "G22": {
+      "label": "p202:G22",
+      "line": 541,
+      "number": "9.1",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-complete-cover",
+          "number": "9.1",
+          "pdf_destination": "theorem.9.1",
+          "physical_pdf_page": 62,
+          "printed_pdf_page": "58",
+          "proof_end_line": 587,
+          "proof_line": 551,
+          "statement_line": 543,
+          "title_latex": "Complete local isometries"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-killing-hopf",
+          "number": "9.2",
+          "pdf_destination": "theorem.9.2",
+          "physical_pdf_page": 62,
+          "printed_pdf_page": "58",
+          "proof_end_line": 679,
+          "proof_line": 602,
+          "statement_line": 589,
+          "title_latex": "Killing--Hopf classification"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "section.9.1",
+      "physical_pdf_page": 62,
+      "planned_proof_route": "提升正规球径向线并用源的完备性延拓，写出所有均匀覆盖片。模型分类用 G20 的局部度量和等距的延拓／单值化，或 LR 的同等完整路线；区分维数 \\(n\\ge2\\)、连通、完备、单连通。",
+      "planned_scope": "连通黎曼流形间源完备的局部等距是覆盖；完备底空间的覆盖拉回度量完备。Killing–Hopf 常曲率空间形式的单连通分类与覆盖商。",
+      "printed_pdf_page": "58",
+      "source_locators": "LR Ch. 6 和 Ch. 12 Thm. 12.4；dC Chs. 7–8；T05/T07。",
+      "title_latex": "Local isometries, covers, and space forms"
+    },
+    "G23": {
+      "label": "p202:G23",
+      "line": 685,
+      "number": "9.2",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-cartan-hadamard",
+          "number": "9.3",
+          "pdf_destination": "theorem.9.3",
+          "physical_pdf_page": 63,
+          "printed_pdf_page": "59",
+          "proof_end_line": 739,
+          "proof_line": 696,
+          "statement_line": 687,
+          "title_latex": "Cartan--Hadamard"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "section.9.2",
+      "physical_pdf_page": 63,
+      "planned_proof_route": "用 Jacobi 场范数凸性给无共轭与角向下界，Gauss 引理给径向等距及正交。拉回度量支配欧氏度量，局部范数上界使欧氏 Cauchy 极限也是拉回度量极限，故完备。再用 G22 的覆盖引理与 Hopf–Rinow。",
+      "planned_scope": "Cartan–Hadamard。连通完备 \\(K\\le0\\) 时 \\(\\exp_p\\) 是覆盖，单连通时为微分同胚并有唯一最短测地线。",
+      "printed_pdf_page": "59",
+      "source_locators": "LR Ch. 12 Thm. 12.8；dC Ch. 7；作者对 asphericity 的完备性更正。",
+      "title_latex": "The Cartan--Hadamard theorem"
+    },
+    "G24": {
+      "label": "p202:G24",
+      "line": 746,
+      "number": "9.3",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-bonnet-myers",
+          "number": "9.4",
+          "pdf_destination": "theorem.9.4",
+          "physical_pdf_page": 64,
+          "printed_pdf_page": "60",
+          "proof_end_line": 783,
+          "proof_line": 756,
+          "statement_line": 748,
+          "title_latex": "Bonnet--Myers"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "section.9.3",
+      "physical_pdf_page": 64,
+      "planned_proof_route": "对最短测地线选平行法标架和 \\(\\sin(\\pi t/L)\\) 测试，求指数型之和。用 Hopf–Rinow 得紧性，万有覆盖度量同样完备并满足下界，纤维紧而离散，故有限。",
+      "planned_scope": "Bonnet–Myers。连通完备、\\(n\\ge2\\)、\\(\\operatorname{Ric}\\ge(n-1)k g,\\ k>0\\) 时直径 \\(\\le\\pi/\\sqrt{k}\\)，流形紧且基本群有限。",
+      "printed_pdf_page": "60",
+      "source_locators": "LR Ch. 12 Thm. 12.24，补明 \\(n\\ge2\\)；dC Ch. 9 §3。",
+      "title_latex": "The Bonnet--Myers theorem"
+    },
+    "G25": {
+      "label": "p202:G25",
+      "line": 792,
+      "number": "9.4",
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "label": "lem:p202-planar-region",
+          "number": "9.5",
+          "pdf_destination": "lemma.9.5",
+          "physical_pdf_page": 65,
+          "printed_pdf_page": "61",
+          "proof_end_line": 874,
+          "proof_line": 817,
+          "statement_line": 805,
+          "title_latex": "Euler characteristic of a planar region"
+        },
+        {
+          "kind": "lemma",
+          "label": "lem:p202-plane-turning",
+          "number": "9.6",
+          "pdf_destination": "lemma.9.6",
+          "physical_pdf_page": 66,
+          "printed_pdf_page": "62",
+          "proof_end_line": 962,
+          "proof_line": 886,
+          "statement_line": 876,
+          "title_latex": "Turning of a positively oriented simple plane boundary"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-local-gb",
+          "number": "9.7",
+          "pdf_destination": "theorem.9.7",
+          "physical_pdf_page": 67,
+          "printed_pdf_page": "63",
+          "proof_end_line": 1039,
+          "proof_line": 980,
+          "statement_line": 964,
+          "title_latex": "Local Gauss--Bonnet"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "section.9.4",
+      "physical_pdf_page": 65,
+      "planned_proof_route": "在盘上用正交标架连接一形式和 \\(d\\omega\\) 的曲率符号；结合 Stokes 和边界切向转角，展开平面旋转指标及所需 Jordan 简单边界条件。",
+      "planned_scope": "定向曲面局部 Gauss–Bonnet，给出曲线测地曲率、边界取向和分段光滑角点的外转角。",
+      "printed_pdf_page": "61",
+      "source_locators": "LR Ch. 9，9.1–9.3；P1‑04 Stokes。",
+      "title_latex": "The local Gauss--Bonnet formula with corners"
+    },
+    "G26": {
+      "label": "p202:G26",
+      "line": 1046,
+      "number": "9.5",
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "label": "lem:p202-surface-regions",
+          "number": "9.8",
+          "pdf_destination": "lemma.9.8",
+          "physical_pdf_page": 68,
+          "printed_pdf_page": "64",
+          "proof_end_line": 1136,
+          "proof_line": 1061,
+          "statement_line": 1048,
+          "title_latex": "Planar regions cut out on a compact surface"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-global-gb",
+          "number": "9.9",
+          "pdf_destination": "theorem.9.9",
+          "physical_pdf_page": 69,
+          "printed_pdf_page": "65",
+          "proof_end_line": 1182,
+          "proof_line": 1153,
+          "statement_line": 1138,
+          "title_latex": "Gauss--Bonnet for compact Riemannian surfaces"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "section.9.5",
+      "physical_pdf_page": 68,
+      "planned_proof_route": "用 9.8 引理构造与边界相容的有限图及位于坐标图内的平面区域，并给出 Euler 恒等式。逐区域应用含角点的局部公式，以面积密度和内法向定义积分。内部边抵消，内点与光滑边界顶点的内角和分别为 \\(2\\pi\\) 与 \\(\\pi\\)。由半边计数得总外角 \\(2\\pi(E-V)\\)，结合 Euler 恒等式得到结论。逐连通分支求和，无需全局定向。",
+      "planned_scope": "紧黎曼曲面的整体 Gauss–Bonnet，含闭曲面、光滑边界、非定向及不连通情形；边界测地曲率使用指向曲面内部的单位法向。",
+      "printed_pdf_page": "64",
+      "source_locators": "LR Ch. 9，9.7、Problems 9‑5、9‑10；T21；P1‑04 M09.02。",
+      "title_latex": "Global Gauss--Bonnet for compact surfaces"
+    },
+    "T01": {
+      "label": "p202:T01",
+      "line": 8,
+      "number": "1.1",
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "label": "prop:p202-path-classes",
+          "number": "1.2",
+          "pdf_destination": "proposition.1.2",
+          "physical_pdf_page": 6,
+          "printed_pdf_page": "2",
+          "proof_end_line": 47,
+          "proof_line": 30,
+          "statement_line": 19,
+          "title_latex": "Functoriality and change of basepoint"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C01-R01"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.1.1",
+      "physical_pdf_page": 6,
+      "planned_proof_route": "写出重参数化、单位和逆元同伦；换基点由选定路径给出，换路径相差内自同构。固定连接顺序及诱导函子方向。",
+      "planned_scope": "相对端点的路径同伦、连接和逆路径；任意带基点空间的基本群、带基点同伦不变性和换基点。",
+      "printed_pdf_page": "2",
+      "source_locators": "H §§0、1.1；MT §§51–52。",
+      "title_latex": "Paths and the fundamental group"
+    },
+    "T02": {
+      "label": "p202:T02",
+      "line": 166,
+      "number": "1.4",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-basic-pi1",
+          "number": "1.6",
+          "pdf_destination": "theorem.1.6",
+          "physical_pdf_page": 8,
+          "printed_pdf_page": "4",
+          "proof_end_line": 197,
+          "proof_line": 176,
+          "statement_line": 168,
+          "title_latex": "Basic fundamental groups"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.1.4",
+      "physical_pdf_page": 8,
+      "planned_proof_route": "用 T05 的 \\(\\mathbb R\\to S^1\\) 提升终点和直线同伦证明绕数完全性与可加性。积空间逐坐标取环与同伦，球面用扩大后的开半球与连通交及 T03。",
+      "planned_scope": "\\(\\pi_1(S^1)\\cong\\mathbb Z\\) 的绕数，积空间基本群，\\(S^n\\) 在 \\(n\\ge2\\) 时单连通。",
+      "printed_pdf_page": "4",
+      "source_locators": "H §1.1 pp. 25–39；MT §§53–54、59。",
+      "title_latex": "Circle, products, and spheres"
+    },
+    "T03": {
+      "label": "p202:T03",
+      "line": 109,
+      "number": "1.3",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-van-kampen",
+          "number": "1.5",
+          "pdf_destination": "theorem.1.5",
+          "physical_pdf_page": 7,
+          "printed_pdf_page": "3",
+          "proof_end_line": 160,
+          "proof_line": 120,
+          "statement_line": 111,
+          "title_latex": "The two-open-set pushout"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C01-R02"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.1.3",
+      "physical_pdf_page": 7,
+      "planned_proof_route": "细分路径和参数方格，沿交集选通往基点的路径；细分、辅助路径更换和零同伦分别给充分与必要关系。",
+      "planned_scope": "\\(X=U\\cup V\\)，两开集及非空交道路连通，基点在交内时的 Seifert–van Kampen 群推出。",
+      "printed_pdf_page": "3",
+      "source_locators": "H §1.2 pp. 40–46；MT §§70–71。",
+      "title_latex": "Seifert--van Kampen"
+    },
+    "T04": {
+      "label": "p202:T04",
+      "line": 567,
+      "number": "2.3",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-graph-attach",
+          "number": "2.5",
+          "pdf_destination": "theorem.2.5",
+          "physical_pdf_page": 13,
+          "printed_pdf_page": "9",
+          "proof_end_line": 623,
+          "proof_line": 582,
+          "statement_line": 569,
+          "title_latex": "Graph groups and attached cells"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.2.3",
+      "physical_pdf_page": 13,
+      "planned_proof_route": "选最大树，证明其可缩后用 T10 折叠；对附着圆周取法闭包，保留共轭基点路径。无限图可用紧子集落入有限子复形，并补齐该子复形中各顶点间的有限树路径。",
+      "planned_scope": "连通图的基本群为自由群；在道路连通骨架附着 2‑胞所生关系、附着更高胞不改变基本群；连通有限 CW 的呈示及闭定向曲面算例。",
+      "printed_pdf_page": "9",
+      "source_locators": "H §1.2 pp. 49–55、§1.A pp. 83–85；MT §§71–74、83。",
+      "title_latex": "Graphs and attaching presentations"
+    },
+    "T05": {
+      "label": "p202:T05",
+      "line": 55,
+      "number": "1.2",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-cover-lifting",
+          "number": "1.4",
+          "pdf_destination": "theorem.1.4",
+          "physical_pdf_page": 7,
+          "printed_pdf_page": "3",
+          "proof_end_line": 100,
+          "proof_line": 75,
+          "statement_line": 65,
+          "title_latex": "Lifting with prescribed initial values"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C01-R03"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.1.2",
+      "physical_pdf_page": 7,
+      "planned_proof_route": "路径用有限区间细分，同伦用局部参数邻域与紧时间的有限细分，并用唯一性粘合；一般参数空间时证明局部构造对参数连续。",
+      "planned_scope": "覆盖的均匀覆盖邻域、路径提升、同伦提升及指定初值的唯一性。",
+      "printed_pdf_page": "3",
+      "source_locators": "H §1.3 pp. 56–62；MT §§53–54、79。",
+      "title_latex": "Path and homotopy lifting"
+    },
+    "T06": {
+      "label": "p202:T06",
+      "line": 199,
+      "number": "1.5",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-cover-criterion",
+          "number": "1.7",
+          "pdf_destination": "theorem.1.7",
+          "physical_pdf_page": 8,
+          "printed_pdf_page": "4",
+          "proof_end_line": 233,
+          "proof_line": 213,
+          "statement_line": 201,
+          "title_latex": "Lifting a map"
+        },
+        {
+          "kind": "corollary",
+          "label": "cor:p202-cover-action",
+          "number": "1.8",
+          "pdf_destination": "corollary.1.8",
+          "physical_pdf_page": 9,
+          "printed_pdf_page": "5",
+          "proof_end_line": 255,
+          "proof_line": 245,
+          "statement_line": 235,
+          "title_latex": "Action on the fiber"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C01-R04"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.1.5",
+      "physical_pdf_page": 8,
+      "planned_proof_route": "用路径提升定义映射，比较两条路径的环提升，局部道路连通性保证局部进入同一片。固定右作用及陪集集合 \\(H\\backslash G=\\{Hg:g\\in G\\}\\) 的约定。",
+      "planned_scope": "覆盖诱导 \\(\\pi_1\\) 单射；道路连通、局部道路连通源的带基点映射提升当且仅当像子群包含于覆盖子群。总空间和基底道路连通时，纤维的单值化作用传递，片数等于子群指数。",
+      "printed_pdf_page": "4",
+      "source_locators": "H §1.3 Props. 1.31–1.34；MT §§79–80。",
+      "title_latex": "The lifting criterion and monodromy"
+    },
+    "T07": {
+      "label": "p202:T07",
+      "line": 257,
+      "number": "1.6",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-cover-classification",
+          "number": "1.9",
+          "pdf_destination": "theorem.1.9",
+          "physical_pdf_page": 9,
+          "printed_pdf_page": "5",
+          "proof_end_line": 326,
+          "proof_line": 279,
+          "statement_line": 266,
+          "title_latex": "Classification of connected coverings"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C01-R04"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.1.6",
+      "physical_pdf_page": 9,
+      "planned_proof_route": "用从基点出发的路径类及小邻域延伸构造覆盖拓扑；证明覆盖性质、连通与万有性。一般子群通过路径等价关系或自由甲板商实现。",
+      "planned_scope": "道路连通、局部道路连通、半局部单连通基底的万有覆盖；连通带基点覆盖按子群分类，无基点按共轭类分类。",
+      "printed_pdf_page": "5",
+      "source_locators": "H §1.3 pp. 63–70；MT §§79–82。",
+      "title_latex": "Universal and classified coverings"
+    },
+    "T08": {
+      "label": "p202:T08",
+      "line": 328,
+      "number": "1.7",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-deck-group",
+          "number": "1.10",
+          "pdf_destination": "theorem.1.10",
+          "physical_pdf_page": 10,
+          "printed_pdf_page": "6",
+          "proof_end_line": 361,
+          "proof_line": 342,
+          "statement_line": 330,
+          "title_latex": "The deck group"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.1.7",
+      "physical_pdf_page": 10,
+      "planned_proof_route": "通过带基点提升判据决定允许的纤维起点，写清作用方向与乘法；正规覆盖的轨道等于纤维。实射影空间例取 \\(n\\ge2\\)。",
+      "planned_scope": "在 T07 的基底条件下，对连通覆盖有 \\(\\operatorname{Deck}(E/B)\\cong N_G(H)/H\\)，正规覆盖等价于纤维上的甲板作用传递和 \\(H\\triangleleft G\\)；圆周覆盖及球面到实射影空间算例。",
+      "printed_pdf_page": "6",
+      "source_locators": "H §1.3 Props. 1.39–1.40 及算例；MT §§80–82。",
+      "title_latex": "Deck transformations and regular coverings"
+    },
+    "T09": {
+      "label": "p202:T09",
+      "line": 380,
+      "number": "2.1",
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "label": "prop:p202-cw-basics",
+          "number": "2.2",
+          "pdf_destination": "proposition.2.2",
+          "physical_pdf_page": 11,
+          "printed_pdf_page": "7",
+          "proof_end_line": 463,
+          "proof_line": 418,
+          "statement_line": 408,
+          "title_latex": "Basic properties of weak cell structures"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C02-R01",
+        "TOP-03-C02-R03"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.2.1",
+      "physical_pdf_page": 11,
+      "planned_proof_route": "写出各层推出与最终拓扑，控制无限层的紧集；说明顶点排序、面识别和不同实现的对象差异。乘积只在有效拓扑约定下使用。",
+      "planned_scope": "CW 特征映射、骨架、闭包有限与弱拓扑；紧子集落入有限子复形；抽象、几何单纯复形与 Δ 复形的实现。",
+      "printed_pdf_page": "7",
+      "source_locators": "H Ch. 0、附录 Props. A.1–A.6、§2.1；MKP §§1.2–1.5、4.12。",
+      "title_latex": "Cells, skeleta, and simplices"
+    },
+    "T10": {
+      "label": "p202:T10",
+      "line": 483,
+      "number": "2.2",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-cw-hep",
+          "number": "2.3",
+          "pdf_destination": "theorem.2.3",
+          "physical_pdf_page": 12,
+          "printed_pdf_page": "8",
+          "proof_end_line": 509,
+          "proof_line": 492,
+          "statement_line": 485,
+          "title_latex": "Homotopy extension for a CW pair"
+        },
+        {
+          "kind": "proposition",
+          "label": "prop:p202-cw-neighborhood",
+          "number": "2.4",
+          "pdf_destination": "proposition.2.4",
+          "physical_pdf_page": 12,
+          "printed_pdf_page": "8",
+          "proof_end_line": 565,
+          "proof_line": 520,
+          "statement_line": 511,
+          "title_latex": "Neighborhood and quotient consequences"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C02-R02"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.2.2",
+      "physical_pdf_page": 12,
+      "planned_proof_route": "由圆柱底与侧面的回缩逐胞延拓，借弱拓扑粘合。构造邻域收缩并保留局部性。区分塌缩的同伦等价与 T16 的同调商比较。",
+      "planned_scope": "CW 对有同伦延拓性质；闭子复形有变形收缩邻域；可缩子复形塌缩是同伦等价；附着映射的同伦替换。",
+      "printed_pdf_page": "8",
+      "source_locators": "H Ch. 0 Props. 0.16–0.18、附录 A.5；MKP §4.12。",
+      "title_latex": "Homotopy extension and good pairs"
+    },
+    "T11": {
+      "label": "p202:T11",
+      "line": 635,
+      "number": "2.4",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-simplicial-approx",
+          "number": "2.7",
+          "pdf_destination": "theorem.2.7",
+          "physical_pdf_page": 14,
+          "printed_pdf_page": "10",
+          "proof_end_line": 685,
+          "proof_line": 645,
+          "statement_line": 637,
+          "title_latex": "Finite-source simplicial approximation"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C02-R03"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.2.4",
+      "physical_pdf_page": 14,
+      "planned_proof_route": "用星形覆盖、Lebesgue 数与网格趋零；按共同承载单形给直线同伦，核对面相容。固定有限源域或另写有效局部有限条件。",
+      "planned_scope": "重心细分、星形判据、有限源复形的单纯逼近及与原映射的同伦。",
+      "printed_pdf_page": "10",
+      "source_locators": "H §2.C pp. 177–183；MKP §§2.2–2.7。",
+      "title_latex": "Simplicial approximation"
+    },
+    "T12": {
+      "label": "p202:T12",
+      "line": 688,
+      "number": "2.5",
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "label": "lem:p202-avoid-cell",
+          "number": "2.8",
+          "pdf_destination": "lemma.2.8",
+          "physical_pdf_page": 14,
+          "printed_pdf_page": "10",
+          "proof_end_line": 734,
+          "proof_line": 698,
+          "statement_line": 690,
+          "title_latex": "Avoiding an interior point of a higher cell"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-cellular-approx",
+          "number": "2.9",
+          "pdf_destination": "theorem.2.9",
+          "physical_pdf_page": 15,
+          "printed_pdf_page": "11",
+          "proof_end_line": 779,
+          "proof_line": 743,
+          "statement_line": 736,
+          "title_latex": "Cellular approximation relative to a subcomplex"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C02-R02"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.2.5",
+      "physical_pdf_page": 14,
+      "planned_proof_route": "源盘紧性将像约束到有限子复形；对每个维数过高的靶胞先做相对的局部逼近以避开一内点，再径向推到边界。逐胞延拓用 T10，粘合用弱拓扑。",
+      "planned_scope": "CW 映射的相对胞腔逼近，初始子复形上已胞腔时相对固定；由此给出低维骨架对同伦类的控制。",
+      "printed_pdf_page": "10",
+      "source_locators": "H §4.1 pp. 348–352，尤其 Lemma 4.10；MKP §§4.11–4.13 作胞腔结构对照。",
+      "title_latex": "Relative cellular approximation"
+    },
+    "T13": {
+      "label": "p202:T13",
+      "line": 791,
+      "number": "2.6",
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "label": "lem:p202-whitehead-disk",
+          "number": "2.10",
+          "pdf_destination": "lemma.2.10",
+          "physical_pdf_page": 16,
+          "printed_pdf_page": "12",
+          "proof_end_line": 868,
+          "proof_line": 826,
+          "statement_line": 817,
+          "title_latex": "Disk replacement"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-whitehead",
+          "number": "2.11",
+          "pdf_destination": "theorem.2.11",
+          "physical_pdf_page": 16,
+          "printed_pdf_page": "12",
+          "proof_end_line": 915,
+          "proof_line": 878,
+          "statement_line": 870,
+          "title_latex": "Whitehead for CW complexes"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.2.6",
+      "physical_pdf_page": 15,
+      "planned_proof_route": "只建立所需的相对同伦群、映射柱及相对 \\(\\pi_n\\) 消失时逐胞扩张／回缩；一般映射先胞腔逼近。将相对 \\(\\pi_1\\) 作为带基点集合，逐分支处理低维延拓。",
+      "planned_scope": "CW 间的映射若诱导 \\(\\pi_0\\) 双射、并在每个基点和每个 \\(n\\ge1\\) 诱导 \\(\\pi_n\\) 同构，则 Whitehead 定理给同伦等价。",
+      "printed_pdf_page": "11",
+      "source_locators": "H §4.1 Thm. 4.5 及其证明。",
+      "title_latex": "Whitehead's theorem"
+    },
+    "T14": {
+      "label": "p202:T14",
+      "line": 926,
+      "number": "3.1",
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "label": "prop:p202-singular-functor",
+          "number": "3.2",
+          "pdf_destination": "proposition.3.2",
+          "physical_pdf_page": 17,
+          "printed_pdf_page": "13",
+          "proof_end_line": 983,
+          "proof_line": 960,
+          "statement_line": 946,
+          "title_latex": "The singular chain functor"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C03-R01",
+        "TOP-03-C03-R04"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.3.1",
+      "physical_pdf_page": 17,
+      "planned_proof_route": "用有序面的关系逐项抵消；链上的增广及零维边界识别道路分支，保留空空间及 \\(S^0\\) 的约定。",
+      "planned_scope": "奇异自由整数链、任意交换环上的自由链及加系数、\\(\\partial^2=0\\)、同调函子、约化 \\(H_0\\) 和道路分支。",
+      "printed_pdf_page": "13",
+      "source_locators": "H §2.1 pp. 108–113；MKP §§4.2、6.3。",
+      "title_latex": "Singular chains and degree zero"
+    },
+    "T15": {
+      "label": "p202:T15",
+      "line": 995,
+      "number": "3.2",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-prism",
+          "number": "3.3",
+          "pdf_destination": "theorem.3.3",
+          "physical_pdf_page": 18,
+          "printed_pdf_page": "14",
+          "proof_end_line": 1038,
+          "proof_line": 1007,
+          "statement_line": 997,
+          "title_latex": "Homotopy invariance"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C03-R02",
+        "TOP-03-C03-R04"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.3.2",
+      "physical_pdf_page": 18,
+      "planned_proof_route": "写出标准棱柱三角剖分与符号，验证 \\(\\partial P+P\\partial=g_\\#-f_\\#\\) 及相对版本所需的对保持条件。",
+      "planned_scope": "同伦诱导相同的同调映射；可缩空间的约化同调消失。",
+      "printed_pdf_page": "14",
+      "source_locators": "H §2.1 pp. 110–113；MKP §4.3。",
+      "title_latex": "The prism operator"
+    },
+    "T16": {
+      "label": "p202:T16",
+      "line": 1040,
+      "number": "3.3",
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "label": "lem:p202-chain-les",
+          "number": "3.5",
+          "pdf_destination": "lemma.3.5",
+          "physical_pdf_page": 18,
+          "printed_pdf_page": "14",
+          "proof_end_line": 1077,
+          "proof_line": 1060,
+          "statement_line": 1050,
+          "title_latex": "The connecting map for a short exact sequence"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-relative-les",
+          "number": "3.6",
+          "pdf_destination": "theorem.3.6",
+          "physical_pdf_page": 19,
+          "printed_pdf_page": "15",
+          "proof_end_line": 1100,
+          "proof_line": 1093,
+          "statement_line": 1079,
+          "title_latex": "The long exact sequence of a pair"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C05-R01"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.3.3",
+      "physical_pdf_page": 18,
+      "planned_proof_route": "链基的包含给短正合列和连接映射；好对的商比较借 T17 的切除证明，写清相对对和低维增广。分开处理 \\(A=\\varnothing\\)。",
+      "planned_scope": "任意对 \\((X,A)\\) 的相对链及自然长正合列；非空闭子空间为其开邻域的变形收缩核时有 \\(H_*(X,A)\\cong\\widetilde H_*(X/A)\\)。",
+      "printed_pdf_page": "14",
+      "source_locators": "H §2.1 pp. 114–125；MKP §§3.2、4.2、4.4。",
+      "title_latex": "Relative chains and exactness"
+    },
+    "T17": {
+      "label": "p202:T17",
+      "line": 1102,
+      "number": "3.4",
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "label": "lem:p202-subdivision",
+          "number": "3.7",
+          "pdf_destination": "lemma.3.7",
+          "physical_pdf_page": 19,
+          "printed_pdf_page": "15",
+          "proof_end_line": 1155,
+          "proof_line": 1120,
+          "statement_line": 1112,
+          "title_latex": "Support-controlled subdivision"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-small-chains",
+          "number": "3.8",
+          "pdf_destination": "theorem.3.8",
+          "physical_pdf_page": 19,
+          "printed_pdf_page": "15",
+          "proof_end_line": 1209,
+          "proof_line": 1166,
+          "statement_line": 1157,
+          "title_latex": "The small-chain comparison"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-excision",
+          "number": "3.9",
+          "pdf_destination": "theorem.3.9",
+          "physical_pdf_page": 20,
+          "printed_pdf_page": "16",
+          "proof_end_line": 1231,
+          "proof_line": 1219,
+          "statement_line": 1211,
+          "title_latex": "Excision"
+        },
+        {
+          "kind": "corollary",
+          "label": "thm:p202-good-pair",
+          "number": "3.10",
+          "pdf_destination": "corollary.3.10",
+          "physical_pdf_page": 20,
+          "printed_pdf_page": "16",
+          "proof_end_line": 1265,
+          "proof_line": 1244,
+          "statement_line": 1233,
+          "title_latex": "The quotient of a good pair"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C03-R02",
+        "TOP-03-C05-R02"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.3.4",
+      "physical_pdf_page": 19,
+      "planned_proof_route": "以标准单形锥构造支撑控制；对给定有限链选择统一细分数，分别证满射与单射。说明原切除和小链开覆盖陈述之间的具体包含映射。",
+      "planned_scope": "重心细分链映射与原链映射链同伦；开覆盖小链准同构；\\(\\overline Z\\subset\\operatorname{int}A\\) 时切除。",
+      "printed_pdf_page": "15",
+      "source_locators": "H §2.1 pp. 119–124；MKP §4.4。",
+      "title_latex": "Subdivision, small chains, and excision"
+    },
+    "T18": {
+      "label": "p202:T18",
+      "line": 1267,
+      "number": "3.5",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-mv",
+          "number": "3.11",
+          "pdf_destination": "theorem.3.11",
+          "physical_pdf_page": 21,
+          "printed_pdf_page": "17",
+          "proof_end_line": 1305,
+          "proof_line": 1282,
+          "statement_line": 1269,
+          "title_latex": "Open-cover Mayer--Vietoris"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C05-R03"
+      ],
+      "path": "parts/foundations.tex",
+      "pdf_destination": "section.3.5",
+      "physical_pdf_page": 21,
+      "planned_proof_route": "小链短正合序列的交集嵌入用相反号，和映射满射，再调用 T16/T17。给出相对版本的开盖条件，说明维数公理和不交并。",
+      "planned_scope": "开覆盖的 Mayer–Vietoris 自然长正合列及普通同调公理的已证明版本。",
+      "printed_pdf_page": "17",
+      "source_locators": "H §§2.2–2.3 pp. 149–165；MKP §§3.3–3.6、4.4。",
+      "title_latex": "Mayer--Vietoris and the ordinary axioms"
+    },
+    "T19": {
+      "label": "p202:T19",
+      "line": 13,
+      "number": "4.1",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-simplicial-comparison",
+          "number": "4.1",
+          "pdf_destination": "theorem.4.1",
+          "physical_pdf_page": 22,
+          "printed_pdf_page": "18",
+          "proof_end_line": 100,
+          "proof_line": 38,
+          "statement_line": 25,
+          "title_latex": "Simplicial--singular comparison"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C03-R03"
+      ],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.4.1",
+      "physical_pdf_page": 22,
+      "planned_proof_route": "排序单形送到线性参数化；按骨架、相对单形和五引理做同构。顶点顺序变化的符号和链同伦写清，无限情形用有限链和有限子复形。",
+      "planned_scope": "有向单纯链及适当 Δ 复形的链模型与实现的奇异同调自然比较。",
+      "printed_pdf_page": "18",
+      "source_locators": "H §2.1 pp. 102–108、128–131；MKP §4.7。",
+      "title_latex": "Simplicial chains and comparison"
+    },
+    "T20": {
+      "label": "p202:T20",
+      "line": 104,
+      "number": "4.2",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-cellular-comparison",
+          "number": "4.2",
+          "pdf_destination": "theorem.4.2",
+          "physical_pdf_page": 23,
+          "printed_pdf_page": "19",
+          "proof_end_line": 157,
+          "proof_line": 123,
+          "statement_line": 106,
+          "title_latex": "Cellular homology"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C03-R03"
+      ],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.4.2",
+      "physical_pdf_page": 23,
+      "planned_proof_route": "用 T10/T16/T17 求骨架相对群，再用对的长正合列证边界平方零及同构。写出附着映射接塌缩的度数；所有无限和按有限支撑。",
+      "planned_scope": "CW 胞腔链 \\(C_n^{\\rm cell}=H_n(X^n,X^{n-1})\\) 的度数边界、奇异同调比较与胞腔自然性。",
+      "printed_pdf_page": "19",
+      "source_locators": "H §2.2 pp. 137–144；MKP §§4.12–4.13。",
+      "title_latex": "Cellular chains and attaching degrees"
+    },
+    "T21": {
+      "label": "p202:T21",
+      "line": 159,
+      "number": "4.3",
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "label": "prop:p202-homology-computations",
+          "number": "4.3",
+          "pdf_destination": "proposition.4.3",
+          "physical_pdf_page": 24,
+          "printed_pdf_page": "20",
+          "proof_end_line": 236,
+          "proof_line": 190,
+          "statement_line": 161,
+          "title_latex": "Spheres, wedges, and standard finite CW models"
+        },
+        {
+          "kind": "corollary",
+          "label": "cor:p202-euler",
+          "number": "4.4",
+          "pdf_destination": "corollary.4.4",
+          "physical_pdf_page": 25,
+          "printed_pdf_page": "21",
+          "proof_end_line": 251,
+          "proof_line": 245,
+          "statement_line": 238,
+          "title_latex": "Euler--Poincar\\'e"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C03-R04"
+      ],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.4.3",
+      "physical_pdf_page": 24,
+      "planned_proof_route": "约化分支、悬挂／对正合列与胞腔度数并用；射影空间核对整数边界的奇偶，Euler 等式由有限链的秩消去。",
+      "planned_scope": "点、球面（含 \\(S^0\\)）、有限好点楔和、环面、射影空间及标准多边形模型的闭曲面同调；有限 CW 的 Euler–Poincaré 公式。",
+      "printed_pdf_page": "20",
+      "source_locators": "H §§2.1–2.2；MKP §§1.7–1.10、4.6、4.13。",
+      "title_latex": "Representative homology computations"
+    },
+    "T22": {
+      "label": "p202:T22",
+      "line": 253,
+      "number": "4.4",
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "label": "prop:p202-degree",
+          "number": "4.5",
+          "pdf_destination": "proposition.4.5",
+          "physical_pdf_page": 25,
+          "printed_pdf_page": "21",
+          "proof_end_line": 279,
+          "proof_line": 262,
+          "statement_line": 255,
+          "title_latex": "Degree and no retraction"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-hurewicz-one",
+          "number": "4.6",
+          "pdf_destination": "theorem.4.6",
+          "physical_pdf_page": 25,
+          "printed_pdf_page": "21",
+          "proof_end_line": 311,
+          "proof_line": 286,
+          "statement_line": 281,
+          "title_latex": "Degree-one Hurewicz map"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.4.4",
+      "physical_pdf_page": 25,
+      "planned_proof_route": "度由顶维同调作用定义，\\(n=0\\) 用约化群并分列；环到 1‑链，借基点连接路径将任意 1‑循环分解，边界三角形给阿贝尔化关系。",
+      "planned_scope": "球面映射度、乘法性、无回缩与 Brouwer 的同调证明；道路连通空间的 \\(H_1(X;\\mathbb Z)\\cong\\pi_1(X)_{\\rm ab}\\)。",
+      "printed_pdf_page": "21",
+      "source_locators": "H §2.2 pp. 134–136、§2.A pp. 166–168；MKP §2.9 对照度数；P1‑06 V10.01。",
+      "title_latex": "Degree and the first homology group"
+    },
+    "T23": {
+      "label": "p202:T23",
+      "line": 313,
+      "number": "4.5",
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "label": "lem:p202-free-chain-dual",
+          "number": "4.7",
+          "pdf_destination": "lemma.4.7",
+          "physical_pdf_page": 26,
+          "printed_pdf_page": "22",
+          "proof_end_line": 346,
+          "proof_line": 330,
+          "statement_line": 324,
+          "title_latex": "Dualizing free chain comparisons"
+        },
+        {
+          "kind": "proposition",
+          "label": "prop:p202-cohomology-pairs",
+          "number": "4.8",
+          "pdf_destination": "proposition.4.8",
+          "physical_pdf_page": 26,
+          "printed_pdf_page": "22",
+          "proof_end_line": 377,
+          "proof_line": 355,
+          "statement_line": 348,
+          "title_latex": "Cohomology of pairs and open covers"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C04-R01",
+        "TOP-03-C04-R03"
+      ],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.4.5",
+      "physical_pdf_page": 26,
+      "planned_proof_route": "用自由链基给上链短正合列。上同调切除须由带支撑的链同伦等价或自然 UCT 比较推出；避免将一般同调正合列直接取对偶。",
+      "planned_scope": "任意阿贝尔系数的普通／相对上链、反变函子、同伦不变性和自然长正合列；开覆盖的上同调切除及 MV。",
+      "printed_pdf_page": "22",
+      "source_locators": "H §§3.1、3.3；MKP §§5.4–5.8。",
+      "title_latex": "Ordinary and relative cohomology"
+    },
+    "T24": {
+      "label": "p202:T24",
+      "line": 503,
+      "number": "4.7",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-cup",
+          "number": "4.11",
+          "pdf_destination": "theorem.4.11",
+          "physical_pdf_page": 28,
+          "printed_pdf_page": "24",
+          "proof_end_line": 537,
+          "proof_line": 511,
+          "statement_line": 505,
+          "title_latex": "The singular cohomology ring"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C04-R02"
+      ],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.4.7",
+      "physical_pdf_page": 28,
+      "planned_proof_route": "正确编号前／后面，证上链 Leibniz 符号，链对角和交换对角的链同伦给分次交换。",
+      "planned_scope": "交换系数环上的 Alexander–Whitney 杯积、单位、结合、自然性与上同调中的分次交换。",
+      "printed_pdf_page": "24",
+      "source_locators": "H §3.2 pp. 206–215；MKP §5.9、Ch. 7。",
+      "title_latex": "The cup product"
+    },
+    "T25": {
+      "label": "p202:T25",
+      "line": 539,
+      "number": "4.8",
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "label": "prop:p202-relative-cup",
+          "number": "4.12",
+          "pdf_destination": "proposition.4.12",
+          "physical_pdf_page": 28,
+          "printed_pdf_page": "24",
+          "proof_end_line": 569,
+          "proof_line": 552,
+          "statement_line": 541,
+          "title_latex": "Relative cup product"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C04-R03"
+      ],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.4.8",
+      "physical_pdf_page": 28,
+      "planned_proof_route": "在 \\(C_*(A)+C_*(B)\\) 上验证消失。小链包含到 \\(C_*(A\\cup B)\\) 是链同伦等价，可用支撑控制的细分，或用有下界的自由无环映射锥证明。经上链对偶及相对短正合列完成并集比较，并保留三元组映射的自然性。",
+      "planned_scope": "任意对的相对上同调连接及对开 \\(A,B\\subset X\\) 的 \\(H^p(X,A;R)\\otimes_R H^q(X,B;R)\\to H^{p+q}(X,A\\cup B;R)\\)。",
+      "printed_pdf_page": "24",
+      "source_locators": "H §3.2 的相对杯积；MKP §§5.4、5.9。",
+      "title_latex": "Products for relative pairs"
+    },
+    "T26": {
+      "label": "p202:T26",
+      "line": 379,
+      "number": "4.6",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-ez",
+          "number": "4.9",
+          "pdf_destination": "theorem.4.9",
+          "physical_pdf_page": 27,
+          "printed_pdf_page": "23",
+          "proof_end_line": 466,
+          "proof_line": 401,
+          "statement_line": 387,
+          "title_latex": "Eilenberg--Zilber equivalence"
+        },
+        {
+          "kind": "corollary",
+          "label": "cor:p202-topological-kunneth",
+          "number": "4.10",
+          "pdf_destination": "corollary.4.10",
+          "physical_pdf_page": 28,
+          "printed_pdf_page": "23",
+          "proof_end_line": 493,
+          "proof_line": 483,
+          "statement_line": 468,
+          "title_latex": "Homological K\\\"unneth over a PID"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C04-R02",
+        "TOP-03-C05-R05"
+      ],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.4.6",
+      "physical_pdf_page": 26,
+      "planned_proof_route": "写 AW、带符号 shuffle、链映射和链同伦证明；可用无环模型但须给出标准单形产品模型及归纳。再调用代数 Künneth，核对 Tor 的总次数 \\(n-1\\) 和非自然分裂。上同调外积的张量同构仅在证清有限型等条件后使用。",
+      "planned_scope": "任意拓扑空间的 Eilenberg–Zilber 链等价和外积；PID 上产品同调 Künneth 的自然张量／Tor 短正合列。",
+      "printed_pdf_page": "22",
+      "source_locators": "H §§3.2、3.B；MKP §§7.7–7.11。",
+      "title_latex": "Product chains and the K\\\"unneth sequence"
+    },
+    "T27": {
+      "label": "p202:T27",
+      "line": 571,
+      "number": "4.9",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-topological-uct",
+          "number": "4.13",
+          "pdf_destination": "theorem.4.13",
+          "physical_pdf_page": 29,
+          "printed_pdf_page": "25",
+          "proof_end_line": 611,
+          "proof_line": 591,
+          "statement_line": 573,
+          "title_latex": "Singular universal coefficients over a PID"
+        }
+      ],
+      "original_contract_ids": [
+        "TOP-03-C05-R04"
+      ],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.4.9",
+      "physical_pdf_page": 29,
+      "planned_proof_route": "确认自由链、边界子模自由和所用模结构；将 P1‑03 的自然短正合列专门化，保留 \\(H_{n-1}\\) 的移位和分裂的非自然性。",
+      "planned_scope": "对 PID 自由奇异链及任意系数模，分别给同调的张量／Tor、上同调的 Hom／Ext UCT。",
+      "printed_pdf_page": "25",
+      "source_locators": "H §§3.1、3.A；MKP §§7.3–7.6；P1‑03 ch. 11。",
+      "title_latex": "Universal coefficients for singular chains"
+    },
+    "T28": {
+      "label": "p202:T28",
+      "line": 1110,
+      "number": "5.5",
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "label": "lem:p202-projective-thom",
+          "number": "5.7",
+          "pdf_destination": "lemma.5.7",
+          "physical_pdf_page": 35,
+          "printed_pdf_page": "31",
+          "proof_end_line": 1161,
+          "proof_line": 1123,
+          "statement_line": 1112,
+          "title_latex": "Classes of transverse coordinate submanifolds"
+        },
+        {
+          "kind": "proposition",
+          "label": "prop:p202-cohomology-rings",
+          "number": "5.8",
+          "pdf_destination": "proposition.5.8",
+          "physical_pdf_page": 36,
+          "printed_pdf_page": "32",
+          "proof_end_line": 1230,
+          "proof_line": 1179,
+          "statement_line": 1163,
+          "title_latex": "Tori, projective spaces, and surfaces"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.5.5",
+      "physical_pdf_page": 35,
+      "planned_proof_route": "用外积和典型生成元算环面；射影空间可用横截坐标超平面、定向与对偶类的乘积，须证明所用交叉／杯积桥，或按 H §3.2 给链级生成元。使用 T29/T30 时将本组放在对偶之后。",
+      "planned_scope": "环面、\\(\\mathbb{RP}^m\\) 的模 2 杯积环、\\(\\mathbb{CP}^m\\) 的整数杯积环，及闭定向曲面的杯积配对。",
+      "printed_pdf_page": "31",
+      "source_locators": "H §3.2 pp. 214–229、§3.3 pp. 249–252；MKP §§5.10、8.8。",
+      "title_latex": "Cohomology rings of basic spaces"
+    },
+    "T29": {
+      "label": "p202:T29",
+      "line": 622,
+      "number": "5.1",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-compact-orientation",
+          "number": "5.1",
+          "pdf_destination": "theorem.5.1",
+          "physical_pdf_page": 30,
+          "printed_pdf_page": "26",
+          "proof_end_line": 727,
+          "proof_line": 664,
+          "statement_line": 653,
+          "title_latex": "Fundamental classes near compact sets"
+        },
+        {
+          "kind": "proposition",
+          "label": "prop:p202-cap",
+          "number": "5.2",
+          "pdf_destination": "proposition.5.2",
+          "physical_pdf_page": 31,
+          "printed_pdf_page": "27",
+          "proof_end_line": 765,
+          "proof_line": 752,
+          "statement_line": 729,
+          "title_latex": "Cap identities"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.5.1",
+      "physical_pdf_page": 30,
+      "planned_proof_route": "以局部欧氏模型和切除识别局部生成元；用有限拼接或紧集归纳证明相容局部类的存在唯一。固定 cap 顺序和与杯积的配对公式。模 2 允许典范取向。",
+      "planned_scope": "流形局部同调、取向与取向双覆盖；闭定向流形的基本类、紧集相对基本类；cap 积、边界公式与局部自然性。",
+      "printed_pdf_page": "26",
+      "source_locators": "H §3.3 pp. 233–239、248–251；MKP §§8.3–8.8。",
+      "title_latex": "Local orientation and the cap product"
+    },
+    "T30": {
+      "label": "p202:T30",
+      "line": 767,
+      "number": "5.2",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-poincare",
+          "number": "5.3",
+          "pdf_destination": "theorem.5.3",
+          "physical_pdf_page": 32,
+          "printed_pdf_page": "28",
+          "proof_end_line": 876,
+          "proof_line": 791,
+          "statement_line": 780,
+          "title_latex": "Poincar\\'e duality"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.5.2",
+      "physical_pdf_page": 32,
+      "planned_proof_route": "对取向系数环，用局部基本类做 cap 映射；在球上验证，证明与开集 MV 的带符号相容性，再用不交并和紧支撑直极限拼接。普通同调配紧支撑上同调。",
+      "planned_scope": "定向无边界 \\(n\\) 维流形的 Poincaré 对偶，紧时 \\(H^k(M;R)\\cong H_{n-k}(M;R)\\)，一般时 \\(H_c^k(M;R)\\cong H_{n-k}(M;R)\\)。",
+      "printed_pdf_page": "28",
+      "source_locators": "H §3.3 pp. 239–248；MKP §§8.5–8.7。",
+      "title_latex": "Poincar\\'e duality and compact supports"
+    },
+    "T31": {
+      "label": "p202:T31",
+      "line": 878,
+      "number": "5.3",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-lefschetz",
+          "number": "5.4",
+          "pdf_destination": "theorem.5.4",
+          "physical_pdf_page": 33,
+          "printed_pdf_page": "29",
+          "proof_end_line": 959,
+          "proof_line": 893,
+          "statement_line": 880,
+          "title_latex": "Duality for a compact manifold with boundary"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.5.3",
+      "physical_pdf_page": 33,
+      "planned_proof_route": "用相对基本类，验证边界类和外法向定向；以 collar 或局部半球模型及正合列、切除／五引理闭合。采用光滑流形或明确给定 collar 的拓扑边界。",
+      "planned_scope": "紧定向有边界流形的 Poincaré–Lefschetz 两个同构 \\(H^k(M,\\partial M)\\cong H_{n-k}(M)\\) 和 \\(H^k(M)\\cong H_{n-k}(M,\\partial M)\\)。",
+      "printed_pdf_page": "29",
+      "source_locators": "H §3.3 pp. 252–255；MKP §8.10；LS Ch. 9。",
+      "title_latex": "Poincar\\'e--Lefschetz duality"
+    },
+    "T32": {
+      "label": "p202:T32",
+      "line": 962,
+      "number": "5.4",
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "label": "lem:p202-enr",
+          "number": "5.5",
+          "pdf_destination": "lemma.5.5",
+          "physical_pdf_page": 34,
+          "printed_pdf_page": "30",
+          "proof_end_line": 1049,
+          "proof_line": 972,
+          "statement_line": 964,
+          "title_latex": "Euclidean neighborhood retraction"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-alexander",
+          "number": "5.6",
+          "pdf_destination": "theorem.5.6",
+          "physical_pdf_page": 35,
+          "printed_pdf_page": "31",
+          "proof_end_line": 1108,
+          "proof_line": 1068,
+          "statement_line": 1056,
+          "title_latex": "Alexander duality",
+          "canonical_latex_line": 2483,
+          "canonical_proof_line": 2495
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.5.4",
+      "physical_pdf_page": 34,
+      "planned_proof_route": "从球面取向、开补集对偶、紧支撑与对的正合列得到邻域极限；将 \\(S^n\\) 在 \\(K\\) 外一点开成欧氏空间，用紧局部可缩欧氏子集的邻域回缩及邻域比较，把极限识别为奇异上同调。记录该独立前置的适用条件和构造。",
+      "planned_scope": "非空真紧、局部可缩 \\(K\\subset S^n\\) 的经典 Alexander 对偶 \\(\\widetilde H_i(S^n\\setminus K;\\mathbb Z)\\cong\\widetilde H^{n-i-1}(K;\\mathbb Z)\\)，取 \\(n\\ge1,\\ i\\ge0\\)。",
+      "printed_pdf_page": "30",
+      "source_locators": "H §3.3 Cor. 3.45 及附录 Thm. A.7；MKP §8.11。",
+      "title_latex": "Alexander duality for compact locally contractible subsets"
+    },
+    "T33": {
+      "label": "p202:T33",
+      "line": 1232,
+      "number": "5.6",
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "label": "lem:p202-smooth-singular",
+          "number": "5.9",
+          "pdf_destination": "lemma.5.9",
+          "physical_pdf_page": 37,
+          "printed_pdf_page": "33",
+          "proof_end_line": 1284,
+          "proof_line": 1246,
+          "statement_line": 1239,
+          "title_latex": "Smooth and continuous singular chains"
+        },
+        {
+          "kind": "theorem",
+          "label": "thm:p202-de-rham",
+          "number": "5.10",
+          "pdf_destination": "theorem.5.10",
+          "physical_pdf_page": 37,
+          "printed_pdf_page": "33",
+          "proof_end_line": 1423,
+          "proof_line": 1296,
+          "statement_line": 1286,
+          "title_latex": "Natural de Rham ring isomorphism"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.5.6",
+      "physical_pdf_page": 37,
+      "planned_proof_route": "先在无边界情形用相对面平滑、棱柱及有限链补证链比较；P1‑04 的 Stokes 积分映射进入 LS Ch. 18 的局部 Poincaré 引理、MV 与无穷开并拼接。乘积由光滑 shuffle、Fubini、实系数配对与对角映射验证；光滑边界用 collar 推入内部的光滑同伦归约。",
+      "planned_scope": "有限维、Hausdorff、第二可数光滑流形上的实系数光滑奇异／普通奇异比较和自然 de Rham 同构，含楔积／杯积兼容。",
+      "printed_pdf_page": "33",
+      "source_locators": "LS Thms. 18.7、18.12、18.14 及 Prop. 18.13；P1‑04 chs. 11–12；T26。",
+      "title_latex": "The de Rham comparison"
+    },
+    "T34": {
+      "label": "p202:T34",
+      "line": 1425,
+      "number": "5.7",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-invariance-domain",
+          "number": "5.11",
+          "pdf_destination": "theorem.5.11",
+          "physical_pdf_page": 39,
+          "printed_pdf_page": "35",
+          "proof_end_line": 1471,
+          "proof_line": 1435,
+          "statement_line": 1427,
+          "title_latex": "Jordan--Brouwer separation and invariance of domain"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.5.7",
+      "physical_pdf_page": 39,
+      "planned_proof_route": "对嵌入球面 \\(K\\) 用 T32 得两分支。对 \\(x\\in K\\) 的任意环境邻域选其中的相对开圆盘 \\(D\\subset K\\)，\\(K\\setminus D\\) 为闭盘，补集连通。如果一分支错过该邻域，它将在 \\(S^n\\setminus(K\\setminus D)\\) 内成为非平凡开闭集。对不变域限制到紧闭球，嵌入开球与嵌入闭球的外部分别连通，并分割嵌入边界的两补集分支。",
+      "planned_scope": "对 \\(n\\ge1\\)，Jordan–Brouwer 分离及欧氏同维不变域。拓扑嵌入 \\(S^{n-1}\\hookrightarrow S^n\\) 的补集有两个分支，共同边界为嵌入球面；连续单射 \\(U\\subset\\mathbb R^n\\to\\mathbb R^n\\) 在开域上是到开像的同胚。",
+      "printed_pdf_page": "35",
+      "source_locators": "H §2.B Prop. 2B.1、Thm. 2B.3。",
+      "title_latex": "Separation and invariance of domain"
+    },
+    "T35": {
+      "label": "p202:T35",
+      "line": 1476,
+      "number": "5.8",
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "label": "thm:p202-fixed-point",
+          "number": "5.12",
+          "pdf_destination": "theorem.5.12",
+          "physical_pdf_page": 39,
+          "printed_pdf_page": "35",
+          "proof_end_line": 1526,
+          "proof_line": 1489,
+          "statement_line": 1478,
+          "title_latex": "Lefschetz fixed point theorem for finite polyhedra"
+        }
+      ],
+      "original_contract_ids": [],
+      "path": "parts/homology.tex",
+      "pdf_destination": "section.5.8",
+      "physical_pdf_page": 39,
+      "planned_proof_route": "无不动点时位移有正下界，选网格及逼近误差均小于其三分之一的靶复形 \\(K\\) 和细分 \\(K'\\)。用 \\(g_\\#\\circ\\mathrm{Sd}_\\#\\) 作 \\(C_*(K;\\mathbb Q)\\) 上的链自映射，其中 \\(g:K'\\to K\\) 是单纯逼近。各子单形的像避开原单形，故对角系数为零。证明链与同调的交错迹相等。",
+      "planned_scope": "有限多面体自映射的 Lefschetz 不动点定理。以有理同调的交错迹给 Lefschetz 数，非零推出不动点。",
+      "printed_pdf_page": "35",
+      "source_locators": "H §2.C Thm. 2C.3；MKP §2.10。",
+      "title_latex": "A homological fixed point criterion"
+    }
+  },
+  "group_count": 61,
+  "inputs": [
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "f09ffa2b1aa17dc938210459d9f18437e9489bbcebedcdf6c28c0afa6c60c1c1"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "ee84285616b4493212f04acf78a066a7610d1e834a3d281393f9e15f3e2575d6"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "1b5e1f11505da2c8bb7b580b6d75b3c06edbbe4cf68ffc7f1bc4c3acadcd5c5a"
+    },
+    {
+      "path": "P2-02_Topology_and_Riemannian_Geometry_Notes.tex",
+      "sha256": "bcdb11b412e37114e17168dec6e08353032309c8276c65c0d5ad0277717e21f3"
+    },
+    {
+      "path": "parts/foundations.tex",
+      "sha256": "66c06b8f5435a7697a94188b14b03abbb9d8e9eeeff46c32c3fe4337a6c43cb2"
+    },
+    {
+      "path": "parts/homology.tex",
+      "sha256": "71e01aaa53846e272ebb8148a605c06b33da7ed538299a57f391e13b749a4183"
+    },
+    {
+      "path": "parts/geometry-local.tex",
+      "sha256": "dd03906f88e1e2c8751a4a70211300e7064fcc427e65690f8ba025c2e059df9b"
+    },
+    {
+      "path": "parts/geometry-global.tex",
+      "sha256": "4fb208561d4d6322e2d4accc4ad4ca5bf94c6e8e498458b971f2c10b0eb2aa37"
+    }
+  ],
+  "latex": {
+    "path": "P2-02_Topology_and_Riemannian_Geometry_Notes.tex",
+    "sha256": "ed86449d2f50b2a0f65e2aa9f95e7e7fa1f90f04ca2a2c81fe09eeaac0e337ec"
+  },
+  "mathematical_body_pages": 63,
+  "numbered_result_count": 88,
+  "numbered_result_counts_by_kind": {
+    "corollary": 6,
+    "lemma": 12,
+    "proposition": 15,
+    "theorem": 55
+  },
+  "original_contract_count": 29,
+  "original_contracts": {
+    "GEO-07-C01-R01": {
+      "family_ids": [
+        "G01"
+      ],
+      "original_title": "Riemannian metric and length",
+      "preserved_content": "正定度量、曲线长度和逐连通分支的诱导距离。"
+    },
+    "GEO-07-C01-R02": {
+      "family_ids": [
+        "G04",
+        "G05"
+      ],
+      "original_title": "Levi–Civita connection",
+      "preserved_content": "无挠、度量相容、存在唯一及 Koszul。"
+    },
+    "GEO-07-C01-R03": {
+      "family_ids": [
+        "G06"
+      ],
+      "original_title": "Parallel transport",
+      "preserved_content": "紧区间分段 \\(C^1\\)、线性同构与保内积。"
+    },
+    "GEO-07-C01-R04": {
+      "family_ids": [
+        "G07",
+        "G08"
+      ],
+      "original_title": "Geodesic initial value problem",
+      "preserved_content": "极大存在、光滑依赖及指数局部微分同胚。"
+    },
+    "GEO-07-C02-R01": {
+      "family_ids": [
+        "G12"
+      ],
+      "original_title": "Curvature tensor symmetries",
+      "preserved_content": "曲率交换对称及两条 Bianchi 恒等式。"
+    },
+    "GEO-07-C02-R02": {
+      "family_ids": [
+        "G16",
+        "G17"
+      ],
+      "original_title": "Jacobi equation and geodesic variations",
+      "preserved_content": "变分导出 Jacobi 及初值唯一，保留曲率符号。"
+    },
+    "GEO-07-C02-R03": {
+      "family_ids": [
+        "G10",
+        "G18"
+      ],
+      "original_title": "First and second variation",
+      "preserved_content": "固定端点第一／第二变分与指数型。"
+    },
+    "GEO-07-C03-R01": {
+      "family_ids": [
+        "G11"
+      ],
+      "original_title": "Hopf–Rinow equivalences",
+      "preserved_content": "度量与测地完备及紧致闭球等价。"
+    },
+    "GEO-07-C03-R02": {
+      "family_ids": [
+        "G11"
+      ],
+      "original_title": "Minimizing geodesics in complete manifolds",
+      "preserved_content": "任意两点有长度等于距离的测地线。"
+    },
+    "GEO-07-C03-R03": {
+      "family_ids": [
+        "G08",
+        "G09"
+      ],
+      "original_title": "Local geodesic minimality and normal neighborhoods",
+      "preserved_content": "径向正交、正规球的局部最短与唯一。"
+    },
+    "TOP-03-C01-R01": {
+      "family_ids": [
+        "T01"
+      ],
+      "original_title": "Fundamental group and homotopy invariance",
+      "preserved_content": "相对端点同伦商和带基点不变性。"
+    },
+    "TOP-03-C01-R02": {
+      "family_ids": [
+        "T03"
+      ],
+      "original_title": "Van Kampen theorem",
+      "preserved_content": "两开集的群推出及交集假设。"
+    },
+    "TOP-03-C01-R03": {
+      "family_ids": [
+        "T05"
+      ],
+      "original_title": "Covering path/homotopy lifting",
+      "preserved_content": "路径与同伦的指定初始提升。"
+    },
+    "TOP-03-C01-R04": {
+      "family_ids": [
+        "T06",
+        "T07"
+      ],
+      "original_title": "Classification of connected coverings",
+      "preserved_content": "局部条件、万有覆盖、带基点子群与共轭分类。"
+    },
+    "TOP-03-C02-R01": {
+      "family_ids": [
+        "T09"
+      ],
+      "original_title": "CW and simplicial complexes",
+      "preserved_content": "胞腔骨架、弱／闭包有限拓扑与单纯实现。"
+    },
+    "TOP-03-C02-R02": {
+      "family_ids": [
+        "T10",
+        "T12"
+      ],
+      "original_title": "Cellular approximation",
+      "preserved_content": "相对胞腔逼近与固定子复形。"
+    },
+    "TOP-03-C02-R03": {
+      "family_ids": [
+        "T09",
+        "T11"
+      ],
+      "original_title": "Simplicial approximation and realization",
+      "preserved_content": "实现与适当细分后的单纯逼近。"
+    },
+    "TOP-03-C03-R01": {
+      "family_ids": [
+        "T14"
+      ],
+      "original_title": "Singular chains and homology",
+      "preserved_content": "奇异链、系数、平方零和函子性。"
+    },
+    "TOP-03-C03-R02": {
+      "family_ids": [
+        "T15",
+        "T17"
+      ],
+      "original_title": "Homotopy and subdivision invariance",
+      "preserved_content": "同伦不变及细分链同伦。"
+    },
+    "TOP-03-C03-R03": {
+      "family_ids": [
+        "T19",
+        "T20"
+      ],
+      "original_title": "Cellular and simplicial comparison",
+      "preserved_content": "单纯和胞腔两条自然比较分别证明。"
+    },
+    "TOP-03-C03-R04": {
+      "family_ids": [
+        "T14",
+        "T15",
+        "T21"
+      ],
+      "original_title": "Basic homology computations",
+      "preserved_content": "可缩、球面含 \\(S^0\\) 和有限好点楔和。"
+    },
+    "TOP-03-C04-R01": {
+      "family_ids": [
+        "T23"
+      ],
+      "original_title": "Cochains and cohomology",
+      "preserved_content": "普通上同调、反变及同伦不变。"
+    },
+    "TOP-03-C04-R02": {
+      "family_ids": [
+        "T24",
+        "T26"
+      ],
+      "original_title": "Cup product and graded commutativity",
+      "preserved_content": "单位、结合、自然性与上同调中的分次交换。"
+    },
+    "TOP-03-C04-R03": {
+      "family_ids": [
+        "T23",
+        "T25"
+      ],
+      "original_title": "Relative cohomology and connecting maps",
+      "preserved_content": "任意对长正合及开对相对杯积。"
+    },
+    "TOP-03-C05-R01": {
+      "family_ids": [
+        "T16"
+      ],
+      "original_title": "Relative homology long exact sequence",
+      "preserved_content": "任意对的自然长正合列。"
+    },
+    "TOP-03-C05-R02": {
+      "family_ids": [
+        "T17"
+      ],
+      "original_title": "Excision theorem",
+      "preserved_content": "闭包位于内部的切除。"
+    },
+    "TOP-03-C05-R03": {
+      "family_ids": [
+        "T18"
+      ],
+      "original_title": "Mayer–Vietoris sequence",
+      "preserved_content": "开覆盖的自然 Mayer–Vietoris 长正合。"
+    },
+    "TOP-03-C05-R04": {
+      "family_ids": [
+        "T27"
+      ],
+      "original_title": "Universal coefficient theorem in topology",
+      "preserved_content": "PID 上张量／Tor 与 Hom／Ext，分裂的性质。"
+    },
+    "TOP-03-C05-R05": {
+      "family_ids": [
+        "T26"
+      ],
+      "original_title": "Künneth theorem for products",
+      "preserved_content": "任意空间奇异 Eilenberg–Zilber 与 PID Künneth。"
+    }
+  },
+  "part_title_physical_pages": [
+    5,
+    41
+  ],
+  "pdf": {
+    "path": "P2-02_Topology_and_Riemannian_Geometry_Notes.pdf",
+    "sha256": "7f052899fdc0bd281b53a162a566dc9e843e726a1a6b64c209e222a982c0cbcc"
+  },
+  "pdf_physical_pages": 70,
+  "prior_notes": {
+    "D10": [
+      {
+        "path": "docs/sources/PointSetTopology/notes/001/SOURCE_RESULT_INDEX.json",
+        "sha256": "96a0f400f143dff6c6c934cb53b47f6a900239759a547f7b56b0535d1821941b"
+      }
+    ],
+    "D13": [
+      {
+        "provenance_status": "unpublished preparatory material",
+        "sha256": "1d09e0491a3a8326c6db9e996828417ae6602fa7deef79d59d78e3eae1dbe24f"
+      }
+    ],
+    "P103": [
+      {
+        "published_notes": {
+          "file": "provenance/components/AlgebraCore/delivery/paper.tex",
+          "historical_fragment": "parts/ch01.tex"
+        },
+        "sha256": "ab7905dc70294b632b3ee896d3c674b97171953125376da5f004546866d9a47c"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/AlgebraCore/delivery/paper.tex",
+          "historical_fragment": "parts/ch09.tex"
+        },
+        "sha256": "be8bb09b6639f5f6a6fa5519db55c6e1750210eb93c45d1b05410d7778fbbdd4"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/AlgebraCore/delivery/paper.tex",
+          "historical_fragment": "parts/ch10.tex"
+        },
+        "sha256": "2b5966c7ae4cb3e19554280f9dd9b7ec998772dbc942107184f79b55475aa061"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/AlgebraCore/delivery/paper.tex",
+          "historical_fragment": "parts/ch11.tex"
+        },
+        "sha256": "5c2f5654fcd62f2db6f2ab4927713d60e0775e704f05ec3fa9b14a45a4312fb5"
+      }
+    ],
+    "P104": [
+      {
+        "published_notes": {
+          "file": "provenance/components/SmoothManifolds/delivery/paper.tex",
+          "historical_fragment": "parts/ch01.tex"
+        },
+        "sha256": "382ebb171cd6d8e70d24c7d5937a2394f54adbc2de8d4be7aa3e923572e912a1"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/SmoothManifolds/delivery/paper.tex",
+          "historical_fragment": "parts/ch02.tex"
+        },
+        "sha256": "45427f7008578b9ae3fcc3a266885f583a6e823541fe238ca7b128077d7c95e7"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/SmoothManifolds/delivery/paper.tex",
+          "historical_fragment": "parts/ch05.tex"
+        },
+        "sha256": "ccc811cd1b9281dd1e4cec5094aaeb42c5b46eba6ab9b012df8189ea653c6d39"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/SmoothManifolds/delivery/paper.tex",
+          "historical_fragment": "parts/ch06.tex"
+        },
+        "sha256": "4f95d356eb19a483c1f3ef136cc9f9dab8557cd027d3b97e7c5800fe5346c408"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/SmoothManifolds/delivery/paper.tex",
+          "historical_fragment": "parts/ch09.tex"
+        },
+        "sha256": "bd91e80dc269bc75e3571b6923037dc42a6595808ba2623b9c1f57e20ed70728"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/SmoothManifolds/delivery/paper.tex",
+          "historical_fragment": "parts/ch10.tex"
+        },
+        "sha256": "0ab9a685c99e5c1e46b1c8e1cf5ff9f5c97cccffc9c2316225ec3e8f12de8faa"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/SmoothManifolds/delivery/paper.tex",
+          "historical_fragment": "parts/ch11.tex"
+        },
+        "sha256": "8144656bc777db2c31bce9e59846f45c8a6bde1b2875a1b1e45a0cbaf5537ef2"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/SmoothManifolds/delivery/paper.tex",
+          "historical_fragment": "parts/ch12.tex"
+        },
+        "sha256": "27447293bfe6dad65b337e90e278d27ed0b20d873295e551097df39ec9f9d1fb"
+      }
+    ],
+    "P106": [
+      {
+        "published_notes": {
+          "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+          "historical_fragment": "parts/v07.tex"
+        },
+        "sha256": "a7b505f20edbf4ffb1b01c90c5d3ddd525de55b2e5ea0c05197a503272afef27"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+          "historical_fragment": "parts/v10.tex"
+        },
+        "sha256": "66e08a1c1954aad824864205392396a7b92f4fb6b40e0929eaab868a35119ed2"
+      }
+    ],
+    "P201": [
+      {
+        "published_notes": {
+          "file": "provenance/components/LinearPDE/delivery/paper.tex",
+          "historical_fragment": "parts/common.tex"
+        },
+        "sha256": "2b069cb8ece3fb3ec311aa4fb24d9b17c55535cc90ffeef088cd169d8bad5f0e"
+      }
+    ]
+  },
+  "proof_closure": [
+    {
+      "label": "p103:pid-submodule-arbitrary",
+      "line": 323,
+      "number": "11.7",
+      "package": "P1-03",
+      "published_notes": {
+        "file": "provenance/components/AlgebraCore/delivery/paper.tex",
+        "historical_fragment": "parts/ch11.tex"
+      },
+      "pdf_destination": "lemma.11.7",
+      "physical_pdf_page": 59,
+      "printed_pdf_page": "55",
+      "role": "Free submodules over a PID in arbitrary rank for singular-chain UCT and Kunneth.",
+      "sha256": "5c2f5654fcd62f2db6f2ab4927713d60e0775e704f05ec3fa9b14a45a4312fb5"
+    },
+    {
+      "label": "lem:p202-enr",
+      "line": 964,
+      "number": "5.5",
+      "package": "P2-02",
+      "path": "parts/homology.tex",
+      "pdf_destination": "lemma.5.5",
+      "physical_pdf_page": 34,
+      "printed_pdf_page": "30",
+      "role": "Compact locally contractible Euclidean subsets retract from open neighborhoods.",
+      "sha256": "71e01aaa53846e272ebb8148a605c06b33da7ed538299a57f391e13b749a4183"
+    },
+    {
+      "label": "lem:p202-planar-region",
+      "line": 806,
+      "number": "9.5",
+      "package": "P2-02",
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "lemma.9.5",
+      "physical_pdf_page": 65,
+      "printed_pdf_page": "61",
+      "role": "Planar Euler characteristic needed by the local Gauss–Bonnet formula.",
+      "sha256": "4fb208561d4d6322e2d4accc4ad4ca5bf94c6e8e498458b971f2c10b0eb2aa37"
+    },
+    {
+      "label": "lem:p202-surface-regions",
+      "line": 1049,
+      "number": "9.8",
+      "package": "P2-02",
+      "path": "parts/geometry-global.tex",
+      "pdf_destination": "lemma.9.8",
+      "physical_pdf_page": 68,
+      "printed_pdf_page": "64",
+      "role": "Finite boundary-compatible chart regions and their Euler identity.",
+      "sha256": "4fb208561d4d6322e2d4accc4ad4ca5bf94c6e8e498458b971f2c10b0eb2aa37"
+    }
+  ],
+  "title": "Foundations of Algebraic Topology and Riemannian Geometry",
+  "verified_internal_pdf_links": 232
+}

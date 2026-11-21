@@ -1,0 +1,389 @@
+\chapter{Standard Tableaux and Branching}
+
+The spanning set of all polytabloids from Result~\ref{res:A04} is
+usually much larger than the dimension of the Specht module. The
+standard polytabloids give a basis whose labels track restriction to
+\(S_{n-1}\). The same labels yield an integer recurrence for the
+dimension, which we solve by a determinant and then by hook lengths.
+Our conventions for diagrams and tabloids are those of
+Results~\ref{res:A02} and~\ref{res:A04}.
+
+\section{The standard polytabloid basis}
+
+A tableau \(t\) of shape \(\lambda\vdash n\) is \emph{standard} if its
+labels \(1,\ldots,n\) increase strictly to the right along each row and
+down each column. Call it \emph{column-increasing} if it satisfies only
+the column condition. The empty diagram has a single tableau, which is
+standard.
+
+\begin{proposition}[Independence of standard polytabloids]\label{res:B01}
+The vectors \(e_t\) for standard \(t\) are linearly independent in
+\(M^\lambda\).
+\end{proposition}
+
+\begin{proof}
+For a tabloid \(u\), let \(N_{k,m}(u)\) count the labels at most \(m\)
+in its first \(k\) rows. These counts for all \(k,m\) determine \(u\):
+the difference \(N_{k,m}(u)-N_{k,m-1}(u)\) tells whether the label
+\(m\) is among the first \(k\) rows. Thus
+\[
+  u\preceq v\quad\Longleftrightarrow\quad
+  N_{k,m}(u)\le N_{k,m}(v)\quad\text{for every } k,m
+\]
+is a partial order on tabloids of the given shape.
+
+For a column-increasing \(t\), the entries of each column retained
+in the first \(k\) rows are the smallest entries of that column in
+the required number. Reordering any column cannot increase the count
+of entries at most \(m\) in these positions. Hence
+\(\{ct\}\preceq\{t\}\) for each \(c\in C_t\). The coefficient of
+\(\{t\}\) in \(e_t\) is \(1\) by Result~\ref{res:A04}, and all other
+terms are strictly smaller in the order just defined. Distinct
+standard tableaux have distinct tabloids, since their row order can
+be recovered by sorting each row.
+
+If a finite linear combination of standard polytabloids had sum zero
+and some coefficient were nonzero, take a maximal tabloid among the
+leading tabloids with nonzero coefficient. No other summand contributes
+at it, by the order property and distinctness. Its coefficient in the
+sum is therefore nonzero, a contradiction. This is the triangular
+argument of \cite[Section 2.5, Proposition 2.5.9]{sagan}.
+\end{proof}
+
+\begin{proposition}[Garnir relations and straightening]\label{res:B02}
+Suppose \(t\) is column-increasing and has a row descent at adjacent
+columns, with entries \(a_i>b_i\) in row \(i\). Write the two columns
+as \(a_1<\cdots<a_p\) and \(b_1<\cdots<b_q\), and set
+\[
+  A=\{a_i,\ldots,a_p\},\qquad B=\{b_1,\ldots,b_i\}.
+\]
+For a set of labels \(U\), write \(S_U\) for the group that permutes
+\(U\) and fixes all other labels. If \(P\) represents the left cosets
+of \(S_A\times S_B\) in \(S_{A\cup B}\) and contains the identity, then
+\[
+  \sum_{\pi\in P}\operatorname{sgn}(\pi)e_{\pi t}=0.
+\]
+Every polytabloid is a linear combination of standard polytabloids.
+\end{proposition}
+
+\begin{proof}
+Write \(U=A\cup B\) and \(H=S_A\times S_B\). Every term \(\{ct\}\)
+of \(e_t\), with \(c\in C_t\), has the labels of \(U\) within the
+same two columns. Those columns occupy at most \(p\) rows, since
+\(q\le p\), while \(\lvert U\rvert=p+1\). Some two labels of \(U\)
+therefore lie in the same row of \(ct\). Their transposition \(\tau\)
+fixes \(\{ct\}\), and the terms indexed by \(\sigma\) and
+\(\sigma\tau\) in the signed sum over \(S_U\) cancel on this tabloid.
+The signed sum over \(S_U\) consequently annihilates \(e_t\).
+
+The subgroup \(H\) is contained in \(C_t\), so \(h e_t\)
+equals \(\operatorname{sgn}(h)e_t\) by Result~\ref{res:A04}. Factor the
+signed sum over \(S_U\) using its disjoint cosets \(\pi H\). The inner
+signed sum over \(H\) acts by \(\lvert H\rvert\), and dividing the
+result by this nonzero integer proves the relation.
+
+To straighten, first sort the columns of any tableau. A column
+permutation acts on its polytabloid by its sign, so this step preserves
+the span. Order the column-increasing tableaux by lexicographic order
+on the word obtained by reading each column from top to bottom and
+the columns from left to right. A column-increasing tableau that is
+not standard has a descent as in the statement. If \(\pi\) represents
+a nonidentity coset, then \(\pi A\ne A\). At least one label of \(A\)
+is replaced in the left column by a label of \(B\). All labels of
+\(B\) are smaller than every label of \(A\), because \(b_i<a_i\).
+All other entries of this column are unchanged, and the earlier
+columns are unchanged. After sorting, the first difference in the
+left column is a smaller label, since the smallest label in the
+symmetric difference of the two column sets belongs to the new set.
+The column word has strictly decreased.
+
+Isolate \(e_t\) in the relation and sort every other term, keeping the
+sign of each sorting permutation. All resulting polytabloids have
+smaller words, so induction over the finite order expresses each one
+in the span of the standard polytabloids. The relation and
+straightening are the column form of the argument in
+\cite[Section 2.6, Proposition 2.6.3 and Theorem 2.6.4]{sagan}.
+\end{proof}
+
+\begin{theorem}[Standard basis and rational model]\label{res:B03}
+The standard polytabloids form a basis of \(S^\lambda\). In
+particular, \(\dim_{\mathbb C} S^\lambda=f^\lambda\), where
+\(f^\lambda\) is the number of standard tableaux of shape \(\lambda\).
+The span of all polytabloids in the rational tabloid module is a
+rational \(S_n\)-module whose complexification is \(S^\lambda\).
+\end{theorem}
+
+\begin{proof}
+Every generator of \(S^\lambda\) straightens by
+Proposition~\ref{res:B02}, and Proposition~\ref{res:B01} gives
+independence. The tabloid basis and every polytabloid have integral
+coordinates. The signed coset relation and its use in straightening
+hold over \(\mathbb Q\), and the same triangular proof gives
+independence over \(\mathbb Q\). The resulting rational and complex
+bases are indexed by the same standard tableaux. The action on
+tabloids is given by permutations, so the scalar-extension map on
+these bases is an isomorphism of \(S_n\)-modules
+\cite[Theorem 2.6.5]{sagan}, \cite[Corollary 4.38]{etingof}.
+\end{proof}
+
+\section{Removing and adding one box}
+
+A removable box of a nonempty diagram is a cell whose deletion
+leaves a diagram. These are the last cells of rows \(r\) with
+\(\lambda_r>\lambda_{r+1}\), where trailing parts are zero. For each
+\(n\ge 1\), view \(S_{n-1}\) as the subgroup of \(S_n\) fixing the
+label \(n\).
+
+\begin{proposition}[Restriction filtration]\label{res:B04}
+For \(n\ge 1\), let \(c_1,\ldots,c_s\) be the removable boxes of
+\(\lambda\vdash n\), listed by increasing row numbers
+\(r_1,\ldots,r_s\). Put
+\(\mu_i=\lambda\setminus c_i\). For \(1\le i\le s\) let \(F_i\)
+be the span of standard \(e_t\) with \(n\) in one of
+\(c_1,\ldots,c_i\) and put \(F_0=0\). Then \(F_i\) are
+\(S_{n-1}\)-submodules, and deleting \(n\) from the \(i\)-th row
+choice induces \(F_i/F_{i-1}\simeq S^{\mu_i}\). Thus the full
+restriction has a filtration with one successive quotient for
+each removable box.
+\end{proposition}
+
+\begin{proof}
+For each \(j\), define \(D_j:M^\lambda\to M^{\mu_j}\) on tabloids.
+If \(n\) is in row \(r_j\), delete it from that row. Otherwise send
+the tabloid to zero. This depends only on row sets and commutes with
+all permutations fixing \(n\). The target row lengths are those of
+\(\mu_j\) because \(c_j\) was removable. If this deletion empties the
+last row, omit that row.
+
+In a standard tableau \(t\), \(n\) has no neighbor to its right or
+below, since such a neighbor would have a greater label. Suppose \(n\)
+is in \(c_a\). In every term of \(e_t\), a column permutation can only
+move \(n\) upwards within its column, since \(c_a\) is the bottom cell
+of the column. Thus \(D_j(e_t)=0\) for \(j>a\). For \(j=a\), only
+the column permutations fixing \(n\) contribute. Restricting them
+to the other labels identifies them with the column group of
+\(t\setminus n\) and preserves their signs. Therefore
+\[
+  D_a(e_t)=e_{t\setminus n}.
+\]
+Deleting \(n\) from standard tableaux with \(n\) in \(c_a\) gives
+a bijection onto the standard tableaux of shape \(\mu_a\), with
+inverse given by placing \(n\) in \(c_a\).
+
+For each \(i\) we now have the equality of vector subspaces
+\[
+  F_i=S^\lambda\cap\bigcap_{j>i}\ker D_j .
+\]
+One inclusion follows from the vanishing just proved. If a vector on
+the right had a nonzero coefficient at a corner with index greater
+than \(i\), take the largest such index \(a\) in its standard-basis
+expansion. Applying \(D_a\) gives a nonzero combination of distinct
+standard polytabloids of \(S^{\mu_a}\); terms from all smaller corners
+vanish, and no term from a larger corner occurs. This contradicts
+membership in the kernel. The same argument includes \(i=0\).
+The characterization by kernels proves invariance under \(S_{n-1}\).
+On \(F_i\), the map \(D_i\) has image \(S^{\mu_i}\) and kernel
+\(F_{i-1}\), by its effect on the standard bases. This proves the
+quotient assertion \cite[Section 2.8]{sagan}.
+\end{proof}
+
+\begin{theorem}[Branching rule]\label{res:B05}
+For \(\lambda\vdash n\) with \(n\ge 1\) and \(\nu\vdash m\)
+with \(m\ge 0\), one has
+\[
+  \begin{aligned}
+  \operatorname{Res}^{S_n}_{S_{n-1}} S^\lambda
+    &\simeq \bigoplus_{\mu\text{ obtained by removing one box}} S^\mu,\\
+  \operatorname{Ind}^{S_{m+1}}_{S_m} S^\nu
+    &\simeq \bigoplus_{\eta\text{ obtained by adding one box}} S^\eta .
+  \end{aligned}
+\]
+The diagrams in the two sums are obtained from \(\lambda\) and
+\(\nu\), respectively. Each summand occurs once.
+\end{theorem}
+
+\begin{proof}
+Maschke's theorem over \(\mathbb C\) splits the restriction filtration
+of Proposition~\ref{res:B04}. Two removable boxes in distinct rows
+leave distinct sequences of row lengths and therefore distinct
+irreducibles by Result~\ref{res:A07}. For the induction statement
+use Frobenius reciprocity and Schur's lemma, in the finite-group
+forms of \cite[Chapters 8--9]{algebra-core}. For each
+\(\eta\vdash m+1\), the multiplicity of \(S^\eta\) in the induced
+module is
+\[
+  \dim_{\mathbb C}\operatorname{Hom}_{S_m}
+      \bigl(S^\nu,\operatorname{Res}^{S_{m+1}}_{S_m}S^\eta\bigr).
+\]
+The restriction formula gives dimension \(1\) precisely when
+\(\nu\) results from deleting a corner of \(\eta\). Otherwise the
+dimension is zero. All irreducibles are covered by
+Result~\ref{res:A07}, so complete reducibility gives the stated sum
+\cite[Theorem 2.8.3]{sagan}. For \(n=1\) the restriction deletes the
+only box and gives the trivial \(S_0\)-module. Induction from \(S_0\)
+to \(S_1\) adds that box and gives the trivial \(S_1\)-module.
+\end{proof}
+
+\begin{corollary}[Corner recurrence]\label{res:B06}
+The numbers of standard tableaux satisfy
+\[
+   f^{\varnothing}=1,\qquad
+   f^\lambda=\sum_{c\text{ removable in }\lambda}f^{\lambda\setminus c}
+   \quad(\lambda\ne\varnothing).
+\]
+\end{corollary}
+
+\begin{proof}
+Group standard tableaux according to the position of the greatest
+label. As shown in the proof of Proposition~\ref{res:B04}, that
+position must be a corner, and deleting the label and filling it
+back are inverse bijections. Alternatively, the recurrence for a
+nonempty diagram follows by taking dimensions in the restriction
+formula and using Theorem~\ref{res:B03}
+\cite[Lemma 2.8.2 and Theorem 2.8.3]{sagan}.
+\end{proof}
+
+\section{A determinant and the hook product}
+
+\begin{theorem}[Frobenius--Young dimension determinant]\label{res:B07}
+Fix \(r\ge \ell(\lambda)\) and pad \(\lambda\vdash n\) with zeros
+through row \(r\). For integer \(a\) put \(q(a)=1/a!\) if
+\(a\ge 0\) and \(q(a)=0\) otherwise. Then
+\[
+  f^\lambda=n!\det\bigl[q(\lambda_i-i+j)\bigr]_{1\le i,j\le r}.
+\]
+The determinant of the empty matrix is \(1\).
+\end{theorem}
+
+\begin{proof}
+Let \(D(\lambda)\) be the displayed determinant without the factor
+\(n!\). For \(\lambda=\varnothing\) the matrix is upper triangular
+with all diagonal entries \(1\). For \(\lambda\ne\varnothing\),
+form \(D_i\) by reducing \(\lambda_i\) by \(1\) in the determinant
+formula, with no requirement yet that the result is a partition.
+If \(i<r\) and \(\lambda_i=\lambda_{i+1}\), the new \(i\)-th row
+equals row \(i+1\). If \(i=r\) and \(\lambda_r=0\), the new last row
+is zero. These are exactly the invalid deletions, and they give
+\(D_i=0\).
+
+For every integer \(a\), \(q(a-1)=a q(a)\), including \(a=0\) and
+negative \(a\) by the zero convention. In the determinant expansion,
+the signed product belonging to a permutation \(\sigma\) is
+therefore multiplied in \(D_i\) by \(\lambda_i-i+\sigma(i)\).
+Summing over \(i\) multiplies that product by \(n\), since
+\(\sum_i\sigma(i)=\sum_i i\). It follows that
+\[
+    n D(\lambda)=\sum_i D_i
+      =\sum_{c\text{ removable in }\lambda}D(\lambda\setminus c).
+\]
+Thus \(n!D(\lambda)\) and \(f^\lambda\) have the same initial value
+and satisfy the recurrence of Corollary~\ref{res:B06}. Induction on \(n\)
+proves the formula for every fixed \(r\) and every diagram of at
+most \(r\) rows. This is a recurrence proof of the determinant
+in \cite[Theorem 3.11.1]{sagan}.
+\end{proof}
+
+For a box \(c=(i,j)\) of \(\lambda\), its \emph{hook} consists of the
+box itself, the boxes to its right in its row, and the boxes below it
+in its column. If \(\lambda'_j\) is the height of column \(j\), its
+length is
+\[
+    h(i,j)=\lambda_i-j+\lambda'_j-i+1.
+\]
+
+\begin{theorem}[Hook-length formula]\label{res:B08}
+For every \(\lambda\vdash n\),
+\[
+      \dim_{\mathbb C} S^\lambda
+        = f^\lambda
+        = \frac{n!}{\displaystyle\prod_{c\in\lambda}h(c)} .
+\]
+The empty product is \(1\). In particular the diagram with one row
+and the diagram with one column each give dimension one.
+\end{theorem}
+
+\begin{proof}
+Keep the number \(r\) of padded rows fixed and put
+\(b_i=\lambda_i+r-i\). These are strictly decreasing nonnegative
+integers. Multiply row \(i\) of the determinant in
+Theorem~\ref{res:B07} by \(b_i!\). The \(j\)-th entry becomes
+the falling factorial
+\[
+    (b_i)_{r-j}=b_i(b_i-1)\cdots(b_i-r+j+1),
+\]
+with \((b_i)_0=1\). If \(b_i<r-j\), the product vanishes, as does
+the original entry by the zero convention. Each column consists of
+values of a monic polynomial of degree \(r-j\). Starting with the
+columns of lowest degree, add combinations of lower degree columns
+to replace each one by the corresponding power column. The result
+is the Vandermonde determinant with columns of degrees
+\(r-1,r-2,\ldots,0\), whose value is
+\(\prod_{i<k}(b_i-b_k)\). For example, its vanishing at coincident
+variables supplies all these factors, and their degree equals
+the degree of the determinant. The coefficient of
+\(b_1^{r-1}b_2^{r-2}\cdots b_r^0\) is \(1\) in both expressions.
+Consequently
+\[
+  D(\lambda)=\frac{\prod_{i<k}(b_i-b_k)}{\prod_i b_i!}.
+\]
+
+We next identify the hook lengths in row \(i\). They are distinct
+positive integers at most \(b_i\): moving one box right strictly
+decreases \(\lambda_i-j\) and cannot increase \(\lambda'_j\), and
+the greatest possible value at \(j=1\) is \(\lambda_i+r-i\).
+For each \(k>i\) the integer \(b_i-b_k\) lies in the same interval,
+and these excluded integers are distinct. None is a hook length
+in that row. Indeed,
+\[
+   h(i,j)-(b_i-b_k)=\lambda_k-j+\lambda'_j-k+1.
+\]
+If \(\lambda_k\ge j\), then \(\lambda'_j\ge k\), so this difference
+is positive. Otherwise \(\lambda'_j<k\), so it is negative. The
+\(\lambda_i\) hook lengths and the \(r-i\) excluded integers are
+therefore disjoint and together number \(b_i\), exhausting
+\(\{1,\ldots,b_i\}\). The argument also covers a padded zero row.
+Multiplying the row identities gives
+\[
+   \prod_{c\in\lambda}h(c)
+      = \frac{\prod_i b_i!}{\prod_{i<k}(b_i-b_k)}.
+\]
+The determinant formula and Theorem~\ref{res:B03} now give the
+claimed dimension \cite[Theorem 3.10.2]{sagan},
+\cite[Theorem 4.53]{etingof}. In a single row or column the hook
+lengths are \(n,n-1,\ldots,1\), as required.
+\end{proof}
+
+\begin{example}[Small diagrams and the standard representation]\label{res:B09}
+For \(n\ge 2\), the sum-zero subspace of the natural point
+representation of \(S_n\) is \(S^{(n-1,1)}\). In \(S_3\) this is the
+two-dimensional standard representation. The \(S_4\)-modules
+\(S^{(2,2)}\) and \(S^{(3,1)}\) have dimensions \(2\) and \(3\).
+Their restrictions to \(S_3\) are \(S^{(2,1)}\) and
+\(S^{(3)}\oplus S^{(2,1)}\), respectively.
+\end{example}
+
+\begin{proof}
+For \((n-1,1)\), the bottom-row label uniquely determines a tabloid.
+Thus \(M^{(n-1,1)}\) is the point representation
+\(\mathbb C^n\), with basis vectors \(v_1,\ldots,v_n\).
+If the bottom label is \(b\) and the top label in its column is
+\(a\), the polytabloid is \(v_b-v_a\): the only nontrivial
+permutation of that column interchanges \(a\) and \(b\). Every
+distinct pair can occur. These differences span the sum-zero
+subspace, since any vector with coordinates \(x_1,\ldots,x_n\)
+summing to zero equals \(\sum_{i<n}x_i(v_i-v_n)\).
+For \(n=3\), the \((2,1)\) hook lengths are \(3,1,1\), in
+agreement with its dimension \(2\).
+
+For \((2,2)\) the hooks by rows are \(3,2\) and \(2,1\).
+For \((3,1)\) they are \(4,2,1\) and \(1\). The hook formula gives
+\(4!/12=2\) and \(4!/8=3\). The square diagram has only the lower
+right corner, with deletion shape \((2,1)\). In \((3,1)\), deleting
+the top right box gives \((2,1)\) and deleting the lower box gives
+\((3)\). The decompositions follow by Theorem~\ref{res:B05}.
+In the opposite direction, adjoining a box to \((2,1)\) yields
+\((3,1),(2,2),(2,1,1)\). The dimensions in the induced module sum
+to \(3+2+3=8\), where the last \(3\) also follows by transposition
+and the sign twist of Result~\ref{res:A09}. This agrees with the
+index \(4\) times the original dimension \(2\).
+\end{proof}

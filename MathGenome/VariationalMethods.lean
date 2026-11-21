@@ -1,0 +1,10 @@
+import MathGenome.VariationalMethods.Topics.VariationalNotes.Ch04
+import MathGenome.VariationalMethods.Topics.VariationalNotes.Ch05
+import MathGenome.VariationalMethods.Topics.VariationalNotes.Ch06
+import MathGenome.VariationalMethods.Topics.VariationalNotes.Classical
+import MathGenome.VariationalMethods.Topics.VariationalNotes.ConvexAnalysis
+import MathGenome.VariationalMethods.Topics.VariationalNotes.ConvexGeometry
+import MathGenome.VariationalMethods.Topics.VariationalNotes.Existence
+import MathGenome.VariationalMethods.Topics.VariationalNotes.FixedPoints
+import MathGenome.VariationalMethods.Topics.VariationalNotes.Flux
+import MathGenome.VariationalMethods.Topics.VariationalNotes.Sobolev

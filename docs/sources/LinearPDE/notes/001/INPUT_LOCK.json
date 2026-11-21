@@ -1,0 +1,49 @@
+{
+  "source_hashes": {
+    "unpublished-input-01": "2b9c9dfc086eabe271a0e70bcd0692fd66a2c12f62a5d83c0347ae8c9f5292fa",
+    "unpublished-input-02": "a94dd18f08daf9610ddf57d6becc5187b533dc20a8cfaf9a19fcb32e92a0d640",
+    "unpublished-input-03": "4109edcf639f4d3fcfe6cceaf223cb3fcd1c0ed88cedf402418b195778b4c4f6",
+    "P2-01_Linear_PDE_Notes.tex": "7e32bc8bc8e6829829e13193bb1257205b4ef8bd9b047d621e6419a64c8545b4",
+    "parts/common.tex": "2b069cb8ece3fb3ec311aa4fb24d9b17c55535cc90ffeef088cd169d8bad5f0e",
+    "parts/potential.tex": "9c7aa8b68720bdb2c223c1de99466b2467efcc92df707c3ddcaa307391169cf1",
+    "parts/elliptic.tex": "0cd282fafd42a7a2d1cacdef7c1e550c17a17a7688804415998a0afd9a674827",
+    "parts/heat.tex": "be61a2de154fef1fd424a18172f62165e9146a03f0c2ea010da8193e863acc1f",
+    "parts/hyperbolic.tex": "8dab890c07fe723b1a76bc5564f1b28a235a0237e5ce5ae89fa3c9ad8332ff0d",
+    "parts/integral.tex": "c545a61552530fcb946bf1cd677a15dc140cff6738dc94b284b2ad220bec5a5c",
+    "output/pdf/P2-01_Linear_PDE_Notes.pdf": "9702ca0a4db6a86beff85936b923246a281fd509fb388f236f54861e580282b8"
+  },
+  "source_map_sha256": "1660d2f942b34794058da79c0bb30d7802fd8b96b863da449a30c7dc437b00f3",
+  "paper_sha256": "dbfc10045a68cf711d5608152308785df45d7822014ffd523f5fa13ec21f2dec",
+  "chapter_ranges_in_paper": {
+    "parts/common.tex": [
+      101,
+      576
+    ],
+    "parts/potential.tex": [
+      577,
+      1208
+    ],
+    "parts/elliptic.tex": [
+      1209,
+      2561
+    ],
+    "parts/heat.tex": [
+      2562,
+      3633
+    ],
+    "parts/hyperbolic.tex": [
+      3634,
+      4284
+    ],
+    "parts/integral.tex": [
+      4285,
+      4436
+    ]
+  },
+  "source_map_entries": 42,
+  "original_obligations": 40,
+  "numbered_results": 66,
+  "pdf_pages": 60,
+  "mathematical_pages": 55,
+  "published_source_map_sha256": "e08937076d9d6f84acefa227a163c87b059bbcf134caf3c433fae353af467764"
+}

@@ -1,0 +1,433 @@
+\chapter[Characters and Schur polynomials]{Characters and Schur Polynomials}
+
+Cycle lengths describe the fixed tabloids of a permutation. An
+alternating coefficient extraction then separates the irreducible
+characters. The same coefficients relate these characters to symmetric
+polynomials and turn induction into multiplication.
+
+\section{Cycle counting and the Frobenius formula}
+
+For \(\nu\vdash n\), write \(m_j(\nu)\) for the multiplicity of \(j\).
+Use \(z_\nu=\prod_j j^{m_j(\nu)}m_j(\nu)!\), as in
+Result~\ref{res:A01}. In \(r\) variables set
+\[
+ p_j(x)=\sum_{i=1}^r x_i^j,\qquad
+ p_\nu(x)=\prod_{j\ge1}p_j(x)^{m_j(\nu)}.
+\]
+All products over an empty set are \(1\). The variables in coefficient
+extractions commute, and an exponent with a negative component has
+coefficient zero.
+
+\begin{proposition}[The Young permutation character]\label{res:C01}
+Let \(\mu=(\mu_1,\ldots,\mu_r)\) be a list of nonnegative integers summing
+to \(n\). Let \(\xi^\mu\) be the character of the \(S_n\)-module with
+basis the ordered decompositions of the labels into rows of these sizes.
+For cycle type \(\nu\), one has \(\xi^\mu(\nu)=[x^\mu]p_\nu(x)\).
+\end{proposition}
+
+\begin{proof}
+This is the tabloid module of Result~\ref{res:A02}, with ordered row
+sizes. Reordering the sizes gives an equivariant bijection by
+reordering the rows. The trace on the basis counts fixed decompositions.
+A row is preserved by the permutation precisely when it is a union of
+cycles. A cycle of length \(j\) can therefore be assigned to any row
+\(i\), contributing \(x_i^j\). The product records independent assignments
+of the individual cycles, and coefficient extraction imposes the sizes
+of all rows. See \cite[Section 4.14]{etingof}.
+\end{proof}
+
+For \(r\ge1\), let \(\delta=(r-1,r-2,\ldots,0)\). For a vector \(b\)
+of \(r\) nonnegative integers define \(a_b(x)=\det[x_i^{b_j}]_{i,j=1}^r\).
+Thus \(\Delta(x)=a_\delta(x)=\prod_{i<j}(x_i-x_j)\). The row convention
+in this determinant fixes all the signs in the coefficient formula.
+
+\begin{lemma}[Cauchy kernel and alternating coefficients]\label{res:C02}
+For \(r\) variables in each alphabet,
+\begin{align*}
+ \prod_{i,j}(1-x_i y_j)^{-1}
+   &=\sum_\nu p_\nu(x)p_\nu(y)/z_\nu,\\
+ \Delta(x)\Delta(y)\prod_{i,j}(1-x_i y_j)^{-1}
+   &=\sum_{\ell(\nu)\le r}a_{\nu+\delta}(x)a_{\nu+\delta}(y).
+\end{align*}
+Consequently, the coefficient of \(x^{\lambda+\delta}y^{\mu+\delta}\)
+in the second line is \(1\) if \(\lambda=\mu\) and \(0\) otherwise.
+\end{lemma}
+
+\begin{proof}
+The first identity follows by expanding
+\(\exp(\sum_{j\ge1}p_j(x)p_j(y)/j)\): using the \(j\)-th summand \(m\)
+times contributes \(1/(j^m m!)\). All operations take place degree by
+degree in formal power series.
+
+For the second identity, clear the product of denominators in the
+determinant of the matrix \([(1-x_i y_j)^{-1}]\).
+The resulting polynomial alternates separately in \(x\) and in \(y\),
+and its degree in each individual \(x_i\) or \(y_j\) is at most \(r-1\).
+It is thus a constant times \(\Delta(x)\Delta(y)\). To determine the
+constant, set \(x_r=y_r=0\) and subtract the last row from each preceding
+row in the determinant before clearing denominators. The last column is
+now zero except for its last entry \(1\), and the remaining entries are
+\(x_i y_j/(1-x_i y_j)\). Factoring out these row and column factors
+reduces the constant to the one for \(r-1\), with value \(1\) for \(r=1\).
+
+Expand each entry as \(\sum_{k\ge0}x_i^k y_j^k\). For a finite truncation,
+the rectangular factors have entries \(x_i^k\) and \(y_j^k\) in the
+complex polynomial ring. Apply the rectangular Cauchy--Binet identity
+over its field of fractions. Both sides are polynomials, so the
+identity holds in the polynomial ring by injectivity of the embedding.
+This gives a sum of products of determinants indexed by distinct
+exponents \(b_1>\cdots>b_r\ge0\).
+Using decreasing order in both determinants preserves their product.
+In any fixed degree the sum stabilizes. Such exponent lists are
+exactly \(\nu+\delta\) for the stated partitions. A monomial with
+strictly decreasing exponents can occur only in the corresponding
+determinant and then has coefficient \(1\). This proves the extraction
+assertion. Compare \cite[Section 4.15]{etingof}.
+\end{proof}
+
+\begin{theorem}[Frobenius character formula]\label{res:C03}
+For \(\lambda,\nu\vdash n\), put \(\chi^\lambda=\chi_{S^\lambda}\).
+If \(r\ge\ell(\lambda)\) and \(r\ge1\), then
+\[
+ \chi^\lambda(\nu)
+   =[x^{\lambda+\delta}]\Delta(x)p_\nu(x),
+\]
+where \(\lambda\) is padded with zeros to length \(r\). For the empty
+partition the formula also has value \(1\) with zero variables.
+\end{theorem}
+
+\begin{proof}
+First choose \(r\ge \max(1,n)\). As a function of \(\nu\), the indicated
+coefficient is \(\xi^\lambda\) plus an integer combination of
+\(\xi^\mu\) for shapes \(\mu\) strictly dominating \(\lambda\).
+Indeed the determinant expansion takes signed coefficients with
+exponents \(\lambda+\delta-w\delta\). When these exponents are
+nonnegative, sort them in decreasing order to obtain \(\mu\).
+The sum of the largest \(k\) exponents is at least the sum of the
+first \(k\) exponents in the unsorted list. The latter is at least
+\(\sum_{i=1}^k\lambda_i\), since the first \(k\) entries of \(\delta\)
+have maximal sum among its \(k\)-element subsets. If \(w\ne1\), some
+initial subset changes, so at least one of the inequalities is strict.
+Result~\ref{res:C01} identifies the corresponding coefficient with
+\(\xi^\mu\).
+
+By Results~\ref{res:A06} and \ref{res:A07}, \(\xi^\lambda\) contains
+\(\chi^\lambda\) once and only strictly dominating shapes can also
+occur. Thus our candidate list is unitriangular in the irreducible
+characters, in any order with dominating shapes first. Its entries are
+orthonormal: the inner product of two candidates is extraction at
+\((\lambda+\delta,\mu+\delta)\) in the first line of
+Result~\ref{res:C02} multiplied by \(\Delta(x)\Delta(y)\).
+Here the candidates are real, and \(1/z_\nu\) is the weight of the
+class in the character inner product. The second line gives the desired
+orthonormality. Reading the unitriangular list from most dominant to
+least, orthogonality to all earlier entries forces all off-diagonal
+coefficients to vanish. We used the finite-group character
+orthogonality established in \cite[Chapter 8]{algebra-core}.
+
+To remove a final zero part, specialize the final variable to zero.
+The power sums are unchanged, and
+\(\Delta_{r+1}(x,0)=(x_1\cdots x_r)\Delta_r(x)\).
+The desired coefficient in \(r+1\) variables has last exponent \(0\)
+and all other exponents raised by \(1\); it therefore reduces to the
+stated \(r\)-variable coefficient. See \cite[Theorem 4.47]{etingof}.
+\end{proof}
+
+\section{Schur polynomials and the characteristic map}
+
+For \(r\) variables let \(h_k\) be the sum of the weights of weakly
+increasing lists of length \(k\) in \(\{1,\ldots,r\}\), where a letter
+\(i\) has weight \(x_i\). Set \(h_0=1\) and \(h_k=0\) for \(k<0\).
+Write \(e_k\) for the corresponding sum over strictly increasing lists,
+and put \(e_0=1\).
+
+\begin{theorem}[Three formulas for the Schur polynomial]\label{res:C04}
+For a partition \(\lambda\) with at most \(r\) parts,
+\[
+ s_\lambda(x)
+ =\frac{a_{\lambda+\delta}(x)}{\Delta(x)}
+ =\det[h_{\lambda_i-i+j}(x)]_{i,j=1}^r
+ =\sum_T \prod_{u\in\lambda}x_{T(u)} .
+\]
+Here \(T\) ranges over the tableaux with entries in
+\(\{1,\ldots,r\}\), weakly increasing along rows and strictly
+increasing down columns. For \(\ell(\lambda)>r\) the tableau sum and
+the Jacobi--Trudi determinant using at least \(\ell(\lambda)\) rows
+are zero. The empty partition gives \(1\).
+\end{theorem}
+
+\begin{proof}
+The quotient is a symmetric polynomial because the alternating
+numerator is divisible by every \(x_i-x_j\). Divide the second identity
+of Result~\ref{res:C02} by \(\Delta(x)\). Extract the coefficient of
+\(y^{\lambda+\delta}\) in the resulting equality. On the sum side this
+gives \(s_\lambda(x)\). On the other side, expand \(\Delta(y)\) and use
+\(\prod_{i}(1-x_i y_j)^{-1}=\sum_{k\ge0}h_k(x)y_j^k\) for each \(j\).
+The coefficient of the \(i\)-th variable is \(h_{\lambda_i-i+j}\) in
+the term using the \(j\)-th exponent of \(\delta\); the alternating sum
+is the stated determinant.
+
+For the tableau formula, use \(r\ge1\) and take a finite rectangular
+piece of the integer grid containing all starts \(A_i=(-i,1)\) and
+ends \(B_j=(\lambda_j-j,r)\). Use east edges of weight \(x_v\) at
+height \(v\) and north edges of weight \(1\). The path sum from \(A_i\)
+to \(B_j\) is \(h_{\lambda_j-j+i}\): the heights of the east steps are
+weakly increasing and determine a unique path. In zero horizontal
+distance there is a single north path; negative distance gives none.
+The matrix is the transpose of the Jacobi--Trudi matrix. The weighted
+path determinant of \cite[Chapter 3]{finite-combinatorics} writes its
+determinant as the signed sum over vertex-disjoint families. The grid
+is acyclic, and the starts and the ends are each distinct. Both
+boundary lines order endpoints from right to left by their index.
+An inversion of that order forces intersection: at each height the
+vertices of a path form an interval, and the north steps send its
+right endpoint to the left endpoint of its next interval. Two disjoint
+intervals preserve their order at every height, including the case
+of one height. Hence only the identity matching survives.
+
+For identity matching, the east-step heights in path \(i\) record
+row \(i\) of a tableau. For adjacent paths let \(u_j,v_j\) be their
+respective \(j\)-th heights. Where both rows have column \(j\), at
+horizontal coordinate \(j-i-1\) the first path's vertical interval
+is \([u_{j-1},u_j]\) and the second path's is \([v_j,v_{j+1}]\).
+Use \(u_0=1\) and the final height \(r\) after the last step.
+These are exactly the shared horizontal coordinates of adjacent
+paths, since \(\lambda_i\ge\lambda_{i+1}\).
+For \(j=1\) the first interval begins at \(1\); disjointness forces
+\(u_1<v_1\). Inductively \(u_{j-1}<v_{j-1}\le v_j\), so at the next
+coordinate disjointness again forces \(u_j<v_j\). The converse follows
+from these same intervals, and their ordered separation prevents
+intersection between nonadjacent paths as well: each intermediate
+path is present at every shared horizontal coordinate of the two
+outer paths. This gives the claimed weight-preserving bijection.
+The argument works with any number of rows in the determinant once
+it is at least the number of nonzero parts. A column taller than \(r\)
+admits no strict filling. With no variables only \(h_0\) is nonzero;
+the empty diagram gives \(1\), and for a nonempty shape the first row
+of the determinant is zero. Compare \cite[Sections 4.4--4.6]{sagan}.
+\end{proof}
+
+Use the ring of symmetric functions in the following degreewise
+sense. A degree \(n\) symmetric function is a compatible sequence of
+homogeneous symmetric polynomials under setting the last variable to
+zero. Its coefficients are determined by the monomial sums for
+partitions of \(n\), which stabilize once there are at least \(n\)
+variables. The tableau formula shows that \(s_\lambda\) is compatible
+with this specialization. The products \(p_\nu\) are a basis over
+\(\mathbb C\):
+their monomial expansion first assigns the parts of \(\nu\) to
+distinct variables, with nonzero coefficient \(\prod_j m_j(\nu)!\);
+all other terms merge parts and have fewer distinct variables.
+This gives a triangular change of basis. Define the Hall Hermitian
+inner product by \(\langle p_\nu,p_\mu\rangle
+=\boldsymbol{1}_{\nu=\mu}z_\nu\), linear in its first variable,
+with different degrees orthogonal.
+
+\begin{theorem}[Frobenius characteristic]\label{res:C05}
+For a class function \(f\) on \(S_n\), the correspondence
+\[
+ \operatorname{ch}(f)=\sum_{\nu\vdash n}f(\nu)p_\nu/z_\nu
+\]
+is a degreewise isometric isomorphism and sends \(\chi^\lambda\) to
+\(s_\lambda\). For class functions on \(S_a\) and \(S_b\), the
+characteristic of their external tensor product induced from
+\(S_a\times S_b\) to \(S_{a+b}\) is the product of their
+characteristics.
+\end{theorem}
+
+\begin{proof}
+The class sizes in Result~\ref{res:A01} and the defining norms of the
+power sums give the isometry and bijection. For a partition \(\nu\),
+the polynomial \(\Delta p_\nu\) is alternating. Its coefficients on
+strictly decreasing exponent lists determine it, since lists with a
+repeated exponent have zero coefficient. By Result~\ref{res:C03},
+expansion in the \(a_{\lambda+\delta}\) and division by \(\Delta\)
+give \(p_\nu=\sum_{\lambda}\chi^\lambda(\nu)s_\lambda\) in enough
+variables. Orthogonality, as used in Result~\ref{res:C03}, inverts
+this matrix and gives the claimed image of \(\chi^\lambda\).
+
+For multiplication, a coset of \(S_a\times S_b\) is an ordered
+decomposition into two label blocks, and the cosets fixed by a
+permutation are assignments of whole cycles to the two blocks.
+The trace on the summand for such a coset is \(f(\alpha)g(\beta)\),
+where \(\alpha,\beta\) are the resulting cycle types. For fixed
+types, the number of those assignments is
+\(\prod_j\binom{m_j(\nu)}{m_j(\alpha)}=z_\nu/(z_\alpha z_\beta)\).
+After division by \(z_\nu\), summing over the types is precisely the
+product rule \(p_\alpha p_\beta=p_{\alpha\cup\beta}\). The trace
+argument proves this for characters, hence by linearity for all
+class functions. See \cite[Sections 4.6--4.7]{sagan}.
+\end{proof}
+
+\begin{corollary}[Young's rule]\label{res:C06}
+The multiplicity of \(S^\lambda\) in the Young permutation module of
+content \(\mu\) is \([x^\mu]s_\lambda(x)\). This is the number of
+semistandard tableaux of shape \(\lambda\) and content \(\mu\).
+\end{corollary}
+
+\begin{proof}
+Take the inner product of \(\xi^\mu\) with \(\chi^\lambda\).
+By Result~\ref{res:C01} its value is the coefficient of \(x^\mu\) in
+\(\sum_\nu\chi^\lambda(\nu)p_\nu(x)/z_\nu\), since the irreducible
+character is real by Result~\ref{res:C03}. This polynomial is
+\(s_\lambda\) by Result~\ref{res:C05}. Apply the tableau formula in
+Result~\ref{res:C04}. See \cite[Theorem 2.11.2]{sagan}.
+\end{proof}
+
+\Needspace{7\baselineskip}
+\section{Pieri and border-strip rules}
+
+\begin{theorem}[Pieri rules]\label{res:C07}
+The product \(s_\lambda h_k\) is the sum of \(s_\mu\) over
+\(\mu\supseteq\lambda\) for which \(\mu/\lambda\) has \(k\) cells
+with at most one in each column. For \(s_\lambda e_k\), the
+corresponding condition is at most one in each row. Each summand
+has coefficient \(1\). By the characteristic map these are the
+decompositions obtained by inducing the external tensor product of
+\(S^\lambda\) with the trivial or sign representation of \(S_k\),
+respectively.
+\end{theorem}
+
+\begin{proof}
+Work in enough variables for the degree in question and put
+\(b=\lambda+\delta\). The horizontal-strip condition says
+\(\mu_j\ge\lambda_j\) for every \(j\) and
+\(\mu_j\le\lambda_{j-1}\) for \(j\ge2\): if that inequality fails,
+column \(\lambda_{j-1}+1\) gains cells in rows \(j-1\) and \(j\).
+Conversely, if column \(q\) gains a cell in row \(j\), then
+\(q\le\mu_j\le\lambda_{j-1}\), so every earlier cell of that column
+was already present. In strict
+exponents \(c=\mu+\delta\), the independent ranges are \(c_1\ge b_1\)
+and \(b_j\le c_j<b_{j-1}\) for \(j\ge2\). Therefore
+\(\sum_c t^{\sum_j(c_j-b_j)}a_c(x)\) is the determinant obtained by
+summing these geometric series in each column separately. Extract
+\((1-x_i t)^{-1}\) from row \(i\). The new first column is \(x_i^{b_1}\);
+column \(j\ge2\) is \(x_i^{b_j}-t^{b_{j-1}-b_j}x_i^{b_{j-1}}\).
+The column-change matrix from \([x_i^{b_j}]\) is triangular with
+diagonal \(1\). The determinant is thus
+\(a_b(x)\prod_i(1-x_it)^{-1}\). Extracting \(t^k\) and dividing by
+\(\Delta\) gives the first formula.
+
+For the vertical-strip formula, use the alternating sum of
+monomials defining \(a_b\). Multiplication by the symmetric
+polynomial \(e_k\) commutes with alternation. Before alternating,
+each term increments \(k\) different exponents by \(1\). A repeated
+exponent gives zero, and the remaining lists stay strictly decreasing
+because adjacent exponents originally differed by at least \(1\).
+They give exactly the partitions with one added cell in each of
+\(k\) distinct rows. Finally a single row has Schur function \(h_k\)
+and a single column has \(e_k\) by Result~\ref{res:C04}. The last
+assertion follows from Results~\ref{res:A07} and \ref{res:C05}.
+The case \(k=1\) agrees with Result~\ref{res:B05}.
+Compare \cite[Section 4.9]{sagan}.
+\end{proof}
+
+\begin{theorem}[Murnaghan--Nakayama rule]\label{res:C08}
+For \(m\ge1\) and \(\lambda\vdash n\) with \(m\le n\), let
+\(\tau\vdash n-m\). Then
+\[
+ \chi^\lambda((m)\cup\tau)
+   =\sum_{\substack{\mu\subseteq\lambda\\
+             \lambda/\mu\ \text{a border strip of size }m}}
+        (-1)^{\operatorname{ht}(\lambda/\mu)}\chi^\mu(\tau).
+\]
+A border strip is connected by edges and contains no \(2\)-by-\(2\)
+square. Its height is its number of occupied rows minus one.
+The empty character takes value \(1\) on the empty cycle type.
+\end{theorem}
+
+\begin{proof}
+For a partition \(\mu\), set \(b=\mu+\delta\). Multiplying the
+alternating monomial sum for \(a_b\) by \(p_m\) adds \(m\) to one
+exponent \(b_j\) before alternation. Discard coincident exponents.
+Move the raised exponent to its place \(i\le j\) in the strictly
+decreasing list \(c\); each interchange contributes a sign, giving
+overall \((-1)^{j-i}\). The new partition \(\lambda=c-\delta\)
+agrees with \(\mu\) outside rows \(i,\ldots,j\), increases in row
+\(i\), and has
+\(\lambda_k=\mu_{k-1}+1\) for \(i<k\le j\). All these rows gain
+cells, and consecutive added row intervals meet in exactly one
+column. Thus the skew shape is a border strip of height \(j-i\).
+Conversely, for a border strip with occupied rows \(i,\ldots,j\),
+connectedness gives an overlap at every adjacent pair of rows.
+Because there is no square that overlap has length one.
+The added intervals start at \(\mu_k+1\), so this forces
+\(\lambda_k=\mu_{k-1}+1\) for \(i<k\le j\).
+The total of \(m\) added cells determines \(\lambda_i\), recovering
+exactly the exponent move above. Hence
+\(p_m s_\mu=\sum_\lambda(-1)^{\operatorname{ht}(\lambda/\mu)}s_\lambda\).
+
+The coefficient of \(s_\lambda\) in \(p_{(m)\cup\tau}=p_m p_\tau\)
+is \(\chi^\lambda((m)\cup\tau)\) by the expansion in
+Result~\ref{res:C05}. Expand \(p_\tau\) first and apply the
+edge-strip multiplication just proved. This gives the rule,
+including the initial value. See \cite[Section 4.10]{sagan}.
+\end{proof}
+
+\paragraph{Example: the character table of \(S_4\).}
+Class sizes follow from Result~\ref{res:A01}. In the standard
+representation the trace is the number of fixed points minus one
+by Result~\ref{res:B09}. Its sign twist gives the row \((2,1,1)\).
+For \((2,2)\), a \(2\)-strip leaves either a horizontal pair with
+positive sign or a vertical pair with negative sign. A \(3\)-strip
+leaves one cell with negative sign, and the full square is no
+\(4\)-strip. The value at the identity is \(2\) by
+Result~\ref{res:B08}. These computations give
+\[
+\begin{array}{c|rrrrr}
+ \nu & 1^4 & (2,1,1) & (2,2) & (3,1) & (4)\\ \hline
+ \text{class size} & 1 & 6 & 3 & 8 & 6\\ \hline
+ (4)     &1& 1& 1& 1& 1\\
+ (3,1)   &3& 1&-1& 0&-1\\
+ (2,2)   &2& 0& 2&-1& 0\\
+ (2,1,1) &3&-1&-1& 0& 1\\
+ (1^4)   &1&-1& 1& 1&-1
+\end{array}
+\]
+With the indicated class-size weights the row Gram matrix is
+\(24I\). The squared column norms are \(24,4,8,3,4\), the five
+centralizer orders, and distinct columns are orthogonal.
+
+\Needspace{26\baselineskip}
+\section{The dual Jacobi--Trudi formula}
+
+\begin{corollary}[Dual Jacobi--Trudi]\label{res:C09}
+Let \(\lambda^{\mathsf t}\) be the transpose of the partition
+\(\lambda\), and pad it with zeros to length \(q\ge \lambda_1\)
+with \(\lambda_1=0\) for the empty partition.
+Then in any finite alphabet \(x\),
+\[
+ s_\lambda(x)=
+ \det\bigl[e_{\lambda^{\mathsf t}_i-i+j}(x)\bigr]_{i,j=1}^{q}.
+\]
+Here \(e_0=1\) and \(e_k=0\) for \(k<0\). For the empty shape one
+may take \(q=0\) and use the empty determinant \(1\).
+\end{corollary}
+
+\begin{proof}
+On the stable symmetric functions used in \ref{res:C05}, define
+\(\omega(p_j)=(-1)^{j-1}p_j\), extending multiplicatively and
+linearly. The products \(p_\nu\) are a basis, so this rule defines
+an algebra involution. Both generating series are identities
+in stable symmetric functions:
+\begin{align*}
+ \sum_{k\ge0}h_k t^k &= \exp\!\left(\sum_{j\ge1}p_jt^j/j\right),\\
+ \sum_{k\ge0}e_k t^k &= \exp\!\left(\sum_{j\ge1}(-1)^{j-1}p_jt^j/j\right).
+\end{align*}
+In a finite alphabet these follow by taking formal logarithms of
+\(\prod_i(1-x_it)^{-1}\) and \(\prod_i(1+x_it)\), respectively.
+Thus \(\omega(h_k)=e_k\), also with the zero convention in
+negative degree.
+
+On a permutation of cycle type \(\nu\), the sign is
+\(\prod_{j\in\nu}(-1)^{j-1}\), counting parts with multiplicity.
+The characteristic map of \ref{res:C05} therefore intertwines
+tensoring with the sign representation and applying \(\omega\).
+By \ref{res:A09} it follows that
+\(\omega(s_\mu)=s_{\mu^{\mathsf t}}\). Apply \(\omega\) to the
+ordinary Jacobi--Trudi formula of \ref{res:C04} for
+\(\mu=\lambda^{\mathsf t}\). Use \(q\) rows in the determinant
+before applying \(\omega\), and then specialize the stable
+identity to the chosen finite alphabet. This gives the formula
+for all alphabet sizes. See \cite[Theorem 4.5.1]{sagan}.
+\end{proof}

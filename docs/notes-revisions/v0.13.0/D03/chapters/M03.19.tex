@@ -1,0 +1,423 @@
+\chapter{Classical Fourier series on an interval}
+\label{module:M03.19}
+\SourceRef{Zorich II, sections 18.1--18.2; Apostol, Fourier-series part of
+chapter 11; Rudin, section 8 and the Fejer exercise}
+
+\KEntry{K03.19.periodic_setup}{A fixed Fourier normalization}
+\begin{definition}
+Let $f:\R\to\C$ be $2\pi$-periodic and Riemann integrable on one period.
+For $n\in\Z$ set
+\[
+ c_n(f)=\frac1{2\pi}\int_{-\pi}^{\pi}f(x)e^{-inx}\dd x,
+ \qquad S_N(f)(x)=\sum_{n=-N}^Nc_n(f)e^{inx}.
+\]
+For real $f$, put
+$a_n=\pi^{-1}\int_{-\pi}^{\pi}f(x)\cos nx\dd x$ and
+$b_n=\pi^{-1}\int_{-\pi}^{\pi}f(x)\sin nx\dd x$ for $n\geq1$,
+and $a_0=\pi^{-1}\int f$. Then
+$c_0=a_0/2$, $c_n=(a_n-ib_n)/2$, $c_{-n}=(a_n+ib_n)/2$.
+\end{definition}
+These formulas follow by inserting Euler's identity into the integrals.
+Finite values at a period seam may be assigned consistently with periodicity;
+changing such isolated values does not change any coefficient. One-sided
+limits at the seam still have to be computed from both adjacent periods.
+
+\KEntry{K03.19.orthogonality}{Trigonometric orthogonality}
+\begin{proposition}
+With $e_n(x)=e^{inx}$ and
+$\langle f,g\rangle=(2\pi)^{-1}\int_{-\pi}^{\pi}f\overline g$,
+we have $\langle e_n,e_m\rangle=\delta_{nm}$.
+The real sine/cosine orthogonality formulas follow from this identity.
+\end{proposition}
+\begin{proof}
+If $n=m$ the normalized integral is $1$. Otherwise a primitive of
+$e^{i(n-m)x}$ is $e^{i(n-m)x}/(i(n-m))$, whose endpoint values are equal
+because $n-m$ is an integer. Expanding sine and cosine as
+$(e_n-e_{-n})/(2i)$ and $(e_n+e_{-n})/2$ gives zero mixed integrals;
+the integral mean of $\cos^2 nx$ or $\sin^2 nx$ is $1/2$ for $n\geq1$.
+All products are Riemann integrable. This pairing is a seminorm pairing
+on arbitrary integrable functions: zero integral norm need not mean equality
+at every point. No unconstructed $L^2$ quotient is being assumed.
+\end{proof}
+
+\KEntry{K03.19.finite_projection}{Finite projection and best approximation}
+\begin{theorem}
+For a finite $E\subset\Z$ let $P_Ef=\sum_{n\in E}c_n(f)e_n$. For every
+$p=\sum_{n\in E}d_ne_n$,
+\[
+ \|f-p\|_2^2=\|f-P_Ef\|_2^2+\sum_{n\in E}|c_n(f)-d_n|^2,
+ \qquad \|h\|_2^2=\frac1{2\pi}\int_{-\pi}^{\pi}|h|^2.
+\]
+\end{theorem}
+\begin{proof}
+For $n\in E$, linearity and orthogonality give
+$\langle f-P_Ef,e_n\rangle=c_n(f)-c_n(f)=0$.
+Expand $f-p=(f-P_Ef)+(P_Ef-p)$ and expand its squared absolute value
+inside the integral. Both cross terms vanish by those finite orthogonality
+relations, while the second square has integral
+$\sum_{n\in E}|c_n-d_n|^2$. This proves the identity and its minimizing
+property without any claim that the infinite trigonometric system is complete.
+\end{proof}
+
+\KEntry{K03.19.bessel}{Bessel's inequality}
+\begin{theorem}
+For scalar Riemann-integrable $f$ and every finite $E\subset\Z$,
+$\sum_{n\in E}|c_n(f)|^2\leq\|f\|_2^2$.
+Consequently $\sum_{n\in\Z}|c_n(f)|^2$ exists as a nonnegative sum and
+has that bound.
+\end{theorem}
+\begin{proof}
+Take $p=0$ in the finite projection identity to get
+$\|f\|_2^2=\|f-P_Ef\|_2^2+\sum_E|c_n|^2$.
+The first term is nonnegative. Increasing finite sets then have bounded
+nonnegative sums, whose supremum defines the asserted countable sum.
+Integrability of $|f|^2$ follows from boundedness and continuous-composition
+closure of proper Riemann integrability.
+\end{proof}
+
+\KEntry{K03.19.riemann_lebesgue}{A Riemann--Lebesgue lemma with its needed extension}
+\begin{theorem}
+For Riemann-integrable $f$ on $[a,b]$,
+$\int_a^b f(x)e^{i\lambda x}\dd x\to0$ as real $|\lambda|\to\infty$.
+In particular $c_n(f)\to0$ as $|n|\to\infty$.
+The same conclusion holds for a locally Riemann-integrable function on a
+bounded interval with an absolutely convergent improper integral.
+\end{theorem}
+\begin{proof}
+First take real bounded $f$. The Darboux criterion gives a partition with
+$\sum_j\operatorname{osc}_{I_j}(f)|I_j|<\eps$. Choosing any tag value in
+each interval defines a step function $s$ with $\int|f-s|<\eps$; endpoint
+values are irrelevant. For complex $f$ do this to real and imaginary parts,
+splitting the error tolerance, to obtain the same integral error bound.
+For each fixed step interval,
+\[
+ \left|\int_u^v e^{i\lambda x}\dd x\right|\leq2/|\lambda|,
+\]
+so $|\int s e^{i\lambda x}|\leq2\sum_j|s_j|/|\lambda|\to0$.
+The difference is bounded by $\int|f-s|<\eps$, uniformly in $\lambda$.
+First let $|\lambda|\to\infty$ and then $\eps\downarrow0$.
+
+For an absolutely convergent improper integral choose regular endpoints
+whose omitted absolute tails total less than $\eps$. The first result
+applies between them, and the omitted oscillatory integrals are bounded by
+those same absolute tails. This proves the extension by truncation, with
+no measure-theoretic convergence theorem.
+\end{proof}
+
+\KEntry{K03.19.dirichlet_kernel}{The Dirichlet kernel and convolution identity}
+\begin{construction}
+Define $D_N(t)=\sum_{n=-N}^Ne^{int}$. The finite geometric identity gives
+\[
+ D_N(t)=\frac{\sin((N+1/2)t)}{\sin(t/2)}\quad(t\notin2\pi\Z),
+ \qquad D_N(0)=2N+1.
+\]
+It is even and real, and its integral mean on a period is $1$.
+\end{construction}
+\begin{proof}[Convolution formula]
+Insert the coefficient integrals into the finite sum and interchange only
+that finite sum with the integral:
+\[
+ S_N(f)(x)=\frac1{2\pi}\int_{-\pi}^{\pi}f(y)D_N(x-y)\dd y
+ =\frac1{2\pi}\int_{-\pi}^{\pi}f(x-t)D_N(t)\dd t.
+\]
+The second equality uses a translation followed by periodicity: a periodic
+integrable function has the same integral over any interval of its period,
+as follows by splitting an interval at one seam and translating the other
+piece. The sine quotient follows by multiplying the finite sum by
+$e^{it/2}-e^{-it/2}$ and canceling all middle terms. The excluded values
+are assigned by the finite sum, so no singular integral is introduced.
+Finally orthogonality of the nonconstant exponentials gives
+$(2\pi)^{-1}\int D_N=1$.
+\end{proof}
+
+\KEntry{K03.19.local_convergence}{Dini's local condition}
+\begin{theorem}
+Let $f$ be periodic Riemann integrable, with finite limits $L_-,L_+$ at
+$x$ from the two sides. If for some $0<\delta<\pi$,
+\[
+ \int_0^\delta
+ \frac{|f(x+t)+f(x-t)-L_+-L_-|}{t}\dd t<\infty,
+\]
+then $S_N(f)(x)\to(L_-+L_+)/2$.
+In particular the conclusion holds under piecewise $C^1$ regularity with
+finite one-sided derivative bounds near the point.
+\end{theorem}
+\begin{proof}
+By evenness and normalization of $D_N$,
+\[
+ S_N(f)(x)-\frac{L_-+L_+}{2}
+ =\frac1{2\pi}\int_0^\pi
+ \frac{f(x+t)+f(x-t)-L_+-L_-}{\sin(t/2)}
+          \sin((N+1/2)t)\dd t.
+\]
+The quotient before the sine is locally Riemann integrable for $t>0$.
+Near zero, $t/\sin(t/2)$ is bounded and tends to $2$, so the assumed
+absolute improper integrability proves absolute integrability of that
+quotient. Away from zero it is properly integrable. Apply the improper
+extension of the preceding Riemann--Lebesgue lemma with frequency
+$N+1/2$. If $f$ has one-sided Lipschitz estimates, the numerator is $O(t)$,
+and its quotient by $t$ is bounded near zero. Piecewise $C^1$ functions
+with finite one-sided derivative bounds have these estimates by the norm
+mean-value inequality. Finite values assigned at the jump do not enter
+the coefficient integrals or the limits.
+\end{proof}
+
+\KEntry{K03.19.jordan}{Dirichlet--Jordan convergence for BV functions}
+\begin{theorem}
+If a periodic scalar function has bounded variation on a period, then at
+every $x$,
+$S_N(f)(x)\to(f(x-)+f(x+))/2$.
+\end{theorem}
+\begin{proof}
+We supply the oscillatory estimate needed when Dini's absolute condition
+is unavailable. The integrals of $D_N$ over arbitrary subintervals of
+$[0,\pi]$ have a common absolute bound $C$ independent of $N$.
+Indeed write
+\[
+ \frac1{\sin(t/2)}=\frac2t+r(t),
+\]
+where $r$ extends continuously to $0$ by the Taylor estimate for sine.
+The $r$ contribution is bounded by $\int_0^\pi|r|$. The other contribution
+is $2\int_{\nu u}^{\nu v}\sin y/y\dd y$, $\nu=N+1/2$, whose absolute
+value is uniformly bounded. To see the latter directly, the integral on
+$[0,1]$ is bounded by $1$, and integration by parts on $[1,T]$ bounds
+it by the sum of the endpoint terms and $\int_1^\infty y^{-2}\dd y$.
+An interval integral is the difference of two such bounded primitives.
+
+Consider first a real BV function $h$ on $[0,\delta]$ with $h(0)=0$ and
+$h(t)\to0$ as $t\downarrow0$. Jordan decomposition writes it as a
+difference of nondecreasing functions. Subtract their right limits at zero
+(which have equal difference zero), to obtain
+$h(t)=u(t)-v(t)$ for $t>0$, where $u,v$ are nonnegative nondecreasing,
+vanish at zero and tend to zero there. Given $\eps>0$, take $\delta$ so
+small that $u(\delta),v(\delta)<\eps$.
+The second mean-value theorem \KRef{K03.09.second_mean_value}, reflected to a nondecreasing
+weight, gives
+\[
+ \int_0^\delta u(t)D_N(t)\dd t
+       =u(\delta)\int_\xi^\delta D_N(t)\dd t
+\]
+for some $\xi\in[0,\delta]$, and the same statement for $v$.
+Its hypotheses hold because the monotone weights are integrable and
+$D_N$ is continuous, including its removable value at zero. Thus
+$|\int_0^\delta hD_N|\leq2C\eps$ uniformly in $N$.
+
+Apply this to $f(x+t)-f(x+)$ and $f(x-t)-f(x-)$, assigning their limiting
+value zero at $t=0$. They are BV and have the required limits. On
+$[\delta,\pi]$ divide these bounded integrable functions by $\sin(t/2)$
+and apply the ordinary Riemann--Lebesgue lemma; the resulting integrals
+tend to zero. The even convolution identity, with the two constants
+subtracted as in the previous proof, now bounds the limsup of the error
+by a constant times $\eps$. Send $\eps$ to zero. For complex $f$ apply
+the real proof to its two BV components; there is no complex order or
+complex Jordan decomposition being assumed.
+\end{proof}
+
+\KEntry{K03.19.coefficient_decay}{Differentiation and Fourier coefficients}
+\begin{theorem}
+Suppose $f\in C^k([-\pi,\pi],\C)$, $k\geq1$, and
+$f^{(j)}(-\pi)=f^{(j)}(\pi)$ for $0\leq j<k$. Then
+\[
+ c_n(f^{(k)})=(in)^k c_n(f),\qquad
+ |c_n(f)|\leq\frac1{2\pi|n|^k}\int_{-\pi}^{\pi}|f^{(k)}(x)|\dd x
+ \quad(n\ne0).
+\]
+In fact $c_n(f)=o(|n|^{-k})$.
+\end{theorem}
+\begin{proof}
+For one derivative integrate $f'e^{-inx}$ by parts. The boundary term
+$[f(x)e^{-inx}]_{-\pi}^{\pi}$ is zero, because the values of $f$ match
+and $e^{in\pi}=e^{-in\pi}=(-1)^n$. Hence $c_n(f')=in c_n(f)$.
+Iterate, using the stated lower-derivative endpoint equalities at each
+step. The norm integral bound follows immediately; Riemann--Lebesgue
+applied to the properly integrable $f^{(k)}$ sharpens the numerator to
+$o(1)$. Endpoint matching is exactly what removes the boundary corrections.
+\end{proof}
+
+\KEntry{K03.19.c1_uniform}{Absolute convergence under first-derivative control}
+\begin{theorem}
+For $f\in C^1([-\pi,\pi],\C)$ with $f(-\pi)=f(\pi)$,
+the Fourier series converges absolutely and uniformly to the continuous
+periodic extension of $f$.
+\end{theorem}
+\begin{proof}
+For $n\ne0$, $|c_n(f)|=|c_n(f')|/|n|$. Finite Cauchy--Schwarz gives
+\[
+ \sum_{1\leq|n|\leq N}|c_n(f)|
+ \leq\left(\sum_{1\leq|n|\leq N}|c_n(f')|^2\right)^{1/2}
+      \left(\sum_{n\ne0}\frac1{n^2}\right)^{1/2}.
+\]
+The first factor is bounded by $\|f'\|_2$ by Bessel and the second is
+finite by the $p$-series test. Increasing partial sums therefore show
+$\sum_{n\in\Z}|c_n(f)|<\infty$. The M-test gives a continuous periodic
+uniform sum $g$. Termwise proper integration proves $c_n(g)=c_n(f)$
+for every $n$. The coefficient uniqueness theorem proved below via Fejer
+means therefore gives $g=f$. That theorem does not use the current
+$C^1$ statement, so the forward reference is noncircular.
+
+The same proof works for continuous periodic $f$ that is $C^1$ on a finite
+partition with finite one-sided derivative limits: integrate by parts on
+each piece, where internal boundary values of $f$ cancel. The resulting
+piecewise derivative is properly Riemann integrable, and the Bessel
+argument is unchanged.
+\end{proof}
+
+\KEntry{K03.19.fejer_kernel}{Fejer means and a positive kernel}
+\begin{construction}
+Put
+\[
+ \sigma_N(f)=\frac1{N+1}\sum_{k=0}^N S_k(f),\qquad
+ F_N(t)=\frac1{N+1}\sum_{k=0}^ND_k(t).
+\]
+Then
+\[
+ F_N(t)=\frac1{N+1}\left|\sum_{j=0}^Ne^{ijt}\right|^2
+       =\frac{\sin^2((N+1)t/2)}{(N+1)\sin^2(t/2)}
+\]
+away from $2\pi\Z$, with value $N+1$ there. It is nonnegative and has
+integral mean $1$. Its normalized mass outside any fixed
+$(-\delta,\delta)\subset(-\pi,\pi)$ tends to zero.
+\end{construction}
+\begin{proof}
+Expand the squared finite sum. The coefficient of $e^{int}$ is
+$(N+1-|n|)/(N+1)$ for $|n|\leq N$, exactly its coefficient in the average
+of the $D_k$. The geometric-sum identity gives the sine quotient.
+Orthogonality computes the integral mean as its constant coefficient $1$.
+For $\delta\leq|t|\leq\pi$,
+\[
+ 0\leq F_N(t)\leq\frac1{(N+1)\sin^2(\delta/2)},
+\]
+so even its normalized integral over that set has this upper bound.
+Finite averaging of the convolution identities yields
+$\sigma_N(f)(x)=(2\pi)^{-1}\int f(x-t)F_N(t)\dd t$.
+\end{proof}
+
+\KEntry{K03.19.fejer}{Uniform Fejer convergence}
+\begin{theorem}
+For continuous $2\pi$-periodic scalar $f$, $\sigma_N(f)\to f$ uniformly
+on $\R$. In particular trigonometric polynomials are uniformly dense in
+continuous periodic functions.
+\end{theorem}
+\begin{proof}
+Such an $f$ is bounded, say $|f|\leq M$, and uniformly continuous on
+$\R$: reduce one point by a period into $[-\pi,\pi]$, put the other
+nearby point in $[-\pi-1,\pi+1]$, and use uniform continuity on this
+compact interval. Choose $\delta$ so $|f(x-t)-f(x)|<\eps$ for
+$|t|<\delta$, for all $x$. Positivity and normalization of the kernel give
+\[
+ |\sigma_N(f)(x)-f(x)|
+ \leq\eps+\frac{2M}{(N+1)\sin^2(\delta/2)}.
+\]
+First let $N\to\infty$ and then $\eps\downarrow0$. Every $\sigma_N$ is a
+trigonometric polynomial by its finite definition. This proves density
+and makes no assertion about uniform convergence of the raw sums $S_N$.
+\end{proof}
+
+\KEntry{K03.19.uniqueness}{Uniqueness of coefficients for continuous functions}
+\begin{corollary}
+A continuous periodic function whose Fourier coefficients all vanish is zero.
+Two continuous periodic functions with the same coefficients are equal.
+\end{corollary}
+\begin{proof}
+All $S_N$, hence all $\sigma_N$, of the zero-coefficient function are
+zero. Uniform Fejer convergence identifies their limit with the function.
+Apply this to the difference of two functions for the second assertion.
+The continuity assumption matters when equality is pointwise: changing
+a single value of an integrable periodic function changes no coefficient.
+\end{proof}
+
+\KEntry{K03.19.parseval}{Parseval for continuous periodic functions}
+\begin{theorem}
+For continuous periodic $f$,
+\[
+ \sum_{n\in\Z}|c_n(f)|^2=\frac1{2\pi}\int_{-\pi}^{\pi}|f(x)|^2\dd x.
+\]
+\end{theorem}
+\begin{proof}
+The Fejer polynomial $\sigma_N$ lies in the span of $e_n$ for $|n|\leq N$.
+Finite best approximation therefore gives
+$\|f-S_N(f)\|_2^2\leq\|f-\sigma_N(f)\|_2^2$.
+The right side is at most the square of its uniform norm and tends to zero.
+The finite orthogonal identity gives
+\[
+ \|f\|_2^2=\sum_{|n|\leq N}|c_n(f)|^2+\|f-S_N(f)\|_2^2.
+\]
+Pass to the limit of the nonnegative coefficient sums. This proves the
+formula in the stated Riemann/continuous setting, without assuming a
+completed Hilbert space or Plancherel theorem.
+\end{proof}
+
+\KEntry{K03.19.examples}{Three Fourier examples and justified numerical sums}
+\begin{example}
+For the periodic sawtooth $f(x)=x$ on $(-\pi,\pi)$, assigned value $0$
+at the seams, integration by parts gives
+\[
+ f(x)\sim2\sum_{n=1}^\infty\frac{(-1)^{n+1}}n\sin nx.
+\]
+For the square wave $g(x)=\operatorname{sgn}(\sin x)$, with value zero at
+its jumps, integration over $(0,\pi)$ gives
+\[
+ g(x)\sim\frac4\pi\sum_{j=0}^\infty\frac{\sin((2j+1)x)}{2j+1}.
+\]
+Both are BV on a period. Dirichlet--Jordan proves equality with their
+ordinary values at continuity points and with the midpoint value $0$ at
+the jumps. At $x=\pi/2$ this gives the ordinary convergent sum
+$\sum_{j\geq0}(-1)^j/(2j+1)=\pi/4$.
+\end{example}
+\begin{proof}[Coefficient computations and a polynomial example]
+Oddness kills the cosine coefficients of both odd examples. For the
+sawtooth,
+$\int_0^\pi x\sin nx\dd x=-\pi(-1)^n/n$; multiplying by $2/\pi$ gives
+the stated $b_n$. For the square wave the same factor multiplies
+$\int_0^\pi\sin nx\dd x=(1-(-1)^n)/n$, giving zero for even $n$ and
+$4/(\pi n)$ for odd $n$.
+
+The periodic extension of $h(x)=x^2$ on $[-\pi,\pi]$ is continuous
+and piecewise $C^1$. Direct integration gives $a_0/2=\pi^2/3$, $b_n=0$.
+Twice integrating $x^2\cos nx$ by parts gives
+$a_n=4(-1)^n/n^2$. Thus
+\[
+ x^2=\frac{\pi^2}3+4\sum_{n=1}^\infty\frac{(-1)^n}{n^2}\cos nx
+ \quad(-\pi\leq x\leq\pi).
+\]
+The coefficients are absolutely summable, so the sum is uniform; its
+identification with $h$ also follows from the already proved BV theorem.
+At $x=\pi$ this yields $\sum_{n\geq1}n^{-2}=\pi^2/6$.
+Parseval is applicable to this continuous $h$, and gives
+\[
+ \frac{\pi^4}{5}=\frac{\pi^4}{9}
+                 +8\sum_{n=1}^\infty\frac1{n^4},
+\]
+hence $\sum n^{-4}=\pi^4/90$. We have not applied the
+continuous-function Parseval theorem to the discontinuous square wave.
+\end{proof}
+
+\KEntry{K03.19.normalization_bridge}{Periods and real/complex representations}
+\begin{proposition}
+For period $T>0$, use
+$\widehat f_T(n)=T^{-1}\int_{a}^{a+T}f(x)e^{-2\pi inx/T}\dd x$.
+If $g(t)=f(Tt/(2\pi))$, then $c_n(g)=\widehat f_T(n)$ when both
+origins are zero; translating the origin changes the expected phase.
+\end{proposition}
+\begin{proof}
+The substitution $x=Tt/(2\pi)$ changes the normalized integral on
+$[-\pi,\pi]$ into $T^{-1}\int_{-T/2}^{T/2}$ of the stated integrand.
+It is $T$-periodic because $n$ is an integer, so the integral may be moved
+to any interval $[a,a+T]$ without change. For $f_a(x)=f(x+a)$ a direct
+substitution gives $\widehat{f_a}_T(n)=e^{2\pi ina/T}\widehat f_T(n)$.
+Expanding $e^{-inx}=\cos nx-i\sin nx$ proves the real/complex
+coefficient conversions stated at the start; combining the $n$ and $-n$
+terms proves equality of the corresponding finite partial sums. Convergence
+claims transfer only through those proved identities and their stated limits.
+\end{proof}
+
+\KEntry{K03.19.fourier_boundary}{The boundary with general Fourier analysis}
+\begin{remark}[Routing record]
+General Fourier transforms, Plancherel, arbitrary $L^p$ convergence,
+distributions and quantitative Gibbs theory belong to D11/D24.
+The present finite-interval results do not assert those theories.
+In particular continuity alone is not offered as a theorem guaranteeing
+pointwise convergence of raw Fourier partial sums. Fejer convergence,
+absolute convergence under derivative control and the explicit Dini/BV
+criteria remain distinct conclusions with distinct hypotheses.
+\end{remark}

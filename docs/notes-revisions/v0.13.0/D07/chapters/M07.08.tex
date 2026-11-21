@@ -1,0 +1,351 @@
+\chapter{Rings, maps, ideals, and fractions}\label{chap:M07.08}
+
+% Topic grouping: Conventions and examples
+\KEntry{K07.08.ring_definition}{Associative unital rings}
+\begin{definition}
+A ring is an abelian group $(R,+,0)$ with an associative multiplication,
+a two-sided identity $1$, and both distributive laws
+$a(b+c)=ab+ac$, $(a+b)c=ac+bc$. It is commutative if $ab=ba$.
+We impose $1\ne0$ only when stated. Ring homomorphisms preserve $1$.
+\end{definition}
+Dummit--Foote and Herstein also allow associative rings without identity;
+Artin uses the word ring for a commutative unital ring; Vinberg initially
+even permits nonassociative multiplication. Each argument here requires
+its stated axioms, irrespective of a source's terminology. An associative
+structure with the additive and distributive axioms but without an identity
+will be called a nonunital ring.
+
+Distributivity implies $a0=0a=0$, since $a0=a(0+0)=a0+a0$
+and additive cancellation applies. Also
+$ab+a(-b)=a(b-b)=0$, so $a(-b)=-ab$. Applying the same argument on
+the other side gives $(-a)b=-ab$, and then $(-a)(-b)=ab$.
+
+\KEntry{K07.08.zero_ring}{The zero ring}
+\begin{proposition}\label{prop:zero-ring}
+A unital ring has $0=1$ if and only if it has one element.
+\end{proposition}
+\begin{proof}
+If $0=1$, every $a$ equals $a1=a0=0$. In a one-element ring the
+distinguished elements $0,1$ necessarily agree.
+\end{proof}
+The one-element ring is allowed, and will occur as $R/R$ in
+Chapter~\ref{chap:M07.09}. It is neither a domain nor a field, since those
+are nontrivial by definition. Its single element is a unit, as
+$0\cdot0=1$ in that ring.
+
+\KEntry{K07.08.basic_examples}{Arithmetic, products, and functions}
+The rings $\Z,\Q,\R,\C$ carry their arithmetic structures from D02.
+For a family of rings $(R_i)_{i\in I}$, define operations on tuples by
+$(a+b)_i=a_i+b_i$ and $(ab)_i=a_i b_i$, with coordinate identities.
+Each ring axiom holds because equality of tuples is coordinatewise and
+the corresponding axiom holds in each $R_i$. This proves that
+$\prod_iR_i$ is a ring. In particular the function ring $R^X$ has
+$(fg)(x)=f(x)g(x)$. Functions on the empty set form a one-element ring.
+If $X\ne\varnothing$ and $R$ is nontrivial, constant $0$ and $1$ differ,
+so $R^X$ is nontrivial.
+
+For $n\ge1$, define operations on residue classes modulo $n$ by integer
+representatives. If $a-a'$ and $b-b'$ are multiples of $n$, then
+$(a+b)-(a'+b')$ and
+$ab-a'b'=a(b-b')+(a-a')b'$ are too. Thus the operations are independent
+of representatives. All ring identities descend from $\Z$, giving
+$\Z/n\Z$; $n=1$ gives the zero ring.
+
+\KEntry{K07.08.units}{Units and one-sided inverses}
+A unit $u$ admits $v$ with $uv=vu=1$. Write $R^\times$ for the units.
+\begin{proposition}\label{prop:ring-units}
+An inverse of a unit is unique, and $R^\times$ is a group.
+\end{proposition}
+\begin{proof}
+If $v,w$ are inverses of $u$, then $v=v(uw)=(vu)w=w$.
+The inverse of $uv$ is $v^{-1}u^{-1}$, as multiplication on either side
+shows. Closure, identity, and associativity now give the group axioms.
+\end{proof}
+A left and a right inverse, if both exist, coincide:
+$su=1=ut$ gives $s=s(ut)=(su)t=t$. One alone is insufficient.
+On a vector space with basis $e_0,e_1,\ldots$, let
+$T(e_i)=e_{i+1}$, $S(e_0)=0$, and $S(e_{i+1})=e_i$.
+Then $ST=\id$, whereas $TS(e_0)=0\ne e_0$, so neither endomorphism
+is a unit. Units also depend on the ambient ring: $2$ is a unit in $\Q$
+but not in $\Z$, whose only units are $1,-1$.
+
+\KEntry{K07.08.domain_field}{Domains, division rings, and fields}
+A division ring is a nontrivial ring in which every nonzero element is
+a unit. A field is a commutative division ring. An integral domain is a
+nontrivial commutative ring in which $ab=0$ implies $a=0$ or $b=0$.
+In a division ring, $a\ne0$ and $ab=0$ imply
+$b=a^{-1}ab=0$, so a field is a domain. Commutativity is independent:
+the real quaternion ring has $ij=k=-ji$ and
+\[
+ (a+bi+cj+dk)^{-1}
+ =\frac{a-bi-cj-dk}{a^2+b^2+c^2+d^2}
+\]
+for a nonzero quaternion. The product with its conjugate, on either side,
+is the displayed positive real denominator, proving invertibility.
+For an associative construction, represent $a+bi+cj+dk$ by
+$\begin{pmatrix}a+bi&c+di\\-c+di&a-bi\end{pmatrix}$ in $M_2(\C)$.
+These matrices form a real linear subspace closed under multiplication,
+as multiplying the matrices for $1,i,j,k$ verifies. Their inherited
+associativity and identity therefore supply the asserted ring structure.
+
+\KEntry{K07.08.zero_divisor_cancellation}{Zero divisors and cancellation}
+A zero divisor is a nonzero $a$ such that $ab=0$ or $ba=0$ for some
+nonzero $b$. A unit cannot be one, since its inverse cancels either
+equation. If $ax=0$ implies $x=0$, then $ab=ac$ gives
+$a(b-c)=0$ and hence $b=c$. Right cancellation uses the corresponding
+right-hand condition. In particular a nonzero factor cancels in a domain.
+Cancelling $0$ is invalid: $0b=0c$ holds for all $b,c$.
+Nonzero elements need not be either units or zero divisors: $2\in\Z$
+is neither.
+
+\KEntry{K07.08.matrix_ring}{Matrix rings}
+With entrywise addition and $(AB)_{ij}=\sum_k a_{ik}b_{kj}$, the
+$(i,j)$ entry of both $(AB)C$ and $A(BC)$ is
+$\sum_{k,l}a_{ik}b_{kl}c_{lj}$. Finite distributivity and associativity
+in $R$ justify these expansions. Entrywise expansion also verifies both
+distributive laws; the diagonal matrix with diagonal entries $1$ is the
+identity. Thus $M_n(R)$ is a ring.
+For matrix units, direct multiplication gives
+$E_{ij}E_{kl}=\delta_{jk}E_{il}$. If $R$ is nontrivial and $n\ge2$,
+\[
+ E_{11}E_{12}=E_{12}\ne0=E_{12}E_{11},\qquad E_{11}E_{22}=0.
+\]
+So the ring is noncommutative and has zero divisors, even when $R$ is
+commutative. For $n=1$ it is $R$; the empty matrix ring is trivial.
+These operations agree with the D05 matrix conventions.
+
+\KEntry{K07.08.subring}{Subrings}
+A unital subring contains the ambient $1$ and is closed under subtraction
+and multiplication. Then $0=1-1$ belongs, negatives are differences from
+$0$, and addition is subtraction of a negative; the other axioms are
+inherited identities. For a nonunital subring replace the $1$ condition
+by nonemptiness: a chosen $s$ gives $s-s=0$, and the same argument applies.
+Thus $2\Z$ is a nonunital subring of $\Z$. It contains no identity of its
+own: an identity $2k$ would satisfy $(2k)2=2$, forcing $2k=1$.
+
+% Topic grouping: Maps and ideals
+\KEntry{K07.08.ring_homomorphism}{Homomorphisms and equivalences}
+A unital ring homomorphism $f:R\to S$ preserves addition, multiplication,
+and $1$. Additivity gives $f(0)=f(0)+f(0)$, so $f(0)=0$;
+then $f(-a)=-f(a)$ follows from $a+(-a)=0$. Repeated addition and
+negation give $f(n1_R)=n1_S$ for $n\in\Z$.
+Composites preserve the same operations. A bijective homomorphism is an
+isomorphism; its inverse preserves operations, since applying $f$ to
+$f^{-1}(xy)$ and to $f^{-1}(x)f^{-1}(y)$ gives the same element, and
+$f$ is injective. The inverse preserves addition and $1$ in the same way.
+The zero map between nontrivial rings is not unital. Herstein's use of
+isomorphism for an injective map must be supplemented by surjectivity
+when asserting that two entire rings are isomorphic.
+
+\KEntry{K07.08.ideal_definition}{Left, right, and two-sided ideals}
+A left ideal is an additive subgroup $I$ with $rI\subseteq I$ for every
+$r\in R$. A right ideal has $Ir\subseteq I$, and an ideal without
+qualification here is two-sided. For a commutative ring these coincide.
+Absorption uses all elements of the ambient ring. A proper ideal cannot
+be a unital subring.
+
+The matrices whose only possibly nonzero column is column $j$ form a
+left ideal: left multiplication changes that column without creating
+others. It need not be right, since $E_{ij}$ belongs but
+$E_{ij}E_{ji}=E_{ii}$ does not when $i\ne j$. A one-sided ideal cannot
+silently be used as a ring-quotient kernel. In the pinned library
+\texttt{Ideal R} is a left ideal; noncommutative two-sidedness requires
+additional data.
+
+\KEntry{K07.08.kernel_image}{Kernels and images}
+\begin{proposition}\label{prop:ring-kernel-image}
+The kernel of a ring homomorphism is a two-sided ideal, and its image is
+a unital subring.
+\end{proposition}
+\begin{proof}
+If $f(a)=f(b)=0$, then $f(a-b)=0$; also
+$f(ra)=f(r)f(a)=0=f(a)f(r)=f(ar)$.
+For image elements, $f(a)-f(b)=f(a-b)$ and $f(a)f(b)=f(ab)$,
+and $1=f(1)$ belongs to the image.
+\end{proof}
+Every two-sided ideal is a kernel, by the projection constructed in
+Proposition~\ref{prop:quotient-projection}; no commutativity is needed.
+
+\KEntry{K07.08.injective_kernel}{The zero-kernel test}
+\begin{proposition}\label{prop:ring-zero-kernel}
+A ring homomorphism $f$ is injective if and only if $\ker f=0$.
+\end{proposition}
+\begin{proof}
+Injectivity implies $f(a)=0=f(0)$ only at $a=0$. Conversely,
+$f(a)=f(b)$ implies $f(a-b)=0$, hence $a-b=0$.
+\end{proof}
+This argument uses only the additive-group homomorphism.
+
+\KEntry{K07.08.ideal_generation}{Generated ideals}
+\begin{proposition}\label{prop:ideal-span}
+For $S\subseteq R$, the least two-sided ideal containing $S$ is
+\[
+ (S)=\left\{\sum_{i=1}^m r_i s_i t_i:
+ m\ge0,\ r_i,t_i\in R,\ s_i\in S\right\}.
+\]
+It is also the intersection of all two-sided ideals containing $S$.
+For commutative $R$ the terms can be written $r_i s_i$.
+\end{proposition}
+\begin{proof}
+The empty sum gives $0$. Concatenating sums and negating the $r_i$
+give additive closure; left and right multiplication are absorbed into
+$r_i$ and $t_i$. Thus the displayed set is an ideal. It contains
+$s=1s1$, and every ideal containing $S$ contains its terms and sums.
+Hence it is least, and has the same least-property as the indicated
+intersection. Commutativity gives $r_i s_i t_i=(r_i t_i)s_i$.
+\end{proof}
+In particular $(\varnothing)=0$. Single products $rst$ need not be closed
+under addition, so finite sums cannot be omitted. A generated left ideal
+uses instead sums $r_i s_i$.
+
+\KEntry{K07.08.ideal_sum_intersection}{The ideal lattice}
+Arbitrary intersections are ideals, because subtraction and absorption
+preserve membership in every member; the empty intersection is $R$.
+For two ideals, $I+J=\{i+j:i\in I,j\in J\}$ is an ideal: subtraction and
+either ambient multiplication preserve this form. It contains $I,J$
+and lies in every ideal containing them. Intersection and sum are thus
+the greatest lower and least upper bound for inclusion.
+A union need not be an ideal: $(2)\cup(3)$ in $\Z$ contains $2,3$ but
+not $5$. A nonempty chain union is an ideal, since any two elements
+occur together in the larger of their two witnessing chain members.
+
+\KEntry{K07.08.ideal_product}{Products of ideals}
+Let $IJ$ consist of finite sums $\sum i_kj_k$ with $i_k\in I,j_k\in J$.
+Addition and negatives preserve this form; left multiplication uses
+$ri_k\in I$, and right multiplication uses $j_kr\in J$. Hence $IJ$ is
+a two-sided ideal. Each term belongs to both $I,J$, proving
+$IJ\subseteq I\cap J$.
+Expanding $i(j+k)$ proves $I(J+K)\subseteq IJ+IK$.
+The opposite inclusion follows from $J,K\subseteq J+K$; the right
+distributive law is proved with the factors on the other side.
+Both $(IJ)K$ and $I(JK)$ consist of finite sums $ijk$, giving
+associativity. In $\Z$, $(2)(2)=(4)\ne(2)\cap(2)$.
+Without commutativity, $IJ$ and $JI$ need not agree.
+
+\KEntry{K07.08.principal_divisibility}{Principal ideals}
+For commutative $R$, $(a)=\{ra:r\in R\}$, so
+\[
+ b\in(a)\ \Longleftrightarrow\ a\mid b\
+ \Longleftrightarrow\ (b)\subseteq(a).
+\]
+Every ideal $I$ of $\Z$ is principal. If nonzero, choose its least
+positive element $d$. Integer division gives $a=qd+r$,
+$0\le r<d$ for $a\in I$. Since $r=a-qd\in I$, minimality forces
+$r=0$, hence $I=(d)$. The zero ideal is $(0)$. Positive generators
+are unique, since equality of ideals makes each divide the other.
+
+\KEntry{K07.08.unit_in_ideal}{Ideals containing units}
+\begin{proposition}\label{prop:unit-ideal}
+A left ideal $I$ is $R$ if and only if $1\in I$, if and only if it
+contains a unit. For commutative $R$, $(a)=R$ if and only if $a$ is a unit.
+\end{proposition}
+\begin{proof}
+Containing $1$ gives every $r=r1$. A unit $u\in I$ gives
+$u^{-1}u=1\in I$; the reverse implication uses the unit $1$.
+Finally $(a)=R$ means $ra=1$, which in a commutative ring also gives
+$ar=1$; the converse follows from $a^{-1}a=1$.
+\end{proof}
+
+\KEntry{K07.08.field_ideals}{Fields from ideals}
+\begin{proposition}\label{prop:field-ideal-criterion}
+A nontrivial commutative ring is a field if and only if its only ideals
+are $0$ and $R$.
+\end{proposition}
+\begin{proof}
+In a field an ideal containing $a\ne0$ contains a unit, hence is $R$.
+Conversely $(a)\ne0$ for $a\ne0$, so $(a)=R$ and $a$ is a unit.
+\end{proof}
+Commutativity is essential if ideals remain two-sided. For a nonzero
+ideal $I$ of $M_n(F)$ choose $A\in I$ with $a_{ij}\ne0$. Then
+$E_{ki}AE_{jl}=a_{ij}E_{kl}\in I$ for arbitrary $k,l$.
+The inverse scalar gives every $E_{kl}\in I$, hence $1\in I$ and
+$I=M_n(F)$. For $n\ge2$ this ring still has zero divisors and is not
+a division ring.
+
+\KEntry{K07.08.field_embedding}{Maps out of fields}
+A unital ring homomorphism $f:F\to R$ from a field into a nontrivial
+ring is injective. Its kernel is an ideal of $F$, and cannot be $F$
+since $f(1)=1\ne0$. Thus it is zero by
+Proposition~\ref{prop:field-ideal-criterion}, and the zero-kernel test
+applies. For a nonunital map, being nonzero excludes an entire kernel
+and gives the same conclusion. The map from $F$ to the zero ring is
+unital but not injective, explaining the target hypothesis.
+
+\KEntry{K07.08.finite_domain_field}{Finite domains}
+A finite integral domain is a field. If $a\ne0$, the map $x\mapsto ax$
+is injective by cancellation and hence surjective on the finite set $R$.
+Some $b$ therefore satisfies $ab=1$; commutativity gives $ba=1$.
+Finiteness is essential, as $\Z$ shows.
+
+% Topic grouping: Fractions
+\KEntry{K07.08.fraction_field}{The fraction-field construction}
+\begin{theorem}\label{thm:fraction-field-construction}
+Every integral domain $R$ embeds in a field $\Frac(R)$ whose elements
+have the form $a/b$, $a,b\in R$, $b\ne0$.
+\end{theorem}
+\begin{proof}
+On such pairs set $(a,b)\sim(c,d)$ when $ad=bc$.
+Reflexivity and symmetry follow from equality. If $ad=bc$ and $cf=de$,
+then $adf=bcf=bde$; cancellation of nonzero $d$ gives $af=be$.
+Thus this is an equivalence relation. Define
+\[
+ \frac ab+\frac cd=\frac{ad+bc}{bd},\qquad
+ \frac ab\frac cd=\frac{ac}{bd}.
+\]
+Denominators stay nonzero. If $ab'=a'b$ and $cd'=c'd$, then
+$acb'd'=a'c'bd$, checking multiplication. Addition is checked by
+\[
+ (ad+bc)b'd'=ab'dd'+bb'cd'
+ =a'bdd'+bb'c'd=(a'd'+b'c')bd.
+\]
+So both formulas are well-defined on classes.
+The negative is $(-a)/b$, zero is $0/1$, and one is $1/1$.
+The two parenthesizations of a three-term sum have numerator
+$adf+bcf+bde$ and denominator $bdf$; three-term products have
+numerator $ace$ and denominator $bdf$.
+For distributivity, both
+$\frac ab(\frac cd+\frac ef)$ and
+$\frac{ac}{bd}+\frac{ae}{bf}$ reduce to
+$(acf+ade)/(bdf)$, cancelling a common denominator factor in the latter
+expression. These computations prove associativity and distributivity.
+The formulas give both identities and additive inverses, and
+commutativity follows from $R$.
+
+The map $a\mapsto a/1$ preserves the operations and $1$; equality
+$a/1=c/1$ forces $a=c$, so it embeds $R$.
+Also $a/b=0$ if and only if $a=0$.
+For $a\ne0$, $b/a$ is an inverse of $a/b$, since $ab/(ba)=1$.
+The constructed ring is nontrivial and every nonzero element is a unit.
+\end{proof}
+Inverting a zero divisor cannot preserve an embedding: if $bd=0$ with
+$d\ne0$ and $b$ became a unit, then $d$ would become zero.
+General localization accommodates such collapse, but the present
+domain construction does not require it.
+
+\KEntry{K07.08.fraction_universal}{The universal property}
+\begin{theorem}\label{thm:fraction-field-universal}
+An injective unital ring homomorphism $f:R\to K$ from a domain into a
+field extends uniquely to a homomorphism
+$\widetilde f:\Frac(R)\to K$. It is injective.
+Two fraction-field models are uniquely isomorphic over $R$.
+\end{theorem}
+\begin{proof}
+For $b\ne0$ we have $f(b)\ne0$. Set
+$\widetilde f(a/b)=f(a)/f(b)$. Equality $ad=bc$ gives
+$f(a)f(d)=f(b)f(c)$, proving well-definedness. The two fraction
+formulas, applied in $K$, verify addition, multiplication, and $1$.
+Every extension must take $(b/1)^{-1}$ to $f(b)^{-1}$, so its values
+are forced. If the value at $a/b$ is zero, then $f(a)=0$, then $a=0$,
+then $a/b=0$, proving injectivity. Between two fraction-field models,
+construct extensions in both directions. Each composite fixes $R$,
+and uniqueness makes it the identity on all fractions. This proves
+existence and uniqueness of the compatible isomorphism.
+\end{proof}
+More generally, for a homomorphism $f:R\to S$ to a commutative ring,
+an extension to $\Frac(R)$ exists if and only if every $f(b)$,
+$b\ne0$, is a unit of $S$. Necessity follows because $b/1$ is
+invertible. For sufficiency the same formula $f(a)f(b)^{-1}$ is
+well-defined by cross multiplication with units, and the fraction
+formulas prove it preserves the operations; uniqueness is unchanged.
+This assertion does not claim that the extension is an embedding if
+$S$ is the zero ring.

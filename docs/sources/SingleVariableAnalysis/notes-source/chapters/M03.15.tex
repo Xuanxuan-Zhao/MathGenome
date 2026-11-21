@@ -1,0 +1,244 @@
+\chapter{Bounded variation and the refinement Stieltjes integral}
+\SourceRef{Apostol, Chapters 6--7, especially Definition 7.1 (PDF 154--155); Rudin, Chapter 6. The refinement definition is retained exactly. Its comparison with a mesh definition has a genuine continuity hypothesis on the integrator.}
+
+\KEntry{K03.15.variation}{Total variation}
+\begin{definition}
+For $f:[a,b]\to\K$, $a<b$, put
+\[\Var_{[a,b]}f=\sup_{a=x_0<\cdots<x_m=b}\sum_{i=1}^m\abs{f(x_i)-f(x_{i-1})}\in[0,\infty].\]
+The function has bounded variation, abbreviated BV, when this is finite. Set $\Var_{[a,a]}f=0$. Values at endpoints and at individual interior points are part of the definition; changing a single value can change variation. For example, a function zero except for value $1$ at an interior point has variation $2$.
+\end{definition}
+
+\KEntry{K03.15.variation_rules}{Variation rules and boundedness}
+\begin{theorem}
+For $a\leq c\leq b$, variation is additive:
+\[\Var_{[a,b]}f=\Var_{[a,c]}f+\Var_{[c,b]}f.\]
+Also $\Var(f+g)\leq\Var f+\Var g$ and $\Var(\lambda f)=\abs\lambda\Var f$ for finite variation (with the zero scalar case interpreted directly). A BV function satisfies $\abs{f(x)}\leq\abs{f(a)}+\Var f$.
+\end{theorem}
+\begin{proof}
+Inserting $c$ into any partition cannot decrease its sum, by the triangle inequality. The refined sum is the sum of two partition sums on the subintervals, proving the upper bound for additivity. Conversely combine two partitions approaching the respective suprema; their union gives the reverse bound, including the infinite case. The triangle inequality on each increment proves the sum rule, and homogeneity on each increment proves the scalar rule. The partition containing $a,x,b$ bounds $\abs{f(x)-f(a)}$ by the total variation, proving boundedness.
+\end{proof}
+
+\KEntry{K03.15.monotone}{Monotone functions have bounded variation}
+\begin{theorem}
+For real monotone $f$, $\Var f=\abs{f(b)-f(a)}$. Consequently finite real or complex linear combinations of BV functions remain BV.
+\end{theorem}
+\begin{proof}
+For nondecreasing $f$ each increment is nonnegative, so every partition sum telescopes to $f(b)-f(a)$. For a nonincreasing function apply this to $-f$. The assertion about linear combinations follows repeatedly from the preceding sum and scalar bounds.
+\end{proof}
+
+\KEntry{K03.15.jordan}{Jordan decomposition of real BV functions}
+\begin{theorem}
+A real function $f$ on $[a,b]$ is BV if and only if it is the difference of two nondecreasing real functions. One choice is
+\[V(x)=\Var_{[a,x]}f,\qquad p(x)=\tfrac12(V(x)+f(x)-f(a)),\quad q(x)=\tfrac12(V(x)-f(x)+f(a)),\]
+so $f=f(a)+p-q$.
+\end{theorem}
+\begin{proof}
+For $y>x$, $V(y)-V(x)=\Var_{[x,y]}f\geq\abs{f(y)-f(x)}$. Both $p(y)-p(x)$ and $q(y)-q(x)$ are therefore nonnegative. Conversely the difference of two bounded monotone functions has finite variation by the preceding entries. This is a decomposition of functions; it does not invoke signed measures or their Jordan decomposition.
+\end{proof}
+
+\KEntry{K03.15.one_sided}{One-sided limits and discontinuities of BV functions}
+\begin{theorem}
+A real BV function has finite left and right limits at every appropriate interior or endpoint approach and has at most countably many discontinuities.
+\end{theorem}
+\begin{proof}
+For bounded nondecreasing $h$, $h(c-)=\sup_{x<c}h(x)$ and $h(c+)=\inf_{x>c}h(x)$ give the finite one-sided limits by the defining supremum and infimum properties. At an interior discontinuity, the interval $(h(c-),h(c+))$ has positive length, since $h(c-)\leq h(c)\leq h(c+)$. For distinct $c$ these open intervals are disjoint. Choose in each a rational number; disjointness makes this an injection into $\Q$, hence there are at most countably many discontinuities. Endpoints add at most two. Apply the two conclusions to the monotone functions in Jordan decomposition: their difference has one-sided limits, and can be discontinuous only in the union of their discontinuity sets.
+\end{proof}
+
+\KEntry{K03.15.regulated}{Regulated functions and step approximation}
+\begin{theorem}
+Suppose a scalar $f$ on $[a,b]$ has finite left limits at every point of $(a,b]$ and finite right limits at every point of $[a,b)$. Then for every $\eps>0$ there is a finite partition and a function $s$ constant on each open partition interval, with separately prescribed node values, such that $\sup\abs{f-s}<\eps$. In particular $f$ is bounded and Riemann integrable.
+\end{theorem}
+\begin{proof}
+At each $c$, choose a relative neighborhood such that the oscillation of $f$ on its portion strictly to the left of $c$ is $<\eps$ and likewise on its portion strictly to the right; the appropriate one-sided limits give this. These neighborhoods cover $[a,b]$. Choose a finite subcover with centers $c_1,\ldots,c_r$ and a Lebesgue number $\delta>0$: every set of diameter $<\delta$ lies in a member. To see this elementary compactness fact, if no such number existed choose sets of diameter $<1/n$ not lying in any member and points $x_n$ in them; a convergent subsequence of $x_n$ has a limit in one of the open members, which then contains the corresponding small sets, a contradiction.
+
+Choose a partition of mesh $<\delta$ containing all $c_i$. Each open partition interval lies in one of the selected neighborhoods and on one side of its center, since every center is a node. Its oscillation is $<\eps$. Define $s$ there by a value of $f$ in that interval, and put $s=f$ at nodes. Then $\sup\abs{f-s}<\eps$. Taking one such finite-valued $s$ proves boundedness of $f$.
+
+A finite step function with arbitrary values at its finitely many nodes is Riemann integrable: put those nodes in small intervals of total length $<\eta$; outside these intervals its upper and lower sums agree, and inside their gap is at most $2\norm{s}_\infty\eta$. The Darboux criterion applies as $\eta\to0$. Taking step approximations with errors tending to zero and using uniform stability of the Riemann integral proves integrability of $f$.
+\end{proof}
+
+\KEntry{K03.15.bv_riemann}{BV functions are Riemann integrable}
+\begin{theorem}
+Every real BV function on $[a,b]$ is bounded, regulated, and Riemann integrable. The same holds for complex BV functions.
+\end{theorem}
+\begin{proof}
+For real functions combine \KRef{K03.15.one_sided} and \KRef{K03.15.regulated}. For complex $f$, the variation of each real component is at most $\Var f$ because each component increment has magnitude at most that of the complex increment. Apply the real result to the two components. These are ordinary Riemann statements; integrability against a discontinuous Stieltjes integrator is a separate condition.
+\end{proof}
+
+\KEntry{K03.15.cantor_function}{The Cantor staircase}
+\begin{construction}
+There exists a continuous nondecreasing $C:[0,1]\to[0,1]$ with $C(0)=0$, $C(1)=1$, constant on every complementary interval of the middle-thirds Cantor set $D$. The set $D$ has length zero and $C'(x)=0$ for every $x\notin D$, although $C$ is not constant.
+\end{construction}
+\begin{proof}
+Start with $C_0(x)=x$. On continuous functions $h$ with endpoint values $0,1$ define
+\[(Th)(x)=\begin{cases}\tfrac12h(3x),&0\leq x\leq1/3,\\1/2,&1/3\leq x\leq2/3,\\\tfrac12+\tfrac12h(3x-2),&2/3\leq x\leq1.\end{cases}\]
+The pieces agree at their joins, and $T$ preserves continuity, the endpoint values, and nondecreasingness. Put $C_n=T^nC_0$. Since $\norm{Th-Tg}_\infty\leq\frac12\norm{h-g}_\infty$, we have $\norm{C_{n+1}-C_n}_\infty\leq2^{-n}\norm{C_1-C_0}_\infty$. The geometric bound makes $C_n$ uniformly Cauchy. Its uniform limit $C$ is continuous, nondecreasing, and has the endpoint values. Passing to the limit in $C_{n+1}=TC_n$ gives $C=TC$.
+
+At stage $m$, delete the open middle thirds from each of the $2^{m-1}$ surviving intervals. The equation $C=TC$, iterated along the left or right affine branch, shows that $C$ is constant on each interval deleted at any finite stage: the branch reaches the middle interval, where its value is fixed. The remaining Cantor set $D$ is contained in $2^m$ closed intervals of length $3^{-m}$. Their total length is $(2/3)^m\to0$. Slightly enlarge this finite collection to open intervals with any prescribed additional total length, obtaining arbitrarily short covers; equivalently one may choose such covers with total length $<\eps$ to meet the length-zero definition in \KRef{K03.08.zero_covers}. Every point outside $D$ is in an open deleted interval, so $C$ is constant in a neighborhood of that point and its derivative there is zero. The differing endpoint values show that it is not constant; its variation is $1$. This construction needs no measure differentiation theorem.
+\end{proof}
+
+\KEntry{K03.15.continuous_variation}{Continuity of the variation function}
+\begin{theorem}
+If a scalar $f$ is continuous and BV on $[a,b]$, then $V(x)=\Var_{[a,x]}f$ is continuous. For real $f$, its Jordan decomposition can consequently be chosen with continuous monotone components.
+\end{theorem}
+\begin{proof}
+Fix $c<b$ and $\eta>0$. Choose a partition $c=t_0<t_1<\cdots<t_m=b$ whose variation sum exceeds $\Var_{[c,b]}f-\eta$. For $c<x<t_1$, using the partition $x,t_1,\ldots,t_m$ on $[x,b]$ gives
+\[\begin{split}\Var_{[c,x]}f&=\Var_{[c,b]}f-\Var_{[x,b]}f\\
+&\leq\eta+\abs{f(t_1)-f(c)}-\abs{f(t_1)-f(x)}\leq\eta+\abs{f(x)-f(c)}.
+\end{split}\]
+Continuity makes the limsup as $x\downarrow c$ at most $\eta$, hence zero. The same argument on $[a,c]$, deleting its last partition interval, proves left continuity. It also handles the endpoints in their appropriate directions. Additivity of variation translates these bounds into continuity of $V$. The Jordan formulas now give continuous components. Merely right continuity of $f$ only yields the corresponding right continuity here; it cannot imply full continuity of $V$, as a right-continuous step with a left jump demonstrates.
+\end{proof}
+
+\KEntry{K03.15.c1_variation}{Variation of a continuously differentiable scalar path}
+\begin{theorem}
+If $f:[a,b]\to\R$ or $\C$ is $C^1$ (with continuous one-sided extensions of $f'$ at the endpoints), then
+\[\Var_{[a,b]}f=\int_a^b\abs{f'(t)}\dd t.\]
+\end{theorem}
+\begin{proof}
+The fundamental theorem of calculus, applied componentwise, gives $f(v)-f(u)=\int_u^v f'$. Summing its norm bound over a partition proves $\Var f\leq\int\abs{f'}$. Conversely let $\omega(\delta)=\sup_{\abs{s-t}\leq\delta}\abs{f'(s)-f'(t)}\to0$. For each interval of a tagged partition,
+\[\abs{f(x_i)-f(x_{i-1})-f'(t_i)\Delta x_i}\leq\omega(\norm P)\Delta x_i.\]
+Thus its polygonal sum is at least $\sum_i\abs{f'(t_i)}\Delta x_i-\omega(\norm P)(b-a)$. Let the mesh tend to zero; the Riemann sum tends to $\int\abs{f'}$ and the error to zero. This proves the opposite inequality, without an invalid complex scalar mean value equality.
+\end{proof}
+
+\KEntry{K03.15.rectifiable}{Rectifiable continuous paths}
+\begin{definition}
+A continuous scalar path $\gamma:[a,b]\to\K$ has length equal to the supremum of the lengths of its inscribed polygonal paths, namely $\sup_P\sum_i\abs{\gamma(x_i)-\gamma(x_{i-1})}$. It is rectifiable if this is finite. By the identical partition formulas its length is precisely $\Var\gamma$; for a $C^1$ path it is the preceding integral. A discontinuous BV function is not a continuous path under this definition.
+\end{definition}
+
+\KEntry{K03.15.rs_sums}{The refinement Stieltjes definition}
+\begin{definition}
+Let $f:[a,b]\to\K$ and $\alpha:[a,b]\to\R$ be bounded. For $P=(x_0,\ldots,x_m)$ and arbitrary tags $t_i\in[x_{i-1},x_i]$, set
+\[S(P,t;f,\alpha)=\sum_{i=1}^mf(t_i)(\alpha(x_i)-\alpha(x_{i-1})).\]
+The refinement integral $\int_a^b f\dd\alpha=I$ exists when for every $\eps>0$ there is a fixed partition $P_\eps$ such that for every refinement $P\supset P_\eps$ and every choice of tags, $\abs{S(P,t;f,\alpha)-I}<\eps$. Set the degenerate integral to zero and reverse orientation by a minus sign. Endpoint values are retained. This is Apostol's Definition 7.1, not an unrestricted small-mesh definition.
+\end{definition}
+\begin{lemma}
+This integral is unique. It exists if and only if for each $\eps>0$ there is $P_\eps$ such that any two tagged sums whose partitions refine $P_\eps$ differ by $<\eps$.
+\end{lemma}
+\begin{proof}
+Two proposed limits are compared using a tagged sum on the union of their controlling partitions; their distance is $<2\eps$. Existence implies the Cauchy condition by the triangle inequality. Conversely choose controlling partitions for errors $2^{-n}$, replace them by their successive unions to make them nested, and choose one tagged sum $S_n$ on each. They are scalar Cauchy and have a limit $I$. Every tagged sum on a refinement of the $n$th partition differs from $S_m$ by $<2^{-n}$ for $m\geq n$; let $m\to\infty$ to bound its distance to $I$ by $2^{-n}$. This is the required refinement limit.
+\end{proof}
+
+\KEntry{K03.15.rs_darboux}{Monotone integrators: the Darboux bridge}
+\begin{theorem}
+For bounded real $f$ and nondecreasing $\alpha$, put
+\[U_\alpha(f,P)=\sum_i\sup_{[x_{i-1},x_i]}f\,\Delta\alpha_i,\qquad
+L_\alpha(f,P)=\sum_i\inf_{[x_{i-1},x_i]}f\,\Delta\alpha_i.\]
+The refinement integral exists if and only if $\inf_P U_\alpha(f,P)=\sup_P L_\alpha(f,P)$, equivalently for every $\eps>0$ some $P$ satisfies $U_\alpha-L_\alpha<\eps$. Its value is the common number. No continuity of $\alpha$ is required.
+\end{theorem}
+\begin{proof}
+Refinement decreases upper sums and increases lower sums because the weights are nonnegative and additive. A common refinement therefore shows every lower sum is at most every upper sum. Their infimum and supremum are finite. If they agree, choose partitions with upper and lower sums within $\eps/2$ of the common value and take their union. All tags on all refinements are squeezed between those bounds.
+
+Conversely, suppose the refinement limit is $I$. On its controlling partition every tagged sum lies within $\eta$ of $I$. The supremum and infimum over tags on that fixed partition are exactly $U_\alpha$ and $L_\alpha$: approximate each interval supremum and infimum separately; finiteness of the partition and nonnegative weights allow arbitrary accuracy in their weighted sums (zero weights need no approximation). Thus $U_\alpha-L_\alpha\leq2\eta$. Since $\eta$ is arbitrary, the epsilon criterion follows, and that criterion forces equality of the upper and lower integrals by their ordering. This proves the precise equivalence with Rudin's monotone Darboux formulation.
+\end{proof}
+
+\KEntry{K03.15.rs_existence}{Continuous integrands and BV integrators}
+\begin{theorem}
+If $f:[a,b]\to\K$ is continuous and real $\alpha$ is BV, the refinement integral exists and
+\[\abs{\int_a^b f\dd\alpha}\leq\norm f_\infty\Var\alpha.\]
+\end{theorem}
+\begin{proof}
+For a partition $P$ of mesh $<\delta$ and a refinement $Q$, distribute each increment $\Delta\alpha$ of $P$ into its subinterval increments in $Q$. The original tag and each new tag lie in the same original interval, so
+\[\abs{S(P,t)-S(Q,u)}\leq\omega_f(\delta)\sum_{J\in Q}\abs{\Delta\alpha_J}\leq\omega_f(\delta)\Var\alpha,\]
+where uniform continuity gives $\omega_f(\delta)\to0$. For two refinements of one sufficiently fine fixed partition, compare them on their common refinement; their tagged sums differ by at most $2\omega_f(\delta)\Var\alpha$. The refinement Cauchy criterion proves existence. Every sum has norm at most $\norm f_\infty\Var\alpha$, giving the integral bound by passage to the limit. The same common-refinement estimate actually proves mesh convergence for continuous integrands even when $\alpha$ jumps; this special sufficient condition does not identify the two definitions for arbitrary bounded integrands.
+\end{proof}
+
+\KEntry{K03.15.rs_algebra}{Linearity and interval additivity}
+\begin{theorem}
+Where the indicated integrals exist, the refinement integral is scalar linear in $f$ and real linear in its real integrator. For $a<c<b$, integrability on $[a,b]$ is equivalent to integrability on both $[a,c]$ and $[c,b]$, and
+\[\int_a^b f\dd\alpha=\int_a^c f\dd\alpha+\int_c^b f\dd\alpha.\]
+\end{theorem}
+\begin{proof}
+The finite tagged sums are linear in both slots separately. Take the union of controlling partitions for finitely many integrals and apply the triangle inequality, with the scalar coefficients multiplying their error bounds, to pass these identities to their limits.
+
+If both subinterval integrals exist, take the union of their controlling partitions, including $c$. Every refinement splits into the two subinterval sums, and the errors add; this proves whole-interval integrability and its value. Conversely take a whole-interval Cauchy-controlling partition and insert $c$. Two arbitrary tagged sums on refinements of its left restriction can be extended using identical right partitions and tags. Their difference is the difference of the whole sums, hence is small. The Cauchy criterion gives the left integral; the identical argument gives the right one. The already proved implication identifies their sum with the whole integral. Shared endpoint tags are permitted throughout and no endpoint values have been removed.
+\end{proof}
+
+\KEntry{K03.15.rs_ordinary}{Reduction to ordinary Riemann integration}
+\begin{theorem}
+For $\alpha(x)=x$ and bounded scalar $f$, the refinement Stieltjes integral exists exactly when the ordinary Riemann integral exists, and their values agree.
+\end{theorem}
+\begin{proof}
+For real $f$, the weighted upper and lower sums in \KRef{K03.15.rs_darboux} are literally the ordinary Darboux sums because $\Delta\alpha_i=\Delta x_i$. Thus their equality is the ordinary integrability criterion with the same value. For complex $f$, existence of either tagged limit is equivalent to existence of its two component limits; apply the real conclusion. The ordinary Darboux/mesh comparison in \KRef{K03.08.tagged_equivalence} then supplies the ordinary mesh interpretation.
+\end{proof}
+
+\KEntry{K03.15.rs_density}{A smooth integrator}
+\begin{theorem}
+For continuous $f$ and $\alpha\in C^1([a,b],\R)$,
+\[\int_a^b f\dd\alpha=\int_a^bf(x)\alpha'(x)\dd x.\]
+\end{theorem}
+\begin{proof}
+The left integral exists since $\alpha$ is BV, and the right integrand is continuous. The fundamental theorem gives $\Delta\alpha_i=\int_{x_{i-1}}^{x_i}\alpha'$. Hence the difference between a Stieltjes sum and the ordinary tagged sum for $f\alpha'$ is bounded by
+\[\norm f_\infty\,\omega_{\alpha'}(\norm P)(b-a)\longrightarrow0.\]
+The latter sums tend to the ordinary integral. Choose partitions of arbitrarily small mesh also refining any controlling Stieltjes partition; uniqueness identifies the two integrals. The estimate in fact gives a mesh limit here directly.
+\end{proof}
+
+\KEntry{K03.15.rs_parts}{Stieltjes integration by parts}
+\begin{theorem}
+If real $f$ and $\alpha$ are continuous BV functions on $[a,b]$, then
+\[\int_a^bf\dd\alpha+\int_a^b\alpha\dd f=f(b)\alpha(b)-f(a)\alpha(a).\]
+\end{theorem}
+\begin{proof}
+Both integrals exist by \KRef{K03.15.rs_existence}. For every partition, finite multiplication and telescoping give
+\[\sum_i f(x_{i-1})\Delta\alpha_i+\sum_i\alpha(x_i)\Delta f_i=f(b)\alpha(b)-f(a)\alpha(a).\]
+The first and second sums are permitted tagged sums for the two integrals, respectively. Choose a common refinement of their controlling partitions for any given accuracy and use these left and right tags. Each sum differs from its integral by an arbitrarily small amount, so the finite identity proves the integral identity. No jump correction formula is being assumed.
+\end{proof}
+
+\KEntry{K03.15.rs_jump}{Step integrators and endpoint atoms}
+\begin{theorem}
+Let $\alpha$ be a real step function with finitely many nodes $c\in(a,b)$, allowing arbitrary values at those nodes. Let bounded $f$ be continuous at every node where either $\alpha(c)-\alpha(c-)$ or $\alpha(c+)-\alpha(c)$ is nonzero, and at any endpoint carrying a jump. Then
+\[\int_a^b f\dd\alpha=f(a)\bigl(\alpha(a+)-\alpha(a)\bigr)
++\sum_{a<c<b}f(c)\bigl(\alpha(c+)-\alpha(c-)\bigr)
++f(b)\bigl(\alpha(b)-\alpha(b-)\bigr).\]
+Zero net weights may be omitted from the displayed numerical sum, but do not remove the continuity requirement if the separate one-sided increments are nonzero. Only a node where both increments vanish carries no such requirement.
+\end{theorem}
+\begin{proof}
+Decompose $\alpha$, up to a constant, into finitely many multiples of $H_c^-(x)=\mathbf1_{[c,b]}(x)$ and $H_c^+(x)=\mathbf1_{(c,b]}(x)$ at interior $c$, with coefficients $\alpha(c)-\alpha(c-)$ and $\alpha(c+)-\alpha(c)$ respectively; use $H_a^+$ for the right endpoint-value jump at $a$ and $H_b^-$ for the left jump at $b$. This decomposition agrees at every interval and every individual node.
+
+For $H_c^-$ the only nonzero increment on a partition containing $c$ is the interval immediately to its left; for $H_c^+$ it is the interval immediately to its right. Insert nodes on the appropriate side sufficiently close to $c$. All tags in the resulting nonzero interval have $f$-value within $\eps$ of $f(c)$ by continuity; the same remains true for every refinement. Each elementary integral is therefore $f(c)$. The same argument gives $f(a)$ and $f(b)$ for the endpoint terms. Linearity proves the formula; the two interior coefficients add to the full jump. In particular a right-continuous step $\mathbf1_{[c,b]}$ gives an atom at an interior $c$ or at $b$, while its value already present at $a$ contributes no atom at $a$. These conventions will determine the outgoing $(a,b]$ measure interface.
+\end{proof}
+
+\begin{remark}
+A zero net jump can still conceal an obstruction. Set $\alpha(c)=f(c)=1$ at one interior node $c$, and set both functions equal to zero elsewhere. Both one-sided limits of $\alpha$ are zero, but the adjacent increments on a partition containing $c$ are $+1$ and $-1$. Independently choosing a tag at $c$ or away from it in the two adjacent intervals produces sums $-1,0,1$ on every such refinement. Every proposed controlling partition can be refined to include $c$, so there is no refinement integral. This proves why cancellation of the displayed net weight does not justify dropping continuity at that node.
+\end{remark}
+
+\KEntry{K03.15.rs_common_jumps}{Same-sided jumps can obstruct existence}
+\begin{proposition}
+Let $\alpha$ be nondecreasing. If $\alpha(c+)-\alpha(c)>0$ and $f$ is not right-continuous at $c$ in the sense that $\limsup_{x\downarrow c}\abs{f(x)-f(c)}>0$, for bounded real $f$, then the refinement integral does not exist. The analogous assertion holds for positive left jump $\alpha(c)-\alpha(c-)$ and failure of left continuity of $f$. In particular common nonzero jumps on the same side obstruct existence; opposite-sided discontinuities need not.
+\end{proposition}
+\begin{proof}
+Choose $\eta>0$ such that every sufficiently small right neighborhood contains a point with $\abs{f(x)-f(c)}>\eta$. In any partition containing $c$, its first interval $[c,u]$ to the right has oscillation at least $\eta$ and weight $\alpha(u)-\alpha(c)\geq\alpha(c+)-\alpha(c)=J>0$. Thus $U_\alpha-L_\alpha\geq\eta J$. Every partition can be refined to include $c$; refinement decreases this gap, so no partition could have had a gap below $\eta J$. The Darboux criterion rules out integrability. Use the interval to the left for the other assertion. This argument uses one-sided oscillation, not merely a label of ``common discontinuity.''
+\end{proof}
+
+\KEntry{K03.15.rs_mesh_bridge}{The mesh bridge for continuous monotone integrators}
+\begin{theorem}
+For bounded scalar $f$ and continuous nondecreasing $\alpha$, refinement integrability is equivalent to existence of the unrestricted tagged mesh limit: there is $I$ such that every tagged sum with sufficiently small $\norm P$ lies near $I$. Their values agree.
+\end{theorem}
+\begin{proof}
+A mesh limit implies a refinement limit by choosing a controlling partition whose mesh is below the mesh threshold. For the converse first take real $f$, $\abs f\leq M$. Choose a fixed partition $Q$ with $U_\alpha(f,Q)-L_\alpha(f,Q)<\eps$ by the Darboux criterion. For any small-mesh $P$, let $T=P\cup Q$. Intervals of $P$ not containing an interior node of $Q$ require no splitting; choose the same tags there in $T$. On an interval that is split, the difference of the original contribution and all new contributions is at most $2M\Delta\alpha$.
+
+There are at most $r$ such intervals, where $r$ is the number of interior nodes of $Q$, and every one has length at most $\norm P$. Uniform continuity of $\alpha$ makes their total $\alpha$-weight at most $r\omega_\alpha(\norm P)$. Thus
+\[\abs{S(P,t)-S(T,u)}\leq2Mr\omega_\alpha(\norm P)\longrightarrow0.\]
+Every sum on $T$ lies between $L_\alpha(f,Q)$ and $U_\alpha(f,Q)$, as does the refinement integral, so its distance to that integral is $<\eps$. The displayed bound proves mesh convergence. If $r=0$ or $M=0$ the bound is zero. For complex $f$ apply the proof to real and imaginary components and combine the errors. Continuity of $\alpha$ is precisely what controls the crossing intervals; the next example shows why it cannot be deleted from this general bridge.
+\end{proof}
+
+\KEntry{K03.15.rs_mesh_counterexample}{Opposite-sided jumps separate the definitions}
+\begin{example}
+On $[-1,1]$ set $\alpha(x)=0$ for $x\leq0$, $\alpha(x)=1$ for $x>0$, and $f(x)=0$ for $x<0$, $f(x)=1$ for $x\geq0$. Every refinement of the partition $(-1,0,1)$ has exactly one nonzero $\alpha$-increment, namely $1$ on the first interval to the right of zero. All its tags have $f=1$. Hence every such sum is $1$, and the refinement integral is $1$.
+
+For any $\delta>0$, take a partition of mesh $<\delta$ with an interval $[-h,h]$, $0<h<\delta/2$, crossing zero and with no node at zero; fill both remaining sides with intervals of length $<\delta$. Its only nonzero increment is the crossing interval. A negative tag gives sum $0$, while tag zero or any positive tag gives sum $1$. These choices persist at arbitrarily small mesh. The mesh limit therefore does not exist. This is an explicit opposite-sided-jump witness, consistent with both Apostol's refinement definition and Rudin's Darboux criterion.
+\end{example}
+
+\KEntry{K03.15.rs_uniform}{Uniform stability for a fixed BV integrator}
+\begin{theorem}
+For fixed real BV $\alpha$, if bounded $f_n$ are refinement integrable and $f_n\to f$ uniformly, then $f$ is refinement integrable and
+\[\abs{\int f\dd\alpha-\int f_n\dd\alpha}\leq\norm{f-f_n}_\infty\Var\alpha\longrightarrow0.\]
+\end{theorem}
+\begin{proof}
+Every tagged sum for a bounded $h$ has magnitude at most $\norm h_\infty\Var\alpha$. If $h$ is integrable, pass to the limit to obtain the same integral bound. By linearity the integral values $I_n$ therefore satisfy $\abs{I_n-I_m}\leq\norm{f_n-f_m}_\infty\Var\alpha$; they have a scalar limit $I$. Given $\eps>0$, choose $n$ making both $\norm{f-f_n}_\infty\Var\alpha$ and $\abs{I_n-I}$ less than $\eps/3$, then a controlling partition for $f_n$ with error $<\eps/3$. On every refinement,
+\[\abs{S(f)-I}\leq\abs{S(f)-S(f_n)}+\abs{S(f_n)-I_n}+\abs{I_n-I}<\eps.\]
+Thus $f$ is integrable with value $I$. Apply the integral bound to $f-f_n$ for the stated estimate. If $\Var\alpha=0$, all sums are zero and the assertions are immediate.
+\end{proof}
+
+\KEntry{K03.15.stieltjes_measure_bridge}{Outgoing interface to Lebesgue--Stieltjes measures}
+\begin{remark}
+This is a routing record to D11, not a theorem proved or assumed in D03. The intended future comparison starts from a right-continuous nondecreasing $\alpha$, constructs a measure satisfying $\mu_\alpha((u,v])=\alpha(v)-\alpha(u)$, and for continuous $f$ compares the refinement integral on $[a,b]$ with the measure integral over $(a,b]$. Right continuity removes the right endpoint-value jump at $a$, and the half-open interval includes the atom at $b$, matching \KRef{K03.15.rs_jump}. Measure construction, measurable integrands, signed measures, and proof of this comparison remain in D11. No measure assertion is used in any proof in this chapter.
+\end{remark}

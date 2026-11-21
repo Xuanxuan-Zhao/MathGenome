@@ -1,0 +1,3370 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=28mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks,bookmarksopen,bookmarksnumbered]{hyperref}
+\hypersetup{pdftitle={Probability: Common Foundations and Limit Theorems},
+  pdfauthor={MathGenome},pdfsubject={Unified notes, P1-05}}
+
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\Law}{Law}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\weakto}{\xrightarrow{\mathrm{w}}}
+\newcommand{\asto}{\xrightarrow{\mathrm{a.s.}}}
+\newcommand{\pto}{\xrightarrow{\mathrm{P}}}
+\allowdisplaybreaks[1]
+\setlength{\emergencystretch}{2em}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{32mm}
+{\large MathGenome \enspace / \enspace P1-05\par}
+\vspace{7mm}
+\hrule height 0.8pt
+\vspace{11mm}
+{\Huge\bfseries Probability\par}
+\vspace{4mm}
+{\LARGE Common Foundations and Limit Theorems\par}
+\vspace{15mm}
+{\large Unified notes\par}
+\vspace{3mm}
+{\normalsize Probability spaces, conditioning, and process construction\\
+Weak convergence, independent sums, and quantitative normal approximation\par}
+\vfill
+{\large 8 November 2026\par}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\tableofcontents
+
+\chapter*{Scope and prerequisites}
+\addcontentsline{toc}{chapter}{Scope and prerequisites}
+
+These notes develop the parts of probability used repeatedly in the study of
+random processes, statistical limits, and probabilistic analysis. The first five
+chapters construct probability laws and explain how to condition and combine them.
+The last four study weak convergence, transforms, sums, and approximation error.
+A continuous Brownian law on a bounded time interval illustrates how the
+extension theorem, an increment estimate, and the Borel structure of a path
+space fit together.
+
+The measure-theoretic prerequisites are countable additivity and the
+\(\pi\)-\(\lambda\) theorem, extension of a finite premeasure on an algebra,
+Lebesgue--Stieltjes measure, monotone and dominated convergence and Fatou's
+lemma, finite-measure Radon--Nikodym, and finite-product Tonelli and Fubini.
+We also use the monotone-class theorem for bounded measurable functions,
+completeness of \(L^p\), elementary Euclidean integration including
+polar coordinates, the compact
+Hausdorff representation of a positive linear functional on real \(C(K)\)
+by a finite regular Borel measure, and the Arzel\`a--Ascoli criterion in its
+compact-interval Euclidean-valued form. These are measure theory, analysis,
+and topology prerequisites. In each application the relevant finiteness,
+measurability, or compactness hypothesis is specified. In finite dimensions
+we use the real spectral theorem for symmetric matrices.
+Probability-specific extension, selection, conditioning,
+and transform arguments are established in the text.
+
+Probability spaces are not assumed complete. We indicate when measurable
+versions or a common exceptional set are needed. Independence of a family
+means independence of all finite subfamilies. Weak convergence refers to
+probability laws tested against bounded continuous real functions. In
+Euclidean statements \(d\ge 1\), with \(d=0\) reducing to a one-point law.
+On \(\R^d\) the transform convention is
+\(\phi_\mu(t)=\int e^{i\langle t,x\rangle}\,\mu(dx)\). Brownian path
+properties, functional limit theorems, general stable laws, stochastic
+integration, and large-deviation theory belong to their respective
+specialized treatments.
+
+Kallenberg~\cite{Kallenberg} is the reference for probability structures,
+Durrett~\cite{Durrett} for independent sums, and Billingsley~\cite{Billingsley}
+for weak convergence on metric spaces. Specific sections or theorem numbers
+are given with the results. The accompanying source map ties all 54
+result groups to these locations and to the original scope.
+
+\mainmatter
+\chapter{Probability Spaces, Laws, and Integrals}
+\label{chap:probability-foundations}
+
+We take the probability space as part of the data. On a measurable space we
+use the specified sigma-algebra, and on a metric space we use the Borel
+sigma-algebra unless another one is specified. We use the usual construction
+of the Lebesgue integral and Tonelli's theorem for sigma-finite factors. The
+integral convergence and completion facts used in this chapter are collected in
+Section~\ref{p01-06}. This chapter draws on
+\cite[Chapter 1 and Theorem 2.14]{Kallenberg} and
+\cite[Sections 1.1--1.7]{Durrett}.
+
+\section{Probability spaces and monotone events}
+\label{p01-01}
+
+\begin{definition}
+A probability space is a triple \((\Omega,\mathcal F,P)\), where
+\(\mathcal F\) is a sigma-algebra on \(\Omega\) and \(P\) is a countably
+additive nonnegative measure with \(P(\Omega)=1\). An event is a member of
+\(\mathcal F\). A random element in a measurable space
+\((S,\mathcal S)\) is an \(\mathcal F/\mathcal S\)-measurable map. A real
+random variable is a random element in \((\mathbb R,\mathcal B(\mathbb R))\).
+We write \(\mathbb E X=\int X\,dP\) for an integrable real or complex
+variable, and allow \(+\infty\) for a nonnegative variable. In particular,
+\(\mathbb E\mathbf 1_A=P(A)\). A property holds almost surely if it holds
+on a measurable event of probability one.
+\end{definition}
+
+\begin{proposition}[Continuity of probability]
+\label{thm:prob-continuity}
+For any countable family of events \(A_n\), \(P(\bigcup_n A_n)\le
+\sum_nP(A_n)\). If \(A_n\uparrow A\), then \(P(A_n)\uparrow P(A)\).
+If \(A_n\downarrow A\), then \(P(A_n)\downarrow P(A)\). For a general
+measure, the last conclusion holds whenever some member of the decreasing
+sequence has finite measure.
+\end{proposition}
+\begin{proof}
+Replace \(A_n\) by the disjoint sets \(A_n\setminus\bigcup_{j<n}A_j\).
+Their union is unchanged and each is contained in \(A_n\). This proves the
+union bound by countable additivity. For an increasing sequence the
+disjoint differences give \(P(A_n)\) as the \(n\)-th partial sum and
+\(P(A)\) as the full sum. For a decreasing sequence, subtract the
+increasing measures of \(A_m\setminus A_n\), \(n\ge m\), from the
+finite measure of \(A_m\). The same argument works for every finite
+measure, while the increasing argument works without a finiteness condition.
+\end{proof}
+
+\begin{example}
+Under counting measure on \(\mathbb N\), the sets
+\(\{n,n+1,\ldots\}\) decrease to the empty set and all have infinite
+measure. Continuity from above uses finiteness exactly at the subtraction
+step of the proof.
+\end{example}
+
+\section{Laws, projections, and transfer of integrals}
+\label{p01-02}
+
+\begin{definition}
+If \(X\colon\Omega\to S\) is measurable, its law
+\(\operatorname{Law}(X)=X_\#P\) is the measure
+\((X_\#P)(B)=P(X^{-1}B)\) for \(B\in\mathcal S\). For random elements
+\(X_i\colon\Omega\to S_i\), \(i\in I\), the joint law is the law of
+\(X=(X_i)_{i\in I}\) with values in the product equipped with its
+product sigma-algebra. The law on any subfamily of coordinates is the
+corresponding marginal.
+\end{definition}
+
+\begin{proposition}[Functoriality and transfer]
+\label{thm:prob-transfer}
+Joint maps to the product sigma-algebra are measurable. Their marginals
+are obtained by pushing forward the joint law under coordinate
+projections. For a measurable \(g\colon S\to T\),
+\[
+ (g\circ X)_\#P=g_\#(X_\#P).
+\]
+For measurable \(f\colon S\to[0,\infty]\), or real or complex \(f\)
+integrable under \(X_\#P\),
+\[
+ \int_S f\,d(X_\#P)=\int_\Omega f(X(\omega))\,dP(\omega).
+\]
+For measurable real or complex \(f\), integrability on either side
+implies integrability on the other side.
+\end{proposition}
+\begin{proof}
+The inverse images of the generating coordinate sets of the product are
+measurable. Preimages commute with complements and countable unions, so
+this verifies joint measurability for every index set \(I\). The defining
+formula for a pushforward gives a probability measure by countable
+additivity on preimages of disjoint sets. Composition follows by
+composing preimages. The marginal statement follows by applying
+composition to a coordinate restriction. The nonnegative integral identity
+follows from indicators by finite summation and monotone convergence.
+Applying it to \(\lvert f\rvert\) gives the equivalence for measurable \(f\).
+Positive and negative parts give the real identity, then real and imaginary
+parts give the complex identity. For \(f\) integrable under \(X_\#P\), use a
+measurable version, since preimages of \(X_\#P\)-null sets are \(P\)-null.
+\end{proof}
+
+\section{Determining classes and distribution functions}
+\label{p01-03}
+
+\begin{lemma}[Determining classes]
+\label{lem:prob-pi-lambda}
+Let \(\mathcal C\) be a collection of subsets of \(S\) closed under
+intersections of nonempty finite subfamilies. Finite measures of equal total mass on
+\(\sigma(\mathcal C)\) are equal if they agree on \(\mathcal C\).
+Consequently they give the same integrals to every nonnegative
+measurable function, and to every integrable function.
+\end{lemma}
+\begin{proof}
+A Dynkin system contains \(S\), is closed under complements in \(S\),
+and is closed under countable disjoint unions. It is also closed under
+differences \(B\setminus A\) when \(A\subset B\) are members, by taking
+the complement of \(A\cup B^c\). The smallest Dynkin system
+\(\mathcal D\) containing \(\mathcal C\) is a sigma-algebra. In fact,
+for fixed \(C\in\mathcal C\), the members \(D\in\mathcal D\) such that
+\(D\cap C\in\mathcal D\) form a Dynkin system containing \(\mathcal C\),
+so the intersection property holds for all \(D\). With such a \(D\)
+now fixed, the members \(D'\in\mathcal D\) such that
+\(D'\cap D\in\mathcal D\) again form a Dynkin system containing
+\(\mathcal C\). Thus \(\mathcal D\) is closed under finite intersections.
+Closure under arbitrary countable unions follows by replacing a
+sequence by its successive disjoint differences. The sets on which
+the two measures agree form a Dynkin system, using equality of finite
+total masses for complements. This proves equality on
+\(\sigma(\mathcal C)\). The integral assertion follows from the
+simple-function argument of Proposition~\ref{thm:prob-transfer}.
+\end{proof}
+
+\begin{theorem}[Real and joint distribution functions]
+\label{thm:prob-cdf}
+For a real probability law \(\mu\), the function
+\(F(x)=\mu((-\infty,x])\) is nondecreasing and right-continuous with limits
+\(0\) at \(-\infty\) and \(1\) at \(+\infty\). Every such \(F\) gives a
+unique probability law. Its mass on \((a,b]\) is \(F(b)-F(a)\), and
+its mass at \(a\) is \(F(a)-F(a-)\), where
+\(F(a-)=\lim_{t\uparrow a}F(t)\). On \(\mathbb R^d\) the masses of
+\(\prod_{j=1}^{d}(-\infty,x_j]\) determine the joint law.
+\end{theorem}
+\begin{proof}
+Monotonicity and the limits follow from
+Proposition~\ref{thm:prob-continuity}. For \(x_n\downarrow x\), use
+\((-\infty,x_n]\downarrow(-\infty,x]\). Similarly, increasing thresholds
+strictly below \(a\) give the mass of \((-\infty,a)\). Differences give
+the two stated formulas.
+
+For the converse, use Lebesgue probability on \((0,1)\) and put
+\(Q(u)=\inf\{t\in\mathbb R:F(t)\ge u\}\). For \(0<u<1\) the set in
+the infimum is nonempty and bounded below. Monotonicity and
+right-continuity give
+\[
+ Q(u)\le x \quad\Longleftrightarrow\quad u\le F(x).
+\]
+For the boundary implication when \(Q(u)=x\), choose thresholds in the
+defining set below \(x+1/n\). This gives \(F(x+1/n)\ge u\), and let
+\(n\to\infty\). The equivalence proves measurability of \(Q\) and shows
+that \(Q_\#\operatorname{Leb}\) has distribution function \(F\).
+Its half-open interval masses are the Lebesgue--Stieltjes increments
+\(F(b)-F(a)\). Uniqueness follows from
+Lemma~\ref{lem:prob-pi-lambda} applied to the generating half-lines.
+In dimension \(d\), the lower orthants form an intersection-closed
+family and generate the Borel sigma-algebra. To see generation, exhaust
+all coordinates except one by increasing upper endpoints and recover
+the coordinate half-lines. Finite intersections and differences then
+give half-open rectangles and a countable basis of open rectangles.
+The determining-class lemma proves uniqueness.
+\end{proof}
+
+\section{Tail integrals and probability bounds}
+\label{p01-04}
+
+\begin{theorem}[Tail and truncated moments]
+\label{thm:prob-tail}
+For \(Y\ge0\), \(p>0\), and \(a>0\),
+\begin{align*}
+ \mathbb E Y^p &= p\int_0^\infty t^{p-1}P(Y>t)\,dt,\\
+ \mathbb E[Y^p\mathbf 1_{\{Y\le a\}}]
+   &=p\int_0^a t^{p-1}P(Y>t)\,dt-a^pP(Y>a),\\
+ \mathbb E[Y^p\mathbf 1_{\{Y>a\}}]
+   &=a^pP(Y>a)+p\int_a^\infty t^{p-1}P(Y>t)\,dt.
+\end{align*}
+The integrals on the right are unchanged if \(>\) in their integrands
+is replaced by \(\ge\). Changing the endpoint
+convention on a truncated expectation changes its value by the term
+\(a^pP(Y=a)\).
+\end{theorem}
+\begin{proof}
+For each \(y\ge0\), including \(y=+\infty\),
+\(y^p=\int_0^\infty p t^{p-1}\mathbf 1_{\{t<y\}}\,dt\). The joint
+indicator is measurable, so Tonelli proves the first identity. Apply
+the same identity to \(Y\wedge a\) and separate \(\{Y\le a\}\) from
+\(\{Y>a\}\) to obtain the second. On \(\{Y>a\}\), integrate the
+pointwise identity \(Y^p=a^p+\int_a^\infty p t^{p-1}
+\mathbf 1_{\{Y>t\}}\,dt\). For each sample value the two interval
+indicators with \(>\) and \(\ge\) differ at at most one finite \(t\).
+Tonelli gives the same integral for each convention. The endpoint
+correction follows by subtracting the two event indicators.
+\end{proof}
+
+\begin{corollary}[Markov, Chebyshev, and exponential Markov]
+\label{thm:prob-markov}
+For \(a>0\) and nonnegative \(Y\), \(P(Y\ge a)\le \mathbb E Y/a\).
+In particular \(P(|X|\ge a)\le a^{-p}\mathbb E|X|^p\) for \(p>0\).
+For any real \(X\) of finite second moment,
+\[
+ P(\lvert X-\mathbb E X\rvert\ge a)
+ \le \frac{\operatorname{Var}(X)}{a^2},
+ \qquad \operatorname{Var}(X)=\mathbb E (X-\mathbb E X)^2 .
+\]
+For a real variable \(X\), \(x\in\mathbb R\), and \(\theta>0\),
+\(P(X\ge x)\le e^{-\theta x}\mathbb E e^{\theta X}\).
+Each inequality also holds for the strict upper-tail event.
+\end{corollary}
+\begin{proof}
+Integrate \(a\mathbf 1_{\{Y\ge a\}}\le Y\). Apply it to
+\(|X|^p\) at threshold \(a^p\) for the moment bound, and to
+\((X-\mathbb E X)^2\) at threshold \(a^2\) for Chebyshev.
+For the exponential bound apply it with \(e^{\theta X}\) and threshold
+\(e^{\theta x}\). Strict events are contained in their non-strict
+counterparts.
+\end{proof}
+
+\section{Uniform integrability and the Vitali criterion}
+\label{p01-05}
+
+We work over a finite measure space \((S,\mathcal S,\mu)\) in this
+section. Write \(\|f\|_1=\int |f|\,d\mu\). For a family
+\(\mathcal H\subset L^1(\mu)\), uniform integrability means
+\[
+ \lim_{R\to\infty}\ \sup_{f\in\mathcal H}
+ \int_{\{|f|>R\}} |f|\,d\mu=0.
+\]
+A sequence \(f_n\) converges to \(f\) in measure if
+\(\mu(\{|f_n-f|>\varepsilon\})\to0\) for each \(\varepsilon>0\).
+On a probability space this is convergence in probability.
+
+\begin{theorem}[Uniform-integrability criteria]
+\label{thm:prob-ui}
+The following conditions for \(\mathcal H\) are equivalent.
+\begin{enumerate}
+\item The family is uniformly integrable.
+\item The \(L^1\) norms are bounded, and for every \(\varepsilon>0\)
+there is a \(\delta>0\) such that
+\(\mu(A)<\delta\) implies \(\sup_{f\in\mathcal H}\int_A|f|\,d\mu
+ <\varepsilon\).
+\item There is an increasing convex function
+\(\Phi\colon[0,\infty)\to[0,\infty)\) with \(\Phi(0)=0\),
+\(\Phi(t)/t\to\infty\), and
+\(\sup_{f\in\mathcal H}\int\Phi(|f|)\,d\mu<\infty\).
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+For condition 1, split
+\(\int_A |f|\le R\mu(A)+\int_{\{|f|>R\}}|f|\).
+Using \(A=S\) gives bounded norms after fixing a large \(R\). For a
+prescribed \(\varepsilon\), first make the tail \(<\varepsilon/2\),
+then choose \(\delta\) with \(R\delta<\varepsilon/2\). Conversely,
+if the norms have common bound \(C\), Markov gives
+\(\mu(\{|f|>R\})\le C/R\). The small-set condition applied to these
+events makes their integrals uniformly small.
+
+Under condition 1, choose strictly increasing \(R_k\ge k\) with
+\(\sup_f\int_{\{|f|>R_k\}}|f|\le 2^{-k}\). Set
+\(\Phi(t)=\sum_{k\ge1}(t-R_k)_+\). This is a locally finite sum of
+increasing convex functions. For every fixed \(m\), \(t>2R_m\)
+gives \(\Phi(t)/t\ge m/2\). Monotone convergence gives
+\(\int\Phi(|f|)\le\sum_k2^{-k}\) uniformly. Conversely, for \(R\)
+large enough that \(\Phi(t)/t\ge M>0\) when \(t>R\),
+\(\int_{\{|f|>R\}}|f|\le M^{-1}\int\Phi(|f|)\).
+Let \(M\) grow to obtain condition 1. This is the de la Vall\'ee
+Poussin criterion.
+\end{proof}
+
+\begin{theorem}[Vitali convergence on finite measure spaces]
+\label{thm:prob-vitali}
+If \(f_n\in L^1(\mu)\) and \(f\) is a finite real or complex
+measurable function, then \(f_n\to f\) in \(L^1\) if and only if
+\(f_n\to f\) in measure and \(\{f_n:n\ge1\}\) is uniformly
+integrable. The latter conditions themselves imply \(f\in L^1\).
+\end{theorem}
+\begin{proof}
+From convergence in measure, choose increasing \(n_k\) with
+\(\mu(\{|f_{n_k}-f|>2^{-k}\})\le2^{-k}\). The union bound makes the
+measure of the union of these events for \(k\ge m\) tend to zero.
+Thus \(f_{n_k}\to f\) almost everywhere. Fatou and uniform boundedness
+of the \(L^1\) norms imply \(\int |f|\le\liminf_k\int|f_{n_k}|<\infty\).
+The integral of any fixed integrable function is absolutely continuous
+on small sets, since
+\(\int_A |f|\le R\mu(A)+\int_{\{|f|>R\}}|f|\) and the tail tends to
+zero by dominated convergence. For \(A_n=\{|f_n-f|>\eta\}\),
+\[
+ \int |f_n-f|\le \eta\mu(S)+\int_{A_n}(|f_n|+|f|).
+\]
+Uniform integrability, absolute continuity for \(f\), and
+\(\mu(A_n)\to0\) show that the limit superior is at most \(\eta\mu(S)\).
+Let \(\eta\downarrow0\).
+
+Conversely, \(L^1\) convergence implies convergence in measure by
+Markov, and the norms are bounded by the triangle inequality. Given
+\(\varepsilon>0\), take \(N\) with \(\|f_n-f\|_1<\varepsilon/2\)
+for \(n\ge N\). Use absolute continuity of the integrals of
+\(|f|,|f_1|,\ldots,|f_{N-1}|\) to choose one \(\delta\) on which
+each of those integrals is \(<\varepsilon/2\). The same \(\delta\)
+gives the small-set bound for all \(f_n\), so
+Theorem~\ref{thm:prob-ui} applies.
+\end{proof}
+
+\section{Integral convergence and completion}
+\label{p01-06}
+
+See \cite[results 1.21--1.23 and 1.27--1.29]{Kallenberg}.
+
+\begin{proposition}[Integral convergence]
+\label{thm:prob-integral-convergence}
+For nonnegative measurable \(f_n\) and \(f\) on a measure space,
+increasing almost-everywhere convergence \(f_n\uparrow f\) gives
+\(\int f_n\uparrow\int f\). For arbitrary nonnegative measurable
+\(f_n\), Fatou's inequality is
+\(\int\liminf_n f_n\le\liminf_n\int f_n\).
+If measurable real or complex \(f_n\to f\) almost everywhere, with
+\(f\) measurable and \(|f_n|\le g\) almost everywhere for one
+measurable integrable \(g\ge0\), then
+\(f\) is integrable and \(\int |f_n-f|\to0\). In particular, bounded
+convergence holds for a common bound on a set of finite measure when
+all variables vanish almost everywhere outside that set.
+\end{proposition}
+\begin{proof}
+Remove the common measurable null exception, which leaves every
+integral unchanged. For monotone convergence, if \(s\) is a finite
+nonnegative simple function below \(f\) and \(0<c<1\), the sets
+\(\{s=0\}\cup\{f_n\ge c s\}\) increase to the whole space.
+Their integrals of \(s\) increase to \(\int s\) by continuity from
+below for measures on the disjoint level sets of \(s\). Hence
+\(\lim_n\int f_n\ge c\int s\). Take \(c\uparrow1\) and then the
+supremum over \(s\), and use \(f_n\le f\) for the reverse inequality.
+For Fatou use monotone convergence on \(h_n=\inf_{k\ge n} f_k\)
+and the bound \(\int h_n\le\inf_{k\ge n}\int f_k\).
+In the dominated case \(f\) satisfies \(|f|\le g\) almost
+everywhere. Apply Fatou to \(2g-|f_n-f|\ge0\). Its pointwise limit is
+\(2g\), and subtraction from the finite integral of \(2g\) gives
+\(\limsup_n\int |f_n-f|\le0\). A bound times the indicator of a set
+of finite measure is integrable, yielding bounded convergence.
+\end{proof}
+
+\begin{proposition}[Measurable versions after completion]
+\label{thm:prob-completed-version}
+Let \(\overline{\mathcal F}\) denote the \(P\)-completion of
+\(\mathcal F\). Every completed measurable real or extended-real
+variable has an \(\mathcal F\)-measurable version equal to it outside
+an \(\mathcal F\)-measurable null set. The same holds for random elements
+in a nonempty separable metric space. The law and the nonnegative or
+integrable expectations do not change under this passage.
+\end{proposition}
+\begin{proof}
+Every completed measurable set differs from an original measurable
+set by a subset of an original null set. For a separable metric target
+\(S\), choose a countable cover by balls of radius \(2^{-n}\) for
+each \(n\), and take the disjoint first-hit partition of this cover.
+Associate to a point the center of its partition cell. This gives
+countably valued completed measurable maps \(X_n\) with
+\(d(X_n,X)<2^{-n}\). Replace each cell in \(\Omega\) by an original
+measurable set differing on an original null set. Take the union of
+the exceptions over the countable collection of all cells and \(n\).
+On its original measurable complement the replaced cells still form
+the same partitions. Define the countably valued approximants on the
+exceptional set to equal one fixed point of \(S\). The approximants are
+original measurable and converge pointwise in \(S\), including on
+the exceptional set. Their limit is measurable. For a nonempty closed
+set \(C\subset S\), this follows from convergence of the real
+functions \(d(X_n,C)\) and the identity
+\(\{X\in C\}=\{d(X,C)=0\}\). Closed sets generate the Borel
+sigma-algebra. Real and extended-real variables are covered by their
+usual separable metric models. On original measurable sets the original
+measure and its completion agree. Two a.e.\ equal maps have preimages
+differing only on a null set and have equal integrals whenever the
+stated integrals exist. This proves the last assertion.
+\end{proof}
+\chapter{Independence and Modes of Convergence}
+\label{chap:probability-independence}
+
+The independence conventions here distinguish independence of every finite
+subfamily from pairwise independence. The results are based on
+\cite[Theorems 4.6--4.18 and Chapter 5]{Kallenberg} and
+\cite[Sections 2.1, 2.3, and 2.5]{Durrett}.
+
+\section{Independence, generators, and joint laws}
+\label{p02-01}
+
+\begin{definition}
+A family \((\mathcal F_i)_{i\in I}\) of sub-sigma-algebras of
+\(\mathcal F\) is mutually independent if, for every finite family of
+distinct indices \(i_1,\ldots,i_m\) and events \(A_j\in\mathcal F_{i_j}\),
+\[
+ P\left(\bigcap_{j=1}^m A_j\right)=\prod_{j=1}^m P(A_j).
+\]
+Random elements \(X_i\) are mutually independent when their
+sigma-algebras \(\sigma(X_i)\) are mutually independent. An event family
+is mutually independent when the sigma-algebras generated by its
+individual events are mutually independent. Pairwise independence
+requires the condition only for two indices.
+\end{definition}
+
+\begin{theorem}[Independence by generators and by laws]
+\label{thm:prob-independent-laws}
+Let each \(\mathcal C_i\) be a pi-system generating \(\mathcal F_i\).
+The family \((\mathcal F_i)_{i\in I}\) is mutually independent if and
+only if the independence equality holds for all finite distinct
+indices and events chosen from their \(\mathcal C_i\).
+In particular, for a finite family of random elements, mutual
+independence is equivalent to its joint law being the product of
+its marginal laws. For an arbitrary family the test applies to every
+finite joint law.
+\end{theorem}
+\begin{proof}
+Adjoin \(\Omega\) to each generator. A generator equality that uses
+\(\Omega\) reduces to the equality with that factor omitted, so the
+hypothesis remains true. Fix a finite list of indices. With all
+events other than one fixed, the maps
+\[
+ B\longmapsto P\left(B\cap\bigcap_{j\ne k} A_j\right),
+ \qquad
+ B\longmapsto P(B)\prod_{j\ne k} P(A_j)
+\]
+are finite measures on \(\mathcal F_{i_k}\). If the other events are
+in their generator classes, the two maps agree on \(\mathcal C_{i_k}\),
+including \(\Omega\). The determining-class lemma
+(Lemma~\ref{lem:prob-pi-lambda}) extends the equality to all
+\(B\in\mathcal F_{i_k}\). Repeat one coordinate at a time, now allowing
+all events already extended. This proves independence. The necessity
+is immediate from the definition.
+
+For random elements, inverse images of measurable rectangles give
+exactly the finite independence equality. The joint law and the
+product of the marginal probabilities agree on rectangles precisely
+under that equality. The rectangles form a determining pi-system
+of the product sigma-algebra, which proves both implications. Finite
+products exist by the finite measure product construction.
+\end{proof}
+
+\begin{example}[Pairwise independent signs]
+\label{ex:prob-pairwise-signs}
+Let \(U,V\) be independent uniform signs on \(\{-1,1\}\) and set
+\(W=UV\). Each pair among \(U,V,W\) is uniform on \(\{-1,1\}^2\).
+Indeed, any two of the three signs determine the third by an
+invertible transformation of the four equiprobable sign pairs
+\((U,V)\). But \(UVW=1\) with probability one, whereas three
+independent uniform signs would have a uniform product. Thus pairwise
+independence does not give a three-factor expectation identity.
+\end{example}
+
+\section{Independent constructions, grouping, and integrals}
+\label{p02-02}
+
+\begin{theorem}[Realization, transformations, and grouping]
+\label{thm:prob-independent-grouping}
+A finite family of specified probability laws on measurable spaces is
+realized by the mutually independent coordinates of their product
+probability space. Measurable coordinatewise transformations preserve
+mutual independence. If \((\mathcal F_i)_{i\in I}\) is mutually
+independent and \((J_\alpha)_\alpha\) are disjoint subfamilies of \(I\),
+then the sigma-algebras
+\(\mathcal G_\alpha=\sigma(\bigcup_{i\in J_\alpha}\mathcal F_i)\)
+are mutually independent.
+\end{theorem}
+\begin{proof}
+On the finite product, the rectangle formula proves that the
+coordinate laws are the specified probabilities and that the
+coordinates are independent. If \(Y_i=g_i(X_i)\) with \(g_i\)
+measurable, then \(\sigma(Y_i)\subseteq\sigma(X_i)\), so the
+definition applies to the smaller sigma-algebras.
+
+For each group take as generators all finite intersections of events
+chosen from distinct coordinates \(i\in J_\alpha\), including the
+empty intersection \(\Omega\). These form a pi-system, since events
+from the same coordinate may be intersected inside \(\mathcal F_i\).
+The generators from a finite family of disjoint groups use disjoint
+finite index sets. Their independence equality follows by applying
+the original independence equality first across the union of indices
+and then to each group. Apply
+Theorem~\ref{thm:prob-independent-laws} to pass from generators to
+the whole \(\mathcal G_\alpha\).
+\end{proof}
+
+\begin{corollary}[Integration of independent variables]
+\label{thm:prob-factorization}
+If \(X_1,\ldots,X_m\) are mutually independent with laws \(\mu_i\),
+then for nonnegative measurable \(f\) on the product,
+\[
+ \mathbb E f(X_1,\ldots,X_m)=
+ \int f(x_1,\ldots,x_m)\,d(\mu_1\otimes\cdots\otimes\mu_m)(x).
+\]
+The same holds for integrable real or complex \(f\). The product
+integral may be evaluated as an iterated integral by Tonelli or
+Fubini, respectively. In particular, for the finitely many
+nonnegative measurable factors \(f_i\colon S_i\to[0,\infty]\),
+where \(S_i\) is the value space of \(X_i\), or for real or complex factors with
+\(\int |f_i|\,d\mu_i<\infty\),
+\[
+ \mathbb E\prod_i f_i(X_i)=\prod_i\int f_i\,d\mu_i .
+\]
+For the nonnegative case a product with a zero factor is interpreted
+as zero, even if another factor is \(+\infty\).
+\end{corollary}
+\begin{proof}
+Apply the integral transfer of Proposition~\ref{thm:prob-transfer}
+to the joint map, and identify its law by
+Theorem~\ref{thm:prob-independent-laws}. Each factor probability
+is finite, so the iterated integration theorems apply. For
+nonnegative products one may also truncate every \(f_i\) and take
+increasing limits. If one factor integral is zero, that factor
+vanishes almost surely, giving the specified convention. For signed
+or complex factors, the formula for their absolute values first
+proves absolute integrability of the product. Repeated Fubini then
+gives the stated identity.
+\end{proof}
+
+\section{The Borel--Cantelli lemmas}
+\label{p02-03}
+
+For events \(A_n\), write \(A_\infty=\bigcap_{m\ge1}\bigcup_{n\ge m}A_n\)
+for the event that infinitely many \(A_n\) occur.
+
+\begin{theorem}[First and second Borel--Cantelli]
+\label{thm:prob-borel-cantelli}
+If \(\sum_nP(A_n)<\infty\), then \(P(A_\infty)=0\).
+If the events are pairwise independent and \(\sum_nP(A_n)=\infty\),
+then \(P(A_\infty)=1\). More precisely, put
+\[
+ N_n=\sum_{k\le n}\mathbf 1_{A_k},\qquad a_n=\sum_{k\le n}P(A_k).
+\]
+For all sufficiently large \(n\) we have \(a_n>0\), and
+\[
+ \frac{N_n}{a_n}\longrightarrow1\quad\text{almost surely}.
+\]
+\end{theorem}
+\begin{proof}
+For the first assertion, the event of infinitely many occurrences is
+contained in \(\bigcup_{n\ge m}A_n\) for every \(m\). Its probability
+is at most the tail sum by the union bound. Let \(m\to\infty\).
+
+For the second assertion, the indicator covariances of distinct
+events vanish by pairwise independence. Consequently
+\[
+ \mathbb E N_n=a_n,\qquad
+ \operatorname{Var}(N_n)=\sum_{k\le n}P(A_k)(1-P(A_k))\le a_n .
+\]
+Fix \(r>1\) and let \(n_j\) be the least \(n\) such that \(a_n\ge r^j\).
+Then \(r^j\le a_{n_j}<r^j+1\), because each step of \(a_n\) is at most
+one. The indices \(n_j\) are strictly increasing for all sufficiently
+large \(j\). For each \(\varepsilon>0\), Chebyshev bounds
+\(P(|N_{n_j}/a_{n_j}-1|>\varepsilon)\) by
+\(\varepsilon^{-2}r^{-j}\). The first assertion and a countable
+sequence of positive \(\varepsilon\) tending to zero give
+\(N_{n_j}/a_{n_j}\to1\) almost surely. For \(n_j\le n<n_{j+1}\),
+monotonicity yields
+\[
+ \frac{N_{n_j}}{a_{n_{j+1}}}
+ \le \frac{N_n}{a_n}
+ \le \frac{N_{n_{j+1}}}{a_{n_j}} .
+\]
+Since \(a_{n_{j+1}}/a_{n_j}\to r\), the limit inferior is at least
+\(1/r\) and the limit superior is at most \(r\).
+Intersect the probability-one events for a countable sequence of
+\(r\downarrow1\). This proves the claimed limit. Since \(a_n\to\infty\),
+the count \(N_n\) tends to infinity on the same event.
+\end{proof}
+
+\section{Almost sure, probability, and moment convergence}
+\label{p02-04}
+
+\begin{theorem}[Convergence comparisons and subsequences]
+\label{thm:prob-convergence-modes}
+For real random variables \(X_n,X\) on one probability space, almost
+sure convergence \(X_n\to X\) and \(L^p\) convergence for \(0<p<\infty\)
+each imply convergence in probability. Here \(L^p\) convergence means
+\(X_n,X\in L^p\) and \(\mathbb E|X_n-X|^p\to0\).
+Convergence in probability is equivalent to the assertion that
+every subsequence has a further subsequence converging to \(X\)
+almost surely. Limits in probability are almost surely unique.
+For \(p=1\), convergence in probability together with uniform
+integrability of the \(X_n\) gives \(L^1\) convergence.
+\end{theorem}
+\begin{proof}
+For almost sure convergence, fix \(\varepsilon>0\) and apply
+dominated convergence to the indicator of the event
+\(\{|X_n-X|>\varepsilon\}\). These indicators tend to zero almost surely
+and are bounded by one. For \(L^p\) convergence use the Markov bound
+\[
+ P(|X_n-X|>\varepsilon)\le\varepsilon^{-p}\mathbb E|X_n-X|^p.
+\]
+
+From any subsequence converging in probability to \(X\), select a
+further subsequence \(Y_k\) with
+\(P(|Y_k-X|>2^{-k})\le 2^{-k}\). The first Borel--Cantelli lemma
+gives almost sure convergence to \(X\). Conversely, if convergence
+in probability fails, there are \(\varepsilon,\delta>0\) and a
+subsequence on which all error probabilities for threshold
+\(\varepsilon\) are at least \(\delta\). No further subsequence
+can converge almost surely by the first implication. If \(X\) and
+\(Y\) are both limits in probability, the triangle inequality
+bounds \(P(|X-Y|>\varepsilon)\) by
+\(P(|X-X_n|>\varepsilon/2)+P(|X_n-Y|>\varepsilon/2)\).
+It is zero for every \(\varepsilon>0\). Taking a countable union
+proves \(X=Y\) almost surely. The last assertion is
+Theorem~\ref{thm:prob-vitali}.
+\end{proof}
+
+\begin{example}
+On \([0,1)\) with Lebesgue probability, enumerate the intervals
+\([j2^{-m},(j+1)2^{-m})\) by increasing level \(m\), with
+\(0\le j<2^m\) at each level. Their indicators converge to zero in
+\(L^p\) for every \(p>0\), since their \(p\)-th moments are \(2^{-m}\).
+Each point belongs to exactly one interval at each level and
+misses all the others. Thus there is no almost sure convergence.
+Conversely, on \((0,1)\) the variables \(n^{1/p}\mathbf
+1_{(0,1/n)}\) converge pointwise to zero and have constant \(p\)-th
+moment one. Almost sure convergence and convergence in probability
+therefore need not give \(L^p\) convergence.
+\end{example}
+
+\section{Kolmogorov and Hewitt--Savage zero--one laws}
+\label{p02-05}
+
+\begin{theorem}[Kolmogorov tail law]
+\label{thm:prob-tail-zero-one}
+For a mutually independent sequence \((\mathcal F_n)_{n\ge1}\) of
+sigma-algebras, every event in
+\[
+ \mathcal T=\bigcap_{m\ge1}\sigma\Bigl(\bigcup_{n>m}\mathcal F_n\Bigr)
+\]
+has probability zero or one.
+\end{theorem}
+\begin{proof}
+For \(A\in\mathcal T\), each finite initial block is independent of
+\(A\) by Theorem~\ref{thm:prob-independent-grouping}. The events
+\(B\in\sigma(\bigcup_n\mathcal F_n)\) satisfying
+\(P(A\cap B)=P(A)P(B)\) contain the union of the increasing finite
+initial sigma-algebras. This union is a pi-system generating the
+full sequence sigma-algebra. The two finite measures
+\(P(A\cap\cdot)\) and \(P(A)P(\cdot)\) therefore agree everywhere by
+Lemma~\ref{lem:prob-pi-lambda}. In particular, \(B=A\) is allowed.
+Thus \(P(A)=P(A)^2\).
+\end{proof}
+
+\begin{theorem}[Hewitt--Savage zero--one law]
+\label{thm:prob-hewitt-savage}
+Let \(\mu\) be the law of an i.i.d.\ sequence on the product
+\(S^{\mathbb N}\) with its product sigma-algebra. If \(A\) is a
+measurable event invariant modulo \(\mu\)-null sets under all
+finite permutations of the coordinates, then \(\mu(A)\) is zero
+or one.
+\end{theorem}
+\begin{proof}
+The product law \(\mu\) is invariant under every finite permutation.
+Its image under such a permutation has the same finite-dimensional
+marginals by independence and identical laws, and cylinder sets
+determine \(\mu\) by Lemma~\ref{lem:prob-pi-lambda}.
+
+Let \(\mathcal A\) be the algebra of events measurable with respect
+to some finite initial block. Every product-measurable event can
+be approximated in \(\mu\)-measure by events in \(\mathcal A\).
+In fact the class of events with such approximations contains
+\(\mathcal A\) and is closed under complements and finite unions
+by the union bound for the approximation errors. A countable
+union of events in the class is approximated first by a finite
+union of those events using continuity from below, then by an
+event of \(\mathcal A\). Thus the class is a sigma-algebra
+containing \(\mathcal A\).
+
+Fix \(\varepsilon>0\), and choose \(B\) from the first \(m\)
+coordinates with \(\mu(A\triangle B)<\varepsilon\). Exchange the
+first \(m\) coordinates with the next \(m\), and let \(B'\) be the
+permuted event. Invariance of \(A\) modulo null sets and of \(\mu\)
+gives \(\mu(A\triangle B')<\varepsilon\) and
+\(\mu(B')=\mu(B)\). The events \(B,B'\) are independent by
+Theorem~\ref{thm:prob-independent-grouping}. Hence
+\[
+ |\mu(A)-\mu(A)^2|
+ \le \mu(A\triangle(B\cap B'))+|\mu(B)^2-\mu(A)^2|
+ \le 4\varepsilon .
+\]
+The first term is at most the sum of the two approximation
+errors, and the second is at most \(2|\mu(B)-\mu(A)|\).
+Let \(\varepsilon\downarrow0\).
+\end{proof}
+\chapter{Scalar Conditional Expectation}
+\label{chap:probability-conditional-expectation}
+
+Throughout this chapter \(\mathcal G\subseteq\mathcal F\) is an
+arbitrary sub-sigma-algebra of a probability space
+\((\Omega,\mathcal F,P)\). The integral identities characterize
+versions even if neither sigma-algebra is complete. We use
+Radon--Nikodym for finite positive measures and develop the
+conditional identities below. The source is
+\cite[Theorems 8.1--8.4]{Kallenberg}, with
+\cite[Section 4.1]{Durrett} for comparison.
+
+\section{Existence and uniqueness}
+\label{p03-01}
+
+\begin{definition}
+If \(X\) is integrable and real, a version of
+\(\mathbb E[X\mid\mathcal G]\) is a \(\mathcal G\)-measurable
+integrable real variable \(U\) with
+\[
+ \int_A U\,dP=\int_A X\,dP
+ \quad\text{for every } A\in\mathcal G .
+\]
+For \(X\ge0\) one uses a \(\mathcal G\)-measurable
+\(U\colon\Omega\to[0,\infty]\), and the test integrals may be
+infinite. Conditional probability of \(B\in\mathcal F\) means
+\(\mathbb E[\mathbf 1_B\mid\mathcal G]\).
+\end{definition}
+
+\begin{theorem}[Conditional expectation exists]
+\label{thm:prob-condexp-exists}
+In each case of the definition there exists a version, unique almost
+surely. For \(X\ge0\) integrable, the nonnegative and integrable
+definitions give the same a.e.\ equivalence class.
+\end{theorem}
+\begin{proof}
+For nonnegative integrable \(X\), the map
+\(A\mapsto\int_A X\,dP\) on \(\mathcal G\) is a finite positive
+measure, by the integral of indicators and monotone convergence.
+It is absolutely continuous with respect to the restriction
+\(P|_{\mathcal G}\). Its Radon--Nikodym derivative is
+\(\mathcal G\)-measurable and integrable, with a finite value
+almost everywhere. Replacing it by zero on its measurable
+exceptional null set gives a nonnegative finite version.
+For real integrable \(X\), subtract the derivatives for its
+positive and negative parts.
+
+If two integrable candidates \(U,V\) agree in their test
+integrals, take \(A=\{U>V\}\) to obtain
+\(\int_A(U-V)\,dP=0\). A strictly positive measurable function
+on a set of positive measure has positive integral, since that
+set is a union of the sets where the function is at least \(1/n\).
+Thus \(P(U>V)=0\), and likewise \(P(V>U)=0\).
+The same argument proves that test integral inequalities on all
+\(A\in\mathcal G\) imply \(U\le V\) almost surely for integrable
+candidates.
+
+For general nonnegative \(X\), take the integrable versions \(U_n\)
+of \(X\wedge n\). The comparison just proved gives
+\(U_n\le U_{n+1}\) almost surely. Make all these inequalities
+pointwise by changing the \(U_n\) to zero on their common
+\(\mathcal G\)-measurable exceptional null set. The increasing
+limit satisfies the test integrals by monotone convergence.
+For nonnegative extended candidates, suppose \(P(U<V)>0\).
+For some finite rational \(r\ge0\), the event
+\(A=\{U\le r<V\}\) has positive measure. On \(A\),
+\(\int_A U\le rP(A)<\int_A V\), with the right integral allowed
+to be infinite. This contradicts equality of the tests.
+Interchanging \(U,V\) proves a.e.\ uniqueness. The same rational
+separation proves comparison when only the order of all test
+integrals is known. For nonnegative integrable \(X\), either
+construction gives the same version by uniqueness.
+\end{proof}
+
+\section{Linearity, the tower law, and measurable factors}
+\label{p03-02}
+
+\begin{proposition}[Basic conditional identities]
+\label{thm:prob-condexp-laws}
+For integrable real inputs, conditional expectation is linear,
+monotone, and positive, and fixes \(\mathcal G\)-measurable
+variables. If \(\mathcal H\subseteq\mathcal G\), the tower law is
+\[
+ \mathbb E[\mathbb E[X\mid\mathcal G]\mid\mathcal H]
+ =\mathbb E[X\mid\mathcal H]\quad\text{a.s.}
+\]
+In particular \(\mathbb E\mathbb E[X\mid\mathcal G]=\mathbb E X\).
+Monotonicity, nonnegative addition, the fixed-point property,
+and the tower law also hold for nonnegative extended inputs.
+The order of conditioning reversed from the displayed identity
+gives \(\mathbb E[\mathbb E[X\mid\mathcal H]\mid\mathcal G]
+=\mathbb E[X\mid\mathcal H]\) almost surely.
+\end{proposition}
+\begin{proof}
+A linear combination of the versions passes the test-integral
+identity by linearity of integration. Nonnegative addition follows
+by additivity of the extended integral. For \(X\le Y\) almost
+surely, integrals over every \(\mathcal G\)-event are ordered.
+The comparison in Theorem~\ref{thm:prob-condexp-exists} yields
+the same order of the versions. Measurable inputs satisfy their
+own defining identity, which gives the fixed-point assertion.
+For the tower law, the \(\mathcal H\)-measurable left version
+integrates over each \(A\in\mathcal H\) to
+\(\int_A\mathbb E[X\mid\mathcal G]\,dP=\int_A X\,dP\).
+Uniqueness applies. Taking \(A=\Omega\) gives preservation of
+the integral, and the reversed tower follows from the
+fixed-point property.
+\end{proof}
+
+\begin{theorem}[Taking out a measurable factor]
+\label{thm:prob-condexp-pullout}
+If \(H\ge0\) is \(\mathcal G\)-measurable and \(X\ge0\), then
+\[
+ \mathbb E[HX\mid\mathcal G]=
+ H\mathbb E[X\mid\mathcal G]\quad\text{a.s.}
+\]
+using the convention \(0\cdot\infty=0\).
+If \(H\) is real and \(\mathcal G\)-measurable, \(X\) is real
+integrable, and \(HX\) is integrable, the same formula holds
+in the integrable sense. These formulas include bounded factors.
+\end{theorem}
+\begin{proof}
+For \(H=\mathbf 1_B\) with \(B\in\mathcal G\), test both sides on
+\(A\in\mathcal G\) by using the original identity on \(A\cap B\).
+For simple nonnegative \(H\), take finite sums. For arbitrary
+nonnegative \(H\), approximate it from below by simple
+nonnegative functions. Monotone convergence on both sides
+proves the defining identity for \(H\mathbb E[X\mid\mathcal G]\)
+on all \(A\), and uniqueness gives the formula.
+
+For real integrable \(X\), comparison applied to
+\(-|X|\le X\le |X|\) gives
+\(|\mathbb E[X\mid\mathcal G]|\le \mathbb E[|X|\mid\mathcal G]\).
+The nonnegative formula and integration show
+\[
+ \mathbb E\bigl[|H|\,|\mathbb E[X\mid\mathcal G]|\bigr]
+ \le\mathbb E\bigl[|H|\mathbb E[|X|\mid\mathcal G]\bigr]
+ =\mathbb E|HX|<\infty.
+\]
+For the test identities of the signed products, apply the
+nonnegative formula to \(H^+X^+\), \(H^+X^-\),
+\(H^-X^+\), and \(H^-X^-\), all integrable because each is
+bounded by \(|HX|\). Subtracting the respective terms and using
+linearity gives the integrable formula.
+\end{proof}
+
+\section{Conditional Jensen and contraction}
+\label{p03-03}
+
+\begin{theorem}[Conditional Jensen]
+\label{thm:prob-cond-jensen}
+Let \(X\) be real integrable and
+\(\varphi\colon\mathbb R\to\mathbb R\) finite and convex. Its
+negative part \(\varphi(X)^-\) is integrable, so
+\(\mathbb E[\varphi(X)\mid\mathcal G]\) is defined by the
+difference of the nonnegative versions for the positive and
+negative parts, allowing \(+\infty\). Then
+\[
+ \varphi(\mathbb E[X\mid\mathcal G])
+ \le \mathbb E[\varphi(X)\mid\mathcal G]\quad\text{a.s.}
+\]
+If \(\varphi(X)\) is integrable, the right side is the usual
+integrable version.
+\end{theorem}
+\begin{proof}
+For each rational \(q\) choose a supporting affine function
+\(\ell_q(t)=\varphi(q)+b_q(t-q)\). Such a \(b_q\) exists since
+the supremum of secant slopes to the left of \(q\) is no greater
+than the infimum of the slopes to the right. Both numbers are
+finite by bounding slopes near \(q\) with secants ending at two
+fixed points on opposite sides. These same secant comparisons
+give locally bounded supporting slopes and continuity of
+\(\varphi\). More explicitly, on any compact interval,
+take one fixed point strictly to its left and another strictly to
+its right. The slopes between interior points are bounded below
+and above by outer secants, using monotonicity of secant slopes.
+This bounds differences of values by a constant times the
+distance. A supporting slope at an interior point lies between
+such finite bounds after enlarging the compact interval.
+Thus for rationals \(q_j\to t\), \(\ell_{q_j}(t)\to\varphi(t)\),
+and \(\varphi(t)=\sup_{q\in\mathbb Q}\ell_q(t)\).
+
+A single \(\ell_q(X)\le\varphi(X)\) proves integrability of
+\(\varphi(X)^-\) by comparison with \(|\ell_q(X)|\).
+If \(U=\mathbb E[X\mid\mathcal G]\), then the affine test is
+\(\mathbb E[\ell_q(X)\mid\mathcal G]=\ell_q(U)\) almost surely.
+The nonnegative variable
+\(\varphi(X)^++\ell_q(X)^-\) dominates
+\(\ell_q(X)^++\varphi(X)^-\).
+Conditional comparison and addition, followed by subtracting
+the two finite conditional negative-part expectations, give
+\(\mathbb E[\varphi(X)\mid\mathcal G]\ge\ell_q(U)\).
+Take one exceptional null set for all rational \(q\) and then
+take their supremum. This proves the inequality.
+\end{proof}
+
+\begin{corollary}[Absolute value and \(L^p\) bounds]
+\label{thm:prob-condexp-contraction}
+For real \(X\in L^1\),
+\(|\mathbb E[X\mid\mathcal G]|\le\mathbb E[|X|\mid\mathcal G]\)
+almost surely. For \(1\le p\le\infty\), conditional expectation
+maps \(L^p\) to \(L^p\) and satisfies
+\(\|\mathbb E[X\mid\mathcal G]\|_p\le\|X\|_p\).
+Consequently its application to two integrable inputs
+contracts their \(L^p\) distance whenever both are in \(L^p\).
+\end{corollary}
+\begin{proof}
+Use conditional Jensen with \(|t|\) and with \(|t|^p\)
+for finite \(p\), then integrate and use preservation of
+expectation. For \(p=\infty\) apply comparison with the constant
+bound \(\|X\|_\infty\). Apply linearity to differences for the
+distance statement.
+\end{proof}
+
+\section{Conditional limits, variance, and uniform integrability}
+\label{p03-04}
+
+\begin{theorem}[Conditional monotone and dominated convergence]
+\label{thm:prob-condexp-convergence}
+All variables below are measurable with respect to the original
+\(\sigma\)-algebra \(\mathcal F\).
+If \(0\le X_n\uparrow X\) almost surely, versions of
+\(\mathbb E[X_n\mid\mathcal G]\) increase almost surely to a
+version of \(\mathbb E[X\mid\mathcal G]\), allowing \(+\infty\).
+If \(X_n\to X\) almost surely and \(|X_n|\le Y\) almost surely
+for an integrable \(Y\ge0\), then
+\(\mathbb E[X_n\mid\mathcal G]\to \mathbb E[X\mid\mathcal G]\)
+almost surely and in \(L^1\).
+\end{theorem}
+\begin{proof}
+For increasing \(X_n\), conditional comparison gives the
+version inequalities simultaneously outside a countable union
+of measurable null sets. Take the pointwise limit there and
+zero on the exception. Monotone convergence on each
+\(A\in\mathcal G\) gives the defining integral for \(X\).
+For the dominated case, use \(H_n=\sup_{k\ge n}|X_k-X|\) on the
+common measurable event where \(Y\) is finite, all the bounds hold,
+and \(X_k\to X\). In particular \(|X|\le Y\) there, so \(X\)
+is integrable. Put \(H_n=Y=0\) on the null complement, which
+preserves the version of \(Y\). Then \(0\le H_n\downarrow0\) and
+\(H_n\le 2Y\) everywhere. The variables \(2Y-H_n\) increase to
+\(2Y\), so the conditional monotone
+part and linearity give \(\mathbb E[H_n\mid\mathcal G]\downarrow0\)
+almost surely. By absolute value control and comparison,
+\[
+ |\mathbb E[X_n\mid\mathcal G]-\mathbb E[X\mid\mathcal G]|
+ \le \mathbb E[|X_n-X|\mid\mathcal G]
+ \le \mathbb E[H_n\mid\mathcal G].
+\]
+This proves the almost sure limit. The \(L^1\) contraction
+and dominated convergence of \(X_n\) give the \(L^1\) limit.
+\end{proof}
+
+\begin{proposition}[Conditional and total variance]
+\label{thm:prob-cond-variance}
+For \(X\in L^2\), put \(M=\mathbb E[X\mid\mathcal G]\) and
+\(V=\mathbb E[(X-M)^2\mid\mathcal G]\). Then
+\[
+ V=\mathbb E[X^2\mid\mathcal G]-M^2\quad\text{a.s.},
+ \qquad
+ \operatorname{Var}(X)=\mathbb E V+\operatorname{Var}(M).
+\]
+\end{proposition}
+\begin{proof}
+The \(L^2\) contraction gives \(M\in L^2\), so \(XM\) is
+integrable by Cauchy--Schwarz. By the pull-out and fixed-point
+properties, \(\mathbb E[XM\mid\mathcal G]=M^2\) and
+\(\mathbb E[M^2\mid\mathcal G]=M^2\). Expanding the square
+proves the first formula. Integrate it and use \(\mathbb E M=\mathbb E X\).
+Then \(\mathbb E V+\operatorname{Var}(M)
+=\mathbb E X^2-(\mathbb E X)^2\), which proves the second formula.
+\end{proof}
+
+\begin{proposition}[Conditional expectations of a fixed input are UI]
+\label{thm:prob-condexp-ui}
+If \(X\in L^1(P)\), the family
+\(\{\mathbb E[X\mid\mathcal G]:\mathcal G\subseteq\mathcal F
+\text{ a sub-sigma-algebra}\}\) is uniformly integrable.
+\end{proposition}
+\begin{proof}
+Its \(L^1\) norms are bounded by \(\mathbb E|X|\).
+For \(R>0\), decompose \(|X|\) into its parts on
+\(\{|X|\le R\}\) and \(\{|X|>R\}\). Conditional absolute value
+control, comparison with the constant \(R\), and preservation of
+expectation yield, for every event \(A\),
+\[
+ \int_A|\mathbb E[X\mid\mathcal G]|\,dP
+ \le RP(A)+\mathbb E[|X|\mathbf 1_{\{|X|>R\}}].
+\]
+The bound is uniform in \(\mathcal G\). Make the second term
+small by choosing \(R\) large, then make the first small by
+restricting \(P(A)\). The small-set criterion of
+Theorem~\ref{thm:prob-ui} gives the claim.
+\end{proof}
+\chapter{Probability Kernels and Conditional Laws}
+
+\section{Standard Borel coding and measurable factorization}\label{p04-01}
+
+A measurable space is standard Borel if it is measurably isomorphic to a Borel subset of a complete separable metric space. A measurable isomorphism is a bijection measurable in both directions. We write \(\mathcal B(T)\) for the specified sigma-algebra of a standard Borel space \(T\). The coding and factorization below correspond to \cite[Theorem 1.8 and Lemma 1.14, pp.~14--18]{Kallenberg}.
+
+\begin{theorem}[Coding and finite products]\label{thm:standard-borel-coding}
+Every standard Borel space is measurably isomorphic to a Borel subset of \(\mathbb R\). Its sigma-algebra has a countable generating \(\pi\)-system containing the entire space. A finite product of standard Borel spaces, equipped with the product sigma-algebra, is standard Borel.
+\end{theorem}
+\begin{proof}
+First let \(M\) be a nonempty complete separable metric space. At each level \(n\ge1\), take a countable open cover by balls of diameter at most \(2^{-n}\). Subtract preceding balls in the enumeration to make a countable Borel partition \((B_{n,j})_{j\ge0}\). For a finite word \(a=(a_1,\ldots,a_n)\) put \(C_a=\bigcap_{k=1}^n B_{k,a_k}\). Assign to \(x\in M\) its sequence \(c(x)\) of cell indices. This map into \(\mathbb N^{\mathbb N}\) is Borel because inverse images of finite-prefix cylinders are the sets \(C_a\).
+
+Let \(D\subseteq\mathbb N^{\mathbb N}\) consist of sequences \(\alpha\) with every \(C_{\alpha|n}\) nonempty. A failed prefix excludes an open cylinder, so \(D\) is closed. Choose one representative \(x_a\in C_a\) for each nonempty cell, a countable collection of choices. If \(\alpha\in D\), the representatives \(x_{\alpha|n}\) are Cauchy because they lie in nested cells of diameter tending to zero. Let \(h(\alpha)\) be their limit. Two sequences with a common prefix of length \(n\) have limits in the closure of the same cell, so their limits are at distance at most \(2^{-n}\). Thus \(h\) is continuous on \(D\).
+
+The image \(c(M)\) consists precisely of the \(\alpha\in D\) such that \(h(\alpha)\in C_{\alpha|n}\) for all \(n\). The condition for each fixed \(n\) is a countable union over nonempty prefixes \(a\) of a prefix cylinder intersected with \(h^{-1}(C_a)\), relative to \(D\). Hence \(c(M)\) is Borel. This argument also shows that \(c\) and the restriction of \(h\) to \(c(M)\) are inverses. For any Borel subset \(M_0\subseteq M\), its coded image is \(c(M)\cap h^{-1}(M_0)\), again Borel.
+
+The map sending \(\alpha\) to the binary sequence formed by the successive blocks \(1^{\alpha_n}0\) is a homeomorphism from \(\mathbb N^{\mathbb N}\) onto the Borel set of binary sequences having infinitely many zeros. Indeed, each finite initial collection of complete blocks determines the corresponding input coordinates and conversely. Identifying the binary sequence with the ternary expansion with digits \(0,2\) gives a homeomorphism of the whole binary sequence space onto the closed Cantor subset of \([0,1]\). Thus the coded images above are Borel subsets of \(\mathbb R\). The empty space uses the empty image. A countable generating \(\pi\)-system is obtained by pulling back the rational closed lower half-lines and the entire line.
+
+For the product assertion, represent each factor as a Borel subset of a complete separable metric space. A finite product of the ambient spaces is complete and separable under the maximum of their metrics. Its Borel sigma-algebra is the product of the factor Borel sigma-algebras because the product has a countable basis of open rectangles. The product of the chosen subsets is Borel, and its trace sigma-algebra equals the product of their trace sigma-algebras, by comparing the generating rectangles.
+\end{proof}
+
+\begin{theorem}[Doob--Dynkin factorization and versions]\label{thm:doob-dynkin}
+Let \(X\) map a set \(\Omega\) into a measurable space \((S,\mathcal S)\), and let \(Y\) take values in a nonempty standard Borel space \(T\). If \(Y\) is \(\sigma(X)\)-measurable, then \(Y=g(X)\) for a measurable \(g:S\to T\). If \(\Omega\) carries a probability and \(Y\) is measurable for the probability completion of \(\sigma(X)\), the conclusion holds almost surely.
+\end{theorem}
+\begin{proof}
+Write \(b:T\to B\subseteq\mathbb R\) for the coding from Theorem~\ref{thm:standard-borel-coding}. In the first assertion, for each rational \(q\) there is \(A_q\in\mathcal S\) with \(X^{-1}(A_q)=\{b(Y)\le q\}\). This follows because the pullbacks of \(\mathcal S\) themselves form the sigma-algebra \(\sigma(X)\). Define the extended real map \(r(s)=\inf\{q\in\mathbb Q:s\in A_q\}\), with \(\inf\varnothing=+\infty\). Its strict lower level sets are countable unions of the \(A_q\), so \(r\) is measurable. At \(s=X(\omega)\), the infimum is \(b(Y(\omega))\). Define \(g=b^{-1}\circ r\) on the measurable set \(\{r\in B\}\), and set it equal to a fixed \(y_*\in T\) elsewhere.
+
+For the completion assertion, every event \(\{b(Y)\le q\}\) has an original \(\sigma(X)\)-measurable representative agreeing with it off an original measurable null set. Apply the preceding infimum construction to the representatives. The union of the exceptional sets over the rational \(q\) is a single null set, so the constructed factorization agrees with \(Y\) almost surely.
+\end{proof}
+
+\section{Kernel integration and composition}\label{p04-02}
+
+\begin{definition}
+A probability kernel \(K:S\rightsquigarrow T\) assigns to each \(s\in S\) a probability measure \(K(s,\cdot)\) on \(T\). For each measurable \(B\subseteq T\), the evaluation \(s\mapsto K(s,B)\) is measurable. The identity kernel on \(S\) is \(I_S(s,\cdot)=\delta_s\).
+\end{definition}
+
+\begin{theorem}[Measure induced by a kernel]\label{thm:kernel-measure}
+Let \(K:S\rightsquigarrow T\) be a probability kernel and let \(\mu\) be a probability on \(S\). For every product-measurable \(C\subseteq S\times T\) its section \(C_s=\{y:(s,y)\in C\}\) is measurable, and \(s\mapsto K(s,C_s)\) is measurable. The formula
+\[
+ (\mu\otimes K)(C)=\int K(s,C_s)\,\mu(ds)
+\]
+defines a probability measure whose first marginal is \(\mu\). For nonnegative product-measurable \(f\),
+\begin{equation}\label{eq:kernel-integration}
+ \int f\,d(\mu\otimes K)
+   =\int \left(\int f(s,y)\,K(s,dy)\right)\mu(ds).
+\end{equation}
+The inner integral is measurable in \(s\). For integrable real \(f\), its absolute integral is finite for \(\mu\)-almost every \(s\), and the same formula holds with any measurable choice of the signed inner integral on the exceptional set.
+\end{theorem}
+\begin{proof}
+The section property holds on rectangles and is preserved under complements and countable unions. The class of sets with measurable \(s\mapsto K(s,C_s)\) contains rectangles. It is a \(\lambda\)-system because the kernel has total mass one, and disjoint unions can be evaluated as pointwise sums. The \(\pi\)-\(\lambda\) theorem gives measurability for all \(C\). Countable additivity and total mass one of \(\mu\otimes K\) follow by monotone convergence and normalization. Taking \(C=A\times T\) gives the marginal. The integral formula follows from its indicator case by finite linearity and increasing nonnegative simple approximations. For signed \(f\), applying the nonnegative formula to \(\lvert f\rvert\) first gives finite fiber integrals almost surely. Apply it separately to the positive and negative parts and subtract.
+\end{proof}
+
+\begin{proposition}[Composition and product kernels]\label{prop:kernel-composition}
+For probability kernels \(K:S\rightsquigarrow T\) and \(L:T\rightsquigarrow U\), the formula
+\[
+ (KL)(s,C)=\int L(y,C)\,K(s,dy)
+\]
+defines a probability kernel. For any nonnegative measurable \(h:U\to[0,\infty]\),
+\[
+ \int h(z)\,(KL)(s,dz)
+   =\int\left(\int h(z)\,L(y,dz)\right)K(s,dy).
+\]
+For each fixed \(s\) this also holds for \(h\) integrable against \((KL)(s,\cdot)\), with the inner signed integral taken wherever it exists. Composition is associative with identity \(I_S\) at \(S\). If \(K:S\rightsquigarrow T\) and \(L:S\rightsquigarrow U\) have a common source, \(s\mapsto K(s,\cdot)\otimes L(s,\cdot)\) is a kernel into \(T\times U\).
+\end{proposition}
+\begin{proof}
+Measurability and countable additivity follow respectively from parameter integration in Theorem~\ref{thm:kernel-measure} and monotone convergence. Normalization follows by setting \(C=U\). The integral formula follows by approximating \(h\) by simple functions, and applying the nonnegative formula to \(\lvert h\rvert\) justifies subtraction for signed \(h\). For three kernels, evaluate the two composite kernels at the indicator of a measurable set of the last space. Both expressions are the same iterated integral by the formula just proved. Evaluating a Dirac measure gives the two identity laws. For the common-source assertion, measurability holds first on rectangles by the product of two evaluations, and then on all product-measurable sets by the \(\pi\)-\(\lambda\) theorem. The finite product measures in this argument are the usual ones for probabilities.
+\end{proof}
+
+These constructions and their parameter measurability are the ones in \cite[Lemmas 3.1--3.3, pp.~56--59]{Kallenberg}.
+
+\section{Existence of regular conditional laws}\label{p04-03}
+
+\begin{theorem}[Disintegration over an arbitrary measurable base]\label{thm:disintegration}
+Let \((S,\mathcal S)\) be any measurable space, \(T\) a nonempty standard Borel space, and \(M\) a probability on \(S\times T\), with first marginal \(\mu\). There exists a probability kernel \(K:S\rightsquigarrow T\) with \(M=\mu\otimes K\).
+\end{theorem}
+\begin{proof}
+Use Theorem~\ref{thm:standard-borel-coding} to replace \(T\) by a nonempty Borel subset \(B\subseteq\mathbb R\). View \(M\) as a measure \(M'\) on \(S\times\mathbb R\) concentrated on \(S\times B\). Fix \(b_*\in B\). For each rational \(q\) the measure \(\nu_q(A)=M'(A\times(-\infty,q])\) on \(S\) is dominated by \(\mu\). Choose a measurable Radon--Nikodym derivative \(r_q\) with values in \([0,1]\), clipping a representative on a null set if necessary.
+
+For rational \(q\le r\), domination \(\nu_q\le\nu_r\) implies \(r_q\le r_r\) almost surely. This follows by comparing the two integrals on \(\{r_q>r_r\}\). After discarding a single measurable null set, all these inequalities hold. On that common full-measure set the limits of \(r_n\) and \(r_{-n}\), as \(n\to\infty\), exist by monotonicity. The integrals of the limits are \(1\) and \(0\), since the corresponding half-lines increase to \(\mathbb R\) and decrease to the empty set. These limits are therefore \(1\) and \(0\) almost surely. For each rational \(q\), the decreasing sequence \(r_{q+1/n}\) has limit \(r_q\) almost surely. Indeed, bounded convergence identifies the integral of the limit over each \(A\) with \(\nu_q(A)\), and uniqueness of Radon--Nikodym derivatives applies. Add all failures of the tail and right-limit identities to the same measurable null set. On that set assign \(r_q(s)=\ind_{\{b_*\le q\}}\) simultaneously for all \(q\). The assignments satisfy all the identities there and preserve each integral against \(\mu\).
+
+For \(t\in\mathbb R\), define
+\[
+ F_s(t)=\inf\{r_q(s): q\in\mathbb Q,\ q>t\}.
+\]
+This is nondecreasing in \(t\). If \(t_j\downarrow t\), then \(F_s(t_j)\ge F_s(t)\), and for any fixed rational \(q>t\), eventually \(F_s(t_j)\le r_q(s)\). Thus \(F_s\) is right-continuous. The two rational tail limits give limits \(0,1\) at the respective infinities, and the rational right-limit identities give \(F_s(q)=r_q(s)\). The distribution function theorem of Section~\ref{p01-03} gives a probability \(K'(s,\cdot)\) on \(\mathbb R\). Its evaluations on rational closed lower half-lines are measurable in \(s\). A \(\pi\)-\(\lambda\) argument gives measurability on all Borel sets, so \(K'\) is a kernel.
+
+By the choice of the derivatives, \(\mu\otimes K'\) and \(M'\) agree on \(A\times(-\infty,q]\) for all measurable \(A\) and rational \(q\). They agree on \(A\times\mathbb R\) by their first marginal. These rectangles form a generating \(\pi\)-system, so the two measures agree. In particular \(\int K'(s,B)\,\mu(ds)=1\). The set \(\{s:K'(s,B)\ne1\}\) is measurable and null. Restrict \(K'(s,\cdot)\) to \(B\) where it gives \(B\) full mass, and use \(\delta_{b_*}\) otherwise. This produces a probability kernel on \(B\) at every \(s\) and preserves the joint law. Transport the kernel to \(T\) by the inverse coding.
+\end{proof}
+
+The construction follows the rational-cut argument in \cite[Theorem 3.4, pp.~60--61]{Kallenberg}. The Dirac assignment on the common exceptional set ensures a normalized distribution function there as well.
+
+\begin{corollary}[Conditional law on a probability space]\label{cor:conditional-law}
+Let \(Y\) be a measurable random element of a nonempty standard Borel space \(T\) on \((\Omega,\mathcal F,P)\). For any sub-sigma-algebra \(\mathcal G\subseteq\mathcal F\), there is a probability kernel \(K:(\Omega,\mathcal G)\rightsquigarrow T\) with
+\[
+  \int_A K(\omega,B)\,P(d\omega)=P(A\cap\{Y\in B\}),
+  \qquad A\in\mathcal G,\ B\in\mathcal B(T).
+\]
+If \(X:\Omega\to S\) is measurable into an arbitrary measurable space, there is also a kernel \(K_X:S\rightsquigarrow T\) with \(\Law(X,Y)=\Law(X)\otimes K_X\). Both assertions extend to inputs admitting measurable versions that agree almost everywhere. In this case laws and event probabilities can be taken on the completion of \(\mathcal F\).
+\end{corollary}
+\begin{proof}
+For the first assertion disintegrate the joint law of the identity \(\Omega\to(\Omega,\mathcal G)\) and \(Y\), with first marginal \(P|_{\mathcal G}\). For the second, use the joint law of \(X,Y\) in Theorem~\ref{thm:disintegration}. Replacing almost everywhere measurable inputs by measurable versions leaves the joint law unchanged because the versions agree off the union of their two null sets.
+\end{proof}
+
+\section{Uniqueness, conditional independence, and gluing}\label{p04-04}
+
+\begin{theorem}[Simultaneous uniqueness and conditional integration]\label{thm:kernel-conditional-integration}
+Let \(M\) be the joint probability of Theorem~\ref{thm:disintegration}. Any two disintegrations \(K,L\) agree as probability measures at every \(s\) outside one measurable \(\mu\)-null set.
+
+Suppose \((X,Y)\) has joint law \(\mu\otimes K\). For nonnegative measurable \(f:S\times T\to[0,\infty]\), the conditional expectation of \(f(X,Y)\) given \(\sigma(X)\) has the version
+\[
+  \omega\longmapsto \int f(X(\omega),y)\,K(X(\omega),dy).
+\]
+The formula also holds for integrable real \(f\), with arbitrary measurable values on the exceptional set where the absolute fiber integral is infinite. For a conditional law \(K\) given \(\mathcal G\) on \(\Omega\), the same conclusion holds for \(\mathcal G\otimes\mathcal B(T)\)-measurable \(f(\omega,y)\), with \(\omega\) in place of \(X(\omega)\).
+\end{theorem}
+\begin{proof}
+For each \(B\) in a countable generating \(\pi\)-system of \(T\) containing \(T\), the functions \(K(s,B)\) and \(L(s,B)\) have the same integrals over every \(A\in\mathcal S\). The integral on \(\{K(s,B)>L(s,B)\}\) and on the reverse inequality set gives equality almost surely. Take the countable union of these null sets. At every point of the complement, the two probability measures agree by uniqueness on the generating class.
+
+For the second assertion the right-hand side is measurable with respect to \(\sigma(X)\) by Theorem~\ref{thm:kernel-measure}. Every event in \(\sigma(X)\) is \(X^{-1}(A)\) for a measurable \(A\subseteq S\). Applying the integral identity of that theorem to \(\ind_A(s)f(s,y)\) gives
+\[
+ \E\!\left[\ind_{\{X\in A\}}f(X,Y)\right]
+ =\E\!\left[\ind_{\{X\in A\}}\int f(X,y)\,K(X,dy)\right].
+\]
+This identifies the conditional expectation. For integrable \(f\), the integral identity for \(\lvert f\rvert\) yields the required almost sure fiber integrability and the integrability of the chosen right-hand side. The assertion with \(\mathcal G\) uses the identity into \((\Omega,\mathcal G)\) as in Corollary~\ref{cor:conditional-law}.
+\end{proof}
+
+\begin{definition}
+Random elements \(Y,Z\) are conditionally independent given \(\mathcal G\) if for all measurable \(B,C\),
+\[
+ \E[\ind_{\{Y\in B,\ Z\in C\}}\mid\mathcal G]
+  =\E[\ind_{\{Y\in B\}}\mid\mathcal G]\,
+   \E[\ind_{\{Z\in C\}}\mid\mathcal G]
+ \quad\text{almost surely}.
+\]
+Each identity is understood as an equality of versions. For measurable real functions \(u,v\) that are bounded, this implies the same factorization for \(\E[u(Y)v(Z)\mid\mathcal G]\). Indeed, first expand finite linear combinations of indicators, then use bounded convergence and the conditional integral characterization to pass to bounded \(u,v\).
+\end{definition}
+
+\begin{proposition}[Product criterion and conditional gluing]\label{prop:conditional-gluing}
+For \(Y,Z\) with standard Borel values, conditional independence is equivalent to the regular conditional law of \((Y,Z)\) being the product of the regular conditional laws of \(Y,Z\), outside one \(\mathcal G\)-measurable null set.
+
+More generally, let \(M\) on \(S\times T\) and \(N\) on \(S\times U\) have the same \(S\)-marginal \(\mu\), with \(T,U\) standard Borel. There is a joint probability on \(S\times T\times U\) with these two projections in which the last two coordinates are conditionally independent given the first. This probability is unique among joint laws with the stated conditional independence.
+\end{proposition}
+\begin{proof}
+By Theorem~\ref{thm:standard-borel-coding} the joint target is standard Borel, so all three conditional kernels exist. A kernel identity implies the indicator factorization by evaluating rectangles. Conversely, apply the factorization on the countable rectangular \(\pi\)-system obtained by taking the product of two countable generating \(\pi\)-systems containing the respective whole spaces. On the complement of one measurable null set, the joint kernel and the product kernel agree on this system and hence on the whole product sigma-algebra.
+
+For the second assertion, disintegrate the two probabilities as \(\mu\otimes K\) and \(\mu\otimes L\). The measure
+\[
+ \Lambda(ds,dy,dz)=\mu(ds)\bigl(K(s,\cdot)\otimes L(s,\cdot)\bigr)(dy,dz)
+\]
+exists by Proposition~\ref{prop:kernel-composition} and Theorem~\ref{thm:kernel-measure}. Integrating out either last coordinate gives the respective specified projection. The product criterion gives conditional independence. In any other joint law with these properties, the two conditional marginals agree with \(K,L\) for \(\mu\)-almost every \(s\) by Theorem~\ref{thm:kernel-conditional-integration}. The product criterion forces the same joint kernel for \(\mu\)-almost every \(s\), which gives the same joint measure.
+\end{proof}
+
+The conditional integral and gluing constructions correspond to \cite[Theorems 8.5 and 8.9 and results 8.16--8.20, pp.~168--177]{Kallenberg}.
+
+\section{Measurable randomization and transfer}\label{p04-05}
+
+\begin{theorem}[Randomization of a kernel]\label{thm:kernel-randomization}
+Let \(K:S\rightsquigarrow T\) be a probability kernel with \(T\) a nonempty standard Borel space. There is a jointly measurable \(g:S\times[0,1]\to T\) such that \(g(s,\cdot)\) pushes Lebesgue probability on \([0,1]\) to \(K(s,\cdot)\) for every \(s\). Consequently, if \(X\) has law \(\mu\) and \(V\) is an independent uniform variable, then \((X,g(X,V))\) has law \(\mu\otimes K\).
+\end{theorem}
+\begin{proof}
+Code \(T\) as a Borel subset \(B\subseteq\mathbb R\), and write \(K'\) for the transported kernel on \(\mathbb R\), concentrated on \(B\) for each \(s\). Write \(F_s(t)=K'(s,(-\infty,t])\). For \(0<u<1\), put
+\[
+  Q(s,u)=\inf\{q\in\mathbb Q:F_s(q)\ge u\}.
+\]
+This is finite by the two tail limits of \(F_s\). For \(a\in\mathbb R\),
+\[
+ \{Q<a\}=\bigcup_{\substack{q\in\mathbb Q\\q<a}}\{(s,u):u\le F_s(q)\},
+\]
+so \(Q\) is jointly measurable. If \(u\le F_s(t)\), all rational \(q>t\) qualify, hence \(Q(s,u)\le t\). Conversely, if \(Q(s,u)\le t\), then for every rational \(r>t\) some qualifying \(q<r\) exists. Thus \(u\le F_s(r)\) for all such \(r\), and right continuity gives \(u\le F_s(t)\). It follows that the distribution function of \(Q(s,V)\) is \(F_s\). Set \(Q\) at \(u=0,1\) equal to a fixed \(b_*\in B\). For each \(s\), the set of \(u\) where \(Q(s,u)\notin B\) has Lebesgue measure zero, so replacing \(Q\) by \(b_*\) on this jointly measurable set preserves each fiber law. Decode to obtain \(g\). Independence gives the product law of \(X,V\). Integrating the indicator of any \(A\times B_1\subseteq S\times T\) against this product gives \(\int_A K(s,B_1)\,\mu(ds)\), which determines the joint law.
+\end{proof}
+
+\begin{corollary}[Transfer and conditionally independent sampling]
+\label{cor:conditional-sampling}
+Suppose \(M\) is a joint probability on \(S\times T\), with \(T\) nonempty standard Borel. On any space carrying a variable \(X\) with the first marginal of \(M\) and an independent uniform, a measurable function of those two variables realizes the second coordinate jointly with the first according to \(M\). For two such conditional laws with the same first marginal, let \(V_1,V_2\) be independent uniforms with \((V_1,V_2)\) independent of \(X\). Applying the two sampling functions to \((X,V_1)\) and \((X,V_2)\), respectively, realizes the glued measure of Proposition~\ref{prop:conditional-gluing}. The independent uniforms can always be supplied on a product enlargement of the original space.
+\end{corollary}
+\begin{proof}
+Disintegrate \(M\) and apply Theorem~\ref{thm:kernel-randomization}. In the two-kernel case the joint input law is \(\mu\otimes\mathrm{Leb}\otimes\mathrm{Leb}\). On rectangles, integrating separately in the two uniform variables gives the product of the two conditional probabilities at each first coordinate, and then integrating that product gives the glued measure. Equality on rectangles determines the law. The product enlargement uses two Lebesgue probability coordinates with their product measure.
+\end{proof}
+
+See \cite[Lemma 4.22, p.~94, and results 8.17--8.20, pp.~175--177]{Kallenberg} for the randomization and transfer interfaces.
+\chapter{Probability Extension and Continuous Paths}
+
+\section{The Ionescu--Tulcea extension}\label{p05-01}
+
+Let \(S_1,S_2,\ldots\) be measurable spaces. The sigma-algebra of the sequence space \(S=\prod_{j\ge1} S_j\) is generated by the prefix cylinders \(\pi_n^{-1}(B)\), with \(B\) measurable in the finite product \(S_{\le n}=\prod_{j=1}^n S_j\). We write \(S_{\le0}=\{*\}\). Consistency of a finite law with a shorter prefix means that its pushforward under prefix restriction is the law specified for that shorter prefix.
+
+\begin{theorem}[Ionescu--Tulcea]\label{thm:ionescu-tulcea}
+Given an initial probability \(\mu_1\) on \(S_1\) and probability kernels \(K_{n+1}:S_{\le n}\rightsquigarrow S_{n+1}\) for \(n\ge1\), there is a unique probability \(\mu\) on \(S\) with prefix laws
+\[
+ \mu_{n+1}=\mu_n\otimes K_{n+1},\qquad n\ge1.
+\]
+The coordinate spaces may be arbitrary measurable spaces.
+\end{theorem}
+\begin{proof}
+The prefix laws exist by Theorem~\ref{thm:kernel-measure} and are consistent by the first marginal identity. Each \(S_n\) is nonempty because it carries a probability marginal of \(\mu_n\). In particular prefix projections of the full product are surjective. Define \(\nu(\pi_n^{-1}(B))=\mu_n(B)\). Prefix cylinders form an algebra, since finitely many cylinders can be lifted to the largest of their lengths. At that common length, surjectivity and consistency prove well-definedness and finite additivity.
+
+We prove continuity at the empty set on this algebra. Let \(A_j\downarrow\varnothing\) be prefix cylinders, and write \(A_j=\pi_{m_j}^{-1}(D_j)\), using sufficiently long, nondecreasing lengths \(m_j\). Include the kernel \(K_1(*,\cdot)=\mu_1\). For every \(j\) and prefix length \(k\), define a function \(h_k^{(j)}:S_{\le k}\to[0,1]\). For \(k\ge m_j\) it is the indicator of \(D_j\) on the first \(m_j\) coordinates. For \(k<m_j\) it is the iterated kernel integral of that indicator over the missing coordinates \(k+1,\ldots,m_j\). These functions are measurable and satisfy
+\[
+ h_k^{(j)}(x_{\le k})
+   =\int h_{k+1}^{(j)}(x_{\le k},y)\,K_{k+1}(x_{\le k},dy)
+ \qquad(k\ge0).
+\]
+This holds also for \(k\ge m_j\) because the integrand is then constant in \(y\). The value \(h_0^{(j)}(*)\) is \(\nu(A_j)\), by successive use of the kernel integral formula.
+
+For fixed \(k\), the sequence \(h_k^{(j)}\) is pointwise decreasing in \(j\). To see this, lift the two indicators to a common prefix length at least \(k,m_j,m_{j+1}\). The inclusion \(A_{j+1}\subseteq A_j\) holds at that length by surjectivity. Integrating out the same coordinates preserves the inequality. Let \(h_k=\lim_j h_k^{(j)}\). Bounded convergence in each transition kernel gives
+\[
+ h_k(x_{\le k})
+   =\int h_{k+1}(x_{\le k},y)\,K_{k+1}(x_{\le k},dy).
+\]
+If \(h_0(*)>0\), choose \(x_1\) with \(h_1(x_1)>0\), then successively extend each positive prefix to one with \(h_{k+1}(x_{\le k+1})>0\), as the integral of a nonnegative function is positive only if it is positive somewhere. For each \(j\), the resulting sequence has
+\[
+ 0<h_{m_j}(x_{\le m_j})\le h_{m_j}^{(j)}(x_{\le m_j})
+   =\ind_{D_j}(x_{\le m_j}).
+\]
+It therefore lies in every \(A_j\), a contradiction. This proves continuity at the empty set.
+
+If disjoint algebra sets \(C_i\) have union \(C\) still in the algebra, the remainders \(C\setminus\bigcup_{i=1}^n C_i\) decrease to the empty set. Finite additivity and the continuity just proved give \(\nu(C)=\sum_i\nu(C_i)\), so \(\nu\) is a finite premeasure. The finite measure extension theorem gives the desired law on the generated sigma-algebra, with uniqueness there.
+\end{proof}
+
+This proof uses the transition kernels themselves at every prefix. Its recursive continuity argument yields the arbitrary measurable state spaces of \cite[Theorem 8.24, pp.~180--181]{Kallenberg}.
+
+\section{Consistent finite-dimensional laws}\label{p05-02}
+
+For any index set \(I\), write \(S_F=\prod_{i\in F}S_i\) for a finite set of indices \(F\subseteq I\). The empty product is a singleton. For \(E\subseteq F\), let \(\pi_{F,E}:S_F\to S_E\) be restriction. A family of probabilities \((\mu_F)\) is consistent if
+\[
+ (\pi_{F,E})_\#\mu_F=\mu_E\qquad(E\subseteq F\subseteq I,\ F\ \text{finite}).
+\]
+The state space \(S_I=\prod_{i\in I}S_i\) is equipped with the sigma-algebra generated by the finite-coordinate projections, called the product or cylinder sigma-algebra.
+
+\begin{lemma}[Reduction to countably many coordinates]\label{lem:countable-cylinder-reduction}
+Suppose \((\mu_F)\) is consistent and each \(S_i\) is nonempty. If every countable coordinate subfamily has a probability extension with its specified finite-dimensional laws, then the whole family has a unique probability extension to the cylinder sigma-algebra of \(S_I\).
+\end{lemma}
+\begin{proof}
+The finite-coordinate cylinders form an algebra. Prescribe the value of a cylinder by its finite-dimensional probability. Equality or finite additivity of cylinders can be checked after lifting them to a common finite coordinate product. Such lifts faithfully reflect set relations since the full product projects onto every finite product. Consistency gives a finitely additive probability on the algebra.
+
+For any decreasing sequence of cylinders \(A_j\) with empty intersection, let \(J\) be the union of their finite supports. It is countable. Write \(A_j=\pi_{I,J}^{-1}(A'_j)\), where \(A'_j\) are the corresponding cylinders on \(S_J\). The projection onto \(S_J\) is surjective, so the \(A'_j\) decrease to the empty set. Their probabilities under a countable-coordinate extension tend to zero by continuity of a probability. Those probabilities are exactly the prescribed cylinder values of the \(A_j\). The same finite-additivity argument as in Theorem~\ref{thm:ionescu-tulcea} gives a finite premeasure. Extend it to the generated sigma-algebra. Agreement on cylinders, a generating \(\pi\)-system, proves uniqueness.
+\end{proof}
+
+\begin{theorem}[Kolmogorov extension]\label{thm:kolmogorov-extension}
+If the \(S_i\) are standard Borel spaces, every consistent family of finite-dimensional probability laws \((\mu_F)\) extends uniquely to a probability law on the cylinder sigma-algebra of \(S_I\).
+\end{theorem}
+\begin{proof}
+The one-coordinate laws ensure that the factors are nonempty. For a countably infinite \(J\subseteq I\), enumerate it as \(j_1,j_2,\ldots\). The laws of its first \(n\) coordinates are consistent under prefix restriction. Disintegrate the \((n+1)\)-coordinate law over its \(n\)-coordinate marginal by Theorem~\ref{thm:disintegration}, with the standard Borel last coordinate as target. This supplies the kernel \(K_{n+1}\) on the whole prefix space. Theorem~\ref{thm:ionescu-tulcea} now produces a probability whose prefix laws, by induction on the kernel recursion, are the given ones. Every finite subset of \(J\) lies in a prefix, so all its finite-dimensional laws are correct. A finite \(J\) already carries the law \(\mu_J\). Apply Lemma~\ref{lem:countable-cylinder-reduction}.
+\end{proof}
+
+The arbitrary-index statement corresponds to \cite[Theorem 8.23, pp.~179--180]{Kallenberg}. A complementary construction for countable real coordinates appears in \cite[Theorem 2.1.21, p.~53, and Appendix A.3, pp.~464--466]{Durrett}.
+
+\section{Independent products and the cylinder sigma-algebra}\label{p05-03}
+
+\begin{theorem}[Arbitrary independent product]\label{thm:independent-product}
+Let \(I\) be arbitrary and let \(\lambda_i\) be a probability on a measurable space \(S_i\) for each \(i\in I\). There is a unique law on the cylinder sigma-algebra of \(S_I\) whose coordinate maps have the respective laws \(\lambda_i\) and are mutually independent. More generally the law of a product-valued process is determined by its finite-dimensional laws on this sigma-algebra.
+\end{theorem}
+\begin{proof}
+The finite products \(\mu_F=\bigotimes_{i\in F}\lambda_i\) are consistent, as can be seen first on rectangles by integrating the missing coordinates over their whole spaces. For a countably infinite subfamily, use Theorem~\ref{thm:ionescu-tulcea} with constant kernels \(K_{n+1}(x_{\le n},\cdot)=\lambda_{j_{n+1}}\). Its finite prefix laws are the finite products by Theorem~\ref{thm:kernel-measure}. Lemma~\ref{lem:countable-cylinder-reduction} extends to arbitrary \(I\). The finite product laws yield mutual independence by evaluating all finite-coordinate rectangles. Conversely mutual independence determines those finite joint laws by uniqueness on rectangles. For any two probabilities with the same finite-dimensional laws, the defining cylinders form a generating \(\pi\)-system on which the two probabilities agree.
+\end{proof}
+
+See \cite[Lemma 4.1, Proposition 4.2, and Corollary 8.25, pp.~83--84 and 181]{Kallenberg} and \cite[Example A.3.2, p.~464]{Durrett}.
+
+\begin{example}[Cylinder and topological Borel sets]\label{ex:uncountable-cylinder}
+Take an uncountable \(I\) and \(S_i=\{0,1\}\) with its discrete topology. Every cylinder-measurable set has membership determined by at most countably many coordinates. Indeed, the sets with this property form a sigma-algebra, since the union of countably many countable determining coordinate sets is countable. The singleton consisting of the all-zero point is closed in the product topology. It cannot have its membership determined by countably many coordinates, because changing an unlisted coordinate changes membership. Hence the topological Borel sigma-algebra is strictly larger than the cylinder sigma-algebra in this example.
+\end{example}
+
+\section{Increment moments and continuous modifications}\label{p05-04}
+
+A process \(Y\) is a modification of \(X\) on the same probability space if \(P(X_t=Y_t)=1\) for each fixed \(t\). The processes are indistinguishable if there is a single measurable full-probability event on which \(X_t=Y_t\) for every \(t\). For a separable metric state space the equality event at a fixed \(t\) is measurable, since the diagonal is closed and the product Borel sigma-algebra agrees with the product sigma-algebra.
+
+\begin{theorem}[Kolmogorov--Chentsov on a compact time interval]\label{thm:kolmogorov-chentsov}
+Let \(T>0\), and let \(X=(X_t)_{0\le t\le T}\) be a process with values in a complete separable metric space \((S,d)\). Suppose that \(p>0\), \(\beta>0\) and \(C<\infty\) satisfy
+\[
+ \E[d(X_t,X_s)^p]\le C\,\lvert t-s\rvert^{1+\beta}
+ \qquad(0\le s,t\le T).
+\]
+There is a modification \(Y\) of \(X\) on the same space with continuous paths. On a single measurable full-probability event, every path of \(Y\) is Hölder continuous for each \(0<\gamma<\beta/p\), with a constant allowed to depend on the path and on \(\gamma\). Any two modifications with almost surely continuous paths are indistinguishable.
+\end{theorem}
+\begin{proof}
+For \(n\ge0\) set \(h_n=T2^{-n}\) and \(D_n=\{jh_n:0\le j\le2^n\}\). Fix \(0<\gamma<\beta/p\). By Markov's inequality and the union bound,
+\begin{align*}
+ &P\left(\max_{1\le j\le2^n}
+       d(X_{jh_n},X_{(j-1)h_n})>h_n^\gamma\right)\\
+ &\hspace{20mm}\le C\,2^n h_n^{1+\beta-p\gamma}
+   = C T^{1+\beta-p\gamma}2^{-n(\beta-p\gamma)}.
+\end{align*}
+This is summable in \(n\). The first Borel--Cantelli lemma gives a measurable full-probability event on which only finitely many levels violate the desired adjacent-increment bound. The finitely many exceptional increments have finite distances. Thus on this event there is \(A_\gamma(\omega)<\infty\) such that every adjacent increment at level \(n\) is bounded by \(A_\gamma(\omega)h_n^\gamma\), for all \(n\). Intersect these full-probability events over a fixed increasing sequence of positive exponents converging to \(\beta/p\), and denote the intersection by \(G\).
+
+Here is the chaining estimate on \(G\) for any one of the selected exponents. Write \(D=\bigcup_n D_n\), and take \(s<t\) in \(D\). Choose \(n\) with \(h_{n+1}<t-s\le h_n\). For \(k\ge n\), let \(s_k,t_k\) be the largest grid points at level \(k\) below or equal to \(s,t\), respectively. At level \(n\) the grid points \(s_n,t_n\) are at most one grid step apart. Between consecutive levels, \(s_k,s_{k+1}\) are either equal or adjacent points of \(D_{k+1}\), and likewise for \(t\). The approximants are eventually \(s,t\) themselves. The triangle inequality gives
+\begin{align*}
+ d(X_t,X_s)
+ &\le A_\gamma(\omega)\left(h_n^\gamma+
+         2\sum_{k=n+1}^{\infty}h_k^\gamma\right)\\
+ &\le 2^\gamma A_\gamma(\omega)
+        \left(1+\frac{2\,2^{-\gamma}}{1-2^{-\gamma}}\right)
+            (t-s)^\gamma.
+\end{align*}
+The bounds for the selected exponents also give all smaller positive exponents, using the finiteness of \(T\). Thus each sample function on \(D\) for \(\omega\in G\) has a unique continuous extension to \([0,T]\) by completeness of \(S\). Each bound persists by approximation. Define \(Y\) by these extensions on \(G\) and by a fixed constant path outside \(G\).
+
+For each fixed \(t\), choose deterministic dyadics \(t_n\to t\). The variable \(Y_t\) is the limit of the measurable variables equal to \(X_{t_n}\) on \(G\) and to the fixed state outside \(G\). A pointwise metric limit is measurable, as is seen by composing with distances to nonempty closed sets and testing whether the limiting distance is zero. The increment moment bound and Markov's inequality give \(X_{t_n}\to X_t\) in probability. Also \(X_{t_n}\to Y_t\) almost surely by construction on \(G\). For any \(\epsilon>0\), the triangle inequality bounds \(P(d(Y_t,X_t)>\epsilon)\) by the sum of the probabilities that either \(d(Y_t,X_{t_n})\) or \(d(X_{t_n},X_t)\) exceeds \(\epsilon/2\). Both tend to zero, so \(Y_t=X_t\) almost surely. This is the modification property.
+
+Finally, take two modifications with almost surely continuous paths. Intersect their two measurable full-probability continuity events with the countably many full-probability equality events at all points of \(D\). Their paths coincide there by density and continuity. This proves indistinguishability.
+\end{proof}
+
+This version follows the moment and continuity argument of \cite[Theorem 4.23, pp.~95--96]{Kallenberg}, specialized to a compact interval. For \(T=0\) there is a single coordinate and the continuity assertion holds without an increment condition.
+
+\section{Borel laws of continuous paths}\label{p05-05}
+
+\begin{theorem}[Continuous path space]\label{thm:path-borel}
+Let \(S\) be a nonempty separable metric space and \(T>0\). Under the uniform metric, \(C([0,T],S)\) is separable. It is complete whenever \(S\) is complete. If \(D_0\) is a countable dense subset of \([0,T]\), its Borel sigma-algebra is generated by the evaluations \(e_t(f)=f(t)\) for \(t\in D_0\).
+\end{theorem}
+\begin{proof}
+The uniform distance is finite for each pair of continuous paths by compactness of the interval. To see separability, fix a countable dense set \(Q\subseteq S\) and \(\epsilon>0\). For each \(n\ge1\), use the grid \(t_j=jT/n\), \(0\le j\le n\). For each tuple \((q_0,\ldots,q_n)\in Q^{n+1}\) consider the class of paths \(f\) satisfying
+\[
+ d(f(u),f(v))\le\epsilon \ \text{if }\lvert u-v\rvert\le T/n,
+ \qquad d(f(t_j),q_j)<\epsilon\ \text{for all }j.
+\]
+These classes cover all continuous paths by uniform continuity and density of \(Q\). They are countably many. Any two paths in one class are at uniform distance at most \(4\epsilon\), by comparing their values at a grid point within \(T/n\) of the argument and then through its coded state \(q_j\). Choose one path from each nonempty class. Repeating for \(\epsilon=2^{-m}\) and taking the union of the chosen paths gives a countable dense set. If \(S\) is complete, a uniformly Cauchy sequence has pointwise limits in \(S\) and converges to them uniformly. The limit is continuous by the uniform convergence estimate, proving completeness.
+
+Each evaluation is continuous in the uniform metric. Conversely, for fixed \(f_0\), continuity of \(t\mapsto d(f(t),f_0(t))\) gives
+\[
+ \{f:\sup_{0\le t\le T}d(f(t),f_0(t))\le r\}
+ =\bigcap_{t\in D_0}\{f:d(f(t),f_0(t))\le r\}.
+\]
+Thus every closed uniform ball is measurable for the evaluations on \(D_0\). Every open ball is the union of closed balls with the same center and rational radii smaller than its radius. The separable metric space has a countable basis of open balls, so all its open sets are measurable for these evaluations. This gives equality of sigma-algebras.
+\end{proof}
+
+\begin{corollary}[Law of a continuous process]\label{cor:continuous-path-law}
+A process with measurable coordinates and continuous paths gives a measurable map into \(C([0,T],S)\). Its law there is determined by its finite-dimensional laws at times in \(D_0\). A process with almost surely continuous paths has the same conclusion after assignment of a constant path off a measurable full-probability continuity event.
+\end{corollary}
+\begin{proof}
+Measurability follows from the generating evaluations in Theorem~\ref{thm:path-borel}. The finite cylinders over \(D_0\) are a generating \(\pi\)-system, so the finite-dimensional laws determine a unique path law when such a law exists. Changing the process off the stated null set preserves each finite-dimensional law and ensures continuity everywhere.
+\end{proof}
+
+These facts explain the use of continuous path laws in \cite[Sections 7--8, pp.~80--90]{Billingsley}. Compare the transfer of regularity in \cite[Lemma 4.24, p.~96]{Kallenberg}.
+
+\begin{example}[A discontinuous process with continuous finite-dimensional version]
+On \([0,1]\) with Lebesgue probability set \(X_t(\omega)=\ind_{\{\omega=t\}}\) for \(t\in[0,1]\), and \(Y_t(\omega)=0\). The coordinates of \(X\) are measurable. For any finite collection of times, \(X\) and \(Y\) agree at those times off the corresponding finite set, which is null. Nevertheless, for every \(\omega\) the path \(X_\cdot(\omega)\) is discontinuous at \(t=\omega\), including the endpoint cases with the relative topology. Thus \(Y\) is a continuous modification, and the two processes fail to be indistinguishable.
+\end{example}
+\chapter{Weak Convergence on Metric Spaces}
+\label{ch:weak-convergence}
+
+Throughout, \((S,d)\) is a metric space with its Borel \(\sigma\)-algebra, and
+\(\mathcal P(S)\) denotes its Borel probability laws. A space carrying a
+probability law is nonempty. The weak topology on \(\mathcal P(S)\) is the
+initial topology of the real-valued maps
+\(\mu\mapsto\mu f:=\int f\,d\mu\), for \(f\in C_b(S,\R)\). We write
+\(\mu_n\weakto\mu\) for convergence in this topology and
+\(X_n\Rightarrow X\) when \(\Law(X_n)\weakto\Law(X)\).
+
+\section{Borel laws and determining tests}
+\label{p06-01}
+
+The open and closed approximation below is valid in any metric space.
+Compact approximation requires additional hypotheses. See
+\cite[Theorems 1.1--1.3, pp.~7--9]{Billingsley}.
+
+\begin{proposition}
+\label{prop:p06-regularity}
+For a finite Borel measure \(\mu\) and a Borel \(A\subset S\), for every
+\(\epsilon>0\) there exist a closed \(F\) and an open \(G\) such that
+\(F\subset A\subset G\) and \(\mu(G\setminus F)<\epsilon\).
+Two Borel probability measures on \(S\) agreeing on \(C_b(S,\R)\) coincide.
+\end{proposition}
+
+\begin{proof}
+If \(F\) is closed and nonempty, the open sets \(F^{1/m}:=\{x:d(x,F)<1/m\}\)
+decrease to \(F\). Continuity from above provides the desired approximation.
+For \(F=\varnothing\) take \(G=\varnothing\). The class of approximable sets
+contains closed sets and is closed under complements. If \(A=\bigcup_j A_j\)
+and each \(A_j\) is approximable, choose \(F_j\subset A_j\subset G_j\) with
+\(\sum_j\mu(G_j\setminus F_j)<\epsilon/2\). The set
+\(G=\bigcup_j G_j\) is open. For some finite \(N\),
+\(F=\bigcup_{j\le N}F_j\) satisfies
+\(\mu((\bigcup_j F_j)\setminus F)<\epsilon/2\), by continuity from below
+and finiteness. This \(F\) gives the approximation. The class therefore
+contains all Borel sets.
+
+For a nonempty closed \(F\), the continuous functions
+\(f_m(x)=(1-m d(x,F))_+\) decrease to \(\ind_F\). Bounded convergence
+shows that two laws agreeing on bounded continuous functions agree on
+closed sets. The closed sets form a \(\pi\)-system that generates the
+Borel \(\sigma\)-algebra, so Lemma~\ref{lem:prob-pi-lambda} gives equality.
+\end{proof}
+
+\begin{definition}
+A Borel set \(A\) is a \(\mu\)-continuity set when
+\(\mu(\partial A)=0\). For any fixed center \(x\), all but countably many
+open balls centered at \(x\) are \(\mu\)-continuity sets. Indeed
+\(\partial B(x,r)\subset\{y:d(x,y)=r\}\), and the latter sets are disjoint
+as \(r>0\) varies. A finite measure charges at most countably many sets
+of a disjoint family with positive mass.
+\end{definition}
+
+\section{Portmanteau and determining classes}
+\label{p06-02}
+
+See \cite[Theorems 2.1--2.4, pp.~16--19]{Billingsley} and
+\cite[Theorem 5.25, pp.~116--117]{Kallenberg}.
+
+\begin{theorem}[Portmanteau]
+\label{thm:p06-portmanteau}
+Let \((\mu_n)\) and \(\mu\) be Borel probability laws on \(S\).
+The following conditions are equivalent.
+\begin{enumerate}
+\item \(\mu_n\weakto\mu\).
+\item \(\limsup_n\mu_n(F)\leq\mu(F)\) for every closed \(F\).
+\item \(\liminf_n\mu_n(G)\geq\mu(G)\) for every open \(G\).
+\item \(\mu_n(A)\to\mu(A)\) for every \(\mu\)-continuity set \(A\).
+\item \(\liminf_n \mu_n f\geq\mu f\) for every lower semicontinuous
+      \(f:S\to(-\infty,\infty]\) bounded below.
+\end{enumerate}
+Equivalently, upper semicontinuous functions bounded above satisfy the
+reversed upper bound, with the possible value \(-\infty\) allowed.
+\end{theorem}
+
+\begin{proof}
+In (1), test with \(f_m=(1-m d(\cdot,F))_+\geq\ind_F\) as above, first
+passing to the limit in \(n\) and then taking \(m\to\infty\). This proves
+(2), with the empty set immediate. Complements give (2) \(\Leftrightarrow\)
+(3). The inclusions \(A^\circ\subset A\subset\overline A\) give (4) from
+(2)--(3). For (3) \(\Rightarrow\) (5) add a constant to reduce to \(f\geq0\).
+The sets \(\{f>t\}\) are open. The layer formula, by Tonelli as in
+Theorem~\ref{thm:prob-tail}, and Fatou's lemma give
+\[
+ \liminf_n\mu_n f
+ \ \geq\ \int_0^\infty\liminf_n\mu_n\{f>t\}\,dt
+ \ \geq\ \mu f.
+\]
+Applying (5) to both \(f\) and \(-f\) for \(f\in C_b(S,\R)\) gives (1).
+For the remaining implication, add a constant so that \(0\leq f\leq M\)
+for \(f\in C_b(S,\R)\). The boundary of \(\{f>t\}\) is contained in
+\(\{f=t\}\), which has \(\mu\)-mass zero for all but countably many \(t\).
+By (4), dominated convergence in the layer formula on \([0,M]\) gives
+\(\mu_n f\to\mu f\). The upper semicontinuous version follows by negation.
+\end{proof}
+
+\begin{proposition}[Small continuity sets]
+\label{prop:p06-small-cells}
+Suppose \(\mu\) gives mass one to a separable Borel subset \(M\subset S\).
+Given \(r,\epsilon>0\), there exists a finite Borel partition
+\((A_0,A_1,\ldots,A_k)\) into \(\mu\)-continuity sets with
+\(\mu(A_0)<\epsilon\) and \(\operatorname{diam}(A_i)<r\) for \(i>0\).
+Empty cells may be discarded except for the remainder \(A_0\).
+\end{proposition}
+
+\begin{proof}
+Take a countable dense set in \(M\). At each center choose a
+\(\mu\)-continuity radius in \((r/4,r/2)\). The balls cover \(M\), so a
+finite union has \(\mu\)-mass greater than \(1-\epsilon\). Subtract the
+preceding balls from each ball in this finite list to form disjoint
+cells. Their diameters are less than \(r\). Finite unions, differences
+and complements have boundary contained in the union of the original
+boundaries, giving the continuity-set assertion for all cells.
+\end{proof}
+
+\begin{proposition}[A countable convergence-determining family]
+\label{prop:p06-determining-class}
+On a separable metric space, one may choose a countable base of
+\(\mu\)-continuity balls. If the masses of all finite intersections of
+those balls converge to their \(\mu\)-masses, then
+\(\mu_n\weakto\mu\).
+On \(\R\), writing \(F_\nu(t)=\nu((-\infty,t])\), one has
+\[
+ \mu_n\weakto\mu
+ \quad\Longleftrightarrow\quad
+ F_{\mu_n}(t)\longrightarrow F_\mu(t)
+ \quad\text{at every continuity point of }F_\mu .
+\]
+\end{proposition}
+
+\begin{proof}
+For each center in a countable dense subset choose a countable dense
+set of continuity radii. These balls form a base. By inclusion and
+exclusion, the hypothesis gives convergence of masses of finite unions
+of the balls. Every open set is the increasing union of such finite
+unions, which yields the open-set lower bound of Portmanteau.
+
+For the real claim, \((-\infty,t]\) is a continuity set when \(\mu\{t\}=0\).
+The jump of \(F_\mu\) at \(t\) is exactly \(\mu\{t\}\). For the converse,
+choose a countable dense \(D\subset\R\) of continuity points. For
+\(a,b\in D\), \(a<b\), the mass of \((a,b]\) is the difference of the two
+CDF values. Any open set is a countable union of such intervals
+contained in it. Intersections of finitely many such intervals are of
+the same kind or empty. Inclusion and exclusion and continuity from
+below again give the open-set lower bound.
+\end{proof}
+
+\section{Continuous and varying maps}
+\label{p06-03}
+
+\begin{theorem}[Continuous mapping on Borel topological spaces]
+\label{thm:p06-continuous-mapping}
+Let \(E,F\) be topological spaces with their Borel \(\sigma\)-algebras.
+Let \(\mu_n,\mu\) be probability laws on \(E\), and suppose
+\(\mu_n\weakto\mu\) when tested against bounded continuous real functions.
+For every continuous \(g:E\to F\),
+\(g_\#\mu_n\weakto g_\#\mu\) on \(F\).
+\end{theorem}
+
+\begin{proof}
+The map \(g\) is Borel measurable. For any bounded continuous real
+function \(f\) on \(F\), the composite \(f\circ g\) is bounded and
+continuous on \(E\). The pushforward integral identity
+(Proposition~\ref{thm:prob-transfer}) gives
+\[
+ \int_F f\,d(g_\#\mu_n)=\int_E f\circ g\,d\mu_n
+ \longrightarrow\int_E f\circ g\,d\mu=\int_F f\,d(g_\#\mu).
+\]
+In particular, taking \(\mu_n=\Law(X_n)\) and \(\mu=\Law(X)\)
+gives convergence in law of \(g(X_n)\) to \(g(X)\).
+\end{proof}
+
+\begin{theorem}[Mapping theorem for varying maps on metric spaces]
+\label{thm:p06-mapping}
+Let \(T\) be a metric space, let \(\mu_n\weakto\mu\) on \(S\), and let
+\(g_n,g:S\to T\) be Borel. Suppose there is a Borel \(C\subset S\) with
+\(\mu(C)=1\) such that for every \(x\in C\) and every sequence
+\(x_n\to x\) in \(S\), \(g_n(x_n)\to g(x)\). Then
+\((g_n)_\#\mu_n\weakto g_\#\mu\). In particular a fixed Borel map
+continuous at \(\mu\)-almost every point preserves weak convergence.
+\end{theorem}
+
+\begin{proof}
+Fix a closed \(F\subset T\), put \(A_n=g_n^{-1}(F)\), and define the
+decreasing sequence \(H_m=\overline{\bigcup_{n\geq m}A_n}\).
+For \(n\geq m\) we have \(A_n\subset H_m\), so Portmanteau and
+continuity from above give
+\[
+ \limsup_n\mu_n(A_n)\leq\inf_m\mu(H_m)
+    =\mu\Bigl(\bigcap_m H_m\Bigr).
+\]
+For \(x\in C\cap\bigcap_m H_m\), choose a strictly increasing sequence
+\(n_j\) and \(x_{n_j}\in A_{n_j}\) with \(d(x_{n_j},x)<1/j\).
+This is possible by taking \(m\) beyond the previous \(n_j\).
+Fill the remaining \(x_n\) with \(x\). The hypothesis gives
+\(g_{n_j}(x_{n_j})\to g(x)\), so \(g(x)\in F\).
+The upper bound is therefore at most \(g_\#\mu(F)\). Apply
+Portmanteau on \(T\). For a fixed map its continuity points form a
+Borel set: for each \(k\) take the union of open sets on which the
+image has diameter less than \(1/k\), and intersect those unions.
+Continuity here is at a point of the entire domain.
+\end{proof}
+
+\begin{corollary}[Mixtures]
+\label{cor:p06-mixtures}
+Let \(\eta_n\weakto\eta\) on \(S\), and let \(K_n,K\) be probability
+kernels from \(S\) to the Borel space of a metric space \(T\).
+Suppose, on a Borel \(\eta\)-full set \(C\), that \(x_n\to x\in C\)
+implies \(K_n(x_n,\cdot)\weakto K(x,\cdot)\). Then the mixed laws
+\(\eta_n K_n\) converge weakly to \(\eta K\).
+\end{corollary}
+
+\begin{proof}
+For \(h\in C_b(T,\R)\) the kernel integrals \(g_n(x)=K_n(x,h)\)
+and \(g(x)=K(x,h)\) are Borel, uniformly bounded, and satisfy the
+pointwise sequential hypothesis of Theorem~\ref{thm:p06-mapping}.
+Their pushforward laws converge. Test these real laws with a
+bounded continuous function equal to the identity on
+\([-\lVert h\rVert_\infty,\lVert h\rVert_\infty]\) to obtain
+\(\eta_n K_n h\to\eta K h\).
+\end{proof}
+
+For the metric-space result with an almost surely continuous fixed map,
+see \cite[Theorem 2.7, p.~21]{Billingsley}. For the varying map and the
+mixture form, see
+\cite[Theorem 5.27 and Corollary 5.28, pp.~117--118]{Kallenberg}.
+
+\section{Perturbations, Slutsky, and moments}
+\label{p06-04}
+
+\begin{theorem}[Converging together]
+\label{thm:p06-together}
+For each \(m,n\) let \(X_n\) and \(X_n^{(m)}\) be \(S\)-valued random
+elements on a common probability space for that pair. Assume the
+distances between them are measurable. Suppose
+\(\Law(X_n^{(m)})\weakto\mu_m\) as \(n\to\infty\) for each \(m\),
+\(\mu_m\weakto\mu\) as \(m\to\infty\), and for every \(\epsilon>0\),
+\[
+ \lim_{m\to\infty}\limsup_{n\to\infty}
+      \Prob\{d(X_n,X_n^{(m)})>\epsilon\}=0.
+\]
+Then \(\Law(X_n)\weakto\mu\). In particular a perturbation tending
+to zero in probability preserves a given weak limit.
+\end{theorem}
+
+\begin{proof}
+For a nonempty closed \(F\) and \(\epsilon>0\), set
+\(F_\epsilon=\{x:d(x,F)\leq\epsilon\}\). If \(X_n\in F\) and the
+distance is at most \(\epsilon\), then \(X_n^{(m)}\in F_\epsilon\).
+For each \(m\) the upper limit of \(\Prob\{X_n\in F\}\) is thus bounded
+by \(\mu_m(F_\epsilon)\) plus the upper limit of the error probability.
+First let \(m\to\infty\), using the closed-set upper bound for
+\(F_\epsilon\), then let \(\epsilon\downarrow0\) and use continuity from
+above. The bound for \(F=\varnothing\) is trivial. Portmanteau gives the
+result. For the last claim take the approximating sequence independent
+of \(m\). When \(S\) is separable, joint measurability of a pair into
+the product Borel space follows from coordinate measurability and a
+countable product base, so the distance is measurable.
+\end{proof}
+
+\begin{corollary}[Slutsky]
+\label{cor:p06-slutsky}
+Let \(X_n\) and \(Y_n\) be random vectors on the same space for each
+\(n\), with \(X_n\Rightarrow X\) and \(Y_n\to c\) in probability for a
+constant vector \(c\). Then \((X_n,Y_n)\Rightarrow(X,c)\).
+Continuous functions of the pair preserve this limit. In particular,
+scalar sums and products have the usual limits, and quotients do if
+\(c\neq0\).
+\end{corollary}
+
+\begin{proof}
+The continuous embedding \(x\mapsto(x,c)\) gives
+\((X_n,c)\Rightarrow(X,c)\). The product distance between this pair and
+\((X_n,Y_n)\) tends to zero in probability. Use
+Theorem~\ref{thm:p06-together}. For quotients define a Borel version
+arbitrarily when the denominator is zero and use continuity at all
+\((x,c)\) with \(c\ne0\).
+\end{proof}
+
+\begin{proposition}[Moments under convergence in distribution]
+\label{prop:p06-moments}
+For real random variables \(X_n\Rightarrow X\) and \(p>0\),
+\(\E |X|^p\leq\liminf_n\E|X_n|^p\).
+If \((|X_n|^p)\) is uniformly integrable, then
+\(\E |X_n|^p\to\E |X|^p<\infty\).
+More generally, if \(h:S\to\R\) is Borel and continuous at
+\(\Law(X)\)-almost every point, \(S\)-valued \(X_n\Rightarrow X\), and
+\((h(X_n))\) is uniformly integrable, then
+\(\E h(X_n)\to\E h(X)\). When \(X_n\Rightarrow X\) is real and
+\((|X_n|^p)\) is uniformly integrable, this also applies to every
+continuous real \(h\) with \(|h(x)|\leq C(1+|x|^p)\).
+\end{proposition}
+
+\begin{proof}
+The first inequality is the lower semicontinuous part of
+Portmanteau. In the more general assertion set \(Z_n=h(X_n)\) and
+\(Z=h(X)\). By the mapping theorem \(Z_n\Rightarrow Z\). The first
+inequality with exponent one and uniform integrability imply
+\(\E|Z|<\infty\), since a uniformly integrable family is bounded in
+\(L^1\) by Theorem~\ref{thm:prob-ui}. With
+\(T_M(z)=\max(-M,\min(z,M))\), bounded continuous
+testing gives \(\E T_M(Z_n)\to\E T_M(Z)\). Uniform integrability
+bounds the absolute error for \(Z_n\) by
+\(\E[|Z_n|\ind_{\{|Z_n|>M\}}]\), uniformly vanishing in \(n\).
+The same error for \(Z\) tends to zero by integrability.
+Take \(h(x)=|x|^p\) for the moment convergence.
+In the final assertion, when \(C>0\) the event \(|h(X_n)|>M\)
+forces \(|X_n|^p>M/C-1\). The upper bound on \(|h|\) and uniform
+integrability of the \(p\)-powers control the term with \(|X_n|^p\).
+The term with \(1\) tends uniformly to zero by Markov's inequality
+and the uniform \(L^1\) bound. The case \(C=0\) is immediate.
+\end{proof}
+
+See \cite[Theorems 3.1--3.2 and 3.4--3.6, pp.~27--32]{Billingsley}
+and \cite[Theorem 5.29, p.~118]{Kallenberg}. An \(L^1\) bound alone
+does not suffice: \(X_n=n\) with probability \(1/n\), and \(0\)
+otherwise, converges in law to \(0\) while \(\E X_n=1\).
+
+\section{Tightness and the forward Prokhorov theorem}
+\label{p06-05}
+
+A family \(\mathcal A\subset\mathcal P(S)\) is \emph{uniformly tight}
+if for every \(\epsilon>0\) some compact \(K\subset S\) satisfies
+\(\sup_{\mu\in\mathcal A}\mu(S\setminus K)<\epsilon\). A single law is
+\emph{tight} when its singleton family has this property. The laws
+\((\delta_n)_{n\geq1}\) on \(\R\) are individually tight and their
+family is not uniformly tight, since every compact subset of \(\R\)
+is bounded.
+
+\begin{lemma}[Probability laws on a compact metric space]
+\label{lem:p06-compact-base}
+If \(H\) is compact metric, then \(\mathcal P(H)\) is compact and
+metrizable in its weak topology.
+\end{lemma}
+
+\begin{proof}
+The claim is immediate for \(H=\varnothing\). Otherwise
+\(C(H,\R)\) is separable in the uniform norm. To see this, for every
+\(m\geq1\) choose a finite \(1/m\)-net \(a_{m,j}\) and normalize the
+continuous weights \((2/m-d(x,a_{m,j}))_+\) by their positive sum.
+The union over \(m\) of all rational linear combinations of these
+normalized weights for that \(m\) is countable and uniformly dense.
+Indeed the weights sum to one and are zero beyond distance \(2/m\)
+from their centers, so uniform continuity and rational
+approximations to the values at the centers give the claim.
+
+Let \(f_j\), \(j\geq1\), be dense in \(C(H,\R)\). The weak topology
+is induced by
+\[
+ d_H^*(\mu,\nu)
+  =\sum_{j=1}^\infty 2^{-j}
+       \min(1,|\mu f_j-\nu f_j|).
+\]
+Measure determination proves separation. The topology assertion
+follows from uniform approximation, since probability integration
+has norm one, and the tails of this series are uniformly small.
+From any sequence of laws, diagonal extraction yields a subsequence
+along which every integral of \(f_j\) converges. Uniform
+approximation shows that all continuous integrals then converge.
+Their limits form a positive linear functional with value one at
+the constant one. The compact-space Riesz representation theorem
+represents it by a Borel probability law. This proves sequential
+compactness in a metric space and hence compactness.
+\end{proof}
+
+\begin{theorem}[Forward Prokhorov theorem]
+\label{thm:p06-prokhorov-forward}
+For an arbitrary metric \(S\), a uniformly tight family
+\(\mathcal A\subset\mathcal P(S)\) has compact weak closure. Every
+sequence in \(\mathcal A\) has a subsequence weakly converging to a
+Borel probability law on \(S\).
+\end{theorem}
+
+\begin{proof}
+The empty family is immediate. Otherwise take increasing, nonempty
+compact sets \(K_j\subset S\) with
+\(\inf_{\mu\in\mathcal A}\mu(K_j)\geq1-2^{-j}\). The Borel union
+\(M=\bigcup_j K_j\) is separable and has full mass for every member.
+Choose a countable dense sequence \(a_j\) in \(M\), repeating points
+if necessary. The map
+\[
+ J:S\longrightarrow H=[0,1]^{\N},\qquad
+ J(x)_j=\min(1,d(x,a_j))
+\]
+is continuous into the compact metric cube. Its restriction to
+\(M\) is an embedding. If \(x\in M\) and \(x_\alpha\in M\) have
+\(J(x_\alpha)\to J(x)\), choose \(a_j\) within
+\(\min(1,r)/4\) of \(x\). For sufficiently large \(\alpha\) the
+\(j\)-coordinate forces \(d(x_\alpha,a_j)<\min(1,r)/2\) and hence
+\(d(x_\alpha,x)<r\). This also shows injectivity by taking a constant
+\(x_\alpha\). The cube is compact, for example by diagonal
+subsequences in its weighted product metric.
+
+Write \(\mathcal B\) for the closure of
+\(\{J_\#\mu:\mu\in\mathcal A\}\) in \(\mathcal P(H)\). By
+Lemma~\ref{lem:p06-compact-base}, \(\mathcal B\) is compact and
+metrizable. The map \(\eta\mapsto\eta(J(K_j))\) is upper
+semicontinuous, since it is the infimum of the integrals of the
+decreasing continuous cutoffs for the compact set \(J(K_j)\).
+Consequently every \(\eta\in\mathcal B\) gives \(J(K_j)\) mass at
+least \(1-2^{-j}\). The set \(D=J(M)=\bigcup_j J(K_j)\) is Borel,
+and the inverse \(J^{-1}:D\to M\) is continuous for the subspace
+topologies. Transport each \(\eta\in\mathcal B\), restricted to \(D\),
+back to a probability law \(T\eta\) on \(S\).
+
+This transport is weakly continuous on \(\mathcal B\).
+In fact, fix \(f\in C_b(S,\R)\), \(\lVert f\rVert_\infty\leq L\).
+On \(J(K_j)\) approximate \(f\circ J^{-1}\) uniformly within
+\(\epsilon\) by a function \(g\in C_b(H,\R)\) with
+\(\lVert g\rVert_\infty\leq L\). One explicit approximation for a
+continuous \(v:J(K_j)\to[-L,L]\) is the clipped function
+\[
+ y\longmapsto
+  \min\!\left(L,\max\!\left(-L,\inf_{z\in J(K_j)}
+           \bigl[v(z)+b\,d_H(y,z)\bigr]\right)\right).
+\]
+It is Lipschitz for finite \(b\). Uniform continuity on the compact
+set makes it within \(\epsilon\) there for sufficiently large \(b\):
+at points \(z\) near \(y\) the value of \(v\) differs by at most
+\(\epsilon\), and for distant \(z\) the penalty \(b\,d_H(y,z)\)
+can exceed \(2L\). Thus
+\(\lvert (T\eta)f-\eta g\rvert\leq\epsilon+2L\,2^{-j}\) uniformly
+on \(\mathcal B\). Taking \(j\) large and \(\epsilon\) small
+exhibits \(\eta\mapsto (T\eta)f\) as a uniform limit of continuous
+functions. This proves continuity.
+
+The weak topology on \(\mathcal P(S)\) is Hausdorff by
+Proposition~\ref{prop:p06-regularity}. The compact image
+\(T(\mathcal B)\) is therefore closed and contains \(\mathcal A\),
+since transport recovers each law concentrated on \(M\). The weak
+closure of \(\mathcal A\) is compact. The subsequence assertion
+also follows directly by taking a convergent subsequence in
+\(\mathcal B\) and applying \(T\).
+\end{proof}
+
+This proof uses the compact representation of positive functionals
+and does not use any representation of weakly convergent random
+elements. Compare \cite[Theorem 5.1, pp.~59--60]{Billingsley}.
+
+\section{The reverse Prokhorov theorem}
+\label{p06-06}
+
+\begin{theorem}[Reverse Prokhorov theorem]
+\label{thm:p06-prokhorov-reverse}
+Let \(S\) be a complete separable metric space. If every sequence
+from \(\mathcal A\subset\mathcal P(S)\) has a weakly convergent
+subsequence with limit in \(\mathcal P(S)\), then \(\mathcal A\)
+is uniformly tight. The same conclusion holds if the weak closure
+of \(\mathcal A\) is compact. Thus the two compactness conditions and
+uniform tightness are equivalent.
+\end{theorem}
+
+\begin{proof}
+Use a countable dense sequence \((a_j)\) in nonempty \(S\).
+For each \(r,\epsilon>0\), the increasing open sets
+\(U_N=\bigcup_{j\leq N}B(a_j,r)\) cover \(S\).
+Under the subsequence hypothesis, some \(U_N\) satisfies
+\(\inf_{\mu\in\mathcal A}\mu(U_N)\geq1-\epsilon\).
+Otherwise there are \(\mu_N\in\mathcal A\) with
+\(\mu_N(U_N)<1-\epsilon\). Pass to a subsequence converging weakly
+to \(\mu\), choose \(N_0\) with \(\mu(U_{N_0})>1-\epsilon\), and
+apply the open-set lower bound to \(U_{N_0}\). For all large
+subsequence indices \(N\), \(U_{N_0}\subset U_N\), a contradiction.
+Under the compact-closure hypothesis the same uniform bound follows
+from the increasing open cover
+\(\{\eta:\eta(U_N)>1-\epsilon\}\) of the closure. These sets are
+weakly open because \(\eta(U_N)\) is the complement of an upper
+semicontinuous closed-set mass.
+
+Apply the resulting bound at radii \(r_k=2^{-k}\) and errors
+\(\epsilon_k>0\) with \(\sum_k\epsilon_k<\epsilon\). If \(U_{N_k}\)
+denotes the corresponding finite union at radius \(r_k\), then
+\(K=\bigcap_k\overline{U_{N_k}}\) is closed and totally bounded:
+for each \(k\) it lies in a finite union of closed \(r_k\)-balls.
+Since \(S\) is complete, \(K\) is compact. The union bound gives
+\(\mu(K^c)\leq\sum_k\epsilon_k<\epsilon\) for every \(\mu\in\mathcal A\).
+The converse implications follow from
+Theorem~\ref{thm:p06-prokhorov-forward}.
+\end{proof}
+
+In particular every single probability law on a complete separable
+metric space is tight. Compare
+\cite[Theorem 5.2, pp.~60--61]{Billingsley} and
+\cite[Theorem 23.2, pp.~507--509]{Kallenberg}.
+
+\section{The Skorokhod representation}
+\label{p06-07}
+
+\begin{theorem}[Skorokhod representation]
+\label{thm:p06-skorokhod}
+Suppose \(\mu_n\weakto\mu\) on a metric space \(S\), and \(\mu\)
+is concentrated on a separable Borel subset of \(S\). There are
+random elements \(X,X_n\) on a single probability space with
+\(\Law(X)=\mu\), \(\Law(X_n)=\mu_n\), and \(X_n\to X\) almost surely.
+The approximating laws need not be concentrated on the same
+separable subset. In particular the result applies when \(S\)
+is separable, whether or not its metric is complete.
+\end{theorem}
+
+\begin{proof}
+Take \(\alpha_m=2^{-m}\), \(m\geq1\), and use
+Proposition~\ref{prop:p06-small-cells} to find a finite partition
+\((A_{m,i})_{0\leq i\leq k_m}\) into \(\mu\)-continuity sets,
+with \(\mu(A_{m,0})<\alpha_m\) and all other cells of diameter
+less than \(\alpha_m\). By Portmanteau there are strictly increasing
+integers \(N_m\) with
+\[
+ \mu_n(A_{m,i})\geq(1-\alpha_m)\mu(A_{m,i})
+ \quad(0\leq i\leq k_m,\ n\geq N_m).
+\]
+Fix \(n\geq N_1\) and take \(m\) such that \(N_m\leq n<N_{m+1}\).
+For \(\mu(A_{m,i})>0\), let \(\lambda_{n,i}\) be
+\(\mu_n(\cdot\cap A_{m,i})/\mu_n(A_{m,i})\). For zero-mass cells
+choose any probability law. The measure
+\[
+ \rho_n=\frac{1}{\alpha_m}\left(\mu_n-
+               (1-\alpha_m)\sum_i\mu(A_{m,i})\lambda_{n,i}\right)
+\]
+is nonnegative by the displayed bound on each cell and has mass one.
+
+Realize \(X\) with law \(\mu\), one uniform variable \(U\) on
+\([0,1]\), variables \(Z_{n,i}\) with laws \(\lambda_{n,i}\),
+and variables \(R_n\) with laws \(\rho_n\), all independent.
+Use the countable independent product from Section~\ref{p05-03}
+on the indicated Borel spaces. For \(n<N_1\) also realize a
+variable of law \(\mu_n\). For \(N_m\leq n<N_{m+1}\) put
+\(X_n=Z_{n,i}\) on
+\(\{U\leq1-\alpha_m,\ X\in A_{m,i}\}\), and \(X_n=R_n\)
+on \(\{U>1-\alpha_m\}\). This is Borel measurable by the
+finite decomposition of its preimages, and the mixture formula
+shows \(\Law(X_n)=\mu_n\).
+
+Outside one null set, every \(Z_{n,i}\) in a cell with positive
+\(\mu\)-mass belongs to that cell, and \(X\) avoids all cells of
+zero \(\mu\)-mass. For a whole block \(N_m\leq n<N_{m+1}\), the
+event \(\{U\leq1-\alpha_m,\ X\notin A_{m,0}\}\) then ensures
+\(d(X_n,X)<\alpha_m\) for every \(n\) in the block. These events
+have complements of probabilities at most \(2\alpha_m\), so
+the first Borel--Cantelli lemma (Theorem~\ref{thm:prob-borel-cantelli}) gives a common event of
+probability one on which all sufficiently late blocks succeed.
+Thus \(X_n\to X\) there. Replacing all \(X_n\) by \(X\) on
+the measurable exceptional set gives convergence everywhere,
+if desired, and preserves each law.
+\end{proof}
+
+This is the representation of \cite[Theorem 6.7, pp.~70--71]{Billingsley}.
+See also \cite[Theorem 5.31, pp.~119--120]{Kallenberg}. It concerns
+probability laws rather than the original joint relationships of
+any sequence of random elements.
+
+\section{Weak convergence and products}
+\label{p06-08}
+
+\begin{proposition}[Finite products]
+\label{prop:p06-finite-products}
+Let \(S_1,\dots,S_k\) be separable metric spaces. A sequence
+\((\lambda_n)\) of probability laws on their product converges
+weakly to \(\lambda\) if and only if \(\lambda_n(A_1\times
+\cdots\times A_k)\to\lambda(A_1\times\cdots\times A_k)\) whenever
+each \(A_i\) is a continuity set of the \(i\)-th marginal of
+\(\lambda\). In particular
+\[
+ \bigotimes_{i=1}^k\mu_{n,i}\weakto\bigotimes_{i=1}^k\mu_i
+ \quad\Longleftrightarrow\quad
+ \mu_{n,i}\weakto\mu_i\quad(1\leq i\leq k).
+\]
+\end{proposition}
+
+\begin{proof}
+The boundary of a rectangle is contained in the union of inverse
+images of the boundaries of its coordinate sets. The forward
+condition follows from Portmanteau. In the other direction the
+rectangles formed from countable bases of marginal continuity
+balls form a countable product base. Finite intersections remain
+rectangles with marginal continuity sets. Inclusion and exclusion
+gives convergence on finite unions of basis rectangles, and
+continuity from below gives the open-set lower bound. For product
+laws the rectangle probabilities are products, which proves
+sufficiency of marginal convergence. Necessity follows from
+continuous projection.
+\end{proof}
+
+\begin{theorem}[Countable products]
+\label{thm:p06-countable-products}
+For separable metric spaces \(S_i\), \(i\geq1\), the laws
+\(\lambda_n,\lambda\) on \(S=\prod_i S_i\) satisfy
+\(\lambda_n\weakto\lambda\) in the product topology if and only
+if all finite-dimensional marginals converge weakly. In particular
+weak convergence of each marginal implies convergence of the
+countable product of the marginal laws.
+\end{theorem}
+
+\begin{proof}
+The product topology is induced by
+\(d(x,y)=\sum_i2^{-i}\min(1,d_i(x_i,y_i))\). The product is separable,
+by using finite strings from coordinate dense sets and fixed tail
+points. Its Borel \(\sigma\)-algebra is the product
+\(\sigma\)-algebra by the countable product base. For each \(m\)
+let \(T_m x\) retain the first \(m\) coordinates and replace all
+later ones by fixed points. The estimate \(d(T_mx,x)\leq2^{-m}\)
+holds for every \(x\). For fixed \(m\),
+\((T_m)_\#\lambda_n\weakto (T_m)_\#\lambda\) by finite-dimensional
+convergence and the continuous embedding with the chosen tail.
+Moreover \((T_m)_\#\lambda\weakto\lambda\) by pointwise
+convergence and bounded convergence. Realize \(x\) and \(T_mx\)
+on the space with law \(\lambda_n\) and use
+Theorem~\ref{thm:p06-together}. The reverse implication is the
+mapping theorem for coordinate projections. The product-law
+assertion follows from Proposition~\ref{prop:p06-finite-products}.
+\end{proof}
+
+See \cite[Theorem 2.8, p.~23]{Billingsley} and
+\cite[Theorem 5.30, pp.~118--119]{Kallenberg}.
+
+\section{The Prokhorov and bounded Lipschitz metrics}
+\label{p06-09}
+
+For a Borel set \(A\) and \(a>0\) put
+\(A^a=\{x:d(x,A)<a\}\), with \(\varnothing^a=\varnothing\). For
+\(\mu,\nu\in\mathcal P(S)\), define
+\[
+ \begin{split}
+ \pi(\mu,\nu)&=\inf\{a>0:\ 
+    \mu(A)\leq\nu(A^a)+a,\ \nu(A)\leq\mu(A^a)+a
+    \text{ for every Borel }A\},\\
+ d_{\mathrm{BL}}(\mu,\nu)&=\sup_{\substack{\lVert f\rVert_\infty\leq1\\
+                                    \operatorname{Lip}(f)\leq1}}
+                               |\mu f-\nu f| ,
+ \end{split}
+\]
+where the supremum is over real-valued functions.
+
+\begin{theorem}
+\label{thm:p06-weak-metrics}
+Both \(\pi\) and \(d_{\mathrm{BL}}\) are metrics on
+\(\mathcal P(S)\). If \(S\) is separable, both induce the weak
+topology. For an arbitrary metric \(S\), convergence in either
+metric implies weak convergence.
+\end{theorem}
+
+\begin{proof}
+The Prokhorov expression is finite, symmetric, and zero on the
+diagonal. Its defining inequalities are monotone in \(a\), so hold
+whenever \(a>\pi(\mu,\nu)\). The inclusion
+\((A^a)^b\subset A^{a+b}\) gives the triangle inequality by composing
+the inequalities for two pairs and taking infima. If \(\pi=0\),
+fix a closed \(F\) and take \(a\downarrow0\). Then
+\(\mu(F)\leq\nu(F)\) and conversely. Agreement on closed sets
+gives equality. If \(\pi(\mu_n,\mu)\to0\), the same argument with
+\(a>0\) fixed for large \(n\), then \(a\downarrow0\), gives the
+closed-set upper bound. For \(d_{\mathrm{BL}}\) the triangle
+inequality is immediate. Tests \((1-m d(\cdot,F))_+\) can be
+rescaled to fit the defining bounds, so convergence of the metric
+also gives Portmanteau and zero distance gives equality.
+
+For the converse in the separable case fix \(a>0\) and use
+Proposition~\ref{prop:p06-small-cells} with a small \(r>0\).
+The partition has \(\mu(A_0)<r\), with every other cell of
+diameter less than \(r\). If \(\nu\) is sufficiently weakly close
+to \(\mu\), then \(\nu(A_0)<2r\) and
+\(\sum_{i>0}|\nu(A_i)-\mu(A_i)|<r\).
+Indeed the mass of a continuity set is continuous at \(\mu\) in
+the weak topology: its liminf and limsup bounds follow by
+sandwiching between the open interior and closed closure, whose
+mass maps are respectively lower and upper semicontinuous.
+For any Borel \(A\), a non-remainder cell meeting \(A\) is
+contained in \(A^r\). Summing over these cells gives
+\[
+ \mu(A)\leq\nu(A^r)+2r,\qquad
+ \nu(A)\leq\mu(A^r)+3r.
+\]
+Choose \(3r<a\). Then \(\pi(\mu,\nu)\leq a\), with a strictly
+smaller bound available by taking \(a\) smaller. For the bounded
+Lipschitz metric choose a representative \(x_i\in A_i\) for every
+nonempty non-remainder cell. For each admissible \(f\), its
+oscillation from \(f(x_i)\) there is bounded by \(r\).
+The integrals outside \(A_0\) differ by at most
+\(2r+\sum_{i>0}|\nu(A_i)-\mu(A_i)|\), and those on \(A_0\)
+differ by at most \(3r\). Hence \(d_{\mathrm{BL}}\leq6r\).
+
+For clarity, the implications from metric convergence hold
+for the topologies, not only for sequences. For any metric-convergent
+net the same closed-set tests give the upper bounds, and
+complements give the lower bounds for open sets.
+For \(0\leq f\leq M\) continuous, bracket \(f\) by finite step
+functions with thresholds at continuity points of its distribution
+under \(\mu\), of arbitrarily small mesh. Each threshold-event
+probability converges by the bounds. The finitely many
+integrals in these bracketing sums converge, giving convergence
+of the integral of \(f\). This yields weak continuity of the
+identity from either metric topology. The neighborhood bounds
+just proved give continuity in the opposite direction when \(S\)
+is separable.
+\end{proof}
+
+The Prokhorov metric argument follows the metric-space version in
+\cite[\S6(iii)--(iv), p.~72]{Billingsley}. The bounded Lipschitz
+form uses the same finite partition with uniform test oscillation.
+
+\section{Couplings and completeness of the law space}
+\label{p06-10}
+
+A coupling of \(\mu,\nu\) on a separable metric space is a
+probability law on \(S\times S\) with those marginals. The product
+Borel \(\sigma\)-algebra equals the product of the Borel
+\(\sigma\)-algebras.
+
+\begin{lemma}[Finite transportation with a defect]
+\label{lem:p06-finite-transport}
+Let \(p_i,q_j\geq0\) be finite vectors of sum one and
+\(R\) a set of allowed left-right edges. Write \(R(I)\)
+for the right neighbors of \(I\). Suppose for every subset \(I\)
+of left indices,
+\[
+ \sum_{i\in I}p_i\leq\sum_{j\in R(I)}q_j+\delta.
+\]
+There exists a nonnegative matrix with row sums \(p_i\), column
+sums \(q_j\), and mass at most \(\delta\) on edges outside \(R\).
+\end{lemma}
+
+\begin{proof}
+First maximize the total mass of a nonnegative matrix supported
+on \(R\) whose row and column sums are bounded above by \(p_i,q_j\).
+The feasible set is compact and nonempty. If its maximum is one
+we are done. Otherwise declare every unsaturated row reachable.
+From a reachable row reach all its allowed neighboring columns,
+and from a reachable column reach every row with positive
+mass in that column. If an unsaturated column is reachable,
+choose a simple alternating path from an unsaturated row to it.
+Increase the masses on forward edges and decrease those on
+backward edges by a common sufficiently small positive amount.
+The endpoint slacks and the positivity of backward-edge masses
+make the perturbation feasible, and intermediate row and column
+sums do not change. Total mass increases, contrary to maximality.
+
+Let \(I\) be the reachable rows and \(J=R(I)\) the reachable
+columns. All columns in \(J\) are saturated. No mass enters them
+from rows outside \(I\), by the backward reachability rule.
+All mass in rows of \(I\) goes into \(J\), and all unmet row
+mass lies in \(I\). The total unmet mass is therefore
+\(\sum_{i\in I}p_i-\sum_{j\in J}q_j\leq\delta\).
+Unmet row and column totals are the same. If positive, fill the
+residual matrix by the outer product of the two unmet vectors
+divided by that total. This preserves the mass already assigned
+and adds at most \(\delta\) off \(R\).
+\end{proof}
+
+\begin{theorem}[Strassen--Dudley coupling]
+\label{thm:p06-strassen}
+Let \(S\) be separable metric and \(a>0\). If
+\(\pi(\mu,\nu)<a\), there is a coupling \(\gamma\) with
+\(\gamma\{(x,y):d(x,y)>a\}<a\). Conversely, any coupling with
+\(\gamma\{d(x,y)>a\}\leq a\) implies \(\pi(\mu,\nu)\leq a\).
+\end{theorem}
+
+\begin{proof}
+Choose \(\delta\in(\pi(\mu,\nu),a)\) and \(h>0\) with
+\(\delta+2h<a\). By separability take a finite cover by
+open balls of radius less than \(h/2\) of all but mass \(h\)
+under each of \(\mu\) and \(\nu\). This means the union of the
+balls has complement of mass less than \(h\) for each law,
+and follows by taking a finite prefix of a countable cover.
+Disjointize the balls to get a partition \(B_0,\dots,B_k\)
+where \(B_0\) is the remainder and \(\operatorname{diam}(B_i)<h\)
+for \(i>0\). Discard empty cells except for the remainder.
+Apply Lemma~\ref{lem:p06-finite-transport} to
+\(p_i=\mu(B_i)\), \(q_j=\nu(B_j)\).
+All edges incident to index zero are allowed. For \(i,j>0\)
+allow \(ij\) exactly when the distance between the cells is
+less than \(\delta\). If \(0\notin I\), then for
+\(A=\bigcup_{i\in I}B_i\), \(A^\delta\) lies in the union of
+the right neighbor cells. Thus the defining Prokhorov bound
+at \(\delta\) gives the required cut inequality. If \(0\in I\)
+every right index is allowed and the inequality is automatic.
+
+On each pair of cells, place the prescribed matrix mass as the
+product of the normalized restrictions of \(\mu,\nu\) to the two
+cells. Rows or columns of zero marginal mass carry zero
+matrix mass and can be omitted. This gives the desired marginals.
+Every allowed rectangle with neither index zero has distances
+less than \(\delta+2h<a\). The mass off allowed edges is at most
+\(\delta\), and the mass with an index zero is less than \(2h\).
+Thus \(\gamma\{d>a\}<a\). Conversely, for a Borel \(A\) and
+\(b>a\), \(x\in A\) and \(d(x,y)\leq a\) imply \(y\in A^b\).
+The two marginal inequalities at \(b\) follow by bounding the
+exception by \(a\), so the infimum defining \(\pi\) is at most \(a\).
+\end{proof}
+
+\begin{theorem}[Polish probability-law spaces]
+\label{thm:p06-polish-laws}
+If \(S\) is separable, then \((\mathcal P(S),\pi)\) is separable.
+If \(S\) is also complete, then \(\pi\) is complete.
+\end{theorem}
+
+\begin{proof}
+For separability, take a countable dense set in \(S\). Given a law
+and \(a>0\), finitely many \(a\)-balls centered there cover
+all but mass less than \(a\). Map each cell of the corresponding
+partition to its center and the remainder to a fixed dense
+point. Coupling a sample with this image gives distance at
+most \(a\) outside mass less than \(a\), so the finitely
+supported law is within Prokhorov distance at most \(a\).
+Changing its finitely many weights to nearby nonnegative rational
+weights of sum one costs at most the sum of their absolute
+differences: for every Borel \(A\), the change of its mass is
+bounded by this sum, and \(A\subset A^b\) for \(b>0\).
+The finite rational laws on the dense set form a countable
+dense family.
+
+For completeness let \((\mu_n)\) be \(\pi\)-Cauchy. Choose a
+subsequence \((\nu_j)\) with \(\pi(\nu_j,\nu_{j+1})<2^{-j}\).
+By Theorem~\ref{thm:p06-strassen}, choose adjacent pair couplings
+\(\gamma_j\) such that \(\gamma_j\{d>2^{-j}\}<2^{-j}\).
+A complete separable metric space is standard Borel with its
+Borel \(\sigma\)-algebra. Disintegrate \(\gamma_j\) over its
+first marginal to obtain a probability kernel from the first
+coordinate to the next, by Section~\ref{p04-03}. Apply the
+Ionescu--Tulcea construction of Section~\ref{p05-01} to the
+initial law \(\nu_1\) and these kernels. Induction gives coordinate
+laws \(\nu_j\) and adjacent joint laws \(\gamma_j\).
+
+On this path probability space, Borel--Cantelli shows that
+\(d(X_j,X_{j+1})\leq2^{-j}\) for all sufficiently large \(j\),
+on a measurable event of probability one. Distances are measurable
+on the product Borel space. Summing the bounds shows that the path
+is Cauchy there. Completeness yields an \(S\)-valued limit \(X\),
+defined to be a fixed point off the full event. The limit is
+measurable, since preimages of closed sets on this event are
+\(\{d(X_j,F)\to0\}\) for nonempty closed \(F\).
+Bounded convergence gives \(\nu_j\weakto\Law(X)\).
+Theorem~\ref{thm:p06-weak-metrics} gives \(\pi\)-convergence of
+the subsequence. The Cauchy condition and the triangle inequality
+then give convergence of the original sequence.
+\end{proof}
+
+Compare \cite[Theorems 6.8--6.9, pp.~72--77]{Billingsley}.
+The completeness assertion concerns the Prokhorov metric.
+
+\section{Tightness on continuous path space}
+\label{p06-11}
+
+Fix \(T>0\) and \(C=C([0,T],\R^d)\) with the supremum norm.
+For \(x\in C\) put
+\[
+ w_x(\delta)=\sup_{\substack{s,t\in[0,T]\\|s-t|\leq\delta}}
+                      \lVert x(s)-x(t)\rVert .
+\]
+The path space is complete by uniform convergence, and separable
+by polygonal interpolation at the times \(jT/m\), using rational
+vectors at the interpolation nodes. In particular all laws on
+this space are Borel laws on a complete separable metric space.
+
+\pagebreak[3]
+\begin{theorem}[Continuous-path tightness criterion]
+\label{thm:p06-path-tightness}
+A family \(\mathcal A\subset\mathcal P(C)\) is uniformly tight
+if and only if its time-zero marginals are uniformly tight
+and, for every \(\eta>0\),
+\[
+ \lim_{\delta\downarrow0}\sup_{\mu\in\mathcal A}
+                  \mu\{x:w_x(\delta)>\eta\}=0.
+\]
+\end{theorem}
+
+\begin{proof}
+Evaluation at zero maps compact sets to compact sets.
+Each compact set of paths is uniformly equicontinuous by
+Arzel\`a--Ascoli, which proves the necessity of both conditions.
+For sufficiency fix \(\epsilon>0\), and choose \(M\) such that
+the time-zero mass outside the closed ball of radius \(M\)
+is uniformly less than \(\epsilon/2\).
+Choose \(\delta_j>0\) decreasing to zero with
+\(\sup_{\mu\in\mathcal A}\mu\{w_x(\delta_j)>2^{-j}\}
+ <\epsilon\,2^{-j-2}\). The set
+\[
+ K=\{x:\ \lVert x(0)\rVert\leq M,\quad
+               w_x(\delta_j)\leq2^{-j}\ \text{for all }j\}
+\]
+is closed, since \(w_x(\delta)\) is \(2\)-Lipschitz as a
+function of \(x\) in the sup norm. The modulus inequalities
+give equicontinuity. To get a uniform bound, join \(0\) to any
+\(t\leq T\) by at most \(\lceil T/\delta_1\rceil+1\)
+increments of length at most \(\delta_1\). The total variation
+of the path values along this chain is bounded by that number
+times \(2^{-1}\). Arzel\`a--Ascoli now gives compactness of \(K\).
+The union bound gives \(\sup_{\mu\in\mathcal A}\mu(K^c)<\epsilon\).
+\end{proof}
+
+\begin{theorem}[Finite-dimensional convergence and tightness]
+\label{thm:p06-path-weak}
+Suppose \((\mu_n)\subset\mathcal P(C)\) is uniformly tight
+and the finite-dimensional marginal laws at every finite
+set of times in a dense countable subset of \([0,T]\)
+converge weakly. Then \(\mu_n\) converges weakly on \(C\) to
+a unique probability law with those marginals.
+If a law \(\mu\) on \(C\) is already given, then
+\(\mu_n\weakto\mu\) if and only if the sequence is
+uniformly tight and its finite-dimensional marginals on
+such a set converge to the corresponding marginals of \(\mu\).
+\end{theorem}
+
+\begin{proof}
+Forward Prokhorov provides a convergent subsequence. Evaluation
+at finitely many times is continuous, so any subsequence limit
+has the given marginals. The Borel \(\sigma\)-algebra on \(C\)
+is generated by the evaluations at the chosen dense countable
+set, by Section~\ref{p05-05}. Agreement of the finite-dimensional
+marginals implies equality on the generating cylinder
+\(\pi\)-system and hence equality of the laws. Every subsequence
+therefore has a further subsequence converging to the same law.
+If the full sequence failed to converge weakly, some bounded
+continuous test would fail to converge, giving a subsequence
+whose integrals stay a positive distance from the proposed limit.
+This contradicts the further subsequence conclusion.
+Conversely, for a weakly convergent sequence the mapping theorem
+gives finite-dimensional convergence. Every subsequence of a
+sequence chosen from the family has either a constant further
+subsequence or a further subsequence whose original indices tend
+to infinity. The latter converges to \(\mu\). The reverse
+Prokhorov theorem yields uniform tightness.
+\end{proof}
+
+\begin{example}[Finite-dimensional convergence without path convergence]
+On \(C([0,1],\R)\) let \(x_n\) be zero off
+\([2^{-n},2^{1-n}]\), linear on each half of that interval, zero
+at its endpoints, and one at its midpoint. At every fixed time
+\(t\), \(x_n(t)\to0\), so \(\delta_{x_n}\) has the
+finite-dimensional limits of the zero path. But
+\(\lVert x_n\rVert_\infty=1\) for all \(n\), and the bounded
+continuous test \(x\mapsto\min(1,\lVert x\rVert_\infty)\)
+excludes weak convergence to the zero path. Every possible
+weak limit would be that point mass by the marginal uniqueness
+argument. The family also fails the modulus condition directly,
+since for any \(\delta>0\), all sufficiently narrow spikes
+have \(w_{x_n}(\delta)=1\).
+\end{example}
+
+These are the continuous-path criteria of
+\cite[Theorems 7.1--7.5, pp.~80--85]{Billingsley}.
+They concern the uniform topology of continuous paths.
+\chapter{Transforms and Gaussian Laws}
+\label{chap:transforms}
+
+\section{Characteristic functions and moments}
+\label{p07-01}
+
+For a probability law \(\mu\) on \(\R^d\), write
+\[
+ \phi_\mu(t)=\int_{\R^d} e^{i\langle t,x\rangle}\,\mu(dx).
+\]
+The probability convention has a plus sign and no \(2\pi\) in the exponent.
+For the convention \(e^{-2\pi i\langle \xi,x\rangle}\), set
+\(\xi=-t/(2\pi)\). See \cite[Section 3.3]{Durrett} and
+\cite[Lemmas 6.1 and 6.9]{Kallenberg}.
+
+\begin{proposition}\label{prop:cf-basic}
+The function \(\phi_\mu\) is uniformly continuous, \(\phi_\mu(0)=1\),
+\(\phi_\mu(-t)=\overline{\phi_\mu(t)}\), and \(|\phi_\mu|\le 1\).
+It is positive definite, in the sense that
+\(\sum_{j,k}c_j\overline{c_k}\phi_\mu(t_j-t_k)\ge 0\)
+for all finite choices of \(c_j\in\C,\ t_j\in\R^d\).
+For probability laws \(\mu,\nu\),
+\(\phi_{\mu*\nu}=\phi_\mu\phi_\nu\).
+\end{proposition}
+
+\begin{proof}
+The modulus bound, normalization, and symmetry follow from the integrand.
+The absolute difference between the values at \(t+h\) and \(t\) is at most
+\(\int |e^{i\langle h,x\rangle}-1|\,d\mu(x)\), which tends to zero by
+dominated convergence, uniformly in \(t\). The quadratic form equals
+\(\int|\sum_j c_j e^{i\langle t_j,x\rangle}|^2\,d\mu(x)\).
+The convolution is the pushforward of \(\mu\otimes\nu\) by addition.
+Fubini factors its exponential integral. The joint law of independent
+random vectors is the product of their laws, so this also gives the
+characteristic function of their sum.
+\end{proof}
+
+\begin{proposition}\label{prop:cf-moment}
+If \(\E\|X\|^m<\infty\) for an integer \(m\ge 1\), then \(\phi_X\)
+has continuous partial derivatives through order \(m\), and
+\[
+ \partial^\alpha\phi_X(t)
+   =\E\big[(iX)^\alpha e^{i\langle t,X\rangle}\big],
+ \qquad |\alpha|\le m .
+\]
+In particular, when \(m\ge2\),
+\begin{equation}\label{eq:cf-second}
+ \phi_X(t)=1+i\langle t,\E X\rangle
+     -\tfrac12\E\langle t,X\rangle^2+o(\|t\|^2).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For a derivative in coordinate \(j\), the exponential difference quotient
+has modulus at most \(|X_j|\). With \(|\alpha|\) factors already present,
+the product bound is \(\|X\|^{|\alpha|+1}\), integrable up to order \(m\).
+Dominated convergence proves the formula inductively and gives continuity.
+For the expansion, the function
+\(e^{iu}-1-iu+u^2/2\) is \(o(u^2)\) and has modulus at most \(u^2\),
+since integrating the derivative of \(e^{iu}-1\) twice bounds
+\(|e^{iu}-1-iu|\) by \(u^2/2\). With \(u=\langle t,X\rangle\), division
+by \(\|t\|^2\) gives a bound by \(\|X\|^2\) and pointwise convergence
+to zero. Dominated convergence proves \eqref{eq:cf-second}.
+\end{proof}
+
+The first-moment hypothesis here is a sufficient condition for
+differentiation. For instance, choose the law of \(|X|\) with tail
+\(\Prob(|X|>r)=1/(r\log r)\) for \(r\ge e\) and \(1/e\) for
+\(0\le r<e\), and give it an independent fair sign. This is a
+nonincreasing right-continuous tail with an atom of mass \(1-1/e\)
+at zero. Its first absolute moment is infinite by the tail integral.
+Yet for \(h=|t|>0\),
+\[
+ 0\le \frac{1-\phi_X(t)}{h}
+ \le \frac{h}{2}\E[|X|^2\ind_{\{|X|\le 1/h\}}]
+        +\frac{2}{h}\Prob(|X|>1/h)\longrightarrow 0 .
+\]
+Indeed \(r\Prob(|X|>r)\to0\), so the truncated second moment divided by
+\(R\) tends to zero by
+\(\E[|X|^2\ind_{\{|X|\le R\}}]\le 2\int_0^R r\Prob(|X|>r)\,dr\).
+Thus \(\phi_X'(0)=0\) in this example.
+
+\section{Inversion and uniqueness}
+\label{p07-02}
+
+For \(\sigma>0\) put
+\(g_\sigma(x)=(2\pi\sigma^2)^{-d/2}\exp(-\|x\|^2/(2\sigma^2))\).
+Its Fourier transform and its inverse satisfy
+\begin{equation}\label{eq:gaussian-transform}
+ \int_{\R^d}e^{i\langle t,x\rangle}g_\sigma(x)\,dx
+       =e^{-\sigma^2\|t\|^2/2},
+ \qquad
+ g_\sigma(x)=(2\pi)^{-d}\int_{\R^d}
+        e^{-i\langle t,x\rangle}e^{-\sigma^2\|t\|^2/2}\,dt .
+\end{equation}
+In dimension one the first transform is differentiable by the first
+absolute moment. Integration by parts using \(xg_\sigma=-\sigma^2g'_\sigma\)
+gives \(F'(t)=-\sigma^2tF(t)\). For normalization, square
+\(\int_{\R}e^{-x^2/2}\,dx\) by Tonelli and use polar coordinates in
+the plane. The square is
+\(2\pi\int_0^\infty r e^{-r^2/2}\,dr=2\pi\), so \(F(0)=1\).
+Multiplying the one-dimensional identities gives the first formula in all
+dimensions, and rescaling it gives the second.
+
+\begin{theorem}\label{thm:cf-inversion}
+Let \(\mu\) be a probability on \(\R^d\).
+Its characteristic function determines \(\mu\).
+If \(\phi_\mu\in L^1(\R^d)\), then \(\mu\) has a bounded continuous
+density
+\begin{equation}\label{eq:cf-inverse-density}
+ f(x)=(2\pi)^{-d}\int_{\R^d}e^{-i\langle t,x\rangle}\phi_\mu(t)\,dt.
+\end{equation}
+In dimension one, for every \(a<b\),
+\begin{equation}\label{eq:interval-inversion}
+ \lim_{T\to\infty}\frac1{2\pi}
+ \int_{-T}^{T}\frac{e^{-ita}-e^{-itb}}{it}\phi_\mu(t)\,dt
+ =\mu((a,b))+\tfrac12\mu(\{a\})+\tfrac12\mu(\{b\}).
+\end{equation}
+The integrand at zero uses the continuous extension of the quotient.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:gaussian-transform} and Fubini, the convolution
+\(\mu*g_\sigma\) has density
+\[
+ f_\sigma(x)=(2\pi)^{-d}\int
+  e^{-i\langle t,x\rangle}\phi_\mu(t)e^{-\sigma^2\|t\|^2/2}\,dt .
+\]
+The interchange is justified by the integrable Gaussian in frequency
+and \(\mu(\R^d)=1\). On a product space the convolution is the law of
+\(X+\sigma Z\) with \(Z\) standard Gaussian independent of \(X\).
+As \(\sigma\downarrow0\), bounded continuous tests converge to their
+\(\mu\)-integrals by dominated convergence. Equal characteristic functions
+therefore give equal bounded continuous integrals and equal laws
+(Section~\ref{p06-01}). If \(\phi_\mu\) is integrable, dominated convergence
+gives uniform convergence of the densities \(f_\sigma\) to \(f\) in
+\eqref{eq:cf-inverse-density}. Thus \(f\ge0\), \(f\) is bounded continuous,
+and for every compactly supported continuous \(u\),
+\(\int uf\,dx=\int u\,d\mu\).
+Taking compactly supported cutoffs increasing to \(1\) gives \(\int f=1\).
+Multiplying bounded continuous tests by those cutoffs and passing to
+the limit proves equality of the two laws.
+
+For \eqref{eq:interval-inversion}, Fubini at finite \(T\) expresses the
+left integral as the \(\mu\)-average of
+\[
+ \frac1\pi\left(
+ \int_0^{T(x-a)}\frac{\sin v}{v}\,dv
+ -
+ \int_0^{T(x-b)}\frac{\sin v}{v}\,dv\right).
+\]
+The oriented integrals are uniformly bounded and tend to
+\(\frac{\pi}{2}\operatorname{sgn}(x-a)\) and
+\(\frac{\pi}{2}\operatorname{sgn}(x-b)\), respectively.
+For completeness, integration by parts on \([A,B]\) bounds the absolute
+tail of the oscillatory integral by \(3/A\) for \(1\le A\le B\);
+the same bound is uniform with a factor \(e^{-\eta v}\) for \(\eta>0\),
+since \(e^{-\eta v}/v\) is decreasing. For \(\eta>0\),
+\[
+ \int_0^\infty e^{-\eta v}\frac{\sin v}{v}\,dv
+  =\int_0^1\int_0^\infty e^{-\eta v}\cos(sv)\,dv\,ds
+  =\int_0^1\frac{\eta}{\eta^2+s^2}\,ds
+  =\arctan(1/\eta).
+\]
+The interchange is absolutely integrable for each \(\eta\).
+The uniform tail estimate permits \(\eta\downarrow0\).
+Dominated convergence against \(\mu\) now gives the interval mass and
+the two half masses. See \cite[Theorems 3.3.11 and 3.3.14]{Durrett}.
+\end{proof}
+
+\section{The continuity theorem}
+\label{p07-03}
+
+\begin{theorem}[L\'evy continuity theorem]\label{thm:levy-cont}
+For probability laws \(\mu_n\) on \(\R^d\), suppose
+\(\phi_{\mu_n}(t)\to \phi(t)\) for every \(t\), and \(\phi\) is
+continuous at \(0\). Then there is a unique probability law \(\mu\)
+with characteristic function \(\phi\), and \(\mu_n\weakto\mu\).
+Conversely, weak convergence implies pointwise convergence of the
+characteristic functions to that of the limit.
+\end{theorem}
+
+\begin{proof}
+The converse is immediate by testing real and imaginary parts.
+For the forward direction, if \(e_j\) is a coordinate vector and \(a>0\),
+\[
+ \frac{1}{2a}\int_{-a}^{a}(1-\Re\phi_{\mu_n}(ue_j))\,du
+ =\int\left(1-\frac{\sin(a x_j)}{a x_j}\right)\mu_n(dx)
+ \ge \tfrac12\mu_n\{|x_j|\ge 2/a\}.
+\]
+Use the continuous value at \(x_j=0\). The left side tends to the same
+average for \(\phi\), by bounded convergence. Since \(\phi(0)=1\) and
+\(\phi\) is continuous there, these limit averages tend to zero as
+\(a\downarrow0\). Applying the bound in each coordinate gives tightness
+for all sufficiently late laws, and a larger compact cube handles the
+finitely many earlier laws. By Section~\ref{p06-05} every subsequence
+has a weakly convergent further subsequence. Every such limit has
+transform \(\phi\), hence all those limits coincide by
+Theorem~\ref{thm:cf-inversion}. For each bounded continuous test, if its
+integrals did not converge to the unique limit integral, a subsequence
+separated from it would contradict the further subsequence conclusion.
+\end{proof}
+
+\begin{corollary}[Laplace continuity on the positive orthant]
+\label{cor:laplace-cont}
+For laws on \([0,\infty)^d\) the same statement holds for
+\(L_\mu(t)=\int e^{-\langle t,x\rangle}\,d\mu(x)\),
+\(t\in[0,\infty)^d\), using continuity at zero within that orthant.
+\end{corollary}
+
+\begin{proof}
+For \(a>0\),
+\((1-e^{-1})\mu_n\{x_j\ge 1/a\}\le 1-L_{\mu_n}(a e_j)\),
+which gives tightness as above. Weak limits have the stipulated Laplace
+values. For uniqueness, push the law into \([0,1]^d\) by
+\(x\mapsto(e^{-x_1},\ldots,e^{-x_d})\). The Laplace values at nonnegative
+integer vectors determine all the monomial integrals of the image law.
+Polynomials uniformly approximate continuous functions on the cube:
+their multivariate Bernstein approximants are expectations of the
+test function at independent scaled binomial variables with the
+corresponding coordinate means, and converge uniformly by uniform
+continuity and the uniform variance bound \(1/(4m)\) per coordinate
+at degree \(m\). Thus the two image laws agree. The map has a continuous
+inverse on its image, proving uniqueness of the original laws.
+The subsequence argument and the converse follow as for characteristic
+functions. See \cite[Theorems 6.3 and 6.23]{Kallenberg}.
+\end{proof}
+
+\section{Projections and Gaussian vectors}
+\label{p07-04}
+
+\begin{theorem}[Cram\'er--Wold]\label{thm:cramer-wold}
+Two laws on \(\R^d\) coincide if all their real one-dimensional linear
+images agree. Also \(\mu_n\weakto\mu\) if and only if each of those images
+converges weakly to the corresponding image of \(\mu\).
+\end{theorem}
+\begin{proof}
+For each \(t\), the characteristic function at \(t\) is the characteristic
+function of the \(t\)-projection at \(1\). Apply
+Theorems~\ref{thm:cf-inversion} and \ref{thm:levy-cont}.
+The forward implication in the weak statement is composition with
+a continuous projection. See \cite[Corollary 6.5]{Kallenberg}.
+\end{proof}
+
+\begin{theorem}[Gaussian vectors]\label{thm:gaussian-vector}
+For \(m\in\R^d\) and a symmetric positive semidefinite matrix \(\Sigma\)
+there is a unique Gaussian law \(N(m,\Sigma)\), with characteristic
+function
+\[
+ \exp\big(i\langle t,m\rangle-\tfrac12 t^\mathsf{T}\Sigma t\big).
+\]
+A vector is Gaussian exactly when all real linear projections are
+univariate Gaussian, where zero variance means a point mass.
+An affine image \(AX+b\) of \(X\sim N(m,\Sigma)\) has law
+\(N(Am+b,A\Sigma A^\mathsf{T})\). Two coordinate blocks of a
+Gaussian vector are independent exactly when the cross-covariance block
+is zero.
+\end{theorem}
+
+\begin{proof}
+Let \(Z\) have independent \(N(0,1)\) coordinates and take
+\(X=m+\Sigma^{1/2}Z\). The square root exists by the real spectral theorem
+even when \(\Sigma\) is singular. Formula~\eqref{eq:gaussian-transform}
+gives the asserted transform by independence. The Gaussian integral
+and integration by parts give zero mean and unit second moment of a
+standard normal, so the constructed covariance is \(\Sigma\).
+The transform determines the law by Theorem~\ref{thm:cf-inversion}.
+Every projection of \(X\) has the stated normal law by its transform.
+Conversely, if all projections are Gaussian, the coordinate projections
+give finite second moments. The actual mean and covariance of the vector
+then give the parameters of each projected normal by linearity of
+expectation and the variance identity. The Cram\'er--Wold theorem
+identifies the vector law. Affine images are handled by substitution
+of \(A^\mathsf{T}t\) in the transform. Independence implies zero
+cross-covariance. If the cross-covariance block is zero, the joint
+transform factors into the marginal transforms, so the law is the
+product law by uniqueness. See \cite[Section 3.10]{Durrett}.
+\end{proof}
+
+\section{Positive definite functions}
+\label{p07-05}
+
+\begin{theorem}[Euclidean Bochner theorem, probability form]
+\label{thm:bochner}
+A continuous positive definite function \(\phi\) on \(\R^d\) with
+\(\phi(0)=1\) is the characteristic function of a unique probability
+law.
+\end{theorem}
+
+\begin{proof}
+The two-point quadratic forms imply
+\(\phi(-t)=\overline{\phi(t)}\) and \(|\phi(t)|\le1\).
+Put \(\psi(t)=\phi(t)e^{-\epsilon\|t\|^2/2}\) for \(\epsilon>0\).
+This function is integrable and positive definite. To see positivity,
+write the Gaussian factor as an integral by \eqref{eq:gaussian-transform}
+and insert \(c_j e^{i\langle t_j,z\rangle}\) in the quadratic form for
+\(\phi\), then average over \(z\).
+
+Let \(f(x)=(2\pi)^{-d}\int e^{-i\langle t,x\rangle}\psi(t)\,dt\).
+For \(Q_L=[-L,L]^d\), the quantity
+\[
+ \frac1{|Q_L|}\int_{Q_L}\int_{Q_L}
+       e^{-i\langle s-t,x\rangle}\psi(s-t)\,ds\,dt
+\]
+is nonnegative, because its Riemann sums are positive definite
+quadratic forms. It equals the integral defining \((2\pi)^df(x)\)
+with extra factor \(|Q_L\cap(Q_L-u)|/|Q_L|\) at frequency \(u=s-t\).
+That factor is bounded by one and tends to one at every fixed \(u\).
+Dominated convergence proves \(f(x)\ge0\). It also follows directly
+from the inverse integral that \(f\) is bounded and continuous.
+
+For \(\delta>0\) and \(s\in\R^d\), Gaussian integration and Fubini give
+\begin{equation}\label{eq:bochner-pair}
+ \int f(x)e^{i\langle s,x\rangle}e^{-\delta\|x\|^2/2}\,dx
+ =\int\psi(u)g_{\sqrt{\delta}}(s-u)\,du .
+\end{equation}
+Here \(\int|\psi|<\infty\) and the Gaussian in \(x\) is integrable.
+The right side tends to \(\psi(s)\) by continuity and boundedness,
+by writing it as the expectation of \(\psi(s+\sqrt\delta Z)\).
+At \(s=0\), monotone convergence on the left gives \(\int f=1\).
+Now dominated convergence in \eqref{eq:bochner-pair} gives
+\(\phi_{f\,dx}=\psi\). Taking \(\epsilon\downarrow0\) through a sequence
+and using Theorem~\ref{thm:levy-cont} proves existence. Uniqueness is
+Theorem~\ref{thm:cf-inversion}. This argument uses only the Euclidean
+Gaussian transform and the continuity theorem
+\cite[Theorem 6.23]{Kallenberg}.
+\end{proof}
+
+\section{From Gaussian marginals to Wiener measure}
+\label{p07-06}
+
+\begin{theorem}\label{thm:wiener}
+For \(T>0\) there is a unique Borel probability on \(C([0,T],\R)\)
+under which the coordinate process starts at zero, is centered Gaussian
+with covariance \(\min(s,t)\), and has independent normal increments of
+variance equal to the length of each increment interval.
+\end{theorem}
+
+\begin{proof}
+For a finite sorted list \(0\le t_1<\cdots<t_m\le T\), let
+\(t_0=0\) and take partial sums of independent centered normals with
+variances \(t_j-t_{j-1}\). A zero time increment is identically zero.
+These vectors have covariance \(\min(t_j,t_k)\). Their marginals are
+the laws prescribed for the corresponding sublists, since Gaussian
+laws are determined by their means and covariances by
+Theorem~\ref{thm:gaussian-vector}. Section~\ref{p05-02} gives a
+probability law for all the coordinates on the product sigma-field.
+For the resulting process, every \(B_t-B_s\) is
+\(N(0,|t-s|)\), with
+\(\E|B_t-B_s|^4=3|t-s|^2\). The factor \(3\) follows from Gaussian
+integration by parts, which gives the fourth standard normal moment
+as three times its second. Section~\ref{p05-04} gives a continuous
+modification (with every H\"older exponent below \(1/4\) from this
+fourth moment). Values at time zero and all fixed finite time lists
+keep their original laws. The path map is measurable and the path
+law is uniquely determined by those lists by Section~\ref{p05-05}.
+The normal increment and independence assertions follow from the
+finite list construction. See \cite[Chapter 14]{Kallenberg} and
+\cite[Section 8]{Billingsley}.
+\end{proof}
+\chapter{Independent Sums and Strong Laws}
+\label{chap:sums}
+
+In this chapter \(S_n=\sum_{k=1}^n X_k\). We use independence at the
+strength required by each assertion. The first-moment strong law uses
+pairwise independence, whereas the maximal inequality and the
+three-series theorem use mutual independence. The primary sources are
+\cite[Chapter 2]{Durrett} and \cite[Chapter 5]{Kallenberg}.
+
+\section{Weak laws and truncation}
+\label{p08-01}
+
+\begin{proposition}\label{prop:weak-var}
+Let \(X_k\) be pairwise uncorrelated square-integrable real variables.
+If \(n^{-2}\sum_{k=1}^n\Var(X_k)\to0\), then
+\((S_n-\E S_n)/n\to0\) in \(L^2\) and in probability.
+\end{proposition}
+\begin{proof}
+Expanding the second moment of the centered sum, every mixed term is
+zero, so its normalized second moment is precisely the stated
+variance sum. Chebyshev gives convergence in probability.
+\end{proof}
+
+\begin{theorem}[Truncated weak law]\label{thm:truncated-wlln}
+Let \(X_k\) be identically distributed and pairwise independent, and
+suppose \(n\Prob(|X_1|>n)\to0\). Then
+\[
+ \frac{S_n}{n}-m_n\pto0,\qquad
+ m_n=\E[X_1\ind_{\{|X_1|\le n\}}].
+\]
+If \(\E|X_1|<\infty\), then \(S_n/n\to \E X_1\) both in probability
+and in \(L^1\).
+\end{theorem}
+
+\begin{proof}
+For each \(n\) use \(Y_{n,k}=X_k\ind_{\{|X_k|\le n\}}\) for \(k\le n\).
+The probability that the truncated row changes the sum is at most
+\(n\Prob(|X_1|>n)\). The normalized truncated row has mean \(m_n\)
+and variance at most
+\[
+ \frac1n \E[X_1^2\ind_{\{|X_1|\le n\}}]
+ \le \frac2n\int_0^n t\,\Prob(|X_1|>t)\,dt .
+\]
+The real variable version of the tail assumption follows from the
+integer version by comparison with \(\lfloor t\rfloor\).
+The displayed upper bound tends to zero by splitting the integral at
+a fixed large threshold. Chebyshev and the event bound prove the claim.
+Under a finite first absolute moment,
+\(n\Prob(|X_1|>n)\le \E[|X_1|\ind_{\{|X_1|>n\}}]\to0\) and
+\(m_n\to\E X_1\). For the \(L^1\) conclusion, truncate instead at a
+fixed \(M\). The centered truncated averages converge in \(L^2\)
+by Proposition~\ref{prop:weak-var}, and in \(L^1\) by Cauchy--Schwarz
+since the space has total mass one. The \(L^1\) distance of the original
+centered averages to those averages is bounded by
+\(2\E[|X_1|\ind_{\{|X_1|>M\}}]\), uniformly in \(n\).
+Let \(M\to\infty\). See \cite[results 2.2.11--2.2.14]{Durrett}.
+\end{proof}
+
+The truncation center in this statement matters. In the different
+normalization \(n^{-1/p} S_n\), \(1<p<2\), the condition
+\(r^p\Prob(|X_1|>r)\to0\) alone cannot give a zero limit.
+The deterministic choice \(X_k=1\) makes the normalized sum diverge.
+The zero-mean condition used in the proof of
+\cite[Theorem 6.17, pp.\ 138--139]{Kallenberg} must be kept for that
+uncentered version.
+
+\section{The first-moment strong law}
+\label{p08-02}
+
+\begin{theorem}[Etemadi strong law]\label{thm:etemadi}
+For pairwise independent, identically distributed real random variables
+with \(\E|X_1|<\infty\),
+\[
+ \frac{S_n}{n}\asto \E X_1 .
+\]
+Conversely, for a pairwise independent, identically distributed sequence,
+almost sure convergence of \(S_n/n\) to a finite random variable implies
+\(\E|X_1|<\infty\). The limit is then the indicated constant.
+\end{theorem}
+
+\begin{proof}
+First suppose the variables are nonnegative. Set
+\(Y_k=X_k\ind_{\{X_k\le k\}}\) and \(T_n=\sum_{k=1}^nY_k\).
+Since \(\sum_k\Prob(X_k>k)\le\E X_1\), the first Borel--Cantelli lemma
+implies \(S_n-T_n\) is eventually constant almost surely. Also
+\(\E T_n/n\to\mu=\E X_1\) by dominated convergence followed by
+Ces\`aro averaging.
+
+Fix \(\alpha>1\) and use \(n_j=\lfloor\alpha^j\rfloor\) with \(j\ge1\).
+Pairwise independence gives
+\[
+ \sum_j \frac{\Var(T_{n_j})}{n_j^2}
+ \le \sum_j \frac{\E[X_1^2\ind_{\{X_1\le n_j\}}]}{n_j}
+ = \E\!\left[X_1^2\sum_{j:\,n_j\ge X_1}\frac1{n_j}\right]<\infty .
+\]
+Indeed \(\tfrac12\alpha^j\le n_j\le\alpha^j\). Summing the geometric
+tail from the first index with \(\alpha^j\ge x\) bounds the inner
+sum by \(C_\alpha/(1\vee x)\), and \(x^2/(1\vee x)\le x\).
+Chebyshev and Borel--Cantelli at a countable sequence of error
+thresholds give \(T_{n_j}/n_j\to\mu\) almost surely and hence
+\(S_{n_j}/n_j\to\mu\). For \(n_j\le n\le n_{j+1}\), monotonicity of
+the nonnegative partial sums gives
+\[
+ \frac{S_{n_j}}{n_{j+1}}\le \frac{S_n}{n}
+ \le\frac{S_{n_{j+1}}}{n_j}.
+\]
+The two bounding limits are \(\mu/\alpha\) and \(\alpha\mu\).
+Intersecting the full-measure events for a countable sequence
+\(\alpha\downarrow1\) proves the result. For real variables apply
+the nonnegative proof separately to their positive and negative parts.
+
+For the converse, write \(X_n/n=S_n/n-[(n-1)/n]\,S_{n-1}/(n-1)\)
+for \(n>1\), so \(X_n/n\to0\) almost surely. The events
+\(\{|X_n|>n\}\) are pairwise independent and occur only finitely often.
+The second Borel--Cantelli lemma implies \(\sum_n\Prob(|X_1|>n)<\infty\),
+and the tail integral for the monotone tail gives finite first moment.
+Compare \cite[Theorems 2.3.8 and 2.4.1]{Durrett}.
+\end{proof}
+
+\section{Maximal inequality and variance summability}
+\label{p08-03}
+
+\begin{theorem}[Kolmogorov maximal inequality]\label{thm:kolm-max}
+If \(X_1,\ldots,X_n\) are mutually independent, centered and
+square-integrable, then for \(\lambda>0\)
+\[
+ \Prob\big(\max_{1\le k\le n}|S_k|\ge\lambda\big)
+ \le\lambda^{-2}\sum_{k=1}^n\Var(X_k).
+\]
+\end{theorem}
+\begin{proof}
+Let \(A_k\) be the event that \(k\) is the first index with
+\(|S_k|\ge\lambda\). It is measurable with respect to the first \(k\)
+variables, and the later increment \(S_n-S_k\) is independent of them
+and centered. Expanding \(S_n^2\) on \(A_k\) gives
+\[
+ \E[\ind_{A_k}S_n^2]
+ = \E[\ind_{A_k}S_k^2]
+   + \E[\ind_{A_k}(S_n-S_k)^2]
+ \ge\lambda^2\Prob(A_k).
+\]
+The mixed expectation vanishes by independence and integrability.
+Summing over disjoint \(A_k\) gives the result.
+\end{proof}
+
+\begin{corollary}\label{cor:series-variance}
+A series of independent centered square-integrable random variables
+with summable variances converges almost surely and in \(L^2\).
+\end{corollary}
+\begin{proof}
+The difference of two partial sums has second moment equal to the
+variance sum over the corresponding interval. Thus the sums are
+Cauchy in \(L^2\). For almost sure convergence choose increasing
+\(m_j\) with \(\sum_{k>m_j}\Var(X_k)\le 2^{-4j}\).
+Apply the maximal inequality to \(S_k-S_{m_j}\) over
+\(m_j<k\le n\), and let \(n\to\infty\) by continuity from below.
+The event that some such increment reaches \(2^{-j}\) has
+probability at most \(2^{-2j}\). Borel--Cantelli gives the Cauchy
+property of the full sequence almost surely. The almost sure and
+\(L^2\) limits agree by uniqueness of the limit in probability.
+See \cite[Section 2.5]{Durrett} and
+\cite[Lemmas 5.15 and 5.16, pp.~109--110]{Kallenberg}.
+\end{proof}
+
+\section{Kronecker's lemma and weighted strong laws}
+\label{p08-04}
+
+\begin{lemma}[Kronecker]\label{lem:kronecker}
+If \(0<b_1\le b_2\le\cdots\), \(b_n\to\infty\), and
+\(\sum_k a_k/b_k\) converges in \(\R\), then
+\(b_n^{-1}\sum_{k=1}^n a_k\to0\).
+\end{lemma}
+\begin{proof}
+Write \(c_k=\sum_{j=1}^k a_j/b_j\) and \(c_0=0\).
+Summation by parts gives
+\[
+ b_n^{-1}\sum_{k=1}^n a_k
+ =c_n-\sum_{k=1}^{n-1}\frac{b_{k+1}-b_k}{b_n}\,c_k .
+\]
+The nonnegative weights sum to \(1-b_1/b_n\).
+If \(c_k\to c\), the sum tends to \(c\), since any fixed finite
+initial block has weights tending to zero and the remaining
+\(c_k\) are uniformly close to \(c\).
+\end{proof}
+
+\begin{corollary}[Kolmogorov variance criterion]\label{cor:variance-slln}
+For independent square-integrable real \(X_k\) and \(b_k\) as in
+Lemma~\ref{lem:kronecker}, if
+\(\sum_k \Var(X_k)/b_k^2<\infty\), then
+\[
+ b_n^{-1}\sum_{k=1}^n(X_k-\E X_k)\asto0 .
+\]
+In particular \(b_k=k\) gives the usual strong law for independent
+variables with summable normalized variances.
+\end{corollary}
+\begin{proof}
+Apply Corollary~\ref{cor:series-variance} to
+\((X_k-\E X_k)/b_k\), then apply Lemma~\ref{lem:kronecker} pointwise
+on the event of convergence. See
+\cite[Lemma 5.21 and Corollary 5.22, pp.~112--113]{Kallenberg}
+and \cite[Theorem 2.5.9]{Durrett}.
+\end{proof}
+
+\section{Kolmogorov's three-series theorem}
+\label{p08-05}
+
+\begin{theorem}\label{thm:three-series}
+Let \(X_k\) be independent real random variables and fix \(a>0\).
+Set \(Y_k=X_k\ind_{\{|X_k|\le a\}}\). Then
+\(\sum_kX_k\) converges almost surely if and only if all three
+series below converge:
+\[
+ \sum_k\Prob(|X_k|>a),\qquad
+ \sum_k \E Y_k,\qquad
+ \sum_k \Var(Y_k).
+\]
+Convergence of the middle series is ordinary convergence in its given
+order.
+\end{theorem}
+
+\begin{proof}
+If the three series converge, Borel--Cantelli ensures that \(X_k=Y_k\)
+for all sufficiently large \(k\) almost surely. The centered series
+of \(Y_k\) converges by Corollary~\ref{cor:series-variance}, and adding
+the deterministic series proves sufficiency.
+
+Conversely, convergence implies \(X_k\to0\) almost surely. The second
+Borel--Cantelli lemma for the independent events \(\{|X_k|>a\}\)
+forces convergence of the first series. The series of \(Y_k\) then
+converges almost surely. Take an independent copy \((Y'_k)\) and put
+\(D_k=Y_k-Y'_k\). The \(D_k\) are independent, symmetric, bounded by
+\(2a\), and their series converges almost surely. Fix \(t\ne0\) with
+\(2a|t|\le1\). By the characteristic function product identity,
+\[
+  \E e^{it\sum_{k=m}^n D_k}=\prod_{k=m}^n u_k,\qquad
+  u_k=\E\cos(tD_k)=|\phi_{Y_k}(t)|^2\in[0,1].
+\]
+The Cauchy property gives
+\(\sup_{n\ge m}|e^{it\sum_{k=m}^nD_k}-1|\to0\) almost surely.
+The supremum is measurable and bounded by \(2\), so for some fixed
+\(m\) the product is at least \(1/2\) for every \(n\ge m\).
+In this tail, \(\sum_{k=m}^n (1-u_k)\le-\log\prod_{k=m}^n u_k
+\le\log 2\).
+For \(|v|\le1\), \(1-\cos v\ge v^2/4\), for example by twice
+integrating \(\cos v\ge 1/2\) on that interval. Consequently
+\[
+  1-u_k\ge (t^2/4)\E D_k^2=(t^2/2)\Var(Y_k).
+\]
+This proves the third condition. Subtract the convergent centered
+series of \(Y_k\) from the convergent uncentered one on a common
+full-measure event to obtain convergence of the deterministic middle
+series. See \cite[Theorem 5.18, pp.~111--112]{Kallenberg}.
+\end{proof}
+
+\section{Marcinkiewicz--Zygmund strong laws}
+\label{p08-06}
+
+\begin{theorem}\label{thm:mz-strong}
+Let \(X_k\) be i.i.d.\ real variables and \(0<p<2\).
+If \(\E|X_1|^p<\infty\), then almost surely
+\[
+ \begin{cases}
+ S_n/n^{1/p}\longrightarrow0,& 0<p<1,\\
+ (S_n-n\E X_1)/n^{1/p}\longrightarrow0,& 1\le p<2 .
+ \end{cases}
+\]
+Conversely, if for some constant \(c\), \((S_n-nc)/n^{1/p}\) has
+a finite almost sure limit, then \(\E|X_1|^p<\infty\).
+In particular when \(1<p<2\) this finite-limit property forces
+\(c=\E X_1\).
+\end{theorem}
+
+\begin{proof}
+Put \(b_k=k^{1/p}\), \(Y_k=X_k\ind_{\{|X_k|\le b_k\}}\).
+The probabilities of truncation are summable by the tail integral
+for \(|X_1|^p\). Tonelli and the tail estimate for the series of
+\(k^{-2/p}\), whose exponent is greater than one, give
+\[
+ \sum_k\frac{\Var(Y_k)}{k^{2/p}}
+ \le \E\!\left[|X_1|^2\sum_{k:\,k\ge |X_1|^p} k^{-2/p}\right]
+ \le C_p\E |X_1|^p .
+\]
+For the last step, the inner sum is bounded by
+\(C_p(1\vee |X_1|^p)^{1-2/p}\). For \(|X_1|\le1\),
+\(|X_1|^2\le |X_1|^p\), and for \(|X_1|>1\) the powers combine
+to \(|X_1|^p\). Thus the centered truncated sums divided by
+\(n^{1/p}\) tend to zero by Corollary~\ref{cor:variance-slln}.
+The original and truncated sums have eventually constant difference.
+
+For \(0<p<1\), dominated convergence applied to
+\[
+ b_k^{p-1}|X_1|\ind_{\{|X_1|\le b_k\}}
+ \le |X_1|^p
+\]
+gives \(|\E Y_k|=o(k^{1/p-1})\).
+For \(1<p<2\),
+\[
+ |\E Y_k-\E X_1|
+ \le b_k^{1-p}\E[|X_1|^p\ind_{\{|X_1|>b_k\}}]
+ =o(k^{1/p-1}).
+\]
+Since \(1/p-1>-1\), the sum of these deterministic errors up to
+\(n\) is \(o(n^{1/p})\), by the integral comparison for
+\(\sum_{k\le n}k^{1/p-1}\) and splitting off finitely many initial
+terms. For \(p=1\) the first-moment theorem already gives the result.
+
+For necessity, put \(A_n=(S_n-nc)/n^{1/p}\).
+The identity
+\[
+ (X_n-c)/n^{1/p}=A_n-((n-1)/n)^{1/p}A_{n-1}
+\]
+implies \(X_n/n^{1/p}\to0\) almost surely. The second Borel--Cantelli
+lemma yields \(\sum_n\Prob(|X_1|^p>n)<\infty\).
+The tail integral gives the moment. If \(p>1\), the finite-limit
+property also gives \(S_n/n\to c\), so \(c=\E X_1\) by
+Theorem~\ref{thm:etemadi}. See \cite[Theorem 5.23]{Kallenberg}.
+\end{proof}
+
+\section{The empirical distribution function}
+\label{p08-07}
+
+\begin{theorem}[Glivenko--Cantelli]\label{thm:gc}
+Let \(F\) be the common distribution function of i.i.d.\ real
+variables \(X_1,X_2,\ldots\), and let
+\(F_n(x)=n^{-1}\sum_{k=1}^n\ind_{\{X_k\le x\}}\).
+Then \(\sup_{x\in\R}|F_n(x)-F(x)|\to0\) almost surely.
+\end{theorem}
+
+\begin{proof}
+For integer \(m\ge2\) and \(j=1,\ldots,m-1\), put
+\(q_j=\inf\{x:F(x)\ge j/m\}\).
+All these numbers are finite, and right continuity gives
+\(F(q_j-)\le j/m\le F(q_j)\). They may repeat. Add
+\(q_0=-\infty,\ q_m=+\infty\), with the corresponding endpoint
+values \(F(q_0)=F_n(q_0)=0,\ F(q_m-)=F_n(q_m-)=1\).
+For any finite \(x\), take \(j\) maximal with \(q_j\le x\). Then
+\(q_j\le x<q_{j+1}\), and \(F(x)\) lies between
+\(F(q_j)\) and \(F(q_{j+1}-)\). Their difference is at most
+\((j+1)/m-j/m=1/m\), also for \(j=0\) and \(j=m-1\).
+The empirical \(F_n(x)\) is bounded between the analogous two empirical
+values. The strong law applies to the indicators of both \(\{X\le q_j\}\)
+and \(\{X<q_j\}\). Simultaneously at all grid points for a fixed \(m\),
+the bracket endpoints therefore converge. It follows that
+\(\limsup_n\sup_x|F_n(x)-F(x)|\le1/m\) on this event.
+Intersect the countably many events over \(m\). The supremum is
+measurable since right continuity permits restriction to rational
+\(x\). The strict indicators at the upper bracket endpoints allow
+arbitrary atoms in the law. See \cite[Theorem 2.4.9]{Durrett} and
+\cite[Proposition 5.24]{Kallenberg}.
+\end{proof}
+\chapter{Normal Approximation and Rare Events}
+\label{chap:clt}
+
+\section{The independent identically distributed central limit theorem}
+\label{p09-01}
+
+\begin{theorem}\label{thm:iid-clt}
+Let \(X_1,X_2,\ldots\) be i.i.d.\ random vectors in \(\R^d\) with
+finite second moment, mean \(m\), and covariance \(\Sigma\).
+Then
+\[
+ \Law\left(n^{-1/2}\sum_{k=1}^n(X_k-m)\right)\weakto N(0,\Sigma).
+\]
+In dimension one \(\Sigma\) is the variance. When it is zero the
+centered sums are zero almost surely.
+\end{theorem}
+
+\begin{proof}
+For a centered real variable \(Y\) with variance \(v<\infty\),
+\eqref{eq:cf-second} gives
+\(\phi_Y(t/\sqrt n)=1-vt^2/(2n)+o(1/n)\) for fixed \(t\).
+Independence raises this expression to the \(n\)-th power,
+whose limit is \(e^{-vt^2/2}\). To see the power limit,
+take the logarithm defined near \(1\) and use
+\(\log(1+z)=z+O(|z|^2)\) there. For \(v=0\), \(Y=0\) almost surely.
+Theorem~\ref{thm:levy-cont} gives the scalar result. For vectors,
+apply the scalar result to each projection \(t^\mathsf{T}(X_k-m)\),
+with variance \(t^\mathsf{T}\Sigma t\), and use
+Theorems~\ref{thm:cramer-wold} and \ref{thm:gaussian-vector}.
+See \cite[Theorem 3.4.1 and Section 3.10]{Durrett}.
+\end{proof}
+
+Pairwise independence alone is insufficient. For independent fair
+bits \((U_j)_{j\ge1}\), enumerate the nonzero finite binary coefficient
+vectors by increasing largest occupied coordinate. Let \(X_k\) be
+\((-1)^{\sum_j v_j U_j}\) for the \(k\)-th such vector \(v\).
+Any two distinct nonzero binary linear forms are linearly independent
+over \(\mathbb F_2\), so the variables are pairwise independent fair signs.
+Among the first \(2^m-1\) signs the sum is \(2^m-1\) if the first \(m\)
+bits are all zero, and \(-1\) otherwise. This follows by summing the
+characters over all of \(\mathbb F_2^m\), including the zero vector.
+The normalized sums at these indices converge in probability to zero,
+although each summand has variance one.
+
+\section{Lindeberg's condition for independent rows}
+\label{p09-02}
+
+Let the \(n\)-th row contain finitely many independent centered real
+variables \(X_{nj}\) with finite variances and total variance
+\(s_n^2=\sum_j \E X_{nj}^2>0\). Write \(Y_{nj}=X_{nj}/s_n\),
+\(v_{nj}=\E Y_{nj}^2\), and \(T_n=\sum_jY_{nj}\), so \(\sum_jv_{nj}=1\).
+No independence across rows is required. Define
+\[
+ L_n(\epsilon)=\sum_j\E[Y_{nj}^2\ind_{\{|Y_{nj}|>\epsilon\}}] .
+\]
+
+\begin{theorem}[Lindeberg]\label{thm:lindeberg}
+If \(L_n(\epsilon)\to0\) for every \(\epsilon>0\), then
+\(\Law(T_n)\weakto N(0,1)\).
+\end{theorem}
+
+\begin{proof}
+For each \(\epsilon>0\), \(v_{nj}\le\epsilon^2+L_n(\epsilon)\),
+so \(\max_jv_{nj}\to0\).
+For fixed \(t\) let \(z_{nj}=\E[e^{itY_{nj}}-1-itY_{nj}]\).
+Then \(|z_{nj}|\le t^2v_{nj}/2\), from the second-order bound on
+the exponential. The third-order remainder is at most
+\(|tY_{nj}|^3/6\), and it is also bounded by \(t^2Y_{nj}^2\).
+Thus
+\[
+ \left|\sum_j z_{nj}+\tfrac12t^2\right|
+ \le |t|^3\epsilon/6+t^2 L_n(\epsilon).
+\]
+First let \(n\to\infty\), then \(\epsilon\downarrow0\).
+Also \(\sum_j |z_{nj}|^2\le(t^4/4)\max_jv_{nj}\to0\).
+For \(n\) large, all \(z_{nj}\) lie in the disk on which the logarithm
+near \(1\) is defined. Hence the log sum differs from \(\sum_j z_{nj}\)
+by at most a constant times \(\sum_j |z_{nj}|^2\).
+The product of the characteristic functions tends to \(e^{-t^2/2}\),
+which gives the result by Theorem~\ref{thm:levy-cont}.
+See \cite[Theorem 3.4.10]{Durrett} and \cite[Theorem 6.13]{Kallenberg}.
+\end{proof}
+
+\section{The Feller converse and the Lyapunov criterion}
+\label{p09-03}
+
+\begin{theorem}[Feller converse]\label{thm:feller}
+In the row setting above, if \(\Law(T_n)\weakto N(0,1)\) and
+\(\max_j v_{nj}\to0\), then \(L_n(\epsilon)\to0\) for every
+\(\epsilon>0\).
+\end{theorem}
+
+\begin{proof}
+Use the same \(z_{nj}\). The maximal-variance hypothesis gives
+\(\sum_j|z_{nj}|^2\to0\), so
+\[
+ \log|\phi_{T_n}(t)|=\sum_j\Re z_{nj}+o(1)
+ \longrightarrow -t^2/2 .
+\]
+The limit follows from weak convergence, since the limiting modulus is
+positive for fixed \(t\). The equality follows by taking real parts
+of the finite sum of logarithms near \(1\), whose exponential is
+\(\phi_{T_n}(t)\). With \(\sum_jv_{nj}=1\), this means
+\[
+ \sum_j \E\big[(tY_{nj})^2/2-(1-\cos(tY_{nj}))\big]\longrightarrow0 .
+\]
+For fixed \(t\ne0\), the expression \(h(y)=(ty)^2/2-(1-\cos(ty))\)
+is nonnegative and strictly positive for \(y\ne0\), because
+\(1-\cos u=2\sin^2(u/2)<u^2/2\) for \(u\ne0\).
+The ratio \(h(y)/y^2\) tends to \(t^2/2\) at infinity. On
+\(|y|\ge\epsilon\) it therefore has a strictly positive lower bound,
+by continuity on the bounded part. The preceding limit bounds
+that constant times \(L_n(\epsilon)\).
+See \cite[Theorem 6.13]{Kallenberg}.
+\end{proof}
+
+\begin{corollary}[Lyapunov]\label{cor:lyapunov}
+If for some \(\delta>0\) all \((2+\delta)\)-moments are finite and
+\[
+ \frac{1}{s_n^{2+\delta}}\sum_j \E|X_{nj}|^{2+\delta}\longrightarrow0,
+\]
+then \(\Law(T_n)\weakto N(0,1)\).
+\end{corollary}
+\begin{proof}
+On \(|Y_{nj}|>\epsilon\),
+\(Y_{nj}^2\le \epsilon^{-\delta}|Y_{nj}|^{2+\delta}\).
+Sum and apply Theorem~\ref{thm:lindeberg}.
+See \cite[Exercise 3.4.12, p.\ 152]{Durrett}.
+\end{proof}
+
+\section{The Poisson limit for independent rare events}
+\label{p09-04}
+
+\begin{theorem}\label{thm:rare-poisson}
+For each \(n\), let \(B_{nj}\) be a finite row of independent Bernoulli
+variables with success probabilities \(p_{nj}\).
+If \(\max_j p_{nj}\to0\) and \(\sum_jp_{nj}\to\lambda\in[0,\infty)\),
+then \(\sum_jB_{nj}\) converges in law to the Poisson law of mean
+\(\lambda\). A row with no variables has sum and maximal parameter
+equal to zero.
+\end{theorem}
+\begin{proof}
+For fixed \(t\), the product of the characteristic functions is
+\(\prod_j[1+p_{nj}(e^{it}-1)]\).
+The summed log error is bounded by a constant times
+\(\sum_jp_{nj}^2\), which tends to zero by the maximum and sum
+hypotheses. The limiting product is
+\(\exp(\lambda(e^{it}-1))\).
+The power series of the exponential identifies this as the transform
+of the probability masses \(e^{-\lambda}\lambda^k/k!\) on
+\(k=0,1,\ldots\), and it is the transform of the point mass at zero
+when \(\lambda=0\). Apply Theorem~\ref{thm:levy-cont}.
+See \cite[Theorem 3.6.1]{Durrett} and \cite[Theorem 6.7]{Kallenberg}.
+\end{proof}
+
+\section{Berry--Esseen and smoothing}
+\label{p09-05}
+
+The normal approximation in Theorem~\ref{thm:iid-clt} becomes
+quantitative with a third absolute moment. We give the smoothing
+argument with its integrability hypotheses. Durrett's preface,
+p.~iv, corrects the assertion about means in Lemma~3.4.19 of the
+archived edition \cite{Durrett}. Here the original laws have finite
+first moments, and the proof of the inversion step uses an integrable
+characteristic-function difference quotient.
+
+\begin{lemma}[A smoothing inequality]\label{lem:esseen-smoothing}
+Let \(F,G\) be distribution functions of laws on \(\R\) with finite
+first absolute moments and characteristic functions \(\phi_F,\phi_G\).
+Assume \(G\) is \(M\)-Lipschitz. There is a numerical constant \(C\)
+such that for every \(T>0\),
+\[
+ \sup_x |F(x)-G(x)|
+ \le C\left(\int_{-T}^{T}
+       \frac{|\phi_F(t)-\phi_G(t)|}{|t|}\,dt+\frac{M}{T}\right).
+\]
+\end{lemma}
+
+\begin{proof}
+We first construct a symmetric probability density \(J\) whose
+characteristic function \(\widehat J\) vanishes outside \([-1,1]\).
+Let \(U\) be uniform on \([-1/4,1/4]\) and write
+\(h(x)=(\sin(x/4)/(x/4))^4\), with \(h(0)=1\).
+This is the characteristic function of the sum of four independent
+copies of \(U\), and it is nonnegative, integrable, and even.
+That sum has continuous density \(q\) by
+Theorem~\ref{thm:cf-inversion}, with
+\(q(t)=(2\pi)^{-1}\int e^{-ixt}h(x)\,dx\).
+Its support is in \([-1,1]\), and \(q(0)>0\) because the integral of
+\(h\) is positive. Thus
+\(J(x)=h(x)/(2\pi q(0))\) is a probability density and
+\(\widehat J(t)=q(t)/q(0)\), using evenness.
+In particular \(|\widehat J|\le1\).
+Also \(\int|x|J(x)\,dx<\infty\) by the \(O(|x|^{-4})\) bound.
+
+Convolve both original laws with the law of \(W/T\), where \(W\)
+has density \(J\). Write \(F_T,G_T\) for their new distribution
+functions and
+\[
+ a(t)=(\phi_F(t)-\phi_G(t))\widehat J(t/T).
+\]
+The two convolved laws have integrable characteristic functions, so
+\(F_T-G_T\) has continuous derivative
+\((2\pi)^{-1}\int e^{-itx}a(t)\,dt\) by inversion.
+Also \(a(t)/t\) is integrable. The finite first moments and
+\(|e^{itx}-1|\le|tx|\) allow dominated differentiation at zero,
+so the quotient extends continuously there, and the cutoff
+gives compact support. The continuous function
+\[
+ H(x)=\frac1{2\pi}\int e^{-itx}\frac{a(t)}{-it}\,dt
+\]
+has the same derivative by differentiation under the integral.
+It tends to zero as \(x\to-\infty\). Indeed, approximate the
+continuous quotient uniformly on \([-T,T]\) by finite linear
+combinations of interval indicators. Their exponential integrals
+tend to zero, and the integral of the approximation error is
+bounded by \(2T\) times the uniform error, independently of \(x\).
+Since \(F_T-G_T\) also tends to zero there, the two functions are equal.
+In particular
+\[
+ D_T=\|F_T-G_T\|_\infty
+ \le (2\pi)^{-1}\int_{-T}^T
+            |\phi_F(t)-\phi_G(t)|\,|t|^{-1}\,dt .
+\]
+
+To remove the smoothing, fix \(b>0\) with
+\(p=\Prob(|W|>b)<1/4\) and set \(d=\|F-G\|_\infty\).
+If \(|W|\le b\), then \(x\le x+b/T-W/T\le x+2b/T\).
+Monotonicity of \(F\) and the Lipschitz bound on \(G\) imply that
+\(F-G\) at that argument is at least \(F(x)-G(x)-2Mb/T\).
+On the complementary event it is at least \(-d\).
+Taking expectations gives
+\[
+ D_T\ge (1-p)(F(x)-G(x)-2Mb/T)-pd .
+\]
+Likewise \(x-2b/T\le x-b/T-W/T\le x\) on the good event,
+so \(G-F\) there is at least \(G(x)-F(x)-2Mb/T\), giving
+the corresponding reverse bound. Take the supremum over \(x\) and
+both signs to get
+\((1-2p)d\le D_T+2(1-p)Mb/T\).
+The desired inequality follows with an absolute constant.
+\end{proof}
+
+\begin{theorem}[Berry--Esseen]\label{thm:berry-esseen}
+Let \(X_k\) be i.i.d.\ real variables with mean \(m\), variance
+\(\sigma^2>0\), and \(\E|X_1-m|^3<\infty\).
+For the standard normal distribution function \(\Phi\) there is a
+universal finite \(C\) such that, for every \(n\ge1\),
+\[
+ \sup_x\left|
+   \Prob\left(\frac{\sum_{k=1}^n(X_k-m)}{\sigma\sqrt n}\le x\right)
+        -\Phi(x)\right|
+ \le \frac{C}{\sqrt n}\frac{\E|X_1-m|^3}{\sigma^3}.
+\]
+\end{theorem}
+
+\begin{proof}
+Standardize a summand to \(Y=(X_1-m)/\sigma\) and let
+\(\rho=\E|Y|^3\ge(\E Y^2)^{3/2}=1\) by Jensen.
+Let \(\phi=\phi_Y\). The integral Taylor remainder gives
+\[
+ \phi(u)=1-u^2/2+R(u),\qquad |R(u)|\le\rho |u|^3/6 .
+\]
+For \(|u|\le c/\rho\) with a fixed \(0<c\le1\), the term
+\(1-u^2/2\) is nonnegative and
+\(|\phi(u)|\le 1-u^2/3\le e^{-u^2/3}\).
+Also
+\(|\phi(u)-e^{-u^2/2}|\le C_0\rho|u|^3\) there, by the
+Taylor estimate on the Gaussian exponential and \(\rho\ge1\).
+For \(n\ge2\) and \(|t|\le c\sqrt n/\rho\), set \(u=t/\sqrt n\).
+Use \(a^n-b^n=(a-b)\sum_{j=0}^{n-1}a^j b^{n-1-j}\)
+with \(a=\phi(u)\), \(b=e^{-u^2/2}\), and both moduli bounded by
+\(e^{-u^2/3}\). This yields
+\[
+ |\phi(t/\sqrt n)^n-e^{-t^2/2}|
+ \le \frac{C_0\rho}{\sqrt n}|t|^3 e^{-t^2/6},
+\]
+since \((n-1)/n\ge1/2\).
+The standard normal distribution function is Lipschitz by its bounded
+density. Apply Lemma~\ref{lem:esseen-smoothing} with
+\(T=c\sqrt n/\rho\) to the distribution of the normalized sum and the
+standard normal. The integral of \(|t|^2 e^{-t^2/6}\) is finite,
+so the transform term and \(1/T\) are both bounded by constants
+times \(\rho/\sqrt n\). For \(n=1\), the left side is at most one
+and \(\rho\ge1\). This proves the claimed bound.
+See \cite[Theorem 3.4.17, pp.\ 157--160]{Durrett}.
+\end{proof}
+
+\backmatter
+\begin{thebibliography}{9}
+\bibitem{Kallenberg}
+Olav Kallenberg, \emph{Foundations of Modern Probability}, third edition,
+Springer, 2021. DOI 10.1007/978-3-030-61871-1.
+\bibitem{Durrett}
+Rick Durrett, \emph{Probability: Theory and Examples}, fifth edition,
+author's version dated January 11, 2019.
+\bibitem{Billingsley}
+Patrick Billingsley, \emph{Convergence of Probability Measures},
+second edition, Wiley, 1999.
+\end{thebibliography}
+\end{document}

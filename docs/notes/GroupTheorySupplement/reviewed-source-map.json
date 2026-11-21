@@ -1,0 +1,1764 @@
+{
+  "component": "GroupTheorySupplement",
+  "paper": "docs/sources/GroupTheorySupplement/paper.tex",
+  "pdf": "docs/notes/GroupTheorySupplement/group-theory.pdf",
+  "physical_pages": 17,
+  "public_declarations_checked": 325,
+  "results": [
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.AmbientCovBy"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.ChiefSeries"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.ChiefSeries.strictMono"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.Factor"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.IsChiefSeries"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.chain_characterization"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.chiefFactor"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.chiefFactorTypes"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.factor_list_length"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.trivial_series"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.zero_length_iff_trivial"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C02.01",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Chief",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 154,
+            "line_end": 165
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.GGroup"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C02.01.g-group",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Chief",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 166,
+            "line_end": 167
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.Factor"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.chiefFactorAction"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.factorAction"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.factorMk"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.factor_smul_mk"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C02.01.factor-action",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Chief",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 167,
+            "line_end": 177
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.GEquiv"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C02.01.equivariant-isomorphism",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Chief",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 172,
+            "line_end": 173
+          }
+        }
+      ],
+      "id": "GR02-C02.01",
+      "kind": "definition",
+      "number": "1.1",
+      "paper_line": 155,
+      "pdf_destination": "definition.1.1",
+      "pdf_page": 4,
+      "title": "Chief series and chief factors"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Existence.lean",
+              "name": "ALG02GroupTheory.Chief.chiefSeries_exists"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.trivial_series"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C02.02.existence",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 181,
+            "line_end": 183
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Existence.lean",
+              "name": "ALG02GroupTheory.Chief.IsMinimalNormal"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Existence.lean",
+              "name": "ALG02GroupTheory.Chief.ambientCovBy_iff_minimalNormal"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Existence.lean",
+              "name": "ALG02GroupTheory.Chief.chief_iff_minimalNormal"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Existence.lean",
+              "name": "ALG02GroupTheory.Chief.factor_equiv_quotient_image"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C02.02.minimal-normal-criterion",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Chief",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 183,
+            "line_end": 187
+          }
+        }
+      ],
+      "id": "GR02-C02.02",
+      "kind": "proposition",
+      "number": "1.2",
+      "paper_line": 182,
+      "pdf_destination": "proposition.1.2",
+      "pdf_page": 4,
+      "title": "Existence and the minimal normal criterion"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/EquivariantSecondIso.lean",
+              "name": "ALG02GroupTheory.Chief.ambient_diamond"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Uniqueness.lean",
+              "name": "ALG02GroupTheory.Chief.chief_series_uniqueness"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/EquivariantSecondIso.lean",
+              "name": "ALG02GroupTheory.Chief.diamond_factor_equivs"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/EquivariantSecondIso.lean",
+              "name": "ALG02GroupTheory.Chief.equivariant_second_iso"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/EquivariantSecondIso.lean",
+              "name": "ALG02GroupTheory.Chief.equivariant_second_iso_image"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/EquivariantSecondIso.lean",
+              "name": "ALG02GroupTheory.Chief.factor_quotient_image_equiv"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C02.03",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 201,
+            "line_end": 205
+          }
+        }
+      ],
+      "id": "GR02-C02.03",
+      "kind": "theorem",
+      "number": "1.3",
+      "paper_line": 202,
+      "pdf_destination": "theorem.1.3",
+      "pdf_page": 5,
+      "title": "Equivariant Jordan–Hölder uniqueness for chief factors"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Existence.lean",
+              "name": "ALG02GroupTheory.Chief.chiefSeries_exists"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/SolvableFactors.lean",
+              "name": "ALG02GroupTheory.Chief.solvable_chiefFactor_elementary_abelian"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/SolvableFactors.lean",
+              "name": "ALG02GroupTheory.Chief.solvable_chiefFactor_vector_space"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/SolvableCharacterization.lean",
+              "name": "ALG02GroupTheory.Chief.solvable_iff_chiefSeries_elementary_abelian"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/Series.lean",
+              "name": "ALG02GroupTheory.Chief.trivial_series"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C02.04.solvability",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 252,
+            "line_end": 255
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/SolvableFactors.lean",
+              "name": "ALG02GroupTheory.Chief.chiefFactor_minimal_invariant"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/SolvableFactors.lean",
+              "name": "ALG02GroupTheory.Chief.solvable_chiefFactor_elementary_abelian"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/SolvableFactors.lean",
+              "name": "ALG02GroupTheory.Chief.solvable_chiefFactor_vector_space"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C02.04.linear-factors",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Chief",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 255,
+            "line_end": 259
+          }
+        }
+      ],
+      "id": "GR02-C02.04",
+      "kind": "corollary",
+      "number": "1.4",
+      "paper_line": 253,
+      "pdf_destination": "corollary.1.4",
+      "pdf_page": 5,
+      "title": "Chief factors of finite solvable groups"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.V"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.chief_chain"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.conjugation_cycle"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.elementary_abelian"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.first_factor_and_action"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.minimal_normal"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.second_factor_and_action"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.subgroup_carriers"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "Specs.ALG02GroupTheory.Chief.AlternatingFour.vNormal"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C02.05.chief-series",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Chief",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 283,
+            "line_end": 299
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.U"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.V"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.composition_chain"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.moved_subgroup"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Chief/AlternatingFour.lean",
+              "name": "ALG02GroupTheory.Chief.AlternatingFour.subgroup_carriers"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C02.05.composition-series",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Chief",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 283,
+            "line_end": 307
+          }
+        }
+      ],
+      "id": "GR02-C02.05",
+      "kind": "example",
+      "number": "1.5",
+      "paper_line": 284,
+      "pdf_destination": "example.1.5",
+      "pdf_page": 6,
+      "title": "The two kinds of series in the alternating group"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.FactorSystem"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.factorSystemOfSection"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.inl_sectionAlpha"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.inl_sectionFactor"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/Basic.lean",
+              "name": "ALG02GroupTheory.Extensions.normalizedSectionExists"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.sectionAlpha"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.sectionFactor"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.sectionFactorSystem"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "Specs.ALG02GroupTheory.Extensions.NormalizedFactorSystem"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.01.extraction",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 325,
+            "line_end": 345
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.changeOfSection"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.sectionChange"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.sectionChangeUnique"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.01.section-change",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Extensions",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 334,
+            "line_end": 339
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.OuterAut"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.innerAutomorphisms"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.innerAutomorphismsNormal"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.outerAction"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.outerActionFormula"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.outerActionOfSection"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/SectionFactorSystem.lean",
+              "name": "ALG02GroupTheory.Extensions.outerClass"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.01.outer-action",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Extensions",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 340,
+            "line_end": 342
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "ALG02GroupTheory.Extensions.CrossedProduct"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "ALG02GroupTheory.Extensions.coordinateEquiv_apply"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "ALG02GroupTheory.Extensions.crossedProductCoordinateEquivalence"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "ALG02GroupTheory.Extensions.crossedProductExtension"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "ALG02GroupTheory.Extensions.crossedProductExtension_inl"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "ALG02GroupTheory.Extensions.crossedProductExtension_rightHom"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "ALG02GroupTheory.Extensions.crossedProductGroup"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "ALG02GroupTheory.Extensions.crossedProductRecoversFactorSystem"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "ALG02GroupTheory.Extensions.crossedProductSection"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "ALG02GroupTheory.Extensions.crossedProductSection_apply"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "Specs.ALG02GroupTheory.Extensions.CrossedProductModel.mul_left"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Extensions/CrossedProduct.lean",
+              "name": "Specs.ALG02GroupTheory.Extensions.CrossedProductModel.mul_right"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.01.reconstruction",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Extensions",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 342,
+            "line_end": 377
+          }
+        }
+      ],
+      "id": "GR02-C04.01",
+      "kind": "proposition",
+      "number": "2.1",
+      "paper_line": 326,
+      "pdf_destination": "proposition.2.1",
+      "pdf_page": 7,
+      "title": "Factor systems for a general kernel"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.classOfExtension"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.classOfExtension_eq"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.classOfExtension_eq_iff"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.classification"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.crossedProduct_action"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.crossedProduct_change"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.crossedProduct_formula"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.crossedProduct_recovery"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.exists_sectionCocycle"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.extensionClassification"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.extensionClassification_apply"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.extensionClassification_symm_apply"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.extension_class_eq_iff"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.sectionCocycle_formula"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.section_class_independent"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "Specs.ALG02GroupTheory.Extensions.H2Classification.InducesAction"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.02.classification",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Extensions",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 408,
+            "line_end": 429
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.classOfExtension_eq"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.classification"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.exists_sectionCocycle"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H2Classification.lean",
+              "name": "ALG02GroupTheory.Extensions.H2Classification.zero_class_iff_splitting"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.02.split-class",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Extensions",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 408,
+            "line_end": 435
+          }
+        }
+      ],
+      "id": "GR02-C04.02",
+      "kind": "theorem",
+      "number": "2.2",
+      "paper_line": 409,
+      "pdf_destination": "theorem.2.2",
+      "pdf_page": 8,
+      "title": "Abelian-kernel extensions and H^2"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H1Complements.lean",
+              "name": "ALG02GroupTheory.Extensions.ComplementConjugacyClasses"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H1Complements.lean",
+              "name": "ALG02GroupTheory.Extensions.complementsCorrespondToH1"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H1Complements.lean",
+              "name": "ALG02GroupTheory.Extensions.graphConjugacyIff"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/H1Complements.lean",
+              "name": "ALG02GroupTheory.Extensions.graphSplittingIff"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Extensions/H1Complements.lean",
+              "name": "Specs.ALG02GroupTheory.Extensions.kernelCohomologyRep"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.03",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Extensions",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 438,
+            "line_end": 456
+          }
+        }
+      ],
+      "id": "GR02-C04.03",
+      "kind": "theorem",
+      "number": "2.3",
+      "paper_line": 439,
+      "pdf_destination": "theorem.2.3",
+      "pdf_page": 9,
+      "title": "Complements and H^1"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CyclicTwo.lean",
+              "name": "ALG02GroupTheory.Extensions.CyclicTwo.cyclic_case"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CyclicTwo.lean",
+              "name": "ALG02GroupTheory.Extensions.CyclicTwo.distinct_extensions"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CyclicTwo.lean",
+              "name": "ALG02GroupTheory.Extensions.CyclicTwo.evaluation_equivalence"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CyclicTwo.lean",
+              "name": "ALG02GroupTheory.Extensions.CyclicTwo.extension_correspondence"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CyclicTwo.lean",
+              "name": "ALG02GroupTheory.Extensions.CyclicTwo.normalized_coboundaries"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CyclicTwo.lean",
+              "name": "ALG02GroupTheory.Extensions.CyclicTwo.normalized_cocycles"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CyclicTwo.lean",
+              "name": "ALG02GroupTheory.Extensions.CyclicTwo.split_case"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Extensions/CyclicTwo.lean",
+              "name": "Specs.ALG02GroupTheory.Extensions.CyclicTwo.trivialAction"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.04",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Extensions",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 466,
+            "line_end": 480
+          }
+        }
+      ],
+      "id": "GR02-C04.04",
+      "kind": "example",
+      "number": "2.4",
+      "paper_line": 467,
+      "pdf_destination": "example.2.4",
+      "pdf_page": 9,
+      "title": "Two extensions of C_2 by C_2"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/BarProjectionKernel.lean",
+              "name": "ALG02GroupTheory.BarProjectionKernel.homologyEquiv_translate"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/BarProjectionKernel.lean",
+              "name": "ALG02GroupTheory.BarProjectionKernel.integralInclusion_mk"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/BarProjectionKernel.lean",
+              "name": "ALG02GroupTheory.BarProjectionKernel.kernel_zero"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/BarProjectionKernel.lean",
+              "name": "ALG02GroupTheory.BarProjectionKernel.natural_identification"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/BarProjectionKernel.lean",
+              "name": "ALG02GroupTheory.BarProjectionKernel.projection_shortExact"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/FiveTerm.lean",
+              "name": "ALG02GroupTheory.FiveTerm.exact_sequence"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/FiveTerm.lean",
+              "name": "ALG02GroupTheory.FiveTerm.five_term"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/FiveTerm.lean",
+              "name": "ALG02GroupTheory.FiveTerm.sequence_natural"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/FiveTerm.lean",
+              "name": "ALG02GroupTheory.FiveTerm.signed_transgression"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/IntegralBar.lean",
+              "name": "ALG02GroupTheory.IntegralBar.kernelQuotientEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/IntegralBar.lean",
+              "name": "ALG02GroupTheory.IntegralBar.normalization_homology_isIso"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/IntegralBar.lean",
+              "name": "ALG02GroupTheory.IntegralBar.normalization_homology_natural"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/IntegralBar.lean",
+              "name": "ALG02GroupTheory.IntegralBar.normalizedBar_d_three"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/IntegralBar.lean",
+              "name": "ALG02GroupTheory.IntegralBar.normalizedBar_d_two"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Homology/Transgression.lean",
+              "name": "ALG02GroupTheory.Transgression.barFiltration"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/Transgression.lean",
+              "name": "ALG02GroupTheory.Transgression.conjugation_coinvariants"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/Transgression.lean",
+              "name": "ALG02GroupTheory.Transgression.conjugation_factors"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/Transgression.lean",
+              "name": "ALG02GroupTheory.Transgression.filtered_bar"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/Transgression.lean",
+              "name": "ALG02GroupTheory.Transgression.filtered_comparison"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/Transgression.lean",
+              "name": "ALG02GroupTheory.Transgression.integralTransgression"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/Transgression.lean",
+              "name": "ALG02GroupTheory.Transgression.integralTransgression_natural"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/Transgression.lean",
+              "name": "ALG02GroupTheory.Transgression.integral_filtered_comparison"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/Transgression.lean",
+              "name": "ALG02GroupTheory.Transgression.integral_lift_formula"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/Transgression.lean",
+              "name": "ALG02GroupTheory.Transgression.lift_independence"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Homology/Transgression.lean",
+              "name": "ALG02GroupTheory.Transgression.pageTwoDifferential"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.05",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 494,
+            "line_end": 505
+          }
+        }
+      ],
+      "id": "GR02-C04.05",
+      "kind": "proposition",
+      "number": "2.5",
+      "paper_line": 495,
+      "pdf_destination": "proposition.2.5",
+      "pdf_page": 9,
+      "title": "The homological five-term sequence"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.PresentationQuotient"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.hopfEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.hopfEquiv_natural"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.hopfEquiv_transgression"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.hopf_formula"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.integralInclusion_abelianization"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.kernel_identification"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.lift_exists"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.lift_extension"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.lift_independence"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.presentationMap_mk"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.presentation_comparison"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.quotient_abelian"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/FreeGroupVanishing.lean",
+              "name": "ALG02GroupTheory.IntegralBar.freeGroup_h2_isZero"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.06",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 589,
+            "line_end": 597
+          }
+        }
+      ],
+      "id": "GR02-C04.06",
+      "kind": "theorem",
+      "number": "2.6",
+      "paper_line": 590,
+      "pdf_destination": "theorem.2.6",
+      "pdf_page": 11,
+      "title": "Hopf's formula for the Schur multiplier"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/CyclicMultipliers.lean",
+              "name": "ALG02GroupTheory.CyclicMultipliers.cyclic_vanishing"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.07.cyclic",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Homology",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 630,
+            "line_end": 633
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/CyclicMultipliers.lean",
+              "name": "ALG02GroupTheory.CyclicMultipliers.cyclic_product"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Homology/HopfFormula.lean",
+              "name": "ALG02GroupTheory.HopfFormula.hopfEquiv"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.07.cyclic-product",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Homology",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 634,
+            "line_end": 659
+          }
+        }
+      ],
+      "id": "GR02-C04.07",
+      "kind": "example",
+      "number": "2.7",
+      "paper_line": 631,
+      "pdf_destination": "example.2.7",
+      "pdf_page": 11,
+      "title": "Multipliers of cyclic groups and their products"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/Central.lean",
+              "name": "ALG02GroupTheory.Extensions.IsUniversalCentralExtension.existsUniqueHomOverArbitrary"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/UniversalCentral.lean",
+              "name": "ALG02GroupTheory.Extensions.UniversalCentral.exists_universal_iff_perfect"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/UniversalCentral.lean",
+              "name": "ALG02GroupTheory.Extensions.UniversalCentral.perfect_of_universal"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/UniversalCentral.lean",
+              "name": "ALG02GroupTheory.Extensions.UniversalCentral.presentation_isUniversal"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/UniversalCentral.lean",
+              "name": "ALG02GroupTheory.Extensions.UniversalCentral.presentation_unique_hom"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.08.existence",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 669,
+            "line_end": 672
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CentralPresentation.lean",
+              "name": "ALG02GroupTheory.Extensions.CentralPresentation.PresentationGroup"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CentralPresentation.lean",
+              "name": "ALG02GroupTheory.Extensions.CentralPresentation.extension"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CentralPresentation.lean",
+              "name": "ALG02GroupTheory.Extensions.CentralPresentation.extension_central"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CentralPresentation.lean",
+              "name": "ALG02GroupTheory.Extensions.CentralPresentation.homology_kernel_identification"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CentralPresentation.lean",
+              "name": "ALG02GroupTheory.Extensions.CentralPresentation.kernelInclusion"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CentralPresentation.lean",
+              "name": "ALG02GroupTheory.Extensions.CentralPresentation.kernel_identification"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CentralPresentation.lean",
+              "name": "ALG02GroupTheory.Extensions.CentralPresentation.presentation_perfect"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CentralPresentation.lean",
+              "name": "ALG02GroupTheory.Extensions.CentralPresentation.projection"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CentralPresentation.lean",
+              "name": "ALG02GroupTheory.Extensions.CentralPresentation.projection_central"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CentralPresentation.lean",
+              "name": "ALG02GroupTheory.Extensions.CentralPresentation.projection_mk"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/CentralPresentation.lean",
+              "name": "ALG02GroupTheory.Extensions.CentralPresentation.projection_surjective"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/UniversalCentral.lean",
+              "name": "ALG02GroupTheory.Extensions.UniversalCentral.presentation_isUniversal"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/UniversalCentral.lean",
+              "name": "ALG02GroupTheory.Extensions.UniversalCentral.presentation_unique_hom"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/UniversalCentral.lean",
+              "name": "ALG02GroupTheory.Extensions.UniversalCentral.universal_comparison"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/UniversalCentral.lean",
+              "name": "ALG02GroupTheory.Extensions.UniversalCentral.universal_kernel_homology"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/UniversalCentral.lean",
+              "name": "ALG02GroupTheory.Extensions.UniversalCentral.universal_presentation"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C04.08.free-presentation",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 672,
+            "line_end": 679
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Extensions/UniversalCentral.lean",
+              "name": "ALG02GroupTheory.Extensions.UniversalCentral.perfect_of_universal"
+            }
+          ],
+          "id": "GroupTheorySupplement:additional:3:GR02-C04.08.source-perfectness",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Extensions",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 701,
+            "line_end": 706
+          }
+        }
+      ],
+      "id": "GR02-C04.08",
+      "kind": "theorem",
+      "number": "2.8",
+      "paper_line": 670,
+      "pdf_destination": "theorem.2.8",
+      "pdf_page": 12,
+      "title": "Universal central extensions of perfect groups"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.Completion"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.TupleCompletion"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.eta"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.finiteQuotient"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.projection"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.projection_compatible"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.projection_eta"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.quotientDiagram"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.toCompatibleTuples"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.toCompatibleTuples_apply"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.toCompatibleTuples_eta"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.topIndex"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.topQuotient_subsingleton"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.transition"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.transition_mk"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "Specs.ALG02GroupTheory.Profinite.compatibleTuples"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.01",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Profinite",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 724,
+            "line_end": 742
+          }
+        }
+      ],
+      "id": "GR02-C05.01",
+      "kind": "definition",
+      "number": "3.1",
+      "paper_line": 725,
+      "pdf_destination": "definition.3.1",
+      "pdf_page": 13,
+      "title": "The profinite completion"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Topology.lean",
+              "name": "ALG02GroupTheory.Profinite.completion_topology"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.toCompatibleTuples"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.02.topology",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 752,
+            "line_end": 755
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.finiteIntersection_le"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Topology.lean",
+              "name": "ALG02GroupTheory.Profinite.isClopen_projection_ker"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Topology.lean",
+              "name": "ALG02GroupTheory.Profinite.nhds_one_hasBasis_projection_ker"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.projection"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Topology.lean",
+              "name": "ALG02GroupTheory.Profinite.projection_continuous"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Topology.lean",
+              "name": "ALG02GroupTheory.Profinite.projection_ker_normal"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Topology.lean",
+              "name": "ALG02GroupTheory.Profinite.projection_surjective"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.02.projections-and-basis",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 755,
+            "line_end": 757
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Topology.lean",
+              "name": "ALG02GroupTheory.Profinite.denseRange_eta"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Topology.lean",
+              "name": "ALG02GroupTheory.Profinite.ker_eta"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.projection_eta"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.toCompatibleTuples_eta"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.02.dense-image-and-kernel",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 757,
+            "line_end": 761
+          }
+        }
+      ],
+      "id": "GR02-C05.02",
+      "kind": "proposition",
+      "number": "3.2",
+      "paper_line": 753,
+      "pdf_destination": "proposition.3.2",
+      "pdf_page": 13,
+      "title": "Topology, density, and kernel"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/UniversalProperty.lean",
+              "name": "ALG02GroupTheory.Profinite.completion_universal"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.toCompatibleTuples"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.03",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 789,
+            "line_end": 796
+          }
+        }
+      ],
+      "id": "GR02-C05.03",
+      "kind": "theorem",
+      "number": "3.3",
+      "paper_line": 790,
+      "pdf_destination": "theorem.3.3",
+      "pdf_page": 14,
+      "title": "Universal property"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Cofinal.lean",
+              "name": "ALG02GroupTheory.Profinite.RestrictedCompletion"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Cofinal.lean",
+              "name": "ALG02GroupTheory.Profinite.cofinal_restriction"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Cofinal.lean",
+              "name": "ALG02GroupTheory.Profinite.restrictCoordinates"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.04",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Profinite",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 822,
+            "line_end": 831
+          }
+        }
+      ],
+      "id": "GR02-C05.04",
+      "kind": "proposition",
+      "number": "3.4",
+      "paper_line": 823,
+      "pdf_destination": "proposition.3.4",
+      "pdf_page": 14,
+      "title": "A cofinal family of finite quotients"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.IntegerGroup"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integerIndex"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integerQuotientEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integer_completion"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integer_finite_index"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integer_index_bijective"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integer_index_le"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integer_quotient_mk"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integer_transition"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.05.integer-residues",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Profinite",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 848,
+            "line_end": 854
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.factorialIndices"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.factorialModulus"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.factorial_cofinal"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.factorial_completion"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.factorial_residue_restriction"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integerQuotientEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integer_transition"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.05.factorials",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Profinite",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 854,
+            "line_end": 857
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/FiniteFieldGalois.lean",
+              "name": "ALG02GroupTheory.Profinite.finite_field_galois_completion"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integer_completion"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Integers.lean",
+              "name": "ALG02GroupTheory.Profinite.integer_quotient_mk"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.05.finite-field-galois",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 859,
+            "line_end": 862
+          }
+        }
+      ],
+      "id": "GR02-C05.05",
+      "kind": "example",
+      "number": "3.5",
+      "paper_line": 849,
+      "pdf_destination": "example.3.5",
+      "pdf_page": 15,
+      "title": "The integers and finite fields"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/ResidualFiniteness.lean",
+              "name": "ALG02GroupTheory.Profinite.residuallyFinite_iff_finiteHom"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/ResidualFiniteness.lean",
+              "name": "ALG02GroupTheory.Profinite.residuallyFinite_iff_finiteQuotient"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.06.definition",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Profinite",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 869,
+            "line_end": 871
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Topology.lean",
+              "name": "ALG02GroupTheory.Profinite.ker_eta"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/ResidualFiniteness.lean",
+              "name": "ALG02GroupTheory.Profinite.residuallyFinite_iff_eta_injective"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/ResidualFiniteness.lean",
+              "name": "ALG02GroupTheory.Profinite.residuallyFinite_iff_finiteHom"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.06.injectivity",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 867,
+            "line_end": 872
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/ResidualFiniteness.lean",
+              "name": "ALG02GroupTheory.Profinite.exists_finiteQuotient_injOn"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.finiteIntersection"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Completion.lean",
+              "name": "ALG02GroupTheory.Profinite.finiteIntersection_isEmpty"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/ResidualFiniteness.lean",
+              "name": "ALG02GroupTheory.Profinite.injOn_trivialQuotient_of_subsingleton"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.06.finite-subset",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 872,
+            "line_end": 874
+          }
+        }
+      ],
+      "id": "GR02-C05.06",
+      "kind": "proposition",
+      "number": "3.6",
+      "paper_line": 868,
+      "pdf_destination": "proposition.3.6",
+      "pdf_page": 15,
+      "title": "Residual finiteness and injectivity"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/FinitelyGeneratedAbelian.lean",
+              "name": "ALG02GroupTheory.Profinite.finitelyGeneratedAbelian_residuallyFinite"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/ResidualFiniteness.lean",
+              "name": "ALG02GroupTheory.Profinite.residuallyFinite_iff_finiteHom"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.07",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 888,
+            "line_end": 891
+          }
+        }
+      ],
+      "id": "GR02-C05.07",
+      "kind": "proposition",
+      "number": "3.7",
+      "paper_line": 889,
+      "pdf_destination": "proposition.3.7",
+      "pdf_page": 15,
+      "title": "Finitely generated abelian groups"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/FreeGroup.lean",
+              "name": "ALG02GroupTheory.Profinite.FreeGroup.existsFiniteQuotient"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/FreeGroup.lean",
+              "name": "ALG02GroupTheory.Profinite.FreeGroup.residuallyFinite"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/FreeWordPermutations.lean",
+              "name": "ALG02GroupTheory.Profinite.FreeWordPermutations.existsPathPermutations"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/FreeWordPermutations.lean",
+              "name": "ALG02GroupTheory.Profinite.FreeWordPermutations.prescriptionsInjective"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Profinite/FreeWordPermutations.lean",
+              "name": "ALG02GroupTheory.Profinite.FreeWordPermutations.stepEndpoint"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/Specs/ALG02GroupTheory/Profinite/FreeWordPermutations.lean",
+              "name": "ALG02GroupTheory.Profinite.FreeWordPermutations.stepLetter"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/ResidualFiniteness.lean",
+              "name": "ALG02GroupTheory.Profinite.residuallyFinite_iff_finiteHom"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.08",
+          "import": "MathGenome.GroupTheorySupplement",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 902,
+            "line_end": 905
+          }
+        }
+      ],
+      "id": "GR02-C05.08",
+      "kind": "theorem",
+      "number": "3.8",
+      "paper_line": 903,
+      "pdf_destination": "theorem.3.8",
+      "pdf_page": 15,
+      "title": "Free groups"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Rationals.lean",
+              "name": "ALG02GroupTheory.Profinite.rational_completion_subsingleton"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Rationals.lean",
+              "name": "ALG02GroupTheory.Profinite.rational_denseRange_eta"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Rationals.lean",
+              "name": "ALG02GroupTheory.Profinite.rational_finiteHom_apply"
+            },
+            {
+              "file": "MathGenome/Internal/GroupTheorySupplement/ALG02GroupTheory/Profinite/Rationals.lean",
+              "name": "ALG02GroupTheory.Profinite.rational_finiteQuotient_subsingleton"
+            }
+          ],
+          "id": "GroupTheorySupplement:GR02-C05.09",
+          "import": "MathGenome.GroupTheorySupplement.Topics.ALG02GroupTheory.Profinite",
+          "source": {
+            "delivery": "provenance/components/GroupTheorySupplement/delivery",
+            "file": "docs/sources/GroupTheorySupplement/paper.tex",
+            "line": 943,
+            "line_end": 954
+          }
+        }
+      ],
+      "id": "GR02-C05.09",
+      "kind": "example",
+      "number": "3.9",
+      "paper_line": 944,
+      "pdf_destination": "example.3.9",
+      "pdf_page": 16,
+      "title": "The additive rationals"
+    }
+  ],
+  "reviewed_catalog_entries": 81
+}

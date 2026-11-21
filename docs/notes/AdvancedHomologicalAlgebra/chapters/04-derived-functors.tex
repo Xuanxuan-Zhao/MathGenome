@@ -1,0 +1,574 @@
+\chapter{Bounded Total Derived Functors}
+\label{ch:derived-functors}
+
+Throughout this chapter, categories are abelian, and the functors used to
+construct total derived functors are additive. An assertion that a category
+has enough injectives or projectives applies to the source of the corresponding
+construction. We use \(\mathrm K(\mathcal A)\) for its homotopy category,
+\(D(\mathcal A)\) for its localization, and \(Q_{\mathcal A}\) for the
+localization functor from \(\mathrm K(\mathcal A)\). The superscripts \(+\)
+and \(-\) mean bounded below and bounded above, respectively. On the complex
+side the bounds are on terms, and on the derived side they are on cohomology.
+The comparison between these descriptions is Proposition~\ref{res:D06}.
+
+\section{Replacements and computation of morphisms}
+
+We first construct replacements of strictly bounded complexes. Here is the
+projective construction in an abelian category with enough projectives.
+For a complex \(X\) zero in degrees \(>N\), start with \(P^i=0\) for \(i>N\).
+Suppose the part of \(P\to X\) above degree \(n\) has been constructed. Set
+\[
+  W^n=X^n\times_{Z^{n+1}X}Z^{n+1}P,
+\]
+using \(d_X^n\) and the already defined comparison on cycles. Choose an
+epimorphism \(P^n\twoheadrightarrow W^n\) from a projective object. Its first
+projection defines \(p^n\), and its second projection, followed by the cycle
+inclusion, defines \(d_P^n\). The pullback identities give \(p^{n+1}d_P^n=d_X^np^n\)
+and \(d_P^{n+1}d_P^n=0\).
+
+Pulling back \(P^n\twoheadrightarrow W^n\) along \(Z^nX\to W^n\),
+\(z\mapsto(z,0)\), gives \(Z^nP\twoheadrightarrow Z^nX\). Thus
+\(W^n\to X^n\) is an epimorphism by the same assertion in degree \(n+1\),
+so \(p^n\) is an epimorphism. Finally, the pullback used at degree \(n-1\)
+shows that \(d_P^{n-1}\) surjects onto the inverse image of \(B^nX\) in
+\(Z^nP\). Indeed \(X^{n-1}\twoheadrightarrow B^nX\) is an epimorphism,
+and so is its pullback to that inverse image. Consequently the induced
+map \(Z^nP/B^nP\to Z^nX/B^nX\) is both monic and epic. This proves it is an
+isomorphism for every \(n\).
+
+\begin{theorem}[Bounded-below injective replacement]\label{res:R01}
+If \(\mathcal A\) has enough injectives, a bounded-below complex \(X\)
+admits a termwise monic quasi-isomorphism \(X\to I\), with \(I\) termwise
+injective and zero below the same lower bound. Every object of
+\(D^+(\mathcal A)\) admits such an injective representative.
+\end{theorem}
+\begin{proof}
+Apply the preceding construction in \(\mathcal A^{\mathrm{op}}\) to
+the bounded-above complex with degree \(i\) term \((X^{-i})^{\mathrm{op}}\)
+and degree \(i\) differential \((d_X^{-i-1})^{\mathrm{op}}\). This reversal
+interchanges kernels and cokernels, so the comparison returns a
+termwise monic quasi-isomorphism with the stated lower bound. Use
+Proposition~\ref{res:D06} first if the input is an object of the derived
+category. See \cite[Tag 013K]{stacks-derived}.
+\end{proof}
+
+\begin{theorem}[Bounded-above projective replacement]\label{res:R02}
+If \(\mathcal A\) has enough projectives, a bounded-above complex \(X\)
+admits a termwise epic quasi-isomorphism \(P\to X\), with \(P\) termwise
+projective and zero above the same upper bound. Every object of
+\(D^-(\mathcal A)\) admits such a projective representative.
+\end{theorem}
+\begin{proof}
+The downward induction above constructs the epic comparison, and
+Proposition~\ref{res:D06} supplies a bounded-above complex for a derived
+object. The construction replaces a complex rather than only an object
+in degree zero. Compare \cite[Tag 0646]{stacks-derived} and the ordinary
+module resolutions of \cite[Chapter 10]{p103}.
+\end{proof}
+
+\begin{theorem}[Orthogonality of the bounded models]\label{res:R03}
+A complex \(I\) is K-injective if every map to \(I\) from an acyclic
+complex is null-homotopic. Dually \(P\) is K-projective if every map
+from \(P\) to an acyclic complex is null-homotopic. A bounded-below
+complex of injectives is K-injective, and a bounded-above complex of
+projectives is K-projective.
+\end{theorem}
+\begin{proof}
+For \(u:C\to I\) with \(C\) acyclic, construct
+\(s^n:C^n\to I^{n-1}\) starting at the lower bound of \(I\). If the
+homotopy identity has been established through degree \(n-1\), then
+\(u^n-d_I^{n-1}s^n\) kills \(B^nC=Z^nC\) by that identity and the chain
+map property of \(u\). It therefore factors through
+\(\operatorname{im}d_C^n\subseteq C^{n+1}\). Extend this factorization
+to \(s^{n+1}:C^{n+1}\to I^n\) by injectivity. This gives
+\(u=d_Is+sd_C\) in every degree. Passing to the opposite category
+and reversing cochain degrees gives the projective statement.
+See \cite[Tags 013R, 0647]{stacks-derived}.
+\end{proof}
+
+\begin{theorem}[Morphisms computed on K-models]\label{res:R04}
+For K-injective \(I\) and K-projective \(P\), the maps induced by
+localization
+\[
+ \operatorname{Hom}_{\mathrm K}(X,I)\longrightarrow
+     \operatorname{Hom}_{D}(QX,QI),\qquad
+ \operatorname{Hom}_{\mathrm K}(P,X)\longrightarrow
+     \operatorname{Hom}_{D}(QP,QX)
+\]
+are bijective and natural. A quasi-isomorphism between two K-injectives,
+or between two K-projectives, is a homotopy equivalence.
+\end{theorem}
+\begin{proof}
+For a quasi-isomorphism \(s:U\to X\), its cone is acyclic by
+Proposition~\ref{res:K03}. Applying \(\operatorname{Hom}_{\mathrm K}(-,I)\)
+to the cone triangle and using Proposition~\ref{res:K06} shows that
+precomposition by \(s\) is a bijection. Thus a roof
+\(X\xleftarrow{s}U\xrightarrow{u} I\) has a unique representative
+\(v:X\to I\) in the homotopy category with \(vs=u\).
+Refining two equal roofs leaves that representative unchanged, by the
+same bijection. The right roof argument and
+\(\operatorname{Hom}_{\mathrm K}(P,-)\) prove the dual assertion.
+In each case an inverse to the image of a quasi-isomorphism is between
+objects on which \(Q\) is fully faithful. It lifts to a two-sided inverse
+in \(\mathrm K\), which is precisely the homotopy equivalence assertion.
+This also supplies uniqueness up to homotopy of each resolution lift.
+See \cite[Tags 05TG, 064B]{stacks-derived}.
+\end{proof}
+
+\section{Total functors and acyclic models}
+
+Let \(F_K\) denote termwise application of \(F:\mathcal A\to\mathcal B\)
+on either bounded homotopy category. It sends homotopies to homotopies.
+Write \(U=Q_{\mathcal B}F_K\), so that \(U\) already takes values in the
+target derived category. We use ordinary categorical composition order in
+this chapter.
+
+\begin{definition}[Total derived functor and its comparison]
+\label{res:R05}
+A total right derived functor comprises a functor \(RF\) on the
+localized source and a natural transformation \(\eta:U\to RF Q_{\mathcal A}\).
+For every functor \(H\) on the localized source, composition with \(\eta\)
+identifies natural transformations \(RF\to H\) with transformations
+\(U\to H Q_{\mathcal A}\). On the left, a comparison \(\epsilon:LF Q_{\mathcal A}\to U\)
+identifies natural transformations \(H\to LF\) with transformations
+\(H Q_{\mathcal A}\to U\).
+\end{definition}
+
+The comparisons characterize the functors up to unique compatible
+isomorphism. In the right case, factor the second comparison through the
+first and the first through the second. Both compositions induce the
+original comparison, so both are identities by uniqueness. The left case
+reverses the arrows. A natural transformation between the original
+functors induces one between their right derived functors by the same
+factorization. The left version uses the dual factorization.
+See \cite[Tags 05SE, 05SV]{stacks-derived} and
+\cite[Chapter 8]{yekutieli}.
+
+\begin{theorem}[Total right derived functor on \(D^+\)]\label{res:R06}
+With enough injectives in \(\mathcal A\), an additive \(F\) has an
+exact total right derived functor \(RF:D^+(\mathcal A)\to D^+(\mathcal B)\).
+It is computed by \(F(I)\) after replacement \(X\to I\) from
+Theorem~\ref{res:R01}. The comparison on a model \(I\) is an isomorphism,
+and natural transformations of additive functors are derived using
+these same models.
+\end{theorem}
+\begin{proof}
+The full homotopy subcategory of bounded-below complexes of injectives
+is closed under shifts and cones, since their terms are finite biproducts
+of injectives. Its composite with \(Q_{\mathcal A}\) is an exact
+equivalence onto \(D^+(\mathcal A)\) by Theorems~\ref{res:R01}
+and~\ref{res:R04}. Transport \(Q_{\mathcal B}F_K\) restricted to that
+subcategory along an inverse equivalence. An additive functor
+preserves the finite biproducts in the cone matrix and its signs, so the
+transported functor is exact. Degreewise \(F(X\to I)\) gives \(\eta\),
+which is natural because replacement lifts are unique up to homotopy
+and \(F_K\) preserves homotopies.
+
+To verify the universal property, a transformation \(U\to H Q_{\mathcal A}\)
+can be restricted to the model subcategory. There \(\eta\) is an isomorphism,
+so it gives the required map \(RF\to H\) via the equivalence. Naturality
+on \(X\to I\) forces the original transformation on every complex,
+which proves both the factorization and its uniqueness.
+See \cite[Tags 05TI, 0159]{stacks-derived}.
+\end{proof}
+
+\begin{theorem}[Total left derived functor on \(D^-\)]\label{res:R07}
+With enough projectives in \(\mathcal A\), an additive \(F\) has an
+exact total left derived functor \(LF:D^-(\mathcal A)\to D^-(\mathcal B)\).
+It is computed by \(F(P)\) after replacement \(P\to X\) from
+Theorem~\ref{res:R02}.
+\end{theorem}
+\begin{proof}
+Use the full homotopy subcategory of bounded-above complexes of
+projectives. Shifts and cones preserve it. Theorems~\ref{res:R02}
+and~\ref{res:R04} make its localization an exact equivalence onto
+\(D^-(\mathcal A)\). Restrict \(Q_{\mathcal B}F_K\) and transport
+across the equivalence. The comparison is induced by \(F(P\to X)\).
+Given a transformation \(H Q_{\mathcal A}\to U\), restrict to projective
+models, where this comparison is invertible, and transport back.
+Naturality on \(P\to X\) shows it agrees with the given map for every \(X\).
+This construction uses the same cochain shifts as the right one.
+If expressed by duality, the reversal in Theorem~\ref{res:R01}
+changes \([n]\) into \([-n]\) and interchanges the two bounds.
+See \cite[Theorem 8.4.23]{yekutieli}.
+\end{proof}
+
+The unit and counit in these constructions commute with shifts:
+the shift of a model is a model for the shifted complex, and
+the resolution comparison comes from its shifted map. Uniqueness
+of the comparison in the homotopy category makes this compatible
+with using any choice of models.
+
+\begin{theorem}[Computing with acyclic terms]\label{res:R08}
+Call an object \(A\) right \(F\)-acyclic if the comparison
+\(F(A)[0]\to RF(A[0])\) is an isomorphism, and define left
+\(F\)-acyclicity using the reverse comparison to \(F(A)[0]\).
+For a bounded-below complex \(C\) of right \(F\)-acyclic objects,
+\(F(C)\to RF(C)\) is an isomorphism. For a bounded-above complex of left
+\(F\)-acyclic objects, \(LF(C)\to F(C)\) is an isomorphism.
+If \(F\) is left exact, right acyclicity reduces to the vanishing of the
+positive right derived functors. For a right exact \(F\), the corresponding
+left condition is the vanishing of the positive left derived functors.
+\end{theorem}
+\begin{proof}
+In the right case begin with a finite complex. The degreewise split
+sequence peeling off its bottom term gives a triangle by
+Theorem~\ref{res:D04}. Application of \(F\) preserves this split sequence
+degreewise. Naturality of the comparison gives a map of triangles,
+and the long exact sequences show inductively that it is an isomorphism
+on cohomology, starting with a shifted stalk.
+Now fix a degree \(i\) and replace \(C\) by its brutal quotient truncation
+in degrees \(\le i+1\). Its kernel has no terms below \(i+2\).
+Both that kernel after \(F\) and its right derived image have
+vanishing cohomology in degrees \(i,i+1\). For the derived image this
+uses the bound-preserving replacement of Theorem~\ref{res:R01}.
+The long exact sequences thus reduce comparison in degree \(i\)
+to the already proved finite case.
+
+For the left case, reverse the degrees and use the opposite categories.
+The top-term sequence now peels off a top stalk, and the discarded
+degrees are below those being tested. For a left exact \(F\), applying it
+to the first two steps of an injective resolution identifies \(F(A)\)
+with the zeroth cohomology of \(F(I)\). The replacement starts in degree
+zero, so all negative cohomology vanishes. The right exact case uses the
+first two projectives and cokernels. See
+\cite[Tags 015E, 05TA]{stacks-derived}.
+\end{proof}
+
+\begin{theorem}[Classical derived functors and the delta-functor property]
+\label{res:R09}
+For a stalk \(A[0]\), the groups or objects
+\(R^iF(A)=H^i(RF(A[0]))\) and \(L_iF(A)=H^{-i}(LF(A[0]))\)
+are computed by ordinary injective and projective resolutions.
+They vanish for \(i>0\) on injective and projective objects,
+respectively. For left exact \(F\), \(R^0F=F\), and the right derived
+functors form a universal cohomological delta-functor. For right exact
+\(F\), \(L_0F=F\) and the left derived functors have the homological
+analogue.
+\end{theorem}
+\begin{proof}
+The replacements of a stalk are the ordinary resolutions, with a
+projective resolution indexed in nonpositive cochain degrees. An
+injective or projective stalk is itself an allowed model. The degree-zero
+claims are those in Theorem~\ref{res:R08}. For a short exact sequence
+of stalks use Theorem~\ref{res:D04} and apply the exact total functor.
+The cohomology sequences give the connecting maps.
+
+For universality on the right, for each object \(A\) embed it in an
+injective \(I\) with quotient \(B\). The connecting map
+\(R^{i-1}F(B)\to R^iF(A)\) is epic for \(i>0\), and its kernel is the
+image from \(R^{i-1}F(I)\). Given a degree-zero transformation to
+another delta-functor, construct its higher components using this
+surjection and the corresponding connecting map of the target.
+The previous degree of the transformation respects the image from \(I\),
+so the construction factors through the surjection. For a morphism
+\(A\to A'\), extend its composite \(A\to I'\) to \(I\to I'\).
+Naturality of the two long exact sequences, and the surjection just
+used, prove naturality and independence of the embedding. Compatibility
+with connecting maps for an arbitrary short exact sequence follows by
+mapping that sequence into \(0\to A\to I\to B\to0\), extending \(A\to I\)
+over its middle object. Surjectivity also proves uniqueness.
+Dually, given a degree-zero map from a homological delta-functor into
+\(L_0F\), choose a projective epimorphism \(P\to A\) with kernel \(J\).
+The inclusion \(L_iF(A)\to L_{i-1}F(J)\) for \(i>0\) forces the
+higher maps by the same argument in the opposite category. See
+\cite[Tags 015A, 05TE, 015B]{stacks-derived}.
+\end{proof}
+
+\begin{proposition}[Exact functors and localization]\label{res:R10}
+An exact \(F\) descends termwise to an exact functor \(D(\mathcal A)\to D(\mathcal B)\)
+commuting with cohomology. On the bounded derived categories on which
+they exist, \(RF\) and \(LF\) identify with this functor.
+\end{proposition}
+\begin{proof}
+Exactness identifies the kernels, images, and quotients defining
+cohomology of \(F(X)\) with the \(F\)-images of those for \(X\).
+It follows that \(F_K\) preserves quasi-isomorphisms, so the localization
+property in Theorem~\ref{res:D03} gives the functor. Because
+termwise application preserves cone matrices and shifts, the functor is
+exact. Its comparison before localization is invertible, so it satisfies
+both universal properties in Definition~\ref{res:R05} whenever
+restricted to the relevant bounded category. See
+\cite[Tag 015F]{stacks-derived}.
+\end{proof}
+
+\section{Ext, Tor, and comparison of compositions}
+
+\begin{theorem}[Ext as shifted Hom]\label{res:R11}
+For \(A,B\in\mathcal A\) the group
+\(\operatorname{Hom}_{D(\mathcal A)}(A[0],B[n])\) agrees for \(n\ge0\)
+with Ext computed by either of the available bounded resolutions,
+covariantly in \(B\) and contravariantly in \(A\).
+In degree zero it is \(\operatorname{Hom}_{\mathcal A}(A,B)\), and
+it vanishes for \(n<0\).
+\end{theorem}
+\begin{proof}
+The fully faithful heart embedding of Theorem~\ref{res:D07} gives
+the zeroth formula. Its orthogonality gives the negative vanishing,
+whether or not either kind of resolution is available.
+For an injective resolution \(B\to I\), Theorem~\ref{res:R04}
+computes the morphism group by homotopy classes of maps \(A[0]\to I[n]\).
+Those maps are morphisms \(A\to I^n\) killed by the next differential,
+modulo morphisms factoring through the previous differential via
+\(A\to I^{n-1}\). The signs of \(I[n]\) do not change either subgroup.
+This gives \(H^n\operatorname{Hom}(A,I^\bullet)\), the stated vanishing
+and the zeroth identification. A projective resolution \(P\to A\) gives
+the same argument for maps \(P\to B[n]\). In the usual cochain Hom
+convention its differential on degree \(j\) is
+\(d(u)=d_B u-(-1)^j u d_P\), so cycles are precisely maps to \(B[j]\);
+boundaries are precisely homotopies to zero. If one writes the
+resolution Hom differential as unsigned precomposition, multiply
+its degree-\(j\) term by \((-1)^{j(j+1)/2}\) to identify the two
+conventions. The Hom bijections are natural and lifts unique up to
+homotopy, giving the bifunctor comparison. This identifies, in
+particular, the resolution-based module Ext of \cite[Chapter 11]{p103}
+with the derived model without identifying their representing complexes.
+See \cite[Tags 06XQ--06XS]{stacks-derived}.
+\end{proof}
+
+\begin{theorem}[Right derived composition and acyclicity]\label{res:R12}
+For left exact \(F:\mathcal A\to\mathcal B\) and \(G:\mathcal B\to\mathcal C\),
+assume \(\mathcal A,\mathcal B\) have enough injectives. The canonical map
+\(R(GF)\to RG\,RF\) on \(D^+(\mathcal A)\) is invertible if and only if
+\(F(I)\) is right \(G\)-acyclic for every injective \(I\) of \(\mathcal A\).
+\end{theorem}
+\begin{proof}
+Compose the comparison from \(G\) on the termwise complex \(F_K(X)\)
+with \(RG\) of the comparison from \(F\) on \(X\). This is a
+transformation \(Q_{\mathcal C}(GF)_K\to RG\,RF Q_{\mathcal A}\);
+Definition~\ref{res:R05} induces the displayed map. Evaluate it on a
+bounded-below injective model \(I^\bullet\) of \(X\). There its first
+term is \(GF(I^\bullet)\), the intermediate comparison for \(F\)
+is invertible, and it is exactly the comparison
+\(G(F(I^\bullet))\to RG(F(I^\bullet))\).
+The latter is invertible under the acyclicity condition by
+Theorem~\ref{res:R08}. Conversely, evaluate an invertible comparison
+at each injective stalk \(I[0]\). Its component is then precisely
+\(G(F(I))[0]\to RG(F(I)[0])\). This is right \(G\)-acyclicity by
+definition. See \cite[Tags 05T2, 015M]{stacks-derived}.
+\end{proof}
+
+\begin{proposition}[Ext boundaries and extension classes]\label{res:R13}
+For a short exact sequence \(0\to A\to B\to C\to0\), write its derived
+boundary as \(\delta:C\to A[1]\). The triangle map in the second Ext
+variable is postcomposition with \(\delta[n]\); in the first it takes
+\(u\) to \(u[1]\delta\). Under the injective Hom comparison of
+Theorem~\ref{res:R11}, the ordinary second-variable boundary has the
+displayed sign, and the ordinary first-variable boundary takes \(u\)
+to \((-1)^{n+1}u[1]\delta\).
+With extension classes given by the triangle convention of
+Theorem~\ref{res:D04}, the assignment of \(\delta\) to a short exact
+sequence identifies Baer sum with addition in \(\operatorname{Ext}^1(C,A)\).
+\end{proposition}
+\begin{proof}
+The two representable long exact sequences of the derived triangle
+give these maps, by the argument of Proposition~\ref{res:K06}.
+For the second variable, regard \(A\to B\to C\) as a
+three-term acyclic complex. Apply the Cartan--Eilenberg
+construction of Theorem~\ref{res:G01}. Each successive
+cokernel complex is acyclic by Lemma~\ref{res:G07}, so the
+injective object for horizontal cohomology is always zero.
+Each horizontal row is therefore a split short exact
+sequence, and the three columns resolve \(A,B,C\).
+This gives the injective horseshoe in this abelian category.
+If its off-diagonal differential is
+\(\alpha:I_C^j\to I_A^{j+1}\), the connecting class on a cocycle \(z\)
+is \(\alpha z\), by taking its lift in the \(I_C\)-summand. The
+map \(\delta\) is represented by \(\alpha:I_C^\bullet\to I_A^\bullet[1]\)
+by Theorem~\ref{res:D04}. Thus postcomposition with \(\delta[n]\)
+has the claimed sign.
+
+For the first variable, use an injective resolution \(I^\bullet\) of
+the fixed target, represent \(u\) by a cocycle \(u:A\to I^n\), and
+extend it to \(w:B\to I^n\). Write \(d_Iw=v\pi\) for the quotient
+\(\pi:B\to C\), so the usual Hom connecting map is represented by \(v\).
+On the two-term cone \((A\xrightarrow{i}B)\) in degrees \(-1,0\),
+the map \(u[1]\delta\) has components \((-u,0)\).
+Adding the homotopy with degree-zero component \(w\) gives components
+\((0,(-1)^{n+1}v\pi)\): the degree-zero target differential is that
+of \(I[n+1]\), and the degree \(-1\) homotopy term is \(wi=u\).
+This proves the comparison, with the sign shown in the statement.
+
+Here is the extension classification in any abelian category.
+By Theorem~\ref{res:D02} a morphism \(C[0]\to A[1]\) is represented
+by a roof \(C[0]\leftarrow L^\bullet\to A[1]\) whose left arrow is
+a quasi-isomorphism. Replace \(L\) first by \(\tau_{\le0}L\) and then by
+its good quotient truncation \(\tau_{\ge-1}\). Both replacements
+are quasi-isomorphisms and the arrows restrict and descend. For the
+arrow to \(A[1]\), descent in degree \(-1\) follows since it kills
+the boundaries there. The roof is now given by a short exact sequence
+\(0\to L^{-1}\xrightarrow{d}L^0\to C\to0\) and a map \(a:L^{-1}\to A\).
+Push this sequence out along \(-a\). The resulting cone roof maps
+to \(A[1]\) by the negative projection, and hence represents the
+given morphism. A homotopy change of \(a\) adds a map factoring
+through \(d\). Pushing out along maps differing this way gives
+equivalent extensions: in the biproduct presentation of the pushout,
+add the corresponding multiple of the \(L^0\)-coordinate to the
+\(A\)-coordinate. If two roofs agree, pass to a common refinement
+as in Theorem~\ref{res:D02} and apply the same two truncations.
+The left maps agree on cycles in degree zero, and the right maps
+differ at most by the homotopy term just treated. The refined
+extension therefore maps to both pushouts by maps inducing the
+identity on \(A\) and \(C\). Conversely an equivalence of extensions
+gives equal cone roofs. This proves the bijection.
+
+Taking direct sums of the cone roofs, pulling back by the diagonal
+of \(C\), and pushing out by the codiagonal of \(A\) sends two
+boundaries to their sum. This is the Baer addition operation.
+The projection convention of \cite[Tags 06XP, 06XU, 06XV]{stacks-derived}
+uses the positive projection for the Yoneda class; with our cone
+matrix it gives the negative of the triangle boundary. The
+classification and addition statements agree after this uniform
+sign change. See also \cite[Chapter 11]{p103}.
+\end{proof}
+
+\begin{proposition}[Classical Tor from a total left derived functor]
+\label{res:R14}
+Fix a ring \(R\) and a left \(R\)-module \(M\). For a right
+\(R\)-module \(A\), \(H^{-n}\bigl(L(-\otimes_R M)(A[0])\bigr)\)
+is naturally \(\operatorname{Tor}_n^R(A,M)\). In degree zero this is
+\(A\otimes_R M\), and its connecting maps agree with the classical
+ones with the chain indices reversed from cochain indices.
+\end{proposition}
+\begin{proof}
+Choose a projective right-module chain resolution \(P_\bullet\to A\),
+place \(P_n\) in degree \(-n\) with differential \(d_n:P_n\to P_{n-1}\),
+and apply Theorem~\ref{res:R07}. On this model both constructions
+take the homology of \(P_\bullet\otimes_R M\). Resolution comparison
+makes the identification independent of the choice and natural in both
+module variables. The balanced computation via a left-module resolution
+is the comparison of Theorem~\ref{res:B05}. Right exactness gives
+the degree-zero statement. For a short exact sequence of right modules
+use a compatible horseshoe resolution. Its degreewise split sequence
+remains exact after tensoring and gives both connecting maps by the
+same lift and differential. The sign of the map in the derived
+triangle is the one identified in Theorem~\ref{res:D04}. See
+\cite[Section 3.2]{weibel} and \cite[Chapter 11]{p103}.
+\end{proof}
+
+\Needspace{24\baselineskip}
+\section{Higher Yoneda extensions and products}
+
+For objects \(X,Y\) of the abelian category and \(n\ge1\), an
+\(n\)-extension of \(X\) by \(Y\) is an exact sequence
+\[
+  0\longrightarrow Y\longrightarrow E_{n-1}\longrightarrow
+  \cdots\longrightarrow E_0\longrightarrow X\longrightarrow 0 .
+\]
+Take equivalence generated by maps of such exact sequences that
+are the identity on both endpoints. The Baer operation is direct
+sum followed by pullback at the right endpoint along the diagonal
+of \(X\) and pushout at the left endpoint along the codiagonal of
+\(Y\). For \(n=0\) use \(\operatorname{Hom}(X,Y)\). Splicing an
+\(m\)-extension of \(Y\) by \(Z\) on the left of an \(n\)-extension
+of \(X\) by \(Y\) uses the composite through \(Y\) at their junction.
+
+\begin{theorem}[The higher Yoneda product]\label{res:R15}
+In any abelian category the equivalence classes of \(n\)-extensions
+of \(X\) by \(Y\), with the Baer operation, are naturally isomorphic
+to \(\operatorname{Ext}^n(X,Y)\) as defined in
+\ref{res:R11}. In degree one the isomorphism uses the positive
+projection convention of \ref{res:R13}. Under these isomorphisms,
+splicing a class \(\alpha\) of degree \(m\) on the left of a class
+\(\beta\) of degree \(n\) is
+\[
+       \alpha[n]\circ\beta:X\longrightarrow Z[n+m],
+       \qquad
+       \beta:X\longrightarrow Y[n],\quad
+       \alpha:Y\longrightarrow Z[m].
+\]
+Degree-zero classes act by pullback or pushout on extensions and by
+ordinary composition in degree zero.
+\end{theorem}
+
+\begin{proof}
+Put the terms from \(Y\) through \(E_0\) in degrees \(-n,\ldots,0\)
+with the displayed differentials, forming a cochain complex \(C_E\).
+The augmentation \(s_E:C_E\to X[0]\) is a quasi-isomorphism.
+Projection \(p_E:C_E\to Y[n]\) is a chain map, equal to the identity
+on \(Y\) in degree \(-n\). Write \(u_E=p_Es_E^{-1}\) for the
+unscaled roof and put
+\[
+             y_E=(-1)^{n(n-1)/2}u_E .
+\]
+These expressions are invariant under maps of extensions with
+identity endpoints, since the induced chain maps commute with
+augmentation and projection and are quasi-isomorphisms.
+
+We verify that the unscaled roofs already give a bijection of sets.
+Represent a morphism \(X[0]\to Y[n]\) by a roof with middle complex
+\(L\), using \ref{res:D02}. Apply the good truncations of
+\ref{res:D05}, first \(\tau_{\le0}\), then \(\tau_{\ge -n}\).
+They are quasi-isomorphisms in the relevant directions because
+\(H^i(L)=0\) for \(i\ne0\). The arrow to \(Y[n]\) descends in
+degree \(-n\) because it kills the incoming boundaries. Write
+\(U\) for this truncated complex, \(s^0:U^0\to X\) for the
+augmentation, and \(f:U^{-n}\to Y\) for the other arrow.
+Then \(U^{-n}\to U^{-n+1}\) is monic, \(s^0\) is epic,
+and the augmented row is exact. Push out the first monomorphism
+along \(f\). Pushouts of monomorphisms in an abelian category
+preserve the short exact row with the same cokernel, so the
+resulting row is an \(n\)-extension by \(Y\). The natural map
+from \(U\) to its complex is \(f\) at the left, the pushout map
+next, and the identity in the remaining terms. It commutes with
+both arrows of the roof and induces the identity on \(X\).
+This proves surjectivity.
+
+If two extension roofs agree, use the common refinement of
+\ref{res:D02} and apply the same two truncations to it.
+The maps to the extension complexes descend through the lower
+truncation because their targets vanish below degree \(-n\).
+The two maps to \(X[0]\) become identical: a homotopy has no contribution
+in degree zero once the source is supported in degrees at most
+zero. The two maps to \(Y[n]\) then differ in degree \(-n\) by a
+map \(h d_U^{-n}\) for some \(h:U^{-n+1}\to Y\), by the chain
+homotopy formula. The two pushouts along \(f\) and \(f+h d_U^{-n}\)
+are isomorphic by the biproduct map
+\((y,v)\mapsto(y-h(v),v)\). Indeed, it maps the defining relations
+\((f(a),-d_U(a))\) to \((f(a)+h d_U(a),-d_U(a))\), and fixes
+the endpoint maps. Each truncated refinement induces a map
+from its pushout extension to the corresponding original
+extension, fixing \(X\) and \(Y\). This gives the required
+equivalence and proves injectivity.
+
+Endpoint maps act on the roofs by precomposition and postcomposition:
+pullback changes the augmentation by its pullback square, and
+pushout changes the projection by its pushout square. The induced
+maps of extension complexes give those two identities of roofs.
+Taking direct sums and then the diagonal and codiagonal proves
+additivity. Multiplying by the chosen sign preserves these
+properties. In degree one the factor is \(1\), and \(p_Es_E^{-1}\)
+is the positive projection of \ref{res:R13}, namely the negative
+of the triangle boundary of \ref{res:D04}.
+
+For the product, take \(n,m>0\). Let \(C\) be the complex of the
+spliced extension of \(\alpha\) on the left of \(\beta\).
+It maps to \(C_\beta\) by the identity on the \(\beta\)-terms,
+by the augmentation of the rightmost \(\alpha\)-term onto \(Y\)
+in degree \(-n\), and by zero to the left. Call this map \(a\).
+It preserves the augmentation to \(X\). There is also a chain
+map \(b:C\to C_\alpha[n]\) which is zero to the right of
+degree \(-n\) and is multiplication by \((-1)^{nj}\) on the
+\(\alpha\)-term in degree \(-n-j\) for \(0\le j\le m\).
+The differential in \(C_\alpha[n]\) has the factor \((-1)^n\),
+so these scalars commute with the differential. At degree \(-n\)
+the scalar is \(1\), whence \(s_\alpha[n]b=p_\beta a\).
+Since \(s_\beta a\) is the augmentation of the spliced extension,
+the composite of the unscaled roofs is represented on \(C\) by
+\(p_\alpha[n]b\). This equals \((-1)^{nm}\) times the positive
+projection of \(C\) onto \(Z[n+m]\).
+
+Finally,
+\[
+ \frac{(n+m)(n+m-1)}{2}
+       =\frac{n(n-1)}{2}+\frac{m(m-1)}{2}+nm .
+\]
+It follows that the normalized classes give exactly shifted
+composition. The cases with a degree-zero factor follow from
+naturality. Thus the sign comparison uses the cochain shift
+and the degree-one projection throughout.
+For the extension classification see
+\cite[Tags 06XP, 06XT and 06XU]{stacks-derived}.
+The calculation above specifies the normalization for our
+cochain shifts and extension differentials.
+\end{proof}

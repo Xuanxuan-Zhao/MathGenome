@@ -1,0 +1,563 @@
+\chapter{Polynomial methods and arithmetic applications}\label{chap:M07.19}
+
+% Symmetric polynomials
+\KEntry{K07.19.symmetric_functions}{Elementary symmetric polynomials}
+Let $R$ be a commutative unital ring. In $R[X_1,\ldots,X_n]$ put
+\[
+ e_j=\sum_{1\le i_1<\cdots<i_j\le n}X_{i_1}\cdots X_{i_j}
+ \quad(1\le j\le n),\qquad e_0=1.
+\]
+Permuting variables gives ring automorphisms: it permutes exponent
+vectors in the finite coefficient expansion, and respects their sums
+under multiplication. A polynomial is symmetric if all these
+automorphisms fix it. The fixed polynomials form a subring, since the
+automorphisms preserve subtraction, multiplication and one.
+Expansion by choosing either $T$ or $-X_i$ in each factor gives
+\begin{equation}\label{eq:symmetric-vieta}
+ \prod_{i=1}^n(T-X_i)=\sum_{j=0}^n(-1)^j e_jT^{n-j}.
+\end{equation}
+This is a formal polynomial identity over every $R$, not an assertion
+about polynomial functions. The empty case has product $1$.
+
+\KEntry{K07.19.symmetric_polynomial_theorem}{The fundamental symmetric-polynomial theorem}
+\begin{theorem}\label{thm:symmetric-polynomials}
+For every symmetric $f\in R[X_1,\ldots,X_n]$ there is a unique
+$G\in R[T_1,\ldots,T_n]$ with $f=G(e_1,\ldots,e_n)$.
+Equivalently the substitution homomorphism identifies the polynomial
+ring on $n$ symbols with the symmetric subring. No characteristic
+restriction or division by $n!$ is required.
+\end{theorem}
+\begin{proof}
+The zero ring and $n=0$ give the assertion directly, so assume $R$
+nontrivial and $n>0$. Order exponent tuples lexicographically, with
+$X_1$ first. For nonzero symmetric $f$, let $cX_1^{a_1}\cdots X_n^{a_n}$
+be its largest monomial. Then $a_1\ge\cdots\ge a_n$:
+if $a_i<a_j$ with $i<j$, swapping those variables gives a larger
+monomial with the same nonzero coefficient, a contradiction.
+The leading monomial of $e_j$ is $X_1\cdots X_j$, with coefficient
+one. A product of polynomials with such leading coefficients has
+the product leading monomial: lexicographic order respects addition
+of tuples, and the maximal term has no competing contribution.
+Consequently
+\[
+ E=e_1^{a_1-a_2}e_2^{a_2-a_3}\cdots e_{n-1}^{a_{n-1}-a_n}e_n^{a_n}
+\]
+has leading monomial $X_1^{a_1}\cdots X_n^{a_n}$ with coefficient
+one. Subtract $cE$. The result remains symmetric, its leading
+monomial decreases, and no monomial of total degree above $\deg f$
+has been introduced: $E$ is homogeneous of degree $\sum a_i$.
+There are finitely many tuples with total degree at most that bound.
+Repeating therefore terminates and expresses $f$ as a polynomial
+in the $e_j$.
+
+For uniqueness, a monomial $T_1^{b_1}\cdots T_n^{b_n}$ maps to a
+polynomial with leading exponent tuple
+\[
+ (b_1+\cdots+b_n,\ b_2+\cdots+b_n,\ \ldots,\ b_n)
+\]
+and leading coefficient one. Distinct $b$ give distinct tuples,
+since adjacent differences recover $b$. In a nonzero finite sum
+$G$, choose the image-leading tuple largest among its nonzero
+terms. All other images have smaller leading tuples, so cannot
+cancel its nonzero coefficient. Thus $G(e_1,\ldots,e_n)\ne0$,
+proving injectivity and uniqueness, even when $R$ has zero divisors.
+\end{proof}
+Giving $T_j$ weight $j$ makes substitution preserve total degree.
+The argument can be applied to homogeneous components and shows that
+the unique expression of a homogeneous symmetric polynomial is
+weighted homogeneous. This theorem concerns invariants under variable
+permutations. The symmetric powers and symmetric multilinear forms
+of D05, including \texttt{K05.15.symmetric} and
+\texttt{K05.15.polynomial\_polarization}, are different constructions.
+
+\KEntry{K07.19.symmetric_root_expressions}{Symmetric expressions in roots}
+If a monic $f\in F[T]$ splits in an extension with roots
+$\alpha_1,\ldots,\alpha_n$ repeated with multiplicity, comparison
+in \eqref{eq:symmetric-vieta} identifies their elementary symmetric
+expressions with the signed coefficients of $f$.
+Every symmetric polynomial over $F$ in these roots therefore belongs
+to $F$: apply Theorem~\ref{thm:symmetric-polynomials} and substitute
+the coefficients into $G$. Separability is unnecessary.
+The theorem does not say that an arbitrary expression in the roots,
+or an arbitrary rational expression with a vanishing denominator,
+belongs to $F$. Newton identities may be reused from
+\texttt{K05.08.newton\_identities}; dividing by their integer
+coefficients still requires those scalars to be invertible.
+
+% A fixed convention for resultants
+\KEntry{K07.19.resultant_definition}{The Sylvester determinant}
+For degree bounds $n,m\ge0$, and polynomials $\deg f\le n$,
+$\deg g\le m$, define $\operatorname{Res}_{n,m}(f,g)$ as follows.
+Form the square matrix with $m$ rows the descending coefficient
+vectors of $X^{m-1}f,\ldots,f$, followed by $n$ rows those of
+$X^{n-1}g,\ldots,g$, in the columns
+$X^{n+m-1},\ldots,1$. Its determinant is the resultant.
+An empty block has no rows and the empty determinant is $1$.
+The ordinary resultant of two nonzero polynomials uses their
+actual degrees. Bounds will be displayed when coefficients may
+specialize or the derivative may lose degree.
+
+The transpose of this matrix represents
+\[
+ F[X]_{<m}\oplus F[X]_{<n}\longrightarrow F[X]_{<n+m},
+ \qquad(A,B)\longmapsto Af+Bg
+\]
+in descending monomial bases. This follows by expanding each input
+coefficient. Swapping its two row blocks proves
+$\operatorname{Res}_{m,n}(g,f)=(-1)^{nm}\operatorname{Res}_{n,m}(f,g)$.
+If $g=c\ne0$ is constant and $f$ has degree $n$, the actual-degree
+resultant is $c^n$; this follows from its diagonal matrix.
+
+\KEntry{K07.19.resultant_common_root}{The common-root criterion}
+\begin{theorem}\label{thm:resultant-common-root}
+For nonzero polynomials $f,g$ of positive degrees $n,m$ over a field,
+their resultant is zero if and only if they have a common
+positive-degree divisor, equivalently a common root in an algebraic
+closure. It is also equivalent to a relation $Af+Bg=0$ with
+$\deg A<m$, $\deg B<n$, and $(A,B)\ne(0,0)$.
+\end{theorem}
+\begin{proof}
+The displayed square linear map is singular exactly when its
+determinant is zero, equivalently when it has such a nonzero kernel
+vector; these are the D05 determinant and injectivity criteria.
+If $h$ is a common nonconstant divisor, use
+$A=g/h$, $B=-f/h$. Conversely if $\gcd(f,g)=1$, Bezout gives
+$uf+vg=1$. From $Af=-Bg$ we obtain $f\mid Bg$, hence $f\mid B$:
+multiply the Bezout identity by $B$. The degree bound forces $B=0$,
+and then the domain property forces $A=0$, a contradiction.
+Finally a common nonconstant divisor has a root in a splitting
+field. A common root would contradict the evaluated Bezout
+identity if the gcd were one. This proves the last equivalence.
+\end{proof}
+The root is in an algebraic closure; it need not be in $F$.
+For example, two copies of $X^2+1$ over $\Q$ have zero resultant
+and no common rational root.
+
+\KEntry{K07.19.resultant_bezout}{A polynomial certificate}
+\begin{lemma}\label{lem:commutative-ring-adjugate}
+For a square matrix $A$ of positive size over any commutative unital
+ring, the cofactor adjugate satisfies
+$\operatorname{adj}(A)A=A\operatorname{adj}(A)=(\det A)I$.
+\end{lemma}
+\begin{proof}
+Define the determinant by its signed permutation sum and the
+cofactors by deleting a row and a column, with the corresponding sign;
+the determinant of the zero-size minor is one.
+Grouping permutation terms by the entry in one fixed column gives
+the cofactor expansion along that column. The $(i,j)$ entry of
+$\operatorname{adj}(A)A$ is
+$\sum_k C_{ki}A_{kj}$, the cofactor expansion of the determinant
+with column $i$ replaced by column $j$. For $i=j$ this is $\det A$.
+For $i\ne j$ the matrix has two equal columns; pair each permutation
+with the permutation obtained by interchanging those columns.
+Their products are equal by commutativity and their signs are
+opposite, so their terms sum to zero. The pairing has no fixed point,
+including in characteristic two. Thus every off-diagonal entry is
+zero. Row expansion proves the other identity in exactly the same
+way: the $(i,j)$ entry is the determinant with row $j$ replaced by
+row $i$, hence is $\det A$ if $i=j$ and zero otherwise.
+This proves the identities using no division or field hypothesis.
+\end{proof}
+This is the general-ring extension of the field adjugate calculation
+in \texttt{K05.05.adjugate}; its broader hypotheses have just been proved.
+\begin{proposition}\label{prop:resultant-bezout}
+Over any commutative coefficient ring, for the fixed bounds above
+there are polynomials $U,V$ with
+\[
+ \operatorname{Res}_{n,m}(f,g)=Uf+Vg,\qquad
+ \deg U<m,\quad \deg V<n,
+\]
+where a negative degree bound requires a zero polynomial.
+If $n+m=0$, instead the determinant is $1$ and this certificate
+is not asserted.
+\end{proposition}
+\begin{proof}
+Let $S$ be the Sylvester matrix and
+$z=(X^{n+m-1},\ldots,1)^t$. Then $Sz$ is the column of the row
+polynomials used to define $S$. The adjugate identity
+$\operatorname{adj}(S)Sz=(\det S)z$ holds over the commutative
+polynomial ring by Lemma~\ref{lem:commutative-ring-adjugate}.
+The last component gives the displayed
+combination of $X^{m-1}f,\ldots,f,X^{n-1}g,\ldots,g$.
+Collecting coefficients gives $U,V$ and their bounds.
+\end{proof}
+This certificate survives every coefficient homomorphism and
+proves the necessary elimination implication even if degrees drop.
+
+\KEntry{K07.19.resultant_product_discriminant}{Products over roots and discriminants}
+\begin{theorem}\label{thm:resultant-product}
+Let $f$ have degree $n\ge1$ and leading coefficient $a\ne0$ over
+a field, and let $\deg g\le m$. In a splitting field write its
+roots as $\alpha_1,\ldots,\alpha_n$ with multiplicity. Then
+\[
+ \operatorname{Res}_{n,m}(f,g)=a^m\prod_{i=1}^n g(\alpha_i).
+\]
+\end{theorem}
+\begin{proof}
+First $f$ is monic. In the target coefficient space of the
+Sylvester map use the basis
+$X^{m-1}f,\ldots,f,X^{n-1},\ldots,1$.
+Its matrix in descending monomials is triangular with diagonal
+ones, hence has determinant one. Division by $f$ shows that the
+Sylvester map in this basis has blocks
+$\begin{pmatrix}I_m&*\\0&\mu_g\end{pmatrix}$,
+where $\mu_g$ is multiplication by $g$ on $F[X]/(f)$.
+Thus the resultant is $\det\mu_g$.
+Extend the scalar field to a splitting field; determinants are
+preserved by mapping their finite coefficient formula.
+If $f=\prod_\alpha(X-\alpha)^{e_\alpha}$, CRT identifies the
+quotient with the product of the corresponding primary quotients.
+In the basis $1,(X-\alpha),\ldots,(X-\alpha)^{e_\alpha-1}$
+of one quotient, multiplication by $g$ is triangular with every
+diagonal entry $g(\alpha)$: write
+$g=g(\alpha)+(X-\alpha)q$. Taking block determinants gives the
+claimed product, with all multiplicities.
+For general $f=a f_0$, its $m$ rows are scaled by $a$, so its
+determinant is $a^m$ times the monic resultant.
+\end{proof}
+
+For $f$ of degree $n\ge1$ define
+\[
+ \operatorname{Disc}(f)
+ =a^{2n-2}\prod_{i<j}(\alpha_i-\alpha_j)^2.
+\]
+The product is symmetric and independent of the ordering. It
+vanishes precisely when a root is repeated. For a monic polynomial
+Theorem~\ref{thm:symmetric-polynomials} makes it a polynomial in
+its coefficients. For general $f$ the precise resultant identity is
+\begin{equation}\label{eq:discriminant-resultant}
+ \operatorname{Disc}(f)=
+ (-1)^{n(n-1)/2}a^{-1}\operatorname{Res}_{n,n-1}(f,f').
+\end{equation}
+Indeed $f'(\alpha_i)=a\prod_{j\ne i}(\alpha_i-\alpha_j)$
+by differentiating the split product, even if a root repeats.
+Multiplying pairs gives
+$\prod_i f'(\alpha_i)=(-1)^{n(n-1)/2}a^n
+\prod_{i<j}(\alpha_i-\alpha_j)^2$; apply the product theorem
+with bound $n-1$.
+
+The bound is essential in positive characteristic, where
+$\deg f'$ can be smaller than $n-1$. Using its actual degree
+without the corresponding leading-coefficient adjustment can
+give a false nonmonic formula. For monic $f$ the extra factor is
+one. Degree one gives discriminant one. For $n>1$ and $f'=0$,
+the padded determinant and discriminant are both zero.
+The discriminant is a polynomial with integer coefficients in
+the coefficients of a degree-$n$ polynomial: in the universal
+Sylvester determinant for $f,f'$, setting the leading coefficient
+to zero makes the highest column zero. Hence that determinant
+is divisible by the leading-coefficient variable in the integer
+polynomial ring. Dividing it there and using
+\eqref{eq:discriminant-resultant} gives the required universal
+coefficient polynomial, valid on specialization.
+
+\KEntry{K07.19.resultant_specialization}{What elimination does and does not show}
+Fixed-bound resultants commute with coefficient homomorphisms,
+because determinants are finite integer polynomials in the entries.
+When $n+m>0$, if a specialization has a common root, the certificate in
+Proposition~\ref{prop:resultant-bezout} forces the specialized
+resultant to vanish. Conversely, over a specialized field it suffices
+that at least one positive specified degree survives. For if
+$n>0$ and $\deg f=n$, Theorem~\ref{thm:resultant-product} expresses the
+resultant as a nonzero scalar times the product of the values of $g$
+at the roots of $f$, repeated with multiplicity. A zero product over
+the algebraic closure has a zero factor, which is a common root.
+This also allows $g$ to become zero or constant. If instead $m>0$
+and $\deg g=m$, interchange the two row blocks of the Sylvester matrix:
+this changes its determinant by $(-1)^{nm}$ and reduces to the same
+argument. If both bounds are zero, their fixed-bound resultant is
+$1$, even when both specialized polynomials are zero; this empty-matrix
+case is excluded from the necessary-elimination implication above.
+Without a degree guard the converse can fail. In $\Q[Y][X]$ take
+\[
+ f=YX+1,\qquad g=YX+2,\qquad
+ \operatorname{Res}_{1,1}(f,g)=
+ \det\begin{pmatrix}Y&1\\Y&2\end{pmatrix}=Y.
+\]
+At $Y=0$ the resultant vanishes but the constants $1,2$ have no
+common root. No claim that every projected algebraic point lifts,
+or that a projection equals its closure, follows from this
+necessary elimination equation. General elimination ideals and
+Groebner algorithms remain explicit advanced undergraduate D22 topics.
+
+% Additive normal forms for rational functions
+\KEntry{K07.19.partial_fractions}{Normalized partial fractions}
+\begin{theorem}\label{thm:normalized-partial-fractions}
+Let $F$ be a field. Write a rational function with reduced monic
+denominator $q=\prod_{i=1}^r p_i^{e_i}$, where the $p_i$ are
+distinct monic irreducibles and $e_i\ge1$. There are unique
+$h\in F[X]$ and polynomials $a_{ij}$ with $\deg a_{ij}<\deg p_i$
+such that
+\[
+ \frac fq=h+\sum_{i=1}^r\sum_{j=1}^{e_i}\frac{a_{ij}}{p_i^j}.
+\]
+For a reduced denominator, $a_{i,e_i}\ne0$ for every $i$.
+\end{theorem}
+\begin{proof}
+Division separates $f=hq+r_0$, $\deg r_0<\deg q$.
+Set $q_i=p_i^{e_i}$ and $Q_i=q/q_i$. Since $Q_i$ is coprime
+to $q_i$, Bezout makes it invertible modulo $q_i$.
+Choose the unique representative $A_i$ of
+$r_0Q_i^{-1}$ modulo $q_i$ with $\deg A_i<\deg q_i$.
+The polynomial $r_0-\sum_i A_iQ_i$ vanishes modulo every $q_i$,
+so CRT makes it divisible by $q$. Its degree is less than
+$\deg q$, forcing it to be zero. Thus the proper part is
+$\sum_i A_i/q_i$.
+
+Successive division of $A_i$ by the monic $p_i$ gives the unique
+expansion
+$A_i=\sum_{k=0}^{e_i-1}b_{ik}p_i^k$ with $\deg b_{ik}<\deg p_i$.
+The quotient degree decreases by $\deg p_i>0$ each time;
+the original bound makes the quotient after $e_i$ steps zero.
+Uniqueness follows by reducing modulo $p_i$, then subtracting
+the first digit and cancelling $p_i$ inductively.
+Put $a_{ij}=b_{i,e_i-j}$ to obtain the asserted expression.
+
+For uniqueness of the grouped expression, subtract two expressions
+and clear $q$. The sum $\sum_i(A_i-A_i')Q_i$ has degree less
+than $\deg q$, whereas a nonzero $(h-h')q$ has degree at least
+$\deg q$. Hence $h=h'$. Reducing the remaining sum modulo $q_i$
+and cancelling the unit $Q_i$ gives $A_i=A_i'$ by their degree
+bounds. Digit uniqueness gives every $a_{ij}=a_{ij}'$.
+If $a_{i,e_i}=b_{i0}$ were zero, $A_i$ would be divisible by
+$p_i$, and the congruence $A_iQ_i\equiv f\pmod {q_i}$
+would give $p_i\mid f$, contradicting reduction.
+\end{proof}
+For a polynomial $q=1$, the sum is empty; zero has $h=0$.
+Monicity and the numerator degree bounds remove unit and polynomial
+ambiguities. If a denominator has already been factored into real
+linear/quadratic factors or complex linear factors, the same theorem
+specializes directly; existence of those factorization patterns uses
+the separately proved fundamental theorem of algebra.
+
+% Exact counting of real roots
+\KEntry{K07.19.cauchy_root_bound}{A finite bound for roots}
+For $f=a_nX^n+\cdots+a_0$, $a_n\ne0$, $n\ge1$, put
+$M=\max_{i<n}|a_i/a_n|$. Every complex root satisfies
+\begin{equation}\label{eq:cauchy-root-bound}
+ |z|<1+M.
+\end{equation}
+If $M=0$, the only possible root is zero. Otherwise a hypothetical
+root with $t=|z|\ge1+M>1$ would satisfy
+\[
+ t^n\le M\sum_{i=0}^{n-1}t^i
+ =M\frac{t^n-1}{t-1}\le t^n-1,
+\]
+a contradiction. This is a bound on any root, not an appeal to
+existence of complex roots or to FTA.
+
+\KEntry{K07.19.sturm_chain}{Squarefree reduction and the Sturm chain}
+For nonconstant $f\in\R[X]$, let $d$ be a monic gcd of $f,f'$ and
+put $s=f/d$. Then $s$ has exactly the distinct real roots of $f$
+and is squarefree, with $\gcd(s,s')=1$.
+Here is a verification without complex factorization.
+Factor $f=c\prod p_i^{e_i}$ in the UFD $\R[X]$.
+Each irreducible $p_i$ has $p_i'\ne0$ and $\deg p_i'<\deg p_i$
+in characteristic zero, so $p_i\nmid p_i'$.
+Writing $f=p_i^{e_i}h$ with $p_i\nmid h$ gives
+$f'=p_i^{e_i-1}(e_i p_i'h+p_i h')$.
+The parenthesis is nonzero modulo $(p_i)$, since its quotient
+is a field and $e_i\ne0$. Thus the gcd has precisely the
+exponents $e_i-1$. This proves the assertions about $s$ and its roots.
+
+For this squarefree $s$, form
+$f_0=s,f_1=s'$ and
+$f_{i+1}=-\operatorname{rem}(f_{i-1},f_i)$,
+stopping before a zero remainder. Division strictly decreases
+nonzero remainder degree, so terminates. Gcds are unchanged by
+the division recurrence; hence the last member is a nonzero
+constant because $\gcd(s,s')=1$.
+Consecutive members have no common real zero: a common zero
+propagates through
+\[
+ f_{i-1}=q_i f_i-f_{i+1}
+\]
+to the nonzero final constant, which is impossible.
+
+\KEntry{K07.19.sturm_theorem}{Sturm's theorem with endpoint conventions}
+\begin{theorem}\label{thm:sturm}
+At a real $x$, delete zero entries from
+$f_0(x),\ldots,f_\ell(x)$ and let $V(x)$ be the number of
+changes of sign in the remaining list. If $a<b$ and
+$s(a)s(b)\ne0$, the number of distinct roots of $f$ in $(a,b)$ is
+$V(a)-V(b)$.
+\end{theorem}
+\begin{proof}
+All chain polynomials are nonzero, so their real zero sets are
+finite by the polynomial root bound. Away from their union all
+signs are locally constant. On a subinterval containing none
+of these zeros each sign is constant: a change of sign of a
+continuous nonvanishing real polynomial would contradict IVT.
+
+At a zero $c$ of an internal member $f_i$, its neighbors are
+nonzero and satisfy $f_{i-1}(c)=-f_{i+1}(c)$.
+Near $c$ their signs stay opposite. Whether $f_i$ is positive,
+negative or deleted at $c$, the two edges across this triple
+contribute exactly one variation. Thus this zero changes no
+total variation. If several internal members vanish at $c$,
+their positions are nonadjacent. The pairs of adjacent edges
+just considered are disjoint, so the same conclusion holds
+simultaneously for all of them.
+
+At a root $c$ of $s$, squarefreeness gives $s'(c)\ne0$.
+Write $s=(X-c)u$; differentiating gives $u(c)=s'(c)$.
+Near $c$, $u$ and $f_1=s'$ therefore have the same fixed sign.
+Immediately to the left, $f_0=s$ has the opposite sign to
+$f_1$; immediately to the right their signs agree.
+The first edge loses exactly one variation. Any internal
+zeros at this same point contribute no change by the previous
+paragraph, and do not use this first edge.
+Consequently $V$ drops exactly one at every root of $s$ and
+never elsewhere.
+
+Partition $[a,b]$ at the finitely many chain zeros in it.
+Because neither endpoint is a zero of $f_0$, deleting internal
+zero entries there has the same value as its nearby interior
+variation: the opposite-neighbor argument still applies.
+Adding all changes gives exactly $V(a)-V(b)$, one for each
+root in $(a,b)$. The roots of $s$ are the distinct roots of $f$.
+\end{proof}
+For a nonzero constant polynomial the root count is zero without
+a chain. The zero polynomial is excluded. The displayed formula
+does not count roots at the endpoints; if such endpoints are
+wanted one must use one-sided limits and explicitly add the
+chosen endpoint roots. At $+\infty$ a member's sign is its
+leading-coefficient sign, and at $-\infty$ it is that sign
+times $(-1)^{\deg f_i}$. Leading terms dominate for sufficiently
+large absolute value, so these sign lists give the variation
+limits and their difference counts all distinct real roots.
+Alternatively choose endpoints outside the explicit bound
+\eqref{eq:cauchy-root-bound}. No real-closed-field generalization
+is assumed in this proof.
+
+% Gaussian arithmetic
+\KEntry{K07.19.gaussian_euclidean}{Euclidean division in the Gaussian integers}
+In $\Z[i]\subset\C$, conjugation gives the multiplicative norm
+$N(a+bi)=a^2+b^2$. It is a positive integer for nonzero elements.
+A unit must have norm one; these elements are exactly
+$1,-1,i,-i$, and their conjugates give their inverses.
+For $z,w\in\Z[i]$, $w\ne0$, choose integers nearest to the real
+and imaginary coordinates of $z/w$, and let $q$ be their
+Gaussian combination. Then $r=z-qw$ satisfies
+$N(r)=N(w)|z/w-q|^2\le N(w)/2<N(w)$.
+Here $N(r)=0$ permits the zero remainder. This proves the
+Euclidean property, so the earlier Euclidean--PID--UFD theorems
+apply to this concrete ring. No unproved ideal-arithmetic
+classification is needed.
+
+\KEntry{K07.19.gaussian_primes_two_squares}{Gaussian primes and two squares}
+\begin{theorem}\label{thm:prime-two-squares}
+A positive integer prime $p$ is a sum of two integer squares
+if and only if $p=2$ or $p\equiv1\pmod4$.
+Up to units the Gaussian primes are $1+i$, rational primes
+$q\equiv3\pmod4$, and Gaussian integers of norm a rational
+prime $p\equiv1\pmod4$.
+\end{theorem}
+\begin{proof}
+For an odd prime, a sum of two squares, each zero or one modulo
+four, can only be one modulo four; $2=1^2+1^2$.
+If $p\equiv1\pmod4$, inverse-pairing in the field $\Z/p\Z$
+gives Wilson's congruence $(p-1)!\equiv-1$: the only
+self-inverse nonzero residues are $1,-1$, by
+$(x-1)(x+1)=0$, and all others pair to one.
+Pairing instead $k$ with $p-k$ gives
+\[
+ (p-1)!\equiv(-1)^{(p-1)/2}
+ \left(((p-1)/2)!\right)^2.
+\]
+Thus some integer $x$ has $x^2\equiv-1\pmod p$.
+In $\Z[i]$, $p\mid(x+i)(x-i)$ but $p$ divides neither factor,
+as their imaginary coefficients are $1,-1$. Therefore $p$
+is not Gaussian prime. In this UFD it is not irreducible,
+so $p=uv$ with both factors nonunits. Their positive norms
+multiply to $p^2$ and both exceed one, forcing both to equal
+$p$. This supplies $p=a^2+b^2$.
+
+Every Gaussian integer of rational-prime norm is irreducible:
+in a proper factorization the norms would be integers greater
+than one multiplying to that prime. The element $1+i$ has
+norm two, and $2=-i(1+i)^2$.
+For a rational prime $q\equiv3\pmod4$, a Gaussian proper
+factorization would force a factor of norm $q$ as above,
+contradicting the modulo-four obstruction. Thus $q$ is a
+Gaussian prime.
+
+Conversely let $\pi$ be a Gaussian irreducible, hence prime.
+It divides the positive integer $N(\pi)=\pi\bar\pi$, and hence
+some rational prime $p$ in its integer factorization.
+If $p=\pi\beta$, then $N(\pi)N(\beta)=p^2$.
+The nonunit norm $N(\pi)$ is $p$ or $p^2$.
+In the first case $\pi$ has prime norm, and modulo four
+forces $p=2$ or $p\equiv1\pmod4$; norm two elements are
+associates of $1+i$. In the second case $\beta$ is a unit,
+so $\pi$ is associate to $p$. The cases $p=2$ and
+$p\equiv1\pmod4$ were just shown reducible, leaving precisely
+$p\equiv3\pmod4$. This proves exhaustion.
+\end{proof}
+This is a prime representation theorem. It does not silently
+assert the further all-integer two-square classification or
+unique ideal factorization in arbitrary quadratic rings.
+
+% A corrected polynomial Fermat application
+\KEntry{K07.19.mason_stothers}{Polynomial abc in characteristic zero}
+For nonzero $u\in F[X]$, let $\operatorname{rad}(u)$ be the
+product of its distinct monic irreducible factors; a nonzero
+constant has radical one. The following argument is supplied
+independently from polynomial UFD and differentiation; it is
+not attributed to the printed Aluffi Fermat assertion.
+\begin{theorem}\label{thm:mason-stothers}
+Over a characteristic-zero field, if nonzero pairwise-coprime
+$a,b,c$ satisfy $a+b=c$ and are not all constant, then
+\[
+ \max(\deg a,\deg b,\deg c)\le
+ \deg\operatorname{rad}(abc)-1.
+\]
+\end{theorem}
+\begin{proof}
+Put $W=a'b-ab'$. It is nonzero. Otherwise coprimality of $a,b$
+would give $a\mid a'$; a nonconstant $a$ cannot divide its
+nonzero smaller-degree derivative. Thus $a$ would be constant;
+then $W=0$ gives $b'=0$, and characteristic zero makes $b$
+and $c$ constant too, a contradiction.
+If $p^e$ exactly divides $a$, differentiation shows
+$p^{e-1}\mid a'$, hence $p^{e-1}\mid W$.
+The same holds for a factor of $b$.
+Since $c=a+b$, we also have $W=a'c-ac'$, giving the same
+divisibility for a factor of $c$. Pairwise coprimality and
+unique factorization therefore give
+$abc/\operatorname{rad}(abc)\mid W$, up to a unit.
+Taking degrees yields
+\[
+ \deg a+\deg b+\deg c-\deg\operatorname{rad}(abc)
+ \le\deg W\le\deg a+\deg b-1.
+\]
+This bounds $\deg c$. Apply the identical argument to
+$c+(-b)=a$ and to $c+(-a)=b$; nonzero constants and units
+do not affect coprimality or radical degree. All three bounds
+follow.
+\end{proof}
+
+\KEntry{K07.19.primitive_fermat}{Primitive polynomial Fermat}
+\begin{corollary}\label{cor:primitive-polynomial-fermat}
+Let $F$ have characteristic zero and $n\ge3$.
+For nonzero pairwise-coprime $f,g,h\in F[X]$,
+$f^n+g^n=h^n$ forces all three to be constant.
+\end{corollary}
+\begin{proof}
+If $D=\max(\deg f,\deg g,\deg h)>0$, apply the theorem to
+$f^n,g^n,h^n$. Their radical has degree at most
+$\deg f+\deg g+\deg h\le3D$, so $nD\le3D-1$, impossible
+for $n\ge3$. Thus $D=0$.
+\end{proof}
+Without coprimality the unqualified statement is false:
+over $\C$, $f=g=X$, $h=2^{1/n}X$ is a nonconstant solution.
+Clearing their common factor turns the triple into constants,
+so does not preserve the premise that they are not all constant.
+In general remove a common gcd from a nonzero solution.
+The resulting three polynomials are pairwise coprime: a prime
+dividing two would divide the third by the equation, contrary
+to their common gcd being one. The corollary then says the
+original triple is a common polynomial multiple of a constant
+solution. This is the corrected conclusion corresponding to
+Aluffi's polynomial application. Characteristic zero is material:
+Frobenius powers produce different behavior in characteristic $p$.

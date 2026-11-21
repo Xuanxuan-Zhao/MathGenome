@@ -1,0 +1,1385 @@
+{
+  "component": "LinearAlgebraSupplement",
+  "paper": "docs/sources/LinearAlgebraSupplement/paper.tex",
+  "pdf": "docs/notes/LinearAlgebraSupplement/linear-multilinear-algebra-matrix-theory.pdf",
+  "physical_pages": 10,
+  "public_declarations_checked": 158,
+  "results": [
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.commutatorIdeal"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.degree"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.degreeMap"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.pureProduct"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.pureProductCoe"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.quotientKernel"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.tensorPresentation"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeQuotient"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.grading"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.01",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 148,
+            "line_end": 167
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.quotientKernel"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.decompose_quotient"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.gradedAlgebra"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.grading"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.idealHomogeneous"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.01.homogeneity",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 169,
+            "line_end": 173
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.quotientKernel"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeOne"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeZero"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.lowDegreeKernels"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.01.low-degrees",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 173,
+            "line_end": 176
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.pureProductCoe"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.quotientKernel"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/FreeAlgebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.FreeAlgebra.existsUniqueExtension"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeOne"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeOneEquiv_coe"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.01.commutativity",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 175,
+            "line_end": 179
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.adjacentRelations"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.adjacent_eq_permutation"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeKernel"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeQuotient"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeQuotientEquiv_tprod"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.permutationRelations"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:additional:2:LA01-C05.01.adjacent-degree-quotient",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Symmetric",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 190,
+            "line_end": 199
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.adjacent_eq_permutation"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeKernel"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeQuotient"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeQuotientEquiv_tprod"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:additional:3:LA01-C05.01.degree-relations",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Symmetric",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 190,
+            "line_end": 201
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.quotientKernel"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.adjacent_eq_permutation"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeKernel"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.invariant_of_adjacent"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:additional:4:LA01-C05.01.adjacent-relations",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 192,
+            "line_end": 199
+          }
+        }
+      ],
+      "id": "LA01-C05.01",
+      "kind": "definition",
+      "number": "1.1",
+      "paper_line": 160,
+      "pdf_destination": "definition.1.1",
+      "pdf_page": 4,
+      "title": "The symmetric algebra"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.pureProduct"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Algebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Algebra.pureProductCoe"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.adjacent_eq_permutation"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeKernel"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeQuotient"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.degreeOne"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.degreeZero"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.equiv"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.universal"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.02",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 181,
+            "line_end": 188
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChange.mapDegree_pureProduct"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.hom_ext"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.inducedDegreeMap"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.mapDegree_comp_quotient"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.naturalitySource"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.naturalityTarget"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.universal"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.02.naturality",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Symmetric",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 181,
+            "line_end": 207
+          }
+        }
+      ],
+      "id": "LA01-C05.02",
+      "kind": "proposition",
+      "number": "1.2",
+      "paper_line": 182,
+      "pdf_destination": "proposition.1.2",
+      "pdf_page": 4,
+      "title": "Universal symmetric multilinear maps"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/FreeAlgebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.FreeAlgebra.existsUniqueExtension"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/FreeAlgebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.FreeAlgebra.extensionValues"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeOne"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeOneEquiv_coe"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.03",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 210,
+            "line_end": 215
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/FreeAlgebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.FreeAlgebra.extensionValues"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:additional:3:LA01-C05.03.extension-values",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Symmetric",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 217,
+            "line_end": 225
+          }
+        }
+      ],
+      "id": "LA01-C05.03",
+      "kind": "proposition",
+      "number": "1.3",
+      "paper_line": 211,
+      "pdf_destination": "proposition.1.3",
+      "pdf_page": 5,
+      "title": "The free commutative algebra property"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.grading"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Polynomial.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Polynomial.degreeEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Polynomial.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Polynomial.equivMvPolynomial"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Polynomial.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Polynomial.equivMvPolynomial_symm_X"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Polynomial.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Polynomial.equivMvPolynomial_ι"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Polynomial.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Polynomial.map_degree"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.04",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 230,
+            "line_end": 238
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/MonomialBasis.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.MonomialBasis.Exponent"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/MonomialBasis.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.MonomialBasis.exists_monomialBasis"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/MonomialBasis.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.MonomialBasis.rankZeroDegreeZero"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/MonomialBasis.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.MonomialBasis.rankZeroPositiveDegree"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.04.degree-basis",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Symmetric",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 232,
+            "line_end": 243
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/MonomialBasis.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.MonomialBasis.Exponent"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/MonomialBasis.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.MonomialBasis.exists_monomialBasis"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/MonomialBasis.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.MonomialBasis.exponentCard"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.04.basis-count",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Symmetric",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 238,
+            "line_end": 243
+          }
+        }
+      ],
+      "id": "LA01-C05.04",
+      "kind": "theorem",
+      "number": "1.4",
+      "paper_line": 231,
+      "pdf_destination": "theorem.1.4",
+      "pdf_page": 5,
+      "title": "The monomial basis of a finite free module"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChange.canonicalComparisons"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeAlgebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeAlgebra.comparison"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeAlgebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeAlgebra.comparisonHom"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeAlgebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeAlgebra.comparisonProperties"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeAlgebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeAlgebra.comparison_symm_comp_ι"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeAlgebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeAlgebra.comparison_tmul_pureProduct"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeAlgebra.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeAlgebra.comparison_toAlgHom"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeDegree.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeDegree.gradedComparison"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeDegree.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeDegree.scalarExtensionGrading"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.05",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 265,
+            "line_end": 276
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeDegree.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeDegree.degreeComparison"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeDegree.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeDegree.degreeEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeDegree.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeDegree.degreeEquiv_coe"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeDegree.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeDegree.degreeEquiv_tmul_pureProduct"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChangeDegree.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChangeDegree.summandIdentification"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.05.degreewise",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Symmetric",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 267,
+            "line_end": 276
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChange.algebraNaturality"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChange.degreeNaturality"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChange.mapDegree_coe"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChange.mapDegree_pureProduct"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChange.symMap_ι"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.hom_ext"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.inducedDegreeMap"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Multilinear.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Multilinear.mapDegree_pureProduct"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.05.naturality",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 265,
+            "line_end": 279
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChange.algebraComposition"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/BaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.BaseChange.degreeComposition"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.05.composition",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Symmetric",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 265,
+            "line_end": 279
+          }
+        }
+      ],
+      "id": "LA01-C05.05",
+      "kind": "theorem",
+      "number": "1.5",
+      "paper_line": 266,
+      "pdf_destination": "theorem.1.5",
+      "pdf_page": 5,
+      "title": "Arbitrary base change"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionBaseChange.integralPresentation"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionPresentation.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionPresentation.presentation"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionPresentation.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionPresentation.presentationEquiv_generator"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionPresentation.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionPresentation.presentationEquiv_map_degree"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionPresentation.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionPresentation.quotientGrading"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.06",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 318,
+            "line_end": 327
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionBaseChange.integralPresentation"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionPresentation.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionPresentation.degreePositive"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionPresentation.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionPresentation.degreeZero"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionPresentation.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionPresentation.presentationDegreeEquiv"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionPresentation.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionPresentation.presentationEquiv_generator"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.06.homogeneous-parts",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 320,
+            "line_end": 329
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionBaseChange.extendedBasis_zero"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionBaseChange.polynomialEquiv_generator"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionBaseChange.polynomialEquiv_map_degree"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionBaseChange.quotientScalarExtension"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionBaseChange.scalarExtension"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.06.base-change",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Symmetric",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 320,
+            "line_end": 332
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/TorsionBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.TorsionBaseChange.nonflatness"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.06.nonflatness",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Symmetric",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 333,
+            "line_end": 335
+          }
+        }
+      ],
+      "id": "LA01-C05.06",
+      "kind": "example",
+      "number": "1.6",
+      "paper_line": 319,
+      "pdf_destination": "example.1.6",
+      "pdf_page": 6,
+      "title": "A torsion module and nonflat base change"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.fixedBasis"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.fixedGenerators"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.fixedTensors"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.swapFactors"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.tensor"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.07",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Symmetric",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 338,
+            "line_end": 347
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.fixedQuotient"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.mixedClass"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.quotientFailures"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.quotientOnMixedTensor"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.quotientOnPairs"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.quotientRange"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/CharacteristicTwo.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.CharacteristicTwo.symmetricPair"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Symmetric/Grading.lean",
+              "name": "Alg01SymmetricWitt.Symmetric.Grading.degreeQuotient"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C05.07.restricted-quotient",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 340,
+            "line_end": 351
+          }
+        }
+      ],
+      "id": "LA01-C05.07",
+      "kind": "example",
+      "number": "1.7",
+      "paper_line": 339,
+      "pdf_destination": "example.1.7",
+      "pdf_page": 6,
+      "title": "The quotient in characteristic two"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/HyperbolicSplitting.lean",
+              "name": "Alg01SymmetricWitt.Witt.HyperbolicSplitting.hyperbolicSplitting"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/OrthogonalSplitting.lean",
+              "name": "Alg01SymmetricWitt.Witt.OrthogonalSplitting.orthogonalSplitting"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.01",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 395,
+            "line_end": 400
+          }
+        }
+      ],
+      "id": "LA01-C06.01",
+      "kind": "lemma",
+      "number": "2.1",
+      "paper_line": 396,
+      "pdf_destination": "lemma.2.1",
+      "pdf_page": 7,
+      "title": "Splitting a hyperbolic plane"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Reflections.lean",
+              "name": "Alg01SymmetricWitt.Witt.Reflections.reflection"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Reflections.lean",
+              "name": "Alg01SymmetricWitt.Witt.Reflections.reflectionIsometry"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Reflections.lean",
+              "name": "Alg01SymmetricWitt.Witt.Reflections.reflection_apply"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Reflections.lean",
+              "name": "Alg01SymmetricWitt.Witt.Reflections.reflection_involutive"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.02.reflection",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Witt",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 418,
+            "line_end": 424
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Reflections.lean",
+              "name": "Alg01SymmetricWitt.Witt.Reflections.moveByReflections"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Reflections.lean",
+              "name": "Alg01SymmetricWitt.Witt.Reflections.reflection_apply"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.02",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Witt",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 424,
+            "line_end": 427
+          }
+        }
+      ],
+      "id": "LA01-C06.02",
+      "kind": "lemma",
+      "number": "2.2",
+      "paper_line": 419,
+      "pdf_destination": "lemma.2.2",
+      "pdf_page": 8,
+      "title": "Moving vectors of the same nonzero value"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Cancellation.lean",
+              "name": "Alg01SymmetricWitt.Witt.Cancellation.cancel"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/LineCancellation.lean",
+              "name": "Alg01SymmetricWitt.Witt.LineCancellation.cancelLine"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.03",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 443,
+            "line_end": 449
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Cancellation.lean",
+              "name": "Alg01SymmetricWitt.Witt.Cancellation.cancel"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Cancellation.lean",
+              "name": "Alg01SymmetricWitt.Witt.Cancellation.cancelEquivalent"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.03.isometric-summands",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Witt",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 445,
+            "line_end": 448
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/LineCancellation.lean",
+              "name": "Alg01SymmetricWitt.Witt.LineCancellation.cancelLine"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:additional:2:LA01-C06.03.line-cancellation",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Witt",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 452,
+            "line_end": 459
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/LineCancellation.lean",
+              "name": "Alg01SymmetricWitt.Witt.LineCancellation.cancelLine"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:additional:3:LA01-C06.03.line-cancellation",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Witt",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 451,
+            "line_end": 459
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/LineCancellation.lean",
+              "name": "Alg01SymmetricWitt.Witt.LineCancellation.cancelLine"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:additional:4:LA01-C06.03.line-cancellation",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Witt",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 451,
+            "line_end": 459
+          }
+        }
+      ],
+      "id": "LA01-C06.03",
+      "kind": "theorem",
+      "number": "2.3",
+      "paper_line": 444,
+      "pdf_destination": "theorem.2.3",
+      "pdf_page": 8,
+      "title": "Witt cancellation"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Coordinates.lean",
+              "name": "Alg01SymmetricWitt.Witt.Coordinates.hyperbolicNondegenerate"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Coordinates.lean",
+              "name": "Alg01SymmetricWitt.Witt.Coordinates.hyperbolicSum"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Coordinates.lean",
+              "name": "Alg01SymmetricWitt.Witt.Coordinates.hyperbolicSum_apply"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Coordinates.lean",
+              "name": "Alg01SymmetricWitt.Witt.Coordinates.hyperbolicSum_zero"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.hyperbolicSumZero"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.wittDecomposition"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/DecompositionExistence.lean",
+              "name": "Alg01SymmetricWitt.Witt.DecompositionExistence.wittDecompositionExists"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.04",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 471,
+            "line_end": 481
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.isWittIndex_equivalent"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.wittDecomposition"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/DecompositionUniqueness.lean",
+              "name": "Alg01SymmetricWitt.Witt.DecompositionUniqueness.decompositionUnique"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.04.uniqueness",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 473,
+            "line_end": 481
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.IsWittIndex"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.existsUnique_wittIndex"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.isWittIndex_equivalent"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.isWittIndex_iff"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.isWittIndex_zero_iff"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.wittDecomposition"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/DecompositionUniqueness.lean",
+              "name": "Alg01SymmetricWitt.Witt.DecompositionUniqueness.decompositionUnique"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.04.index-and-part",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 477,
+            "line_end": 480
+          }
+        }
+      ],
+      "id": "LA01-C06.04",
+      "kind": "theorem",
+      "number": "2.4",
+      "paper_line": 472,
+      "pdf_destination": "theorem.2.4",
+      "pdf_page": 8,
+      "title": "Witt decomposition and uniqueness"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Coordinates.lean",
+              "name": "Alg01SymmetricWitt.Witt.Coordinates.firstCoordinates"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Coordinates.lean",
+              "name": "Alg01SymmetricWitt.Witt.Coordinates.hyperbolicSum_apply"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Coordinates.lean",
+              "name": "Alg01SymmetricWitt.Witt.Coordinates.mem_firstCoordinates"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Coordinates.lean",
+              "name": "Alg01SymmetricWitt.Witt.Coordinates.preservesQuadraticIffBilinear"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.hyperbolicSumZero"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/IsotropicExtension.lean",
+              "name": "Alg01SymmetricWitt.Witt.IsotropicExtension.isotropicExtension"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittIndexSubspaces.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittIndexSubspaces.wittIndexSubspaces"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.05",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 498,
+            "line_end": 502
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Coordinates.lean",
+              "name": "Alg01SymmetricWitt.Witt.Coordinates.firstCoordinates_totallyIsotropic"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.existsUnique_wittIndex"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.isWittIndex_iff"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittIndexSubspaces.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittIndexSubspaces.wittIndexSubspaces"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.05.maximum",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 500,
+            "line_end": 504
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/Decomposition.lean",
+              "name": "Alg01SymmetricWitt.Witt.Decomposition.isWittIndex_iff"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittIndexSubspaces.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittIndexSubspaces.wittIndexSubspaces"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.05.inclusion-maximal",
+          "import": "MathGenome.LinearAlgebraSupplement",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 503,
+            "line_end": 506
+          }
+        }
+      ],
+      "id": "LA01-C06.05",
+      "kind": "proposition",
+      "number": "2.5",
+      "paper_line": 499,
+      "pdf_destination": "proposition.2.5",
+      "pdf_page": 9,
+      "title": "Totally isotropic subspaces and the Witt index"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/RationalIndex.lean",
+              "name": "Alg01SymmetricWitt.Witt.RationalIndex.binaryPlane"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/RationalIndex.lean",
+              "name": "Alg01SymmetricWitt.Witt.RationalIndex.binaryPlane_anisotropic"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/RationalIndex.lean",
+              "name": "Alg01SymmetricWitt.Witt.RationalIndex.binaryPlane_apply"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/RationalIndex.lean",
+              "name": "Alg01SymmetricWitt.Witt.RationalIndex.binaryPlane_nondegenerate"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/RationalIndex.lean",
+              "name": "Alg01SymmetricWitt.Witt.RationalIndex.rationalForm"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/RationalIndex.lean",
+              "name": "Alg01SymmetricWitt.Witt.RationalIndex.rationalForm_apply"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/RationalIndex.lean",
+              "name": "Alg01SymmetricWitt.Witt.RationalIndex.rationalForm_eq_hyperbolic_prod"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/RationalIndex.lean",
+              "name": "Alg01SymmetricWitt.Witt.RationalIndex.rationalForm_nondegenerate"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/RationalIndex.lean",
+              "name": "Alg01SymmetricWitt.Witt.RationalIndex.rationalForm_wittIndex"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/RationalIndex.lean",
+              "name": "Alg01SymmetricWitt.Witt.RationalIndex.two_not_isSquare"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.06",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Witt",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 534,
+            "line_end": 543
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittBaseChange.baseChangeCoordinates"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittBaseChange.baseChangeHyperbolic"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittBaseChange.binaryPlaneSplits"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittBaseChange.coordinateBinaryForm"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittBaseChange.coordinateForm_apply"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittBaseChange.sqrtTwo"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittBaseChange.sqrtTwoExtension"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittBaseChange.sqrtTwo_sq"
+            },
+            {
+              "file": "MathGenome/Internal/LinearAlgebraSupplement/Alg01SymmetricWitt/Witt/WittBaseChange.lean",
+              "name": "Alg01SymmetricWitt.Witt.WittBaseChange.wittIndexComparison"
+            }
+          ],
+          "id": "LinearAlgebraSupplement:LA01-C06.06.extended-index",
+          "import": "MathGenome.LinearAlgebraSupplement.Topics.Alg01SymmetricWitt.Witt",
+          "source": {
+            "delivery": "provenance/components/LinearAlgebraSupplement/delivery",
+            "file": "docs/sources/LinearAlgebraSupplement/paper.tex",
+            "line": 536,
+            "line_end": 550
+          }
+        }
+      ],
+      "id": "LA01-C06.06",
+      "kind": "example",
+      "number": "2.6",
+      "paper_line": 535,
+      "pdf_destination": "example.2.6",
+      "pdf_page": 9,
+      "title": "A Witt index that increases after extending scalars"
+    }
+  ],
+  "reviewed_catalog_entries": 69
+}

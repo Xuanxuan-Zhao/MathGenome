@@ -1,0 +1,119 @@
+D16 EXPANDED FUNCTIONAL ANALYSIS: AUTHORIZED MATHEMATICAL SOURCE ERRATUM
+Revision: 20261105-six-boundary-errata; authorized by the project owner.
+Includes the unchanged 20261105-maximal-dimension-errata below.
+
+This is a correction of the adopted mathematical source, not a proposed
+relaxation of acceptance, a source-navigation hint or a proof certificate.
+The mathematical input is the immutable paper.tex together with this erratum.
+The identified passages below are superseded as specified. All other source results,
+previously authorized corrections and normal fidelity obligations remain.
+
+Source: paper.tex:18180-18210, Theorem 56.4,
+label fa2:p4:maximal (Hardy--Littlewood maximal bounds).
+
+Corrected statement:
+For every integer dimension d>=0, define the centered maximal function on
+Euclidean R^d by the supremum of positive-radius ball averages of |f|.
+It satisfies the stated weak (1,1) estimate, is bounded on L^p for every
+1<p<=infinity, and locally integrable functions have a.e. Lebesgue points.
+Failure of strong L^1 boundedness is asserted only when d>=1.
+
+Corrected endpoint proof:
+For d>=1, the maximal function of the unit-ball indicator is bounded below
+by c|x|^(-d) at infinity. Its radial integral contains integral_1^infinity dr/r,
+which diverges. For d=0, Euclidean space is a singleton of Lebesgue volume
+one, every positive-radius ball is the whole space, and Mf=|f|; hence strong
+L^1 has norm one. The affirmative estimates and differentiation do not
+acquire a positive-dimension restriction.
+
+The previously unqualified phrase "but not on L^1" is therefore superseded
+by "if d>=1, it is not bounded on L^1". Proving the unqualified false phrase
+is not a remaining obligation. No additional standalone theorem is introduced
+by this explanatory singleton calculation. The complete revised theorem and
+proof are also in the corrected consolidated LaTeX/PDF and source catalog.
+
+The original frozen paper is retained byte-for-byte so genuine prior native
+and local mathematical-review receipts stay traceable to their actual input.
+The input-materials snapshot and final source-document digest also bind this
+erratum. Scope review must check this corrected obligation; it does not grant
+its candidate a mathematical acceptance. The original open incident, all
+negative reports, and the separate periodic-Sobolev realization/derivative
+bridge objections remain available for ordinary impact/planning/worker repair.
+
+
+ADDITIONAL OWNER-AUTHORIZED CORRECTIONS, 20261105-six-boundary-errata
+
+The owner expressly requested safe pause, independent verification of all six
+objection classes, correction of genuine notes and plan defects, synchronized
+inputs and same-run continuation without agent changes or weaker acceptance.
+The following supersedes the identified ORIGINAL passages. Old source-hold or
+pending-authorization feedback for these clauses is historical, not current.
+The corrected consolidated manuscript/catalog has the same labels and physical
+source-line anchors. These amendments allocate valid source obligations; they
+do not certify any Lean proof. Five ordinary independent repair-scope reviews,
+native checks and normal fidelity gates remain required.
+
+1. paper.tex:18211-18226, fa2:p4:cz-decomposition (Lemma 56.5).
+Require d>=1 for the Calderon-Zygmund decomposition for arbitrary f in L1 and
+lambda>0. Keep every displayed estimate, the factor 2^d, zero-mean bad pieces,
+disjoint cubes and both L1/L2 convergence. In d=0 the mass-one singleton has
+no nonzero zero-mean functions; f=2,lambda=1 contradicts the good-part bound.
+When lambda>=|f(0)| the trivial decomposition is valid. This explanatory zero
+case is not a new separately required theorem. Do not restrict other affirmative
+operator theorems solely because this proof uses the decomposition: their d=0
+cases must instead be handled by their actual singleton definitions.
+
+2. paper.tex:18406-18412, fa2:p4:bmo (Definition 56.10).
+Retain BMO on Euclidean R^d for every d>=0, modulo constants and a.e. equality,
+with its stated seminorm, completeness and bounded-function inclusion.
+Require d>=1 only for the unbounded BMO example log|x|; assign value zero at
+the origin. Its local integrability includes the origin. At d=0 this assigned
+function is zero and bounded, and the BMO quotient is the zero Banach space.
+The already available native LogExample qualified by 0<d is therefore the
+correct scope, not an unauthorized loss of a possible unbounded zero case.
+
+3. paper.tex:19704-19730, fa2:p4:hardy-fourier (Proposition 57.26).
+Keep the full weighted Fourier bound for the actual completed atomic H1(R^d)
+and its L1 Fourier transform in every d>=0. Require d>=1 only for the separately
+stated necessity of atom cancellation. The printed nonzero-mean divergence
+argument also applies only for d>=1: Fourier continuity and nonzero value at
+zero yield the divergent radial integral dr/r. At d=0 atomic H1={0}, so the
+affirmative bound holds; f=1 has transform 1 and weighted integral 1 because
+|0|^0=1, so the negative necessity assertion is not made there. Equivalent
+valid proofs of necessity are allowed; the printed proof-internal universal
+divergence argument is not an extra independent acceptance target.
+
+4. paper.tex:21549-21575, fa2:p4:marcinkiewicz-space (Theorem 62.4).
+Keep all finite-measure distribution/weak-Lp Banach and interpolation estimates,
+including their original ranges, constants, zero-norm and zero-measure cases.
+Require d>=1 only for strict Lp inclusion in weak Lp on the Euclidean unit ball,
+witnessed by |x|^(-d/p). For d=0 strong/weak spaces coincide on the unit point
+mass, with Qp=Np=|f(0)|. No general finite-measure assertion gains d>=1.
+
+5. paper.tex:19879-19920, fa2:p4:measure-approximation (Proposition 57.30).
+The named proposition is unchanged. Preserve exact-norm smooth weak-star
+approximation in C(closure Omega)' and C0(Omega)', both scalar fields,
+positivity and the isometric L1 embedding, including empty/zero-dimensional
+cases. Correct only the auxiliary proof statement at 19914-19917: for d>=1,
+u dx and c delta_a are mutually singular, giving norm ||u||1+|c|. In d=0 and
+nonempty Omega the norm is instead |u(0)+c|. For mu=m delta_0 use the constant
+smooth density m, and for Omega empty use zero. The unconditional false norm
+additivity clause is removed from the plan's extra hard obligations; the main
+theorem is not restricted. Equivalent complete proof routes remain permitted.
+
+6. paper.tex:15096-15133, fa2:p3:triple-trace (Lemma 46.1).
+Require 0<T<infinity for the Hilbert-triple unique C([0,T];H) representative,
+continuous trace for the sum of the two L2 norms, and the energy identity for
+every pair of times. Keep the dense continuous real Hilbert triple, weak
+derivative interpretation and all endpoint identities. At T=0 the two L2
+classes vanish; distinct continuous singleton values represent the same class.
+There is no unique endpoint trace determined by those data. This amendment is
+local to the lemma; it does not silently remove degenerate initial-value cases
+from other evolution theorems, whose specified initial data can fix the value.
+
+All earlier authorized multiplier, real/complex spectral and endpoint
+corrections remain in force. The separate periodic-Sobolev all-real-order
+distribution realization and distributional differentiation repair remains open
+Lean work; these notes errata do not discharge it. Existing code, genuine old
+review evidence and prior reports are preserved. Any changed obligation or
+actually affected dependency receives normal versioning and reacceptance.

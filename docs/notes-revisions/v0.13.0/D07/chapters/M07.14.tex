@@ -1,0 +1,216 @@
+\chapter{Galois groups and the fundamental correspondence}\label{chap:M07.14}
+Throughout, a Galois algebraic extension means one that is normal and separable. Finiteness is always stated when a degree or group order is counted. Automorphisms act on the left and multiply by composition.
+
+\KEntry{K07.14.automorphism_group}{Base-fixing automorphism groups}
+\begin{definition}
+$\Aut_K(L)$ is the set of field automorphisms of $L$ fixing $K$ pointwise; $(\sigma\tau)(x)=\sigma(\tau(x))$.
+\end{definition}
+\begin{proposition}
+It is a group, and is a subgroup of the full automorphism group of $L$.
+\end{proposition}
+\begin{proof}
+Composing two bijective additive, multiplicative, unital maps preserves all these properties and fixes every $k\in K$. Composition is associative as composition of functions. The identity map is in the set, and the inverse of a field isomorphism is a field isomorphism. If $\sigma$ fixes $K$, applying $\sigma^{-1}$ to $\sigma(k)=k$ shows its inverse fixes $K$ as well. These checks establish the subgroup assertion and the composition convention.
+\end{proof}
+
+\KEntry{K07.14.fixed_field}{Fixed fields and fixing subgroups}
+\begin{definition}
+For $H\leq\Aut_K(L)$ put $L^H=\{x\in L:\sigma(x)=x\text{ for all }\sigma\in H\}$. For an intermediate field $E$, put $G_E=\{\sigma\in\Aut_K(L):\sigma|_E=\id\}$.
+\end{definition}
+\begin{proposition}
+$L^H$ is an intermediate field and $G_E$ is a subgroup naturally identified with $\Aut_E(L)$.
+\end{proposition}
+\begin{proof}
+All automorphisms fix $0,1,K$. If they fix $a,b$, they fix $a-b,ab$, and $a^{-1}$ when $a\ne0$ by preservation of the corresponding operations. This proves field closure. Identity, composition, and inverse preserve pointwise fixation of $E$, giving the subgroup. The identification with $\Aut_E(L)$ does not change a map; it records exactly which scalar elements it fixes.
+\end{proof}
+
+\KEntry{K07.14.inclusion_reversal}{The antitone Galois connection}
+\begin{proposition}
+If $E_1\subseteq E_2$, then $G_{E_2}\subseteq G_{E_1}$. If $H_1\subseteq H_2$, then $L^{H_2}\subseteq L^{H_1}$. More generally $E\subseteq L^H$ if and only if $H\subseteq G_E$.
+\end{proposition}
+\begin{proof}
+Fixing a larger field imposes more conditions; being fixed by a larger group also imposes more conditions. Explicitly each side of the final equivalence says that every $\sigma\in H$ fixes every $x\in E$. These assertions require no finiteness, normality, or separability, unlike the inverse-bijection theorem below.
+\end{proof}
+
+\begin{lemma}[Linear independence of embeddings]\label{lem:independent-embeddings}
+Distinct field embeddings $\sigma_1,\ldots,\sigma_s:A\to B$ are linearly independent as $B$-valued functions on $A$.
+\end{lemma}
+\begin{proof}
+If not, choose a relation $\sum c_i\sigma_i(x)=0$ for all $x$ with the smallest positive number of nonzero coefficients. One term is impossible by evaluation at $1$. Relabel so $c_1,c_s\ne0$ and choose $a$ with $\sigma_1(a)\ne\sigma_s(a)$. The relation evaluated at $ax$, minus $\sigma_s(a)$ times the relation at $x$, eliminates its $s$th term but keeps the first coefficient $c_1(\sigma_1(a)-\sigma_s(a))\ne0$. This is a shorter nonzero relation, a contradiction.
+\end{proof}
+
+\KEntry{K07.14.artin_fixed_field}{Artin's fixed-field theorem}
+\begin{theorem}
+If a finite group $H$ acts faithfully by field automorphisms on $L$ and $F=L^H$, then $L/F$ is finite Galois, $[L:F]=|H|$, and every $F$-automorphism of $L$ comes from $H$.
+\end{theorem}
+\begin{proof}
+Faithfulness identifies $H$ with its image subgroup of automorphisms; write $n=|H|$. Given any $n+1$ elements $a_1,\ldots,a_{n+1}\in L$, the $n$ homogeneous equations
+\[\sum_{j=1}^{n+1}\sigma(a_j)c_j=0\qquad(\sigma\in H)
+\]
+have a nonzero solution over $L$, by finite-dimensional linear algebra. Among all nonzero solutions choose one with minimal support and scale a nonzero coordinate, say $c_1$, to $1$. For $\tau\in H$, applying $\tau$ to all equations permutes their rows and shows $(\tau(c_j))_j$ is also a solution. Its difference from $(c_j)_j$ has strictly smaller support if nonzero, since the first coordinate disappears. Minimality therefore gives $\tau(c_j)=c_j$ for all $j$. Hence all $c_j\in F$, and the identity row is a nontrivial $F$-linear relation among the $a_j$. Every $n+1$ elements are dependent, so $[L:F]=d\leq n$.
+
+Every member of $H$ is an $F$-linear map $L\to L$. Choosing an $F$-basis identifies the space of such maps with $L^d$ as an $L$-vector space. Lemma~\ref{lem:independent-embeddings} makes its $n$ distinct members independent over $L$, so $n\leq d$. Thus $d=n$.
+
+For $a\in L$, the polynomial $P_a=\prod_{b\in H a}(X-b)$ is fixed coefficientwise by $H$, hence belongs to $F[X]$. It has distinct roots in $L$ and annihilates $a$. The minimal polynomial divides it, so is separable and splits in $L$. Thus $L/F$ is both separable and normal. Finally its automorphism group has at most $d=n$ elements by the embedding-count theorem; it already contains the $n$ members of $H$, proving equality. Without faithfulness one must use the image-group order instead of $|H|$.
+\end{proof}
+
+\KEntry{K07.14.automorphism_bound}{Automorphism order and degree}
+\begin{theorem}
+For finite $L/K$, $|\Aut_K(L)|\leq[L:K]$. Equality is equivalent to $L/K$ being Galois, and also to $L^{\Aut_K(L)}=K$.
+\end{theorem}
+\begin{proof}
+The embedding count bounds the automorphisms. If $L/K$ is separable and normal, it has $[L:K]$ embeddings into an algebraic closure and every image is $L$, giving equality. Conversely let $G=\Aut_K(L)$ and $F=L^G$. Artin's theorem gives $[L:F]=|G|$. If $|G|=[L:K]$, the tower law gives $[F:K]=1$, so $F=K$ and Artin's theorem makes $L/K$ Galois. If instead $F=K$ is assumed, the same theorem gives equality directly. These arguments also prove that a finite Galois extension has precisely its base as full fixed field.
+\end{proof}
+
+\KEntry{K07.14.galois_definition}{Galois extensions and the finite convention}
+\begin{definition}
+An algebraic extension is Galois if it is normal and separable. For such an extension write $\Gal(L/K)=\Aut_K(L)$.
+\end{definition}
+\begin{proposition}
+For finite extensions this definition is equivalent to the automorphism-count definition $|\Aut_K(L)|=[L:K]$.
+\end{proposition}
+\begin{proof}
+This is both directions of Entry~\ref{K07.14.automorphism_bound}, which was proved using the embedding count and Artin's theorem. Infinite algebraic extensions are not characterized here by an equality of finite natural numbers; in particular the unrestricted finite subgroup correspondence is not being asserted for them.
+\end{proof}
+
+\KEntry{K07.14.splitting_criterion}{Galois extensions as separable splitting fields}
+\begin{theorem}
+A finite extension is Galois if and only if it is a splitting field of a separable polynomial. A splitting field of a separable polynomial is automatically finite.
+\end{theorem}
+\begin{proof}
+For finite separable normal $L/K$, choose a primitive element $a$. Its minimal polynomial is separable and splits in $L$ by normality, and its roots generate $L$ because one of them already generates $L$. Conversely a splitting field is finite and normal. If its defining polynomial is separable, all its roots are separable over $K$; the generated-field separability theorem makes the splitting field separable. This proves the equivalence without assuming the automorphism count as a definition.
+\end{proof}
+
+\KEntry{K07.14.fundamental_correspondence}{The fundamental theorem}
+\begin{theorem}
+For finite Galois $L/K$, the assignments $E\mapsto G_E$ and $H\mapsto L^H$ are mutually inverse inclusion-reversing bijections between intermediate fields and subgroups of $G=\Gal(L/K)$.
+\end{theorem}
+\begin{proof}
+For $H\leq G$, Artin's theorem applied to its faithful action gives $\Aut_{L^H}(L)=H$, proving $G_{L^H}=H$. For intermediate $E$, the extension $L/E$ remains normal and separable by raising the base. Thus $|G_E|=[L:E]$. Artin's theorem also gives $[L:L^{G_E}]=|G_E|$. Since $E\subseteq L^{G_E}$, the tower law forces $[L^{G_E}:E]=1$, proving $L^{G_E}=E$. Inclusion reversal was proved earlier. These identities prove injectivity, surjectivity and inversion of the two assignments, rather than only an informal matching of two lattices.
+\end{proof}
+
+\KEntry{K07.14.degree_index}{Degrees, orders and indices}
+\begin{corollary}
+For $E=L^H$ in a finite Galois $L/K$,
+\[[L:E]=|H|,\qquad [E:K]=[G:H],\qquad[L:K]=|G|.\]
+\end{corollary}
+\begin{proof}
+The first identity is Artin's theorem and the last is the automorphism-count characterization. Divide the tower identity $[L:K]=[L:E][E:K]$ by the positive integer $|H|$ and use Lagrange's formula $|G|=|H|[G:H]$. Subgroup order and subgroup index are not interchangeable.
+\end{proof}
+
+\KEntry{K07.14.conjugate_subfields}{Conjugate fields and subgroups}
+\begin{proposition}
+For $\sigma\in G$ and intermediate $E$, $G_{\sigma(E)}=\sigma G_E\sigma^{-1}$.
+\end{proposition}
+\begin{proof}
+An automorphism $\tau$ fixes every element $\sigma(e)$ exactly when $\sigma^{-1}\tau\sigma$ fixes every $e\in E$. This is exactly membership in the displayed conjugate subgroup. The argument works with explicit maps and therefore fixes the conjugation direction unambiguously.
+\end{proof}
+
+\KEntry{K07.14.normal_quotient}{Normal subgroups and quotient groups}
+\begin{theorem}
+For finite Galois $L/K$ and $E=L^H$, the extension $E/K$ is Galois if and only if $H$ is normal in $G$. In that case restriction induces $G/H\simeq\Gal(E/K)$.
+\end{theorem}
+\begin{proof}
+Separability of $E/K$ is inherited. By the embedding characterization, its normality means every $K$-embedding into an algebraic closure preserves $E$. Every such embedding extends to $L$, and normality of $L/K$ makes that extension an element of $G$. Thus normality of $E/K$ is equivalent to $\sigma(E)=E$ for all $\sigma\in G$. By the preceding conjugation formula and injectivity of the field--subgroup correspondence, this is equivalent to $\sigma H\sigma^{-1}=H$ for all $\sigma$, which is $H\trianglelefteq G$.
+
+When these conditions hold, restriction is a homomorphism $G\to\Gal(E/K)$ with kernel $H$. An automorphism of $E/K$ extends to $L$ inside an algebraic closure, and normality of $L/K$ makes the extension an automorphism of $L$; thus restriction is onto. The first group isomorphism theorem (Entry~\ref{K07.04.first_isomorphism}) gives the quotient isomorphism.
+\end{proof}
+
+\KEntry{K07.14.restriction_exactness}{The restriction exact sequence}
+\begin{corollary}
+For finite Galois $L/K$ with intermediate Galois $E/K$, the sequence
+\[1\longrightarrow\Gal(L/E)\longrightarrow\Gal(L/K)
+ \longrightarrow\Gal(E/K)\longrightarrow1\]
+is exact, where the last map is restriction.
+\end{corollary}
+\begin{proof}
+The first map is inclusion and is injective. The last is onto by the extension argument just proved. Its kernel consists precisely of automorphisms fixing all of $E$, namely the included $\Gal(L/E)$. This proves exactness at each position. If $E/K$ is not normal, some automorphisms can send $E$ to a different conjugate field, so restriction need not even have the indicated self-map codomain.
+\end{proof}
+
+\KEntry{K07.14.lattice_operations}{Intersections and composita}
+\begin{proposition}
+For intermediate $E_1,E_2$ in finite Galois $L/K$,
+\[G_{E_1E_2}=G_{E_1}\cap G_{E_2},\qquad
+G_{E_1\cap E_2}=\langle G_{E_1},G_{E_2}\rangle.\]
+Dually $L^{\langle H_1,H_2\rangle}=L^{H_1}\cap L^{H_2}$, and $L^{H_1\cap H_2}=L^{H_1}L^{H_2}$.
+\end{proposition}
+\begin{proof}
+Fixing both fields is equivalent to fixing the field they generate, proving the first identity. An element is fixed by both subgroups exactly when it is fixed by every product of their elements and inverses, proving the dual intersection identity. Apply the inverse correspondence to these two already proved identities to get the other two. In particular neither a union of fields nor a union of subgroups can be substituted for the generated object.
+\end{proof}
+
+\KEntry{K07.14.galois_closure}{The finite Galois closure}
+\begin{theorem}
+Every finite separable $E/K$ in a fixed algebraic closure lies in a smallest finite Galois extension $N/K$. It is generated by all conjugates of any finite generating list of $E/K$.
+\end{theorem}
+\begin{proof}
+Take the product of the distinct minimal polynomials of the chosen generators. Each is separable, and distinct irreducibles have no common root, so the product is separable. Its splitting field $N$ is finite Galois and contains $E$. If a normal extension $M/K$ in the same closure contains $E$, it contains every root of each of those irreducibles, hence contains $N$. This proves minimality, independence from the generating list, and uniqueness as an embedded field. Without separability the normal closure still exists by the same construction but need not be Galois, and no inseparable element can lie in a separable extension.
+\end{proof}
+
+\KEntry{K07.14.base_change}{Galois base change}
+\begin{theorem}
+Let $E/K$ be finite Galois and $F/K$ any extension in a common overfield. Then $EF/F$ is finite Galois, and restriction gives
+\[\Gal(EF/F)\simeq\Gal(E/(E\cap F)).\]
+If $F/K$ is finite, then $[EF:K][E\cap F:K]=[E:K][F:K]$.
+\end{theorem}
+\begin{proof}
+Choose a separable $K$-polynomial whose splitting field is $E$. Over $F$ it remains separable (a Bezout identity with its derivative remains valid), and its splitting field is $EF$. Restriction from $\Gal(EF/F)$ to $\Gal(E/K)$ is injective because an automorphism fixing $E$ and $F$ fixes their compositum. Denote its image by $H$. The fixed field of $H$ inside $E$ is $E\cap F$: an element of $E$ is fixed by $H$ precisely when it is fixed by every $F$-automorphism of $EF$, whose full fixed field is $F$. The fundamental correspondence for $E/K$ therefore gives $H=\Gal(E/(E\cap F))$, proving surjectivity onto the claimed group without assuming $F/K$ algebraic. Counts now give $[EF:F]=[E:E\cap F]$. When $F/K$ is finite, apply the tower law on both sides and cross-multiply to obtain the degree formula.
+\end{proof}
+
+\KEntry{K07.14.polynomial_root_action}{Root permutation actions}
+\begin{theorem}
+If $f\in K[X]$ is nonconstant and separable of degree $n$, its splitting-field Galois group acts faithfully on the $n$ roots and embeds in $S_n$ after a numbering of them. If $f$ is irreducible this action is transitive.
+\end{theorem}
+\begin{proof}
+Applying a base-fixing automorphism to $f(a)=0$ shows it permutes the roots. If it fixes all roots it fixes their generated field, the splitting field, proving faithfulness. Separability makes the number of distinct roots exactly $n$. For irreducible $f$, any two roots $a,b$ give an isomorphism $K(a)\to K(b)$ by the simple-embedding theorem. Extend it to the splitting field in a closure; normality makes its image the same splitting field. This supplies an automorphism sending $a$ to $b$ and proves transitivity.
+\end{proof}
+
+\KEntry{K07.14.quadratic_example}{Quadratic Galois groups}
+\begin{example}
+For $\operatorname{char}K\ne2$ and $a\in K^\times$ nonsquare, $K(u)$ with $u^2=a$ is a degree-$2$ Galois extension with group $C_2$ and only the two endpoint intermediate fields.
+\end{example}
+\begin{proof}
+$X^2-a$ has no root in $K$ and is irreducible. Its two distinct roots $u,-u$ are in $K(u)$, so it is a separable splitting field. The map $b+cu\mapsto b-cu$ preserves products by $u^2=a$, fixes $K$, and squares to the identity. Together with the identity it accounts for the degree-$2$ group. An intermediate degree divides $2$, so it is an endpoint. The sign description fails in characteristic $2$, where the two signs coincide.
+\end{proof}
+
+\KEntry{K07.14.biquadratic_example}{A biquadratic lattice}
+\begin{example}
+$L=\Q(\sqrt2,\sqrt3)$ has degree $4$ and group $C_2\times C_2$. Its three proper nontrivial intermediate fields are $\Q(\sqrt2)$, $\Q(\sqrt3)$ and $\Q(\sqrt6)$.
+\end{example}
+\begin{proof}
+If $\sqrt3=a+b\sqrt2$ for rational $a,b$, squaring and comparing coefficients in the basis $1,\sqrt2$ gives $ab=0$. If $b=0$, then $a^2=3$, impossible for a rational square; if $a=0$, then $b^2=3/2$, also impossible by comparing the parity of prime exponents in a fraction in lowest terms. Thus the tower degree is $4$ and $1,u,v,uv$, with $u=\sqrt2,v=\sqrt3$, is a basis. Independent sign choices on $u,v$ preserve multiplication, since their squares lie in $\Q$, and yield four commuting automorphisms of order at most $2$. The field is the separable splitting field of $(X^2-2)(X^2-3)$, so these are all automorphisms. A sign flip of $u$ fixes exactly the span of $1,v$; a sign flip of $v$ fixes exactly the span of $1,u$; the simultaneous flip fixes exactly the span of $1,uv$. These are the fixed fields of the three order-$2$ subgroups of the Klein group. Its complete subgroup list and the correspondence give no further intermediate fields.
+\end{proof}
+
+\KEntry{K07.14.cubic_splitting_example}{The splitting field of \texorpdfstring{$X^3-2$}{X cubed minus two}}
+\begin{example}
+Let $a=\sqrt[3]{2}\in\R$ and let $\zeta$ be a primitive cube root of unity. $L=\Q(a,\zeta)$ is the degree-$6$ splitting field of $X^3-2$, with group $S_3$. Its three cubic fields are $\Q(a),\Q(\zeta a),\Q(\zeta^2a)$; $A_3$ fixes $\Q(\zeta)$.
+\end{example}
+\begin{proof}
+Eisenstein at $2$ gives $[\Q(a):\Q]=3$. The polynomial $X^2+X+1$ has nonreal roots, so has no root in the real field $\Q(a)$ and is irreducible there. Thus $[L:\Q]=6$. The roots are $a,\zeta a,\zeta^2a$, all in $L$, so this is the separable splitting field. The faithful root group has order $6$ inside $S_3$, hence equals $S_3$. The rotation $a\mapsto\zeta a,\zeta\mapsto\zeta$ has order $3$: it exists as a simple-root embedding over $\Q(\zeta)$ since $[L:\Q(\zeta)]=3$. Complex conjugation fixes $a$ and exchanges $\zeta,\zeta^2$ and has order $2$. The rotation subgroup fixes exactly $\Q(\zeta)$ by the index formula. Each cubic root field is fixed by the stabilizer of its corresponding root, a distinct order-$2$ subgroup, so the three fields are distinct. Two distinct such cubic fields intersect in $\Q$, since their intersection degree divides $3$ and degree $3$ would make them equal. The first two generate $L$, because their ratio supplies $\zeta$. This proves the compositum example used earlier. The field $\Q(a)$ is not normal, since it is real and lacks the other roots.
+\end{proof}
+
+\KEntry{K07.14.quartic_splitting_example}{The splitting field of \texorpdfstring{$X^4-2$}{X to the fourth minus two}}
+\begin{example}
+For $a=\sqrt[4]{2}>0$, $L=\Q(a,i)$ is a degree-$8$ splitting field. Its Galois group is the dihedral group of order $8$, generated by $r(a)=ia,r(i)=i$ and $s(a)=a,s(i)=-i$, with $r^4=s^2=1$ and $srs=r^{-1}$.
+\end{example}
+\begin{proof}
+Eisenstein gives degree $4$ of $\Q(a)$, which is real. Hence adjoining $i$ doubles the degree. The four roots $a,ia,-a,-ia$ lie in $L$, making it a separable splitting field. Over $\Q(i)$, $a$ still has degree $4$, since the tower degree is $8/2=4$. Therefore its minimal polynomial is $X^4-2$ there, and the simple-embedding theorem constructs $r$. The map $s$ is complex conjugation. Their formulas give the stated relations on both generators $a,i$, and show the eight maps $r^j,r^js$, $0\leq j<4$, are distinct. They exhaust the group by its degree. This is the rotation/reflection presentation of the square's symmetry group. The fixed field of $\langle r\rangle$ is $\Q(i)$, and that of $\langle s\rangle$ is $\Q(a)$, by their subgroup indices. The first subgroup is normal, the second is not, illustrating both sides of the normal-subgroup criterion. We specify order $8$ to avoid the conflicting conventions $D_4,D_8$.
+\end{proof}
+
+\KEntry{K07.14.discriminant}{Discriminants and alternating groups}
+\begin{theorem}
+Let $f$ be separable of degree $n$ over a field of characteristic different from $2$, and number its roots $a_1,\ldots,a_n$. Then
+\[D=\prod_{i<j}(a_i-a_j),\qquad\Delta=D^2\in K^\times.
+\]
+Its Galois root group is contained in $A_n$ if and only if $\Delta$ is a square in $K$.
+\end{theorem}
+\begin{proof}
+A transposition of two roots changes the sign of $D$: its exchanged difference reverses, and all other affected differences can be paired with equal products. Since transpositions generate $S_n$, a permutation multiplies $D$ by its sign. Hence every automorphism fixes $D^2$, and the full fixed-field theorem gives $\Delta\in K$. Distinct roots make it nonzero. If the group lies in $A_n$, it fixes $D$, so $D\in K$ and $\Delta$ is a square. Conversely if $\Delta=b^2$ for $b\in K$, the field identity $(D-b)(D+b)=0$ gives $D=b$ or $D=-b$, so $D\in K$. The sign action and $D\ne0$ force every automorphism even, because $1\ne-1$ in this characteristic. For a nonmonic polynomial the usual leading-coefficient discriminant differs by an even power of that coefficient, so its square test is the same.
+\end{proof}
+
+\KEntry{K07.14.cubic_discriminant}{The cubic criterion}
+\begin{corollary}
+For an irreducible separable cubic over $K$ with $\operatorname{char}K\ne2$, the Galois group is $A_3\simeq C_3$ if its discriminant is a square and is $S_3$ otherwise.
+\end{corollary}
+\begin{proof}
+The faithful group is transitive on three roots, so orbit--stabilizer makes its order divisible by $3$. Lagrange makes its order divide $6$. The only possibilities are the order-$3$ subgroup $A_3$ and the whole $S_3$: an order-$3$ subgroup consists of identity and the two $3$-cycles. The discriminant criterion distinguishes precisely these two cases. Reducible cubics need not have a transitive root group, so irreducibility is not dispensable.
+\end{proof}
+

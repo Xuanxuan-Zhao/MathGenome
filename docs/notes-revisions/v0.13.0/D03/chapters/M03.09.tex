@@ -1,0 +1,415 @@
+\chapter{Primitives and finite integration formulas}
+\SourceRef{Zorich I, Sections 6.2--6.4, especially PDF pp. 377--386; Apostol, Section 7.20; Tao I, Section 11.9. For rationalizing substitutions compare Zorich I, Sections 5.7.4--5.7.5}
+Unless stated otherwise $a<b$ and integration is the proper Riemann
+integration of module 08. A scalar may be real or complex; order and exact
+mean-value conclusions require real values.
+
+\KEntry{K03.09.primitive}{Primitives are functions}
+\begin{definition}
+On an open interval $I$, a primitive of $f:I\to\K$ is a differentiable
+function $F$ with $F'=f$ at every point. On a general interval impose
+this on its interior, and specify continuity or one-sided derivatives at
+endpoints separately. The indefinite integral denotes the family of all
+primitives, not a number; the definite integral denotes a value under an
+integrability hypothesis.
+\end{definition}
+
+\KEntry{K03.09.uniqueness}{Uniqueness up to a constant}
+\begin{theorem}
+Two primitives of the same function on an interval differ by a constant.
+If endpoints are included, assume their continuous extensions there.
+\end{theorem}
+\begin{proof}
+Their difference has derivative zero. For any two interior points, the
+real mean value theorem applied between them gives equal values.
+For complex values apply this separately to real and imaginary parts.
+Continuity passes the equality to included endpoints. On a disconnected
+domain the argument applies to each interval component, with independent
+constants: for example a function equal to $0$ on $(-\infty,0)$ and $1$
+on $(0,\infty)$ has zero derivative on its domain but is not constant there.
+\end{proof}
+
+\KEntry{K03.09.accumulation}{Lipschitz continuity of accumulation}
+\begin{theorem}
+If $f$ is bounded and integrable on $[a,b]$, then
+$F(x)=\int_a^xf$ satisfies
+$|F(y)-F(x)|\le M|y-x|$ for $M=\sup|f|$.
+\end{theorem}
+\begin{proof}
+Restrictions are integrable by interval additivity. For $x\le y$,
+$F(y)-F(x)=\int_x^yf$, whose modulus is at most $M(y-x)$ by
+\KRef{K03.08.order}. Reversing $x,y$ proves the other case. This
+argument uses bounded integrability and does not assume continuity of $f$.
+\end{proof}
+
+\KEntry{K03.09.ftc_first}{The first fundamental theorem}
+\begin{theorem}
+For integrable $f$ on $[a,b]$, its accumulation $F(x)=\int_a^xf$
+is differentiable at every interior continuity point $x$ of $f$, with
+$F'(x)=f(x)$. At a relatively continuous endpoint the corresponding
+one-sided derivative equals that endpoint value.
+\end{theorem}
+\begin{proof}
+For $h\ne0$ with $x+h\in[a,b]$, additivity and orientation give
+\[\frac{F(x+h)-F(x)}h-f(x)=\frac1h\int_x^{x+h}(f(t)-f(x))\dd t.
+\]
+Its modulus is bounded by
+$\sup_{t\text{ between }x\text{ and }x+h}|f(t)-f(x)|$, which tends to
+zero by continuity at $x$. The same estimate with one-sided $h$ proves
+the endpoint statements, with no two-sided derivative claimed there.
+\end{proof}
+
+\KEntry{K03.09.ftc_second}{Newton--Leibniz with integrable derivative}
+\begin{theorem}
+Suppose $F:[a,b]\to\K$ is continuous, differentiable on $(a,b)$,
+and its derivative, extended by any finite endpoint values, is bounded
+and Riemann integrable. Then
+\[\int_a^bF'(x)\dd x=F(b)-F(a).
+\]
+\end{theorem}
+\begin{proof}
+For real $F$ and any partition the mean value theorem supplies
+$\xi_i\in(x_{i-1},x_i)$ with
+$F(x_i)-F(x_{i-1})=F'(\xi_i)\Delta x_i$. Summing telescopes to
+$F(b)-F(a)$. As the mesh tends to zero, these sums tend to $\int F'$
+by the all-tagged equivalence. For complex $F$ apply the real argument
+to its components; their mean-value tags may differ, which causes no
+problem because each real integral has the all-tagged limit.
+Finite endpoint assignments do not change the integral.
+\end{proof}
+
+\KEntry{K03.09.continuous_primitive}{Existence for continuous functions}
+\begin{theorem}
+Every continuous scalar function on an interval $I$ has a primitive on
+its interior, continuously defined at every included finite endpoint.
+\end{theorem}
+\begin{proof}
+Fix $x_0\in I$ and define $F(x)=\int_{x_0}^xf$ on each compact
+interval between $x_0$ and $x$. Continuity supplies proper integrability
+there. Additivity ensures the definitions agree as the chosen compact
+interval grows. The first fundamental theorem gives $F'=f$ at every
+interior point. Local boundedness gives continuity at each included
+endpoint by the accumulation estimate. No assertion of a finite value
+at an excluded infinite or singular endpoint is involved.
+\end{proof}
+
+\KEntry{K03.09.parts}{Integration by parts}
+\begin{theorem}
+For $u,v\in C^1([a,b],\K)$,
+\[\int_a^buv'=u(b)v(b)-u(a)v(a)-\int_a^bu'v.
+\]
+More generally it suffices that $u,v$ are continuous on $[a,b]$,
+differentiable inside, and their derivatives admit bounded integrable
+endpoint extensions.
+\end{theorem}
+\begin{proof}
+The continuous $u,v$ are bounded integrable, so products with their
+integrable derivatives are integrable by \KRef{K03.08.products}.
+The product rule gives $(uv)'=u'v+uv'$ in the interior. The second
+fundamental theorem applied to $uv$ and linearity give the formula.
+The $C^1$ case satisfies all these hypotheses directly.
+\end{proof}
+
+\KEntry{K03.09.substitution}{Substitution for continuous integrands}
+\begin{theorem}
+If $\phi\in C^1([a,b],\R)$ and $f$ is continuous on an interval
+containing $\phi([a,b])$, then
+\[\int_a^bf(\phi(t))\phi'(t)\dd t
+=\int_{\phi(a)}^{\phi(b)}f(x)\dd x.
+\]
+No monotonicity of $\phi$ is required in this version.
+\end{theorem}
+\begin{proof}
+Let $m=\min\phi([a,b])$ and $M=\max\phi([a,b])$. Extend the restriction of $f$ to $[m,M]$ constantly beyond its endpoints: use $f(m)$ for $x<m$ and $f(M)$ for $x>M$. This gives a continuous scalar function $\widetilde f$ on $\R$, also when $m=M$. Choose its accumulation primitive $H$ on $\R$. This open-domain extension is needed even for a turning point such as $\phi(t)=t^2$ when the original $f$ was defined only on a closed interval.
+The chain rule gives $(H\circ\phi)'=(\widetilde f\circ\phi)\phi'=(f\circ\phi)\phi'$, continuous
+on $[a,b]$ with the one-sided endpoint convention. Newton--Leibniz gives
+the left side as $H(\phi(b))-H(\phi(a))$. The same theorem for $H$
+identifies this difference with the oriented integral on the right, because $\widetilde f=f$ between the two image endpoints.
+\end{proof}
+
+\KEntry{K03.09.monotone_substitution}{Substitution for Riemann-integrable integrands}
+\begin{theorem}
+If $\phi\in C^1([a,b],\R)$ is monotone and $f$ is bounded and Riemann
+integrable on the interval between $\phi(a),\phi(b)$, then
+$(f\circ\phi)\phi'$ is integrable and the same substitution formula holds.
+\end{theorem}
+\begin{proof}
+First let $\phi$ be nondecreasing and nonconstant, $|f|\le M$, and
+$L=\sup|\phi'|$. For a tagged partition $P$ put
+$d_i=(\phi(t_i)-\phi(t_{i-1}))/\Delta t_i$.
+The mean value theorem and uniform continuity of $\phi'$ imply
+$|\phi'(\xi_i)-d_i|\le\omega_{\phi'}(|P|)$, where this uniform
+modulus tends to zero. Thus the tagged sum for $g=(f\circ\phi)\phi'$
+differs by at most $M(b-a)\omega_{\phi'}(|P|)$ from
+\[\sum_i f(\phi(\xi_i))(\phi(t_i)-\phi(t_{i-1})).\]
+After deleting repeated image points, this is a tagged sum for $f$ on
+$[\phi(a),\phi(b)]$: terms on constant image cells are zero, and each
+other image tag lies in its image cell. Its mesh is at most $L|P|$.
+All such sums consequently approach $\int_{\phi(a)}^{\phi(b)}f$.
+The displayed error tends to zero uniformly in tags, so $g$, which is
+bounded, is integrable by \KRef{K03.08.tagged_equivalence} with the
+required value. For constant $\phi$, $\phi'=0$ and both sides are zero.
+For nonincreasing $\phi$, apply the increasing result to $-\phi$ and
+$x\mapsto f(-x)$, then reverse orientation. Complex $f$ follows by
+components. This proves existence of the transformed integral rather
+than adding it as an extra assumption.
+\end{proof}
+
+\KEntry{K03.09.mean_value}{The weighted integral mean value theorem}
+\begin{theorem}
+For continuous real $f$ and integrable real $g\ge0$ on $[a,b]$, some
+$c\in[a,b]$ satisfies $\int fg=f(c)\int g$.
+\end{theorem}
+\begin{proof}
+Let $m=\min f$, $M=\max f$ and $G=\int g\ge0$.
+Order gives $mG\le\int fg\le MG$. If $G=0$ these bounds make
+$\int fg=0$, and any $c$ works. If $G>0$, the ratio $(\int fg)/G$
+lies in $[m,M]$, and the intermediate value theorem supplies $c$.
+The exact point conclusion is real; for complex $f$ the analogous
+norm bounds hold but a point of equality need not exist.
+\end{proof}
+
+\KEntry{K03.09.second_mean_value}{The normalized second mean value theorem}
+\begin{theorem}
+If $f$ is real integrable and $g$ is nonnegative and nonincreasing on
+$[a,b]$, then some $\xi\in[a,b]$ satisfies
+\[\int_a^bg(x)f(x)\dd x=g(a)\int_a^\xi f(x)\dd x.
+\]
+\end{theorem}
+\begin{proof}
+The bounded monotone $g$ and its product with $f$ are integrable.
+Let $F(x)=\int_a^xf$, continuous by the accumulation estimate, with
+minimum $m$ and maximum $M$; $m\le F(a)=0\le M$.
+For a partition put $g_i=g(x_i)$. The difference between $\int gf$ and
+$\sum_{i=1}^ng_{i-1}(F(x_i)-F(x_{i-1}))$ is bounded by
+\[\|f\|_\infty\sum_i\osc(g,[x_{i-1},x_i])\Delta x_i
+\le\|f\|_\infty |P|(g(a)-g(b))\longrightarrow0.
+\]
+Finite summation by parts writes that sum as
+\[g_{n-1}F(b)+\sum_{i=1}^{n-1}(g_{i-1}-g_i)F(x_i).
+\]
+All weights are nonnegative and sum to $g(a)$. It is consequently
+between $mg(a)$ and $Mg(a)$, and the same holds for its limit $\int gf$.
+If $g(a)=0$, monotonicity and nonnegativity give $g=0$. Otherwise
+$(\int gf)/g(a)\in[m,M]$ and continuity of $F$ gives the required
+$\xi$. The proof allows jumps and retains the actual endpoint value
+$g(a)$, as in Zorich I, formula (6.33); it does not silently assume $C^1$.
+\end{proof}
+
+\KEntry{K03.09.elementary_primitives}{Elementary primitives with domains}
+\begin{proposition}
+The following primitive formulas hold on any interval in the indicated domain:
+\begin{align*}
+\int x^\alpha\dd x&=x^{\alpha+1}/(\alpha+1)+C
+ &&(x>0,\ \alpha\ne-1),\\
+\int x^{-1}\dd x&=\log|x|+C&&(x\ne0),\\
+\int E(ax)\dd x&=E(ax)/a+C&&(a\ne0),\\
+\int\cos x\dd x&=\sin x+C,&
+\int\sin x\dd x&=-\cos x+C,\\
+\int\frac{\dd x}{1+x^2}&=\arctan x+C,&
+\int\frac{\dd x}{\sqrt{1-x^2}}&=\arcsin x+C\quad(|x|<1),\\
+\int\tan x\dd x&=-\log|\cos x|+C&&(\cos x\ne0).
+\end{align*}
+For integer $\alpha\ge0$ the power formula holds on all of $\R$.
+\end{proposition}
+\begin{proof}
+Differentiate each right side using module 07. In the logarithmic formula,
+on $x<0$ the chain rule gives $(\log(-x))'=(-1)/(-x)=1/x$;
+on $x>0$ the usual logarithm derivative applies. Likewise
+$(\log|\cos x|)'=-\sin x/\cos x$ on each pole-free interval.
+The other displayed derivatives are respectively $x^\alpha$, $E(ax)$,
+$\cos x$, $\sin x$, $(1+x^2)^{-1}$ and $(1-x^2)^{-1/2}$.
+Uniqueness of primitives gives the additive constants on each interval.
+Constants on different sides of a pole are independent. The excluded
+case $a=0$ is the constant integrand one, with primitive $x+C$.
+\end{proof}
+
+\KEntry{K03.09.trig_substitution}{The half-angle rationalization}
+\begin{proposition}
+On $I_k=((2k-1)\pi,(2k+1)\pi)$, put $t=\tan(x/2)$.
+This is a $C^1$ increasing bijection onto $\R$, with inverse
+$x=2\arctan t+2k\pi$, and
+\[\sin x=\frac{2t}{1+t^2},\qquad
+\cos x=\frac{1-t^2}{1+t^2},\qquad
+\dd x=\frac{2\dd t}{1+t^2}.
+\]
+\end{proposition}
+\begin{proof}
+The tangent branch results give the bijection and its inverse.
+For $u=x/2$, divide $\sin2u=2\sin u\cos u$ and
+$\cos2u=\cos^2u-\sin^2u$ by
+$1=\cos^2u(1+\tan^2u)$ to obtain the identities.
+Differentiating the inverse gives $\dd x/\dd t=2/(1+t^2)$.
+The proper substitution theorem applies on compact subintervals avoiding
+the endpoints and all zeros of the original rational denominator.
+Thus a rational expression $R(\sin x,\cos x)$ becomes rational in $t$,
+but a primitive must be continued separately across the excluded branch
+endpoints or denominator poles if continuation is possible.
+\end{proof}
+
+\KEntry{K03.09.algebraic_substitution}{Selected real square-root substitutions}
+\begin{example}
+For $A>0$, on $-A<x<A$, $x=A\sin u$ with
+$u\in(-\pi/2,\pi/2)$ gives
+$\sqrt{A^2-x^2}=A\cos u>0$ and $\dd x=A\cos u\dd u$.
+On $x>A$, $x=A\cosh u$, $u>0$, gives
+$\sqrt{x^2-A^2}=A\sinh u>0$ and $\dd x=A\sinh u\dd u$.
+On all real $x$, $x=A\sinh u$ gives
+$\sqrt{x^2+A^2}=A\cosh u>0$ and $\dd x=A\cosh u\dd u$.
+\end{example}
+\begin{proof}
+Each radicand identity follows from the trigonometric or hyperbolic
+square identity. The branch restrictions fix the sign of the square root
+and make the substitution a bijection. The differentials follow by
+differentiation. For a linear root $y=\sqrt{\alpha x+\beta}$ with
+$\alpha\ne0$ and $\alpha x+\beta>0$, use
+$x=(y^2-\beta)/\alpha$, $y>0$, and $\dd x=2y\dd y/\alpha$.
+Completing the square, when the residual constant is nonzero, reduces
+a quadratic with nonzero leading coefficient to a positive scaling of
+one of the three displayed radicands on intervals where it is positive,
+or reveals that no positive real branch exists. For a zero residual
+constant, $\sqrt{A(x-h)^2}=\sqrt A\,|x-h|$ if $A>0$; on each side
+of $h$ this is a fixed linear branch. If $A<0$ there is no open interval
+of positive radicand. For instance
+$\int\dd x/\sqrt{x^2+A^2}=u+C=\operatorname{arsinh}(x/A)+C$.
+All reductions use the substitution theorem on regular compact
+subintervals. These selected reductions do not assert a universal
+algorithm for elementary antiderivatives.
+\end{proof}
+
+\KEntry{K03.09.holder}{H\"older's finite integral inequality}
+\begin{theorem}
+Let $p,q>1$, $1/p+1/q=1$, and let $f,g$ be integrable real or complex
+functions on $[a,b]$. Then
+\[\int_a^b|fg|\le
+\left(\int_a^b|f|^p\right)^{1/p}
+\left(\int_a^b|g|^q\right)^{1/q}.
+\]
+\end{theorem}
+\begin{proof}
+All absolute powers are integrable by continuous composition on bounded
+ranges. Young's pointwise inequality $uv\le u^p/p+v^q/q$ for $u,v\ge0$
+follows as follows: for fixed $v>0$ the derivative of
+$u^p/p-uv+v^q/q$ is $u^{p-1}-v$, so its minimum is at
+$u=v^{1/(p-1)}$ and has value zero because $q=p/(p-1)$.
+The case $v=0$ is immediate.
+Put $A=(\int|f|^p)^{1/p}$, $B=(\int|g|^q)^{1/q}$.
+If $A,B>0$, apply Young to $|f|/A,|g|/B$ and integrate, obtaining
+$\int|fg|/(AB)\le1/p+1/q=1$.
+If $A=0$, Young applied to $|f|/\delta$ and $|g|$ gives
+$\int|fg|\le\delta\int|g|^q/q$ for every $\delta>0$, so the left
+side is zero. If $B=0$, interchange the roles. This handles zero
+seminorms without claiming the functions vanish at every point.
+The case $p=q=2$ is Cauchy--Schwarz.
+\end{proof}
+
+\KEntry{K03.09.minkowski}{Minkowski's finite integral inequality}
+\begin{theorem}
+For $p\ge1$, write $\|f\|_p=(\int_a^b|f|^p)^{1/p}$.
+For integrable scalar $f,g$, $\|f+g\|_p\le\|f\|_p+\|g\|_p$.
+\end{theorem}
+\begin{proof}
+For $p=1$ integrate $|f+g|\le|f|+|g|$.
+For $p>1$ put $H=\|f+g\|_p$. All functions below are integrable
+by products and continuous composition. If $H=0$ there is nothing to
+prove. Otherwise the triangle inequality followed by H\"older with
+$q=p/(p-1)$ gives
+\begin{align*}
+H^p&\le\int(|f|+|g|)|f+g|^{p-1}\\
+&\le(\|f\|_p+\|g\|_p)
+\left(\int|f+g|^{(p-1)q}\right)^{1/q}
+=(\|f\|_p+\|g\|_p)H^{p-1}.
+\end{align*}
+Divide by $H^{p-1}$. This is a seminorm on actual functions: a function
+nonzero at just one point can have zero seminorm. No quotient space is
+being constructed here.
+\end{proof}
+
+\KEntry{K03.09.partial_fractions}{Rational integration and the algebraic interface}
+\begin{construction}
+The shared algebra interface used here is the following precise result:
+for real polynomials $P,Q$, $Q\ne0$, Euclidean division and factorization
+of $Q$ into real linear factors and irreducible real quadratic factors
+provide a finite identity
+\[\frac P Q=A(x)+\sum_{r,k}\frac{a_{rk}}{(x-r)^k}
++\sum_{j,k}\frac{b_{jk}x+c_{jk}}{(x^2+u_jx+v_j)^k},
+\qquad u_j^2-4v_j<0.
+\]
+This factorization and partial-fraction algebra are accepted from the
+fixed shared algebra foundation (D07), not asserted as newly proved D03
+theorems. The identity holds where $Q\ne0$.
+\end{construction}
+\begin{proof}[The analytic reduction]
+Polynomial terms integrate by powers. Linear terms integrate to
+$a\log|x-r|$ for $k=1$ and
+$a(x-r)^{1-k}/(1-k)$ for $k>1$ on intervals excluding $r$.
+For a quadratic write $y=x+u/2$, $d=v-u^2/4>0$ and split the numerator
+as $By+C$. The $By$ term has primitive
+$(B/2)\log(y^2+d)$ if $k=1$, and
+$B(y^2+d)^{1-k}/(2(1-k))$ otherwise.
+For the constant term define $J_k=\int\dd y/(y^2+d)^k$.
+$J_1=d^{-1/2}\arctan(y/\sqrt d)$, and differentiating
+$y/(y^2+d)^{k-1}$ gives
+\[\left(\frac{y}{(y^2+d)^{k-1}}\right)'
+=\frac{2(k-1)d}{(y^2+d)^k}-\frac{2k-3}{(y^2+d)^{k-1}}.
+\]
+Therefore
+\[J_k=\frac{y}{2(k-1)d(y^2+d)^{k-1}}
++\frac{2k-3}{2(k-1)d}J_{k-1}\quad(k\ge2).
+\]
+This finite recurrence completes the reduction to rational functions,
+logarithms and arctangents, and differentiating verifies every term.
+Complex partial fractions can instead be reduced on real intervals
+componentwise, or by this real decomposition of their real and imaginary
+rational parts; a complex logarithm branch is not introduced implicitly.
+\end{proof}
+
+\KEntry{K03.09.area_length}{Area and length of a scalar graph}
+\begin{theorem}
+For continuous $f\ge0$ on $[a,b]$, the area of its subgraph is $\int_a^bf$
+when area is defined by inner and outer finite axis-parallel rectangle
+contents. For $f\in C^1([a,b])$, its graph has polygonal length
+\[L=\int_a^b\sqrt{1+f'(x)^2}\dd x.
+\]
+\end{theorem}
+\begin{proof}
+For area, a partition gives interior columns of heights $\inf_J f$ and
+covering columns of heights $\sup_J f$. Their total areas are $L(f,P)$
+and $U(f,P)$. Boundaries can be covered by finitely many rectangles
+of arbitrarily small total area; a common finite grid proves the elementary
+inequality that every inner finite rectangle sum is at most every outer
+one (decompose all overlaps by their finitely many horizontal and vertical
+edges). The inner content is thus bounded above by every $U(f,P)$ and
+the outer content below by every $L(f,P)$, while these column constructions
+give the reverse bounds in the limit. The Darboux gap tends to zero,
+so both contents equal $\int f$.
+
+Define graph length as the supremum over partitions of the sum of chord
+lengths for $\gamma(x)=(x,f(x))$. Since
+$\gamma(y)-\gamma(x)=\int_x^y(1,f')$, the vector norm estimate gives
+every chord length at most $\int_x^y\sqrt{1+f'^2}$. Hence all polygonal
+lengths are bounded above by the displayed integral. Conversely, for a
+tagged fine partition, uniform continuity of $f'$ gives
+\[\left\|\gamma(x_i)-\gamma(x_{i-1})
+-(1,f'(\xi_i))\Delta x_i\right\|
+\le\omega_{f'}(|P|)\Delta x_i.
+\]
+The reverse triangle inequality bounds the difference of polygonal length
+and the tagged sum for $\sqrt{1+f'^2}$ by
+$(b-a)\omega_{f'}(|P|)\to0$. These polygonal lengths approach the
+integral, proving the opposite inequality for their supremum.
+\end{proof}
+
+\KEntry{K03.09.derivative_not_integrable}{A primitive with nonintegrable derivative}
+\begin{example}
+Define $F(x)=x^2\sin(1/x^2)$ for $x\ne0$ and $F(0)=0$ on $[-1,1]$.
+Then $F'(0)=\lim_{h\to0}h\sin(1/h^2)=0$, while for $x\ne0$,
+\[F'(x)=2x\sin(1/x^2)-\frac2x\cos(1/x^2).
+\]
+At $x_n=(2\pi n)^{-1/2}$ this equals $-2/x_n\to-\infty$.
+Thus $F$ is a primitive of its everywhere defined derivative, but the
+derivative is unbounded on $[-1,1]$ and is not properly Riemann integrable.
+This is the unbounded-derivative example of \KRef{K03.04.unbounded_derivative},
+and shows why existence of a primitive does not remove the integrability
+condition from Newton--Leibniz.
+\end{example}

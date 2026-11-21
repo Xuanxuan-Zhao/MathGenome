@@ -1,0 +1,17 @@
+import MathGenome.Internal.RealAnalysis.D11.Ch08.CompletedProduct
+import MathGenome.Internal.RealAnalysis.D11.Ch08.CompletionSectionsFailure
+import MathGenome.Internal.RealAnalysis.D11.Ch08.EuclideanProductCompletion
+import MathGenome.Internal.RealAnalysis.D11.Ch08.FiniteProductPermutations
+import MathGenome.Internal.RealAnalysis.D11.Ch08.Fubini
+import MathGenome.Internal.RealAnalysis.D11.Ch08.MeasurablePair
+import MathGenome.Internal.RealAnalysis.D11.Ch08.NonsigmaFiniteTonelliFailure
+import MathGenome.Internal.RealAnalysis.D11.Ch08.NullSections
+import MathGenome.Internal.RealAnalysis.D11.Ch08.ProductMeasure
+import MathGenome.Internal.RealAnalysis.D11.Ch08.ProductSigma
+import MathGenome.Internal.RealAnalysis.D11.Ch08.SectionIntegralsOneSided
+import MathGenome.Internal.RealAnalysis.D11.Ch08.Sections
+import MathGenome.Internal.RealAnalysis.D11.Ch08.SignedFubiniFailure
+import MathGenome.Internal.RealAnalysis.D11.Ch08.SubgraphCavalieri
+import MathGenome.Internal.RealAnalysis.D11.Ch08.SumIntegralCounting
+import MathGenome.Internal.RealAnalysis.D11.Ch08.TensorIntegrals
+import MathGenome.Internal.RealAnalysis.D11.Ch08.Tonelli

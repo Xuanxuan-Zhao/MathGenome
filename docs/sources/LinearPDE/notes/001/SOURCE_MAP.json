@@ -1,0 +1,2180 @@
+{
+  "title": "Classical and Weak Linear Partial Differential Equations",
+  "group_count": 42,
+  "original_contract_count": 40,
+  "numbered_result_count": 66,
+  "numbered_result_counts_by_kind": {
+    "proposition": 9,
+    "theorem": 45,
+    "lemma": 6,
+    "corollary": 6
+  },
+  "pdf_physical_pages": 60,
+  "mathematical_text_physical_pages": [
+    5,
+    59
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "title_latex": "The Common PDE Framework",
+      "groups": 7,
+      "first_physical_page": 5,
+      "last_physical_page": 10
+    },
+    {
+      "chapter": 2,
+      "title_latex": "Laplace's Equation and Potential Theory",
+      "groups": 7,
+      "first_physical_page": 11,
+      "last_physical_page": 18
+    },
+    {
+      "chapter": 3,
+      "title_latex": "Linear Elliptic Equations",
+      "groups": 11,
+      "first_physical_page": 19,
+      "last_physical_page": 34
+    },
+    {
+      "chapter": 4,
+      "title_latex": "The Heat Equation and Parabolic Energy",
+      "groups": 8,
+      "first_physical_page": 35,
+      "last_physical_page": 47
+    },
+    {
+      "chapter": 5,
+      "title_latex": "Characteristics, Waves, and Hyperbolic Systems",
+      "groups": 7,
+      "first_physical_page": 48,
+      "last_physical_page": 56
+    },
+    {
+      "chapter": 6,
+      "title_latex": "Classical Linear Integral Equations",
+      "groups": 2,
+      "first_physical_page": 57,
+      "last_physical_page": 59
+    }
+  ],
+  "books": {
+    "Evans": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4445,
+        "key": "Evans"
+      }
+    },
+    "TaylorI": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4453,
+        "key": "TaylorI"
+      }
+    },
+    "TaylorII": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4455,
+        "key": "TaylorII"
+      }
+    },
+    "RR": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4457,
+        "key": "RR"
+      }
+    },
+    "Strauss": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4467,
+        "key": "Strauss"
+      }
+    },
+    "John": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4465,
+        "key": "John"
+      }
+    },
+    "GT": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4449,
+        "key": "GT"
+      }
+    },
+    "Grisvard": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4451,
+        "key": "Grisvard"
+      }
+    },
+    "Lieberman": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4461,
+        "key": "Lieberman"
+      }
+    },
+    "AG": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4447,
+        "key": "AG"
+      }
+    },
+    "EngelNagel": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4463,
+        "key": "EngelNagel"
+      }
+    },
+    "Brezis": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4459,
+        "key": "Brezis"
+      }
+    },
+    "Kress": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4469,
+        "key": "Kress"
+      }
+    },
+    "Brunner": {
+      "bibliography": {
+        "file": "docs/notes/LinearPDE/P2-01_Linear_PDE_Notes.tex",
+        "line": 4471,
+        "key": "Brunner"
+      }
+    }
+  },
+  "prior_notes": {
+    "P102": [
+      {
+        "published_notes": {
+          "file": "provenance/components/FourierSobolev/delivery/paper.tex",
+          "historical_fragment": "parts/u1.tex"
+        },
+        "sha256": "167b42c19b003aa1e4460481c09f9774e9acf2ef6362d0cfe1e2cbcaa61d5345"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/FourierSobolev/delivery/paper.tex",
+          "historical_fragment": "parts/u2.tex"
+        },
+        "sha256": "921bc3a618bb6f9f15f8bc8eb4fd96db3bac998ad7eede01efa634ca15b74808"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/FourierSobolev/delivery/paper.tex",
+          "historical_fragment": "parts/u3.tex"
+        },
+        "sha256": "c00306abe35d4857c063048f652f45fed7b822c09ec82ee172db45cf62c8da9a"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/FourierSobolev/delivery/paper.tex",
+          "historical_fragment": "parts/u4.tex"
+        },
+        "sha256": "c7382cb2559ec2ed050ec71287c1ac9ae9f53edbd011276898bd3ecfdfdc28e6"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/FourierSobolev/delivery/paper.tex",
+          "historical_fragment": "parts/u5.tex"
+        },
+        "sha256": "042a30bc282c56d31e6350c67331999d40c73f5bccede31e5566514c77de9f85"
+      }
+    ],
+    "P106": [
+      {
+        "published_notes": {
+          "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+          "historical_fragment": "parts/v03.tex"
+        },
+        "sha256": "bd5f5e8e5e5a2d8f80e0e45c7c302198917deab8c8c4274f7d677f6f5cf9ed9b"
+      },
+      {
+        "published_notes": {
+          "file": "provenance/components/VariationalMethods/delivery/paper.tex",
+          "historical_fragment": "parts/v08.tex"
+        },
+        "sha256": "0b04a9f2cc8228c3a96a42c31381be52b7044a45039b5d3b192239e291b642b4"
+      }
+    ],
+    "D12": [
+      {
+        "provenance_status": "unpublished preparatory material",
+        "sha256": "71bc8de3df481f0c41cef51199b32743e97ae9ec4bfee1b1ad8d8c2bc2f4e4e1"
+      }
+    ],
+    "D13": [
+      {
+        "provenance_status": "unpublished preparatory material",
+        "sha256": "1d09e0491a3a8326c6db9e996828417ae6602fa7deef79d59d78e3eae1dbe24f"
+      }
+    ],
+    "D16": [
+      {
+        "provenance_status": "unpublished preparatory material",
+        "sha256": "4c1915d0661e4122b3a51dfb2810586a356ff8377c34172399d49e6a855833bf"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "2b9c9dfc086eabe271a0e70bcd0692fd66a2c12f62a5d83c0347ae8c9f5292fa"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "a94dd18f08daf9610ddf57d6becc5187b533dc20a8cfaf9a19fcb32e92a0d640"
+    },
+    {
+      "provenance_status": "unpublished preparatory material",
+      "sha256": "4109edcf639f4d3fcfe6cceaf223cb3fcd1c0ed88cedf402418b195778b4c4f6"
+    },
+    {
+      "path": "P2-01_Linear_PDE_Notes.tex",
+      "sha256": "7e32bc8bc8e6829829e13193bb1257205b4ef8bd9b047d621e6419a64c8545b4"
+    },
+    {
+      "path": "parts/common.tex",
+      "sha256": "2b069cb8ece3fb3ec311aa4fb24d9b17c55535cc90ffeef088cd169d8bad5f0e"
+    },
+    {
+      "path": "parts/potential.tex",
+      "sha256": "9c7aa8b68720bdb2c223c1de99466b2467efcc92df707c3ddcaa307391169cf1"
+    },
+    {
+      "path": "parts/elliptic.tex",
+      "sha256": "0cd282fafd42a7a2d1cacdef7c1e550c17a17a7688804415998a0afd9a674827"
+    },
+    {
+      "path": "parts/heat.tex",
+      "sha256": "be61a2de154fef1fd424a18172f62165e9146a03f0c2ea010da8193e863acc1f"
+    },
+    {
+      "path": "parts/hyperbolic.tex",
+      "sha256": "8dab890c07fe723b1a76bc5564f1b28a235a0237e5ce5ae89fa3c9ad8332ff0d"
+    },
+    {
+      "path": "parts/integral.tex",
+      "sha256": "c545a61552530fcb946bf1cd677a15dc140cff6738dc94b284b2ad220bec5a5c"
+    }
+  ],
+  "pdf": {
+    "path": "output/pdf/P2-01_Linear_PDE_Notes.pdf",
+    "sha256": "9702ca0a4db6a86beff85936b923246a281fd509fb388f236f54861e580282b8"
+  },
+  "original_contracts": {
+    "AN-12-C01-R01": {
+      "family_ids": [
+        "L04"
+      ],
+      "preserved_content": "次调和定义保留上半连续、可取 $-\\infty$、各分支非恒 $-\\infty$ 及光滑 $\\Delta$ 判据。",
+      "original_title": "Harmonic/subharmonic notions"
+    },
+    "AN-12-C01-R02": {
+      "family_ids": [
+        "L04"
+      ],
+      "preserved_content": "球边界 $\\limsup$ 调和比较。在分支达到该分支的有限最大值时常值。",
+      "original_title": "Subharmonic comparison principle"
+    },
+    "AN-12-C02-R01": {
+      "family_ids": [
+        "L02"
+      ],
+      "preserved_content": "球和球面两种均值。",
+      "original_title": "Harmonic mean-value property"
+    },
+    "AN-12-C02-R02": {
+      "family_ids": [
+        "L04"
+      ],
+      "preserved_content": "有界连通域的边界上界与强最大原理。",
+      "original_title": "Maximum principle"
+    },
+    "AN-12-C02-R03": {
+      "family_ids": [
+        "L02",
+        "L05"
+      ],
+      "preserved_content": "光滑性、所有 $n\\ge2$ 的球核精确常数与表示。",
+      "original_title": "Harmonic smoothness and Poisson formula on balls"
+    },
+    "AN-12-C03-R01": {
+      "family_ids": [
+        "L07"
+      ],
+      "preserved_content": "规范 $-\\Delta G=\\delta$，外法向项为负，保留体积项。",
+      "original_title": "Green representation in a regular domain"
+    },
+    "AN-12-C03-R02": {
+      "family_ids": [
+        "L01"
+      ],
+      "preserved_content": "光滑紧源 Newton 势、紧支撑分布卷积和二维对数核。",
+      "original_title": "Newtonian potential solves Poisson"
+    },
+    "EQ-01-C01-R01": {
+      "family_ids": [
+        "C01"
+      ],
+      "preserved_content": "主符号及显式演化方向。",
+      "original_title": "Order and principal symbol of a differential operator"
+    },
+    "EQ-01-C02-R01": {
+      "family_ids": [
+        "C02"
+      ],
+      "preserved_content": "双向光滑—分布对应，内部测试没有边界推论。",
+      "original_title": "Classical solution implies weak/distributional solution"
+    },
+    "EQ-01-C02-R02": {
+      "family_ids": [
+        "C07"
+      ],
+      "preserved_content": "$x_0\\in D(A),f\\in C^1$ 的经典解与反向公式。",
+      "original_title": "Mild and classical evolution solutions"
+    },
+    "EQ-01-C03-R01": {
+      "family_ids": [
+        "C03"
+      ],
+      "preserved_content": "在实际数据／解拓扑中陈述 Hadamard 三条件。",
+      "original_title": "Hadamard well-posedness contract"
+    },
+    "EQ-01-C03-R02": {
+      "family_ids": [
+        "C03",
+        "H06",
+        "W03"
+      ],
+      "preserved_content": "能量控制差解，推出唯一和连续依赖。",
+      "original_title": "Energy estimate implies uniqueness/stability"
+    },
+    "EQ-01-C04-R01": {
+      "family_ids": [
+        "C07"
+      ],
+      "preserved_content": "$L^1$ 外力的温和解和经典条件。",
+      "original_title": "Duhamel principle"
+    },
+    "EQ-01-C04-R02": {
+      "family_ids": [
+        "C02",
+        "L07"
+      ],
+      "preserved_content": "Green 恒等式与符号正确的完整表示。",
+      "original_title": "Green-identity representation interface"
+    },
+    "EQ-01-C05-R01": {
+      "family_ids": [
+        "C04"
+      ],
+      "preserved_content": "分布截断的全部三项。",
+      "original_title": "Cutoff localization identity"
+    },
+    "EQ-01-C05-R02": {
+      "family_ids": [
+        "C06",
+        "H06"
+      ],
+      "preserved_content": "真实 $L^2$ 连续代表，保留 $\\langle f,u\\rangle$ 的能量等式及估计。",
+      "original_title": "Basic linear energy estimate"
+    },
+    "EQ-01-C06-R01": {
+      "family_ids": [
+        "C05"
+      ],
+      "preserved_content": "有限维可解及精确 $M/\\alpha$ 的 Céa 界。",
+      "original_title": "Galerkin convergence for a coercive form"
+    },
+    "EQ-01-C06-R02": {
+      "family_ids": [
+        "C05"
+      ],
+      "preserved_content": "自反有界列、稠密嵌套测试传弱极限、强制时唯一。",
+      "original_title": "Weak compactness passage to a linear variational limit"
+    },
+    "EQ-04-C01-R01": {
+      "family_ids": [
+        "L01"
+      ],
+      "preserved_content": "一维线性、二维对数和高维幂核。",
+      "original_title": "Laplace fundamental solution"
+    },
+    "EQ-04-C01-R02": {
+      "family_ids": [
+        "L05",
+        "L06"
+      ],
+      "preserved_content": "球上连续边值的 Poisson 积分与非齐次唯一经典解。",
+      "original_title": "Classical Poisson Dirichlet model"
+    },
+    "EQ-04-C01-R03": {
+      "family_ids": [
+        "C02",
+        "E02"
+      ],
+      "preserved_content": "$H^{-1/2}$ 法向数据、有界连通 Lipschitz、正号相容式、模常数。",
+      "original_title": "Weak Neumann compatibility and uniqueness modulo constants"
+    },
+    "EQ-04-C02-R01": {
+      "family_ids": [
+        "E01"
+      ],
+      "preserved_content": "任意有界开集、无对称性要求、完整 $H^{-1}$ 源项。",
+      "original_title": "Weak coercive Dirichlet existence"
+    },
+    "EQ-04-C03-R01": {
+      "family_ids": [
+        "E03"
+      ],
+      "preserved_content": "$c\\le0$ 与 $c=0$ 两个符号版本的经典弱／强最大原理。",
+      "original_title": "Elliptic weak/strong maximum principle"
+    },
+    "EQ-04-C04-R01": {
+      "family_ids": [
+        "E05"
+      ],
+      "preserved_content": "局部 Lipschitz 系数、$L^2$ 源、内部 $H^2$ 的嵌套估计。",
+      "original_title": "Interior H² elliptic regularity"
+    },
+    "EQ-04-C04-R02": {
+      "family_ids": [
+        "E06"
+      ],
+      "preserved_content": "$C^{1,1}$ 而非只 $C^2$ 的边界、齐次 Dirichlet 全局 $H^2$。",
+      "original_title": "Global H² regularity for homogeneous Dirichlet data"
+    },
+    "EQ-04-C04-R03": {
+      "family_ids": [
+        "E07"
+      ],
+      "preserved_content": "常系数 Poisson 内部 $C^{2,\\alpha}$ 与范数估计。",
+      "original_title": "Interior Schauder estimate for Poisson"
+    },
+    "EQ-04-C05-R01": {
+      "family_ids": [
+        "E10"
+      ],
+      "preserved_content": "紧正自伴逆、完整正交特征基、趋于无穷并按重数排列。",
+      "original_title": "Dirichlet elliptic compact-resolvent spectrum"
+    },
+    "EQ-04-C05-R02": {
+      "family_ids": [
+        "E11"
+      ],
+      "preserved_content": "对称谱参数、正交相容性、模核唯一。",
+      "original_title": "Elliptic Fredholm alternative at a spectral parameter"
+    },
+    "EQ-05-C01-R01": {
+      "family_ids": [
+        "H01"
+      ],
+      "preserved_content": "核常数、热方程、质量、半群律和 $1\\le p<\\infty$ 强收敛。",
+      "original_title": "Gaussian heat fundamental solution"
+    },
+    "EQ-05-C02-R01": {
+      "family_ids": [
+        "H05",
+        "H06"
+      ],
+      "preserved_content": "真实 $H^{-1}$ 外力，$C_tL^2$ 初值与 Sobolev 零边值。",
+      "original_title": "Linear heat Cauchy/Dirichlet solution"
+    },
+    "EQ-05-C03-R01": {
+      "family_ids": [
+        "C06",
+        "H05"
+      ],
+      "preserved_content": "一般稠密连续实三元组的强制型存在唯一和估计。",
+      "original_title": "Heat energy existence and estimate"
+    },
+    "EQ-05-C04-R01": {
+      "family_ids": [
+        "H03"
+      ],
+      "preserved_content": "经典抛物边界最大与 $c=0$ 符号特例。",
+      "original_title": "Parabolic maximum principle"
+    },
+    "EQ-05-C05-R01": {
+      "family_ids": [
+        "H02"
+      ],
+      "preserved_content": "正时间 $L^p\\to L^q$ 导数的精确缩放。",
+      "original_title": "Heat smoothing"
+    },
+    "EQ-06-C01-R01": {
+      "family_ids": [
+        "W01"
+      ],
+      "preserved_content": "非自治正反流、$C^1$ 微分同胚及存在流域限制。",
+      "original_title": "Method of characteristics before crossing"
+    },
+    "EQ-06-C02-R01": {
+      "family_ids": [
+        "W03",
+        "W04"
+      ],
+      "preserved_content": "齐次有限能量守恒、支撑半径和依赖域。",
+      "original_title": "Wave energy and finite propagation"
+    },
+    "EQ-06-C02-R02": {
+      "family_ids": [
+        "W03"
+      ],
+      "preserved_content": "$H^1\\times L^2,\\ L^1_{\\rm loc}L^2$ 数据的全空间能量适定。",
+      "original_title": "Finite-energy wave Cauchy well-posedness"
+    },
+    "EQ-06-C03-R01": {
+      "family_ids": [
+        "W06"
+      ],
+      "preserved_content": "系数一阶导数有界，原假设容许主系数线性增长。",
+      "original_title": "Symmetric-hyperbolic energy estimate"
+    },
+    "EQ-06-C03-R02": {
+      "family_ids": [
+        "W07"
+      ],
+      "preserved_content": "全空间整数 $s>n/2+1$，强 $C_tH^s\\cap C_t^1H^{s-1}$。",
+      "original_title": "Linear symmetric-hyperbolic Cauchy existence"
+    },
+    "EQ-09-C01-R01": {
+      "family_ids": [
+        "I01"
+      ],
+      "preserved_content": "紧 Hausdorff 与一般有限正 Borel 测度，满支撑，Fredholm 对偶相容。",
+      "original_title": "Compact-kernel Fredholm bridge"
+    },
+    "EQ-09-C02-R01": {
+      "family_ids": [
+        "I02"
+      ],
+      "preserved_content": "紧三角连续核、全部 $\\lambda$ 和退化区间。",
+      "original_title": "Regular Volterra resolvent"
+    }
+  },
+  "families": {
+    "C01": {
+      "title_latex": "Order, principal symbols, and evolution variables",
+      "path": "parts/common.tex",
+      "line": 5,
+      "label": "pde:C01",
+      "number": "1.1",
+      "printed_pdf_page": "1",
+      "physical_pdf_page": 5,
+      "pdf_destination": "section.1.1",
+      "planned_scope": "阶数、线性／半线性／拟线性／全非线性语义，线性主符号 $\\sum_{\\vert \\alpha\\vert =m} a_\\alpha(x)(i\\xi)^\\alpha$。椭圆性与一致椭圆性分别陈述。二阶实对称主部的典型分类及变系数情形逐点主符号以二次型和选定演化方向说明。",
+      "planned_proof_route": "只保留最高阶项，统一 Fourier 记号。波的实特征根与时间方向、热的空间椭圆主部与一阶时间分别解释。二次型退化本身不足以推出适定的抛物演化。",
+      "source_locators": "E §§1.1–1.3 pp. 1–9，T1 ch. 3，S ch. 1。",
+      "original_contract_ids": [
+        "EQ-01-C01-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Real quadratic principal parts",
+          "statement_line": 36,
+          "proof_line": 45,
+          "proof_end_line": 57,
+          "label": "prop:pde-symbol-types",
+          "number": "1.1",
+          "printed_pdf_page": "1",
+          "physical_pdf_page": 5,
+          "pdf_destination": "proposition.1.1"
+        }
+      ]
+    },
+    "C02": {
+      "title_latex": "Distributions, Green identities, and the normal trace",
+      "path": "parts/common.tex",
+      "line": 73,
+      "label": "pde:C02",
+      "number": "1.2",
+      "printed_pdf_page": "2",
+      "physical_pdf_page": 6,
+      "pdf_destination": "section.1.2",
+      "planned_scope": "光滑散度方程的经典⇔分布，Green 第一、第二恒等式及弱法向迹。对有界 Lipschitz 域 $F\\in L^2,\\ \\operatorname{div}F\\in L^2$ 定义 $\\gamma_\\nu F\\in H^{-1/2}(\\partial\\Omega)$。",
+      "planned_proof_route": "先对紧支撑测试分部。连续函数诱导零分布时，函数处处为零。用有界迹提升和零迹核使 $\\int F\\cdot\\nabla v+(\\operatorname{div}F)v$ 只依赖 $\\gamma v$。光滑时与外法向通量一致。内部测试只约束内部方程。",
+      "source_locators": "E §§5.2、6.1 pp. 255、311–314，T1 §5.7，P1‑02 U4/U5。",
+      "original_contract_ids": [
+        "EQ-01-C02-R01",
+        "EQ-01-C04-R02",
+        "EQ-04-C01-R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "The interior equation and its test functions",
+          "statement_line": 88,
+          "proof_line": 102,
+          "proof_end_line": 110,
+          "label": "prop:pde-interior-testing",
+          "number": "1.2",
+          "printed_pdf_page": "2",
+          "physical_pdf_page": 6,
+          "pdf_destination": "proposition.1.2"
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Normal trace and weak Green identities",
+          "statement_line": 116,
+          "proof_line": 135,
+          "proof_end_line": 171,
+          "label": "thm:pde-normal-trace",
+          "number": "1.3",
+          "printed_pdf_page": "2",
+          "physical_pdf_page": 6,
+          "pdf_destination": "theorem.1.3"
+        }
+      ]
+    },
+    "C03": {
+      "title_latex": "Data, traces, and well-posedness",
+      "path": "parts/common.tex",
+      "line": 178,
+      "label": "pde:C03",
+      "number": "1.3",
+      "printed_pdf_page": "3",
+      "physical_pdf_page": 7,
+      "pdf_destination": "section.1.3",
+      "planned_scope": "Cauchy、边值和初边值问题，Hadamard 适定性。对能量控制所选解范数且差能量满足 $E(t)\\le CE(0)$ 的解类，推出唯一性和连续依赖。",
+      "planned_proof_route": "列清数据空间、边界或初值的解释及解空间。能量为范数平方时常数为 $\\sqrt C$。热与波分别补齐存在。可用周期倒向热高频例说明连续依赖需要独立核验。",
+      "source_locators": "E §§1.3.1、2.3.4、2.4.3，RR §1.1.5 p. 8。",
+      "original_contract_ids": [
+        "EQ-01-C03-R01",
+        "EQ-01-C03-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Energy control of differences",
+          "statement_line": 197,
+          "proof_line": 206,
+          "proof_end_line": 214,
+          "label": "prop:pde-energy-stability",
+          "number": "1.4",
+          "printed_pdf_page": "3",
+          "physical_pdf_page": 7,
+          "pdf_destination": "proposition.1.4"
+        }
+      ]
+    },
+    "C04": {
+      "title_latex": "Localization and difference quotients",
+      "path": "parts/common.tex",
+      "line": 230,
+      "label": "pde:C04",
+      "number": "1.4",
+      "printed_pdf_page": "4",
+      "physical_pdf_page": 8,
+      "pdf_destination": "section.1.4",
+      "planned_scope": "分布乘积的截断公式 $\\Delta(\\chi u)=\\chi\\Delta u+2\\nabla\\chi\\cdot\\nabla u+(\\Delta\\chi)u$。差商的离散分部、Sobolev 差商界及局部逆判据。",
+      "planned_proof_route": "乘积公式逐阶在测试函数上证明。差商限制到含所有平移的内部区域，沿坐标线取平均控制范数。均匀差商界经弱子列识别分布导数，适用于 $1<p<\\infty$ 的所需版本。",
+      "source_locators": "E §5.8.2 p. 291、§6.3.1，P1‑02 U4。",
+      "original_contract_ids": [
+        "EQ-01-C05-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Distributional cutoff identity",
+          "statement_line": 232,
+          "proof_line": 242,
+          "proof_end_line": 249,
+          "label": "prop:pde-cutoff",
+          "number": "1.6",
+          "printed_pdf_page": "4",
+          "physical_pdf_page": 8,
+          "pdf_destination": "proposition.1.6"
+        },
+        {
+          "kind": "lemma",
+          "title_latex": "Difference quotient estimates",
+          "statement_line": 256,
+          "proof_line": 270,
+          "proof_end_line": 285,
+          "label": "lem:pde-difference-quotients",
+          "number": "1.7",
+          "printed_pdf_page": "4",
+          "physical_pdf_page": 8,
+          "pdf_destination": "lemma.1.7"
+        }
+      ]
+    },
+    "C05": {
+      "title_latex": "Galerkin approximation and weak-limit testing",
+      "path": "parts/common.tex",
+      "line": 291,
+      "label": "pde:C05",
+      "number": "1.5",
+      "printed_pdf_page": "4",
+      "physical_pdf_page": 8,
+      "pdf_destination": "section.1.5",
+      "planned_scope": "实 Hilbert 有界强制形式的 Galerkin／Céa 与独立的弱极限通过。保留 $\\lVert u-u_m\\rVert\\le(M/\\alpha)\\inf_{v\\in V_m}\\lVert u-v\\rVert$。弱极限命题只假设自反 $V$、有界列、有界双线性型与稠密嵌套测试空间。",
+      "planned_proof_route": "有限维解由 Lax–Milgram，Galerkin 正交与强制性推出误差。弱极限先在任一固定有限维空间取测试，再稠密延拓。只在唯一性步骤加入强制性。",
+      "source_locators": "E §§6.2.1、7.1.2，B §5.3，D16 Galerkin／Céa。",
+      "original_contract_ids": [
+        "EQ-01-C06-R01",
+        "EQ-01-C06-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Coercive Galerkin approximation",
+          "statement_line": 293,
+          "proof_line": 306,
+          "proof_end_line": 315,
+          "label": "thm:pde-cea",
+          "number": "1.8",
+          "printed_pdf_page": "4",
+          "physical_pdf_page": 8,
+          "pdf_destination": "theorem.1.8"
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "Passing a linear equation to a weak limit",
+          "statement_line": 317,
+          "proof_line": 327,
+          "proof_end_line": 335,
+          "label": "prop:pde-weak-galerkin",
+          "number": "1.9",
+          "printed_pdf_page": "5",
+          "physical_pdf_page": 9,
+          "pdf_destination": "proposition.1.9"
+        }
+      ]
+    },
+    "C06": {
+      "title_latex": "Hilbert triples, time traces, and energy rules",
+      "path": "parts/common.tex",
+      "line": 338,
+      "label": "pde:C06",
+      "number": "1.6",
+      "printed_pdf_page": "5",
+      "physical_pdf_page": 9,
+      "pdf_destination": "section.1.6",
+      "planned_scope": "实 Hilbert 三元组 $V\\hookrightarrow H\\hookrightarrow V'$，稠密连续。$T>0$，$u\\in L^2(0,T;V)$、$u'\\in L^2(0,T;V')$ 给唯一 $C([0,T];H)$ 代表和能量恒等式。极化得两函数乘积法则。",
+      "planned_proof_route": "在 $V'$ 绝对连续代表上作端点反射，时间磨光。以时间平均和配对的 Cauchy–Schwarz 控制 $C_tH$ 差，过极限保留任意端点。处理 $T>0$ 的迹。",
+      "source_locators": "E §5.9.2 p. 301，RR §§11.1.1–2 pp. 380–385，D16 Hilbert 三元组。",
+      "original_contract_ids": [
+        "EQ-01-C05-R02",
+        "EQ-05-C03-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Time trace and product rule",
+          "statement_line": 346,
+          "proof_line": 362,
+          "proof_end_line": 394,
+          "label": "thm:pde-time-trace",
+          "number": "1.10",
+          "printed_pdf_page": "5",
+          "physical_pdf_page": 9,
+          "pdf_destination": "theorem.1.10"
+        }
+      ]
+    },
+    "C07": {
+      "title_latex": "Semigroups and variation of constants",
+      "path": "parts/common.tex",
+      "line": 400,
+      "label": "pde:C07",
+      "number": "1.7",
+      "printed_pdf_page": "6",
+      "physical_pdf_page": 10,
+      "pdf_destination": "section.1.7",
+      "planned_scope": "$C_0$ 半群的变常数公式，$x_0\\in X,\\ f\\in L^1(0,T;X)$ 得连续温和解。积分定义等价且解唯一。若 $x_0\\in D(A), f\\in C^1$，得 $C_t^1X\\cap C_tD(A)$ 经典解，反向每个经典解满足公式。",
+      "planned_proof_route": "$J(h)=\\int_0^h S(s)\\,ds$ 满足 $AJ(h)=S(h)-I$。Fubini 在图范数中证明 $\\int_0^t u\\in D(A)$ 和积分方程。对解差取时间原函数，应用齐次经典唯一性。$f\\in C^1$ 时对卷积换元并对 $f$ 积分分部。",
+      "source_locators": "EN II §6、VI §7 定义 7.2、习题 7.26(1)，D16 与 P1‑01 核对表。",
+      "original_contract_ids": [
+        "EQ-01-C02-R02",
+        "EQ-01-C04-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Duhamel formula and the integrated equation",
+          "statement_line": 419,
+          "proof_line": 435,
+          "proof_end_line": 472,
+          "label": "thm:pde-duhamel",
+          "number": "1.11",
+          "printed_pdf_page": "6",
+          "physical_pdf_page": 10,
+          "pdf_destination": "theorem.1.11"
+        }
+      ]
+    },
+    "L01": {
+      "title_latex": "Fundamental solutions and Newtonian potentials",
+      "path": "parts/potential.tex",
+      "line": 11,
+      "label": "pde:L01",
+      "number": "2.1",
+      "printed_pdf_page": "7",
+      "physical_pdf_page": 11,
+      "pdf_destination": "section.2.1",
+      "planned_scope": "$-\\Delta\\Phi=\\delta_0$ 的基本解。$n=1$ 为 $-\\vert x\\vert /2$，$n=2$ 为 $-\\log\\vert x\\vert /(2\\pi)$，$n\\ge3$ 为 $ \\vert x\\vert ^{2-n}/((n-2)\\vert S^{n-1}\\vert )$。紧支撑光滑源的 Newton 势光滑并解 Poisson，紧支撑分布下保留有定义的卷积。",
+      "planned_proof_route": "一维用导数跳跃，高维在穿孔域积分并计算球面通量及余项。对 $f$ 转移导数。利用 P1‑02 的紧支撑分布卷积交换 $\\Delta$。二维按对数增长处理。",
+      "source_locators": "E §2.2.1 p. 21，GT §4.1 p. 51，AG §§1.1、4.3。",
+      "original_contract_ids": [
+        "AN-12-C03-R02",
+        "EQ-04-C01-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Normalized fundamental solutions",
+          "statement_line": 13,
+          "proof_line": 30,
+          "proof_end_line": 61,
+          "label": "thm:pde-laplace-fundamental",
+          "number": "2.1",
+          "printed_pdf_page": "7",
+          "physical_pdf_page": 11,
+          "pdf_destination": "theorem.2.1"
+        }
+      ]
+    },
+    "L02": {
+      "title_latex": "Mean values and Weyl's lemma",
+      "path": "parts/potential.tex",
+      "line": 69,
+      "label": "pde:L02",
+      "number": "2.2",
+      "printed_pdf_page": "8",
+      "physical_pdf_page": 12,
+      "pdf_destination": "section.2.2",
+      "planned_scope": "球面与球均值公式、连续均值性质的反向判据、分布版 Weyl 引理和 $C^\\infty$ 正则性。",
+      "planned_proof_route": "球面平均对半径求导用散度。对任意 $\\Delta T=0$ 的分布，磨光后是光滑调和。在更小子域以固定径向单位核保持均值，令磨光尺度趋零得到 $T=T*\\rho$ 局部表示。",
+      "source_locators": "AG §§1.2–1.3，GT §2.7 p. 22，E §§2.2.2–3 pp. 25–26。",
+      "original_contract_ids": [
+        "AN-12-C02-R01",
+        "AN-12-C02-R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Mean values and distributional harmonicity",
+          "statement_line": 75,
+          "proof_line": 88,
+          "proof_end_line": 128,
+          "label": "thm:pde-mean-weyl",
+          "number": "2.2",
+          "printed_pdf_page": "8",
+          "physical_pdf_page": 12,
+          "pdf_destination": "theorem.2.2"
+        }
+      ]
+    },
+    "L03": {
+      "title_latex": "Derivative bounds, Liouville, and analyticity",
+      "path": "parts/potential.tex",
+      "line": 135,
+      "label": "pde:L03",
+      "number": "2.3",
+      "printed_pdf_page": "8",
+      "physical_pdf_page": 12,
+      "pdf_destination": "section.2.3",
+      "planned_scope": "调和函数内点导数估计、全空间有界调和的 Liouville 定理、调和函数实解析及相应连通延拓唯一性。",
+      "planned_proof_route": "固定半径径向核给 $D^\\alpha$ 的局部 $L^1$ 估计。令半径增大使一阶导数消失。球 Poisson 核在严格内部有一致局部解析展开，由 L05 得解析性。连通性用于延拓。",
+      "source_locators": "E §2.2.3，AG §§1.2–1.4，GT §§2.5、2.7。",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "proposition",
+          "title_latex": "Interior derivative estimate and Liouville",
+          "statement_line": 137,
+          "proof_line": 148,
+          "proof_end_line": 161,
+          "label": "prop:pde-harmonic-derivatives",
+          "number": "2.3",
+          "printed_pdf_page": "8",
+          "physical_pdf_page": 12,
+          "pdf_destination": "proposition.2.3"
+        },
+        {
+          "kind": "corollary",
+          "title_latex": "Analyticity and continuation",
+          "statement_line": 163,
+          "proof_line": 169,
+          "proof_end_line": 191,
+          "label": "cor:pde-harmonic-analytic",
+          "number": "2.4",
+          "printed_pdf_page": "9",
+          "physical_pdf_page": 13,
+          "pdf_destination": "corollary.2.4"
+        }
+      ]
+    },
+    "L04": {
+      "title_latex": "Subharmonicity and the maximum principles",
+      "path": "parts/potential.tex",
+      "line": 194,
+      "label": "pde:L04",
+      "number": "2.4",
+      "printed_pdf_page": "9",
+      "physical_pdf_page": 13,
+      "pdf_destination": "section.2.4",
+      "planned_scope": "$n\\ge2$ 的上半连续次调和 $u:\\Omega\\to[-\\infty,\\infty)$，每个连通分支非恒 $-\\infty$。保留闭球次均值、球上调和比较、对 $C^2$ 实函数等价于 $\\Delta u\\ge0$，及弱／强最大原理。",
+      "planned_proof_route": "对 $C^2$ 实函数，次调和等价于 $\\Delta u\\ge0$。一般情形以球上的上半连续边界函数从上连续逼近和 Poisson 调和替换闭合比较。边界用 $\\limsup$，内点有限最大值用次均值与上半连续把相等传播到整个分支。",
+      "source_locators": "AG 定义 3.1.2、定理 3.1.5、3.2.2 pp. 59–67，GT §2.8。",
+      "original_contract_ids": [
+        "AN-12-C01-R01",
+        "AN-12-C01-R02",
+        "AN-12-C02-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Comparison and maximum principles",
+          "statement_line": 208,
+          "proof_line": 223,
+          "proof_end_line": 270,
+          "label": "thm:pde-subharmonic-comparison",
+          "number": "2.6",
+          "printed_pdf_page": "9",
+          "physical_pdf_page": 13,
+          "pdf_destination": "theorem.2.6"
+        }
+      ]
+    },
+    "L05": {
+      "title_latex": "The Poisson kernel and Harnack's inequalities",
+      "path": "parts/potential.tex",
+      "line": 278,
+      "label": "pde:L05",
+      "number": "2.5",
+      "printed_pdf_page": "10",
+      "physical_pdf_page": 14,
+      "pdf_destination": "section.2.5",
+      "planned_scope": "球 Poisson 核 $P(x,\\zeta)=(r^2-\\vert x-a\\vert ^2)/(r\\vert S^{n-1}\\vert \\vert x-\\zeta\\vert ^n)$，$n\\ge2$。对连续球面数据给调和、边界连续与唯一，原调和函数的 Poisson 表示。正调和函数的球 Harnack、连通紧子集链及单调 Harnack 收敛。",
+      "planned_proof_route": "直接验证核对内点调和。球面积分是过球心正则的径向调和函数，等于球心值 1。再与显式球 Green 的外法导数核对，二维常数单独检查。用球帽外核质量趋零证明边界收敛。核比给局部双侧界，再用重叠球与均值正则性处理正函数的单调列。",
+      "source_locators": "AG §§1.3–1.5 pp. 6–15，GT §§2.3、2.5 pp. 16、19，E §2.2.4。",
+      "original_contract_ids": [
+        "AN-12-C02-R03",
+        "EQ-04-C01-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "The ball Poisson problem",
+          "statement_line": 280,
+          "proof_line": 297,
+          "proof_end_line": 322,
+          "label": "thm:pde-ball-poisson",
+          "number": "2.7",
+          "printed_pdf_page": "10",
+          "physical_pdf_page": 14,
+          "pdf_destination": "theorem.2.7"
+        },
+        {
+          "kind": "corollary",
+          "title_latex": "Harnack bounds and monotone convergence",
+          "statement_line": 324,
+          "proof_line": 342,
+          "proof_end_line": 367,
+          "label": "cor:pde-harmonic-harnack",
+          "number": "2.8",
+          "printed_pdf_page": "11",
+          "physical_pdf_page": 15,
+          "pdf_destination": "corollary.2.8"
+        }
+      ]
+    },
+    "L06": {
+      "title_latex": "The ball Green kernel and the Poisson--Dirichlet problem",
+      "path": "parts/potential.tex",
+      "line": 376,
+      "label": "pde:L06",
+      "number": "2.6",
+      "printed_pdf_page": "11",
+      "physical_pdf_page": 15,
+      "pdf_destination": "section.2.6",
+      "planned_scope": "球上非齐次 Poisson–Dirichlet，$f\\in C_c^\\infty(B)$、$g\\in C(\\partial B)$，给唯一 $C^2(B)\\cap C(\\bar B)$ 解。",
+      "planned_proof_route": "用 Newton 势减去其边界 Poisson 提升，再加 $Pg$。构造核型写法与这一解相同，并验证球 Green 函数。对数核的 Kelvin 修正单列。",
+      "source_locators": "E §2.2.4 pp. 33–41，GT §§2.4–2.5、4.2。",
+      "original_contract_ids": [
+        "EQ-04-C01-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Poisson--Dirichlet on a ball",
+          "statement_line": 378,
+          "proof_line": 391,
+          "proof_end_line": 443,
+          "label": "thm:pde-poisson-dirichlet-ball",
+          "number": "2.9",
+          "printed_pdf_page": "11",
+          "physical_pdf_page": 15,
+          "pdf_destination": "theorem.2.9"
+        }
+      ]
+    },
+    "L07": {
+      "title_latex": "Regular domains, harmonic lifting, and Green representation",
+      "path": "parts/potential.tex",
+      "line": 449,
+      "label": "pde:L07",
+      "number": "2.7",
+      "printed_pdf_page": "12",
+      "physical_pdf_page": 16,
+      "pdf_destination": "section.2.7",
+      "planned_scope": "有界 $C^2$ 域的正规 Dirichlet 调和提升、Green 核存在、对称、归一和表示。同一连通分支内不同两点的核为正，跨分支取零。原公式 $u(x)=\\int_\\Omega G(x,y)(-\\Delta u(y))dy-\\int_{\\partial\\Omega}u\\,\\partial_{\\nu_y}G\\,dS$ 对 $u\\in C^2(\\bar\\Omega)$。保留各连通分支及一维区间。",
+      "planned_proof_route": "用球调和替换和外球障碍的 Perron 法建立连续边值，减去 $\\Phi(x-\\cdot)$ 的调和提升。连续边界值通过障碍，法向迹通过 E06 的 $H^2$ 与边界光滑提升，说明两种提升相符（弱比较与障碍）。Green 公式对穿孔域计算内球方向，外边界积分可先按迹配对解释。双穿孔或弱逆给对称。区间用分段线性 $G$。",
+      "source_locators": "AG §§4.1、6.6、6.8 pp. 89、179、189，GT §§2.4、2.8、4.2，E §2.2.4。",
+      "original_contract_ids": [
+        "AN-12-C03-R01",
+        "EQ-01-C04-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": "Continuous harmonic Dirichlet data on a regular domain",
+          "statement_line": 451,
+          "proof_line": 460,
+          "proof_end_line": 539,
+          "label": "lem:pde-harmonic-lift",
+          "number": "2.10",
+          "printed_pdf_page": "12",
+          "physical_pdf_page": 16,
+          "pdf_destination": "lemma.2.10"
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Green representation on bounded \\(C^2\\) open sets",
+          "statement_line": 541,
+          "proof_line": 557,
+          "proof_end_line": 628,
+          "label": "thm:pde-green-representation",
+          "number": "2.11",
+          "printed_pdf_page": "13",
+          "physical_pdf_page": 17,
+          "pdf_destination": "theorem.2.11"
+        }
+      ]
+    },
+    "E01": {
+      "title_latex": "Coercive weak Dirichlet problems",
+      "path": "parts/elliptic.tex",
+      "line": 17,
+      "label": "pde:E01",
+      "number": "3.1",
+      "printed_pdf_page": "15",
+      "physical_pdf_page": 19,
+      "pdf_destination": "section.3.1",
+      "planned_scope": "有界开集 $\\Omega$、一致椭圆 $A\\in L^\\infty$、$f\\in H^{-1}$ 的弱 Dirichlet 唯一解和估计，保留非对称 $A$。Lipschitz 域上 $g\\in H^{1/2}$ 的非齐次 Dirichlet 通过迹提升，同样连续依赖于 $f,g$。",
+      "planned_proof_route": "任意有界开集的零延拓和板状 Poincaré 给梯度范数等价。用 Lax–Milgram。非零边值取有界线性提升，再在 $H_0^1$ 解校正。不同提升的差落在零迹核。",
+      "source_locators": "E §6.2.1–2 pp. 315–320，RR §§9.2.2–4，GT §8.2，P1‑02 U5，P1‑06 V03.07/V08.01。",
+      "original_contract_ids": [
+        "EQ-04-C02-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Coercive Dirichlet problem",
+          "statement_line": 23,
+          "proof_line": 43,
+          "proof_end_line": 63,
+          "label": "pde:elliptic-weak-dirichlet",
+          "number": "3.1",
+          "printed_pdf_page": "15",
+          "physical_pdf_page": 19,
+          "pdf_destination": "theorem.3.1"
+        }
+      ]
+    },
+    "E02": {
+      "title_latex": "Weak Neumann data and constants",
+      "path": "parts/elliptic.tex",
+      "line": 85,
+      "label": "pde:E02",
+      "number": "3.2",
+      "printed_pdf_page": "16",
+      "physical_pdf_page": 20,
+      "pdf_destination": "section.3.2",
+      "planned_scope": "$-\\Delta u=f,\\ \\partial_\\nu u=g$ 的弱 Neumann。有界连通 Lipschitz 域，$f\\in L^2,\\ g\\in H^{-1/2}$。充要相容条件 $\\int_\\Omega f+\\langle g,1\\rangle=0$，模常数唯一和商范数估计。",
+      "planned_proof_route": "全 $H^1$ 测试取 1 给必要性。均值零 Poincaré 与迹界使右端连续，Lax–Milgram 给充分性。相容性恢复全 $H^1$ 测试，C02 给法向迹。非连通时各分量分别核对。",
+      "source_locators": "RR §9.4.1 p. 304，T1 §5.7 p. 433，P1‑02 U5。",
+      "original_contract_ids": [
+        "EQ-04-C01-R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Neumann compatibility",
+          "statement_line": 87,
+          "proof_line": 108,
+          "proof_end_line": 132,
+          "label": "pde:elliptic-neumann",
+          "number": "3.2",
+          "printed_pdf_page": "16",
+          "physical_pdf_page": 20,
+          "pdf_destination": "theorem.3.2"
+        }
+      ]
+    },
+    "E03": {
+      "title_latex": "The classical maximum and Hopf principles",
+      "path": "parts/elliptic.tex",
+      "line": 142,
+      "label": "pde:E03",
+      "number": "3.3",
+      "printed_pdf_page": "17",
+      "physical_pdf_page": 21,
+      "pdf_destination": "section.3.3",
+      "planned_scope": "有界连通 $C^1$ 域、域内连续系数且 $(a^{ij})$ 对称一致正定、$u\\in C^2(\\Omega)\\cap C(\\bar\\Omega)$ 的实经典非散度椭圆弱／强最大原理及比较。另列 Hopf 边界引理。保留 $Lu=a^{ij}u_{ij}+b^iu_i+cu\\ge0,\\ c\\le0$ 时的 $\\sup_\\Omega u\\le\\max(0,\\sup_{\\partial\\Omega}u)$，及非负内点最大推出常值。$c=0$ 时上界为 $\\sup_{\\partial\\Omega}u$ 且最大值不要求非负。",
+      "planned_proof_route": "对有界系数用严格扰动。原弱最大合同若仅给域内连续系数，可在紧的超水平内用局部强原理处理。用切球指数障碍和传播证明强结论。Hopf 另列内切球、边界近处系数界和导数存在的条件。",
+      "source_locators": "GT §§3.1–3.2 pp. 32–33，RR §§4.1.1–2，E §§6.4.1–2。",
+      "original_contract_ids": [
+        "EQ-04-C03-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Classical comparison",
+          "statement_line": 144,
+          "proof_line": 164,
+          "proof_end_line": 210,
+          "label": "pde:elliptic-max",
+          "number": "3.3",
+          "printed_pdf_page": "17",
+          "physical_pdf_page": 21,
+          "pdf_destination": "theorem.3.3"
+        },
+        {
+          "kind": "corollary",
+          "title_latex": "Hopf boundary inequality",
+          "statement_line": 212,
+          "proof_line": 228,
+          "proof_end_line": 234,
+          "label": "pde:elliptic-hopf",
+          "number": "3.4",
+          "printed_pdf_page": "17",
+          "physical_pdf_page": 21,
+          "pdf_destination": "corollary.3.4"
+        }
+      ]
+    },
+    "E04": {
+      "title_latex": "Weak comparison and a local energy estimate",
+      "path": "parts/elliptic.tex",
+      "line": 242,
+      "label": "pde:E04",
+      "number": "3.4",
+      "printed_pdf_page": "18",
+      "physical_pdf_page": 22,
+      "pdf_destination": "section.3.4",
+      "planned_scope": "一致椭圆有界可测散度型弱比较和 Caccioppoli 局部能量。弱次解的正部有零迹时可与零比较。允许正号算子 $-\\operatorname{div}(A\\nabla)+c$ 的 $c\\ge0$ 有界零阶项。",
+      "planned_proof_route": "用 $u^+$ 测试和椭圆性得到正部零。局部测试 $\\eta^2u$ 吸收交叉项，带 $L^2$ 右端时保留 $\\int\\vert f\\eta^2u\\vert $ 或 Young 估计。先交代弱链式法则和测试类的密度。",
+      "source_locators": "GT §§8.1、8.6 pp. 179、194，E §6.2.2，P1‑02 U4。",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Weak divergence-form comparison",
+          "statement_line": 263,
+          "proof_line": 277,
+          "proof_end_line": 286,
+          "label": "pde:elliptic-weak-max",
+          "number": "3.5",
+          "printed_pdf_page": "18",
+          "physical_pdf_page": 22,
+          "pdf_destination": "theorem.3.5"
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "Caccioppoli inequality",
+          "statement_line": 288,
+          "proof_line": 302,
+          "proof_end_line": 310,
+          "label": "pde:elliptic-caccioppoli",
+          "number": "3.6",
+          "printed_pdf_page": "18",
+          "physical_pdf_page": 22,
+          "pdf_destination": "proposition.3.6"
+        }
+      ]
+    },
+    "E05": {
+      "title_latex": "Interior second derivatives in \\texorpdfstring{\\(L^2\\)}{L2}",
+      "path": "parts/elliptic.tex",
+      "line": 315,
+      "label": "pde:E05",
+      "number": "3.5",
+      "printed_pdf_page": "19",
+      "physical_pdf_page": 23,
+      "pdf_destination": "section.3.5",
+      "planned_scope": "$A$ 局部 Lipschitz 和局部一致椭圆、$u\\in H^1_{\\rm loc}$、$f\\in L^2_{\\rm loc}$ 的内部 $H^2$，保留内外两个区域及 $\\lVert f\\rVert_{L^2}+\\lVert u\\rVert_{H^1}$ 界。",
+      "planned_proof_route": "对差商作带截断的伴随测试，右端用测试的差商界吸收，避免对 $f$ 求导。$A$ 差商由 Lipschitz 界控制。C04 的逆判据识别二阶弱导数。",
+      "source_locators": "E §6.3.1 p. 327，RR §9.5.1 p. 321，GT §8.3 p. 183。",
+      "original_contract_ids": [
+        "EQ-04-C04-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Interior \\(H^2\\) estimate",
+          "statement_line": 317,
+          "proof_line": 332,
+          "proof_end_line": 370,
+          "label": "pde:elliptic-interior-h2",
+          "number": "3.7",
+          "printed_pdf_page": "19",
+          "physical_pdf_page": 23,
+          "pdf_destination": "theorem.3.7"
+        }
+      ]
+    },
+    "E06": {
+      "title_latex": "The \\texorpdfstring{\\(C^{1,1}\\)}{C(1,1)} Dirichlet boundary",
+      "path": "parts/elliptic.tex",
+      "line": 376,
+      "label": "pde:E06",
+      "number": "3.6",
+      "printed_pdf_page": "19",
+      "physical_pdf_page": 23,
+      "pdf_destination": "section.3.6",
+      "planned_scope": "有界 $C^{1,1}$ 域、实对称一致椭圆 Lipschitz $A$、$f\\in L^2$、$u\\in H_0^1$ 的全局 $H^2$ 与同型估计。",
+      "planned_proof_route": "边界 $C^{1,1}$ 拉平保持主系数 Lipschitz 和椭圆性。切向差商保持零迹，法向二阶项由方程和正的 $a_{nn}$ 恢复。拼接内部与边界估计，列清换坐标和低维情形。",
+      "source_locators": "G 定理 2.4.2.5 pp. 124–125，RR §9.5.2，E §6.3.2 为 $C^2$ 对照。",
+      "original_contract_ids": [
+        "EQ-04-C04-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Global Dirichlet \\(H^2\\) estimate",
+          "statement_line": 378,
+          "proof_line": 392,
+          "proof_end_line": 446,
+          "label": "pde:elliptic-global-h2",
+          "number": "3.8",
+          "printed_pdf_page": "19",
+          "physical_pdf_page": 23,
+          "pdf_destination": "theorem.3.8"
+        },
+        {
+          "kind": "corollary",
+          "title_latex": "A lifted boundary value",
+          "statement_line": 448,
+          "proof_line": 457,
+          "proof_end_line": 462,
+          "label": "pde:elliptic-h2-lift",
+          "number": "3.9",
+          "printed_pdf_page": "20",
+          "physical_pdf_page": 24,
+          "pdf_destination": "corollary.3.9"
+        }
+      ]
+    },
+    "E07": {
+      "title_latex": "The interior Poisson Schauder estimate",
+      "path": "parts/elliptic.tex",
+      "line": 472,
+      "label": "pde:E07",
+      "number": "3.7",
+      "printed_pdf_page": "21",
+      "physical_pdf_page": 25,
+      "pdf_destination": "section.3.7",
+      "planned_scope": "Poisson 内部 Schauder。$f\\in C^{0,\\alpha}_{\\rm loc}$、$u\\in C^2$、$-\\Delta u=f$、$0<\\alpha<1$，得局部 $C^{2,\\alpha}$，嵌套区域上以 $\\lVert u\\rVert _{C^0}+\\lVert f\\rVert _{C^{0,\\alpha}}$ 控制。",
+      "planned_proof_route": "对局部 Newton 势把 $f(y)-f(x)$ 与奇核配对，用近区、远区分拆和球面对称抵消。明确 Hessian 的分布接触项，或给等效正则化。调和余项用 L02/L03。一维直接两次积分。",
+      "source_locators": "GT §4.3 p. 56，E §2.2.3 的调和导数对照。",
+      "original_contract_ids": [
+        "EQ-04-C04-R03"
+      ],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": "Cancellation on Hölder data",
+          "statement_line": 479,
+          "proof_line": 490,
+          "proof_end_line": 518,
+          "label": "pde:elliptic-holder-kernel",
+          "number": "3.10",
+          "printed_pdf_page": "21",
+          "physical_pdf_page": 25,
+          "pdf_destination": "lemma.3.10"
+        },
+        {
+          "kind": "lemma",
+          "title_latex": "The Newtonian Hessian",
+          "statement_line": 520,
+          "proof_line": 537,
+          "proof_end_line": 571,
+          "label": "pde:elliptic-newton-hessian",
+          "number": "3.11",
+          "printed_pdf_page": "21",
+          "physical_pdf_page": 25,
+          "pdf_destination": "lemma.3.11"
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Interior Schauder estimate for Poisson",
+          "statement_line": 573,
+          "proof_line": 586,
+          "proof_end_line": 601,
+          "label": "pde:elliptic-poisson-schauder",
+          "number": "3.12",
+          "printed_pdf_page": "22",
+          "physical_pdf_page": 26,
+          "pdf_destination": "theorem.3.12"
+        }
+      ]
+    },
+    "E08": {
+      "title_latex": "The Poisson \\texorpdfstring{\\(W^{2,p}\\)}{W(2,p)} model",
+      "path": "parts/elliptic.tex",
+      "line": 615,
+      "label": "pde:E08",
+      "number": "3.8",
+      "printed_pdf_page": "22",
+      "physical_pdf_page": 26,
+      "pdf_destination": "section.3.8",
+      "planned_scope": "Laplace 的 $W^{2,p}$ 模型，$1<p<\\infty$。全空间紧支撑光滑函数二阶导数受 $\\lVert\\Delta u\\rVert_p$ 控制。局部 $u,f\\in L^p_{\\rm loc},-\\Delta u=f$ 的分布解得内部 $W^{2,p}$ 及嵌套区域估计。",
+      "planned_proof_route": "Fourier 确定 $D_{ij}u=R_iR_j(-\\Delta u)$。对局部源切断后用基本解，证明其 Hessian 对应的分布乘子，保留奇核接触项。P1‑02 的 Riesz 界加有界区核的局部可积性控制该势，Weyl 处理调和余项。$n=1$ 直接处理。",
+      "source_locators": "GT 第 9 章 $L^p$ 估计背景，E §4.3.1 的 Fourier 方法，P1‑02 U3 的 Riesz 变换。",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Whole-space and local \\(W^{2,p}\\) estimates",
+          "statement_line": 622,
+          "proof_line": 638,
+          "proof_end_line": 689,
+          "label": "pde:elliptic-poisson-w2p",
+          "number": "3.13",
+          "printed_pdf_page": "22",
+          "physical_pdf_page": 26,
+          "pdf_destination": "theorem.3.13"
+        }
+      ]
+    },
+    "E09": {
+      "title_latex": "Variable-coefficient Schauder theory",
+      "path": "parts/elliptic.tex",
+      "line": 696,
+      "label": "pde:E09",
+      "number": "3.9",
+      "printed_pdf_page": "23",
+      "physical_pdf_page": 27,
+      "pdf_destination": "section.3.9",
+      "planned_scope": "非散度一致椭圆 $C^{0,\\alpha}$ 系数的经典内点 Schauder。另给有界 $C^{2,\\alpha}$ 域、$C^{0,\\alpha}$ 系数和右端、$c\\le0$、可由 $C^{2,\\alpha}(\\bar\\Omega)$ 提升的边界数据的全局估计与经典 Dirichlet 存在唯一。",
+      "planned_proof_route": "先在常系数球／半球上证估计，再冻结系数、用插值吸收、拉平和拼接。存在与先验估计分开。按 GT 的球上方法连续与边界估计、Perron 障碍、局部边界正则性逐层闭合。球上先用 Newton 势和球 Poisson 提升处理光滑 Laplace 数据，再用统一 Hölder 估计与逼近闭合起点。保留 $c\\le0$ 下控制 $C^0$ 的障碍估计。",
+      "source_locators": "GT §6.1 定理 6.2，§6.2 定理 6.6，§6.3 引理 6.10、定理 6.13–6.14 pp. 89–107。",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "lemma",
+          "title_latex": "Constant coefficients at a flat boundary",
+          "statement_line": 704,
+          "proof_line": 717,
+          "proof_end_line": 802,
+          "label": "pde:elliptic-flat-schauder",
+          "number": "3.14",
+          "printed_pdf_page": "23",
+          "physical_pdf_page": 27,
+          "pdf_destination": "lemma.3.14"
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Local and global Schauder estimates",
+          "statement_line": 804,
+          "proof_line": 826,
+          "proof_end_line": 919,
+          "label": "pde:elliptic-variable-estimate",
+          "number": "3.15",
+          "printed_pdf_page": "24",
+          "physical_pdf_page": 28,
+          "pdf_destination": "theorem.3.15"
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Classical Dirichlet solvability",
+          "statement_line": 921,
+          "proof_line": 935,
+          "proof_end_line": 1125,
+          "label": "pde:elliptic-schauder-solvability",
+          "number": "3.16",
+          "printed_pdf_page": "25",
+          "physical_pdf_page": 29,
+          "pdf_destination": "theorem.3.16"
+        }
+      ]
+    },
+    "E10": {
+      "title_latex": "Closed forms and the Dirichlet spectrum",
+      "path": "parts/elliptic.tex",
+      "line": 1136,
+      "label": "pde:E10",
+      "number": "3.10",
+      "printed_pdf_page": "28",
+      "physical_pdf_page": 32,
+      "pdf_destination": "section.3.10",
+      "planned_scope": "$\\mathbb R^n$（$n\\ge1$）中非空有界 Lipschitz 域、对称有界一致椭圆 $A$ 的 Dirichlet 正算子。逆在 $L^2$ 上紧、自伴、正且单射，$L^2$ 正交特征基，特征值带有限重数趋于无穷。加 Rayleigh–Ritz 极小极大。",
+      "planned_proof_route": "变分解算子加 Rellich，能量恒等给正性与对称，稠密性给单射和稠密值域。以谱或闭型给精确定义域，证明二次型展开后作子空间维数比较。",
+      "source_locators": "E §6.5.1 p. 354，RR §9.3.2 p. 302，T2 ch. 8，D16 紧自伴谱。",
+      "original_contract_ids": [
+        "EQ-04-C05-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Closed forms and the Friedrichs extension",
+          "statement_line": 1151,
+          "proof_line": 1164,
+          "proof_end_line": 1192,
+          "label": "pde:elliptic-friedrichs",
+          "number": "3.17",
+          "printed_pdf_page": "28",
+          "physical_pdf_page": 32,
+          "pdf_destination": "theorem.3.17"
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Dirichlet spectrum and min--max",
+          "statement_line": 1194,
+          "proof_line": 1212,
+          "proof_end_line": 1248,
+          "label": "pde:elliptic-dirichlet-spectrum",
+          "number": "3.18",
+          "printed_pdf_page": "28",
+          "physical_pdf_page": 32,
+          "pdf_destination": "theorem.3.18"
+        }
+      ]
+    },
+    "E11": {
+      "title_latex": "Spectral parameters and Fredholm solvability",
+      "path": "parts/elliptic.tex",
+      "line": 1257,
+      "label": "pde:E11",
+      "number": "3.11",
+      "printed_pdf_page": "29",
+      "physical_pdf_page": 33,
+      "pdf_destination": "section.3.11",
+      "planned_scope": "对称椭圆在谱参数处的 Fredholm 二择。非自伴有界低阶项的 Gårding 移位与紧预解给第二个标准版本，$f$ 须正交于 $\\ker(L^*-\\bar\\lambda)$。",
+      "planned_proof_route": "Young 吸收一阶项，加 $\\mu I$ 得强制型，紧解算子 $S=(L+\\mu)^{-1}$。用 $I-(\\lambda+\\mu)S$ 的指数零和伴随换算。对称时相容子空间退为原特征空间，解模核唯一。",
+      "source_locators": "E §§6.2.3、6.5，RR §§9.2.3、9.3.1，GT §8.2，D16 Riesz–Schauder。",
+      "original_contract_ids": [
+        "EQ-04-C05-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "The shifted Fredholm argument",
+          "statement_line": 1259,
+          "proof_line": 1286,
+          "proof_end_line": 1326,
+          "label": "pde:elliptic-fredholm",
+          "number": "3.19",
+          "printed_pdf_page": "29",
+          "physical_pdf_page": 33,
+          "pdf_destination": "theorem.3.19"
+        },
+        {
+          "kind": "corollary",
+          "title_latex": "Symmetric spectral compatibility",
+          "statement_line": 1328,
+          "proof_line": 1339,
+          "proof_end_line": 1346,
+          "label": "pde:elliptic-symmetric-fredholm",
+          "number": "3.20",
+          "printed_pdf_page": "30",
+          "physical_pdf_page": 34,
+          "pdf_destination": "corollary.3.20"
+        }
+      ]
+    },
+    "H01": {
+      "title_latex": "The heat kernel and the Cauchy problem",
+      "path": "parts/heat.tex",
+      "line": 15,
+      "label": "pde:H01",
+      "number": "4.1",
+      "printed_pdf_page": "31",
+      "physical_pdf_page": 35,
+      "pdf_destination": "section.4.1",
+      "planned_scope": "全空间 Gaussian 热核 $K_t$、质量 1、卷积半群、$\\Gamma=1_{t>0}K_t$ 的时空基本解及 $L^p$ 逼近恒等，$1\\le p<\\infty$。经典有源及无源 Cauchy 表示，初值连续有界，外力取足以交换导数的连续有界光滑数据，解在有界时间条带内有界时唯一。",
+      "planned_proof_route": "直接微分并用 Gaussian 积分或 Fourier 得半群律。测试积分产生初始 $\\delta$。热核尾质量给 $L^p$ 和逐点初值。$L^\\infty$ 范数收敛仅在 BUC 类用。非齐次卷积在 $s=t$ 产生外力。全空间有界唯一用大球上的增长障碍和最大值原理。",
+      "source_locators": "E §§2.3.1、2.3.3 pp. 45–61，T1 §6.2，D16 热半群。",
+      "original_contract_ids": [
+        "EQ-05-C01-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Gaussian kernel",
+          "statement_line": 17,
+          "proof_line": 36,
+          "proof_end_line": 84,
+          "label": "pde:heat-gaussian",
+          "number": "4.1",
+          "printed_pdf_page": "31",
+          "physical_pdf_page": 35,
+          "pdf_destination": "theorem.4.1"
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Classical Cauchy solution on the whole space",
+          "statement_line": 86,
+          "proof_line": 101,
+          "proof_end_line": 130,
+          "label": "pde:heat-cauchy",
+          "number": "4.2",
+          "printed_pdf_page": "32",
+          "physical_pdf_page": 36,
+          "pdf_destination": "theorem.4.2"
+        }
+      ]
+    },
+    "H02": {
+      "title_latex": "Smoothing and local estimates for caloric distributions",
+      "path": "parts/heat.tex",
+      "line": 139,
+      "label": "pde:H02",
+      "number": "4.2",
+      "printed_pdf_page": "33",
+      "physical_pdf_page": 37,
+      "pdf_destination": "section.4.2",
+      "planned_scope": "全空间 $1\\le p\\le q\\le\\infty$ 的 $L^p\\to L^q$ 空间导数估计，$t^{-k/2-(n/2)(1/p-1/q)}$，以及正时间光滑。局部齐次分布热解的光滑性和内点估计。",
+      "planned_proof_route": "用缩放后的 Gaussian 导数及 Young。时间导数等于空间 Laplace 幂。局部以时空截断写 $\\chi u=\\Gamma*(\\partial_t-\\Delta)(\\chi u)$，把微分移到离开时空原点的核，用较大紧包含柱上的局部范数控制内柱导数并保留抛物缩放。",
+      "source_locators": "E §2.3.3 定理 8 pp. 59–61，T1 ch. 3、§6.2，P1‑02 U2/U4。",
+      "original_contract_ids": [
+        "EQ-05-C05-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Heat smoothing",
+          "statement_line": 141,
+          "proof_line": 155,
+          "proof_end_line": 173,
+          "label": "pde:heat-lp-smoothing",
+          "number": "4.3",
+          "printed_pdf_page": "33",
+          "physical_pdf_page": 37,
+          "pdf_destination": "theorem.4.3"
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Interior caloric regularity and scaling",
+          "statement_line": 175,
+          "proof_line": 191,
+          "proof_end_line": 231,
+          "label": "pde:heat-local",
+          "number": "4.4",
+          "printed_pdf_page": "33",
+          "physical_pdf_page": 37,
+          "pdf_destination": "theorem.4.4"
+        }
+      ]
+    },
+    "H03": {
+      "title_latex": "The classical parabolic maximum principle",
+      "path": "parts/heat.tex",
+      "line": 235,
+      "label": "pde:H03",
+      "number": "4.3",
+      "printed_pdf_page": "34",
+      "physical_pdf_page": 38,
+      "pdf_destination": "section.4.3",
+      "planned_scope": "有界柱上 $u\\in C^{2,1}(\\Omega\\times(0,T])\\cap C(\\bar\\Omega\\times[0,T])$、连续系数的经典抛物弱最大、比较与唯一性。$u_t-a^{ij}u_{ij}-b^iu_i-cu\\le0$，一致椭圆 $a$、$c\\le0$。最大受底面和侧边控制。$c=0$ 时可取任意符号的边界最大。",
+      "planned_proof_route": "用 $u-\\epsilon t$ 得严格不等式。首次／正最大点的空间 Hessian 与时间左导数产生矛盾，顶面 $t=T$ 允许为比较时间。用差函数给比较。",
+      "source_locators": "E §7.1.4 pp. 389–391，RR §4.4.1，L ch. II §1 p. 7。",
+      "original_contract_ids": [
+        "EQ-05-C04-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Classical maximum and comparison",
+          "statement_line": 246,
+          "proof_line": 266,
+          "proof_end_line": 279,
+          "label": "pde:heat-classical-maximum",
+          "number": "4.5",
+          "printed_pdf_page": "34",
+          "physical_pdf_page": 38,
+          "pdf_destination": "theorem.4.5"
+        }
+      ]
+    },
+    "H04": {
+      "title_latex": "Heat balls, strong maximum, and Harnack",
+      "path": "parts/heat.tex",
+      "line": 289,
+      "label": "pde:H04",
+      "number": "4.4",
+      "printed_pdf_page": "34",
+      "physical_pdf_page": 38,
+      "pdf_destination": "section.4.4",
+      "planned_scope": "经典热球均值、热方程的向过去强最大值，以及局部抛物 Harnack。Harnack 先取非负光滑 caloric 函数，在连通 $V\\Subset\\Omega$，$0<t_1<t_2<T$ 时，$\\sup_{x\\in V}u(t_1,x)\\le C\\inf_{x\\in V}u(t_2,x)$。",
+      "planned_proof_route": "热球从伴随基本解与移动水平面公式推出。等号或传播论证得强最大。Harnack 按 E §7.1.4 定理 10 的常系数特例，采用局部化对数估计并沿时空路径积分，对零值用 $u+\\epsilon$ 极限。时间先后和内部距离进入常数。",
+      "source_locators": "E §§2.3.2–3 pp. 51–61、§7.1.4 pp. 391–398，L ch. II §2 p. 10。",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Heat-ball mean-value formula",
+          "statement_line": 300,
+          "proof_line": 313,
+          "proof_end_line": 365,
+          "label": "pde:heat-ball",
+          "number": "4.7",
+          "printed_pdf_page": "34",
+          "physical_pdf_page": 38,
+          "pdf_destination": "theorem.4.7"
+        },
+        {
+          "kind": "corollary",
+          "title_latex": "Strong maximum principle for the heat equation",
+          "statement_line": 367,
+          "proof_line": 377,
+          "proof_end_line": 403,
+          "label": "pde:heat-strong-maximum",
+          "number": "4.8",
+          "printed_pdf_page": "35",
+          "physical_pdf_page": 39,
+          "pdf_destination": "corollary.4.8"
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Local parabolic Harnack inequality",
+          "statement_line": 409,
+          "proof_line": 421,
+          "proof_end_line": 502,
+          "label": "pde:heat-harnack",
+          "number": "4.9",
+          "printed_pdf_page": "36",
+          "physical_pdf_page": 40,
+          "pdf_destination": "theorem.4.9"
+        }
+      ]
+    },
+    "H05": {
+      "title_latex": "Weak evolution on a Hilbert triple",
+      "path": "parts/heat.tex",
+      "line": 511,
+      "label": "pde:H05",
+      "number": "4.5",
+      "printed_pdf_page": "37",
+      "physical_pdf_page": 41,
+      "pdf_destination": "section.4.5",
+      "planned_scope": "稠密连续实 Hilbert 三元组上的有界强制型演化，$u_0\\in H,\\ f\\in L^2_tV'$，存在唯一 $u\\in L^2_tV\\cap C_tH$、$u'\\in L^2_tV'$ 和能量估计。保留 D16 已证明的可测时变 Gårding 版本作为线性变系数扩展。",
+      "planned_proof_route": "取按包含关系定向的有限维子空间，初值取 $H$ 正交投影。有限维能量界后取弱子网，对固定测试传递方程。由极限方程识别 $u'$，保留时间测试在 0 的端点项，用 C06 给初值、能量与唯一。时变情形保留统一界与 $t\\mapsto A(t)v$ 强可测，或适当可分性。",
+      "source_locators": "E §7.1.2 p. 375，RR §§11.1.1–2 pp. 380–385，D16 抛物型。",
+      "original_contract_ids": [
+        "EQ-05-C02-R01",
+        "EQ-05-C03-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Coercive and G{\\aa}rding parabolic forms",
+          "statement_line": 521,
+          "proof_line": 555,
+          "proof_end_line": 628,
+          "label": "pde:parabolic-form",
+          "number": "4.10",
+          "printed_pdf_page": "37",
+          "physical_pdf_page": 41,
+          "pdf_destination": "theorem.4.10"
+        }
+      ]
+    },
+    "H06": {
+      "title_latex": "Weak Dirichlet heat flow and weak comparison",
+      "path": "parts/heat.tex",
+      "line": 638,
+      "label": "pde:H06",
+      "number": "4.6",
+      "printed_pdf_page": "38",
+      "physical_pdf_page": 42,
+      "pdf_destination": "section.4.6",
+      "planned_scope": "有界 Lipschitz 域上的弱 Dirichlet 热问题与原能量等式。$u_0\\in L^2,\\ f\\in L^2_tH^{-1}$，实际解属于 $L^2_tH^1_0\\cap C_tL^2$，导数属于 $L^2_tH^{-1}$。给实有界可测一致椭圆 $A(t,x)$ 的纯散度主部弱比较，初值和边值有序，源项对非负测试有序。有序非零边值须在 $L^2_tH^1\\cap C_tL^2$ 解类中赋予 Sobolev 迹。",
+      "planned_proof_route": "用 E01 的范数及 H05 得解，C06 使 $u$ 成为能量测试，保留外力配对，Young/Poincaré 给先验界。弱比较用正部时间链式法则和强制性。先证明时间平均、截断、极限，在有序边值情形用正部零迹。",
+      "source_locators": "E §§7.1.1–2，B §§10.1–2 pp. 325、333，L ch. IX §§3–4。",
+      "original_contract_ids": [
+        "EQ-01-C03-R02",
+        "EQ-01-C05-R02",
+        "EQ-05-C02-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "The energy solution of the Dirichlet heat problem",
+          "statement_line": 640,
+          "proof_line": 668,
+          "proof_end_line": 688,
+          "label": "pde:heat-dirichlet-weak",
+          "number": "4.11",
+          "printed_pdf_page": "38",
+          "physical_pdf_page": 42,
+          "pdf_destination": "theorem.4.11"
+        },
+        {
+          "kind": "lemma",
+          "title_latex": "Time chain rule for an ordered trace",
+          "statement_line": 694,
+          "proof_line": 710,
+          "proof_end_line": 774,
+          "label": "pde:heat-positive-chain",
+          "number": "4.12",
+          "printed_pdf_page": "39",
+          "physical_pdf_page": 43,
+          "pdf_destination": "lemma.4.12"
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Comparison for divergence-form weak heat flow",
+          "statement_line": 776,
+          "proof_line": 796,
+          "proof_end_line": 818,
+          "label": "pde:heat-weak-comparison",
+          "number": "4.13",
+          "printed_pdf_page": "40",
+          "physical_pdf_page": 44,
+          "pdf_destination": "theorem.4.13"
+        }
+      ]
+    },
+    "H07": {
+      "title_latex": "The self-adjoint heat semigroup and its weak solution",
+      "path": "parts/heat.tex",
+      "line": 829,
+      "label": "pde:H07",
+      "number": "4.7",
+      "printed_pdf_page": "40",
+      "physical_pdf_page": 44,
+      "pdf_destination": "section.4.7",
+      "planned_scope": "对称强制型实现的 Dirichlet $L^2$ 热半群、谱演算和正时间算子幂平滑。有紧预解时给特征函数展开。对 $H$ 值可积外力，半群公式与同时落在能量类的弱解一致。",
+      "planned_proof_route": "从 E10 或闭型构造正自伴 $A_H$，以 $e^{-t\\lambda}$ 与 $\\sup_{\\lambda\\ge0}\\lambda^m e^{-t\\lambda}$ 证收缩和平滑。$f\\in L^2_t H$ 时用谱截断或稠密数据及能量唯一性证一致。一般 $L^1_tH$ 保留温和公式。若有能量解，在有界域可逐特征函数求标量方程比对，或将外力同时在 $L^1_tH$ 和 $L^2_tV'$ 中时间磨光。$V'$ 值源项使用 H05/H06。",
+      "source_locators": "T1 §6.1 p. 518，B §10.1，E §§7.4.2–3，D16 谱、生成元和闭型。",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "The operator of a symmetric coercive form",
+          "statement_line": 831,
+          "proof_line": 846,
+          "proof_end_line": 893,
+          "label": "pde:heat-form-operator",
+          "number": "4.14",
+          "printed_pdf_page": "40",
+          "physical_pdf_page": 44,
+          "pdf_destination": "theorem.4.14"
+        },
+        {
+          "kind": "theorem",
+          "title_latex": "Heat semigroup and spectral smoothing",
+          "statement_line": 900,
+          "proof_line": 920,
+          "proof_end_line": 942,
+          "label": "pde:heat-dirichlet-semigroup",
+          "number": "4.15",
+          "printed_pdf_page": "41",
+          "physical_pdf_page": 45,
+          "pdf_destination": "theorem.4.15"
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "Agreement of mild and energy solutions",
+          "statement_line": 944,
+          "proof_line": 958,
+          "proof_end_line": 988,
+          "label": "pde:heat-mild-energy",
+          "number": "4.16",
+          "printed_pdf_page": "42",
+          "physical_pdf_page": 46,
+          "pdf_destination": "proposition.4.16"
+        }
+      ]
+    },
+    "H08": {
+      "title_latex": "Improved energy regularity",
+      "path": "parts/heat.tex",
+      "line": 1000,
+      "label": "pde:H08",
+      "number": "4.8",
+      "printed_pdf_page": "42",
+      "physical_pdf_page": 46,
+      "pdf_destination": "section.4.8",
+      "planned_scope": "时间不变对称强制型的高一级能量正则性。$u_0\\in V,\\ f\\in L^2_tH$ 时 $u'\\in L^2_tH,\\ A_Hu\\in L^2_tH,\\ u\\in L^\\infty_tV$。按 E06 的边界和系数条件给相应 $L^2_tH^2$。",
+      "planned_proof_route": "谱截断或 Galerkin 测 $u'$，对称性把 $a(u,u')$ 化为半个能量导数。强制性控制 $V$ 范数，极限时以闭算子域或谱测度识别 $A_H u$。空间 $H^2$ 单独调用椭圆定理。",
+      "source_locators": "E §7.1.3 定理 5 p. 380，RR §11.1.2，B §10.1。",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "An additional energy derivative",
+          "statement_line": 1002,
+          "proof_line": 1027,
+          "proof_end_line": 1067,
+          "label": "pde:heat-improved",
+          "number": "4.17",
+          "printed_pdf_page": "42",
+          "physical_pdf_page": 46,
+          "pdf_destination": "theorem.4.17"
+        }
+      ]
+    },
+    "W01": {
+      "title_latex": "Characteristics and transport",
+      "path": "parts/hyperbolic.tex",
+      "line": 8,
+      "label": "pde:W01",
+      "number": "5.1",
+      "printed_pdf_page": "44",
+      "physical_pdf_page": 48,
+      "pdf_destination": "section.5.1",
+      "planned_scope": "全空间有界 $C^1$ 向量场 $b(t,x)$ 及有界空间导数的非自治流。在 $u_0\\in C^1(\\mathbb R^n)$ 时，逆向流给唯一 $C^1$ 输运解。给有源／零阶项的变常数、连续性方程的 Jacobian 公式和非特征初始面的局部解。",
+      "planned_proof_route": "D13 续拓和 $C^1$ 依赖保证正、反流。沿流求导，积分因子处理源项及 $c u$，Liouville 公式处理 $\\operatorname{div}b$。局部只用实际流域，初始面需横截 $(1,b)$，流坐标用逆函数定理。",
+      "source_locators": "E §§2.1、3.2 pp. 18–19、96–109，S §1.2，RR ch. 2，J ch. 1 §5。",
+      "original_contract_ids": [
+        "EQ-06-C01-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Transport by a nonautonomous flow",
+          "statement_line": 10,
+          "proof_line": 32,
+          "proof_end_line": 52,
+          "label": "thm:pde-transport-flow",
+          "number": "5.1",
+          "printed_pdf_page": "44",
+          "physical_pdf_page": 48,
+          "pdf_destination": "theorem.5.1"
+        },
+        {
+          "kind": "proposition",
+          "title_latex": "Continuity equation and transverse data",
+          "statement_line": 54,
+          "proof_line": 74,
+          "proof_end_line": 101,
+          "label": "prop:pde-transport-jacobian",
+          "number": "5.2",
+          "printed_pdf_page": "44",
+          "physical_pdf_page": 49,
+          "pdf_destination": "proposition.5.2"
+        }
+      ]
+    },
+    "W02": {
+      "title_latex": "Classical wave formulas in every dimension",
+      "path": "parts/hyperbolic.tex",
+      "line": 106,
+      "label": "pde:W02",
+      "number": "5.2",
+      "printed_pdf_page": "45",
+      "physical_pdf_page": 49,
+      "pdf_destination": "section.5.2",
+      "planned_scope": "光滑数据的经典波表示。保留一维 d’Alembert、三维 Kirchhoff、二维下降法和一般奇偶维球均值公式，光滑有源项的 Duhamel，奇维 $n\\ge3$ 的 Huygens。",
+      "planned_proof_route": "球均值满足 Euler–Poisson–Darboux 方程，验证降维微分递推、核归一和初值。偶维从多一维的不依赖最后坐标数据下降。对有源项积分速度传播子。Huygens 在无源奇维与有限传播结论分开。",
+      "source_locators": "E §§2.4.1–2 pp. 67–81，J ch. 2 §4、ch. 5 §1 pp. 103–112，S §§2.1、9.2。",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Spherical means and descent",
+          "statement_line": 113,
+          "proof_line": 148,
+          "proof_end_line": 209,
+          "label": "thm:pde-classical-wave",
+          "number": "5.3",
+          "printed_pdf_page": "45",
+          "physical_pdf_page": 49,
+          "pdf_destination": "theorem.5.3"
+        }
+      ]
+    },
+    "W03": {
+      "title_latex": "Whole-space finite-energy waves",
+      "path": "parts/hyperbolic.tex",
+      "line": 216,
+      "label": "pde:W03",
+      "number": "5.3",
+      "printed_pdf_page": "47",
+      "physical_pdf_page": 51,
+      "pdf_destination": "section.5.3",
+      "planned_scope": "全空间有限能量 Cauchy 解，$u_0\\in H^1,\\ u_1\\in L^2,\\ f\\in L^1_{\\rm loc}L^2$，波速 $c>0$。给 $u\\in C_tH^1\\cap C_t^1L^2$ 的存在、唯一与能量估计，齐次时守恒。",
+      "planned_proof_route": "采用 P1‑02 归一化 $\\omega=2\\pi c\\vert \\xi\\vert $，用余弦、$\\sin(t\\omega)/\\omega$ 和外力卷积，零频取 $t$。除梯度、速度能量外单控位移 $L^2$。用 Schwartz 稠密性、能量稳定性及正则化测试核对能量恒等和弱解唯一。",
+      "source_locators": "E §§2.4.2–3、4.3.1，T1 §6.2，P1‑02 U3，D16 抽象波。",
+      "original_contract_ids": [
+        "EQ-01-C03-R02",
+        "EQ-06-C02-R01",
+        "EQ-06-C02-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Forced wave Cauchy problem in the energy space",
+          "statement_line": 218,
+          "proof_line": 240,
+          "proof_end_line": 296,
+          "label": "thm:pde-wave-energy",
+          "number": "5.4",
+          "printed_pdf_page": "47",
+          "physical_pdf_page": 51,
+          "pdf_destination": "theorem.5.4"
+        }
+      ]
+    },
+    "W04": {
+      "title_latex": "Cone energy, domain of dependence, and finite speed",
+      "path": "parts/hyperbolic.tex",
+      "line": 302,
+      "label": "pde:W04",
+      "number": "5.4",
+      "printed_pdf_page": "48",
+      "physical_pdf_page": 52,
+      "pdf_destination": "section.5.4",
+      "planned_scope": "局部锥能量、有限传播、依赖域和紧支撑数据的支撑半径 $R+ct$。差解在后向锥中无源且底面数据相同时，锥内解相同。",
+      "planned_proof_route": "对收缩球求导，边界 $c^2u_t\\partial_\\nu u-ce\\le0$。使用支持控制的平滑逼近。局部数据和外力的相等先在稍小后向锥中保持，再取极限传递能量，保留初始位移以确定空间常数。由局部差解推出全局支撑结论。",
+      "source_locators": "E §2.4.3 定理 6 p. 84、§7.2.4，S §§2.2、9.1。",
+      "original_contract_ids": [
+        "EQ-06-C02-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Localized wave energy",
+          "statement_line": 304,
+          "proof_line": 326,
+          "proof_end_line": 372,
+          "label": "thm:pde-wave-cone",
+          "number": "5.5",
+          "printed_pdf_page": "48",
+          "physical_pdf_page": 52,
+          "pdf_destination": "theorem.5.5"
+        }
+      ]
+    },
+    "W05": {
+      "title_latex": "The Dirichlet wave in the form domain",
+      "path": "parts/hyperbolic.tex",
+      "line": 377,
+      "label": "pde:W05",
+      "number": "5.5",
+      "printed_pdf_page": "49",
+      "physical_pdf_page": 53,
+      "pdf_destination": "section.5.5",
+      "planned_scope": "有界 Lipschitz 域的 Dirichlet 有限能量波。对称强制型 $A_H$，$u_0\\in H_0^1,\\ u_1\\in L^2,\\ f\\in L^1_tL^2$，给 $C_tH_0^1\\cap C_t^1L^2$、弱方程、唯一性与能量恒等式。",
+      "planned_proof_route": "用 E10 的特征基或正自伴谱 $\\cos(t\\sqrt{A_H})$、$\\sin(t\\sqrt{A_H})/\\sqrt{A_H}$，外力同空间积分。证明有限谱截断收敛，保留形域与算子域的区别、初边值迹和源项能量配对。",
+      "source_locators": "E §7.2.1–2 pp. 398–408，T1 §6.1 p. 518，B §10.3 p. 335，RR §12.3.2。",
+      "original_contract_ids": [],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Finite-energy Dirichlet wave",
+          "statement_line": 379,
+          "proof_line": 405,
+          "proof_end_line": 448,
+          "label": "thm:pde-dirichlet-wave",
+          "number": "5.6",
+          "printed_pdf_page": "49",
+          "physical_pdf_page": 53,
+          "pdf_destination": "theorem.5.6"
+        }
+      ]
+    },
+    "W06": {
+      "title_latex": "The first-order symmetric energy estimate",
+      "path": "parts/hyperbolic.tex",
+      "line": 455,
+      "label": "pde:W06",
+      "number": "5.6",
+      "printed_pdf_page": "50",
+      "physical_pdf_page": 54,
+      "pdf_destination": "section.5.6",
+      "planned_scope": "全空间线性对称双曲的 $L^2$ 估计。保留 $A^j$ 对称 $C^1$ 且一阶导数有界、$B$ 有界、平滑解的原假设，允许主系数至多线性增长。齐次差解的唯一与稳定。",
+      "planned_proof_route": "对称性把主项化为通量，体积分只用 $\\partial_jA^j$ 及 $B$ 对称部分。在线性增长时用适当移动球能量把无界通量留在可控边界，再令半径趋无穷，或在可用时间可积界时用截断尾量。Gronwall 得原 $e^{Ct}$ 界。",
+      "source_locators": "E §7.3.2 pp. 423–429，J ch. 5 §3(a) p. 139 起，T1 §6.5 作周期对照。",
+      "original_contract_ids": [
+        "EQ-06-C03-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "An \\(L^2\\) estimate with linear growth in the principal part",
+          "statement_line": 457,
+          "proof_line": 476,
+          "proof_end_line": 508,
+          "label": "thm:pde-symmetric-energy",
+          "number": "5.7",
+          "printed_pdf_page": "50",
+          "physical_pdf_page": 54,
+          "pdf_destination": "theorem.5.7"
+        }
+      ]
+    },
+    "W07": {
+      "title_latex": "Whole-space existence for symmetric systems",
+      "path": "parts/hyperbolic.tex",
+      "line": 516,
+      "label": "pde:W07",
+      "number": "5.7",
+      "printed_pdf_page": "51",
+      "physical_pdf_page": 55,
+      "pdf_destination": "section.5.7",
+      "planned_scope": "整空间的变系数对称系统 Cauchy 适定。$s$ 整数且 $s>n/2+1$，$A^j,B$ 光滑、有统一空间导数界至所需 $s$ 阶且给强时间乘子连续性，$u_0\\in H^s,\\ f\\in C_tH^s$，得唯一 $C_tH^s\\cap C_t^1H^{s-1}$ 与高阶能量界。",
+      "planned_proof_route": "用 Leibniz 交换子及对称主项闭合 $H^s$ 估计。对称 Friedrichs 正则化 $J_\\epsilon P J_\\epsilon$，差估计在 $H^{s-2}$ 给 Cauchy，再插值至 $H^{s-1}$。极限给弱 $H^s$ 连续，双向重启能量估计与唯一性给强 $H^s$ 连续，方程给强时间导数。",
+      "source_locators": "E §7.3.2 弱构造，J ch. 5 §3(b)，RR §12.3.1 对照。",
+      "original_contract_ids": [
+        "EQ-06-C03-R02"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Strong Sobolev well-posedness",
+          "statement_line": 518,
+          "proof_line": 540,
+          "proof_end_line": 646,
+          "label": "thm:pde-symmetric-hs",
+          "number": "5.8",
+          "printed_pdf_page": "51",
+          "physical_pdf_page": 55,
+          "pdf_destination": "theorem.5.8"
+        }
+      ]
+    },
+    "I01": {
+      "title_latex": "Continuous kernels and the Fredholm alternative",
+      "path": "parts/integral.tex",
+      "line": 9,
+      "label": "pde:I01",
+      "number": "6.1",
+      "printed_pdf_page": "53",
+      "physical_pdf_page": 57,
+      "pdf_destination": "section.6.1",
+      "planned_scope": "紧 Hausdorff $K$、有限正 Borel 测度（保留原满支撑范围）、连续复核 $k\\in C(K\\times K)$，积分算子在 $C(K)$ 上有界紧，$\\lambda\\ne0$ 的第二类 Fredholm 二择和伴随相容。",
+      "planned_proof_route": "在紧积上用 Stone–Weierstrass 将 $k$ 一致逼近为有限和 $a(x)b(y)$，诱导算子范数逼近有限秩。这个证明保留一般 Borel 测度。再调 D16 的紧算子二择，写出相容性的对偶条件。",
+      "source_locators": "K §2.5 定理 2.27 p. 28、§§3.1、4.3 pp. 33、52，D16 紧 Fredholm。",
+      "original_contract_ids": [
+        "EQ-09-C01-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Compact-kernel Fredholm bridge",
+          "statement_line": 11,
+          "proof_line": 35,
+          "proof_end_line": 72,
+          "label": "thm:pde-fredholm-kernel",
+          "number": "6.1",
+          "printed_pdf_page": "53",
+          "physical_pdf_page": 57,
+          "pdf_destination": "theorem.6.1"
+        }
+      ]
+    },
+    "I02": {
+      "title_latex": "The regular Volterra resolvent",
+      "path": "parts/integral.tex",
+      "line": 81,
+      "label": "pde:I02",
+      "number": "6.2",
+      "printed_pdf_page": "54",
+      "physical_pdf_page": 58,
+      "pdf_destination": "section.6.2",
+      "planned_scope": "$a\\le b$，紧三角上连续核、连续 $g$，Volterra 第二类方程对任意标量 $\\lambda$ 的唯一连续解。迭代核、阶乘界、Neumann 级数与连续 resolvent 表示。",
+      "planned_proof_route": "嵌套积分区域体积 $(t-a)^m/m!$，给全区间一致收敛和逆算子。用核级数复核积分式及 $\\lambda$ 幂次，$a=b$ 直接得到 $u=g$。",
+      "source_locators": "K §3.3 定理 3.10 pp. 41–42，Br §1.2 pp. 4–5，D16 正则 Volterra。",
+      "original_contract_ids": [
+        "EQ-09-C02-R01"
+      ],
+      "numbered_results": [
+        {
+          "kind": "theorem",
+          "title_latex": "Triangular kernel and factorial convergence",
+          "statement_line": 83,
+          "proof_line": 109,
+          "proof_end_line": 148,
+          "label": "thm:pde-volterra",
+          "number": "6.2",
+          "printed_pdf_page": "54",
+          "physical_pdf_page": 58,
+          "pdf_destination": "theorem.6.2"
+        }
+      ]
+    }
+  },
+  "proof_closure": [
+    {
+      "package": "P2-01",
+      "path": "parts/common.tex",
+      "line": 117,
+      "label": "thm:pde-normal-trace",
+      "number": "1.3",
+      "printed_pdf_page": "2",
+      "physical_pdf_page": 6,
+      "pdf_destination": "theorem.1.3",
+      "sha256": "2b069cb8ece3fb3ec311aa4fb24d9b17c55535cc90ffeef088cd169d8bad5f0e",
+      "role": "Normal flux in Lipschitz graphs and the one-dimensional endpoint trace."
+    },
+    {
+      "package": "P1-02",
+      "published_notes": {
+        "file": "provenance/components/FourierSobolev/delivery/paper.tex",
+        "historical_fragment": "parts/u4.tex"
+      },
+      "line": 202,
+      "label": "p102:u4-rademacher",
+      "number": "4.15",
+      "printed_pdf_page": "33",
+      "physical_pdf_page": 36,
+      "pdf_destination": "theorem.4.15",
+      "sha256": "c7382cb2559ec2ed050ec71287c1ac9ae9f53edbd011276898bd3ecfdfdc28e6",
+      "role": "Almost-everywhere differentiability of the graph."
+    },
+    {
+      "package": "P1-02",
+      "published_notes": {
+        "file": "provenance/components/FourierSobolev/delivery/paper.tex",
+        "historical_fragment": "parts/u4.tex"
+      },
+      "line": 277,
+      "label": "p102:u4-lipschitz-graph-area",
+      "number": "4.16",
+      "printed_pdf_page": "34",
+      "physical_pdf_page": 37,
+      "pdf_destination": "theorem.4.16",
+      "sha256": "c7382cb2559ec2ed050ec71287c1ac9ae9f53edbd011276898bd3ecfdfdc28e6",
+      "role": "Euclidean-normalized surface measure and the graph area factor."
+    },
+    {
+      "package": "P1-02",
+      "published_notes": {
+        "file": "provenance/components/FourierSobolev/delivery/paper.tex",
+        "historical_fragment": "parts/u5.tex"
+      },
+      "line": 906,
+      "label": "p102:AN-11-C05-R03",
+      "number": "5.17",
+      "printed_pdf_page": "49",
+      "physical_pdf_page": 52,
+      "pdf_destination": "theorem.5.17",
+      "sha256": "042a30bc282c56d31e6350c67331999d40c73f5bccede31e5566514c77de9f85",
+      "role": "Exact Sobolev trace and bounded lifting, with the one-dimensional case treated separately in U5 and C02."
+    }
+  ]
+}

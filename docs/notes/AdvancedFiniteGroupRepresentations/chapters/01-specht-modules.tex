@@ -1,0 +1,327 @@
+\chapter[The symmetric group and Specht modules]{The Symmetric Group and Specht Modules}
+
+Write \(S_n\) for the permutations of \(\{1,\ldots,n\}\), composed from
+right to left. All modules in the main argument are complex and
+finite-dimensional. We use the group algebra \(A_n=\mathbb C[S_n]\) and
+regard its representations as left modules. The sign of \(g\in S_n\)
+is written \(\operatorname{sgn}(g)\). The group \(S_0\) is trivial, and
+every construction on zero labels uses the empty diagram.
+
+The finite-group results used below are Schur's lemma, Maschke's
+theorem and the count of irreducible complex representations by
+conjugacy classes. They are established in \cite[Chapter 8]{algebra-core}.
+For the count, the finite-group theorem starts from a complete family
+of irreducibles. Its characters are an orthonormal basis of the space
+of class functions, whose dimension is the number of conjugacy classes.
+We apply this count to determine when a constructed family is complete.
+
+\section{Cycle types and permutation modules}
+
+\begin{theorem}[Conjugacy classes and their sizes]
+\label{res:A01}
+The cycle type of a permutation records all its cycle lengths, including
+one for each fixed point. It gives a bijection from conjugacy classes of
+\(S_n\) to partitions of \(n\). If \(\nu\) has \(m_j\) parts of size \(j\),
+the centralizer of a permutation of type \(\nu\) has order
+\[
+  z_\nu=\prod_{j\geq 1}j^{m_j}m_j!,
+\]
+and the corresponding class has \(n!/z_\nu\) elements. At \(n=0\) these
+counts are both \(1\).
+\end{theorem}
+
+\begin{proof}
+Conjugation relabels each orbit of a permutation and preserves its
+cyclic order. If two permutations have the same type, pair their cycles
+of equal length and choose a starting label in each paired cycle.
+Mapping successive labels in the source cycle to successive labels in
+its target defines a bijection that conjugates the permutations.
+Conversely, for any partition divide the labels into successive blocks of
+its part sizes and cycle the labels of each block. This realizes every
+partition, with the sole possibility at \(n=0\) being the identity.
+
+To commute with a given permutation \(g\), a permutation must send each
+cycle of \(g\) to a cycle of the same length. For cycles of length \(j\)
+there are \(m_j!\) choices of their target order and \(j\) choices of
+the image of one chosen starting label on each cycle. Commuting with
+\(g\) then determines the images of all successive labels. Each such
+choice gives a bijection commuting with \(g\), independently for each
+length. The class-size formula now follows from orbit--stabilizer for
+conjugation. See \cite[\S2.1]{sagan} and \cite[\S4.14]{etingof}.
+\end{proof}
+
+A partition \(\lambda\vdash n\) is a weakly decreasing list of positive
+integers summing to \(n\). We may append zeros when comparing lists.
+Its Young diagram consists of cells \((i,j)\) with \(1\leq j\leq\lambda_i\).
+Rows are numbered from top to bottom and columns from left to right.
+The transpose partition \(\lambda^\top\) has \(j\)-th part equal to the
+height of column \(j\), and \(\ell(\lambda)\) is the number of nonempty rows.
+
+\begin{proposition}[Tableaux, tabloids, and induction]
+\label{res:A02}
+A \(\lambda\)-tableau \(t\) is a bijective labeling of the diagram of
+\(\lambda\) by \(\{1,\ldots,n\}\). Two tableaux give the same tabloid if
+the sets of labels in the corresponding rows agree. Write \(\{t\}\)
+for the tabloid of \(t\). The row subgroup \(R_t\) and the column
+subgroup \(C_t\) permute labels within the rows and columns of \(t\),
+respectively, so \(R_t\cap C_t=\{1\}\). The left permutation module
+\(M^\lambda\) on the basis of tabloids is isomorphic to
+\(\operatorname{Ind}_{R_t}^{S_n}\mathbf 1\), where \(\mathbf 1\) is the
+trivial \(R_t\)-module.
+\end{proposition}
+
+\begin{proof}
+For a fixed tableau \(t\), any other tableau is \(gt\) for a unique
+permutation \(g\), where \(g\) replaces each entry \(a\) by \(g(a)\).
+The stabilizer of \(\{t\}\) is exactly \(R_t\) because the tabloid
+remembers the set of labels in each row. A permutation preserving both
+row sets and column sets fixes the label in their intersection at each
+cell. Thus \(R_t\cap C_t\) is trivial. Also \(R_t\) is a product of
+symmetric groups on the row sets, the Young subgroup for this choice
+of labeling.
+
+With the induction model from \cite[Chapter 9]{algebra-core}, send
+\(g\otimes 1\) in \(A_n\otimes_{\mathbb C[R_t]}\mathbb C\) to \(\{gt\}\).
+The relation \(gr\otimes 1=g\otimes 1\) holds for every \(r\in R_t\),
+and the proposed map respects it. As a right \(\mathbb C[R_t]\)-module,
+\(A_n\) is a direct sum of the spans \(g\mathbb C[R_t]\), one for each
+left coset \(gR_t\). Tensoring makes each summand a line and sends its
+generator to the corresponding tabloid. Hence the map is bijective
+and intertwines left multiplication by \(S_n\). See
+\cite[\S2.1, Theorem 2.1.12]{sagan}.
+\end{proof}
+
+For partitions \(\lambda,\mu\vdash n\), write \(\lambda\unrhd\mu\) if
+\(\sum_{i=1}^k\lambda_i\geq\sum_{i=1}^k\mu_i\) for every \(k\).
+These sums include appended zeros. In particular, dominance in both
+directions forces equal parts.
+
+\begin{lemma}[The row--column test]
+\label{res:A03}
+If \(\lambda\not\unrhd\mu\), then for any \(\lambda\)-tableau \(t\) and
+\(\mu\)-tableau \(u\), some column of \(t\) and some row of \(u\) have at
+least two labels in common. If \(\lambda=\mu\) and there is no such
+intersection, then \(\{u\}=\{ct\}\) for a unique \(c\in C_t\).
+\end{lemma}
+
+\begin{proof}
+In the absence of an intersection of size at least two, column \(j\)
+of \(t\) has at most \(\min(k,\lambda^\top_j)\) of its labels in the
+first \(k\) rows of \(u\). Counting all the labels in those rows gives
+\[
+  \sum_{i=1}^k\mu_i
+  \ \leq\ \sum_{j\geq 1}\min(k,\lambda^\top_j)
+  \ =\ \sum_{i=1}^k\lambda_i .
+\]
+The last equality counts the cells in the first \(k\) rows of the
+\(\lambda\)-diagram by columns. This proves the first claim. When the
+shapes are equal, the sum is an equality for each \(k\), so every
+column attains its individual upper bound. Taking the differences of
+these bounds at consecutive \(k\) shows that each column \(j\) supplies
+exactly one label to row \(i\) of \(u\) if \(i\leq\lambda^\top_j\),
+and none otherwise. Within each column, send the label of \(t\) in
+cell \((i,j)\) to that column's unique label in row \(i\) of \(u\).
+The resulting \(c\in C_t\) has \(\{ct\}=\{u\}\). Two such choices
+could differ only by an element of \(C_t\cap R_t\), which is trivial.
+Compare \cite[\S\S2.2--2.3]{sagan}.
+\end{proof}
+
+\section{Polytabloids and irreducibility}
+
+\begin{proposition}[Column alternation and the Specht module]
+\label{res:A04}
+For a tableau \(t\), put
+\[
+  b_t=\sum_{c\in C_t}\operatorname{sgn}(c)c\in A_n,
+  \qquad e_t=b_t\{t\}\in M^\lambda .
+\]
+The vector \(e_t\) is called a polytabloid. Its coefficient at \(\{t\}\)
+is \(1\), and \(g e_t=e_{gt}\) for all \(g\in S_n\).
+The Specht module \(S^\lambda\) is the span of the polytabloids of shape
+\(\lambda\). It is a nonzero submodule generated by any one \(e_t\).
+For \(c\in C_t\), \(e_{ct}=\operatorname{sgn}(c)e_t\), and
+\(b_t e_t=|C_t|e_t\).
+\end{proposition}
+
+\begin{proof}
+By Proposition~\ref{res:A02}, only the identity in \(C_t\) fixes
+\(\{t\}\); in fact the \(\{ct\}\) for \(c\in C_t\) are distinct.
+Since \(C_{gt}=gC_tg^{-1}\) and sign is invariant under conjugation,
+\(b_{gt}=gb_tg^{-1}\), which gives \(ge_t=e_{gt}\). The action on
+tableaux is transitive, so the orbit of any \(e_t\) generates the
+indicated nonzero module. Multiplying \(b_t\) on either side by
+\(c\in C_t\) gives \(\operatorname{sgn}(c)b_t\) by reindexing the sum.
+Consequently \(c e_t=\operatorname{sgn}(c)e_t\), and each signed
+summand of \(b_t\) acts on \(e_t\) as the identity. This yields
+\(b_t e_t=|C_t|e_t\). See \cite[\S2.3]{sagan}.
+\end{proof}
+
+Give \(M^\lambda\) the positive definite Hermitian inner product
+with orthonormal tabloid basis, linear in the first variable. The
+permutation action preserves this inner product.
+
+\begin{theorem}[Submodule theorem]
+\label{res:A05}
+For a tableau \(t\) of shape \(\lambda\), the action of \(b_t\) on
+\(M^\lambda\) is \(b_t x=\langle x,e_t\rangle e_t\).
+Every submodule \(U\subseteq M^\lambda\) contains \(S^\lambda\) or
+is contained in \((S^\lambda)^\perp\). In particular \(S^\lambda\)
+is irreducible.
+\end{theorem}
+
+\begin{proof}
+First consider the action on an arbitrary tabloid \(\{u\}\), possibly
+of a different shape. If some row of \(u\) contains two labels in a
+column of \(t\), the transposition of these labels belongs to \(C_t\)
+and fixes \(\{u\}\). Pairing terms in \(b_t\) by right multiplication
+by this transposition gives \(b_t\{u\}=0\). In the equal-shape case
+with no such collision, Lemma~\ref{res:A03} gives
+\(\{u\}=c\{t\}\) for \(c\in C_t\). The product rule for \(b_t c\)
+then gives \(b_t\{u\}=\operatorname{sgn}(c)e_t\).
+
+Thus the image on \(M^\lambda\) is the line \(\mathbb C e_t\). The
+adjoint of each basis permutation is its inverse, and
+\(\operatorname{sgn}(c^{-1})=\operatorname{sgn}(c)\), so \(b_t\)
+is self-adjoint. If \(b_t x=\alpha e_t\), taking the inner product
+against \(\{t\}\) gives
+\[
+  \alpha=\langle b_t x,\{t\}\rangle
+        =\langle x,b_t\{t\}\rangle=\langle x,e_t\rangle .
+\]
+Here the first equality uses the coefficient \(1\) from
+Proposition~\ref{res:A04}. If some vector \(x\in U\) pairs nontrivially
+with any \(e_t\), applying \(b_t\) puts that \(e_t\) in \(U\), and the
+orbit of \(e_t\) gives \(S^\lambda\subseteq U\). Otherwise \(U\)
+is perpendicular to every \(e_t\) and hence to \(S^\lambda\).
+Apply this dichotomy to a submodule of \(S^\lambda\). In the second
+case it is zero by positive definiteness, while in the first it is all
+of \(S^\lambda\). This is the argument of \cite[\S2.4]{sagan}.
+\end{proof}
+
+\begin{proposition}[Dominance and diagonal multiplicity]
+\label{res:A06}
+If \(\operatorname{Hom}_{S_n}(S^\lambda,M^\mu)\neq 0\), then
+\(\lambda\unrhd\mu\). The space
+\(\operatorname{Hom}_{S_n}(S^\lambda,M^\lambda)\) has dimension \(1\).
+\end{proposition}
+
+\begin{proof}
+An intertwiner \(f:S^\lambda\to M^\mu\) is determined by \(f(e_t)\)
+for a fixed \(\lambda\)-tableau \(t\), since \(e_t\) generates.
+Moreover
+\[
+  b_t f(e_t)=f(b_t e_t)=|C_t| f(e_t),
+\]
+so \(f(e_t)\) belongs to the image of \(b_t\). If
+\(\lambda\not\unrhd\mu\), the first part of Lemma~\ref{res:A03}
+and the transposition pairing in Theorem~\ref{res:A05} show
+that \(b_t\) kills every basis tabloid of \(M^\mu\).
+If \(\lambda=\mu\), Theorem~\ref{res:A05} gives the one-dimensional
+image \(\mathbb C e_t\), and the inclusion \(S^\lambda\hookrightarrow
+M^\lambda\) gives a nonzero intertwiner. See
+\cite[\S2.4, Proposition 2.4.5]{sagan}.
+\end{proof}
+
+\begin{theorem}[Classification over \(\mathbb C\)]
+\label{res:A07}
+The modules \(S^\lambda\), for \(\lambda\vdash n\), form a complete
+family of pairwise nonisomorphic irreducible \(S_n\)-modules.
+For \(n\geq 1\), \(S^{(n)}\) is trivial and \(S^{(1^n)}\) is the
+sign module. At \(n=0\), \(S^\varnothing\) is the trivial line.
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{res:A05} proves irreducibility. If
+\(S^\lambda\simeq S^\mu\), then composing an isomorphism and its
+inverse with the respective inclusions in \(M^\mu\) and \(M^\lambda\)
+gives nonzero intertwiners. Proposition~\ref{res:A06} yields both
+dominance inequalities, so \(\lambda=\mu\).
+Theorem~\ref{res:A01} gives a conjugacy class for each partition,
+so the number constructed is already the number of isomorphism
+classes given by the finite-group count.
+
+For one row there is one tabloid and every permutation fixes it.
+For one column, \(C_t=S_n\), and Proposition~\ref{res:A04} makes
+the orbit of \(e_t\) the sign line. The empty diagram has one tabloid
+and the only permutation fixes it. The classification is
+\cite[\S2.4, Theorem 2.4.6]{sagan}; compare
+\cite[\S4.12, Theorem 4.36]{etingof}.
+\end{proof}
+
+\section{Young operators in the group algebra}
+
+\begin{proposition}[Left ideals and normalized Young idempotents]
+\label{res:A08}
+Fix a tableau \(t\) of shape \(\lambda\) and put
+\[
+  a_t=\sum_{r\in R_t}r,\qquad c_t=b_t a_t,\qquad c'_t=a_t b_t .
+\]
+The map \(\{gt\}\mapsto ga_t\) identifies \(M^\lambda\) with
+\(A_n a_t\), and its restriction identifies \(S^\lambda\) with
+\(A_n c_t\). With \(q_\lambda=n!/\dim S^\lambda\),
+\[
+  c_t^2=q_\lambda c_t,\qquad (c'_t)^2=q_\lambda c'_t .
+\]
+Thus \(c_t/q_\lambda\) and \(c'_t/q_\lambda\) are idempotents, and
+the left ideals \(A_n c_t\) and \(A_n c'_t\) are isomorphic.
+\end{proposition}
+
+\begin{proof}
+The map on tabloids is well-defined since \(ra_t=a_t\) for \(r\in R_t\).
+The sum \(ga_t\) has support on \(gR_t\), and sums on distinct cosets
+have disjoint supports. Hence the map identifies the tabloid basis
+with a basis of \(A_n a_t\) and is equivariant. It sends \(e_t\)
+to \(b_t a_t=c_t\), which generates the image \(A_n c_t\).
+
+Right multiplication by \(c_t\) on \(A_n\) is a left-module map with
+image \(A_n c_t\). Its restriction to that image is multiplication
+by some scalar \(q\) by Schur's lemma, since \(A_n c_t\simeq S^\lambda\)
+is irreducible. In the group basis its trace is \(n!\) times the
+coefficient of \(1\) in \(c_t\). That coefficient is \(1\): an equality
+\(cr=1\) for \(c\in C_t\), \(r\in R_t\) implies \(c=r=1\).
+The map induces zero on the quotient \(A_n/(A_n c_t)\), so its trace
+also equals \(q\dim S^\lambda\). Thus \(q=q_\lambda\), and applying
+the restriction to \(c_t\) gives \(c_t^2=q_\lambda c_t\).
+The linear map \(g\mapsto g^{-1}\) reverses products and fixes \(a_t\)
+and \(b_t\), so it takes the square relation for \(c_t\) to the
+one for \(c'_t\).
+
+Right multiplication by \(b_t\) maps \(A_n c_t\) into \(A_n c'_t\)
+because \(c_t b_t=b_t c'_t\). Right multiplication by \(a_t\) maps
+back because \(c'_t a_t=a_t c_t\). The compositions are right
+multiplication by \(c_t\) and \(c'_t\) on the respective ideals,
+each equal to scalar \(q_\lambda\) by the square relations. These
+maps are therefore inverse up to a nonzero scalar. Our column-sum
+then row-sum order is the \(b_t a_t\) model compared with \(a_t b_t\)
+in \cite[Lemma 4.42 and Problem 4.68(a)]{etingof}.
+\end{proof}
+
+\begin{corollary}[Transpose and sign twist]
+\label{res:A09}
+For every \(\lambda\vdash n\),
+\(S^{\lambda^\top}\simeq S^\lambda\otimes\operatorname{sgn}\).
+The regular module of \(S_2\) over \(\mathbb F_2\) has a fixed line
+with no invariant complement. It illustrates the role of invertibility
+of the group order in Maschke's theorem.
+\end{corollary}
+
+\begin{proof}
+The algebra automorphism \(\theta\) defined by
+\(\theta(g)=\operatorname{sgn}(g)g\) is an involution. For a left
+ideal \(I\), the linear map \(x\mapsto\theta(x)\) intertwines the
+sign-twisted action on \(I\) with the ordinary action on \(\theta(I)\),
+since \(\theta(\operatorname{sgn}(g)gx)=g\theta(x)\).
+The transposed tableau \(t^\top\) interchanges the row and column
+subgroups. Hence \(\theta(b_t)=a_{t^\top}\),
+\(\theta(a_t)=b_{t^\top}\), and \(\theta(c_t)=c'_{t^\top}\).
+Proposition~\ref{res:A08} identifies \(A_n c'_{t^\top}\) with
+\(S^{\lambda^\top}\), proving the sign twist formula.
+
+For \(S_2=\{1,s\}\) over \(\mathbb F_2\), the regular module has
+basis \(1,s\), and \(s\) exchanges the two basis vectors. The fixed
+space is the line spanned by \(1+s\). An invariant complement would
+have dimension \(1\), and on it \(s\) would act by a nonzero scalar
+in \(\mathbb F_2\), necessarily \(1\). Such a complement would
+therefore lie in the fixed line, which is impossible.
+Compare \cite[\S3.1 and Problem 4.68(b)]{etingof}.
+\end{proof}

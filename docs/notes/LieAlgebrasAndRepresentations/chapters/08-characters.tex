@@ -1,0 +1,541 @@
+\chapter{Characters, Multiplicities, and the Center}
+\label{ch:characters}
+
+Keep the complex semisimple algebra and positive system of
+Chapter~\ref{ch:highest-weights}. We use a nondegenerate invariant
+form \(B\), positive on the real root space after identifying
+\(\mathfrak h\) with its dual. In particular every squared norm
+in a dominance argument is taken on that real space.
+Let
+\[
+ \rho=\tfrac12\sum_{\alpha>0}\alpha,\quad
+ \varepsilon(w)=\det(w),\quad
+ A_\nu=\sum_{w\in W}\varepsilon(w)e^{w\nu},\quad
+ D=e^\rho\prod_{\alpha>0}(1-e^{-\alpha}).
+\]
+The symbols \(e^\mu\) are formal basis elements, with
+\(e^\mu e^\nu=e^{\mu+\nu}\), rather than a choice of a Lie-group
+exponential.
+
+\section{Formal characters and a finite truncation argument}
+
+\begin{proposition}[Characters and their completion]
+\label{res:H01}
+For a finite-dimensional module set
+\(\operatorname{ch}V=\sum_\mu(\dim V_\mu)e^\mu\in\mathbb Z[P]\).
+Characters add in exact sequences, multiply in tensor products,
+and are \(W\)-invariant. The characters of the \(L(\lambda)\),
+\(\lambda\in P_+\), are linearly independent.
+There is also a well-defined ring of series over the additive group
+\(\mathfrak h^*\) whose support lies in a finite union of sets
+\(\lambda-Q_+\). Integral-weight series form a subring; in the
+larger ring
+\[
+ \operatorname{ch}M(\lambda)
+   =e^\lambda\prod_{\alpha>0}(1-e^{-\alpha})^{-1}.
+\]
+\end{proposition}
+\begin{proof}
+Exactness holds weight by weight by
+Lemma~\ref{supp:weight-submodules}, and
+\((V\otimes U)_\eta=\bigoplus_{\mu+\nu=\eta}V_\mu\otimes U_\nu\).
+These facts prove additivity and multiplication.
+Weyl invariance is Proposition~\ref{res:G07}.
+In a finite linear relation between simple characters, choose a
+maximal highest weight among the terms. Its coefficient receives
+no contribution from a different term, since all other weights
+lie below that term's own highest weight. Its multiplicity in its
+own character is one, so its coefficient is zero. Repeating proves
+independence.
+
+For the series ring, a coefficient of a product can receive only
+finitely many contributions. Indeed, for fixed upper bounds
+\(\lambda,\mu\), the decompositions
+\(\beta+\gamma=\lambda+\mu-\eta\), \(\beta,\gamma\in Q_+\),
+are finite: the simple-root coefficients are nonnegative integers
+with bounded sum. A finite union of upper bounds makes no
+difference to finiteness. The same observation proves associativity
+by rearranging finite coefficient sums.
+Finally PBW in \(U(\mathfrak n^-)\) makes a negative-root exponent
+independent for every positive root. Summing each geometric series
+gives the displayed formula. No Weyl action on this entire
+completion is assumed; we use that action on finite expressions
+when taking alternating sums.
+\end{proof}
+
+\begin{proposition}[The denominator, the Casimir, and truncated expansion]
+\label{res:H02}
+The denominator identity is \(D=A_\rho\).
+The Casimir for \(B\) acts on any highest-weight module of weight
+\(\lambda\) by
+\[
+ c_\lambda=(\lambda,\lambda+2\rho)
+           =\|\lambda+\rho\|^2-\|\rho\|^2 .
+\]
+If a weight module \(V\), supported in \(\lambda-Q_+\), has finite
+weight spaces and Casimir scalar \(c\), then, to any fixed height
+bound, its character is an integral linear combination of
+Verma characters \(M(\mu)\) with \(c_\mu=c\).
+\end{proposition}
+\begin{proof}
+First \(s_i\) permutes the positive roots other than \(\alpha_i\),
+and \(s_i\rho=\rho-\alpha_i\). Substitution in the product for \(D\)
+gives \(s_iD=-D\).
+In a finite alternating expression a coefficient on a reflection
+hyperplane is zero. Every remaining orbit has a unique strictly
+dominant representative \(\nu\), and its contribution is a
+multiple of \(A_\nu\).
+Every exponent of \(D\) is in \(\rho-Q_+\).
+If such a \(\nu\) is strictly dominant and integral, then
+\(\nu-\rho\) is dominant. If it were nonzero, its pairing with
+\(\rho\) would be positive: \(\rho\) is a positive sum of simple
+roots containing every simple root, and a nonzero dominant vector
+pairs nonnegatively with all of them and positively with at least
+one. On the other hand \(\nu-\rho\in-Q_+\), which pairs
+nonpositively with \(\rho\), since
+\((\rho,\alpha_i)>0\). This is impossible.
+Thus only \(A_\rho\) occurs; its top coefficient is one.
+This proves the denominator identity independently of the character
+formula.
+
+Choose dual bases \(h_a,h^a\) of \(\mathfrak h\), and root vectors
+\(x_\alpha,y_\alpha\) with \(B(x_\alpha,y_\alpha)=1\).
+Invariance gives
+\([x_\alpha,y_\alpha]=t_\alpha\), where
+\(B(t_\alpha,h)=\alpha(h)\).
+The Casimir is
+\[
+ \Omega=\sum_a h_ah^a+
+       \sum_{\alpha>0}(x_\alpha y_\alpha+y_\alpha x_\alpha)
+ =\sum_a h_ah^a+2t_\rho+
+       2\sum_{\alpha>0}y_\alpha x_\alpha.
+\]
+The dual tensor is invariant, so its multiplication commutes with
+every \(x\in\mathfrak g\); this is also the calculation in
+Theorem~\ref{res:C02}. Acting on a highest vector gives
+\(\|\lambda\|^2+2(\rho,\lambda)\).
+Since the module is generated by that vector and \(\Omega\) is
+central, this is its action on the whole module.
+
+For the expansion, the height of a weight \(\lambda-\beta\)
+is \(\operatorname{ht}\beta\). If \(V\ne0\), take all weight
+spaces of minimal height, and choose a basis of each.
+There are finitely many of these spaces, each finite dimensional.
+Every selected vector is highest, because raising a weight
+would give a smaller height. The universal property gives a map
+\[
+ T=\bigoplus_j M(\mu_j)\longrightarrow V
+\]
+which is an isomorphism on the entire minimal-height layer.
+The Casimir scalar on each summand is \(c_{\mu_j}=c\), as may
+be checked on its nonzero image of the highest vector.
+Both its kernel \(K\) and cokernel \(C\) therefore have Casimir
+scalar \(c\) and have zero spaces on that layer. Exactness gives
+\[
+ \operatorname{ch}V=\operatorname{ch}T-\operatorname{ch}K+
+                       \operatorname{ch}C.
+\]
+Repeat separately for \(K\) and \(C\). Their minimal heights have
+strictly increased. To compute all coefficients through height
+\(N\), stop after at most \(N+1\) such layers on each branch.
+There are finitely many branches, and finitely many Verma modules
+at each node. This proves the truncated assertion.
+Taking the whole minimal layer is essential: removing only one
+highest vector could leave the same highest weight in the cokernel.
+The proof does not claim that an arbitrary module has a finite
+untruncated Verma resolution.
+\end{proof}
+
+\begin{theorem}[Weyl character formula]
+\label{res:H03}
+For \(\lambda\in P_+\),
+\[
+ \operatorname{ch}L(\lambda)=
+ \frac{A_{\lambda+\rho}}{A_\rho}
+ =\frac{\sum_w\varepsilon(w)e^{w(\lambda+\rho)}}
+        {e^\rho\prod_{\alpha>0}(1-e^{-\alpha})}.
+\]
+The fraction denotes the equality after multiplication by the
+denominator, or its expansion in the completion of
+Proposition~\ref{res:H01}.
+\end{theorem}
+\begin{proof}
+The finite expression \(D\operatorname{ch}L(\lambda)\) is
+alternating. Its exponents lie in \(\lambda+\rho-Q_+\), and the
+coefficient of \(e^{\lambda+\rho}\) is one.
+Apply the truncated expansion in Proposition~\ref{res:H02} at
+arbitrarily large height bounds. Multiplication by
+\(\prod_{\alpha>0}(1-e^{-\alpha})\) only lowers weights,
+so any fixed coefficient is computed by a finite truncation.
+Whenever \(e^{\mu+\rho}\) has a nonzero coefficient, some
+Verma term contributing to it has \(c_\mu=c_\lambda\). Thus
+\[
+ \|\mu+\rho\|^2=\|\lambda+\rho\|^2.
+\]
+Choose the strictly dominant representative \(\nu\) of any orbit
+in this alternating expression. It too is an exponent in the
+support, so \(\delta=\lambda+\rho-\nu\in Q_+\).
+If \(\delta\ne0\), strict dominance of both \(\lambda+\rho\)
+and \(\nu\) gives
+\[
+ \|\lambda+\rho\|^2-\|\nu\|^2
+     =(\delta,\lambda+\rho+\nu)>0,
+\]
+contrary to the Casimir equality. Therefore the sole possible
+orbit is that of \(\lambda+\rho\).
+Its top coefficient determines it to be \(A_{\lambda+\rho}\).
+Singular orbits have zero coefficients by alternation.
+This proves the formula without using Harish--Chandra's theorem.
+\end{proof}
+
+\begin{corollary}[Weyl dimension formula]
+\label{res:H04}
+For every dominant integral weight,
+\[
+ \dim L(\lambda)
+  =\prod_{\alpha>0}\frac{(\lambda+\rho,\alpha)}{(\rho,\alpha)}
+  =\prod_{\alpha>0}
+       \frac{\langle\lambda+\rho,\alpha^\vee\rangle}
+            {\langle\rho,\alpha^\vee\rangle}.
+\]
+The formula includes \(\lambda=0\), products of simple factors,
+and the empty root system.
+\end{corollary}
+\begin{proof}
+Evaluate the character at \(e^\mu=\exp(2t(\mu,\rho))\).
+Invariance of the inner product and substitution \(w\mapsto w^{-1}\)
+give
+\[
+ A_{\lambda+\rho}(2t\rho)
+  =\sum_w\varepsilon(w)\exp(2t(w\rho,\lambda+\rho))
+  =A_\rho(2t(\lambda+\rho)).
+\]
+By the denominator identity this is
+\(\prod_{\alpha>0}
+ (\exp(t(\alpha,\lambda+\rho))-\exp(-t(\alpha,\lambda+\rho)))\).
+The denominator has the same expression with \(\lambda=0\).
+Divide, and let \(t\to0\), using
+\((e^{ta}-e^{-ta})/(e^{tb}-e^{-tb})\to a/b\) for \(b\ne0\).
+Every denominator is positive by the choice of positive system.
+The left side tends to the sum of the weight multiplicities.
+Replacing roots by coroots cancels the same nonzero factor in
+each quotient. All factors are independent on different simple
+components, so the asserted conventions follow as well.
+\end{proof}
+
+\section{Weight multiplicities and tensor coefficients}
+
+\begin{theorem}[Freudenthal's recursion]
+\label{res:H05}
+Let \(m_\lambda(\mu)=\dim L(\lambda)_\mu\), extended by zero
+away from the weight set. Then
+\[
+ \bigl(\|\lambda+\rho\|^2-\|\mu+\rho\|^2\bigr)m_\lambda(\mu)
+ =2\sum_{\alpha>0}\sum_{j\geq1}
+        (\mu+j\alpha,\alpha)m_\lambda(\mu+j\alpha).
+\]
+Together with \(m_\lambda(\lambda)=1\), this is a terminating
+recursion on the finite set
+\((\lambda+Q)\cap\operatorname{conv}(W\lambda)\).
+\end{theorem}
+\begin{proof}
+Set \(T_\mu^\alpha=\operatorname{tr}
+(y_\alpha x_\alpha|_{L(\lambda)_\mu})\).
+For maps between two different finite-dimensional spaces,
+\(\operatorname{tr}(AB)=\operatorname{tr}(BA)\);
+this follows by writing their two rectangular matrices.
+Hence, using \([x_\alpha,y_\alpha]=t_\alpha\),
+\[
+ T_\mu^\alpha
+   =\operatorname{tr}(x_\alpha y_\alpha|_{L(\lambda)_{\mu+\alpha}})
+   =T_{\mu+\alpha}^\alpha+
+                 (\mu+\alpha,\alpha)m_\lambda(\mu+\alpha).
+\]
+Iteration terminates because there are finitely many weights,
+and gives
+\(T_\mu^\alpha=\sum_{j\geq1}
+(\mu+j\alpha,\alpha)m_\lambda(\mu+j\alpha)\).
+Now take traces of the normal-ordered Casimir in
+Proposition~\ref{res:H02} on the \(\mu\) weight space.
+Its Cartan and linear terms have trace
+\((\|\mu\|^2+2(\rho,\mu))m_\lambda(\mu)\).
+Subtracting them from \(c_\lambda m_\lambda(\mu)\)
+proves the identity.
+
+By Proposition~\ref{res:G07} the weight set lies in the indicated
+bounded polytope. For \(\mu\) in that polytope,
+\(\|\mu\|^2\leq\|\lambda\|^2\), since a convex combination of
+vectors of norm \(\|\lambda\|\) has no larger norm.
+If also \(\mu\ne\lambda\) and \(\lambda-\mu\in Q_+\), then
+\((\rho,\lambda-\mu)>0\). Consequently
+\[
+ \|\lambda+\rho\|^2-\|\mu+\rho\|^2
+ =\|\lambda\|^2-\|\mu\|^2+2(\rho,\lambda-\mu)>0.
+\]
+All terms on the right have smaller height below \(\lambda\).
+The lattice intersection with the polytope is finite. These
+observations prove both that division is legitimate away from
+the top weight and that the recursion terminates. Candidates
+outside the cone or polytope have multiplicity zero.
+\end{proof}
+
+\begin{theorem}[Kostant's multiplicity formula]
+\label{res:H06}
+Let \(p(\beta)\) count the unordered decompositions of \(\beta\)
+as a sum of positive roots, with \(p(0)=1\), and set \(p(\beta)=0\)
+when \(\beta\notin Q_+\). Then
+\[
+ m_\lambda(\mu)=
+   \sum_{w\in W}\varepsilon(w)
+      p\bigl(w(\lambda+\rho)-(\mu+\rho)\bigr).
+\]
+\end{theorem}
+\begin{proof}
+Each root may occur with any nonnegative multiplicity, so in the
+completed ring
+\[
+ \prod_{\alpha>0}(1-e^{-\alpha})^{-1}
+     =\sum_{\beta\in Q_+}p(\beta)e^{-\beta}.
+\]
+Every coefficient is a finite sum by the height bound used in
+Proposition~\ref{res:G02}.
+Insert this expression into Theorem~\ref{res:H03}, cancel
+\(e^\rho\), and compare the coefficient of \(e^\mu\).
+The equality of exponents requires precisely
+\(\beta=w(\lambda+\rho)-(\mu+\rho)\).
+The zero convention covers weights outside the root-lattice
+coset and outside the positive cone.
+\end{proof}
+
+\section{Polynomial invariants and central characters}
+
+Polynomial functions on a vector space \(E\) form \(S(E^*)\).
+The form \(B\) identifies \(S(\mathfrak g)\) with polynomial
+functions on \(\mathfrak g\), compatibly with the adjoint action;
+similarly on \(\mathfrak h\). When speaking of restriction we
+always use these identifications. The group of inner automorphisms
+is generated by \(\exp(t\operatorname{ad}x)\), \(x\in\mathfrak g\).
+For root vectors these exponentials are finite on \(\mathfrak g\);
+their rank-one products represent the Weyl reflections.
+
+\begin{theorem}[Chevalley restriction]
+\label{res:H07}
+Restriction is an isomorphism
+\[
+ S(\mathfrak g^*)^{\mathfrak g}\longrightarrow
+ S(\mathfrak h^*)^W .
+\]
+The source is generated as an algebra by trace polynomials
+\(x\mapsto\operatorname{tr}_{L(\lambda)}(x^m)\),
+\(\lambda\in P_+\), \(m\geq1\), and constants.
+\end{theorem}
+\begin{proof}
+Infinitesimal invariance is equivalent to invariance under all
+inner exponentials. If every infinitesimal action kills a
+polynomial, its value along \(\exp(t\operatorname{ad}x)y\) has
+zero derivative for every \(t\), and hence is constant.
+Conversely differentiate such invariance at \(t=0\).
+The root directions suffice to test infinitesimal invariance,
+because their operators generate the Lie algebra action.
+The representatives of the simple Weyl reflections are products
+of these exponentials, so restriction lands in the stated
+invariants. If restriction is zero, invariance makes the polynomial
+vanish on all conjugates of \(\mathfrak h\).
+They include the dense regular semisimple set from
+Proposition~\ref{res:D06}; a polynomial vanishing on a dense set
+is zero. This proves injectivity.
+
+Here is a direct surjectivity proof, including the invariant
+polynomials which must be constructed. The lattice \(P\) spans
+\(\mathfrak h^*\), and pure powers of lattice elements span its
+symmetric powers. For example polarization expresses a product
+\(\eta_1\cdots\eta_m\) as
+\[
+ \frac1{m!}\sum_{J\subseteq\{1,\ldots,m\}}
+       (-1)^{m-|J|}\left(\sum_{j\in J}\eta_j\right)^m.
+\]
+Averaging over \(W\), and then moving a lattice element to the
+dominant chamber, shows that the invariant polynomials are spanned
+by orbit sums
+\(q_{\lambda,m}=\sum_{\nu\in W\lambda}\nu^m\),
+\(\lambda\in P_+\). Constants can be treated separately.
+
+For such a \(\lambda\), take \(L(\lambda)\), whose existence has
+already been proved. The trace polynomial
+\(T_{\lambda,m}(x)=\operatorname{tr}(\pi_\lambda(x)^m)\)
+is infinitesimally invariant: its derivative in the direction
+\([y,x]\) is
+\(m\operatorname{tr}(\pi_\lambda(x)^{m-1}
+[\pi_\lambda(y),\pi_\lambda(x)])=0\) by trace cyclicity.
+The preceding paragraph gives its inner invariance as well.
+Its restriction is
+\[
+ T_{\lambda,m}|_{\mathfrak h}
+   =q_{\lambda,m}
+     +\sum_{\substack{\nu\in P_+\\\nu<\lambda}}
+                  m_\lambda(\nu)q_{\nu,m}.
+\]
+Only weights of \(L(\lambda)\) occur. There are finitely many
+dominant weights below any fixed \(\lambda\), by the
+\(\rho^\vee\) bound in Theorem~\ref{res:G05}.
+Induction on that finite lower set therefore lifts every
+\(q_{\lambda,m}\) as a linear combination of trace polynomials.
+This proves surjectivity and the generation assertion.
+No conclusion about surjectivity has been inferred just from
+root-direction differentiation.
+\end{proof}
+
+\begin{theorem}[Harish--Chandra isomorphism and central characters]
+\label{res:H08}
+Let \(Z=Z(U(\mathfrak g))\). In the triangular PBW ordering,
+project onto the monomials entirely in \(\mathfrak h\):
+\(p:U(\mathfrak g)\to U(\mathfrak h)=S(\mathfrak h)\).
+For \(z\in Z\), define
+\[
+ \gamma(z)(\eta)=p(z)(\eta-\rho),\qquad \eta\in\mathfrak h^*.
+\]
+Then \(\gamma:Z\longrightarrow S(\mathfrak h)^W\) is an
+algebra isomorphism. The central character on \(M(\lambda)\)
+and its nonzero highest-weight quotients is
+\(\chi_\lambda(z)=\gamma(z)(\lambda+\rho)\), and
+\[
+ \chi_\lambda=\chi_\mu
+    \quad\Longleftrightarrow\quad
+ \mu+\rho\in W(\lambda+\rho).
+\]
+Every complex algebra character of \(Z\) is obtained in this way.
+\end{theorem}
+\begin{proof}
+A central \(z\) has Cartan weight zero. In its PBW expansion,
+a term with a positive-root factor on the right kills a highest
+vector. A term with negative-root factors and none positive
+cannot have weight zero unless those negative factors are absent.
+Thus \(zv_\lambda=p(z)(\lambda)v_\lambda\).
+Centrality extends this scalar action to the generated module.
+It follows for all \(\lambda\) that
+\(p(zz')(\lambda)=p(z)(\lambda)p(z')(\lambda)\).
+Two polynomials equal at all \(\lambda\) are equal, proving
+multiplicativity on \(Z\).
+
+We check the shifted invariance without presuming the theorem.
+If \(\lambda(h_i)=m\in\mathbb Z_{\geq0}\), the vector
+\(f_i^{m+1}v_\lambda\) in \(M(\lambda)\) is nonzero by PBW.
+The rank-one relation makes it killed by \(e_i\), and it is
+killed by \(e_j\), \(j\ne i\), because \([e_j,f_i]=0\).
+It has weight \(s_i(\lambda+\rho)-\rho\).
+There is therefore a nonzero highest-weight map from the Verma
+module of that weight into \(M(\lambda)\).
+The center has the same scalar on the two modules, so
+\[
+ p(z)(\lambda)
+    =p(z)\bigl(s_i(\lambda+\rho)-\rho\bigr).
+\]
+For each nonnegative integer \(m\) this is a polynomial identity
+on the entire affine hyperplane \(\lambda(h_i)=m\);
+the other coordinates are arbitrary. A polynomial in
+\(\lambda(h_i)\), with coefficients in the remaining coordinates,
+cannot have infinitely many distinct roots unless it is zero.
+The identity thus holds everywhere. After translation by
+\(\rho\) it says that \(\gamma(z)\) is \(s_i\)-invariant,
+and hence \(W\)-invariant.
+
+Equip \(U(\mathfrak g)\) with PBW degree.
+The leading symbol of a central element is in \(S(\mathfrak g)^{\mathfrak g}\).
+The leading symbol of \(p(z)\), if not zero, is its restriction
+to \(\mathfrak h\). By Chevalley restriction that restriction
+cannot be zero for a nonzero invariant symbol. Translation
+by \(-\rho\) does not change the leading symbol. It follows that
+\(\gamma(z)\ne0\) for \(z\ne0\), proving injectivity.
+
+For surjectivity, take a homogeneous invariant polynomial
+\(q\in S(\mathfrak h)^W\) of degree \(d\).
+By Theorem~\ref{res:H07} and the form \(B\), lift it to a
+homogeneous \(F\in S(\mathfrak g)^{\mathfrak g}\).
+The symmetrization map
+\[
+ x_1\cdots x_d\longmapsto
+       \frac1{d!}\sum_{\sigma\in S_d}x_{\sigma(1)}\cdots x_{\sigma(d)}
+\]
+is a filtered \(\mathfrak g\)-module isomorphism to
+\(U(\mathfrak g)\) by PBW.
+It carries \(F\) to a central element \(z\) whose leading
+symbol restricts to \(q\). Thus \(\gamma(z)-q\) is an invariant
+of smaller degree. Induction on degree corrects this difference;
+degree zero is immediate. This proves the isomorphism.
+
+Finally finite-group invariants separate distinct orbits.
+On two disjoint finite orbits choose, by polynomial interpolation,
+a polynomial equal to one on the first and zero on the second.
+One construction makes a delta polynomial at each point by
+multiplying linear functions separating it from all other points,
+then sums those delta polynomials. Averaging over \(W\) keeps
+the two prescribed constant values and makes it invariant.
+This proves the equivalence of central characters.
+To see that no characters are missing, the polynomial ring
+\(A=S(\mathfrak h)\) is integral and finite over \(A^W\):
+each of its finitely many linear generators satisfies the monic
+polynomial \(\prod_{w\in W}(t-w\ell)\), and adjoining finitely
+many integral generators is finite.
+Lying-over lifts a maximal ideal of \(A^W\) to one of \(A\).
+The weak Nullstellensatz identifies that ideal of \(A\) with
+evaluation at some \(\eta\in\mathfrak h^*\).
+These elementary integral-extension facts are among the
+prerequisites in \cite[Chapter 4]{p103}.
+Take \(\lambda=\eta-\rho\).
+\end{proof}
+
+\begin{theorem}[Steinberg's tensor multiplicities and small-rank checks]
+\label{res:H09}
+If \(\lambda,\mu,\nu\in P_+\), the multiplicity of \(L(\nu)\)
+in \(L(\lambda)\otimes L(\mu)\) is
+\[
+ c_{\lambda\mu}^{\nu}
+ =\sum_{u,w\in W}\varepsilon(u)\varepsilon(w)
+   p\bigl(u(\lambda+\rho)+w(\mu+\rho)-(\nu+2\rho)\bigr).
+\]
+For type \(A_1\) this gives
+\(L(a)\otimes L(b)=\bigoplus_{j=0}^{\min(a,b)}L(a+b-2j)\).
+For \(A_2\),
+\[
+ \dim L(a\omega_1+b\omega_2)
+    =\frac{(a+1)(b+1)(a+b+2)}2 ,
+ \qquad p(s\alpha_1+t\alpha_2)=
+      \min(s,t)+1\quad(s,t\geq0).
+\]
+\end{theorem}
+\begin{proof}
+By complete reducibility and the character formula,
+\[
+ \operatorname{ch}L(\lambda) A_{\mu+\rho}
+       =\sum_{\xi\in P_+}c_{\lambda\mu}^{\xi}A_{\xi+\rho}.
+\]
+For dominant \(\nu\), the coefficient of \(e^{\nu+\rho}\)
+on the right is just \(c_{\lambda\mu}^\nu\):
+two strictly dominant weights in the same Weyl orbit agree.
+The coefficient on the left is
+\(\sum_w\varepsilon(w)m_\lambda(\nu+\rho-w(\mu+\rho))\).
+Insert Kostant's formula and simplify its argument to obtain
+the stated double sum.
+
+For \(A_1\), the rank-one character is
+\(e^a+e^{a-2}+\cdots+e^{-a}\).
+The coefficient counts in the product, followed by successive
+subtraction of its top rank-one character, give the indicated
+list, each once. This also checks the double sum since
+\(p(j\alpha)=1\) for \(j\geq0\) and zero otherwise.
+For \(A_2\) the positive roots are
+\(\alpha_1,\alpha_2,\alpha_1+\alpha_2\).
+The dimension product has factors
+\(a+1,b+1,(a+b+2)/2\).
+A decomposition of \(s\alpha_1+t\alpha_2\) uses
+\(j\) copies of \(\alpha_1+\alpha_2\), with
+\(0\leq j\leq\min(s,t)\), and then forced numbers of the
+two simple roots. This proves the partition formula.
+As an internal multiplicity check, for the adjoint highest
+weight \(\lambda=\alpha_1+\alpha_2\), Kostant's formula at
+\(\mu=0\) has the identity term \(p(\alpha_1+\alpha_2)=2\);
+every other Weyl term lies outside \(Q_+\).
+It gives the two-dimensional zero weight space \(\mathfrak h\),
+consistent with the eight-dimensional decomposition in
+Example~\ref{res:G09}.
+\end{proof}

@@ -1,0 +1,167 @@
+\chapter{Compactness and approximation in scalar continuous-function spaces}
+\SourceRef{Rudin, Chapter 7, including Theorem 7.18 (PDF 165, formula checked against the scan); Pugh, Sections 4.3--4.4; Zorich II, Section 16.4. The domain here is a compact subset of the real line and the target is scalar.}
+
+\KEntry{K03.16.sup_space}{The scalar space \texorpdfstring{$C(K)$}{C(K)}}
+\begin{definition}
+Let $K\subset\R$ be nonempty and compact. The real or complex vector space $C(K,\K)$ consists of continuous scalar functions with pointwise operations and norm
+\[\norm f_\infty=\max_{x\in K}\abs{f(x)}.\]
+The maximum exists by compactness and continuity. The triangle inequality and homogeneity follow pointwise and then by taking maxima, and zero norm implies that every value is zero. The distance is $\norm{f-g}_\infty$, whose convergence is uniform convergence. For $K=\varnothing$, the space has only its zero (empty) function, with norm zero; all subsequent approximation and compactness assertions are then trivial.
+\end{definition}
+
+\KEntry{K03.16.complete}{Completeness of \texorpdfstring{$C(K)$}{C(K)}}
+\begin{theorem}
+Every sup-norm Cauchy sequence in $C(K,\K)$ converges in that norm to a member of $C(K,\K)$.
+\end{theorem}
+\begin{proof}
+Norm Cauchy convergence is exactly uniform Cauchy convergence. By \KRef{K03.12.cauchy}, scalar completeness gives a uniform scalar limit $f$. By \KRef{K03.12.continuity}, $f$ is continuous. It is bounded on compact $K$, hence belongs to $C(K)$, and the supremum criterion gives convergence in the norm.
+\end{proof}
+
+\KEntry{K03.16.equicontinuity}{Equicontinuity and boundedness}
+\begin{definition}
+A family $\mathcal F\subset C(K,\K)$ is pointwise equicontinuous if for every $x\in K$ and $\eps>0$ there is $\delta_x>0$ such that $\abs{f(y)-f(x)}<\eps$ for every $f\in\mathcal F$ whenever $y\in K$, $\abs{x-y}<\delta_x$. It is uniformly equicontinuous if a single $\delta$ works for every pair $x,y\in K$. Uniform boundedness means $\sup_{f\in\mathcal F,x\in K}\abs{f(x)}<\infty$.
+\end{definition}
+\begin{theorem}
+On compact $K$, pointwise equicontinuity implies uniform equicontinuity. For such a family, boundedness at each individual point implies uniform boundedness.
+\end{theorem}
+\begin{proof}
+For each $x$ choose $r_x>0$ such that $\abs{f(y)-f(x)}<\eps/2$ whenever $\abs{y-x}<2r_x$, for every $f$. Finitely many balls $B(x_i,r_{x_i})$ cover $K$. Put $\delta=\min_i r_{x_i}$. If $\abs{y-z}<\delta$ and $y\in B(x_i,r_{x_i})$, then both $y,z$ lie in $B(x_i,2r_{x_i})$; the triangle inequality gives $\abs{f(y)-f(z)}<\eps$ for every $f$. For boundedness choose a finite net with this common modulus at error $1$. At each of its finitely many centers the family values are bounded; the largest center bound plus $1$ bounds every value.
+\end{proof}
+
+\KEntry{K03.16.ascoli}{Arzela--Ascoli for scalar functions on compact real sets}
+\begin{theorem}
+A uniformly bounded equicontinuous sequence in $C(K,\K)$ has a uniformly convergent subsequence. A family $\mathcal F\subset C(K,\K)$ is compact in sup norm if and only if it is closed, uniformly bounded, and equicontinuous.
+\end{theorem}
+\begin{proof}
+Take finite $1/j$-nets of $K$ and let $D$ be their countable union, dense in $K$. At the first point of $D$ use bounded scalar subsequence compactness (\KRef{K03.01.bolzano}); at the second point extract a further subsequence, and continue. The diagonal subsequence $g_n$ converges at every point of $D$. For $\eps>0$, uniform equicontinuity supplies $\delta>0$ giving error $\eps/3$ between points less than $\delta$ apart, simultaneously for all $g_n$. Choose a finite $\delta$-net with centers in $D$. Their finitely many value sequences are Cauchy, so for large $n,m$, all center differences are $<\eps/3$. For any $x\in K$, compare $g_n(x)$ and $g_m(x)$ through a nearby center: the three errors sum to $<\eps$. Thus $g_n$ is uniformly Cauchy and converges in $C(K)$ by completeness.
+
+For sufficiency in the family statement this argument gives a subsequence converging in $C(K)$ from every sequence in $\mathcal F$; closedness puts its limit in $\mathcal F$. For clarity, sequential compactness implies compactness here as follows. A sequentially compact metric space has a finite $\eta$-net for each $\eta>0$, since otherwise inductively choosing points at mutual distances at least $\eta$ produces a sequence with no convergent subsequence. Given an open cover, it has a Lebesgue number: otherwise choose points $x_n$ such that their relative $1/n$-balls lie in no single cover member; a convergent subsequence $x_{n_j}\to x$ and a cover member containing a ball about $x$ contradict this choice for large $j$. A finite net with radius less than half the Lebesgue number now yields a finite subcover. Hence $\mathcal F$ is compact.
+
+Conversely a compact family has a finite sup-norm $\eta$-net for each $\eta$. It is bounded, since the norms of a finite $1$-net plus $1$ bound all its norms. For equicontinuity use a finite $\eps/3$-net of continuous functions; each is uniformly continuous on $K$, and the minimum of their continuity radii controls the middle term in
+\[\abs{f(x)-f(y)}\leq\abs{f(x)-h(x)}+\abs{h(x)-h(y)}+\abs{h(y)-f(y)}<\eps.\]
+Finally a compact subset of a metric space is closed: for a point $g$ outside it, the balls $B(f,\norm{g-f}/2)$ cover the compact family; a finite subcover yields a positive lower bound for its distances to $g$, so a ball about $g$ misses it. This completes both directions.
+\end{proof}
+
+\KEntry{K03.16.ascoli_hypotheses}{Why neither bound nor equicontinuity alone suffices}
+\begin{example}
+The constant functions $f_n(x)=n$ on any nonempty $K$ are equicontinuous, but their values at every fixed point are unbounded; no subsequence converges uniformly to a finite-valued function. On $[0,2\pi]$, $g_n(x)=\sin(nx)$ has common bound $1$, but $g_n(0)=0$ and $g_n(\pi/(2n))=1$, with $\pi/(2n)\to0$. Thus it is not equicontinuous at zero. No subsequence $g_{n_j}$ can converge uniformly: its continuous limit $g$ would satisfy $g(0)=0$ and $g(\pi/(2n_j))\to0$, whereas uniform convergence would also make those latter values tend to $1$.
+\end{example}
+\begin{remark}
+Pugh PDF 238 lists ODE and holomorphic-family applications without displaying all necessary hypotheses; they are not imported here. For example, $y_n=n$ solves $y'=0$ but has no finite-valued convergent subsequence. Zorich II PDF 412 includes a parenthesis suggesting local compactness of a target suffices to equate boundedness with total boundedness. For a general metric this fails: $\N$ with distance $1$ between distinct points is locally compact (singletons are compact neighborhoods) and bounded, yet no finite collection of balls of radius $1/2$ covers it. The scalar and finite-dimensional target cases used above are valid; no broader target claim is needed.
+\end{remark}
+
+\KEntry{K03.16.piecewise_linear}{Piecewise-linear uniform approximation}
+\begin{theorem}
+For real continuous $f$ on $[a,b]$ and a partition $P$, let $L_P$ interpolate $f$ linearly between successive nodes. If $\omega_f(\delta)=\sup_{\abs{x-y}\leq\delta}\abs{f(x)-f(y)}$, then
+\[\norm{f-L_P}_\infty\leq\omega_f(\norm P)\longrightarrow0\quad\text{as }\norm P\to0.\]
+\end{theorem}
+\begin{proof}
+For $x\in[u,v]$ write $x=(1-t)u+tv$, $0\leq t\leq1$. Then $L_P(x)=(1-t)f(u)+tf(v)$, so
+\[\abs{f(x)-L_P(x)}\leq(1-t)\abs{f(x)-f(u)}+t\abs{f(x)-f(v)}\leq\omega_f(v-u).\]
+Uniform continuity gives $\omega_f(\delta)\to0$. The degenerate interval is handled by its constant interpolant.
+\end{proof}
+
+\KEntry{K03.16.bernstein}{Bernstein polynomials and finite moment identities}
+\begin{construction}
+For $f\in C([0,1],\K)$ and $n\geq1$ define
+\[B_nf(x)=\sum_{k=0}^nf(k/n)w_{n,k}(x),\qquad w_{n,k}(x)=\binom nkx^k(1-x)^{n-k}.\]
+The weights are nonnegative and satisfy
+\[\sum_kw_{n,k}=1,\quad\sum_k(k/n)w_{n,k}=x,\quad\sum_k(k/n-x)^2w_{n,k}=x(1-x)/n.\]
+\end{construction}
+\begin{proof}
+The first identity is the binomial theorem for $(x+1-x)^n$. Using $k\binom nk=n\binom{n-1}{k-1}$ and shifting the finite index gives $\sum k w_{n,k}=nx$. Likewise $k(k-1)\binom nk=n(n-1)\binom{n-2}{k-2}$ gives $\sum k(k-1)w_{n,k}=n(n-1)x^2$; for $n=1$ this second factorial moment is zero directly. Add the first moment to get the second moment and expand the square:
+\[\sum(k/n-x)^2w_{n,k}=\frac{n(n-1)x^2+nx}{n^2}-2x^2+x^2=\frac{x(1-x)}n.\]
+All identities hold at $0,1$ as polynomial identities, with zeroth powers interpreted as $1$.
+\end{proof}
+
+\KEntry{K03.16.bernstein_convergence}{Bernstein's uniform estimate}
+\begin{theorem}
+For $M=\norm f_\infty$ and any $\delta>0$,
+\[\norm{B_nf-f}_\infty\leq\omega_f(\delta)+\frac{M}{2n\delta^2}.\]
+In particular $B_nf\to f$ uniformly on $[0,1]$.
+\end{theorem}
+\begin{proof}
+At fixed $x$, write the error as $\sum_k(f(k/n)-f(x))w_{n,k}(x)$. On the indices $\abs{k/n-x}\leq\delta$ its magnitude is bounded by $\omega_f(\delta)\sum_kw_{n,k}\leq\omega_f(\delta)$. On the other indices it is bounded by $2M$ times their total weight, which is at most
+\[\delta^{-2}\sum_k(k/n-x)^2w_{n,k}=x(1-x)/(n\delta^2)\leq1/(4n\delta^2).\]
+This gives the estimate uniformly in $x$. First choose $\delta$ making $\omega_f(\delta)$ small, then choose $n$ to make the second term small. Alternatively $\delta=n^{-1/4}$ gives an explicit sequence tending to zero. This proof uses only finite algebra and uniform continuity, not a probability convergence theorem.
+\end{proof}
+
+\KEntry{K03.16.weierstrass}{Weierstrass approximation on an interval}
+\begin{theorem}
+For $f\in C([a,b],\R)$ and every $\eps>0$, a real polynomial $p$ satisfies $\norm{f-p}_\infty<\eps$. The same assertion holds with complex coefficients for complex continuous $f$.
+\end{theorem}
+\begin{proof}
+For $a<b$ apply the Bernstein construction to $g(t)=f(a+(b-a)t)$, and substitute $t=(x-a)/(b-a)$ into its approximating polynomials. This affine substitution preserves polynomials and the supremum error, proving the real result. For complex $f=u+iv$, approximate $u,v$ by real polynomials with errors $<\eps/2$ and combine them; the triangle inequality gives total error $<\eps$. If $a=b$, use the constant polynomial $f(a)$.
+\end{proof}
+
+\KEntry{K03.16.lattice}{Algebra closures and the absolute-value construction}
+\begin{theorem}
+The uniform closure $\overline A$ of a real unital subalgebra $A\subset C(K,\R)$ is a unital algebra and is closed under absolute values, finite maxima, and finite minima.
+\end{theorem}
+\begin{proof}
+Addition and scalar multiplication pass to uniform limits. For multiplication, if $f_n\to f$ and $g_n\to g$ uniformly, then $f_n$ are uniformly bounded and
+\[\norm{f_ng_n-fg}_\infty\leq\norm{f_n}_\infty\norm{g_n-g}_\infty+\norm{f_n-f}_\infty\norm g_\infty\longrightarrow0.\]
+Thus $\overline A$ is an algebra. For $f\in\overline A$ choose $M\geq\norm f_\infty$. By the explicit Bernstein/affine construction in \KRef{K03.16.weierstrass} there are polynomials $p_j$ with $\sup_{[-M,M]}\abs{p_j(t)-\abs t}\to0$; if $M=0$ nothing is needed. Since constants and $f$ belong to $\overline A$, so does $p_j(f)$, and their uniform limit is $\abs f$. Finally
+\[\max(f,g)=\tfrac12(f+g+\abs{f-g}),\qquad\min(f,g)=\tfrac12(f+g-\abs{f-g}),\]
+proving finite lattice closure by iteration. More generally these formulas give lattice closure of any real algebra closure already known to contain absolute values.
+\end{proof}
+
+\KEntry{K03.16.stone_real}{Real Stone--Weierstrass on compact real sets}
+\begin{theorem}
+If a real subalgebra $A\subset C(K,\R)$ contains constants and separates points (for $x\ne y$ some $u\in A$ has $u(x)\ne u(y)$), then its uniform closure is $C(K,\R)$.
+\end{theorem}
+\begin{proof}
+Fix $f\in C(K,\R)$ and $\eps>0$. For $x\ne y$, choose a separating $u$ and an affine expression $h_{xy}=\lambda u+\mu$ matching $f$ at $x$ and $y$; explicitly $\lambda=(f(x)-f(y))/(u(x)-u(y))$, $\mu=f(x)-\lambda u(x)$. For $y=x$ use the constant $f(x)$. Fixing $x$, the open sets $\{t:h_{xy}(t)>f(t)-\eps\}$, indexed by $y$, cover $K$ since each contains $y$. Choose finitely many and put $g_x=\max_i h_{xy_i}\in\overline A$. Then $g_x>f-\eps$ everywhere and $g_x(x)=f(x)$. The open sets $\{t:g_x(t)<f(t)+\eps\}$ cover $K$ as $x$ varies. Choose finitely many $x_j$ and set $h=\min_jg_{x_j}\in\overline A$. Every value of $h$ is $>f-\eps$, and at each point one selected $g_{x_j}$ is $<f+\eps$, so $\norm{h-f}_\infty\leq\eps$. Since $h\in\overline A$, approximate it within any further $\eps$ by an element of $A$. As $\eps$ is arbitrary this proves density.
+
+A frequently used source variant replaces constants by ``no common zero.'' Its reduction needs proof: for each point choose $u\in A$ nonzero there; finitely many such neighborhoods cover $K$, so $t=\sum_{i=1}^ru_i^2\in A$ has range in $[m,M]$ for some $m>0$. Approximate $1/s$ on $[m,M]$ by polynomials $p_j(s)$ using Weierstrass. Then $t p_j(t)\in A$ (the polynomial $s p_j(s)$ has zero constant term) and $t p_j(t)\to1$ uniformly. Thus constants belong to $\overline A$, and the theorem just proved applied to this closed separating algebra gives $\overline A=C(K,\R)$. This establishes the variant rather than identifying its hypotheses by name.
+\end{proof}
+
+\KEntry{K03.16.stone_complex}{Complex Stone--Weierstrass with conjugation closure}
+\begin{theorem}
+If a complex subalgebra $A\subset C(K,\C)$ contains constants, separates points, and is closed under pointwise complex conjugation, then $\overline A=C(K,\C)$.
+\end{theorem}
+\begin{proof}
+Its real-valued elements form a real unital algebra $B$. For $u\in A$, the functions $(u+\overline u)/2$ and $(u-\overline u)/(2i)$ lie in $B$. Whenever $u$ distinguishes two points, at least one of these two components also distinguishes them; hence $B$ separates points. The real theorem uniformly approximates the real and imaginary parts of any continuous complex function by members of $B$. Combining those two approximations gives a member of $A$ with arbitrarily small uniform error. Conjugation closure is exactly what made the component functions available and remains an explicit hypothesis.
+\end{proof}
+
+\KEntry{K03.16.smooth_density}{Smooth uniform approximation}
+\begin{theorem}
+Every continuous scalar function on a compact real interval is a uniform limit of smooth functions defined on a neighborhood of that interval.
+\end{theorem}
+\begin{proof}
+Choose approximating polynomials from \KRef{K03.16.weierstrass} with errors $<1/n$. Polynomials have derivatives of all orders everywhere, so they supply the required smooth approximants. A discontinuous function on the interval cannot be a uniform limit of continuous, hence cannot be a uniform limit of smooth functions, by \KRef{K03.12.continuity}; no assertion about such functions follows from this density theorem.
+\end{proof}
+
+\KEntry{K03.16.approximate_identity}{Elementary convolution approximation}
+\begin{theorem}
+Let $f:\R\to\K$ be bounded and uniformly continuous. Let $k_j$ be nonnegative continuous functions with support contained in $[-\delta_j,\delta_j]$, $\delta_j\downarrow0$, and ordinary integral $1$. Then the proper Riemann convolutions
+\[T_jf(x)=\int_{-\delta_j}^{\delta_j}f(x-t)k_j(t)\dd t\]
+converge uniformly on $\R$ to $f$, with $\sup_x\abs{T_jf(x)-f(x)}\leq\omega_f(\delta_j)$.
+\end{theorem}
+\begin{proof}
+Uniform continuity implies continuity of $f$, so each integrand is continuous on the compact integration interval and the integral exists. Since the kernel has integral one,
+\[\abs{T_jf(x)-f(x)}\leq\int\abs{f(x-t)-f(x)}k_j(t)\dd t\leq\omega_f(\delta_j)\int k_j=\omega_f(\delta_j)\to0.\]
+The bound is independent of $x$. Such kernels exist explicitly: $k_\delta(t)=\delta^{-1}\max(1-\abs t/\delta,0)$ has triangular area $1$, is continuous, nonnegative, and has the required support. General measurable or $L^p$ convolution theory is outside this assertion.
+\end{proof}
+
+\KEntry{K03.16.nowhere_differentiable}{A complete periodic-tent nowhere differentiable example}
+\begin{construction}
+Let $\phi$ be the $2$-periodic extension of $\abs x$ on $[-1,1]$. Then
+\[F(x)=\sum_{n=0}^\infty(3/4)^n\phi(4^nx)\]
+is continuous on $\R$ and has no finite derivative at any real point.
+\end{construction}
+\begin{proof}
+The tent has $0\leq\phi\leq1$ and is affine with slope $1$ or $-1$ between consecutive integers. Subdivide any segment at the finitely many intervening integers and add the slope bounds to obtain $\abs{\phi(s)-\phi(t)}\leq\abs{s-t}$. Thus it is continuous. The geometric majorant $\sum(3/4)^n$ proves uniform convergence of the defining series and hence continuity of $F$.
+
+Fix $x\in\R$. For every integer $m\geq1$, choose
+\[h_m=\pm\tfrac12\,4^{-m}\]
+so that the segment between $4^mx$ and $4^m(x+h_m)$ contains no integer in its interior. This is possible because within the unit interval containing $4^mx$, at least one side has available length at least $1/2$; at an integer choose either direction. On that segment the tent is affine, so
+\[\gamma_{n,m}=\frac{\phi(4^n(x+h_m))-\phi(4^nx)}{h_m}\quad\text{satisfies}\quad
+\abs{\gamma_{m,m}}=4^m,\qquad\abs{\gamma_{n,m}}\leq4^n\ (n<m).\]
+If $n>m$, the displacement $4^nh_m=\pm2\cdot4^{n-m-1}$ is an even integer, so periodicity gives $\gamma_{n,m}=0$ exactly. Therefore the quotient of the uniformly convergent sum is here an actual finite sum:
+\[\begin{split}
+\abs{\frac{F(x+h_m)-F(x)}{h_m}}
+&=\abs{\sum_{n=0}^m(3/4)^n\gamma_{n,m}}\\
+&\geq3^m-\sum_{n=0}^{m-1}3^n=\tfrac12(3^m+1)\longrightarrow\infty.
+\end{split}\]
+Since $h_m\to0$, a finite derivative at this fixed $x$ is impossible. The argument holds at every $x$. No differentiation of an uncontrolled infinite series was used. The coefficients and signed half-cell increments are those of Rudin Theorem 7.18, verified against its displayed scan.
+\end{proof}

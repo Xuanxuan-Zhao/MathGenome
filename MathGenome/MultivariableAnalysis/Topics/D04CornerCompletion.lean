@@ -1,0 +1,5 @@
+import MathGenome.Internal.MultivariableAnalysis.D04CornerCompletion.BoxAndSquareCorollaries
+import MathGenome.Internal.MultivariableAnalysis.D04CornerCompletion.BoxGeometry
+import MathGenome.Internal.MultivariableAnalysis.D04CornerCompletion.IntervalEndpointCharts
+import MathGenome.Internal.MultivariableAnalysis.D04CornerCompletion.NoVertexChart
+import MathGenome.Internal.MultivariableAnalysis.D04CornerCompletion.VertexCurveDerivative

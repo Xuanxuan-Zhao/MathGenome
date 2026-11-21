@@ -1,0 +1,540 @@
+\chapter{Complex characters and induction}\label{chap:M07.21}
+Throughout this chapter $G$ is a finite group, and representations and
+vector spaces are over $\C$. Representations whose characters are taken
+are finite-dimensional. We reuse the definitions, Schur lemmas and
+Maschke theorem in Chapter~\ref{chap:M07.17}; their general-field versions
+are not being silently strengthened to character classification.
+The external D05 tensor, dual, trace and inner-product results cited by
+their literal identifiers have their proofs in the D05 notes and the
+declared foundation register of this project.
+
+% Algebra, duals and averaging.
+\KEntry{K07.21.group_algebra}{The group algebra and its modules}
+The group algebra $\C[G]$ has basis $(e_g)_{g\in G}$, multiplication
+$e_ge_h=e_{gh}$ extended bilinearly, and unit $e_1$.
+We usually write $g$ for $e_g$, but the group identity then denotes
+the algebra unit rather than the zero vector. For three basis elements,
+$(e_ge_h)e_k=e_{(gh)k}=e_{g(hk)}=e_g(e_he_k)$; trilinearity
+proves associativity on all elements. Scalars $ce_1$ commute with the
+basis and hence with the whole algebra. Its dimension is $|G|$.
+
+A representation $\rho$ extends uniquely to a unital algebra map
+\[
+ \C[G]\longrightarrow\End_\C(V),\qquad
+ \sum_g a_g g\longmapsto\sum_g a_g\rho(g).
+\]
+Indeed multiplication of the two finite sums gives
+$\sum_{g,h}a_gb_h\rho(gh)$, which is the required image of their
+algebra product. Conversely a unital $\C[G]$-module gives a group
+action, because the actions of $g$ and $g^{-1}$ are inverse. The
+scalar action is the given complex vector-space action. These
+constructions are inverse. A subspace is $G$-invariant exactly when it
+is a submodule, and a linear map is equivariant exactly when it commutes
+with the action of every algebra element: both assertions follow by
+linear extension from the basis $G$. This proves the correspondence,
+including the zero module and the case $G=1$, when $\C[G]=\C$.
+
+\KEntry{K07.21.dual_tensor}{Dual and tensor representations}
+For a representation on $V$, put
+\[
+ (g\phi)(v)=\phi(g^{-1}v)\qquad(\phi\in V^*).
+\]
+This is linear in $\phi$, and
+$g(h\phi)(v)=\phi(h^{-1}g^{-1}v)=((gh)\phi)(v)$.
+The identity acts identically and the action of $g^{-1}$ is inverse.
+Thus it defines the dual representation; omitting the inverse would
+reverse the product law. In dual bases its matrix is
+$(\rho(g^{-1}))^{\mathsf T}$, so
+\[
+ \chi_{V^*}(g)=\chi_V(g^{-1}).
+\]
+Finite-dimensional duality also preserves irreducibility. If
+$0<U<V^*$ were invariant, its annihilator in $V$ would be a proper
+nonzero invariant subspace: for $v$ annihilating $U$ and $\phi\in U$,
+$\phi(gv)=(g^{-1}\phi)(v)=0$. Its positive, proper dimension follows
+from the D05 annihilator dimension formula
+\texttt{K05.07.annihilator\_dimension}. This contradicts irreducibility
+of $V$. Conversely apply the same assertion to $V^*$ and the natural
+equivariant identification $V\simeq V^{**}$, whose equivariance follows
+by evaluating at every $\phi$. Zero spaces remain zero and are not
+irreducible.
+
+For representations $V,W$, define
+$g(v\otimes w)=gv\otimes gw$. The tensor universal property and
+functoriality, \texttt{K05.15.tensor\_universal} and
+\texttt{K05.15.tensor\_maps}, give linear operators satisfying the
+group law on elementary tensors and therefore everywhere. In product
+bases the diagonal entries are $\rho(g)_{ii}\sigma(g)_{jj}$; summing
+gives
+\[
+ \chi_{V\otimes W}(g)=\chi_V(g)\chi_W(g).
+\]
+If one space is zero both sides are zero. These are representation
+structures on the D05 tensor product, not a new tensor construction.
+
+\KEntry{K07.21.square_characters}{Symmetric and exterior square characters}
+The flip $F(v\otimes w)=w\otimes v$ on $V\otimes V$ commutes
+with $A\otimes A$ for every linear $A$. The two projections
+$P_+=(I+F)/2$ and $P_-=(I-F)/2$ have complementary images,
+identified with $\operatorname{Sym}^2V$ and $\Lambda^2V$ by
+\texttt{K05.15.symmetrizers}, \texttt{K05.15.symmetric} and
+\texttt{K05.15.exterior}. Consequently both are invariant for the
+tensor representation. If a map $T$ commutes with a projection $P$,
+then $T$ is block diagonal on $\im P\oplus\ker P$, while $TP$
+has blocks $T|_{\im P},0$; thus $\Tr(TP)=\Tr(T|_{\im P})$.
+For a matrix $A$, product-basis entries give
+\[
+ \Tr((A\otimes A)F)=\sum_{i,j}A_{ij}A_{ji}=\Tr(A^2).
+\]
+Taking $A=\rho(g)$ therefore proves
+\[
+ \chi_{\operatorname{Sym}^2 V}(g)
+  =\frac{\chi_V(g)^2+\chi_V(g^2)}2,\qquad
+ \chi_{\Lambda^2 V}(g)
+  =\frac{\chi_V(g)^2-\chi_V(g^2)}2.
+\]
+The argument includes dimensions zero and one. Division by two is valid
+over $\C$; these projection formulas are not asserted in characteristic
+two.
+
+\KEntry{K07.21.unitary_averaging}{Invariant Hermitian metrics}
+Choose any positive definite Hermitian form $h_0$ on a finite-dimensional
+$V$, using a basis. Fix linearity in the first argument and conjugate
+linearity in the second; \texttt{K05.12.convention\_bridge} relates this
+to the opposite convention. Set
+\[
+ h(v,w)=\frac1{|G|}\sum_{g\in G}h_0(gv,gw).
+\]
+The form is Hermitian and sesquilinear by addition. If $v\ne0$, every
+$gv$ is nonzero, so the summands $h_0(gv,gv)$ are positive and
+$h(v,v)>0$. Reindexing $g\mapsto gk$ proves
+$h(kv,kw)=h(v,w)$. Gram--Schmidt from
+\texttt{K05.12.gram\_schmidt} gives an orthonormal basis in which every
+$\rho(g)$ is unitary. The zero space has its unique Hermitian form,
+which is positive definite with the usual vacuous nonzero-vector test.
+Since a unitary matrix has inverse its conjugate transpose,
+\[
+ \chi_V(g^{-1})=\overline{\chi_V(g)},\qquad
+ \chi_{V^*}(g)=\overline{\chi_V(g)}.
+\]
+The first identity concerns finite complex representations of a finite
+group; it does not follow from trace invariance alone over an arbitrary
+field.
+
+\KEntry{K07.21.hom_pairing}{Averaging Hom spaces and character inner products}
+For functions on $G$, define
+\[
+ \langle f,k\rangle_G=\frac1{|G|}\sum_{g\in G}
+ f(g)\overline{k(g)}.
+\]
+This is a positive definite Hermitian inner product: the squared norm is
+the average of $|f(g)|^2$, and vanishes exactly when every value vanishes.
+It is linear in its first argument. On $\Hom_\C(V,W)$ use the action
+\[
+ gT=\sigma(g)T\rho(g)^{-1}.
+\]
+Composition of these operators proves the group law, and its invariant
+subspace is exactly $\Hom_G(V,W)$.
+The average $Q=|G|^{-1}\sum_g(g\cdot-)$ has invariant image by
+reindexing and is the identity on invariants. Hence $Q^2=Q$ and
+$\im Q=\Hom_G(V,W)$. Its decomposition into image and kernel
+shows $\Tr Q=\dim_\C\Hom_G(V,W)$, since its matrix there is
+$\operatorname{diag}(I,0)$.
+
+In bases of $V,W$, the trace of the map $T\mapsto BT A$ on the
+matrix space is $\Tr(B)\Tr(A)$: the coefficient of a matrix unit
+$E_{ba}$ in its own image is $B_{bb}A_{aa}$, and these units form
+a basis. Take $B=\sigma(g),A=\rho(g)^{-1}$ and use the preceding
+unitary character identity. Trace linearity gives the exact formula
+\begin{equation}\label{eq:character-hom-pairing}
+ \langle\chi_W,\chi_V\rangle_G
+   =\dim_\C\Hom_G(V,W).
+\end{equation}
+The integer on the right is viewed in $\C$. This also proves that these
+particular inner products are real nonnegative integers. When either
+space is zero both sides vanish.
+
+\KEntry{K07.21.matrix_orthogonality}{Schur orthogonality of matrix coefficients}
+Choose pairwise inequivalent irreducible representations $V_i$, with
+unitary bases, and write $d_i=\dim V_i>0$. No completeness of the
+chosen family is assumed yet. Then
+\begin{equation}\label{eq:matrix-orthogonality}
+ \frac1{|G|}\sum_{g\in G}\rho_i(g)_{ab}
+      \overline{\rho_j(g)_{cd}}
+ =\begin{cases}\delta_{ac}\delta_{bd}/d_i&i=j,\\0&i\ne j.
+ \end{cases}
+\end{equation}
+To prove it, average a map $T:V_j\to V_i$ as in the preceding entry.
+The result $Q(T)$ is an intertwiner. If $i\ne j$, Schur's
+zero-or-isomorphism lemma makes it zero. If $i=j$, scalar Schur gives
+$Q(T)=\lambda I$. Trace invariance under conjugation gives
+$d_i\lambda=\Tr Q(T)=\Tr T$, so $Q(T)=(\Tr T/d_i)I$.
+Now take $T$ with its single nonzero entry $T_{bd}=1$. The $(a,c)$
+entry of the average is
+$|G|^{-1}\sum_g\rho_i(g)_{ab}\rho_j(g)^{-1}_{dc}$.
+Unitarity identifies the last entry with
+$\overline{\rho_j(g)_{cd}}$, and the scalar answer has entry
+$\delta_{bd}\delta_{ac}/d_i$, as required.
+
+Summing the diagonal coefficient pairings proves
+\begin{equation}\label{eq:character-row-orthogonality}
+ \langle\chi_i,\chi_j\rangle_G=\delta_{ij}.
+\end{equation}
+This also follows from \eqref{eq:character-hom-pairing} and the two
+Schur lemmas. All matrix coefficients in this family are nonzero
+orthogonal functions after the indicated normalization, not only their
+diagonal sums.
+
+% Regular representations and completeness.
+\KEntry{K07.21.regular_decomposition}{All irreducibles and the regular representation}
+\begin{theorem}\label{thm:regular-complex-decomposition}
+There are finitely many irreducible complex representations of $G$ up
+to equivalence. Choose one of each, $V_1,\ldots,V_r$, and put
+$d_i=\dim V_i$. Then
+\[
+ \C[G]\cong_G\bigoplus_{i=1}^r V_i^{\oplus d_i},
+ \qquad |G|=\sum_{i=1}^r d_i^2.
+\]
+Every irreducible representation of a finite group is finite-dimensional,
+even if this was not assumed in its definition.
+\end{theorem}
+\begin{proof}
+For an irreducible $V$ choose $v\ne0$. The span of the orbit $Gv$
+is nonzero and invariant, hence is $V$. The map
+$\C[G]\to V$, $\sum a_gg\mapsto\sum a_g gv$, is therefore
+surjective and equivariant. It also proves $\dim V\leq |G|$.
+By Maschke and \ref{K07.17.complete_reducibility}, the finite-dimensional
+regular representation is a finite direct sum of irreducibles.
+The displayed surjection is nonzero on at least one summand; its
+restriction there is an equivalence by Schur. Thus its finitely many
+summand types are all irreducible types, proving finiteness.
+
+Collect equal types to write the regular module as
+$\bigoplus_i V_i^{\oplus m_i}$. Left multiplication by $g$ permutes
+the basis $G$ and has a fixed basis vector exactly when $g=1$.
+Thus its character is $|G|$ at $1$ and zero elsewhere. Pairing that
+character with $\chi_i$ and applying row orthogonality gives
+\[
+ m_i=\langle\chi_{\C[G]},\chi_i\rangle_G
+ =\overline{\chi_i(1)}=d_i.
+\]
+Taking dimensions proves the square sum. In particular every chosen
+type really occurs. There is at least one type, since the nonzero
+regular module contains the trivial line spanned by $\sum_g g$.
+For $G=1$, the result is the single one-dimensional trivial type.
+\end{proof}
+There are $\sum_i d_i^2=|G|$ matrix coefficient functions in
+\eqref{eq:matrix-orthogonality}. They are independent and hence form
+an orthogonal basis of the entire $|G|$-dimensional function space
+$\C^G$. This completeness is now justified by the regular module,
+not presumed while proving orthogonality.
+
+\KEntry{K07.21.character_completeness}{The class count and complete character basis}
+\begin{theorem}\label{thm:character-completeness}
+The number $r$ of irreducible complex representation types equals the
+number of conjugacy classes of $G$. Their characters form an orthonormal
+basis of the space of complex class functions on $G$.
+\end{theorem}
+\begin{proof}
+The representation actions extend to an algebra map
+\[
+ \Phi:\C[G]\longrightarrow\prod_{i=1}^r\End_\C(V_i).
+\]
+If $a$ is in its kernel, it acts by zero on every irreducible and
+therefore on every summand of the regular module. Left multiplication
+by $a$ on $\C[G]$ is zero, so evaluating it at the algebra unit gives
+$a=0$. Thus $\Phi$ is injective. By the square sum, both vector
+spaces have dimension $|G|$, so it is surjective and hence an algebra
+isomorphism. This proves the needed special group-algebra decomposition
+without assuming a general structure theorem for associative algebras.
+
+An endomorphism commuting with all matrix units is scalar: commuting
+with each diagonal matrix unit makes its off-diagonal entries zero;
+commuting with $E_{ab}$ then equates every two diagonal entries.
+This includes dimension one. Hence the center of the product algebra
+has dimension $r$, one scalar per factor, and so does $Z(\C[G])$.
+On the other hand, $a=\sum_g a_g g$ is central exactly when
+$hah^{-1}=a$ for every $h\in G$, equivalently when its coefficients
+are constant on conjugacy classes. The sums of the basis elements in
+each class form a basis of this center: their supports are disjoint,
+and every constant-on-class coefficient list is their linear combination.
+Thus its dimension is the number $k$ of classes, giving $r=k$.
+
+Class functions form a $k$-dimensional vector space with the class
+indicator basis. The $r=k$ irreducible characters lie in this space by
+\ref{K07.17.characters} and are orthonormal by
+\eqref{eq:character-row-orthogonality}. They are consequently a basis.
+\end{proof}
+
+\KEntry{K07.21.multiplicity_classification}{Multiplicities and equality of characters}
+For a finite-dimensional representation $V$, complete reducibility
+gives $V\cong\bigoplus_i V_i^{\oplus m_i}$ with $m_i\geq0$.
+Taking characters and pairing with $\chi_j$ proves
+\[
+ m_j=\langle\chi_V,\chi_j\rangle_G,
+ \qquad \langle\chi_V,\chi_V\rangle_G=\sum_i m_i^2.
+\]
+Thus the multiplicities are unique. Two finite-dimensional complex
+representations are equivalent if and only if their characters are equal:
+equal characters give the same multiplicities and isomorphisms with the
+same direct sum, while an equivalence preserves trace. A representation
+is irreducible exactly when its character has squared norm one, because
+a sum of squares of nonnegative integers is one exactly when one is
+one and the others are zero. The zero space has all multiplicities and
+character zero and has squared norm zero; it is not an exception to the
+equivalence criterion. More generally
+\[
+ \dim\Hom_G(V,W)=\sum_i m_i(V)m_i(W)
+\]
+follows either by the character inner product or by Schur on summands.
+These conclusions have the complex, finite-group and finite-dimensional
+hypotheses fixed above; the modular counterexample in
+\ref{K07.17.characters} prevents dropping them indiscriminately.
+
+\KEntry{K07.21.column_orthogonality}{The second orthogonality relation}
+Choose class representatives $g_1,\ldots,g_r$, and write $c_j$ for
+the size of the class of $g_j$. The square matrix
+$U_{ij}=\sqrt{c_j/|G|}\,\chi_i(g_j)$ has orthonormal rows by the
+first orthogonality relation. Hence $UU^*=I$; finite-dimensional
+invertibility then gives $U^*U=I$. Comparing its $(j,l)$ entries and
+conjugating if necessary proves
+\[
+ \sum_i\chi_i(g)\overline{\chi_i(h)}
+ =\begin{cases}|C_G(g)|&g,h\text{ are conjugate},\\0&\text{otherwise}.
+ \end{cases}
+\]
+Indeed at equal class indices the column norm is $|G|/c_j$, which is
+$|C_G(g_j)|$ by conjugacy orbit--stabilizer
+\ref{K07.05.conjugacy_counting}; unequal indices give zero.
+Characters are constant on classes, so this covers arbitrary $g,h$.
+The square-matrix step uses the class-count theorem: row orthogonality
+of a rectangular partial character table would not imply this conclusion.
+
+\KEntry{K07.21.s3_table}{The complete character table of the symmetric group on three letters}
+The three classes in $S_3$ have representatives $1,s=(12),a=(123)$
+and sizes $1,3,2$, by cycle-type conjugacy
+\ref{K07.02.conjugacy_cycle_type}. The trivial and sign characters
+are $(1,1,1)$ and $(1,-1,1)$. On $\C^3$, the permutation action
+preserves $W=\{(x_1,x_2,x_3):x_1+x_2+x_3=0\}$ and the trivial
+line $L=\C(1,1,1)$. Every vector is uniquely the sum of its mean
+coordinate vector in $L$ and a vector in $W$, so
+$\C^3=L\oplus W$. The permutation character counts fixed basis
+points and has values $(3,1,0)$. Therefore $\chi_W=(2,0,-1)$.
+Its squared norm is $(4+3\cdot0+2\cdot1)/6=1$, proving
+irreducibility by the multiplicity criterion. It differs from the two
+one-dimensional characters. Their squared dimensions sum to
+$1+1+4=6$, so the regular square sum excludes another irreducible type.
+The complete table is thus
+\[
+\begin{array}{c|rrr}
+ &1&(12)&(123)\\ \hline
+\text{class size}&1&3&2\\
+\chi_{\mathrm{triv}}&1&1&1\\
+\chi_{\mathrm{sgn}}&1&-1&1\\
+\chi_W&2&0&-1
+\end{array}
+\]
+The representation itself is explicit. In the basis $e_1-e_3,e_2-e_3$
+of $W$, the matrices of $s$ and $a$ are respectively
+\[
+ \begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+ \begin{pmatrix}-1&-1\\1&0\end{pmatrix}.
+\]
+Their columns are the coordinates of the permuted basis vectors, so
+their trace values and the common representation law require no
+guess from a numerical character table.
+
+% Restriction, induction and reciprocity.
+\KEntry{K07.21.induction_coset_model}{The induced representation and its coset model}
+Restriction $\operatorname{Res}_H^G W$ for $H\leq G$ is the same
+vector space with the action restricted to $H$; its group laws are
+inherited. To construct induction from an $H$-representation $V$, form
+the ordinary complex tensor product $\C[G]\otimes_\C V$ from D05,
+and quotient by the subspace generated by
+\[
+ gh\otimes v-g\otimes hv\qquad(g\in G,h\in H,v\in V).
+\]
+Denote a quotient generator by $[g,v]$, and denote the quotient by
+$\operatorname{Ind}_H^G V$. This explicit construction is also written
+$\C[G]\otimes_{\C[H]}V$; no unproved module-tensor construction is
+being presumed by that notation. Left multiplication on the first
+factor preserves the relation subspace, since $k$ sends the displayed
+relation to $kgh\otimes v-kg\otimes hv$. It therefore defines
+$k[g,v]=[kg,v]$ on the quotient, with inverse given by $k^{-1}$.
+This is a $G$-representation.
+
+Choose representatives $T$ for the left cosets $G/H$. There is a
+vector-space isomorphism
+\begin{equation}\label{eq:induction-coset-sum}
+ \bigoplus_{t\in T}V\longrightarrow\operatorname{Ind}_H^G V,
+ \qquad(v_t)_t\longmapsto\sum_t[t,v_t].
+\end{equation}
+For its inverse, write each $g$ uniquely as $th$ and send $g\otimes v$
+to the vector with $hv$ in its $t$-component and zero elsewhere.
+Extend linearly over the basis $G$ and linearly in $v$. It kills the
+relations: for $h_0\in H$, the two expressions $gh_0\otimes v$
+and $g\otimes h_0v$ both give $hh_0v$ in that component.
+Thus it descends to the quotient. Its composite with
+\eqref{eq:induction-coset-sum} is the identity. In the other order,
+$[g,v]=[th,v]=[t,hv]$, proving identity on spanning generators.
+
+If $kt=t'h$, the action in this model sends the $t$-copy of $v$ to
+the $t'$-copy of $hv$. This is the explicit coset block-matrix model.
+For finite-dimensional $V$ it proves
+$\dim\operatorname{Ind}_H^G V=[G:H]\dim V$. Different representative
+choices give equivalent coordinate models of the same constructed
+quotient. Induction sends the zero space to zero. For $H=G$ the map
+$[g,v]\mapsto gv$ is an equivalence with inverse $v\mapsto[1,v]$;
+for $H=1$, induction is the regular representation tensored with $V$.
+If $V\ne0$ is finite-dimensional and $H<G$, its larger dimension shows that induction
+does not mean an extension of the original action on the same space.
+
+\KEntry{K07.21.induced_character}{The induced-character formula}
+\begin{theorem}\label{thm:induced-character-formula}
+For $H\leq G$, an $H$-character $\psi$, and left-coset representatives
+$T$, the character of the induced representation is
+\[
+ \operatorname{Ind}_H^G\psi(g)
+ =\sum_{\substack{t\in T\\t^{-1}gt\in H}}\psi(t^{-1}gt)
+ =\frac1{|H|}\sum_{\substack{x\in G\\x^{-1}gx\in H}}
+       \psi(x^{-1}gx).
+\]
+In particular it vanishes if $g$ is not conjugate to an element of $H$,
+and its value at $1$ is $[G:H]\psi(1)$.
+\end{theorem}
+\begin{proof}
+In the coset model, the action of $g$ sends the $t$-block to a different
+block unless $gtH=tH$. A block moved elsewhere contributes zero
+to the full matrix diagonal. On a fixed block its matrix is the action
+of $t^{-1}gt\in H$ on $V$, so its trace is the first summand.
+This proves the first formula. For $x=th$, the condition on $x$ is
+equivalent to the condition on $t$; when it holds,
+$x^{-1}gx=h^{-1}(t^{-1}gt)h$. The character is constant on
+$H$-conjugacy classes, so all $|H|$ choices of $h$ give the same
+value. Sum coset by coset to get the second formula. The two final
+assertions follow by an empty sum or by all cosets being fixed,
+respectively. For $V=0$ the formula is identically zero.
+\end{proof}
+The second expression defines induction of an arbitrary complex class
+function as well: replacing $g$ by $kgk^{-1}$ and $x$ by $kx$
+leaves the sum unchanged. This observation will be used only where its
+class-function hypothesis is stated.
+
+\KEntry{K07.21.frobenius_reciprocity}{Frobenius reciprocity, as maps and as characters}
+\begin{theorem}\label{thm:frobenius-reciprocity}
+There is a natural linear isomorphism
+\[
+ \Hom_G(\operatorname{Ind}_H^G V,W)
+ \simeq\Hom_H(V,\operatorname{Res}_H^G W).
+\]
+For class functions $f$ on $H$ and $k$ on $G$,
+\[
+ \langle\operatorname{Ind}_H^G f,k\rangle_G
+   =\langle f,\operatorname{Res}_H^G k\rangle_H.
+\]
+In particular these formulas apply to characters and give the
+multiplicity of an irreducible $G$-representation in an induced one.
+\end{theorem}
+\begin{proof}
+Send $T$ to $A(v)=T[1,v]$. For $h\in H$,
+$A(hv)=T[1,hv]=T[h,v]=hT[1,v]$, proving $H$-equivariance.
+Conversely, for an $H$-equivariant $A$, define
+$T[g,v]=gA(v)$. The basis $G$ and the tensor universal property
+extend this formula linearly before quotienting. It kills the relation
+because $ghA(v)=gA(hv)$, so it descends. It is $G$-equivariant since
+$T[k g,v]=kgA(v)=kT[g,v]$. These constructions are inverse:
+evaluation at $[1,v]$ recovers $A$, while $G$-equivariance forces
+$T[g,v]=gT[1,v]$ on all spanning generators. They are linear,
+including when either space is zero.
+
+For the class-function formula substitute the induced sum into the
+inner product. All sums are finite. Write $g=xhx^{-1}$ in its inner
+sum; for a fixed $x$ this is a bijection between eligible $g$ and
+$h\in H$. Since $k$ is a class function, the result is
+\[
+ \begin{aligned}
+ \frac1{|G||H|}\sum_{x\in G}\sum_{h\in H}
+       f(h)\overline{k(xhx^{-1})}
+ &=\frac1{|G||H|}\sum_{x\in G}\sum_{h\in H}
+       f(h)\overline{k(h)}\\
+ &=\frac1{|H|}\sum_{h\in H}f(h)\overline{k(h)}.
+ \end{aligned}
+\]
+This is the required $H$-inner product. For characters the multiplicity
+interpretation follows from the earlier classification formula, so no
+assertion that an arbitrary induced representation is irreducible is
+needed.
+\end{proof}
+
+\KEntry{K07.21.induction_transitivity}{Transitivity and additivity of induction}
+For $H\leq K\leq G$ there is an explicit equivalence
+\[
+ \operatorname{Ind}_K^G(\operatorname{Ind}_H^K V)
+ \simeq_G\operatorname{Ind}_H^G V,
+ \qquad [g,[k,v]]\longmapsto[gk,v].
+\]
+To verify descent, the inner relation $[kh,v]=[k,hv]$ is taken to
+$[gkh,v]=[gk,hv]$, and the outer $K$-relation
+$[gk_0,[k,v]]=[g,k_0[k,v]]$ is taken on both sides to
+$[gk_0k,v]$. Tensor linearity and quotient universality from D05
+therefore construct the map. Its inverse sends $[g,v]$ to
+$[g,[1,v]]$: the $H$-relation is respected because
+\[
+ [gh,[1,v]]=[g,h[1,v]]=[g,[h,v]]=[g,[1,hv]].
+\]
+One composite fixes $[g,v]$. The other sends $[g,[k,v]]$ to
+$[gk,[1,v]]=[g,[k,v]]$. Spanning proves both are identities,
+and both commute with the left $G$-action. This also treats equal
+adjacent subgroups and zero spaces.
+
+Induction preserves direct sums: the map
+$[g,(v,w)]\mapsto([g,v],[g,w])$ descends because each component
+respects the same $H$-relations. Its inverse is the sum of the induced
+inclusions, and their composites are identities on generators. Thus
+\[
+ \operatorname{Ind}_H^G(\psi+\theta)
+ =\operatorname{Ind}_H^G\psi+\operatorname{Ind}_H^G\theta,
+ \qquad
+ \operatorname{Ind}_K^G\operatorname{Ind}_H^K\psi
+ =\operatorname{Ind}_H^G\psi.
+\]
+These are proved representation equivalences before being read as
+character identities; no unproved associativity of module tensors is
+required.
+
+\KEntry{K07.21.induction_examples}{Induction in the symmetric group}
+For any $H\leq G$, induction of its one-dimensional trivial
+representation is the permutation representation on $G/H$: the coset
+model has one basis vector per coset and each $h$ acts on its coefficient
+as the identity. In particular induction from the trivial subgroup gives
+the regular representation. If $|G|>1$, this is reducible: its invariant
+line spanned by the sum of all basis vectors is nonzero and proper.
+Thus inducing an irreducible representation need not preserve
+irreducibility.
+
+For $G=S_3$ and $H=\langle(12)\rangle$, the coset set is identified
+with $\{1,2,3\}$ by $gH\mapsto g(3)$: $H$ is exactly the
+stabilizer of $3$, so the orbit--coset theorem proves bijectivity and
+equivariance. Hence induction of the trivial character is
+$\chi_{\mathrm{triv}}+\chi_W$. If $\varepsilon$ is the nontrivial
+character of $H$, the induced character has values $(3,-1,0)$.
+Its degree is three; a transposition fixes exactly one coset and acts
+on that block by the nonidentity element of $H$, of value $-1$;
+a three-cycle fixes no coset. Therefore it equals
+$\chi_{\mathrm{sgn}}+\chi_W$, and character classification proves
+the corresponding representation equivalence.
+
+Finally take $H=A_3=\langle a\rangle$, choose a primitive cube root
+$\omega$, and let $\psi(a)=\omega$. The representatives $1,s$,
+with $s=(12)$, give induced values $2$ at $1$, zero at a
+transposition, and $\omega+\omega^2=-1$ at $a$, since
+$s^{-1}as=a^{-1}$. Thus $\operatorname{Ind}_{A_3}^{S_3}\psi$
+has character $\chi_W$ and is irreducible. The distinct conjugate
+character $\overline\psi$ induces the same representation, showing
+induction is not injective on representation types. Nor does $\psi$
+extend to a one-dimensional representation of $S_3$: such a map has
+abelian target and kills the commutator subgroup $A_3$, computed in
+\ref{K07.18.nilpotence_examples}, whereas $\psi(a)\ne1$.
+This distinguishes an induced representation from an extension and
+concludes the bounded induction theory without an assertion about
+general Frobenius groups or classification of simple groups.

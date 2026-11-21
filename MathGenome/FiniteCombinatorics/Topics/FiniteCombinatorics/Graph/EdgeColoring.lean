@@ -1,0 +1,3 @@
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.EdgeColoring.Foundations
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.EdgeColoring.Konig
+import MathGenome.Internal.FiniteCombinatorics.FiniteCombinatorics.Graph.EdgeColoring.Vizing

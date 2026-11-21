@@ -1,0 +1,65 @@
+{
+  "source_hashes": {
+    "P1-06_Variational_Notes.tex": "1a8715d7bdf85e5ed23796252974aa029061c21d0eb523652987fdd1dd93b172",
+    "parts/v01.tex": "e663c473dd14eae6af332e41f99c2662f07b52863d9ca4869b6b4236d077f7a9",
+    "parts/v02.tex": "406477c6aa0b81fd292d7b809bdc996f1ed1997155daf4a62a2fe9d9a37e8bad",
+    "parts/v03.tex": "8aedca77017512e0d78a0ab722fbee08b4a62e7973bd5c6ab09becc34862b2f7",
+    "parts/v04.tex": "da6de9e3c01490c054a81b3ed21b80bf359d5461648435347b001954002143eb",
+    "parts/v05.tex": "0baabad0701058f0db4ec95f12dbba00daa230cb946384efd6ec0bbba1c98cd0",
+    "parts/v06.tex": "9ee5567a522ba9b921f0459242d5203904729983a103aa00b834142ed028bffc",
+    "parts/v07.tex": "8151f155d34f398dd8e92b25b9c32f6d2f01793811a109b844728cff49087b9c",
+    "parts/v08.tex": "1e61edccadefaa78d0db1ad81d2d6baa876d94eba7cc54f708914c3311eb6e49",
+    "parts/v09.tex": "057f03db4891b1727514ec7b0ceb402c2a85c4b265dbd147cce9dcb2fd6def54",
+    "parts/v10.tex": "66e08a1c1954aad824864205392396a7b92f4fb6b40e0929eaab868a35119ed2",
+    "output/pdf/P1-06_Variational_Notes.pdf": "f8d2e0d1cf55829bfaebded6d95edfc5f6e6dc1a949a52082d68776d58a3a979"
+  },
+  "source_map_sha256": "239f61bd98ac118069744aec42ee902a9c77cf47a75ba0d667d5a442ede4a9a8",
+  "paper_sha256": "851f38a8d5fe6d2e4c07757843836623c24e3e19590249638ec18ad2a9b90df1",
+  "chapter_ranges_in_paper": {
+    "parts/v01.tex": [
+      106,
+      777
+    ],
+    "parts/v02.tex": [
+      778,
+      1332
+    ],
+    "parts/v03.tex": [
+      1333,
+      1692
+    ],
+    "parts/v04.tex": [
+      1693,
+      2232
+    ],
+    "parts/v05.tex": [
+      2233,
+      2643
+    ],
+    "parts/v06.tex": [
+      2644,
+      3088
+    ],
+    "parts/v07.tex": [
+      3089,
+      3648
+    ],
+    "parts/v08.tex": [
+      3649,
+      4335
+    ],
+    "parts/v09.tex": [
+      4336,
+      4583
+    ],
+    "parts/v10.tex": [
+      4584,
+      4814
+    ]
+  },
+  "source_map_entries": 69,
+  "numbered_results": 110,
+  "pdf_pages": 62,
+  "mathematical_pages": 57,
+  "published_source_map_sha256": "6b4e4f4192ba724d27c449f040dd3a1b95d03ad4a4a4d390b0e596f12fc6a055"
+}

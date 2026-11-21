@@ -1,0 +1,8 @@
+import MathGenome.Internal.ODEDynamics.D13Unified.Ch01.Autonomization
+import MathGenome.Internal.ODEDynamics.D13Unified.Ch01.AutonomousParameters
+import MathGenome.Internal.ODEDynamics.D13Unified.Ch01.BoundaryValueExample
+import MathGenome.Internal.ODEDynamics.D13Unified.Ch01.CoordinateTimeChanges
+import MathGenome.Internal.ODEDynamics.D13Unified.Ch01.HigherOrderReduction
+import MathGenome.Internal.ODEDynamics.D13Unified.Ch01.IntegralFormulation
+import MathGenome.Internal.ODEDynamics.D13Unified.Ch01.RestrictionPasting
+import MathGenome.Internal.ODEDynamics.D13Unified.Ch01.SolutionConcepts

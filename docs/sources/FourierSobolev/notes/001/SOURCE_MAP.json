@@ -1,0 +1,1969 @@
+{
+  "package": "P1-02",
+  "notes_language": "en",
+  "pdf_page_count": 55,
+  "mathematical_chapter_pages": 50,
+  "row_count": 65,
+  "count_by_unit": {
+    "U1": 14,
+    "U2": 12,
+    "U3": 13,
+    "U4": 15,
+    "U5": 11
+  },
+  "pins": {
+    "lean": "4.35.0",
+    "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "mathgenome_version": "v0.8.0",
+    "mathgenome_commit": "d71d7aceffae141b6b06566347f53ddf8938d39e"
+  },
+  "reuse_scope": "The 33 baseline assessments come from the earlier pinned declaration checks. Expansion links are static leads or related obligations, not complete declaration matches. No formalization run was started for these notes.",
+  "files": [
+    {
+      "path": "P1-02_Analysis_Notes.tex",
+      "sha256": "a3a271fc17d6305a231ee06ab25d70fdfd442fbab46191b704dff208bc9b6dab"
+    },
+    {
+      "path": "parts/u1.tex",
+      "sha256": "167b42c19b003aa1e4460481c09f9774e9acf2ef6362d0cfe1e2cbcaa61d5345"
+    },
+    {
+      "path": "parts/u2.tex",
+      "sha256": "921bc3a618bb6f9f15f8bc8eb4fd96db3bac998ad7eede01efa634ca15b74808"
+    },
+    {
+      "path": "parts/u3.tex",
+      "sha256": "c00306abe35d4857c063048f652f45fed7b822c09ec82ee172db45cf62c8da9a"
+    },
+    {
+      "path": "parts/u4.tex",
+      "sha256": "c7382cb2559ec2ed050ec71287c1ac9ae9f53edbd011276898bd3ecfdfdc28e6"
+    },
+    {
+      "path": "parts/u5.tex",
+      "sha256": "042a30bc282c56d31e6350c67331999d40c73f5bccede31e5566514c77de9f85"
+    },
+    {
+      "path": "output/pdf/P1-02_Analysis_Notes.pdf",
+      "sha256": "5b1517115fbd808681c55b0c6fee68fd8566240bd3e143c58a53ae6e4c64bc25"
+    }
+  ],
+  "results": [
+    {
+      "id": "AN-13-C04-R01",
+      "title_zh": "Hilbert 正交展开与抽象 Parseval",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 214
+      },
+      "sources": "F §5.5 定理 5.27、命题 5.30；A §11.2–6 用作可数体系和 Riesz–Fischer 对照。",
+      "contract": "实或复 Hilbert 空间中，正交归一族若闭线性张成全空间，则每个向量为内积系数展开的范数和，平方范数等于平方系数和。一般指标集用有限子集网，只有可数指标且已选枚举时才写普通级数。$\\ell^2$ 系数可反构向量。",
+      "reuse": {
+        "level": "direct_baseline",
+        "prior_assessment": "`HilbertBasis.mk` 用完全性和稠密性构造等距同构。`hasSum_repr` 给范数和，`hasSum_inner_mul_inner` 取同一个向量给平方系数和，`hasSum_repr_symm` 给反构。直接复用后实例化到圆周，不重证通用 Hilbert 展开。",
+        "evidence": "[`HilbertBasis.repr_apply_apply`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/InnerProductSpace/l2Space.lean#L413) · [`HilbertBasis.hasSum_repr_symm`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/InnerProductSpace/l2Space.lean#L428) · [`HilbertBasis.hasSum_repr、hasSum_inner_mul_inner`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/InnerProductSpace/l2Space.lean#L445) · [`HilbertBasis.mk、coe_mk`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/InnerProductSpace/l2Space.lean#L548)"
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 13,
+        "unit": "U1",
+        "label": "p102:AN-13-C04-R01",
+        "number": "1.1",
+        "printed_page": 1,
+        "pdf_page": 4
+      }
+    },
+    {
+      "id": "U1-01",
+      "title_zh": "Dirichlet 核与局部化",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 30
+      },
+      "sources": "G §3.1.3，p. 178；SS 第 2 章 §2、第 3 章 §2，p. 81 起",
+      "contract": "给出对称部分和的核公式。若两个 $L^1$ 函数在考察点附近几乎处处相等，则其部分和在该点之差趋零。切去奇点后对积分用 Riemann–Lebesgue。周期 $L^1$ 版本先从三角多项式稠密性得到，和 U3 的欧氏版本共用结果索引。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-S01",
+          "AN-06-C01-S02"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 92,
+        "unit": "U1",
+        "label": "p102:U1-01",
+        "number": "1.2",
+        "printed_page": 2,
+        "pdf_page": 5
+      }
+    },
+    {
+      "id": "AN-06-C01-S02",
+      "title_zh": "Fejér 求和及范数恢复",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 230
+      },
+      "sources": "G §1.2.4 例 1.2.18、定理 1.2.19（修订），印刷页 27–29；§3.1.3 定义 3.1.8、命题 3.1.10，印刷页 178–181；A §11.14–15。",
+      "contract": "圆周归一 Haar 下，Fejér 核非负、质量一且远离零的质量趋零。Cesàro 均值等于核卷积，系数权重为 $(1-|n|/(N+1))_+$。连续函数一致收敛，每个 $f\\in L^p$、$1\\le p<\\infty$ 有范数收敛。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "D03 有核、均值与实/复一致收敛。首单元调用该部分并落实任意正周期换算。后续从连续函数稠密和正质量一卷积在 $L^p$ 不增推出一般有限 $p$；它和近似恒等共用证明入口。",
+        "evidence": "[`SingleVariableAnalysis.fejer_uniform_convergence`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/SingleVariableAnalysis/SingleVariableAnalysis/Ch19/Fejer.lean#L145) · [`SingleVariableAnalysis.fejerMean_polynomial`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/SingleVariableAnalysis/SingleVariableAnalysis/Ch19/Fejer.lean#L180) · [`span_fourierLp_closure_eq_top`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/AddCircle.lean#L261)"
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 122,
+        "unit": "U1",
+        "label": "p102:AN-06-C01-S02",
+        "number": "1.3",
+        "printed_page": 3,
+        "pdf_page": 6
+      },
+      "companion_passages": [
+        {
+          "tex": "parts/u2.tex",
+          "tex_line": 50,
+          "unit": "U2",
+          "label": "p102:fejer-lp",
+          "number": "2.3",
+          "printed_page": 12,
+          "pdf_page": 15
+        }
+      ]
+    },
+    {
+      "id": "AN-06-C01-R03",
+      "title_zh": "圆周 Fourier 基与 Parseval",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 46
+      },
+      "sources": "G §3.1–3.2，命题 3.2.6–7，印刷页 185–186；F §8.3 定理 8.20（PDF 第 322 页）。",
+      "contract": "周期 $T>0$，归一 Haar 测度质量一。$e_n(x)=e^{2\\pi inx/T}$ 是复 $L^2$ 的完备正交归一族，系数由 $T^{-1}\\int_a^{a+T} f(x)e_{-n}(x)\\,dx$ 给出，级数按 $L^2$ 范数收敛，$\\|f\\|_2^2=\\sum_n|c_n|^2$。实余弦/正弦表示用共轭对称与归一因子转换。",
+      "reuse": {
+        "level": "direct_baseline",
+        "prior_assessment": "固定 Mathlib 直接给出任意正周期的 Hilbert 基、系数换算、级数和平方和。$L^2$ 结论与点态收敛分开，$L^p$ 三角多项式稠密在有限 $p$ 另有现成声明。",
+        "evidence": "[`span_fourierLp_closure_eq_top`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/AddCircle.lean#L261) · [`fourierCoeff_eq_intervalIntegral`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/AddCircle.lean#L303) · [`fourierBasis、fourierBasis_repr`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/AddCircle.lean#L411) · [`hasSum_fourier_series_L2、hasSum_sq_fourierCoeff`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/AddCircle.lean#L433)"
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 169,
+        "unit": "U1",
+        "label": "p102:AN-06-C01-R03",
+        "number": "1.4",
+        "printed_page": 3,
+        "pdf_page": 6
+      }
+    },
+    {
+      "id": "U1-04",
+      "title_zh": "Abel 求和与 Poisson 核",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 33
+      },
+      "sources": "SS 第 2 章 §5.3，p. 54 起；F §8.4",
+      "contract": "由几何级数求核、非负性与质量一。证明连续函数的一致收敛、有限 $p$ 的 $L^p$ 收敛，以及 $L^1$ 函数在 Lebesgue 点的径向恢复。后者用近点分层和远点尾质量。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-R03",
+          "AN-06-C03-R03"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 201,
+        "unit": "U1",
+        "label": "p102:U1-04",
+        "number": "1.5",
+        "printed_page": 4,
+        "pdf_page": 7
+      }
+    },
+    {
+      "id": "U1-02",
+      "title_zh": "Dini 与 Dirichlet–Jordan 点态收敛",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 31
+      },
+      "sources": "F §8.5；G §3.4.4，p. 212 起；SS 第 3 章 §2",
+      "contract": "对周期 $L^1$ 函数分别处理局部 Dini 可积条件及局部有界变差条件。极限为左右极限的平均。分别核验两个证明，Jordan 路线用有界变差分解和振荡积分。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-S01"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 244,
+        "unit": "U1",
+        "label": "p102:U1-02",
+        "number": "1.6",
+        "printed_page": 4,
+        "pdf_page": 7
+      }
+    },
+    {
+      "id": "U1-03",
+      "title_zh": "连续函数部分和发散",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 32
+      },
+      "sources": "SS 第 3 章 §2.2，p. 83；G §3.4.3，p. 210",
+      "contract": "用 Dirichlet 核 $L^1$ 范数无界确定固定点的部分和算子范数，再用一致有界原理给出连续反例。证明可用连续函数近似核的符号，处理绝对值积分。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-R03"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 305,
+        "unit": "U1",
+        "label": "p102:U1-03",
+        "number": "1.7",
+        "printed_page": 5,
+        "pdf_page": 8
+      }
+    },
+    {
+      "id": "U1-05",
+      "title_zh": "有限循环群的 Fourier",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 34
+      },
+      "sources": "SS 第 7 章 §§1–2，pp. 218–235 起",
+      "contract": "对正整数阶的循环群证明字符正交、反演、Parseval 和卷积乘积公式。明确归一计数测度、频率等价类及平凡群，有限求和与圆周 Haar 的比较作显式记号说明。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-R03"
+        ],
+        "pinned_source_lead": {
+          "declaration": "ZMod.dft_dft",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/ZMod.lean#L160",
+          "scope": "Convert the unnormalized discrete transform to probability counting; track factors in inverse, Parseval and convolution."
+        }
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 338,
+        "unit": "U1",
+        "label": "p102:U1-05",
+        "number": "1.8",
+        "printed_page": 5,
+        "pdf_page": 8
+      }
+    },
+    {
+      "id": "AN-13-C02-R01",
+      "title_zh": "多项式与三角多项式一致逼近",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 193
+      },
+      "sources": "A §11.14–15，定理 11.16–17（普通多项式在印刷页 322，PDF 第 335 页）；G §3.2.1 推论 3.2.2，印刷页 183；F §4.7 作一般紧空间对照。",
+      "contract": "实连续函数在紧实区间可由实多项式一致逼近，复值用实虚部；任意正周期的连续实/复函数可由对应实三角或复指数多项式一致逼近。对每个 $\\varepsilon>0$ 选择逼近元。",
+      "reuse": {
+        "level": "direct_baseline",
+        "prior_assessment": "区间估计与圆周 Fourier 张成稠密可直接调用。D03 还给出 $2\\pi$ 周期的实、复三角多项式明确逼近，任意正周期作尺度换算。三角逼近的构造性 Fejér 版本与补项共用。",
+        "evidence": "[`exists_polynomial_near_continuousMap`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Topology/ContinuousMap/Weierstrass.lean#L94) · [`span_fourier_closure_eq_top`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/AddCircle.lean#L245) · [`SingleVariableAnalysis.trigonometric_polynomials_dense、real_trigonometric_polynomials_dense`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/SingleVariableAnalysis/SingleVariableAnalysis/Ch19/Fejer.lean#L207)"
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 397,
+        "unit": "U1",
+        "label": "p102:AN-13-C02-R01",
+        "number": "1.10",
+        "printed_page": 6,
+        "pdf_page": 9
+      },
+      "companion_passages": [
+        {
+          "tex": "parts/u1.tex",
+          "tex_line": 377,
+          "unit": "U1",
+          "label": "p102:bernstein-polynomials",
+          "number": "1.9",
+          "printed_page": 6,
+          "pdf_page": 9
+        },
+        {
+          "tex": "parts/u1.tex",
+          "tex_line": 122,
+          "unit": "U1",
+          "label": "p102:AN-06-C01-S02",
+          "number": "1.3",
+          "printed_page": 3,
+          "pdf_page": 6
+        }
+      ]
+    },
+    {
+      "id": "AN-13-C03-R01",
+      "title_zh": "实、复 Stone–Weierstrass",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 207
+      },
+      "sources": "F §4.7 定理 4.45、4.51（PDF 第 189、192 页）；D10 已发布第 16 章。",
+      "contract": "$K$ 紧 Hausdorff，$A\\subset C(K,\\mathbb R)$ 为含常数且分离点的子代数，实结论是一致稠密。复情形要求 $A\\subset C(K,\\mathbb C)$ 还在复共轭下封闭。闭包等于全空间与逐 $\\varepsilon$ 形式等价。",
+      "reuse": {
+        "level": "direct_baseline",
+        "prior_assessment": "Mathlib 分别提供实子代数与复星子代数的闭包定理，D10 还有原语言的一致误差版本。保留共轭封闭和单位，不用仅分离点的复代数替代。",
+        "evidence": "[`ContinuousMap.subalgebra_topologicalClosure_eq_top_of_separatesPoints`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Topology/ContinuousMap/StoneWeierstrass.lean#L265) · [`ContinuousMap.starSubalgebra_topologicalClosure_eq_top_of_separatesPoints`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Topology/ContinuousMap/StoneWeierstrass.lean#L401) · [`D10 复版本的逐 ε 声明`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/PointSetTopology/D10Topology/Ch16/StoneWeierstrassComplex.lean#L52)"
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 414,
+        "unit": "U1",
+        "label": "p102:AN-13-C03-R01",
+        "number": "1.11",
+        "printed_page": 6,
+        "pdf_page": 9
+      }
+    },
+    {
+      "id": "AN-13-C02-R02",
+      "title_zh": "指定极点集 Runge 逼近",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 200
+      },
+      "sources": "C 第 VIII 章 §1 定理 1.7，印刷页 198（PDF 第 212 页）；MathGenome 已发布 D12 notes 第 15 章的同一结果。",
+      "contract": "$K\\subset\\mathbb C$ 紧，$f$ 在含 $K$ 的开邻域全纯；$A\\subset\\widehat{\\mathbb C}\\setminus K$ 与补集每个连通分支相交。对每个 $\\varepsilon>0$，存在球面极点只在 $A$、在 $K$ 有限且一致误差小于 $\\varepsilon$ 的有理函数。无穷远只有在 $A$ 中才能成为极点，约去的零点不计为极点。",
+      "reuse": {
+        "level": "direct_baseline",
+        "prior_assessment": "解开 `runge_allowed_poles_type` 后条件和结论均匹配，包含空 $K$。与 AN‑04‑C05 用同一声明，通过已发布章入口调用；如采用 `DifferentiableOn` 表示，补与现有全纯定义的换算。",
+        "evidence": "[`D12Complex.RungeAllowedPoles.runge_allowed_poles`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/ComplexAnalysis/D12Complex/Ch15/RungeAllowedPoles.lean#L86) · [`展开球面极点与一致误差契约`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/ComplexAnalysis/Specs/D12Complex/Ch15/RungeAllowedPoles.lean#L30) · [`公开主题入口`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/ComplexAnalysis/Topics/D12Complex/Ch15.lean#L9)"
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 449,
+        "unit": "U1",
+        "label": "p102:AN-13-C02-R02",
+        "number": "1.12",
+        "printed_page": 7,
+        "pdf_page": 10
+      }
+    },
+    {
+      "id": "U1-06",
+      "title_zh": "最佳一致逼近与交错",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 35
+      },
+      "sources": "DL 第 3 章 §§1、4–6，pp. 58、71、73–75 起；NIST §3.11(i)",
+      "contract": "在非退化紧区间上，对实连续函数与实多项式次数上界 $n$，证明最佳逼近存在、唯一和正误差时的 $n+2$ 点交错判据。零误差单列，证明充分性和必要性。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-13-C02-R01"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 526,
+        "unit": "U1",
+        "label": "p102:U1-06",
+        "number": "1.13",
+        "printed_page": 8,
+        "pdf_page": 11
+      }
+    },
+    {
+      "id": "U1-07",
+      "title_zh": "Bernstein 与 Markov 导数估计",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 36
+      },
+      "sources": "DL 第 4 章 §1，p. 97 起",
+      "contract": "证明三角多项式的次数一次界与实区间代数多项式的次数平方界。记录区间长度缩放，两个估计分别服务周期逆定理和端点说明。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-13-C02-R01"
+        ],
+        "pinned_source_lead": {
+          "declaration": "bernsteinApproximation_uniform",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/SpecialFunctions/Bernstein.lean#L168",
+          "scope": "Related polynomial approximation API only. The degree derivative estimates use a different result."
+        }
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 578,
+        "unit": "U1",
+        "label": "p102:U1-07",
+        "number": "1.14",
+        "printed_page": 9,
+        "pdf_page": 12
+      }
+    },
+    {
+      "id": "U1-08",
+      "title_zh": "Jackson 直接与经典逆估计",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 37
+      },
+      "sources": "DL 第 7 章 §§2–3、6，pp. 201–219 起；第 8 章 p. 238 起对照端点",
+      "contract": "证明圆周和紧区间上一阶连续模的 Jackson 直接界。周期情形取 $0<\\alpha<1$，用二进次数分组与 Bernstein 界建立最佳误差 $O(n^{-\\alpha})$ 和 Hölder 正则性的等价。区间用余弦替换与偶对称，端点的加权逆理论另列。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-13-C02-R01",
+          "U1-07"
+        ],
+        "pinned_source_lead": {
+          "declaration": "bernsteinApproximation_uniform",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/SpecialFunctions/Bernstein.lean#L168",
+          "scope": "Qualitative polynomial approximation only. It does not establish the Jackson rate or periodic inverse."
+        }
+      },
+      "manuscript": {
+        "tex": "parts/u1.tex",
+        "tex_line": 651,
+        "unit": "U1",
+        "label": "p102:U1-08",
+        "number": "1.15",
+        "printed_page": 10,
+        "pdf_page": 13
+      }
+    },
+    {
+      "id": "AN-06-C02-R01",
+      "title_zh": "一般三指数 Young 卷积",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 53
+      },
+      "sources": "G §1.2.3 定理 1.2.12，印刷页 22；L §10.5 定理 10.48–49，印刷页 303–304。",
+      "contract": "在 $\\mathbb R^n$ 的 Lebesgue 测度上，$1\\le p,q,r\\le\\infty$ 且 $1+1/r=1/p+1/q$，$f\\in L^p,g\\in L^q$。卷积绝对存在 a.e.，与所取 a.e. 代表相容，属于 $L^r$ 且 $\\|f*g\\|_r\\le\\|f\\|_p\\|g\\|_q$。",
+      "reuse": {
+        "level": "new_proof_baseline",
+        "prior_assessment": "D11 的 Young 只有 $L^1*L^p\\to L^p$，含 $p=\\infty$。Mathlib 积分核的 Hölder 估计支持 $r=\\infty$；有限 $r$ 一般式用三因子 Hölder 和 Tonelli，指数为 0 的因子按常函数处理。复用已有代表独立性、卷积和可测性接口。",
+        "evidence": "[`D11.Ch11.ConvolutionYoung.young`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch11/ConvolutionYoung.lean#L16) · [`展开 Young 的 L¹×Lᵖ 假设`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/Specs/D11/Ch11/ConvolutionBound.lean#L24) · [`eLpNorm_convolution_integrand_le、enorm_convolution_le`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Convolution.lean#L537) · [`ENNReal.lintegral_mul_le_Lp_mul_Lq`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/MeasureTheory/Integral/MeanInequalities.lean#L202)"
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 9,
+        "unit": "U2",
+        "label": "p102:AN-06-C02-R01",
+        "number": "2.1",
+        "printed_page": 11,
+        "pdf_page": 14
+      }
+    },
+    {
+      "id": "AN-06-C02-R02",
+      "title_zh": "一般族近似恒等",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 60
+      },
+      "sources": "G §1.2.4 定义 1.2.15、定理 1.2.19，印刷页 26–29，采用作者修订页；D11 已验收 notes §11，锚点 d11:11:approximate-identity-lp、d11:11:approximate-identity-uniform。",
+      "contract": "$k_\\epsilon\\in L^1$、积分一、$L^1$ 范数一致有界，并且对每个 $\\delta>0$，球外 $\\int_{|x|>\\delta}|k_\\epsilon|\\to0$。对 $1\\le p<\\infty$ 卷积在 $L^p$ 范数收敛；有界一致连续的实际代表获得逐点上确界意义的一致收敛。允许符号变化或复值核。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "D11 的两个直接结论固定同一母核伸缩。重用 $L^p$ 平移连续性和积分 Minkowski，把积分分成小球与尾部，证明一般族。Mathlib 点态卷积趋近的非负条件不能代替本条。",
+        "evidence": "[`translation_error_continuous`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch11/ApproximateIdentityLp.lean#L117) · [`D11.Ch11.ApproximateIdentityLp.approximate_identity_lp`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch11/ApproximateIdentityLp.lean#L273) · [`D11.Ch11.ApproximateIdentityUniform.uniform_convergence`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch11/ApproximateIdentityUniform.lean#L209) · [`D11.Ch10.MinkowskiIntegral.scalar_minkowski`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch10/MinkowskiIntegral.lean#L189)"
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 33,
+        "unit": "U2",
+        "label": "p102:AN-06-C02-R02",
+        "number": "2.2",
+        "printed_page": 12,
+        "pdf_page": 15
+      }
+    },
+    {
+      "id": "AN-06-C01-S03",
+      "title_zh": "周期 $L^1$ 唯一性及绝对可和反演",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 237
+      },
+      "sources": "G §3.2.1 命题 3.2.4–5，印刷页 184–185。",
+      "contract": "$f,g\\in L^1$ 若所有圆周 Fourier 系数相同，则 $f=g$ a.e.。若 $f$ 的系数绝对可和，绝对一致收敛的级数给出其连续代表，并在连续点等于所取代表。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "用前条 Fejér $L^1$ 收敛推出唯一性，再逐项积分得级数的系数。固定 Mathlib 已证明连续函数且系数可和的级数反演，可用作连续端口。",
+        "evidence": "[`hasSum_fourier_series_of_summable、has_pointwise_sum_fourier_series_of_summable`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/AddCircle.lean#L494)"
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 58,
+        "unit": "U2",
+        "label": "p102:AN-06-C01-S03",
+        "number": "2.4",
+        "printed_page": 12,
+        "pdf_page": 15
+      }
+    },
+    {
+      "id": "U2-01",
+      "title_zh": "弱型与实插值接口",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 45
+      },
+      "sources": "G §§1.3.1、1.4.1–1.4.2，pp. 33、48–56；AF 第 2 章 pp. 49–52",
+      "contract": "用分布函数定义弱 $L^q$ 估计并写清 $q=\\infty$ 的意义。给出原对角 Marcinkiewicz 的截断、分布函数积分和端点常数依赖，供奇异积分直接使用。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C04-R02"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 68,
+        "unit": "U2",
+        "label": "p102:U2-01",
+        "number": "2.5",
+        "printed_page": 13,
+        "pdf_page": 16
+      }
+    },
+    {
+      "id": "AN-06-C04-R02",
+      "title_zh": "Marcinkiewicz 对角插值",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 95
+      },
+      "sources": "G §1.3.1 定理 1.3.2，印刷页 34–36，以作者修订页为准。",
+      "contract": "σ 有限测度空间上同一个次线性算子定义于 $L^{p_0}+L^{p_1}$，有弱型 $(p_i,p_i)$ 两端界，保留 $1\\le p_0<p_1<\\infty$ 及有用的 $p_1=\\infty$ 强端点。$p_0<p<p_1$ 时得到强型 $(p,p)$，常数只由端点界和指数决定。",
+      "reuse": {
+        "level": "new_proof_baseline",
+        "prior_assessment": "复用 layer cake、Tonelli 及 D11 的分布函数基础。按高度切分 $f$ 后对两个尾积分分别计算，$p_1=\\infty$ 用有界截断单独处理；无须把两个端点上互不兼容的算子拼接。",
+        "evidence": "[`MeasureTheory.lintegral_comp_eq_lintegral_meas_lt_mul`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/MeasureTheory/Integral/Layercake.lean#L476) · [`eLpNorm_interpolation（同一函数的范数插值，作为基础）`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch10/ElementaryNormInterpolation.lean#L13)"
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 84,
+        "unit": "U2",
+        "label": "p102:AN-06-C04-R02",
+        "number": "2.6",
+        "printed_page": 13,
+        "pdf_page": 16
+      }
+    },
+    {
+      "id": "AN-06-C03-R01",
+      "title_zh": "Hardy–Littlewood 弱 $(1,1)$",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 67
+      },
+      "sources": "G §2.1.1 定理 2.1.6，印刷页 88–90；F §3.4；D11 notes 定理 d11:13:maximal-weak11。",
+      "contract": "$n\\ge1$，球为欧氏开球，$M_cf(x)=\\sup_{r>0}\\dashint_{B(x,r)}|f|$。$f\\in L^1$ 时 $\\mu\\{M_cf>\\lambda\\}\\le C_n\\|f\\|_1/\\lambda$ 对 $\\lambda>0$。非中心型对所有含 $x$ 的球取上确界，定义可测，保留可验证的维数比较常数。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "D11 已证中心型 $3^n$ 常数及可测性。补 $M_c\\le M_u\\le2^nM_c$，后者用 $B(z,r)\\subset B(x,2r)$；非中心严格超水平集是开球并，可得弱估计常数 $2^n3^n$。来源中的更小常数可另循覆盖证明，本契约用维数常数。",
+        "evidence": "[`D11.Ch13.MaximalWeak11.maximal_weak11`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch13/MaximalWeak11.lean#L180) · [`弱型常数、阈值与测度`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/Specs/D11/Ch13/MaximalWeak11.lean#L42)"
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 103,
+        "unit": "U2",
+        "label": "p102:AN-06-C03-R01",
+        "number": "2.7",
+        "printed_page": 13,
+        "pdf_page": 16
+      }
+    },
+    {
+      "id": "AN-06-C03-R02",
+      "title_zh": "Hardy–Littlewood 强 $L^p$",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 74
+      },
+      "sources": "G §2.1.1 定理 2.1.6，印刷页 88–90；§1.3.1（含 $\\infty$ 端点的作者修订）。",
+      "contract": "同一欧氏最大函数，对 $1<p<\\infty$ 的 $f\\in L^p$ 给出 $\\|Mf\\|_p\\le C_{n,p}\\|f\\|_p$，$p=\\infty$ 为范数不增。对中心及非中心型均成立，作为 a.e. 类使用。",
+      "reuse": {
+        "level": "new_proof_baseline",
+        "prior_assessment": "$L^\\infty$ 用每个球平均估计；$L^p$ 函数先证局部可积并建立可测性。有限 $p$ 可由弱型与强无穷端点插值，或以 $|f|>\\lambda/2$ 截断后做 layer cake。与 R01 和 AN‑06‑C04‑R02 共用，工作量不重复加算。",
+        "evidence": "[`maximal_weak11（端点输入）`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch13/MaximalWeak11.lean#L180) · [`MeasureTheory.lintegral_comp_eq_lintegral_meas_lt_mul（分布函数积分）`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/MeasureTheory/Integral/Layercake.lean#L476)"
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 124,
+        "unit": "U2",
+        "label": "p102:AN-06-C03-R02",
+        "number": "2.8",
+        "printed_page": 14,
+        "pdf_page": 17
+      }
+    },
+    {
+      "id": "AN-06-C03-R03",
+      "title_zh": "Lebesgue 微分",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 81
+      },
+      "sources": "G §2.1.3 推论 2.1.16，印刷页 95；F §3.4 定理 3.20（该 PDF 第 139 页）；D11 notes d11:13:lebesgue-differentiation。",
+      "contract": "$n\\ge1$，$f\\in L^1_{\\rm loc}(\\mathbb R^n)$。几乎每个 $x$，$\\dashint_{B(x,r)}|f(y)-f(x)|\\,dy\\to0$。同一满测集给出球平均收敛，保留 D11 已有的含点球族扩展作可复用接口。",
+      "reuse": {
+        "level": "direct_baseline",
+        "prior_assessment": "D11 以完成化 Lebesgue 测度给出更强的代表层结论，源码确实经弱型估计证明。选 Borel 体积版本时可直接实例化 Mathlib 的 Vitali 微分接口，或显式做测度完成化的比较。",
+        "evidence": "[`D11.Ch13.LebesgueDifferentiation.ae_lebesguePoint`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch13/LebesgueDifferentiation.lean#L229) · [`D11.Ch13.LebesgueDifferentiation.lebesgue_differentiation`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch13/LebesgueDifferentiation.lean#L348) · [`VitaliFamily.ae_tendsto_average_norm_sub`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/MeasureTheory/Covering/Differentiation.lean#L838)"
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 132,
+        "unit": "U2",
+        "label": "p102:AN-06-C03-R03",
+        "number": "2.9",
+        "printed_page": 14,
+        "pdf_page": 17
+      }
+    },
+    {
+      "id": "U2-02",
+      "title_zh": "Calderón–Zygmund 分解",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 46
+      },
+      "sources": "G §5.3.1，p. 355；S 第 II 章",
+      "contract": "在 $\\mathbb R^d$、$d\\ge1$ 对 $f\\in L^1$ 和高度 $\\lambda>0$ 选极大二进立方体。核验互不交、总体积、好函数的 $2^d\\lambda$ 界、坏块零均值和 $L^1$ 求和。需要在 $L^2$ 上使用时另证相应分解收敛。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C03-R03"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 147,
+        "unit": "U2",
+        "label": "p102:U2-02",
+        "number": "2.10",
+        "printed_page": 14,
+        "pdf_page": 17
+      }
+    },
+    {
+      "id": "U2-03",
+      "title_zh": "经典奇异积分的弱型和强型",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 47
+      },
+      "sources": "G §5.3.2，p. 358；S 第 II 章 §2，p. 28 起",
+      "contract": "采用已有 $L^2$ 有界算子、离支撑核表示和 Hörmander 型积分差条件的卷积版本。由好坏分解得弱 $(1,1)$，插值得 $1<p\\le2$，用反射共轭核的伴随与对偶得 $p>2$。列明点态光滑核蕴含积分差条件的估计。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C04-R02",
+          "U2-02"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 165,
+        "unit": "U2",
+        "label": "p102:U2-03",
+        "number": "2.11",
+        "printed_page": 15,
+        "pdf_page": 18
+      }
+    },
+    {
+      "id": "U2-04",
+      "title_zh": "Riesz 势与 Hardy–Littlewood–Sobolev",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 48
+      },
+      "sources": "S 第 V 章 §1，p. 117；[Hedberg 原论文](https://doi.org/10.2307/2039187)",
+      "contract": "对 $0<\\alpha<d$，由近远区分割和极大函数得到 $1<p<d/\\alpha$ 的强型估计，$1/q=1/p-\\alpha/d$。$p=1$ 的弱型另从最大函数弱型推导。保留积分几乎处处存在与代表无关。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C03-R01",
+          "AN-06-C03-R02"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 190,
+        "unit": "U2",
+        "label": "p102:U2-04",
+        "number": "2.12",
+        "printed_page": 16,
+        "pdf_page": 19
+      }
+    },
+    {
+      "id": "U2-05",
+      "title_zh": "标准卷积核的截断与主值",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 49
+      },
+      "sources": "G §§5.2.1、5.3.4，pp. 333、362 起；S 第 II 章",
+      "contract": "对 Hilbert、Riesz 一类具有球面消去的光滑齐次核，核验光滑函数上的主值、Cotlar 控制与 $1<p<\\infty$ 的最大截断估计。用稠密性和最大估计延伸几乎处处主值，证明与有界延拓一致。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C03-R02",
+          "U2-03"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u2.tex",
+        "tex_line": 202,
+        "unit": "U2",
+        "label": "p102:U2-05",
+        "number": "2.13",
+        "printed_page": 16,
+        "pdf_page": 19
+      },
+      "companion_passages": [
+        {
+          "tex": "parts/u2.tex",
+          "tex_line": 165,
+          "unit": "U2",
+          "label": "p102:U2-03",
+          "number": "2.11",
+          "printed_page": 15,
+          "pdf_page": 18
+        },
+        {
+          "tex": "parts/u3.tex",
+          "tex_line": 150,
+          "unit": "U3",
+          "label": "p102:U3-03",
+          "number": "3.12",
+          "printed_page": 22,
+          "pdf_page": 25
+        }
+      ]
+    },
+    {
+      "id": "AN-06-C01-S01",
+      "title_zh": "Riemann–Lebesgue 与周期系数衰减",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 223
+      },
+      "sources": "G §2.2.4 命题 2.2.17，印刷页 114；§3.3.1，印刷页 193 起；L §10.7 定理 10.65。",
+      "contract": "欧氏 $f\\in L^1$ 时 $\\hat f$ 连续且在无穷远趋零。圆周 $f\\in L^1$ 时 $c_n\\to0$（$|n|\\to\\infty$）。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "欧氏声明已覆盖。周期一般 $L^1$ 可将一个基本区间上的代表零延拓到实线，把 $c_n$ 写成 $T^{-1}\\hat g(n/T)$，或用有限 $p$ 三角稠密。D03 振荡积分另有较早版本，勿将其 Riemann 型条件提升为一般 $L^1$ 证据。",
+        "evidence": "[`tendsto_integral_exp_smul_cocompact_of_inner_product`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/RiemannLebesgueLemma.lean#L218) · [`fourierCoeff_eq_intervalIntegral`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/AddCircle.lean#L303) · [`SingleVariableAnalysis.fourierCoeff_tendsto_zero`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/SingleVariableAnalysis/SingleVariableAnalysis/Ch19/RiemannLebesgue.lean#L195)"
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 15,
+        "unit": "U3",
+        "label": "p102:AN-06-C01-S01",
+        "number": "3.1",
+        "printed_page": 18,
+        "pdf_page": 21
+      }
+    },
+    {
+      "id": "AN-06-C02-S01",
+      "title_zh": "$L^1$ 卷积的 Fourier 乘积公式",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 244
+      },
+      "sources": "F §8.3 定理 8.22；G §2.2.2 命题 2.2.11 的 Schwartz 运算与 §2.2.4 的 $L^1$ 接口。",
+      "contract": "欧氏 $f,g\\in L^1$，按同一测度和 $2\\pi$ 约定，$f*g\\in L^1$ 且 $\\widehat{f*g}=\\hat f\\,\\hat g$，取 Fourier 积分的连续代表。",
+      "reuse": {
+        "level": "direct_baseline",
+        "prior_assessment": "用已验收 $L^1$ 卷积闭合与 Mathlib 的乘积公式。也把这个公式用于检验 D11 和 Mathlib 的积分卷积接口，逐点存在与 a.e. 类分开。",
+        "evidence": "[`Real.fourier_mul_convolution_eq`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/Convolution.lean#L121) · [`D11.Ch11.ConvolutionYoung.l1_algebra`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch11/ConvolutionYoung.lean#L189)"
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 23,
+        "unit": "U3",
+        "label": "p102:AN-06-C02-S01",
+        "number": "3.2",
+        "printed_page": 18,
+        "pdf_page": 21
+      }
+    },
+    {
+      "id": "AN-06-C01-R01",
+      "title_zh": "欧氏 Fourier 反演",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 32
+      },
+      "sources": "G §2.2.3–4，印刷页 111–114；F §8.3 定理 8.26 与推论 8.28。",
+      "contract": "取标准体积，复值 $f\\in L^1(\\mathbb R^n)$ 且 $\\widehat f\\in L^1$。正号积分给出连续代表，在 $f$ 的每个连续点及几乎处处等于 $f$。Schwartz 上处处成立，正反变换互为连续线性逆。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "$L^1$ 反演的连续点等式已存在。任意可积代表未必有连续点，a.e. 子结论另用归一 Gaussian 卷积在 $L^1$ 收敛并抽 a.e. 子列，结合已证频域极限。Schwartz 双向连续性直接使用现有实例，与 AN‑11‑C03 共用。",
+        "evidence": "[`Real.tendsto_integral_gaussian_smul`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/Inversion.lean#L77) · [`MeasureTheory.Integrable.fourierInv_fourier_eq`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/Inversion.lean#L166) · [`SchwartzMap.fourierTransformCLM`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/SchwartzSpace/Fourier.lean#L53)"
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 55,
+        "unit": "U3",
+        "label": "p102:AN-06-C01-R01",
+        "number": "3.5",
+        "printed_page": 19,
+        "pdf_page": 22
+      }
+    },
+    {
+      "id": "AN-06-C01-R02",
+      "title_zh": "Plancherel 与 $L^2$ 反演",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 39
+      },
+      "sources": "G §2.2.4，印刷页 113–114；F §8.3 定理 8.29。教材的标量定理与 Lean 的 Hilbert 值版本分别对应。",
+      "contract": "有限维实内积空间配标准体积，值域为复 Hilbert 空间。Schwartz Fourier 唯一延拓成 $L^2$ 上的复线性等距同构，保持内积，逆为正号变换，并在 $L^1\\cap L^2$ 上与积分式一致（用 a.e. 意义）。",
+      "reuse": {
+        "level": "direct_baseline",
+        "prior_assessment": "现有等距同构给出原契约的正反变换、Schwartz 一致性和内积。对教材补列的 $L^1\\cap L^2$ 一致性，从 Schwartz 取同时 $L^1/L^2$ 逼近，或用测试配对与 $L^2$ 温和分布嵌入。该一致性注明为同一条目的表示桥接，不单算新定理族。",
+        "evidence": "[`MeasureTheory.Lp.fourierTransformₗᵢ`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/LpSpace.lean#L51) · [`MeasureTheory.Lp.inner_fourier_eq、SchwartzMap.toLp_fourier_eq`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/LpSpace.lean#L94) · [`MeasureTheory.Lp.fourier_toTemperedDistribution_eq`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/LpSpace.lean#L121)"
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 67,
+        "unit": "U3",
+        "label": "p102:AN-06-C01-R02",
+        "number": "3.6",
+        "printed_page": 19,
+        "pdf_page": 22
+      }
+    },
+    {
+      "id": "AN-11-C03-R01",
+      "title_zh": "Schwartz 空间和温和分布 Fourier",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 137
+      },
+      "sources": "G §2.2.1–3、§2.3.3（定义 2.3.6–7），印刷页 105–113、123–130；L §10.4、§10.7，印刷页 298–302、309–316；R 第 7 章。",
+      "contract": "在有限维欧氏空间，Schwartz 空间按多项式加权导数半范数定义，Fourier 为连续复线性自同构，正号变换为逆。双线性配对下转置到 $\\mathcal S'$，有 $\\mathcal F(\\partial_jT)=2\\pi i\\xi_j\\mathcal FT$、$\\mathcal F(x_jT)=-(2\\pi i)^{-1}\\partial_{\\xi_j}\\mathcal FT$。说明弱-* 和强对偶拓扑的连续性。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "Mathlib 的 $\\mathcal S'$ 是逐测试函数收敛拓扑，逆与两个算子恒等式已可用（第二式移项及取坐标方向）。若按强对偶表述，由 Fourier 与其逆把有界集映到有界集，强对偶半范数沿转置拉回，须单列这个桥接。与 R01 的 Schwartz 反演共用。",
+        "evidence": "[`SchwartzMap.fourierTransformCLM 与反向实例`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/SchwartzSpace/Fourier.lean#L53) · [`TemperedDistribution 的逐点拓扑`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/TemperedDistribution.lean#L50) · [`TemperedDistribution.instContinuousFourier、fourier_apply、instFourierPair`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/TemperedDistribution.lean#L478) · [`lineDerivOp_fourier_eq、fourier_lineDerivOp_eq`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/TemperedDistribution.lean#L536)"
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 80,
+        "unit": "U3",
+        "label": "p102:AN-11-C03-R01",
+        "number": "3.7",
+        "printed_page": 20,
+        "pdf_page": 23
+      }
+    },
+    {
+      "id": "AN-06-C04-R01",
+      "title_zh": "Riesz–Thorin 插值",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 88
+      },
+      "sources": "G §1.3.2 定理 1.3.4，印刷页 37–40，配作者修订；核对原书在 $p_\\theta<\\infty$ 才使用稠密延拓。",
+      "contract": "两个 σ 有限测度空间，复线性 $T$ 在有限测度支撑简单函数上满足 $L^{p_j}\\to L^{q_j}$ 两个端点界 $M_j$，$1\\le p_j,q_j\\le\\infty$。内插互反指数、$0<\\theta<1$，得到 $M_0^{1-\\theta}M_1^\\theta$。$p_\\theta<\\infty$ 时唯一有界延拓；若 $p_0=p_1=\\infty$，为完整 $L^\\infty$ 结论须给定同一个兼容算子在 $L^\\infty$ 上满足两端界。",
+      "reuse": {
+        "level": "new_proof_baseline",
+        "prior_assessment": "复用 Hadamard 三线。有限支撑简单函数建立指数族和对偶测试，再用有限 $p$ 稠密性；$q=\\infty$ 的简单函数对偶测试保留。旧条目没有区分 $p_\\theta=\\infty$ 时的定义域，计数测度上有限支撑函数在 $L^\\infty$ 不稠密。补明正确端点条件，保留原插值估计。",
+        "evidence": "[`Complex.HadamardThreeLines.norm_le_interpStrip_of_mem_verticalClosedStrip₀₁`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Complex/Hadamard.lean#L469) · [`Complex.HadamardThreeLines.norm_le_interp_of_mem_verticalClosedStrip'`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Complex/Hadamard.lean#L611)"
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 95,
+        "unit": "U3",
+        "label": "p102:AN-06-C04-R01",
+        "number": "3.8",
+        "printed_page": 20,
+        "pdf_page": 23
+      }
+    },
+    {
+      "id": "AN-06-C04-S01",
+      "title_zh": "Hausdorff–Young 插值应用",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 251
+      },
+      "sources": "G §2.2.4 命题 2.2.16，印刷页 114；L §10.7 推论 10.67。",
+      "contract": "$1\\le p\\le2$，$1/p+1/p'=1$。同一欧氏 Fourier 变换从 $L^1\\cap L^p$ 一致延拓至 $L^p\\to L^{p'}$，该归一化下范数不大于一；保留 $p=1,2$ 两端。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "用已证 $L^1\\to L^\\infty$ 和 Plancherel 作为端点，调用 C04‑R01。$p>1$ 的傅里叶像由延拓或兼容的分布确定，原积分公式不能直接用于任意 $L^p$。",
+        "evidence": "[`SchwartzMap.norm_fourier_apply_le_toLp_one`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/SchwartzSpace/Fourier.lean#L281) · [`MeasureTheory.Lp.norm_fourier_eq`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/LpSpace.lean#L90)"
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 115,
+        "unit": "U3",
+        "label": "p102:AN-06-C04-S01",
+        "number": "3.9",
+        "printed_page": 21,
+        "pdf_page": 24
+      }
+    },
+    {
+      "id": "U3-01",
+      "title_zh": "Schwartz 的 Poisson 求和",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 57
+      },
+      "sources": "SS 第 5 章 §3，p. 153 起；G §3.2.3，p. 187；H §7.2，p. 177",
+      "contract": "对任意正周期的方格点阵，先证周期化绝对、局部一致收敛，再计算归一 Fourier 系数并用唯一性识别。写明体积因子、对偶格点及多维级数绝对收敛。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-R01",
+          "AN-06-C01-S03"
+        ],
+        "pinned_source_lead": {
+          "declaration": "SchwartzMap.tsum_eq_tsum_fourier",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Fourier/PoissonSummation.lean#L201",
+          "scope": "One-dimensional unit-period specialization. General period uses scaling; the cubical higher-dimensional statement still needs a bridge."
+        }
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 125,
+        "unit": "U3",
+        "label": "p102:U3-01",
+        "number": "3.10",
+        "printed_page": 21,
+        "pdf_page": 24
+      }
+    },
+    {
+      "id": "U3-02",
+      "title_zh": "有限测度的 Fourier 唯一性",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 58
+      },
+      "sources": "F §8.6；G §§2.5.1–2.5.3 作为卷积对照",
+      "contract": "对有限实符号测度或复 Borel 测度，构造 Fourier–Stieltjes 变换并证有界连续。用 Schwartz 反演和 Fubini 将变换相等传到测试配对，再由稠密性与 Radon 测度唯一性判定。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-R01"
+        ],
+        "pinned_source_lead": {
+          "declaration": "MeasureTheory.Measure.ext_of_charFun",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/MeasureTheory/Measure/CharacteristicFunction/Basic.lean#L229",
+          "scope": "Finite positive measures. Match the sign and scaling and handle signed or complex measures explicitly."
+        }
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 138,
+        "unit": "U3",
+        "label": "p102:U3-02",
+        "number": "3.11",
+        "printed_page": 22,
+        "pdf_page": 25
+      }
+    },
+    {
+      "id": "U3-03",
+      "title_zh": "Hilbert 与 Riesz 变换",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 59
+      },
+      "sources": "G §§5.1.1–5.1.4，pp. 314–333；S 第 III 章 §1，p. 54",
+      "contract": "将主值核和 $L^2$ 乘子 $-i\\,\\mathrm{sgn}(\\xi)$、$-i\\xi_j/\\lvert\\xi\\rvert$ 对齐。先验证测试函数上的恒等式，再用 U2 得经典 $L^p$ 范围，并区分弱型和主值收敛。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-R02",
+          "U2-03",
+          "U2-05"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 150,
+        "unit": "U3",
+        "label": "p102:U3-03",
+        "number": "3.12",
+        "printed_page": 22,
+        "pdf_page": 25
+      }
+    },
+    {
+      "id": "U3-04",
+      "title_zh": "周期共轭与部分和的 $L^p$ 收敛",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 60
+      },
+      "sources": "G §§4.1.1–4.1.2，pp. 241–250",
+      "contract": "周期共轭核的局部奇点与实线 Hilbert 核对照，剩余核可积。零频单列，通过移频的 Riesz 投影控制对称部分和，结合三角多项式稠密性证明 $1<p<\\infty$ 的范数收敛。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-R03",
+          "AN-06-C01-S02",
+          "U3-03"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 175,
+        "unit": "U3",
+        "label": "p102:U3-04",
+        "number": "3.13",
+        "printed_page": 23,
+        "pdf_page": 26
+      }
+    },
+    {
+      "id": "U3-05",
+      "title_zh": "经典 Mihlin 乘子",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 61
+      },
+      "sources": "G §6.2.3，p. 445 起",
+      "contract": "对 $\\mathbb R^d\\setminus\\{0\\}$ 的有界乘子，采用至 $\\lfloor d/2\\rfloor+1$ 阶的经典齐次导数界。由二进频块、加权 Plancherel 与近远估计建立 U2 的积分差条件，固定原点处理及有界延拓。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-R02",
+          "U2-03"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 195,
+        "unit": "U3",
+        "label": "p102:U3-05",
+        "number": "3.14",
+        "printed_page": 24,
+        "pdf_page": 27,
+        "published_tex": "docs/sources/FourierSobolev/revisions/20261112/paper.tex",
+        "published_tex_line": 1206
+      }
+    },
+    {
+      "id": "U3-06",
+      "title_zh": "基本 Littlewood–Paley 平方函数",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 62
+      },
+      "sources": "G §6.1.1，p. 420；L §10.8，p. 316",
+      "contract": "取满足 $0\\le\\chi\\le1$ 的实值光滑径向截断，且 $|\\xi|\\le1$ 时 $\\chi(\\xi)=1$，$|\\xi|\\ge2$ 时 $\\chi(\\xi)=0$。对 $\\eta(\\xi)=\\chi(\\xi)-\\chi(2\\xi)$ 得到的环形频率分割，证明 $1<p<\\infty$ 的双向范数估计。随机符号和 Khintchine 给一侧，辅助频带重构与对偶给另一侧。通过 U3-05 的一致乘子界处理有限和，再核验无限频带极限。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-R02",
+          "U3-05"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u3.tex",
+        "tex_line": 237,
+        "unit": "U3",
+        "label": "p102:U3-06",
+        "number": "3.16",
+        "printed_page": 25,
+        "pdf_page": 28,
+        "published_tex": "docs/sources/FourierSobolev/revisions/20261112/paper.tex",
+        "published_tex_line": 1248
+      }
+    },
+    {
+      "id": "AN-11-C01-R01",
+      "title_zh": "测试函数空间、LF 拓扑和分布",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 102
+      },
+      "sources": "L §10.1，印刷页 281–287（定理 10.2、10.5）；R 第 6 章，印刷页 149 起；G §2.3.1–2 作欧氏全空间对照。",
+      "contract": "任意开集 $\\Omega\\subset\\mathbb R^n$。测试函数光滑且拓扑支撑紧含于 $\\Omega$，固定支撑空间取所有导数的上确界半范数。用保持各固定支撑嵌入连续的最细局部凸拓扑。证明与内部覆盖的递增紧耗尽上的严格 LF 描述相容，分布是此空间的连续线性泛函。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "Mathlib 已有测试函数子空间、固定支撑半范数及局部凸归纳极限。补固定支撑的 Fréchet 完备性/闭嵌入的核对和紧耗尽共尾性。普通分布用实值测试、实线性取实或复值；教材用复线性复测试时经实部虚部复化。",
+        "evidence": "[`TestFunction.topologicalSpace`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/TestFunction.lean#L274) · [`TestFunction.ofSupportedInCLM`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/TestFunction.lean#L319) · [`ContDiffMapSupportedIn.withSeminorms`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/ContDiffMapSupportedIn.lean#L645) · [`Distribution 的标量约定`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/Distribution.lean#L78)"
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 9,
+        "unit": "U4",
+        "label": "p102:AN-11-C01-R01",
+        "number": "4.1",
+        "printed_page": 26,
+        "pdf_page": 29
+      }
+    },
+    {
+      "id": "AN-11-C01-R02",
+      "title_zh": "分布的有限阶连续性判据",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 109
+      },
+      "sources": "L §10.1–2，印刷页 285–290（定理 10.10，PDF 第 310 页）；G §2.3.2 命题 2.3.4，印刷页 121–122。",
+      "contract": "线性 $T$ 连续，当且仅当每个紧 $K\\subset\\Omega$ 上有依赖 $K$ 的 $C\\ge0$、整数 $m\\ge0$，使 $|T\\phi|\\le C\\max_{|\\alpha|\\le m}\\sup_K|\\partial^\\alpha\\phi|$，限 $\\operatorname{supp}\\phi\\subset K$。不要求所有 $K$ 共用阶数。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "用现有逐固定支撑连续性判据与半范数拓扑，取有限个半范数的最高阶。需把 Fréchet 导数的算子范数和有限维坐标多重指标的最大值双向比较。复值情形照 R01 的标量约定。",
+        "evidence": "[`TestFunction.continuous_iff_continuous_comp`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/TestFunction.lean#L335) · [`ContDiffMapSupportedIn.withSeminorms'`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/ContDiffMapSupportedIn.lean#L654) · [`norm_iteratedFDeriv_apply_le_seminorm`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/ContDiffMapSupportedIn.lean#L688)"
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 29,
+        "unit": "U4",
+        "label": "p102:AN-11-C01-R02",
+        "number": "4.3",
+        "printed_page": 27,
+        "pdf_page": 30
+      }
+    },
+    {
+      "id": "AN-11-C02-R01",
+      "title_zh": "分布导数与经典导数的一致性",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 116
+      },
+      "sources": "L §10.3，印刷页 290–298（普通分布导数、定义 10.18 的正规分布）；R 第 6 章的微分小节。",
+      "contract": "开集上 $\\langle\\partial^\\alpha T,\\phi\\rangle=(-1)^{|\\alpha|}\\langle T,\\partial^\\alpha\\phi\\rangle$，含 $\\alpha=0$。对 $u\\in C^{|\\alpha|}(\\Omega)$，$\\partial^\\alpha T_u=T_{\\partial^\\alpha u}$，局部可积函数用同一测试配对。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "方向导数 CLM 及负号已存在。依次组合坐标导数，检查混合偏导次序，用紧支撑截断把开集分部积分转成已有全空间式。`ofFun` 的局部可积条件在使用时显式给出。",
+        "evidence": "[`Distribution.lineDerivCLM、lineDerivOp_apply_apply`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/Distribution.lean#L235) · [`Distribution.ofFun_apply`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/Distribution.lean#L307) · [`integral_smul_fderiv_eq_neg_fderiv_smul_of_integrable`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Calculus/LineDeriv/IntegrationByParts.lean#L212)"
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 44,
+        "unit": "U4",
+        "label": "p102:AN-11-C02-R01",
+        "number": "4.4",
+        "printed_page": 27,
+        "pdf_page": 30
+      }
+    },
+    {
+      "id": "AN-11-C02-R03",
+      "title_zh": "光滑乘子、限制、支撑与乘积法则",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 130
+      },
+      "sources": "L §10.3，印刷页 290–298；R 第 6 章的局部性质；G §2.3.3 定义 2.3.15–18，印刷页 125–126（温和乘子须另有增长条件）。",
+      "contract": "光滑 $a$ 乘普通分布用 $(aT)(\\phi)=T(a\\phi)$；$U\\subset\\Omega$ 为开集，$T|_U$ 由测试函数零延拓定义。乘法及限制是连续线性操作，保留分布的相对闭支撑、在其补集消失和 Leibniz 公式。支撑以闭集及消失判据表达。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "已证测试函数单调嵌入与分布支撑 API。补逐固定紧集的乘子半范数估计并转置，复乘子按复化处理，再证限制相容、支撑与乘积法则。Mathlib 温和分布 `smulLeftCLM` 只适用于满足温和增长的乘子。",
+        "evidence": "[`TestFunction.monoCLM`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/TestFunction.lean#L469) · [`Distribution.dsupport、Distribution.isClosed_dsupport`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/Support.lean#L94) · [`TemperedDistribution.smulLeftCLM（温和版本）`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/TemperedDistribution.lean#L248)"
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 58,
+        "unit": "U4",
+        "label": "p102:AN-11-C02-R03",
+        "number": "4.5",
+        "printed_page": 28,
+        "pdf_page": 31
+      }
+    },
+    {
+      "id": "AN-11-C02-R02",
+      "title_zh": "分布卷积与正则化",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 123
+      },
+      "sources": "L §10.5–6，印刷页 302–309（定义 10.50、定理 10.52–53）；G §2.3.3 定理 2.3.20 的温和全空间版本作对照。",
+      "contract": "$T\\in\\mathcal D'(\\Omega)$，$\\phi\\in C_c^\\infty(\\mathbb R^n)$。在开集 $\\{x:x-\\operatorname{supp}\\phi\\subset\\Omega\\}$ 上，$T*\\phi(x)=T[\\phi(x-\\cdot)]$ 光滑，导数移到 $\\phi$。对积分一、支撑收缩的标准磨光核，任意 $U\\Subset\\Omega$ 上最终定义良好，逐测试函数收敛到 $T|_U$。",
+      "reuse": {
+        "level": "new_proof_baseline",
+        "prior_assessment": "固定支撑的测试函数空间和归一磨光核已有，Mathlib 的函数卷积光滑定理针对局部可积函数，普通分布的全契约需新证明。邻域内统一紧支撑，逐半范数控制平移的差商和余项。测试收敛时对反射核写明 Fubini/连续线性泛函交换，并在同一紧支撑上验证各阶测试导数收敛。",
+        "evidence": "[`TestFunction.ofSupportedInCLM`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/TestFunction.lean#L319) · [`HasCompactSupport.contDiff_convolution_right（函数版）`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Calculus/ContDiff/Convolution.lean#L421) · [`D11.Ch11.SmoothMollifier.scaledMollifier_properties`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch11/SmoothMollifier.lean#L131)"
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 68,
+        "unit": "U4",
+        "label": "p102:AN-11-C02-R02",
+        "number": "4.6",
+        "printed_page": 28,
+        "pdf_page": 31
+      }
+    },
+    {
+      "id": "U4-01",
+      "title_zh": "普通分布与温和分布的接口",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 70
+      },
+      "sources": "L §§10.1、10.4，pp. 281、298；R 第 6–7 章；H §7.1，p. 159",
+      "contract": "证明全空间的 $\\mathcal D(\\mathbb R^d)$ 连续嵌入 Schwartz 空间、全空间紧支撑截断在 Schwartz 半范数中逼近，以及限制映射 $\\mathcal S'\\to\\mathcal D'$ 的单射。把实测试复化与强、弱对偶拓扑分清。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-11-C01-R01",
+          "AN-11-C03-R01"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 91,
+        "unit": "U4",
+        "label": "p102:U4-01",
+        "number": "4.7",
+        "printed_page": 29,
+        "pdf_page": 32
+      }
+    },
+    {
+      "id": "U4-02",
+      "title_zh": "紧支撑分布的有限阶",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 71
+      },
+      "sources": "H §2.3，p. 44；F §9.2；R 第 6 章 p. 164 起",
+      "contract": "用在支撑附近恒为一的截断给紧支撑分布构造作用于光滑函数的扩展，证明截断无关与固定有限阶估计，并给出到 $\\mathcal S'$ 的桥接。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-11-C01-R02",
+          "U4-01"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 99,
+        "unit": "U4",
+        "label": "p102:U4-02",
+        "number": "4.8",
+        "printed_page": 29,
+        "pdf_page": 32
+      }
+    },
+    {
+      "id": "U4-03",
+      "title_zh": "点支撑分布的结构",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 72
+      },
+      "sources": "G §2.4.1，p. 134；H §2.3，p. 44 起",
+      "contract": "证明支撑包含在一点的分布是该点 Dirac 质量的有限个偏导数组合。对零 jet 用收缩截断和 Taylor 余项估计，再构造有限 jet 基及验证系数唯一性。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-11-C02-R03",
+          "U4-02"
+        ],
+        "pinned_source_lead": {
+          "declaration": "Distribution.dsupport",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/Support.lean#L86",
+          "scope": "Support representation only. Finite derivatives of the point mass and uniqueness still need to be shown."
+        }
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 107,
+        "unit": "U4",
+        "label": "p102:U4-03",
+        "number": "4.9",
+        "printed_page": 29,
+        "pdf_page": 32
+      }
+    },
+    {
+      "id": "U4-04",
+      "title_zh": "分布与分布的卷积",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 73
+      },
+      "sources": "H §§4.1–4.2，pp. 88、100；L §10.6，p. 305",
+      "contract": "在全空间取至少一个紧支撑因子，定义卷积并验证截断无关、支撑包含和导数公式。统一已有的分布与光滑核卷积、普通函数表示与正则化。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-11-C02-R02",
+          "U4-02"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 121,
+        "unit": "U4",
+        "label": "p102:U4-04",
+        "number": "4.10",
+        "printed_page": 30,
+        "pdf_page": 33
+      }
+    },
+    {
+      "id": "AN-11-C04-R01",
+      "title_zh": "整数阶弱导数空间与完备性",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 144
+      },
+      "sources": "L §11.1 定义 11.1、定理 11.12，印刷页 319–325（完备性所在 PDF 第 344 页）。",
+      "contract": "任意开 $\\Omega\\subset\\mathbb R^n$、整数 $m\\ge0$、$1\\le p\\le\\infty$，$W^{m,p}(\\Omega)$ 是所有 $|\\alpha|\\le m$ 的分布导数可由 $L^p$ 类表示的 $u$ 的空间，配含零阶项的有限乘积范数是 Banach。各代表唯一至 a.e.，$m=0$ 与普通 $L^p$ 对应。",
+      "reuse": {
+        "level": "new_proof_baseline",
+        "prior_assessment": "在有限个 $L^p(\\Omega)$ 的积中以测试积分等式定义闭图。配对连续性用 Hölder，支撑紧且体积有限；导数代表唯一性用 `ofFun_injective`，完备性由闭子空间取得。全空间 Bessel 势空间的完备性不能交付这里的任意域弱导数契约。",
+        "evidence": "[`Distribution.ofFun_injective`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/Distribution.lean#L373) · [`TemperedDistribution.MemSobolev（Bessel 表示）`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/Sobolev.lean#L153) · [`Bessel 势空间等距接口（相关表示）`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/FunctionalSpaces/BesselPotentialSpace.lean#L250)"
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 144,
+        "unit": "U4",
+        "label": "p102:AN-11-C04-R01",
+        "number": "4.11",
+        "printed_page": 30,
+        "pdf_page": 33
+      }
+    },
+    {
+      "id": "AN-11-C04-R03",
+      "title_zh": "Meyers–Serrin 与 $W_0^{m,p}$",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 158
+      },
+      "sources": "L §11.1 定义 11.17、§11.2 定理 11.24，印刷页 323–335（定理在 PDF 第 349 页）。",
+      "contract": "开集 $\\Omega$、整数 $m\\ge0$、$1\\le p<\\infty$。$C^\\infty(\\Omega)\\cap W^{m,p}(\\Omega)$ 在 $W^{m,p}$ 范数下稠密；$W_0^{m,p}$ 定义为 $C_c^\\infty(\\Omega)$ 的闭包。先单列全空间光滑截断密度与零延拓，再对一般开集局部化。",
+      "reuse": {
+        "level": "new_proof_baseline",
+        "prior_assessment": "D11 有函数磨光，Mathlib 有平滑逼近。一般开集需局部有限分割、每块固定支撑、逐导数误差选 $2^{-j}\\varepsilon$、在 Sobolev 范数求和。$W_0$ 是独立闭子空间，零迹刻画交由边界迹定理。",
+        "evidence": "[`D11.Ch11.SmoothMollifier.regularization_all_derivatives`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch11/SmoothMollifier.lean#L246) · [`函数平滑逼近入口（无 Wᵐ·ᵖ 范数契约）`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Calculus/BumpFunction/SmoothApprox.lean#L33)"
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 156,
+        "unit": "U4",
+        "label": "p102:AN-11-C04-R03",
+        "number": "4.12",
+        "printed_page": 31,
+        "pdf_page": 34
+      }
+    },
+    {
+      "id": "AN-11-C04-S01",
+      "title_zh": "零边值 Poincaré 与梯度范数",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 258
+      },
+      "sources": "L §13.2 定理 13.19，印刷页 430 起。与选定 PDE 能量空间的前置条件对应。",
+      "contract": "$n\\ge1$，开集 $\\Omega$ 在一个方向有限宽（包括有界开集），$1\\le p<\\infty$，$u\\in W_0^{1,p}$。$\\|u\\|_p\\le C\\|\\nabla u\\|_p$。梯度范数等价于全范数，$p=2$ 的实、复 Hilbert 接口由同一范数等价闭合。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "对紧支撑光滑函数沿有限宽方向应用一维积分与 Hölder，再由 $W_0$ 定义延拓。使用 C04‑R01、R03 给完备闭包，且依赖正维下确有可选方向；不和非零均值域上 Poincaré 混用。",
+        "evidence": "[`相关光滑函数估计（仅作背景；本项走有限宽一维路线）`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/FunctionalSpaces/SobolevInequality.lean#L602)"
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 168,
+        "unit": "U4",
+        "label": "p102:AN-11-C04-S01",
+        "number": "4.13",
+        "printed_page": 31,
+        "pdf_page": 34
+      }
+    },
+    {
+      "id": "U4-05",
+      "title_zh": "沿线绝对连续与差商",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 74
+      },
+      "sources": "L §§11.3、11.5，pp. 336、349；Evans 第 5 章",
+      "contract": "用坐标盒、Fubini 和一维基本定理证明 ACL 对弱导数的表征。正向差商估计保留 $p=1$。逆向的常用版取 $1<p<\\infty$，明确内域余量并用弱紧性识别导数。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-11-C04-R01",
+          "AN-11-C04-R03"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 183,
+        "unit": "U4",
+        "label": "p102:U4-05",
+        "number": "4.14",
+        "printed_page": 32,
+        "pdf_page": 35
+      }
+    },
+    {
+      "id": "U4-06",
+      "title_zh": "弱链式、乘积与坐标拉回",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 75
+      },
+      "sources": "L §§12.4、13.1，pp. 387、411；AF 第 3 章 p. 77；H §6.1，p. 133",
+      "contract": "证明 $W^{1,p}$ 上有界导数复合、截断和有界 Sobolev 函数的乘积。用绝对连续代表或平滑逼近补足一阶双 Lipschitz 坐标拉回。普通分布的光滑坐标拉回单列，证明中写明 Jacobian 与测试函数方向。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-11-C02-R01",
+          "AN-11-C04-R03",
+          "U4-05"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 404,
+        "unit": "U4",
+        "label": "p102:U4-06",
+        "number": "4.17",
+        "printed_page": 35,
+        "pdf_page": 38
+      },
+      "companion_passages": [
+        {
+          "tex": "parts/u4.tex",
+          "tex_line": 202,
+          "unit": "U4",
+          "label": "p102:u4-rademacher",
+          "number": "4.15",
+          "printed_page": 33,
+          "pdf_page": 36
+        }
+      ]
+    },
+    {
+      "id": "U4-07",
+      "title_zh": "负阶空间与散度表示",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 76
+      },
+      "sources": "L §11.4，p. 344；AF 第 3 章 p. 62 起",
+      "contract": "对 $1<p<\\infty$，把 $W^{-1,p'}$ 作为 $W_0^{1,p}$ 的对偶。以 $u\\mapsto(u,\\nabla u)$ 的闭子空间表示和 Hahn–Banach 取得 $f_0+\\sum_j\\partial_j f_j$，其中 $f_j\\in L^{p'}$。明确配对符号和可比范数。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-11-C04-R01",
+          "AN-11-C04-R03"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u4.tex",
+        "tex_line": 420,
+        "unit": "U4",
+        "label": "p102:U4-07",
+        "number": "4.18",
+        "printed_page": 36,
+        "pdf_page": 39
+      }
+    },
+    {
+      "id": "AN-11-C04-R02",
+      "title_zh": "亚临界 Sobolev 嵌入",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 151
+      },
+      "sources": "L §12.1 定理 12.4，印刷页 356 起；§13.1 定理 13.17，印刷页 424；D16 相应章仅作可选交叉参考。",
+      "contract": "$n\\ge2$、$1\\le p<n$、$p^*=np/(n-p)$。全空间 $W^{1,p}$ 有梯度型 $\\|u\\|_{p^*}\\le C_{n,p}\\|\\nabla u\\|_p$；有界 Lipschitz 域为完整 $W^{1,p}$ 范数控制；$W_0^{1,p}$ 的零延拓给梯度型版本。保留 $p=1$。",
+      "reuse": {
+        "level": "bridge_baseline",
+        "prior_assessment": "固定 Mathlib 已有紧支撑 $C^1$ 的正确指数及常数型估计。需把光滑逼近同时传到 $L^p$ 和梯度，再用 a.e. 子列与 Fatou 得 $L^{p^*}$。Lipschitz 域用 AN‑11‑C05‑R01 的有界延拓，零迹空间用 $C_c^\\infty$ 闭包得到零延拓；后二者假设不同。",
+        "evidence": "[`MeasureTheory.eLpNorm_le_eLpNorm_fderiv_of_eq`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/FunctionalSpaces/SobolevInequality.lean#L602)"
+      },
+      "manuscript": {
+        "tex": "parts/u5.tex",
+        "tex_line": 78,
+        "unit": "U5",
+        "label": "p102:AN-11-C04-R02",
+        "number": "5.3",
+        "printed_page": 39,
+        "pdf_page": 42
+      }
+    },
+    {
+      "id": "AN-11-C04-R04",
+      "title_zh": "临界嵌入与 Morrey",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 165
+      },
+      "sources": "L §12.2，印刷页 372–378，§12.3（定理 12.48、推论 12.50），印刷页 378–386；L §13.1 域延拓。",
+      "contract": "有界 Lipschitz 域、$n\\ge1$。$p=n$ 时 $W^{1,n}\\hookrightarrow L^q$ 对每个有限 $q\\ge1$。$n<p<\\infty$ 时有 $C^{0,1-n/p}(\\overline\\Omega)$ 代表及有界范数；若取 $p=\\infty$，用本域的有界延拓给 Lipschitz 版本。$n=p=1$ 用一维绝对连续代表。",
+      "reuse": {
+        "level": "new_proof_baseline",
+        "prior_assessment": "临界情形利用有界域先降到 $p'<n$ 且使 $p'^*\\ge q$，一维独立。Morrey 需证明平均振荡、尺度求和与代表拼接，并借域延拓到闭包。紧性在 C05‑R02，强嵌入与紧嵌入的 Hölder 指数严格区分。",
+        "evidence": "[`亚临界估计（用于 p=n 的有限 q 桥接）`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/FunctionalSpaces/SobolevInequality.lean#L602)"
+      },
+      "manuscript": {
+        "tex": "parts/u5.tex",
+        "tex_line": 126,
+        "unit": "U5",
+        "label": "p102:AN-11-C04-R04",
+        "number": "5.4",
+        "printed_page": 40,
+        "pdf_page": 43
+      }
+    },
+    {
+      "id": "AN-11-C05-R02",
+      "title_zh": "Rellich–Kondrachov 紧性",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 179
+      },
+      "sources": "L §12.1 定理 12.18、12.23，印刷页 366 起；§12.2 定理 12.44 及 §12.3 定理 12.48；§13.1 的 Lipschitz 延拓。",
+      "contract": "$\\Omega$ 有界 Lipschitz，$1\\le p<\\infty$。$p<n$ 时 $W^{1,p}\\Subset L^q$ 对 $1\\le q<p^*$；$p\\ge n$ 时对每个有限 $q\\ge1$；$p>n$ 时还对 $0\\le\\alpha<1-n/p$ 紧嵌入 $C^{0,\\alpha}(\\overline\\Omega)$，$\\alpha=0$ 读作一致范数。",
+      "reuse": {
+        "level": "new_proof_baseline",
+        "prior_assessment": "延拓并乘共同紧支撑截断。用一阶弱梯度控制平移，再经卷积一致逼近和 Arzelà–Ascoli 得 $L^p$ 相对紧；用强嵌入与插值升到允许的 $q$。Morrey 端先得一致子列，再用 Hölder 半范数插值升到任意严格较小的 $\\alpha$。保留临界非紧的边界。",
+        "evidence": "[`已有单个函数的平移连续性（统一梯度控制仍需证明）`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch11/ApproximateIdentityLp.lean#L117) · [`嵌入估计的光滑函数基础`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/FunctionalSpaces/SobolevInequality.lean#L602)"
+      },
+      "manuscript": {
+        "tex": "parts/u5.tex",
+        "tex_line": 179,
+        "unit": "U5",
+        "label": "p102:AN-11-C05-R02",
+        "number": "5.5",
+        "printed_page": 40,
+        "pdf_page": 43
+      }
+    },
+    {
+      "id": "U5-01",
+      "title_zh": "均值零的 Poincaré",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 84
+      },
+      "sources": "L §13.2，p. 430；AF 第 6 章 pp. 167、183 作紧性与等价范数对照",
+      "contract": "在连通、有界 Lipschitz 域上取 $1\\le p<\\infty$，证明 $\\lVert u-u_\\Omega\\rVert_p\\le C\\lVert\\nabla u\\rVert_p$。用 Rellich 反证时先闭合 U5 的紧性证明，并证零弱梯度在连通域上意味着常值。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-11-C05-R02",
+          "U4-05"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u5.tex",
+        "tex_line": 232,
+        "unit": "U5",
+        "label": "p102:U5-01",
+        "number": "5.6",
+        "printed_page": 41,
+        "pdf_page": 44
+      }
+    },
+    {
+      "id": "U5-02",
+      "title_zh": "经典 Gagliardo–Nirenberg 插值",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 85
+      },
+      "sources": "L §§12.5、13.3，pp. 399、449；AF 第 5 章 pp. 135–145",
+      "contract": "选全空间经典估计，写明插值指数、缩放关系和教材端点例外。再用本篇已证明的一阶延拓给有界 Lipschitz 域的一阶非齐次版本。低阶范数项与梯度齐次估计分别陈述。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-11-C04-R02",
+          "AN-11-C04-R04"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u5.tex",
+        "tex_line": 258,
+        "unit": "U5",
+        "label": "p102:U5-02",
+        "number": "5.7",
+        "printed_page": 41,
+        "pdf_page": 44
+      }
+    },
+    {
+      "id": "U5-03",
+      "title_zh": "临界 Trudinger–Moser",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 86
+      },
+      "sources": "AF 第 8 章 p. 277；Moser 原文定位",
+      "contract": "对 $d\\ge2$、有界开集的 $W_0^{1,d}$，用梯度归一化建立经典指数可积性与阈值。成稿分别核验重排与一维积分估计、零延拓及阈值以上的集中反例。与原台账的有限 $q$ 嵌入分列。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-11-C04-R03",
+          "U4-06"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u5.tex",
+        "tex_line": 475,
+        "unit": "U5",
+        "label": "p102:U5-03",
+        "number": "5.10",
+        "printed_page": 44,
+        "pdf_page": 47
+      },
+      "companion_passages": [
+        {
+          "tex": "parts/u5.tex",
+          "tex_line": 441,
+          "unit": "U5",
+          "label": "p102:u5-moser-1d",
+          "number": "5.9",
+          "printed_page": 44,
+          "pdf_page": 47
+        },
+        {
+          "tex": "parts/u5.tex",
+          "tex_line": 334,
+          "unit": "U5",
+          "label": "p102:u5-polya-szego",
+          "number": "5.8",
+          "printed_page": 42,
+          "pdf_page": 45
+        }
+      ]
+    },
+    {
+      "id": "U5-04",
+      "title_zh": "Gagliardo 分数阶空间",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 87
+      },
+      "sources": "AF 第 7 章 pp. 205、234、241；分数阶公开全文 §§2–3；L §§17.1–17.2",
+      "contract": "对 $0<s<1$、$1\\le p<\\infty$ 定义 $W^{s,p}$，证明完备性和所选全空间光滑密度。$p=2$ 给出差分半范数与 Fourier 表示的明确关系，保留双积分和 Plancherel 的规范因子。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-06-C01-R02"
+        ],
+        "pinned_source_lead": {
+          "declaration": "TemperedDistribution.MemSobolev",
+          "url": "https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/Sobolev.lean#L137",
+          "scope": "This is a Bessel-potential representation. The Gagliardo norm, completeness and the Fourier norm comparison have separate obligations."
+        }
+      },
+      "manuscript": {
+        "tex": "parts/u5.tex",
+        "tex_line": 549,
+        "unit": "U5",
+        "label": "p102:U5-04",
+        "number": "5.11",
+        "printed_page": 45,
+        "pdf_page": 48
+      }
+    },
+    {
+      "id": "U5-05",
+      "title_zh": "分数阶的基本延拓、嵌入与紧性",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 88
+      },
+      "sources": "分数阶公开全文 §§5–7；AF 第 7 章 pp. 228–247 作空间表示对照",
+      "contract": "采用标准 Lipschitz 域与有限指数。证明换图和拼接所需的延拓、$sp<d$ 的经典临界指数连续嵌入，并给出有界域上严格低于该临界指数的紧性。区分 $sp=d$ 和超临界情形的适用假设。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "U5-04",
+          "AN-11-C05-R01"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u5.tex",
+        "tex_line": 618,
+        "unit": "U5",
+        "label": "p102:U5-05",
+        "number": "5.13",
+        "printed_page": 46,
+        "pdf_page": 49
+      }
+    },
+    {
+      "id": "U5-06",
+      "title_zh": "边界迹与零延拓的证明闭包",
+      "group": "expansion",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 89
+      },
+      "sources": "L §§13.1、18.1–18.4，pp. 411–429、592–620；AF 第 5 章 p. 163 和第 7 章 p. 234",
+      "contract": "这是原 C05-R01、R03 的证明补强。半空间先证迹估计和显式线性提升，再用边界图、固定分割与 Hausdorff 测度拼接，证明迹与光滑代表相容及零迹核。$p=1$ 的 $L^1$ 满射、$p>1$ 的分数阶有界线性右逆及一维端点分别处理。",
+      "reuse": {
+        "level": "static_lead_or_unmatched",
+        "related_checklist_ids": [
+          "AN-11-C05-R01",
+          "AN-11-C05-R03",
+          "U5-04"
+        ]
+      },
+      "manuscript": {
+        "tex": "parts/u5.tex",
+        "tex_line": 860,
+        "unit": "U5",
+        "label": "p102:U5-06",
+        "number": "5.7",
+        "printed_page": 49,
+        "pdf_page": 52
+      },
+      "companion_passages": [
+        {
+          "tex": "parts/u5.tex",
+          "tex_line": 757,
+          "unit": "U5",
+          "label": "p102:u5-flat-trace",
+          "number": "5.14",
+          "printed_page": 48,
+          "pdf_page": 51
+        },
+        {
+          "tex": "parts/u5.tex",
+          "tex_line": 836,
+          "unit": "U5",
+          "label": "p102:u5-flat-zero",
+          "number": "5.15",
+          "printed_page": 49,
+          "pdf_page": 52
+        },
+        {
+          "tex": "parts/u5.tex",
+          "tex_line": 891,
+          "unit": "U5",
+          "label": "p102:AN-11-C05-R01",
+          "number": "5.16",
+          "printed_page": 49,
+          "pdf_page": 52
+        },
+        {
+          "tex": "parts/u5.tex",
+          "tex_line": 906,
+          "unit": "U5",
+          "label": "p102:AN-11-C05-R03",
+          "number": "5.17",
+          "printed_page": 49,
+          "pdf_page": 52
+        }
+      ]
+    },
+    {
+      "id": "AN-11-C05-R01",
+      "title_zh": "Lipschitz 域延拓、$L^p$ 迹和零迹核",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 172
+      },
+      "sources": "L §13.1 定理 13.17（印刷页 424、PDF 第 447 页）；§18.1–2、§18.4 定理 18.7、18.18、18.40，印刷页 592–604、606–620。",
+      "contract": "有界 Lipschitz 开集、$1\\le p<\\infty$。有界线性 $\\operatorname{Ext}:W^{1,p}(\\Omega)\\to W^{1,p}(\\mathbb R^n)$ 且限制为原类；有界 $\\operatorname{Tr}:W^{1,p}(\\Omega)\\to L^p(\\partial\\Omega,\\mathcal H^{n-1})$，光滑情形为边界值，核恰为 $W_0^{1,p}$。$n=1$ 的迹以端点和 $\\mathcal H^0$ 计数处理。 另保留 $p=1$ 时迹到 $L^1(\\partial\\Omega)$ 的满射性。",
+      "reuse": {
+        "level": "new_proof_baseline",
+        "prior_assessment": "以局部 Lipschitz 图与固定分割统一表示。在半空间用可核验的弱链式法则和反射，拼接延拓；用一维法向界构造迹，再证一致性及核的反向包含。普通 $L^p$ 迹与下一条精确分数阶目标空间共用同一算子。 $p=1$ 的有界原像走 Leoni 18.18 的逐层逼近路线，线性右逆只在 R03 的 $p>1$ 范围交付。",
+        "evidence": "[`Distribution.ofFun_apply（弱导数接口）`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Distribution/Distribution.lean#L307) · [`函数磨光（延拓后密度的基础）`](../../../%E6%95%B0%E5%AD%A6%E5%9F%BA%E5%9B%A0%E5%BA%93/MathGenome/MathGenome/Internal/RealAnalysis/D11/Ch11/SmoothMollifier.lean#L232)"
+      },
+      "manuscript": {
+        "tex": "parts/u5.tex",
+        "tex_line": 891,
+        "unit": "U5",
+        "label": "p102:AN-11-C05-R01",
+        "number": "5.16",
+        "printed_page": 49,
+        "pdf_page": 52
+      },
+      "companion_passages": [
+        {
+          "tex": "parts/u5.tex",
+          "tex_line": 29,
+          "unit": "U5",
+          "label": "p102:u5-integer-extension",
+          "number": "5.2",
+          "printed_page": 38,
+          "pdf_page": 41
+        },
+        {
+          "tex": "parts/u5.tex",
+          "tex_line": 836,
+          "unit": "U5",
+          "label": "p102:u5-flat-zero",
+          "number": "5.15",
+          "printed_page": 49,
+          "pdf_page": 52
+        },
+        {
+          "tex": "parts/u4.tex",
+          "tex_line": 277,
+          "unit": "U4",
+          "label": "p102:u4-lipschitz-graph-area",
+          "number": "4.16",
+          "printed_page": 34,
+          "pdf_page": 37
+        }
+      ]
+    },
+    {
+      "id": "AN-11-C05-R03",
+      "title_zh": "一阶精确迹与有界线性右逆",
+      "group": "baseline",
+      "ledger": {
+        "provenance_status": "unpublished preparatory material",
+        "line": 186
+      },
+      "sources": "L §18.4 定理 18.27–28、推论 18.29、定理 18.34、18.40，印刷页 608–620（18.40 在印刷页 616、PDF 第 639 页）；§18.1 定理 18.7 供核的刻画。",
+      "contract": "$n\\ge2$、有界 Lipschitz 域、$1<p<\\infty$。同一迹映射连续满射至 $W^{1-1/p,p}(\\partial\\Omega)$，以边界图的 Slobodeckij 范数定义，有有界线性右逆及零迹核。$p=1$ 的 $L^1$ 迹另由 C05‑R01 覆盖。",
+      "reuse": {
+        "level": "new_proof_baseline",
+        "prior_assessment": "定义等价的边界图范数并证明换图稳定。半空间右逆用切向尺度核的显式线性构造（L 式 18.30），乘固定截断后用局部图与分割拼接。18.40 的结论页给有界原像，线性来自固定构造，必须作为单独的验证项。",
+        "evidence": "[`全空间 Bessel 接口仅供表示对照`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/FunctionalSpaces/BesselPotentialSpace.lean#L77) · [`半空间核构造可复用的函数卷积光滑性`](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Analysis/Calculus/ContDiff/Convolution.lean#L421)"
+      },
+      "manuscript": {
+        "tex": "parts/u5.tex",
+        "tex_line": 906,
+        "unit": "U5",
+        "label": "p102:AN-11-C05-R03",
+        "number": "5.17",
+        "printed_page": 49,
+        "pdf_page": 52
+      },
+      "companion_passages": [
+        {
+          "tex": "parts/u5.tex",
+          "tex_line": 757,
+          "unit": "U5",
+          "label": "p102:u5-flat-trace",
+          "number": "5.14",
+          "printed_page": 48,
+          "pdf_page": 51
+        },
+        {
+          "tex": "parts/u5.tex",
+          "tex_line": 860,
+          "unit": "U5",
+          "label": "p102:U5-06",
+          "number": "5.7",
+          "printed_page": 49,
+          "pdf_page": 52
+        },
+        {
+          "tex": "parts/u4.tex",
+          "tex_line": 277,
+          "unit": "U4",
+          "label": "p102:u4-lipschitz-graph-area",
+          "number": "4.16",
+          "printed_page": 34,
+          "pdf_page": 37
+        }
+      ]
+    }
+  ],
+  "published_revision": {
+    "release": "v0.11.0",
+    "tex": "docs/sources/FourierSobolev/revisions/20261112/paper.tex",
+    "tex_sha256": "af24137be7b68be94ffb85f195b6e03f1700f68a5992d03f66e974c38ef88910",
+    "pdf": "docs/sources/FourierSobolev/revisions/20261112/P1-02_Analysis_Notes.pdf",
+    "pdf_sha256": "e664bdaa8ddc386b03902d3a781a8462185dae8652144e88d1bd985662461cbe",
+    "pdf_page_count": 55,
+    "unchanged_tex_line_count": 2718,
+    "unchanged_pdf_named_destinations": 196,
+    "changed_pdf_pages": [
+      27,
+      28
+    ],
+    "historical_delivery": "provenance/components/FourierSobolev/delivery"
+  }
+}

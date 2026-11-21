@@ -1,0 +1,18 @@
+D13 conventions for mathematical reuse
+Use the exact source statement and retained domain/field/dimension/regularity.
+Real Ck, smooth, real analytic and holomorphic dependence are distinct.
+Flows are partial; composition, inverse and return maps retain common domains.
+Floquet representation is complex unless an explicitly proved real version applies.
+Sturm--Liouville L2 identities are initially almost everywhere; the regularity
+bridge supplies actual classical eigenfunctions where the notes assert them.
+Conjugacy, orbital equivalence and semiconjugacy are distinct. Hartman--Grobman
+here gives time-preserving local homeomorphisms, not smooth conjugacies.
+Ergodic assertions retain probability/finite-measure, integrability and AE conditions.
+Principal-result fidelity permits alternate proofs; a proof-route intermediate
+step is not an extra independent required target merely because it was printed.
+Definitions and necessary representation/equivalence bridges remain binding.
+The fixed MathGenomev0.7.0 includes seven completed components and compatible
+Mathlib. Inspect public imports, exact definitions, catalog/knowledge-index.json
+and source files. Reuse when mathematically appropriate; do not add synonymous
+copies merely to avoid looking at the library. No search quota or proof route
+is imposed. Available compiled artifacts are bound to the fixed environment.

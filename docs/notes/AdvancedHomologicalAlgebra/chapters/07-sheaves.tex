@@ -1,0 +1,290 @@
+\chapter{Sheaf Cohomology and Leray}
+\label{ch:sheaves}
+
+We work with sheaves of modules on a ringed space \((X,\mathcal O_X)\).
+An open subspace carries the restricted structure sheaf. For abelian
+sheaves one can use the constant sheaf of rings \(\underline{\mathbb Z}\).
+The calculations retain the module structures over the section rings.
+In particular a map of ringed spaces induces restriction of scalars
+on global sections even though its pushforward is already a functor of
+categories of sheaves of modules.
+
+\section{Cohomology and acyclicity on open sets}
+
+The stalk functor at \(x\) is exact and has a right adjoint sending an
+\(\mathcal O_{X,x}\)-module to its skyscraper sheaf at \(x\), with
+sections equal to that module on opens containing \(x\) and zero
+otherwise. The adjunction follows by sending a morphism into the
+skyscraper to its value on germs at \(x\). Choose an embedding of each
+stalk of \(\mathcal F\) into an injective \(\mathcal O_{X,x}\)-module.
+The induced map into the product of the skyscrapers is monic, since
+its projection at each \(x\) induces the chosen injection on the
+\(x\)-stalk. Every factor is injective by the adjunction with an exact
+functor, and the product is injective by extending one component at
+a time. Thus the category of sheaves of modules has enough injectives.
+
+For an open inclusion \(j:V\hookrightarrow X\), extension by zero
+\(j_!\) is left adjoint to restriction and is exact. Its stalks are the
+original stalks on \(V\) and zero outside \(V\), which proves exactness.
+In particular the restriction of an injective sheaf to \(V\) is
+injective. The adjunction identifies
+\(\operatorname{Hom}(j_!\mathcal O_V,\mathcal F)\) with \(\mathcal F(V)\).
+If \(V\subseteq W\) are open, the evident map of extensions by zero
+of the unit modules is monic, as is seen on stalks. An injective
+sheaf therefore has surjective restrictions between arbitrary opens.
+A sheaf with this property is called flasque.
+
+\begin{theorem}[Sections, flasque models, and change to abelian sheaves]
+\label{res:H01}
+For an open \(U\subseteq X\) define
+\[
+  H^i(U,\mathcal F)=H^i\bigl(\Gamma(U,I^\bullet)\bigr)
+\]
+from an injective resolution of \(\mathcal F\) on \(X\). This is also
+the \(i\)-th right derived functor of sections of \(\mathcal F|_U\)
+on \(U\). Its degree zero is \(\mathcal F(U)\), and a short exact
+sequence of sheaves gives the natural cohomology sequence in
+\(\mathcal O_X(U)\)-modules. Flasque sheaves are acyclic for sections
+over every open. Taking underlying abelian sheaves identifies the
+underlying groups of these cohomology objects with ordinary
+cohomology of abelian sheaves.
+\end{theorem}
+\begin{proof}
+The adjunction for \(j:U\hookrightarrow X\) shows that the restricted
+injective resolution is an injective resolution on \(U\).
+The degree-zero and long exact sequence claims follow from left
+exactness of sections and Theorem~\ref{res:R09}.
+
+To prove acyclicity, in \(0\to\mathcal F\to\mathcal G\to\mathcal H\to0\)
+with \(\mathcal F\) flasque, every section of \(\mathcal H\) over an open
+\(U\) lifts over \(U\). Partially lift it over open subsets of \(U\).
+A chain of partial lifts glues over the union. If a maximal partial
+lift omits a point of \(U\), the epimorphism of sheaves supplies a lift
+near that point. On the overlap, the difference lies in \(\mathcal F\);
+extend this difference to the new open and subtract it from the new lift.
+The two lifts then glue, contradicting maximality. This proves
+surjectivity on sections over every open. If \(\mathcal G\) is also
+flasque, a section of \(\mathcal H\) lifts over its entire open
+and its lift extends to any larger open. Hence \(\mathcal H\) is flasque.
+Applied to an injective resolution of a flasque \(\mathcal F\), this
+proves by induction that all successive cokernels are flasque and that
+the resolution is exact after taking sections in positive degrees.
+
+Forgetting scalars is exact on stalks and does not change restrictions.
+An injective resolution of \(\mathcal F\) as an \(\mathcal O_X\)-module
+becomes a flasque resolution of the underlying abelian sheaf, so it
+computes the cohomology there by Theorem~\ref{res:R08}. The comparison
+is natural because it is the canonical comparison through acyclic
+models. On abelian sheaves one can also express sections on \(U\) as
+\(\operatorname{Hom}(j_!\underline{\mathbb Z},-)\), so
+Theorem~\ref{res:R11} gives the comparison with Ext from this free
+abelian sheaf. See \cite[Tags 0712, 01E1, 01E3, 09SY]{stacks-sheaf}.
+\end{proof}
+
+\section{\v{C}ech cochains and the comparison spectral sequence}
+
+\begin{definition}[\v{C}ech cochains for an indexed cover]\label{res:H02}
+Let \(\mathcal U=(U_i)_{i\in I}\) be an open cover of \(U\).
+Use all ordered tuples, including repetitions, and put
+\[
+  \check C^p(\mathcal U,\mathcal F)=
+    \prod_{(i_0,\ldots,i_p)\in I^{p+1}}
+       \mathcal F(U_{i_0}\cap\cdots\cap U_{i_p}).
+\]
+Its differential on the component \((i_0,\ldots,i_{p+1})\) is
+the sum over \(a\) of \((-1)^a\) times the restriction of the
+component with \(i_a\) omitted. The same formula defines the
+complex for a presheaf of modules.
+\end{definition}
+
+Deleting positions \(a<b\) in opposite orders gives the same restriction
+with signs \((-1)^{a+b-1}\) and \((-1)^{a+b}\), so \(d^2=0\).
+The degree-zero augmentation from sections on \(U\) lands in the
+kernel of the first differential. For a sheaf it is an isomorphism
+onto that kernel, by the gluing axiom. All products and restrictions
+are in \(\mathcal O_X(U)\)-modules via restriction of scalars.
+See \cite[Sections 9--11]{stacks-sheaf}.
+
+We need the following acyclicity calculation for the full, unnormalized
+cochains. Write \(j_J:U_{i_0}\cap\cdots\cap U_{i_p}\to U\) for the open
+inclusion indexed by a tuple \(J\). On \(U\) consider the augmented
+chain complex with \(p\)-th term
+\[
+     \bigoplus_{J\in I^{p+1}}(j_J)_!\mathcal O_{U_J}
+\]
+and augmentation to \(\mathcal O_U\). The face maps on each summand
+are the extension-by-zero inclusions, with the alternating signs.
+At a point \(x\) the complex is the free chain module on tuples
+of indices containing \(x\), over \(\mathcal O_{U,x}\). Choose one
+index containing \(x\). Prepending it (also in degree \(-1\))
+is a contraction of the augmented complex: the first deletion is
+the identity and the other deletions cancel the prepending of the
+old boundary. Stalks commute with these direct sums, so this proves
+exactness of the augmented chain of sheaves. Apply
+\(\operatorname{Hom}_{\mathcal O_U}(-,I')\) for an injective \(I'\).
+Exactness is preserved contravariantly, and the adjunction for each
+\(j_J\) gives exactly the product cochains above. Thus the
+augmented \v{C}ech cochain complex is exact for each injective \(I'\).
+
+\begin{theorem}[\v{C}ech-to-cohomology spectral sequence]\label{res:H03}
+For a cover \(\mathcal U\) of \(U\) and a sheaf of modules \(\mathcal F\),
+there is a first-quadrant spectral sequence
+\[
+ E_2^{p,q}=
+ \check H^p\bigl(\mathcal U,\;V\longmapsto H^q(V,\mathcal F)\bigr)
+ \quad\Longrightarrow\quad H^{p+q}(U,\mathcal F).
+\]
+It is natural in \(\mathcal F\) and induces a finite filtration of each
+abutment group. The coefficient in the \v{C}ech expression is the
+presheaf of local cohomology groups.
+\end{theorem}
+\begin{proof}
+Let \(\mathcal F\to I^\bullet\) be an injective resolution. Form
+\(D^{p,q}=\check C^p(\mathcal U,I^q)\), with commuting differentials
+and the totalization of Proposition~\ref{res:B01}. The horizontal
+augmentation by \(\Gamma(U,I^q)\) is exact for every \(q\), by the
+preceding computation and exact open restriction. Therefore
+\(\Gamma(U,I^\bullet)\to\operatorname{Tot}D\) is a quasi-isomorphism
+by the augmented comparison in Theorem~\ref{res:B04}.
+
+In the column filtration, vertical cohomology is the product of the
+groups \(H^q(U_J,\mathcal F)\). Here products of modules are exact,
+and \(I^\bullet|_{U_J}\) is an injective resolution. The horizontal
+induced differential is the alternating restriction of these groups.
+Consequently the second page is the displayed \v{C}ech term by
+Proposition~\ref{res:B03}. First-quadrant support gives convergence and a
+finite filtration by Theorems~\ref{res:B04} and~\ref{res:S01}.
+Maps of coefficients lift to maps of injective resolutions and any
+two lifts are homotopic by Theorem~\ref{res:R04}. On each column
+the induced homotopy gives equality on vertical cohomology. The
+total homotopy, multiplied by \((-1)^p\) in column \(p\), preserves
+the column filtration and gives equality of the abutment maps.
+Page functoriality now proves the stated naturality. See
+\cite[Tags 01EP, 01ES]{stacks-sheaf}.
+\end{proof}
+
+\begin{corollary}[\v{C}ech comparison on acyclic intersections]
+\label{res:H04}
+If \(H^q(U_{i_0}\cap\cdots\cap U_{i_p},\mathcal F)=0\) for every
+finite tuple and every \(q>0\), the natural comparison
+\[
+      \check H^p(\mathcal U,\mathcal F)\longrightarrow H^p(U,\mathcal F)
+\]
+is an isomorphism for each \(p\).
+\end{corollary}
+\begin{proof}
+In Theorem~\ref{res:H03} only the \(q=0\) row survives. Its
+identification with the target comes from the edge map, since the
+target filtration has one nonzero graded layer in each total degree.
+Concretely the comparison is induced by
+\(\check C^\bullet(\mathcal U,\mathcal F)\to\operatorname{Tot}D\),
+using the augmentation in vertical degree zero, followed on cohomology
+by the inverse of the horizontal augmentation isomorphism.
+It is therefore the usual comparison and natural in coefficients.
+See \cite[Tag 01ET]{stacks-sheaf}.
+\end{proof}
+
+\begin{theorem}[Mayer--Vietoris for two opens]\label{res:H05}
+For \(U=V\cup W\) there is a natural long exact sequence
+\[
+ \cdots\longrightarrow H^n(U,\mathcal F)
+ \longrightarrow H^n(V,\mathcal F)\oplus H^n(W,\mathcal F)
+ \xrightarrow{\operatorname{res}_V-\operatorname{res}_W}
+ H^n(V\cap W,\mathcal F)
+ \longrightarrow H^{n+1}(U,\mathcal F)\longrightarrow\cdots .
+\]
+\end{theorem}
+\begin{proof}
+For each injective \(I^q\) the sequence of sections is short exact.
+Gluing identifies the kernel of the difference map. Surjectivity
+follows by extending a section on \(V\cap W\) to \(V\), since \(I^q\)
+is flasque. These short exact sequences form a short exact sequence
+of complexes. Its ordinary cohomology sequence, with connecting map
+given by lifting and taking the differential, is the displayed
+sequence by Theorem~\ref{res:H01}. This convention agrees with the
+triangle of Theorem~\ref{res:D04}; using the opposite order of \(V,W\)
+reverses the sign of the difference map together with its boundary
+identification. See \cite[Tag 01EB]{stacks-sheaf}.
+\end{proof}
+
+\section{Higher direct images and composition}
+
+\begin{theorem}[Pushforward, local cohomology, and global sections]
+\label{res:H06}
+Let \(f:X\to Y\) be a map of ringed spaces. The sheaf \(R^q f_*\mathcal F\)
+is the sheafification of the presheaf on \(Y\) sending \(V\) to
+\(H^q(f^{-1}V,\mathcal F)\), with its natural \(\mathcal O_Y(V)\)-action.
+If \(I\) is injective on \(X\), \(f_*I\) is acyclic for sections over
+every open of \(Y\). There is a natural isomorphism
+\[
+  \operatorname{Res}\circ R\Gamma(X,-)
+     \ \simeq\ R\Gamma(Y,-)\circ Rf_*
+   \quad\text{on }D^+(\mathcal O_X\text{-}\mathrm{Mod}).
+\]
+Here \(\operatorname{Res}\) restricts scalars along
+\(\mathcal O_Y(Y)\to\mathcal O_X(X)\).
+\end{theorem}
+\begin{proof}
+The pushforward is additive and left exact. Its bounded right derived
+functor is constructed in Theorem~\ref{res:R06}. For an injective
+resolution \(I^\bullet\), cohomology sheaves of \(f_*I^\bullet\)
+are obtained by sheafifying the presheaf cohomology, since the
+comparison is an isomorphism on stalks by exactness of filtered
+colimits of modules. Sections of \(f_*I^\bullet\) on \(V\) are sections
+of \(I^\bullet\) on \(f^{-1}V\), giving the asserted local description
+by Theorem~\ref{res:H01}. Pushforward preserves flasqueness since
+the relevant restriction maps are those on inverse-image opens.
+Thus \(f_*I\) is acyclic on every open by Theorem~\ref{res:H01}.
+Apply the right composition comparison of Theorem~\ref{res:R12}
+to \(f_*\) and \(\Gamma(Y,-)\). Their underived composite is
+\(\operatorname{Res}\circ\Gamma(X,-)\). Restriction of scalars is
+exact, and termwise restriction of the complex of sections on
+an injective model computes the right derived composite.
+This gives the displayed isomorphism, with the indicated coefficient
+ring. See \cite[Tags 0713, 01E4, 01EX, 01EZ]{stacks-sheaf}.
+\end{proof}
+
+\begin{theorem}[Leray spectral sequence and two degenerations]
+\label{res:H07}
+For \(\mathcal F\) an \(\mathcal O_X\)-module, there is a first-quadrant
+spectral sequence of \(\mathcal O_Y(Y)\)-modules
+\[
+ H^p(Y,R^q f_*\mathcal F)\ \Longrightarrow\
+     \operatorname{Res} H^{p+q}(X,\mathcal F).
+\]
+For \(K\in D^+(\mathcal O_X\text{-}\mathrm{Mod})\), use \(H^q(Rf_*K)\)
+on the second page and hypercohomology at the target. Here \(p\ge0\),
+and \(q\in\mathbb Z\) is bounded below for each \(K\). Each abutment has a
+finite filtration. For a sheaf \(\mathcal F\) the edge comparison gives
+\[
+\begin{array}{ll}
+ H^n(Y,f_*\mathcal F)\ \simeq\ \operatorname{Res}H^n(X,\mathcal F)
+    &\text{if all }R^q f_*\mathcal F=0\text{ for }q>0,\\[2pt]
+ \operatorname{Res}H^n(X,\mathcal F)\ \simeq\
+    \Gamma(Y,R^n f_*\mathcal F)
+    &\text{if all }H^p(Y,R^q f_*\mathcal F)=0\text{ for }p>0 .
+\end{array}
+\]
+For another map of ringed spaces \(g:Y\to Z\) the relative version has
+second page \(R^p g_*(H^q(Rf_*K))\) and target
+\(H^{p+q}(R(gf)_*K)\), with the same indexing convention.
+\end{theorem}
+\begin{proof}
+Take \(F=f_*\) and \(G=\Gamma(Y,-)\) in
+Theorem~\ref{res:G04}. The required acyclicity and the identification
+of the composite are those of Theorem~\ref{res:H06}.
+Corollary~\ref{res:G05} gives the first-quadrant case for a sheaf.
+The two vanishing hypotheses leave only the row \(q=0\), or only the
+column \(p=0\), respectively. The single surviving layer in each
+total degree identifies the corresponding edge map with an isomorphism.
+
+For the relative version, \(f_*I\) is flasque and is acyclic for
+sections over every open of \(Y\). By the local description in
+Theorem~\ref{res:H06} applied to \(g\), this implies
+\(R^p g_*(f_*I)=0\) for \(p>0\). Thus the same hypothesis of the
+derived composition theorem holds for \(g_*\).
+Use \(g_*f_*=(gf)_*\) and Theorem~\ref{res:G04} again. The spectral
+sequences and their edge comparisons are natural by the corresponding
+constructions of Chapter~\ref{ch:grothendieck}.
+See \cite[Tags 01F2, 01F4, 01F6]{stacks-sheaf}.
+\end{proof}

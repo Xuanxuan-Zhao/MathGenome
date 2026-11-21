@@ -1,0 +1,152 @@
+\chapter{Normal subgroups, quotients, and products}\label{chap:M07.04}
+
+\KEntry{K07.04.normality_equivalences}{Equivalent forms of normality}
+\begin{proposition}\label{prop:normality-criteria}
+For $N\leq G$, the following conditions are equivalent: $gng^{-1}\in N$ for all $g\in G,n\in N$; $gNg^{-1}=N$ for all $g$; and $gN=Ng$ for all $g$. Every kernel is normal, and every normal subgroup is a kernel.
+\end{proposition}
+\begin{proof}
+The first condition gives $gNg^{-1}\subseteq N$. Applied to $g^{-1}$, it gives $g^{-1}Ng\subseteq N$, hence $N\subseteq gNg^{-1}$, proving equality. Multiplication of the equality on the right by $g$ gives $gN=Ng$, and reversing that multiplication proves the converse. Equality implies the first condition immediately. Kernel normality is Proposition~\ref{prop:kernel-image}; a normal subgroup is the kernel of its quotient projection by Lemma~\ref{lem:normal-quotient-preliminary}.
+\end{proof}
+
+\KEntry{K07.04.quotient_construction}{The quotient group}
+\begin{theorem}\label{thm:quotient-group}
+For $N\mathrel{\triangleleft}G$, the coset set $G/N$ is a group with
+\[
+ (gN)(hN)=ghN,\quad 1_{G/N}=N,\quad (gN)^{-1}=g^{-1}N.
+\]
+The projection is surjective with kernel $N$.
+\end{theorem}
+\begin{proof}
+Lemma~\ref{lem:normal-quotient-preliminary} proves all these assertions, including representative independence by the explicit formula $gn\,hm=gh(h^{-1}nh)m$. Its proof uses precisely normality, so it applies to this arbitrary $G,N$, not just presented groups. Quotient elements are cosets, not selected representatives. If multiplication by the displayed rule were well-defined for a subgroup $N$, then the representatives $n$ and $1$ of $N$ would give $ngN=gN$, so $g^{-1}ng\in N$ for every $g,n$; Proposition~\ref{prop:normality-criteria} would force normality. Thus the coset set for a nonnormal subgroup cannot receive this quotient-group law. Both extreme cases are allowed: $G/\{1\}\cong G$ by $g\{1\}\mapsto g$, and $G/G$ is trivial.
+\end{proof}
+
+\KEntry{K07.04.quotient_universal_property}{Descent and its uniqueness}
+\begin{theorem}\label{thm:quotient-universal}
+Let $N$ be normal in $G$. A homomorphism $f:G\to H$ factors through $G/N$ if and only if $N\subseteq\ker f$. Its factorization is unique and is given by $\bar f(gN)=f(g)$.
+\end{theorem}
+\begin{proof}
+This is the final assertion of Lemma~\ref{lem:normal-quotient-preliminary}: equality of cosets changes a representative by a factor in $N$, so killing $N$ proves well-definedness and multiplicativity. Surjectivity of the projection proves uniqueness. Conversely a factorization sends $n\in N$ first to the identity coset, hence to $1$.
+\end{proof}
+
+
+\KEntry{K07.04.first_isomorphism}{The first isomorphism theorem}
+\begin{theorem}\label{thm:group-first-isomorphism}
+For a homomorphism $f:G\to H$, $g\ker f\mapsto f(g)$ is an isomorphism $G/\ker f\cong\im f$. If $f$ is surjective its target is $H$.
+\end{theorem}
+\begin{proof}
+The universal property makes this a homomorphism, and by definition it is onto the image subgroup. Its values on $g\ker f$ and $h\ker f$ agree exactly when $f(h^{-1}g)=1$, which holds exactly when the two cosets agree. Thus it is injective, proving the isomorphism. No finite-cardinality argument or commutativity is needed.
+\end{proof}
+
+\KEntry{K07.04.second_isomorphism}{The second isomorphism theorem}
+\begin{theorem}\label{thm:group-second-isomorphism}
+For $H\leq G$ and $N\mathrel{\triangleleft}G$, $HN$ is a subgroup, $N$ is normal in $HN$, $H\cap N$ is normal in $H$, and
+\[
+ H/(H\cap N)\cong HN/N,\qquad h(H\cap N)\longmapsto hN.
+\]
+\end{theorem}
+\begin{proof}
+The product assertion follows from Proposition~\ref{prop:subgroup-product}, without finiteness. Conjugation by any member of $HN\subseteq G$ preserves $N$, so $N$ is normal there. Restrict the quotient projection to $H$. Its kernel is $H\cap N$, proving normality in $H$. Its image consists of cosets $hN$; these are exactly the cosets of $N$ inside $HN$, since $(hn)N=hN$. Apply Theorem~\ref{thm:group-first-isomorphism} to this restricted map to obtain the asserted formula, including its representative description.
+\end{proof}
+
+\KEntry{K07.04.correspondence_theorem}{The correspondence of subgroups}
+\begin{theorem}\label{thm:group-correspondence}
+For $N\mathrel{\triangleleft}G$, inverse image under $\pi:G\to G/N$ bijects subgroups of $G/N$ with subgroups of $G$ containing $N$. Its inverse is $H\mapsto H/N$. Both maps preserve inclusion and normality. For $H\geq N$, the sets of cosets $G/H$ and $(G/N)/(H/N)$ are in canonical bijection, so their finite indices agree.
+\end{theorem}
+\begin{proof}
+Inverse images of subgroups contain $1$ and are closed under products and inverses by the homomorphism laws; they contain $N=\ker\pi$. If $H\geq N$, its image is the subgroup $H/N$. For a subgroup $L$ of the quotient, surjectivity gives $\pi(\pi^{-1}L)=L$. For $H\geq N$, the condition $\pi(g)\in\pi(H)$ means $g=hn$ for some $h\in H,n\in N$, so $\pi^{-1}(\pi H)=H$. These prove that the maps are inverse and plainly preserve inclusion. Conjugating $hN$ by $gN$ gives $(ghg^{-1})N$; using $\pi^{-1}(H/N)=H$ shows that closure under all such conjugations on one side is equivalent to closure on the other. Finally send $gH$ to $(gN)(H/N)$. Two values agree exactly when $(g^{-1}g')N\in H/N$, equivalently $g^{-1}g'\in H$, exactly the criterion for equality of the original cosets. Every quotient coset has such a representative, giving the bijection.
+\end{proof}
+
+\KEntry{K07.04.third_isomorphism}{The third isomorphism theorem}
+\begin{theorem}\label{thm:group-third-isomorphism}
+If $N\leq M$ are both normal in $G$, then $M/N$ is normal in $G/N$, and
+\[
+ (G/N)/(M/N)\cong G/M.
+\]
+The isomorphism sends $(gN)(M/N)$ to $gM$.
+\end{theorem}
+\begin{proof}
+Normality follows from Theorem~\ref{thm:group-correspondence}. Since $N\subseteq M$, the map $G\to G/M$ kills $N$ and descends to $G/N$. This descended map is onto and its kernel is exactly the cosets $gN$ with $g\in M$, namely $M/N$. The first isomorphism theorem gives the result and its displayed formula. That formula also verifies compatibility with both quotient projections.
+\end{proof}
+
+\KEntry{K07.04.index_two_normal}{Index two implies normality}
+\begin{corollary}\label{cor:index-two-normal}
+Every subgroup of index two is normal, with no finiteness assumption on the group.
+\end{corollary}
+\begin{proof}
+Lemma~\ref{lem:index-two-preliminary} proved that for $g\notin H$, the left and right cosets both equal $G\setminus H$, while for $g\in H$ both equal $H$. Proposition~\ref{prop:normality-criteria} converts this equality into normality.
+\end{proof}
+
+\KEntry{K07.04.normality_not_transitive}{A failure of transitivity}
+\begin{example}\label{ex:normality-not-transitive}
+In $S_4$, let $V=\{1,(12)(34),(13)(24),(14)(23)\}$ and $H=\{1,(12)(34)\}$. Then $H\mathrel{\triangleleft}V\mathrel{\triangleleft}S_4$, but $H$ is not normal in $S_4$.
+\end{example}
+\begin{proof}
+Each nonidentity member of $V$ squares to $1$, and the product of any two distinct nonidentity members is the third, by evaluating on four letters. This proves that $V$ is an abelian subgroup and $H$ a subgroup of it. Subgroups of an abelian group are normal because conjugation fixes every element. Conjugation in $S_4$ relabels the three double transpositions and hence preserves $V$, proving its normality. But conjugation by $(123)$ sends $(12)(34)$ to $(23)(14)$, which is not in $H$.
+\end{proof}
+
+\KEntry{K07.04.direct_products}{External direct products}
+For a family of groups $(G_i)_{i\in I}$, define $\prod_iG_i$ to be their Cartesian product with pointwise operations. Associativity follows by equality at every coordinate; the tuple of identities is an identity, and the tuple $(g_i^{-1})$ is inverse to $(g_i)$. This proves the group axioms, including the empty product, which is trivial. Projection to coordinate $i$ preserves multiplication and identity. The map inserting $g\in G_i$ at coordinate $i$ and identities elsewhere also preserves these operations; thus both maps are homomorphisms. For a finite index set and finite factors, elementary counting of Cartesian products gives
+\[
+ \left|\prod_iG_i\right|=\prod_i|G_i|.
+\]
+One proof is induction on the number of factors: there are $|A|$ choices for the first component of a pair and $|B|$ for the second, giving $|A\times B|=|A||B|$; removing one index gives the inductive step. For an infinite family the subgroup of tuples with finitely many nonidentity coordinates is usually smaller than the full product. In additive abelian notation it is the direct sum; these infinite constructions must be distinguished.
+
+\KEntry{K07.04.order_product_element}{Element orders in a product}
+\begin{proposition}\label{prop:product-orders}
+For finite-order $x,y$, the pair $(x,y)$ has order $\lcm(\operatorname{ord}(x),\operatorname{ord}(y))$. If either has infinite order, the pair has infinite order. For positive integers $m,n$, $C_m\times C_n$ is cyclic exactly when $\gcd(m,n)=1$.
+\end{proposition}
+\begin{proof}
+The $k$th power of the pair is identity precisely when both component powers are identity. Proposition~\ref{prop:order-divisibility} identifies the positive such $k$ with the common multiples of the two finite orders, and their least positive member is the least common multiple. With an infinite-order component no positive $k$ works. In $C_m\times C_n$, any component orders divide $m,n$ by Theorem~\ref{thm:finite-cyclic-subgroups}, so every element order divides $\lcm(m,n)=mn/\gcd(m,n)$. A generator of the product, whose size is $mn$, must have order $mn$, forcing coprimality. Conversely, a pair of generators has order $mn$ when $m,n$ are coprime, so its generated subgroup has the full size $mn$ and is the product. This includes a trivial factor of order one.
+\end{proof}
+
+\KEntry{K07.04.characteristic_subgroups}{Characteristic subgroups}
+\begin{proposition}\label{prop:characteristic}
+A subgroup is characteristic if every automorphism maps it to itself. Characteristic subgroups are normal; characteristic-in-characteristic is characteristic; characteristic-in-normal is normal in the ambient group. The center is characteristic.
+\end{proposition}
+\begin{proof}
+Conjugations are automorphisms by Proposition~\ref{prop:inner-automorphisms}, proving the first assertion. If $K$ is characteristic in $H$ and $H$ characteristic in $G$, every automorphism of $G$ restricts to an automorphism of $H$, which preserves $K$; hence $K$ is characteristic in $G$. If instead $H$ is normal in $G$, conjugations of $G$ restrict to automorphisms of $H$ and preserve $K$, proving normality of $K$ in $G$. An automorphism sends a central element $z$ to a central element: for every $y=f(x)$, $f(z)y=f(zx)=f(xz)=yf(z)$, using surjectivity. Applying this to $f^{-1}$ gives equality of the images of the center. The commutator-subgroup assertion is proved next by the same explicitly preserved defining relations.
+\end{proof}
+
+\KEntry{K07.04.commutator_abelianization}{The universal abelian quotient}
+\begin{theorem}\label{thm:abelianization}
+Let $G'$ be generated by $[x,y]=xyx^{-1}y^{-1}$. It is characteristic, $G/G'$ is abelian, and for normal $N$ the quotient $G/N$ is abelian if and only if $G'\leq N$. Every homomorphism from $G$ to an abelian group factors uniquely through $G/G'$.
+\end{theorem}
+\begin{proof}
+An automorphism sends $[x,y]$ to $[f(x),f(y)]$, hence maps the generating set bijectively onto itself. Proposition~\ref{prop:hom-generators} gives $f(G')=G'$. Thus $G'$ is characteristic and therefore normal. In $G/N$ the two cosets $xN,yN$ commute exactly when $[x,y]N=N$. Consequently the quotient is abelian exactly when $N$ contains every commutator, equivalently their generated subgroup. Taking $N=G'$ proves that its quotient is abelian. A homomorphism to an abelian group kills each commutator, hence $G'$; Theorem~\ref{thm:quotient-universal} supplies the unique factorization. Some sources use $x^{-1}y^{-1}xy$ as their commutator: this is our $[x^{-1},y^{-1}]$, so as $x,y$ range over $G$ the sets of generators agree. Individual formulas may differ even though the generated subgroup agrees. The subgroup need not consist solely of single commutators; the definition is generation, not a closure assertion about that set.
+\end{proof}
+
+\KEntry{K07.04.internal_direct_product}{Recognizing an internal direct product}
+\begin{theorem}\label{thm:internal-direct-product}
+If $H,K\mathrel{\triangleleft}G$, $H\cap K=\{1\}$ and $HK=G$, then $(h,k)\mapsto hk$ is an isomorphism $H\times K\to G$. Conversely, coordinate subgroups in an external product have these properties.
+\end{theorem}
+\begin{proof}
+For $h\in H,k\in K$, the commutator $hkh^{-1}k^{-1}$ belongs to $K$ by normality of $K$ and to $H$ by normality of $H$, so is $1$. Hence $h$ and $k$ commute. This makes the multiplication map a homomorphism, since $h_1k_1h_2k_2=h_1h_2k_1k_2$. Surjectivity is $HK=G$. If $hk=h'k'$, then $h'^{-1}h=k'k^{-1}\in H\cap K$, giving $h=h'$ and $k=k'$. This proves injectivity. In an external product the coordinate subgroups commute and intersect trivially; they are kernels of the opposite projections and therefore normal, and every pair is the product of its coordinate pairs.
+\end{proof}
+
+\KEntry{K07.04.semidirect_product}{Semidirect products}
+\begin{theorem}\label{thm:semidirect-construction}
+For $\phi:H\to\Aut(N)$ a homomorphism, the set $N\times H$ with
+\[
+ (n,h)(n',h')=(n\phi(h)(n'),hh')
+\]
+is a group $N\rtimes_\phi H$. The first factor embeds normally and the second embeds as a complement. The trivial action gives the direct product.
+\end{theorem}
+\begin{proof}
+In a product of three pairs, either association has first component
+$n\phi(h)(n')\phi(hh')(n'')$, because $\phi(h)$ is multiplicative and $\phi(hh')=\phi(h)\phi(h')$; the second component is $hh'h''$. The identity is $(1,1)$, and
+\[
+ (n,h)^{-1}=(\phi(h^{-1})(n^{-1}),h^{-1})
+\]
+gives identity on multiplication in either order by the homomorphism law for $\phi$. The embeddings $n\mapsto(n,1)$ and $h\mapsto(1,h)$ preserve products and are injective. Projection to $H$ is a homomorphism with kernel the first factor, making that factor normal. The two embedded factors intersect only at the identity and $(n,h)=(n,1)(1,h)$, so the second is a complement. When $\phi$ is trivial the multiplication is exactly coordinatewise; the identity map on the underlying Cartesian product is then an isomorphism to $N\times H$.
+\end{proof}
+
+\KEntry{K07.04.semidirect_recognition}{Internal semidirect products}
+\begin{theorem}\label{thm:semidirect-recognition}
+If $N\mathrel{\triangleleft}G$, $H\leq G$, $N\cap H=\{1\}$ and $NH=G$, then conjugation by $H$ defines $\phi:H\to\Aut(N)$ and $N\rtimes_\phi H\cong G$ by $(n,h)\mapsto nh$.
+\end{theorem}
+\begin{proof}
+Normality makes $n\mapsto hnh^{-1}$ a map $N\to N$; its inverse is conjugation by $h^{-1}$, and composition of conjugations proves the homomorphism law in $h$. The equality
+$nhn'h'=n(hn'h^{-1})hh'$ proves that multiplication of pairs maps to multiplication in $G$. The map is onto by $NH=G$. If $nh=n'h'$, then $n'^{-1}n=h'h^{-1}$ belongs to both factors and must be $1$, proving injectivity. If $H$ is not normal, its conjugation action can be nontrivial and the untwisted direct-product conclusion is unjustified. For example $S_3$ is generated by a normal three-cycle subgroup and a transposition subgroup with trivial intersection; conjugation inverts the three-cycle. This group is nonabelian, whereas $C_3\times C_2$ is abelian.
+\end{proof}
+
+A normal subgroup need not have a complement. In $Q_8$, take $N=\langle i\rangle$, of index two and hence normal. The quotient has order two. A complement would have order two by the coset product formula, and so would be generated by an involution outside $N$. But each of $\pm i,\pm j,\pm k$ squares to $-1$, and the only involution of $Q_8$ is $-1\in N$. No such complement exists; this extension by $C_2$ is therefore not split.
