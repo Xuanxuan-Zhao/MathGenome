@@ -13,7 +13,7 @@ MathGenome 是一座可查阅、可核验的数学知识库，收录用 Lean 形
 
 </details>
 
-[Explore MathGenome](https://mathgenome-preview.primeclay5.chatgpt.site).
+[Explore MathGenome](https://mathgenome.org).
 
 The current release, v0.25.0, includes the ALG-02 group theory supplement and publication errata.
 
