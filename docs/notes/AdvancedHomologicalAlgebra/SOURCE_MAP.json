@@ -553,7 +553,7 @@
       "title": "Contractibility and the cone criterion",
       "source": "Stacks, Derived Categories [014F] p.28, [05RT] p.39，Yekutieli Lemma 5.4.4 p.148。",
       "proof_dependencies": "K02, P01, P02",
-      "lean_reuse": "复用＋桥接 CochainComplex.mappingCone.homotopyToZeroOfId、HomotopyCategory.quasiIso_eq_trW_subcategoryAcyclic 及 P1‑03 的 ShiftsAndCones.augmentation_quasiIsomorphism、.augmentation_not_homotopyEquiv。https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Algebra/Homology/HomotopyCategory/Pretriangulated.lean#L88 · https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Algebra/Homology/HomotopyCategory/Acyclic.lean#L37 · https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/MathGenome/Internal/AlgebraCore/P103/Ch10/ShiftsAndCones.lean#L405",
+      "lean_reuse": "复用＋桥接 CochainComplex.mappingCone.homotopyToZeroOfId、HomotopyCategory.quasiIso_eq_trW_subcategoryAcyclic 及 P1‑03 的 ShiftsAndCones.augmentation_quasiIsomorphism、.augmentation_not_homotopyEquiv。https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Algebra/Homology/HomotopyCategory/Pretriangulated.lean#L88 · https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Algebra/Homology/HomotopyCategory/Acyclic.lean#L37 · https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/MathGenome/Internal/AlgebraCore/P103/Ch10/ShiftsAndCones.lean#L405",
       "qualified_id": "HA-K03",
       "goal_ids": [
         "HA-K03"
@@ -1107,7 +1107,7 @@
       "title": "Ext boundaries and extension classes",
       "source": "Stacks, Derived Categories [06XQ] pp.87–88, [06XU] pp.89–90，P1‑03 第 11 章。 Stacks, Derived Categories, Tags 06XP and 06XV (Yoneda convention).",
       "proof_dependencies": "D04, R11, P05, K06, D02；G01/G07 应用于短正合列给出的三项无环复形；每层余核保持无环，G01 的逐项分裂解消给出一般阿贝尔范畴的内射马蹄。",
-      "lean_reuse": "复用＋桥接 CategoryTheory.Abelian.Ext.covariantSequence_exact、.contravariantSequence_exact，P103.Ch11.ExtensionClassification.classification、.naturality。https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Algebra/Homology/DerivedCategory/Ext/ExactSequences.lean#L148 · https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/MathGenome/Internal/AlgebraCore/P103/Ch11/ExtensionClassification.lean#L510",
+      "lean_reuse": "复用＋桥接 CategoryTheory.Abelian.Ext.covariantSequence_exact、.contravariantSequence_exact，P103.Ch11.ExtensionClassification.classification、.naturality。https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/Algebra/Homology/DerivedCategory/Ext/ExactSequences.lean#L148 · https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/MathGenome/Internal/AlgebraCore/P103/Ch11/ExtensionClassification.lean#L510",
       "qualified_id": "HA-R13",
       "goal_ids": [
         "HA-R13-Boundaries",

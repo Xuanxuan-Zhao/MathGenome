@@ -1,11 +1,21 @@
 # MathGenome
 
-MathGenome v0.25.0 is a Lean library organized around mathematical definitions,
-theorems, and their sources. The catalog links results to Lean declarations and
-to the corresponding lecture notes. This repository contains the v0.25.0
-library and its accompanying notes, including publication errata.
+MathGenome is a mathematical knowledge base where you can look up and verify definitions, theorems, and proofs formalized in Lean. Our long-term goal is to formalize all theories across mathematics, so that every theorem has its own piece of mathematical DNA here.
 
-This release adds the ALG-02 group theory supplement.
+From classic textbooks to the research literature, we link theorems to their original sources, proofs, and dependencies. In your own Lean projects, you can import the modules you need and reuse existing definitions and theorems directly. Follow those links to see how a theorem was proved and how it can become the starting point for another proof.
+
+<details>
+<summary>中文介绍</summary>
+
+MathGenome 是一座可查阅、可核验的数学知识库，收录用 Lean 形式化的定义、定理与证明。我们的长远目标，是逐步形式化数学各领域的所有理论，让每一条定理都在这里拥有独属于自己的「基因片段」。
+
+从经典教材到研究文献，我们把定理与原文、证明和依赖关系连在一起。在自己的 Lean 项目中，你可以导入所需模块，直接复用库中已有的定义和定理。沿着这些联系，你既能追溯一条定理如何得来，也能看到它如何成为下一段证明的起点。
+
+</details>
+
+[Explore MathGenome](https://mathgenome-preview.primeclay5.chatgpt.site).
+
+The current release, v0.25.0, includes the ALG-02 group theory supplement and publication errata.
 
 ## Library
 
@@ -52,7 +62,7 @@ python tools/search.py Brouwer
 ```
 
 For full declaration search, download `mathgenome-v0.25.0-declarations.zip`
-from the [v0.25.0 Release](https://github.com/Xuanxuan-Zhao/MathGenome-Public/releases/tag/v0.25.0)
+from the [v0.25.0 Release](https://github.com/Xuanxuan-Zhao/MathGenome/releases/tag/v0.25.0)
 and save it in `catalog/`. The search tool reads the ZIP directly.
 
 ```sh
@@ -86,7 +96,7 @@ Use the same Lean toolchain and pin MathGenome to a release tag in your
 `lakefile.lean`. For v0.25.0, add this dependency and run `lake update`.
 
 ```lean
-require mathGenome from git "https://github.com/Xuanxuan-Zhao/MathGenome-Public.git" @ "v0.25.0"
+require mathGenome from git "https://github.com/Xuanxuan-Zhao/MathGenome.git" @ "v0.25.0"
 ```
 
 Then import the subject you need.

@@ -67,7 +67,7 @@
       "title": "A finite Galois subextension containing a finite set",
       "source": "Milne v5.10 p.95 第 7 章开头，Stacks 0BMG (https://stacks.math.columbia.edu/tag/0BMG)。",
       "proof_dependencies": "F01, F02",
-      "lean_reuse": "复用 FiniteGaloisIntermediateField.adjoin、.subset_adjoin。按每个元素的可分最小多项式取分裂域，或先去除乘积中的重复因子。D07 的有限伽罗瓦闭包先在代数闭包里构造，嵌回 $L$ 要用正规性。 有限子扩张 (https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/FieldTheory/Galois/GaloisClosure.lean#L92) · D07 闭包 (https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/MathGenome/Internal/D07/Ch14/GaloisClosure.lean#L44)",
+      "lean_reuse": "复用 FiniteGaloisIntermediateField.adjoin、.subset_adjoin。按每个元素的可分最小多项式取分裂域，或先去除乘积中的重复因子。D07 的有限伽罗瓦闭包先在代数闭包里构造，嵌回 $L$ 要用正规性。 有限子扩张 (https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/FieldTheory/Galois/GaloisClosure.lean#L92) · D07 闭包 (https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/MathGenome/Internal/D07/Ch14/GaloisClosure.lean#L44)",
       "qualified_id": "FT-F03",
       "goal_ids": [
         "FT-F03"
@@ -510,7 +510,7 @@
       "title": "Cosets as embeddings",
       "source": "Milne v5.10 Prop. 7.4 p.95、Thm. 7.13(b) p.98，D07 第 12、14 章。",
       "proof_dependencies": "F01, F02, F05, C06",
-      "lean_reuse": "复用＋桥接 IntermediateField.finrank_eq_fixingSubgroup_index 给 Lean 中自然数值相等。讲义将其用于有限次数，以嵌入延拓及有限可分嵌入计数证明。陪集在此是集合。 次数与指数 (https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/FieldTheory/Galois/Basic.lean#L705) · 嵌入计数 (https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/docs/sources/D07/chapters/M07.12.tex)",
+      "lean_reuse": "复用＋桥接 IntermediateField.finrank_eq_fixingSubgroup_index 给 Lean 中自然数值相等。讲义将其用于有限次数，以嵌入延拓及有限可分嵌入计数证明。陪集在此是集合。 次数与指数 (https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/FieldTheory/Galois/Basic.lean#L705) · 嵌入计数 (https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/docs/sources/D07/chapters/M07.12.tex)",
       "qualified_id": "FT-C07",
       "goal_ids": [
         "FT-C07"
@@ -579,7 +579,7 @@
       "title": "Galois base change in a common overfield",
       "source": "Milne v5.10 Prop. 7.15 p.99，D07 第 14 章的有限版本。",
       "proof_dependencies": "F02, F04, T03, T06, C01, C04, T01, C09",
-      "lean_reuse": "桥接先对各有限伽罗瓦层 $E_i/K$ 用可分多项式证明 $E_iM/M$ 伽罗瓦，再取有向并。限制因 $EM$ 由 $E,M$ 生成而单射，以有限点条件证连续。像紧致而闭，其在 $E$ 的固定域为 $E\\cap M$，再用 C04 得满射。D07.Ch14.BaseChange.restriction_isomorphism 的有限版本要求 $E/K$ 有限，$M/K$ 可任意。 D07 换底 (https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/MathGenome/Internal/D07/Ch14/BaseChange.lean#L224)",
+      "lean_reuse": "桥接先对各有限伽罗瓦层 $E_i/K$ 用可分多项式证明 $E_iM/M$ 伽罗瓦，再取有向并。限制因 $EM$ 由 $E,M$ 生成而单射，以有限点条件证连续。像紧致而闭，其在 $E$ 的固定域为 $E\\cap M$，再用 C04 得满射。D07.Ch14.BaseChange.restriction_isomorphism 的有限版本要求 $E/K$ 有限，$M/K$ 可任意。 D07 换底 (https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/MathGenome/Internal/D07/Ch14/BaseChange.lean#L224)",
       "qualified_id": "FT-C10",
       "goal_ids": [
         "FT-C10A",
@@ -651,7 +651,7 @@
       "title": "Root fields in the chosen closure",
       "source": "Milne v5.10 Prop. 4.20、4.23 pp.53–54，Lidl–Niederreiter Thm. 2.5 p.60。",
       "proof_dependencies": "P01, P04",
-      "lean_reuse": "复用 D07.Ch13.Existence.root_field_membership、.embedded_existence 和 D07.Ch13.Uniqueness.embedded_uniqueness。从导数 $-1$、$q$-幂闭合与有限域计数证明。 根域存在 (https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/MathGenome/Internal/D07/Ch13/Existence.lean#L35) · 嵌入唯一 (https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/MathGenome/Internal/D07/Ch13/Uniqueness.lean#L87)",
+      "lean_reuse": "复用 D07.Ch13.Existence.root_field_membership、.embedded_existence 和 D07.Ch13.Uniqueness.embedded_uniqueness。从导数 $-1$、$q$-幂闭合与有限域计数证明。 根域存在 (https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/MathGenome/Internal/D07/Ch13/Existence.lean#L35) · 嵌入唯一 (https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/MathGenome/Internal/D07/Ch13/Uniqueness.lean#L87)",
       "qualified_id": "FT-E01",
       "goal_ids": [
         "FT-E01"
@@ -674,7 +674,7 @@
       "title": "The divisor lattice",
       "source": "Milne v5.10 Cor. 4.21、Prop. 4.23 pp.53–54，Lidl–Niederreiter Thm. 2.6 pp.60–61。",
       "proof_dependencies": "E01, P04",
-      "lean_reuse": "复用 D07.Ch13.IntersectionCompositum.inclusion_iff_divides、.intersection_eq、.compositum_eq、D07.Ch13.EmbeddingCompatibility.coherent_embedded_family。 整除格 (https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/MathGenome/Internal/D07/Ch13/IntersectionCompositum.lean#L14) · 相容包含 (https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/MathGenome/Internal/D07/Ch13/EmbeddingCompatibility.lean#L84)",
+      "lean_reuse": "复用 D07.Ch13.IntersectionCompositum.inclusion_iff_divides、.intersection_eq、.compositum_eq、D07.Ch13.EmbeddingCompatibility.coherent_embedded_family。 整除格 (https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/MathGenome/Internal/D07/Ch13/IntersectionCompositum.lean#L14) · 相容包含 (https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/MathGenome/Internal/D07/Ch13/EmbeddingCompatibility.lean#L84)",
       "qualified_id": "FT-E02",
       "goal_ids": [
         "FT-E02"
@@ -720,7 +720,7 @@
       "title": "Arithmetic Frobenius and its restrictions",
       "source": "Milne v5.10 Prop. 4.20、4.23 pp.53–54、Ex. 7.17 pp.99–100，Lidl–Niederreiter Thm. 2.21 pp.64–65。",
       "proof_dependencies": "E01, E02, E03",
-      "lean_reuse": "复用＋桥接 D07.Ch13.GaloisGroup.embedded_galois_group、D07.Ch13.Frobenius.relative_automorphism 和 D07.Ch13.FrobeniusInfiniteOrderOnClosure.infinite_order_on_closure。原生 FiniteField.frobeniusAlgEquivOfAlgebraic、.orderOf_frobeniusAlgEquivOfAlgebraic 对照实际有限性假设。相对群按基域大小 $q^m$ 比较。 D07 有限群 (https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/MathGenome/Internal/D07/Ch13/GaloisGroup.lean#L52) · 全局无限阶 (https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/MathGenome/Internal/D07/Ch13/FrobeniusInfiniteOrderOnClosure.lean#L54) · Mathlib Frobenius (https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/FieldTheory/Finite/Basic.lean#L364)",
+      "lean_reuse": "复用＋桥接 D07.Ch13.GaloisGroup.embedded_galois_group、D07.Ch13.Frobenius.relative_automorphism 和 D07.Ch13.FrobeniusInfiniteOrderOnClosure.infinite_order_on_closure。原生 FiniteField.frobeniusAlgEquivOfAlgebraic、.orderOf_frobeniusAlgEquivOfAlgebraic 对照实际有限性假设。相对群按基域大小 $q^m$ 比较。 D07 有限群 (https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/MathGenome/Internal/D07/Ch13/GaloisGroup.lean#L52) · 全局无限阶 (https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/MathGenome/Internal/D07/Ch13/FrobeniusInfiniteOrderOnClosure.lean#L54) · Mathlib Frobenius (https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/FieldTheory/Finite/Basic.lean#L364)",
       "qualified_id": "FT-E04",
       "goal_ids": [
         "FT-E04A",
@@ -815,7 +815,7 @@
       "title": "Open subgroups and finite intermediate fields",
       "source": "Milne v5.10 Thm. 7.13(b) p.98、Ex. 7.17 pp.99–100，Ribes–Zalesskii Thm. 2.7.2 p.65。",
       "proof_dependencies": "C06, C07, E01, E02, E06, E07, C04, E03",
-      "lean_reuse": "新增用 $\\operatorname{lcm}(n,m)$ 层证明 $\\overline{n\\mathbb Z}=\\ker\\pi_n$。再用乘 $n$ 连续、像紧致及整数稠密证明该闭包等于 $n\\widehat{\\mathbb Z}$。D07 的 SubfieldLattice.embedded_classification 核对有限子层。 有限层子域 (https://github.com/Xuanxuan-Zhao/MathGenome-Public/blob/main/MathGenome/Internal/D07/Ch13/SubfieldLattice.lean#L45)",
+      "lean_reuse": "新增用 $\\operatorname{lcm}(n,m)$ 层证明 $\\overline{n\\mathbb Z}=\\ker\\pi_n$。再用乘 $n$ 连续、像紧致及整数稠密证明该闭包等于 $n\\widehat{\\mathbb Z}$。D07 的 SubfieldLattice.embedded_classification 核对有限子层。 有限层子域 (https://github.com/Xuanxuan-Zhao/MathGenome/blob/main/MathGenome/Internal/D07/Ch13/SubfieldLattice.lean#L45)",
       "qualified_id": "FT-E08",
       "goal_ids": [
         "FT-E08A",
