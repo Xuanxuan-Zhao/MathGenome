@@ -1,0 +1,6 @@
+id	source	dependencies
+C01	Stacks, Commutative Algebra 138.12 (031L), PDF pp. 371–372 and 158.7–9, pp. 433–434	Core FL-01, FL-02, FL-07, KD-17; prime-field lifting
+C02	Stacks, Commutative Algebra 159.1, 160.6–7 (0328, 0329), PDF pp. 435–438	C01; P1-03 ALG-05-C04-S01; DVR valuation
+C03	Stacks, Commutative Algebra 160.4, 160.8(1) (032A), PDF pp. 437–439; Bruns–Herzog A.20–21, p. 431	C01, C02; completion
+C04	Stacks, Commutative Algebra 160.8–10 (032A, 032C), PDF pp. 438–440; Bruns–Herzog A.21	C03; P1-03 height and completion
+C05	Stacks, Commutative Algebra 160.11 (032D), PDF p. 440; Bruns–Herzog A.22, p. 431	L01, C03, C04; P1-03 ALG-05-C01-S04 and parameter theorem

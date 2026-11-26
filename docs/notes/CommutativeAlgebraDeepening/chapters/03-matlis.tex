@@ -1,0 +1,226 @@
+\chapter{Injective hulls and Matlis duality}\label{ch:matlis}
+
+Let $(R,\mathfrak m,k)$ be a Noetherian local ring and
+$\widehat R=\varprojlim_n R/\mathfrak m^n$. Write
+$\operatorname{soc}X=(0:_X\mathfrak m)$ and call a module finite if it is
+finitely generated. An inclusion is essential if its image meets every
+nonzero submodule. The functor used in this chapter is
+\[
+     X^\vee=\operatorname{Hom}_R(X,E_R(k)).
+\]
+The action on this Hom can be written as multiplication in the codomain
+or as precomposition with scalar multiplication on the domain. These are
+equal by $R$-linearity. We use \cite[Sections 6--7]{st-dual} and
+\cite[Section 3.2]{bruns} for the organization of the chapter.
+
+\section{Endomorphisms of the injective hull}
+
+\begin{proposition}[An exact dual with detection]\label{res:M01}
+The residue field has an injective hull $E=E_R(k)$ and
+$\operatorname{soc}E=k$. The contravariant functor $X\mapsto X^\vee$
+is exact and detects nonzero objects.
+\end{proposition}
+\begin{proof}
+Existence of the hull with its essential embedding $k\hookrightarrow E$
+is \cite[ALG-03-C02-S03]{p103}. Each nonzero vector killed by
+$\mathfrak m$ generates a simple submodule. Its intersection with $k$
+is nonzero by essentiality, so that submodule is $k$. This proves the
+formula for the socle. Exactness is injectivity of $E$. If $x\ne0$ in
+an $R$-module $X$, then $Rx\simeq R/\operatorname{Ann}(x)$ with
+$\operatorname{Ann}(x)\subseteq\mathfrak m$. The quotient $Rx\to k$
+sends $x$ to $1$. Compose with $k\hookrightarrow E$ and extend along
+$Rx\subseteq X$. The extension is a functional nonzero on $x$.
+\end{proof}
+
+\begin{proposition}[Finite-length truncations]\label{res:M02}
+Put $E[n]=(0:_E\mathfrak m^n)$. Then $E=\bigcup_{n\ge1}E[n]$,
+and $E[n]$ is the injective hull of $k$ over $R/\mathfrak m^n$.
+On finite-length $R$-modules the dual preserves length and natural
+evaluation $X\to X^{\vee\vee}$ is an isomorphism.
+\end{proposition}
+\begin{proof}
+By \ref{res:L03}, $\Gamma_{\mathfrak m}E$ is injective. It contains $k$,
+so its inclusion in $E$ splits and the complementary summand has zero
+intersection with $k$. Essentiality forces that summand to vanish.
+For $A_n=R/\mathfrak m^n$, the evaluation map at $1$ identifies
+$\operatorname{Hom}_R(A_n,E)$ with $E[n]$. For an $A_n$-module $T$,
+an $R$-linear map $T\to E$ has image in $E[n]$, so
+$\operatorname{Hom}_{A_n}(T,E[n])=\operatorname{Hom}_R(T,E)$ naturally.
+Hence $E[n]$ is injective over $A_n$ and its inclusion of $k$ is
+essential there. The ring $A_n$ is Artinian because it has a finite
+filtration by powers of $\mathfrak m$ with finite-dimensional
+$k$-vector space factors. A finite-length module is killed by a power
+of $\mathfrak m$, by a composition series. Its dual is then a dual into
+$E[n]$. More directly, exactness and $\operatorname{Hom}_R(k,E)\simeq k$
+show along any composition series that the dual has the same length.
+Evaluation is an isomorphism for $k$, since it is a nonzero map between
+simples. The exactness of both dual functors, naturality of evaluation,
+and the short exact sequences of a composition series give the
+biduality isomorphism for every finite-length module by induction.
+\end{proof}
+
+\begin{theorem}[Endomorphisms of the residue-field hull]\label{res:M03}
+Scalar multiplication gives an $R$-algebra isomorphism
+$\widehat R\simeq \operatorname{End}_R(E)$, compatible with
+restriction to $E[n]$ and reduction modulo $\mathfrak m^n$.
+\end{theorem}
+\begin{proof}
+The isomorphism $\operatorname{Hom}_R(A_n,E)\simeq E[n]$ is the one
+in \ref{res:M02}. Dualizing an endomorphism of $A_n$ gives an
+anti-isomorphism to $\operatorname{End}_R(E[n])$ by finite-length
+biduality. Multiplication by $a\in A_n$ dualizes to multiplication by
+$a$ on $E[n]$. Thus this anti-isomorphism is the scalar homomorphism
+from the commutative ring $A_n$. Every endomorphism of $E$ preserves
+each submodule $E[n]$. A compatible family of endomorphisms of $E[n]$
+defines an endomorphism of their union, with composition computed on
+each member. In the scalar description, restriction from $E[n+1]$
+to $E[n]$ reduces the scalar modulo $\mathfrak m^n$. Taking inverse
+limits proves the result. In particular, the action of $\widehat R$
+on $E$ is the action on a power-torsion module described in
+\ref{res:L09}.
+\end{proof}
+
+\section{Finite and Artinian modules}
+
+\begin{proposition}[Artinian modules and their socles]\label{res:M04}
+The injective hull $E$ is Artinian. An $\mathfrak m$-power-torsion
+module is Artinian if and only if its socle has finite dimension
+over $k$. Every Artinian $R$-module is $\mathfrak m$-power torsion.
+\end{proposition}
+\begin{proof}
+For a submodule $U\subseteq E$, restriction gives a surjection
+$E^\vee\to U^\vee$ by injectivity. Its kernel is an ideal of
+$\widehat R$. Under \ref{res:M03} it consists precisely of the scalars
+annihilating $U$. A descending chain of submodules of $E$ gives an
+ascending chain of these ideals, which stabilizes because $\widehat R$
+is Noetherian \cite[ALG-05-C04-S01]{p103}. For $U'\subseteq U$ with
+the same restriction kernel, the map $U^\vee\to (U')^\vee$ is an
+isomorphism. Exactness and detection in \ref{res:M01} then give
+$U/U'=0$. This proves that $E$ is Artinian.
+
+If $T$ is power torsion, its socle is essential. In fact, for a nonzero
+element $x$ killed by a least power $\mathfrak m^n$, some element of
+$\mathfrak m^{n-1}x$ is nonzero and killed by $\mathfrak m$. If the
+socle has dimension $t$, a choice of basis gives an embedding of
+$\operatorname{soc}T$ into $\operatorname{soc}(E^t)$. Extend it to
+$T\to E^t$ using injectivity of the finite direct sum. A nonzero kernel
+would meet the socle, so this map is injective and $T$ is Artinian.
+If $T$ is Artinian, every cyclic submodule is both Noetherian and
+Artinian, hence has a finite composition series. Each simple factor
+is $k$, so the cyclic submodule is killed by a power of $\mathfrak m$.
+Thus $T$ is power torsion. An infinite-dimensional socle would admit
+a strictly decreasing chain of subspaces by removing independent basis
+elements successively. This proves the converse.
+\end{proof}
+
+\begin{theorem}[Matlis duality over a complete local ring]\label{res:M05}
+If $R$ is complete, the Matlis dual gives a contravariant equivalence
+between finite $R$-modules and Artinian $R$-modules. On both categories
+the natural evaluation map to the second dual is an isomorphism.
+\end{theorem}
+\begin{proof}
+For finite $X$, choose a presentation $R^b\to R^a\to X\to0$.
+Dualizing embeds $X^\vee$ into $E^a$, which is Artinian by
+\ref{res:M04}. For Artinian $Y$, the same result embeds $Y$ into $E^a$
+for some $a$. Dualizing gives a surjection $R^a\to Y^\vee$, since
+$E^\vee\simeq R$ by completeness and \ref{res:M03}. The second dual
+functor is exact. Evaluation on $R$ identifies with its scalar action
+on $E$, an isomorphism by \ref{res:M03}. The same holds on finite free
+modules. Apply twice-dualization to the finite presentation of $X$.
+Naturality of evaluation and its isomorphisms on the two free terms
+identify the cokernels, giving biduality for $X$.
+
+For the other category, evaluation on $E$ is an isomorphism because the
+identification $E^\vee=R$ by scalar multiplication sends evaluation
+at $e$ to the map $r\mapsto re$. For Artinian $Y$ choose an embedding
+$Y\to E^a$ and embed its Artinian cokernel into $E^b$. Then
+$Y=\ker(E^a\to E^b)$. Applying the exact twice-dual functor and using
+evaluation on both powers of $E$ identifies these kernels. Hence
+evaluation is also an isomorphism for $Y$. The same natural evaluation
+maps supply the two natural equivalences for the stated opposite
+categories.
+\end{proof}
+
+\begin{theorem}[Matlis duality and completion]\label{res:M06}
+For arbitrary Noetherian local $R$, Artinian $R$-modules and finite
+$\widehat R$-modules are contravariantly equivalent via Matlis duality.
+For finite $R$-modules $X$, the natural identification
+$X^{\vee\vee}\simeq \widehat X$ sends evaluation to the completion map.
+\end{theorem}
+\begin{proof}
+The completion is Noetherian and flat, its maximal ideal is
+$\mathfrak m\widehat R$, and
+$\widehat R/\mathfrak m^n\widehat R=R/\mathfrak m^n$
+\cite[ALG-05-C04-S01]{p103}. Let $\widehat E$ be the injective hull
+of $k$ over $\widehat R$. Restriction makes it injective over $R$ by
+the adjunction
+\[
+ \operatorname{Hom}_R(X,\widehat E)
+ \simeq\operatorname{Hom}_{\widehat R}
+       (\widehat R\otimes_R X,\widehat E)
+\]
+and flatness. By \ref{res:M02} over $\widehat R$, it is power torsion.
+Any $R$-submodule of a power-torsion module with its extended scalar
+action is already a $\widehat R$-submodule because on each element the action
+of a completed scalar equals that of an ordinary scalar with the same
+residue modulo a killing power. Hence $k$ is essential in $\widehat E$
+as an $R$-module. We may choose $E=\widehat E$ after restriction, and
+uniqueness of the extended action holds by \ref{res:L09}. The same
+argument shows that all $R$-linear maps between power-torsion modules
+are $\widehat R$-linear, and that Artinian objects over the two rings
+have the same submodule chains. By \ref{res:M04}, all Artinian objects
+are power torsion, so \ref{res:M05} over $\widehat R$ proves the first
+assertion. For finite $X$, $\widehat R\otimes_R X=\widehat X$
+\cite[ALG-05-C04-R03]{p103}, and the displayed adjunction identifies
+$X^\vee$ with the dual of $\widehat X$. A second dual now gives
+$\widehat X$ by \ref{res:M05}. The identification carries evaluation
+at $x$ to evaluation at $1\otimes x$, proving the claimed compatibility.
+\end{proof}
+
+\section{Minimal injective resolutions}
+
+\begin{proposition}[Socles of minimal injective resolutions]\label{res:M07}
+Every module has an injective resolution obtained by taking the
+injective hull at each cosyzygy. Applying $\operatorname{Hom}_R(k,-)$
+to that resolution gives zero differentials. If an injective module
+$J$ has $\dim_k\operatorname{soc}J=t<\infty$, then
+$\Gamma_{\mathfrak m}J\simeq E^t$.
+\end{proposition}
+\begin{proof}
+Start with $T^0=X$ and recursively set $J^i=E_R(T^i)$ and
+$T^{i+1}=\operatorname{coker}(T^i\hookrightarrow J^i)$, using the
+injective hull construction of \cite[ALG-03-C02-S03]{p103}.
+Take $d^i$ to be $J^i\to T^{i+1}\hookrightarrow J^{i+1}$.
+This gives an injective resolution because each kernel is $T^i$.
+Every simple submodule of $J^i$ lies in $T^i$ by essentiality.
+Consequently all differentials vanish on the socles.
+
+For the last assertion $\Gamma_{\mathfrak m}J$ is injective by
+\ref{res:L03} and has the same socle as $J$. Identify that socle with
+$\operatorname{soc}(E^t)$ and extend to a map
+$E^t\to \Gamma_{\mathfrak m}J$. The domain is power torsion by
+\ref{res:M02}, so its socle is essential as in \ref{res:M04}.
+The extension is an embedding and splits by injectivity of $E^t$.
+Its complementary summand is power torsion with zero socle and hence
+zero.
+\end{proof}
+
+\begin{theorem}[Artinianness of local cohomology]\label{res:M08}
+For a finite $R$-module $X$, every $H^i_{\mathfrak m}(X)$ is Artinian.
+Its Matlis dual is a finite $\widehat R$-module.
+\end{theorem}
+\begin{proof}
+Resolve $X$ by the injective resolution $J^\bullet$ from
+\ref{res:M07}. Its $i$th socle is $\operatorname{Ext}^i_R(k,X)$
+because all the differentials on $\operatorname{Hom}_R(k,J^\bullet)$
+are zero. That Ext module is finite since a free resolution of $k$
+can be made degreewise finite by choosing generators of successive
+kernels over the Noetherian ring. Computing Ext by this resolution
+gives cohomology of a complex of finite modules
+\cite[ALG-10-C03-R01 and S01]{p103}. The Ext module is killed by $\mathfrak m$,
+as is also visible from the calculation by socles. Thus the socle
+has finite dimension. By \ref{res:M07}, $\Gamma_{\mathfrak m}J^i$
+is a finite power of $E$ and hence Artinian. Its cohomology computes
+$H^i_{\mathfrak m}(X)$ by definition, and subquotients of Artinian
+modules are Artinian. The last assertion follows from \ref{res:M06}.
+\end{proof}

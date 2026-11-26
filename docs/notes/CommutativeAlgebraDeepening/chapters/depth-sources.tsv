@@ -1,0 +1,9 @@
+id	source	dependencies
+V01	Stacks, Dualizing Complexes 11.1 (0AVZ), PDF pp. 18–19; Bruns–Herzog 3.5.7, p. 144	L02, L08; core DP-01, DP-04–DP-06
+V02	Bruns–Herzog 3.5.7, PDF pp. 144–145; proof by prime filtration	L02, L06, L08; P1-03 associated primes
+V03	Bruns–Herzog 3.5.6–7, PDF pp. 143–145; Stacks, Commutative Algebra §106	L07, V02; core RK-09, CM-08; P1-03 ALG-05-C03-S03
+V04	Stacks, Commutative Algebra §97, PDF pp. 226–227; Bruns–Herzog 3.5.7, 3.5.11	L09, V01; P1-03 ALG-05-C03-S02, ALG-05-C04-R03/S01
+V05	Bruns–Herzog 3.5.7 and A.22, PDF pp. 144–145, 431; Stacks, Commutative Algebra 160.11	L06, L08, V03, C05
+V06	Bruns–Herzog 3.5.7(b), PDF pp. 144–145	L08, V02, V04, V05; local Nakayama
+V07	Stacks, Dualizing Complexes §11, PDF pp. 18–20; Bruns–Herzog 3.5.7	V01, V02, V06; core CM-01
+V08	Stacks, Dualizing Complexes §§9, 11, PDF pp. 13–19	L10, V01

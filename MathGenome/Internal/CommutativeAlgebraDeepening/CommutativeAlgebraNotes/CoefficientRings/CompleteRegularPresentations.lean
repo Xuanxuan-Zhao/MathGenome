@@ -1,0 +1,16 @@
+import MathGenome.Internal.CommutativeAlgebraDeepening.Specs.CommutativeAlgebraNotes.CoefficientRings.CompleteRegularPresentations
+import MathGenome.Internal.CommutativeAlgebraDeepening.CommutativeAlgebraNotes.CoefficientRings.CompleteRegularCover
+import MathGenome.Internal.CommutativeAlgebraDeepening.CommutativeAlgebraNotes.CoefficientRings.EqualCharacteristicRegularPresentation
+import MathGenome.Internal.CommutativeAlgebraDeepening.CommutativeAlgebraNotes.CoefficientRings.UnramifiedRegularPresentation
+
+namespace CommutativeAlgebraNotes.CoefficientRings
+
+universe u
+
+/-- Complete regular covers and the equal-characteristic and unramified
+mixed-characteristic power-series presentations. -/
+theorem completeRegularPresentations :
+    _root_.Specs.CommutativeAlgebraNotes.CoefficientRings.CompleteRegularPresentations.{u} :=
+  ⟨completeRegularCover, equalCharacteristicRegularPresentation, unramifiedRegularPresentation⟩
+
+end CommutativeAlgebraNotes.CoefficientRings

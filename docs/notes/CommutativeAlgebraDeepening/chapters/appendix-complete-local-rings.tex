@@ -1,0 +1,240 @@
+\chapter{Coefficient rings and complete local structure}
+\label{ch:coefficient-rings}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+
+This appendix proves both the regular-ring quotient used for local
+duality and the finite regular subring used for nonvanishing. It follows
+the coefficient-ring approach in \cite[\S160]{st-alg}. We use
+formal lifting and the split conormal criterion from
+\cite[FL-01, FL-02, FL-07 and KD-17]{core}, and the completion
+properties in \cite[ALG-05-C04-R02--R04 and S01]{p103}.
+
+\section{Lifting fields and a flat lifting criterion}
+
+\begin{lemma}[Two formally smooth lifting facts]\label{res:C01}
+A field is formally smooth over its prime field. Also, if
+\(A\to B\) is flat, \(K\subset A\) satisfies \(K^2=0\), and
+\(B/KB\) is formally smooth over \(A/K\), then \(B\) is formally
+smooth over \(A\).
+\end{lemma}
+\begin{proof}
+First let \(F\subset L\) be a finite-type field extension with \(F\)
+the prime field. In characteristic zero choose a transcendence basis
+and the remaining finite algebraic extension is separable. In
+characteristic \(p\), write \(r=\operatorname{trdeg}_F L\).
+For any transcendence basis \(t\) the degrees over \(F(t)^p\)
+and the Frobenius isomorphism give
+\[
+ [L:L^p]=[F(t):F(t)^p]=p^r,
+\]
+since \(F^p=F\) and \([L^p:F(t)^p]=[L:F(t)]\). Adjoin successively
+\(x_i\notin L^p(x_1,\ldots,x_{i-1})\). Each step has degree \(p\) because
+its minimal polynomial divides \(T^p-x_i^p\), whose monic factors of
+degree \(0<e<p\) have coefficient \(-e x_i\) at \(T^{e-1}\).
+After \(r\) steps the monomials with exponents \(<p\) form a basis
+over \(L^p\). If a nonzero polynomial relation in the \(x_i\) over
+\(F\) had minimal degree, grouping its monomials by exponents modulo
+\(p\) and taking \(p\)-th roots of the coefficients would yield
+\(\sum_\alpha x^\alpha g_\alpha(x)^p=0\).
+The basis forces each \(g_\alpha(x)=0\), contradicting minimality for
+one nonzero \(g_\alpha\) (a nonzero constant cannot vanish).
+These \(x_i\) form a transcendence basis. Write \(F'=F(x_i)\).
+Then \(L=L^pF'\). In the finite algebraic extension \(L/F'\), some
+\(p^e\)-th power of every element of \(L\) lies in its maximal separable
+subfield. Take sufficiently large \(e\) for finitely many algebraic
+generators, writing each irreducible polynomial as a separable
+polynomial in a \(p\)-power of its variable. But \(L=L^{p^e}F'\) by
+iteration, so the extension is separable.
+
+For a square-zero surjection \(T\to T/N\) and a prime-field algebra
+map \(L\to T/N\), arbitrary lifts of a separable transcendence basis
+give a map on its rational function field, since the images of the
+nonzero denominators are units modulo \(N\) and hence units in \(T\).
+Lift the remaining finite separable generators successively. If
+\(h(b)\in N\) for a lift of a root and \(h'(b)\) is a unit,
+replace \(b\) by \(b-h'(b)^{-1}h(b)\). Taylor expansion modulo
+\(N^2=0\) gives an exact root. This constructs a lift for the
+finite-type subfield.
+
+For an arbitrary field \(L\), choose a lift in \(T\) for each value
+of the map on \(L\). Its error in respecting addition, multiplication,
+and the prime field is a system of linear equations for corrections in
+\(N\), now an \(L\)-vector space via the given map. Indeed products of
+two corrections vanish, and multiplication by any chosen lift acts
+on \(N\) by its residue. A finite set of equations uses only finitely
+many elements of \(L\). The preceding argument lifts their generated
+subfield, so that finite subsystem has a solution. More explicitly,
+the equations prescribe a linear map from the span of their
+finite-support coefficient rows in the free vector space on the
+unknowns to \(N\). Finite solvability makes this prescription
+well-defined. Extend the map to the entire free vector space by a
+basis, giving simultaneous corrections. The resulting lift is an
+algebra map. This argument verifies the infinite-generation step.
+
+For the second assertion let \(P=A[T_i]\twoheadrightarrow B\) be
+a polynomial presentation with kernel \(J\), allowing arbitrarily many
+variables. Flatness gives \(J\cap KP=KJ\) by tensoring the presentation
+with \(A/K\). Thus the conormal module of the presentation after
+reduction is \((J/J^2)/K(J/J^2)\). The corresponding conormal map
+is the reduction of \(d:J/J^2\to\bigoplus_i B\,dT_i\). By formal
+smoothness it has a left inverse after reduction. Lift the images
+of the free basis to obtain \(s:\bigoplus_i B\,dT_i\to J/J^2\).
+Then \(sd=1+e\) with image of \(e\) in \(K(J/J^2)\), and \(e^2=0\).
+Thus \((1-e)s\) is a left inverse of \(d\). The split conormal
+criterion proves formal smoothness of \(B/A\).
+\end{proof}
+
+\section{The coefficient ring}
+
+\begin{lemma}[A Cohen ring with prescribed residue field]\label{res:C02}
+For every field \(k\) of characteristic \(p>0\) there is a complete
+discrete valuation ring \(\Lambda\) with uniformizer \(p\) and residue
+field \(k\). For \(n\ge1\) the map
+\(\mathbb Z/p^n\to\Lambda/p^n\Lambda\) is formally smooth.
+\end{lemma}
+\begin{proof}
+Begin with the \(p\)-adic integer ring. In its inverse-limit
+description a nonzero element has a first nonzero digit and is a power
+of \(p\) times an element invertible modulo every \(p^n\). This proves
+the discrete valuation assertion at this starting stage.
+Well-order generators of \(k/\mathbb F_p\) and lift the corresponding
+tower of residue fields. Suppose \(D\) is a discrete valuation ring
+with uniformizer \(p\) and residue field \(k_0\). For a transcendental
+adjoining, use \(D[T]_{(p)}\) with residue field \(k_0(T)\).
+For an algebraic adjoining, lift its monic irreducible polynomial to
+\(D[T]\) and take the monic quotient. This quotient is finite free,
+and all its maximal ideals lie over \(p\). Its quotient by \(p\)
+is a field, so it is already local. In both cases the new ring
+is Noetherian local with maximal ideal generated by the
+nonzerodivisor \(p\). By Krull intersection each nonzero element
+has a finite \(p\)-order, hence is a power of \(p\) times a unit.
+Its ideals are principal by taking the least such order. These steps
+are injective and take units to units, so the same finite-order
+argument at limit stages, in the directed union, proves that the
+union is still a discrete valuation ring with uniformizer \(p\).
+Its residue field is the union of the prescribed residue fields.
+Complete it. The comparison modulo \(p^n\), faithful flatness, and
+Noetherianity of completion are
+\cite[ALG-05-C04-S01]{p103}. They give the same maximal ideal and
+keep \(p\) regular. Consequently the completion is the required
+\(\Lambda\).
+
+The discrete valuation ring \(\Lambda\) is torsion-free over
+\(\mathbb Z\), hence flat over \(\mathbb Z\) by the ideal criterion, which
+tests the injectivity of multiplication by each positive integer.
+Base change makes \(\Lambda/p^n\) flat over \(\mathbb Z/p^n\).
+At \(n=1\) apply the field case of Result~\ref{res:C01}. Inductively
+\((p^{n-1})\subset\mathbb Z/p^n\) is square-zero when \(n\ge2\).
+Apply the second part of Result~\ref{res:C01} to lift formal
+smoothness from \(n-1\) to \(n\).
+\end{proof}
+
+\begin{theorem}[Coefficient ring of a complete local ring]\label{res:C03}
+Let \((R,\mathfrak m,k)\) be a complete Noetherian local ring.
+In equal characteristic a coefficient field \(k\to R\) induces the
+identity on \(k\). If \(k\) has characteristic \(p>0\) there is also
+a continuous map \(\Lambda\to R\), with \(\Lambda\) as in
+Result~\ref{res:C02}, inducing the identity on the residue field.
+Its kernel is \(0\) if \(p\) is not nilpotent in \(R\), and is
+\((p^e)\) if \(p^e=0\) with \(e\) least.
+\end{theorem}
+\begin{proof}
+In residue characteristic zero each nonzero integer is a unit in
+\(R\), so we have a coefficient map from \(\mathbb Q\).
+Lift the identity \(k\to R/\mathfrak m\) successively to
+\(R/\mathfrak m^n\), using Result~\ref{res:C01} on the square-zero
+successive quotients. In equal characteristic \(p\), the same proof
+uses \(\mathbb F_p\).
+For general residue characteristic \(p>0\) start with
+\(\Lambda/p\to R/\mathfrak m\). At step \(n\) compose the given map
+\(\Lambda/p^n\to R/\mathfrak m^n\) with
+\(\Lambda/p^{n+1}\to\Lambda/p^n\).
+As a map over \(\mathbb Z/p^{n+1}\) it lifts through
+\(R/\mathfrak m^{n+1}\twoheadrightarrow R/\mathfrak m^n\) by
+Result~\ref{res:C02}. Passing to inverse limits gives the map.
+It preserves the topologies because \(p\in\mathfrak m\). Every
+proper nonzero ideal of \(\Lambda\) is a power of \(p\), giving the
+kernel assertion. A map from a field inducing the residue identity
+is injective.
+\end{proof}
+
+\section{Two kinds of regular presentation}
+
+\begin{theorem}[Complete regular covers and presentations]\label{res:C04}
+Every complete Noetherian local ring \(R\) is a quotient of a
+complete regular local ring \(S\) by a local surjection inducing
+the identity on its residue field. A complete regular local ring
+of equal characteristic is \(k[[X_1,\ldots,X_d]]\) with \(d=\dim R\).
+In mixed characteristic with \(p\notin\mathfrak m^2\) it is
+\(\Lambda[[X_1,\ldots,X_{d-1}]]\), with \(\Lambda\) of
+Result~\ref{res:C02}.
+\end{theorem}
+\begin{proof}
+Use the coefficient field or complete discrete valuation ring \(D\)
+of Result~\ref{res:C03} and send finitely many variables to generators
+of \(\mathfrak m\). Evaluation of formal series converges in \(R\).
+The source \(D[[X_1,\ldots,X_s]]\) is complete with maximal ideal
+generated by the variables and, for a valuation coefficient ring,
+by \(p\). To see regularity directly, its associated graded ring is
+the polynomial ring over \(k\) on these generators. In degree \(n\)
+the coefficient of each monomial in the variables records its
+appropriate residue digit at total degree \(n\). These descriptions
+also prove completeness and separatedness degree by degree.
+A finite set of initial forms generating the initial ideal of any
+ideal lifts to finitely many elements of the ideal. Successively
+subtract their multiples to increase order. The coefficients
+converge, showing those lifts generate the ideal. This uses the
+Noetherian polynomial graded ring and gives Noetherianity of the
+source. The chains of prime ideals obtained by adjoining generators
+one by one give dimension at least the number of generators.
+The height theorem gives the reverse bound. Thus the source is
+regular local.
+
+To prove that the map onto \(R\) is surjective, lift an element modulo
+\(\mathfrak m\), then lift each error in
+\(\mathfrak m^n/\mathfrak m^{n+1}\) by a homogeneous polynomial
+in the chosen generators. Since the generators come from the
+maximal ideal of the source, these corrections converge there.
+In equal characteristic and regular dimension \(d\), choose only
+\(d\) minimal generators. In the stated mixed characteristic case,
+include \(p\) in a minimal set and use \(d-1\) variables for the
+others, with \(p\) provided by the coefficient map. The same
+successive lifting yields surjectivity. Both source and target have
+dimension \(d\). In the regular source, a nonzero ideal has quotient
+of dimension at most \(d-1\) by prepending the zero prime to any
+chain containing it. Hence the kernel is zero in these two cases.
+\end{proof}
+
+\begin{theorem}[Finite regular normalization]\label{res:C05}
+A complete Noetherian local domain \((B,\mathfrak m,k)\) of
+dimension \(d\) contains a complete regular local subring
+\((S,\mathfrak n,k)\) of dimension \(d\) such that \(B\) is finite
+over \(S\) and \(\sqrt{\mathfrak n B}=\mathfrak m\).
+\end{theorem}
+\begin{proof}
+In equal characteristic send \(d\) variables over the coefficient
+field to a system of parameters. In mixed characteristic the
+coefficient discrete valuation ring embeds, since \(B\) is a
+domain of characteristic zero. Here \(p\in\mathfrak m\) is
+nonzero and \(\dim B/pB=d-1\). The upper bound follows by
+prepending the zero prime to chains and the lower bound by
+lifting a parameter system of \(B/pB\), adjoining \(p\) and applying
+the height theorem. Send \(d-1\) variables over \(\Lambda\) to such
+lifts. In each case the image \(J\) of the source maximal ideal
+generates an \(\mathfrak m\)-primary ideal in \(B\) and the source
+has dimension \(d\) by Result~\ref{res:C04}'s calculation.
+The \(J\)-adic and \(\mathfrak m\)-adic topologies agree, since their
+powers are cofinal as in Result~\ref{res:L01}.
+
+Choose finite lifts of a \(k\)-basis of \(B/J\).
+Their \(S\)-span is all of \(B\). First approximate modulo \(J\),
+then express each term in an error in \(J^n\) as a product of
+\(n\) image generators times an element of \(B\), and lift its
+coefficient modulo \(J\). These lifts give coefficients in \(S\)
+of order at least \(n\), so the coefficients converge in \(S\) and
+the error tends to zero in \(B\). Thus \(B\) is finite over the
+image of the source. Integral extensions preserve dimension
+(\cite[ALG-05-C01-S04]{p103}), so that image has dimension \(d\).
+A nonzero kernel would lower the dimension of the regular source
+as in Result~\ref{res:C04}. The map is injective, proving the result.
+\end{proof}

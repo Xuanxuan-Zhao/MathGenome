@@ -1,0 +1,469 @@
+\chapter{Grothendieck local duality}\label{ch:local-duality}
+
+We use cohomological indexing, so $K[a]^j=K^{j+a}$ and
+$d_{K[a]}=(-1)^a d_K$. A module without an indicated shift is
+in degree zero. Write $\mathcal H om(X,Y)$ for the Hom complex
+\[
+ \mathcal H om(X,Y)^a=\prod_j\operatorname{Hom}(X^j,Y^{j+a}),
+ \qquad d(f)=d_Y f-(-1)^a f d_X .
+\]
+Throughout, $C_{\mathfrak m}$ denotes the augmented \v{C}ech
+complex of the local ring in question, with the ring in degree
+zero, as in \ref{res:L05}. We write $\operatorname{Ext}^j=0$ for
+negative degrees whenever both arguments are modules. References
+for the local duality formulas are \cite[Sections 18--22]{st-dual}
+and \cite[Section 3.5]{bruns}.
+
+\section{Duality over a Gorenstein local ring}
+
+\begin{proposition}[The top local cohomology of a Gorenstein local ring]\label{res:D01}
+Let $(S,\mathfrak n,k)$ be Gorenstein of dimension $n$. Then
+$R\Gamma_{\mathfrak n}(S)\simeq E_S(k)[-n]$.
+\end{proposition}
+\begin{proof}
+For this ring, $\operatorname{Ext}^i_S(k,S)$ is zero for $i\ne n$
+and is a one-dimensional $k$-space for $i=n$
+\cite[GC-06]{core}. In the minimal injective resolution from
+\ref{res:M07}, these Ext groups are its socles. Thus applying
+$\Gamma_{\mathfrak n}$ gives a complex with a single nonzero term,
+a copy of $E_S(k)$ in degree $n$. This complex computes the derived
+functor by the injective resolution. Choosing a different
+identification with the chosen injective hull postcomposes this
+comparison by an automorphism of that hull.
+\end{proof}
+
+\begin{lemma}[A finite-free model for the dual calculation]\label{res:D02}
+Under the hypotheses of \ref{res:D01}, let
+$P\to X$ be a bounded-above, degreewise finite free resolution of
+a finite $S$-module $X$, and put $E_S=E_S(k)$. There are
+quasi-isomorphism comparisons
+\[
+ P\otimes_S C_{\mathfrak n}\simeq X\otimes_S C_{\mathfrak n},
+ \qquad
+ P\otimes_S C_{\mathfrak n}\simeq P\otimes_S E_S[-n].
+\]
+After applying the dual into $E_S[0]$, the last model is identified
+by tensor--Hom adjunction with $\mathcal H om_S(P,\widehat S[n])$.
+\end{lemma}
+\begin{proof}
+Choose $P$ by successively resolving finite kernels. A bounded
+complex of flat modules preserves acyclicity under tensor product:
+filter by the subcomplexes obtained by retaining only terms
+in degrees greater than or equal to a given index. Each successive
+quotient is one flat module in one degree, and successive short
+exact sequences are split in each degree. The same argument applies
+to a bounded-above complex via the increasing union of its bounded
+degree truncations. Indeed its tensor product is the filtered
+colimit of the tensor products of the truncations, and filtered
+colimits of modules are exact. This proves both applications of
+tensoring a quasi-isomorphism, the first using the bounded flat
+$C_{\mathfrak n}$ and the second using $P$ with \ref{res:D01}.
+One can use quasi-isomorphisms in either direction through a
+common complex, since tensoring preserves each of them.
+
+In the model with $E_S[-n]$, each total degree in the tensor
+product uses a single term of $P$. With the usual tensor
+differential $d(p\otimes e)=dp\otimes e+(-1)^{\deg p}p\otimes de$,
+the assignment $f\mapsto (p\mapsto(e\mapsto f(p\otimes e)))$
+is a chain isomorphism
+\[
+ \mathcal H om_S(P\otimes_S E_S[-n],E_S[0])
+ \ \cong\
+ \mathcal H om_S(P,\mathcal H om_S(E_S[-n],E_S[0])) .
+\]
+In the differential, the $d_P$ term has sign $-(-1)^{\deg f}$,
+and the $d_{E_S[-n]}$ term has sign
+$-(-1)^{\deg f+\deg p}$ on both sides. The inner Hom on the right
+is concentrated in degree $-n$ and has value
+$\operatorname{End}_S(E_S)=\widehat S$ by \ref{res:M03}. This
+gives the indicated shift.
+\end{proof}
+
+\begin{theorem}[Gorenstein local duality]\label{res:D03}
+Under the assumptions of \ref{res:D01}, for each finite
+$S$-module $X$ there are natural isomorphisms
+\[
+ \bigl(H^i_{\mathfrak n}(X)\bigr)^\vee
+   \ \cong\ \operatorname{Ext}^{n-i}_S(X,\widehat S)
+   \ \cong\ \widehat{\operatorname{Ext}^{n-i}_S(X,S)} .
+\]
+\end{theorem}
+\begin{proof}
+Dualizing into the injective module $E_S$ is exact. On complexes it gives
+\[
+     H^j(\mathcal H om_S(U,E_S[0]))\cong H^{-j}(U)^\vee.
+\]
+For example, a cocycle of degree $j$ vanishes on boundaries in
+degree $-j$ and a coboundary vanishes on the cycles. Every map on
+those cycle classes extends to the ambient quotient by injectivity.
+This proves the identification and its naturality. Now apply it to
+\ref{res:L05} and take degree $-i$ in the comparison of
+\ref{res:D02}. In the last complex, shifting the second argument
+by $n$ shifts the Hom complex by $n$, so the result is
+$\operatorname{Ext}^{n-i}_S(X,\widehat S)$.
+
+Completion is flat and agrees with tensoring by $\widehat S$ on
+finite modules \cite[ALG-05-C04-R03 and S01]{p103}. For each term
+of the degreewise finite free resolution, base change of its
+$S$-dual gives its $\widehat S$-valued dual. Flatness commutes with
+taking cohomology, giving the last isomorphism. A map of finite
+modules lifts to a chain map of free resolutions by lifting into
+successive cycle modules, starting in degree zero. Any two lifts
+are chain homotopic by lifting their difference into successive
+boundary preimages. The chain comparisons therefore give
+naturality on modules. With the scalar action induced by
+\ref{res:M03}, the maps are also $\widehat S$-linear.
+\end{proof}
+
+\section{The general complete case}
+
+\begin{lemma}[Adjunction for a local quotient]\label{res:D04}
+If $S\twoheadrightarrow R$ is a surjective local map of Noetherian
+local rings with residue field $k$, put $\mathfrak m=\mathfrak nR$.
+There is an identification
+\[
+ E_R(k)\cong\operatorname{Hom}_S(R,E_S(k)).
+\]
+For an $R$-module $X$, the local cohomology over $R$ is computed by
+the \v{C}ech model over $S$ on $X$, and
+\[
+ \operatorname{Hom}_R(X,\operatorname{Hom}_S(R,E_S(k)))
+   \ \cong\ \operatorname{Hom}_S(X,E_S(k)).
+\]
+Both comparisons respect the $R$-action.
+\end{lemma}
+\begin{proof}
+Use precomposition with multiplication for the $R$-action on the
+inner Hom. The displayed adjunction is evaluation at $1$ with
+inverse $h\mapsto [x\mapsto (r\mapsto h(rx))]$. Hence the inner Hom
+is injective over $R$. Evaluating it at $1$ identifies it as the
+elements of $E_S(k)$ annihilated by the kernel of $S\to R$.
+It contains $k$ essentially, because it is a submodule of the
+$S$-injective hull of $k$ and its $S$-submodules are its
+$R$-submodules. It is therefore an injective hull over $R$.
+If $s_1,\ldots,s_l$ generate $\mathfrak n$, their images generate
+$\mathfrak m$. Each term of the \v{C}ech complex on $X$
+localizes $X$ at the same endomorphism of $X$ for either choice
+of scalar ring, so \ref{res:L08} gives the assertion. All the
+maps commute both with multiplication by $R$ on $X$ and with
+the adjunction.
+\end{proof}
+
+\begin{theorem}[A normalized dualizing complex]\label{res:D05}
+Let $R$ be complete Noetherian local, and let $S\twoheadrightarrow R$ be a surjection
+from a complete regular local ring of dimension $n$ as in \ref{res:C04}.
+Put
+\[
+          \mathcal D_R=\mathrm{RHom}_S(R,S[n]).
+\]
+It can be represented by a bounded complex of injective $R$-modules,
+and its cohomology modules are finite. The homothety map
+$R\longrightarrow\mathrm{RHom}_R(\mathcal D_R,\mathcal D_R)$ is an
+isomorphism, and $\mathrm{RHom}_R(k,\mathcal D_R)\simeq k[0]$.
+\end{theorem}
+\begin{proof}
+The regular local ring $S$ is Gorenstein and has injective
+dimension $n$ as a module over itself \cite[GC-06--GC-07]{core}.
+Represent $S[n]$ by a bounded injective resolution $J$ and let
+$I=\mathcal H om_S(R,J)$, with $R$ acting on the argument $R$.
+Each term of $I$ is injective by the adjunction of \ref{res:D04}.
+A bounded complex of injectives is a valid target for derived
+Hom. Filter it by its bounded degree truncations, use degreewise
+split short exact sequences of complexes, and use exactness of
+Hom into each single injective term to see that Hom from any
+acyclic complex into it is acyclic. Thus the termwise adjunction
+gives
+\[
+        \mathrm{RHom}_R(U,\mathcal D_R)
+        \ \simeq\ \mathrm{RHom}_S(U,S[n])
+\]
+for every $R$-complex $U$. At $U=k$ it gives the normalization by
+the Gorenstein residue-field Ext calculation \cite[GC-06]{core}.
+Finiteness of $H^j(I)$ follows from computing $\mathrm{RHom}_S(R,S[n])$
+by a degreewise finite free resolution over the Noetherian ring.
+The cohomology is an $R$-module, so finiteness over $S$ implies
+finiteness over $R$.
+
+For the homothety assertion, the same adjunction at $U=I$
+turns scalar multiplication by $r$ on $I$ into
+$[i\mapsto i(r)]\in\mathcal H om_S(I,J)$. This is the natural
+derived biduality morphism of $R$ over $S$ with target $S[n]$.
+Here is a direct comparison. Since $S$ is regular local, the
+finite module $R$ has a bounded finite free resolution
+$P\to R$ \cite[CM-12]{core}. Set
+$Q=\mathcal H om_S(P,S[n])$. The maps
+$I\to\mathcal H om_S(P,J)\leftarrow Q$ are quasi-isomorphisms.
+The left one uses that $J$ is a bounded injective target.
+The right one follows from filtering the bounded finite free
+source $P$ and using exactness of Hom from each free term.
+For homogeneous $p\in P^a$ and $q\in Q^b$, the bidual pairing
+sends $p$ against $q$ to $(-1)^{ab}q(p)$. Substituting into the
+Hom differential verifies it is a chain map. Its map
+\[
+          P\longrightarrow \mathcal H om_S(Q,S[n])
+\]
+is an isomorphism, since in each degree it is finite free
+biduality up to this sign. The finite free terms of $Q$ give
+$\mathcal H om_S(Q,S[n])\simeq \mathcal H om_S(Q,J)$, and taking
+Hom into $J$ in the preceding zigzag compares this target to
+$\mathcal H om_S(I,J)$. The evaluation pairing is natural in
+the morphisms of the source and the target, so under these
+comparisons evaluation on $P$ gives $i\mapsto i(r)$ after
+$P\to R$. This proves that the actual homothety morphism is
+a quasi-isomorphism.
+\end{proof}
+
+\begin{theorem}[Local duality for a complete local ring]\label{res:D06}
+For every complete Noetherian local ring $R$ and finite $R$-module $X$,
+\[
+ \bigl(H^i_{\mathfrak m}(X)\bigr)^\vee
+     \ \cong\ H^{-i}\!\left(\mathrm{RHom}_R(X,\mathcal D_R)\right)
+\]
+naturally as $R$-modules. With a chosen $E_R(k)$,
+$\mathcal H om_R(C_{\mathfrak m},E_R(k)[0])$ represents
+$\mathcal D_R$.
+\end{theorem}
+\begin{proof}
+Choose a complete regular cover $S$ by \ref{res:C04}.
+Using the \v{C}ech complex over $S$, consider
+\[
+                W=\mathcal H om_S(C_{\mathfrak n},E_S[0]).
+\]
+It is bounded and its terms are injective. For each flat term
+$F$ of $C_{\mathfrak n}$, the functor
+$\operatorname{Hom}_S(-,\operatorname{Hom}_S(F,E_S))$
+is exact by tensor--Hom adjunction, flatness of $F$, and
+injectivity of $E_S$. By \ref{res:D01}, \ref{res:D03} with
+$X=S$, and completeness, $W$ has just one cohomology module,
+namely $S$ in degree $-n$. A cocycle representing a generator
+defines a quasi-isomorphism $S[n]\to W$. Thus the bounded
+injective complex $W$ may be used as $J$ in \ref{res:D05}.
+Choose the generators of $\mathfrak m$ as the images of the
+generators of $\mathfrak n$. Termwise adjunction, with the
+complex signs of \ref{res:D02}, gives the isomorphism of
+$R$-complexes
+\[
+ \begin{aligned}
+ \mathcal H om_S(R,W)
+ &\cong \mathcal H om_S(R\otimes_S C_{\mathfrak n},E_S[0])\\
+ &\cong \mathcal H om_R(C_{\mathfrak m},E_R(k)[0]).
+ \end{aligned}
+\]
+The second line uses \ref{res:D04}, together with the ordinary
+base change of the flat localized terms of the \v{C}ech complex.
+In particular the action on the right is the usual $R$-action,
+and on the left it is the action on the argument $R$.
+Any choice of generators gives the same derived torsion
+comparison by \ref{res:L05}, and exact dualization preserves
+those quasi-isomorphisms.
+
+The displayed bounded injective complex computes Hom out of $X$
+by plain Hom. Under adjunction it is
+$\mathcal H om_R(X\otimes_R C_{\mathfrak m},E_R(k)[0])$.
+By \ref{res:L05} and the exact-dual cohomology calculation in
+\ref{res:D03}, its degree $-i$ cohomology is the asserted
+Matlis dual. All identifications after a choice of the dualizing
+model are natural in $X$.
+\end{proof}
+
+\begin{corollary}[Local duality after completion]\label{res:D07}
+If $R$ is any Noetherian local ring and $X$ is finite, then as
+$\widehat R$-modules
+\[
+ \bigl(H^i_{\mathfrak m}(X)\bigr)^\vee
+ \ \cong\
+ H^{-i}\!\left(\mathrm{RHom}_{\widehat R}
+        (\widehat X,\mathcal D_{\widehat R})\right).
+\]
+\end{corollary}
+\begin{proof}
+The completion comparison \ref{res:L09} identifies
+$H^i_{\mathfrak m}(X)$ with
+$H^i_{\mathfrak m\widehat R}(\widehat X)$ with its unique
+completed action. Choose the $\widehat R$-injective hull of
+$k$ as $R$-injective hull after restriction, as in \ref{res:M06}.
+For torsion modules all $R$-linear maps to it are already
+$\widehat R$-linear, so this comparison identifies the two
+Matlis duals over $\widehat R$. Now use \ref{res:D06} for
+$\widehat R$.
+\end{proof}
+
+\section{Canonical modules and examples}
+
+\begin{proposition}[Canonical modules and concentration]\label{res:D08}
+Let $R$ be a complete Noetherian local ring with $\dim R=d$. Then
+\[
+      \omega_R=H^{-d}(\mathcal D_R)
+             \ \cong\ (H^d_{\mathfrak m}(R))^\vee
+\]
+is finite, with $\omega_R^\vee\cong H^d_{\mathfrak m}(R)$. In
+particular it is the canonical module in the sense of being the
+unique finite module up to isomorphism with this dual. The ring
+$R$ is Cohen--Macaulay if and only if
+$\mathcal D_R\simeq\omega_R[d]$. In that case $\omega_R$ is also
+the canonical module of \cite[GC-10]{core}, computed as
+$\operatorname{Ext}^{n-d}_S(R,S)$ for a regular cover as above.
+\end{proposition}
+\begin{proof}
+Apply \ref{res:D06} at $X=R$. The stated dual characterization
+and its uniqueness follow from \ref{res:M05} and the Artinianness
+in \ref{res:M08}. By detection in \ref{res:M01}, nonzero
+cohomology of $\mathcal D_R$ corresponds in opposite degrees to
+nonzero local cohomology of $R$. By the vanishing and
+Cohen--Macaulay criterion \ref{res:V07}, only degree $-d$ is
+nonzero exactly in the Cohen--Macaulay case. A complex with a
+single nonzero cohomology module is isomorphic in the derived
+category to that module in the corresponding degree. To see this,
+truncate at that degree with the kernel of the outgoing
+differential as the last term, then quotient that kernel by
+boundaries to obtain the indicated zigzag. Finally, shifting
+the second argument in the formula defining $\mathcal D_R$ in
+\ref{res:D05} gives the stated Ext identification. It is the
+same module and quotient-ring action as in \cite[GC-10]{core}.
+\end{proof}
+
+\begin{corollary}[Cohen--Macaulay duality]\label{res:D09}
+For a complete Cohen--Macaulay local ring of dimension $d$
+and finite $R$-module $X$ there are natural identifications
+\[
+ (H^i_{\mathfrak m}(X))^\vee
+       \cong \operatorname{Ext}^{d-i}_R(X,\omega_R),\qquad
+ H^i_{\mathfrak m}(X)
+       \cong (\operatorname{Ext}^{d-i}_R(X,\omega_R))^\vee .
+\]
+For noncomplete Cohen--Macaulay $R$ the same comparisons are
+available using $\widehat R,\widehat X,\omega_{\widehat R}$.
+If a finite module $\omega$ over $R$ is given with
+$\widehat\omega\simeq\omega_{\widehat R}$, the dual can equivalently
+be written as $\widehat{\operatorname{Ext}^{d-i}_R(X,\omega)}$.
+\end{corollary}
+\begin{proof}
+After substituting \ref{res:D08} in \ref{res:D06}, the shift adds $d$ to
+the index of the Hom complex. Artinianness \ref{res:M08} and
+evaluation \ref{res:M05} give the second formula. In the
+noncomplete case dimension and depth of a finite module
+are preserved by completion, in particular by \ref{res:V04}
+applied to $R$. Thus $\widehat R$ is Cohen--Macaulay of
+dimension $d$. Use \ref{res:D07} and Artinian-side evaluation
+from \ref{res:M06}. Finally, in a degreewise finite free
+resolution of $X$, flat base change gives a resolution of
+$\widehat X$. In each term it commutes with the Hom into
+$\omega$, hence with cohomology. The Ext groups on the
+original ring are finite, so their completed modules are the
+corresponding tensors. This proves the asserted variant.
+\end{proof}
+
+\begin{example}[Power series and a noncomplete DVR]\label{res:E01}
+For $S=k[[x_1,\ldots,x_d]]$, the inverse monomials
+$x_1^{-a_1}\cdots x_d^{-a_d}$ with all $a_j\ge1$ form a $k$-basis
+of $H^d_{\mathfrak n}(S)\cong E_S(k)$. For $T=k[t]_{(t)}$,
+$H^1_{(t)}(T)=k(t)/T$ and its Matlis dual is $k[[t]]$.
+\end{example}
+\begin{proof}
+For $d>0$ the top \v{C}ech quotient is
+\[
+ S_{x_1\cdots x_d}\bigg/\sum_j S_{\prod_{i\ne j} x_i}.
+\]
+With denominator $\prod_i x_i^N$, retain only numerator terms
+whose exponents in all variables are $<N$. The remaining terms
+can be assigned to the first index $j$ at which the exponent is
+at least $N$. On each such subseries the denominator in $x_j$
+cancels, so its class is zero. The retained terms give a finite
+linear combination of inverse monomials. Conversely, after
+putting a finite linear combination and a sum of terms from the
+smaller localizations over a common denominator, coefficient
+comparison in the formal series ring forces the coefficients
+of the inverse monomials to vanish. For $d=0$ the empty product
+is the basis of $k$. The ring is Gorenstein, so \ref{res:D01}
+identifies this top cohomology with $E_S(k)$.
+For the DVR $T$, the one-generator complex is
+$T\to k(t)$, so its first cohomology is the asserted quotient.
+It is $E_T(k)$ by \ref{res:D01}, with dual the completion by
+\ref{res:M03}.
+\end{proof}
+
+\begin{example}[An Artinian dualizing module]\label{res:E02}
+For $R=k[[x,y]]/(x,y)^2$, one has
+$\mathcal D_R\simeq\operatorname{Hom}_k(R,k)[0]$.
+The ring has socle dimension two, and the dualizing module
+has socle dimension one.
+\end{example}
+\begin{proof}
+As a $k$-space $R$ has basis $1,x,y$ and
+$\mathfrak m=\langle x,y\rangle$ with square zero.
+Thus $\operatorname{soc}R=\mathfrak m$. The $k$-dual has the
+usual $R$-action by precomposition and is injective by the
+adjunction $\operatorname{Hom}_R(U,\operatorname{Hom}_k(R,k))
+\cong\operatorname{Hom}_k(U,k)$. Its socle consists of the
+functionals vanishing on $\mathfrak m$, a single copy of $k$.
+It is essential, since every module is power torsion for this
+nilpotent maximal ideal and \ref{res:M04} applies. Hence it is
+$E_R(k)$. The \v{C}ech complex on $x,y$ has only the ring
+term nonzero, so \ref{res:D06} computes the asserted dualizing
+complex. The Artinian socle criterion
+\cite[GC-05--GC-06]{core} shows that $R$ is not Gorenstein.
+\end{proof}
+
+\begin{example}[A one-dimensional hypersurface]\label{res:E03}
+Let $R=k[[u,v]]/(uv)$. Then $\omega_R\cong R$. For $X=R$,
+$H^0_{\mathfrak m}(X)=0$ and $H^1_{\mathfrak m}(X)=E_R(k)$.
+For $X=k$, $H^0_{\mathfrak m}(X)=k$ and $H^1_{\mathfrak m}(X)=0$.
+\end{example}
+\begin{proof}
+The element $uv$ is regular in the two-dimensional regular
+local ring $k[[u,v]]$, so $R$ is a one-dimensional Gorenstein
+local ring \cite[CM-02 and GC-07]{core}. The two-term free
+resolution of $R$ over $k[[u,v]]$ has differential $uv$ and its
+degree-one Ext into that ring is $R$. This is the canonical
+module by \ref{res:D08}. For $X=R$, \ref{res:D01} gives the
+cohomology assertions. In coordinates, $R$ consists of pairs
+of series in $k[[u]]\oplus k[[v]]$ with equal constant terms.
+The \v{C}ech complex has first map the inclusion into
+$k((u))\oplus k((v))$ and next term zero since $uv=0$.
+The degree-one quotient realizes the hull explicitly. For
+$X=k$, all the localizations at either generator vanish, giving
+the assertions by \ref{res:L05}. The degrees can also be seen
+from \ref{res:D09}. The Ext groups of $R$ into $R$ in degrees
+zero and one are $R$ and $0$, respectively, and those of $k$
+into $R$ are $0$ and $k$, respectively, by
+\cite[GC-06]{core}.
+\end{proof}
+
+\begin{example}[A dualizing complex with two nonzero degrees]\label{res:E04}
+Let $S=k[[x,y]]$ and $R=S/(x^2,xy)$. Then
+\[
+ \begin{array}{ll}
+ H^0_{\mathfrak m}(R)=kx, &
+ H^1_{\mathfrak m}(R)\cong k((y))/k[[y]],\\[2pt]
+ H^{-1}(\mathcal D_R)\cong S/(x), &
+ H^0(\mathcal D_R)\cong k .
+ \end{array}
+\]
+All remaining cohomology of $\mathcal D_R$ is zero.
+\end{example}
+\begin{proof}
+In $R$, the element $x$ is nilpotent and killed by $y$.
+Consequently the \v{C}ech model on $x,y$ reduces to $R\to R_y$.
+The ring is the direct sum $k[[y]]\oplus kx$ as a $k$-space,
+and localization kills $kx$ and embeds $k[[y]]$ into $k((y))$.
+This gives the local cohomology calculation.
+
+Over $S$ a free resolution has consecutive maps
+\[
+        S\xrightarrow{(-y,x)^{\mathsf T}} S^2
+          \xrightarrow{(x^2,xy)} S \longrightarrow R .
+\]
+The first map is injective. If $x^2a+xyb=0$, cancel $x$, reduce
+modulo $x$ to get $b=xc$, and conclude $a=-yc$. Thus the maps
+are exact where required. Upon dualizing into $S$, the maps
+are the column $(x^2,xy)^{\mathsf T}$ and the row $(-y,x)$.
+The kernel of the row is $S(x,y)^{\mathsf T}$ because $x,y$
+are regular parameters in the domain $S$, and the image of
+the column is $x S(x,y)^{\mathsf T}$. The cokernel of the row
+is $k$. The dualized first map is injective, so the only nonzero
+Ext groups are $S/(x)$ and $k$ in degrees one and two.
+Shifting by $2$ in \ref{res:D05} gives the two claimed degrees
+of $\mathcal D_R$. This matches \ref{res:D06} since $kx$ is simple,
+and the dual of the top cohomology of $k[[y]]$ is $k[[y]]$
+by \ref{res:D03} over that DVR and \ref{res:D04}.
+\end{proof}

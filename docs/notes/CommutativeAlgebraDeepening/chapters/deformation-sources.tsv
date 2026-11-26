@@ -1,0 +1,11 @@
+id	source	dependencies
+T01	Stacks, Cotangent Complex §16, PDF pp. 31–32; Hartshorne, Deformation Theory §11, PDF pp. 92–96	Polynomial conormal module; core FL-06; Ext long exact sequence
+T02	Stacks, Cotangent Complex 16.1 and 11.3, PDF pp. 20–22, 31–32	T01; core KD-07/FL-06; HA R11
+T03	Stacks, Cotangent Complex §16, PDF pp. 31–32; square-zero flatness by the Artin free-basis argument	T01; nilpotence and Tor exactness
+T04	Hartshorne, Deformation Theory §§2, 11, PDF pp. 16–22, 92–96; Stacks, Cotangent Complex §14, PDF p. 29	T02, T03; core RK-07; finite-filtered Koszul complexes
+T05	Hartshorne, Deformation Theory §2, PDF pp. 16–22; explicit Jacobian calculation	T04
+T06	Original multiplication-table example for square-zero lifting; compare Stacks, Cotangent Complex §16, PDF pp. 31–32	T03; basis comparison and associativity
+T07	Stacks, Formal Deformation Theory 10.8, 11.4, PDF pp. 31–33; Schlessinger §2	Artin split fibre product; H1/H2
+T08	Stacks, Formal Deformation Theory 13.3 (06SZ), PDF pp. 38–39	T07; induction on kernel length and intersection of subspaces
+T09	Schlessinger, Functors of Artin rings, Theorem 2.11, journal pp. 214–216; Stacks, Formal Deformation Theory 13.2–4, 15.5, PDF pp. 37–41, 46–48	T07, T08; C04; P1-03 ALG-05-C04-R04/S01
+T10	Schlessinger, Functors of Artin rings, Theorem 2.11; Stacks, Formal Deformation Theory 17.5, 18.1–2, PDF pp. 53–55	T07, T09; H4 and induction on Artin length

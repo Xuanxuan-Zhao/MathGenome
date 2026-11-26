@@ -1,0 +1,346 @@
+\chapter[Excellence and Valuations]{Formal Fibres, Excellence, and Valuations}
+\label{ch:excellence-valuations}
+
+The map from a local ring to its completion is faithfully flat. The fibres of this map give additional information about regularity. We study them alongside valuation rings, which test integral dependence without a Noetherian hypothesis. The definitions and the classical routes through \(p\)-bases and domination are recorded in \cite[Sections 47--53 and 125]{st-more}, \cite[Section 50]{st-alg}, and \cite[Section 32]{matsumura}.
+
+\section{Regular maps and formal fibres}
+
+\begin{definition}[Formal fibres and excellence]\label{res:X01}
+An algebra \(T\) over a field \(k\) is geometrically regular if \(T\otimes_k k'\) is Noetherian and regular for every finite field extension \(k'/k\). A regular ring is one whose local rings at all primes are regular local. A map of Noetherian rings is regular if it is flat and each fibre over a prime is geometrically regular over the corresponding residue field.
+
+Let \((A,\mathfrak m)\) be Noetherian local and let \(\mathfrak q\) be a prime. Its formal fibre at \(\mathfrak q\) is
+\[
+ \widehat A\otimes_A\kappa(\mathfrak q)
+  \ \cong\ \widehat{A/\mathfrak q}\otimes_{A/\mathfrak q}\operatorname{Frac}(A/\mathfrak q),
+\]
+where the completion on the right is at \(\mathfrak m/\mathfrak q\). Indeed, completion commutes with passing to the finite \(A\)-module \(A/\mathfrak q\), and tensoring then localizes at the nonzero elements of the domain \(A/\mathfrak q\). A Noetherian ring \(R\) is a \(G\)-ring if the completion maps of all \(R_{\mathfrak p}\) are regular.
+
+A Noetherian ring satisfies \(J\)-2 if the regular locus of every finite-type \(R\)-algebra is open. A ring is catenary if the saturated prime chains between any fixed comparable pair of primes have the same length. A Noetherian ring is universally catenary if every finite-type algebra over it is catenary. A quasi-excellent ring is a Noetherian \(G\)-ring satisfying \(J\)-2. An excellent ring is a universally catenary quasi-excellent ring.
+\end{definition}
+
+\begin{lemma}[Regular local maps and auxiliary rings]\label{res:X02}
+For a flat local map \(A\to B\) of Noetherian local rings, if \(A\) and the closed fibre \(B/\mathfrak m_A B\) are regular local, then \(B\) is regular local. Conversely, if \(B\) is regular local, then \(A\) is regular local. Polynomial rings and finite separable scalar extensions of regular Noetherian rings are regular, as are completions of regular Noetherian local rings.
+\end{lemma}
+\begin{proof}
+Generators for \(\mathfrak m_A\) and lifts of generators for the maximal ideal of the closed fibre generate \(\mathfrak m_B\). Thus the embedding dimension of \(B\) is at most \(\dim A+\dim(B/\mathfrak m_A B)=\dim B\), using the flat local dimension formula \cite[CM-10]{core}. The opposite inequality is the height theorem \cite[ALG-05-C03-R01]{p103}.
+
+For descent, tensor a minimal free resolution of \(A/\mathfrak m_A\) over \(A\) with \(B\). Flatness makes it a free resolution of \(B/\mathfrak m_A B\). Its terms are finite free and its differentials have entries in \(\mathfrak m_A B\subseteq\mathfrak m_B\). Over the regular local ring \(B\), \(B/\mathfrak m_A B\) has finite projective dimension by \cite[CM-12]{core}. Tensoring the resolution with \(B/\mathfrak m_B\) gives zero differentials, so all sufficiently high terms are zero. The original resolution therefore terminates. The residue-field criterion \cite[CM-19]{core} proves that \(A\) is regular.
+
+For polynomials, first use one variable. At a prime of \(R[T]\), the localized map from \(R\) has flat local form and closed fibre a localization of \(\kappa(\mathfrak p)[T]\), a regular local ring since the one-variable polynomial ring over a field is a principal ideal domain. Iterate. For a finite separable extension \(k'/k\), adjoin finitely many generators one at a time. A simple step defined by a monic separable polynomial \(h\) is finite free, and its fibres are products of fields because \(h\) and \(h'\) remain relatively prime. Apply the flat local ascent at each prime and iterate. Completion is flat with the same closed residue field \cite[ALG-05-C04-S01]{p103}, so the ascent also proves regularity of the completion. The regularity of localizations of a regular local ring follows from \cite[CM-12, CM-19]{core}. A finite module over a localization is the localization of a finite module, by clearing denominators in a finite presentation. The finite projective dimension test can then be applied to the localized residue field.
+\end{proof}
+
+\begin{lemma}[Derivations and a regular hypersurface]\label{res:X03}
+Every derivation \(D:R\to R\) extends to localizations and to the completion of \(R\) at any ideal. If \(R\) is Noetherian regular and \(D(f)\) is a unit in \(R\), then
+\[
+             R[T]/(T^n-f)
+\]
+is regular for every \(n\geq 1\).
+\end{lemma}
+\begin{proof}
+In a localization use the quotient rule
+\(D(a/s)=D(a)/s-aD(s)/s^2\). For an ideal \(I\), the Leibniz rule implies
+\(D(I^j)\subseteq I^{j-1}\) for \(j\geq1\). Thus residues modulo \(I^{j+1}\) determine differentiated residues modulo \(I^j\). Taking the compatible limit preserves the additive and product rules.
+
+Extend \(D\) to \(R[T]\) by \(D(T)=0\). This polynomial ring is regular by \ref{res:X02}. If \(\mathfrak n\) is a prime containing \(h=T^n-f\), the extension to the regular local ring \(R[T]_{\mathfrak n}\) sends \(\mathfrak n^2R[T]_{\mathfrak n}\) into \(\mathfrak nR[T]_{\mathfrak n}\). But \(D(h)=-D(f)\) is a unit. Therefore \(h\) has nonzero class modulo the square of the maximal ideal, can be completed to a minimal generating set, and cuts a regular local quotient by \cite[CM-08]{core}.
+\end{proof}
+
+\section[Generic formal fibres]{Positive characteristic and generic formal fibres}
+
+There is no finiteness assumption on the imperfection degree of the coefficient field in the next argument. In characteristic \(p\), write \(F^p=\{a^p:a\in F\}\). Over a subfield containing \(F^p\), a \(p\)-basis is a family whose monomials of exponents less than \(p\) and finite support form a vector-space basis.
+
+\begin{lemma}[Finite coefficient approximations]\label{res:X04}
+Let \(k\) be a field of characteristic \(p>0\) and put
+\[
+ S=k[[u_1,\ldots,u_r]][v_1,\ldots,v_s],\qquad K=\operatorname{Frac}(S).
+\]
+There is a family of subrings \(S_J\subseteq S\) with \(S\) finite free over every \(S_J\) and \(S^p\subseteq S_J\). If \(K_J=\operatorname{Frac}(S_J)\), then the \(K_J\) form a family directed downwards by inclusion and, for each finite extension \(F/K\),
+\[
+                    \bigcap_J F^pK_J=F^p .
+\]
+\end{lemma}
+\begin{proof}
+A maximal \(p\)-independent set exists by Zorn's lemma, since each linear dependence among its restricted monomials involves finitely many variables. If the subfield generated by such a set and the \(p\)-th powers were proper, adjoining an element from outside would give a purely inseparable degree \(p\) extension and preserve independence. Thus it is a \(p\)-basis. In particular, choose a \(p\)-basis \(\{a_e:e\in E\}\) of \(k\) over \(k^p\), and let \(k_J=k^p(a_e:e\notin J)\) for \(J\) finite. The \(a_e\) with \(e\in J\) have restricted monomials forming a finite \(k_J\)-basis of \(k\). The uniqueness of monomial expansions over \(k^p\) gives \(\bigcap_J k_J=k^p\).
+
+Take \(S_J=k_J[[u_1^p,\ldots,u_r^p]][v_1^p,\ldots,v_s^p]\). Expand coefficients in that finite basis and group the exponents of \(u_i,v_j\) by their residues modulo \(p\). This expresses \(S\) freely over \(S_J\) with basis the products of the restricted coefficient monomials and restricted variable monomials. The basis contains \(1\). Consequently \(S\cap K_J=S_J\), by uniqueness after clearing denominators. If \(x\in\bigcap_J K_J\), write \(x=b/c^p\) with \(b,c\in S\), \(c\ne0\), by multiplying numerator and denominator of an ordinary fraction by \(c^{p-1}\). Then \(b\in\bigcap_JS_J=S^p\). It follows that \(\bigcap_J K_J=K^p\).
+
+To pass to \(F\), use a tower of simple extensions each separable or purely inseparable of degree \(p\). Such a tower is obtained by adjoining successive generators, since an irreducible inseparable polynomial in characteristic \(p\) has the form \(g(T^{p^a})\) with \(g\) irreducible separable. Suppose the result is known for \(M\), an intermediate field, and put \(M_J=M^p K_J\). In a separable step \(F=M(b)\) of degree \(d\), \(b^p\) is still primitive because \(M(b)/M(b^p)\) is both separable and purely inseparable. The powers \((b^p)^i\), \(0\le i<d\), form a basis both for \(F^p/M^p\) by Frobenius and for \(M_J(b^p)/M_J\) by independence over \(M\). Thus intersection amounts to intersecting the coefficients, giving \(F^p\).
+
+In a purely inseparable step \(F=M(b)\), let \(c=b^p\in M\setminus M^p\). Choose \(J_0\) with \(c\notin M_{J_0}\). For the cofinal family \(J\supseteq J_0\), \(c\) has degree \(p\) over \(M_J\), since \(c^p\in M^p\). The basis \(1,c,\ldots,c^{p-1}\) over \(M_{J_0}\) defines a common unique expansion for any element of \(\bigcap_J M_J(c)\). Its coefficients lie in every finer \(M_J\), hence in \(M^p\). This yields \(M^p(c)=F^p\), completing the induction.
+\end{proof}
+
+\begin{lemma}[Derivations detecting non-powers]\label{res:X05}
+With \(S\) as in \ref{res:X04}, let \(B\) be a finite-type \(S\)-algebra that is a domain containing \(S\), with \(F=\operatorname{Frac}(B)\) finite over \(K\). For \(f\in B\setminus F^p\), there exists a derivation \(D:B\to B\) with \(D(f)\ne0\).
+\end{lemma}
+\begin{proof}
+Choose \(J\) such that \(f\notin F^p K_J\), by \ref{res:X04}. Extend \(\{f\}\) to a \(p\)-basis of \(F/F^pK_J\) using the argument there. Differentiate the restricted monomial expansion in this basis by assigning \(D_0(f)=1\) and value zero to every other basis variable and to \(F^p K_J\). The multiplication rule is preserved when a power of an exponent is reduced, because all \(p\)-th powers are constants of this differentiation. This gives a derivation \(D_0:F\to F\) killing \(K_J\). Since \(S\) is finite over \(S_J\), \(B\) is generated over \(S_J\) by finitely many elements. Multiply \(D_0\) by a nonzero element of \(B\) clearing the denominators of its values on those generators. The resulting derivation preserves \(B\) and has nonzero value on \(f\).
+\end{proof}
+
+\begin{lemma}[Finite algebras and completion]\label{res:X06}
+For a finite map \(A\to B\) of Noetherian rings and a prime \(\mathfrak p\) of \(A\), there is a canonical decomposition
+\[
+ \widehat{A_{\mathfrak p}}\otimes_A B
+ \ \cong\ \prod_{\mathfrak p_i\cap A=\mathfrak p}\widehat{B_{\mathfrak p_i}}.
+\]
+In particular, finite algebras and localizations of \(G\)-rings are \(G\)-rings.
+\end{lemma}
+\begin{proof}
+Localize \(A\) at \(\mathfrak p\), and replace \(B\) by its finite localization over that local base. If \(B=0\) the product is empty and the statement is immediate. Otherwise all maximal ideals \(\mathfrak p_i\) contract to \(\mathfrak p\) by integrality, and there are finitely many because \(B/\mathfrak p B\) is a finite-dimensional algebra over a field. Put \(J=\bigcap_i\mathfrak p_i=\sqrt{\mathfrak p B}\). The \(J\)-adic and \(\mathfrak p B\)-adic filtrations are cofinal, since \(B\) is Noetherian. The maximal ideals are pairwise comaximal. Chinese remaindering identifies \(B/J^n\) with \(\prod_i B/\mathfrak p_i^n\). Each factor has a unique maximal ideal and equals its localization at \(\mathfrak p_i\). Taking inverse limits proves the assertion because completion of the finite module \(B\) over the local base is its tensor with the completion \cite[ALG-05-C04-R03]{p103}.
+
+If \(\mathfrak q'\subseteq\mathfrak p'\) in \(B\) lie over \(\mathfrak q\subseteq\mathfrak p\) in \(A\), the formal fibre of \(B_{\mathfrak p'}\) at \(\mathfrak q'\) is a factor of
+\[
+ \widehat{A_{\mathfrak p}}\otimes_A\kappa(\mathfrak q')
+ \cong (\widehat{A_{\mathfrak p}}\otimes_A\kappa(\mathfrak q))
+                         \otimes_{\kappa(\mathfrak q)}\kappa(\mathfrak q').
+\]
+The extension of residue fields is finite. Geometric regularity is inherited by this base change and by each factor because further finite extensions are still finite over the original field. Localization preserves the \(G\)-condition because every prime local ring after localization is the same prime local ring as before localization.
+\end{proof}
+
+\begin{theorem}[Geometrically regular formal fibres]\label{res:X07}
+Every Noetherian complete local ring is a \(G\)-ring. Every finite-type algebra over a field or over \(\mathbb Z\) is a \(G\)-ring.
+\end{theorem}
+\begin{proof}
+First consider the generic formal fibre \(T=\widehat{S_{\mathfrak p}}\otimes_S K\) of a regular domain \(S\) with fraction field \(K\). It is regular because \(S_{\mathfrak p}\), its completion and the relevant localization are regular by \ref{res:X02}. When \(\operatorname{char}K=0\), every finite extension of \(K\) is separable, giving geometric regularity by \ref{res:X02}.
+
+In characteristic \(p>0\), assume \(S=k[[u_1,\dots,u_r]][v_1,\dots,v_s]\). It is regular by the power-series construction in \ref{res:C04} and the polynomial case of \ref{res:X02}. For a finite extension \(L/K\), prove regularity of \(T\otimes_K L\) along a simple tower, as in \ref{res:X04}. A separable step uses \ref{res:X02}. For a purely inseparable step from \(M\) to \(M[z]/(z^p-f)\), choose a finite \(S\)-algebra \(B\subset M\) with fraction field \(M\). To construct one, multiply a finite set of field generators by nonzero elements of \(S\) to make their respective monic equations have coefficients in \(S\), and adjoin them. Multiply \(f\) by a \(p\)-th power of a nonzero denominator in \(B\), which changes the choice of \(z\) by the corresponding nonzero scalar and permits \(f\in B\). By \ref{res:X05} choose \(D\) of \(B\) with \(D(f)\ne0\). By \ref{res:X06},
+\[
+ T\otimes_K M\cong
+ \left(\prod_{\mathfrak p_i\cap S=\mathfrak p}\widehat{B_{\mathfrak p_i}}\right)
+                       \otimes_B M .
+\]
+Extend \(D\) on each factor and then on the localization, using \ref{res:X03}. The value of \(D(f)\) is a unit there, since it comes from a nonzero element of \(M\). The induction hypothesis makes \(T\otimes_K M\) regular. Now \ref{res:X03} applied to \(z^p-f\) proves this step.
+
+For an arbitrary complete local ring or an algebra of one of the finite types in the statement, fix a prime pair specifying a formal fibre. By \ref{res:X01} pass to the quotient by the smaller prime, so we are considering a generic formal fibre of a domain \(A\). It suffices in each case to find a regular domain \(S\subseteq A\) with regular geometric generic formal fibres such that \(A\) is finite over \(S\). Indeed, \ref{res:X06} identifies the fibre of \(A\) with a factor of the fibre of \(S\) extended to \(\operatorname{Frac}(A)\), a finite extension of \(\operatorname{Frac}(S)\).
+
+For a complete local \(A\) use finite regular normalization \ref{res:C05}. If the regular power-series base is over a field of characteristic \(p>0\), the preceding tower applies. Otherwise its fraction field has characteristic zero. For a finite-type domain over a field, use ordinary Noether normalization \cite[ALG-05-C03-R02]{p103}. The base \(S\) is polynomial so the same argument applies. For a finite-type domain over \(\mathbb Z\) with nonzero kernel on \(\mathbb Z\), the preceding field case applies. The remaining case uses a polynomial presentation over \(\mathbb Z\).
+
+Write \(A=\mathbb Z[y_1,\ldots,y_m]/I\), and let \(\mathfrak p\) be the relevant prime of \(A\) with inverse image \(\mathfrak P\) in \(C=\mathbb Z[y_1,\ldots,y_m]\). Here \(I\) is prime and \(I\cap\mathbb Z=0\). Over \(\mathbb Q\), \(I\mathbb Q[\mathbf y]\) is generically cut out by elements \(g_1,\ldots,g_c\) with independent partial derivatives in its residue fraction field. To see this, choose a transcendence basis among the residue classes of the \(y_i\). Over the rational function field in those basis elements, each of the remaining \(c\) variables has a separable minimal polynomial. Use those univariate polynomials and clear denominators to obtain \(g_i\in I\). Their determinant of partial derivatives in these \(c\) coordinates is nonzero modulo \(I\). The quotient by these polynomials near the generic point is a localization of a tensor product of finite separable field extensions over that rational function field. That tensor product is a product of fields. Successively base change the separable minimal polynomial and factor it into distinct irreducibles. Thus the \(g_i\) generate \(IC_I\). After localization at some \(h\notin I\), they generate \(I C_h\) since \(I\) is finite, and \(h\) can be chosen divisible by that determinant.
+
+The partial derivatives extend to \(\widehat{C_{\mathfrak P}}\) by \ref{res:X03}. At each prime of this completion lying over \(I\), where \(h\) is invertible, the derivative determinant shows that \(g_1,\ldots,g_c\) are independent modulo the square of the maximal ideal. In fact, a relation \(\sum_i a_i g_i\) in that square, differentiated and reduced modulo the maximal ideal, forces every \(a_i\) into the maximal ideal. Hence these elements are part of a minimal system of generators of the maximal ideal of the regular local ring there. They cut a regular quotient by \cite[CM-08]{core}. Completion commutes with the quotient by \(I\), so this proves regularity of the generic formal fibre of \(A\) at \(\mathfrak p\). Its field of scalars has characteristic zero, and \ref{res:X02} gives geometric regularity.
+\end{proof}
+
+\section[The regular locus]{The regular locus and examples of excellence}
+
+\begin{theorem}[Open regular loci over the basic bases]\label{res:X08}
+Let \(R\) be a field, \(\mathbb Z\), or a Noetherian complete local ring. Every finite-type \(R\)-algebra has open regular locus.
+\end{theorem}
+\begin{proof}
+We first treat a finite-type domain \(A\) over \(R\). If \(R\) is a field, use it as a subring \(R_0\subset A\). If \(R=\mathbb Z\), take \(R_0=\mathbb Z\) when the map is injective and \(R_0=\mathbb F_p\) when its kernel is \((p)\). In the complete local case \(R/\ker(R\to A)\) is a complete local domain, so \ref{res:C05} provides a regular subring \(R_0\) over which that domain is finite. Thus \(A\) is a finite-type domain containing \(R_0\) and \(R_0\) is regular. In positive characteristic \(R_0\) is a field or a power-series ring over a field.
+
+Choose a transcendence basis \(\mathbf v\) of \(\operatorname{Frac}(A)\) over \(\operatorname{Frac}(R_0)\) among a finite set of algebra generators. Then \(S=R_0[\mathbf v]\) is regular by \ref{res:X02} and \(\operatorname{Frac}(A)\) is a finite extension of \(\operatorname{Frac}(S)\). We construct a regular finite-type \(S\)-algebra \(B\) with the same fraction field as \(A\), inside that field. Start with \(S\) and use a simple field tower as in \ref{res:X04}. If the next extension is separable, use a monic irreducible separable polynomial. Invert finitely many denominators to place it over the current ring, and invert its discriminant there to make the polynomial square-free in every fibre. The new ring is finite free over the localized ring and has regular zero-dimensional fibres, hence is regular by \ref{res:X02}. It is a domain, since its standard free basis embeds into the field defined by the polynomial. If the next extension is \(F[z]/(z^p-f)\), multiply \(f\) by a \(p\)-th power of a denominator to put it in the current ring. This ring is finite type over \(S\) and its fraction field is finite over \(\operatorname{Frac}(S)\). Apply \ref{res:X05}, invert the nonzero \(D(f)\), and use \ref{res:X03} to pass to the new regular domain. Iteration produces \(B\).
+
+Since \(A\) and \(B\) are finite-type \(S\)-algebras inside the same field, each is contained in a principal localization of the other by clearing denominators on algebra generators. More concretely choose \(a\in A\setminus0\), \(b\in B\setminus0\) with \(B\subset A[1/a]\) and \(A\subset B[1/b]\). Inverting \(a,b\) gives the same ring on both sides, a principal localization of each after clearing the new denominator. Therefore \(A\) is regular on a nonempty open.
+
+Now let \(A\) be arbitrary of finite type. Every quotient \(A/\mathfrak p\) by a prime is a finite-type domain and has a nonempty regular open. Fix \(\mathfrak p\) for which \(A_{\mathfrak p}\) is regular. Choose \(h_1,\ldots,h_d\in\mathfrak p\) mapping to minimal generators of \(\mathfrak p A_{\mathfrak p}\). They form a regular sequence there by \cite[CM-08]{core}. After inverting an element outside \(\mathfrak p\) they generate \(\mathfrak p\), by finite generation, and are still a regular sequence, by killing the finite kernels of the successive multiplication maps. For \(\mathfrak q\supseteq\mathfrak p\) in this open with \((A/\mathfrak p)_{\mathfrak q}\) regular, \(A_{\mathfrak q}\) is regular. To verify this, a nonzerodivisor in the maximal ideal of a Noetherian local ring drops dimension by one. A prime chain of the quotient can be extended downwards by a minimal prime avoiding that element, and a system of parameters in the quotient together with the element gives the reverse inequality by the height theorem \cite[ALG-05-C03-R01/S01]{p103}. Apply this successively. Generators for the maximal ideal in the regular quotient and the \(d\) elements lift to at most \(\dim A_{\mathfrak q}\) generators. Hence the embedding dimension equals the dimension.
+
+We have found a relatively open nonempty subset of \(V(\mathfrak p)\) in the regular locus for every regular \(\mathfrak p\). If the singular set were not closed, some generic point \(\mathfrak p\) of a component of its closure would be regular. Indeed the singular set is stable under specialization, since regularity is stable under localization. The singular set meets the complement of the other components densely in \(V(\mathfrak p)\), contradicting the relatively open regular subset just found. Thus the singular set is closed.
+\end{proof}
+
+\begin{theorem}[Excellent rings and permanence]\label{res:X09}
+Noetherian complete local rings, fields, \(\mathbb Z\), and finite-type algebras over fields or \(\mathbb Z\) are excellent. Every localization and every finite algebra of an excellent ring is excellent.
+\end{theorem}
+\begin{proof}
+We have the \(G\)-property from \ref{res:X07}. For a finite-type algebra over a field or \(\mathbb Z\), every finite-type algebra over it is again of the same kind, giving \(J\)-2 by \ref{res:X08}. That theorem also applies to a complete local base. Regular Noetherian rings are Cohen--Macaulay, hence universally catenary by \cite[CM-08, CM-15]{core}. Quotients of universally catenary rings are universally catenary by the finite-type definition. A complete local ring has the regular cover \ref{res:C04}, and the other rings are regular or quotients of polynomial rings over regular bases. This proves universal catenarity of all the examples.
+
+The \(G\)-part of permanence is \ref{res:X06}. A finite algebra is finite type, so the \(J\)-2 and universal catenarity conditions pass to it directly by composing finite-type maps. If we instead localize the base, any finite-type algebra over that localization is a localization of one over the original ring, by clearing denominators from its finite presentation. Taking open regular loci commutes with localization. Catenarity also localizes because the primes between two surviving primes avoid the multiplicative set because the larger endpoint avoids it. These facts give the other two properties for the localization.
+\end{proof}
+
+\begin{corollary}[Normality under completion]\label{res:X10}
+Let \(A\) be a Noetherian local \(G\)-ring. If \(A\) is normal then \(\widehat A\) is normal. If \(A\) is reduced then \(\widehat A\) is reduced.
+\end{corollary}
+\begin{proof}
+At a prime of the completion, localize the completion map and write \(B\) for the resulting target local ring, \(R\) for the source local ring, and \(F\) for the closed fibre. The map is flat local and \(F\) is regular. The dimension and depth formulas of \cite[CM-10]{core}, with \(\operatorname{depth}F=\dim F\), imply
+\[
+ \dim B=\dim R+\dim F,\qquad
+ \operatorname{depth}B=\operatorname{depth}R+\dim F .
+\]
+Thus \((S_j)\) ascends, since \(\min(j,\dim R)+\dim F\geq\min(j,\dim B)\). Also \((R_i)\) ascends. At a target prime of height at most \(i\), the source local ring has dimension at most \(i\), so both it and its closed fibre are regular. Apply \ref{res:X02}. Now apply the reducedness criterion \((R_0)+(S_1)\) and the normality criterion \((R_1)+(S_2)\) from \cite[SN-03 and SN-09]{core}.
+\end{proof}
+
+\section[Finite-type permanence]{Permanence under finite type extensions}
+
+\begin{lemma}[Base change, composition, and descent]\label{res:X11}
+Regular maps of Noetherian rings are preserved by localization, by base change along a finite-type map, and by composition. If \(A\to B\to C\) has regular composite and \(B\to C\) is faithfully flat, then \(A\to B\) is regular.
+\end{lemma}
+\begin{proof}
+We first show that a geometrically regular \(k\)-algebra \(T\) remains geometrically regular after base change to a finitely generated field extension \(L/k\). The tensor products with such fields are Noetherian, since each field is the fraction field of a finite-type \(k\)-domain and tensoring gives a localization of a finite-type \(T\)-algebra. For regularity in characteristic zero it suffices to choose a transcendence basis and use \ref{res:X02} for adjoining rational variables and then a finite separable extension. In characteristic \(p>0\), form \(Lk^{\mathrm{perf}}\) in an algebraic closure, adjoining all \(p\)-power roots of the constants. It has a separating transcendence basis over \(k^{\mathrm{perf}}\) by the finite-type field argument in \ref{res:C01} applies over any perfect field because that part uses only \(F^p=F\). Choose a finite purely inseparable extension \(k'/k\) inside \(k^{\mathrm{perf}}\) containing the finitely many constants needed to express that basis and the coefficients of separable equations for a finite set of generators of \(L\) over \(k\). The basis remains algebraically independent, and the same equations over \(k'\) show that \(Lk'\) is finite separable over the rational function field over \(k'\) in those basis elements. The equations remain separable because their nonzero discriminants remain nonzero. Now \(T\otimes_k k'\) is regular by the geometric hypothesis, and its extension to \(Lk'\) is regular by \ref{res:X02}. The faithfully flat map \(T\otimes_k L\to T\otimes_k Lk'\) descends regularity by localizing at primes and using \ref{res:X02}. The argument applies equally to every finite extension of \(L\), since that extension is still finitely generated over \(k\).
+
+For base change along \(A\to A'\) of finite type, flatness persists and each new fibre is the corresponding old fibre extended along \(\kappa(\mathfrak p)\subseteq\kappa(\mathfrak p')\). This is a finitely generated extension, so the preceding argument applies. In a localization the fibres are localizations of the old fibres, and these commute with finite scalar extension.
+
+For composition \(A\to B\to C\), fix a finite extension \(L/\kappa(\mathfrak p)\), with \(\mathfrak p\) a prime of \(A\). The flat map \(B\otimes_A L\to C\otimes_A L\) has regular fibres. Indeed \(B\otimes_A L\) is finite over the localization and quotient \(B\otimes_A\kappa(\mathfrak p)\). The residue field at any of its primes is a finite extension of the residue field at the corresponding prime of \(B\), and the fibre is a scalar extension of a fibre of \(B\to C\). The source ring is regular by regularity of \(A\to B\). Local ascent in \ref{res:X02} makes \(C\otimes_A L\) regular. Flatness of the composite follows by composition of flat tensor functors.
+
+Finally, faithful flatness detects exactness after tensoring, so flatness of \(A\to C\) descends along \(B\to C\) to \(A\to B\). For every test \(L/\kappa(\mathfrak p)\) the map \(B\otimes_A L\to C\otimes_A L\) is faithfully flat, and regularity of its target descends by \ref{res:X02}.
+\end{proof}
+
+\begin{lemma}[Completions of polynomial rings over the generic base]\label{res:X12}
+Let \(A\) be a Noetherian complete local domain with fraction field \(K\). For every prime \(\mathfrak P\) of \(A[T]\), the ring
+\[
+                 \widehat{A[T]_{\mathfrak P}}\otimes_A K
+\]
+is geometrically regular over \(K\).
+\end{lemma}
+\begin{proof}
+First take \(A=S\) one of the regular power-series bases provided by \ref{res:C05}. Write \(K_0=\operatorname{Frac}(S)\). The ring in the statement is regular by the polynomial and completion cases of \ref{res:X02}, since the tensor just localizes at nonzero elements of \(S\). If \(\operatorname{char}K_0=0\), all finite scalars extend separably. Otherwise use the tower from \ref{res:X04} for finite extensions of \(K_0\). A separable step again follows from \ref{res:X02}. For a purely inseparable step \(M\subset M[z]/(z^p-f)\), choose a finite domain \(B\) over \(S\) with fraction field \(M\), and scale \(f\) into \(B\) as in \ref{res:X07}. The derivation furnished by \ref{res:X05} for \(B/S\) has \(D(f)\ne0\). Extend it on \(B[T]\) by \(D(T)=0\). Finite completion decomposition for \(S[T]\to B[T]\), followed by localizing the constants of \(B\), identifies
+\[
+ \widehat{S[T]_{\mathfrak P}}\otimes_S M
+   \cong
+ \left(\prod_{\mathfrak P_i\cap S[T]=\mathfrak P}
+                \widehat{B[T]_{\mathfrak P_i}}\right)\otimes_B M .
+\]
+Thus the derivation extends to the ring on the left, by extending it on each local completion and then on the localization. The element \(D(f)\) becomes a unit. Inductive regularity of this ring and the hypersurface argument in \ref{res:X03} prove the step.
+
+For a general complete local domain \(A\), choose a finite normalization subring \(S\) by \ref{res:C05}. The map \(S[T]\to A[T]\) is finite, so \ref{res:X06} makes the ring in the statement a factor of
+\[
+         \widehat{S[T]_{\mathfrak P\cap S[T]}}\otimes_S K .
+\]
+This is geometrically regular over \(K\), as the extension \(K/K_0\) is finite and the regular-base case has been proved. The factor therefore has the required property.
+\end{proof}
+
+\begin{lemma}[Polynomial \(G\)-rings]\label{res:X13}
+If \(A\) is Noetherian complete local, then \(A[T]\) is a \(G\)-ring.
+\end{lemma}
+\begin{proof}
+For primes \(\mathfrak q\subseteq\mathfrak P\) of \(A[T]\), pass to the quotient of \(A\) by \(\mathfrak q\cap A\). The quotient is a Noetherian complete local domain, and this replacement preserves the formal fibre by the completion and quotient comparison in \ref{res:X01}. We may therefore assume \(A\) is a domain and \(\mathfrak q\cap A=0\). Write \(K=\operatorname{Frac}(A)\).
+
+If \(\mathfrak q=0\), the generic formal fibre over \(K(T)\) is geometrically regular. Indeed \(A[T]\) is finite over \(S[T]\) for the power-series base \(S\) of \ref{res:C05}. The generic-fibre calculation for \(S[T]\) in \ref{res:X07}, followed by \ref{res:X06} and finite scalar extension to \(K(T)\), proves this case.
+
+If \(\mathfrak q\ne0\), the prime in \(K[T]\) is generated by an irreducible polynomial. Thus \(\kappa(\mathfrak q)\) is finite over \(K\). Let \(L\) be any finite extension of \(\kappa(\mathfrak q)\), and let \(\alpha\) be the image of \(T\) in \(L\). Choose a finite \(A\)-subalgebra \(B\subset L\) with fraction field \(L\), by scaling generators as in \ref{res:X07}. This domain \(B\) is complete local because the decomposition in \ref{res:X06} at the maximal ideal of \(A=\widehat A\) expresses \(B\) as a product of its local completions. A nonzero domain forces one factor. Finite completion decomposition for the map \(A[T]\to B[T]\) now gives
+\[
+ \widehat{A[T]_{\mathfrak P}}\otimes_{A[T]}L
+  \cong
+  \prod_{\mathfrak P_i\cap A[T]=\mathfrak P}
+       \left(\widehat{B[T]_{\mathfrak P_i}}\otimes_B L\right)/(T-\alpha).
+\]
+Here tensoring over \(B[T]\) with \(L\) first inverts the nonzero elements of \(B\) and then imposes \(T=\alpha\). The rings before quotienting are regular by \ref{res:X12}. The derivation \(\partial/\partial T\) extends to them by \ref{res:X03}, kills \(L\) and sends \(T-\alpha\) to \(1\). The same local argument as in \ref{res:X03} makes each quotient regular. Wherever the generator is nonunit it has nonzero class modulo the square of the local maximal ideal and is part of a regular system of parameters. Factors where it is a unit become the zero ring. This verifies every finite scalar extension of the formal fibre.
+\end{proof}
+
+\begin{theorem}[Finite-type permanence of excellence]\label{res:X14}
+Every essentially finite-type algebra over a Noetherian \(G\)-ring is a \(G\)-ring. Consequently every essentially finite-type algebra over a quasi-excellent ring is quasi-excellent, and every essentially finite-type algebra over an excellent ring is excellent.
+\end{theorem}
+\begin{proof}
+For the \(G\)-assertion it suffices to prove that \(R[T]\) is a \(G\)-ring when \(R\) is one. Iteration gives finite polynomial extensions, and quotients and localizations are then handled by \ref{res:X06}. Fix a prime \(\mathfrak P\) of \(R[T]\). Replacing \(R\) by \(R_{\mathfrak P\cap R}\) leaves the prime local ring unchanged, so assume \(R\) is local with maximal ideal \(\mathfrak m\subseteq\mathfrak P\). Write \(\mathfrak P'=\mathfrak P\widehat R[T]\), which is prime since \(R[T]\) and \(\widehat R[T]\) have the same quotient by \(\mathfrak m\). There are natural isomorphisms
+\[
+    R[T]/\mathfrak P^n \;\cong\;
+       \widehat R[T]/(\mathfrak P')^n .
+\]
+Indeed, the quotient on the right is the tensor product of the quotient on the left with \(\widehat R\), and the quotient on the left is killed by \(\mathfrak m^n\), with \(R/\mathfrak m^n=\widehat R/\mathfrak m^n\widehat R\). Localizing these quotients at the corresponding primes and taking inverse limits gives an isomorphism of completions.
+
+The map \(R[T]_{\mathfrak P}\to\widehat R[T]_{\mathfrak P'}\) is regular by the \(G\)-assumption on \(R\), finite-type base change and localization in \ref{res:X11}. The map from \(\widehat R[T]_{\mathfrak P'}\) to its completion is regular by \ref{res:X13}. The composite is the completion map of \(R[T]_{\mathfrak P}\) under the isomorphism just proved, and is regular by \ref{res:X11}. This proves the \(G\)-assertion. The \(J\)-2 and universal catenarity conditions are inherited under finite-type maps and localization as in \ref{res:X09}, yielding the remaining conclusions.
+\end{proof}
+
+\section[Valuation rings]{Valuation rings and integral dependence}
+
+\begin{proposition}[Intrinsic valuation tests]\label{res:W01}
+For a domain \(V\) with fraction field \(K\), the following are equivalent.
+\begin{enumerate}
+\item For each \(x\in K^\times\), \(x\) or \(x^{-1}\) belongs to \(V\).
+\item The ideals of \(V\) are totally ordered by inclusion.
+\item \(V\) is local and every finitely generated ideal is principal.
+\end{enumerate}
+A ring satisfying them is called a valuation ring.
+\end{proposition}
+\begin{proof}
+For nonzero \(a,b\in V\), the first condition applied to \(a/b\) makes either \(a\) divide \(b\) or \(b\) divide \(a\). If two ideals were incomparable we could choose one element in each outside the other, contradicting this divisibility. The linear order on ideals implies a unique maximal ideal, and the largest of finitely many principal ideals generated by the given generators is their sum.
+
+Conversely let \((a,b)=(d)\) in a local domain, with \(a,b\ne0\). Write \(a=du,b=dv\). The equality of the ideals says \(1\in(u,v)\), so \(u\) or \(v\) is a unit. Applying this to a numerator and denominator of \(x\) gives condition 1.
+\end{proof}
+
+\begin{theorem}[Domination and extension]\label{res:W02}
+Every local subring \((A,\mathfrak m_A)\) of a field \(L\) is dominated by a valuation ring \(V\) of \(L\), meaning \(A\subseteq V\) and \(\mathfrak m_V\cap A=\mathfrak m_A\). If \(K\subseteq L\) and \(A\) is a valuation ring of \(K\), then the dominating \(V\) satisfies \(V\cap K=A\).
+\end{theorem}
+\begin{proof}
+Order local subrings of \(L\) dominating \(A\) by domination. The union of a chain is local because the union of the contracted maximal ideals consists of precisely the nonunits, because an element outside that union already has its inverse at a stage where it is present. The domination relation survives. Zorn's lemma gives a maximal element \((V,\mathfrak m)\).
+
+If \(x\in L^\times\setminus V\) and \(\mathfrak m V[x]\ne V[x]\), localization at a maximal ideal containing \(\mathfrak m V[x]\) would give a larger dominating ring. Thus
+\[
+           1=b_0+b_1x+\cdots+b_nx^n,\qquad b_i\in\mathfrak m.
+\]
+Here \(n\ge1\). Divide by the unit \(1-b_0\) after moving \(b_0\) to the left, and multiply by \(x^{-n}\). This gives a monic equation for \(x^{-1}\) over \(V\). Lying over for the integral extension \(V\subset V[x^{-1}]\), from \cite[ALG-05-C01-R03]{p103}, provides a prime over \(\mathfrak m\). Localizing there gives a dominating ring. Maximality implies \(x^{-1}\in V\), so \(V\) is a valuation ring by \ref{res:W01}. The same criterion shows \(\operatorname{Frac}(V)=L\).
+
+For the extension assertion, \(x\in K^\times\setminus A\) has \(x^{-1}\in\mathfrak m_A\). Its inverse cannot be in \(V\), as \(x^{-1}\in\mathfrak m_V\). Thus \(V\cap K=A\).
+\end{proof}
+
+\begin{theorem}[Valuative criterion for integral dependence]\label{res:W03}
+If \(A\subseteq L\) is any domain contained in a field, its integral closure in \(L\) is the intersection of all valuation rings of \(L\) containing \(A\).
+\end{theorem}
+\begin{proof}
+A valuation ring is integrally closed in its fraction field. For if \(x\notin V\) were integral over \(V\), then \(x^{-1}\) would belong to its maximal ideal. Dividing the monic equation by its leading monomial \(x^n\) would place \(1\) in that ideal. Thus the integral closure is contained in every such valuation ring.
+
+Let \(x\in L\) fail to be integral over \(A\), so \(x\ne0\). The ideal generated by \(x^{-1}\) in \(A[x^{-1}]\) is proper. Indeed, an identity \(1=\sum_{i\ge1}a_i x^{-i}\) would give a monic equation after multiplication by a suitable power of \(x\). Localize \(A[x^{-1}]\) at any maximal ideal containing \(x^{-1}\) and apply \ref{res:W02}. The resulting valuation ring of \(L\) contains \(A\) and has \(x^{-1}\) in its maximal ideal, so does not contain \(x\).
+\end{proof}
+
+\section[Value groups and rank]{Value groups, rank, and extension degrees}
+
+\begin{proposition}[The ordered group of a valuation]\label{res:W04}
+For a valuation ring \(V\) of \(K\), the quotient group \(\Gamma=K^\times/V^\times\) has a total order defined by \(v(a)\ge v(b)\) if \(a/b\in V\). In additive notation the quotient map \(v\) satisfies
+\[
+                  v(a+b)\ge\min\{v(a),v(b)\}
+\]
+for \(a,b,a+b\ne0\), with equality when the two values differ. Conversely a homomorphism from \(K^\times\) to a totally ordered abelian group satisfying this inequality defines a valuation ring by taking zero and all elements of nonnegative value.
+\end{proposition}
+\begin{proof}
+Comparison only depends on the classes modulo units. Transitivity and translation invariance follow from multiplication, antisymmetry follows from the unit criterion, and totality follows from \ref{res:W01}. Suppose \(v(a)\ge v(b)\). Then \(a/b\in V\), so \((a+b)/b\in V\). When the inequality is strict \(a/b\) lies in the maximal ideal and \(1+a/b\) is a unit, proving equality. For the converse the stated inequality makes the nonnegative part a subring and the sign comparison with the inverse gives \ref{res:W01}. Its value group is the image of the homomorphism with the inherited order.
+\end{proof}
+
+\begin{theorem}[Prime ideals, coarsening, and composition]\label{res:W05}
+The prime ideals of a valuation ring \(V\) with group \(\Gamma\) correspond in reverse order to the convex subgroups \(H\) of \(\Gamma\). Under this correspondence the localization \(V_P\) has value group \(\Gamma/H\), and \(V/P\), as a valuation ring of \(\kappa(P)\), has group \(H\). Conversely, if \(U\) is a valuation ring and \(W\) is a valuation ring of its residue field, the inverse image of \(W\) in \(U\) is a valuation ring obtained by composing the two valuations.
+\end{theorem}
+\begin{proof}
+A subgroup is convex when it contains the entire order interval between any two of its elements. For a prime \(P\), the values \(C=v(V\setminus P)\) are an initial subset of \(\Gamma_{\ge0}\). A nonnegative value below that of an element outside \(P\) is realized by a divisor of it, which must also be outside \(P\). The set \(C\) contains \(0\) and is closed under addition by primality. For \(\alpha,\beta\in C\) with \(\alpha\ge\beta\), their difference belongs to \(C\) by the initial property. Hence \(H=C\cup(-C)\) is a convex subgroup. Conversely the complement of the nonnegative part of a convex subgroup inside \(\Gamma_{\ge0}\) is a final subset closed under adding nonnegative values. The elements having values in that complement, together with zero, form an ideal. Addition follows from \ref{res:W04} and multiplication from nonnegativity. Its complement is multiplicatively closed, making it prime. These constructions are inverse.
+
+In the ordered quotient by a convex subgroup, a coset is nonnegative when it contains a nonnegative representative. A strictly positive coset consists of elements greater than every element of \(H\). An element \(x\in K^\times\) belongs to \(V_P\) exactly when \(v(x)+h\ge0\) for some \(h\in C\), since \(h\) can be realized by a denominator outside \(P\). This is exactly nonnegativity of the coset of \(v(x)\). For the residue valuation, a nonzero element of \(V/P\) represented by \(a\notin P\) has value \(v(a)\in H\). Adding an element of \(P\) does not change its value, by the strict case in \ref{res:W04}. Extend by differences to nonzero fractions. It satisfies the valuation inequalities by lifting the operations and has image \(H\), since every nonnegative element of \(H\) comes from \(V\setminus P\). The corresponding valuation ring consists exactly of the fractions whose numerator is divisible by the denominator in \(V/P\), using divisibility in \(V\).
+
+For composition let \(V\subset U\) be the indicated inverse image. If \(x\) lies outside \(U\), then \(x^{-1}\) lies in the maximal ideal of \(U\) and hence in \(V\). If \(x\) lies in that maximal ideal it belongs to \(V\). Otherwise \(x\) is a unit in \(U\), and the valuation test for its residue in \(W\) places either \(x\) or \(x^{-1}\) in \(V\). This proves the valuation test for \(V\). Its quotient by the inverse image of zero is \(W\), and localization at that prime returns \(U\) because any missing unit of \(U\) is the inverse of a unit of \(U\) whose residue lies in \(W\).
+\end{proof}
+
+The rank of a valuation is the Krull dimension of its valuation ring. By \ref{res:W05} it is the supremum of lengths of strict chains of convex subgroups of the value group.
+
+\begin{proposition}[Noetherian valuation rings]\label{res:W06}
+A valuation ring is Noetherian exactly when it is a field or has value group isomorphic to \(\mathbb Z\) with its usual order. In the second case it is a discrete valuation ring.
+\end{proposition}
+\begin{proof}
+If \(V\) is Noetherian and not a field, its nonzero maximal ideal is generated by one nonzero element \(\pi\) by \ref{res:W01}. Since \(\bigcap_{n\ge0}(\pi)^n=0\) by Krull intersection \cite[ALG-05-C04-R04]{p103}, every nonzero element has a factorization \(\pi^n u\) with \(u\) a unit. Taking fractions gives \(\Gamma=\mathbb Z v(\pi)\) with \(v(\pi)>0\).
+
+Conversely, in the ordered group \(\mathbb Z\) a nonempty set of nonnegative values has a minimum. Choosing an element of least value in a nonzero ideal yields a generator, by \ref{res:W04}. This makes the ring Noetherian. Value group zero gives the field case.
+\end{proof}
+
+\begin{example}[Rank does not give discreteness]\label{res:W07}
+On \(k((x))((y))^\times\), let
+\[
+ v(f)=\bigl(\operatorname{ord}_y(f),\
+       \operatorname{ord}_x(\text{leading \(y\)-coefficient of }f)\bigr).
+\]
+Products multiply leading coefficients and add exponents. For a sum with unequal first values the lesser term survives, and when the first values coincide the second valuation gives the comparison, unless cancellation raises the first value. This is a valuation with group \(\mathbb Z^2\) lexicographically ordered. The only nonzero proper convex subgroup is \(0\times\mathbb Z\) because a subgroup containing an element with nonzero first coordinate also contains one with positive first coordinate. Positive multiples of the latter eventually exceed each fixed element of the group, forcing the convex subgroup to be the whole group. The group quotient yields \(y\)-adic order. The residue valuation is \(x\)-adic order on \(k((x))\). By \ref{res:W05} the composed valuation ring has dimension two, whereas by \ref{res:W06} it is not Noetherian.
+
+For rank one without discreteness, take the union of fields \(k(t^{1/n!})\) with the embeddings that take a generator to the appropriate power of the next generator. At the \(n\)-th stage use the order at its generator, scaled by \(1/n!\). Substitution by a power rescales the unnormalized order by \(n+1\), so the valuations agree on overlaps. The group is \(\mathbb Q\), which has no nonzero proper convex subgroup because multiples of any positive rational bound all rationals. The associated ring has dimension one by \ref{res:W05}, and it is not Noetherian by \ref{res:W06}.
+\end{example}
+
+\begin{theorem}[Finite valuation extensions]\label{res:W08}
+Let \(V\subseteq W\) be a valuation extension with fraction fields \(K\subseteq L\) and \(W\cap K=V\). If \(L/K\) is finite, then
+\[
+       [\Gamma_W:\Gamma_V]\,[\kappa(W):\kappa(V)]\le [L:K].
+\]
+If \(L/K\) is purely inseparable, with no finiteness assumption, \(V\) has a unique extension to \(L\) and the extended ring is the integral closure of \(V\).
+\end{theorem}
+\begin{proof}
+The contraction condition identifies the value group and residue field of \(V\) with a subgroup and a subfield for \(W\). Choose finitely many \(x_i\in L^\times\) with values in distinct cosets modulo \(\Gamma_V\), and units \(y_j\in W\) with residues linearly independent over \(\kappa(V)\). The products \(x_i y_j\) are linearly independent over \(K\). In fact for a nonzero coefficient block \((a_{ij})_j\), divide \(\sum_j a_{ij}y_j\) by a coefficient of least value. The resulting sum has nonzero residue by the chosen residue independence. Thus the value of the block is that least coefficient value and lies in \(\Gamma_V\). Multiplication by \(x_i\) puts nonzero blocks in distinct cosets, so they have distinct values. A term of unique least value cannot cancel, by \ref{res:W04}. Bounding the number of products by \([L:K]\) first gives finiteness of the index and residue degree and then gives the stated inequality.
+
+In characteristic \(p>0\), for \(x\in L^\times\) choose \(n\) with \(x^{p^n}\in K\). In any extension ring \(W\) the signs of \(v_W(x)\) and \(v_W(x^{p^n})\) agree. Thus membership in \(W\) is equivalent to \(x^{p^n}\in V\), independent of the extension. Existence comes from \ref{res:W02}. Every such element is integral because it satisfies the monic polynomial \(T^{p^n}-x^{p^n}\). Conversely the extended valuation ring is integrally closed by \ref{res:W03}.
+\end{proof}
+
+\begin{example}[A discrete valuation with an inseparable formal fibre]\label{res:W09}
+Put \(k=\mathbb F_p\) and choose \(f\in k[[t]]\) transcendental over \(k(t)\).
+Such an \(f\) exists since \(k[[t]]\) is uncountable and \(k(t)\) is countable.
+Set \(K=k(t,f^p)\) and \(V=K\cap k[[t]]\). Since \(t\in K\), the restricted
+order has group \(\mathbb Z\) and \(V\) is a discrete valuation ring with
+uniformizer \(t\). Truncations lie in \(k[t]\), and elements of order
+at least \(n\) divide by \(t^n\) in \(V\). Thus \(V/t^n V=k[t]/(t^n)\).
+Thus \(\widehat V=k[[t]]\) and the generic formal fibre is \(k((t))\).
+Grouping powers of the transcendental element \(f\) modulo \(p\) gives
+\([K(f):K]=p\). Over \(K(f)\) the generic formal fibre becomes
+\[
+ k((t))[Z]/(Z^p-f^p)
+        = k((t))[Z]/((Z-f)^p).
+\]
+It contains the nonzero nilpotent \(Z-f\), so \(V\) fails the \(G\)-condition.
+The discrete valuation ring \(k[t]_{(t)}\) is excellent by \ref{res:X09}.
+\end{example}

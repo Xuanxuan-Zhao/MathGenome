@@ -1,0 +1,22 @@
+id	source	dependencies
+M01	Stacks Dualizing Complexes, §§5 and 7, PDF pp. 6–11 (08Y3, 08Z3)	P1-03 ALG-03-C02-S03
+M02	Stacks Dualizing Complexes, Lemmas 6.2–6.3, 7.1, 7.3, PDF pp. 8–10 (08YY, 08YZ, 08Z2, 08Z4)	L03, M01
+M03	Stacks Dualizing Complexes, Lemma 7.5, PDF p. 10 (08Z6)	M02, L09
+M04	Stacks Dualizing Complexes, Lemmas 7.6–7.7, PDF p. 10 (08Z7, 08Z8)	M01–M03, P1-03 ALG-05-C04-S01
+M05	Stacks Dualizing Complexes, Proposition 7.8, PDF p. 11 (08Z9); Bruns–Herzog, 3.2.12–13, PDF pp. 115–117	M01–M04
+M06	Stacks Dualizing Complexes, Lemmas 7.4–7.5 and Proposition 7.8, PDF pp. 10–11 (08Z5–08Z6, 08Z9)	L09, M02–M05, P1-03 ALG-05-C04-R03, ALG-05-C04-S01
+M07	Stacks Dualizing Complexes, Lemmas 3.9 and 7.3, PDF pp. 5, 9; Bruns–Herzog, proof of 3.5.4, PDF p. 141	L03, M01, M02, M04, P1-03 ALG-03-C02-S03
+M08	Bruns–Herzog, 3.5.4, PDF p. 141	M04, M06, M07, P1-03 ALG-10-C03-R01, ALG-10-C03-S01
+D01	Stacks Dualizing Complexes, Lemma 18.1 and §21, PDF pp. 34, 37–40 (0A82); Bruns–Herzog, 3.5.4, PDF p. 141	M07, Advanced Commutative Algebra GC-06
+D02	Stacks Dualizing Complexes, §18, PDF pp. 34–35; Bruns–Herzog, 3.5.8, PDF pp. 145–146	L05, M03, D01
+D03	Stacks Dualizing Complexes, §18, PDF pp. 34–35 (0AAK); Bruns–Herzog, 3.5.8–9, PDF pp. 145–146	L05, M01, M03, D02, P1-03 ALG-05-C04-R03, ALG-05-C04-S01
+D04	Stacks Dualizing Complexes, Lemmas 7.1 and 13.1, PDF pp. 9, 23 (08Z2, 0A70)	L08, M01
+D05	Stacks Dualizing Complexes, Lemmas 15.8–15.9, 16.1, 21.3, 22.4, PDF pp. 28–30, 37–41 (0A7I, 0AX1, 0BFR)	C04, D04, Advanced Commutative Algebra GC-06, GC-07, CM-12
+D06	Stacks Dualizing Complexes, Lemmas 18.4 and 22.4, PDF pp. 35, 40–41 (0AAK, 0BFR)	C04, L05, D01–D05
+D07	Stacks Dualizing Complexes, Lemma 18.4, PDF p. 35 (0AAK); Bruns–Herzog, 3.5.9, PDF p. 146	L09, M06, D06
+D08	Stacks Dualizing Complexes, §§19–20, PDF pp. 35–36 (0DW3, 0AWS); Bruns–Herzog, 3.5.8, PDF pp. 145–146	V07, M01, M05, M08, D05, D06, Advanced Commutative Algebra GC-10
+D09	Bruns–Herzog, 3.5.8–9, PDF pp. 145–146; Stacks Dualizing Complexes, §§18–20, PDF pp. 34–36	V04, M05, M06, M08, D06–D08, P1-03 ALG-05-C04-R03, ALG-05-C04-S01
+E01	Bruns–Herzog, 3.5.6 and 3.5.8–9, PDF pp. 143, 145–146 (calculation model); explicit example in this volume	L05, M03, D01, regularity of formal power series rings
+E02	Stacks Dualizing Complexes, §§6–7 and 19–21, PDF pp. 8–11, 35–40; explicit example in this volume	M01, M04, D06, Advanced Commutative Algebra GC-05, GC-06, GC-14
+E03	Stacks Dualizing Complexes, Lemma 13.10 and §21, PDF pp. 25, 37–40; explicit example in this volume	L05, D01, D08, D09, Advanced Commutative Algebra CM-02, GC-06, GC-07
+E04	Stacks Dualizing Complexes, §§18–20, PDF pp. 34–36 (general formulas); explicit example in this volume	L05, D03–D06

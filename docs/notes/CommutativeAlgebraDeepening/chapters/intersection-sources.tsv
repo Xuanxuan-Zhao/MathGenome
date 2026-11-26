@@ -1,0 +1,18 @@
+id	source	dependencies
+I01	Serre, Local Algebra, ch. V B.1, printed pp. 101–102; Dugger, A Geometric Introduction to K-Theory, (1.6) and §2, physical PDF pp. 8, 10–11.	Core CM-12 and CM-19; P1-03 ALG-05-C04-R01; localization of free resolutions and finite-length support argument in the proof.
+I02	Dugger, A Geometric Introduction to K-Theory, §2, Lemma 2.2, physical PDF pp. 10–12; Serre, ch. V B.4(c), printed p. 107.	I01; the proof constructs finite prime filtrations using maximal annihilators.
+I03	Serre, Local Algebra, ch. V B.4(b), printed p. 107; P1-03, ch. 7, completion and Hilbert–Samuel dimension.	I01; P1-03 ALG-05-C04-S01, ALG-05-C03-S02 and the regular local definition ALG-05-C03-S03.
+I04	Serre, Local Algebra, ch. V A.2, printed pp. 100–101; Eisenbud, Commutative Algebra, ch. 12, physical PDF p. 280 and following.	P1-03 ALG-05-C03-S02.
+I05	Serre, Local Algebra, ch. IV A.3, Theorem 1, printed pp. 57–58.	I04; P1-03 ALG-05-C03-R01 and ALG-05-C04-R02; the proof provides the Koszul homotopy and the acyclicity of the staggered filtration.
+I06	Serre, Local Algebra, ch. V B.4(a), printed p. 107; core notes ch. 5, regular-sequence Koszul resolution.	I05; core chapter 5 (Koszul resolution) and dimension drop for successive nonzero divisors.
+I07	Serre, Local Algebra, ch. V B.2, printed pp. 102–105.	P1-03 ALG-05-C04-R02 and ALG-05-C04-R03; exactness and inverse-limit correction are proved.
+I08	Serre, Local Algebra, ch. V B.2 and B.3, printed pp. 104–106.	I04 and I07; P1-03 ALG-05-C03-S02; associated-graded and Hilbert-series arguments in the proof.
+I09	Serre, Local Algebra, ch. V B.3, Theorem 1, printed pp. 106–107.	I01, I03, I05, I07, I08, C04; core CM-12 and the regular-sequence Koszul resolution.
+I10	Serre, Local Algebra, ch. V B.5, proof of Lemma 1(c), printed pp. 108–110.	I01; bounded change-of-rings spectral sequence constructed in the proof from finite free resolutions.
+I11	Serre, Local Algebra, ch. V B.5, Lemma 1, first case, printed pp. 108–109.	I01, I07, I08, I09, C04; core CM-12; P1-03 ALG-05-C04-R01 and ALG-05-C03-S01.
+I12	Serre, Local Algebra, ch. V B.5, Theorem 2 and Lemma 1, printed pp. 108–110.	I01, I02, I03, I05, I09, I10, I11, C04.
+I13	Serre, Local Algebra, ch. V B.6, printed pp. 110–112; Bruns–Herzog, §9.4, printed pp. 364–365, physical PDF pp. 376–377.	I03, I09, I10, I12, C03, C04; P1-03 ALG-05-C03-S03; core CM-07 and CM-19.
+I14	Bruns–Herzog, §9.4, Corollary 9.4.3, printed p. 362, physical PDF p. 374 (comparison with general new intersection theorem).	L05 and V01; finite double-complex argument and finite-length local cohomology calculation given in the proof.
+I15	Bruns–Herzog, §9.4, Theorem 9.4.5 and preceding discussion, printed p. 365, physical PDF p. 377; comparison with the scope of the classical intersection theorem.	I01, I13, I14; core DP-02 and DP-13.
+I16	Direct calculations in this volume; cf. Dugger, §1, physical PDF pp. 6–9, for the role of excess Tor.	I01 and I06; explicit two-term and Koszul resolutions.
+I17	Roberts, Multiplicities and Chern Classes in Local Algebra, §5.3, printed p. 105 ff., physical DjVu p. 117 ff.; ch. 11, printed p. 231 ff., physical DjVu p. 243 ff.	I01 and I02; proof supplies splitting of bounded exact complexes, support, cones and additivity.

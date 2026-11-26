@@ -1,0 +1,3035 @@
+\documentclass[11pt,oneside,openany]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,xcolor,titlesec,fancyhdr,etoolbox,hyperref}
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome Topics in Commutative Algebra 2026-11-20}
+\fi
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\hypersetup{colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Topics in Commutative Algebra},pdfauthor={MathGenome},
+  pdfsubject={ALG-05-D01 to D03},bookmarksnumbered=true}
+\setcounter{tocdepth}{1}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{9pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{6pt}{24pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\thispdfpagelabel{Cover}
+\begin{flushleft}
+\vspace*{0.68in}
+{\large\scshape\color{deepgreen}MathGenome\par}
+\vspace{0.35in}
+{\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+\vspace{0.42in}
+{\color{ink}\fontsize{35}{41}\selectfont\bfseries
+Topics in\\[4pt] Commutative Algebra\par}
+\vspace{0.3in}
+{\color{deepgreen}\Large Local duality, valuations, deformations,\\[4pt]
+and intersection multiplicity\par}
+\vfill
+{\large Mathematical lecture notes\par}
+\vspace{0.16in}
+{\normalsize ALG-05-D01 through ALG-05-D03\par}
+\vspace*{0.45in}
+\end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\makeatletter
+\patchcmd{\l@chapter}{\vskip 1.0em \@plus\p@}
+  {\vskip 0.48em \@plus 0.25\p@}{}{}
+\makeatother
+\tableofcontents
+\endgroup
+
+\chapter*{Scope and conventions}
+\addcontentsline{toc}{chapter}{Scope and conventions}
+These notes continue the MathGenome volume \emph{Advanced Commutative Algebra}.
+The first four chapters construct and compute cohomology with ideal support,
+prove the depth and dimension bounds, and establish Matlis and local duality.
+Chapter~\ref{ch:excellence-valuations} studies formal fibres and valuation rings.
+Chapter~\ref{ch:deformations} constructs lifting obstructions and formal
+deformations. Chapter~\ref{ch:intersection-multiplicities} studies
+intersection multiplicity by free and Koszul complexes.
+Appendix~\ref{ch:coefficient-rings} supplies coefficient rings and the two
+different uses of complete regular local rings in the proof chain.
+
+Rings are commutative with identity. We specify Noetherianity, finite generation
+and separatedness where they matter. A finite module is a finitely generated
+module. Cohomological shift is \(H^q(K[s])=H^{q+s}(K)\). For a local ring
+\((R,\mathfrak m,k)\), a hat denotes \(\mathfrak m\)-adic completion and
+\(E_R(k)\) denotes the injective envelope of its residue field. A reference
+to a MathGenome result with an alphanumeric identifier points to the exact
+proved version in the corresponding lecture notes.
+
+The results numbered here are proved below, using the cited MathGenome
+prerequisites. Statements about the wider literature at the ends of topics
+provide context and delimit the hypotheses of the results established here.
+The source map records the exact locations and proof prerequisites.
+
+\mainmatter
+\chapter{Local cohomology and its calculation}
+\label{ch:local-cohomology}
+
+Throughout this chapter \(R\) is Noetherian, \(I\) is an ideal of \(R\),
+and modules are arbitrary unless a finiteness condition is given.
+The module-localization formulas and exactness used below are those of
+\cite[ALG-05-C01-S01]{p103}. We use the same sign for the connecting
+homomorphism as in the cochain long exact sequence.
+
+\section{The torsion functor and its derived functors}
+
+\begin{definition}[Sections supported in an ideal]\label{res:L01}
+For an \(R\)-module \(M\) put
+\[
+ \Gamma_I(M)=\bigcup_{n\geq 1}(0:_M I^n).
+\]
+This is an additive left exact functor of \(M\), depends only on \(\sqrt I\),
+and equals the identity for \(I=0\) and zero for \(I=R\).
+\end{definition}
+\begin{proof}
+The annihilator submodules form an ascending union. A map preserves
+annihilation by \(I^n\), and on a submodule the union is its intersection
+with \(\Gamma_I(M)\). These observations give functoriality and left
+exactness. If an ideal \(J\) generated by \(g_1,\ldots,g_t\) lies in
+\(\sqrt I\), choose \(b_j\geq1\) with \(g_j^{b_j}\in I\). Every product
+of \(1+\sum_j(b_j-1)\) generators contains such a power, so some power
+of \(J\) lies in \(I\). Apply this argument in both directions if the
+radicals agree. The two extreme ideals give the stated functors directly.
+\end{proof}
+
+\begin{theorem}[Derived torsion and the Ext limit]\label{res:L02}
+Let \(H_I^q=R^q\Gamma_I\) for \(q\geq0\), and put \(H_I^q=0\) for
+negative \(q\). A short exact sequence of modules gives a natural long
+exact sequence. There is a natural isomorphism
+\[
+ H_I^q(M)\simeq\varinjlim_{n}\operatorname{Ext}_R^q(R/I^n,M).
+\]
+Each \(H_I^q(M)\) is \(I\)-power torsion.
+\end{theorem}
+\begin{proof}
+Choose an injective resolution \(M\to Q^\bullet\) using
+\cite[ALG-03-C02-S03]{p103}. Apply the injective horseshoe and the
+connecting morphism for cochain complexes to obtain the long exact
+sequence. The natural maps \(R/I^{n+1}\to R/I^n\) yield compatible
+inclusions
+\[
+ \operatorname{Hom}_R(R/I^n,Q^\bullet)
+   \longrightarrow \operatorname{Hom}_R(R/I^{n+1},Q^\bullet).
+\]
+Evaluation at \(1\) identifies their union with \(\Gamma_I(Q^\bullet)\).
+Filtered colimits of modules are exact because a finite relation between
+representatives holds in the limit precisely when it holds at a sufficiently
+late stage. Applied to cycles and boundaries this commutes cohomology
+with the colimit. The complex at stage \(n\) is killed by \(I^n\) by
+\(R\)-linearity, so its cohomology and the resulting union are power
+torsion. Resolution comparison gives naturality, including the maps
+for short exact sequences.
+\end{proof}
+
+\begin{lemma}[Torsion of an injective module]\label{res:L03}
+If \(Q\) is injective, then \(\Gamma_I(Q)\) is injective.
+\end{lemma}
+\begin{proof}
+Use Baer's criterion \cite[ALG-03-C02-R03]{p103}. For a map
+\(u:J\to\Gamma_I(Q)\) from an ideal \(J\), its image is killed by one
+power \(I^n\) because \(J\) is finite. Artin--Rees
+\cite[ALG-05-C04-R02]{p103} gives \(N\) such that
+\(J\cap I^N\subset I^nJ\). Consequently \(u\) extends by zero to
+\(J+I^N\). Extend this new map to \(R\) with values in \(Q\).
+Its value at \(1\) is killed by \(I^N\), so the entire extension lands
+in \(\Gamma_I(Q)\).
+\end{proof}
+
+\begin{lemma}[Localization of an injective module]\label{res:L04}
+For \(f\in R\) the map \(Q\to Q_f\) of an injective module is surjective
+with kernel \(\Gamma_{(f)}(Q)\).
+\end{lemma}
+\begin{proof}
+The kernel follows by the fraction relation. For \(e/f^a\in Q_f\) choose
+\(b\) after the ascending sequence \(\operatorname{Ann}(f^j)\) has
+stabilized. Then \(\operatorname{Ann}(f^{a+b})=\operatorname{Ann}(f^b)\).
+The rule \(f^{a+b}r\mapsto rf^b e\) defines a map on the principal ideal
+\((f^{a+b})\). Extend it to \(R\), and call its value at \(1\) \(q\).
+In \(Q_f\) the equality \(f^{a+b}q=f^b e\) gives \(q=e/f^a\).
+This argument also allows \(f=0\) or a unit.
+\end{proof}
+
+\section{The augmented \v{C}ech complex}
+
+\begin{theorem}[Comparison with the augmented \v{C}ech complex]\label{res:L05}
+For \(I=(f_1,\ldots,f_r)\) set
+\[
+ C_I^\bullet=\bigotimes_{j=1}^r [R\longrightarrow R_{f_j}],
+\]
+with each factor in degrees \(0,1\) and the empty tensor product \(R[0]\).
+It computes \(R\Gamma_I\) naturally on bounded-below complexes by tensor
+product. In particular \(H_I^q(M)=H^q(C_I^\bullet\otimes_R M)\).
+\end{theorem}
+\begin{proof}
+The degree \(q\) term is the sum over \(q\)-element subsets \(J\) of the
+localization at \(\prod_{j\in J}f_j\). Inserting index \(a\notin J\)
+has sign \((-1)^{|\{j\in J:j<a\}|}\). Each pair of insertions in opposite
+order has opposite sign, so this differential squares to zero.
+
+For injective \(Q\), the inclusion
+\(\Gamma_{(f)}(Q)[0]\to [Q\to Q_f]\) is a quasi-isomorphism by
+Result~\ref{res:L04}. Its source is injective by Result~\ref{res:L03}.
+Tensoring a quasi-isomorphism with a bounded complex of flat modules
+preserves quasi-isomorphisms. Indeed, filter that bounded complex by
+its degree tails and apply flatness to the single-term quotients
+and the long exact sequence to their successive extensions.
+Inducting over the factors now gives the natural quasi-isomorphism
+\(\Gamma_I(Q)[0]\to C_I^\bullet\otimes Q\). Iteration of the principal
+torsion functors gives \(\Gamma_I\) because individual annihilation
+powers for finitely many \(f_j\) give a common power of \(I\).
+
+Take a bounded-below injective replacement \(K\to J^\bullet\) as in
+\cite[R01, R03 and R06]{homological}. The map
+\(C_I^\bullet\otimes K\to C_I^\bullet\otimes J^\bullet\) is a
+quasi-isomorphism by bounded flatness. The inclusion
+\(\Gamma_I(J^\bullet)\to\operatorname{Tot}(C_I^\bullet\otimes J^\bullet)\)
+is also a quasi-isomorphism because each augmented row is acyclic by the
+injective case, and the bounded horizontal degree and lower bound
+on \(J^\bullet\) give finite filtrations in each total degree.
+This is the augmented totalization comparison of
+\cite[B01--B04]{homological}. Both arrows are natural on replacements,
+and replacement comparisons are unique in the derived category.
+\end{proof}
+
+\begin{corollary}[Generators and the cohomological bound]\label{res:L06}
+The calculation is independent of the generators and depends only on
+the radical of \(I\). If \(\sqrt I=\sqrt{(g_1,\ldots,g_s)}\), then
+\(H_I^q(M)=0\) for \(q>s\). The zero and unit ideals have the derived
+functors given by Result~\ref{res:L01}, with higher degrees zero.
+\end{corollary}
+\begin{proof}
+Use the common functor of Result~\ref{res:L01} and the natural
+comparisons of Result~\ref{res:L05}. The complex for the \(g_j\) has
+length \(s\). Both extreme functors are exact.
+\end{proof}
+
+\begin{proposition}[The Koszul tower]\label{res:L07}
+The complex \(C_I^\bullet\otimes M\) is the filtered colimit of the
+cochain Koszul complexes on \(f_1^n,\ldots,f_r^n\) with coefficients in
+\(M\). In the component \(J\) the transition to stage \(n+1\) is
+multiplication by \(\prod_{j\in J}f_j\). In particular
+\[
+ H_I^r(M)\simeq
+ \varinjlim_n M/(f_1^n,\ldots,f_r^n)M
+\]
+with transition multiplication by \(f_1\cdots f_r\).
+\end{proposition}
+\begin{proof}
+The cochain differential in the component inserting \(a\) multiplies
+by \(f_a^n\) with the sign of Result~\ref{res:L05}
+(\cite[RK-03 and RK-10]{core}). The proposed maps commute with this
+differential since \(f_a^{n+1}\prod_{j\in J}f_j
+=f_a^n\prod_{j\in J\cup\{a\}}f_j\). A coefficient \(u\) at stage \(n\)
+corresponds to \(u/(\prod_{j\in J}f_j)^n\). This identifies the
+termwise colimit and the induced localization maps, including the
+degree-zero component. The top cohomology at each stage is the stated
+quotient. Apply filtered exactness. The ideals of powers of the
+generators and the ordinary \(I\)-powers are cofinal by the same
+pigeonhole argument as in Result~\ref{res:L01}.
+\end{proof}
+
+\section{Base change and the open complement}
+
+\begin{proposition}[Change of rings and support]\label{res:L08}
+Let \(R\to B\) be a homomorphism of Noetherian rings. For a \(B\)-module
+\(N\), \(H_I^q(N)\simeq H_{IB}^q(N)\) compatibly with the \(B\)-action.
+If \(B\) is \(R\)-flat then, for an \(R\)-module \(M\),
+\[
+ B\otimes_R H_I^q(M)\simeq H_{IB}^q(B\otimes_RM).
+\]
+In particular \(\operatorname{Supp} H_I^q(M)
+\subseteq V(I)\cap\operatorname{Supp}M\).
+\end{proposition}
+\begin{proof}
+Tensor the displayed localization terms of \(C_I^\bullet\) with \(B\).
+Each is the localization of \(B\) at the images of the same generators.
+Associativity of tensor product identifies the two complexes for \(N\).
+For a flat map the tensor also takes the kernels and images in the
+complex for \(M\) to the corresponding kernels and images after base
+change. Localize at a prime to see that the cohomology is zero if \(M\)
+localizes to zero or if \(I\) becomes the unit ideal.
+\end{proof}
+
+\begin{proposition}[Passage to the completion]\label{res:L09}
+Let \(R\) be local and \(T\) be \(\mathfrak m\)-power torsion.
+The \(R\)-action on \(T\) extends uniquely to \(\widehat R\), and
+\(\widehat R\otimes_R T\to T\) is an isomorphism. For any \(R\)-module
+\(M\), \(H^q_{\mathfrak m}(M)\) corresponds to
+\(H^q_{\mathfrak m\widehat R}(\widehat R\otimes_RM)\).
+\end{proposition}
+\begin{proof}
+On \(T[n]=(0:_T\mathfrak m^n)\), use
+\(\widehat R/\mathfrak m^n\widehat R=R/\mathfrak m^n\)
+from \cite[ALG-05-C04-S01]{p103}. The actions agree on overlaps,
+and every extended action on an element killed by \(\mathfrak m^n\)
+factors through that quotient. Tensor commutes with the ascending
+union, giving the first isomorphism. Completion is flat by the same
+prerequisite. Apply Result~\ref{res:L08} and then power torsion from
+Result~\ref{res:L02}.
+\end{proof}
+
+\begin{proposition}[Cohomology of the complement]\label{res:L10}
+Put \(U=\operatorname{Spec} R\setminus V(I)\).
+There is a natural exact sequence
+\[
+ 0\to H_I^0(M)\to M\to\Gamma(U,\widetilde M)\to H_I^1(M)\to0
+\]
+and \(H^q(U,\widetilde M)\simeq H_I^{q+1}(M)\) for \(q\geq1\).
+\end{proposition}
+\begin{proof}
+Every open in a Noetherian affine spectrum has a finite distinguished
+cover. Sections of an associated module sheaf on a distinguished open
+are the corresponding localization. The sheaf axiom identifies sections
+over the cover with the degree-zero cocycles of its unaugmented complex.
+For an injective module \(Q\), Result~\ref{res:L05} shows that restriction
+from \(Q\) to the sections on any open is surjective. This implies
+that \(\widetilde Q\) is flasque, since an extension from a smaller
+open can be restricted to any larger one. An injective module
+resolution therefore gives a flasque resolution of \(\widetilde M\).
+The sheafification of the module sequence is exact by exactness of
+localization on stalks. By \cite[H01]{homological}, this gives
+vanishing of positive sheaf cohomology on the affine spectrum and
+on each distinguished affine intersection, applying the argument
+over its localized Noetherian ring.
+
+Now apply \cite[H02--H04]{homological} to the cover by \(D(f_j)\).
+Its unaugmented complex is the complex of Result~\ref{res:L05}
+in degrees \(\geq1\), shifted into degrees \(\geq0\), with the
+usual sign comparison. Inserting \(M\) in degree zero gives precisely
+the displayed low-degree sequence and the higher degree shift.
+At complex level, if \(F^\bullet\) is the flasque replacement above,
+the compatible \v{C}ech comparisons on \(X=\operatorname{Spec}R\) and
+on \(U\) identify this augmented complex with the shifted cone of
+\(\Gamma(X,F^\bullet)\to\Gamma(U,F^\bullet)\).
+Indeed the augmentation of the double \v{C}ech complex on each flasque
+term is exact, and the termwise restriction of \(M\to F^\bullet\)
+is a resolution on every affine intersection with acyclic terms.
+Taking the two comparisons in the total complex commutes with
+the augmentation from \(X\). A homomorphism of modules lifts to a
+map of injective resolutions, unique up to homotopy, so these
+comparisons are natural on the derived complexes.
+\end{proof}
+
+\begin{corollary}[Mayer--Vietoris for supports]\label{res:L11}
+For two ideals \(I,J\) there is a natural long exact sequence
+\[
+ \cdots\to H_{I+J}^q(M)\to H_I^q(M)\oplus H_J^q(M)
+ \to H_{I\cap J}^q(M)\to H_{I+J}^{q+1}(M)\to\cdots .
+\]
+\end{corollary}
+\begin{proof}
+Take a flasque resolution \(F^\bullet\) of \(\widetilde M\) as in
+Result~\ref{res:L10}. Write \(U=D(I)\), \(W=D(J)\) and \(X=\operatorname{Spec}R\).
+The complexes for sections on \(U\cup W,U,W,U\cap W\) form the short
+exact Mayer--Vietoris sequence of \cite[H05]{homological}, with difference
+of restrictions in the last map. Augment the first and last terms by
+\(\Gamma(X,F^\bullet)\) and the middle term by its two copies, using the
+diagonal and the difference, respectively. Taking shifted mapping cones
+of the augmented restrictions gives a short exact sequence of complexes.
+Each cone computes the corresponding cohomology with support by the
+complex comparison in Result~\ref{res:L10}. Here \(U\cup W=D(I+J)\)
+and \(U\cap W=D(IJ)=D(I\cap J)\), which fixes the order of the terms.
+\end{proof}
+\chapter{Depth, vanishing, and nonvanishing}
+\label{ch:depth-and-vanishing}
+
+Let \(R\) be Noetherian and let \(M\) be finite. We use
+\(\dim M=\dim\operatorname{Supp} M\) with \(\dim 0=-\infty\).
+We use the depth and regular-sequence facts proved in
+\cite[DP-01, DP-04--DP-06, CM-01--CM-04]{core}. In particular
+\(\operatorname{grade}(I,M)\) is the length of a maximal
+\(M\)-regular sequence in \(I\) when \(V(I)\cap\operatorname{Supp}M\)
+is nonempty, with value \(+\infty\) in the disjoint case.
+
+\begin{theorem}[Depth detected by local cohomology]\label{res:V01}
+With \(\inf\varnothing=+\infty\),
+\[
+ \operatorname{grade}(I,M)=\inf\{q\geq0:H_I^q(M)\ne0\}.
+\]
+\end{theorem}
+\begin{proof}
+If the supports are disjoint, Result~\ref{res:L08} gives zero in every
+degree. Otherwise the grade is finite by the local depth formula of
+\cite[DP-06]{core}. At grade zero there is an associated prime of \(M\)
+containing \(I\), which supplies a nonzero element killed by \(I\).
+For positive grade \(g\), prime avoidance supplies a regular
+\(x\in I\) and \(M/xM\) has grade \(g-1\). It has nonempty support
+in \(V(I)\) by local Nakayama at any prime of the original intersection.
+Apply induction and the long exact sequence for
+\(0\to M\xrightarrow{x}M\to M/xM\to0\).
+For \(q<g\), multiplication by \(x\) on \(H_I^q(M)\) is injective
+because \(H_I^{q-1}(M/xM)=0\). Since this module is \(I\)-power
+torsion by Result~\ref{res:L02}, it is zero. At degree \(g\) the
+nonzero group \(H_I^{g-1}(M/xM)\) injects into \(H_I^g(M)\).
+\end{proof}
+
+\begin{theorem}[Grothendieck vanishing]\label{res:V02}
+If \(M\) has finite-dimensional support, \(H_I^q(M)=0\) for
+\(q>\dim M\).
+\end{theorem}
+\begin{proof}
+A finite module over a Noetherian ring has a finite filtration
+with factors \(R/\mathfrak p\). To construct one, choose in each
+nonzero quotient a cyclic submodule whose annihilator is a maximal
+annihilator of a nonzero element. That annihilator is prime, since
+if \(ab\) annihilates the generator and \(b\) does not, the
+annihilator of its multiple by \(b\) contains \(a\) and cannot
+strictly enlarge the original one. Noetherianity terminates the
+resulting chain. All factors have support inside that of \(M\).
+The long exact sequence and Result~\ref{res:L08} reduce the claim
+to a domain \(B\) of dimension at most \(\dim M\).
+Zero and unit ideals follow from Result~\ref{res:L06}. Otherwise take
+\(0\ne x\in IB\). Prepending the zero prime to any chain in \(V(x)\)
+shows \(\dim B/xB\leq\dim B-1\). Induct on dimension, applying the
+claim for lower-dimensional modules to \(B/xB\).
+The sequence for multiplication by \(x\) makes
+\(x:H^q_{IB}(B)\to H^q_{IB}(B)\) injective for \(q>\dim B\).
+Power torsion then gives zero. At dimension zero, a domain is a field
+and there are only the two extreme ideals.
+\end{proof}
+
+\begin{lemma}[A regular-local top class]\label{res:V03}
+If \(S\) is regular local of dimension \(d\) and
+\(x_1,\ldots,x_d\) minimally generate its maximal ideal \(\mathfrak n\),
+the class of \(1/(x_1\cdots x_d)\) in \(H^d_{\mathfrak n}(S)\)
+is nonzero. Multiplication by each \(0\ne c\in S\) on this
+cohomology module is surjective.
+\end{lemma}
+\begin{proof}
+The minimal generators are regular and permutable and their positive
+powers are likewise regular in any order
+(\cite[ALG-05-C03-S03]{p103} and \cite[RK-09, CM-08]{core}).
+For each \(n\), take the colon of the ideal
+\((x_1^{n+1},\ldots,x_d^{n+1})\) by the product \(x_1\cdots x_d\),
+one factor at a time. At a factor \(x_j\), reduce by the powers of
+the other parameters. In the quotient \(x_j\) is a nonzerodivisor,
+so taking the colon reduces its exponent by one. Thus the final
+colon is \((x_1^n,\ldots,x_d^n)\).
+The maps of the top colimit in Result~\ref{res:L07} are injective,
+so the class of \(1\) at stage one survives. A regular local ring is
+a domain. If \(c\) is a nonunit, \(S/cS\) has smaller dimension by
+the prime-chain argument of Result~\ref{res:V02}. Its \(d\)-th local
+cohomology vanishes, so the long exact sequence proves surjectivity.
+For a unit multiplication is an isomorphism. When \(d=0\), \(S\)
+is a field and the class is \(1\) in \(H^0_{(0)}(S)=S\).
+\end{proof}
+
+\begin{proposition}[Completion preserves local depth and dimension]\label{res:V04}
+Let \(R\) be local and \(M\ne0\) finite. Then \(\widehat M\) has
+the same dimension and depth as \(M\), and the \(\mathfrak m\)-local
+cohomology groups of \(M\) identify with the
+\(\mathfrak m\widehat R\)-local groups of \(\widehat M\).
+\end{proposition}
+\begin{proof}
+The last assertion is Result~\ref{res:L09} and the tensor formula for
+completion. Faithful flatness ensures \(\widehat M\ne0\).
+The Hilbert--Samuel functions of \(M\) and \(\widehat M\) agree
+because \(M/\mathfrak m^{n+1}M\) and
+\(\widehat M/(\mathfrak m\widehat R)^{n+1}\widehat M\) agree over
+the same Artin quotient, so their composition lengths agree.
+Their degrees are the support dimensions by
+\cite[ALG-05-C03-S02, ALG-05-C04-R03 and S01]{p103}.
+Apply Result~\ref{res:V01} at the maximal ideals for depth.
+\end{proof}
+
+\begin{lemma}[Top cohomology in positive rank]\label{res:V05}
+Let \(B\) be a complete Noetherian local domain of dimension \(d\).
+If a finite \(B\)-module \(N\) has positive rank, then
+\(H^d_{\mathfrak m_B}(N)\ne0\).
+\end{lemma}
+\begin{proof}
+By Result~\ref{res:C05}, \(B\) is finite over a regular local
+subring \((S,\mathfrak n)\) of dimension \(d\), with
+\(\sqrt{\mathfrak nB}=\mathfrak m_B\).
+The fraction field of \(B\) is a finite extension of that of \(S\).
+localization of \(B\) at the nonzero elements of \(S\) is a finite domain
+over a field, hence a field. Thus \(N\) has positive rank over \(S\).
+A nonzero linear functional over the fraction field of \(S\) can be
+scaled by a denominator common to a finite set of generators to give
+a nonzero \(S\)-linear map \(N\to S\). Choose \(u\in N\) whose image
+\(c\) is nonzero. The composite \(S\to N\to S\), where the first
+arrow sends \(1\) to \(u\), is multiplication by \(c\).
+The induced composite on \(H^d_{\mathfrak n}(S)\) is nonzero by
+Result~\ref{res:V03}. It factors through \(H^d_{\mathfrak n}(N)\),
+which identifies with the claimed module by Results~\ref{res:L06}
+and~\ref{res:L08}.
+\end{proof}
+
+\begin{theorem}[Grothendieck nonvanishing]\label{res:V06}
+For a nonzero finite module \(M\) over a Noetherian local ring,
+\(H_{\mathfrak m}^{\dim M}(M)\ne0\).
+\end{theorem}
+\begin{proof}
+By Result~\ref{res:V04}, we may work over the completion with the
+same dimension \(d\). Choose \(\mathfrak p\) in the support with
+\(\dim R/\mathfrak p=d\), by taking the bottom of a chain of maximal
+length. Put \(N=M/\mathfrak pM\). Its localization at the generic
+point of the complete domain \(B=R/\mathfrak p\) is nonzero by
+Nakayama over \(R_{\mathfrak p}\). Hence \(N\) has positive rank over
+\(B\). The long exact sequence and Result~\ref{res:V02} give a
+surjection \(H_{\mathfrak m}^d(M)\to H_{\mathfrak m}^d(N)\), since
+\(\mathfrak p M\) is supported in \(\operatorname{Supp}M\).
+The target is nonzero by Results~\ref{res:L08} and~\ref{res:V05}.
+\end{proof}
+
+\begin{corollary}[Cohen--Macaulay criterion]\label{res:V07}
+A nonzero finite module over a Noetherian local ring is
+Cohen--Macaulay if and only if \(H^q_{\mathfrak m}(M)\) is
+concentrated in degree \(\dim M\). Its group in that degree is nonzero.
+\end{corollary}
+\begin{proof}
+By Results~\ref{res:V01}, \ref{res:V02} and~\ref{res:V06},
+the bottom and top nonzero degrees are respectively depth and
+dimension. Equality is the definition of Cohen--Macaulayness.
+The assertion for the ring follows by taking \(M=R\).
+\end{proof}
+
+\begin{corollary}[Extension across the support]\label{res:V08}
+For \(U=\operatorname{Spec}R\setminus V(I)\), the restriction
+\(M\to\Gamma(U,\widetilde M)\) is an isomorphism if and only if
+\(\operatorname{grade}(I,M)\geq2\).
+\end{corollary}
+\begin{proof}
+Its kernel and cokernel are \(H_I^0(M)\) and \(H_I^1(M)\) by
+Result~\ref{res:L10}. Both vanish precisely under the asserted
+condition by Result~\ref{res:V01}.
+\end{proof}
+\chapter{Injective hulls and Matlis duality}\label{ch:matlis}
+
+Let $(R,\mathfrak m,k)$ be a Noetherian local ring and
+$\widehat R=\varprojlim_n R/\mathfrak m^n$. Write
+$\operatorname{soc}X=(0:_X\mathfrak m)$ and call a module finite if it is
+finitely generated. An inclusion is essential if its image meets every
+nonzero submodule. The functor used in this chapter is
+\[
+     X^\vee=\operatorname{Hom}_R(X,E_R(k)).
+\]
+The action on this Hom can be written as multiplication in the codomain
+or as precomposition with scalar multiplication on the domain. These are
+equal by $R$-linearity. We use \cite[Sections 6--7]{st-dual} and
+\cite[Section 3.2]{bruns} for the organization of the chapter.
+
+\section{Endomorphisms of the injective hull}
+
+\begin{proposition}[An exact dual with detection]\label{res:M01}
+The residue field has an injective hull $E=E_R(k)$ and
+$\operatorname{soc}E=k$. The contravariant functor $X\mapsto X^\vee$
+is exact and detects nonzero objects.
+\end{proposition}
+\begin{proof}
+Existence of the hull with its essential embedding $k\hookrightarrow E$
+is \cite[ALG-03-C02-S03]{p103}. Each nonzero vector killed by
+$\mathfrak m$ generates a simple submodule. Its intersection with $k$
+is nonzero by essentiality, so that submodule is $k$. This proves the
+formula for the socle. Exactness is injectivity of $E$. If $x\ne0$ in
+an $R$-module $X$, then $Rx\simeq R/\operatorname{Ann}(x)$ with
+$\operatorname{Ann}(x)\subseteq\mathfrak m$. The quotient $Rx\to k$
+sends $x$ to $1$. Compose with $k\hookrightarrow E$ and extend along
+$Rx\subseteq X$. The extension is a functional nonzero on $x$.
+\end{proof}
+
+\begin{proposition}[Finite-length truncations]\label{res:M02}
+Put $E[n]=(0:_E\mathfrak m^n)$. Then $E=\bigcup_{n\ge1}E[n]$,
+and $E[n]$ is the injective hull of $k$ over $R/\mathfrak m^n$.
+On finite-length $R$-modules the dual preserves length and natural
+evaluation $X\to X^{\vee\vee}$ is an isomorphism.
+\end{proposition}
+\begin{proof}
+By \ref{res:L03}, $\Gamma_{\mathfrak m}E$ is injective. It contains $k$,
+so its inclusion in $E$ splits and the complementary summand has zero
+intersection with $k$. Essentiality forces that summand to vanish.
+For $A_n=R/\mathfrak m^n$, the evaluation map at $1$ identifies
+$\operatorname{Hom}_R(A_n,E)$ with $E[n]$. For an $A_n$-module $T$,
+an $R$-linear map $T\to E$ has image in $E[n]$, so
+$\operatorname{Hom}_{A_n}(T,E[n])=\operatorname{Hom}_R(T,E)$ naturally.
+Hence $E[n]$ is injective over $A_n$ and its inclusion of $k$ is
+essential there. The ring $A_n$ is Artinian because it has a finite
+filtration by powers of $\mathfrak m$ with finite-dimensional
+$k$-vector space factors. A finite-length module is killed by a power
+of $\mathfrak m$, by a composition series. Its dual is then a dual into
+$E[n]$. More directly, exactness and $\operatorname{Hom}_R(k,E)\simeq k$
+show along any composition series that the dual has the same length.
+Evaluation is an isomorphism for $k$, since it is a nonzero map between
+simples. The exactness of both dual functors, naturality of evaluation,
+and the short exact sequences of a composition series give the
+biduality isomorphism for every finite-length module by induction.
+\end{proof}
+
+\begin{theorem}[Endomorphisms of the residue-field hull]\label{res:M03}
+Scalar multiplication gives an $R$-algebra isomorphism
+$\widehat R\simeq \operatorname{End}_R(E)$, compatible with
+restriction to $E[n]$ and reduction modulo $\mathfrak m^n$.
+\end{theorem}
+\begin{proof}
+The isomorphism $\operatorname{Hom}_R(A_n,E)\simeq E[n]$ is the one
+in \ref{res:M02}. Dualizing an endomorphism of $A_n$ gives an
+anti-isomorphism to $\operatorname{End}_R(E[n])$ by finite-length
+biduality. Multiplication by $a\in A_n$ dualizes to multiplication by
+$a$ on $E[n]$. Thus this anti-isomorphism is the scalar homomorphism
+from the commutative ring $A_n$. Every endomorphism of $E$ preserves
+each submodule $E[n]$. A compatible family of endomorphisms of $E[n]$
+defines an endomorphism of their union, with composition computed on
+each member. In the scalar description, restriction from $E[n+1]$
+to $E[n]$ reduces the scalar modulo $\mathfrak m^n$. Taking inverse
+limits proves the result. In particular, the action of $\widehat R$
+on $E$ is the action on a power-torsion module described in
+\ref{res:L09}.
+\end{proof}
+
+\section{Finite and Artinian modules}
+
+\begin{proposition}[Artinian modules and their socles]\label{res:M04}
+The injective hull $E$ is Artinian. An $\mathfrak m$-power-torsion
+module is Artinian if and only if its socle has finite dimension
+over $k$. Every Artinian $R$-module is $\mathfrak m$-power torsion.
+\end{proposition}
+\begin{proof}
+For a submodule $U\subseteq E$, restriction gives a surjection
+$E^\vee\to U^\vee$ by injectivity. Its kernel is an ideal of
+$\widehat R$. Under \ref{res:M03} it consists precisely of the scalars
+annihilating $U$. A descending chain of submodules of $E$ gives an
+ascending chain of these ideals, which stabilizes because $\widehat R$
+is Noetherian \cite[ALG-05-C04-S01]{p103}. For $U'\subseteq U$ with
+the same restriction kernel, the map $U^\vee\to (U')^\vee$ is an
+isomorphism. Exactness and detection in \ref{res:M01} then give
+$U/U'=0$. This proves that $E$ is Artinian.
+
+If $T$ is power torsion, its socle is essential. In fact, for a nonzero
+element $x$ killed by a least power $\mathfrak m^n$, some element of
+$\mathfrak m^{n-1}x$ is nonzero and killed by $\mathfrak m$. If the
+socle has dimension $t$, a choice of basis gives an embedding of
+$\operatorname{soc}T$ into $\operatorname{soc}(E^t)$. Extend it to
+$T\to E^t$ using injectivity of the finite direct sum. A nonzero kernel
+would meet the socle, so this map is injective and $T$ is Artinian.
+If $T$ is Artinian, every cyclic submodule is both Noetherian and
+Artinian, hence has a finite composition series. Each simple factor
+is $k$, so the cyclic submodule is killed by a power of $\mathfrak m$.
+Thus $T$ is power torsion. An infinite-dimensional socle would admit
+a strictly decreasing chain of subspaces by removing independent basis
+elements successively. This proves the converse.
+\end{proof}
+
+\begin{theorem}[Matlis duality over a complete local ring]\label{res:M05}
+If $R$ is complete, the Matlis dual gives a contravariant equivalence
+between finite $R$-modules and Artinian $R$-modules. On both categories
+the natural evaluation map to the second dual is an isomorphism.
+\end{theorem}
+\begin{proof}
+For finite $X$, choose a presentation $R^b\to R^a\to X\to0$.
+Dualizing embeds $X^\vee$ into $E^a$, which is Artinian by
+\ref{res:M04}. For Artinian $Y$, the same result embeds $Y$ into $E^a$
+for some $a$. Dualizing gives a surjection $R^a\to Y^\vee$, since
+$E^\vee\simeq R$ by completeness and \ref{res:M03}. The second dual
+functor is exact. Evaluation on $R$ identifies with its scalar action
+on $E$, an isomorphism by \ref{res:M03}. The same holds on finite free
+modules. Apply twice-dualization to the finite presentation of $X$.
+Naturality of evaluation and its isomorphisms on the two free terms
+identify the cokernels, giving biduality for $X$.
+
+For the other category, evaluation on $E$ is an isomorphism because the
+identification $E^\vee=R$ by scalar multiplication sends evaluation
+at $e$ to the map $r\mapsto re$. For Artinian $Y$ choose an embedding
+$Y\to E^a$ and embed its Artinian cokernel into $E^b$. Then
+$Y=\ker(E^a\to E^b)$. Applying the exact twice-dual functor and using
+evaluation on both powers of $E$ identifies these kernels. Hence
+evaluation is also an isomorphism for $Y$. The same natural evaluation
+maps supply the two natural equivalences for the stated opposite
+categories.
+\end{proof}
+
+\begin{theorem}[Matlis duality and completion]\label{res:M06}
+For arbitrary Noetherian local $R$, Artinian $R$-modules and finite
+$\widehat R$-modules are contravariantly equivalent via Matlis duality.
+For finite $R$-modules $X$, the natural identification
+$X^{\vee\vee}\simeq \widehat X$ sends evaluation to the completion map.
+\end{theorem}
+\begin{proof}
+The completion is Noetherian and flat, its maximal ideal is
+$\mathfrak m\widehat R$, and
+$\widehat R/\mathfrak m^n\widehat R=R/\mathfrak m^n$
+\cite[ALG-05-C04-S01]{p103}. Let $\widehat E$ be the injective hull
+of $k$ over $\widehat R$. Restriction makes it injective over $R$ by
+the adjunction
+\[
+ \operatorname{Hom}_R(X,\widehat E)
+ \simeq\operatorname{Hom}_{\widehat R}
+       (\widehat R\otimes_R X,\widehat E)
+\]
+and flatness. By \ref{res:M02} over $\widehat R$, it is power torsion.
+Any $R$-submodule of a power-torsion module with its extended scalar
+action is already a $\widehat R$-submodule because on each element the action
+of a completed scalar equals that of an ordinary scalar with the same
+residue modulo a killing power. Hence $k$ is essential in $\widehat E$
+as an $R$-module. We may choose $E=\widehat E$ after restriction, and
+uniqueness of the extended action holds by \ref{res:L09}. The same
+argument shows that all $R$-linear maps between power-torsion modules
+are $\widehat R$-linear, and that Artinian objects over the two rings
+have the same submodule chains. By \ref{res:M04}, all Artinian objects
+are power torsion, so \ref{res:M05} over $\widehat R$ proves the first
+assertion. For finite $X$, $\widehat R\otimes_R X=\widehat X$
+\cite[ALG-05-C04-R03]{p103}, and the displayed adjunction identifies
+$X^\vee$ with the dual of $\widehat X$. A second dual now gives
+$\widehat X$ by \ref{res:M05}. The identification carries evaluation
+at $x$ to evaluation at $1\otimes x$, proving the claimed compatibility.
+\end{proof}
+
+\section{Minimal injective resolutions}
+
+\begin{proposition}[Socles of minimal injective resolutions]\label{res:M07}
+Every module has an injective resolution obtained by taking the
+injective hull at each cosyzygy. Applying $\operatorname{Hom}_R(k,-)$
+to that resolution gives zero differentials. If an injective module
+$J$ has $\dim_k\operatorname{soc}J=t<\infty$, then
+$\Gamma_{\mathfrak m}J\simeq E^t$.
+\end{proposition}
+\begin{proof}
+Start with $T^0=X$ and recursively set $J^i=E_R(T^i)$ and
+$T^{i+1}=\operatorname{coker}(T^i\hookrightarrow J^i)$, using the
+injective hull construction of \cite[ALG-03-C02-S03]{p103}.
+Take $d^i$ to be $J^i\to T^{i+1}\hookrightarrow J^{i+1}$.
+This gives an injective resolution because each kernel is $T^i$.
+Every simple submodule of $J^i$ lies in $T^i$ by essentiality.
+Consequently all differentials vanish on the socles.
+
+For the last assertion $\Gamma_{\mathfrak m}J$ is injective by
+\ref{res:L03} and has the same socle as $J$. Identify that socle with
+$\operatorname{soc}(E^t)$ and extend to a map
+$E^t\to \Gamma_{\mathfrak m}J$. The domain is power torsion by
+\ref{res:M02}, so its socle is essential as in \ref{res:M04}.
+The extension is an embedding and splits by injectivity of $E^t$.
+Its complementary summand is power torsion with zero socle and hence
+zero.
+\end{proof}
+
+\begin{theorem}[Artinianness of local cohomology]\label{res:M08}
+For a finite $R$-module $X$, every $H^i_{\mathfrak m}(X)$ is Artinian.
+Its Matlis dual is a finite $\widehat R$-module.
+\end{theorem}
+\begin{proof}
+Resolve $X$ by the injective resolution $J^\bullet$ from
+\ref{res:M07}. Its $i$th socle is $\operatorname{Ext}^i_R(k,X)$
+because all the differentials on $\operatorname{Hom}_R(k,J^\bullet)$
+are zero. That Ext module is finite since a free resolution of $k$
+can be made degreewise finite by choosing generators of successive
+kernels over the Noetherian ring. Computing Ext by this resolution
+gives cohomology of a complex of finite modules
+\cite[ALG-10-C03-R01 and S01]{p103}. The Ext module is killed by $\mathfrak m$,
+as is also visible from the calculation by socles. Thus the socle
+has finite dimension. By \ref{res:M07}, $\Gamma_{\mathfrak m}J^i$
+is a finite power of $E$ and hence Artinian. Its cohomology computes
+$H^i_{\mathfrak m}(X)$ by definition, and subquotients of Artinian
+modules are Artinian. The last assertion follows from \ref{res:M06}.
+\end{proof}
+\chapter{Grothendieck local duality}\label{ch:local-duality}
+
+We use cohomological indexing, so $K[a]^j=K^{j+a}$ and
+$d_{K[a]}=(-1)^a d_K$. A module without an indicated shift is
+in degree zero. Write $\mathcal H om(X,Y)$ for the Hom complex
+\[
+ \mathcal H om(X,Y)^a=\prod_j\operatorname{Hom}(X^j,Y^{j+a}),
+ \qquad d(f)=d_Y f-(-1)^a f d_X .
+\]
+Throughout, $C_{\mathfrak m}$ denotes the augmented \v{C}ech
+complex of the local ring in question, with the ring in degree
+zero, as in \ref{res:L05}. We write $\operatorname{Ext}^j=0$ for
+negative degrees whenever both arguments are modules. References
+for the local duality formulas are \cite[Sections 18--22]{st-dual}
+and \cite[Section 3.5]{bruns}.
+
+\section{Duality over a Gorenstein local ring}
+
+\begin{proposition}[The top local cohomology of a Gorenstein local ring]\label{res:D01}
+Let $(S,\mathfrak n,k)$ be Gorenstein of dimension $n$. Then
+$R\Gamma_{\mathfrak n}(S)\simeq E_S(k)[-n]$.
+\end{proposition}
+\begin{proof}
+For this ring, $\operatorname{Ext}^i_S(k,S)$ is zero for $i\ne n$
+and is a one-dimensional $k$-space for $i=n$
+\cite[GC-06]{core}. In the minimal injective resolution from
+\ref{res:M07}, these Ext groups are its socles. Thus applying
+$\Gamma_{\mathfrak n}$ gives a complex with a single nonzero term,
+a copy of $E_S(k)$ in degree $n$. This complex computes the derived
+functor by the injective resolution. Choosing a different
+identification with the chosen injective hull postcomposes this
+comparison by an automorphism of that hull.
+\end{proof}
+
+\begin{lemma}[A finite-free model for the dual calculation]\label{res:D02}
+Under the hypotheses of \ref{res:D01}, let
+$P\to X$ be a bounded-above, degreewise finite free resolution of
+a finite $S$-module $X$, and put $E_S=E_S(k)$. There are
+quasi-isomorphism comparisons
+\[
+ P\otimes_S C_{\mathfrak n}\simeq X\otimes_S C_{\mathfrak n},
+ \qquad
+ P\otimes_S C_{\mathfrak n}\simeq P\otimes_S E_S[-n].
+\]
+After applying the dual into $E_S[0]$, the last model is identified
+by tensor--Hom adjunction with $\mathcal H om_S(P,\widehat S[n])$.
+\end{lemma}
+\begin{proof}
+Choose $P$ by successively resolving finite kernels. A bounded
+complex of flat modules preserves acyclicity under tensor product:
+filter by the subcomplexes obtained by retaining only terms
+in degrees greater than or equal to a given index. Each successive
+quotient is one flat module in one degree, and successive short
+exact sequences are split in each degree. The same argument applies
+to a bounded-above complex via the increasing union of its bounded
+degree truncations. Indeed its tensor product is the filtered
+colimit of the tensor products of the truncations, and filtered
+colimits of modules are exact. This proves both applications of
+tensoring a quasi-isomorphism, the first using the bounded flat
+$C_{\mathfrak n}$ and the second using $P$ with \ref{res:D01}.
+One can use quasi-isomorphisms in either direction through a
+common complex, since tensoring preserves each of them.
+
+In the model with $E_S[-n]$, each total degree in the tensor
+product uses a single term of $P$. With the usual tensor
+differential $d(p\otimes e)=dp\otimes e+(-1)^{\deg p}p\otimes de$,
+the assignment $f\mapsto (p\mapsto(e\mapsto f(p\otimes e)))$
+is a chain isomorphism
+\[
+ \mathcal H om_S(P\otimes_S E_S[-n],E_S[0])
+ \ \cong\
+ \mathcal H om_S(P,\mathcal H om_S(E_S[-n],E_S[0])) .
+\]
+In the differential, the $d_P$ term has sign $-(-1)^{\deg f}$,
+and the $d_{E_S[-n]}$ term has sign
+$-(-1)^{\deg f+\deg p}$ on both sides. The inner Hom on the right
+is concentrated in degree $-n$ and has value
+$\operatorname{End}_S(E_S)=\widehat S$ by \ref{res:M03}. This
+gives the indicated shift.
+\end{proof}
+
+\begin{theorem}[Gorenstein local duality]\label{res:D03}
+Under the assumptions of \ref{res:D01}, for each finite
+$S$-module $X$ there are natural isomorphisms
+\[
+ \bigl(H^i_{\mathfrak n}(X)\bigr)^\vee
+   \ \cong\ \operatorname{Ext}^{n-i}_S(X,\widehat S)
+   \ \cong\ \widehat{\operatorname{Ext}^{n-i}_S(X,S)} .
+\]
+\end{theorem}
+\begin{proof}
+Dualizing into the injective module $E_S$ is exact. On complexes it gives
+\[
+     H^j(\mathcal H om_S(U,E_S[0]))\cong H^{-j}(U)^\vee.
+\]
+For example, a cocycle of degree $j$ vanishes on boundaries in
+degree $-j$ and a coboundary vanishes on the cycles. Every map on
+those cycle classes extends to the ambient quotient by injectivity.
+This proves the identification and its naturality. Now apply it to
+\ref{res:L05} and take degree $-i$ in the comparison of
+\ref{res:D02}. In the last complex, shifting the second argument
+by $n$ shifts the Hom complex by $n$, so the result is
+$\operatorname{Ext}^{n-i}_S(X,\widehat S)$.
+
+Completion is flat and agrees with tensoring by $\widehat S$ on
+finite modules \cite[ALG-05-C04-R03 and S01]{p103}. For each term
+of the degreewise finite free resolution, base change of its
+$S$-dual gives its $\widehat S$-valued dual. Flatness commutes with
+taking cohomology, giving the last isomorphism. A map of finite
+modules lifts to a chain map of free resolutions by lifting into
+successive cycle modules, starting in degree zero. Any two lifts
+are chain homotopic by lifting their difference into successive
+boundary preimages. The chain comparisons therefore give
+naturality on modules. With the scalar action induced by
+\ref{res:M03}, the maps are also $\widehat S$-linear.
+\end{proof}
+
+\section{The general complete case}
+
+\begin{lemma}[Adjunction for a local quotient]\label{res:D04}
+If $S\twoheadrightarrow R$ is a surjective local map of Noetherian
+local rings with residue field $k$, put $\mathfrak m=\mathfrak nR$.
+There is an identification
+\[
+ E_R(k)\cong\operatorname{Hom}_S(R,E_S(k)).
+\]
+For an $R$-module $X$, the local cohomology over $R$ is computed by
+the \v{C}ech model over $S$ on $X$, and
+\[
+ \operatorname{Hom}_R(X,\operatorname{Hom}_S(R,E_S(k)))
+   \ \cong\ \operatorname{Hom}_S(X,E_S(k)).
+\]
+Both comparisons respect the $R$-action.
+\end{lemma}
+\begin{proof}
+Use precomposition with multiplication for the $R$-action on the
+inner Hom. The displayed adjunction is evaluation at $1$ with
+inverse $h\mapsto [x\mapsto (r\mapsto h(rx))]$. Hence the inner Hom
+is injective over $R$. Evaluating it at $1$ identifies it as the
+elements of $E_S(k)$ annihilated by the kernel of $S\to R$.
+It contains $k$ essentially, because it is a submodule of the
+$S$-injective hull of $k$ and its $S$-submodules are its
+$R$-submodules. It is therefore an injective hull over $R$.
+If $s_1,\ldots,s_l$ generate $\mathfrak n$, their images generate
+$\mathfrak m$. Each term of the \v{C}ech complex on $X$
+localizes $X$ at the same endomorphism of $X$ for either choice
+of scalar ring, so \ref{res:L08} gives the assertion. All the
+maps commute both with multiplication by $R$ on $X$ and with
+the adjunction.
+\end{proof}
+
+\begin{theorem}[A normalized dualizing complex]\label{res:D05}
+Let $R$ be complete Noetherian local, and let $S\twoheadrightarrow R$ be a surjection
+from a complete regular local ring of dimension $n$ as in \ref{res:C04}.
+Put
+\[
+          \mathcal D_R=\mathrm{RHom}_S(R,S[n]).
+\]
+It can be represented by a bounded complex of injective $R$-modules,
+and its cohomology modules are finite. The homothety map
+$R\longrightarrow\mathrm{RHom}_R(\mathcal D_R,\mathcal D_R)$ is an
+isomorphism, and $\mathrm{RHom}_R(k,\mathcal D_R)\simeq k[0]$.
+\end{theorem}
+\begin{proof}
+The regular local ring $S$ is Gorenstein and has injective
+dimension $n$ as a module over itself \cite[GC-06--GC-07]{core}.
+Represent $S[n]$ by a bounded injective resolution $J$ and let
+$I=\mathcal H om_S(R,J)$, with $R$ acting on the argument $R$.
+Each term of $I$ is injective by the adjunction of \ref{res:D04}.
+A bounded complex of injectives is a valid target for derived
+Hom. Filter it by its bounded degree truncations, use degreewise
+split short exact sequences of complexes, and use exactness of
+Hom into each single injective term to see that Hom from any
+acyclic complex into it is acyclic. Thus the termwise adjunction
+gives
+\[
+        \mathrm{RHom}_R(U,\mathcal D_R)
+        \ \simeq\ \mathrm{RHom}_S(U,S[n])
+\]
+for every $R$-complex $U$. At $U=k$ it gives the normalization by
+the Gorenstein residue-field Ext calculation \cite[GC-06]{core}.
+Finiteness of $H^j(I)$ follows from computing $\mathrm{RHom}_S(R,S[n])$
+by a degreewise finite free resolution over the Noetherian ring.
+The cohomology is an $R$-module, so finiteness over $S$ implies
+finiteness over $R$.
+
+For the homothety assertion, the same adjunction at $U=I$
+turns scalar multiplication by $r$ on $I$ into
+$[i\mapsto i(r)]\in\mathcal H om_S(I,J)$. This is the natural
+derived biduality morphism of $R$ over $S$ with target $S[n]$.
+Here is a direct comparison. Since $S$ is regular local, the
+finite module $R$ has a bounded finite free resolution
+$P\to R$ \cite[CM-12]{core}. Set
+$Q=\mathcal H om_S(P,S[n])$. The maps
+$I\to\mathcal H om_S(P,J)\leftarrow Q$ are quasi-isomorphisms.
+The left one uses that $J$ is a bounded injective target.
+The right one follows from filtering the bounded finite free
+source $P$ and using exactness of Hom from each free term.
+For homogeneous $p\in P^a$ and $q\in Q^b$, the bidual pairing
+sends $p$ against $q$ to $(-1)^{ab}q(p)$. Substituting into the
+Hom differential verifies it is a chain map. Its map
+\[
+          P\longrightarrow \mathcal H om_S(Q,S[n])
+\]
+is an isomorphism, since in each degree it is finite free
+biduality up to this sign. The finite free terms of $Q$ give
+$\mathcal H om_S(Q,S[n])\simeq \mathcal H om_S(Q,J)$, and taking
+Hom into $J$ in the preceding zigzag compares this target to
+$\mathcal H om_S(I,J)$. The evaluation pairing is natural in
+the morphisms of the source and the target, so under these
+comparisons evaluation on $P$ gives $i\mapsto i(r)$ after
+$P\to R$. This proves that the actual homothety morphism is
+a quasi-isomorphism.
+\end{proof}
+
+\begin{theorem}[Local duality for a complete local ring]\label{res:D06}
+For every complete Noetherian local ring $R$ and finite $R$-module $X$,
+\[
+ \bigl(H^i_{\mathfrak m}(X)\bigr)^\vee
+     \ \cong\ H^{-i}\!\left(\mathrm{RHom}_R(X,\mathcal D_R)\right)
+\]
+naturally as $R$-modules. With a chosen $E_R(k)$,
+$\mathcal H om_R(C_{\mathfrak m},E_R(k)[0])$ represents
+$\mathcal D_R$.
+\end{theorem}
+\begin{proof}
+Choose a complete regular cover $S$ by \ref{res:C04}.
+Using the \v{C}ech complex over $S$, consider
+\[
+                W=\mathcal H om_S(C_{\mathfrak n},E_S[0]).
+\]
+It is bounded and its terms are injective. For each flat term
+$F$ of $C_{\mathfrak n}$, the functor
+$\operatorname{Hom}_S(-,\operatorname{Hom}_S(F,E_S))$
+is exact by tensor--Hom adjunction, flatness of $F$, and
+injectivity of $E_S$. By \ref{res:D01}, \ref{res:D03} with
+$X=S$, and completeness, $W$ has just one cohomology module,
+namely $S$ in degree $-n$. A cocycle representing a generator
+defines a quasi-isomorphism $S[n]\to W$. Thus the bounded
+injective complex $W$ may be used as $J$ in \ref{res:D05}.
+Choose the generators of $\mathfrak m$ as the images of the
+generators of $\mathfrak n$. Termwise adjunction, with the
+complex signs of \ref{res:D02}, gives the isomorphism of
+$R$-complexes
+\[
+ \begin{aligned}
+ \mathcal H om_S(R,W)
+ &\cong \mathcal H om_S(R\otimes_S C_{\mathfrak n},E_S[0])\\
+ &\cong \mathcal H om_R(C_{\mathfrak m},E_R(k)[0]).
+ \end{aligned}
+\]
+The second line uses \ref{res:D04}, together with the ordinary
+base change of the flat localized terms of the \v{C}ech complex.
+In particular the action on the right is the usual $R$-action,
+and on the left it is the action on the argument $R$.
+Any choice of generators gives the same derived torsion
+comparison by \ref{res:L05}, and exact dualization preserves
+those quasi-isomorphisms.
+
+The displayed bounded injective complex computes Hom out of $X$
+by plain Hom. Under adjunction it is
+$\mathcal H om_R(X\otimes_R C_{\mathfrak m},E_R(k)[0])$.
+By \ref{res:L05} and the exact-dual cohomology calculation in
+\ref{res:D03}, its degree $-i$ cohomology is the asserted
+Matlis dual. All identifications after a choice of the dualizing
+model are natural in $X$.
+\end{proof}
+
+\begin{corollary}[Local duality after completion]\label{res:D07}
+If $R$ is any Noetherian local ring and $X$ is finite, then as
+$\widehat R$-modules
+\[
+ \bigl(H^i_{\mathfrak m}(X)\bigr)^\vee
+ \ \cong\
+ H^{-i}\!\left(\mathrm{RHom}_{\widehat R}
+        (\widehat X,\mathcal D_{\widehat R})\right).
+\]
+\end{corollary}
+\begin{proof}
+The completion comparison \ref{res:L09} identifies
+$H^i_{\mathfrak m}(X)$ with
+$H^i_{\mathfrak m\widehat R}(\widehat X)$ with its unique
+completed action. Choose the $\widehat R$-injective hull of
+$k$ as $R$-injective hull after restriction, as in \ref{res:M06}.
+For torsion modules all $R$-linear maps to it are already
+$\widehat R$-linear, so this comparison identifies the two
+Matlis duals over $\widehat R$. Now use \ref{res:D06} for
+$\widehat R$.
+\end{proof}
+
+\section{Canonical modules and examples}
+
+\begin{proposition}[Canonical modules and concentration]\label{res:D08}
+Let $R$ be a complete Noetherian local ring with $\dim R=d$. Then
+\[
+      \omega_R=H^{-d}(\mathcal D_R)
+             \ \cong\ (H^d_{\mathfrak m}(R))^\vee
+\]
+is finite, with $\omega_R^\vee\cong H^d_{\mathfrak m}(R)$. In
+particular it is the canonical module in the sense of being the
+unique finite module up to isomorphism with this dual. The ring
+$R$ is Cohen--Macaulay if and only if
+$\mathcal D_R\simeq\omega_R[d]$. In that case $\omega_R$ is also
+the canonical module of \cite[GC-10]{core}, computed as
+$\operatorname{Ext}^{n-d}_S(R,S)$ for a regular cover as above.
+\end{proposition}
+\begin{proof}
+Apply \ref{res:D06} at $X=R$. The stated dual characterization
+and its uniqueness follow from \ref{res:M05} and the Artinianness
+in \ref{res:M08}. By detection in \ref{res:M01}, nonzero
+cohomology of $\mathcal D_R$ corresponds in opposite degrees to
+nonzero local cohomology of $R$. By the vanishing and
+Cohen--Macaulay criterion \ref{res:V07}, only degree $-d$ is
+nonzero exactly in the Cohen--Macaulay case. A complex with a
+single nonzero cohomology module is isomorphic in the derived
+category to that module in the corresponding degree. To see this,
+truncate at that degree with the kernel of the outgoing
+differential as the last term, then quotient that kernel by
+boundaries to obtain the indicated zigzag. Finally, shifting
+the second argument in the formula defining $\mathcal D_R$ in
+\ref{res:D05} gives the stated Ext identification. It is the
+same module and quotient-ring action as in \cite[GC-10]{core}.
+\end{proof}
+
+\begin{corollary}[Cohen--Macaulay duality]\label{res:D09}
+For a complete Cohen--Macaulay local ring of dimension $d$
+and finite $R$-module $X$ there are natural identifications
+\[
+ (H^i_{\mathfrak m}(X))^\vee
+       \cong \operatorname{Ext}^{d-i}_R(X,\omega_R),\qquad
+ H^i_{\mathfrak m}(X)
+       \cong (\operatorname{Ext}^{d-i}_R(X,\omega_R))^\vee .
+\]
+For noncomplete Cohen--Macaulay $R$ the same comparisons are
+available using $\widehat R,\widehat X,\omega_{\widehat R}$.
+If a finite module $\omega$ over $R$ is given with
+$\widehat\omega\simeq\omega_{\widehat R}$, the dual can equivalently
+be written as $\widehat{\operatorname{Ext}^{d-i}_R(X,\omega)}$.
+\end{corollary}
+\begin{proof}
+After substituting \ref{res:D08} in \ref{res:D06}, the shift adds $d$ to
+the index of the Hom complex. Artinianness \ref{res:M08} and
+evaluation \ref{res:M05} give the second formula. In the
+noncomplete case dimension and depth of a finite module
+are preserved by completion, in particular by \ref{res:V04}
+applied to $R$. Thus $\widehat R$ is Cohen--Macaulay of
+dimension $d$. Use \ref{res:D07} and Artinian-side evaluation
+from \ref{res:M06}. Finally, in a degreewise finite free
+resolution of $X$, flat base change gives a resolution of
+$\widehat X$. In each term it commutes with the Hom into
+$\omega$, hence with cohomology. The Ext groups on the
+original ring are finite, so their completed modules are the
+corresponding tensors. This proves the asserted variant.
+\end{proof}
+
+\begin{example}[Power series and a noncomplete DVR]\label{res:E01}
+For $S=k[[x_1,\ldots,x_d]]$, the inverse monomials
+$x_1^{-a_1}\cdots x_d^{-a_d}$ with all $a_j\ge1$ form a $k$-basis
+of $H^d_{\mathfrak n}(S)\cong E_S(k)$. For $T=k[t]_{(t)}$,
+$H^1_{(t)}(T)=k(t)/T$ and its Matlis dual is $k[[t]]$.
+\end{example}
+\begin{proof}
+For $d>0$ the top \v{C}ech quotient is
+\[
+ S_{x_1\cdots x_d}\bigg/\sum_j S_{\prod_{i\ne j} x_i}.
+\]
+With denominator $\prod_i x_i^N$, retain only numerator terms
+whose exponents in all variables are $<N$. The remaining terms
+can be assigned to the first index $j$ at which the exponent is
+at least $N$. On each such subseries the denominator in $x_j$
+cancels, so its class is zero. The retained terms give a finite
+linear combination of inverse monomials. Conversely, after
+putting a finite linear combination and a sum of terms from the
+smaller localizations over a common denominator, coefficient
+comparison in the formal series ring forces the coefficients
+of the inverse monomials to vanish. For $d=0$ the empty product
+is the basis of $k$. The ring is Gorenstein, so \ref{res:D01}
+identifies this top cohomology with $E_S(k)$.
+For the DVR $T$, the one-generator complex is
+$T\to k(t)$, so its first cohomology is the asserted quotient.
+It is $E_T(k)$ by \ref{res:D01}, with dual the completion by
+\ref{res:M03}.
+\end{proof}
+
+\begin{example}[An Artinian dualizing module]\label{res:E02}
+For $R=k[[x,y]]/(x,y)^2$, one has
+$\mathcal D_R\simeq\operatorname{Hom}_k(R,k)[0]$.
+The ring has socle dimension two, and the dualizing module
+has socle dimension one.
+\end{example}
+\begin{proof}
+As a $k$-space $R$ has basis $1,x,y$ and
+$\mathfrak m=\langle x,y\rangle$ with square zero.
+Thus $\operatorname{soc}R=\mathfrak m$. The $k$-dual has the
+usual $R$-action by precomposition and is injective by the
+adjunction $\operatorname{Hom}_R(U,\operatorname{Hom}_k(R,k))
+\cong\operatorname{Hom}_k(U,k)$. Its socle consists of the
+functionals vanishing on $\mathfrak m$, a single copy of $k$.
+It is essential, since every module is power torsion for this
+nilpotent maximal ideal and \ref{res:M04} applies. Hence it is
+$E_R(k)$. The \v{C}ech complex on $x,y$ has only the ring
+term nonzero, so \ref{res:D06} computes the asserted dualizing
+complex. The Artinian socle criterion
+\cite[GC-05--GC-06]{core} shows that $R$ is not Gorenstein.
+\end{proof}
+
+\begin{example}[A one-dimensional hypersurface]\label{res:E03}
+Let $R=k[[u,v]]/(uv)$. Then $\omega_R\cong R$. For $X=R$,
+$H^0_{\mathfrak m}(X)=0$ and $H^1_{\mathfrak m}(X)=E_R(k)$.
+For $X=k$, $H^0_{\mathfrak m}(X)=k$ and $H^1_{\mathfrak m}(X)=0$.
+\end{example}
+\begin{proof}
+The element $uv$ is regular in the two-dimensional regular
+local ring $k[[u,v]]$, so $R$ is a one-dimensional Gorenstein
+local ring \cite[CM-02 and GC-07]{core}. The two-term free
+resolution of $R$ over $k[[u,v]]$ has differential $uv$ and its
+degree-one Ext into that ring is $R$. This is the canonical
+module by \ref{res:D08}. For $X=R$, \ref{res:D01} gives the
+cohomology assertions. In coordinates, $R$ consists of pairs
+of series in $k[[u]]\oplus k[[v]]$ with equal constant terms.
+The \v{C}ech complex has first map the inclusion into
+$k((u))\oplus k((v))$ and next term zero since $uv=0$.
+The degree-one quotient realizes the hull explicitly. For
+$X=k$, all the localizations at either generator vanish, giving
+the assertions by \ref{res:L05}. The degrees can also be seen
+from \ref{res:D09}. The Ext groups of $R$ into $R$ in degrees
+zero and one are $R$ and $0$, respectively, and those of $k$
+into $R$ are $0$ and $k$, respectively, by
+\cite[GC-06]{core}.
+\end{proof}
+
+\begin{example}[A dualizing complex with two nonzero degrees]\label{res:E04}
+Let $S=k[[x,y]]$ and $R=S/(x^2,xy)$. Then
+\[
+ \begin{array}{ll}
+ H^0_{\mathfrak m}(R)=kx, &
+ H^1_{\mathfrak m}(R)\cong k((y))/k[[y]],\\[2pt]
+ H^{-1}(\mathcal D_R)\cong S/(x), &
+ H^0(\mathcal D_R)\cong k .
+ \end{array}
+\]
+All remaining cohomology of $\mathcal D_R$ is zero.
+\end{example}
+\begin{proof}
+In $R$, the element $x$ is nilpotent and killed by $y$.
+Consequently the \v{C}ech model on $x,y$ reduces to $R\to R_y$.
+The ring is the direct sum $k[[y]]\oplus kx$ as a $k$-space,
+and localization kills $kx$ and embeds $k[[y]]$ into $k((y))$.
+This gives the local cohomology calculation.
+
+Over $S$ a free resolution has consecutive maps
+\[
+        S\xrightarrow{(-y,x)^{\mathsf T}} S^2
+          \xrightarrow{(x^2,xy)} S \longrightarrow R .
+\]
+The first map is injective. If $x^2a+xyb=0$, cancel $x$, reduce
+modulo $x$ to get $b=xc$, and conclude $a=-yc$. Thus the maps
+are exact where required. Upon dualizing into $S$, the maps
+are the column $(x^2,xy)^{\mathsf T}$ and the row $(-y,x)$.
+The kernel of the row is $S(x,y)^{\mathsf T}$ because $x,y$
+are regular parameters in the domain $S$, and the image of
+the column is $x S(x,y)^{\mathsf T}$. The cokernel of the row
+is $k$. The dualized first map is injective, so the only nonzero
+Ext groups are $S/(x)$ and $k$ in degrees one and two.
+Shifting by $2$ in \ref{res:D05} gives the two claimed degrees
+of $\mathcal D_R$. This matches \ref{res:D06} since $kx$ is simple,
+and the dual of the top cohomology of $k[[y]]$ is $k[[y]]$
+by \ref{res:D03} over that DVR and \ref{res:D04}.
+\end{proof}
+\chapter[Excellence and Valuations]{Formal Fibres, Excellence, and Valuations}
+\label{ch:excellence-valuations}
+
+The map from a local ring to its completion is faithfully flat. The fibres of this map give additional information about regularity. We study them alongside valuation rings, which test integral dependence without a Noetherian hypothesis. The definitions and the classical routes through \(p\)-bases and domination are recorded in \cite[Sections 47--53 and 125]{st-more}, \cite[Section 50]{st-alg}, and \cite[Section 32]{matsumura}.
+
+\section{Regular maps and formal fibres}
+
+\begin{definition}[Formal fibres and excellence]\label{res:X01}
+An algebra \(T\) over a field \(k\) is geometrically regular if \(T\otimes_k k'\) is Noetherian and regular for every finite field extension \(k'/k\). A regular ring is one whose local rings at all primes are regular local. A map of Noetherian rings is regular if it is flat and each fibre over a prime is geometrically regular over the corresponding residue field.
+
+Let \((A,\mathfrak m)\) be Noetherian local and let \(\mathfrak q\) be a prime. Its formal fibre at \(\mathfrak q\) is
+\[
+ \widehat A\otimes_A\kappa(\mathfrak q)
+  \ \cong\ \widehat{A/\mathfrak q}\otimes_{A/\mathfrak q}\operatorname{Frac}(A/\mathfrak q),
+\]
+where the completion on the right is at \(\mathfrak m/\mathfrak q\). Indeed, completion commutes with passing to the finite \(A\)-module \(A/\mathfrak q\), and tensoring then localizes at the nonzero elements of the domain \(A/\mathfrak q\). A Noetherian ring \(R\) is a \(G\)-ring if the completion maps of all \(R_{\mathfrak p}\) are regular.
+
+A Noetherian ring satisfies \(J\)-2 if the regular locus of every finite-type \(R\)-algebra is open. A ring is catenary if the saturated prime chains between any fixed comparable pair of primes have the same length. A Noetherian ring is universally catenary if every finite-type algebra over it is catenary. A quasi-excellent ring is a Noetherian \(G\)-ring satisfying \(J\)-2. An excellent ring is a universally catenary quasi-excellent ring.
+\end{definition}
+
+\begin{lemma}[Regular local maps and auxiliary rings]\label{res:X02}
+For a flat local map \(A\to B\) of Noetherian local rings, if \(A\) and the closed fibre \(B/\mathfrak m_A B\) are regular local, then \(B\) is regular local. Conversely, if \(B\) is regular local, then \(A\) is regular local. Polynomial rings and finite separable scalar extensions of regular Noetherian rings are regular, as are completions of regular Noetherian local rings.
+\end{lemma}
+\begin{proof}
+Generators for \(\mathfrak m_A\) and lifts of generators for the maximal ideal of the closed fibre generate \(\mathfrak m_B\). Thus the embedding dimension of \(B\) is at most \(\dim A+\dim(B/\mathfrak m_A B)=\dim B\), using the flat local dimension formula \cite[CM-10]{core}. The opposite inequality is the height theorem \cite[ALG-05-C03-R01]{p103}.
+
+For descent, tensor a minimal free resolution of \(A/\mathfrak m_A\) over \(A\) with \(B\). Flatness makes it a free resolution of \(B/\mathfrak m_A B\). Its terms are finite free and its differentials have entries in \(\mathfrak m_A B\subseteq\mathfrak m_B\). Over the regular local ring \(B\), \(B/\mathfrak m_A B\) has finite projective dimension by \cite[CM-12]{core}. Tensoring the resolution with \(B/\mathfrak m_B\) gives zero differentials, so all sufficiently high terms are zero. The original resolution therefore terminates. The residue-field criterion \cite[CM-19]{core} proves that \(A\) is regular.
+
+For polynomials, first use one variable. At a prime of \(R[T]\), the localized map from \(R\) has flat local form and closed fibre a localization of \(\kappa(\mathfrak p)[T]\), a regular local ring since the one-variable polynomial ring over a field is a principal ideal domain. Iterate. For a finite separable extension \(k'/k\), adjoin finitely many generators one at a time. A simple step defined by a monic separable polynomial \(h\) is finite free, and its fibres are products of fields because \(h\) and \(h'\) remain relatively prime. Apply the flat local ascent at each prime and iterate. Completion is flat with the same closed residue field \cite[ALG-05-C04-S01]{p103}, so the ascent also proves regularity of the completion. The regularity of localizations of a regular local ring follows from \cite[CM-12, CM-19]{core}. A finite module over a localization is the localization of a finite module, by clearing denominators in a finite presentation. The finite projective dimension test can then be applied to the localized residue field.
+\end{proof}
+
+\begin{lemma}[Derivations and a regular hypersurface]\label{res:X03}
+Every derivation \(D:R\to R\) extends to localizations and to the completion of \(R\) at any ideal. If \(R\) is Noetherian regular and \(D(f)\) is a unit in \(R\), then
+\[
+             R[T]/(T^n-f)
+\]
+is regular for every \(n\geq 1\).
+\end{lemma}
+\begin{proof}
+In a localization use the quotient rule
+\(D(a/s)=D(a)/s-aD(s)/s^2\). For an ideal \(I\), the Leibniz rule implies
+\(D(I^j)\subseteq I^{j-1}\) for \(j\geq1\). Thus residues modulo \(I^{j+1}\) determine differentiated residues modulo \(I^j\). Taking the compatible limit preserves the additive and product rules.
+
+Extend \(D\) to \(R[T]\) by \(D(T)=0\). This polynomial ring is regular by \ref{res:X02}. If \(\mathfrak n\) is a prime containing \(h=T^n-f\), the extension to the regular local ring \(R[T]_{\mathfrak n}\) sends \(\mathfrak n^2R[T]_{\mathfrak n}\) into \(\mathfrak nR[T]_{\mathfrak n}\). But \(D(h)=-D(f)\) is a unit. Therefore \(h\) has nonzero class modulo the square of the maximal ideal, can be completed to a minimal generating set, and cuts a regular local quotient by \cite[CM-08]{core}.
+\end{proof}
+
+\section[Generic formal fibres]{Positive characteristic and generic formal fibres}
+
+There is no finiteness assumption on the imperfection degree of the coefficient field in the next argument. In characteristic \(p\), write \(F^p=\{a^p:a\in F\}\). Over a subfield containing \(F^p\), a \(p\)-basis is a family whose monomials of exponents less than \(p\) and finite support form a vector-space basis.
+
+\begin{lemma}[Finite coefficient approximations]\label{res:X04}
+Let \(k\) be a field of characteristic \(p>0\) and put
+\[
+ S=k[[u_1,\ldots,u_r]][v_1,\ldots,v_s],\qquad K=\operatorname{Frac}(S).
+\]
+There is a family of subrings \(S_J\subseteq S\) with \(S\) finite free over every \(S_J\) and \(S^p\subseteq S_J\). If \(K_J=\operatorname{Frac}(S_J)\), then the \(K_J\) form a family directed downwards by inclusion and, for each finite extension \(F/K\),
+\[
+                    \bigcap_J F^pK_J=F^p .
+\]
+\end{lemma}
+\begin{proof}
+A maximal \(p\)-independent set exists by Zorn's lemma, since each linear dependence among its restricted monomials involves finitely many variables. If the subfield generated by such a set and the \(p\)-th powers were proper, adjoining an element from outside would give a purely inseparable degree \(p\) extension and preserve independence. Thus it is a \(p\)-basis. In particular, choose a \(p\)-basis \(\{a_e:e\in E\}\) of \(k\) over \(k^p\), and let \(k_J=k^p(a_e:e\notin J)\) for \(J\) finite. The \(a_e\) with \(e\in J\) have restricted monomials forming a finite \(k_J\)-basis of \(k\). The uniqueness of monomial expansions over \(k^p\) gives \(\bigcap_J k_J=k^p\).
+
+Take \(S_J=k_J[[u_1^p,\ldots,u_r^p]][v_1^p,\ldots,v_s^p]\). Expand coefficients in that finite basis and group the exponents of \(u_i,v_j\) by their residues modulo \(p\). This expresses \(S\) freely over \(S_J\) with basis the products of the restricted coefficient monomials and restricted variable monomials. The basis contains \(1\). Consequently \(S\cap K_J=S_J\), by uniqueness after clearing denominators. If \(x\in\bigcap_J K_J\), write \(x=b/c^p\) with \(b,c\in S\), \(c\ne0\), by multiplying numerator and denominator of an ordinary fraction by \(c^{p-1}\). Then \(b\in\bigcap_JS_J=S^p\). It follows that \(\bigcap_J K_J=K^p\).
+
+To pass to \(F\), use a tower of simple extensions each separable or purely inseparable of degree \(p\). Such a tower is obtained by adjoining successive generators, since an irreducible inseparable polynomial in characteristic \(p\) has the form \(g(T^{p^a})\) with \(g\) irreducible separable. Suppose the result is known for \(M\), an intermediate field, and put \(M_J=M^p K_J\). In a separable step \(F=M(b)\) of degree \(d\), \(b^p\) is still primitive because \(M(b)/M(b^p)\) is both separable and purely inseparable. The powers \((b^p)^i\), \(0\le i<d\), form a basis both for \(F^p/M^p\) by Frobenius and for \(M_J(b^p)/M_J\) by independence over \(M\). Thus intersection amounts to intersecting the coefficients, giving \(F^p\).
+
+In a purely inseparable step \(F=M(b)\), let \(c=b^p\in M\setminus M^p\). Choose \(J_0\) with \(c\notin M_{J_0}\). For the cofinal family \(J\supseteq J_0\), \(c\) has degree \(p\) over \(M_J\), since \(c^p\in M^p\). The basis \(1,c,\ldots,c^{p-1}\) over \(M_{J_0}\) defines a common unique expansion for any element of \(\bigcap_J M_J(c)\). Its coefficients lie in every finer \(M_J\), hence in \(M^p\). This yields \(M^p(c)=F^p\), completing the induction.
+\end{proof}
+
+\begin{lemma}[Derivations detecting non-powers]\label{res:X05}
+With \(S\) as in \ref{res:X04}, let \(B\) be a finite-type \(S\)-algebra that is a domain containing \(S\), with \(F=\operatorname{Frac}(B)\) finite over \(K\). For \(f\in B\setminus F^p\), there exists a derivation \(D:B\to B\) with \(D(f)\ne0\).
+\end{lemma}
+\begin{proof}
+Choose \(J\) such that \(f\notin F^p K_J\), by \ref{res:X04}. Extend \(\{f\}\) to a \(p\)-basis of \(F/F^pK_J\) using the argument there. Differentiate the restricted monomial expansion in this basis by assigning \(D_0(f)=1\) and value zero to every other basis variable and to \(F^p K_J\). The multiplication rule is preserved when a power of an exponent is reduced, because all \(p\)-th powers are constants of this differentiation. This gives a derivation \(D_0:F\to F\) killing \(K_J\). Since \(S\) is finite over \(S_J\), \(B\) is generated over \(S_J\) by finitely many elements. Multiply \(D_0\) by a nonzero element of \(B\) clearing the denominators of its values on those generators. The resulting derivation preserves \(B\) and has nonzero value on \(f\).
+\end{proof}
+
+\begin{lemma}[Finite algebras and completion]\label{res:X06}
+For a finite map \(A\to B\) of Noetherian rings and a prime \(\mathfrak p\) of \(A\), there is a canonical decomposition
+\[
+ \widehat{A_{\mathfrak p}}\otimes_A B
+ \ \cong\ \prod_{\mathfrak p_i\cap A=\mathfrak p}\widehat{B_{\mathfrak p_i}}.
+\]
+In particular, finite algebras and localizations of \(G\)-rings are \(G\)-rings.
+\end{lemma}
+\begin{proof}
+Localize \(A\) at \(\mathfrak p\), and replace \(B\) by its finite localization over that local base. If \(B=0\) the product is empty and the statement is immediate. Otherwise all maximal ideals \(\mathfrak p_i\) contract to \(\mathfrak p\) by integrality, and there are finitely many because \(B/\mathfrak p B\) is a finite-dimensional algebra over a field. Put \(J=\bigcap_i\mathfrak p_i=\sqrt{\mathfrak p B}\). The \(J\)-adic and \(\mathfrak p B\)-adic filtrations are cofinal, since \(B\) is Noetherian. The maximal ideals are pairwise comaximal. Chinese remaindering identifies \(B/J^n\) with \(\prod_i B/\mathfrak p_i^n\). Each factor has a unique maximal ideal and equals its localization at \(\mathfrak p_i\). Taking inverse limits proves the assertion because completion of the finite module \(B\) over the local base is its tensor with the completion \cite[ALG-05-C04-R03]{p103}.
+
+If \(\mathfrak q'\subseteq\mathfrak p'\) in \(B\) lie over \(\mathfrak q\subseteq\mathfrak p\) in \(A\), the formal fibre of \(B_{\mathfrak p'}\) at \(\mathfrak q'\) is a factor of
+\[
+ \widehat{A_{\mathfrak p}}\otimes_A\kappa(\mathfrak q')
+ \cong (\widehat{A_{\mathfrak p}}\otimes_A\kappa(\mathfrak q))
+                         \otimes_{\kappa(\mathfrak q)}\kappa(\mathfrak q').
+\]
+The extension of residue fields is finite. Geometric regularity is inherited by this base change and by each factor because further finite extensions are still finite over the original field. Localization preserves the \(G\)-condition because every prime local ring after localization is the same prime local ring as before localization.
+\end{proof}
+
+\begin{theorem}[Geometrically regular formal fibres]\label{res:X07}
+Every Noetherian complete local ring is a \(G\)-ring. Every finite-type algebra over a field or over \(\mathbb Z\) is a \(G\)-ring.
+\end{theorem}
+\begin{proof}
+First consider the generic formal fibre \(T=\widehat{S_{\mathfrak p}}\otimes_S K\) of a regular domain \(S\) with fraction field \(K\). It is regular because \(S_{\mathfrak p}\), its completion and the relevant localization are regular by \ref{res:X02}. When \(\operatorname{char}K=0\), every finite extension of \(K\) is separable, giving geometric regularity by \ref{res:X02}.
+
+In characteristic \(p>0\), assume \(S=k[[u_1,\dots,u_r]][v_1,\dots,v_s]\). It is regular by the power-series construction in \ref{res:C04} and the polynomial case of \ref{res:X02}. For a finite extension \(L/K\), prove regularity of \(T\otimes_K L\) along a simple tower, as in \ref{res:X04}. A separable step uses \ref{res:X02}. For a purely inseparable step from \(M\) to \(M[z]/(z^p-f)\), choose a finite \(S\)-algebra \(B\subset M\) with fraction field \(M\). To construct one, multiply a finite set of field generators by nonzero elements of \(S\) to make their respective monic equations have coefficients in \(S\), and adjoin them. Multiply \(f\) by a \(p\)-th power of a nonzero denominator in \(B\), which changes the choice of \(z\) by the corresponding nonzero scalar and permits \(f\in B\). By \ref{res:X05} choose \(D\) of \(B\) with \(D(f)\ne0\). By \ref{res:X06},
+\[
+ T\otimes_K M\cong
+ \left(\prod_{\mathfrak p_i\cap S=\mathfrak p}\widehat{B_{\mathfrak p_i}}\right)
+                       \otimes_B M .
+\]
+Extend \(D\) on each factor and then on the localization, using \ref{res:X03}. The value of \(D(f)\) is a unit there, since it comes from a nonzero element of \(M\). The induction hypothesis makes \(T\otimes_K M\) regular. Now \ref{res:X03} applied to \(z^p-f\) proves this step.
+
+For an arbitrary complete local ring or an algebra of one of the finite types in the statement, fix a prime pair specifying a formal fibre. By \ref{res:X01} pass to the quotient by the smaller prime, so we are considering a generic formal fibre of a domain \(A\). It suffices in each case to find a regular domain \(S\subseteq A\) with regular geometric generic formal fibres such that \(A\) is finite over \(S\). Indeed, \ref{res:X06} identifies the fibre of \(A\) with a factor of the fibre of \(S\) extended to \(\operatorname{Frac}(A)\), a finite extension of \(\operatorname{Frac}(S)\).
+
+For a complete local \(A\) use finite regular normalization \ref{res:C05}. If the regular power-series base is over a field of characteristic \(p>0\), the preceding tower applies. Otherwise its fraction field has characteristic zero. For a finite-type domain over a field, use ordinary Noether normalization \cite[ALG-05-C03-R02]{p103}. The base \(S\) is polynomial so the same argument applies. For a finite-type domain over \(\mathbb Z\) with nonzero kernel on \(\mathbb Z\), the preceding field case applies. The remaining case uses a polynomial presentation over \(\mathbb Z\).
+
+Write \(A=\mathbb Z[y_1,\ldots,y_m]/I\), and let \(\mathfrak p\) be the relevant prime of \(A\) with inverse image \(\mathfrak P\) in \(C=\mathbb Z[y_1,\ldots,y_m]\). Here \(I\) is prime and \(I\cap\mathbb Z=0\). Over \(\mathbb Q\), \(I\mathbb Q[\mathbf y]\) is generically cut out by elements \(g_1,\ldots,g_c\) with independent partial derivatives in its residue fraction field. To see this, choose a transcendence basis among the residue classes of the \(y_i\). Over the rational function field in those basis elements, each of the remaining \(c\) variables has a separable minimal polynomial. Use those univariate polynomials and clear denominators to obtain \(g_i\in I\). Their determinant of partial derivatives in these \(c\) coordinates is nonzero modulo \(I\). The quotient by these polynomials near the generic point is a localization of a tensor product of finite separable field extensions over that rational function field. That tensor product is a product of fields. Successively base change the separable minimal polynomial and factor it into distinct irreducibles. Thus the \(g_i\) generate \(IC_I\). After localization at some \(h\notin I\), they generate \(I C_h\) since \(I\) is finite, and \(h\) can be chosen divisible by that determinant.
+
+The partial derivatives extend to \(\widehat{C_{\mathfrak P}}\) by \ref{res:X03}. At each prime of this completion lying over \(I\), where \(h\) is invertible, the derivative determinant shows that \(g_1,\ldots,g_c\) are independent modulo the square of the maximal ideal. In fact, a relation \(\sum_i a_i g_i\) in that square, differentiated and reduced modulo the maximal ideal, forces every \(a_i\) into the maximal ideal. Hence these elements are part of a minimal system of generators of the maximal ideal of the regular local ring there. They cut a regular quotient by \cite[CM-08]{core}. Completion commutes with the quotient by \(I\), so this proves regularity of the generic formal fibre of \(A\) at \(\mathfrak p\). Its field of scalars has characteristic zero, and \ref{res:X02} gives geometric regularity.
+\end{proof}
+
+\section[The regular locus]{The regular locus and examples of excellence}
+
+\begin{theorem}[Open regular loci over the basic bases]\label{res:X08}
+Let \(R\) be a field, \(\mathbb Z\), or a Noetherian complete local ring. Every finite-type \(R\)-algebra has open regular locus.
+\end{theorem}
+\begin{proof}
+We first treat a finite-type domain \(A\) over \(R\). If \(R\) is a field, use it as a subring \(R_0\subset A\). If \(R=\mathbb Z\), take \(R_0=\mathbb Z\) when the map is injective and \(R_0=\mathbb F_p\) when its kernel is \((p)\). In the complete local case \(R/\ker(R\to A)\) is a complete local domain, so \ref{res:C05} provides a regular subring \(R_0\) over which that domain is finite. Thus \(A\) is a finite-type domain containing \(R_0\) and \(R_0\) is regular. In positive characteristic \(R_0\) is a field or a power-series ring over a field.
+
+Choose a transcendence basis \(\mathbf v\) of \(\operatorname{Frac}(A)\) over \(\operatorname{Frac}(R_0)\) among a finite set of algebra generators. Then \(S=R_0[\mathbf v]\) is regular by \ref{res:X02} and \(\operatorname{Frac}(A)\) is a finite extension of \(\operatorname{Frac}(S)\). We construct a regular finite-type \(S\)-algebra \(B\) with the same fraction field as \(A\), inside that field. Start with \(S\) and use a simple field tower as in \ref{res:X04}. If the next extension is separable, use a monic irreducible separable polynomial. Invert finitely many denominators to place it over the current ring, and invert its discriminant there to make the polynomial square-free in every fibre. The new ring is finite free over the localized ring and has regular zero-dimensional fibres, hence is regular by \ref{res:X02}. It is a domain, since its standard free basis embeds into the field defined by the polynomial. If the next extension is \(F[z]/(z^p-f)\), multiply \(f\) by a \(p\)-th power of a denominator to put it in the current ring. This ring is finite type over \(S\) and its fraction field is finite over \(\operatorname{Frac}(S)\). Apply \ref{res:X05}, invert the nonzero \(D(f)\), and use \ref{res:X03} to pass to the new regular domain. Iteration produces \(B\).
+
+Since \(A\) and \(B\) are finite-type \(S\)-algebras inside the same field, each is contained in a principal localization of the other by clearing denominators on algebra generators. More concretely choose \(a\in A\setminus0\), \(b\in B\setminus0\) with \(B\subset A[1/a]\) and \(A\subset B[1/b]\). Inverting \(a,b\) gives the same ring on both sides, a principal localization of each after clearing the new denominator. Therefore \(A\) is regular on a nonempty open.
+
+Now let \(A\) be arbitrary of finite type. Every quotient \(A/\mathfrak p\) by a prime is a finite-type domain and has a nonempty regular open. Fix \(\mathfrak p\) for which \(A_{\mathfrak p}\) is regular. Choose \(h_1,\ldots,h_d\in\mathfrak p\) mapping to minimal generators of \(\mathfrak p A_{\mathfrak p}\). They form a regular sequence there by \cite[CM-08]{core}. After inverting an element outside \(\mathfrak p\) they generate \(\mathfrak p\), by finite generation, and are still a regular sequence, by killing the finite kernels of the successive multiplication maps. For \(\mathfrak q\supseteq\mathfrak p\) in this open with \((A/\mathfrak p)_{\mathfrak q}\) regular, \(A_{\mathfrak q}\) is regular. To verify this, a nonzerodivisor in the maximal ideal of a Noetherian local ring drops dimension by one. A prime chain of the quotient can be extended downwards by a minimal prime avoiding that element, and a system of parameters in the quotient together with the element gives the reverse inequality by the height theorem \cite[ALG-05-C03-R01/S01]{p103}. Apply this successively. Generators for the maximal ideal in the regular quotient and the \(d\) elements lift to at most \(\dim A_{\mathfrak q}\) generators. Hence the embedding dimension equals the dimension.
+
+We have found a relatively open nonempty subset of \(V(\mathfrak p)\) in the regular locus for every regular \(\mathfrak p\). If the singular set were not closed, some generic point \(\mathfrak p\) of a component of its closure would be regular. Indeed the singular set is stable under specialization, since regularity is stable under localization. The singular set meets the complement of the other components densely in \(V(\mathfrak p)\), contradicting the relatively open regular subset just found. Thus the singular set is closed.
+\end{proof}
+
+\begin{theorem}[Excellent rings and permanence]\label{res:X09}
+Noetherian complete local rings, fields, \(\mathbb Z\), and finite-type algebras over fields or \(\mathbb Z\) are excellent. Every localization and every finite algebra of an excellent ring is excellent.
+\end{theorem}
+\begin{proof}
+We have the \(G\)-property from \ref{res:X07}. For a finite-type algebra over a field or \(\mathbb Z\), every finite-type algebra over it is again of the same kind, giving \(J\)-2 by \ref{res:X08}. That theorem also applies to a complete local base. Regular Noetherian rings are Cohen--Macaulay, hence universally catenary by \cite[CM-08, CM-15]{core}. Quotients of universally catenary rings are universally catenary by the finite-type definition. A complete local ring has the regular cover \ref{res:C04}, and the other rings are regular or quotients of polynomial rings over regular bases. This proves universal catenarity of all the examples.
+
+The \(G\)-part of permanence is \ref{res:X06}. A finite algebra is finite type, so the \(J\)-2 and universal catenarity conditions pass to it directly by composing finite-type maps. If we instead localize the base, any finite-type algebra over that localization is a localization of one over the original ring, by clearing denominators from its finite presentation. Taking open regular loci commutes with localization. Catenarity also localizes because the primes between two surviving primes avoid the multiplicative set because the larger endpoint avoids it. These facts give the other two properties for the localization.
+\end{proof}
+
+\begin{corollary}[Normality under completion]\label{res:X10}
+Let \(A\) be a Noetherian local \(G\)-ring. If \(A\) is normal then \(\widehat A\) is normal. If \(A\) is reduced then \(\widehat A\) is reduced.
+\end{corollary}
+\begin{proof}
+At a prime of the completion, localize the completion map and write \(B\) for the resulting target local ring, \(R\) for the source local ring, and \(F\) for the closed fibre. The map is flat local and \(F\) is regular. The dimension and depth formulas of \cite[CM-10]{core}, with \(\operatorname{depth}F=\dim F\), imply
+\[
+ \dim B=\dim R+\dim F,\qquad
+ \operatorname{depth}B=\operatorname{depth}R+\dim F .
+\]
+Thus \((S_j)\) ascends, since \(\min(j,\dim R)+\dim F\geq\min(j,\dim B)\). Also \((R_i)\) ascends. At a target prime of height at most \(i\), the source local ring has dimension at most \(i\), so both it and its closed fibre are regular. Apply \ref{res:X02}. Now apply the reducedness criterion \((R_0)+(S_1)\) and the normality criterion \((R_1)+(S_2)\) from \cite[SN-03 and SN-09]{core}.
+\end{proof}
+
+\section[Finite-type permanence]{Permanence under finite type extensions}
+
+\begin{lemma}[Base change, composition, and descent]\label{res:X11}
+Regular maps of Noetherian rings are preserved by localization, by base change along a finite-type map, and by composition. If \(A\to B\to C\) has regular composite and \(B\to C\) is faithfully flat, then \(A\to B\) is regular.
+\end{lemma}
+\begin{proof}
+We first show that a geometrically regular \(k\)-algebra \(T\) remains geometrically regular after base change to a finitely generated field extension \(L/k\). The tensor products with such fields are Noetherian, since each field is the fraction field of a finite-type \(k\)-domain and tensoring gives a localization of a finite-type \(T\)-algebra. For regularity in characteristic zero it suffices to choose a transcendence basis and use \ref{res:X02} for adjoining rational variables and then a finite separable extension. In characteristic \(p>0\), form \(Lk^{\mathrm{perf}}\) in an algebraic closure, adjoining all \(p\)-power roots of the constants. It has a separating transcendence basis over \(k^{\mathrm{perf}}\) by the finite-type field argument in \ref{res:C01} applies over any perfect field because that part uses only \(F^p=F\). Choose a finite purely inseparable extension \(k'/k\) inside \(k^{\mathrm{perf}}\) containing the finitely many constants needed to express that basis and the coefficients of separable equations for a finite set of generators of \(L\) over \(k\). The basis remains algebraically independent, and the same equations over \(k'\) show that \(Lk'\) is finite separable over the rational function field over \(k'\) in those basis elements. The equations remain separable because their nonzero discriminants remain nonzero. Now \(T\otimes_k k'\) is regular by the geometric hypothesis, and its extension to \(Lk'\) is regular by \ref{res:X02}. The faithfully flat map \(T\otimes_k L\to T\otimes_k Lk'\) descends regularity by localizing at primes and using \ref{res:X02}. The argument applies equally to every finite extension of \(L\), since that extension is still finitely generated over \(k\).
+
+For base change along \(A\to A'\) of finite type, flatness persists and each new fibre is the corresponding old fibre extended along \(\kappa(\mathfrak p)\subseteq\kappa(\mathfrak p')\). This is a finitely generated extension, so the preceding argument applies. In a localization the fibres are localizations of the old fibres, and these commute with finite scalar extension.
+
+For composition \(A\to B\to C\), fix a finite extension \(L/\kappa(\mathfrak p)\), with \(\mathfrak p\) a prime of \(A\). The flat map \(B\otimes_A L\to C\otimes_A L\) has regular fibres. Indeed \(B\otimes_A L\) is finite over the localization and quotient \(B\otimes_A\kappa(\mathfrak p)\). The residue field at any of its primes is a finite extension of the residue field at the corresponding prime of \(B\), and the fibre is a scalar extension of a fibre of \(B\to C\). The source ring is regular by regularity of \(A\to B\). Local ascent in \ref{res:X02} makes \(C\otimes_A L\) regular. Flatness of the composite follows by composition of flat tensor functors.
+
+Finally, faithful flatness detects exactness after tensoring, so flatness of \(A\to C\) descends along \(B\to C\) to \(A\to B\). For every test \(L/\kappa(\mathfrak p)\) the map \(B\otimes_A L\to C\otimes_A L\) is faithfully flat, and regularity of its target descends by \ref{res:X02}.
+\end{proof}
+
+\begin{lemma}[Completions of polynomial rings over the generic base]\label{res:X12}
+Let \(A\) be a Noetherian complete local domain with fraction field \(K\). For every prime \(\mathfrak P\) of \(A[T]\), the ring
+\[
+                 \widehat{A[T]_{\mathfrak P}}\otimes_A K
+\]
+is geometrically regular over \(K\).
+\end{lemma}
+\begin{proof}
+First take \(A=S\) one of the regular power-series bases provided by \ref{res:C05}. Write \(K_0=\operatorname{Frac}(S)\). The ring in the statement is regular by the polynomial and completion cases of \ref{res:X02}, since the tensor just localizes at nonzero elements of \(S\). If \(\operatorname{char}K_0=0\), all finite scalars extend separably. Otherwise use the tower from \ref{res:X04} for finite extensions of \(K_0\). A separable step again follows from \ref{res:X02}. For a purely inseparable step \(M\subset M[z]/(z^p-f)\), choose a finite domain \(B\) over \(S\) with fraction field \(M\), and scale \(f\) into \(B\) as in \ref{res:X07}. The derivation furnished by \ref{res:X05} for \(B/S\) has \(D(f)\ne0\). Extend it on \(B[T]\) by \(D(T)=0\). Finite completion decomposition for \(S[T]\to B[T]\), followed by localizing the constants of \(B\), identifies
+\[
+ \widehat{S[T]_{\mathfrak P}}\otimes_S M
+   \cong
+ \left(\prod_{\mathfrak P_i\cap S[T]=\mathfrak P}
+                \widehat{B[T]_{\mathfrak P_i}}\right)\otimes_B M .
+\]
+Thus the derivation extends to the ring on the left, by extending it on each local completion and then on the localization. The element \(D(f)\) becomes a unit. Inductive regularity of this ring and the hypersurface argument in \ref{res:X03} prove the step.
+
+For a general complete local domain \(A\), choose a finite normalization subring \(S\) by \ref{res:C05}. The map \(S[T]\to A[T]\) is finite, so \ref{res:X06} makes the ring in the statement a factor of
+\[
+         \widehat{S[T]_{\mathfrak P\cap S[T]}}\otimes_S K .
+\]
+This is geometrically regular over \(K\), as the extension \(K/K_0\) is finite and the regular-base case has been proved. The factor therefore has the required property.
+\end{proof}
+
+\begin{lemma}[Polynomial \(G\)-rings]\label{res:X13}
+If \(A\) is Noetherian complete local, then \(A[T]\) is a \(G\)-ring.
+\end{lemma}
+\begin{proof}
+For primes \(\mathfrak q\subseteq\mathfrak P\) of \(A[T]\), pass to the quotient of \(A\) by \(\mathfrak q\cap A\). The quotient is a Noetherian complete local domain, and this replacement preserves the formal fibre by the completion and quotient comparison in \ref{res:X01}. We may therefore assume \(A\) is a domain and \(\mathfrak q\cap A=0\). Write \(K=\operatorname{Frac}(A)\).
+
+If \(\mathfrak q=0\), the generic formal fibre over \(K(T)\) is geometrically regular. Indeed \(A[T]\) is finite over \(S[T]\) for the power-series base \(S\) of \ref{res:C05}. The generic-fibre calculation for \(S[T]\) in \ref{res:X07}, followed by \ref{res:X06} and finite scalar extension to \(K(T)\), proves this case.
+
+If \(\mathfrak q\ne0\), the prime in \(K[T]\) is generated by an irreducible polynomial. Thus \(\kappa(\mathfrak q)\) is finite over \(K\). Let \(L\) be any finite extension of \(\kappa(\mathfrak q)\), and let \(\alpha\) be the image of \(T\) in \(L\). Choose a finite \(A\)-subalgebra \(B\subset L\) with fraction field \(L\), by scaling generators as in \ref{res:X07}. This domain \(B\) is complete local because the decomposition in \ref{res:X06} at the maximal ideal of \(A=\widehat A\) expresses \(B\) as a product of its local completions. A nonzero domain forces one factor. Finite completion decomposition for the map \(A[T]\to B[T]\) now gives
+\[
+ \widehat{A[T]_{\mathfrak P}}\otimes_{A[T]}L
+  \cong
+  \prod_{\mathfrak P_i\cap A[T]=\mathfrak P}
+       \left(\widehat{B[T]_{\mathfrak P_i}}\otimes_B L\right)/(T-\alpha).
+\]
+Here tensoring over \(B[T]\) with \(L\) first inverts the nonzero elements of \(B\) and then imposes \(T=\alpha\). The rings before quotienting are regular by \ref{res:X12}. The derivation \(\partial/\partial T\) extends to them by \ref{res:X03}, kills \(L\) and sends \(T-\alpha\) to \(1\). The same local argument as in \ref{res:X03} makes each quotient regular. Wherever the generator is nonunit it has nonzero class modulo the square of the local maximal ideal and is part of a regular system of parameters. Factors where it is a unit become the zero ring. This verifies every finite scalar extension of the formal fibre.
+\end{proof}
+
+\begin{theorem}[Finite-type permanence of excellence]\label{res:X14}
+Every essentially finite-type algebra over a Noetherian \(G\)-ring is a \(G\)-ring. Consequently every essentially finite-type algebra over a quasi-excellent ring is quasi-excellent, and every essentially finite-type algebra over an excellent ring is excellent.
+\end{theorem}
+\begin{proof}
+For the \(G\)-assertion it suffices to prove that \(R[T]\) is a \(G\)-ring when \(R\) is one. Iteration gives finite polynomial extensions, and quotients and localizations are then handled by \ref{res:X06}. Fix a prime \(\mathfrak P\) of \(R[T]\). Replacing \(R\) by \(R_{\mathfrak P\cap R}\) leaves the prime local ring unchanged, so assume \(R\) is local with maximal ideal \(\mathfrak m\subseteq\mathfrak P\). Write \(\mathfrak P'=\mathfrak P\widehat R[T]\), which is prime since \(R[T]\) and \(\widehat R[T]\) have the same quotient by \(\mathfrak m\). There are natural isomorphisms
+\[
+    R[T]/\mathfrak P^n \;\cong\;
+       \widehat R[T]/(\mathfrak P')^n .
+\]
+Indeed, the quotient on the right is the tensor product of the quotient on the left with \(\widehat R\), and the quotient on the left is killed by \(\mathfrak m^n\), with \(R/\mathfrak m^n=\widehat R/\mathfrak m^n\widehat R\). Localizing these quotients at the corresponding primes and taking inverse limits gives an isomorphism of completions.
+
+The map \(R[T]_{\mathfrak P}\to\widehat R[T]_{\mathfrak P'}\) is regular by the \(G\)-assumption on \(R\), finite-type base change and localization in \ref{res:X11}. The map from \(\widehat R[T]_{\mathfrak P'}\) to its completion is regular by \ref{res:X13}. The composite is the completion map of \(R[T]_{\mathfrak P}\) under the isomorphism just proved, and is regular by \ref{res:X11}. This proves the \(G\)-assertion. The \(J\)-2 and universal catenarity conditions are inherited under finite-type maps and localization as in \ref{res:X09}, yielding the remaining conclusions.
+\end{proof}
+
+\section[Valuation rings]{Valuation rings and integral dependence}
+
+\begin{proposition}[Intrinsic valuation tests]\label{res:W01}
+For a domain \(V\) with fraction field \(K\), the following are equivalent.
+\begin{enumerate}
+\item For each \(x\in K^\times\), \(x\) or \(x^{-1}\) belongs to \(V\).
+\item The ideals of \(V\) are totally ordered by inclusion.
+\item \(V\) is local and every finitely generated ideal is principal.
+\end{enumerate}
+A ring satisfying them is called a valuation ring.
+\end{proposition}
+\begin{proof}
+For nonzero \(a,b\in V\), the first condition applied to \(a/b\) makes either \(a\) divide \(b\) or \(b\) divide \(a\). If two ideals were incomparable we could choose one element in each outside the other, contradicting this divisibility. The linear order on ideals implies a unique maximal ideal, and the largest of finitely many principal ideals generated by the given generators is their sum.
+
+Conversely let \((a,b)=(d)\) in a local domain, with \(a,b\ne0\). Write \(a=du,b=dv\). The equality of the ideals says \(1\in(u,v)\), so \(u\) or \(v\) is a unit. Applying this to a numerator and denominator of \(x\) gives condition 1.
+\end{proof}
+
+\begin{theorem}[Domination and extension]\label{res:W02}
+Every local subring \((A,\mathfrak m_A)\) of a field \(L\) is dominated by a valuation ring \(V\) of \(L\), meaning \(A\subseteq V\) and \(\mathfrak m_V\cap A=\mathfrak m_A\). If \(K\subseteq L\) and \(A\) is a valuation ring of \(K\), then the dominating \(V\) satisfies \(V\cap K=A\).
+\end{theorem}
+\begin{proof}
+Order local subrings of \(L\) dominating \(A\) by domination. The union of a chain is local because the union of the contracted maximal ideals consists of precisely the nonunits, because an element outside that union already has its inverse at a stage where it is present. The domination relation survives. Zorn's lemma gives a maximal element \((V,\mathfrak m)\).
+
+If \(x\in L^\times\setminus V\) and \(\mathfrak m V[x]\ne V[x]\), localization at a maximal ideal containing \(\mathfrak m V[x]\) would give a larger dominating ring. Thus
+\[
+           1=b_0+b_1x+\cdots+b_nx^n,\qquad b_i\in\mathfrak m.
+\]
+Here \(n\ge1\). Divide by the unit \(1-b_0\) after moving \(b_0\) to the left, and multiply by \(x^{-n}\). This gives a monic equation for \(x^{-1}\) over \(V\). Lying over for the integral extension \(V\subset V[x^{-1}]\), from \cite[ALG-05-C01-R03]{p103}, provides a prime over \(\mathfrak m\). Localizing there gives a dominating ring. Maximality implies \(x^{-1}\in V\), so \(V\) is a valuation ring by \ref{res:W01}. The same criterion shows \(\operatorname{Frac}(V)=L\).
+
+For the extension assertion, \(x\in K^\times\setminus A\) has \(x^{-1}\in\mathfrak m_A\). Its inverse cannot be in \(V\), as \(x^{-1}\in\mathfrak m_V\). Thus \(V\cap K=A\).
+\end{proof}
+
+\begin{theorem}[Valuative criterion for integral dependence]\label{res:W03}
+If \(A\subseteq L\) is any domain contained in a field, its integral closure in \(L\) is the intersection of all valuation rings of \(L\) containing \(A\).
+\end{theorem}
+\begin{proof}
+A valuation ring is integrally closed in its fraction field. For if \(x\notin V\) were integral over \(V\), then \(x^{-1}\) would belong to its maximal ideal. Dividing the monic equation by its leading monomial \(x^n\) would place \(1\) in that ideal. Thus the integral closure is contained in every such valuation ring.
+
+Let \(x\in L\) fail to be integral over \(A\), so \(x\ne0\). The ideal generated by \(x^{-1}\) in \(A[x^{-1}]\) is proper. Indeed, an identity \(1=\sum_{i\ge1}a_i x^{-i}\) would give a monic equation after multiplication by a suitable power of \(x\). Localize \(A[x^{-1}]\) at any maximal ideal containing \(x^{-1}\) and apply \ref{res:W02}. The resulting valuation ring of \(L\) contains \(A\) and has \(x^{-1}\) in its maximal ideal, so does not contain \(x\).
+\end{proof}
+
+\section[Value groups and rank]{Value groups, rank, and extension degrees}
+
+\begin{proposition}[The ordered group of a valuation]\label{res:W04}
+For a valuation ring \(V\) of \(K\), the quotient group \(\Gamma=K^\times/V^\times\) has a total order defined by \(v(a)\ge v(b)\) if \(a/b\in V\). In additive notation the quotient map \(v\) satisfies
+\[
+                  v(a+b)\ge\min\{v(a),v(b)\}
+\]
+for \(a,b,a+b\ne0\), with equality when the two values differ. Conversely a homomorphism from \(K^\times\) to a totally ordered abelian group satisfying this inequality defines a valuation ring by taking zero and all elements of nonnegative value.
+\end{proposition}
+\begin{proof}
+Comparison only depends on the classes modulo units. Transitivity and translation invariance follow from multiplication, antisymmetry follows from the unit criterion, and totality follows from \ref{res:W01}. Suppose \(v(a)\ge v(b)\). Then \(a/b\in V\), so \((a+b)/b\in V\). When the inequality is strict \(a/b\) lies in the maximal ideal and \(1+a/b\) is a unit, proving equality. For the converse the stated inequality makes the nonnegative part a subring and the sign comparison with the inverse gives \ref{res:W01}. Its value group is the image of the homomorphism with the inherited order.
+\end{proof}
+
+\begin{theorem}[Prime ideals, coarsening, and composition]\label{res:W05}
+The prime ideals of a valuation ring \(V\) with group \(\Gamma\) correspond in reverse order to the convex subgroups \(H\) of \(\Gamma\). Under this correspondence the localization \(V_P\) has value group \(\Gamma/H\), and \(V/P\), as a valuation ring of \(\kappa(P)\), has group \(H\). Conversely, if \(U\) is a valuation ring and \(W\) is a valuation ring of its residue field, the inverse image of \(W\) in \(U\) is a valuation ring obtained by composing the two valuations.
+\end{theorem}
+\begin{proof}
+A subgroup is convex when it contains the entire order interval between any two of its elements. For a prime \(P\), the values \(C=v(V\setminus P)\) are an initial subset of \(\Gamma_{\ge0}\). A nonnegative value below that of an element outside \(P\) is realized by a divisor of it, which must also be outside \(P\). The set \(C\) contains \(0\) and is closed under addition by primality. For \(\alpha,\beta\in C\) with \(\alpha\ge\beta\), their difference belongs to \(C\) by the initial property. Hence \(H=C\cup(-C)\) is a convex subgroup. Conversely the complement of the nonnegative part of a convex subgroup inside \(\Gamma_{\ge0}\) is a final subset closed under adding nonnegative values. The elements having values in that complement, together with zero, form an ideal. Addition follows from \ref{res:W04} and multiplication from nonnegativity. Its complement is multiplicatively closed, making it prime. These constructions are inverse.
+
+In the ordered quotient by a convex subgroup, a coset is nonnegative when it contains a nonnegative representative. A strictly positive coset consists of elements greater than every element of \(H\). An element \(x\in K^\times\) belongs to \(V_P\) exactly when \(v(x)+h\ge0\) for some \(h\in C\), since \(h\) can be realized by a denominator outside \(P\). This is exactly nonnegativity of the coset of \(v(x)\). For the residue valuation, a nonzero element of \(V/P\) represented by \(a\notin P\) has value \(v(a)\in H\). Adding an element of \(P\) does not change its value, by the strict case in \ref{res:W04}. Extend by differences to nonzero fractions. It satisfies the valuation inequalities by lifting the operations and has image \(H\), since every nonnegative element of \(H\) comes from \(V\setminus P\). The corresponding valuation ring consists exactly of the fractions whose numerator is divisible by the denominator in \(V/P\), using divisibility in \(V\).
+
+For composition let \(V\subset U\) be the indicated inverse image. If \(x\) lies outside \(U\), then \(x^{-1}\) lies in the maximal ideal of \(U\) and hence in \(V\). If \(x\) lies in that maximal ideal it belongs to \(V\). Otherwise \(x\) is a unit in \(U\), and the valuation test for its residue in \(W\) places either \(x\) or \(x^{-1}\) in \(V\). This proves the valuation test for \(V\). Its quotient by the inverse image of zero is \(W\), and localization at that prime returns \(U\) because any missing unit of \(U\) is the inverse of a unit of \(U\) whose residue lies in \(W\).
+\end{proof}
+
+The rank of a valuation is the Krull dimension of its valuation ring. By \ref{res:W05} it is the supremum of lengths of strict chains of convex subgroups of the value group.
+
+\begin{proposition}[Noetherian valuation rings]\label{res:W06}
+A valuation ring is Noetherian exactly when it is a field or has value group isomorphic to \(\mathbb Z\) with its usual order. In the second case it is a discrete valuation ring.
+\end{proposition}
+\begin{proof}
+If \(V\) is Noetherian and not a field, its nonzero maximal ideal is generated by one nonzero element \(\pi\) by \ref{res:W01}. Since \(\bigcap_{n\ge0}(\pi)^n=0\) by Krull intersection \cite[ALG-05-C04-R04]{p103}, every nonzero element has a factorization \(\pi^n u\) with \(u\) a unit. Taking fractions gives \(\Gamma=\mathbb Z v(\pi)\) with \(v(\pi)>0\).
+
+Conversely, in the ordered group \(\mathbb Z\) a nonempty set of nonnegative values has a minimum. Choosing an element of least value in a nonzero ideal yields a generator, by \ref{res:W04}. This makes the ring Noetherian. Value group zero gives the field case.
+\end{proof}
+
+\begin{example}[Rank does not give discreteness]\label{res:W07}
+On \(k((x))((y))^\times\), let
+\[
+ v(f)=\bigl(\operatorname{ord}_y(f),\
+       \operatorname{ord}_x(\text{leading \(y\)-coefficient of }f)\bigr).
+\]
+Products multiply leading coefficients and add exponents. For a sum with unequal first values the lesser term survives, and when the first values coincide the second valuation gives the comparison, unless cancellation raises the first value. This is a valuation with group \(\mathbb Z^2\) lexicographically ordered. The only nonzero proper convex subgroup is \(0\times\mathbb Z\) because a subgroup containing an element with nonzero first coordinate also contains one with positive first coordinate. Positive multiples of the latter eventually exceed each fixed element of the group, forcing the convex subgroup to be the whole group. The group quotient yields \(y\)-adic order. The residue valuation is \(x\)-adic order on \(k((x))\). By \ref{res:W05} the composed valuation ring has dimension two, whereas by \ref{res:W06} it is not Noetherian.
+
+For rank one without discreteness, take the union of fields \(k(t^{1/n!})\) with the embeddings that take a generator to the appropriate power of the next generator. At the \(n\)-th stage use the order at its generator, scaled by \(1/n!\). Substitution by a power rescales the unnormalized order by \(n+1\), so the valuations agree on overlaps. The group is \(\mathbb Q\), which has no nonzero proper convex subgroup because multiples of any positive rational bound all rationals. The associated ring has dimension one by \ref{res:W05}, and it is not Noetherian by \ref{res:W06}.
+\end{example}
+
+\begin{theorem}[Finite valuation extensions]\label{res:W08}
+Let \(V\subseteq W\) be a valuation extension with fraction fields \(K\subseteq L\) and \(W\cap K=V\). If \(L/K\) is finite, then
+\[
+       [\Gamma_W:\Gamma_V]\,[\kappa(W):\kappa(V)]\le [L:K].
+\]
+If \(L/K\) is purely inseparable, with no finiteness assumption, \(V\) has a unique extension to \(L\) and the extended ring is the integral closure of \(V\).
+\end{theorem}
+\begin{proof}
+The contraction condition identifies the value group and residue field of \(V\) with a subgroup and a subfield for \(W\). Choose finitely many \(x_i\in L^\times\) with values in distinct cosets modulo \(\Gamma_V\), and units \(y_j\in W\) with residues linearly independent over \(\kappa(V)\). The products \(x_i y_j\) are linearly independent over \(K\). In fact for a nonzero coefficient block \((a_{ij})_j\), divide \(\sum_j a_{ij}y_j\) by a coefficient of least value. The resulting sum has nonzero residue by the chosen residue independence. Thus the value of the block is that least coefficient value and lies in \(\Gamma_V\). Multiplication by \(x_i\) puts nonzero blocks in distinct cosets, so they have distinct values. A term of unique least value cannot cancel, by \ref{res:W04}. Bounding the number of products by \([L:K]\) first gives finiteness of the index and residue degree and then gives the stated inequality.
+
+In characteristic \(p>0\), for \(x\in L^\times\) choose \(n\) with \(x^{p^n}\in K\). In any extension ring \(W\) the signs of \(v_W(x)\) and \(v_W(x^{p^n})\) agree. Thus membership in \(W\) is equivalent to \(x^{p^n}\in V\), independent of the extension. Existence comes from \ref{res:W02}. Every such element is integral because it satisfies the monic polynomial \(T^{p^n}-x^{p^n}\). Conversely the extended valuation ring is integrally closed by \ref{res:W03}.
+\end{proof}
+
+\begin{example}[A discrete valuation with an inseparable formal fibre]\label{res:W09}
+Put \(k=\mathbb F_p\) and choose \(f\in k[[t]]\) transcendental over \(k(t)\).
+Such an \(f\) exists since \(k[[t]]\) is uncountable and \(k(t)\) is countable.
+Set \(K=k(t,f^p)\) and \(V=K\cap k[[t]]\). Since \(t\in K\), the restricted
+order has group \(\mathbb Z\) and \(V\) is a discrete valuation ring with
+uniformizer \(t\). Truncations lie in \(k[t]\), and elements of order
+at least \(n\) divide by \(t^n\) in \(V\). Thus \(V/t^n V=k[t]/(t^n)\).
+Thus \(\widehat V=k[[t]]\) and the generic formal fibre is \(k((t))\).
+Grouping powers of the transcendental element \(f\) modulo \(p\) gives
+\([K(f):K]=p\). Over \(K(f)\) the generic formal fibre becomes
+\[
+ k((t))[Z]/(Z^p-f^p)
+        = k((t))[Z]/((Z-f)^p).
+\]
+It contains the nonzero nilpotent \(Z-f\), so \(V\) fails the \(G\)-condition.
+The discrete valuation ring \(k[t]_{(t)}\) is excellent by \ref{res:X09}.
+\end{example}
+\chapter{Infinitesimal deformations}
+\label{ch:deformations}
+
+We first work with square-zero extensions of rings and chosen
+identifications of their kernels. We then specialize to local Artin
+\(k\)-algebras with a specified residue field \(k\).
+The construction extends the linear lifting equation
+\cite[FL-06]{core} from lifting a map into a given ring to
+constructing the target extension itself.
+
+\section{Lifting a ring over a prescribed extension}
+
+\begin{theorem}[Square-zero extensions from a presentation]\label{res:T01}
+Let \(A'\twoheadrightarrow A\) have square-zero kernel \(I\).
+Let \(B\) be an \(A\)-algebra, \(N\) a \(B\)-module, and \(c:I\to N\)
+an \(A\)-linear map. A lift is an \(A'\)-algebra \(B'\twoheadrightarrow B\)
+with square-zero kernel identified with \(N\), inducing \(c\) on \(I\).
+Take a polynomial presentation \(P'=A'[X_i]\twoheadrightarrow B\)
+with kernel \(Q\). Let \(\overline P=P'/IP'\), let
+\(J=\ker(\overline P\to B)\), and write \(K\) for the image of
+\(IP'\to Q/Q^2\).
+A lift exists if and only if the induced \(P'\)-linear map
+\(IP'\to N\) factors through \(K\) and the resulting map
+\(K\to N\) extends to \(Q/Q^2\). Once the factorization condition
+holds, the extension condition is the vanishing of its connecting
+class in \(\operatorname{Ext}^1_B(J/J^2,N)\).
+\end{theorem}
+\begin{proof}
+Given a lift, choose lifts of the variable images in \(B'\).
+The resulting map \(P'\to B'\) sends \(Q\) into \(N\), kills
+\(Q^2\), and induces a \(B\)-linear homomorphism \(\rho:Q/Q^2\to N\)
+extending the prescribed map. Conversely, make
+\(N\) a module over \(P'/Q^2\) through \(B\) and form the trivial
+square-zero extension \((P'/Q^2)\ltimes N\), with multiplication
+\((a,u)(b,v)=(ab,av+bu)\).
+The graph \(\{(q,-\rho(q)):q\in Q/Q^2\}\) is an ideal because
+\(Q/Q^2\) acts trivially on \(N\). Quotienting identifies the kernel
+of the map to \(B\) with \(N\), via \((q,n)\mapsto\rho(q)+n\).
+The induced map on \(I\) is \(c\). This construction is inverse
+to the previous one with lifted variables because the map to \(B'\)
+is surjective and has exactly that graph as its kernel.
+
+The quotient \((Q/Q^2)/K\) identifies with \(J/J^2\), since \(Q\)
+surjects to \(J\) with kernel \(IP'\) and its square has image \(J^2\).
+Apply \(\operatorname{Hom}_B(-,N)\) to
+\(0\to K\to Q/Q^2\to J/J^2\to0\).
+Exactness identifies extension of the prescribed map with zero
+connecting class. Thus the vanishing test is exact for each
+presentation. Its truth is independent of the presentation since
+it is equivalent to the existence of a lift.
+\end{proof}
+
+\begin{proposition}[Differences and infinitesimal automorphisms]\label{res:T02}
+If the lifts in Result~\ref{res:T01} exist, their isomorphism
+classes form a torsor under
+\[
+ T^1(B/A;N)=
+ \operatorname{coker}\bigl(
+  \operatorname{Hom}_B(\Omega_{\overline P/A}\otimes_{\overline P}B,N)
+  \longrightarrow \operatorname{Hom}_B(J/J^2,N)\bigr).
+\]
+Here isomorphisms preserve \(B,N\) and the \(A'\)-structure.
+The automorphisms of a chosen lift inducing the identity on
+\(B,N\) are naturally \(\operatorname{Der}_A(B,N)\).
+The displayed group is
+\(\operatorname{Ext}^1_B([J/J^2\to\Omega_{\overline P/A}\otimes B],N)\)
+where the complex is in degrees \(-1,0\).
+\end{proposition}
+\begin{proof}
+Any two extensions of the prescribed map \(\rho|_K\) differ by a
+map \(J/J^2\to N\). Changing the chosen variable lifts by elements
+of \(N\) changes \(\rho\) by the restriction of a polynomial
+derivation. That restriction factors through the conormal map.
+An isomorphism of two lifts sends one list of variable lifts to
+another such list, so this equivalence accounts for precisely the
+isomorphic lifts, by the explicit graph construction.
+An automorphism with the specified identities has the form
+\(z\mapsto z+d(\bar z)\) with \(d:B\to N\). Additivity and
+multiplicativity are equivalent to additivity and the Leibniz
+rule for \(d\). Respecting the \(A'\)-map makes \(d\) an
+\(A\)-derivation. Conversely this formula always gives the required
+automorphism with inverse obtained by replacing \(d\) by \(-d\).
+
+For the last formula, use the triangle with degree-zero free
+term \(\Omega_{\overline P/A}\otimes B\), the two-term complex,
+and the quotient complex \(J/J^2[1]\). Apply the derived Hom
+long exact sequence in \cite[R11]{homological}. The degree-one
+Ext from the free term is zero, and the degree-one Ext from
+\(J/J^2[1]\) is \(\operatorname{Hom}_B(J/J^2,N)\).
+Thus degree one is exactly the indicated cokernel.
+\end{proof}
+
+\begin{lemma}[The flat-lift condition over Artin rings]\label{res:T03}
+Let \(A'\to A\) be a square-zero surjection of local Artin
+\(k\)-algebras with identity on \(k\). Let \(B_A\) be a flat
+\(A\)-algebra. A lift of \(B_A\) which is \(A'\)-flat and reduces
+to \(B_A\) gives a solution of Result~\ref{res:T01} with
+\(N=I\otimes_A B_A\) and \(c(i)=i\otimes1\). Conversely a
+solution for this \(N,c\) is flat and reduces to \(B_A\).
+\end{lemma}
+\begin{proof}
+A flat module \(M\) over a local Artin ring is free. Indeed lifts
+of a basis modulo the maximal ideal give a surjection from a free
+module by nilpotence. Flatness implies its kernel is zero modulo
+the maximal ideal after tensoring the sequence with the residue
+field. Nilpotence gives zero kernel even for infinite bases.
+For a flat lift, tensor \(0\to I\to A'\to A\to0\) with the lifted
+algebra to obtain exactly the stated sequence with
+\(I\otimes_{A'} B'=I\otimes_A B_A\).
+
+Conversely let \(B'\) be a solution. Lift an \(A\)-basis of \(B_A\)
+to \(B'\) and compare the exact sequence with
+\(0\to I^{(S)}\to (A')^{(S)}\to A^{(S)}\to0\), indexed by the basis.
+The map on left terms is the canonical basis isomorphism since
+the map on \(I\) is \(c\), and the map on right terms is an
+isomorphism by choice. Injectivity and surjectivity of the middle
+map now follow by chasing the sequence. In particular \(B'\)
+is free and its base change is the prescribed \(B_A\).
+\end{proof}
+
+\section{Complete intersections and an obstruction example}
+
+\begin{theorem}[Unobstructed polynomial complete intersections]\label{res:T04}
+Let \(P=k[x_1,\ldots,x_n]\), \(f_1,\ldots,f_s\) be a regular
+sequence, and \(B=P/(f_1,\ldots,f_s)\).
+Every flat deformation of \(B\) over a local Artin \(k\)-algebra
+lifts through any surjection of local Artin \(k\)-algebras.
+The tangent space of isomorphism classes of marked deformations
+is the cokernel of the Jacobian map
+\[
+ B^n \longrightarrow B^s,\qquad
+ (u_j)_j\longmapsto
+ \Big(\sum_j \frac{\partial f_i}{\partial x_j}u_j\Big)_i .
+\]
+\end{theorem}
+\begin{proof}
+If \(B_A\) is a flat deformation, choose variable lifts to get
+\(P_A=A[x_1,\ldots,x_n]\to B_A\). It is surjective because it is
+so modulo \(\mathfrak m_A\) and this ideal is nilpotent. In the
+surjection's defining sequence, flatness of \(B_A\) injects
+the modulus-\(\mathfrak m_A\) kernel into \(P\).
+Thus lifts \(g_i\) of \(f_i\) generate the full kernel:
+the quotient by their span is equal to its multiple by
+\(\mathfrak m_A\) and hence is zero. For \(A'\twoheadrightarrow A\),
+choose arbitrary lifts \(g_i'\in P_{A'}\). Consider their Koszul
+complex filtered by powers of \(\mathfrak m_{A'}\).
+Every graded quotient complex is a copy of the Koszul complex on
+\(f\) with \(k\)-vector-space coefficients \(\mathfrak m_{A'}^j/
+\mathfrak m_{A'}^{j+1}\). Its positive homology vanishes by
+\cite[RK-07]{core}. Induct along the finite filtration using the
+long exact sequence to identify the associated graded of degree-zero
+homology with
+\(\operatorname{gr}_{\mathfrak m_{A'}}(A')\otimes_k B\).
+The filtration on degree zero is by the actual maximal-ideal powers
+because it is the image of the filtered degree-zero term of the
+Koszul complex. Lift a \(k\)-basis of \(B\) to the quotient.
+The resulting map from the free \(A'\)-module is an isomorphism
+on associated graded and hence an isomorphism by finite filtration.
+This proves flatness, and the presentation gives reduction to \(B_A\).
+
+For first-order deformations use Result~\ref{res:T03} with
+\(A=k\), \(A'=k[\epsilon]\), and basepoint the trivial extension.
+The classes form the group of Result~\ref{res:T02} for \(N=B\).
+For a regular sequence the classes of \(f_i\) freely generate
+\(J/J^2\). In a relation \(\sum_i a_i f_i\in J^2\), subtract
+a presentation of its right hand side with coefficients in \(J\).
+The resulting ordinary relation is a Koszul syzygy, so the remaining
+coefficients also lie in \(J\).
+The conormal map differentiates the \(f_i\), giving exactly
+the displayed Jacobian.
+\end{proof}
+
+\begin{example}[A hypersurface tangent space]\label{res:T05}
+For \(B=k[x]/(x^m)\), \(m\geq1\), the tangent space is
+\(B/(m x^{m-1})\). An infinitesimal deformation is given by
+\(x^m+\epsilon q(x)\) and two \(q\)'s give the same class precisely
+when their difference vanishes in this quotient.
+\end{example}
+\begin{proof}
+This is the single-entry Jacobian of Result~\ref{res:T04}.
+For the polynomial form, the deformed principal equation is
+\(x^m+\epsilon q(x)\). Replacing \(x\) by \(x+\epsilon u(x)\)
+adds \(m x^{m-1}u(x)\), and multiplying the equation by
+\(1+\epsilon v(x)\) adds a multiple of \(x^m\) to \(q\).
+These account for the cokernel, including the case when the
+characteristic divides \(m\).
+\end{proof}
+
+\begin{example}[A first-order deformation that does not lift]\label{res:T06}
+Let \(B=k\oplus kx\oplus ky\oplus kz\), with the span of \(x,y,z\)
+square-zero. On the free \(k[t]/(t^2)\)-module with this marked basis,
+set \(xy=tz\), \(z^2=ty\), and all other products of basis elements
+in the maximal-ideal span equal to zero, imposing symmetry and the unit.
+This flat first-order deformation admits no flat lift to \(k[t]/(t^3)\).
+\end{example}
+\begin{proof}
+Associativity on triples from the span of \(x,y,z\) holds modulo
+\(t^2\), since a product is \(t\) times a member of that span
+and the next product adds another factor of \(t\).
+If a lift existed, Result~\ref{res:T03} and the free basis argument
+allow lifts of the same basis. Up to terms of order three write
+\(xy=tz+t^2a\), \(yz=t^2b\), \(z^2=ty+t^2c\).
+On the residual algebra, multiplying \(a\) by \(z\) is its
+scalar coefficient times \(z\), and multiplying \(b\) by \(x\)
+is its scalar coefficient times \(x\). Hence
+\[
+ (xy)z-x(yz)=t^2\bigl(y+a_0z-b_0x\bigr),
+\]
+which is nonzero in the claimed free basis. This contradicts
+associativity and is independent of the choices of lifted basis.
+\end{proof}
+
+\section{Tangent spaces and formal hulls}
+
+Write \(\mathcal A_k\) for the local Artin \(k\)-algebras with residue
+field \(k\) and local \(k\)-algebra maps. A small extension has
+one-dimensional kernel \(I\) killed by the source maximal ideal.
+Every surjection in \(\mathcal A_k\) decomposes into such extensions.
+a nonzero kernel has a one-dimensional socle ideal, and induction on
+length applies after quotienting it out. Let \(F:\mathcal A_k\to
+\mathrm{Sets}\) have \(F(k)=\{*\}\). For \(A_1\to A\leftarrow A_2\)
+the canonical fibre-product map is
+\[
+ F(A_1\times_A A_2)\longrightarrow F(A_1)\times_{F(A)}F(A_2).
+\]
+We use the classical conditions H1 (surjectivity when \(A_2\to A\)
+is small), H2 (bijectivity when \(A=k\), \(A_2=k[\epsilon]\)),
+H3 (finite-dimensional tangent space), and H4 (bijectivity for
+\(A_1=A_2\) and both maps the same small extension).
+
+\begin{proposition}[Tangent functor and split corrections]\label{res:T07}
+Under H2, \(TF=F(k[\epsilon])\) has a natural \(k\)-vector-space structure,
+and \(F(k\oplus I)\simeq TF\otimes_k I\) for finite-dimensional
+square-zero \(I\). Suppose \(B\to A\) is small and
+\(h:A_1\to B\) lifts \(A_1\to A\). Then
+\[
+ A_1\times_A B \simeq A_1\times_k (k\oplus I)
+\]
+by \((u,v)\mapsto (u,\bar u+(v-h(u)))\).
+Under H1, two prescribed compatible elements of \(F(A_1),F(B)\)
+can therefore be represented by an element of \(F(A_1)\) and a
+single tangent correction in \(TF\otimes I\).
+\end{proposition}
+\begin{proof}
+Repeated H2 identifies \(F(k\oplus k^r)\) with \(TF^r\).
+Apply \(F\) to addition \(k^2\to k\) and multiplication by scalars
+on \(k\). The vector-space axioms follow from the corresponding
+equalities of linear maps, using the product identifications.
+In a basis of \(I\), this is exactly \(TF\otimes I\).
+Changing the basis uses the same linear maps under the product
+identifications, so the correspondence is natural.
+For the splitting formula, the inverse sends
+\((u,\bar u+w)\) to \((u,h(u)+w)\). In multiplying, \(w w'=0\)
+and the action on \(I\) is via the residue field, which verifies
+the formula as a ring isomorphism. Apply H1 to choose an element
+over the fibre product and apply H2 to its split presentation.
+\end{proof}
+
+\begin{lemma}[Largest quotient on which a lift exists]\label{res:T08}
+Suppose H1 holds and \(B\twoheadrightarrow A\) has kernel \(I\)
+killed by the maximal ideal of \(B\). For \(x\in F(A)\) there
+is a smallest \(k\)-subspace \(J\subseteq I\) such that \(x\)
+lifts to \(F(B/J)\).
+\end{lemma}
+\begin{proof}
+The set is nonempty since it contains \(I\) and is upward closed.
+By factoring a surjection into small extensions, H1 also gives
+surjectivity of the fibre-product map when the second leg is an
+arbitrary surjection. For that induction, pull the first ring
+back successively along the small extensions. At each stage the
+already chosen element and the next prescribed image agree over
+the preceding ring, so H1 supplies the next element.
+If \(J_1,J_2\) allow lifts, choose \(J_1'\supseteq J_1\) with
+\(J_1'+J_2=I\), \(J_1'\cap J_2=J_1\cap J_2\), by adjoining a
+vector-space complement to \(J_1+J_2\) in \(I\).
+Push the lift forward to \(B/J_1'\).
+The two lifts glue to \(B/J_1'\times_A B/J_2=B/(J_1\cap J_2)\).
+Thus the set is closed under pairwise intersections.
+An element of smallest dimension is contained in every element.
+\end{proof}
+
+For a complete Noetherian local \(k\)-algebra \(R\) with residue
+field \(k\), put \(h_R(A)=\operatorname{Hom}_{k,\mathrm{loc}}(R,A)\).
+A compatible family of elements of \(F(R/\mathfrak m_R^n)\) defines
+a natural map \(h_R\to F\). A hull has a tangent isomorphism and the
+lifting property that \(h_R(B)\to h_R(A)\times_{F(A)}F(B)\)
+is surjective for every small \(B\to A\).
+
+\begin{theorem}[Schlessinger's hull in the classical base category]\label{res:T09}
+If H1, H2, and H3 hold, \(F\) has a hull. Conversely the
+existence of a hull implies these conditions.
+\end{theorem}
+\begin{proof}
+Let \(S=k[[X_1,\ldots,X_r]]\), \(r=\dim TF\), with maximal ideal
+\(\mathfrak n\). Set \(J_2=\mathfrak n^2\). The element
+\(\xi_2\in F(S/J_2)\) corresponding under Result~\ref{res:T07}
+to the tensor of a basis of \(TF\) with the variable classes induces
+a tangent isomorphism. Having chosen \(\xi_n\in F(S/J_n)\), apply
+Result~\ref{res:T08} to
+\(S/\mathfrak n J_n\to S/J_n\) and choose the smallest ideal
+\(J_{n+1}\) between \(\mathfrak n J_n\) and \(J_n\) through which
+\(\xi_n\) lifts. Choose a lift \(\xi_{n+1}\).
+All these quotients are Artin since \(\mathfrak n^n\subseteq J_n\)
+by induction.
+
+Put \(J=\bigcap J_n\) and \(R=S/J\). The ideals \(J_n/J\) are
+cofinal with powers of the maximal ideal of \(R\).
+For the nontrivial direction, for each \(q\) the images of \(J_n\) in
+\(S/\mathfrak n^q\) stabilize. Their stable images surject to one
+another as \(q\) decreases by choosing \(n\) large in two successive
+degrees. A point in a stable image therefore lifts to compatible
+stable points in all higher degrees, hence to an element of \(S\).
+For each fixed \(n\) this element lies in \(J_n+\mathfrak n^q\)
+for every \(q\), and thus in \(J_n\) by Krull intersection on
+\(S/J_n\). It lies in \(J\). The stable image is precisely the
+image of \(J\), as required. The compatible \(\xi_n\) therefore
+give a natural map \(h_R\to F\) with tangent isomorphism.
+
+To prove the lifting property let \(B\to A\) be small with kernel
+\(I\), \(a:R\to A\), and \(y\in F(B)\) lifting the element from \(a\).
+Factor \(a\) through \(S/J_n\). Consider \(T=S/J_n\times_A B\).
+If the projection \(T\to S/J_n\) splits, composing its section
+with \(R\to S/J_n\) gives a ring lift \(R\to B\).
+If it does not split, any map \(S\to T\) lifting the quotient map
+\(S\to S/J_n\) is surjective. Indeed its image surjects onto
+\(S/J_n\), and if it missed the one-dimensional kernel it would
+be a section. Such a map exists by lifting the \(X_i\) to the
+maximal ideal of \(T\). Its kernel \(K\) lies between
+\(\mathfrak n J_n\) and \(J_n\), since the kernel of the projection
+is killed by the maximal ideal. H1 glues \(\xi_n,y\) to an
+element over \(T=S/K\). Thus \(J_{n+1}\subseteq K\) by
+Result~\ref{res:T08}, giving again a ring lift \(R\to B\).
+
+It remains to make the ring lift send the formal object to the
+prescribed \(y\). Increase \(n\) so that this lift factors through
+\(S/J_n\). By H1 glue \(\xi_n,y\) over \(T=S/J_n\times_A B\).
+The chosen lift splits the projection, and Result~\ref{res:T07}
+expresses the glued element by \((\xi_n,\theta)\) for a tangent
+correction \(\theta\in F(k\oplus I)\). The tangent isomorphism
+gives \(\delta:R\to k\oplus I\) carrying the formal object to
+\(\theta\). The map \(R\to (S/J_n)\times_k(k\oplus I)\) with
+components the quotient and \(\delta\) sends it to the glued
+element by H2. Its composition through \(T\to B\) gives the
+required lift matching \(y\).
+
+For the converse, smoothness of a hull and \(F(k)=\{*\}\) make
+\(h_R(A)\to F(A)\) surjective by induction on length.
+To glue compatible elements for a small leg, choose a ring map
+for the first element and use smoothness to choose one for the
+second with the same reduction. Their fibre-product map proves H1.
+For H2, the same existence argument gives surjectivity. For
+injectivity, take any two elements over \(A_1\times_k k[\epsilon]\)
+with the same projections, and lift them from \(h_R\).
+Their tangent components agree since the tangent map is injective.
+One may instead fix a single ring lift of the \(A_1\)-component.
+Smoothness for the small projection
+\(A_1\times_k k[\epsilon]\to A_1\) then lifts both elements with
+that fixed component. Now the ring maps have both components
+equal, so the elements coincide. H3 follows from Noetherianity
+of \(R\) and the tangent isomorphism.
+\end{proof}
+
+\begin{theorem}[Prorepresentability]\label{res:T10}
+Under H1--H3, the hull represents the functor on \(\mathcal A_k\)
+if and only if H4 holds. Conversely every prorepresentable
+functor in this category satisfies H1--H4.
+\end{theorem}
+\begin{proof}
+Let \(B\to A\) be small and fix \(x\in F(A)\). When its fibre
+of lifts is nonempty, H4 identifies ordered pairs of lifts with
+the elements of \(F(B\times_A B)\) over \((x,x)\).
+Use the split formula of Result~\ref{res:T07} with \(h=1_B\).
+With a first lift fixed, the second is therefore in bijection
+with \(TF\otimes I\). For three lifts, apply H1 to
+\((B\times_A B)\to A\leftarrow B\) to glue the first pair
+and the third lift over the triple fibre product. Its pairwise
+restrictions are the H4 representatives of the three pairs.
+Their two successive differences add to the first-to-last
+difference. The ring maps
+from the triple fibre product to \(k\oplus I\) send
+\((v_1,v_2,v_3)\) to the residue with components \(v_2-v_1\),
+\(v_3-v_2\), and \(v_3-v_1\), respectively. H2 and the addition
+rule of Result~\ref{res:T07} transport that equality to the
+tangent space. Hence the fibre is a torsor, naturally in \(F\).
+
+If \(h_R\to F\) is a hull, it is surjective over each small step.
+Inductively assume it bijects elements over the quotient \(A\).
+The nonempty lift fibres over corresponding elements are torsors
+on both sides, using H4 for \(F\) and the fibre-product property
+of \(h_R\). The tangent isomorphism makes their equivariant
+maps bijective. Induction on length gives the natural isomorphism
+\(h_R\simeq F\). Conversely \(\operatorname{Hom}(R,-)\) preserves
+fibre products, and its tangent space is the dual of the
+finite-dimensional cotangent space of \(R\), giving all conditions.
+\end{proof}
+
+The obstruction in Result~\ref{res:T01} is a concrete extension
+test on a conormal module, and Results~\ref{res:T02} and~\ref{res:T03}
+give its ambiguity and flatness tests. For general cotangent
+complexes, the derived obstruction can be packaged as degree-two
+Ext, with ambiguity in degree one and infinitesimal automorphisms
+in degree zero. The full construction and its comparison are
+treated in \cite[\S16]{st-cot}.
+\chapter{Intersection Multiplicities and Homological Bounds}
+\label{ch:intersection-multiplicities}
+
+At an isolated intersection the ordinary tensor product records the
+intersection scheme. Higher Tor groups measure the failure of tensor
+product to preserve a resolution. Taking their alternating length makes
+the resulting number additive. In a power series ring, the diagonal
+presents this alternating length as a Koszul Euler characteristic.
+Hilbert--Samuel theory then supplies its sign.
+\cite[Chapter V]{serre-local}
+
+\section{The Tor Euler characteristic}
+
+Write \(\ell_R\) for module length. All complexes in this chapter, except
+for a Cech complex written cohomologically, have homological grading.
+The total differential on \(P_i\otimes Q_j\) is
+\(d_P\otimes 1+(-1)^i1\otimes d_Q\).
+
+\begin{definition}[The isolated-intersection Euler characteristic]\label{res:I01}
+Let \((R,\mathfrak m)\) be a regular local ring of dimension \(d\).
+For finite \(R\)-modules \(M,N\) with \(M\otimes_R N\) of finite length, set
+\[
+ \chi_R(M,N)=\sum_{i=0}^d(-1)^i
+                \ell_R\bigl(\operatorname{Tor}_i^R(M,N)\bigr).
+\]
+The terms have finite length, all higher terms vanish, and the integer is
+symmetric in \(M,N\).
+\end{definition}
+\begin{proof}
+A finite module has a resolution by finite free modules of length at
+most \(d\) by \cite[CM-12 or CM-19]{core}. The Tor modules are finite
+and the resolution localizes. A localized Tor module vanishes when
+one localized argument vanishes. Conversely, two nonzero finite
+modules over \(R_{\mathfrak p}\) have nonzero tensor product because reduction
+to its residue field gives the tensor product of two nonzero vector
+spaces by Nakayama's lemma. Thus
+\[
+ \operatorname{Supp}(M\otimes_R N)
+   =\operatorname{Supp}(M)\cap\operatorname{Supp}(N).
+\]
+This support is contained in \(\{\mathfrak m\}\) under the hypothesis.
+A finite module with this support is killed by some power of
+\(\mathfrak m\), and its successive \(\mathfrak m\)-adic quotients are
+finite-dimensional over the residue field. It has finite length.
+For symmetry, use the total tensor product of finite free resolutions
+of \(M,N\). Taking homology in the two possible directions gives the
+two computations of Tor, and interchange of the factors sends
+\(p\otimes q\) to \((-1)^{ij}q\otimes p\) in bidegree \((i,j)\).
+\cite[\S2]{dugger}
+\end{proof}
+
+\begin{proposition}[Additivity and reduction to prime quotients]\label{res:I02}
+For a fixed finite \(N\), the Euler characteristic is additive on an
+exact sequence of finite modules whose supports meet the support of
+\(N\) only at \(\mathfrak m\). The same holds in the other argument.
+For prime filtrations of \(M\) and \(N\) with factors
+\(R/\mathfrak p_a\) and \(R/\mathfrak q_b\), respectively, one has
+\[
+ \chi_R(M,N)=
+ \sum_{a,b}\chi_R(R/\mathfrak p_a,R/\mathfrak q_b).
+\]
+Each pair on the right still satisfies the isolated-support condition.
+The maxima of the dimensions of the respective factors are
+\(\dim M\) and \(\dim N\) for nonzero modules.
+\end{proposition}
+\begin{proof}
+The long exact Tor sequence is finite and consists of finite-length
+modules by \ref{res:I01}. Its alternating length is zero, since the
+length of a term is the sum of the lengths of the incoming and outgoing
+images. Regrouping yields additivity.
+
+In a nonzero finite module choose a nonzero element with maximal
+annihilator among the annihilators of nonzero elements. Such an
+annihilator exists by the ascending chain condition on ideals. If
+\(ab\) kills this element but \(b\) does not, multiplication by \(b\)
+produces a nonzero element whose annihilator contains the original
+annihilator and \(a\). Maximality puts \(a\) in the original
+annihilator, so it is prime. Remove the cyclic submodule and repeat
+in the quotient. The preimages form an ascending chain of submodules,
+which terminates by Noetherianness. Localization of each short exact
+sequence shows that the support is the union of the supports of the
+factors. This proves the support and dimension claims, and iterated
+additivity gives the formula. Equivalently the Euler pairing descends
+to the Grothendieck groups of finite modules on the two fixed closed
+supports with isolated intersection, where the relations impose
+additivity on short exact sequences. \cite[\S2, Lemma 2.2]{dugger}
+\end{proof}
+
+\begin{proposition}[Passage to the completion]\label{res:I03}
+For an isolated intersection in a regular local ring,
+\[
+ \chi_{\widehat R}(\widehat M,\widehat N)=\chi_R(M,N).
+\]
+The dimensions of the nonzero modules and the regular local dimension
+of \(R\) are preserved by maximal-ideal completion.
+\end{proposition}
+\begin{proof}
+The ring map to the completion is flat and induces an isomorphism on
+residue fields by \cite[ALG-05-C04-S01]{p103}. Tensoring a finite free
+resolution and then commuting flat base change with homology identifies
+each completed Tor module with the corresponding Tor over
+\(\widehat R\). A composition series of a finite-length module stays a
+composition series after base change, since each simple factor becomes
+the same residue field. In particular the tensor product still has
+finite length. The lengths of all maximal-ideal power quotients are
+unchanged, so the Hilbert--Samuel dimension formula
+\cite[ALG-05-C03-S02]{p103} preserves dimension. For the ring, the
+dimension of the maximal ideal modulo its square also stays the same.
+The definition of regular local ring makes \(\widehat R\) regular.
+\end{proof}
+
+\section{Koszul Euler characteristics}
+
+\begin{definition}[Multiplicity in a specified degree]\label{res:I04}
+Let \((A,\mathfrak n)\) be Noetherian local and let \(E\ne 0\) be a
+finite \(A\)-module. Suppose \(J\subseteq\mathfrak n\) and \(E/JE\)
+has finite length. Write \(P_{J,E}(t)\) for the eventual polynomial
+\(\ell_A(E/J^{t+1}E)\) for integer \(t\ge 0\). For an integer
+\(r\ge\dim_A E\) let
+\[
+ e^{(r)}_J(E)=r!\,[t^r]P_{J,E}(t).
+\]
+Its value at \(r=\dim_A E\) is the Hilbert--Samuel multiplicity
+\(e_J(E)\). For the zero module put \(e^{(r)}_J(0)=0\).
+\end{definition}
+
+Existence, degree \(\dim_A E\), and positivity of the leading
+coefficient for a nonzero module follow from
+\cite[ALG-05-C03-S02]{p103}. The notation \(e^{(r)}\) retains the
+degree in which the coefficient is taken. A module of smaller
+dimension contributes zero in that degree.
+
+\begin{theorem}[Serre's Koszul Euler formula]\label{res:I05}
+Let \(z=(z_1,\ldots,z_r)\) generate \(J\subseteq\mathfrak n\), where
+\(E/JE\) has finite length. Write \(K_\bullet(z;E)\) for the Koszul
+complex. For nonzero \(E\) one has \(\dim_A E\le r\), and
+\[
+ \sum_{i=0}^r(-1)^i\ell_A H_i(K_\bullet(z;E))=e^{(r)}_J(E).
+\]
+In particular, when \(\dim_A E=r\) this multiplicity is a positive
+integer.
+\end{theorem}
+\begin{proof}
+The dimension bound follows by applying the height theorem to the
+image of \(J\) in \(A/\operatorname{Ann} E\), where its radical is
+the maximal ideal.
+\cite[ALG-05-C03-R01 and ALG-05-C03-S01]{p103}
+For \(r=0\) the assertion reads \(\ell_A E=\ell_A E\). For the zero
+module all lengths are zero, so suppose \(r>0\) and \(E\ne 0\).
+
+Multiplication by each \(z_j\) on the Koszul complex is homotopic to
+zero via exterior multiplication by its basis vector. Thus every
+homology group vanishes outside \(V(J)\) and is supported in
+\(\operatorname{Supp}(E)\). It has finite length, since
+\(V(J)\cap\operatorname{Supp}(E)\subseteq\{\mathfrak n\}\).
+Write \(K_i=K_i(z;E)\) and \(Z_i=\ker(d_i)\). For an integer \(n>r\)
+the submodules \(F^nK_i=J^{n-i}K_i\) form a subcomplex. For each \(i\),
+Artin--Rees applied to \(Z_i\subseteq K_i\) gives, for all sufficiently
+large \(n\),
+\[
+ Z_i\cap J^{n-i}K_i
+     =J\bigl(Z_i\cap J^{n-i-1}K_i\bigr).
+\]
+A cycle on the left is then \(\sum_j z_j w_j\) with each \(w_j\)
+a cycle in \(J^{n-i-1}K_i\). The Koszul homotopy identifies \(z_jw_j\)
+with \(d(e_j\wedge w_j)\), and its preimage belongs to
+\(J^{n-i-1}K_{i+1}=F^nK_{i+1}\). In last degree the wedge is zero
+and the same identity states that the term is zero. This proves
+acyclicity of \(F^nK_\bullet\) simultaneously in all degrees for
+large \(n\). The quotient complex therefore has the original
+homology.
+
+Each quotient term has finite length. For \(a\ge 1\),
+\(E/J^aE\) has support at most the closed point. For a bounded complex
+of finite length modules, the alternating sum of the lengths of
+the terms equals that of the homology. This follows by applying
+length additivity to the image and kernel sequences for every
+differential. Using \(K_i=E^{\binom ri}\), the alternating length
+of the quotient complex is
+\[
+ \sum_{i=0}^r(-1)^i\binom ri P_{J,E}(n-i-1).
+\]
+This is the \(r\)-fold backward difference of a polynomial of degree
+at most \(r\) evaluated at \(n-1\). Each difference reduces the
+positive degree by one and multiplies the leading coefficient by
+the old degree. The expression equals \(r!\,[t^r]P_{J,E}(t)\).
+Positivity in degree \(r\) follows from the Hilbert--Samuel dimension
+formula and integrality from the length sum. The proof also gives
+additivity of the degree-\(r\) formula on finite modules supported
+at the closed point after quotienting by \(J\). Apply the long exact
+Koszul homology sequence to a short exact sequence of coefficients.
+\cite[Chapter IV, \S A.3]{serre-local}
+\end{proof}
+
+\begin{corollary}[One complete-intersection factor]\label{res:I06}
+If \(z\) is an \(R\)-regular sequence of length \(r\) in the maximal
+ideal of a Noetherian local ring \(R\), and \(N\ne 0\) is finite
+with \(N/(z)N\) of finite length, the Tor Euler characteristic
+of \(R/(z),N\), defined by the sum through degree \(r\), equals
+\(e^{(r)}_{(z)}(N)\).
+It is zero for \(\dim_R N<r\) and positive for \(\dim_R N=r\).
+\end{corollary}
+\begin{proof}
+The Koszul complex of the regular sequence is a finite free
+resolution of \(R/(z)\). \cite[Chapter 5]{core}
+After tensoring with \(N\) it is precisely the complex of
+\ref{res:I05}. Thus all assertions hold without a characteristic
+restriction or regularity assumption on \(R\) itself. When \(R\)
+is regular of dimension \(d\), \(R/(z)\) has dimension \(d-r\) by
+successive dimension drops, so this is the isolated-intersection
+vanishing and proper-intersection positivity criterion for this
+particular first argument.
+\end{proof}
+
+\section{The completed exterior tensor product over a field}
+
+\begin{proposition}[Construction and separate exactness]\label{res:I07}
+Let \(k\) be a field and put
+\[
+ A=k[[x_1,\ldots,x_a]],\qquad B=k[[y_1,\ldots,y_b]],
+ \qquad S=k[[x_1,\ldots,x_a,y_1,\ldots,y_b]] .
+\]
+For finite \(A\)- and \(B\)-modules \(M,N\) there is a natural finite
+\(S\)-module
+\[
+ M\boxtimes_k N=(S\otimes_A M)\otimes_B N.
+\]
+It is exact in either variable on finite modules. It has the
+description
+\[
+ M\boxtimes_k N
+   \ \cong\
+ \varprojlim_{u,v}
+   (M/(x)^uM)\otimes_k(N/(y)^vN).
+\]
+\end{proposition}
+\begin{proof}
+The ordinary tensor expression is finite over \(S\), for generators
+of each factor give generators indexed by their pairs. Its quotient by
+\((x)^uS+(y)^vS\) is the displayed finite-level tensor product over \(k\).
+Indeed the quotient of \(S\) is
+\(A/(x)^u\otimes_k B/(y)^v\) by the monomial bases, and the claimed
+quotient follows by the universal balanced tensor maps.
+The ideals with \(u=v=n\) are cofinal with powers of \((x,y)S\).
+\[
+ (x,y)^{2n-1}S\ \subseteq\ (x)^nS+(y)^nS\
+             \subseteq\ (x,y)^nS .
+\]
+Finite modules over the complete Noetherian ring \(S\) are complete
+by the completion tensor comparison of
+\cite[ALG-05-C04-R03]{p103}. This proves the inverse-limit formula.
+
+For an exact sequence \(0\to M'\to M\to M''\to0\), use the exact
+finite-level sequence
+\[
+ 0\to M'/(M'\cap(x)^nM)\to M/(x)^nM\to M''/(x)^n M''\to0 .
+\]
+Tensor with \(N/(y)^nN\) over the field. The left terms now have
+surjective transition maps. A compatible class in the right terms
+lifts to a compatible class in the middle. After choosing the
+next lift, its discrepancy with the preceding lift comes from a
+left term, and that discrepancy lifts to the next left term.
+Subtracting it supplies the required correction. Kernel exactness
+and injectivity are checked termwise. Artin--Rees makes
+\(M'\cap(x)^nM\) cofinal with \((x)^nM'\), and using the respective
+cofinal indices gives mutually inverse maps on limits after tensoring
+with the truncations of \(N\). The limit sequence is the exterior
+tensor sequence, and the same argument interchanges the roles.
+\cite[Chapter V, \S B.2]{serre-local}
+\end{proof}
+
+\begin{lemma}[Dimensions add over the field]\label{res:I08}
+For nonzero finite \(M,N\) in \ref{res:I07}, with
+\(\mathfrak s=(x,y)S\), one has
+\[
+ \dim_S(M\boxtimes_k N)=\dim_A M+\dim_B N,\qquad
+ e_{\mathfrak s}(M\boxtimes_k N)=e_{(x)}(M)e_{(y)}(N).
+\]
+\end{lemma}
+\begin{proof}
+Let \(T=M\boxtimes_k N\). For any \(j\ge 0\) the natural product map
+from the vector spaces of the two associated graded modules identifies
+\[
+ \mathfrak s^jT/\mathfrak s^{j+1}T
+   \ \cong\
+ \bigoplus_{u+v=j}
+       \frac{(x)^uM}{(x)^{u+1}M}
+              \otimes_k\frac{(y)^vN}{(y)^{v+1}N}.
+\]
+To verify both surjectivity and injectivity, work modulo
+\((x)^{j+1}S+(y)^{j+1}S\), which is contained in
+\(\mathfrak s^{j+1}\). Split the flags in the two finite-dimensional
+truncated vector spaces over \(k\). In their tensor product,
+\(\mathfrak s^j\) acts through the sum of the images of
+\((x)^uM\otimes (y)^vN\) with \(u+v=j\). These images are the sum of
+split tensors with total filtration index at least \(j\).
+The quotient removes precisely those with index at least \(j+1\).
+The natural map therefore has the displayed description, independent
+of the choices of splittings.
+
+For a nonzero finite module \(U\) of dimension \(s\) over a local
+ring with the indicated maximal-ideal filtration, let \(h_U(j)\)
+be its \(j\)-th layer length. The Hilbert--Samuel dimension formula
+gives
+\[
+ \sum_{j\ge 0}h_U(j)t^j=\frac{Q_U(t)}{(1-t)^s},
+ \qquad Q_U(1)=e(U)>0 ,
+\]
+where \(Q_U(t)\) is a polynomial and \(e(U)\) is its maximal-ideal
+multiplicity. To see the asserted value, first sum the cumulative
+lengths. An eventual polynomial of degree \(s\) expands in
+\(\binom{j}{i}\) with highest coefficient \(e(U)\).
+The corresponding series for those polynomials are
+\(t^i/(1-t)^{i+1}\), and a finite initial correction is a polynomial.
+Multiplication by \(1-t\) gives the series of layer lengths and
+preserves the stated numerator at \(1\). This argument includes
+\(s=0\), where the layer series is already a polynomial.
+The direct-sum calculation multiplies the two layer series. The
+numerator at \(1\) is the product of two positive numbers, so the
+pole order and numerator give exactly the asserted dimension and
+multiplicity. \cite[Chapter V, \S B.3]{serre-local}
+\end{proof}
+
+\begin{theorem}[Diagonal reduction in equal characteristic]\label{res:I09}
+Let \(R=k[[x_1,\ldots,x_d]]\) and let \(M,N\ne0\) be finite
+\(R\)-modules such that \(M\otimes_R N\) has finite length. Regard
+\(N\) as a module over the copy with variables \(y\) and set
+\(T=M\boxtimes_k N\) and \(J=(x_1-y_1,\ldots,x_d-y_d)\subset S\).
+Then
+\[
+ \operatorname{Tor}_i^R(M,N)\cong H_i(K_\bullet(x-y;T)),\qquad
+ \chi_R(M,N)=e^{(d)}_J(T).
+\]
+In particular \(\dim M+\dim N\le d\), with zero Euler
+characteristic for strict inequality and positive Euler
+characteristic for equality. The conclusion holds for any
+equal-characteristic regular local ring.
+\end{theorem}
+\begin{proof}
+The variable substitution \(z_i=x_i-y_i\) gives the isomorphism
+\(S=k[[z_1,\ldots,z_d,y_1,\ldots,y_d]]\), and \(S/J\) identifies
+with \(R\). The \(z_i\) form a regular sequence with Koszul
+resolution of \(S/J\).
+
+Take bounded finite free resolutions \(P,Q\) over the \(x\) and
+\(y\) copies, respectively. Their exterior tensor double complex
+has finite free \(S\)-terms. Separate exactness in
+\ref{res:I07}, applied successively to the two resolutions, gives
+a finite free resolution of \(T\) on taking the total complex.
+To justify this computation, filter the total complex in either
+direction. Homology in the first direction leaves only the
+augmented column or row, and homology in the second leaves only
+\(T\) in degree zero. After tensoring this total resolution with
+\(S/J\), the terms and differentials identify with the total
+complex \(P\otimes_R Q\). One can again take homology first on the
+free resolution \(P\) to obtain \(\operatorname{Tor}^R(M,N)\).
+Computing \(\operatorname{Tor}^S(S/J,T)\) instead with the
+diagonal Koszul resolution gives the homology in the assertion.
+The two computations agree, by the same double complex argument.
+The \(S\)-action factors through \(R\) and the finite lengths
+agree for these two coefficient rings.
+
+In degree zero,
+\(T/JT=M\otimes_R N\) has finite length. Thus \ref{res:I05}
+applies to \(J\) with \(d\) generators. By \ref{res:I08},
+\(\dim T=\dim M+\dim N\), giving the strict and equality cases.
+For a general equal-characteristic regular local ring apply
+\ref{res:I03} and use the coefficient field and power series
+description of its completion from \ref{res:C04}.
+\cite[Chapter V, \S B.3, Theorem 1]{serre-local}
+\end{proof}
+
+\section{Mixed characteristic and the dimension bound}
+
+\begin{lemma}[Euler cancellation across a regular element]\label{res:I10}
+Let \(S\) be Noetherian local, let \(h\) be a nonzero divisor in
+its maximal ideal, and set \(A=S/(h)\). Let \(M,N\) be finite
+\(A\)-modules such that \(M\otimes_A N\) has finite length.
+Suppose \(M\) has a finite free \(A\)-resolution and \(N\) has a
+finite free \(S\)-resolution. Then the alternating length of
+\(\operatorname{Tor}_i^S(M,N)\) is zero.
+\end{lemma}
+\begin{proof}
+Let \(P\) be a bounded finite free \(A\)-resolution of \(M\) and
+\(Q\) a bounded finite free \(S\)-resolution of \(N\). Consider
+the bounded double complex \(P\otimes_A(A\otimes_S Q)\).
+Its total complex identifies with the total complex of
+\(P\otimes_S Q\). In the direction of \(P\), exactness against
+each free \(S\)-module \(Q_j\) leaves \(M\otimes_S Q\), so the
+abutment is \(\operatorname{Tor}^S(M,N)\).
+In the direction of \(Q\), one obtains the groups
+\(P_i\otimes_A \operatorname{Tor}_j^S(A,N)\), since each \(P_i\)
+is \(A\)-free. A two-term free \(S\)-resolution of \(A\) is
+\([S\xrightarrow{h}S]\). Multiplication by \(h\) on \(N\) is
+zero. Thus \(\operatorname{Tor}_j^S(A,N)\cong N\) for \(j=0,1\)
+as an \(A\)-module, with all other groups zero. For this
+identification, multiplication by a scalar in \(S\) on either
+argument is represented by multiplication by that scalar on
+the tensor complex. Hence the action obtained from \(A\) on
+the first argument agrees with that of \(S\) on \(N\) and
+factors through \(A\). Taking the next
+homology gives \(\operatorname{Tor}_i^A(M,N)\) in each of the
+two rows \(j=0,1\). These entries have finite length by the
+same support argument as in \ref{res:I01}. Length over \(A\)
+equals length over \(S\).
+
+For each succeeding page the total alternating length is
+preserved since pairs of boundary terms contribute with opposite
+signs, as each differential changes total degree by one.
+The double complex is bounded, so the last page gives a finite
+filtration on each abutment group. The two identical rows
+contribute with opposite signs in total degree, which proves
+the cancellation. \cite[Chapter V, \S B.5]{serre-local}
+\end{proof}
+
+\begin{lemma}[Diagonal reduction over a discrete valuation ring]\label{res:I11}
+Let \(V\) be a complete discrete valuation ring with uniformizer
+\(\pi\) and residue field \(k\). Put
+\[
+ R=V[[x_1,\ldots,x_a]],\qquad
+ S=V[[x_1,\ldots,x_a,y_1,\ldots,y_a]] .
+\]
+Let \(M,N\) be nonzero finite \(R\)-modules on which multiplication
+by \(\pi\) is injective. Define \(T=(S\otimes_{V[[x]]}M)
+\otimes_{V[[y]]}N\), with \(N\) written in the \(y\)-variables.
+Then multiplication by \(\pi\) on \(T\) is injective and
+\[
+ T/\pi T\cong (M/\pi M)\boxtimes_k(N/\pi N),\qquad
+ \dim_S T=\dim_R M+\dim_R N-1 .
+\]
+For \(J=(x_1-y_1,\ldots,x_a-y_a)\), the diagonal Koszul complex
+\(K_\bullet(x-y;T)\) computes \(\operatorname{Tor}^R(M,N)\).
+\end{lemma}
+\begin{proof}
+The rings in the statement are regular local, with respective
+systems of parameters \(\pi,x_1,\ldots,x_a\) and
+\(\pi,x_1,\ldots,x_a,y_1,\ldots,y_a\). This is the power series
+construction of \ref{res:C04}. Take bounded finite free resolutions
+\(P,Q\) over the two copies of \(R\). Form the total complex \(D\) of
+the finite free double complex
+\(S\otimes_{V[[x]]}P\otimes_{V[[y]]}Q\). Its zeroth homology is
+\(T\) by right exactness of tensor product in the two arguments.
+Since \(\pi\) is injective on \(M,N\), the exact sequences of
+complexes for multiplication by \(\pi\) show that \(P/\pi P\)
+and \(Q/\pi Q\) are finite free resolutions of \(M/\pi M\)
+and \(N/\pi N\). Thus \(D/\pi D\) is exactly their exterior tensor
+double complex from the proof of \ref{res:I09}.
+It has no positive homology by \ref{res:I07}, and its zeroth
+homology is the exterior tensor product in the statement.
+The long exact sequence for
+\(0\to D\xrightarrow{\pi}D\to D/\pi D\to0\) implies
+that multiplication by \(\pi\) acts surjectively on every
+\(H_i(D)\) with \(i>0\). Each is finite, hence zero by Nakayama.
+The segment at degree zero gives the injectivity on \(T\)
+and the claimed quotient identification. In particular \(D\)
+resolves \(T\).
+
+For a finite nonzero module \(U\) over a Noetherian local ring
+and a nonzero divisor \(u\) on \(U\) in the maximal ideal,
+\(\dim(U/uU)=\dim U-1\). Here is the dimension argument.
+Each minimal prime of the support of \(U\) avoids \(u\),
+since such a prime is an associated prime. Every prime
+in \(\operatorname{Supp}(U/uU)\) contains \(u\) and lies
+strictly over a minimal prime of \(\operatorname{Supp}(U)\).
+Prepending that prime to a longest chain above the given prime
+gives the upper bound. Conversely, prepend \(u\) to a system of
+parameters on \(U/uU\). The resulting sequence has finite-colength
+quotient on \(U\), so the height bound gives
+\(\dim U\le 1+\dim(U/uU)\). For the associated prime and parameter
+facts used here see \cite[Chapter 6]{core} and
+\cite[ALG-05-C03-S01]{p103}.
+Apply this drop to \(M,N,T\), with \(u=\pi\). Their special-fiber
+dimensions are related by \ref{res:I08}, proving the formula.
+To compute Tor, base change \(D\) to \(S/J\cong R\). The total
+complex becomes \(P\otimes_R Q\), as in \ref{res:I09}. Compute
+the same Tor groups with the Koszul resolution of the diagonal
+over \(S\). The substitution \(z_i=x_i-y_i\) is valid over \(V\),
+so this is a regular sequence. \cite[Chapter V, \S B.5, Lemma 1]{serre-local}
+\end{proof}
+
+\begin{theorem}[Unramified mixed characteristic]\label{res:I12}
+Let \(R\) be a regular local ring of mixed characteristic
+\((0,p)\) such that \(p\notin\mathfrak m^2\), of dimension
+\(d\). For nonzero finite modules meeting only at the closed
+point, \(\dim M+\dim N\le d\). The number \(\chi_R(M,N)\)
+is zero if this inequality is strict and positive if it is
+equality.
+\end{theorem}
+\begin{proof}
+By \ref{res:I03} pass to the completion, where \ref{res:C04}
+identifies \(R\) with \(V[[x_1,\ldots,x_{d-1}]]\) for
+a complete discrete valuation ring \(V\) of uniformizer \(p\).
+By \ref{res:I02} it suffices to prove the claims for prime
+quotients. Indeed all pairs of prime-filtration factors
+have dimensions bounded by those of the original modules.
+If the original dimension sum is \(d\), the factors attaining
+the two maxima give at least one strictly positive term, and
+all other terms are nonnegative.
+
+A prime quotient is either killed by \(p\) or \(p\) acts
+injectively on it. If both arguments have injective \(p\)-action,
+apply \ref{res:I11}. The diagonal has \(d-1\) generators and
+\(T/JT\cong M\otimes_R N\) has finite length. By \ref{res:I05},
+\(\dim T\le d-1\) and the sign follows from the comparison
+\(\dim T=\dim M+\dim N-1\).
+
+Suppose exactly one factor, say \(M\), is killed by \(p\).
+Write \(\bar R=R/pR\). For a finite free \(R\)-resolution
+\(Q\) of \(N\), the homology sequence of multiplication by \(p\)
+shows \(Q/pQ\) resolves \(N/pN\) over \(\bar R\). Termwise,
+\(M\otimes_R Q=M\otimes_{\bar R}(Q/pQ)\). Thus both the
+Tor groups and lengths agree with those for \(M,N/pN\) over
+\(\bar R\). The dimensions of \(M\) over \(R\) and \(\bar R\)
+agree, and \(\dim(N/pN)=\dim N-1\) by the drop used in
+\ref{res:I11}. The ring \(\bar R\) is equal-characteristic
+of dimension \(d-1\), so \ref{res:I09} gives the result.
+
+If both arguments are killed by \(p\), apply \ref{res:I09}
+over \(\bar R\) to see that their dimension sum is at most
+\(d-1\). Their alternating length over \(R\) vanishes by
+\ref{res:I10}, with \(S=R\), \(A=\bar R\), \(h=p\).
+All modules admit the required bounded resolutions since the
+rings are regular. This completes the three cases.
+\cite[Chapter V, \S B.5, Theorem 2]{serre-local}
+\end{proof}
+
+\begin{theorem}[Serre's dimension bound]\label{res:I13}
+Let \(R\) be a regular local ring of dimension \(d\) in any
+characteristic. For nonzero finite modules with finite-length
+tensor product,
+\[
+ \dim_R M+\dim_R N\le d.
+\]
+In particular, if \(\mathfrak r\) is minimal over
+\(\mathfrak p+\mathfrak q\) for two prime ideals in a regular
+local ring, then
+\(\operatorname{ht}\mathfrak r\le
+  \operatorname{ht}\mathfrak p+\operatorname{ht}\mathfrak q\).
+\end{theorem}
+\begin{proof}
+The equal-characteristic and unramified cases are
+\ref{res:I09} and \ref{res:I12}. By \ref{res:I03} it remains
+to consider a complete mixed-characteristic regular local \(R\)
+with \(p\in\mathfrak m^2\). The coefficient-ring construction
+of \ref{res:C03} supplies a complete discrete valuation ring
+\(V\to R\) with uniformizer \(p\) and residue-field isomorphism.
+For a minimal system of parameters \(x_1,\ldots,x_d\) of \(R\),
+the natural map
+\[
+ S=V[[X_1,\ldots,X_d]]\longrightarrow R,\qquad X_i\longmapsto x_i
+\]
+is surjective. At each order the parameters generate the
+associated graded ring over the residue field, so one lifts
+successive homogeneous pieces using coefficients in \(V\).
+The resulting series converges to the prescribed element.
+Since \(p\in\mathfrak m^2\), choose \(f\in (X_1,\ldots,X_d)^2\)
+mapping to \(p\) by lifting its expression in products \(x_ix_j\).
+The kernel contains \(h=p-f\), which is part of a minimal
+system of generators of the maximal ideal of \(S\).
+The quotient \(S/(h)\) is regular local and a domain of
+dimension \(d\) by \cite[ALG-05-C03-S03]{p103}. A nonzero
+ideal in this domain has quotient of dimension at most
+\(d-1\), since any prime chain in its vanishing locus may be
+lengthened below by the zero prime. Therefore the induced
+surjection \(S/(h)\to R\) is an isomorphism.
+
+View \(M,N\) as \(S\)-modules. Their dimensions and finite
+tensor length are unchanged. By \ref{res:I10},
+\(\chi_S(M,N)=0\). The regular local ring \(S\) is unramified
+of dimension \(d+1\). By \ref{res:I12} the dimension sum is
+at most \(d+1\), and equality would make \(\chi_S(M,N)>0\).
+The bound follows.
+
+For the height statement localize at \(\mathfrak r\), which
+preserves regularity by \cite[CM-19]{core}. The localized
+prime quotients meet only at the closed point since
+\(\mathfrak r\) is minimal over their sum. Their dimensions are
+\(\operatorname{ht}\mathfrak r-\operatorname{ht}\mathfrak p\)
+and \(\operatorname{ht}\mathfrak r-\operatorname{ht}\mathfrak q\),
+by the height and dimension formula in a Cohen--Macaulay local
+ring \cite[CM-07]{core}. Heights of these smaller primes do
+not change upon localization, since all primes under them
+are contained in \(\mathfrak r\). Substitution into the
+dimension bound gives the stated inequality.
+\cite[Chapter V, \S B.6]{serre-local}
+\end{proof}
+
+\section{Finite free complexes and examples}
+
+\begin{proposition}[A depth bound for short complexes]\label{res:I14}
+Let \((A,\mathfrak n)\) be Noetherian local. Let \(F_\bullet\)
+be a finite free complex in degrees \(0,\ldots,s\), and let
+\(U\ne0\) be finite. Suppose all \(H_i(F_\bullet\otimes_A U)\)
+have finite length and some is nonzero. Then
+\(s\ge\operatorname{depth}_A U\). In particular, a nonexact
+finite free complex over a Cohen--Macaulay local ring with
+finite-length homology has length at least the dimension
+of the ring.
+\end{proposition}
+\begin{proof}
+Choose generators of \(\mathfrak n\). Let \(C^\bullet\) be
+the augmented cohomological Cech complex from \ref{res:L05}.
+Its terms are flat. Give \(C^q\otimes F_i\otimes U\) total
+cohomological degree \(q-i\). In the filtration taking
+\(F_\bullet\otimes U\) homology first, flatness gives
+\(C^\bullet\otimes H_i(F_\bullet\otimes U)\) in the \(i\)-th
+row. Each finite-length homology group is killed by a power
+of \(\mathfrak n\). Localizing such a group at any generator of
+\(\mathfrak n\) makes it zero. Its Cech complex is therefore
+the group itself in degree zero, and all surviving terms
+have total degree \(-i\le 0\). There is a nonzero term, and
+no later differential can leave or enter the only remaining
+Cech degree. The abutment has a nonzero group in a
+nonpositive degree.
+
+In the other filtration the initial homology groups are
+\(H^q_{\mathfrak n}(U)^{\operatorname{rank}F_i}\). They are
+zero for \(q<\operatorname{depth}_A U\) by \ref{res:V01}.
+If \(\operatorname{depth}_A U>s\), every nonzero term then
+has \(q-i>0\). This contradicts the nonpositive-degree
+abutment from the first filtration. Both filtrations are
+bounded and converge to the homology of the same finite
+total complex. Apply the assertion with \(U=A\) for the
+last claim. \cite[\S 9.4, Corollary 9.4.3]{bruns}
+\end{proof}
+
+\begin{corollary}[Projective dimension and isolated support]\label{res:I15}
+Let \(M,N\ne 0\) be finite modules over a Noetherian local
+ring \(R\) with \(M\otimes_R N\) of finite length and
+\(\operatorname{pd}_R M\) finite. Then
+\[
+ \operatorname{depth}_R N\le \operatorname{pd}_R M .
+\]
+This implies \(\dim_R N\le\operatorname{pd}_R M\) whenever
+\(N\) is Cohen--Macaulay. The latter dimension bound also
+holds for arbitrary \(N\) over a regular local ring.
+\end{corollary}
+\begin{proof}
+Let \(F_\bullet\) be a finite free resolution of \(M\) of
+length \(\operatorname{pd}_R M\), obtained by taking finite free
+surjections through the final projective syzygy, which is finite
+free over the local ring. All homology groups of
+\(F_\bullet\otimes_R N\) have finite length by the localization
+argument of \ref{res:I01}. Its zeroth homology \(M\otimes_R N\)
+is nonzero by reducing modulo the maximal ideal and using
+Nakayama. Now \ref{res:I14} gives the depth inequality.
+When \(N\) is Cohen--Macaulay its depth equals its dimension.
+When \(R\) is regular, \ref{res:I13} and the
+Auslander--Buchsbaum formula give
+\[
+ \dim N\le\dim R-\dim M
+          \le\dim R-\operatorname{depth}_R M
+          =\operatorname{pd}_R M.
+\]
+The depth-dimension bound and the Auslander--Buchsbaum formula
+are \cite[DP-02 and DP-13]{core}.
+\end{proof}
+
+\begin{example}[Tangency and excess Tor]\label{res:I16}
+In \(k[[x,y]]\), the two quotients by \(y\) and by \(y-x^b\),
+for \(b\ge1\), have intersection multiplicity \(b\). The
+two axes in the plane have multiplicity one. In
+\(k[[x,y,z]]\), the modules \(R/(x,y)\) and \(R/(y,z)\)
+meet only at the closed point and have intersection
+multiplicity zero even though their tensor product has length
+one.
+\end{example}
+\begin{proof}
+For the tangency, resolve \(R/(y)\) by the two free terms for
+multiplication by \(y\). On \(R/(y-x^b)\cong k[[x]]\) this
+becomes multiplication by \(x^b\), which is injective with
+cokernel of length \(b\). For the two axes the same resolution
+with the second quotient \(R/(x)\) leaves multiplication by
+the variable \(y\) in \(k[[y]]\), with cokernel \(k\).
+For the last pair resolve \(R/(x,y)\) by its Koszul
+complex. On \(R/(y,z)\cong k[[x]]\), the first Koszul
+factor on \(x\) has homology \(k\) only in degree zero,
+and the second factor on \(y=0\) has differential zero.
+The tensor complex therefore has \(k\) in degrees zero
+and one and zero higher homology. This verifies the
+cancellation directly and agrees with the dimension sum
+\(1+1<3\).
+\end{proof}
+
+\begin{proposition}[The supported Euler pairing]\label{res:I17}
+Let \(F_\bullet,G_\bullet\) be bounded complexes of finite
+free modules over a Noetherian local ring. Suppose the unions
+of the supports of their homology meet at most at the closed
+point. The alternating length of the homology of
+\(F_\bullet\otimes G_\bullet\) is finite and additive in
+each variable on degreewise short exact sequences of such
+bounded free complexes. A homology isomorphism between two
+such bounded free complexes in one variable preserves the
+pairing.
+\end{proposition}
+\begin{proof}
+A bounded exact complex of finite free modules is contractible.
+Starting from its lowest degree, its first surjective
+differential splits because the target is free. The kernel is
+then a direct summand of a free module and is projective.
+Repeat the splitting at each succeeding degree. For each
+nonmaximal prime, one factor of the localized tensor complex
+is exact and hence contractible, so the total complex is
+contractible there. Its homology is finite and supported at
+most at the closed point, hence has finite length by
+\ref{res:I01}'s length argument.
+
+Tensoring a degreewise short exact sequence with a bounded free
+complex produces a degreewise short exact sequence of totals.
+The long exact homology sequence and length additivity imply
+the assertion. The cone of a homology isomorphism between
+bounded free complexes is a bounded exact free complex, so
+it is contractible. Its tensor product is again contractible.
+Because formation of the cone commutes with tensor product
+up to the usual interchange sign, the induced tensor map
+is a homology isomorphism. For two finite free resolutions
+of modules the pairing recovers \ref{res:I01}. Thus the
+same Euler expression makes sense on perfect complexes
+with isolated intersection of supports.
+\cite[Chapter 5, \S 5.3, and Chapter 11]{roberts}
+\end{proof}
+
+\section{General results in the literature}
+
+The direct proofs above establish the dimension bound
+in every characteristic, all signs in equal and unramified
+mixed characteristic, and the complete-intersection case without
+a characteristic restriction. The following statements describe
+the broader literature and supply context for the chapter.
+
+Roberts and Gillet--Soul\'e proved vanishing when
+\(\dim M+\dim N<\dim R\) for general regular local rings.
+The supported pairing of \ref{res:I17} is the algebraic
+quantity to which the localized Chern character and
+Adams operations are applied in those proofs. The local
+Chern character associates a cycle operation to a
+complex equipped with its support, rather than to its
+ordinary rank. Tensor product then corresponds to composition
+of the localized operations. The construction and its
+Riemann--Roch formula are developed in
+\cite[Chapter 11 and \S 13.1]{roberts}.
+Gabber's nonnegativity theorem applies also in the ramified
+mixed-characteristic case.
+\href{https://doi.org/10.1090/S0273-0979-1985-15394-7}{Roberts's announcement}.
+\href{https://numdam.org/item/SB_1995-1996__38__273_0.pdf}{Berthelot,
+\S 6.1, Theorem 6.1.1}.
+
+The September 2026
+\href{https://github.com/openai/math/blob/main/preprints/Positivity-of-Serres-Intersection-Multiplicity-September-23-2026/paper.pdf}{preprint
+\emph{Positivity of Serre's Intersection Multiplicity}}
+reports strict positivity for complementary dimensions
+also in the ramified mixed-characteristic case. The classical
+direct argument in \ref{res:I12} uses the unramified
+hypothesis precisely in its coefficient-DVR and power series
+description. The dimension argument in \ref{res:I13}
+uses a larger unramified ring and reads a dimension bound
+from its Euler cancellation. That cancellation concerns
+\(\chi_S\) over the larger ring and gives no formula for
+\(\chi_R\) in the ramified ring.
+
+The new intersection theorem concerns the length of a
+nonexact bounded finite free complex with finite-length
+homology over a general Noetherian local ring. It replaces
+the depth bound of \ref{res:I14} by the Krull dimension
+bound. This strengthening matters over non-Cohen--Macaulay
+rings. The equicharacteristic setting is discussed in
+\cite[\S 9.4]{bruns}. Roberts's mixed-characteristic proof
+uses localized Chern characters. A proof using Adams
+operations on \(K\)-theory with supports is described in
+\href{https://arxiv.org/abs/0706.0201}{Piepmeyer and Walker,
+\emph{A New Proof of the New Intersection Theorem}}.
+\appendix
+\chapter{Coefficient rings and complete local structure}
+\label{ch:coefficient-rings}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+
+This appendix proves both the regular-ring quotient used for local
+duality and the finite regular subring used for nonvanishing. It follows
+the coefficient-ring approach in \cite[\S160]{st-alg}. We use
+formal lifting and the split conormal criterion from
+\cite[FL-01, FL-02, FL-07 and KD-17]{core}, and the completion
+properties in \cite[ALG-05-C04-R02--R04 and S01]{p103}.
+
+\section{Lifting fields and a flat lifting criterion}
+
+\begin{lemma}[Two formally smooth lifting facts]\label{res:C01}
+A field is formally smooth over its prime field. Also, if
+\(A\to B\) is flat, \(K\subset A\) satisfies \(K^2=0\), and
+\(B/KB\) is formally smooth over \(A/K\), then \(B\) is formally
+smooth over \(A\).
+\end{lemma}
+\begin{proof}
+First let \(F\subset L\) be a finite-type field extension with \(F\)
+the prime field. In characteristic zero choose a transcendence basis
+and the remaining finite algebraic extension is separable. In
+characteristic \(p\), write \(r=\operatorname{trdeg}_F L\).
+For any transcendence basis \(t\) the degrees over \(F(t)^p\)
+and the Frobenius isomorphism give
+\[
+ [L:L^p]=[F(t):F(t)^p]=p^r,
+\]
+since \(F^p=F\) and \([L^p:F(t)^p]=[L:F(t)]\). Adjoin successively
+\(x_i\notin L^p(x_1,\ldots,x_{i-1})\). Each step has degree \(p\) because
+its minimal polynomial divides \(T^p-x_i^p\), whose monic factors of
+degree \(0<e<p\) have coefficient \(-e x_i\) at \(T^{e-1}\).
+After \(r\) steps the monomials with exponents \(<p\) form a basis
+over \(L^p\). If a nonzero polynomial relation in the \(x_i\) over
+\(F\) had minimal degree, grouping its monomials by exponents modulo
+\(p\) and taking \(p\)-th roots of the coefficients would yield
+\(\sum_\alpha x^\alpha g_\alpha(x)^p=0\).
+The basis forces each \(g_\alpha(x)=0\), contradicting minimality for
+one nonzero \(g_\alpha\) (a nonzero constant cannot vanish).
+These \(x_i\) form a transcendence basis. Write \(F'=F(x_i)\).
+Then \(L=L^pF'\). In the finite algebraic extension \(L/F'\), some
+\(p^e\)-th power of every element of \(L\) lies in its maximal separable
+subfield. Take sufficiently large \(e\) for finitely many algebraic
+generators, writing each irreducible polynomial as a separable
+polynomial in a \(p\)-power of its variable. But \(L=L^{p^e}F'\) by
+iteration, so the extension is separable.
+
+For a square-zero surjection \(T\to T/N\) and a prime-field algebra
+map \(L\to T/N\), arbitrary lifts of a separable transcendence basis
+give a map on its rational function field, since the images of the
+nonzero denominators are units modulo \(N\) and hence units in \(T\).
+Lift the remaining finite separable generators successively. If
+\(h(b)\in N\) for a lift of a root and \(h'(b)\) is a unit,
+replace \(b\) by \(b-h'(b)^{-1}h(b)\). Taylor expansion modulo
+\(N^2=0\) gives an exact root. This constructs a lift for the
+finite-type subfield.
+
+For an arbitrary field \(L\), choose a lift in \(T\) for each value
+of the map on \(L\). Its error in respecting addition, multiplication,
+and the prime field is a system of linear equations for corrections in
+\(N\), now an \(L\)-vector space via the given map. Indeed products of
+two corrections vanish, and multiplication by any chosen lift acts
+on \(N\) by its residue. A finite set of equations uses only finitely
+many elements of \(L\). The preceding argument lifts their generated
+subfield, so that finite subsystem has a solution. More explicitly,
+the equations prescribe a linear map from the span of their
+finite-support coefficient rows in the free vector space on the
+unknowns to \(N\). Finite solvability makes this prescription
+well-defined. Extend the map to the entire free vector space by a
+basis, giving simultaneous corrections. The resulting lift is an
+algebra map. This argument verifies the infinite-generation step.
+
+For the second assertion let \(P=A[T_i]\twoheadrightarrow B\) be
+a polynomial presentation with kernel \(J\), allowing arbitrarily many
+variables. Flatness gives \(J\cap KP=KJ\) by tensoring the presentation
+with \(A/K\). Thus the conormal module of the presentation after
+reduction is \((J/J^2)/K(J/J^2)\). The corresponding conormal map
+is the reduction of \(d:J/J^2\to\bigoplus_i B\,dT_i\). By formal
+smoothness it has a left inverse after reduction. Lift the images
+of the free basis to obtain \(s:\bigoplus_i B\,dT_i\to J/J^2\).
+Then \(sd=1+e\) with image of \(e\) in \(K(J/J^2)\), and \(e^2=0\).
+Thus \((1-e)s\) is a left inverse of \(d\). The split conormal
+criterion proves formal smoothness of \(B/A\).
+\end{proof}
+
+\section{The coefficient ring}
+
+\begin{lemma}[A Cohen ring with prescribed residue field]\label{res:C02}
+For every field \(k\) of characteristic \(p>0\) there is a complete
+discrete valuation ring \(\Lambda\) with uniformizer \(p\) and residue
+field \(k\). For \(n\ge1\) the map
+\(\mathbb Z/p^n\to\Lambda/p^n\Lambda\) is formally smooth.
+\end{lemma}
+\begin{proof}
+Begin with the \(p\)-adic integer ring. In its inverse-limit
+description a nonzero element has a first nonzero digit and is a power
+of \(p\) times an element invertible modulo every \(p^n\). This proves
+the discrete valuation assertion at this starting stage.
+Well-order generators of \(k/\mathbb F_p\) and lift the corresponding
+tower of residue fields. Suppose \(D\) is a discrete valuation ring
+with uniformizer \(p\) and residue field \(k_0\). For a transcendental
+adjoining, use \(D[T]_{(p)}\) with residue field \(k_0(T)\).
+For an algebraic adjoining, lift its monic irreducible polynomial to
+\(D[T]\) and take the monic quotient. This quotient is finite free,
+and all its maximal ideals lie over \(p\). Its quotient by \(p\)
+is a field, so it is already local. In both cases the new ring
+is Noetherian local with maximal ideal generated by the
+nonzerodivisor \(p\). By Krull intersection each nonzero element
+has a finite \(p\)-order, hence is a power of \(p\) times a unit.
+Its ideals are principal by taking the least such order. These steps
+are injective and take units to units, so the same finite-order
+argument at limit stages, in the directed union, proves that the
+union is still a discrete valuation ring with uniformizer \(p\).
+Its residue field is the union of the prescribed residue fields.
+Complete it. The comparison modulo \(p^n\), faithful flatness, and
+Noetherianity of completion are
+\cite[ALG-05-C04-S01]{p103}. They give the same maximal ideal and
+keep \(p\) regular. Consequently the completion is the required
+\(\Lambda\).
+
+The discrete valuation ring \(\Lambda\) is torsion-free over
+\(\mathbb Z\), hence flat over \(\mathbb Z\) by the ideal criterion, which
+tests the injectivity of multiplication by each positive integer.
+Base change makes \(\Lambda/p^n\) flat over \(\mathbb Z/p^n\).
+At \(n=1\) apply the field case of Result~\ref{res:C01}. Inductively
+\((p^{n-1})\subset\mathbb Z/p^n\) is square-zero when \(n\ge2\).
+Apply the second part of Result~\ref{res:C01} to lift formal
+smoothness from \(n-1\) to \(n\).
+\end{proof}
+
+\begin{theorem}[Coefficient ring of a complete local ring]\label{res:C03}
+Let \((R,\mathfrak m,k)\) be a complete Noetherian local ring.
+In equal characteristic a coefficient field \(k\to R\) induces the
+identity on \(k\). If \(k\) has characteristic \(p>0\) there is also
+a continuous map \(\Lambda\to R\), with \(\Lambda\) as in
+Result~\ref{res:C02}, inducing the identity on the residue field.
+Its kernel is \(0\) if \(p\) is not nilpotent in \(R\), and is
+\((p^e)\) if \(p^e=0\) with \(e\) least.
+\end{theorem}
+\begin{proof}
+In residue characteristic zero each nonzero integer is a unit in
+\(R\), so we have a coefficient map from \(\mathbb Q\).
+Lift the identity \(k\to R/\mathfrak m\) successively to
+\(R/\mathfrak m^n\), using Result~\ref{res:C01} on the square-zero
+successive quotients. In equal characteristic \(p\), the same proof
+uses \(\mathbb F_p\).
+For general residue characteristic \(p>0\) start with
+\(\Lambda/p\to R/\mathfrak m\). At step \(n\) compose the given map
+\(\Lambda/p^n\to R/\mathfrak m^n\) with
+\(\Lambda/p^{n+1}\to\Lambda/p^n\).
+As a map over \(\mathbb Z/p^{n+1}\) it lifts through
+\(R/\mathfrak m^{n+1}\twoheadrightarrow R/\mathfrak m^n\) by
+Result~\ref{res:C02}. Passing to inverse limits gives the map.
+It preserves the topologies because \(p\in\mathfrak m\). Every
+proper nonzero ideal of \(\Lambda\) is a power of \(p\), giving the
+kernel assertion. A map from a field inducing the residue identity
+is injective.
+\end{proof}
+
+\section{Two kinds of regular presentation}
+
+\begin{theorem}[Complete regular covers and presentations]\label{res:C04}
+Every complete Noetherian local ring \(R\) is a quotient of a
+complete regular local ring \(S\) by a local surjection inducing
+the identity on its residue field. A complete regular local ring
+of equal characteristic is \(k[[X_1,\ldots,X_d]]\) with \(d=\dim R\).
+In mixed characteristic with \(p\notin\mathfrak m^2\) it is
+\(\Lambda[[X_1,\ldots,X_{d-1}]]\), with \(\Lambda\) of
+Result~\ref{res:C02}.
+\end{theorem}
+\begin{proof}
+Use the coefficient field or complete discrete valuation ring \(D\)
+of Result~\ref{res:C03} and send finitely many variables to generators
+of \(\mathfrak m\). Evaluation of formal series converges in \(R\).
+The source \(D[[X_1,\ldots,X_s]]\) is complete with maximal ideal
+generated by the variables and, for a valuation coefficient ring,
+by \(p\). To see regularity directly, its associated graded ring is
+the polynomial ring over \(k\) on these generators. In degree \(n\)
+the coefficient of each monomial in the variables records its
+appropriate residue digit at total degree \(n\). These descriptions
+also prove completeness and separatedness degree by degree.
+A finite set of initial forms generating the initial ideal of any
+ideal lifts to finitely many elements of the ideal. Successively
+subtract their multiples to increase order. The coefficients
+converge, showing those lifts generate the ideal. This uses the
+Noetherian polynomial graded ring and gives Noetherianity of the
+source. The chains of prime ideals obtained by adjoining generators
+one by one give dimension at least the number of generators.
+The height theorem gives the reverse bound. Thus the source is
+regular local.
+
+To prove that the map onto \(R\) is surjective, lift an element modulo
+\(\mathfrak m\), then lift each error in
+\(\mathfrak m^n/\mathfrak m^{n+1}\) by a homogeneous polynomial
+in the chosen generators. Since the generators come from the
+maximal ideal of the source, these corrections converge there.
+In equal characteristic and regular dimension \(d\), choose only
+\(d\) minimal generators. In the stated mixed characteristic case,
+include \(p\) in a minimal set and use \(d-1\) variables for the
+others, with \(p\) provided by the coefficient map. The same
+successive lifting yields surjectivity. Both source and target have
+dimension \(d\). In the regular source, a nonzero ideal has quotient
+of dimension at most \(d-1\) by prepending the zero prime to any
+chain containing it. Hence the kernel is zero in these two cases.
+\end{proof}
+
+\begin{theorem}[Finite regular normalization]\label{res:C05}
+A complete Noetherian local domain \((B,\mathfrak m,k)\) of
+dimension \(d\) contains a complete regular local subring
+\((S,\mathfrak n,k)\) of dimension \(d\) such that \(B\) is finite
+over \(S\) and \(\sqrt{\mathfrak n B}=\mathfrak m\).
+\end{theorem}
+\begin{proof}
+In equal characteristic send \(d\) variables over the coefficient
+field to a system of parameters. In mixed characteristic the
+coefficient discrete valuation ring embeds, since \(B\) is a
+domain of characteristic zero. Here \(p\in\mathfrak m\) is
+nonzero and \(\dim B/pB=d-1\). The upper bound follows by
+prepending the zero prime to chains and the lower bound by
+lifting a parameter system of \(B/pB\), adjoining \(p\) and applying
+the height theorem. Send \(d-1\) variables over \(\Lambda\) to such
+lifts. In each case the image \(J\) of the source maximal ideal
+generates an \(\mathfrak m\)-primary ideal in \(B\) and the source
+has dimension \(d\) by Result~\ref{res:C04}'s calculation.
+The \(J\)-adic and \(\mathfrak m\)-adic topologies agree, since their
+powers are cofinal as in Result~\ref{res:L01}.
+
+Choose finite lifts of a \(k\)-basis of \(B/J\).
+Their \(S\)-span is all of \(B\). First approximate modulo \(J\),
+then express each term in an error in \(J^n\) as a product of
+\(n\) image generators times an element of \(B\), and lift its
+coefficient modulo \(J\). These lifts give coefficients in \(S\)
+of order at least \(n\), so the coefficients converge in \(S\) and
+the error tends to zero in \(B\). Thus \(B\) is finite over the
+image of the source. Integral extensions preserve dimension
+(\cite[ALG-05-C01-S04]{p103}), so that image has dimension \(d\).
+A nonzero kernel would lower the dimension of the regular source
+as in Result~\ref{res:C04}. The map is injective, proving the result.
+\end{proof}
+\backmatter
+\begingroup
+\small
+\begin{thebibliography}{99}
+\setlength{\itemsep}{0.2\baselineskip}
+\setlength{\parsep}{0pt}
+\bibitem{p103} MathGenome. \emph{Algebra Core} (P1-03). MathGenome v0.22.0,
+  fixed release. Chapters 1--2, 6--7 and 10--11.
+\bibitem{core} MathGenome. \emph{Advanced Commutative Algebra:
+  Differentials, Smoothness, and Local Algebra}. Independently audited
+  notes, 19 November 2026 snapshot.
+\bibitem{homological} MathGenome. \emph{Advanced Homological Algebra}.
+  Independently audited notes, 19 November 2026 snapshot.
+\bibitem{st-alg} The Stacks Project Authors. \emph{Commutative Algebra},
+  Chapter 10. \url{https://stacks.math.columbia.edu/tag/00AO}.
+\bibitem{st-more} The Stacks Project Authors. \emph{More on Algebra},
+  Chapter 15. \url{https://stacks.math.columbia.edu/tag/00JH}.
+\bibitem{st-dual} The Stacks Project Authors. \emph{Dualizing Complexes},
+  Chapter 47. \url{https://stacks.math.columbia.edu/tag/08XG}.
+\bibitem{st-def} The Stacks Project Authors. \emph{Formal Deformation Theory},
+  Chapter 90. \url{https://stacks.math.columbia.edu/tag/06G7}.
+\bibitem{st-cot} The Stacks Project Authors. \emph{The Cotangent Complex},
+  Chapter 92. \url{https://stacks.math.columbia.edu/tag/08P5}.
+\bibitem{bruns} W. Bruns and J. Herzog. \emph{Cohen--Macaulay Rings}.
+  Revised edition, Cambridge University Press, 1998.
+\bibitem{matsumura} H. Matsumura. \emph{Commutative Ring Theory}.
+  Translated by M. Reid, corrected paperback, Cambridge University Press, 1989.
+\bibitem{eisenbud} D. Eisenbud. \emph{Commutative Algebra with a View Toward Algebraic Geometry}.
+  Graduate Texts in Mathematics 150, Springer, 1995.
+\bibitem{hartshorne} R. Hartshorne. \emph{Deformation Theory}.
+  Graduate Texts in Mathematics 257, Springer, 2010.
+\bibitem{schlessinger} M. Schlessinger. Functors of Artin rings.
+  \emph{Transactions of the American Mathematical Society} 130 (1968), 208--222.
+\bibitem{serre-local} J.-P. Serre. \emph{Local Algebra}. Springer, 2000,
+  Chapter V, pp. 99--121. \url{https://doi.org/10.1007/978-3-662-04203-8_5}.
+\bibitem{dugger} D. Dugger. \emph{A Geometric Introduction to K-Theory}.
+  Author's lecture notes, Chapters 1--2.
+\bibitem{roberts} P. C. Roberts. \emph{Multiplicities and Chern Classes in
+  Local Algebra}. Cambridge University Press, 1998.
+\end{thebibliography}
+\endgroup
+\end{document}

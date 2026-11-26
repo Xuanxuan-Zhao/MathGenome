@@ -1,0 +1,12 @@
+id	source	dependencies
+L01	Stacks, Dualizing Complexes §§8–10, PDF pp. 11–18; Bruns–Herzog 3.5.1, p. 140	Ideal powers and finite generation
+L02	Stacks, Dualizing Complexes 8.2 (0954), PDF p. 12	L01; P1-03 ALG-03-C02-S03; injective horseshoe
+L03	Stacks, Dualizing Complexes 3.9(2) (08XW), PDF p. 5	L01; P1-03 ALG-03-C02-R03, ALG-05-C04-R02
+L04	Stacks, Dualizing Complexes §§3, 10, PDF pp. 5, 17–18; fraction argument in text	L01; P1-03 ALG-05-C01-S01
+L05	Stacks, Dualizing Complexes 9.1, 10.1–2, PDF pp. 14, 17–18; Bruns–Herzog 3.5.6, p. 143	L02, L03, L04; HA R01/R03/R06, B01–B04
+L06	Stacks, Dualizing Complexes §10, PDF pp. 17–18	L01, L05
+L07	Stacks, Dualizing Complexes 9.1, 10.1, PDF pp. 14, 17; Bruns–Herzog 3.5.5–6, pp. 142–143	L02, L05; core RK-03, RK-10
+L08	Stacks, Dualizing Complexes 9.2–3 and 10.3, PDF pp. 14–15, 18	L02, L05; P1-03 ALG-05-C01-S01
+L09	Stacks, Dualizing Complexes 10.3, PDF p. 18; Commutative Algebra §97, pp. 226–227	L02, L08; P1-03 ALG-05-C04-S01
+L10	Stacks, Dualizing Complexes §9, PDF pp. 13–15	L05; HA H01–H04
+L11	Stacks, Dualizing Complexes §9, PDF pp. 13–15; HA H05	L05, L10; HA H05

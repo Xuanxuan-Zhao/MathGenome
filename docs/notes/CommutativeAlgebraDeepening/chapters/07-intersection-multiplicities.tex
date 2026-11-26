@@ -1,0 +1,771 @@
+\chapter{Intersection Multiplicities and Homological Bounds}
+\label{ch:intersection-multiplicities}
+
+At an isolated intersection the ordinary tensor product records the
+intersection scheme. Higher Tor groups measure the failure of tensor
+product to preserve a resolution. Taking their alternating length makes
+the resulting number additive. In a power series ring, the diagonal
+presents this alternating length as a Koszul Euler characteristic.
+Hilbert--Samuel theory then supplies its sign.
+\cite[Chapter V]{serre-local}
+
+\section{The Tor Euler characteristic}
+
+Write \(\ell_R\) for module length. All complexes in this chapter, except
+for a Cech complex written cohomologically, have homological grading.
+The total differential on \(P_i\otimes Q_j\) is
+\(d_P\otimes 1+(-1)^i1\otimes d_Q\).
+
+\begin{definition}[The isolated-intersection Euler characteristic]\label{res:I01}
+Let \((R,\mathfrak m)\) be a regular local ring of dimension \(d\).
+For finite \(R\)-modules \(M,N\) with \(M\otimes_R N\) of finite length, set
+\[
+ \chi_R(M,N)=\sum_{i=0}^d(-1)^i
+                \ell_R\bigl(\operatorname{Tor}_i^R(M,N)\bigr).
+\]
+The terms have finite length, all higher terms vanish, and the integer is
+symmetric in \(M,N\).
+\end{definition}
+\begin{proof}
+A finite module has a resolution by finite free modules of length at
+most \(d\) by \cite[CM-12 or CM-19]{core}. The Tor modules are finite
+and the resolution localizes. A localized Tor module vanishes when
+one localized argument vanishes. Conversely, two nonzero finite
+modules over \(R_{\mathfrak p}\) have nonzero tensor product because reduction
+to its residue field gives the tensor product of two nonzero vector
+spaces by Nakayama's lemma. Thus
+\[
+ \operatorname{Supp}(M\otimes_R N)
+   =\operatorname{Supp}(M)\cap\operatorname{Supp}(N).
+\]
+This support is contained in \(\{\mathfrak m\}\) under the hypothesis.
+A finite module with this support is killed by some power of
+\(\mathfrak m\), and its successive \(\mathfrak m\)-adic quotients are
+finite-dimensional over the residue field. It has finite length.
+For symmetry, use the total tensor product of finite free resolutions
+of \(M,N\). Taking homology in the two possible directions gives the
+two computations of Tor, and interchange of the factors sends
+\(p\otimes q\) to \((-1)^{ij}q\otimes p\) in bidegree \((i,j)\).
+\cite[\S2]{dugger}
+\end{proof}
+
+\begin{proposition}[Additivity and reduction to prime quotients]\label{res:I02}
+For a fixed finite \(N\), the Euler characteristic is additive on an
+exact sequence of finite modules whose supports meet the support of
+\(N\) only at \(\mathfrak m\). The same holds in the other argument.
+For prime filtrations of \(M\) and \(N\) with factors
+\(R/\mathfrak p_a\) and \(R/\mathfrak q_b\), respectively, one has
+\[
+ \chi_R(M,N)=
+ \sum_{a,b}\chi_R(R/\mathfrak p_a,R/\mathfrak q_b).
+\]
+Each pair on the right still satisfies the isolated-support condition.
+The maxima of the dimensions of the respective factors are
+\(\dim M\) and \(\dim N\) for nonzero modules.
+\end{proposition}
+\begin{proof}
+The long exact Tor sequence is finite and consists of finite-length
+modules by \ref{res:I01}. Its alternating length is zero, since the
+length of a term is the sum of the lengths of the incoming and outgoing
+images. Regrouping yields additivity.
+
+In a nonzero finite module choose a nonzero element with maximal
+annihilator among the annihilators of nonzero elements. Such an
+annihilator exists by the ascending chain condition on ideals. If
+\(ab\) kills this element but \(b\) does not, multiplication by \(b\)
+produces a nonzero element whose annihilator contains the original
+annihilator and \(a\). Maximality puts \(a\) in the original
+annihilator, so it is prime. Remove the cyclic submodule and repeat
+in the quotient. The preimages form an ascending chain of submodules,
+which terminates by Noetherianness. Localization of each short exact
+sequence shows that the support is the union of the supports of the
+factors. This proves the support and dimension claims, and iterated
+additivity gives the formula. Equivalently the Euler pairing descends
+to the Grothendieck groups of finite modules on the two fixed closed
+supports with isolated intersection, where the relations impose
+additivity on short exact sequences. \cite[\S2, Lemma 2.2]{dugger}
+\end{proof}
+
+\begin{proposition}[Passage to the completion]\label{res:I03}
+For an isolated intersection in a regular local ring,
+\[
+ \chi_{\widehat R}(\widehat M,\widehat N)=\chi_R(M,N).
+\]
+The dimensions of the nonzero modules and the regular local dimension
+of \(R\) are preserved by maximal-ideal completion.
+\end{proposition}
+\begin{proof}
+The ring map to the completion is flat and induces an isomorphism on
+residue fields by \cite[ALG-05-C04-S01]{p103}. Tensoring a finite free
+resolution and then commuting flat base change with homology identifies
+each completed Tor module with the corresponding Tor over
+\(\widehat R\). A composition series of a finite-length module stays a
+composition series after base change, since each simple factor becomes
+the same residue field. In particular the tensor product still has
+finite length. The lengths of all maximal-ideal power quotients are
+unchanged, so the Hilbert--Samuel dimension formula
+\cite[ALG-05-C03-S02]{p103} preserves dimension. For the ring, the
+dimension of the maximal ideal modulo its square also stays the same.
+The definition of regular local ring makes \(\widehat R\) regular.
+\end{proof}
+
+\section{Koszul Euler characteristics}
+
+\begin{definition}[Multiplicity in a specified degree]\label{res:I04}
+Let \((A,\mathfrak n)\) be Noetherian local and let \(E\ne 0\) be a
+finite \(A\)-module. Suppose \(J\subseteq\mathfrak n\) and \(E/JE\)
+has finite length. Write \(P_{J,E}(t)\) for the eventual polynomial
+\(\ell_A(E/J^{t+1}E)\) for integer \(t\ge 0\). For an integer
+\(r\ge\dim_A E\) let
+\[
+ e^{(r)}_J(E)=r!\,[t^r]P_{J,E}(t).
+\]
+Its value at \(r=\dim_A E\) is the Hilbert--Samuel multiplicity
+\(e_J(E)\). For the zero module put \(e^{(r)}_J(0)=0\).
+\end{definition}
+
+Existence, degree \(\dim_A E\), and positivity of the leading
+coefficient for a nonzero module follow from
+\cite[ALG-05-C03-S02]{p103}. The notation \(e^{(r)}\) retains the
+degree in which the coefficient is taken. A module of smaller
+dimension contributes zero in that degree.
+
+\begin{theorem}[Serre's Koszul Euler formula]\label{res:I05}
+Let \(z=(z_1,\ldots,z_r)\) generate \(J\subseteq\mathfrak n\), where
+\(E/JE\) has finite length. Write \(K_\bullet(z;E)\) for the Koszul
+complex. For nonzero \(E\) one has \(\dim_A E\le r\), and
+\[
+ \sum_{i=0}^r(-1)^i\ell_A H_i(K_\bullet(z;E))=e^{(r)}_J(E).
+\]
+In particular, when \(\dim_A E=r\) this multiplicity is a positive
+integer.
+\end{theorem}
+\begin{proof}
+The dimension bound follows by applying the height theorem to the
+image of \(J\) in \(A/\operatorname{Ann} E\), where its radical is
+the maximal ideal.
+\cite[ALG-05-C03-R01 and ALG-05-C03-S01]{p103}
+For \(r=0\) the assertion reads \(\ell_A E=\ell_A E\). For the zero
+module all lengths are zero, so suppose \(r>0\) and \(E\ne 0\).
+
+Multiplication by each \(z_j\) on the Koszul complex is homotopic to
+zero via exterior multiplication by its basis vector. Thus every
+homology group vanishes outside \(V(J)\) and is supported in
+\(\operatorname{Supp}(E)\). It has finite length, since
+\(V(J)\cap\operatorname{Supp}(E)\subseteq\{\mathfrak n\}\).
+Write \(K_i=K_i(z;E)\) and \(Z_i=\ker(d_i)\). For an integer \(n>r\)
+the submodules \(F^nK_i=J^{n-i}K_i\) form a subcomplex. For each \(i\),
+Artin--Rees applied to \(Z_i\subseteq K_i\) gives, for all sufficiently
+large \(n\),
+\[
+ Z_i\cap J^{n-i}K_i
+     =J\bigl(Z_i\cap J^{n-i-1}K_i\bigr).
+\]
+A cycle on the left is then \(\sum_j z_j w_j\) with each \(w_j\)
+a cycle in \(J^{n-i-1}K_i\). The Koszul homotopy identifies \(z_jw_j\)
+with \(d(e_j\wedge w_j)\), and its preimage belongs to
+\(J^{n-i-1}K_{i+1}=F^nK_{i+1}\). In last degree the wedge is zero
+and the same identity states that the term is zero. This proves
+acyclicity of \(F^nK_\bullet\) simultaneously in all degrees for
+large \(n\). The quotient complex therefore has the original
+homology.
+
+Each quotient term has finite length. For \(a\ge 1\),
+\(E/J^aE\) has support at most the closed point. For a bounded complex
+of finite length modules, the alternating sum of the lengths of
+the terms equals that of the homology. This follows by applying
+length additivity to the image and kernel sequences for every
+differential. Using \(K_i=E^{\binom ri}\), the alternating length
+of the quotient complex is
+\[
+ \sum_{i=0}^r(-1)^i\binom ri P_{J,E}(n-i-1).
+\]
+This is the \(r\)-fold backward difference of a polynomial of degree
+at most \(r\) evaluated at \(n-1\). Each difference reduces the
+positive degree by one and multiplies the leading coefficient by
+the old degree. The expression equals \(r!\,[t^r]P_{J,E}(t)\).
+Positivity in degree \(r\) follows from the Hilbert--Samuel dimension
+formula and integrality from the length sum. The proof also gives
+additivity of the degree-\(r\) formula on finite modules supported
+at the closed point after quotienting by \(J\). Apply the long exact
+Koszul homology sequence to a short exact sequence of coefficients.
+\cite[Chapter IV, \S A.3]{serre-local}
+\end{proof}
+
+\begin{corollary}[One complete-intersection factor]\label{res:I06}
+If \(z\) is an \(R\)-regular sequence of length \(r\) in the maximal
+ideal of a Noetherian local ring \(R\), and \(N\ne 0\) is finite
+with \(N/(z)N\) of finite length, the Tor Euler characteristic
+of \(R/(z),N\), defined by the sum through degree \(r\), equals
+\(e^{(r)}_{(z)}(N)\).
+It is zero for \(\dim_R N<r\) and positive for \(\dim_R N=r\).
+\end{corollary}
+\begin{proof}
+The Koszul complex of the regular sequence is a finite free
+resolution of \(R/(z)\). \cite[Chapter 5]{core}
+After tensoring with \(N\) it is precisely the complex of
+\ref{res:I05}. Thus all assertions hold without a characteristic
+restriction or regularity assumption on \(R\) itself. When \(R\)
+is regular of dimension \(d\), \(R/(z)\) has dimension \(d-r\) by
+successive dimension drops, so this is the isolated-intersection
+vanishing and proper-intersection positivity criterion for this
+particular first argument.
+\end{proof}
+
+\section{The completed exterior tensor product over a field}
+
+\begin{proposition}[Construction and separate exactness]\label{res:I07}
+Let \(k\) be a field and put
+\[
+ A=k[[x_1,\ldots,x_a]],\qquad B=k[[y_1,\ldots,y_b]],
+ \qquad S=k[[x_1,\ldots,x_a,y_1,\ldots,y_b]] .
+\]
+For finite \(A\)- and \(B\)-modules \(M,N\) there is a natural finite
+\(S\)-module
+\[
+ M\boxtimes_k N=(S\otimes_A M)\otimes_B N.
+\]
+It is exact in either variable on finite modules. It has the
+description
+\[
+ M\boxtimes_k N
+   \ \cong\
+ \varprojlim_{u,v}
+   (M/(x)^uM)\otimes_k(N/(y)^vN).
+\]
+\end{proposition}
+\begin{proof}
+The ordinary tensor expression is finite over \(S\), for generators
+of each factor give generators indexed by their pairs. Its quotient by
+\((x)^uS+(y)^vS\) is the displayed finite-level tensor product over \(k\).
+Indeed the quotient of \(S\) is
+\(A/(x)^u\otimes_k B/(y)^v\) by the monomial bases, and the claimed
+quotient follows by the universal balanced tensor maps.
+The ideals with \(u=v=n\) are cofinal with powers of \((x,y)S\).
+\[
+ (x,y)^{2n-1}S\ \subseteq\ (x)^nS+(y)^nS\
+             \subseteq\ (x,y)^nS .
+\]
+Finite modules over the complete Noetherian ring \(S\) are complete
+by the completion tensor comparison of
+\cite[ALG-05-C04-R03]{p103}. This proves the inverse-limit formula.
+
+For an exact sequence \(0\to M'\to M\to M''\to0\), use the exact
+finite-level sequence
+\[
+ 0\to M'/(M'\cap(x)^nM)\to M/(x)^nM\to M''/(x)^n M''\to0 .
+\]
+Tensor with \(N/(y)^nN\) over the field. The left terms now have
+surjective transition maps. A compatible class in the right terms
+lifts to a compatible class in the middle. After choosing the
+next lift, its discrepancy with the preceding lift comes from a
+left term, and that discrepancy lifts to the next left term.
+Subtracting it supplies the required correction. Kernel exactness
+and injectivity are checked termwise. Artin--Rees makes
+\(M'\cap(x)^nM\) cofinal with \((x)^nM'\), and using the respective
+cofinal indices gives mutually inverse maps on limits after tensoring
+with the truncations of \(N\). The limit sequence is the exterior
+tensor sequence, and the same argument interchanges the roles.
+\cite[Chapter V, \S B.2]{serre-local}
+\end{proof}
+
+\begin{lemma}[Dimensions add over the field]\label{res:I08}
+For nonzero finite \(M,N\) in \ref{res:I07}, with
+\(\mathfrak s=(x,y)S\), one has
+\[
+ \dim_S(M\boxtimes_k N)=\dim_A M+\dim_B N,\qquad
+ e_{\mathfrak s}(M\boxtimes_k N)=e_{(x)}(M)e_{(y)}(N).
+\]
+\end{lemma}
+\begin{proof}
+Let \(T=M\boxtimes_k N\). For any \(j\ge 0\) the natural product map
+from the vector spaces of the two associated graded modules identifies
+\[
+ \mathfrak s^jT/\mathfrak s^{j+1}T
+   \ \cong\
+ \bigoplus_{u+v=j}
+       \frac{(x)^uM}{(x)^{u+1}M}
+              \otimes_k\frac{(y)^vN}{(y)^{v+1}N}.
+\]
+To verify both surjectivity and injectivity, work modulo
+\((x)^{j+1}S+(y)^{j+1}S\), which is contained in
+\(\mathfrak s^{j+1}\). Split the flags in the two finite-dimensional
+truncated vector spaces over \(k\). In their tensor product,
+\(\mathfrak s^j\) acts through the sum of the images of
+\((x)^uM\otimes (y)^vN\) with \(u+v=j\). These images are the sum of
+split tensors with total filtration index at least \(j\).
+The quotient removes precisely those with index at least \(j+1\).
+The natural map therefore has the displayed description, independent
+of the choices of splittings.
+
+For a nonzero finite module \(U\) of dimension \(s\) over a local
+ring with the indicated maximal-ideal filtration, let \(h_U(j)\)
+be its \(j\)-th layer length. The Hilbert--Samuel dimension formula
+gives
+\[
+ \sum_{j\ge 0}h_U(j)t^j=\frac{Q_U(t)}{(1-t)^s},
+ \qquad Q_U(1)=e(U)>0 ,
+\]
+where \(Q_U(t)\) is a polynomial and \(e(U)\) is its maximal-ideal
+multiplicity. To see the asserted value, first sum the cumulative
+lengths. An eventual polynomial of degree \(s\) expands in
+\(\binom{j}{i}\) with highest coefficient \(e(U)\).
+The corresponding series for those polynomials are
+\(t^i/(1-t)^{i+1}\), and a finite initial correction is a polynomial.
+Multiplication by \(1-t\) gives the series of layer lengths and
+preserves the stated numerator at \(1\). This argument includes
+\(s=0\), where the layer series is already a polynomial.
+The direct-sum calculation multiplies the two layer series. The
+numerator at \(1\) is the product of two positive numbers, so the
+pole order and numerator give exactly the asserted dimension and
+multiplicity. \cite[Chapter V, \S B.3]{serre-local}
+\end{proof}
+
+\begin{theorem}[Diagonal reduction in equal characteristic]\label{res:I09}
+Let \(R=k[[x_1,\ldots,x_d]]\) and let \(M,N\ne0\) be finite
+\(R\)-modules such that \(M\otimes_R N\) has finite length. Regard
+\(N\) as a module over the copy with variables \(y\) and set
+\(T=M\boxtimes_k N\) and \(J=(x_1-y_1,\ldots,x_d-y_d)\subset S\).
+Then
+\[
+ \operatorname{Tor}_i^R(M,N)\cong H_i(K_\bullet(x-y;T)),\qquad
+ \chi_R(M,N)=e^{(d)}_J(T).
+\]
+In particular \(\dim M+\dim N\le d\), with zero Euler
+characteristic for strict inequality and positive Euler
+characteristic for equality. The conclusion holds for any
+equal-characteristic regular local ring.
+\end{theorem}
+\begin{proof}
+The variable substitution \(z_i=x_i-y_i\) gives the isomorphism
+\(S=k[[z_1,\ldots,z_d,y_1,\ldots,y_d]]\), and \(S/J\) identifies
+with \(R\). The \(z_i\) form a regular sequence with Koszul
+resolution of \(S/J\).
+
+Take bounded finite free resolutions \(P,Q\) over the \(x\) and
+\(y\) copies, respectively. Their exterior tensor double complex
+has finite free \(S\)-terms. Separate exactness in
+\ref{res:I07}, applied successively to the two resolutions, gives
+a finite free resolution of \(T\) on taking the total complex.
+To justify this computation, filter the total complex in either
+direction. Homology in the first direction leaves only the
+augmented column or row, and homology in the second leaves only
+\(T\) in degree zero. After tensoring this total resolution with
+\(S/J\), the terms and differentials identify with the total
+complex \(P\otimes_R Q\). One can again take homology first on the
+free resolution \(P\) to obtain \(\operatorname{Tor}^R(M,N)\).
+Computing \(\operatorname{Tor}^S(S/J,T)\) instead with the
+diagonal Koszul resolution gives the homology in the assertion.
+The two computations agree, by the same double complex argument.
+The \(S\)-action factors through \(R\) and the finite lengths
+agree for these two coefficient rings.
+
+In degree zero,
+\(T/JT=M\otimes_R N\) has finite length. Thus \ref{res:I05}
+applies to \(J\) with \(d\) generators. By \ref{res:I08},
+\(\dim T=\dim M+\dim N\), giving the strict and equality cases.
+For a general equal-characteristic regular local ring apply
+\ref{res:I03} and use the coefficient field and power series
+description of its completion from \ref{res:C04}.
+\cite[Chapter V, \S B.3, Theorem 1]{serre-local}
+\end{proof}
+
+\section{Mixed characteristic and the dimension bound}
+
+\begin{lemma}[Euler cancellation across a regular element]\label{res:I10}
+Let \(S\) be Noetherian local, let \(h\) be a nonzero divisor in
+its maximal ideal, and set \(A=S/(h)\). Let \(M,N\) be finite
+\(A\)-modules such that \(M\otimes_A N\) has finite length.
+Suppose \(M\) has a finite free \(A\)-resolution and \(N\) has a
+finite free \(S\)-resolution. Then the alternating length of
+\(\operatorname{Tor}_i^S(M,N)\) is zero.
+\end{lemma}
+\begin{proof}
+Let \(P\) be a bounded finite free \(A\)-resolution of \(M\) and
+\(Q\) a bounded finite free \(S\)-resolution of \(N\). Consider
+the bounded double complex \(P\otimes_A(A\otimes_S Q)\).
+Its total complex identifies with the total complex of
+\(P\otimes_S Q\). In the direction of \(P\), exactness against
+each free \(S\)-module \(Q_j\) leaves \(M\otimes_S Q\), so the
+abutment is \(\operatorname{Tor}^S(M,N)\).
+In the direction of \(Q\), one obtains the groups
+\(P_i\otimes_A \operatorname{Tor}_j^S(A,N)\), since each \(P_i\)
+is \(A\)-free. A two-term free \(S\)-resolution of \(A\) is
+\([S\xrightarrow{h}S]\). Multiplication by \(h\) on \(N\) is
+zero. Thus \(\operatorname{Tor}_j^S(A,N)\cong N\) for \(j=0,1\)
+as an \(A\)-module, with all other groups zero. For this
+identification, multiplication by a scalar in \(S\) on either
+argument is represented by multiplication by that scalar on
+the tensor complex. Hence the action obtained from \(A\) on
+the first argument agrees with that of \(S\) on \(N\) and
+factors through \(A\). Taking the next
+homology gives \(\operatorname{Tor}_i^A(M,N)\) in each of the
+two rows \(j=0,1\). These entries have finite length by the
+same support argument as in \ref{res:I01}. Length over \(A\)
+equals length over \(S\).
+
+For each succeeding page the total alternating length is
+preserved since pairs of boundary terms contribute with opposite
+signs, as each differential changes total degree by one.
+The double complex is bounded, so the last page gives a finite
+filtration on each abutment group. The two identical rows
+contribute with opposite signs in total degree, which proves
+the cancellation. \cite[Chapter V, \S B.5]{serre-local}
+\end{proof}
+
+\begin{lemma}[Diagonal reduction over a discrete valuation ring]\label{res:I11}
+Let \(V\) be a complete discrete valuation ring with uniformizer
+\(\pi\) and residue field \(k\). Put
+\[
+ R=V[[x_1,\ldots,x_a]],\qquad
+ S=V[[x_1,\ldots,x_a,y_1,\ldots,y_a]] .
+\]
+Let \(M,N\) be nonzero finite \(R\)-modules on which multiplication
+by \(\pi\) is injective. Define \(T=(S\otimes_{V[[x]]}M)
+\otimes_{V[[y]]}N\), with \(N\) written in the \(y\)-variables.
+Then multiplication by \(\pi\) on \(T\) is injective and
+\[
+ T/\pi T\cong (M/\pi M)\boxtimes_k(N/\pi N),\qquad
+ \dim_S T=\dim_R M+\dim_R N-1 .
+\]
+For \(J=(x_1-y_1,\ldots,x_a-y_a)\), the diagonal Koszul complex
+\(K_\bullet(x-y;T)\) computes \(\operatorname{Tor}^R(M,N)\).
+\end{lemma}
+\begin{proof}
+The rings in the statement are regular local, with respective
+systems of parameters \(\pi,x_1,\ldots,x_a\) and
+\(\pi,x_1,\ldots,x_a,y_1,\ldots,y_a\). This is the power series
+construction of \ref{res:C04}. Take bounded finite free resolutions
+\(P,Q\) over the two copies of \(R\). Form the total complex \(D\) of
+the finite free double complex
+\(S\otimes_{V[[x]]}P\otimes_{V[[y]]}Q\). Its zeroth homology is
+\(T\) by right exactness of tensor product in the two arguments.
+Since \(\pi\) is injective on \(M,N\), the exact sequences of
+complexes for multiplication by \(\pi\) show that \(P/\pi P\)
+and \(Q/\pi Q\) are finite free resolutions of \(M/\pi M\)
+and \(N/\pi N\). Thus \(D/\pi D\) is exactly their exterior tensor
+double complex from the proof of \ref{res:I09}.
+It has no positive homology by \ref{res:I07}, and its zeroth
+homology is the exterior tensor product in the statement.
+The long exact sequence for
+\(0\to D\xrightarrow{\pi}D\to D/\pi D\to0\) implies
+that multiplication by \(\pi\) acts surjectively on every
+\(H_i(D)\) with \(i>0\). Each is finite, hence zero by Nakayama.
+The segment at degree zero gives the injectivity on \(T\)
+and the claimed quotient identification. In particular \(D\)
+resolves \(T\).
+
+For a finite nonzero module \(U\) over a Noetherian local ring
+and a nonzero divisor \(u\) on \(U\) in the maximal ideal,
+\(\dim(U/uU)=\dim U-1\). Here is the dimension argument.
+Each minimal prime of the support of \(U\) avoids \(u\),
+since such a prime is an associated prime. Every prime
+in \(\operatorname{Supp}(U/uU)\) contains \(u\) and lies
+strictly over a minimal prime of \(\operatorname{Supp}(U)\).
+Prepending that prime to a longest chain above the given prime
+gives the upper bound. Conversely, prepend \(u\) to a system of
+parameters on \(U/uU\). The resulting sequence has finite-colength
+quotient on \(U\), so the height bound gives
+\(\dim U\le 1+\dim(U/uU)\). For the associated prime and parameter
+facts used here see \cite[Chapter 6]{core} and
+\cite[ALG-05-C03-S01]{p103}.
+Apply this drop to \(M,N,T\), with \(u=\pi\). Their special-fiber
+dimensions are related by \ref{res:I08}, proving the formula.
+To compute Tor, base change \(D\) to \(S/J\cong R\). The total
+complex becomes \(P\otimes_R Q\), as in \ref{res:I09}. Compute
+the same Tor groups with the Koszul resolution of the diagonal
+over \(S\). The substitution \(z_i=x_i-y_i\) is valid over \(V\),
+so this is a regular sequence. \cite[Chapter V, \S B.5, Lemma 1]{serre-local}
+\end{proof}
+
+\begin{theorem}[Unramified mixed characteristic]\label{res:I12}
+Let \(R\) be a regular local ring of mixed characteristic
+\((0,p)\) such that \(p\notin\mathfrak m^2\), of dimension
+\(d\). For nonzero finite modules meeting only at the closed
+point, \(\dim M+\dim N\le d\). The number \(\chi_R(M,N)\)
+is zero if this inequality is strict and positive if it is
+equality.
+\end{theorem}
+\begin{proof}
+By \ref{res:I03} pass to the completion, where \ref{res:C04}
+identifies \(R\) with \(V[[x_1,\ldots,x_{d-1}]]\) for
+a complete discrete valuation ring \(V\) of uniformizer \(p\).
+By \ref{res:I02} it suffices to prove the claims for prime
+quotients. Indeed all pairs of prime-filtration factors
+have dimensions bounded by those of the original modules.
+If the original dimension sum is \(d\), the factors attaining
+the two maxima give at least one strictly positive term, and
+all other terms are nonnegative.
+
+A prime quotient is either killed by \(p\) or \(p\) acts
+injectively on it. If both arguments have injective \(p\)-action,
+apply \ref{res:I11}. The diagonal has \(d-1\) generators and
+\(T/JT\cong M\otimes_R N\) has finite length. By \ref{res:I05},
+\(\dim T\le d-1\) and the sign follows from the comparison
+\(\dim T=\dim M+\dim N-1\).
+
+Suppose exactly one factor, say \(M\), is killed by \(p\).
+Write \(\bar R=R/pR\). For a finite free \(R\)-resolution
+\(Q\) of \(N\), the homology sequence of multiplication by \(p\)
+shows \(Q/pQ\) resolves \(N/pN\) over \(\bar R\). Termwise,
+\(M\otimes_R Q=M\otimes_{\bar R}(Q/pQ)\). Thus both the
+Tor groups and lengths agree with those for \(M,N/pN\) over
+\(\bar R\). The dimensions of \(M\) over \(R\) and \(\bar R\)
+agree, and \(\dim(N/pN)=\dim N-1\) by the drop used in
+\ref{res:I11}. The ring \(\bar R\) is equal-characteristic
+of dimension \(d-1\), so \ref{res:I09} gives the result.
+
+If both arguments are killed by \(p\), apply \ref{res:I09}
+over \(\bar R\) to see that their dimension sum is at most
+\(d-1\). Their alternating length over \(R\) vanishes by
+\ref{res:I10}, with \(S=R\), \(A=\bar R\), \(h=p\).
+All modules admit the required bounded resolutions since the
+rings are regular. This completes the three cases.
+\cite[Chapter V, \S B.5, Theorem 2]{serre-local}
+\end{proof}
+
+\begin{theorem}[Serre's dimension bound]\label{res:I13}
+Let \(R\) be a regular local ring of dimension \(d\) in any
+characteristic. For nonzero finite modules with finite-length
+tensor product,
+\[
+ \dim_R M+\dim_R N\le d.
+\]
+In particular, if \(\mathfrak r\) is minimal over
+\(\mathfrak p+\mathfrak q\) for two prime ideals in a regular
+local ring, then
+\(\operatorname{ht}\mathfrak r\le
+  \operatorname{ht}\mathfrak p+\operatorname{ht}\mathfrak q\).
+\end{theorem}
+\begin{proof}
+The equal-characteristic and unramified cases are
+\ref{res:I09} and \ref{res:I12}. By \ref{res:I03} it remains
+to consider a complete mixed-characteristic regular local \(R\)
+with \(p\in\mathfrak m^2\). The coefficient-ring construction
+of \ref{res:C03} supplies a complete discrete valuation ring
+\(V\to R\) with uniformizer \(p\) and residue-field isomorphism.
+For a minimal system of parameters \(x_1,\ldots,x_d\) of \(R\),
+the natural map
+\[
+ S=V[[X_1,\ldots,X_d]]\longrightarrow R,\qquad X_i\longmapsto x_i
+\]
+is surjective. At each order the parameters generate the
+associated graded ring over the residue field, so one lifts
+successive homogeneous pieces using coefficients in \(V\).
+The resulting series converges to the prescribed element.
+Since \(p\in\mathfrak m^2\), choose \(f\in (X_1,\ldots,X_d)^2\)
+mapping to \(p\) by lifting its expression in products \(x_ix_j\).
+The kernel contains \(h=p-f\), which is part of a minimal
+system of generators of the maximal ideal of \(S\).
+The quotient \(S/(h)\) is regular local and a domain of
+dimension \(d\) by \cite[ALG-05-C03-S03]{p103}. A nonzero
+ideal in this domain has quotient of dimension at most
+\(d-1\), since any prime chain in its vanishing locus may be
+lengthened below by the zero prime. Therefore the induced
+surjection \(S/(h)\to R\) is an isomorphism.
+
+View \(M,N\) as \(S\)-modules. Their dimensions and finite
+tensor length are unchanged. By \ref{res:I10},
+\(\chi_S(M,N)=0\). The regular local ring \(S\) is unramified
+of dimension \(d+1\). By \ref{res:I12} the dimension sum is
+at most \(d+1\), and equality would make \(\chi_S(M,N)>0\).
+The bound follows.
+
+For the height statement localize at \(\mathfrak r\), which
+preserves regularity by \cite[CM-19]{core}. The localized
+prime quotients meet only at the closed point since
+\(\mathfrak r\) is minimal over their sum. Their dimensions are
+\(\operatorname{ht}\mathfrak r-\operatorname{ht}\mathfrak p\)
+and \(\operatorname{ht}\mathfrak r-\operatorname{ht}\mathfrak q\),
+by the height and dimension formula in a Cohen--Macaulay local
+ring \cite[CM-07]{core}. Heights of these smaller primes do
+not change upon localization, since all primes under them
+are contained in \(\mathfrak r\). Substitution into the
+dimension bound gives the stated inequality.
+\cite[Chapter V, \S B.6]{serre-local}
+\end{proof}
+
+\section{Finite free complexes and examples}
+
+\begin{proposition}[A depth bound for short complexes]\label{res:I14}
+Let \((A,\mathfrak n)\) be Noetherian local. Let \(F_\bullet\)
+be a finite free complex in degrees \(0,\ldots,s\), and let
+\(U\ne0\) be finite. Suppose all \(H_i(F_\bullet\otimes_A U)\)
+have finite length and some is nonzero. Then
+\(s\ge\operatorname{depth}_A U\). In particular, a nonexact
+finite free complex over a Cohen--Macaulay local ring with
+finite-length homology has length at least the dimension
+of the ring.
+\end{proposition}
+\begin{proof}
+Choose generators of \(\mathfrak n\). Let \(C^\bullet\) be
+the augmented cohomological Cech complex from \ref{res:L05}.
+Its terms are flat. Give \(C^q\otimes F_i\otimes U\) total
+cohomological degree \(q-i\). In the filtration taking
+\(F_\bullet\otimes U\) homology first, flatness gives
+\(C^\bullet\otimes H_i(F_\bullet\otimes U)\) in the \(i\)-th
+row. Each finite-length homology group is killed by a power
+of \(\mathfrak n\). Localizing such a group at any generator of
+\(\mathfrak n\) makes it zero. Its Cech complex is therefore
+the group itself in degree zero, and all surviving terms
+have total degree \(-i\le 0\). There is a nonzero term, and
+no later differential can leave or enter the only remaining
+Cech degree. The abutment has a nonzero group in a
+nonpositive degree.
+
+In the other filtration the initial homology groups are
+\(H^q_{\mathfrak n}(U)^{\operatorname{rank}F_i}\). They are
+zero for \(q<\operatorname{depth}_A U\) by \ref{res:V01}.
+If \(\operatorname{depth}_A U>s\), every nonzero term then
+has \(q-i>0\). This contradicts the nonpositive-degree
+abutment from the first filtration. Both filtrations are
+bounded and converge to the homology of the same finite
+total complex. Apply the assertion with \(U=A\) for the
+last claim. \cite[\S 9.4, Corollary 9.4.3]{bruns}
+\end{proof}
+
+\begin{corollary}[Projective dimension and isolated support]\label{res:I15}
+Let \(M,N\ne 0\) be finite modules over a Noetherian local
+ring \(R\) with \(M\otimes_R N\) of finite length and
+\(\operatorname{pd}_R M\) finite. Then
+\[
+ \operatorname{depth}_R N\le \operatorname{pd}_R M .
+\]
+This implies \(\dim_R N\le\operatorname{pd}_R M\) whenever
+\(N\) is Cohen--Macaulay. The latter dimension bound also
+holds for arbitrary \(N\) over a regular local ring.
+\end{corollary}
+\begin{proof}
+Let \(F_\bullet\) be a finite free resolution of \(M\) of
+length \(\operatorname{pd}_R M\), obtained by taking finite free
+surjections through the final projective syzygy, which is finite
+free over the local ring. All homology groups of
+\(F_\bullet\otimes_R N\) have finite length by the localization
+argument of \ref{res:I01}. Its zeroth homology \(M\otimes_R N\)
+is nonzero by reducing modulo the maximal ideal and using
+Nakayama. Now \ref{res:I14} gives the depth inequality.
+When \(N\) is Cohen--Macaulay its depth equals its dimension.
+When \(R\) is regular, \ref{res:I13} and the
+Auslander--Buchsbaum formula give
+\[
+ \dim N\le\dim R-\dim M
+          \le\dim R-\operatorname{depth}_R M
+          =\operatorname{pd}_R M.
+\]
+The depth-dimension bound and the Auslander--Buchsbaum formula
+are \cite[DP-02 and DP-13]{core}.
+\end{proof}
+
+\begin{example}[Tangency and excess Tor]\label{res:I16}
+In \(k[[x,y]]\), the two quotients by \(y\) and by \(y-x^b\),
+for \(b\ge1\), have intersection multiplicity \(b\). The
+two axes in the plane have multiplicity one. In
+\(k[[x,y,z]]\), the modules \(R/(x,y)\) and \(R/(y,z)\)
+meet only at the closed point and have intersection
+multiplicity zero even though their tensor product has length
+one.
+\end{example}
+\begin{proof}
+For the tangency, resolve \(R/(y)\) by the two free terms for
+multiplication by \(y\). On \(R/(y-x^b)\cong k[[x]]\) this
+becomes multiplication by \(x^b\), which is injective with
+cokernel of length \(b\). For the two axes the same resolution
+with the second quotient \(R/(x)\) leaves multiplication by
+the variable \(y\) in \(k[[y]]\), with cokernel \(k\).
+For the last pair resolve \(R/(x,y)\) by its Koszul
+complex. On \(R/(y,z)\cong k[[x]]\), the first Koszul
+factor on \(x\) has homology \(k\) only in degree zero,
+and the second factor on \(y=0\) has differential zero.
+The tensor complex therefore has \(k\) in degrees zero
+and one and zero higher homology. This verifies the
+cancellation directly and agrees with the dimension sum
+\(1+1<3\).
+\end{proof}
+
+\begin{proposition}[The supported Euler pairing]\label{res:I17}
+Let \(F_\bullet,G_\bullet\) be bounded complexes of finite
+free modules over a Noetherian local ring. Suppose the unions
+of the supports of their homology meet at most at the closed
+point. The alternating length of the homology of
+\(F_\bullet\otimes G_\bullet\) is finite and additive in
+each variable on degreewise short exact sequences of such
+bounded free complexes. A homology isomorphism between two
+such bounded free complexes in one variable preserves the
+pairing.
+\end{proposition}
+\begin{proof}
+A bounded exact complex of finite free modules is contractible.
+Starting from its lowest degree, its first surjective
+differential splits because the target is free. The kernel is
+then a direct summand of a free module and is projective.
+Repeat the splitting at each succeeding degree. For each
+nonmaximal prime, one factor of the localized tensor complex
+is exact and hence contractible, so the total complex is
+contractible there. Its homology is finite and supported at
+most at the closed point, hence has finite length by
+\ref{res:I01}'s length argument.
+
+Tensoring a degreewise short exact sequence with a bounded free
+complex produces a degreewise short exact sequence of totals.
+The long exact homology sequence and length additivity imply
+the assertion. The cone of a homology isomorphism between
+bounded free complexes is a bounded exact free complex, so
+it is contractible. Its tensor product is again contractible.
+Because formation of the cone commutes with tensor product
+up to the usual interchange sign, the induced tensor map
+is a homology isomorphism. For two finite free resolutions
+of modules the pairing recovers \ref{res:I01}. Thus the
+same Euler expression makes sense on perfect complexes
+with isolated intersection of supports.
+\cite[Chapter 5, \S 5.3, and Chapter 11]{roberts}
+\end{proof}
+
+\section{General results in the literature}
+
+The direct proofs above establish the dimension bound
+in every characteristic, all signs in equal and unramified
+mixed characteristic, and the complete-intersection case without
+a characteristic restriction. The following statements describe
+the broader literature and supply context for the chapter.
+
+Roberts and Gillet--Soul\'e proved vanishing when
+\(\dim M+\dim N<\dim R\) for general regular local rings.
+The supported pairing of \ref{res:I17} is the algebraic
+quantity to which the localized Chern character and
+Adams operations are applied in those proofs. The local
+Chern character associates a cycle operation to a
+complex equipped with its support, rather than to its
+ordinary rank. Tensor product then corresponds to composition
+of the localized operations. The construction and its
+Riemann--Roch formula are developed in
+\cite[Chapter 11 and \S 13.1]{roberts}.
+Gabber's nonnegativity theorem applies also in the ramified
+mixed-characteristic case.
+\href{https://doi.org/10.1090/S0273-0979-1985-15394-7}{Roberts's announcement}.
+\href{https://numdam.org/item/SB_1995-1996__38__273_0.pdf}{Berthelot,
+\S 6.1, Theorem 6.1.1}.
+
+The September 2026
+\href{https://github.com/openai/math/blob/main/preprints/Positivity-of-Serres-Intersection-Multiplicity-September-23-2026/paper.pdf}{preprint
+\emph{Positivity of Serre's Intersection Multiplicity}}
+reports strict positivity for complementary dimensions
+also in the ramified mixed-characteristic case. The classical
+direct argument in \ref{res:I12} uses the unramified
+hypothesis precisely in its coefficient-DVR and power series
+description. The dimension argument in \ref{res:I13}
+uses a larger unramified ring and reads a dimension bound
+from its Euler cancellation. That cancellation concerns
+\(\chi_S\) over the larger ring and gives no formula for
+\(\chi_R\) in the ramified ring.
+
+The new intersection theorem concerns the length of a
+nonexact bounded finite free complex with finite-length
+homology over a general Noetherian local ring. It replaces
+the depth bound of \ref{res:I14} by the Krull dimension
+bound. This strengthening matters over non-Cohen--Macaulay
+rings. The equicharacteristic setting is discussed in
+\cite[\S 9.4]{bruns}. Roberts's mixed-characteristic proof
+uses localized Chern characters. A proof using Adams
+operations on \(K\)-theory with supports is described in
+\href{https://arxiv.org/abs/0706.0201}{Piepmeyer and Walker,
+\emph{A New Proof of the New Intersection Theorem}}.

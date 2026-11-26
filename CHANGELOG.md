@@ -1,3 +1,9 @@
+# 0.28.0 — Topics in Commutative Algebra
+
+- Add the ALG-05 deepening development with 191 checked proof goals across 95 numbered lecture results.
+- Cover local duality, valuations, deformations, and intersection multiplicity.
+- Add `MathGenome.CommutativeAlgebraDeepening`, the revised 56-page PDF, LaTeX, and reviewed source links.
+
 # 0.27.0 — Linear Algebraic Groups
 
 - Add ALG-09 with 683 original proof goals and 75 numbered results in the lecture notes.

@@ -1,0 +1,3 @@
+import MathGenome.CommutativeAlgebraDeepening.Topics.CommutativeAlgebraNotes
+import MathGenome.CommutativeAlgebraDeepening.Topics.CommutativeAlgebraNotes.CoefficientRings
+import MathGenome.CommutativeAlgebraDeepening.Topics.CommutativeAlgebraNotes.Intersection

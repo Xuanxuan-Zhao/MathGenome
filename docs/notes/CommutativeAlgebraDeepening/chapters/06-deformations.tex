@@ -1,0 +1,403 @@
+\chapter{Infinitesimal deformations}
+\label{ch:deformations}
+
+We first work with square-zero extensions of rings and chosen
+identifications of their kernels. We then specialize to local Artin
+\(k\)-algebras with a specified residue field \(k\).
+The construction extends the linear lifting equation
+\cite[FL-06]{core} from lifting a map into a given ring to
+constructing the target extension itself.
+
+\section{Lifting a ring over a prescribed extension}
+
+\begin{theorem}[Square-zero extensions from a presentation]\label{res:T01}
+Let \(A'\twoheadrightarrow A\) have square-zero kernel \(I\).
+Let \(B\) be an \(A\)-algebra, \(N\) a \(B\)-module, and \(c:I\to N\)
+an \(A\)-linear map. A lift is an \(A'\)-algebra \(B'\twoheadrightarrow B\)
+with square-zero kernel identified with \(N\), inducing \(c\) on \(I\).
+Take a polynomial presentation \(P'=A'[X_i]\twoheadrightarrow B\)
+with kernel \(Q\). Let \(\overline P=P'/IP'\), let
+\(J=\ker(\overline P\to B)\), and write \(K\) for the image of
+\(IP'\to Q/Q^2\).
+A lift exists if and only if the induced \(P'\)-linear map
+\(IP'\to N\) factors through \(K\) and the resulting map
+\(K\to N\) extends to \(Q/Q^2\). Once the factorization condition
+holds, the extension condition is the vanishing of its connecting
+class in \(\operatorname{Ext}^1_B(J/J^2,N)\).
+\end{theorem}
+\begin{proof}
+Given a lift, choose lifts of the variable images in \(B'\).
+The resulting map \(P'\to B'\) sends \(Q\) into \(N\), kills
+\(Q^2\), and induces a \(B\)-linear homomorphism \(\rho:Q/Q^2\to N\)
+extending the prescribed map. Conversely, make
+\(N\) a module over \(P'/Q^2\) through \(B\) and form the trivial
+square-zero extension \((P'/Q^2)\ltimes N\), with multiplication
+\((a,u)(b,v)=(ab,av+bu)\).
+The graph \(\{(q,-\rho(q)):q\in Q/Q^2\}\) is an ideal because
+\(Q/Q^2\) acts trivially on \(N\). Quotienting identifies the kernel
+of the map to \(B\) with \(N\), via \((q,n)\mapsto\rho(q)+n\).
+The induced map on \(I\) is \(c\). This construction is inverse
+to the previous one with lifted variables because the map to \(B'\)
+is surjective and has exactly that graph as its kernel.
+
+The quotient \((Q/Q^2)/K\) identifies with \(J/J^2\), since \(Q\)
+surjects to \(J\) with kernel \(IP'\) and its square has image \(J^2\).
+Apply \(\operatorname{Hom}_B(-,N)\) to
+\(0\to K\to Q/Q^2\to J/J^2\to0\).
+Exactness identifies extension of the prescribed map with zero
+connecting class. Thus the vanishing test is exact for each
+presentation. Its truth is independent of the presentation since
+it is equivalent to the existence of a lift.
+\end{proof}
+
+\begin{proposition}[Differences and infinitesimal automorphisms]\label{res:T02}
+If the lifts in Result~\ref{res:T01} exist, their isomorphism
+classes form a torsor under
+\[
+ T^1(B/A;N)=
+ \operatorname{coker}\bigl(
+  \operatorname{Hom}_B(\Omega_{\overline P/A}\otimes_{\overline P}B,N)
+  \longrightarrow \operatorname{Hom}_B(J/J^2,N)\bigr).
+\]
+Here isomorphisms preserve \(B,N\) and the \(A'\)-structure.
+The automorphisms of a chosen lift inducing the identity on
+\(B,N\) are naturally \(\operatorname{Der}_A(B,N)\).
+The displayed group is
+\(\operatorname{Ext}^1_B([J/J^2\to\Omega_{\overline P/A}\otimes B],N)\)
+where the complex is in degrees \(-1,0\).
+\end{proposition}
+\begin{proof}
+Any two extensions of the prescribed map \(\rho|_K\) differ by a
+map \(J/J^2\to N\). Changing the chosen variable lifts by elements
+of \(N\) changes \(\rho\) by the restriction of a polynomial
+derivation. That restriction factors through the conormal map.
+An isomorphism of two lifts sends one list of variable lifts to
+another such list, so this equivalence accounts for precisely the
+isomorphic lifts, by the explicit graph construction.
+An automorphism with the specified identities has the form
+\(z\mapsto z+d(\bar z)\) with \(d:B\to N\). Additivity and
+multiplicativity are equivalent to additivity and the Leibniz
+rule for \(d\). Respecting the \(A'\)-map makes \(d\) an
+\(A\)-derivation. Conversely this formula always gives the required
+automorphism with inverse obtained by replacing \(d\) by \(-d\).
+
+For the last formula, use the triangle with degree-zero free
+term \(\Omega_{\overline P/A}\otimes B\), the two-term complex,
+and the quotient complex \(J/J^2[1]\). Apply the derived Hom
+long exact sequence in \cite[R11]{homological}. The degree-one
+Ext from the free term is zero, and the degree-one Ext from
+\(J/J^2[1]\) is \(\operatorname{Hom}_B(J/J^2,N)\).
+Thus degree one is exactly the indicated cokernel.
+\end{proof}
+
+\begin{lemma}[The flat-lift condition over Artin rings]\label{res:T03}
+Let \(A'\to A\) be a square-zero surjection of local Artin
+\(k\)-algebras with identity on \(k\). Let \(B_A\) be a flat
+\(A\)-algebra. A lift of \(B_A\) which is \(A'\)-flat and reduces
+to \(B_A\) gives a solution of Result~\ref{res:T01} with
+\(N=I\otimes_A B_A\) and \(c(i)=i\otimes1\). Conversely a
+solution for this \(N,c\) is flat and reduces to \(B_A\).
+\end{lemma}
+\begin{proof}
+A flat module \(M\) over a local Artin ring is free. Indeed lifts
+of a basis modulo the maximal ideal give a surjection from a free
+module by nilpotence. Flatness implies its kernel is zero modulo
+the maximal ideal after tensoring the sequence with the residue
+field. Nilpotence gives zero kernel even for infinite bases.
+For a flat lift, tensor \(0\to I\to A'\to A\to0\) with the lifted
+algebra to obtain exactly the stated sequence with
+\(I\otimes_{A'} B'=I\otimes_A B_A\).
+
+Conversely let \(B'\) be a solution. Lift an \(A\)-basis of \(B_A\)
+to \(B'\) and compare the exact sequence with
+\(0\to I^{(S)}\to (A')^{(S)}\to A^{(S)}\to0\), indexed by the basis.
+The map on left terms is the canonical basis isomorphism since
+the map on \(I\) is \(c\), and the map on right terms is an
+isomorphism by choice. Injectivity and surjectivity of the middle
+map now follow by chasing the sequence. In particular \(B'\)
+is free and its base change is the prescribed \(B_A\).
+\end{proof}
+
+\section{Complete intersections and an obstruction example}
+
+\begin{theorem}[Unobstructed polynomial complete intersections]\label{res:T04}
+Let \(P=k[x_1,\ldots,x_n]\), \(f_1,\ldots,f_s\) be a regular
+sequence, and \(B=P/(f_1,\ldots,f_s)\).
+Every flat deformation of \(B\) over a local Artin \(k\)-algebra
+lifts through any surjection of local Artin \(k\)-algebras.
+The tangent space of isomorphism classes of marked deformations
+is the cokernel of the Jacobian map
+\[
+ B^n \longrightarrow B^s,\qquad
+ (u_j)_j\longmapsto
+ \Big(\sum_j \frac{\partial f_i}{\partial x_j}u_j\Big)_i .
+\]
+\end{theorem}
+\begin{proof}
+If \(B_A\) is a flat deformation, choose variable lifts to get
+\(P_A=A[x_1,\ldots,x_n]\to B_A\). It is surjective because it is
+so modulo \(\mathfrak m_A\) and this ideal is nilpotent. In the
+surjection's defining sequence, flatness of \(B_A\) injects
+the modulus-\(\mathfrak m_A\) kernel into \(P\).
+Thus lifts \(g_i\) of \(f_i\) generate the full kernel:
+the quotient by their span is equal to its multiple by
+\(\mathfrak m_A\) and hence is zero. For \(A'\twoheadrightarrow A\),
+choose arbitrary lifts \(g_i'\in P_{A'}\). Consider their Koszul
+complex filtered by powers of \(\mathfrak m_{A'}\).
+Every graded quotient complex is a copy of the Koszul complex on
+\(f\) with \(k\)-vector-space coefficients \(\mathfrak m_{A'}^j/
+\mathfrak m_{A'}^{j+1}\). Its positive homology vanishes by
+\cite[RK-07]{core}. Induct along the finite filtration using the
+long exact sequence to identify the associated graded of degree-zero
+homology with
+\(\operatorname{gr}_{\mathfrak m_{A'}}(A')\otimes_k B\).
+The filtration on degree zero is by the actual maximal-ideal powers
+because it is the image of the filtered degree-zero term of the
+Koszul complex. Lift a \(k\)-basis of \(B\) to the quotient.
+The resulting map from the free \(A'\)-module is an isomorphism
+on associated graded and hence an isomorphism by finite filtration.
+This proves flatness, and the presentation gives reduction to \(B_A\).
+
+For first-order deformations use Result~\ref{res:T03} with
+\(A=k\), \(A'=k[\epsilon]\), and basepoint the trivial extension.
+The classes form the group of Result~\ref{res:T02} for \(N=B\).
+For a regular sequence the classes of \(f_i\) freely generate
+\(J/J^2\). In a relation \(\sum_i a_i f_i\in J^2\), subtract
+a presentation of its right hand side with coefficients in \(J\).
+The resulting ordinary relation is a Koszul syzygy, so the remaining
+coefficients also lie in \(J\).
+The conormal map differentiates the \(f_i\), giving exactly
+the displayed Jacobian.
+\end{proof}
+
+\begin{example}[A hypersurface tangent space]\label{res:T05}
+For \(B=k[x]/(x^m)\), \(m\geq1\), the tangent space is
+\(B/(m x^{m-1})\). An infinitesimal deformation is given by
+\(x^m+\epsilon q(x)\) and two \(q\)'s give the same class precisely
+when their difference vanishes in this quotient.
+\end{example}
+\begin{proof}
+This is the single-entry Jacobian of Result~\ref{res:T04}.
+For the polynomial form, the deformed principal equation is
+\(x^m+\epsilon q(x)\). Replacing \(x\) by \(x+\epsilon u(x)\)
+adds \(m x^{m-1}u(x)\), and multiplying the equation by
+\(1+\epsilon v(x)\) adds a multiple of \(x^m\) to \(q\).
+These account for the cokernel, including the case when the
+characteristic divides \(m\).
+\end{proof}
+
+\begin{example}[A first-order deformation that does not lift]\label{res:T06}
+Let \(B=k\oplus kx\oplus ky\oplus kz\), with the span of \(x,y,z\)
+square-zero. On the free \(k[t]/(t^2)\)-module with this marked basis,
+set \(xy=tz\), \(z^2=ty\), and all other products of basis elements
+in the maximal-ideal span equal to zero, imposing symmetry and the unit.
+This flat first-order deformation admits no flat lift to \(k[t]/(t^3)\).
+\end{example}
+\begin{proof}
+Associativity on triples from the span of \(x,y,z\) holds modulo
+\(t^2\), since a product is \(t\) times a member of that span
+and the next product adds another factor of \(t\).
+If a lift existed, Result~\ref{res:T03} and the free basis argument
+allow lifts of the same basis. Up to terms of order three write
+\(xy=tz+t^2a\), \(yz=t^2b\), \(z^2=ty+t^2c\).
+On the residual algebra, multiplying \(a\) by \(z\) is its
+scalar coefficient times \(z\), and multiplying \(b\) by \(x\)
+is its scalar coefficient times \(x\). Hence
+\[
+ (xy)z-x(yz)=t^2\bigl(y+a_0z-b_0x\bigr),
+\]
+which is nonzero in the claimed free basis. This contradicts
+associativity and is independent of the choices of lifted basis.
+\end{proof}
+
+\section{Tangent spaces and formal hulls}
+
+Write \(\mathcal A_k\) for the local Artin \(k\)-algebras with residue
+field \(k\) and local \(k\)-algebra maps. A small extension has
+one-dimensional kernel \(I\) killed by the source maximal ideal.
+Every surjection in \(\mathcal A_k\) decomposes into such extensions.
+a nonzero kernel has a one-dimensional socle ideal, and induction on
+length applies after quotienting it out. Let \(F:\mathcal A_k\to
+\mathrm{Sets}\) have \(F(k)=\{*\}\). For \(A_1\to A\leftarrow A_2\)
+the canonical fibre-product map is
+\[
+ F(A_1\times_A A_2)\longrightarrow F(A_1)\times_{F(A)}F(A_2).
+\]
+We use the classical conditions H1 (surjectivity when \(A_2\to A\)
+is small), H2 (bijectivity when \(A=k\), \(A_2=k[\epsilon]\)),
+H3 (finite-dimensional tangent space), and H4 (bijectivity for
+\(A_1=A_2\) and both maps the same small extension).
+
+\begin{proposition}[Tangent functor and split corrections]\label{res:T07}
+Under H2, \(TF=F(k[\epsilon])\) has a natural \(k\)-vector-space structure,
+and \(F(k\oplus I)\simeq TF\otimes_k I\) for finite-dimensional
+square-zero \(I\). Suppose \(B\to A\) is small and
+\(h:A_1\to B\) lifts \(A_1\to A\). Then
+\[
+ A_1\times_A B \simeq A_1\times_k (k\oplus I)
+\]
+by \((u,v)\mapsto (u,\bar u+(v-h(u)))\).
+Under H1, two prescribed compatible elements of \(F(A_1),F(B)\)
+can therefore be represented by an element of \(F(A_1)\) and a
+single tangent correction in \(TF\otimes I\).
+\end{proposition}
+\begin{proof}
+Repeated H2 identifies \(F(k\oplus k^r)\) with \(TF^r\).
+Apply \(F\) to addition \(k^2\to k\) and multiplication by scalars
+on \(k\). The vector-space axioms follow from the corresponding
+equalities of linear maps, using the product identifications.
+In a basis of \(I\), this is exactly \(TF\otimes I\).
+Changing the basis uses the same linear maps under the product
+identifications, so the correspondence is natural.
+For the splitting formula, the inverse sends
+\((u,\bar u+w)\) to \((u,h(u)+w)\). In multiplying, \(w w'=0\)
+and the action on \(I\) is via the residue field, which verifies
+the formula as a ring isomorphism. Apply H1 to choose an element
+over the fibre product and apply H2 to its split presentation.
+\end{proof}
+
+\begin{lemma}[Largest quotient on which a lift exists]\label{res:T08}
+Suppose H1 holds and \(B\twoheadrightarrow A\) has kernel \(I\)
+killed by the maximal ideal of \(B\). For \(x\in F(A)\) there
+is a smallest \(k\)-subspace \(J\subseteq I\) such that \(x\)
+lifts to \(F(B/J)\).
+\end{lemma}
+\begin{proof}
+The set is nonempty since it contains \(I\) and is upward closed.
+By factoring a surjection into small extensions, H1 also gives
+surjectivity of the fibre-product map when the second leg is an
+arbitrary surjection. For that induction, pull the first ring
+back successively along the small extensions. At each stage the
+already chosen element and the next prescribed image agree over
+the preceding ring, so H1 supplies the next element.
+If \(J_1,J_2\) allow lifts, choose \(J_1'\supseteq J_1\) with
+\(J_1'+J_2=I\), \(J_1'\cap J_2=J_1\cap J_2\), by adjoining a
+vector-space complement to \(J_1+J_2\) in \(I\).
+Push the lift forward to \(B/J_1'\).
+The two lifts glue to \(B/J_1'\times_A B/J_2=B/(J_1\cap J_2)\).
+Thus the set is closed under pairwise intersections.
+An element of smallest dimension is contained in every element.
+\end{proof}
+
+For a complete Noetherian local \(k\)-algebra \(R\) with residue
+field \(k\), put \(h_R(A)=\operatorname{Hom}_{k,\mathrm{loc}}(R,A)\).
+A compatible family of elements of \(F(R/\mathfrak m_R^n)\) defines
+a natural map \(h_R\to F\). A hull has a tangent isomorphism and the
+lifting property that \(h_R(B)\to h_R(A)\times_{F(A)}F(B)\)
+is surjective for every small \(B\to A\).
+
+\begin{theorem}[Schlessinger's hull in the classical base category]\label{res:T09}
+If H1, H2, and H3 hold, \(F\) has a hull. Conversely the
+existence of a hull implies these conditions.
+\end{theorem}
+\begin{proof}
+Let \(S=k[[X_1,\ldots,X_r]]\), \(r=\dim TF\), with maximal ideal
+\(\mathfrak n\). Set \(J_2=\mathfrak n^2\). The element
+\(\xi_2\in F(S/J_2)\) corresponding under Result~\ref{res:T07}
+to the tensor of a basis of \(TF\) with the variable classes induces
+a tangent isomorphism. Having chosen \(\xi_n\in F(S/J_n)\), apply
+Result~\ref{res:T08} to
+\(S/\mathfrak n J_n\to S/J_n\) and choose the smallest ideal
+\(J_{n+1}\) between \(\mathfrak n J_n\) and \(J_n\) through which
+\(\xi_n\) lifts. Choose a lift \(\xi_{n+1}\).
+All these quotients are Artin since \(\mathfrak n^n\subseteq J_n\)
+by induction.
+
+Put \(J=\bigcap J_n\) and \(R=S/J\). The ideals \(J_n/J\) are
+cofinal with powers of the maximal ideal of \(R\).
+For the nontrivial direction, for each \(q\) the images of \(J_n\) in
+\(S/\mathfrak n^q\) stabilize. Their stable images surject to one
+another as \(q\) decreases by choosing \(n\) large in two successive
+degrees. A point in a stable image therefore lifts to compatible
+stable points in all higher degrees, hence to an element of \(S\).
+For each fixed \(n\) this element lies in \(J_n+\mathfrak n^q\)
+for every \(q\), and thus in \(J_n\) by Krull intersection on
+\(S/J_n\). It lies in \(J\). The stable image is precisely the
+image of \(J\), as required. The compatible \(\xi_n\) therefore
+give a natural map \(h_R\to F\) with tangent isomorphism.
+
+To prove the lifting property let \(B\to A\) be small with kernel
+\(I\), \(a:R\to A\), and \(y\in F(B)\) lifting the element from \(a\).
+Factor \(a\) through \(S/J_n\). Consider \(T=S/J_n\times_A B\).
+If the projection \(T\to S/J_n\) splits, composing its section
+with \(R\to S/J_n\) gives a ring lift \(R\to B\).
+If it does not split, any map \(S\to T\) lifting the quotient map
+\(S\to S/J_n\) is surjective. Indeed its image surjects onto
+\(S/J_n\), and if it missed the one-dimensional kernel it would
+be a section. Such a map exists by lifting the \(X_i\) to the
+maximal ideal of \(T\). Its kernel \(K\) lies between
+\(\mathfrak n J_n\) and \(J_n\), since the kernel of the projection
+is killed by the maximal ideal. H1 glues \(\xi_n,y\) to an
+element over \(T=S/K\). Thus \(J_{n+1}\subseteq K\) by
+Result~\ref{res:T08}, giving again a ring lift \(R\to B\).
+
+It remains to make the ring lift send the formal object to the
+prescribed \(y\). Increase \(n\) so that this lift factors through
+\(S/J_n\). By H1 glue \(\xi_n,y\) over \(T=S/J_n\times_A B\).
+The chosen lift splits the projection, and Result~\ref{res:T07}
+expresses the glued element by \((\xi_n,\theta)\) for a tangent
+correction \(\theta\in F(k\oplus I)\). The tangent isomorphism
+gives \(\delta:R\to k\oplus I\) carrying the formal object to
+\(\theta\). The map \(R\to (S/J_n)\times_k(k\oplus I)\) with
+components the quotient and \(\delta\) sends it to the glued
+element by H2. Its composition through \(T\to B\) gives the
+required lift matching \(y\).
+
+For the converse, smoothness of a hull and \(F(k)=\{*\}\) make
+\(h_R(A)\to F(A)\) surjective by induction on length.
+To glue compatible elements for a small leg, choose a ring map
+for the first element and use smoothness to choose one for the
+second with the same reduction. Their fibre-product map proves H1.
+For H2, the same existence argument gives surjectivity. For
+injectivity, take any two elements over \(A_1\times_k k[\epsilon]\)
+with the same projections, and lift them from \(h_R\).
+Their tangent components agree since the tangent map is injective.
+One may instead fix a single ring lift of the \(A_1\)-component.
+Smoothness for the small projection
+\(A_1\times_k k[\epsilon]\to A_1\) then lifts both elements with
+that fixed component. Now the ring maps have both components
+equal, so the elements coincide. H3 follows from Noetherianity
+of \(R\) and the tangent isomorphism.
+\end{proof}
+
+\begin{theorem}[Prorepresentability]\label{res:T10}
+Under H1--H3, the hull represents the functor on \(\mathcal A_k\)
+if and only if H4 holds. Conversely every prorepresentable
+functor in this category satisfies H1--H4.
+\end{theorem}
+\begin{proof}
+Let \(B\to A\) be small and fix \(x\in F(A)\). When its fibre
+of lifts is nonempty, H4 identifies ordered pairs of lifts with
+the elements of \(F(B\times_A B)\) over \((x,x)\).
+Use the split formula of Result~\ref{res:T07} with \(h=1_B\).
+With a first lift fixed, the second is therefore in bijection
+with \(TF\otimes I\). For three lifts, apply H1 to
+\((B\times_A B)\to A\leftarrow B\) to glue the first pair
+and the third lift over the triple fibre product. Its pairwise
+restrictions are the H4 representatives of the three pairs.
+Their two successive differences add to the first-to-last
+difference. The ring maps
+from the triple fibre product to \(k\oplus I\) send
+\((v_1,v_2,v_3)\) to the residue with components \(v_2-v_1\),
+\(v_3-v_2\), and \(v_3-v_1\), respectively. H2 and the addition
+rule of Result~\ref{res:T07} transport that equality to the
+tangent space. Hence the fibre is a torsor, naturally in \(F\).
+
+If \(h_R\to F\) is a hull, it is surjective over each small step.
+Inductively assume it bijects elements over the quotient \(A\).
+The nonempty lift fibres over corresponding elements are torsors
+on both sides, using H4 for \(F\) and the fibre-product property
+of \(h_R\). The tangent isomorphism makes their equivariant
+maps bijective. Induction on length gives the natural isomorphism
+\(h_R\simeq F\). Conversely \(\operatorname{Hom}(R,-)\) preserves
+fibre products, and its tangent space is the dual of the
+finite-dimensional cotangent space of \(R\), giving all conditions.
+\end{proof}
+
+The obstruction in Result~\ref{res:T01} is a concrete extension
+test on a conormal module, and Results~\ref{res:T02} and~\ref{res:T03}
+give its ambiguity and flatness tests. For general cotangent
+complexes, the derived obstruction can be packaged as degree-two
+Ext, with ambiguity in degree one and infinitesimal automorphisms
+in degree zero. The full construction and its comparison are
+treated in \cite[\S16]{st-cot}.

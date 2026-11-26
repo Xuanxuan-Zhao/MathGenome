@@ -1,0 +1,164 @@
+\chapter{Depth, vanishing, and nonvanishing}
+\label{ch:depth-and-vanishing}
+
+Let \(R\) be Noetherian and let \(M\) be finite. We use
+\(\dim M=\dim\operatorname{Supp} M\) with \(\dim 0=-\infty\).
+We use the depth and regular-sequence facts proved in
+\cite[DP-01, DP-04--DP-06, CM-01--CM-04]{core}. In particular
+\(\operatorname{grade}(I,M)\) is the length of a maximal
+\(M\)-regular sequence in \(I\) when \(V(I)\cap\operatorname{Supp}M\)
+is nonempty, with value \(+\infty\) in the disjoint case.
+
+\begin{theorem}[Depth detected by local cohomology]\label{res:V01}
+With \(\inf\varnothing=+\infty\),
+\[
+ \operatorname{grade}(I,M)=\inf\{q\geq0:H_I^q(M)\ne0\}.
+\]
+\end{theorem}
+\begin{proof}
+If the supports are disjoint, Result~\ref{res:L08} gives zero in every
+degree. Otherwise the grade is finite by the local depth formula of
+\cite[DP-06]{core}. At grade zero there is an associated prime of \(M\)
+containing \(I\), which supplies a nonzero element killed by \(I\).
+For positive grade \(g\), prime avoidance supplies a regular
+\(x\in I\) and \(M/xM\) has grade \(g-1\). It has nonempty support
+in \(V(I)\) by local Nakayama at any prime of the original intersection.
+Apply induction and the long exact sequence for
+\(0\to M\xrightarrow{x}M\to M/xM\to0\).
+For \(q<g\), multiplication by \(x\) on \(H_I^q(M)\) is injective
+because \(H_I^{q-1}(M/xM)=0\). Since this module is \(I\)-power
+torsion by Result~\ref{res:L02}, it is zero. At degree \(g\) the
+nonzero group \(H_I^{g-1}(M/xM)\) injects into \(H_I^g(M)\).
+\end{proof}
+
+\begin{theorem}[Grothendieck vanishing]\label{res:V02}
+If \(M\) has finite-dimensional support, \(H_I^q(M)=0\) for
+\(q>\dim M\).
+\end{theorem}
+\begin{proof}
+A finite module over a Noetherian ring has a finite filtration
+with factors \(R/\mathfrak p\). To construct one, choose in each
+nonzero quotient a cyclic submodule whose annihilator is a maximal
+annihilator of a nonzero element. That annihilator is prime, since
+if \(ab\) annihilates the generator and \(b\) does not, the
+annihilator of its multiple by \(b\) contains \(a\) and cannot
+strictly enlarge the original one. Noetherianity terminates the
+resulting chain. All factors have support inside that of \(M\).
+The long exact sequence and Result~\ref{res:L08} reduce the claim
+to a domain \(B\) of dimension at most \(\dim M\).
+Zero and unit ideals follow from Result~\ref{res:L06}. Otherwise take
+\(0\ne x\in IB\). Prepending the zero prime to any chain in \(V(x)\)
+shows \(\dim B/xB\leq\dim B-1\). Induct on dimension, applying the
+claim for lower-dimensional modules to \(B/xB\).
+The sequence for multiplication by \(x\) makes
+\(x:H^q_{IB}(B)\to H^q_{IB}(B)\) injective for \(q>\dim B\).
+Power torsion then gives zero. At dimension zero, a domain is a field
+and there are only the two extreme ideals.
+\end{proof}
+
+\begin{lemma}[A regular-local top class]\label{res:V03}
+If \(S\) is regular local of dimension \(d\) and
+\(x_1,\ldots,x_d\) minimally generate its maximal ideal \(\mathfrak n\),
+the class of \(1/(x_1\cdots x_d)\) in \(H^d_{\mathfrak n}(S)\)
+is nonzero. Multiplication by each \(0\ne c\in S\) on this
+cohomology module is surjective.
+\end{lemma}
+\begin{proof}
+The minimal generators are regular and permutable and their positive
+powers are likewise regular in any order
+(\cite[ALG-05-C03-S03]{p103} and \cite[RK-09, CM-08]{core}).
+For each \(n\), take the colon of the ideal
+\((x_1^{n+1},\ldots,x_d^{n+1})\) by the product \(x_1\cdots x_d\),
+one factor at a time. At a factor \(x_j\), reduce by the powers of
+the other parameters. In the quotient \(x_j\) is a nonzerodivisor,
+so taking the colon reduces its exponent by one. Thus the final
+colon is \((x_1^n,\ldots,x_d^n)\).
+The maps of the top colimit in Result~\ref{res:L07} are injective,
+so the class of \(1\) at stage one survives. A regular local ring is
+a domain. If \(c\) is a nonunit, \(S/cS\) has smaller dimension by
+the prime-chain argument of Result~\ref{res:V02}. Its \(d\)-th local
+cohomology vanishes, so the long exact sequence proves surjectivity.
+For a unit multiplication is an isomorphism. When \(d=0\), \(S\)
+is a field and the class is \(1\) in \(H^0_{(0)}(S)=S\).
+\end{proof}
+
+\begin{proposition}[Completion preserves local depth and dimension]\label{res:V04}
+Let \(R\) be local and \(M\ne0\) finite. Then \(\widehat M\) has
+the same dimension and depth as \(M\), and the \(\mathfrak m\)-local
+cohomology groups of \(M\) identify with the
+\(\mathfrak m\widehat R\)-local groups of \(\widehat M\).
+\end{proposition}
+\begin{proof}
+The last assertion is Result~\ref{res:L09} and the tensor formula for
+completion. Faithful flatness ensures \(\widehat M\ne0\).
+The Hilbert--Samuel functions of \(M\) and \(\widehat M\) agree
+because \(M/\mathfrak m^{n+1}M\) and
+\(\widehat M/(\mathfrak m\widehat R)^{n+1}\widehat M\) agree over
+the same Artin quotient, so their composition lengths agree.
+Their degrees are the support dimensions by
+\cite[ALG-05-C03-S02, ALG-05-C04-R03 and S01]{p103}.
+Apply Result~\ref{res:V01} at the maximal ideals for depth.
+\end{proof}
+
+\begin{lemma}[Top cohomology in positive rank]\label{res:V05}
+Let \(B\) be a complete Noetherian local domain of dimension \(d\).
+If a finite \(B\)-module \(N\) has positive rank, then
+\(H^d_{\mathfrak m_B}(N)\ne0\).
+\end{lemma}
+\begin{proof}
+By Result~\ref{res:C05}, \(B\) is finite over a regular local
+subring \((S,\mathfrak n)\) of dimension \(d\), with
+\(\sqrt{\mathfrak nB}=\mathfrak m_B\).
+The fraction field of \(B\) is a finite extension of that of \(S\).
+localization of \(B\) at the nonzero elements of \(S\) is a finite domain
+over a field, hence a field. Thus \(N\) has positive rank over \(S\).
+A nonzero linear functional over the fraction field of \(S\) can be
+scaled by a denominator common to a finite set of generators to give
+a nonzero \(S\)-linear map \(N\to S\). Choose \(u\in N\) whose image
+\(c\) is nonzero. The composite \(S\to N\to S\), where the first
+arrow sends \(1\) to \(u\), is multiplication by \(c\).
+The induced composite on \(H^d_{\mathfrak n}(S)\) is nonzero by
+Result~\ref{res:V03}. It factors through \(H^d_{\mathfrak n}(N)\),
+which identifies with the claimed module by Results~\ref{res:L06}
+and~\ref{res:L08}.
+\end{proof}
+
+\begin{theorem}[Grothendieck nonvanishing]\label{res:V06}
+For a nonzero finite module \(M\) over a Noetherian local ring,
+\(H_{\mathfrak m}^{\dim M}(M)\ne0\).
+\end{theorem}
+\begin{proof}
+By Result~\ref{res:V04}, we may work over the completion with the
+same dimension \(d\). Choose \(\mathfrak p\) in the support with
+\(\dim R/\mathfrak p=d\), by taking the bottom of a chain of maximal
+length. Put \(N=M/\mathfrak pM\). Its localization at the generic
+point of the complete domain \(B=R/\mathfrak p\) is nonzero by
+Nakayama over \(R_{\mathfrak p}\). Hence \(N\) has positive rank over
+\(B\). The long exact sequence and Result~\ref{res:V02} give a
+surjection \(H_{\mathfrak m}^d(M)\to H_{\mathfrak m}^d(N)\), since
+\(\mathfrak p M\) is supported in \(\operatorname{Supp}M\).
+The target is nonzero by Results~\ref{res:L08} and~\ref{res:V05}.
+\end{proof}
+
+\begin{corollary}[Cohen--Macaulay criterion]\label{res:V07}
+A nonzero finite module over a Noetherian local ring is
+Cohen--Macaulay if and only if \(H^q_{\mathfrak m}(M)\) is
+concentrated in degree \(\dim M\). Its group in that degree is nonzero.
+\end{corollary}
+\begin{proof}
+By Results~\ref{res:V01}, \ref{res:V02} and~\ref{res:V06},
+the bottom and top nonzero degrees are respectively depth and
+dimension. Equality is the definition of Cohen--Macaulayness.
+The assertion for the ring follows by taking \(M=R\).
+\end{proof}
+
+\begin{corollary}[Extension across the support]\label{res:V08}
+For \(U=\operatorname{Spec}R\setminus V(I)\), the restriction
+\(M\to\Gamma(U,\widetilde M)\) is an isomorphism if and only if
+\(\operatorname{grade}(I,M)\geq2\).
+\end{corollary}
+\begin{proof}
+Its kernel and cokernel are \(H_I^0(M)\) and \(H_I^1(M)\) by
+Result~\ref{res:L10}. Both vanish precisely under the asserted
+condition by Result~\ref{res:V01}.
+\end{proof}

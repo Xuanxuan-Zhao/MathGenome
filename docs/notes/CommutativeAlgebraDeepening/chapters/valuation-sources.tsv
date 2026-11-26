@@ -1,0 +1,24 @@
+id	source	dependencies
+X01	Stacks More on Algebra, Definitions 48.1 (07P7), 51.1 (07GH), 53.1 (07QT), physical pp. 119, 125–126, 136	P1-03 ALG-05-C04-R03/S01 (flatness, quotient and completion)
+X02	Stacks Commutative Algebra §§106, 163; More on Algebra §§42, 44 (flat local regularity and completion)	Core CM-07, CM-08, CM-10, CM-12, CM-19; P1-03 ALG-05-C04-R03/S01
+X03	Stacks More on Algebra, Lemma 49.1 (07PE), Lemmas 49.2–49.4 (07PF/0GEE/07PG), physical pp. 121–122	X02; Core CM-08
+X04	Stacks More on Algebra, Lemmas 47.2, 47.4–47.5 (07P2/07P4/07P5), physical pp. 117–119	P1-03 field and polynomial algebra; coefficient grouping and finite purely inseparable towers proved here
+X05	Stacks More on Algebra, Lemma 49.5 (07PH), physical pp. 122–123	X04
+X06	Stacks More on Algebra, Lemma 51.3 (07PP); Commutative Algebra, finite algebra completion lemma §97; Matsumura §32	X01; P1-03 ALG-05-C04-R03/S01; CRT and equivalent adic filtrations proved here
+X07	Stacks More on Algebra, Lemmas 51.2 and 51.5–51.6 (07PN/07PR/07PS), physical pp. 126–128	X01–X06; C04–C05; Core CM-08; P1-03 Noether normalization and integrality
+X08	Stacks More on Algebra, Lemmas 48.2–48.3 and Proposition 49.7 (07P8/07P9/07PJ), physical pp. 120–123	X02–X05; C05; Core CM-08; P1-03 Krull height and parameters
+X09	Stacks More on Algebra, Lemma 53.2, Proposition 53.3 (07QU/07QW), physical p. 137	X06–X08; C04; Core CM-15 (universal catenarity); P1-03 Hilbert basis
+X10	Stacks More on Algebra, Lemma 53.6 (0C23), physical p. 138; normal and reduced ascent through regular fibres	X01–X02; Core CM-10, SN-03, SN-09
+X11	Stacks More on Algebra, Lemmas 42.3–42.4, 42.7 (07C1/07QI/07NT), physical pp. 109–110; Commutative Algebra, Lemmas 45.3 and 166.1	X01–X02; C01 (perfect-field argument); Noetherian tensor localizations and faithful flatness
+X12	Stacks More on Algebra, Proposition 50.2 and Lemma 51.9 (07PM/07PU), physical pp. 124–125, 128–129; direct generic-base variant	X02–X07; C05; derivative on coefficient algebras and finite completion decomposition
+X13	Stacks More on Algebra, Lemma 51.9 and Proposition 51.10 (07PU/07PV), physical pp. 128–130	X01, X03, X06–X07, X12; C05; finite residue extensions and derivative of T minus its residue value
+X14	Stacks More on Algebra, Proposition 51.10 and Lemma 53.2 (07PV/07QU), physical pp. 129–130, 137	X06, X09, X11, X13; P1-03 ALG-05-C04-S01
+W01	Stacks Commutative Algebra, Lemmas 50.4–50.5, 50.15 (00IB/052K/090Q), physical pp. 117–120; Matsumura §10	Elementary local ring and fraction-field algebra
+W02	Stacks Commutative Algebra, Lemmas 50.2 and 50.7 (00IA/052L), physical pp. 116–118	W01; P1-03 lying over; Zorn maximality
+W03	Stacks Commutative Algebra, Lemmas 50.3 and 50.11 (00IC/090P), physical pp. 117–119	W01–W02
+W04	Stacks Commutative Algebra, Lemma 50.12, Definition 50.13 and Lemmas 50.14–50.16 (00ID–00IG), physical pp. 119–120	W01
+W05	Stacks Commutative Algebra, Lemmas 50.9–50.10 and 50.17 (088Y/088Z/00IH), physical pp. 118–120; Matsumura §10	W01, W04; explicit prime/convex correspondence and coarsening
+W06	Stacks Commutative Algebra, Lemma 50.18 (00II), physical p. 120; Matsumura §§10–11	W01, W04; P1-03 Krull intersection
+W07	Rank examples using the value-group description in Stacks Commutative Algebra §50; calculations in this volume	W04–W06
+W08	Stacks More on Algebra, Lemmas 125.2–125.3 (0ASH/0H37), physical pp. 380–381	W02–W04; finite linear independence and purely inseparable integrality proved here
+W09	Stacks Commutative Algebra §50; Matsumura §32 formal fibres; examples in this volume	X01, X09; W06, W08; P1-03 ALG-05-C03-S03
