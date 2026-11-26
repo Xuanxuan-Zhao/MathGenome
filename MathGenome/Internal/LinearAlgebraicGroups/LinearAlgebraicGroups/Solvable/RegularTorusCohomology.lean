@@ -256,8 +256,8 @@ private theorem omit_omit_swap (n : ℕ) (f : Regular M W n)
   rw [h1, h2, h4]
   split_ifs <;> rfl
 
--- Pair the terms indexed by (i, j) and (j, i + 1), following the argument in
--- Mathlib’s AlternatingFaceMapComplex.d_squared.
+-- Adapted from Mathlib/AlgebraicTopology/AlternatingFaceMapComplex.lean (AlternatingFaceMapComplex.d_squared). Copyright (c) 2021 Joël Riou. All rights reserved.
+-- Released under Apache 2.0, see LICENSE. MathGenome adapts the index pairing and sum proof to regular torus cochains.
 theorem differential_squared (n : ℕ) (f : Regular M W n) :
     differential (R := R) (n + 1) (differential (R := R) n f) = 0 := by
   classical

@@ -203,7 +203,7 @@ private theorem smallOfSecondCountable (X : Type u) [TopologicalSpace X] [T2Spac
   have hh : b' = (⟨b, hb⟩ : B) := Encodable.encode_injective henc
   rw [hh] at hyb
   exact Set.disjoint_left.mp hUV (hbU hyb) hy
-
+-- Adapted from Mathlib/NumberTheory/LocalField/Basic.lean (Nonarchimedean local field rank-one valuation setup). Copyright (c) 2025 Andrew Yang. All rights reserved. Released under Apache 2.0, see LICENSE. MathGenome adapts the rank-one valuation setup to the local-field smallness proof.
 private theorem localFieldSmall (F : Type u) [Field F] [ValuativeRel F]
     [TopologicalSpace F] [IsNonarchimedeanLocalField F] : Small.{0} F := by
   letI := IsTopologicalAddGroup.rightUniformSpace F

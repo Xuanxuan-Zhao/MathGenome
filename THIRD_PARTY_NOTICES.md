@@ -191,3 +191,39 @@ The later source is from [Mathlib PR #43046](https://github.com/leanprover-commu
 
 - [`InjectiveComplexReplacement.lean`](MathGenome/Internal/AdvancedHomologicalAlgebra/AdvancedHomologicalAlgebra/InjectiveComplexReplacement.lean#L56-L91). Adapts the lower-bound truncation and adds degreewise monomorphisms at the bound.
 - [`ProjectiveComplexReplacement.lean`](MathGenome/Internal/AdvancedHomologicalAlgebra/AdvancedHomologicalAlgebra/ProjectiveComplexReplacement.lean#L41-L75). Adapts the same truncation with a degreewise monomorphism before dualizing to projective replacement.
+
+### ALG-09 · Quasi-coherent sheaves on a finite principal-open cover
+
+[AlgebraicGeometry/Modules/Tilde.lean](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/AlgebraicGeometry/Modules/Tilde.lean#L660-L776) · Kevin Buzzard, Johan Commelin, Amelia Livingston, Sophie Morel, Jujian Zhang, Weihong Xu, Andrew Yang, Brian Nugent. Copyright (c) 2024 Weihong Xu. All rights reserved. [Apache-2.0](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/LICENSE).
+
+- [`EquivariantCoherentSubobjectExtension.lean`](MathGenome/Internal/LinearAlgebraicGroups/LinearAlgebraicGroups/Representation/EquivariantCoherentSubobjectExtension.lean#L448-L572). Adapts the common-denominator, gluing, and uniqueness proof to the inverse-image cover of a quasi-compact open immersion.
+
+### ALG-09 · The square of the regular torus differential
+
+[AlgebraicTopology/AlternatingFaceMapComplex.lean](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/AlgebraicTopology/AlternatingFaceMapComplex.lean#L75-L113) · Joël Riou, Adam Topaz, Johan Commelin. Copyright (c) 2021 Joël Riou. All rights reserved. [Apache-2.0](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/LICENSE).
+
+- [`RegularTorusCohomology.lean`](MathGenome/Internal/LinearAlgebraicGroups/LinearAlgebraicGroups/Solvable/RegularTorusCohomology.lean#L259-L293). Retains the index pairing and Finset.sum_bij proof, with the regular-cochain degree convention and omission maps.
+
+### ALG-09 · Root-datum equivalence from a map preserving roots
+
+[LinearAlgebra/RootSystem/Hom.lean](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/LinearAlgebra/RootSystem/Hom.lean#L498-L518) · Scott Carnahan. Copyright (c) 2024 Scott Carnahan. All rights reserved. [Apache-2.0](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/LICENSE).
+
+- [`OctonionForms.lean`](MathGenome/Internal/LinearAlgebraicGroups/LinearAlgebraicGroups/Arithmetic/OctonionForms.lean#L2646-L2682). Retains the root-pairing equivalence construction and transpose fields. Specializes to the integral lattice and supplies the coroot comparison via the spanning finite root set.
+
+### ALG-09 · Cancellation of iterated tensor base change
+
+[RingTheory/TensorProduct/Maps.lean](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/RingTheory/TensorProduct/Maps.lean#L469-L479) · Kim Morrison, Johan Commelin. Copyright (c) 2020 Kim Morrison. All rights reserved. [Apache-2.0](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/LICENSE).
+
+- [`QuaternionSpinIsotropy.lean`](MathGenome/Internal/LinearAlgebraicGroups/LinearAlgebraicGroups/Arithmetic/QuaternionSpinIsotropy.lean#L516-L528). Retains the construction of the algebra equivalence from the linear base-change cancellation map. Adjusts the scalar tower and allows a noncommutative algebra factor.
+
+### ALG-09 · Faithful flatness of stalks in reducedness descent
+
+[AlgebraicGeometry/Morphisms/Flat.lean](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/AlgebraicGeometry/Morphisms/Flat.lean#L155-L165) · Christian Merten, Andrew Yang. Copyright (c) 2024 Christian Merten. All rights reserved. [Apache-2.0](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/LICENSE).
+
+- [`ProjectiveFlags.lean`](MathGenome/Internal/LinearAlgebraicGroups/LinearAlgebraicGroups/Flag/ProjectiveFlags.lean#L70-L79). Retains the faithfully flat stalk-map construction from the epimorphism proof and applies its injectivity to descent of reducedness.
+
+### ALG-09 · Rank-one valuation setup for a local field
+
+[NumberTheory/LocalField/Basic.lean](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/NumberTheory/LocalField/Basic.lean#L142-L150) · Andrew Yang. Copyright (c) 2025 Andrew Yang. All rights reserved. [Apache-2.0](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/LICENSE).
+
+- [`TrialitarianAlbertApplication.lean`](MathGenome/Internal/LinearAlgebraicGroups/LinearAlgebraicGroups/Arithmetic/TrialitarianAlbertApplication.lean#L207-L217). Retains the explicit rank-one valuation and uniform-space setup from the finite-residue-field instance. Uses it to obtain a proper normed topology and establish smallness.

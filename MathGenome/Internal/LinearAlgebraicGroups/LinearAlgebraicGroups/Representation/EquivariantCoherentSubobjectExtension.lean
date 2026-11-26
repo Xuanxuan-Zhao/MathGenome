@@ -446,8 +446,8 @@ private theorem aux_on_principal_open [IsOpenImmersion j] [H.IsQuasicoherent]
   exact (isIso_fromTildeΓ_iff_isLocalizing _).mp inferInstance
 
 set_option backward.isDefEq.respectTransparency false in
--- The denominator argument follows Mathlib's `QuasicoherentTilde.Aux.of_eq_iSup_basicOpen`,
--- with the gluing checks made on the inverse-image cover.
+-- Adapted from Mathlib/AlgebraicGeometry/Modules/Tilde.lean (QuasicoherentTilde.Aux.of_eq_iSup_basicOpen). Copyright (c) 2024 Weihong Xu. All rights reserved.
+-- Released under Apache 2.0, see LICENSE. MathGenome adapts denominator clearing and gluing to the inverse-image cover.
 private theorem aux_of_principal_cover [IsOpenImmersion j] [H.IsQuasicoherent]
     {I : Type u} [Finite I] (g : I → R) (hg : j.opensRange = ⨆ i, basicOpen (g i)) :
     QuasicoherentTilde.Aux ((Scheme.Modules.pushforward j).obj H) ⊤ := by

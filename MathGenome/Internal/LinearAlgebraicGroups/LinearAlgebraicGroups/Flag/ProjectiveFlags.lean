@@ -66,7 +66,7 @@ private theorem translateImages {G : GroupScheme k} {X : SchemeOver k}
     toUnit_unique (toUnit T) (𝟙 T), F.map_id, Category.id_comp, ← IsModHom.map_smul]
   change (g * p₀) ≫ q = r₀ ≫ q
   rw [show g * p₀ = r₀ by simp [g]]
-
+-- Adapted from Mathlib/AlgebraicGeometry/Morphisms/Flat.lean (AlgebraicGeometry.epi_of_flat_of_surjective). Copyright (c) 2024 Christian Merten. All rights reserved. Released under Apache 2.0, see LICENSE. MathGenome adapts the faithfully flat stalk argument to descent of reducedness.
 private theorem reduced_of_flat_surjective {X Y : Scheme.{u}} (f : X ⟶ Y)
     [Flat f] [Surjective f] [IsReduced X] : IsReduced Y := by
   apply +allowSynthFailures isReduced_of_isReduced_stalk

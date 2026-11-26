@@ -512,7 +512,7 @@ private theorem extendAnti_apply {k A L : Type u} [Field k] [Ring A] [Algebra k 
   induction z using TensorProduct.inductionOn with
   | tmul l a => rfl
   | add x y hx hy => simpa only [antiValue, map_add, MulOpposite.unop_add] using congrArg₂ (· + ·) hx hy
-
+-- Adapted from Mathlib/RingTheory/TensorProduct/Maps.lean (Algebra.TensorProduct.cancelBaseChange). Copyright (c) 2020 Kim Morrison. All rights reserved. Released under Apache 2.0, see LICENSE. MathGenome adapts tensor base-change cancellation to the local scalar tower.
 private def tensorCancel (k F L A : Type u) [CommRing k] [CommRing F] [CommRing L]
     [Ring A] [Algebra k F] [Algebra k L] [Algebra k A] [Algebra F L] [IsScalarTower k F L] :
     (L ⊗[F] (F ⊗[k] A)) ≃ₐ[L] L ⊗[k] A :=

@@ -2640,7 +2640,7 @@ private theorem rootSpan_of_datumEquiv {I J X Y U V : Type*}
   change e.weightEquiv.toLinearMap '' Set.range P.root = Set.range Q.root at hf
   rw [← hf, ← Submodule.map_span, h, Submodule.map_top]
   exact LinearMap.range_eq_top.mpr e.weightEquiv.surjective
-
+-- Adapted from Mathlib/LinearAlgebra/RootSystem/Hom.lean (RootPairing.Equiv.mk'). Copyright (c) 2024 Scott Carnahan. All rights reserved. Released under Apache 2.0, see LICENSE. MathGenome adapts the root-pairing equivalence construction to integral lattices.
 /-- Once the character-lattice comparison carries the roots onto the roots,
 the finite spanning root set determines the coroot reflections. -/
 private def datumEquivOfRoots {I J X Y U V : Type*}
