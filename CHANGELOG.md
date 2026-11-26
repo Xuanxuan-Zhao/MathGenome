@@ -1,3 +1,9 @@
+# 0.27.0 — Linear Algebraic Groups
+
+- Add ALG-09 with 683 original proof goals and 75 numbered results in the lecture notes.
+- Add `MathGenome.LinearAlgebraicGroups`, the PDF, the standalone LaTeX source, and the reviewed source map.
+- Include the equality of relative ranks for a semisimple group and its adjoint quotient.
+
 # 0.26.0 — Rings, Modules, and Associative Algebras
 
 - Add ALG-03 with 57 accepted goals and 28 numbered lecture results.
