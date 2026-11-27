@@ -1,0 +1,516 @@
+\chapter{Galois Cohomology and Field Arithmetic}
+\label{ch:galois-cohomology}
+
+Throughout, \(\operatorname{Gal}(L/k)\) for a possibly infinite Galois
+extension has the Krull topology. Fix a separable closure \(k^{\mathrm s}\)
+and write \(G_k=\operatorname{Gal}(k^{\mathrm s}/k)\). Superscript
+\({}^{+}\) denotes an additive group. The coefficient groups and matrix
+groups attached to a field in this chapter have the discrete topology.
+We use the continuous inhomogeneous complex of Result GC01 in
+\emph{Topics in Group Theory} \cite[PDF p.~24]{mg-groups}. In degree one,
+with multiplicative notation, \(c(gh)=c(g)\,g(c(h))\); for abelian
+coefficients the coboundary attached to \(b\) is \(g\mapsto b^{-1}g(b)\).
+For a possibly nonabelian coefficient group the equivalence is
+\[
+ c'(g)=b^{-1}c(g)\,g(b).
+\]
+The resulting \(H^1\) is a pointed set in this case, with the identity
+cocycle as base point.
+
+\section{Finite layers and Hilbert's Theorem 90}
+
+\begin{proposition}[Finite Galois layers and fixed coefficients]
+\label{res:GH01}
+Let \(L/k\) be Galois and put \(G=\operatorname{Gal}(L/k)\).
+For each finite Galois intermediate field \(E\) put
+\(U_E=\operatorname{Gal}(L/E)\) and
+\(G_E=\operatorname{Gal}(E/k)\). For a discrete continuous abelian
+\(G\)-module \(M\) there are identifications
+\[
+ H^q_{\mathrm{cts}}(G,M)
+   \ \cong\ \varinjlim_E H^q(G_E,M^{U_E})\qquad(q\geq 0).
+\]
+They use inflation along restriction of field automorphisms and inclusion
+of fixed coefficients. For a discrete group \(B\) with continuous
+\(G\)-action, the analogous identification holds for the pointed sets
+\(H^1_{\mathrm{cts}}(G,B)\).
+\end{proposition}
+\begin{proof}
+Results F04, T02, T06 and C02 of \emph{Infinite Galois Theory}
+\cite[PDF pp.~5, 9--10, 12]{mg-aft} give the directed finite layers,
+the open normal basis \(U_E\), the quotient \(G/U_E=G_E\), and
+\(L^{U_E}=E\). The abelian assertion is GC02 of \emph{Topics in Group
+Theory} \cite[PDF p.~24]{mg-groups} applied to this cofinal basis.
+
+For a nonabelian cocycle, compactness gives a finite image, and
+Result PF03(4) of \emph{Topics in Group Theory}
+\cite[PDF p.~16]{mg-groups} factors its underlying continuous map
+through a finite quotient. Enlarge the layer \(E\) so that \(U_E\)
+fixes all image elements, by intersecting their open stabilizers
+with the first quotient kernel and choosing a basis subgroup.
+Then the cocycle identity descends by surjectivity of restriction.
+If two cocycles are related by some \(b\in B\), enlarge the common
+layer once more so that \(U_E\) fixes \(b\). Their equivalence now
+holds at that stage. These two finite-layer assertions give
+surjectivity and injectivity of the pointed-set comparison.
+\end{proof}
+
+\begin{lemma}[A trace-one element]
+\label{res:GH02}
+If \(E/k\) is finite Galois, there exists \(t\in E\) with
+\(\sum_{\sigma\in\operatorname{Gal}(E/k)}\sigma(t)=1\).
+\end{lemma}
+\begin{proof}
+The independence lemma for distinct field embeddings in D07,
+Lemma 16.6 \cite[PDF p.~125]{mg-d07}, makes the sum of the
+automorphisms in the finite Galois group a nonzero function.
+It is \(k\)-linear and its values are fixed by the Galois group, hence
+are in \(k\) by the finite fixed-field theorem (Result F01 of
+\emph{Infinite Galois Theory} \cite[PDF p.~4]{mg-aft}).
+Divide an element of nonzero trace by its trace.
+\end{proof}
+
+\begin{theorem}[Matrix Hilbert 90]
+\label{res:GH03}
+For \(n\geq 1\) and a Galois extension \(L/k\), with entrywise action,
+\[
+ H^1_{\mathrm{cts}}\bigl(\operatorname{Gal}(L/k),
+                         \operatorname{GL}_n(L)\bigr)=\{*\}.
+\]
+In particular \(H^1_{\mathrm{cts}}(\operatorname{Gal}(L/k),L^\times)=0\).
+\end{theorem}
+\begin{proof}
+For a finite extension \(E/k\) and a cocycle with values in
+\(\operatorname{GL}_n(E)\), Lemma~\ref{res:PV18} gives an invertible
+matrix \(b\) with \(A_\sigma=b^{-1}\sigma(b)\) in any characteristic.
+The stated equivalence applied to the identity cocycle shows
+that this cocycle represents the base point.
+In the infinite case \(\operatorname{GL}_n(L)^{U_E}=
+\operatorname{GL}_n(E)\): the fixed entries lie in \(E\), and a
+determinant nonzero in \(L\) is nonzero in \(E\).
+Proposition~\ref{res:GH01} now reduces the assertion to the finite case.
+\end{proof}
+
+\begin{proposition}[Evaluation at a generator in degree one]
+\label{res:GH04}
+For \(C=\langle s\rangle\) of finite order \(d\) acting on an abelian
+group \(A\), evaluation at \(s\) gives an isomorphism
+\[
+ H^1(C,A)\ \cong\ \ker(N:A\to A)/(s-1)A,\qquad
+ N=1+s+\cdots+s^{d-1}.
+\]
+\end{proposition}
+\begin{proof}
+If \(d=1\), both sides are zero. Otherwise a cocycle with value \(a\)
+at \(s\) has value \(\sum_{j=0}^{i-1}s^j a\) at \(s^i\) for
+\(0\leq i<d\). At \(i=d\) the cocycle identity gives \(Na=0\);
+conversely this condition makes the sum rule consistent under
+reduction modulo \(d\) and implies the cocycle identity. A
+coboundary has value \((s-1)b\) at \(s\), so quotienting gives
+the stated isomorphism.
+\end{proof}
+
+Thus the older multiplicative and additive forms of cyclic
+Hilbert 90 are statements that these particular quotients vanish.
+D07 proves the norm-one and trace-zero formulas in Results
+\texttt{K07.20.hilbert90\_multiplicative} and
+\texttt{K07.20.hilbert90\_additive} \cite[PDF pp.~171--172]{mg-d07}.
+
+\section{Kummer theory}
+
+\begin{proposition}[Exact coefficient sequences for continuous cochains]
+\label{res:GH05}
+An exact sequence \(0\to A\to B\to C\to0\) of discrete abelian
+continuous \(G\)-modules, for \(G\) profinite, gives the long exact
+sequence in continuous cohomology. The connecting arrow sends
+\([c]\) to \([d\widetilde c]\), for a continuous cochain lift
+\(\widetilde c\) to \(B\).
+\end{proposition}
+\begin{proof}
+The induced cochain map to \(C\) is surjective: a continuous map from
+the compact space \(G^n\) to a discrete group takes finitely many
+values, and the choice of one lift for each value gives a continuous
+lift. The two other exactness assertions hold pointwise, with the
+induced topology on each subgroup still discrete. This gives a
+short exact sequence of cochain complexes. Its connecting arrow
+is obtained by lifting a cocycle and applying the differential,
+as in \emph{Algebra Core}, Theorem 10.3
+\cite[PDF p.~51]{mg-algebra-core}.
+\end{proof}
+
+\begin{theorem}[Kummer isomorphism with its Galois action]
+\label{res:GH06}
+Let \(m\geq 1\) and assume that \(m\) is invertible in \(k\). Give
+\(\mu_m\subset(k^{\mathrm s})^\times\) its natural \(G_k\)-action.
+Then there is an isomorphism
+\[
+ k^\times/k^{\times m}
+   \ \xrightarrow{\ \sim\ }\ H^1_{\mathrm{cts}}(G_k,\mu_m),
+ \qquad
+ a\longmapsto [\,g\mapsto g(\alpha)/\alpha\,],\quad \alpha^m=a.
+\]
+If \(\mu_m\subset k^\times\), this identifies the quotient with
+\(\operatorname{Hom}_{\mathrm{cts}}(G_k,\mu_m)\).
+\end{theorem}
+\begin{proof}
+The \(m\)-th power on \((k^{\mathrm s})^\times\) is surjective.
+Indeed \(X^m-u\) is separable for \(u\ne0\), by its derivative, and
+splits over the separably closed \(k^{\mathrm s}\). Its kernel on
+units is \(\mu_m\). The maps are equivariant, and all coefficients
+are continuous by the stabilizers in the Krull topology.
+Invariants in \((k^{\mathrm s})^\times\) are \(k^\times\), by
+Result C02 of \emph{Infinite Galois Theory}
+\cite[PDF p.~12]{mg-aft}. Proposition~\ref{res:GH05} gives the connecting
+map of the short exact sequence, and Theorem~\ref{res:GH03} makes it
+surjective onto \(H^1_{\mathrm{cts}}(G_k,\mu_m)\). Its formula follows
+from the coboundary of \(\alpha\). Changing \(\alpha\) by an element of
+\(\mu_m\) multiplies the cocycle by that element's coboundary. For
+trivial action the cocycle identity is the homomorphism condition and
+every coboundary is the identity.
+\end{proof}
+
+\begin{theorem}[Finite Kummer duality]
+\label{res:GH07}
+Assume that \(m\) is invertible in \(k\) and
+\(\mu_m\subset k^\times\). Inside \(k^{\mathrm s}\), the finite Galois
+extensions with abelian group of exponent dividing \(m\)
+correspond to the finite subgroups \(D\subset k^\times/k^{\times m}\).
+The field \(L_D\) is obtained by adjoining \(m\)-th roots of
+representatives of \(D\). If \(L\) is one of the extensions, its
+subgroup is
+\[
+ D_L=\bigl(k^\times\cap (L^\times)^m\bigr)/k^{\times m}.
+\]
+The pairing \((g,[a])\mapsto g(\alpha)/\alpha\), with \(\alpha^m=a\),
+identifies either of \(\operatorname{Gal}(L_D/k)\) and \(D\) with the
+group of homomorphisms from the other to \(\mu_m\).
+\end{theorem}
+\begin{proof}
+Any finite subgroup of the units of a field is cyclic. Its exponent
+\(e\) is realized as the order of an element: choose the prime-power
+parts of elements having maximal such parts and multiply them.
+Then the polynomial \(X^e-1\) bounds the order of the subgroup by \(e\).
+In particular \(\mu_m\) is cyclic of order \(m\), since \(X^m-1\) is
+separable and split in \(k^{\mathrm s}\).
+
+For a finite abelian group \(A\) of exponent dividing \(m\), its
+\(\mu_m\)-valued characters separate elements and number \(|A|\).
+Indeed, a character on a subgroup \(H\) extends across an element
+\(x\) of order \(d\) modulo \(H\). Since \(d\mid m\),
+\(\chi(x^d)^{m/d}=1\); choose \(\zeta\in\mu_m\) with
+\(\zeta^d=\chi(x^d)\). Then
+\(\chi(hx^i)=\chi(h)\zeta^i\) gives the extension. Repeating proves
+surjectivity of restriction to any subgroup. This extends a faithful
+character of each cyclic subgroup. Counting the characters by
+restriction to a nontrivial cyclic subgroup and using the quotient
+for the kernel gives the count by induction on \(|A|\).
+
+Choose finitely many generators of \(D\). The field generated by
+each chosen root is finite cyclic Galois by the single-radical
+result \texttt{K07.15.kummer\_forward} in D07
+\cite[PDF p.~135]{mg-d07}. By Result F04 of
+\emph{Infinite Galois Theory} \cite[PDF p.~5]{mg-aft},
+their compositum \(L_D/k\) is finite Galois.
+If \([a]\) is a product of powers of the generator classes, an
+\(m\)-th root of \(a\) in \(L_D\) is the corresponding product of
+powers of the chosen roots times a scalar in \(k^\times\).
+On these generators the ratios give an injective homomorphism
+of \(\operatorname{Gal}(L_D/k)\) into a product of \(\mu_m\)'s.
+The pairing is independent of roots and representatives and is
+multiplicative in both variables. Its right kernel is trivial by
+the fixed-field theorem: if each \(g\) fixes \(\alpha\), then
+\(\alpha\in k\), so \([a]=1\). The left kernel is trivial because
+the chosen roots generate \(L_D\). The character counts just proved
+now make both maps isomorphisms.
+
+For a finite Galois \(L/k\) with abelian group \(A\) of exponent
+dividing \(m\), each character \(\chi:A\to\mu_m\) is a cocycle on
+\(L^\times\). Theorem~\ref{res:GH03} gives \(\chi(g)=g(b)/b\), with
+\(b\in L^\times\) and \(b^m\in k^\times\). Choosing such a \(b\) for
+each character generates \(L\): the subgroup fixing them all is
+trivial because the characters separate, and the finite Galois
+correspondence applies (Result F01 of \emph{Infinite Galois Theory}
+\cite[PDF p.~4]{mg-aft}). Finally \([a]\mapsto(g\mapsto g(\alpha)/\alpha)\)
+injects \(D_L\) into the character group, by the fixed-field theorem,
+and the chosen elements show surjectivity. For \(L=L_D\), inclusion
+\(D\subseteq D_L\) and the equal sizes from perfectness give equality.
+\end{proof}
+
+\section{Artin--Schreier theory}
+
+\begin{proposition}[Trace contraction for semilinear coefficients]
+\label{res:GH08}
+Let \(E/k\) be finite Galois with group \(H\), and let \(V\) be an
+\(E\)-vector space on which \(H\) acts semilinearly, so
+\(\sigma(av)=\sigma(a)\sigma(v)\). Its additive group has
+\(H^q(H,V^+)=0\) for all \(q>0\). For any Galois extension \(L/k\),
+\[
+ H^q_{\mathrm{cts}}\bigl(\operatorname{Gal}(L/k),L^+\bigr)=0
+ \qquad(q>0).
+\]
+\end{proposition}
+\begin{proof}
+Use equivariant homogeneous cochains \(f:H^{q+1}\to V^+\),
+with differential the alternating sum of omissions.
+The change to inhomogeneous cochains evaluates \(f\) at
+\((1,g_1,g_1g_2,\ldots,g_1\cdots g_q)\); its inverse takes
+\(F\) to \(g_0 F(g_0^{-1}g_1,\ldots,g_{q-1}^{-1}g_q)\).
+Deleting the first variable yields the action term and deleting
+an interior variable multiplies adjacent increments. These formulas
+intertwine the two differentials.
+Choose trace-one \(t\) by Lemma~\ref{res:GH02}. For \(q\geq1\) put
+\[
+ (s f)(g_0,\ldots,g_{q-1})
+   =\sum_{h\in H}h(t)\,f(h,g_0,\ldots,g_{q-1}).
+\]
+The reindexing \(h=\sigma h'\) and semilinearity prove
+equivariance. In \(s d f\), omitting \(h\) gives
+\(\sum_h h(t)f=f\); each of the remaining terms cancels its
+counterpart in \(d s f\) by the shift of signs. Hence \(d s+s d=1\)
+on positive degrees. For \(L/k\) the fixed coefficients at stage
+\(E\) are \(E^+\), so use Proposition~\ref{res:GH01}.
+\end{proof}
+
+\begin{theorem}[The Artin--Schreier connecting isomorphism]
+\label{res:GH09}
+If \(\operatorname{char}k=p>0\) and \(\wp(x)=x^p-x\), then
+\[
+ k/\wp(k)
+   \ \cong\ H^1_{\mathrm{cts}}(G_k,\mathbb F_p)
+   =\operatorname{Hom}_{\mathrm{cts}}(G_k,\mathbb F_p),
+ \qquad
+ [a]\longmapsto \bigl(g\mapsto g(\alpha)-\alpha\bigr)
+ \quad(\wp(\alpha)=a).
+\]
+The coefficient action on \(\mathbb F_p\) is trivial.
+\end{theorem}
+\begin{proof}
+The polynomial \(X^p-X-u\) is separable, since its derivative is
+\(-1\), so \(\wp:k^{\mathrm s}\to k^{\mathrm s}\) is surjective.
+Its kernel is exactly \(\mathbb F_p\), which already gives \(p\)
+roots. The resulting sequence of discrete coefficients is exact.
+Apply Proposition~\ref{res:GH05}, the invariants formula
+(Result C02 of \emph{Infinite Galois Theory}
+\cite[PDF p.~12]{mg-aft}), and Proposition~\ref{res:GH08} in
+degree one. The connecting cocycle is the difference displayed.
+\end{proof}
+
+For a nonzero class its character has kernel
+\(\operatorname{Gal}(k^{\mathrm s}/k(\alpha))\), since the value at
+\(g\) is zero exactly when \(g\) fixes \(\alpha\). This realizes
+the cyclic degree-\(p\) extensions of D07,
+\texttt{K07.20.artin\_schreier} \cite[PDF p.~172]{mg-d07},
+as the lines in the character space: changing the isomorphism from
+the cyclic quotient to \(\mathbb F_p^+\) rescales the character.
+
+\begin{theorem}[Vanishing for \(p\)-primary coefficients in characteristic \(p\)]
+\label{res:GH10}
+In characteristic \(p>0\), every discrete continuous \(G_k\)-module
+\(M\) with \(p\)-primary torsion underlying group satisfies
+\[
+ H^q_{\mathrm{cts}}(G_k,M)=0\qquad(q\geq2).
+\]
+\end{theorem}
+\begin{proof}
+First suppose \(pM=0\), and put
+\(W=k^{\mathrm s}\otimes_{\mathbb F_p}M\), with diagonal action and
+the discrete topology. It is continuous because each tensor is a
+finite sum of elementary tensors, and each factor has an open
+stabilizer. The Artin--Schreier sequence tensored over \(\mathbb F_p\)
+with \(M\) gives
+\[
+ 0\longrightarrow M\xrightarrow{m\mapsto 1\otimes m}W
+ \xrightarrow{\wp\otimes 1}W\longrightarrow0.
+\]
+Exactness follows by choosing a vector-space basis of \(M\), which
+turns the tensor sequence into a direct sum of copies of the
+Artin--Schreier sequence from Theorem~\ref{res:GH09}. The maps in the
+display are equivariant because \(\wp\) commutes with field
+automorphisms.
+
+For any continuous \(q\)-cocycle with values in \(W\), finitely
+many field elements and vectors occur in expressions for its
+finitely many values. A vector in the discrete \(M\) has finite
+orbit by compactness of \(G_k\). Thus there is a finite-dimensional
+stable \(\mathbb F_p\)-subspace \(M_0\) containing those vectors.
+Choose a finite Galois layer \(E\) containing the field elements,
+large enough that \(U_E\) fixes \(M_0\) and the cocycle factors
+through \(G_E^q\). For the latter use the cochain factorization in
+the proof of Proposition~\ref{res:GH01}. For the former use the
+intersection of the stabilizers of a finite basis. The cocycle
+then takes values in \(E\otimes_{\mathbb F_p} M_0\), on which
+\(G_E\) acts semilinearly. This group embeds in \(W\) since tensors
+over a field preserve injections, and restriction onto \(G_E\)
+is surjective. The cocycle identity holds at that stage. For
+\(q>0\), Proposition~\ref{res:GH08} kills the class at that stage,
+so \(H^q_{\mathrm{cts}}(G_k,W)=0\). The sequence above and
+Proposition~\ref{res:GH05} prove the assertion for \(pM=0\).
+
+For \(M\) killed by \(p^r\), use the exact sequence
+\(0\to M[p]\to M\xrightarrow{p}pM\to0\) and induction on \(r\).
+For general \(p\)-primary torsion \(M\), each continuous cocycle
+has finite image and takes values in \(M[p^r]\) for some \(r\).
+Its coboundary primitive found in that submodule also works in \(M\).
+\end{proof}
+
+\section{Cyclic \texorpdfstring{\(H^2\)}{H2} and arithmetic calculations}
+
+\begin{proposition}[Second cohomology of a finite cyclic group]
+\label{res:GH11}
+Let \(C=\langle s\rangle\) have order \(d\geq1\) and \(A\) be an
+abelian \(C\)-module. For \(N=1+s+\cdots+s^{d-1}\), one has
+\[
+ H^2(C,A)\cong A^C/N(A).
+\]
+In particular for a finite cyclic field extension \(E/k\),
+\[
+ H^2\bigl(\operatorname{Gal}(E/k),E^\times\bigr)
+     \cong k^\times/N_{E/k}(E^\times).
+\]
+\end{proposition}
+\begin{proof}
+The order-one case is immediate from the one-element group complex.
+For \(d\geq2\) use additive notation. Every class has a normalized
+cocycle \(c\), with \(c(1,g)=c(g,1)=0\). In fact the cocycle identity
+implies \(c(1,g)=c(1,1)\) and \(c(g,1)=g c(1,1)\); subtract the
+coboundary of the constant one-cochain \(c(1,1)\).
+Define a group on \(A\times C\) by
+\((a,g)(b,h)=(a+g b+c(g,h),gh)\).
+Associativity is the cocycle identity, the normalized values give
+the identity \((0,1)\), and inverse elements are obtained by first
+solving the equation in \(C\) and then in \(A\).
+The element \(u=(0,s)\) conjugates \(A\) by \(s\), and
+\(u^d=(a,1)\) for some \(a\in A^C\), because \(u\) commutes with
+\(u^d\). A different lift \(b u\), for \(b\in A\), replaces
+\(a\) by \(a+N b\) after moving the \(d\) copies of \(b\) to the
+left. Replacing \(c\) by \(c+df\) induces the isomorphism
+\((b,g)\mapsto (b+f(g),g)\) from the new group to the old one, so the
+class of \(a\) is well defined.
+
+Use the section \(s^i\mapsto u^i\) for \(0\leq i<d\).
+Changing a section changes its factor set by a coboundary:
+if each section element is multiplied on the left by \(f(g)\in A\),
+its factor set at \((g,h)\) changes by
+\(f(g)+g f(h)-f(gh)\). The factor set of this section has value \(0\)
+at \((s^i,s^j)\) when \(i+j<d\) and \(a\) otherwise.
+Conversely, for every \(a\in A^C\) this carry rule defines a
+cocycle: adding \(i,j,\ell\) and reducing modulo \(d\) in either
+order gives the same total carry because \(a\) is invariant.
+Its \(d\)-th power computation gives \(a\), and its cohomology
+class depends additively on \(a\). If two such cocycles have
+parameters differing by \(N b\), the section defined by the
+new lift \(b u\) changes one into the other. These checks give the
+isomorphism. The field formula follows by the finite fixed-field
+theorem and the multiplicative norm.
+\end{proof}
+
+\begin{example}[Finite fields]
+\label{res:GH12}
+For \(k=\mathbb F_q\) of characteristic \(p\) and \(p\nmid m\),
+\(H^1_{\mathrm{cts}}(G_k,\mu_m)\) is cyclic of order
+\(\gcd(m,q-1)\). The Artin--Schreier quotient \(k/\wp(k)\)
+is identified with \(\mathbb F_p\) by the trace, and the
+character of \(a\) takes the trace value at the arithmetic
+Frobenius \(x\mapsto x^q\). Also
+\[
+ H^2_{\mathrm{cts}}\bigl(G_k,(k^{\mathrm s})^\times\bigr)=0.
+\]
+\end{example}
+\begin{proof}
+Apply Theorem~\ref{res:GH06} and cyclicity of the units, proved in
+Theorem~\ref{res:GH07}. Write \(q=p^r\). The trace
+\(\operatorname{Tr}_{\mathbb F_q/\mathbb F_p}\) is
+\(\sum_{i=0}^{r-1}a^{p^i}\), by the Frobenius description of
+finite Galois layers (Results E01--E04 of \emph{Infinite Galois
+Theory} \cite[PDF pp.~18--19]{mg-aft}), and induces the claimed
+quotient by \texttt{K07.20.finite\_artin\_schreier} of D07
+\cite[PDF p.~173]{mg-d07}. For a root \(\wp(\alpha)=a\),
+the equality \(\alpha^q-\alpha=\sum_{i=0}^{r-1}a^{p^i}\) follows
+by raising the defining equation to \(p^i\) and summing. This gives
+the stated evaluation in Theorem~\ref{res:GH09}.
+If \(E=\mathbb F_{q^d}\), its norm on units is the power
+\(1+q+\dots+q^{d-1}=(q^d-1)/(q-1)\). A generator therefore has norm
+of order \(q-1\), so the norm is onto. The finite-layer
+\(H^2(G_E,E^\times)\) vanishes by Proposition~\ref{res:GH11}.
+Proposition~\ref{res:GH01} now gives the last equality.
+\end{proof}
+
+\begin{example}[A real norm obstruction and two rational-function classes]
+\label{res:GH13}
+For \(\mathbb C/\mathbb R\), the relative group
+\(H^2(\operatorname{Gal}(\mathbb C/\mathbb R),\mathbb C^\times)\)
+has order two, with nonzero class represented by a cyclic cocycle
+carrying the value \(-1\).
+Over \(k=\mathbb F_q(t)\) of characteristic \(p\), \(a=t\) gives a
+nonzero Artin--Schreier class. If \(m>1\) divides \(q-1\), the Kummer
+class of \(t\) has order \(m\) and gives a cyclic extension of degree
+\(m\).
+\end{example}
+\begin{proof}
+The complex norm has image exactly the positive real numbers, by
+\(z\bar z>0\) for \(z\ne0\) and positive real square roots. The
+first assertion is then Proposition~\ref{res:GH11} with multiplicative
+notation. For \(t\), put \(v_\infty(f/g)=\deg g-\deg f\) on
+nonzero rational functions in coprime polynomials, and
+\(v_\infty(0)=+\infty\). A common denominator shows
+\(v_\infty(f+g)\geq\min(v_\infty(f),v_\infty(g))\), with equality
+for unequal values because the leading terms cannot cancel.
+If \(v_\infty(x)\geq0\), then \(v_\infty(\wp(x))\geq0\); if
+\(v_\infty(x)<0\), then \(v_\infty(\wp(x))=p v_\infty(x)\).
+Neither gives the value \(-1\) of \(t\), so
+Theorem~\ref{res:GH09} applies. Finally \(v_\infty(t^i)=-i\)
+and the valuation of any \(m\)-th power is divisible by \(m\).
+The class of \(t\) has order \(m\), and \(m\mid q-1\) puts
+\(\mu_m\) inside \(k\) by cyclicity of \(\mathbb F_q^\times\)
+from Theorem~\ref{res:GH07}. The perfect pairing there gives the
+cyclic degree-\(m\) extension.
+\end{proof}
+
+\section{Inflation and restriction}
+
+\begin{proposition}[Continuous inflation--restriction in degree one]
+\label{res:GH14}
+For a profinite group \(G\), a closed normal subgroup \(N\), and a
+discrete continuous abelian \(G\)-module \(M\), the sequence
+\[
+ 0\longrightarrow H^1_{\mathrm{cts}}(G/N,M^N)
+ \xrightarrow{\mathrm{inf}} H^1_{\mathrm{cts}}(G,M)
+ \xrightarrow{\mathrm{res}} H^1_{\mathrm{cts}}(N,M)^{G/N}
+\]
+is exact at its first two cohomology groups. The action on the last
+group comes from \((g\cdot f)(n)=g f(g^{-1}ng)\).
+\end{proposition}
+\begin{proof}
+The displayed action respects the continuous cocycle identity
+and sends the coboundary of \(b\in M\) to that of \(gb\).
+For any cocycle \(c\) on \(G\), expanding the three factors in
+\(g^{-1}ng\) gives
+\[
+ g c(g^{-1}ng)=c(n)+(n-1)c(g).
+\]
+The same identity within \(N\), for any cocycle on \(N\), shows
+that inner action by elements of \(N\) is trivial on cohomology.
+Thus the action factors through \(G/N\), and the identity for
+\(c\) on \(G\) places its restriction class among the invariants.
+
+An inflated cocycle vanishes on \(N\). If it is a coboundary
+\(g\mapsto(g-1)b\) on \(G\), then \(b\in M^N\), so its original
+class was already zero. Conversely a class restricting to zero
+has a representative \(c\) vanishing on \(N\), obtained by subtracting
+a coboundary whose restriction is the given restriction cocycle.
+The cocycle rule gives \(c(gn)=c(g)\) and \(c(ng)=n c(g)\).
+Normality gives \(ng\in gN\), so \(n c(g)=c(g)\). Hence \(c\)
+descends to a cocycle on \(G/N\) with values in \(M^N\).
+It is continuous by the quotient topology. The action of \(G/N\)
+on the discrete \(M^N\) is continuous because its point stabilizers
+are the images of the open stabilizers in \(G\), each containing
+\(N\). Closed normal quotients here are profinite by Result PF02
+of \emph{Topics in Group Theory} \cite[PDF pp.~15--16]{mg-groups}.
+\end{proof}
+
+\paragraph{Sources.}
+The finite-layer and degree-one arithmetic constructions are in
+\cite[Sections 2.2, 2.4--2.5]{sharifi} and
+\cite[Chapter~I, Sections 2--3 and 5]{serregc}.
+For field-theoretic independence, norm and radical expressions,
+see \cite[Chapter~5]{milneft}.

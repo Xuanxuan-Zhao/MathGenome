@@ -3,8 +3,8 @@
   "counts": {
     "D05_entries": 249,
     "D07_entries": 408,
-    "declarations": 483208,
-    "entries": 6921,
+    "declarations": 487527,
+    "entries": 7025,
     "project_goals": 1710,
     "registered_bindings": 42901,
     "searchable_project_declarations": 10053,
@@ -291912,6 +291912,3690 @@
       },
       "source_declarations": [],
       "title": "Bibliographic references and closing LaTeX matter."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "FieldAndGaloisTheoryDeepening:CTX-PREAMBLE",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "CTX-PREAMBLE",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1,
+        "line_end": 82
+      },
+      "source_declarations": [],
+      "title": "LaTeX layout, theorem numbering, title page and table of contents."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "FieldAndGaloisTheoryDeepening:CTX-SCOPE-OVERVIEW",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "CTX-SCOPE-OVERVIEW",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 83,
+        "line_end": 101
+      },
+      "source_declarations": [],
+      "title": "Scope and overview of the four chapters on linear operator Galois theory, continuous Galois cohomology, and embedding problems and specialization."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "FieldAndGaloisTheoryDeepening:CTX-SCOPE-REFERRALS",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "CTX-SCOPE-REFERRALS",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 102,
+        "line_end": 108
+      },
+      "source_declarations": [],
+      "title": "The chapter scope includes specialization at a specified separable fibre and full-group specializations in explicit families. The references on general embedding problems, Hilbert irreducibility, general regular realization and rigidity, and regular split embedding problems over complete valued fields are contextual referrals."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.KrullLayers.AbsoluteGaloisGroup",
+        "GaloisFormalization.GH.KrullLayers.GaloisGroup",
+        "GaloisFormalization.GH.KrullLayers.continuous_fieldAction",
+        "GaloisFormalization.GH.KrullLayers.continuous_unitsAction",
+        "GaloisFormalization.GH.KrullLayers.layerKernels_basis",
+        "GaloisFormalization.GH.KrullLayers.profiniteGroup",
+        "GaloisFormalization.GH.NonabelianH1.Cocycle.cocycle",
+        "GaloisFormalization.GH.differentialFormula_expanded",
+        "GaloisFormalization.GH.differential_cochainZero",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem",
+        "GaloisFormalization.PV.Operator.IsBaseField"
+      ],
+      "goal_ids": [
+        "GH_KrullLayers",
+        "IG01",
+        "PV01"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:COMMON-TOPOLOGY-AND-ACTIONS",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "COMMON-TOPOLOGY-AND-ACTIONS",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 110,
+        "line_end": 116
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.KrullLayers.AbsoluteGaloisGroup",
+        "GaloisFormalization.GH.KrullLayers.GaloisGroup",
+        "GaloisFormalization.GH.KrullLayers.continuous_fieldAction",
+        "GaloisFormalization.GH.KrullLayers.continuous_unitsAction",
+        "GaloisFormalization.GH.KrullLayers.layerKernels_basis",
+        "GaloisFormalization.GH.KrullLayers.profiniteGroup",
+        "GaloisFormalization.GH.NonabelianH1.Cocycle.cocycle",
+        "GaloisFormalization.GH.differentialFormula_expanded",
+        "GaloisFormalization.GH.differential_cochainZero",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem",
+        "GaloisFormalization.PV.Operator.IsBaseField"
+      ],
+      "title": "By default use left actions, with st acting by applying t and then s. For any field k fix a separable closure kˢ, with the discrete topology when used for coefficients, and give the absolute Galois group Gal(kˢ/k) the Krull topology. The operator chapters impose their own separate characteristic and constant-field hypotheses."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "FieldAndGaloisTheoryDeepening:CTX-SOURCE-REFERENCES",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "CTX-SOURCE-REFERENCES",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 118,
+        "line_end": 123
+      },
+      "source_declarations": [],
+      "title": "Explains the function of the references and the accompanying numbered-statement map."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "FieldAndGaloisTheoryDeepening:PV-introduction",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV-introduction",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 124,
+        "line_end": 132
+      },
+      "source_declarations": [],
+      "title": "Chapter introduction compares solution rings with splitting fields and motivates using a ring with possible zero divisors in difference theory."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Operator",
+        "GaloisFormalization.PV.Operator.Ideal",
+        "GaloisFormalization.PV.Operator.IsConstant",
+        "GaloisFormalization.PV.Operator.IsExtension",
+        "GaloisFormalization.PV.Operator.IsSimple",
+        "GaloisFormalization.PV.Operator.IsStable",
+        "GaloisFormalization.PV.Operator.RingEquiv",
+        "GaloisFormalization.PV.Operator.RingHom",
+        "GaloisFormalization.PV.Operator.Subring",
+        "GaloisFormalization.PV.Operator.constantSubfield",
+        "GaloisFormalization.PV.Operator.constantSubring",
+        "GaloisFormalization.PV.Operator.difference",
+        "GaloisFormalization.PV.Operator.differential",
+        "GaloisFormalization.PV.Operator.toDerivation",
+        "GaloisFormalization.PV.Operator.toRingEquiv",
+        "GaloisFormalization.PV.OperatorField"
+      ],
+      "goal_ids": [
+        "PV01"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV01",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV01",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 136,
+        "line_end": 150,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "definition.1.1"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Operator",
+        "GaloisFormalization.PV.Operator.Ideal",
+        "GaloisFormalization.PV.Operator.IsConstant",
+        "GaloisFormalization.PV.Operator.IsExtension",
+        "GaloisFormalization.PV.Operator.IsSimple",
+        "GaloisFormalization.PV.Operator.IsStable",
+        "GaloisFormalization.PV.Operator.RingEquiv",
+        "GaloisFormalization.PV.Operator.RingHom",
+        "GaloisFormalization.PV.Operator.Subring",
+        "GaloisFormalization.PV.Operator.constantSubfield",
+        "GaloisFormalization.PV.Operator.constantSubring",
+        "GaloisFormalization.PV.Operator.difference",
+        "GaloisFormalization.PV.Operator.differential",
+        "GaloisFormalization.PV.Operator.toDerivation",
+        "GaloisFormalization.PV.Operator.toRingEquiv",
+        "GaloisFormalization.PV.OperatorField"
+      ],
+      "title": "The rings are commutative and unital. A differential operator is an additive derivation ∂ satisfying ∂(ab)=a∂b+b∂a. A difference operator is a ring automorphism σ. Operator subrings and operator ideals are stable under ∂ or under both σ and σ⁻¹, respectively. A simple operator ring is nonzero and has only the zero and unit operator ideals. Its constants S^const are ker ∂ or the fixed ring of σ, respectively. An operator field is a field with the indicated operator."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Operator.IsBaseField",
+        "GaloisFormalization.PV.Operator.constantSubfield",
+        "GaloisFormalization.PV.Operator.mem_constantSubfield"
+      ],
+      "goal_ids": [
+        "PV01"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV-base-hypotheses",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV-base-hypotheses",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 152,
+        "line_end": 154
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Operator.IsBaseField",
+        "GaloisFormalization.PV.Operator.constantSubfield",
+        "GaloisFormalization.PV.Operator.mem_constantSubfield"
+      ],
+      "title": "The default hypotheses for the operator chapters are that k is an operator field of characteristic zero and its constant field C=k^const is algebraically closed. Explicit exceptions in particular statements govern those statements."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Operator.tensor",
+        "GaloisFormalization.PV.Operator.tensor_constant_existsUnique",
+        "GaloisFormalization.PV.Operator.tensor_difference_symm_tmul",
+        "GaloisFormalization.PV.Operator.tensor_difference_tmul",
+        "GaloisFormalization.PV.Operator.tensor_differential_tmul",
+        "GaloisFormalization.PV.Operator.tensor_existsUnique",
+        "GaloisFormalization.PV.Operator.tensor_twisted_existsUnique"
+      ],
+      "goal_ids": [
+        "PV01Tensor"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV-tensor-operators",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV-tensor-operators",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 154,
+        "line_end": 157
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Operator.tensor",
+        "GaloisFormalization.PV.Operator.tensor_constant_existsUnique",
+        "GaloisFormalization.PV.Operator.tensor_difference_symm_tmul",
+        "GaloisFormalization.PV.Operator.tensor_difference_tmul",
+        "GaloisFormalization.PV.Operator.tensor_differential_tmul",
+        "GaloisFormalization.PV.Operator.tensor_existsUnique",
+        "GaloisFormalization.PV.Operator.tensor_twisted_existsUnique"
+      ],
+      "title": "For two operator extensions S,T of the same operator field k, the tensor product over k carries the well-defined derivation ∂(s⊗t)=∂(s)⊗t+s⊗∂(t), or difference automorphism σ(s⊗t)=σ(s)⊗σ(t), respectively. The operators on S and T restrict to the same operator on k."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Operator.constants_finiteType",
+        "GaloisFormalization.PV.UniversalSolutionRing.isNoetherian",
+        "GaloisFormalization.PV.intermediateTotalRing_structure"
+      ],
+      "goal_ids": [
+        "PV05",
+        "PV07Universal",
+        "PV13"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV-finite-type-noetherian",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV-finite-type-noetherian",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 158,
+        "line_end": 159
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Operator.constants_finiteType",
+        "GaloisFormalization.PV.UniversalSolutionRing.isNoetherian",
+        "GaloisFormalization.PV.intermediateTotalRing_structure"
+      ],
+      "title": "A finite-type algebra over a noetherian ring is noetherian, the cited consequence of the Hilbert basis theorem."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.LinearSystem",
+        "GaloisFormalization.PV.LinearSystem.FundamentalMatrix",
+        "GaloisFormalization.PV.LinearSystem.IsFundamental",
+        "GaloisFormalization.PV.LinearSystem.IsSolution",
+        "GaloisFormalization.PV.LinearSystem.coefficientMatrix",
+        "GaloisFormalization.PV.LinearSystem.determinantInverse",
+        "GaloisFormalization.PV.LinearSystem.difference",
+        "GaloisFormalization.PV.LinearSystem.differential"
+      ],
+      "goal_ids": [
+        "PV02System"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV02-fundamental",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV02-fundamental",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 161,
+        "line_end": 166,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "lemma.1.2"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.LinearSystem",
+        "GaloisFormalization.PV.LinearSystem.FundamentalMatrix",
+        "GaloisFormalization.PV.LinearSystem.IsFundamental",
+        "GaloisFormalization.PV.LinearSystem.IsSolution",
+        "GaloisFormalization.PV.LinearSystem.coefficientMatrix",
+        "GaloisFormalization.PV.LinearSystem.determinantInverse",
+        "GaloisFormalization.PV.LinearSystem.difference",
+        "GaloisFormalization.PV.LinearSystem.differential"
+      ],
+      "title": "The differential system for A∈M_n(k) is ∂Y=AY, and the difference system for A∈GL_n(k) is σ(Y)=AY. In either case a fundamental matrix is an invertible solution matrix."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.LinearSystem.fundamentalColumnEquivalence",
+        "GaloisFormalization.PV.LinearSystem.fundamentalRightMultiplier",
+        "GaloisFormalization.PV.LinearSystem.orderZeroFundamental"
+      ],
+      "goal_ids": [
+        "PV02"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV02",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV02",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 161,
+        "line_end": 169,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "lemma.1.2"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.LinearSystem.fundamentalColumnEquivalence",
+        "GaloisFormalization.PV.LinearSystem.fundamentalRightMultiplier",
+        "GaloisFormalization.PV.LinearSystem.orderZeroFundamental"
+      ],
+      "title": "For the indicated differential or difference system, if Y is fundamental in an operator extension S, the solution columns in S^n are precisely the columns Yc with c∈(S^const)^n, each with a unique c. For any two fundamental matrices Y and Y′ in S there is B∈GL_n(S^const) with Y′=YB."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.LinearSystem.IsScalarSolution",
+        "GaloisFormalization.PV.LinearSystem.companionColumnEquivalence",
+        "GaloisFormalization.PV.LinearSystem.companionDeterminant",
+        "GaloisFormalization.PV.LinearSystem.companionMatrix",
+        "GaloisFormalization.PV.LinearSystem.differenceCompanionExists",
+        "GaloisFormalization.PV.LinearSystem.differentialCompanion",
+        "GaloisFormalization.PV.LinearSystem.orderZeroColumnEquivalence",
+        "GaloisFormalization.PV.LinearSystem.orderZeroFundamental",
+        "GaloisFormalization.PV.LinearSystem.orderZeroScalarSolutions",
+        "GaloisFormalization.PV.LinearSystem.scalarColumn"
+      ],
+      "goal_ids": [
+        "PV02"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV02-companion",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV02-companion",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 170,
+        "line_end": 187,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "lemma.1.2"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.LinearSystem.IsScalarSolution",
+        "GaloisFormalization.PV.LinearSystem.companionColumnEquivalence",
+        "GaloisFormalization.PV.LinearSystem.companionDeterminant",
+        "GaloisFormalization.PV.LinearSystem.companionMatrix",
+        "GaloisFormalization.PV.LinearSystem.differenceCompanionExists",
+        "GaloisFormalization.PV.LinearSystem.differentialCompanion",
+        "GaloisFormalization.PV.LinearSystem.orderZeroColumnEquivalence",
+        "GaloisFormalization.PV.LinearSystem.orderZeroFundamental",
+        "GaloisFormalization.PV.LinearSystem.orderZeroScalarSolutions",
+        "GaloisFormalization.PV.LinearSystem.scalarColumn"
+      ],
+      "title": "For a monic scalar differential or difference equation of order n ≥ 1, take the column of the unknown and its first n−1 derivatives or iterates. The first-order companion system has shift rows followed by the negatives of the scalar coefficients in increasing order. A scalar solution gives a solution column in this way, and the first entry of a solution column recovers its scalar solution. In the difference case the companion matrix is invertible exactly when the order-zero coefficient is nonzero."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Operator.isDomain_of_isSimple",
+        "GaloisFormalization.PV.Operator.simpleDifferentialFractionField",
+        "GaloisFormalization.PV.simpleDifferenceComponents"
+      ],
+      "goal_ids": [
+        "PV03",
+        "PV03Difference",
+        "PV03Differential"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV03",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV03",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 192,
+        "line_end": 196,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 5,
+        "pdf_destination": "lemma.1.3"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Operator.isDomain_of_isSimple",
+        "GaloisFormalization.PV.Operator.simpleDifferentialFractionField",
+        "GaloisFormalization.PV.simpleDifferenceComponents"
+      ],
+      "title": "A simple noetherian differential ring containing ℚ is a domain. A simple noetherian difference ring is a finite product of domains whose factors the automorphism permutes transitively."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Operator.fractionOperator",
+        "GaloisFormalization.PV.Operator.fractionOperator_difference_mk'",
+        "GaloisFormalization.PV.Operator.fractionOperator_existsUnique",
+        "GaloisFormalization.PV.Operator.fractionRingEquiv_onFractions",
+        "GaloisFormalization.PV.Operator.localizedDerivation_quotientRule",
+        "GaloisFormalization.PV.Operator.simpleDifferentialFractionField",
+        "GaloisFormalization.PV.TotalQuotientRing",
+        "GaloisFormalization.PV.simpleDifferenceFractionComponents"
+      ],
+      "goal_ids": [
+        "PV03",
+        "PV03Localization"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV03-fractions",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV03-fractions",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 197,
+        "line_end": 200,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 5,
+        "pdf_destination": "lemma.1.3"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Operator.fractionOperator",
+        "GaloisFormalization.PV.Operator.fractionOperator_difference_mk'",
+        "GaloisFormalization.PV.Operator.fractionOperator_existsUnique",
+        "GaloisFormalization.PV.Operator.fractionRingEquiv_onFractions",
+        "GaloisFormalization.PV.Operator.localizedDerivation_quotientRule",
+        "GaloisFormalization.PV.Operator.simpleDifferentialFractionField",
+        "GaloisFormalization.PV.TotalQuotientRing",
+        "GaloisFormalization.PV.simpleDifferenceFractionComponents"
+      ],
+      "title": "Under the respective hypotheses of PV03, localize at the non-zero-divisors to obtain the total ring of fractions. The operator extends. The localization is a field in the differential case and a finite product of fields transitively permuted by the operator in the difference case."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Operator.RingHom.mapConstants",
+        "GaloisFormalization.PV.Operator.constants_fractionRing",
+        "GaloisFormalization.PV.Operator.isField_constantSubring_of_isSimple"
+      ],
+      "goal_ids": [
+        "PV01",
+        "PV03"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV03-constants",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV03-constants",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 200,
+        "line_end": 202,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 5,
+        "pdf_destination": "lemma.1.3"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Operator.RingHom.mapConstants",
+        "GaloisFormalization.PV.Operator.constants_fractionRing",
+        "GaloisFormalization.PV.Operator.isField_constantSubring_of_isSimple"
+      ],
+      "title": "A simple operator ring and its total ring of fractions have the same constants under the natural operator extension, and their common constants form a field."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.finite_unit_specializations"
+      ],
+      "goal_ids": [
+        "PV04"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV04",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV04",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 244,
+        "line_end": 248,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 5,
+        "pdf_destination": "lemma.1.4"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.finite_unit_specializations"
+      ],
+      "title": "If F is an infinite field, B a finitely generated domain over F, and t∈B transcendental over F, then t−a is a nonunit of B for all but finitely many a∈F."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.finiteAlgebraicOfFiniteType",
+        "GaloisFormalization.PV.maximalQuotientFinite"
+      ],
+      "goal_ids": [
+        "PV04Points"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV04-field",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV04-field",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 246,
+        "line_end": 250,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 5,
+        "pdf_destination": "lemma.1.4"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.finiteAlgebraicOfFiniteType",
+        "GaloisFormalization.PV.maximalQuotientFinite"
+      ],
+      "title": "A field finitely generated as an algebra over the infinite field F is a finite algebraic extension of F."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.existsAlgHom",
+        "GaloisFormalization.PV.existsAlgHomOfNeZero",
+        "GaloisFormalization.PV.maximalQuotientAlgEquiv"
+      ],
+      "goal_ids": [
+        "PV04Points"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV04-detection",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV04-detection",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 250,
+        "line_end": 254,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 5,
+        "pdf_destination": "lemma.1.4"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.existsAlgHom",
+        "GaloisFormalization.PV.existsAlgHomOfNeZero",
+        "GaloisFormalization.PV.maximalQuotientAlgEquiv"
+      ],
+      "title": "Over an algebraically closed field F, every nonzero element of a nonzero reduced finite-type F-algebra has nonzero image under at least one F-algebra homomorphism to F."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Operator.constants_finiteType",
+        "GaloisFormalization.PV.Operator.constants_finiteType_fractionRing"
+      ],
+      "goal_ids": [
+        "PV05"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV05",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV05",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 281,
+        "line_end": 286,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 6,
+        "pdf_destination": "proposition.1.5"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Operator.constants_finiteType",
+        "GaloisFormalization.PV.Operator.constants_finiteType_fractionRing"
+      ],
+      "title": "Let k be an operator field of characteristic zero with algebraically closed constants C. If S is a simple operator extension finitely generated as a k-algebra, its constants and those of its total ring of fractions are exactly C."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.IsPicardVessiotField",
+        "GaloisFormalization.PV.IsPicardVessiotRing",
+        "GaloisFormalization.PV.IsPicardVessiotRing.existsUnique_totalExtension",
+        "GaloisFormalization.PV.IsPicardVessiotTotalExtension",
+        "GaloisFormalization.PV.IsPicardVessiotTotalExtension.isExtension",
+        "GaloisFormalization.PV.matrixGeneratedSubalgebra"
+      ],
+      "goal_ids": [
+        "PV06"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV06",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV06",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 314,
+        "line_end": 322,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 6,
+        "pdf_destination": "definition.1.6"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.IsPicardVessiotField",
+        "GaloisFormalization.PV.IsPicardVessiotRing",
+        "GaloisFormalization.PV.IsPicardVessiotRing.existsUnique_totalExtension",
+        "GaloisFormalization.PV.IsPicardVessiotTotalExtension",
+        "GaloisFormalization.PV.IsPicardVessiotTotalExtension.isExtension",
+        "GaloisFormalization.PV.matrixGeneratedSubalgebra"
+      ],
+      "title": "A Picard–Vessiot ring over k for one of the indicated systems is a simple operator extension R containing a fundamental matrix Y and generated as a k-algebra by its entries and det(Y)⁻¹. Its total extension Q(R) is its total ring of fractions equipped with the extended operator. It is a Picard–Vessiot field when Q(R) is a field."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.UniversalSolutionRing.Ring",
+        "GaloisFormalization.PV.UniversalSolutionRing.differenceOperator",
+        "GaloisFormalization.PV.UniversalSolutionRing.differentialOperator",
+        "GaloisFormalization.PV.UniversalSolutionRing.exists_operator",
+        "GaloisFormalization.PV.UniversalSolutionRing.generated_by_entries",
+        "GaloisFormalization.PV.UniversalSolutionRing.genericMatrix",
+        "GaloisFormalization.PV.picardVessiot_exists"
+      ],
+      "goal_ids": [
+        "PV07",
+        "PV07Universal"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV07",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV07",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 324,
+        "line_end": 329,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "theorem.1.7"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.UniversalSolutionRing.Ring",
+        "GaloisFormalization.PV.UniversalSolutionRing.differenceOperator",
+        "GaloisFormalization.PV.UniversalSolutionRing.differentialOperator",
+        "GaloisFormalization.PV.UniversalSolutionRing.exists_operator",
+        "GaloisFormalization.PV.UniversalSolutionRing.generated_by_entries",
+        "GaloisFormalization.PV.UniversalSolutionRing.genericMatrix",
+        "GaloisFormalization.PV.picardVessiot_exists"
+      ],
+      "title": "Every system ∂Y=AY with A∈M_n(k) or σ(Y)=AY with A∈GL_n(k) over a characteristic-zero operator field k with algebraically closed constants C admits a Picard–Vessiot ring. Both the ring and its total extension have constant field exactly C."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Operator.HasConstantField",
+        "GaloisFormalization.PV.Operator.constantIdealDescent",
+        "GaloisFormalization.PV.Operator.constantTensorConstants",
+        "GaloisFormalization.PV.Operator.tensor_constant_existsUnique"
+      ],
+      "goal_ids": [
+        "PV01Tensor",
+        "PV08"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV08",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV08",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 347,
+        "line_end": 352,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "lemma.1.8"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Operator.HasConstantField",
+        "GaloisFormalization.PV.Operator.constantIdealDescent",
+        "GaloisFormalization.PV.Operator.constantTensorConstants",
+        "GaloisFormalization.PV.Operator.tensor_constant_existsUnique"
+      ],
+      "title": "For a simple operator ring S with constant field C and any C-algebra D, act on S⊗_C D from the S factor only. Every operator ideal of S⊗_C D is the ideal extended from its contraction to D, and the constants of the tensor product are exactly 1⊗D."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Operator.constantTensorMul",
+        "GaloisFormalization.PV.Operator.constantTensorMulIsEquiv",
+        "GaloisFormalization.PV.Operator.constantTensorMul_tmul",
+        "GaloisFormalization.PV.Operator.tensor_constant_existsUnique"
+      ],
+      "goal_ids": [
+        "PV01Tensor",
+        "PV08"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV08-multiplication",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV08-multiplication",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 353,
+        "line_end": 357,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "lemma.1.8"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Operator.constantTensorMul",
+        "GaloisFormalization.PV.Operator.constantTensorMulIsEquiv",
+        "GaloisFormalization.PV.Operator.constantTensorMul_tmul",
+        "GaloisFormalization.PV.Operator.tensor_constant_existsUnique"
+      ],
+      "title": "If B is an operator extension of a simple operator ring S with constant field C, and B is generated as an S-algebra by a C-subalgebra D⊆B^const, multiplication gives the operator algebra isomorphism S⊗_C D≅B, with the operator acting in the first tensor factor only."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.picardVessiotEquiv_totalExtension",
+        "GaloisFormalization.PV.picardVessiot_uniqueness"
+      ],
+      "goal_ids": [
+        "PV09"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV09",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV09",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 381,
+        "line_end": 385,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "theorem.1.9"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.picardVessiotEquiv_totalExtension",
+        "GaloisFormalization.PV.picardVessiot_uniqueness"
+      ],
+      "title": "Over a characteristic-zero operator field k with algebraically closed constants C, any two Picard–Vessiot rings for the same differential or difference system are isomorphic over k as operator rings. This isomorphism extends to their total extensions."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.picardVessiot_recognition"
+      ],
+      "goal_ids": [
+        "PV09"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV09-recognition",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV09-recognition",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 385,
+        "line_end": 389,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "theorem.1.9"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.picardVessiot_recognition"
+      ],
+      "title": "Under the chapter's hypotheses on k and C, if a simple operator extension S/k has constants C and contains a fundamental matrix Y for one of the indicated systems, the subalgebra k[Y_ij,det(Y)⁻¹] is a Picard–Vessiot ring for that system."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.DisconnectedDifference.productIdempotents",
+        "GaloisFormalization.PV.DisconnectedDifference.productPicardVessiot",
+        "GaloisFormalization.PV.DisconnectedDifference.quotientNoFieldEmbedding",
+        "GaloisFormalization.PV.DisconnectedDifference.quotientPresentation",
+        "GaloisFormalization.PV.DisconnectedDifference.quotientTotal",
+        "GaloisFormalization.PV.rationalDilation_algebraMap",
+        "GaloisFormalization.PV.rationalDilation_constantSubfield",
+        "GaloisFormalization.PV.rationalDilation_mk"
+      ],
+      "goal_ids": [
+        "PV10",
+        "PV10Constants"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV10",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV10",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 410,
+        "line_end": 419,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 8,
+        "pdf_destination": "example.1.10"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.DisconnectedDifference.productIdempotents",
+        "GaloisFormalization.PV.DisconnectedDifference.productPicardVessiot",
+        "GaloisFormalization.PV.DisconnectedDifference.quotientNoFieldEmbedding",
+        "GaloisFormalization.PV.DisconnectedDifference.quotientPresentation",
+        "GaloisFormalization.PV.DisconnectedDifference.quotientTotal",
+        "GaloisFormalization.PV.rationalDilation_algebraMap",
+        "GaloisFormalization.PV.rationalDilation_constantSubfield",
+        "GaloisFormalization.PV.rationalDilation_mk"
+      ],
+      "title": "Let C be algebraically closed of characteristic zero, k=C(z), and q∈C× of infinite multiplicative order. For the difference automorphism σ(f)(z)=f(qz), the constants of k equal C. For σ(y)=−y, the algebra k[u]/(u²−1) with σ(u)=−u is a Picard–Vessiot ring. It equals its own total ring of fractions and has no embedding into a field."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "FieldAndGaloisTheoryDeepening:PV-foundations-sources",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV-foundations-sources",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 435,
+        "line_end": 442
+      },
+      "source_declarations": [],
+      "title": "Bibliographic pointers for the differential and difference constructions and the relation with Ore operators."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.IsPicardVessiotRing",
+        "GaloisFormalization.PV.IsPicardVessiotTotalExtension",
+        "GaloisFormalization.PV.LinearSystem.IsFundamental",
+        "GaloisFormalization.PV.Operator.IsBaseField",
+        "GaloisFormalization.PV.matrixFractionAutomorphism",
+        "GaloisFormalization.PV.matrixGaloisGroup",
+        "GaloisFormalization.PV.operatorAutomorphisms"
+      ],
+      "goal_ids": [
+        "PV01",
+        "PV02System",
+        "PV06",
+        "PV12"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV-correspondence-setup",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV-correspondence-setup",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 443,
+        "line_end": 450
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.IsPicardVessiotRing",
+        "GaloisFormalization.PV.IsPicardVessiotTotalExtension",
+        "GaloisFormalization.PV.LinearSystem.IsFundamental",
+        "GaloisFormalization.PV.Operator.IsBaseField",
+        "GaloisFormalization.PV.matrixFractionAutomorphism",
+        "GaloisFormalization.PV.matrixGaloisGroup",
+        "GaloisFormalization.PV.operatorAutomorphisms"
+      ],
+      "title": "Fix a Picard–Vessiot ring R/k with fundamental matrix Y and total extension Q=Q(R), subject to the previous chapter's hypotheses. An automorphism of an operator ring in this chapter is required to commute with the operator."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.reducedFieldBaseChange",
+        "GaloisFormalization.PV.reducedOperatorTensors"
+      ],
+      "goal_ids": [
+        "PV11",
+        "PV11Field"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV11",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV11",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 454,
+        "line_end": 458,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "lemma.2.1"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.reducedFieldBaseChange",
+        "GaloisFormalization.PV.reducedOperatorTensors"
+      ],
+      "title": "If F is a characteristic-zero field, A a reduced finite-type F-algebra, and L/F any field extension, then L⊗_F A is reduced."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.reducedOperatorTensors",
+        "GaloisFormalization.PV.reducedProductBaseChange"
+      ],
+      "goal_ids": [
+        "PV11"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV11-product",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV11-product",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 458,
+        "line_end": 462,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "lemma.2.1"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.reducedOperatorTensors",
+        "GaloisFormalization.PV.reducedProductBaseChange"
+      ],
+      "title": "The reducedness of L⊗_F A also holds for a finite product F of characteristic-zero fields when A is reduced and finite type over F and L is a finite product of field extensions of the base components, with its componentwise F-algebra structure."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.picardVessiotCoordinateAlgebra",
+        "GaloisFormalization.PV.picardVessiotTensor",
+        "GaloisFormalization.PV.tensorRatio"
+      ],
+      "goal_ids": [
+        "PV12Tensor"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV12",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV12",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 482,
+        "line_end": 491,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "theorem.2.2"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.picardVessiotCoordinateAlgebra",
+        "GaloisFormalization.PV.picardVessiotTensor",
+        "GaloisFormalization.PV.tensorRatio"
+      ],
+      "title": "For the fixed Picard–Vessiot ring R/k and its fundamental matrix Y, set Y₁=Y⊗1 and Y₂=1⊗Y in R⊗_k R and Z=Y₁⁻¹Y₂. Then Z is constant and D=C[Z_ij,det(Z)⁻¹] is reduced. The map R⊗_C D → R⊗_k R, r⊗d ↦ (r⊗1)d, is an isomorphism, with the operator on R⊗_C D coming from R."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.MatrixGroupCoordinates.IsAlgebraicSubgroup",
+        "GaloisFormalization.PV.MatrixGroupCoordinates.evalCoordinate_bijective",
+        "GaloisFormalization.PV.MatrixGroupCoordinates.isClosed_iff_zeroLocus",
+        "GaloisFormalization.PV.galoisCoordinateAlgebra",
+        "GaloisFormalization.PV.galoisEvaluation",
+        "GaloisFormalization.PV.galoisRingAction",
+        "GaloisFormalization.PV.matrixAutomorphism",
+        "GaloisFormalization.PV.matrixGaloisGroup",
+        "GaloisFormalization.PV.operatorAutomorphisms"
+      ],
+      "goal_ids": [
+        "PV12",
+        "PVCoordinate"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV12-group",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV12-group",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 491,
+        "line_end": 497,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "theorem.2.2"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.MatrixGroupCoordinates.IsAlgebraicSubgroup",
+        "GaloisFormalization.PV.MatrixGroupCoordinates.evalCoordinate_bijective",
+        "GaloisFormalization.PV.MatrixGroupCoordinates.isClosed_iff_zeroLocus",
+        "GaloisFormalization.PV.galoisCoordinateAlgebra",
+        "GaloisFormalization.PV.galoisEvaluation",
+        "GaloisFormalization.PV.galoisRingAction",
+        "GaloisFormalization.PV.matrixAutomorphism",
+        "GaloisFormalization.PV.matrixGaloisGroup",
+        "GaloisFormalization.PV.operatorAutomorphisms"
+      ],
+      "title": "For this Z and D the C-algebra maps D→C correspond via Z↦g to the algebraic subgroup G={g∈GL_n(C) | Y↦Yg defines an operator automorphism of R over k}. The coordinate algebra C[G] is D."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Operator.fractionOperatorEquiv_existsUnique",
+        "GaloisFormalization.PV.galoisChangeFundamentalMatrix",
+        "GaloisFormalization.PV.galoisRingAction",
+        "GaloisFormalization.PV.galoisTotalRingAction"
+      ],
+      "goal_ids": [
+        "PV03Localization",
+        "PV12"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV12-aut",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV12-aut",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 497,
+        "line_end": 501,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "theorem.2.2"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Operator.fractionOperatorEquiv_existsUnique",
+        "GaloisFormalization.PV.galoisChangeFundamentalMatrix",
+        "GaloisFormalization.PV.galoisRingAction",
+        "GaloisFormalization.PV.galoisTotalRingAction"
+      ],
+      "title": "Each k-operator automorphism of R extends uniquely to its total extension Q, and each k-operator automorphism of Q restricts to R. Changing to a different fundamental matrix Yb, b∈GL_n(C), conjugates the matrix realization g↦b⁻¹gb of the Galois group."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.IsIntermediateTotalRing",
+        "GaloisFormalization.PV.ProjectionKernels.RegularElementsAreUnits"
+      ],
+      "goal_ids": [
+        "PV13"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV13-intermediate-total",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV13-intermediate-total",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 535,
+        "line_end": 538,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 10,
+        "pdf_destination": "lemma.2.3"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.IsIntermediateTotalRing",
+        "GaloisFormalization.PV.ProjectionKernels.RegularElementsAreUnits"
+      ],
+      "title": "An intermediate total ring is an operator subring F between k and Q in which every non-zero-divisor of F is a unit of F."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.ProjectionKernels.decomposition",
+        "GaloisFormalization.PV.ProjectionKernels.subring_isField_of_regular_isUnit",
+        "GaloisFormalization.PV.intermediateTotalRing_structure"
+      ],
+      "goal_ids": [
+        "PV13",
+        "PV13Projections"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV13",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV13",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 535,
+        "line_end": 541,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 10,
+        "pdf_destination": "lemma.2.3"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.ProjectionKernels.decomposition",
+        "GaloisFormalization.PV.ProjectionKernels.subring_isField_of_regular_isUnit",
+        "GaloisFormalization.PV.intermediateTotalRing_structure"
+      ],
+      "title": "For the fixed Picard–Vessiot extension and an intermediate total ring F, F is a field in the differential case and a finite product of fields whose factors the operator permutes transitively in the difference case. In either case its constants equal C."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.intermediateTotalRing_structure",
+        "GaloisFormalization.PV.relativePicardVessiotSubalgebra"
+      ],
+      "goal_ids": [
+        "PV13"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV13-total-fraction",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV13-total-fraction",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 542,
+        "line_end": 544,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 10,
+        "pdf_destination": "lemma.2.3"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.intermediateTotalRing_structure",
+        "GaloisFormalization.PV.relativePicardVessiotSubalgebra"
+      ],
+      "title": "For an intermediate total ring F as above, the algebra R_F=F[Y_ij,det(Y)⁻¹] inside Q is noetherian and has total ring of fractions Q."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Specs.matrixFixedSubalgebra",
+        "GaloisFormalization.PV.Specs.relativeStabilizer",
+        "GaloisFormalization.PV.intermediateFixedRing",
+        "GaloisFormalization.PV.relativePicardVessiotTensor"
+      ],
+      "goal_ids": [
+        "PV14",
+        "PV14Tensor"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV14",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV14",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 578,
+        "line_end": 583,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "theorem.2.4"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Specs.matrixFixedSubalgebra",
+        "GaloisFormalization.PV.Specs.relativeStabilizer",
+        "GaloisFormalization.PV.intermediateFixedRing",
+        "GaloisFormalization.PV.relativePicardVessiotTensor"
+      ],
+      "title": "Given any intermediate total ring F between k and Q, the subgroup G_F of elements of G fixing every element of F is algebraic, and its fixed ring Q^{G_F} equals F."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.ClosedSubgroupRepresentations.exists_lineStabilizerRepresentation",
+        "GaloisFormalization.PV.LineStabilizerRepresentation.exists_lineStabilizerRepresentation",
+        "GaloisFormalization.PV.MatrixGroupCoordinates.IsRegularRepresentation",
+        "GaloisFormalization.PV.galoisCoordinateAlgebra"
+      ],
+      "goal_ids": [
+        "PV12",
+        "PV15",
+        "PV15Line",
+        "PVCoordinate"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV15",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV15",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 635,
+        "line_end": 639,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "lemma.2.5"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.ClosedSubgroupRepresentations.exists_lineStabilizerRepresentation",
+        "GaloisFormalization.PV.LineStabilizerRepresentation.exists_lineStabilizerRepresentation",
+        "GaloisFormalization.PV.MatrixGroupCoordinates.IsRegularRepresentation",
+        "GaloisFormalization.PV.galoisCoordinateAlgebra"
+      ],
+      "title": "For every Zariski-closed subgroup H of the Picard–Vessiot Galois group G, there exist a finite-dimensional regular representation ρ of G over C and a one-dimensional subspace of its representation space whose stabilizer equals H."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.ClosedSubgroupRepresentations.exists_kernelRepresentation",
+        "GaloisFormalization.PV.MatrixGroupCoordinates.IsRegularRepresentation",
+        "GaloisFormalization.PV.galoisCoordinateAlgebra"
+      ],
+      "goal_ids": [
+        "PV12",
+        "PV15",
+        "PVCoordinate"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV15-normal",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV15-normal",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 640,
+        "line_end": 642,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 11,
+        "pdf_destination": "lemma.2.5"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.ClosedSubgroupRepresentations.exists_kernelRepresentation",
+        "GaloisFormalization.PV.MatrixGroupCoordinates.IsRegularRepresentation",
+        "GaloisFormalization.PV.galoisCoordinateAlgebra"
+      ],
+      "title": "If the closed subgroup H of G is normal, there is a finite-dimensional regular linear representation of G over C with kernel exactly H."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.CoordinateRationalSeparation.exists_coordinateRationalSeparator",
+        "GaloisFormalization.PV.rationalInvariantSeparation",
+        "GaloisFormalization.PV.torsorSpecialization",
+        "GaloisFormalization.PV.torsorSpecializationAtResidue"
+      ],
+      "goal_ids": [
+        "PV16",
+        "PV16Invariant",
+        "PVTorsorPoint"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV16",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV16",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 697,
+        "line_end": 701,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 12,
+        "pdf_destination": "lemma.2.6"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.CoordinateRationalSeparation.exists_coordinateRationalSeparator",
+        "GaloisFormalization.PV.rationalInvariantSeparation",
+        "GaloisFormalization.PV.torsorSpecialization",
+        "GaloisFormalization.PV.torsorSpecializationAtResidue"
+      ],
+      "title": "For each Zariski-closed subgroup H of the Picard–Vessiot Galois group G and each g∈G outside H, some element of the fixed ring Q^H is moved by g."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.Specs.matrixFixedSubalgebra",
+        "GaloisFormalization.PV.Specs.relativeStabilizer",
+        "GaloisFormalization.PV.intermediateFixedRing",
+        "GaloisFormalization.PV.operatorGaloisCorrespondence",
+        "GaloisFormalization.PV.rationalInvariantSeparation"
+      ],
+      "goal_ids": [
+        "PV14",
+        "PV16",
+        "PV17"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV17",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV17",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 750,
+        "line_end": 762,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "theorem.2.7"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.Specs.matrixFixedSubalgebra",
+        "GaloisFormalization.PV.Specs.relativeStabilizer",
+        "GaloisFormalization.PV.intermediateFixedRing",
+        "GaloisFormalization.PV.operatorGaloisCorrespondence",
+        "GaloisFormalization.PV.rationalInvariantSeparation"
+      ],
+      "title": "The maps H↦Q^H and F↦G_F are inverse inclusion-reversing bijections between Zariski-closed subgroups H of G and intermediate operator subrings F of Q/k in which every non-zero-divisor is a unit. In the differential case the latter are precisely the intermediate differential fields. In particular the full fixed ring Q^G equals k."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.finiteSemilinearDescent"
+      ],
+      "goal_ids": [
+        "PV18"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV18",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV18",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 784,
+        "line_end": 791,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "lemma.2.8"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.finiteSemilinearDescent"
+      ],
+      "title": "Let E/k be a finite Galois extension of a field of arbitrary characteristic with group Γ, and suppose a_γ∈GL_m(E) satisfies a_{γη}=a_γ γ(a_η) for every γ,η∈Γ, with entrywise action. There exists B∈GL_m(E) such that γ(B)=B a_γ for every γ∈Γ."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.fixedSubalgebraStableIffNormal",
+        "GaloisFormalization.PV.operatorGaloisCorrespondence"
+      ],
+      "goal_ids": [
+        "PV17",
+        "PV19"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV19",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV19",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 807,
+        "line_end": 811,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 14,
+        "pdf_destination": "theorem.2.9"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.fixedSubalgebraStableIffNormal",
+        "GaloisFormalization.PV.operatorGaloisCorrespondence"
+      ],
+      "title": "For an intermediate total ring F=Q^H corresponding to a closed subgroup H of G, F is stable under the action of G exactly when H is normal in G."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.descendedRepresentationMatrix",
+        "GaloisFormalization.PV.intermediateAutomorphismLift",
+        "GaloisFormalization.PV.normalSubgroupQuotient",
+        "GaloisFormalization.PV.normalSubgroupRealization"
+      ],
+      "goal_ids": [
+        "PV19",
+        "PV19EquivariantMatrix",
+        "PV19Lift",
+        "PV19Realization"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV19-quotient",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV19-quotient",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 811,
+        "line_end": 817,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 14,
+        "pdf_destination": "theorem.2.9"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.descendedRepresentationMatrix",
+        "GaloisFormalization.PV.intermediateAutomorphismLift",
+        "GaloisFormalization.PV.normalSubgroupQuotient",
+        "GaloisFormalization.PV.normalSubgroupRealization"
+      ],
+      "title": "If H is normal in this correspondence, F=Q^H is the total extension of a Picard–Vessiot ring for a system over k. The restriction G→Aut_op(F/k) is a regular morphism in the two matrix realizations and induces an isomorphism G/H≅Aut_op(F/k) on groups of C-points."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.picardVessiotTotalSubextensionStable"
+      ],
+      "goal_ids": [
+        "PV19"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV19-converse",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV19-converse",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 818,
+        "line_end": 820,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 14,
+        "pdf_destination": "theorem.2.9"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.picardVessiotTotalSubextensionStable"
+      ],
+      "title": "Conversely every intermediate total ring that is a Picard–Vessiot total extension over k is stable under G."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_carrier",
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_closed",
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_cosets",
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_finiteIndex",
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_le_of_closed_finiteIndex",
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_normal",
+        "GaloisFormalization.PV.algebraicElementsAndOrbits",
+        "GaloisFormalization.PV.differentialAlgebraicPart"
+      ],
+      "goal_ids": [
+        "PV20",
+        "PV20Algebraic",
+        "PV20Component"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV20",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV20",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 900,
+        "line_end": 906,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 15,
+        "pdf_destination": "corollary.2.10"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_carrier",
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_closed",
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_cosets",
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_finiteIndex",
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_le_of_closed_finiteIndex",
+        "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_normal",
+        "GaloisFormalization.PV.algebraicElementsAndOrbits",
+        "GaloisFormalization.PV.differentialAlgebraicPart"
+      ],
+      "title": "In the differential case let G⁰ be the connected component of the identity in the Zariski topology of G. The fixed field Q^{G⁰} is the relative algebraic closure of k inside Q. It is a finite Galois extension of k, with Galois group G/G⁰."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.rankOneMultiplicativeGroup"
+      ],
+      "goal_ids": [
+        "PV21"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV21",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV21",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 942,
+        "line_end": 953,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 15,
+        "pdf_destination": "corollary.2.11"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.rankOneMultiplicativeGroup"
+      ],
+      "title": "For the rank-one equation ∂y=ay with a∈k, or σ(y)=ay with a∈k×, the Galois group is either C× or μ_m(C). It is finite exactly when there exist a positive integer m and b∈k× satisfying ∂b=mab or σ(b)=a^m b, respectively. The least such m is the order of the group."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.DisconnectedDifference.disconnectedGaloisGroup",
+        "GaloisFormalization.PV.DisconnectedDifference.quotientPresentation",
+        "GaloisFormalization.PV.DisconnectedDifference.quotientTotal",
+        "GaloisFormalization.PV.rationalDilation_constantSubfield"
+      ],
+      "goal_ids": [
+        "PV10",
+        "PV10Constants",
+        "PV22"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV22",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV22",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 970,
+        "line_end": 974,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "example.2.12"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.DisconnectedDifference.disconnectedGaloisGroup",
+        "GaloisFormalization.PV.DisconnectedDifference.quotientPresentation",
+        "GaloisFormalization.PV.DisconnectedDifference.quotientTotal",
+        "GaloisFormalization.PV.rationalDilation_constantSubfield"
+      ],
+      "title": "For the difference Picard–Vessiot extension over k=C(z) of PV10, with C algebraically closed of characteristic zero, σ(z)=qz for q∈C× of infinite multiplicative order and σ(u)=−u on k[u]/(u²−1), the Galois group is the disconnected subgroup {1,−1} of C× acting by u↦±u, and the full fixed ring is k."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.PV.rationalDerivative_constants",
+        "GaloisFormalization.PV.rationalDerivative_existsUnique",
+        "GaloisFormalization.PV.rationalDerivative_noPowerSolution",
+        "GaloisFormalization.PV.rationalDifferential_fullGroup",
+        "GaloisFormalization.PV.rationalDifferential_fullGroup_exists",
+        "GaloisFormalization.PV.rationalLogDerivative"
+      ],
+      "goal_ids": [
+        "PV22Differential"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:PV22-differential",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+      "key": "PV22-differential",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 974,
+        "line_end": 992,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "example.2.12"
+      },
+      "source_declarations": [
+        "GaloisFormalization.PV.rationalDerivative_constants",
+        "GaloisFormalization.PV.rationalDerivative_existsUnique",
+        "GaloisFormalization.PV.rationalDerivative_noPowerSolution",
+        "GaloisFormalization.PV.rationalDifferential_fullGroup",
+        "GaloisFormalization.PV.rationalDifferential_fullGroup_exists",
+        "GaloisFormalization.PV.rationalLogDerivative"
+      ],
+      "title": "For the differential field C(z) with ∂z=1 over algebraically closed C of characteristic zero, the constants are C and the equation ∂y=y has Galois group C×."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "FieldAndGaloisTheoryDeepening:PV-correspondence-sources",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "PV-correspondence-sources",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 995,
+        "line_end": 1001
+      },
+      "source_declarations": [],
+      "title": "Bibliographic pointers for the differential and difference Galois groups and correspondences."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.ContinuousH",
+        "GaloisFormalization.GH.ContinuousMulH",
+        "GaloisFormalization.GH.Hilbert90.continuous_matrixAction",
+        "GaloisFormalization.GH.Hilbert90.matrixAction",
+        "GaloisFormalization.GH.KrullLayers.AbsoluteGaloisGroup",
+        "GaloisFormalization.GH.KrullLayers.GaloisGroup",
+        "GaloisFormalization.GH.KrullLayers.continuous_fieldAction",
+        "GaloisFormalization.GH.KrullLayers.continuous_unitsAction",
+        "GaloisFormalization.GH.KrullLayers.profiniteGroup",
+        "GaloisFormalization.GH.NonabelianH1.Cocycle",
+        "GaloisFormalization.GH.NonabelianH1.Cohomologous",
+        "GaloisFormalization.GH.NonabelianH1.H1",
+        "GaloisFormalization.GH.NonabelianH1.IsCocycle",
+        "GaloisFormalization.GH.NonabelianH1.basepoint",
+        "GaloisFormalization.GH.NonabelianH1.classOf_eq_iff",
+        "GaloisFormalization.GH.NonabelianH1.trivial",
+        "GaloisFormalization.GH.continuousCochains",
+        "GaloisFormalization.GH.continuousDifferential",
+        "GaloisFormalization.GH.continuousDifferential_formula",
+        "GaloisFormalization.GH.continuousDifferential_sq",
+        "GaloisFormalization.GH.multiplicativeClass_eq_iff",
+        "GaloisFormalization.GH.multiplicativeCoboundary",
+        "GaloisFormalization.GH.multiplicativeCocycle_iff"
+      ],
+      "goal_ids": [
+        "GH_Cochains",
+        "GH_KrullLayers",
+        "GH_NonabelianH1"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH-CONVENTIONS",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH-CONVENTIONS",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1005,
+        "line_end": 1019
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.ContinuousH",
+        "GaloisFormalization.GH.ContinuousMulH",
+        "GaloisFormalization.GH.Hilbert90.continuous_matrixAction",
+        "GaloisFormalization.GH.Hilbert90.matrixAction",
+        "GaloisFormalization.GH.KrullLayers.AbsoluteGaloisGroup",
+        "GaloisFormalization.GH.KrullLayers.GaloisGroup",
+        "GaloisFormalization.GH.KrullLayers.continuous_fieldAction",
+        "GaloisFormalization.GH.KrullLayers.continuous_unitsAction",
+        "GaloisFormalization.GH.KrullLayers.profiniteGroup",
+        "GaloisFormalization.GH.NonabelianH1.Cocycle",
+        "GaloisFormalization.GH.NonabelianH1.Cohomologous",
+        "GaloisFormalization.GH.NonabelianH1.H1",
+        "GaloisFormalization.GH.NonabelianH1.IsCocycle",
+        "GaloisFormalization.GH.NonabelianH1.basepoint",
+        "GaloisFormalization.GH.NonabelianH1.classOf_eq_iff",
+        "GaloisFormalization.GH.NonabelianH1.trivial",
+        "GaloisFormalization.GH.continuousCochains",
+        "GaloisFormalization.GH.continuousDifferential",
+        "GaloisFormalization.GH.continuousDifferential_formula",
+        "GaloisFormalization.GH.continuousDifferential_sq",
+        "GaloisFormalization.GH.multiplicativeClass_eq_iff",
+        "GaloisFormalization.GH.multiplicativeCoboundary",
+        "GaloisFormalization.GH.multiplicativeCocycle_iff"
+      ],
+      "title": "For any possibly infinite Galois extension L/k, use the Krull topology on Gal(L/k). Fix a separable closure kˢ and set G_k = Gal(kˢ/k). Give the field coefficient groups, including additive groups denoted by a superscript + and matrix groups, the discrete topology. Continuous cohomology uses continuous inhomogeneous cochains. In degree one the multiplicative cocycle rule is c(gh)=c(g)g(c(h)), the coboundary of b for abelian coefficients is g ↦ b⁻¹g(b), and for nonabelian coefficients two cocycles are equivalent when c′(g)=b⁻¹c(g)g(b) for a single b. Nonabelian H¹ is the pointed set of classes with the identity cocycle as base point."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.FiniteCochainDescent.commonCochainFactorization",
+        "GaloisFormalization.GH.FiniteCochainDescent.finiteCochainFactorization",
+        "GaloisFormalization.GH.FiniteLayerCohomology.LayerCoefficients",
+        "GaloisFormalization.GH.FiniteLayerCohomology.LayerH",
+        "GaloisFormalization.GH.FiniteLayerCohomology.LayerLimit",
+        "GaloisFormalization.GH.FiniteLayerCohomology.directedTransitions",
+        "GaloisFormalization.GH.FiniteLayerCohomology.finiteLayerComparison",
+        "GaloisFormalization.GH.FiniteLayerCohomology.inflateCocycle_apply",
+        "GaloisFormalization.GH.FiniteLayerCohomology.layerAction",
+        "GaloisFormalization.GH.FiniteLayerCohomology.stageClass_surjective",
+        "GaloisFormalization.GH.FiniteLayerCohomology.stageTransition",
+        "GaloisFormalization.GH.KrullLayers.fixedField_layerKernel",
+        "GaloisFormalization.GH.KrullLayers.layerKernel",
+        "GaloisFormalization.GH.KrullLayers.layerKernels_basis",
+        "GaloisFormalization.GH.KrullLayers.layers_directed",
+        "GaloisFormalization.GH.KrullLayers.quotient_restriction",
+        "GaloisFormalization.GH.KrullLayers.restrict",
+        "GaloisFormalization.GH.KrullLayers.transition",
+        "GaloisFormalization.GH.ordinary_comparison",
+        "GaloisFormalization.GH.ordinary_comparison_natural"
+      ],
+      "goal_ids": [
+        "GH01",
+        "GH_Cochains",
+        "GH_FiniteCochainDescent",
+        "GH_KrullLayers"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH01",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH01",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1023,
+        "line_end": 1035,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "proposition.3.1"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.FiniteCochainDescent.commonCochainFactorization",
+        "GaloisFormalization.GH.FiniteCochainDescent.finiteCochainFactorization",
+        "GaloisFormalization.GH.FiniteLayerCohomology.LayerCoefficients",
+        "GaloisFormalization.GH.FiniteLayerCohomology.LayerH",
+        "GaloisFormalization.GH.FiniteLayerCohomology.LayerLimit",
+        "GaloisFormalization.GH.FiniteLayerCohomology.directedTransitions",
+        "GaloisFormalization.GH.FiniteLayerCohomology.finiteLayerComparison",
+        "GaloisFormalization.GH.FiniteLayerCohomology.inflateCocycle_apply",
+        "GaloisFormalization.GH.FiniteLayerCohomology.layerAction",
+        "GaloisFormalization.GH.FiniteLayerCohomology.stageClass_surjective",
+        "GaloisFormalization.GH.FiniteLayerCohomology.stageTransition",
+        "GaloisFormalization.GH.KrullLayers.fixedField_layerKernel",
+        "GaloisFormalization.GH.KrullLayers.layerKernel",
+        "GaloisFormalization.GH.KrullLayers.layerKernels_basis",
+        "GaloisFormalization.GH.KrullLayers.layers_directed",
+        "GaloisFormalization.GH.KrullLayers.quotient_restriction",
+        "GaloisFormalization.GH.KrullLayers.restrict",
+        "GaloisFormalization.GH.KrullLayers.transition",
+        "GaloisFormalization.GH.ordinary_comparison",
+        "GaloisFormalization.GH.ordinary_comparison_natural"
+      ],
+      "title": "Let L/k be Galois, G = Gal(L/k), and let E range over the finite Galois intermediate fields, with U_E = Gal(L/E) and G_E = Gal(E/k). For any discrete continuous abelian G-module M and every integer q ≥ 0 there is an isomorphism Hᵠ_cts(G,M) ≅ colim_E Hᵠ(G_E,M^(U_E)). For E ⊆ E′ the transition uses inflation along G_E′ → G_E (restriction of automorphisms) and inclusion of U_E-fixed coefficients into U_E′-fixed coefficients. The comparison to continuous cohomology is induced by restriction G → G_E and coefficient inclusion into M."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.FiniteLayerPointedCohomology.comparison",
+        "GaloisFormalization.GH.KrullLayers.layerKernel",
+        "GaloisFormalization.GH.KrullLayers.restrict",
+        "GaloisFormalization.GH.KrullLayers.transition",
+        "GaloisFormalization.GH.NonabelianH1.discreteEquiv",
+        "GaloisFormalization.GH.NonabelianH1.discreteEquiv_basepoint",
+        "GaloisFormalization.GH.NonabelianH1.inflate_basepoint",
+        "GaloisFormalization.GH.NonabelianH1.inflate_classOf",
+        "GaloisFormalization.GH.NonabelianH1.map_classOf",
+        "Specs.GaloisFormalization.GH.FiniteLayerPointedCohomology.stageInflation",
+        "Specs.GaloisFormalization.GH.FiniteLayerPointedCohomology.stageMap"
+      ],
+      "goal_ids": [
+        "GH01_Pointed",
+        "GH_KrullLayers",
+        "GH_NonabelianH1"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH01-POINTED",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH01-POINTED",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1025,
+        "line_end": 1038,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "proposition.3.1"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.FiniteLayerPointedCohomology.comparison",
+        "GaloisFormalization.GH.KrullLayers.layerKernel",
+        "GaloisFormalization.GH.KrullLayers.restrict",
+        "GaloisFormalization.GH.KrullLayers.transition",
+        "GaloisFormalization.GH.NonabelianH1.discreteEquiv",
+        "GaloisFormalization.GH.NonabelianH1.discreteEquiv_basepoint",
+        "GaloisFormalization.GH.NonabelianH1.inflate_basepoint",
+        "GaloisFormalization.GH.NonabelianH1.inflate_classOf",
+        "GaloisFormalization.GH.NonabelianH1.map_classOf",
+        "Specs.GaloisFormalization.GH.FiniteLayerPointedCohomology.stageInflation",
+        "Specs.GaloisFormalization.GH.FiniteLayerPointedCohomology.stageMap"
+      ],
+      "title": "Under the same Galois and finite-layer definitions, for any discrete group B with continuous G-action by automorphisms, H¹_cts(G,B) is identified as a pointed set with colim_E H¹(G_E,B^(U_E)) by inflation along restriction and inclusion of fixed coefficients."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.exists_trace_one"
+      ],
+      "goal_ids": [
+        "GH02"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH02",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+      "key": "GH02",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1059,
+        "line_end": 1063,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 18,
+        "pdf_destination": "lemma.3.2"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.exists_trace_one"
+      ],
+      "title": "For any finite Galois E/k there exists t ∈ E with ∑_{σ∈Gal(E/k)} σ(t)=1."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.Hilbert90.continuous_matrixAction",
+        "GaloisFormalization.GH.Hilbert90.matrixAction",
+        "GaloisFormalization.GH.Hilbert90.matrixCoboundary",
+        "GaloisFormalization.GH.Hilbert90.matrixVanishing",
+        "GaloisFormalization.GH.Hilbert90.unitsCoboundary",
+        "GaloisFormalization.GH.Hilbert90.unitsVanishing"
+      ],
+      "goal_ids": [
+        "GH03"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH03",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+      "key": "GH03",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1074,
+        "line_end": 1082,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 18,
+        "pdf_destination": "theorem.3.3"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.Hilbert90.continuous_matrixAction",
+        "GaloisFormalization.GH.Hilbert90.matrixAction",
+        "GaloisFormalization.GH.Hilbert90.matrixCoboundary",
+        "GaloisFormalization.GH.Hilbert90.matrixVanishing",
+        "GaloisFormalization.GH.Hilbert90.unitsCoboundary",
+        "GaloisFormalization.GH.Hilbert90.unitsVanishing"
+      ],
+      "title": "For any Galois extension L/k, finite or infinite, and every n ≥ 1, with entrywise action on the discrete group GL_n(L), the pointed set H¹_cts(Gal(L/k), GL_n(L)) is a singleton. Equivalently each continuous cocycle c has the form c(g)=b⁻¹g(b) for one b ∈ GL_n(L). In particular H¹_cts(Gal(L/k), Lˣ)=0."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.CyclicDegreeOne.cocycle_power_sums",
+        "GaloisFormalization.GH.CyclicDegreeOne.evaluation_at_generator",
+        "GaloisFormalization.GH.CyclicDegreeOne.norm_formula",
+        "GaloisFormalization.GH.CyclicDegreeOne.norm_kills_differences",
+        "GaloisFormalization.GH.CyclicDegreeOne.trivial_group"
+      ],
+      "goal_ids": [
+        "GH04"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH04",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+      "key": "GH04",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1095,
+        "line_end": 1103,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 18,
+        "pdf_destination": "proposition.3.4"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.CyclicDegreeOne.cocycle_power_sums",
+        "GaloisFormalization.GH.CyclicDegreeOne.evaluation_at_generator",
+        "GaloisFormalization.GH.CyclicDegreeOne.norm_formula",
+        "GaloisFormalization.GH.CyclicDegreeOne.norm_kills_differences",
+        "GaloisFormalization.GH.CyclicDegreeOne.trivial_group"
+      ],
+      "title": "For a finite cyclic group C of order d generated by s, acting on an abelian group A, evaluation of cocycles at s induces the group isomorphism H¹(C,A) ≅ ker(N:A→A)/(s−1)A for N=1+s+⋯+s^(d−1), including d=1."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.CyclicHilbert90.additive_hilbert90",
+        "GaloisFormalization.GH.CyclicHilbert90.additive_quotient_vanishing",
+        "GaloisFormalization.GH.CyclicHilbert90.multiplicative_hilbert90",
+        "GaloisFormalization.GH.CyclicHilbert90.multiplicative_quotient_vanishing",
+        "GaloisFormalization.GH.CyclicHilbert90.norm_formula",
+        "GaloisFormalization.GH.CyclicHilbert90.trace_formula"
+      ],
+      "goal_ids": [
+        "GH_CyclicHilbert90"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH-CYCLIC-HILBERT90",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+      "key": "GH-CYCLIC-HILBERT90",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1114,
+        "line_end": 1118
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.CyclicHilbert90.additive_hilbert90",
+        "GaloisFormalization.GH.CyclicHilbert90.additive_quotient_vanishing",
+        "GaloisFormalization.GH.CyclicHilbert90.multiplicative_hilbert90",
+        "GaloisFormalization.GH.CyclicHilbert90.multiplicative_quotient_vanishing",
+        "GaloisFormalization.GH.CyclicHilbert90.norm_formula",
+        "GaloisFormalization.GH.CyclicHilbert90.trace_formula"
+      ],
+      "title": "For a finite cyclic field extension E/k with generator s of Gal(E/k), the multiplicative norm-one quotient and additive trace-zero quotient in GH04 vanish. If a∈Eˣ and N_{E/k}(a)=1 then a=s(b)/b for some b∈Eˣ, and if a∈E and Tr_{E/k}(a)=0 then a=s(b)−b for some b∈E. The source cites the earlier D07 norm-one and trace-zero formulas."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.continuousCohomology_longExact",
+        "GaloisFormalization.GH.continuousHZero_fixed",
+        "GaloisFormalization.GH.continuousHomology_comparison"
+      ],
+      "goal_ids": [
+        "GH05",
+        "GH_Cochains"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH05",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH05",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1122,
+        "line_end": 1129,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 18,
+        "pdf_destination": "proposition.3.5"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.continuousCohomology_longExact",
+        "GaloisFormalization.GH.continuousHZero_fixed",
+        "GaloisFormalization.GH.continuousHomology_comparison"
+      ],
+      "title": "For a profinite G and a short exact sequence 0→A→B→C→0 of discrete abelian continuous G-modules, the induced continuous cohomology sequence is long exact, starting in degree zero. In every degree the connecting map from Hᵠ_cts(G,C) to H^{q+1}_cts(G,A) sends [c] to [d c̃], using a continuous lift c̃ of the cocycle c to a B-valued cochain and viewing the differential, which lies in the kernel of B→C, as an A-valued cochain."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.KummerCoefficients.PowerClasses",
+        "GaloisFormalization.GH.KummerCoefficients.Roots",
+        "GaloisFormalization.GH.KummerCoefficients.additiveCoefficients_exact",
+        "GaloisFormalization.GH.KummerCoefficients.coefficients_exact",
+        "GaloisFormalization.GH.KummerCoefficients.powerMap_surjective",
+        "GaloisFormalization.GH.KummerCoefficients.rootsAction",
+        "GaloisFormalization.GH.KummerConnecting.cohomologyCharacters",
+        "GaloisFormalization.GH.KummerConnecting.kummerCharacters",
+        "GaloisFormalization.GH.KummerConnecting.kummerIsomorphism"
+      ],
+      "goal_ids": [
+        "GH06",
+        "GH_KummerCoefficients"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH06",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH06",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1142,
+        "line_end": 1155,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 19,
+        "pdf_destination": "theorem.3.6"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.KummerCoefficients.PowerClasses",
+        "GaloisFormalization.GH.KummerCoefficients.Roots",
+        "GaloisFormalization.GH.KummerCoefficients.additiveCoefficients_exact",
+        "GaloisFormalization.GH.KummerCoefficients.coefficients_exact",
+        "GaloisFormalization.GH.KummerCoefficients.powerMap_surjective",
+        "GaloisFormalization.GH.KummerCoefficients.rootsAction",
+        "GaloisFormalization.GH.KummerConnecting.cohomologyCharacters",
+        "GaloisFormalization.GH.KummerConnecting.kummerCharacters",
+        "GaloisFormalization.GH.KummerConnecting.kummerIsomorphism"
+      ],
+      "title": "Let m ≥ 1 be invertible in k and let μ_m be the m-th roots of unity in (kˢ)ˣ with their natural G_k-action. There is a group isomorphism kˣ/k^{×m} → H¹_cts(G_k,μ_m) sending the class of a to [g ↦ g(α)/α] for α∈kˢ with α^m=a. If μ_m⊆kˣ, the same map identifies kˣ/k^{×m} with Hom_cts(G_k,μ_m)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.FiniteKummerDuality.finiteKummerCorrespondence",
+        "GaloisFormalization.GH.KummerRadicals.classesOfField",
+        "GaloisFormalization.GH.KummerRadicals.memClassesOfField",
+        "GaloisFormalization.GH.KummerRadicals.radicalField",
+        "GaloisFormalization.GH.KummerRadicals.radicalFieldFiniteGalois",
+        "GaloisFormalization.GH.KummerRadicals.radicalFieldOfGenerators",
+        "GaloisFormalization.GH.KummerRadicals.radicalGaloisGroup"
+      ],
+      "goal_ids": [
+        "GH07",
+        "GH_KummerRadicals"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH07",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH07",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1173,
+        "line_end": 1184,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 19,
+        "pdf_destination": "theorem.3.7"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.FiniteKummerDuality.finiteKummerCorrespondence",
+        "GaloisFormalization.GH.KummerRadicals.classesOfField",
+        "GaloisFormalization.GH.KummerRadicals.memClassesOfField",
+        "GaloisFormalization.GH.KummerRadicals.radicalField",
+        "GaloisFormalization.GH.KummerRadicals.radicalFieldFiniteGalois",
+        "GaloisFormalization.GH.KummerRadicals.radicalFieldOfGenerators",
+        "GaloisFormalization.GH.KummerRadicals.radicalGaloisGroup"
+      ],
+      "title": "For positive m invertible in k with μ_m⊆kˣ, the finite Galois intermediate fields L of kˢ/k whose Galois groups are abelian of exponent dividing m are in bijection with finite subgroups D⊆kˣ/k^{×m}. The map to fields is D ↦ L_D, obtained inside kˢ by adjoining m-th roots of representatives of D. The inverse is L ↦ D_L=(kˣ∩(Lˣ)^m)/k^{×m}."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.FiniteKummerDuality.perfectRadicalPairing",
+        "GaloisFormalization.GH.KummerRadicals.classesOfFieldCharacters",
+        "GaloisFormalization.GH.KummerRadicals.memClassesOfField"
+      ],
+      "goal_ids": [
+        "GH07",
+        "GH_KummerRadicals"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH07-PAIRING",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH07-PAIRING",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1175,
+        "line_end": 1188,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 19,
+        "pdf_destination": "theorem.3.7"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.FiniteKummerDuality.perfectRadicalPairing",
+        "GaloisFormalization.GH.KummerRadicals.classesOfFieldCharacters",
+        "GaloisFormalization.GH.KummerRadicals.memClassesOfField"
+      ],
+      "title": "For the same k, m and D, the pairing Gal(L_D/k) × D → μ_m sending (g,[a]) to g(α)/α for α∈L_D with α^m=a induces both group isomorphisms Gal(L_D/k) ≅ Hom(D,μ_m) and D ≅ Hom(Gal(L_D/k),μ_m). The pairing is independent of choices of roots and representatives."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.AdditiveGaloisCohomology.finite_semilinear_vanishing",
+        "GaloisFormalization.GH.discrete_semilinear_cohomology_subsingleton",
+        "GaloisFormalization.GH.ordinary_comparison",
+        "GaloisFormalization.GH.semilinear_cohomology_subsingleton"
+      ],
+      "goal_ids": [
+        "GH08",
+        "GH_Cochains",
+        "GH_TraceContraction"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH08",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH08",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1242,
+        "line_end": 1247,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 20,
+        "pdf_destination": "proposition.3.8"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.AdditiveGaloisCohomology.finite_semilinear_vanishing",
+        "GaloisFormalization.GH.discrete_semilinear_cohomology_subsingleton",
+        "GaloisFormalization.GH.ordinary_comparison",
+        "GaloisFormalization.GH.semilinear_cohomology_subsingleton"
+      ],
+      "title": "If E/k is finite Galois with group H and V is an E-vector space of arbitrary dimension with a semilinear H-action, σ(av)=σ(a)σ(v), then Hᵠ(H,V⁺)=0 for every integer q>0."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.AdditiveGaloisCohomology.continuous_additive_vanishing",
+        "GaloisFormalization.GH.FiniteLayerCohomology.finiteLayerComparison",
+        "GaloisFormalization.GH.KrullLayers.fixedField_layerKernel"
+      ],
+      "goal_ids": [
+        "GH01",
+        "GH08",
+        "GH_KrullLayers"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH08-FIELD",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH08-FIELD",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1247,
+        "line_end": 1252,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 20,
+        "pdf_destination": "proposition.3.8"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.AdditiveGaloisCohomology.continuous_additive_vanishing",
+        "GaloisFormalization.GH.FiniteLayerCohomology.finiteLayerComparison",
+        "GaloisFormalization.GH.KrullLayers.fixedField_layerKernel"
+      ],
+      "title": "For any Galois extension L/k, Hᵠ_cts(Gal(L/k),L⁺)=0 for every integer q>0, with the natural field action on the discrete additive coefficient group."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.Quotient",
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.primeFieldAction",
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.primeFieldInclusion",
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.shortExact",
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.wp",
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.wp_surjective",
+        "GaloisFormalization.GH.ArtinSchreierConnecting.artinSchreierConnecting"
+      ],
+      "goal_ids": [
+        "GH09",
+        "GH_ArtinSchreierCoefficients"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH09",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH09",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1275,
+        "line_end": 1287,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 20,
+        "pdf_destination": "theorem.3.9"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.Quotient",
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.primeFieldAction",
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.primeFieldInclusion",
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.shortExact",
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.wp",
+        "GaloisFormalization.GH.ArtinSchreierCoefficients.wp_surjective",
+        "GaloisFormalization.GH.ArtinSchreierConnecting.artinSchreierConnecting"
+      ],
+      "title": "If char(k)=p>0, let ℘(x)=x^p−x. For the trivial G_k-action on the additive group of 𝔽_p there are additive group identifications k/℘(k) ≅ H¹_cts(G_k,𝔽_p) = Hom_cts(G_k,𝔽_p), with [a] ↦ (g ↦ g(α)−α) for ℘(α)=a in kˢ."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.ArtinSchreierLines.artinSchreierLines",
+        "GaloisFormalization.GH.ArtinSchreierLines.characterKernels"
+      ],
+      "goal_ids": [
+        "GH_ArtinSchreierLines"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH-ARTIN-SCHREIER-LINES",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+      "key": "GH-ARTIN-SCHREIER-LINES",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1299,
+        "line_end": 1305
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.ArtinSchreierLines.artinSchreierLines",
+        "GaloisFormalization.GH.ArtinSchreierLines.characterKernels"
+      ],
+      "title": "In characteristic p, the character of a nonzero Artin–Schreier class [a] has kernel Gal(kˢ/k(α)) for ℘(α)=a. Cyclic degree-p subextensions of kˢ/k correspond to one-dimensional 𝔽_p-subspaces of Hom_cts(G_k,𝔽_p), equivalently of k/℘(k), via these kernels and fixed fields. A choice of isomorphism of the cyclic quotient with 𝔽_p⁺ determines a character, and replacing the isomorphism rescales it by a nonzero element of 𝔽_p."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.ArtinSchreierTensor.diagonalAction",
+        "GaloisFormalization.GH.ArtinSchreierTensor.equivariant",
+        "GaloisFormalization.GH.ArtinSchreierTensor.shortExact",
+        "GaloisFormalization.GH.ArtinSchreierTensorAcyclic.tensorAcyclic",
+        "GaloisFormalization.GH.PrimaryCohomologyVanishing.vanishing"
+      ],
+      "goal_ids": [
+        "GH10",
+        "GH_ArtinSchreierTensor",
+        "GH_ArtinSchreierTensorAcyclic"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH10",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH10",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1307,
+        "line_end": 1314,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 21,
+        "pdf_destination": "theorem.3.10"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.ArtinSchreierTensor.diagonalAction",
+        "GaloisFormalization.GH.ArtinSchreierTensor.equivariant",
+        "GaloisFormalization.GH.ArtinSchreierTensor.shortExact",
+        "GaloisFormalization.GH.ArtinSchreierTensorAcyclic.tensorAcyclic",
+        "GaloisFormalization.GH.PrimaryCohomologyVanishing.vanishing"
+      ],
+      "title": "If char(k)=p>0 and M is any discrete continuous G_k-module whose underlying abelian group is p-primary torsion, meaning each element is killed by some power of p, then Hᵠ_cts(G_k,M)=0 for every integer q≥2."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.CyclicDegreeTwo.carryCochain_apply_pow",
+        "GaloisFormalization.GH.cyclicCarryCochain",
+        "GaloisFormalization.GH.cyclicDegreeTwoEquiv_symm_mk",
+        "GaloisFormalization.GH.cyclicNorm",
+        "GaloisFormalization.GH.cyclic_degree_two",
+        "GaloisFormalization.GH.cyclic_degree_two_order_one",
+        "GaloisFormalization.GH.ordinary_comparison"
+      ],
+      "goal_ids": [
+        "GH11",
+        "GH_Cochains"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH11",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH11",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1359,
+        "line_end": 1365,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 21,
+        "pdf_destination": "proposition.3.11"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.CyclicDegreeTwo.carryCochain_apply_pow",
+        "GaloisFormalization.GH.cyclicCarryCochain",
+        "GaloisFormalization.GH.cyclicDegreeTwoEquiv_symm_mk",
+        "GaloisFormalization.GH.cyclicNorm",
+        "GaloisFormalization.GH.cyclic_degree_two",
+        "GaloisFormalization.GH.cyclic_degree_two_order_one",
+        "GaloisFormalization.GH.ordinary_comparison"
+      ],
+      "title": "If C is a finite cyclic group of order d≥1 generated by s and A is an abelian C-module, then H²(C,A) ≅ A^C/N(A) for N=1+s+⋯+s^(d−1)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.cyclicFieldDegreeTwoEquiv",
+        "GaloisFormalization.GH.cyclic_field_degree_two",
+        "GaloisFormalization.GH.ordinary_comparison"
+      ],
+      "goal_ids": [
+        "GH11",
+        "GH_Cochains"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH11-NORM",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH11-NORM",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1366,
+        "line_end": 1371,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 21,
+        "pdf_destination": "proposition.3.11"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.cyclicFieldDegreeTwoEquiv",
+        "GaloisFormalization.GH.cyclic_field_degree_two",
+        "GaloisFormalization.GH.ordinary_comparison"
+      ],
+      "title": "For a finite cyclic field extension E/k, H²(Gal(E/k),Eˣ) ≅ kˣ/N_{E/k}(Eˣ), for the natural action on Eˣ."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.FiniteFieldKummer.cohomologyCyclicOrder",
+        "GaloisFormalization.GH.FiniteFieldKummer.cohomologyOneSubsingleton",
+        "GaloisFormalization.GH.FiniteFieldKummer.cohomologySubsingletonOfGcdEqOne",
+        "GaloisFormalization.GH.KummerConnecting.kummerIsomorphism"
+      ],
+      "goal_ids": [
+        "GH06",
+        "GH12_Kummer"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH12",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH12",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1408,
+        "line_end": 1412,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 22,
+        "pdf_destination": "example.3.12"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.FiniteFieldKummer.cohomologyCyclicOrder",
+        "GaloisFormalization.GH.FiniteFieldKummer.cohomologyOneSubsingleton",
+        "GaloisFormalization.GH.FiniteFieldKummer.cohomologySubsingletonOfGcdEqOne",
+        "GaloisFormalization.GH.KummerConnecting.kummerIsomorphism"
+      ],
+      "title": "For k=𝔽_q of characteristic p and a positive integer m with p∤m, H¹_cts(G_k,μ_m) with natural coefficient action is cyclic of order gcd(m,q−1)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.FiniteFieldArtinSchreier.characterAtFrobenius",
+        "GaloisFormalization.GH.FiniteFieldArtinSchreier.traceFormula",
+        "GaloisFormalization.GH.FiniteFieldArtinSchreier.traceQuotient",
+        "GaloisFormalization.GH.FiniteFrobenius.arithmeticFrobenius",
+        "GaloisFormalization.GH.FiniteFrobenius.arithmeticFrobenius_apply"
+      ],
+      "goal_ids": [
+        "GH12_ArtinSchreier",
+        "GH_FiniteFrobenius"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH12-TRACE",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH12-TRACE",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1412,
+        "line_end": 1415,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 22,
+        "pdf_destination": "example.3.12"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.FiniteFieldArtinSchreier.characterAtFrobenius",
+        "GaloisFormalization.GH.FiniteFieldArtinSchreier.traceFormula",
+        "GaloisFormalization.GH.FiniteFieldArtinSchreier.traceQuotient",
+        "GaloisFormalization.GH.FiniteFrobenius.arithmeticFrobenius",
+        "GaloisFormalization.GH.FiniteFrobenius.arithmeticFrobenius_apply"
+      ],
+      "title": "For k=𝔽_q of characteristic p, trace Tr_{𝔽_q/𝔽_p} induces the isomorphism k/℘(k) ≅ 𝔽_p⁺. The Artin–Schreier character attached to a∈k takes the value Tr_{𝔽_q/𝔽_p}(a) on the arithmetic Frobenius x↦x^q."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.FiniteFrobenius.restrict_frobenius_generates",
+        "GaloisFormalization.GH.FiniteLayerCohomology.finiteLayerComparison",
+        "GaloisFormalization.GH.KrullLayers.fixedUnits_layer",
+        "GaloisFormalization.GH.cyclic_field_degree_two",
+        "GaloisFormalization.GH.finite_field_degree_two"
+      ],
+      "goal_ids": [
+        "GH01",
+        "GH11",
+        "GH12_Brauer",
+        "GH_FiniteFrobenius",
+        "GH_KrullLayers"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH12-VANISHING",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH12-VANISHING",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1415,
+        "line_end": 1419,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 22,
+        "pdf_destination": "example.3.12"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.FiniteFrobenius.restrict_frobenius_generates",
+        "GaloisFormalization.GH.FiniteLayerCohomology.finiteLayerComparison",
+        "GaloisFormalization.GH.KrullLayers.fixedUnits_layer",
+        "GaloisFormalization.GH.cyclic_field_degree_two",
+        "GaloisFormalization.GH.finite_field_degree_two"
+      ],
+      "title": "For every finite field k=𝔽_q, H²_cts(G_k,(kˢ)ˣ)=0 with the natural G_k-action on discrete coefficients."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.RealNormObstruction.real_norm_obstruction",
+        "GaloisFormalization.GH.cyclicDegreeTwoEquiv_symm_mk",
+        "GaloisFormalization.GH.cyclic_degree_two",
+        "GaloisFormalization.GH.ordinary_comparison"
+      ],
+      "goal_ids": [
+        "GH11",
+        "GH13_Complex",
+        "GH_Cochains"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH13",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH13",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1439,
+        "line_end": 1444,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 22,
+        "pdf_destination": "example.3.13"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.RealNormObstruction.real_norm_obstruction",
+        "GaloisFormalization.GH.cyclicDegreeTwoEquiv_symm_mk",
+        "GaloisFormalization.GH.cyclic_degree_two",
+        "GaloisFormalization.GH.ordinary_comparison"
+      ],
+      "title": "The relative group H²(Gal(ℂ/ℝ),ℂˣ) has order two, and the nonzero class is represented by the normalized cyclic carry cocycle c with c(σ,σ)=−1 for the nontrivial automorphism σ and c=1 when either argument is the identity."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.RationalArtinSchreier.variableClassNonzero",
+        "GaloisFormalization.GH.RationalArtinSchreier.variableCohomologyClassNonzero"
+      ],
+      "goal_ids": [
+        "GH13_ArtinSchreier"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH13-ARTIN-SCHREIER",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+      "key": "GH13-ARTIN-SCHREIER",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1445,
+        "line_end": 1446,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 22,
+        "pdf_destination": "example.3.13"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.RationalArtinSchreier.variableClassNonzero",
+        "GaloisFormalization.GH.RationalArtinSchreier.variableCohomologyClassNonzero"
+      ],
+      "title": "Over k=𝔽_q(t) of characteristic p, the class of the indeterminate t in k/℘(k) is nonzero."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.RationalKummer.parameterClassOrder",
+        "GaloisFormalization.GH.RationalKummer.parameterRadicalExtension"
+      ],
+      "goal_ids": [
+        "GH13_Kummer"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH13-KUMMER",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+      "key": "GH13-KUMMER",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1445,
+        "line_end": 1449,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 22,
+        "pdf_destination": "example.3.13"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.RationalKummer.parameterClassOrder",
+        "GaloisFormalization.GH.RationalKummer.parameterRadicalExtension"
+      ],
+      "title": "Over k=𝔽_q(t), if m>1 divides q−1, the Kummer class of t in kˣ/k^{×m} has order m and gives the cyclic degree-m extension obtained by adjoining an m-th root of t."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.continuousFixedCoefficientAction",
+        "GaloisFormalization.GH.continuousInflationRestriction_one_exact",
+        "GaloisFormalization.GH.continuousInflation_class",
+        "GaloisFormalization.GH.continuousInflation_one_injective",
+        "GaloisFormalization.GH.continuousRestrictionToInvariants",
+        "GaloisFormalization.GH.continuousRestrictionToInvariants_val",
+        "GaloisFormalization.GH.invariantContinuousH1",
+        "GaloisFormalization.GH.profiniteInflationRestriction",
+        "GaloisFormalization.GH.quotientH1Conjugation",
+        "GaloisFormalization.GH.quotientH1Conjugation_on_classes"
+      ],
+      "goal_ids": [
+        "GH14",
+        "GH_Cochains"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:GH14",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH14",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1472,
+        "line_end": 1483,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 23,
+        "pdf_destination": "proposition.3.14"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.continuousFixedCoefficientAction",
+        "GaloisFormalization.GH.continuousInflationRestriction_one_exact",
+        "GaloisFormalization.GH.continuousInflation_class",
+        "GaloisFormalization.GH.continuousInflation_one_injective",
+        "GaloisFormalization.GH.continuousRestrictionToInvariants",
+        "GaloisFormalization.GH.continuousRestrictionToInvariants_val",
+        "GaloisFormalization.GH.invariantContinuousH1",
+        "GaloisFormalization.GH.profiniteInflationRestriction",
+        "GaloisFormalization.GH.quotientH1Conjugation",
+        "GaloisFormalization.GH.quotientH1Conjugation_on_classes"
+      ],
+      "title": "For a profinite group G, a closed normal subgroup N, and a discrete continuous abelian G-module M, 0→H¹_cts(G/N,M^N)→H¹_cts(G,M)→H¹_cts(N,M)^{G/N} is exact at the first two cohomology groups, with the maps inflation and restriction. The G/N-action on H¹_cts(N,M) is induced by the action on cocycles (g·f)(n)=g f(g⁻¹ng), and the restriction class is G/N-invariant."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "FieldAndGaloisTheoryDeepening:GH-SOURCES",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "GH-SOURCES",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1512,
+        "line_end": 1517
+      },
+      "source_declarations": [],
+      "title": "Bibliographic pointers to Sharifi and Serre for finite layers and degree-one arithmetic, and to Milne for field-theoretic independence, norm and radical expressions."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.KrullLayers.AbsoluteGaloisGroup",
+        "GaloisFormalization.GH.KrullLayers.layer_finite_discrete",
+        "GaloisFormalization.GH.KrullLayers.profiniteGroup",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem"
+      ],
+      "goal_ids": [
+        "GH_KrullLayers",
+        "IG01"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG-introduction",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG-introduction",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1518,
+        "line_end": 1532
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.KrullLayers.AbsoluteGaloisGroup",
+        "GaloisFormalization.GH.KrullLayers.layer_finite_discrete",
+        "GaloisFormalization.GH.KrullLayers.profiniteGroup",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem"
+      ],
+      "title": "Chapter overview and references to earlier Galois correspondence results. The notation is Γ_k = Gal(kˢ/k) with the Krull topology, and finite groups are discrete."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.IsCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.IsSplit",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.IsProper",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.kernel",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.kernelInclusion"
+      ],
+      "goal_ids": [
+        "IG01"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG01",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+      "key": "IG01",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1536,
+        "line_end": 1549,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 24,
+        "pdf_destination": "definition.4.1"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.IsCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.IsSplit",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.IsProper",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.kernel",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.kernelInclusion"
+      ],
+      "title": "A finite embedding problem for a profinite group Γ consists of continuous surjections ρ: Γ → Q and π: B → Q with B and Q finite discrete groups, and has kernel A = ker π. A weak solution is a continuous homomorphism λ: Γ → B satisfying π ∘ λ = ρ. It is proper if it is surjective. The problem is split if π has a homomorphic section and central if A lies in the centre of B."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.layerGroup_subsingleton_iff",
+        "GaloisFormalization.IG.prescribedProblem",
+        "GaloisFormalization.IG.properSolution_iff_realization",
+        "GaloisFormalization.IG.realization_in_separableClosure",
+        "GaloisFormalization.IG.weakSolution_fixedField",
+        "GaloisFormalization.IG.weakSolution_of_extension"
+      ],
+      "goal_ids": [
+        "IG02"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG02",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+      "key": "IG02",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1551,
+        "line_end": 1562,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 24,
+        "pdf_destination": "proposition.4.2"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.layerGroup_subsingleton_iff",
+        "GaloisFormalization.IG.prescribedProblem",
+        "GaloisFormalization.IG.properSolution_iff_realization",
+        "GaloisFormalization.IG.realization_in_separableClosure",
+        "GaloisFormalization.IG.weakSolution_fixedField",
+        "GaloisFormalization.IG.weakSolution_of_extension"
+      ],
+      "title": "Let Γ = Γ_k, let E/k be a fixed finite Galois subextension of kˢ/k, and take ρ to be restriction to E with Q = Gal(E/k). A weak solution gives a finite Galois subextension L/k in kˢ containing E and an injective homomorphism ι: Gal(L/k) → B with π ∘ ι equal to restriction to E, through which the weak solution factors by restriction to L. Conversely such an L and ι give a weak solution. It is proper exactly when ι is an isomorphism. In the case Q = 1, proper solutions are finite Galois realizations of B over k."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.ContinuousH",
+        "GaloisFormalization.GH.continuousCochains",
+        "GaloisFormalization.GH.continuousDifferential",
+        "GaloisFormalization.GH.continuousDifferential_formula",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorCochain",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction"
+      ],
+      "goal_ids": [
+        "GH_Cochains",
+        "IG03",
+        "IG_KernelAction"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG-cochain-conventions",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG-cochain-conventions",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1577,
+        "line_end": 1580
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.ContinuousH",
+        "GaloisFormalization.GH.continuousCochains",
+        "GaloisFormalization.GH.continuousDifferential",
+        "GaloisFormalization.GH.continuousDifferential_formula",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorCochain",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction"
+      ],
+      "title": "Notation and references for the cohomology of abelian kernels. Cochains are additive and the coefficients in continuous cohomology carry the discrete topology."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.NormalizedSection",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousClass_of_section",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousExtensionClass",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousExtensionClass_zero_iff_split",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_quotientKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.extensionClass",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.extensionClass_zero_iff_split",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorCochain",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorCocycle",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorCocycle_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_change",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_coe",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_identity",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_normalized",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.isMulCommutative_kernel_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.kernelCoordinate",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.normalizedSection",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.ordinaryClass_comparison",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.ordinaryClass_of_section",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_eq_self_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_eq_self_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_unique",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates_mul",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates_symm_apply"
+      ],
+      "goal_ids": [
+        "IG03",
+        "IG_KernelAction"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG03",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG03",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1582,
+        "line_end": 1591,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 25,
+        "pdf_destination": "lemma.4.3"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.NormalizedSection",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousClass_of_section",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousExtensionClass",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousExtensionClass_zero_iff_split",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_quotientKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.extensionClass",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.extensionClass_zero_iff_split",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorCochain",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorCocycle",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorCocycle_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_change",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_coe",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_identity",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_normalized",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.isMulCommutative_kernel_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.kernelCoordinate",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.normalizedSection",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.ordinaryClass_comparison",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.ordinaryClass_of_section",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_eq_self_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_eq_self_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_unique",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates_mul",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates_symm_apply"
+      ],
+      "title": "For a finite embedding problem with abelian kernel A of π: B → Q, conjugation by any representative in B defines a well-defined action of Q on A. For every set section s: Q → B with s(1) = 1, the A-valued factor set c(q,r) = s(q)s(r)s(qr)⁻¹ is a normalized 2-cocycle for this action. The class [c] in H²(Q,A) is independent of the normalized section and vanishes exactly when π has a homomorphic section."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.LiftCoordinateSolutions",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolutionConjugacyClasses",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.centralWeakLift_coefficient_action",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.kernelCoordinate_conj",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.liftCoordinateEquation_iff",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.liftCoordinateSolutions_add_iff",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.liftCoordinateSolutions_apply_one",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.nonempty_weakSolution_iff_obstruction_eq_zero",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackFactorCocycle",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackFactorCocycle_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakLiftObstruction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakLiftObstruction_eq_class",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakLift_obstruction_and_classification",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolutionClass",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolutionClasses_torsor",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolutionConjugacy",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolution_coordinateEquiv"
+      ],
+      "goal_ids": [
+        "IG04",
+        "IG_KernelAction",
+        "IG_LiftCoordinates",
+        "IG_WeakLiftTorsor"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG04",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG04",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1613,
+        "line_end": 1624,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 25,
+        "pdf_destination": "theorem.4.4"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.LiftCoordinateSolutions",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolutionConjugacyClasses",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.centralWeakLift_coefficient_action",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.kernelCoordinate_conj",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.liftCoordinateEquation_iff",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.liftCoordinateSolutions_add_iff",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.liftCoordinateSolutions_apply_one",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.nonempty_weakSolution_iff_obstruction_eq_zero",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackFactorCocycle",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackFactorCocycle_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakLiftObstruction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakLiftObstruction_eq_class",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakLift_obstruction_and_classification",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolutionClass",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolutionClasses_torsor",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolutionConjugacy",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolution_coordinateEquiv"
+      ],
+      "title": "For a finite embedding problem with abelian kernel A, use the conjugation action from Q and the Γ-action pulled back along ρ. A weak solution exists exactly when the pullback ρ⁎[c] is zero in H²_cts(Γ,A). If there is a weak solution, the set of all weak solutions modulo conjugation by A carries the free transitive action of H¹_cts(Γ,A), acting by multiplying a lift pointwise on the left by a cocycle representative. A central kernel has trivial action."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.finiteStage_detection",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.finiteStage_inflation",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.finiteStage_properties",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.galois_finiteStage_identification"
+      ],
+      "goal_ids": [
+        "IG05"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG05",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+      "key": "IG05",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1643,
+        "line_end": 1654,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 25,
+        "pdf_destination": "corollary.4.5"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.finiteStage_detection",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.finiteStage_inflation",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.finiteStage_properties",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.galois_finiteStage_identification"
+      ],
+      "title": "For a finite embedding problem with abelian kernel A, let U range over open normal subgroups of Γ contained in ker ρ and let ρ_U: Γ/U → Q be induced by ρ. A weak solution exists exactly when ρ_U⁎[c] = 0 in H²(Γ/U,A) for some such U. For open normal V ≤ U, inflation along Γ/V → Γ/U carries the class for U to the class for V. In the absolute Galois setup with ρ the restriction to E/k, these stages are precisely the restrictions to finite Galois subextensions of kˢ/k containing E."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.image_inf_kernel",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.image_surjects_onto_quotient",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.proper_iff_map_kernel"
+      ],
+      "goal_ids": [
+        "IG06"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG06",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+      "key": "IG06",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1668,
+        "line_end": 1671,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 26,
+        "pdf_destination": "proposition.4.6"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.image_inf_kernel",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.image_surjects_onto_quotient",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.proper_iff_map_kernel"
+      ],
+      "title": "For any finite embedding problem and any weak solution λ, with N = ker ρ and A = ker π, λ is proper exactly when λ(N) = A."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.ContinuousCrossedHom",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.proper_iff_map_kernel",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.crossedHomEquivWeakSolution_exists",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.crossedHom_restriction_and_properness",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.splitMulEquiv_exists"
+      ],
+      "goal_ids": [
+        "IG06"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG06-split",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+      "key": "IG06-split",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1672,
+        "line_end": 1681,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 26,
+        "pdf_destination": "proposition.4.6"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.ContinuousCrossedHom",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.proper_iff_map_kernel",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.crossedHomEquivWeakSolution_exists",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.crossedHom_restriction_and_properness",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.splitMulEquiv_exists"
+      ],
+      "title": "For a split finite embedding problem, use a homomorphic section to identify B with A ⋊ Q, with the resulting action of Q on the possibly nonabelian kernel A. The weak solutions are exactly λ(γ) = (z(γ),ρ(γ)) for continuous maps z: Γ → A satisfying z(γη) = z(γ)(ρ(γ) · z(η)) for all γ,η. The restriction z|_{ker ρ} is a homomorphism and the solution is proper precisely when z(ker ρ) = A."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclicProblem",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_central",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_factor_set_value",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_generator_fibre",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_generator_lift_order",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_kernel",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_no_weak_solution",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_nonzero_classes",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_normalized_differential",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_quotientKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.isMulCommutative_kernel_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_eq_self_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_eq_self_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_unique"
+      ],
+      "goal_ids": [
+        "IG07",
+        "IG_KernelAction"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG07",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG07",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1695,
+        "line_end": 1704,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 26,
+        "pdf_destination": "example.4.7"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclicProblem",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_central",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_factor_set_value",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_generator_fibre",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_generator_lift_order",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_kernel",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_no_weak_solution",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_nonzero_classes",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_normalized_differential",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_quotientKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.isMulCommutative_kernel_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_eq_self_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_apply",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_eq_self_of_isCentral",
+        "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_unique"
+      ],
+      "title": "Take Γ = Q = C₂ and ρ = id. The quotient C₄ → C₂ is a central embedding problem with no weak solution. For the normalized set section sending the nonidentity element to 1 modulo 4, the factor set has c(1̄,1̄) = 2 in the kernel {0,2}, and its class is a nonzero lifting obstruction with trivial kernel action."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.CyclicAndSplitExamples.firstFactorSolution",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.product_is_split",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.product_no_proper_solution",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.splitProblem"
+      ],
+      "goal_ids": [
+        "IG07"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG07-split",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+      "key": "IG07-split",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1695,
+        "line_end": 1708,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 26,
+        "pdf_destination": "example.4.7"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.CyclicAndSplitExamples.firstFactorSolution",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.product_is_split",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.product_no_proper_solution",
+        "GaloisFormalization.IG.CyclicAndSplitExamples.splitProblem"
+      ],
+      "title": "Take Γ = Q = C₂ and ρ = id, now with π: C₂ × C₂ → C₂ the first projection. The inclusion of the first factor gives a weak solution, and there is no proper solution."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.GH.FiniteFrobenius.frobenius_cyclic_dense",
+        "GaloisFormalization.GH.FiniteFrobenius.reduction_frobenius",
+        "GaloisFormalization.IG.FiniteFieldEmbeddingProblems.properSolutionExistsIff",
+        "GaloisFormalization.IG.FiniteFieldEmbeddingProblems.weakSolutionExists"
+      ],
+      "goal_ids": [
+        "GH_FiniteFrobenius",
+        "IG08"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG08",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG08",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1710,
+        "line_end": 1715,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 26,
+        "pdf_destination": "proposition.4.8"
+      },
+      "source_declarations": [
+        "GaloisFormalization.GH.FiniteFrobenius.frobenius_cyclic_dense",
+        "GaloisFormalization.GH.FiniteFrobenius.reduction_frobenius",
+        "GaloisFormalization.IG.FiniteFieldEmbeddingProblems.properSolutionExistsIff",
+        "GaloisFormalization.IG.FiniteFieldEmbeddingProblems.weakSolutionExists"
+      ],
+      "title": "Every finite embedding problem for the absolute Galois group of a finite field has a weak solution. A proper solution exists exactly when the finite group B is cyclic."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.SpecializationData.inducedOrder",
+        "GaloisFormalization.IG.SpecializationData.integralSeries",
+        "GaloisFormalization.IG.SpecializationData.mem_positiveIdeal",
+        "GaloisFormalization.IG.SpecializationData.mem_valuationRing",
+        "GaloisFormalization.IG.SpecializationData.nonnegative_iff_powerSeries",
+        "GaloisFormalization.IG.SpecializationData.positiveIdeal",
+        "GaloisFormalization.IG.SpecializationData.powerToLaurent_integralSeries",
+        "GaloisFormalization.IG.SpecializationData.reduction",
+        "GaloisFormalization.IG.SpecializationData.reduction_apply",
+        "GaloisFormalization.IG.SpecializationData.residueEmbedding",
+        "GaloisFormalization.IG.SpecializationData.residueEmbedding_residue",
+        "GaloisFormalization.IG.SpecializationData.residueField",
+        "GaloisFormalization.IG.SpecializationData.seriesOrder",
+        "GaloisFormalization.IG.SpecializationData.valuationRing"
+      ],
+      "goal_ids": [
+        "IG_SpecializationData"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG-series-valuation",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+      "key": "IG-series-valuation",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1740,
+        "line_end": 1745
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.SpecializationData.inducedOrder",
+        "GaloisFormalization.IG.SpecializationData.integralSeries",
+        "GaloisFormalization.IG.SpecializationData.mem_positiveIdeal",
+        "GaloisFormalization.IG.SpecializationData.mem_valuationRing",
+        "GaloisFormalization.IG.SpecializationData.nonnegative_iff_powerSeries",
+        "GaloisFormalization.IG.SpecializationData.positiveIdeal",
+        "GaloisFormalization.IG.SpecializationData.powerToLaurent_integralSeries",
+        "GaloisFormalization.IG.SpecializationData.reduction",
+        "GaloisFormalization.IG.SpecializationData.reduction_apply",
+        "GaloisFormalization.IG.SpecializationData.residueEmbedding",
+        "GaloisFormalization.IG.SpecializationData.residueEmbedding_residue",
+        "GaloisFormalization.IG.SpecializationData.residueField",
+        "GaloisFormalization.IG.SpecializationData.seriesOrder",
+        "GaloisFormalization.IG.SpecializationData.valuationRing"
+      ],
+      "title": "For any field k, any extension ℓ/k and indeterminate u, let v_u of a nonzero Laurent series over ℓ be its least exponent. This order is additive on nonzero products and gives at least the minimum under addition when the sum is nonzero. The residue of a series of nonnegative order is its constant term."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.simpleRootLifting"
+      ],
+      "goal_ids": [
+        "IG09"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG09",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+      "key": "IG09",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1747,
+        "line_end": 1753,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 27,
+        "pdf_destination": "lemma.4.9"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.simpleRootLifting"
+      ],
+      "title": "For any field k, f ∈ k[[u]][X] and extension ℓ/k, if r ∈ ℓ is a simple root of the coefficientwise reduction f̄ at u = 0, then there is exactly one α ∈ ℓ[[u]] such that α(0) = r and f(α) = 0."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.SpecializationCoefficients.constantCoeff_regularSeries",
+        "GaloisFormalization.IG.SpecializationCoefficients.fraction_specializes",
+        "GaloisFormalization.IG.SpecializationCoefficients.laurentMap",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_laurent",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_monicDegree",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_naturality",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_reduction",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_reduction_base",
+        "GaloisFormalization.IG.SpecializationCoefficients.powerToLaurent_regularSeries",
+        "GaloisFormalization.IG.SpecializationCoefficients.regularAt_div",
+        "GaloisFormalization.IG.SpecializationCoefficients.regularSeries",
+        "GaloisFormalization.IG.SpecializationCoefficients.regularSeries_naturality",
+        "GaloisFormalization.IG.SpecializationCoefficients.specialize_monicDegree",
+        "GaloisFormalization.IG.SpecializationCoefficients.substitution_C",
+        "GaloisFormalization.IG.SpecializationCoefficients.substitution_div",
+        "GaloisFormalization.IG.SpecializationCoefficients.substitution_injective",
+        "GaloisFormalization.IG.SpecializationCoefficients.substitution_naturality",
+        "GaloisFormalization.IG.SpecializationCoefficients.substitution_sub_C",
+        "GaloisFormalization.IG.SpecializationData.MatchesRoots",
+        "GaloisFormalization.IG.SpecializationData.PointEmbedding",
+        "GaloisFormalization.IG.SpecializationData.PolynomialRegularAt",
+        "GaloisFormalization.IG.SpecializationData.RegularAt",
+        "GaloisFormalization.IG.SpecializationData.specialize_coeff",
+        "GaloisFormalization.IG.SpecializationDecomposition.constantInValuationRing",
+        "GaloisFormalization.IG.SpecializationDecomposition.normalizedValueGroup",
+        "GaloisFormalization.IG.SpecializationDecomposition.residueAlgebra",
+        "GaloisFormalization.IG.SpecializationDecomposition.residueFieldEquivalence",
+        "GaloisFormalization.IG.SpecializationRootMatching.existsRootMatchingEmbedding",
+        "GaloisFormalization.IG.SpecializationRootMatching.laurentSpecializationRoots",
+        "GaloisFormalization.IG.SpecializationRootMatching.liftSpecializedRoot",
+        "GaloisFormalization.IG.SpecializationRootMatching.liftedRootImages",
+        "GaloisFormalization.IG.SpecializationRootMatching.pointEmbeddingRoots",
+        "GaloisFormalization.IG.goodSpecialization"
+      ],
+      "goal_ids": [
+        "IG10",
+        "IG10_Decomposition",
+        "IG10_RootMatching",
+        "IG_SpecializationCoefficients",
+        "IG_SpecializationData"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG10",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG10",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1773,
+        "line_end": 1782,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 27,
+        "pdf_destination": "theorem.4.10"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.SpecializationCoefficients.constantCoeff_regularSeries",
+        "GaloisFormalization.IG.SpecializationCoefficients.fraction_specializes",
+        "GaloisFormalization.IG.SpecializationCoefficients.laurentMap",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_laurent",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_monicDegree",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_naturality",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_reduction",
+        "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_reduction_base",
+        "GaloisFormalization.IG.SpecializationCoefficients.powerToLaurent_regularSeries",
+        "GaloisFormalization.IG.SpecializationCoefficients.regularAt_div",
+        "GaloisFormalization.IG.SpecializationCoefficients.regularSeries",
+        "GaloisFormalization.IG.SpecializationCoefficients.regularSeries_naturality",
+        "GaloisFormalization.IG.SpecializationCoefficients.specialize_monicDegree",
+        "GaloisFormalization.IG.SpecializationCoefficients.substitution_C",
+        "GaloisFormalization.IG.SpecializationCoefficients.substitution_div",
+        "GaloisFormalization.IG.SpecializationCoefficients.substitution_injective",
+        "GaloisFormalization.IG.SpecializationCoefficients.substitution_naturality",
+        "GaloisFormalization.IG.SpecializationCoefficients.substitution_sub_C",
+        "GaloisFormalization.IG.SpecializationData.MatchesRoots",
+        "GaloisFormalization.IG.SpecializationData.PointEmbedding",
+        "GaloisFormalization.IG.SpecializationData.PolynomialRegularAt",
+        "GaloisFormalization.IG.SpecializationData.RegularAt",
+        "GaloisFormalization.IG.SpecializationData.specialize_coeff",
+        "GaloisFormalization.IG.SpecializationDecomposition.constantInValuationRing",
+        "GaloisFormalization.IG.SpecializationDecomposition.normalizedValueGroup",
+        "GaloisFormalization.IG.SpecializationDecomposition.residueAlgebra",
+        "GaloisFormalization.IG.SpecializationDecomposition.residueFieldEquivalence",
+        "GaloisFormalization.IG.SpecializationRootMatching.existsRootMatchingEmbedding",
+        "GaloisFormalization.IG.SpecializationRootMatching.laurentSpecializationRoots",
+        "GaloisFormalization.IG.SpecializationRootMatching.liftSpecializedRoot",
+        "GaloisFormalization.IG.SpecializationRootMatching.liftedRootImages",
+        "GaloisFormalization.IG.SpecializationRootMatching.pointEmbeddingRoots",
+        "GaloisFormalization.IG.goodSpecialization"
+      ],
+      "title": "For any field k, let f(t,X) ∈ k(t)[X] be monic with coefficients regular at a ∈ k and with separable reduction f(a,X). Let L/k(t) be a splitting field of f and ℓ/k a splitting field of f(a,X). There is a k-embedding L → ℓ((u)) extending t ↦ a + u that sends the generic roots into ℓ[[u]] with distinct reductions in bijection with the roots of f(a,X). The valuation w induced on L by v_u has residue field ℓ via the constant-term map and value group ℤ with w(t−a) = 1."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.SpecializationData.decompositionGroup",
+        "GaloisFormalization.IG.SpecializationDecomposition.decompositionEquivalence",
+        "GaloisFormalization.IG.SpecializationDecomposition.onValuationRing",
+        "GaloisFormalization.IG.SpecializationDecomposition.residueAlgebra",
+        "GaloisFormalization.IG.SpecializationDecomposition.residueFieldEquivalence",
+        "GaloisFormalization.IG.SpecializationRootMatching.pointEmbeddingRoots",
+        "GaloisFormalization.IG.goodSpecialization",
+        "GaloisFormalization.IG.goodSpecializationConjugacy"
+      ],
+      "goal_ids": [
+        "IG10",
+        "IG10_Decomposition",
+        "IG10_RootMatching",
+        "IG_SpecializationData"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG10-decomposition",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG10-decomposition",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1773,
+        "line_end": 1792,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 27,
+        "pdf_destination": "theorem.4.10"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.SpecializationData.decompositionGroup",
+        "GaloisFormalization.IG.SpecializationDecomposition.decompositionEquivalence",
+        "GaloisFormalization.IG.SpecializationDecomposition.onValuationRing",
+        "GaloisFormalization.IG.SpecializationDecomposition.residueAlgebra",
+        "GaloisFormalization.IG.SpecializationDecomposition.residueFieldEquivalence",
+        "GaloisFormalization.IG.SpecializationRootMatching.pointEmbeddingRoots",
+        "GaloisFormalization.IG.goodSpecialization",
+        "GaloisFormalization.IG.goodSpecializationConjugacy"
+      ],
+      "title": "Let f(t,X) ∈ k(t)[X] be monic with coefficients regular at a ∈ k and with separable reduction f(a,X), and take splitting fields L/k(t) for f and ℓ/k for f(a,X). For the valuation w induced by the root-matching embedding L → ℓ((u)) extending t ↦ a + u, reduction gives a group isomorphism from the subgroup {σ ∈ Gal(L/k(t)) | w(σx) = w(x) for every x ∈ Lˣ} to Gal(ℓ/k). Its inertia kernel is trivial, and the resulting embedding of the specialized Galois group into the generic Galois group is determined up to conjugacy."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.TowerSpecialization.towerSpecialization"
+      ],
+      "goal_ids": [
+        "IG11"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG11",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+      "key": "IG11",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1824,
+        "line_end": 1835,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 28,
+        "pdf_destination": "corollary.4.11"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.TowerSpecialization.towerSpecialization"
+      ],
+      "title": "Take L/k(t), ℓ/k and the chosen valuation on L as in the good specialization setup for f(t,X) at a ∈ k. Let L₀ ⊆ L be a splitting field over k(t) of a second monic polynomial f₀ whose coefficients are regular at a and whose specialization f₀(a,X) is separable. Under the valuation obtained by restricting the chosen valuation on L, the residue field ℓ₀ of L₀ is the splitting field of f₀(a,X) inside ℓ. Restriction from the decomposition group for L to that for L₀ agrees, under the respective reduction isomorphisms, with the surjective restriction Gal(ℓ/k) → Gal(ℓ₀/k)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.IsRegularOver",
+        "GaloisFormalization.IG.constantIntersection",
+        "GaloisFormalization.IG.geometricGaloisGroup"
+      ],
+      "goal_ids": [
+        "IG12",
+        "IG12_ConstantIntersection"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG-regularity",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG-regularity",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1856,
+        "line_end": 1860
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.IsRegularOver",
+        "GaloisFormalization.IG.constantIntersection",
+        "GaloisFormalization.IG.geometricGaloisGroup"
+      ],
+      "title": "A finite Galois realization L/k(t) is regular over k if k is algebraically closed in L, meaning every element of L algebraic over k belongs to k. The definition is for arbitrary base fields, and the finite Galois extension is already separable over k(t)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.IsRegularOver",
+        "GaloisFormalization.IG.constantIntersection",
+        "GaloisFormalization.IG.geometricGaloisGroup",
+        "GaloisFormalization.IG.geometricRestriction",
+        "GaloisFormalization.IG.rationalConstantField",
+        "GaloisFormalization.IG.rationalWithConstants"
+      ],
+      "goal_ids": [
+        "IG12",
+        "IG12_ConstantIntersection"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG12",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG12",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1862,
+        "line_end": 1870,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 28,
+        "pdf_destination": "proposition.4.12"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.IsRegularOver",
+        "GaloisFormalization.IG.constantIntersection",
+        "GaloisFormalization.IG.geometricGaloisGroup",
+        "GaloisFormalization.IG.geometricRestriction",
+        "GaloisFormalization.IG.rationalConstantField",
+        "GaloisFormalization.IG.rationalWithConstants"
+      ],
+      "title": "Let L/k(t) be finite Galois for any field k, and work in a common algebraic closure of k(t), with k̄ the subfield of elements algebraic over k. Restriction is an injective homomorphism Gal(Lk̄(t)/k̄(t)) → Gal(L/k(t)) and is surjective exactly when L/k(t) is regular over k. This includes imperfect fields."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.GenericCubic.arithmetic_discr",
+        "GaloisFormalization.IG.GenericCubic.cubic_toPoly_discr",
+        "GaloisFormalization.IG.GenericCubic.generic_coefficients",
+        "GaloisFormalization.IG.GenericCubic.generic_discr_nonsquare",
+        "GaloisFormalization.IG.GenericCubic.generic_irreducible",
+        "GaloisFormalization.IG.GenericCubic.generic_separable",
+        "GaloisFormalization.IG.GenericCubic.geometric",
+        "GaloisFormalization.IG.GenericCubic.polynomial",
+        "GaloisFormalization.IG.GenericCubic.polynomial_discr",
+        "GaloisFormalization.IG.GenericCubic.polynomial_map",
+        "GaloisFormalization.IG.GenericCubic.polynomial_monic_degree",
+        "GaloisFormalization.IG.GenericCubic.specialization",
+        "GaloisFormalization.IG.cubic_discriminant_eq_vandermonde_sq",
+        "GaloisFormalization.IG.cubic_discriminant_of_roots",
+        "GaloisFormalization.IG.cubic_galois_equiv_of_nonsquare",
+        "GaloisFormalization.IG.cubic_root_action_alternating_iff_mem_base",
+        "GaloisFormalization.IG.cubic_root_action_alternating_iff_square",
+        "GaloisFormalization.IG.cubic_root_action_apply",
+        "GaloisFormalization.IG.cubic_root_action_faithful_transitive",
+        "GaloisFormalization.IG.cubic_root_ordering",
+        "GaloisFormalization.IG.cubic_vandermonde_automorphism_sign",
+        "GaloisFormalization.IG.cubic_vandermonde_mem_base_iff_square",
+        "GaloisFormalization.IG.cubic_vandermonde_permutation_sign",
+        "GaloisFormalization.IG.exists_cubic_galois_equiv",
+        "GaloisFormalization.IG.regular_generic_cubic"
+      ],
+      "goal_ids": [
+        "IG13",
+        "IG13_CubicCriterion",
+        "IG13_GenericCubic"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG13",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG13",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1914,
+        "line_end": 1917,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 29,
+        "pdf_destination": "theorem.4.13"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.GenericCubic.arithmetic_discr",
+        "GaloisFormalization.IG.GenericCubic.cubic_toPoly_discr",
+        "GaloisFormalization.IG.GenericCubic.generic_coefficients",
+        "GaloisFormalization.IG.GenericCubic.generic_discr_nonsquare",
+        "GaloisFormalization.IG.GenericCubic.generic_irreducible",
+        "GaloisFormalization.IG.GenericCubic.generic_separable",
+        "GaloisFormalization.IG.GenericCubic.geometric",
+        "GaloisFormalization.IG.GenericCubic.polynomial",
+        "GaloisFormalization.IG.GenericCubic.polynomial_discr",
+        "GaloisFormalization.IG.GenericCubic.polynomial_map",
+        "GaloisFormalization.IG.GenericCubic.polynomial_monic_degree",
+        "GaloisFormalization.IG.GenericCubic.specialization",
+        "GaloisFormalization.IG.cubic_discriminant_eq_vandermonde_sq",
+        "GaloisFormalization.IG.cubic_discriminant_of_roots",
+        "GaloisFormalization.IG.cubic_galois_equiv_of_nonsquare",
+        "GaloisFormalization.IG.cubic_root_action_alternating_iff_mem_base",
+        "GaloisFormalization.IG.cubic_root_action_alternating_iff_square",
+        "GaloisFormalization.IG.cubic_root_action_apply",
+        "GaloisFormalization.IG.cubic_root_action_faithful_transitive",
+        "GaloisFormalization.IG.cubic_root_ordering",
+        "GaloisFormalization.IG.cubic_vandermonde_automorphism_sign",
+        "GaloisFormalization.IG.cubic_vandermonde_mem_base_iff_square",
+        "GaloisFormalization.IG.cubic_vandermonde_permutation_sign",
+        "GaloisFormalization.IG.exists_cubic_galois_equiv",
+        "GaloisFormalization.IG.regular_generic_cubic"
+      ],
+      "title": "The splitting field of X³ − X − t over ℚ(t) is a regular Galois realization of S₃ over ℚ."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.oddCubicFibre",
+        "GaloisFormalization.IG.odd_cubic_fibre_discriminant",
+        "GaloisFormalization.IG.odd_cubic_fibre_discriminant_neg",
+        "GaloisFormalization.IG.odd_cubic_fibre_discriminant_nonsquare",
+        "GaloisFormalization.IG.odd_cubic_fibre_galois_equiv",
+        "GaloisFormalization.IG.odd_cubic_fibre_irreducible",
+        "GaloisFormalization.IG.odd_cubic_fibre_isMonicOfDegree",
+        "GaloisFormalization.IG.odd_cubic_fibre_separable",
+        "GaloisFormalization.IG.regular_cubic_coefficients",
+        "GaloisFormalization.IG.regular_cubic_odd_specialization",
+        "GaloisFormalization.IG.regular_cubic_specialization_formula",
+        "GaloisFormalization.IG.regular_generic_cubic"
+      ],
+      "goal_ids": [
+        "IG13",
+        "IG13_OddFibres"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG13-specialized",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG13-specialized",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1914,
+        "line_end": 1920,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 29,
+        "pdf_destination": "theorem.4.13"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.oddCubicFibre",
+        "GaloisFormalization.IG.odd_cubic_fibre_discriminant",
+        "GaloisFormalization.IG.odd_cubic_fibre_discriminant_neg",
+        "GaloisFormalization.IG.odd_cubic_fibre_discriminant_nonsquare",
+        "GaloisFormalization.IG.odd_cubic_fibre_galois_equiv",
+        "GaloisFormalization.IG.odd_cubic_fibre_irreducible",
+        "GaloisFormalization.IG.odd_cubic_fibre_isMonicOfDegree",
+        "GaloisFormalization.IG.odd_cubic_fibre_separable",
+        "GaloisFormalization.IG.regular_cubic_coefficients",
+        "GaloisFormalization.IG.regular_cubic_odd_specialization",
+        "GaloisFormalization.IG.regular_cubic_specialization_formula",
+        "GaloisFormalization.IG.regular_generic_cubic"
+      ],
+      "title": "Every odd integer a is a good specialization point for X³ − X − t over ℚ, with X³ − X − a separable and its splitting field over ℚ having Galois group S₃. The decomposition group at such a specialization is the full generic Galois group."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.CyclicBinomial.binomial",
+        "GaloisFormalization.IG.CyclicBinomial.binomial_irreducible",
+        "GaloisFormalization.IG.CyclicBinomial.binomial_separable",
+        "GaloisFormalization.IG.CyclicBinomial.cyclic_splitting_field",
+        "GaloisFormalization.IG.CyclicBinomial.cyclic_splitting_field_extend_constants",
+        "GaloisFormalization.IG.CyclicBinomial.dvd_of_t_zpow_eq_pow",
+        "GaloisFormalization.IG.CyclicBinomial.orderAtT_mul",
+        "GaloisFormalization.IG.CyclicBinomial.orderAtT_t",
+        "GaloisFormalization.IG.CyclicBinomial.orderOf_tPowerClass",
+        "GaloisFormalization.IG.CyclicBinomial.tPowerClass",
+        "GaloisFormalization.IG.RegularCyclic.geometric_cyclic_realization",
+        "GaloisFormalization.IG.RegularCyclic.regular_cyclic_realization"
+      ],
+      "goal_ids": [
+        "IG14",
+        "IG14_CyclicGroup"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG14",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG14",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1965,
+        "line_end": 1977,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 29,
+        "pdf_destination": "example.4.14"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.CyclicBinomial.binomial",
+        "GaloisFormalization.IG.CyclicBinomial.binomial_irreducible",
+        "GaloisFormalization.IG.CyclicBinomial.binomial_separable",
+        "GaloisFormalization.IG.CyclicBinomial.cyclic_splitting_field",
+        "GaloisFormalization.IG.CyclicBinomial.cyclic_splitting_field_extend_constants",
+        "GaloisFormalization.IG.CyclicBinomial.dvd_of_t_zpow_eq_pow",
+        "GaloisFormalization.IG.CyclicBinomial.orderAtT_mul",
+        "GaloisFormalization.IG.CyclicBinomial.orderAtT_t",
+        "GaloisFormalization.IG.CyclicBinomial.orderOf_tPowerClass",
+        "GaloisFormalization.IG.CyclicBinomial.tPowerClass",
+        "GaloisFormalization.IG.RegularCyclic.geometric_cyclic_realization",
+        "GaloisFormalization.IG.RegularCyclic.regular_cyclic_realization"
+      ],
+      "title": "Let n ≥ 2 be invertible in the field k and let k contain a primitive n-th root of unity ζ. The splitting field of Xⁿ − t over k(t) is a regular realization of Cₙ over k. The Kummer class of t in k(t)ˣ/(k(t)ˣ)ⁿ has order n, and the full cyclic group occurs geometrically over k̄(t) as well."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.RegularCyclic.binomial_regular_at",
+        "GaloisFormalization.IG.RegularCyclic.binomial_specialize",
+        "GaloisFormalization.IG.RegularCyclic.quadratic_prime_full_specialization",
+        "GaloisFormalization.IG.prime_not_isSquare_rat",
+        "GaloisFormalization.IG.quadratic_prime_fibre_galoisGroup",
+        "GaloisFormalization.IG.quadratic_prime_fibre_separable"
+      ],
+      "goal_ids": [
+        "IG14",
+        "IG14_PrimeFibres"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG14-specialized",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG14-specialized",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1977,
+        "line_end": 1981,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 29,
+        "pdf_destination": "example.4.14"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.RegularCyclic.binomial_regular_at",
+        "GaloisFormalization.IG.RegularCyclic.binomial_specialize",
+        "GaloisFormalization.IG.RegularCyclic.quadratic_prime_full_specialization",
+        "GaloisFormalization.IG.prime_not_isSquare_rat",
+        "GaloisFormalization.IG.quadratic_prime_fibre_galoisGroup",
+        "GaloisFormalization.IG.quadratic_prime_fibre_separable"
+      ],
+      "title": "For n = 2 over ℚ, every positive prime specialization t = p of X² − t is good and gives the full group C₂ over ℚ through the splitting field of X² − p."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.exists_fresh_prime"
+      ],
+      "goal_ids": [
+        "IG15"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG15",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+      "key": "IG15",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 1983,
+        "line_end": 1987,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 30,
+        "pdf_destination": "lemma.4.15"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.exists_fresh_prime"
+      ],
+      "title": "For each integer n ≥ 2 and each finite set of primes, there exists a prime p outside that set such that n divides p−1."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.exists_disjoint_abelian_realization",
+        "GaloisFormalization.IG.exists_finite_abelian_realization",
+        "GaloisFormalization.IG.exists_pairwise_disjoint_galois_realizations"
+      ],
+      "goal_ids": [
+        "IG16",
+        "IG16_CyclotomicRealizations"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG16",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG16",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 2010,
+        "line_end": 2015,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 30,
+        "pdf_destination": "theorem.4.16"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.exists_disjoint_abelian_realization",
+        "GaloisFormalization.IG.exists_finite_abelian_realization",
+        "GaloisFormalization.IG.exists_pairwise_disjoint_galois_realizations"
+      ],
+      "title": "For every finite abelian group A, including the trivial group, and every prescribed finite Galois extension E/ℚ, there is a finite Galois extension F/ℚ in a common algebraic closure with Gal(F/ℚ) ≅ A and F ∩ E = ℚ. In particular every finite abelian group occurs as a Galois group over ℚ."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "GaloisFormalization.IG.exists_disjoint_abelian_embedding_solution",
+        "GaloisFormalization.IG.exists_disjoint_abelian_realization",
+        "GaloisFormalization.IG.prescribedProblem",
+        "GaloisFormalization.IG.weakSolution_of_extension"
+      ],
+      "goal_ids": [
+        "IG02",
+        "IG16"
+      ],
+      "id": "FieldAndGaloisTheoryDeepening:IG16-proper",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "IG16-proper",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 2010,
+        "line_end": 2022,
+        "pdf_file": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+        "pdf_page": 30,
+        "pdf_destination": "theorem.4.16"
+      },
+      "source_declarations": [
+        "GaloisFormalization.IG.exists_disjoint_abelian_embedding_solution",
+        "GaloisFormalization.IG.exists_disjoint_abelian_realization",
+        "GaloisFormalization.IG.prescribedProblem",
+        "GaloisFormalization.IG.weakSolution_of_extension"
+      ],
+      "title": "For every finite abelian A and prescribed finite Galois E/ℚ, the finite embedding problem for Γ_ℚ with ρ restriction to E and π the second projection A × Gal(E/ℚ) → Gal(E/ℚ) has a proper solution through EF, with F as in the disjoint realization. The product identification of Gal(EF/ℚ) makes π equal to restriction to E."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "FieldAndGaloisTheoryDeepening:paper-bibliography",
+      "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+      "key": "paper-bibliography",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+        "line": 2061,
+        "line_end": 2168
+      },
+      "source_declarations": [],
+      "title": "Bibliography, descriptions of relevant chapters and results in the cited literature, and LaTeX closing matter. These citations are supporting references and supply no additional assertions within the locked volume."
     }
   ],
   "environment": {
@@ -291976,7 +295660,7 @@
       "verified_bridge"
     ]
   },
-  "release": "0.29.0",
+  "release": "0.30.0",
   "scope": "Fixed Mathlib plus audited D05 linear algebra, corrected D07 abstract algebra and D03 single-variable analysis. Public entries describe stable result families; all source-coverage records and proof-route scope dispositions remain separately archived. Added source-audited component MultivariableAnalysis. Added source-audited component PointSetTopology. Added source-audited component RealAnalysis. Added source-audited component ComplexAnalysis. Added source-audited component ODEDynamics. Added source-audited component FunctionalAnalysis. Added source-audited component FourierSobolev. Added source-audited component AlgebraCore. Added source-audited component SmoothManifolds. Added source-audited component ProbabilityFoundations. Added source-audited component VariationalMethods. Added source-audited component LinearPDE. Added source-audited component TopologyRiemannianGeometry. Added source-audited component ElementaryNumberTheory. Added source-audited component FiniteCombinatorics. Added source-audited component ExtremalOptimization. Added source-audited component NumericalAnalysis. Added source-audited component DiscreteMarkovMartingales. Added source-audited component AdvancedCommutativeAlgebra. Added four source-audited algebra components with independent public imports. Added source-audited component LinearAlgebraSupplement. Added source-audited component GroupTheorySupplement.",
   "supplemental_entries": [
     {
@@ -293325,7 +297009,7 @@
     "declarations/025.json"
   ],
   "distribution": {
-    "release": "v0.29.0",
-    "archived_context_entries_omitted": 109
+    "release": "v0.30.0",
+    "archived_context_entries_omitted": 114
   }
 }

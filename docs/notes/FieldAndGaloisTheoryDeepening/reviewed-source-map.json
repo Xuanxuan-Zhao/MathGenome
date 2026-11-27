@@ -1,0 +1,4539 @@
+{
+  "component": "FieldAndGaloisTheoryDeepening",
+  "paper": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+  "paper_sha256": "ec885df58cfbabf7db1578c699ce945c83137f9efc5c617d311aca15a534a076",
+  "pdf": "docs/notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf",
+  "pdf_sha256": "064318784e90a6c3eff9b6eb1ac3304cf88fe1c2de954d1fead39d5de0551df5",
+  "physical_pages": 31,
+  "public_declarations_checked": 512,
+  "results": [
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator",
+              "line": 8,
+              "end_line": 11
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.Ideal",
+              "line": 146,
+              "end_line": 147
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.IsConstant",
+              "line": 154,
+              "end_line": 157
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.IsExtension",
+              "line": 116,
+              "end_line": 117
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.IsSimple",
+              "line": 150,
+              "end_line": 151
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.IsStable",
+              "line": 120,
+              "end_line": 125
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.RingEquiv",
+              "line": 98,
+              "end_line": 99
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.RingHom",
+              "line": 94,
+              "end_line": 95
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.Subring",
+              "line": 138,
+              "end_line": 139
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.constantSubfield",
+              "line": 223,
+              "end_line": 235
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.constantSubring",
+              "line": 160,
+              "end_line": 176
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.difference",
+              "line": 26,
+              "end_line": 26
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.differential",
+              "line": 23,
+              "end_line": 23
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.toDerivation",
+              "line": 29,
+              "end_line": 29
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.toRingEquiv",
+              "line": 32,
+              "end_line": 32
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.OperatorField",
+              "line": 14,
+              "end_line": 15
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV01",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 136,
+            "line_end": 150
+          }
+        }
+      ],
+      "id": "PV01",
+      "kind": "definition",
+      "number": "1.1",
+      "paper_line": 137,
+      "pdf_destination": "definition.1.1",
+      "pdf_page": 4,
+      "title": "Operator rings and constants"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/LinearSystem.lean",
+              "name": "GaloisFormalization.PV.LinearSystem",
+              "line": 11,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/LinearSystem.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.FundamentalMatrix",
+              "line": 56,
+              "end_line": 57
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/LinearSystem.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.IsFundamental",
+              "line": 47,
+              "end_line": 49
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/LinearSystem.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.IsSolution",
+              "line": 43,
+              "end_line": 44
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/LinearSystem.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.coefficientMatrix",
+              "line": 27,
+              "end_line": 30
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/LinearSystem.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.determinantInverse",
+              "line": 62,
+              "end_line": 64
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/LinearSystem.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.difference",
+              "line": 24,
+              "end_line": 24
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/LinearSystem.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.differential",
+              "line": 21,
+              "end_line": 21
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV02-fundamental",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 161,
+            "line_end": 166
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.fundamentalColumnEquivalence",
+              "line": 87,
+              "end_line": 94
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.fundamentalRightMultiplier",
+              "line": 109,
+              "end_line": 139
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.orderZeroFundamental",
+              "line": 141,
+              "end_line": 143
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV02",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 161,
+            "line_end": 169
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.IsScalarSolution",
+              "line": 170,
+              "end_line": 173
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.companionColumnEquivalence",
+              "line": 272,
+              "end_line": 278
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.companionDeterminant",
+              "line": 180,
+              "end_line": 188
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.companionMatrix",
+              "line": 150,
+              "end_line": 152
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.differenceCompanionExists",
+              "line": 203,
+              "end_line": 212
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.differentialCompanion",
+              "line": 176,
+              "end_line": 178
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.orderZeroColumnEquivalence",
+              "line": 284,
+              "end_line": 293
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.orderZeroFundamental",
+              "line": 141,
+              "end_line": 143
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.orderZeroScalarSolutions",
+              "line": 280,
+              "end_line": 282
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FundamentalMatrices.lean",
+              "name": "GaloisFormalization.PV.LinearSystem.scalarColumn",
+              "line": 165,
+              "end_line": 167
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV02-companion",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 170,
+            "line_end": 187
+          }
+        }
+      ],
+      "id": "PV02",
+      "kind": "lemma",
+      "number": "1.2",
+      "paper_line": 162,
+      "pdf_destination": "lemma.1.2",
+      "pdf_page": 4,
+      "title": "Fundamental matrices and scalar equations"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/SimpleDifferentialDomain.lean",
+              "name": "GaloisFormalization.PV.Operator.isDomain_of_isSimple",
+              "line": 74,
+              "end_line": 81
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/SimpleOperatorComponents.lean",
+              "name": "GaloisFormalization.PV.Operator.simpleDifferentialFractionField",
+              "line": 172,
+              "end_line": 177
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/SimpleDifferenceComponents.lean",
+              "name": "GaloisFormalization.PV.simpleDifferenceComponents",
+              "line": 152,
+              "end_line": 185
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV03",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 192,
+            "line_end": 196
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorLocalization.lean",
+              "name": "GaloisFormalization.PV.Operator.fractionOperator",
+              "line": 177,
+              "end_line": 180
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorLocalization.lean",
+              "name": "GaloisFormalization.PV.Operator.fractionOperator_difference_mk'",
+              "line": 218,
+              "end_line": 222
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorLocalization.lean",
+              "name": "GaloisFormalization.PV.Operator.fractionOperator_existsUnique",
+              "line": 193,
+              "end_line": 206
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorLocalization.lean",
+              "name": "GaloisFormalization.PV.Operator.fractionRingEquiv_onFractions",
+              "line": 161,
+              "end_line": 163
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorLocalization.lean",
+              "name": "GaloisFormalization.PV.Operator.localizedDerivation_quotientRule",
+              "line": 89,
+              "end_line": 108
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/SimpleOperatorComponents.lean",
+              "name": "GaloisFormalization.PV.Operator.simpleDifferentialFractionField",
+              "line": 172,
+              "end_line": 177
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorLocalization.lean",
+              "name": "GaloisFormalization.PV.TotalQuotientRing",
+              "line": 13,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/SimpleOperatorComponents.lean",
+              "name": "GaloisFormalization.PV.simpleDifferenceFractionComponents",
+              "line": 211,
+              "end_line": 241
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV03-fractions",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 197,
+            "line_end": 200
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorRing.lean",
+              "name": "GaloisFormalization.PV.Operator.RingHom.mapConstants",
+              "line": 212,
+              "end_line": 216
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/SimpleOperatorComponents.lean",
+              "name": "GaloisFormalization.PV.Operator.constants_fractionRing",
+              "line": 118,
+              "end_line": 169
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/SimpleOperatorComponents.lean",
+              "name": "GaloisFormalization.PV.Operator.isField_constantSubring_of_isSimple",
+              "line": 35,
+              "end_line": 77
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV03-constants",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 200,
+            "line_end": 202
+          }
+        }
+      ],
+      "id": "PV03",
+      "kind": "lemma",
+      "number": "1.3",
+      "paper_line": 193,
+      "pdf_destination": "lemma.1.3",
+      "pdf_page": 5,
+      "title": "The components of a simple operator ring"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/SpecializationNonunits.lean",
+              "name": "GaloisFormalization.PV.finite_unit_specializations",
+              "line": 37,
+              "end_line": 65
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV04",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 244,
+            "line_end": 248
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FiniteTypeResiduesAndPoints.lean",
+              "name": "GaloisFormalization.PV.finiteAlgebraicOfFiniteType",
+              "line": 10,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FiniteTypeResiduesAndPoints.lean",
+              "name": "GaloisFormalization.PV.maximalQuotientFinite",
+              "line": 17,
+              "end_line": 22
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV04-field",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 246,
+            "line_end": 250
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FiniteTypeResiduesAndPoints.lean",
+              "name": "GaloisFormalization.PV.existsAlgHom",
+              "line": 36,
+              "end_line": 41
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FiniteTypeResiduesAndPoints.lean",
+              "name": "GaloisFormalization.PV.existsAlgHomOfNeZero",
+              "line": 45,
+              "end_line": 55
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FiniteTypeResiduesAndPoints.lean",
+              "name": "GaloisFormalization.PV.maximalQuotientAlgEquiv",
+              "line": 26,
+              "end_line": 33
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV04-detection",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 250,
+            "line_end": 254
+          }
+        }
+      ],
+      "id": "PV04",
+      "kind": "lemma",
+      "number": "1.4",
+      "paper_line": 245,
+      "pdf_destination": "lemma.1.4",
+      "pdf_page": 5,
+      "title": "Specialization in a finitely generated domain"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FiniteTypeConstants.lean",
+              "name": "GaloisFormalization.PV.Operator.constants_finiteType",
+              "line": 135,
+              "end_line": 162
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FiniteTypeConstants.lean",
+              "name": "GaloisFormalization.PV.Operator.constants_finiteType_fractionRing",
+              "line": 166,
+              "end_line": 176
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV05",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 281,
+            "line_end": 286
+          }
+        }
+      ],
+      "id": "PV05",
+      "kind": "proposition",
+      "number": "1.5",
+      "paper_line": 282,
+      "pdf_destination": "proposition.1.5",
+      "pdf_page": 6,
+      "title": "No new constants in a simple finite-type algebra"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotRing.lean",
+              "name": "GaloisFormalization.PV.IsPicardVessiotField",
+              "line": 35,
+              "end_line": 37
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotRing.lean",
+              "name": "GaloisFormalization.PV.IsPicardVessiotRing",
+              "line": 21,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotRing.lean",
+              "name": "GaloisFormalization.PV.IsPicardVessiotRing.existsUnique_totalExtension",
+              "line": 46,
+              "end_line": 50
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotRing.lean",
+              "name": "GaloisFormalization.PV.IsPicardVessiotTotalExtension",
+              "line": 29,
+              "end_line": 31
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotRing.lean",
+              "name": "GaloisFormalization.PV.IsPicardVessiotTotalExtension.isExtension",
+              "line": 54,
+              "end_line": 57
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotRing.lean",
+              "name": "GaloisFormalization.PV.matrixGeneratedSubalgebra",
+              "line": 10,
+              "end_line": 14
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV06",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 314,
+            "line_end": 322
+          }
+        }
+      ],
+      "id": "PV06",
+      "kind": "definition",
+      "number": "1.6",
+      "paper_line": 315,
+      "pdf_destination": "definition.1.6",
+      "pdf_page": 6,
+      "title": "Picard–Vessiot ring and its total extension"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/UniversalSolutionRing.lean",
+              "name": "GaloisFormalization.PV.UniversalSolutionRing.Ring",
+              "line": 17,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/UniversalSolutionRing.lean",
+              "name": "GaloisFormalization.PV.UniversalSolutionRing.differenceOperator",
+              "line": 163,
+              "end_line": 189
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/UniversalSolutionRing.lean",
+              "name": "GaloisFormalization.PV.UniversalSolutionRing.differentialOperator",
+              "line": 47,
+              "end_line": 87
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/UniversalSolutionRing.lean",
+              "name": "GaloisFormalization.PV.UniversalSolutionRing.exists_operator",
+              "line": 217,
+              "end_line": 244
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/UniversalSolutionRing.lean",
+              "name": "GaloisFormalization.PV.UniversalSolutionRing.generated_by_entries",
+              "line": 247,
+              "end_line": 282
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/UniversalSolutionRing.lean",
+              "name": "GaloisFormalization.PV.UniversalSolutionRing.genericMatrix",
+              "line": 20,
+              "end_line": 20
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotExistence.lean",
+              "name": "GaloisFormalization.PV.picardVessiot_exists",
+              "line": 89,
+              "end_line": 119
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV07",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 324,
+            "line_end": 329
+          }
+        }
+      ],
+      "id": "PV07",
+      "kind": "theorem",
+      "number": "1.7",
+      "paper_line": 325,
+      "pdf_destination": "theorem.1.7",
+      "pdf_page": 7,
+      "title": "Existence with prescribed constants"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ConstantIdealDescent.lean",
+              "name": "GaloisFormalization.PV.Operator.HasConstantField",
+              "line": 14,
+              "end_line": 15
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ConstantIdealDescent.lean",
+              "name": "GaloisFormalization.PV.Operator.constantIdealDescent",
+              "line": 268,
+              "end_line": 316
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ConstantIdealDescent.lean",
+              "name": "GaloisFormalization.PV.Operator.constantTensorConstants",
+              "line": 128,
+              "end_line": 139
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorTensor.lean",
+              "name": "GaloisFormalization.PV.Operator.tensor_constant_existsUnique",
+              "line": 223,
+              "end_line": 225
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV08",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 347,
+            "line_end": 352
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ConstantIdealDescent.lean",
+              "name": "GaloisFormalization.PV.Operator.constantTensorMul",
+              "line": 324,
+              "end_line": 325
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ConstantIdealDescent.lean",
+              "name": "GaloisFormalization.PV.Operator.constantTensorMulIsEquiv",
+              "line": 379,
+              "end_line": 417
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ConstantIdealDescent.lean",
+              "name": "GaloisFormalization.PV.Operator.constantTensorMul_tmul",
+              "line": 327,
+              "end_line": 329
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorTensor.lean",
+              "name": "GaloisFormalization.PV.Operator.tensor_constant_existsUnique",
+              "line": 223,
+              "end_line": 225
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV08-multiplication",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 353,
+            "line_end": 357
+          }
+        }
+      ],
+      "id": "PV08",
+      "kind": "lemma",
+      "number": "1.8",
+      "paper_line": 348,
+      "pdf_destination": "lemma.1.8",
+      "pdf_page": 7,
+      "title": "Descent of ideals with constant variables"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotUniqueness.lean",
+              "name": "GaloisFormalization.PV.picardVessiotEquiv_totalExtension",
+              "line": 119,
+              "end_line": 139
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotUniqueness.lean",
+              "name": "GaloisFormalization.PV.picardVessiot_uniqueness",
+              "line": 436,
+              "end_line": 458
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV09",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 381,
+            "line_end": 385
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotUniqueness.lean",
+              "name": "GaloisFormalization.PV.picardVessiot_recognition",
+              "line": 389,
+              "end_line": 432
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV09-recognition",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 385,
+            "line_end": 389
+          }
+        }
+      ],
+      "id": "PV09",
+      "kind": "theorem",
+      "number": "1.9",
+      "paper_line": 382,
+      "pdf_destination": "theorem.1.9",
+      "pdf_page": 7,
+      "title": "Uniqueness and recognition inside a simple extension"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/DisconnectedDifferenceRing.lean",
+              "name": "GaloisFormalization.PV.DisconnectedDifference.productIdempotents",
+              "line": 49,
+              "end_line": 62
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/DisconnectedDifferenceRing.lean",
+              "name": "GaloisFormalization.PV.DisconnectedDifference.productPicardVessiot",
+              "line": 153,
+              "end_line": 161
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/DisconnectedDifferenceRing.lean",
+              "name": "GaloisFormalization.PV.DisconnectedDifference.quotientNoFieldEmbedding",
+              "line": 362,
+              "end_line": 372
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/DisconnectedDifferenceRing.lean",
+              "name": "GaloisFormalization.PV.DisconnectedDifference.quotientPresentation",
+              "line": 318,
+              "end_line": 331
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/DisconnectedDifferenceRing.lean",
+              "name": "GaloisFormalization.PV.DisconnectedDifference.quotientTotal",
+              "line": 350,
+              "end_line": 360
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalDilationConstants.lean",
+              "name": "GaloisFormalization.PV.rationalDilation_algebraMap",
+              "line": 21,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalDilationConstants.lean",
+              "name": "GaloisFormalization.PV.rationalDilation_constantSubfield",
+              "line": 99,
+              "end_line": 106
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalDilationConstants.lean",
+              "name": "GaloisFormalization.PV.rationalDilation_mk",
+              "line": 28,
+              "end_line": 31
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV10",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 410,
+            "line_end": 419
+          }
+        }
+      ],
+      "id": "PV10",
+      "kind": "example",
+      "number": "1.10",
+      "paper_line": 411,
+      "pdf_destination": "example.1.10",
+      "pdf_page": 8,
+      "title": "A difference Picard–Vessiot ring that is not a field"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ReducedFieldBaseChange.lean",
+              "name": "GaloisFormalization.PV.reducedFieldBaseChange",
+              "line": 86,
+              "end_line": 112
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ReducedOperatorTensors.lean",
+              "name": "GaloisFormalization.PV.reducedOperatorTensors",
+              "line": 64,
+              "end_line": 67
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV11",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 454,
+            "line_end": 458
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ReducedOperatorTensors.lean",
+              "name": "GaloisFormalization.PV.reducedOperatorTensors",
+              "line": 64,
+              "end_line": 67
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ReducedOperatorTensors.lean",
+              "name": "GaloisFormalization.PV.reducedProductBaseChange",
+              "line": 27,
+              "end_line": 61
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV11-product",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 458,
+            "line_end": 462
+          }
+        }
+      ],
+      "id": "PV11",
+      "kind": "lemma",
+      "number": "2.1",
+      "paper_line": 455,
+      "pdf_destination": "lemma.2.1",
+      "pdf_page": 9,
+      "title": "Reduced operator tensors in characteristic zero"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTensor.lean",
+              "name": "GaloisFormalization.PV.picardVessiotCoordinateAlgebra",
+              "line": 19,
+              "end_line": 19
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTensor.lean",
+              "name": "GaloisFormalization.PV.picardVessiotTensor",
+              "line": 232,
+              "end_line": 314
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTensor.lean",
+              "name": "GaloisFormalization.PV.tensorRatio",
+              "line": 17,
+              "end_line": 17
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV12",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 482,
+            "line_end": 491
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/MatrixGroupCoordinates.lean",
+              "name": "GaloisFormalization.PV.MatrixGroupCoordinates.IsAlgebraicSubgroup",
+              "line": 34,
+              "end_line": 34
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/MatrixGroupCoordinates.lean",
+              "name": "GaloisFormalization.PV.MatrixGroupCoordinates.evalCoordinate_bijective",
+              "line": 211,
+              "end_line": 223
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/MatrixGroupCoordinates.lean",
+              "name": "GaloisFormalization.PV.MatrixGroupCoordinates.isClosed_iff_zeroLocus",
+              "line": 172,
+              "end_line": 180
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTorsor.lean",
+              "name": "GaloisFormalization.PV.galoisCoordinateAlgebra",
+              "line": 604,
+              "end_line": 690
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTorsor.lean",
+              "name": "GaloisFormalization.PV.galoisEvaluation",
+              "line": 450,
+              "end_line": 598
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTorsor.lean",
+              "name": "GaloisFormalization.PV.galoisRingAction",
+              "line": 123,
+              "end_line": 157
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTorsor.lean",
+              "name": "GaloisFormalization.PV.matrixAutomorphism",
+              "line": 13,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTorsor.lean",
+              "name": "GaloisFormalization.PV.matrixGaloisGroup",
+              "line": 12,
+              "end_line": 12
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTorsor.lean",
+              "name": "GaloisFormalization.PV.operatorAutomorphisms",
+              "line": 11,
+              "end_line": 11
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV12-group",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 491,
+            "line_end": 497
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorLocalization.lean",
+              "name": "GaloisFormalization.PV.Operator.fractionOperatorEquiv_existsUnique",
+              "line": 278,
+              "end_line": 286
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTorsor.lean",
+              "name": "GaloisFormalization.PV.galoisChangeFundamentalMatrix",
+              "line": 160,
+              "end_line": 192
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTorsor.lean",
+              "name": "GaloisFormalization.PV.galoisRingAction",
+              "line": 123,
+              "end_line": 157
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTorsor.lean",
+              "name": "GaloisFormalization.PV.galoisTotalRingAction",
+              "line": 243,
+              "end_line": 333
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV12-aut",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 497,
+            "line_end": 501
+          }
+        }
+      ],
+      "id": "PV12",
+      "kind": "theorem",
+      "number": "2.2",
+      "paper_line": 483,
+      "pdf_destination": "theorem.2.2",
+      "pdf_page": 9,
+      "title": "The torsor of a fundamental matrix"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/IntermediateTotalRing.lean",
+              "name": "GaloisFormalization.PV.IsIntermediateTotalRing",
+              "line": 15,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/PV/TransitiveProductProjectionKernels.lean",
+              "name": "GaloisFormalization.PV.ProjectionKernels.RegularElementsAreUnits",
+              "line": 60,
+              "end_line": 61
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV13-intermediate-total",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 535,
+            "line_end": 538
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/TransitiveProductProjectionKernels.lean",
+              "name": "GaloisFormalization.PV.ProjectionKernels.decomposition",
+              "line": 196,
+              "end_line": 269
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/TransitiveProductProjectionKernels.lean",
+              "name": "GaloisFormalization.PV.ProjectionKernels.subring_isField_of_regular_isUnit",
+              "line": 274,
+              "end_line": 278
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/IntermediateTotalRing.lean",
+              "name": "GaloisFormalization.PV.intermediateTotalRing_structure",
+              "line": 477,
+              "end_line": 480
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV13",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 535,
+            "line_end": 541
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/IntermediateTotalRing.lean",
+              "name": "GaloisFormalization.PV.intermediateTotalRing_structure",
+              "line": 477,
+              "end_line": 480
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/IntermediateTotalRing.lean",
+              "name": "GaloisFormalization.PV.relativePicardVessiotSubalgebra",
+              "line": 21,
+              "end_line": 24
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV13-total-fraction",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 542,
+            "line_end": 544
+          }
+        }
+      ],
+      "id": "PV13",
+      "kind": "lemma",
+      "number": "2.3",
+      "paper_line": 536,
+      "pdf_destination": "lemma.2.3",
+      "pdf_page": 10,
+      "title": "Structure of an intermediate total ring"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/PV/IntermediateFixedRing.lean",
+              "name": "GaloisFormalization.PV.Specs.matrixFixedSubalgebra",
+              "line": 12,
+              "end_line": 33
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/PV/RelativePicardVessiotTensor.lean",
+              "name": "GaloisFormalization.PV.Specs.relativeStabilizer",
+              "line": 22,
+              "end_line": 26
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/IntermediateFixedRing.lean",
+              "name": "GaloisFormalization.PV.intermediateFixedRing",
+              "line": 127,
+              "end_line": 149
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RelativePicardVessiotTensor.lean",
+              "name": "GaloisFormalization.PV.relativePicardVessiotTensor",
+              "line": 675,
+              "end_line": 771
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV14",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 578,
+            "line_end": 583
+          }
+        }
+      ],
+      "id": "PV14",
+      "kind": "theorem",
+      "number": "2.4",
+      "paper_line": 579,
+      "pdf_destination": "theorem.2.4",
+      "pdf_page": 11,
+      "title": "Fixed ring over an intermediate total ring"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ClosedSubgroupRepresentations.lean",
+              "name": "GaloisFormalization.PV.ClosedSubgroupRepresentations.exists_lineStabilizerRepresentation",
+              "line": 10,
+              "end_line": 12
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/LineStabilizerRepresentation.lean",
+              "name": "GaloisFormalization.PV.LineStabilizerRepresentation.exists_lineStabilizerRepresentation",
+              "line": 528,
+              "end_line": 542
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/MatrixGroupCoordinates.lean",
+              "name": "GaloisFormalization.PV.MatrixGroupCoordinates.IsRegularRepresentation",
+              "line": 32,
+              "end_line": 32
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTorsor.lean",
+              "name": "GaloisFormalization.PV.galoisCoordinateAlgebra",
+              "line": 604,
+              "end_line": 690
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV15",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 635,
+            "line_end": 639
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/ClosedSubgroupRepresentations.lean",
+              "name": "GaloisFormalization.PV.ClosedSubgroupRepresentations.exists_kernelRepresentation",
+              "line": 230,
+              "end_line": 300
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/MatrixGroupCoordinates.lean",
+              "name": "GaloisFormalization.PV.MatrixGroupCoordinates.IsRegularRepresentation",
+              "line": 32,
+              "end_line": 32
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/PicardVessiotTorsor.lean",
+              "name": "GaloisFormalization.PV.galoisCoordinateAlgebra",
+              "line": 604,
+              "end_line": 690
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV15-normal",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 640,
+            "line_end": 642
+          }
+        }
+      ],
+      "id": "PV15",
+      "kind": "lemma",
+      "number": "2.5",
+      "paper_line": 636,
+      "pdf_destination": "lemma.2.5",
+      "pdf_page": 11,
+      "title": "A representation detecting a closed subgroup"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/CoordinateRationalSeparation.lean",
+              "name": "GaloisFormalization.PV.CoordinateRationalSeparation.exists_coordinateRationalSeparator",
+              "line": 205,
+              "end_line": 270
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalInvariantSeparation.lean",
+              "name": "GaloisFormalization.PV.rationalInvariantSeparation",
+              "line": 218,
+              "end_line": 219
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/TorsorSpecialization.lean",
+              "name": "GaloisFormalization.PV.torsorSpecialization",
+              "line": 332,
+              "end_line": 333
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/TorsorSpecialization.lean",
+              "name": "GaloisFormalization.PV.torsorSpecializationAtResidue",
+              "line": 334,
+              "end_line": 335
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV16",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 697,
+            "line_end": 701
+          }
+        }
+      ],
+      "id": "PV16",
+      "kind": "lemma",
+      "number": "2.6",
+      "paper_line": 698,
+      "pdf_destination": "lemma.2.6",
+      "pdf_page": 12,
+      "title": "Separating a coset by a rational invariant"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/PV/IntermediateFixedRing.lean",
+              "name": "GaloisFormalization.PV.Specs.matrixFixedSubalgebra",
+              "line": 12,
+              "end_line": 33
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/PV/RelativePicardVessiotTensor.lean",
+              "name": "GaloisFormalization.PV.Specs.relativeStabilizer",
+              "line": 22,
+              "end_line": 26
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/IntermediateFixedRing.lean",
+              "name": "GaloisFormalization.PV.intermediateFixedRing",
+              "line": 127,
+              "end_line": 149
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorGaloisCorrespondence.lean",
+              "name": "GaloisFormalization.PV.operatorGaloisCorrespondence",
+              "line": 76,
+              "end_line": 198
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalInvariantSeparation.lean",
+              "name": "GaloisFormalization.PV.rationalInvariantSeparation",
+              "line": 218,
+              "end_line": 219
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV17",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 750,
+            "line_end": 762
+          }
+        }
+      ],
+      "id": "PV17",
+      "kind": "theorem",
+      "number": "2.7",
+      "paper_line": 751,
+      "pdf_destination": "theorem.2.7",
+      "pdf_page": 13,
+      "title": "Differential and difference Galois correspondence"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/FiniteSemilinearDescent.lean",
+              "name": "GaloisFormalization.PV.finiteSemilinearDescent",
+              "line": 11,
+              "end_line": 99
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV18",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 784,
+            "line_end": 791
+          }
+        }
+      ],
+      "id": "PV18",
+      "kind": "lemma",
+      "number": "2.8",
+      "paper_line": 785,
+      "pdf_destination": "lemma.2.8",
+      "pdf_page": 13,
+      "title": "Finite semilinear descent of a matrix"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/NormalSubgroupQuotient.lean",
+              "name": "GaloisFormalization.PV.fixedSubalgebraStableIffNormal",
+              "line": 48,
+              "end_line": 87
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/OperatorGaloisCorrespondence.lean",
+              "name": "GaloisFormalization.PV.operatorGaloisCorrespondence",
+              "line": 76,
+              "end_line": 198
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV19",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 807,
+            "line_end": 811
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/DescendedRepresentationMatrix.lean",
+              "name": "GaloisFormalization.PV.descendedRepresentationMatrix",
+              "line": 408,
+              "end_line": 438
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/IntermediateAutomorphismLift.lean",
+              "name": "GaloisFormalization.PV.intermediateAutomorphismLift",
+              "line": 272,
+              "end_line": 378
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/NormalSubgroupQuotient.lean",
+              "name": "GaloisFormalization.PV.normalSubgroupQuotient",
+              "line": 165,
+              "end_line": 299
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/NormalSubgroupRealization.lean",
+              "name": "GaloisFormalization.PV.normalSubgroupRealization",
+              "line": 172,
+              "end_line": 282
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV19-quotient",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 811,
+            "line_end": 817
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/NormalSubgroupQuotient.lean",
+              "name": "GaloisFormalization.PV.picardVessiotTotalSubextensionStable",
+              "line": 303,
+              "end_line": 351
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV19-converse",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 818,
+            "line_end": 820
+          }
+        }
+      ],
+      "id": "PV19",
+      "kind": "theorem",
+      "number": "2.9",
+      "paper_line": 808,
+      "pdf_destination": "theorem.2.9",
+      "pdf_page": 14,
+      "title": "The normal subgroup criterion and quotient"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/MatrixGroupIdentityComponent.lean",
+              "name": "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_carrier",
+              "line": 122,
+              "end_line": 133
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/MatrixGroupIdentityComponent.lean",
+              "name": "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_closed",
+              "line": 135,
+              "end_line": 138
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/MatrixGroupIdentityComponent.lean",
+              "name": "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_cosets",
+              "line": 155,
+              "end_line": 160
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/MatrixGroupIdentityComponent.lean",
+              "name": "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_finiteIndex",
+              "line": 162,
+              "end_line": 183
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/MatrixGroupIdentityComponent.lean",
+              "name": "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_le_of_closed_finiteIndex",
+              "line": 211,
+              "end_line": 215
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/MatrixGroupIdentityComponent.lean",
+              "name": "GaloisFormalization.PV.MatrixGroupIdentityComponent.identityComponent_normal",
+              "line": 140,
+              "end_line": 147
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/AlgebraicElementsAndOrbits.lean",
+              "name": "GaloisFormalization.PV.algebraicElementsAndOrbits",
+              "line": 80,
+              "end_line": 144
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/DifferentialAlgebraicPart.lean",
+              "name": "GaloisFormalization.PV.differentialAlgebraicPart",
+              "line": 43,
+              "end_line": 89
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV20",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 900,
+            "line_end": 906
+          }
+        }
+      ],
+      "id": "PV20",
+      "kind": "corollary",
+      "number": "2.10",
+      "paper_line": 901,
+      "pdf_destination": "corollary.2.10",
+      "pdf_page": 15,
+      "title": "The algebraic part of a differential extension"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RankOneMultiplicativeGroup.lean",
+              "name": "GaloisFormalization.PV.rankOneMultiplicativeGroup",
+              "line": 157,
+              "end_line": 313
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV21",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 942,
+            "line_end": 953
+          }
+        }
+      ],
+      "id": "PV21",
+      "kind": "corollary",
+      "number": "2.11",
+      "paper_line": 943,
+      "pdf_destination": "corollary.2.11",
+      "pdf_page": 15,
+      "title": "The rank-one multiplicative group"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/DisconnectedDifferenceGaloisGroup.lean",
+              "name": "GaloisFormalization.PV.DisconnectedDifference.disconnectedGaloisGroup",
+              "line": 221,
+              "end_line": 222
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/DisconnectedDifferenceRing.lean",
+              "name": "GaloisFormalization.PV.DisconnectedDifference.quotientPresentation",
+              "line": 318,
+              "end_line": 331
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/DisconnectedDifferenceRing.lean",
+              "name": "GaloisFormalization.PV.DisconnectedDifference.quotientTotal",
+              "line": 350,
+              "end_line": 360
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalDilationConstants.lean",
+              "name": "GaloisFormalization.PV.rationalDilation_constantSubfield",
+              "line": 99,
+              "end_line": 106
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV22",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 970,
+            "line_end": 974
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalDifferentialFullGroup.lean",
+              "name": "GaloisFormalization.PV.rationalDerivative_constants",
+              "line": 71,
+              "end_line": 106
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalDifferentialFullGroup.lean",
+              "name": "GaloisFormalization.PV.rationalDerivative_existsUnique",
+              "line": 36,
+              "end_line": 54
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalDifferentialFullGroup.lean",
+              "name": "GaloisFormalization.PV.rationalDerivative_noPowerSolution",
+              "line": 123,
+              "end_line": 142
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalDifferentialFullGroup.lean",
+              "name": "GaloisFormalization.PV.rationalDifferential_fullGroup",
+              "line": 152,
+              "end_line": 164
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalDifferentialFullGroup.lean",
+              "name": "GaloisFormalization.PV.rationalDifferential_fullGroup_exists",
+              "line": 166,
+              "end_line": 172
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/PV/RationalDifferentialFullGroup.lean",
+              "name": "GaloisFormalization.PV.rationalLogDerivative",
+              "line": 108,
+              "end_line": 121
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:PV22-differential",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 974,
+            "line_end": 992
+          }
+        }
+      ],
+      "id": "PV22",
+      "kind": "example",
+      "number": "2.12",
+      "paper_line": 971,
+      "pdf_destination": "example.2.12",
+      "pdf_page": 16,
+      "title": "A disconnected difference Galois group"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteCochainDescent.lean",
+              "name": "GaloisFormalization.GH.FiniteCochainDescent.commonCochainFactorization",
+              "line": 114,
+              "end_line": 135
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteCochainDescent.lean",
+              "name": "GaloisFormalization.GH.FiniteCochainDescent.finiteCochainFactorization",
+              "line": 138,
+              "end_line": 145
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerCohomology.LayerCoefficients",
+              "line": 15,
+              "end_line": 15
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerCohomology.LayerH",
+              "line": 18,
+              "end_line": 18
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerCohomology.LayerLimit",
+              "line": 22,
+              "end_line": 22
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerCohomology.directedTransitions",
+              "line": 104,
+              "end_line": 115
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerCohomology.finiteLayerComparison",
+              "line": 264,
+              "end_line": 299
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerCohomology.inflateCocycle_apply",
+              "line": 25,
+              "end_line": 27
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerCohomology.layerAction",
+              "line": 16,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerCohomology.stageClass_surjective",
+              "line": 29,
+              "end_line": 34
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerCohomology.stageTransition",
+              "line": 19,
+              "end_line": 19
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.fixedField_layerKernel",
+              "line": 136,
+              "end_line": 138
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.layerKernel",
+              "line": 42,
+              "end_line": 43
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.layerKernels_basis",
+              "line": 122,
+              "end_line": 128
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.layers_directed",
+              "line": 30,
+              "end_line": 34
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.quotient_restriction",
+              "line": 117,
+              "end_line": 120
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.restrict",
+              "line": 50,
+              "end_line": 52
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.transition",
+              "line": 55,
+              "end_line": 58
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Cochains.lean",
+              "name": "GaloisFormalization.GH.ordinary_comparison",
+              "line": 702,
+              "end_line": 705
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Cochains.lean",
+              "name": "GaloisFormalization.GH.ordinary_comparison_natural",
+              "line": 707,
+              "end_line": 717
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH01",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1023,
+            "line_end": 1035
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerPointedCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerPointedCohomology.comparison",
+              "line": 111,
+              "end_line": 118
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.layerKernel",
+              "line": 42,
+              "end_line": 43
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.restrict",
+              "line": 50,
+              "end_line": 52
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.transition",
+              "line": 55,
+              "end_line": 58
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/NonabelianH1.lean",
+              "name": "GaloisFormalization.GH.NonabelianH1.discreteEquiv",
+              "line": 100,
+              "end_line": 100
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/NonabelianH1.lean",
+              "name": "GaloisFormalization.GH.NonabelianH1.discreteEquiv_basepoint",
+              "line": 107,
+              "end_line": 108
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/NonabelianH1.lean",
+              "name": "GaloisFormalization.GH.NonabelianH1.inflate_basepoint",
+              "line": 206,
+              "end_line": 208
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/NonabelianH1.lean",
+              "name": "GaloisFormalization.GH.NonabelianH1.inflate_classOf",
+              "line": 195,
+              "end_line": 199
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/NonabelianH1.lean",
+              "name": "GaloisFormalization.GH.NonabelianH1.map_classOf",
+              "line": 135,
+              "end_line": 137
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/GH/FiniteLayerPointedCohomology.lean",
+              "name": "Specs.GaloisFormalization.GH.FiniteLayerPointedCohomology.stageInflation",
+              "line": 168,
+              "end_line": 170
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/GH/FiniteLayerPointedCohomology.lean",
+              "name": "Specs.GaloisFormalization.GH.FiniteLayerPointedCohomology.stageMap",
+              "line": 85,
+              "end_line": 93
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH01-POINTED",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1025,
+            "line_end": 1038
+          }
+        }
+      ],
+      "id": "GH01",
+      "kind": "proposition",
+      "number": "3.1",
+      "paper_line": 1024,
+      "pdf_destination": "proposition.3.1",
+      "pdf_page": 17,
+      "title": "Finite Galois layers and fixed coefficients"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/TraceOne.lean",
+              "name": "GaloisFormalization.GH.exists_trace_one",
+              "line": 10,
+              "end_line": 15
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH02",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1059,
+            "line_end": 1063
+          }
+        }
+      ],
+      "id": "GH02",
+      "kind": "lemma",
+      "number": "3.2",
+      "paper_line": 1060,
+      "pdf_destination": "lemma.3.2",
+      "pdf_page": 18,
+      "title": "A trace-one element"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Hilbert90.lean",
+              "name": "GaloisFormalization.GH.Hilbert90.continuous_matrixAction",
+              "line": 21,
+              "end_line": 36
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/GH/Hilbert90.lean",
+              "name": "GaloisFormalization.GH.Hilbert90.matrixAction",
+              "line": 11,
+              "end_line": 23
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Hilbert90.lean",
+              "name": "GaloisFormalization.GH.Hilbert90.matrixCoboundary",
+              "line": 84,
+              "end_line": 116
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Hilbert90.lean",
+              "name": "GaloisFormalization.GH.Hilbert90.matrixVanishing",
+              "line": 119,
+              "end_line": 130
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Hilbert90.lean",
+              "name": "GaloisFormalization.GH.Hilbert90.unitsCoboundary",
+              "line": 133,
+              "end_line": 147
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Hilbert90.lean",
+              "name": "GaloisFormalization.GH.Hilbert90.unitsVanishing",
+              "line": 150,
+              "end_line": 170
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH03",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1074,
+            "line_end": 1082
+          }
+        }
+      ],
+      "id": "GH03",
+      "kind": "theorem",
+      "number": "3.3",
+      "paper_line": 1075,
+      "pdf_destination": "theorem.3.3",
+      "pdf_page": 18,
+      "title": "Matrix Hilbert 90"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeOne.lean",
+              "name": "GaloisFormalization.GH.CyclicDegreeOne.cocycle_power_sums",
+              "line": 93,
+              "end_line": 117
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeOne.lean",
+              "name": "GaloisFormalization.GH.CyclicDegreeOne.evaluation_at_generator",
+              "line": 229,
+              "end_line": 257
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeOne.lean",
+              "name": "GaloisFormalization.GH.CyclicDegreeOne.norm_formula",
+              "line": 28,
+              "end_line": 32
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeOne.lean",
+              "name": "GaloisFormalization.GH.CyclicDegreeOne.norm_kills_differences",
+              "line": 21,
+              "end_line": 26
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeOne.lean",
+              "name": "GaloisFormalization.GH.CyclicDegreeOne.trivial_group",
+              "line": 259,
+              "end_line": 274
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH04",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1095,
+            "line_end": 1103
+          }
+        }
+      ],
+      "id": "GH04",
+      "kind": "proposition",
+      "number": "3.4",
+      "paper_line": 1096,
+      "pdf_destination": "proposition.3.4",
+      "pdf_page": 18,
+      "title": "Evaluation at a generator in degree one"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CohomologyExactSequence.lean",
+              "name": "GaloisFormalization.GH.continuousCohomology_longExact",
+              "line": 284,
+              "end_line": 285
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Cochains.lean",
+              "name": "GaloisFormalization.GH.continuousHZero_fixed",
+              "line": 693,
+              "end_line": 695
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Cochains.lean",
+              "name": "GaloisFormalization.GH.continuousHomology_comparison",
+              "line": 697,
+              "end_line": 700
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH05",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1122,
+            "line_end": 1129
+          }
+        }
+      ],
+      "id": "GH05",
+      "kind": "proposition",
+      "number": "3.5",
+      "paper_line": 1123,
+      "pdf_destination": "proposition.3.5",
+      "pdf_page": 18,
+      "title": "Exact coefficient sequences for continuous cochains"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerCoefficients.lean",
+              "name": "GaloisFormalization.GH.KummerCoefficients.PowerClasses",
+              "line": 20,
+              "end_line": 20
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerCoefficients.lean",
+              "name": "GaloisFormalization.GH.KummerCoefficients.Roots",
+              "line": 14,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerCoefficients.lean",
+              "name": "GaloisFormalization.GH.KummerCoefficients.additiveCoefficients_exact",
+              "line": 175,
+              "end_line": 179
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerCoefficients.lean",
+              "name": "GaloisFormalization.GH.KummerCoefficients.coefficients_exact",
+              "line": 111,
+              "end_line": 117
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerCoefficients.lean",
+              "name": "GaloisFormalization.GH.KummerCoefficients.powerMap_surjective",
+              "line": 100,
+              "end_line": 109
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerCoefficients.lean",
+              "name": "GaloisFormalization.GH.KummerCoefficients.rootsAction",
+              "line": 49,
+              "end_line": 50
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerConnecting.lean",
+              "name": "GaloisFormalization.GH.KummerConnecting.cohomologyCharacters",
+              "line": 133,
+              "end_line": 193
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerConnecting.lean",
+              "name": "GaloisFormalization.GH.KummerConnecting.kummerCharacters",
+              "line": 195,
+              "end_line": 203
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerConnecting.lean",
+              "name": "GaloisFormalization.GH.KummerConnecting.kummerIsomorphism",
+              "line": 37,
+              "end_line": 118
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH06",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1142,
+            "line_end": 1155
+          }
+        }
+      ],
+      "id": "GH06",
+      "kind": "theorem",
+      "number": "3.6",
+      "paper_line": 1143,
+      "pdf_destination": "theorem.3.6",
+      "pdf_page": 19,
+      "title": "Kummer isomorphism with its Galois action"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteKummerDuality.lean",
+              "name": "GaloisFormalization.GH.FiniteKummerDuality.finiteKummerCorrespondence",
+              "line": 193,
+              "end_line": 220
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerRadicals.lean",
+              "name": "GaloisFormalization.GH.KummerRadicals.classesOfField",
+              "line": 23,
+              "end_line": 24
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerRadicals.lean",
+              "name": "GaloisFormalization.GH.KummerRadicals.memClassesOfField",
+              "line": 115,
+              "end_line": 148
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerRadicals.lean",
+              "name": "GaloisFormalization.GH.KummerRadicals.radicalField",
+              "line": 19,
+              "end_line": 21
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerRadicals.lean",
+              "name": "GaloisFormalization.GH.KummerRadicals.radicalFieldFiniteGalois",
+              "line": 92,
+              "end_line": 111
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerRadicals.lean",
+              "name": "GaloisFormalization.GH.KummerRadicals.radicalFieldOfGenerators",
+              "line": 151,
+              "end_line": 165
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerRadicals.lean",
+              "name": "GaloisFormalization.GH.KummerRadicals.radicalGaloisGroup",
+              "line": 179,
+              "end_line": 214
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH07",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1173,
+            "line_end": 1184
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteKummerDuality.lean",
+              "name": "GaloisFormalization.GH.FiniteKummerDuality.perfectRadicalPairing",
+              "line": 223,
+              "end_line": 233
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerRadicals.lean",
+              "name": "GaloisFormalization.GH.KummerRadicals.classesOfFieldCharacters",
+              "line": 218,
+              "end_line": 286
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerRadicals.lean",
+              "name": "GaloisFormalization.GH.KummerRadicals.memClassesOfField",
+              "line": 115,
+              "end_line": 148
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH07-PAIRING",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1175,
+            "line_end": 1188
+          }
+        }
+      ],
+      "id": "GH07",
+      "kind": "theorem",
+      "number": "3.7",
+      "paper_line": 1174,
+      "pdf_destination": "theorem.3.7",
+      "pdf_page": 19,
+      "title": "Finite Kummer duality"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/AdditiveGaloisCohomology.lean",
+              "name": "GaloisFormalization.GH.AdditiveGaloisCohomology.finite_semilinear_vanishing",
+              "line": 16,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/TraceContraction.lean",
+              "name": "GaloisFormalization.GH.discrete_semilinear_cohomology_subsingleton",
+              "line": 130,
+              "end_line": 167
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Cochains.lean",
+              "name": "GaloisFormalization.GH.ordinary_comparison",
+              "line": 702,
+              "end_line": 705
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/TraceContraction.lean",
+              "name": "GaloisFormalization.GH.semilinear_cohomology_subsingleton",
+              "line": 183,
+              "end_line": 184
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH08",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1242,
+            "line_end": 1247
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/AdditiveGaloisCohomology.lean",
+              "name": "GaloisFormalization.GH.AdditiveGaloisCohomology.continuous_additive_vanishing",
+              "line": 61,
+              "end_line": 72
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerCohomology.finiteLayerComparison",
+              "line": 264,
+              "end_line": 299
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.fixedField_layerKernel",
+              "line": 136,
+              "end_line": 138
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH08-FIELD",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1247,
+            "line_end": 1252
+          }
+        }
+      ],
+      "id": "GH08",
+      "kind": "proposition",
+      "number": "3.8",
+      "paper_line": 1243,
+      "pdf_destination": "proposition.3.8",
+      "pdf_page": 20,
+      "title": "Trace contraction for semilinear coefficients"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/ArtinSchreierCoefficients.lean",
+              "name": "GaloisFormalization.GH.ArtinSchreierCoefficients.Quotient",
+              "line": 41,
+              "end_line": 42
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/ArtinSchreierCoefficients.lean",
+              "name": "GaloisFormalization.GH.ArtinSchreierCoefficients.primeFieldAction",
+              "line": 92,
+              "end_line": 93
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/ArtinSchreierCoefficients.lean",
+              "name": "GaloisFormalization.GH.ArtinSchreierCoefficients.primeFieldInclusion",
+              "line": 24,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/ArtinSchreierCoefficients.lean",
+              "name": "GaloisFormalization.GH.ArtinSchreierCoefficients.shortExact",
+              "line": 101,
+              "end_line": 108
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/ArtinSchreierCoefficients.lean",
+              "name": "GaloisFormalization.GH.ArtinSchreierCoefficients.wp",
+              "line": 28,
+              "end_line": 29
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/ArtinSchreierCoefficients.lean",
+              "name": "GaloisFormalization.GH.ArtinSchreierCoefficients.wp_surjective",
+              "line": 59,
+              "end_line": 72
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/ArtinSchreierConnecting.lean",
+              "name": "GaloisFormalization.GH.ArtinSchreierConnecting.artinSchreierConnecting",
+              "line": 103,
+              "end_line": 175
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH09",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1275,
+            "line_end": 1287
+          }
+        }
+      ],
+      "id": "GH09",
+      "kind": "theorem",
+      "number": "3.9",
+      "paper_line": 1276,
+      "pdf_destination": "theorem.3.9",
+      "pdf_page": 20,
+      "title": "The Artin–Schreier connecting isomorphism"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/ArtinSchreierTensor.lean",
+              "name": "GaloisFormalization.GH.ArtinSchreierTensor.diagonalAction",
+              "line": 24,
+              "end_line": 24
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/ArtinSchreierTensor.lean",
+              "name": "GaloisFormalization.GH.ArtinSchreierTensor.equivariant",
+              "line": 110,
+              "end_line": 130
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/ArtinSchreierTensor.lean",
+              "name": "GaloisFormalization.GH.ArtinSchreierTensor.shortExact",
+              "line": 93,
+              "end_line": 107
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/ArtinSchreierTensorAcyclic.lean",
+              "name": "GaloisFormalization.GH.ArtinSchreierTensorAcyclic.tensorAcyclic",
+              "line": 128,
+              "end_line": 145
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/PrimaryCohomologyVanishing.lean",
+              "name": "GaloisFormalization.GH.PrimaryCohomologyVanishing.vanishing",
+              "line": 154,
+              "end_line": 190
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH10",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1307,
+            "line_end": 1314
+          }
+        }
+      ],
+      "id": "GH10",
+      "kind": "theorem",
+      "number": "3.10",
+      "paper_line": 1308,
+      "pdf_destination": "theorem.3.10",
+      "pdf_page": 21,
+      "title": "Vanishing for p-primary coefficients in characteristic p"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/GH/CyclicDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.CyclicDegreeTwo.carryCochain_apply_pow",
+              "line": 85,
+              "end_line": 92
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.cyclicCarryCochain",
+              "line": 16,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.cyclicDegreeTwoEquiv_symm_mk",
+              "line": 300,
+              "end_line": 304
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.cyclicNorm",
+              "line": 13,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.cyclic_degree_two",
+              "line": 308,
+              "end_line": 311
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.cyclic_degree_two_order_one",
+              "line": 313,
+              "end_line": 317
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Cochains.lean",
+              "name": "GaloisFormalization.GH.ordinary_comparison",
+              "line": 702,
+              "end_line": 705
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH11",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1359,
+            "line_end": 1365
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.cyclicFieldDegreeTwoEquiv",
+              "line": 418,
+              "end_line": 421
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.cyclic_field_degree_two",
+              "line": 425,
+              "end_line": 428
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Cochains.lean",
+              "name": "GaloisFormalization.GH.ordinary_comparison",
+              "line": 702,
+              "end_line": 705
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH11-NORM",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1366,
+            "line_end": 1371
+          }
+        }
+      ],
+      "id": "GH11",
+      "kind": "proposition",
+      "number": "3.11",
+      "paper_line": 1360,
+      "pdf_destination": "proposition.3.11",
+      "pdf_page": 21,
+      "title": "Second cohomology of a finite cyclic group"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFieldKummer.lean",
+              "name": "GaloisFormalization.GH.FiniteFieldKummer.cohomologyCyclicOrder",
+              "line": 15,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFieldKummer.lean",
+              "name": "GaloisFormalization.GH.FiniteFieldKummer.cohomologyOneSubsingleton",
+              "line": 33,
+              "end_line": 39
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFieldKummer.lean",
+              "name": "GaloisFormalization.GH.FiniteFieldKummer.cohomologySubsingletonOfGcdEqOne",
+              "line": 27,
+              "end_line": 31
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KummerConnecting.lean",
+              "name": "GaloisFormalization.GH.KummerConnecting.kummerIsomorphism",
+              "line": 37,
+              "end_line": 118
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH12",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1408,
+            "line_end": 1412
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFieldArtinSchreier.lean",
+              "name": "GaloisFormalization.GH.FiniteFieldArtinSchreier.characterAtFrobenius",
+              "line": 60,
+              "end_line": 78
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFieldArtinSchreier.lean",
+              "name": "GaloisFormalization.GH.FiniteFieldArtinSchreier.traceFormula",
+              "line": 17,
+              "end_line": 23
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFieldArtinSchreier.lean",
+              "name": "GaloisFormalization.GH.FiniteFieldArtinSchreier.traceQuotient",
+              "line": 37,
+              "end_line": 58
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFrobenius.lean",
+              "name": "GaloisFormalization.GH.FiniteFrobenius.arithmeticFrobenius",
+              "line": 23,
+              "end_line": 24
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFrobenius.lean",
+              "name": "GaloisFormalization.GH.FiniteFrobenius.arithmeticFrobenius_apply",
+              "line": 45,
+              "end_line": 46
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH12-TRACE",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1412,
+            "line_end": 1415
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFrobenius.lean",
+              "name": "GaloisFormalization.GH.FiniteFrobenius.restrict_frobenius_generates",
+              "line": 73,
+              "end_line": 80
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteLayerCohomology.lean",
+              "name": "GaloisFormalization.GH.FiniteLayerCohomology.finiteLayerComparison",
+              "line": 264,
+              "end_line": 299
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/KrullLayers.lean",
+              "name": "GaloisFormalization.GH.KrullLayers.fixedUnits_layer",
+              "line": 236,
+              "end_line": 246
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.cyclic_field_degree_two",
+              "line": 425,
+              "end_line": 428
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFieldDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.finite_field_degree_two",
+              "line": 125,
+              "end_line": 126
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH12-VANISHING",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1415,
+            "line_end": 1419
+          }
+        }
+      ],
+      "id": "GH12",
+      "kind": "example",
+      "number": "3.12",
+      "paper_line": 1409,
+      "pdf_destination": "example.3.12",
+      "pdf_page": 22,
+      "title": "Finite fields"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/RealNormObstruction.lean",
+              "name": "GaloisFormalization.GH.RealNormObstruction.real_norm_obstruction",
+              "line": 217,
+              "end_line": 218
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.cyclicDegreeTwoEquiv_symm_mk",
+              "line": 300,
+              "end_line": 304
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/CyclicDegreeTwo.lean",
+              "name": "GaloisFormalization.GH.cyclic_degree_two",
+              "line": 308,
+              "end_line": 311
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Cochains.lean",
+              "name": "GaloisFormalization.GH.ordinary_comparison",
+              "line": 702,
+              "end_line": 705
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH13",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1439,
+            "line_end": 1444
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/RationalArtinSchreier.lean",
+              "name": "GaloisFormalization.GH.RationalArtinSchreier.variableClassNonzero",
+              "line": 52,
+              "end_line": 57
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/RationalArtinSchreier.lean",
+              "name": "GaloisFormalization.GH.RationalArtinSchreier.variableCohomologyClassNonzero",
+              "line": 60,
+              "end_line": 69
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH13-ARTIN-SCHREIER",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1445,
+            "line_end": 1446
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/RationalKummer.lean",
+              "name": "GaloisFormalization.GH.RationalKummer.parameterClassOrder",
+              "line": 40,
+              "end_line": 42
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/RationalKummer.lean",
+              "name": "GaloisFormalization.GH.RationalKummer.parameterRadicalExtension",
+              "line": 91,
+              "end_line": 124
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH13-KUMMER",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1445,
+            "line_end": 1449
+          }
+        }
+      ],
+      "id": "GH13",
+      "kind": "example",
+      "number": "3.13",
+      "paper_line": 1440,
+      "pdf_destination": "example.3.13",
+      "pdf_page": 22,
+      "title": "A real norm obstruction and two rational-function classes"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/InflationRestriction.lean",
+              "name": "GaloisFormalization.GH.continuousFixedCoefficientAction",
+              "line": 193,
+              "end_line": 196
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/InflationRestriction.lean",
+              "name": "GaloisFormalization.GH.continuousInflationRestriction_one_exact",
+              "line": 151,
+              "end_line": 172
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/Cochains.lean",
+              "name": "GaloisFormalization.GH.continuousInflation_class",
+              "line": 260,
+              "end_line": 268
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/InflationRestriction.lean",
+              "name": "GaloisFormalization.GH.continuousInflation_one_injective",
+              "line": 84,
+              "end_line": 98
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/InflationRestriction.lean",
+              "name": "GaloisFormalization.GH.continuousRestrictionToInvariants",
+              "line": 19,
+              "end_line": 19
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/InflationRestriction.lean",
+              "name": "GaloisFormalization.GH.continuousRestrictionToInvariants_val",
+              "line": 187,
+              "end_line": 190
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/InflationRestriction.lean",
+              "name": "GaloisFormalization.GH.invariantContinuousH1",
+              "line": 16,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/InflationRestriction.lean",
+              "name": "GaloisFormalization.GH.profiniteInflationRestriction",
+              "line": 200,
+              "end_line": 204
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/InflationRestriction.lean",
+              "name": "GaloisFormalization.GH.quotientH1Conjugation",
+              "line": 13,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/InflationRestriction.lean",
+              "name": "GaloisFormalization.GH.quotientH1Conjugation_on_classes",
+              "line": 177,
+              "end_line": 184
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:GH14",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1472,
+            "line_end": 1483
+          }
+        }
+      ],
+      "id": "GH14",
+      "kind": "proposition",
+      "number": "3.14",
+      "paper_line": 1473,
+      "pdf_destination": "proposition.3.14",
+      "pdf_page": 23,
+      "title": "Continuous inflation–restriction in degree one"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/EmbeddingProblem.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem",
+              "line": 14,
+              "end_line": 15
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/EmbeddingProblem.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.IsCentral",
+              "line": 56,
+              "end_line": 57
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/EmbeddingProblem.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.IsSplit",
+              "line": 52,
+              "end_line": 53
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/EmbeddingProblem.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution",
+              "line": 32,
+              "end_line": 33
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/EmbeddingProblem.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.IsProper",
+              "line": 42,
+              "end_line": 43
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/EmbeddingProblem.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.kernel",
+              "line": 24,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/EmbeddingProblem.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.kernelInclusion",
+              "line": 28,
+              "end_line": 29
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG01",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1536,
+            "line_end": 1549
+          }
+        }
+      ],
+      "id": "IG01",
+      "kind": "definition",
+      "number": "4.1",
+      "paper_line": 1537,
+      "pdf_destination": "definition.4.1",
+      "pdf_page": 24,
+      "title": "Weak and proper solutions"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/PrescribedExtension.lean",
+              "name": "GaloisFormalization.IG.layerGroup_subsingleton_iff",
+              "line": 121,
+              "end_line": 139
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/PrescribedExtension.lean",
+              "name": "GaloisFormalization.IG.prescribedProblem",
+              "line": 19,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/PrescribedExtension.lean",
+              "name": "GaloisFormalization.IG.properSolution_iff_realization",
+              "line": 142,
+              "end_line": 158
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/PrescribedExtension.lean",
+              "name": "GaloisFormalization.IG.realization_in_separableClosure",
+              "line": 162,
+              "end_line": 173
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/PrescribedExtension.lean",
+              "name": "GaloisFormalization.IG.weakSolution_fixedField",
+              "line": 40,
+              "end_line": 95
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/PrescribedExtension.lean",
+              "name": "GaloisFormalization.IG.weakSolution_of_extension",
+              "line": 98,
+              "end_line": 118
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG02",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1551,
+            "line_end": 1562
+          }
+        }
+      ],
+      "id": "IG02",
+      "kind": "proposition",
+      "number": "4.2",
+      "paper_line": 1552,
+      "pdf_destination": "proposition.4.2",
+      "pdf_page": 24,
+      "title": "The prescribed quotient extension"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.NormalizedSection",
+              "line": 11,
+              "end_line": 11
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousClass_of_section",
+              "line": 92,
+              "end_line": 113
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousExtensionClass",
+              "line": 18,
+              "end_line": 19
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousExtensionClass_zero_iff_split",
+              "line": 131,
+              "end_line": 182
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_pullbackKernelAction",
+              "line": 76,
+              "end_line": 83
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_quotientKernelAction",
+              "line": 69,
+              "end_line": 73
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.extensionClass",
+              "line": 20,
+              "end_line": 20
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.extensionClass_zero_iff_split",
+              "line": 185,
+              "end_line": 188
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.factorCochain",
+              "line": 16,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.factorCocycle",
+              "line": 17,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.factorCocycle_apply",
+              "line": 63,
+              "end_line": 64
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet",
+              "line": 13,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_change",
+              "line": 75,
+              "end_line": 89
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_coe",
+              "line": 33,
+              "end_line": 34
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_identity",
+              "line": 58,
+              "end_line": 61
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.factorSet_normalized",
+              "line": 40,
+              "end_line": 46
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.isMulCommutative_kernel_of_isCentral",
+              "line": 88,
+              "end_line": 89
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.kernelCoordinate",
+              "line": 14,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.normalizedSection",
+              "line": 12,
+              "end_line": 12
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.ordinaryClass_comparison",
+              "line": 116,
+              "end_line": 121
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.ordinaryClass_of_section",
+              "line": 124,
+              "end_line": 128
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction",
+              "line": 32,
+              "end_line": 34
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_apply",
+              "line": 61,
+              "end_line": 66
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_eq_self_of_isCentral",
+              "line": 105,
+              "end_line": 112
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction",
+              "line": 28,
+              "end_line": 29
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_apply",
+              "line": 37,
+              "end_line": 48
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_eq_self_of_isCentral",
+              "line": 92,
+              "end_line": 102
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_unique",
+              "line": 51,
+              "end_line": 58
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates",
+              "line": 15,
+              "end_line": 15
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates_apply",
+              "line": 48,
+              "end_line": 49
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates_mul",
+              "line": 66,
+              "end_line": 72
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ExtensionClass.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionCoordinates_symm_apply",
+              "line": 51,
+              "end_line": 52
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG03",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1582,
+            "line_end": 1591
+          }
+        }
+      ],
+      "id": "IG03",
+      "kind": "lemma",
+      "number": "4.3",
+      "paper_line": 1583,
+      "pdf_destination": "lemma.4.3",
+      "pdf_page": 25,
+      "title": "The class of an abelian extension"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/LiftCoordinates.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.LiftCoordinateSolutions",
+              "line": 18,
+              "end_line": 19
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/WeakLiftTorsor.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolutionConjugacyClasses",
+              "line": 11,
+              "end_line": 12
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ObstructionAndClassification.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.centralWeakLift_coefficient_action",
+              "line": 17,
+              "end_line": 19
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/LiftCoordinates.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.kernelCoordinate_conj",
+              "line": 171,
+              "end_line": 190
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/LiftCoordinates.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.liftCoordinateEquation_iff",
+              "line": 51,
+              "end_line": 66
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/LiftCoordinates.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.liftCoordinateSolutions_add_iff",
+              "line": 193,
+              "end_line": 199
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/LiftCoordinates.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.liftCoordinateSolutions_apply_one",
+              "line": 69,
+              "end_line": 73
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/LiftCoordinates.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.nonempty_weakSolution_iff_obstruction_eq_zero",
+              "line": 202,
+              "end_line": 219
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/LiftCoordinates.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackFactorCocycle",
+              "line": 12,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/LiftCoordinates.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackFactorCocycle_apply",
+              "line": 38,
+              "end_line": 40
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_apply",
+              "line": 61,
+              "end_line": 66
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/LiftCoordinates.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.weakLiftObstruction",
+              "line": 15,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/LiftCoordinates.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.weakLiftObstruction_eq_class",
+              "line": 42,
+              "end_line": 48
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ObstructionAndClassification.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.weakLift_obstruction_and_classification",
+              "line": 12,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/WeakLiftTorsor.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolutionClass",
+              "line": 14,
+              "end_line": 15
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/WeakLiftTorsor.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolutionClasses_torsor",
+              "line": 112,
+              "end_line": 219
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/WeakLiftTorsor.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolutionConjugacy",
+              "line": 8,
+              "end_line": 9
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/LiftCoordinates.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.weakSolution_coordinateEquiv",
+              "line": 148,
+              "end_line": 168
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG04",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1613,
+            "line_end": 1624
+          }
+        }
+      ],
+      "id": "IG04",
+      "kind": "theorem",
+      "number": "4.4",
+      "paper_line": 1614,
+      "pdf_destination": "theorem.4.4",
+      "pdf_page": 25,
+      "title": "Obstruction and classification of weak lifts"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/FiniteStageObstructions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.finiteStage_detection",
+              "line": 95,
+              "end_line": 102
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/FiniteStageObstructions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.finiteStage_inflation",
+              "line": 114,
+              "end_line": 140
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/FiniteStageObstructions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.finiteStage_properties",
+              "line": 25,
+              "end_line": 26
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/FiniteStageObstructions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.galois_finiteStage_identification",
+              "line": 155,
+              "end_line": 198
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG05",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1643,
+            "line_end": 1654
+          }
+        }
+      ],
+      "id": "IG05",
+      "kind": "corollary",
+      "number": "4.5",
+      "paper_line": 1644,
+      "pdf_destination": "corollary.4.5",
+      "pdf_page": 25,
+      "title": "Detection on finite stages"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ProperSplitSolutions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.image_inf_kernel",
+              "line": 28,
+              "end_line": 38
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ProperSplitSolutions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.image_surjects_onto_quotient",
+              "line": 21,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ProperSplitSolutions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.proper_iff_map_kernel",
+              "line": 41,
+              "end_line": 54
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG06",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1668,
+            "line_end": 1671
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ProperSplitSolutions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.ContinuousCrossedHom",
+              "line": 64,
+              "end_line": 65
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ProperSplitSolutions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.WeakSolution.proper_iff_map_kernel",
+              "line": 41,
+              "end_line": 54
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ProperSplitSolutions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.crossedHomEquivWeakSolution_exists",
+              "line": 158,
+              "end_line": 185
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ProperSplitSolutions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.crossedHom_restriction_and_properness",
+              "line": 189,
+              "end_line": 221
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ProperSplitSolutions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.sectionAction",
+              "line": 59,
+              "end_line": 61
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/ProperSplitSolutions.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.splitMulEquiv_exists",
+              "line": 105,
+              "end_line": 109
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG06-split",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1672,
+            "line_end": 1681
+          }
+        }
+      ],
+      "id": "IG06",
+      "kind": "proposition",
+      "number": "4.6",
+      "paper_line": 1669,
+      "pdf_destination": "proposition.4.6",
+      "pdf_page": 26,
+      "title": "Proper solutions of split problems"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.cyclicProblem",
+              "line": 17,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_central",
+              "line": 26,
+              "end_line": 27
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_factor_set_value",
+              "line": 73,
+              "end_line": 78
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_generator_fibre",
+              "line": 37,
+              "end_line": 43
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_generator_lift_order",
+              "line": 54,
+              "end_line": 63
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_kernel",
+              "line": 29,
+              "end_line": 35
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_no_weak_solution",
+              "line": 65,
+              "end_line": 71
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_nonzero_classes",
+              "line": 100,
+              "end_line": 131
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.cyclic_normalized_differential",
+              "line": 92,
+              "end_line": 98
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_pullbackKernelAction",
+              "line": 76,
+              "end_line": 83
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.continuousSMul_quotientKernelAction",
+              "line": 69,
+              "end_line": 73
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.isMulCommutative_kernel_of_isCentral",
+              "line": 88,
+              "end_line": 89
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction",
+              "line": 32,
+              "end_line": 34
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_apply",
+              "line": 61,
+              "end_line": 66
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.pullbackKernelAction_eq_self_of_isCentral",
+              "line": 105,
+              "end_line": 112
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction",
+              "line": 28,
+              "end_line": 29
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_apply",
+              "line": 37,
+              "end_line": 48
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_eq_self_of_isCentral",
+              "line": 92,
+              "end_line": 102
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/AbelianKernelAction.lean",
+              "name": "GaloisFormalization.IG.FiniteEmbeddingProblem.quotientKernelAction_unique",
+              "line": 51,
+              "end_line": 58
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG07",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1695,
+            "line_end": 1704
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.firstFactorSolution",
+              "line": 23,
+              "end_line": 24
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.product_is_split",
+              "line": 133,
+              "end_line": 134
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.product_no_proper_solution",
+              "line": 136,
+              "end_line": 146
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicAndSplitExamples.lean",
+              "name": "GaloisFormalization.IG.CyclicAndSplitExamples.splitProblem",
+              "line": 20,
+              "end_line": 20
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG07-split",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1695,
+            "line_end": 1708
+          }
+        }
+      ],
+      "id": "IG07",
+      "kind": "example",
+      "number": "4.7",
+      "paper_line": 1696,
+      "pdf_destination": "example.4.7",
+      "pdf_page": 26,
+      "title": "A central obstruction and a split weak solution"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFrobenius.lean",
+              "name": "GaloisFormalization.GH.FiniteFrobenius.frobenius_cyclic_dense",
+              "line": 82,
+              "end_line": 84
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/GH/FiniteFrobenius.lean",
+              "name": "GaloisFormalization.GH.FiniteFrobenius.reduction_frobenius",
+              "line": 99,
+              "end_line": 103
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/FiniteFieldEmbeddingProblems.lean",
+              "name": "GaloisFormalization.IG.FiniteFieldEmbeddingProblems.properSolutionExistsIff",
+              "line": 126,
+              "end_line": 143
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/FiniteFieldEmbeddingProblems.lean",
+              "name": "GaloisFormalization.IG.FiniteFieldEmbeddingProblems.weakSolutionExists",
+              "line": 117,
+              "end_line": 122
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG08",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1710,
+            "line_end": 1715
+          }
+        }
+      ],
+      "id": "IG08",
+      "kind": "proposition",
+      "number": "4.8",
+      "paper_line": 1711,
+      "pdf_destination": "proposition.4.8",
+      "pdf_page": 26,
+      "title": "Finite-field embedding problems"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SimpleRootLifting.lean",
+              "name": "GaloisFormalization.IG.simpleRootLifting",
+              "line": 101,
+              "end_line": 111
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG09",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1747,
+            "line_end": 1753
+          }
+        }
+      ],
+      "id": "IG09",
+      "kind": "lemma",
+      "number": "4.9",
+      "paper_line": 1748,
+      "pdf_destination": "lemma.4.9",
+      "pdf_page": 27,
+      "title": "Simple-root lifting in power series"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.constantCoeff_regularSeries",
+              "line": 71,
+              "end_line": 77
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.fraction_specializes",
+              "line": 61,
+              "end_line": 66
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.laurentMap",
+              "line": 25,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift",
+              "line": 23,
+              "end_line": 23
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_laurent",
+              "line": 79,
+              "end_line": 86
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_monicDegree",
+              "line": 102,
+              "end_line": 106
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_naturality",
+              "line": 161,
+              "end_line": 165
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_reduction",
+              "line": 88,
+              "end_line": 95
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.polynomialLift_reduction_base",
+              "line": 97,
+              "end_line": 100
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.powerToLaurent_regularSeries",
+              "line": 68,
+              "end_line": 69
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.regularAt_div",
+              "line": 56,
+              "end_line": 59
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.regularSeries",
+              "line": 21,
+              "end_line": 21
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.regularSeries_naturality",
+              "line": 151,
+              "end_line": 159
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.specialize_monicDegree",
+              "line": 108,
+              "end_line": 112
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.substitution_C",
+              "line": 31,
+              "end_line": 34
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.substitution_div",
+              "line": 36,
+              "end_line": 37
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.substitution_injective",
+              "line": 27,
+              "end_line": 29
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.substitution_naturality",
+              "line": 142,
+              "end_line": 149
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationCoefficients.lean",
+              "name": "GaloisFormalization.IG.SpecializationCoefficients.substitution_sub_C",
+              "line": 45,
+              "end_line": 54
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationData.lean",
+              "name": "GaloisFormalization.IG.SpecializationData.MatchesRoots",
+              "line": 61,
+              "end_line": 61
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationData.lean",
+              "name": "GaloisFormalization.IG.SpecializationData.PointEmbedding",
+              "line": 57,
+              "end_line": 57
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationData.lean",
+              "name": "GaloisFormalization.IG.SpecializationData.PolynomialRegularAt",
+              "line": 19,
+              "end_line": 19
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationData.lean",
+              "name": "GaloisFormalization.IG.SpecializationData.RegularAt",
+              "line": 17,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationData.lean",
+              "name": "GaloisFormalization.IG.SpecializationData.specialize_coeff",
+              "line": 74,
+              "end_line": 81
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationDecomposition.lean",
+              "name": "GaloisFormalization.IG.SpecializationDecomposition.constantInValuationRing",
+              "line": 13,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationDecomposition.lean",
+              "name": "GaloisFormalization.IG.SpecializationDecomposition.normalizedValueGroup",
+              "line": 20,
+              "end_line": 48
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationDecomposition.lean",
+              "name": "GaloisFormalization.IG.SpecializationDecomposition.residueAlgebra",
+              "line": 16,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationDecomposition.lean",
+              "name": "GaloisFormalization.IG.SpecializationDecomposition.residueFieldEquivalence",
+              "line": 50,
+              "end_line": 75
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationRootMatching.lean",
+              "name": "GaloisFormalization.IG.SpecializationRootMatching.existsRootMatchingEmbedding",
+              "line": 112,
+              "end_line": 117
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationRootMatching.lean",
+              "name": "GaloisFormalization.IG.SpecializationRootMatching.laurentSpecializationRoots",
+              "line": 54,
+              "end_line": 85
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationRootMatching.lean",
+              "name": "GaloisFormalization.IG.SpecializationRootMatching.liftSpecializedRoot",
+              "line": 17,
+              "end_line": 29
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationRootMatching.lean",
+              "name": "GaloisFormalization.IG.SpecializationRootMatching.liftedRootImages",
+              "line": 14,
+              "end_line": 15
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationRootMatching.lean",
+              "name": "GaloisFormalization.IG.SpecializationRootMatching.pointEmbeddingRoots",
+              "line": 87,
+              "end_line": 110
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GoodSpecialization.lean",
+              "name": "GaloisFormalization.IG.goodSpecialization",
+              "line": 11,
+              "end_line": 21
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG10",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1773,
+            "line_end": 1782
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationData.lean",
+              "name": "GaloisFormalization.IG.SpecializationData.decompositionGroup",
+              "line": 59,
+              "end_line": 59
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationDecomposition.lean",
+              "name": "GaloisFormalization.IG.SpecializationDecomposition.decompositionEquivalence",
+              "line": 175,
+              "end_line": 248
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationDecomposition.lean",
+              "name": "GaloisFormalization.IG.SpecializationDecomposition.onValuationRing",
+              "line": 18,
+              "end_line": 18
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationDecomposition.lean",
+              "name": "GaloisFormalization.IG.SpecializationDecomposition.residueAlgebra",
+              "line": 16,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationDecomposition.lean",
+              "name": "GaloisFormalization.IG.SpecializationDecomposition.residueFieldEquivalence",
+              "line": 50,
+              "end_line": 75
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/SpecializationRootMatching.lean",
+              "name": "GaloisFormalization.IG.SpecializationRootMatching.pointEmbeddingRoots",
+              "line": 87,
+              "end_line": 110
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GoodSpecialization.lean",
+              "name": "GaloisFormalization.IG.goodSpecialization",
+              "line": 11,
+              "end_line": 21
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GoodSpecialization.lean",
+              "name": "GaloisFormalization.IG.goodSpecializationConjugacy",
+              "line": 23,
+              "end_line": 63
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG10-decomposition",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1773,
+            "line_end": 1792
+          }
+        }
+      ],
+      "id": "IG10",
+      "kind": "theorem",
+      "number": "4.10",
+      "paper_line": 1774,
+      "pdf_destination": "theorem.4.10",
+      "pdf_page": 27,
+      "title": "Good specialization as a decomposition subgroup"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/TowerSpecialization.lean",
+              "name": "GaloisFormalization.IG.TowerSpecialization.towerSpecialization",
+              "line": 204,
+              "end_line": 271
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG11",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1824,
+            "line_end": 1835
+          }
+        }
+      ],
+      "id": "IG11",
+      "kind": "corollary",
+      "number": "4.11",
+      "paper_line": 1825,
+      "pdf_destination": "corollary.4.11",
+      "pdf_page": 28,
+      "title": "Specialization in a tower"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GeometricGaloisGroup.lean",
+              "name": "GaloisFormalization.IG.IsRegularOver",
+              "line": 10,
+              "end_line": 10
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/RationalConstantFields.lean",
+              "name": "GaloisFormalization.IG.constantIntersection",
+              "line": 248,
+              "end_line": 306
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GeometricGaloisGroup.lean",
+              "name": "GaloisFormalization.IG.geometricGaloisGroup",
+              "line": 37,
+              "end_line": 83
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GeometricGaloisGroup.lean",
+              "name": "GaloisFormalization.IG.geometricRestriction",
+              "line": 13,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/IG/RationalConstantFields.lean",
+              "name": "GaloisFormalization.IG.rationalConstantField",
+              "line": 17,
+              "end_line": 19
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/IG/RationalConstantFields.lean",
+              "name": "GaloisFormalization.IG.rationalWithConstants",
+              "line": 12,
+              "end_line": 14
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG12",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1862,
+            "line_end": 1870
+          }
+        }
+      ],
+      "id": "IG12",
+      "kind": "proposition",
+      "number": "4.12",
+      "paper_line": 1863,
+      "pdf_destination": "proposition.4.12",
+      "pdf_page": 28,
+      "title": "Regularity and the geometric group"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.arithmetic_discr",
+              "line": 118,
+              "end_line": 121
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.cubic_toPoly_discr",
+              "line": 31,
+              "end_line": 36
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.generic_coefficients",
+              "line": 123,
+              "end_line": 126
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.generic_discr_nonsquare",
+              "line": 75,
+              "end_line": 108
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.generic_irreducible",
+              "line": 64,
+              "end_line": 69
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.generic_separable",
+              "line": 71,
+              "end_line": 73
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.geometric",
+              "line": 110,
+              "end_line": 116
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.polynomial",
+              "line": 9,
+              "end_line": 10
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.polynomial_discr",
+              "line": 25,
+              "end_line": 29
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.polynomial_map",
+              "line": 12,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.polynomial_monic_degree",
+              "line": 20,
+              "end_line": 23
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/GenericCubic.lean",
+              "name": "GaloisFormalization.IG.GenericCubic.specialization",
+              "line": 128,
+              "end_line": 134
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.cubic_discriminant_eq_vandermonde_sq",
+              "line": 101,
+              "end_line": 104
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.cubic_discriminant_of_roots",
+              "line": 53,
+              "end_line": 71
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.cubic_galois_equiv_of_nonsquare",
+              "line": 233,
+              "end_line": 239
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.cubic_root_action_alternating_iff_mem_base",
+              "line": 155,
+              "end_line": 186
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.cubic_root_action_alternating_iff_square",
+              "line": 188,
+              "end_line": 192
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.cubic_root_action_apply",
+              "line": 20,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.cubic_root_action_faithful_transitive",
+              "line": 27,
+              "end_line": 51
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.cubic_root_ordering",
+              "line": 13,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.cubic_vandermonde_automorphism_sign",
+              "line": 121,
+              "end_line": 133
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.cubic_vandermonde_mem_base_iff_square",
+              "line": 136,
+              "end_line": 153
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.cubic_vandermonde_permutation_sign",
+              "line": 115,
+              "end_line": 119
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CubicGaloisCriterion.lean",
+              "name": "GaloisFormalization.IG.exists_cubic_galois_equiv",
+              "line": 194,
+              "end_line": 229
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/RegularCubic.lean",
+              "name": "GaloisFormalization.IG.regular_generic_cubic",
+              "line": 187,
+              "end_line": 196
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG13",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1914,
+            "line_end": 1917
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/OddCubicFibres.lean",
+              "name": "GaloisFormalization.IG.oddCubicFibre",
+              "line": 16,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/OddCubicFibres.lean",
+              "name": "GaloisFormalization.IG.odd_cubic_fibre_discriminant",
+              "line": 55,
+              "end_line": 59
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/OddCubicFibres.lean",
+              "name": "GaloisFormalization.IG.odd_cubic_fibre_discriminant_neg",
+              "line": 61,
+              "end_line": 70
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/OddCubicFibres.lean",
+              "name": "GaloisFormalization.IG.odd_cubic_fibre_discriminant_nonsquare",
+              "line": 72,
+              "end_line": 75
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/OddCubicFibres.lean",
+              "name": "GaloisFormalization.IG.odd_cubic_fibre_galois_equiv",
+              "line": 77,
+              "end_line": 83
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/OddCubicFibres.lean",
+              "name": "GaloisFormalization.IG.odd_cubic_fibre_irreducible",
+              "line": 35,
+              "end_line": 49
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/OddCubicFibres.lean",
+              "name": "GaloisFormalization.IG.odd_cubic_fibre_isMonicOfDegree",
+              "line": 23,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/OddCubicFibres.lean",
+              "name": "GaloisFormalization.IG.odd_cubic_fibre_separable",
+              "line": 51,
+              "end_line": 53
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/RegularCubic.lean",
+              "name": "GaloisFormalization.IG.regular_cubic_coefficients",
+              "line": 20,
+              "end_line": 24
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/RegularCubic.lean",
+              "name": "GaloisFormalization.IG.regular_cubic_odd_specialization",
+              "line": 198,
+              "end_line": 232
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/RegularCubic.lean",
+              "name": "GaloisFormalization.IG.regular_cubic_specialization_formula",
+              "line": 26,
+              "end_line": 34
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/RegularCubic.lean",
+              "name": "GaloisFormalization.IG.regular_generic_cubic",
+              "line": 187,
+              "end_line": 196
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG13-specialized",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1914,
+            "line_end": 1920
+          }
+        }
+      ],
+      "id": "IG13",
+      "kind": "theorem",
+      "number": "4.13",
+      "paper_line": 1915,
+      "pdf_destination": "theorem.4.13",
+      "pdf_page": 29,
+      "title": "A regular S3-family over Q"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/IG/CyclicBinomialGroup.lean",
+              "name": "GaloisFormalization.IG.CyclicBinomial.binomial",
+              "line": 12,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicBinomialGroup.lean",
+              "name": "GaloisFormalization.IG.CyclicBinomial.binomial_irreducible",
+              "line": 48,
+              "end_line": 76
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicBinomialGroup.lean",
+              "name": "GaloisFormalization.IG.CyclicBinomial.binomial_separable",
+              "line": 78,
+              "end_line": 82
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicBinomialGroup.lean",
+              "name": "GaloisFormalization.IG.CyclicBinomial.cyclic_splitting_field",
+              "line": 84,
+              "end_line": 95
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicBinomialGroup.lean",
+              "name": "GaloisFormalization.IG.CyclicBinomial.cyclic_splitting_field_extend_constants",
+              "line": 97,
+              "end_line": 106
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicBinomialGroup.lean",
+              "name": "GaloisFormalization.IG.CyclicBinomial.dvd_of_t_zpow_eq_pow",
+              "line": 23,
+              "end_line": 31
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicBinomialGroup.lean",
+              "name": "GaloisFormalization.IG.CyclicBinomial.orderAtT_mul",
+              "line": 11,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicBinomialGroup.lean",
+              "name": "GaloisFormalization.IG.CyclicBinomial.orderAtT_t",
+              "line": 19,
+              "end_line": 21
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclicBinomialGroup.lean",
+              "name": "GaloisFormalization.IG.CyclicBinomial.orderOf_tPowerClass",
+              "line": 33,
+              "end_line": 46
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/Specs/GaloisFormalization/IG/CyclicBinomialGroup.lean",
+              "name": "GaloisFormalization.IG.CyclicBinomial.tPowerClass",
+              "line": 23,
+              "end_line": 24
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/RegularCyclic.lean",
+              "name": "GaloisFormalization.IG.RegularCyclic.geometric_cyclic_realization",
+              "line": 68,
+              "end_line": 124
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/RegularCyclic.lean",
+              "name": "GaloisFormalization.IG.RegularCyclic.regular_cyclic_realization",
+              "line": 126,
+              "end_line": 177
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG14",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1965,
+            "line_end": 1977
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/RegularCyclic.lean",
+              "name": "GaloisFormalization.IG.RegularCyclic.binomial_regular_at",
+              "line": 25,
+              "end_line": 28
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/RegularCyclic.lean",
+              "name": "GaloisFormalization.IG.RegularCyclic.binomial_specialize",
+              "line": 30,
+              "end_line": 40
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/RegularCyclic.lean",
+              "name": "GaloisFormalization.IG.RegularCyclic.quadratic_prime_full_specialization",
+              "line": 42,
+              "end_line": 59
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/QuadraticPrimeFibres.lean",
+              "name": "GaloisFormalization.IG.prime_not_isSquare_rat",
+              "line": 11,
+              "end_line": 12
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/QuadraticPrimeFibres.lean",
+              "name": "GaloisFormalization.IG.quadratic_prime_fibre_galoisGroup",
+              "line": 20,
+              "end_line": 27
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/QuadraticPrimeFibres.lean",
+              "name": "GaloisFormalization.IG.quadratic_prime_fibre_separable",
+              "line": 15,
+              "end_line": 17
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG14-specialized",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1977,
+            "line_end": 1981
+          }
+        }
+      ],
+      "id": "IG14",
+      "kind": "example",
+      "number": "4.14",
+      "paper_line": 1966,
+      "pdf_destination": "example.4.14",
+      "pdf_page": 29,
+      "title": "A regular cyclic family"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/FreshPrimes.lean",
+              "name": "GaloisFormalization.IG.exists_fresh_prime",
+              "line": 7,
+              "end_line": 14
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG15",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 1983,
+            "line_end": 1987
+          }
+        }
+      ],
+      "id": "IG15",
+      "kind": "lemma",
+      "number": "4.15",
+      "paper_line": 1984,
+      "pdf_destination": "lemma.4.15",
+      "pdf_page": 30,
+      "title": "Fresh primes for prescribed cyclic factors"
+    },
+    {
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/DisjointAbelianRealization.lean",
+              "name": "GaloisFormalization.IG.exists_disjoint_abelian_realization",
+              "line": 13,
+              "end_line": 53
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/DisjointAbelianRealization.lean",
+              "name": "GaloisFormalization.IG.exists_finite_abelian_realization",
+              "line": 98,
+              "end_line": 103
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/CyclotomicAbelianFields.lean",
+              "name": "GaloisFormalization.IG.exists_pairwise_disjoint_galois_realizations",
+              "line": 126,
+              "end_line": 171
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG16",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 2010,
+            "line_end": 2015
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/DisjointAbelianRealization.lean",
+              "name": "GaloisFormalization.IG.exists_disjoint_abelian_embedding_solution",
+              "line": 72,
+              "end_line": 95
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/DisjointAbelianRealization.lean",
+              "name": "GaloisFormalization.IG.exists_disjoint_abelian_realization",
+              "line": 13,
+              "end_line": 53
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/PrescribedExtension.lean",
+              "name": "GaloisFormalization.IG.prescribedProblem",
+              "line": 19,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/FieldAndGaloisTheoryDeepening/GaloisFormalization/IG/PrescribedExtension.lean",
+              "name": "GaloisFormalization.IG.weakSolution_of_extension",
+              "line": 98,
+              "end_line": 118
+            }
+          ],
+          "id": "FieldAndGaloisTheoryDeepening:IG16-proper",
+          "import": "MathGenome.FieldAndGaloisTheoryDeepening",
+          "source": {
+            "file": "docs/sources/FieldAndGaloisTheoryDeepening/paper.tex",
+            "line": 2010,
+            "line_end": 2022
+          }
+        }
+      ],
+      "id": "IG16",
+      "kind": "theorem",
+      "number": "4.16",
+      "paper_line": 2011,
+      "pdf_destination": "theorem.4.16",
+      "pdf_page": 30,
+      "title": "Abelian realizations disjoint from a prescribed field"
+    }
+  ],
+  "reviewed_catalog_entries": 109
+}

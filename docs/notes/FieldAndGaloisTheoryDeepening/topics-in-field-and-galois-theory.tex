@@ -1,0 +1,130 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,xcolor,titlesec,fancyhdr,etoolbox,needspace}
+\usepackage{hyperref}
+
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome Topics in Field and Galois Theory}
+\fi
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\hypersetup{colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Topics in Field and Galois Theory},pdfauthor={MathGenome},
+  pdfsubject={ALG-04-D01 through ALG-04-D04},bookmarksnumbered=true}
+\setcounter{tocdepth}{1}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+\newcommand{\runningchapter}{}
+\raggedbottom
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{8pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{7pt}{22pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\runningchapter}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\renewcommand{\runningchapter}{\chaptername\ \thechapter}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand*\keeptheoremheading[1]{\BeforeBeginEnvironment{#1}{\Needspace{4\baselineskip}}}
+\forcsvlist{\keeptheoremheading}{theorem,lemma,proposition,corollary,definition,example,remark}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\thispdfpagelabel{Cover}
+\begin{flushleft}
+\vspace*{0.72in}
+{\large\scshape\color{deepgreen}MathGenome\par}
+\vspace{0.36in}
+{\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+\vspace{0.46in}
+{\color{ink}\fontsize{35}{41}\selectfont\bfseries
+  Topics in Field and\\[2pt]Galois Theory\par}
+\vspace{0.34in}
+{\color{deepgreen}\Large Picard--Vessiot theory, Galois cohomology,\\[4pt]
+  and embedding problems\par}
+\vfill
+{\normalsize ALG-04-D01 through ALG-04-D04\par}
+\vspace*{0.50in}
+\end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\makeatletter
+\patchcmd{\l@chapter}{\vskip 1.0em \@plus \p@}
+  {\vskip 0.45em \@plus 0.25\p@}{}{}
+\makeatother
+\tableofcontents
+\endgroup
+
+\chapter*{Scope and conventions}
+\phantomsection
+\addcontentsline{toc}{chapter}{Scope and conventions}
+\renewcommand{\runningchapter}{Scope and conventions}
+
+These notes continue the field theory and profinite group theory developed
+in \emph{Infinite Galois Theory} and \emph{Topics in Group Theory}.
+The opening chapters study linear systems over differential and difference
+fields. We construct their Picard--Vessiot rings and explain how
+automorphisms of a solution ring determine intermediate objects. The
+total quotient ring matters in the difference setting: even over a field,
+a solution ring can have several connected components.
+
+We then study the continuous cohomology of the absolute Galois group with
+discrete coefficients. The comparison with finite quotients gives concrete
+descriptions of classes by field elements and by finite extensions.
+The last chapter relates extensions of finite groups to lifting problems
+for the absolute Galois group and proves explicit specialization results.
+
+Chapter 4 proves specialization at a specified separable fibre and
+full-group specialization in explicit families. For general
+embedding problems, see Malle--Matzat~\cite[Chapter IV, Sections 1--2]{mallematzat}.
+For Hilbert irreducibility, regular realization and rigidity, see
+D\`ebes~\cite[Sections 5.2--5.3 and 8.2]{debes}.
+Haran--Jarden~\cite[Sections 1 and 5]{haranjarden} treats regular split
+embedding problems over complete valued fields.
+
+Unless another convention is specified, actions are on the left and
+\(st\) acts by first applying \(t\), then \(s\). A fixed separable
+closure \(k^{\mathrm s}\) of a field \(k\) carries the discrete topology
+when used as a coefficient group, and
+\(\operatorname{Gal}(k^{\mathrm s}/k)\) carries the Krull topology.
+The first two chapters state their characteristic and constant-field
+assumptions separately from those used in ordinary Galois theory.
+
+Proofs give the hypotheses for each use of earlier MathGenome notes.
+The bibliography identifies the source literature, and the accompanying
+map locates each numbered statement in the source and the PDF and records
+its dependencies.
+
+\mainmatter
+\input{chapters/01-pv-foundations}
+\input{chapters/02-pv-correspondence}
+\input{chapters/03-galois-cohomology}
+\input{chapters/04-inverse-galois}
+\backmatter
+\input{bibliography}
+\end{document}

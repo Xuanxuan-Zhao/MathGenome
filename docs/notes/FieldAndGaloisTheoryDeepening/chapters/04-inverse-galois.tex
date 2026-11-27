@@ -1,0 +1,544 @@
+\chapter{Embedding problems and regular realizations}
+\label{ch:inverse-galois}
+
+An inverse Galois question asks for a Galois extension with a specified
+group. An embedding problem also prescribes a quotient extension and
+the map to its Galois group. We first treat finite embedding problems,
+including both the obstruction to a lift and the extra requirement for
+surjectivity. We then pass from rational-function fields to residue
+fields by specialization at an explicitly good point.
+
+We use the finite and infinite Galois correspondences of
+the earlier field-theory volume~\cite[Results F01, F07, T02,
+C04, C06, C08--C10]{mg-aft}. In particular, the absolute Galois
+group \(\Gamma_k=\operatorname{Gal}(k^{\mathrm{s}}/k)\) carries
+the Krull topology, and finite groups have the discrete topology.
+
+\section{Finite embedding problems}
+
+\begin{definition}[Weak and proper solutions]
+\label{res:IG01}
+A finite embedding problem for a profinite group \(\Gamma\)
+consists of continuous surjections
+\[
+   \rho\colon\Gamma\twoheadrightarrow Q,\qquad
+   \pi\colon B\twoheadrightarrow Q
+\]
+with \(Q\) and \(B\) finite. Write \(A=\ker\pi\). A weak solution is
+a continuous homomorphism \(\lambda\colon\Gamma\to B\) satisfying
+\(\pi\lambda=\rho\). It is proper if it is surjective. The problem is
+split if \(\pi\) has a homomorphic section and central if \(A\) is
+contained in the centre of \(B\).
+\end{definition}
+
+\begin{proposition}[The prescribed quotient extension]
+\label{res:IG02}
+Let \(\Gamma=\Gamma_k\), and let \(\rho\) be restriction to a prescribed
+finite Galois extension \(E/k\) in \(k^{\mathrm{s}}\), with the
+identification \(Q=\operatorname{Gal}(E/k)\). A weak solution produces
+a finite Galois extension \(L/k\) containing \(E\) and an injection
+\(\iota\colon\operatorname{Gal}(L/k)\hookrightarrow B\) for which
+\(\pi\iota\) is restriction to \(E\). Conversely such an extension
+and injection give a weak solution. This is a proper solution exactly
+when \(\iota\) is an isomorphism. In particular, when \(Q=1\),
+proper solutions are finite Galois realizations of \(B\) over \(k\).
+\end{proposition}
+
+\begin{proof}
+The kernel of \(\lambda\) is open and normal and is contained in
+\(\ker\rho\). The fixed field \(L\) of this kernel is finite and
+Galois over \(k\) and contains \(E\). Restriction gives the
+isomorphism from the quotient \(\Gamma_k/\ker\lambda\) to
+\(\operatorname{Gal}(L/k)\), and \(\lambda\) identifies this
+quotient with its image in \(B\). The equation
+\(\pi\lambda=\rho\) checks the restriction diagram. Conversely,
+compose the surjective restriction to \(L\) with \(\iota\).
+\end{proof}
+
+\section{Abelian kernels and properness}
+
+In this section cochains with values in an abelian kernel are written
+additively. The coefficients in \(H^i_{\mathrm{cts}}\) have the
+discrete topology. This agrees with the cochain convention in
+\cite[Results GC01 and GC04--GC05]{mg-groups}.
+
+\begin{lemma}[The class of an abelian extension]
+\label{res:IG03}
+For an abelian kernel \(A\) in Definition~\ref{res:IG01}, conjugation
+by representatives in \(B\) defines an action of \(Q\) on \(A\).
+Let \(s\colon Q\to B\) be a set section with \(s(1)=1\).
+The factor set \(c(q,r)=s(q)s(r)s(qr)^{-1}\), valued in \(A\),
+is a normalized \(2\)-cocycle for this action. Its class
+\([c]\in H^2(Q,A)\) is independent of \(s\), and it vanishes
+exactly when \(\pi\) splits.
+\end{lemma}
+
+\begin{proof}
+Representatives of \(q\) differ by an element of \(A\), whose
+conjugation on \(A\) is trivial. Also \(s(q)s(r)\) represents \(qr\),
+so the resulting conjugations give an action. In the coordinates
+\((a,q)\leftrightarrow a\,s(q)\), multiplication has the rule
+\[
+ (a,q)(b,r)=(a+q\cdot b+c(q,r),\,qr).
+\]
+Associativity implies
+\[
+ c(q,r)+c(qr,u)=q\cdot c(r,u)+c(q,ru).
+\]
+Normalization follows from \(s(1)=1\). Replacing \(s(q)\) by
+\(b(q)s(q)\) adds the coboundary
+\(\delta b(q,r)=b(q)+q\cdot b(r)-b(qr)\) to \(c\).
+If \(c\) is a coboundary, changing the section by the negative of a
+cochain representing it makes the new factor set zero. A section
+with zero factor set is a homomorphism.
+\end{proof}
+
+\begin{theorem}[Obstruction and classification of weak lifts]
+\label{res:IG04}
+Give \(A\) the \(\Gamma\)-action through \(\rho\).
+For an abelian kernel, a weak solution exists exactly when
+\[
+        \rho^*[c]=0\quad\text{in }H^2_{\mathrm{cts}}(\Gamma,A).
+\]
+If a weak solution exists, the set of weak solutions modulo
+conjugation by \(A\) has a free transitive action of
+\(H^1_{\mathrm{cts}}(\Gamma,A)\).
+For a central kernel the action on \(A\) is trivial.
+\end{theorem}
+
+\begin{proof}
+A continuous map lifting \(\rho\) has the unique form
+\(\lambda(\gamma)=z(\gamma)s(\rho\gamma)\) with a continuous
+map \(z\colon\Gamma\to A\). By Lemma~\ref{res:IG03}, it is a
+homomorphism exactly when
+\[
+   z(\gamma)+\gamma\cdot z(\eta)-z(\gamma\eta)
+           =-c(\rho\gamma,\rho\eta).
+\]
+The equation at \((1,1)\) forces \(z(1)=0\).
+This gives the obstruction. Once one such \(z_0\) is fixed, all
+solutions are \(z_0+w\) for continuous \(1\)-cocycles \(w\).
+Conjugation by \(a\in A\) adds the cochain
+\(\gamma\mapsto a-\gamma\cdot a\) to \(z\); these cochains are
+exactly the \(1\)-coboundaries. This proves the claimed action.
+\end{proof}
+
+\begin{corollary}[Detection on finite stages]
+\label{res:IG05}
+Let \(U\) range over the open normal subgroups of \(\Gamma\) contained
+in \(\ker\rho\), and write \(\rho_U\colon\Gamma/U\to Q\) for
+the induced map. For abelian kernel \(A\), a weak solution exists
+exactly when \(\rho_U^*[c]\) vanishes at one finite stage
+\(H^2(\Gamma/U,A)\). Inflation along
+\(\Gamma/V\to\Gamma/U\), for \(V\leq U\), carries the class
+for \(U\) to the class for \(V\). In an absolute Galois group these
+are the stages obtained by restriction to the finite Galois
+extensions containing \(E\).
+\end{corollary}
+
+\begin{proof}
+The proof of Theorem~\ref{res:IG04} applied to the finite group
+\(\Gamma/U\) gives the equivalence between vanishing at this
+stage and a weak lift from this stage. Inflation acts by
+precomposition on each cochain, giving the asserted transition.
+Every continuous lift to the finite group \(B\) factors through
+the finite quotient by its open normal kernel, which is contained
+in \(\ker\rho\). For \(\Gamma_k\), open normal kernels are exactly
+the kernels of restriction to finite Galois subextensions, by
+the earlier correspondence~\cite[Results C06 and C08--C09]{mg-aft}.
+\end{proof}
+
+\begin{proposition}[Proper solutions of split problems]
+\label{res:IG06}
+Put \(N=\ker\rho\). A weak solution of any finite embedding problem
+is proper if and only if \(\lambda(N)=A\).
+Suppose \(\pi\) splits and identify \(B=A\rtimes Q\) using a
+homomorphic section. Weak solutions are the maps
+\[
+ \lambda(\gamma)=(z(\gamma),\rho\gamma),\qquad
+ z(\gamma\eta)=z(\gamma)\bigl(\rho\gamma\cdot z(\eta)\bigr),
+\]
+for continuous \(z\colon\Gamma\to A\); \(A\) may be nonabelian
+in this assertion. The restriction \(z|_N\) is a homomorphism,
+and this weak solution is proper exactly when \(z(N)=A\).
+\end{proposition}
+
+\begin{proof}
+The image \(H\) of any weak solution maps onto \(Q\).
+The equality \(H\cap A=\lambda(N)\) follows by applying \(\pi\)
+and using \(\pi\lambda=\rho\). If \(H\cap A=A\), then for
+any \(b\in B\) choose \(h\in H\) over \(\pi(b)\) and write
+\(b=(bh^{-1})h\in H\). The converse is immediate.
+For a split problem the displayed equation for \(z\) is exactly
+the multiplication condition in the semidirect product. On \(N\),
+the action through \(\rho\) is trivial and \(z\) is the
+restriction of \(\lambda\) with values in \(A\).
+\end{proof}
+
+\begin{example}[A central obstruction and a split weak solution]
+\label{res:IG07}
+Take \(\Gamma=Q=C_2\) and \(\rho\) the identity. The epimorphism
+\(C_4\to C_2\) has no weak solution. Indeed the two possible
+images of the generator both have order four. The lift from the
+set section has \(c(\bar 1,\bar 1)=2\in\{0,2\}\subset C_4\).
+For a normalized cochain \(z\) with values in this trivial-action
+kernel, \(\delta z(\bar 1,\bar 1)=2z(\bar 1)=0\). Thus the
+factor set represents a nonzero obstruction in the notation of
+Theorem~\ref{res:IG04}. In comparison, projection
+\(C_2\times C_2\to C_2\) admits the section in the first
+factor. Its embedding problem has weak solutions, and
+Proposition~\ref{res:IG06} rules out a proper one since \(N=1\).
+\end{example}
+
+\begin{proposition}[Finite-field embedding problems]
+\label{res:IG08}
+Every finite embedding problem for the absolute Galois group of
+a finite field has a weak solution. It has a proper solution
+exactly when \(B\) is cyclic.
+\end{proposition}
+
+\begin{proof}
+The absolute Galois group is \(\widehat{\mathbb Z}\) with
+arithmetic Frobenius the topological generator
+\cite[Results E04, E06 and E07]{mg-aft}. The element
+\(q=\rho(1)\) therefore generates \(Q\). Any \(b\in\pi^{-1}(q)\)
+of order \(m\) defines a weak lift by reducing
+\(\widehat{\mathbb Z}\) modulo \(m\) and sending \(1\) to \(b\).
+The composite with \(\pi\) agrees with \(\rho\) on the dense
+integer subgroup and hence everywhere. Since the image of
+\(\widehat{\mathbb Z}\) in any finite group is generated by
+the image of \(1\), properness requires \(B\) cyclic.
+
+Conversely, suppose \(B=\langle x\rangle\) has order \(m\) and
+\(Q\) has order \(n\mid m\). We have
+\(q=\pi(x)^a\) for some \(a\) prime to \(n\).
+Choose \(a'\equiv a\pmod n\) and \(a'\equiv1\pmod p\) for
+each prime \(p\mid m\) with \(p\nmid n\), using the Chinese
+remainder construction. Then \(a'\) is prime to \(m\), and
+\(x^{a'}\) is a generator of \(B\) lifting \(q\).
+\end{proof}
+
+\section{Specialization at a good point}
+
+Let \(k\) be any field and \(u\) an indeterminate. For a field
+\(\ell\) containing \(k\), write \(v_u\) for the order of a nonzero
+Laurent series over \(\ell\). The leading terms of nonzero
+series multiply, so orders add under multiplication, and the order of
+a sum is at least the lesser order. The residue of a series of
+nonnegative order is its constant term.
+
+\begin{lemma}[Simple-root lifting in power series]
+\label{res:IG09}
+If \(f\in k[[u]][X]\), \(\ell/k\) is a field extension, and
+\(r\in\ell\) is a simple root of the reduction \(\overline f\),
+there is exactly one \(\alpha\in\ell[[u]]\) with
+\(\alpha(0)=r\) and \(f(\alpha)=0\).
+\end{lemma}
+
+\begin{proof}
+Begin with \(\alpha_1=r\), which solves the equation modulo \(u\).
+Given a polynomial \(\alpha_j\equiv r\pmod u\) with
+\(f(\alpha_j)\equiv0\pmod{u^j}\) for \(j\geq1\),
+every extension of its coefficients through degree \(j\) has
+the form \(\alpha_j+b u^j\) modulo \(u^{j+1}\).
+Expansion gives
+\[
+ f(\alpha_j+b u^j)\equiv f(\alpha_j)+b u^j\overline f'(r)
+          \pmod{u^{j+1}},
+\]
+since \(2j\geq j+1\). The coefficient \(b\in\ell\) that kills the
+degree-\(j\) term is unique because \(\overline f'(r)\ne0\).
+The successive coefficients define a series \(\alpha\).
+Its evaluation in \(f\) is zero modulo every \(u^j\), so it
+is zero. The same coefficient recursion proves uniqueness.
+\end{proof}
+
+\begin{theorem}[Good specialization as a decomposition subgroup]
+\label{res:IG10}
+Let \(f(t,X)\in k(t)[X]\) be monic, with coefficients regular at
+\(t=a\in k\), and assume \(f(a,X)\) is separable. Let \(L\) be a
+splitting field over \(k(t)\) and \(\ell\) a splitting field of
+\(f(a,X)\) over \(k\). There is an embedding
+\(L\hookrightarrow\ell((u))\) extending \(t\mapsto a+u\)
+which matches the generic roots with their distinct reductions.
+For the valuation \(w\) induced by \(v_u\), its residue field is
+\(\ell\), its value group is \(\mathbb Z\) with \(w(t-a)=1\),
+and the map
+\[
+ \{\sigma\in\operatorname{Gal}(L/k(t)):
+           w(\sigma x)=w(x)\ \text{for every }x\in L^\times\}
+       \longrightarrow \operatorname{Gal}(\ell/k)
+\]
+given by reduction is an isomorphism. In particular the subgroup
+stabilizing \(w\) has trivial inertia kernel, and the specialized
+Galois group embeds into the generic Galois group up to conjugacy.
+\end{theorem}
+
+\begin{proof}
+The substitution \(t=a+u\) gives the indicated embedding of
+\(k(t)\) into \(k((u))\). A coefficient regular at \(a\) can be
+written with a denominator nonzero at \(a\), whose image in
+\(k[[u]]\) has an inverse by coefficient recursion.
+By Lemma~\ref{res:IG09}, each root of \(f(a,X)\) lifts to a root
+of \(f(a+u,X)\) in \(\ell[[u]]\). The lifted roots are distinct
+by their reductions. Since the polynomial is monic of unchanged
+degree, the lifts are all of its roots. They generate a splitting
+field over the embedded \(k(t)\); uniqueness of the splitting field
+gives the required embedding. Write \(L\) for its image.
+
+The residue field of \(L\) lies in \(\ell\) and contains every
+specialized root, so equals \(\ell\). The value group lies in
+\(\mathbb Z\) and contains \(1=w(u)\). An automorphism preserving
+\(w\) acts on the residue field. If it induces the identity, it
+fixes the reduction of each lifted root. The reductions are distinct,
+and the automorphism permutes these roots, so it fixes all of them
+and is the identity. For surjectivity, extend any
+\(\tau\in\operatorname{Gal}(\ell/k)\) coefficientwise to
+\(\ell((u))\), fixing \(u\). This automorphism preserves order.
+It takes the lift of \(r\) to the lift of \(\tau(r)\) by uniqueness,
+and hence preserves \(L\). Its restriction induces \(\tau\) on
+the residue field. Finally, a different embedding into
+\(\ell((u))\) over the same \(t\mapsto a+u\) has the same image,
+since its roots must be the same full set of lifted roots.
+Thus it changes the induced valuation by an automorphism of \(L\),
+which conjugates the displayed subgroup.
+\end{proof}
+
+\begin{corollary}[Specialization in a tower]
+\label{res:IG11}
+In Theorem~\ref{res:IG10}, let \(L_0\subseteq L\) be a splitting
+field over \(k(t)\) of another monic polynomial \(f_0(t,X)\)
+regular at \(a\) with separable reduction. Under the valuation
+induced from \(L\), the residue field \(\ell_0\) of \(L_0\) is
+the splitting field of \(f_0(a,X)\) inside \(\ell\).
+Under the decomposition group isomorphisms of
+Theorem~\ref{res:IG10}, restriction from the subgroup for \(L\)
+to the subgroup for \(L_0\) is exactly the surjective map
+\(\operatorname{Gal}(\ell/k)\to\operatorname{Gal}(\ell_0/k)\).
+\end{corollary}
+
+\begin{proof}
+Every root of \(f_0(a+u,X)\) in \(L_0\) is integral for the
+series valuation. If a root had negative order, its leading monic
+term in the polynomial equation would have strictly lower order
+than each of the other terms, which cannot sum to zero.
+Reducing the monic factorization gives all the roots of \(f_0(a,X)\)
+in \(\ell\), and they are distinct by separability. Let \(\ell_0\)
+be the field they generate. The same roots lift in
+\(\ell_0[[u]]\) by Lemma~\ref{res:IG09}, and uniqueness of the
+lifts inside \(\ell[[u]]\) identifies these with the original
+roots. Consequently \(L_0\) embeds into \(\ell_0((u))\), and its
+residue field is exactly \(\ell_0\). Reduction commutes with
+restriction to \(L_0\). The residue restriction is surjective
+by finite Galois restriction, and the two vertical identifications
+are those of Theorem~\ref{res:IG10}.
+\end{proof}
+
+\section{Regular realizations and arithmetic examples}
+
+A finite Galois realization \(L/k(t)\) is called regular over
+\(k\) when \(k\) is algebraically closed in \(L\): every element
+of \(L\) algebraic over \(k\) lies in \(k\).
+Here the finite extension of \(k(t)\) is separable already.
+The criterion below works over imperfect fields as well.
+
+\begin{proposition}[Regularity and the geometric group]
+\label{res:IG12}
+For a finite Galois extension \(L/k(t)\), work in a common algebraic
+closure of \(k(t)\) and write \(\overline k\) for its algebraic
+closure of constants. Restriction embeds
+\(\operatorname{Gal}(L\overline k(t)/\overline k(t))\) into
+\(\operatorname{Gal}(L/k(t))\). It is onto exactly when \(L/k(t)\)
+is regular over \(k\).
+\end{proposition}
+
+\begin{proof}
+Let \(M=L\cap\overline k(t)\). Restriction identifies the geometric
+group with \(\operatorname{Gal}(L/M)\) by Galois base change
+\cite[Result C10]{mg-aft}. We show \(M=C(t)\) for a finite
+extension \(C/k\) inside \(L\cap\overline k\).
+
+In characteristic \(p>0\), each member of \(\overline k(t)\)
+has some \(p\)-power in \(k^{\mathrm{s}}(t)\): take an exponent
+making all its finitely many algebraic coefficients separable over
+\(k\). For an algebraic constant \(\beta\), write its monic minimal
+polynomial as \(g(X^{p^r})\) with \(g'\ne0\) by collecting successive
+\(p\)-th powers in the exponents. Irreducibility of \(g\) follows
+from that of the original polynomial, so \(\beta^{p^r}\) is
+separable. Any \(x\in M\) is separable over \(k(t)\), and hence
+separable over \(k^{\mathrm{s}}(t)\), since its minimal polynomial
+over the larger field divides a separable polynomial. It is also
+purely inseparable over \(k^{\mathrm{s}}(t)\), so it belongs there.
+In characteristic zero \(k^{\mathrm{s}}=\overline k\) already.
+Since \(M/k(t)\) is finite, its finitely many generators have
+their coefficients in some finite Galois extension \(k'/k\)
+inside \(k^{\mathrm{s}}\), using Result F03 of
+\cite{mg-aft}.
+
+The extension \(k'(t)/k(t)\) has group \(\operatorname{Gal}(k'/k)\)
+acting on coefficients. Indeed any constant basis over \(k\)
+remains independent over \(k(t)\) by clearing denominators and
+comparing powers of \(t\). The resulting span over \(k(t)\)
+is a finite-dimensional domain containing \(k'\) and \(k(t)\).
+Multiplication by a nonzero element is injective and hence
+surjective, so this span is a field and equals \(k'(t)\).
+Thus the coefficient actions already supply as many automorphisms
+as the extension degree. Let \(H\) be the subgroup fixing \(M\),
+and put \(C=(k')^H\). Then \(C(t)\subseteq M\); the same
+basis argument gives \([k'(t):C(t)]=[k':C]=|H|\), which is
+also \([k'(t):M]\) by finite Galois correspondence. Hence
+\(M=C(t)\), with \(C\subseteq L\cap\overline k\).
+If \(L\cap\overline k=k\), this forces \(M=k(t)\).
+Conversely if \(M=k(t)\), an algebraic constant in \(L\) is
+a constant rational function in \(k(t)\), thus lies in \(k\)
+by comparison of coefficients after clearing the denominator.
+\end{proof}
+
+\begin{theorem}[A regular \(S_3\)-family over \(\mathbb Q\)]
+\label{res:IG13}
+The splitting field of \(X^3-X-t\) over \(\mathbb Q(t)\)
+is regular over \(\mathbb Q\) with group \(S_3\).
+Every odd integer \(a\) gives a good specialization with
+Galois group \(S_3\) over \(\mathbb Q\).
+\end{theorem}
+
+\begin{proof}
+There is no root in \(\overline{\mathbb Q}(t)\).
+For a putative root \(P(t)/Q(t)\) in lowest terms, the equation
+\(P^3-PQ^2=tQ^3\) forces \(Q\mid P^3\) in
+\(\overline{\mathbb Q}[t]\). Thus \(Q\) is constant, and
+a nonconstant polynomial \(h\) with \(h^3-h=t\) is impossible
+by degree. A reducible cubic over a field would have a root.
+
+For a monic cubic with roots \(r_1,r_2,r_3\) counted with multiplicity,
+a square root of its discriminant is
+\(d=\prod_{i<j}(r_i-r_j)\). Permuting the roots acts on \(d\)
+by the sign. For \(f=X^3-X-t\) one has
+\[
+ d^2=-\prod_i f'(r_i)
+     =-27f(b)f(-b)=4-27t^2,\qquad b^2=1/3 .
+\]
+The first equality follows by taking each ordered pair of
+distinct indices in the derivative product; the second follows
+from \(f'(X)=3(X-b)(X+b)\). The displayed polynomial is
+nonzero, so the cubic is separable, and it has two distinct
+simple zeros in \(\overline{\mathbb Q}\), so it is no square
+in \(\overline{\mathbb Q}(t)\). For an irreducible separable
+cubic in characteristic zero, its Galois group is a transitive
+subgroup of \(S_3\). It has order divisible by three and it
+lies in \(A_3\) exactly when \(d\) lies in the ground field.
+Indeed this is the fixed-field criterion for \(d\), and
+\(d^2\) is a square in the ground field exactly when \(d\) is
+in it. Thus a nonsquare discriminant gives order six.
+This proves that the geometric group is \(S_3\); the arithmetic
+group also acts faithfully on the three roots and contains the
+geometric group. Regularity follows by Proposition~\ref{res:IG12}.
+
+If \(a\) is odd, the specialization \(X^3-X-a\) reduces to
+\(X^3+X+1\) modulo \(2\), which has neither \(0\) nor \(1\)
+as a root. A rational root of a monic integer cubic is an
+integer, as its denominator in lowest terms divides the cube
+of its numerator. There is no such root here. Its discriminant
+\(4-27a^2\) is negative, so it is nonzero and nonsquare over
+\(\mathbb Q\). The same transitivity and sign argument gives
+group \(S_3\). Theorem~\ref{res:IG10} identifies this specialized
+group with the full generic group.
+\end{proof}
+
+\begin{example}[A regular cyclic family]
+\label{res:IG14}
+Let \(n\geq2\) be invertible in \(k\), and suppose \(k\) contains a
+primitive \(n\)-th root of unity \(\zeta\). The
+splitting field of \(X^n-t\) over \(k(t)\) is a regular realization
+of \(C_n\). The exponent of the factor \(t\) in a rational
+function, with poles counted negatively, is additive under
+multiplication. Hence \(t^i\) can be an \(n\)-th power in \(k(t)\)
+only if \(n\mid i\), and the class of \(t\) has order \(n\).
+Kummer duality (Theorem~\ref{res:GH07}) gives the cyclic group.
+The same exponent argument over \(\overline k(t)\) gives the
+full geometric group, so regularity follows from
+Proposition~\ref{res:IG12}. For instance \(n=2\) over
+\(\mathbb Q\) gives full group at each positive prime \(t=p\)
+by Theorem~\ref{res:IG10}: the specialization has distinct roots
+and \(p\) is nonsquare by prime factorization.
+\end{example}
+
+\begin{lemma}[Fresh primes for prescribed cyclic factors]
+\label{res:IG15}
+Given \(n\geq2\) and a finite set of primes, there is a prime
+\(p\) outside the set with \(n\mid p-1\).
+\end{lemma}
+
+\begin{proof}
+Use the monic integral cyclotomic polynomials and their product
+formula from \cite[Result K07.15.cyclotomic\_polynomials]{mg-d07}.
+In that formula \(\Phi_1(0)=-1\); evaluation at zero and induction
+on \(n\) give \(\Phi_n(0)=1\) for \(n>1\).
+Choose an integer \(b\geq3\) divisible by \(n\) and all the
+excluded primes. Since each primitive complex \(n\)-th root
+\(\xi\) has modulus \(1\), each factor \(|b-\xi|\) is at least
+\(b-1\). Thus \(|\Phi_n(b)|>1\). Choose a prime divisor \(p\)
+of \(\Phi_n(b)\); it does not divide \(b\), since
+\(\Phi_n(b)\equiv 1\) modulo every prime dividing \(b\).
+In particular \(p\nmid n\). Modulo \(p\) the polynomial
+\(X^n-1\) has no repeated root, since its derivative is
+\(nX^{n-1}\). The factors \(\Phi_d\) for \(d\mid n\) therefore
+have disjoint root sets. The class of \(b\) has \(n\)-th power
+one; if its order were \(d<n\) with \(d\mid n\), it would
+also be a root of a factor of \(X^d-1\), a contradiction.
+Hence it has order \(n\) in \(\mathbb F_p^\times\), and
+\(n\mid p-1\).
+\end{proof}
+
+\begin{theorem}[Abelian realizations disjoint from a prescribed field]
+\label{res:IG16}
+Every finite abelian group \(A\) occurs as a Galois group over
+\(\mathbb Q\). More precisely, for any finite Galois extension
+\(E/\mathbb Q\) there is a finite Galois extension \(F/\mathbb Q\)
+with group \(A\) and \(F\cap E=\mathbb Q\). Consequently the
+split embedding problem
+\[
+   A\times\operatorname{Gal}(E/\mathbb Q)
+             \longrightarrow \operatorname{Gal}(E/\mathbb Q)
+\]
+over the restriction to \(E\) has a proper solution through \(EF\).
+\end{theorem}
+
+\begin{proof}
+Write \(A=\prod_{i=1}^r C_{n_i}\) with \(n_i\geq2\),
+using \cite[Result K07.07.invariant\_factor\_existence]{mg-d07}.
+The case \(r=0\) takes \(F=\mathbb Q\). Choose any finite
+number \(s\) of disjoint prime lists \(p_{j,i}\), with
+\(n_i\mid p_{j,i}-1\), by Lemma~\ref{res:IG15}.
+Let \(m\) be the product of all selected primes. The cyclotomic
+group of \(\mathbb Q(\zeta_m)\) is
+\((\mathbb Z/m\mathbb Z)^\times\) by
+\cite[Result K07.15.cyclotomic\_galois]{mg-d07}.
+By the Chinese remainder isomorphism it is the product of
+the groups \(\mathbb F_{p_{j,i}}^\times\), each cyclic of
+order \(p_{j,i}-1\) by
+\cite[Result K07.13.multiplicative\_cyclic]{mg-d07}.
+For list \(j\), project to its factors and take their respective
+quotients of order \(n_i\), giving a surjection onto a copy
+of \(A\). The fixed field \(F_j\) of its kernel is Galois
+with group \(A\). For two distinct lists the joint map onto
+\(A\times A\) is surjective; thus
+\([F_jF_h:\mathbb Q]=|A|^2\) for \(j\ne h\), by the
+fixed-field correspondence. Galois base change
+\cite[Result C10]{mg-aft} now gives \(F_j\cap F_h=\mathbb Q\).
+
+The finite Galois extension \(E/\mathbb Q\) has only finitely
+many intermediate fields, since its Galois group has finitely
+many subgroups. Take \(s\) greater than this number. If all
+intersections \(F_j\cap E\) were nontrivial over \(\mathbb Q\),
+they would be pairwise different because the \(F_j\) have
+trivial pairwise intersection. This is impossible, so some
+\(F=F_j\) has \(F\cap E=\mathbb Q\). Restriction from
+\(\operatorname{Gal}(EF/\mathbb Q)\) to the product for \(F\)
+and \(E\) is injective since the two fields generate \(EF\);
+it is surjective by the degree formula from Result C10.
+The resulting isomorphism has second projection equal to
+restriction to \(E\). Proposition~\ref{res:IG02} gives the
+proper solution.
+\end{proof}
+

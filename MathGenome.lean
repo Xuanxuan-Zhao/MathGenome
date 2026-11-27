@@ -33,4 +33,5 @@ import MathGenome.RingModuleAssociativeAlgebra
 import MathGenome.LinearAlgebraicGroups
 import MathGenome.CommutativeAlgebraDeepening
 import MathGenome.HomologicalAlgebraDeepening
+import MathGenome.FieldAndGaloisTheoryDeepening
 /-! MathGenome v0.3.0: audited D05, D07 and D03 extensions over fixed Mathlib. -/

@@ -1,3 +1,9 @@
+# 0.30.0 — Topics in Field and Galois Theory
+
+- Add the ALG-04 deepening development with 106 checked proof goals across 52 numbered lecture results.
+- Cover Picard–Vessiot rings, linear operator Galois correspondence, continuous Galois cohomology, and embedding problems.
+- Add `MathGenome.FieldAndGaloisTheoryDeepening`, the 31-page PDF, LaTeX, and reviewed source links.
+
 # 0.29.0 — Topics in Homological Algebra
 
 - Add the ALG-10 deepening development with 186 checked proof goals across 76 numbered lecture results.

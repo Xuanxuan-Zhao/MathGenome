@@ -1,0 +1,3 @@
+import MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.GH
+import MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.IG
+import MathGenome.FieldAndGaloisTheoryDeepening.Topics.GaloisFormalization.PV

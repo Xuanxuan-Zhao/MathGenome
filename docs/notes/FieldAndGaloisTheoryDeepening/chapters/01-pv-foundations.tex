@@ -1,0 +1,319 @@
+\chapter{Picard--Vessiot Rings}
+
+For an algebraic polynomial one adjoins roots. For a linear differential
+or difference system one adjoins an invertible matrix of solutions,
+and the role of the splitting field is played initially by a ring.
+This chapter explains why the difference ring can have zero divisors,
+why no new constants appear under the stated hypotheses, and how to
+recognize the resulting extension. The two theories will use the same
+formalism in the next chapter.
+
+\section{The operator and the system}
+
+\begin{definition}[Operator rings and constants]
+\label{res:PV01}
+All rings in these chapters are commutative and have an identity. In
+the differential case an operator is a derivation \(\partial\), an
+additive map satisfying \(\partial(ab)=a\partial b+b\partial a\).
+In the difference case it is a ring automorphism \(\sigma\).
+An operator subring is closed under \(\partial\), or under both
+\(\sigma\) and \(\sigma^{-1}\), respectively. An operator ideal is
+defined by the same stability condition. An operator ring is
+\emph{simple} if it is nonzero and its only operator ideals are \(0\)
+and the whole ring. Its constants are the kernel of \(\partial\), or
+the fixed ring of \(\sigma\), respectively, and will be denoted
+\(S^{\mathrm{const}}\) for either kind of operator on \(S\).
+An operator field is a field with the indicated operator.
+\end{definition}
+
+Except where explicitly stated, \(k\) is an operator field of
+characteristic zero and \(C=k^{\mathrm{const}}\) is algebraically
+closed. On a tensor product of extensions over \(k\) the differential
+operator is the sum of the operators in the two factors and the
+difference operator acts in both factors. The product rule and the
+common operator on \(k\) make these formulas well defined.
+Finite-type algebras over a noetherian base are noetherian
+by the Hilbert basis theorem in~\cite[Section 23.11, PDF p.~191]{mg-d07}.
+
+\begin{lemma}[Fundamental matrices and scalar equations]
+\label{res:PV02}
+In the differential case let \(A\in M_n(k)\) and consider
+\(\partial Y=AY\). In the difference case let \(A\in GL_n(k)\)
+and consider \(\sigma(Y)=AY\). An invertible solution matrix is
+called fundamental. If \(Y\) is fundamental in an extension \(S\),
+every solution column in \(S^n\) is uniquely of the form \(Yc\) with
+\(c\in(S^{\mathrm{const}})^n\). Two fundamental matrices in \(S\)
+differ on the right by an invertible constant matrix.
+A monic scalar equation of order \(n\) gives such a system by taking
+the column consisting of the unknown and its first \(n-1\) derivatives
+or iterates. For the difference equation its order-zero coefficient
+must be nonzero to give an invertible system matrix.
+\end{lemma}
+
+\begin{proof}
+For a solution column \(v\), differentiating \(Y^{-1}v\) gives
+\(-Y^{-1}Av+Y^{-1}Av=0\). In the difference case
+\(\sigma(Y^{-1}v)=(AY)^{-1}Av=Y^{-1}v\).
+The converse follows by applying the operator to \(Yc\).
+Apply this to the columns of a second fundamental matrix and then
+interchange the two matrices to obtain constant inverses.
+For the scalar equation, the first \(n-1\) rows of its system shift the
+entries of the column by one. The last row is the negative of the
+coefficients in increasing order. In the difference case its determinant
+is the order-zero coefficient times a sign, so the stated condition
+is precisely invertibility.
+\end{proof}
+
+\section{Simplicity, constants and the total ring}
+
+\begin{lemma}[The components of a simple operator ring]
+\label{res:PV03}
+A simple noetherian differential ring containing \(\mathbb Q\) is a
+domain. A simple noetherian difference ring is a finite product of
+domains whose factors are permuted transitively by the automorphism.
+In either case the operator extends to the total ring of fractions,
+obtained by inverting the non-zero-divisors. This ring is a field in
+the differential case and a finite product of fields with a transitive
+permutation in the difference case. A simple ring and its total ring
+of fractions have the same constants, and these constants form a field.
+\end{lemma}
+
+\begin{proof}
+If \(x^m=0\), applying a derivation \(m\) times shows that
+\(m!(\partial x)^m\in(x)\), because the terms other than the one
+with one derivative in each factor have an undifferentiated factor.
+Thus the nilradical is a differential ideal in characteristic zero
+when the ring contains \(\mathbb Q\). For every minimal prime \(P\),
+localize at \(P\) and apply this argument to the nilradical \(PR_P\).
+Contraction to the original ring shows that \(P\) is a differential
+ideal. Simplicity gives \(P=0\), so the ring is a domain.
+
+In the difference case the nilradical is a proper stable ideal, so
+the ring is reduced. The automorphism permutes its finite set of
+minimal primes. To recall finiteness, a minimal counterexample
+among closed sets of a noetherian spectrum would split into two
+smaller closed sets, each a finite union of irreducible sets.
+Applied to the whole spectrum, this gives finitely many
+irreducible components and hence finitely many minimal primes.
+The intersection of any proper subset of the
+minimal primes is nonzero: choose an omitted minimal prime \(P\)
+and multiply elements, one in each prime of the subset and outside
+\(P\). This also applies to the empty subset, using the product \(1\).
+Simplicity therefore implies transitivity. For the minimal primes
+\(P_i\), the sum of the ideals \(J_i=\bigcap_{j\ne i}P_j\) is nonzero
+and is stable, so it equals the ring. Write \(1=\sum_i e_i\) with
+\(e_i\in J_i\). The image of \(e_i\) modulo \(P_j\) is \(1\) for
+\(i=j\) and \(0\) otherwise. The intersection of the \(P_j\) is zero,
+so the \(e_i\) are orthogonal idempotents. The components \(e_iS\)
+are the domains \(S/P_i\). A non-zero-divisor has a nonzero image
+in each component, which proves the assertion about the total
+ring of fractions.
+
+The quotient rule extends \(\partial\), and
+\(\sigma(r/s)=\sigma(r)/\sigma(s)\) extends the automorphism.
+A nonzero constant of a simple ring generates a nonzero stable
+ideal, hence is a unit with constant inverse. If \(q\) in its total
+ring of fractions is constant, the ideal
+\(\{a\in S:aq\in S\}\) is stable and contains a denominator of \(q\).
+It therefore contains \(1\), so \(q\) was already a constant of \(S\).
+\end{proof}
+
+\begin{lemma}[Specialization in a finitely generated domain]
+\label{res:PV04}
+Suppose that \(B\) is a finitely generated domain over an infinite
+field \(F\) and \(t\in B\) is transcendental over \(F\).
+Then \(t-a\) is a nonunit of \(B\) for all but finitely many \(a\in F\).
+Consequently a field finitely generated as an algebra over \(F\)
+is finite algebraic over \(F\). If \(F\) is also algebraically
+closed, a nonzero reduced finitely generated \(F\)-algebra
+is detected by its \(F\)-algebra maps to \(F\): every nonzero
+element is nonzero under at least one of them.
+\end{lemma}
+
+\begin{proof}
+Extend \(t\) to a transcendence basis \(t,u_1,\dots,u_j\) of
+\(\operatorname{Frac}(B)/F\) by choosing some of the generators of
+\(B\). Each generator satisfies a monic polynomial over
+\(F(t,u_1,\dots,u_j)\). Choose a single nonzero polynomial \(d(t,u)\)
+clearing all the denominators in their coefficients. Then
+\(B[d^{-1}]\) is integral over
+\(D=F[t,u_1,\dots,u_j,d^{-1}]\).
+For all but finitely many \(a\in F\), \(d(a,u)\ne0\):
+view the coefficients in the \(u_i\) as polynomials in \(t\) and take
+one nonzero coefficient. At such \(a\), specialization at \(t=a\)
+exhibits \(t-a\) as a nonunit in \(D\). It is still a nonunit in
+\(B[d^{-1}]\): an inverse integral over \(D\) would belong to \(D\),
+by multiplying its monic relation by a suitable power of \(t-a\).
+It follows that \(t-a\) is a nonunit in \(B\).
+
+A finitely generated \(F\)-algebra that is a field can therefore
+have no transcendental element, and finitely many algebraic
+generators give a finite extension. Over algebraically closed \(F\),
+a maximal ideal in a nonzero finitely generated \(F\)-algebra has
+residue field \(F\). To detect a nonzero element \(b\) in a reduced
+algebra, apply this to the nonzero finitely generated algebra
+obtained by inverting \(b\), and restrict the resulting map.
+\end{proof}
+
+\begin{proposition}[No new constants in a simple finite-type algebra]
+\label{res:PV05}
+Let \(S\) be a simple operator ring finitely generated as an algebra
+over \(k\). Then \(S^{\mathrm{const}}=C\); the same holds for
+its total ring of fractions.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{res:PV03}, the simple ring is a finite product of
+domains, with one factor in the differential case. Suppose a
+constant \(c\in S\) is transcendental over \(k\). Some component
+of \(c\) is transcendental, since otherwise the product of
+polynomial relations in the finitely many components would give a
+relation in \(S\). For every \(a\in C\) the difference \(c-a\) is a
+nonzero constant, hence a unit in \(S\). Its component in the
+chosen domain is a unit as well. As \(C\) is infinite, this
+contradicts Lemma~\ref{res:PV04} with \(F=k\).
+
+Thus \(c\) has a monic relation of least degree in \(k[T]\).
+In the differential case, applying \(\partial\) to that relation
+gives a relation of lower degree with coefficients the derivatives of
+the original coefficients. In the difference case, applying
+\(\sigma\) and subtracting the original relation gives one whose
+coefficients are the differences of the coefficients and their
+images. In both cases the lower-degree relation is zero, hence the
+original coefficients lie in \(C\). Since \(S^{\mathrm{const}}\)
+is a field and \(C\) is algebraically closed, \(c\) belongs to
+\(C\). The statement about the total ring follows from
+Lemma~\ref{res:PV03}.
+\end{proof}
+
+\section{Construction and uniqueness}
+
+\begin{definition}[Picard--Vessiot ring and its total extension]
+\label{res:PV06}
+For either system of Lemma~\ref{res:PV02} a Picard--Vessiot ring
+over \(k\) is a simple operator extension \(R\) containing a
+fundamental matrix \(Y\) and generated as a \(k\)-algebra by its
+entries and \(\det(Y)^{-1}\). Its total extension \(Q(R)\) is the
+total ring of fractions with the extended operator. It is called a
+Picard--Vessiot field when it is a field.
+\end{definition}
+
+\begin{theorem}[Existence with prescribed constants]
+\label{res:PV07}
+Every system of Lemma~\ref{res:PV02} over \(k\) has a
+Picard--Vessiot ring. Both the ring and its total extension have
+exactly the constants \(C\).
+\end{theorem}
+
+\begin{proof}
+Let \(U=k[X_{ij},\det(X)^{-1}]\) with \(X\) an indeterminate
+square matrix. A derivation of the polynomial ring is defined by
+\(\partial X=AX\) and extends to the localization by the
+quotient rule. In the difference case set \(\sigma(X)=AX\) and
+apply \(\sigma\) to the coefficients. The image of \(\det X\) is
+\(\det A\det X\), a unit in \(U\). This is an automorphism
+with inverse acting on coefficients by \(\sigma^{-1}\) and on \(X\)
+by \(\sigma^{-1}(A^{-1})X\).
+By the ascending chain condition, a maximal proper operator
+ideal exists, and its quotient is simple. A proper ideal does
+not meet \(k\) nontrivially, so the quotient is an extension
+of \(k\). The image of \(X\) is fundamental and generates the
+required algebra. Proposition~\ref{res:PV05} supplies its constants.
+\end{proof}
+
+\begin{lemma}[Descent of ideals with constant variables]
+\label{res:PV08}
+Let \(S\) be a simple operator ring with constant field \(C\).
+If \(D\) is any \(C\)-algebra, equip \(S\otimes_C D\) with the
+operator from the first factor only. Every operator ideal is extended
+from its contraction to \(D\), and the constants equal \(1\otimes D\).
+In particular, if an operator extension \(B\) of \(S\) is generated
+as an \(S\)-algebra by a \(C\)-subalgebra \(D\subseteq
+B^{\mathrm{const}}\), multiplication gives an isomorphism
+\(S\otimes_C D\cong B\).
+\end{lemma}
+
+\begin{proof}
+For an operator ideal \(I\), divide \(D\) by its contraction and
+replace \(I\) by its image. Exactness of tensoring over \(C\) gives
+zero contraction for this image. Suppose the image contains a
+nonzero \(\sum_{i=1}^m s_i\otimes d_i\) with \(m\) minimal,
+and choose the \(d_i\) linearly independent over \(C\).
+The possible first coefficients in elements of \(I\) whose
+expressions use only \(d_1,\dots,d_m\) form a nonzero operator
+ideal of \(S\). It is the whole ring. Thus we can choose such
+an element with first coefficient \(1\). Applying \(\partial\),
+or subtracting the element from its image under \(\sigma\), now
+gives an element of \(I\) with at most \(m-1\) terms. By minimality
+it is zero, so all the coefficients are constants. This gives
+a nonzero element of the contraction, a contradiction.
+Expanding an arbitrary element of the tensor product in a finite
+linearly independent set in \(D\) also shows directly that a
+constant has constant coefficients. The multiplication map in
+the last assertion is surjective with an operator kernel
+whose contraction to \(D\) is zero. The first assertion gives
+injectivity.
+\end{proof}
+
+\begin{theorem}[Uniqueness and recognition inside a simple extension]
+\label{res:PV09}
+Any two Picard--Vessiot rings for the same system over \(k\) are
+isomorphic over \(k\) as operator rings, and the isomorphism
+extends to their total extensions. More generally, if a simple
+operator extension \(S/k\) has constants \(C\) and contains a
+fundamental matrix \(Y\), the subalgebra
+\(k[Y_{ij},\det(Y)^{-1}]\) is a Picard--Vessiot ring.
+\end{theorem}
+
+\begin{proof}
+Take a Picard--Vessiot ring \(R'\) with fundamental matrix \(Y'\).
+In \(S\otimes_k R'\) put
+\(Z=(Y\otimes1)^{-1}(1\otimes Y')\). Its entries and inverse
+determinant are constant by Lemma~\ref{res:PV02}.
+The tensor product is nonzero, contains the first factor faithfully,
+and is generated over that factor by
+\(D=C[Z_{ij},\det(Z)^{-1}]\). Apply Lemma~\ref{res:PV08}
+and choose a \(C\)-algebra map \(D\to C\) by
+Lemma~\ref{res:PV04}. Evaluation defines an operator map
+\(R'\to S\) taking \(Y'\) to \(YB\) for some \(B\in GL_n(C)\).
+It is injective by simplicity of \(R'\), and its image is
+exactly the algebra generated by \(Y\) and its inverse
+determinant, since \(B,B^{-1}\) have entries in \(k\).
+This proves recognition. Taking \(S\) itself to be a second
+Picard--Vessiot ring gives uniqueness, and localization gives
+the assertion about the total extensions.
+\end{proof}
+
+\begin{example}[A difference Picard--Vessiot ring that is not a field]
+\label{res:PV10}
+Let \(k=C(z)\), where \(C\) is algebraically closed of
+characteristic zero, and set
+\(\sigma(f)(z)=f(qz)\) for a fixed \(q\in C^\times\) of infinite
+multiplicative order. The constants are \(C\). For
+\(\sigma(y)=-y\), a Picard--Vessiot ring is
+\(k[u]/(u^2-1)\) with \(\sigma(u)=-u\). It is already its
+own total ring of fractions and has no embedding into a field.
+\end{example}
+
+\begin{proof}
+A rational function fixed by the substitution \(z\mapsto qz\)
+has its zeros and poles invariant under multiplication by \(q\).
+Any orbit of a point in \(C^\times\) is infinite, so a nonzero
+fixed rational function is \(az^m\) with \(a\in C^\times\) and
+\(m\in\mathbb Z\). Invariance gives \(q^m=1\), so \(m=0\).
+The idempotents \((1+u)/2,(1-u)/2\) exhibit the asserted ring
+as \(k\times k\). The automorphism interchanges the two
+idempotents, so no proper nonzero ideal is stable. The
+invertible element \(u\) is fundamental and generates the ring,
+which is therefore Picard--Vessiot. Its two orthogonal nonzero
+idempotents preclude an embedding into a field.
+\end{proof}
+
+\paragraph{Sources.}
+The differential construction follows the subject of
+van der Put--Singer~\cite[Chapter 1, Sections 1.1--1.3]{vps-differential}
+and Singer~\cite[Sections 1.2--1.3]{singer}. For the difference
+construction see van der Put--Singer~\cite[Chapter 1, Section 1.1]{vps-difference}
+and Roques~\cite[Definitions 7--8, Propositions 9 and 12, Theorems 13 and 17]{roques}.
+The operator-ring viewpoint also connects to the treatment of Ore
+operators in~\cite[Chapter 4]{mg-rm03d}.
