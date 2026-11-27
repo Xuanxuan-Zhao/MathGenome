@@ -1,0 +1,460 @@
+\chapter{Derived dg categories and Morita theory}
+\label{ch:dg-categories}
+
+The representable resolutions above let us compute the derived
+category without any boundedness condition. Its compact objects
+recover the finite shifts, cones, and retracts of the representables.
+We then use the signed tensor--Hom adjunction to compare derived
+categories of different dg categories.
+
+\section{Homotopy-projectivity and the derived category}
+
+\begin{theorem}[Semi-free modules are \(K\)-projective]\label{res:G07}
+A dg module \(P\) is called \(K\)-projective if
+\(\underline{\operatorname{Hom}}_{\mathcal A}(P,N)\) is acyclic for
+every acyclic \(N\). Every semi-free module is \(K\)-projective.
+The class of \(K\)-projective modules is closed under shifts,
+cones of closed degree-zero maps, and arbitrary direct sums.
+\end{theorem}
+\begin{proof}
+Let \(N\) be acyclic and let \(f:P\to N\) be a graded map of
+degree \(r\) with \(\partial f=0\), where \(P\) is semi-free.
+Construct a graded map \(h\) of degree \(r-1\) on successive
+cell stages with \(\partial h=f\). At a new generator \(e\)
+of degree \(n\) at \(a\), take \(z=de\) in the previous stage.
+The requirement is
+\[
+          d_N h(e)= f(e)-(-1)^r h(z).
+\]
+The right side is closed because
+\(d_N f(e)=(-1)^r f(z)\), and the already constructed homotopy
+gives \(d_N h(z)=f(z)\) since \(dz=0\). Acyclicity of \(N(a)\)
+gives a primitive, which we choose as \(h(e)\). Extending
+right-linearly over the new cells is well-defined, and verification
+on generators suffices by Result~\ref{res:G03}. Taking the union yields
+\(\partial h=f\) at every degree. This proves \(K\)-projectivity.
+
+Shifts preserve the condition by reindexing Hom complexes with
+the shift signs of Result~\ref{res:G04}. For a cone \(C\) of
+\(P_1\to P_2\), the degreewise split sequence
+\(P_2\to C\to P_1[1]\) gives a short exact sequence of Hom complexes
+into \(N\), in the reverse order, since its splitting exists
+in graded \(\mathcal A\)-modules. The end complexes are acyclic.
+For a sum of \(P_i\), Hom becomes the product of their Hom
+complexes. A product of acyclic complexes of modules is acyclic
+by choosing a primitive in every component of a cycle.
+\end{proof}
+
+\begin{theorem}[Computing the derived category by resolutions]\label{res:G08}
+Let \(D(\mathcal A)\) be the localization of \(K(\mathcal A)\)
+at the objectwise quasi-isomorphisms. The full homotopy subcategory
+of \(K\)-projective modules maps equivalently onto \(D(\mathcal A)\).
+If \(P\to M\) is a \(K\)-projective replacement, then
+\[
+ \operatorname{Hom}_{D(\mathcal A)}(M,N)
+      \cong H^0\underline{\operatorname{Hom}}_{\mathcal A}(P,N).
+\]
+Cones of maps of \(K\)-projective modules represent distinguished
+triangles, and coproducts of arbitrary derived objects are
+represented by direct sums of their modules.
+\end{theorem}
+\begin{proof}
+For a quasi-isomorphism \(u:N'\to N\) and \(K\)-projective \(P\),
+\(\underline{\operatorname{Hom}}_{\mathcal A}(P,u)\) is a
+quasi-isomorphism. Its cone is identified with Hom into the cone
+of \(u\) using the Hom and shift formulas, hence is acyclic.
+An acyclic \(K\)-projective module is contractible since its
+identity represents a class in \(H^0\) of its own acyclic Hom
+complex. By the closure in Result~\ref{res:G07}, the cone of a
+quasi-isomorphism between \(K\)-projective modules is contractible,
+so that quasi-isomorphism is a homotopy equivalence.
+
+For every \(M\) choose \(p_M:P_M\to M\) as in Result~\ref{res:G06},
+taking the identity when \(M\) is already \(K\)-projective.
+For a homotopy class \(M\to N\), the isomorphism
+\(\operatorname{Hom}_{K(\mathcal A)}(P_M,P_N)\to
+  \operatorname{Hom}_{K(\mathcal A)}(P_M,N)\)
+induced by \(p_N\) gives a unique lifted homotopy class
+\(P_M\to P_N\). Uniqueness proves the composition law and
+naturality of the \(p_M\). If the original map is a quasi-isomorphism,
+so is its lift by the comparison square, and this lift is
+invertible in the homotopy category. The lift functor therefore
+factors through the localization. The comparisons \(p_M\) give a
+natural isomorphism from its composite with inclusion to the
+identity on the localization. In the other order the composite
+is the identity on the \(K\)-projective subcategory. This proves
+the equivalence and the stated Hom formula, since \(N\) can be
+compared with \(P_N\) after applying Hom from \(P_M\).
+
+The \(K\)-projective homotopy subcategory is triangulated by
+Results~\ref{res:G04} and~\ref{res:G07}. It gives the cone
+triangulation on the localization. Indeed a closed map between
+arbitrary modules is represented by the lifted map between
+replacements. A comparison with its original cone exists from
+the degree-\(-1\) homotopy in the comparison square and the
+usual cone matrix in \cite[K05]{ha-core}. It is a quasi-isomorphism
+by the long exact sequences for the two cones. Direct sums of
+\(K\)-projective modules are \(K\)-projective, and direct sums preserve
+objectwise quasi-isomorphisms. Hom from a sum of replacements is
+the product of the corresponding Hom groups, as \(H^0\) commutes
+with products of complexes of modules. Hence the sum of the
+chosen replacements computes the coproduct, and its map to the
+sum of original modules is a quasi-isomorphism.
+\end{proof}
+
+\section{Compactness and the pretriangulated hull}
+
+\begin{lemma}[The telescope of a sequence of strict maps]\label{res:G09}
+Let \(M_0\to M_1\to\cdots\) be a sequence of dg modules and closed
+degree-zero maps. On \(U=\bigoplus_{j\geq0}M_j\) let \(s\) send
+the \(j\)-th summand to the \((j+1)\)-st by the transition.
+Then \(\operatorname{Cone}(1-s)\to\varinjlim_j M_j\) is an
+objectwise quasi-isomorphism. If \(C\) is compact in
+\(D(\mathcal A)\), any map from \(C\) to this telescope in
+\(D(\mathcal A)\) comes from a single \(M_j\). In fact its group
+of maps is the colimit of the groups of maps into \(M_j\).
+\end{lemma}
+\begin{proof}
+The map \(1-s\) is injective in each degree by considering the
+first nonzero component of a finite-support element. Its cokernel
+imposes exactly the relations identifying an element and its
+successor, which presents the colimit. For any injective dg map
+\(U'\to U''\), the natural map from its cone to its cokernel
+has kernel the cone of the identity of \(U'\). That cone is
+contractible by the right-linear homotopy
+\((y,x)\mapsto(0,y)\). This proves the claim for \(1-s\).
+
+Compactness means that \(\operatorname{Hom}(C,-)\) takes arbitrary
+sums to direct sums, and this also applies to the objects \(M_j[1]\).
+In the Hom exact sequence of the cone of \(1-s\), the map
+\(1-s\) on the direct sum of the groups
+\(\operatorname{Hom}(C,M_j[1])\) is injective by the same first
+component argument. Thus \(\operatorname{Hom}(C,\operatorname{Cone}(1-s))\)
+is the cokernel of \(1-s\) on the unshifted Hom groups. This is
+their colimit. An element in a sequential colimit of groups
+can be represented at a single stage.
+\end{proof}
+
+\begin{theorem}[Representables are compact generators]\label{res:G10}
+Each \(h_a\) is a compact object of \(D(\mathcal A)\). For every
+\(N\) and \(n\in\mathbb Z\),
+\[
+       \operatorname{Hom}_{D(\mathcal A)}(h_a[-n],N)
+           \cong H^n(N(a)).
+\]
+The smallest full triangulated subcategory closed under
+isomorphisms and coproducts and containing the \(h_a\) is all of
+\(D(\mathcal A)\). In particular the shifted representables detect
+the zero object.
+\end{theorem}
+\begin{proof}
+The Hom formula follows from enriched Yoneda and
+Results~\ref{res:G05} and~\ref{res:G08}. Explicitly a map out of
+the shifted cell is determined by a degree-\(n\) element, closed
+for a chain map, and homotopy identifies classes modulo boundaries.
+Since cohomology of modules commutes with direct sums, the formula
+also proves compactness by the coproduct description of
+Result~\ref{res:G08}.
+
+For generation resolve \(N\) by a semi-free module \(P\). Each
+\(P_j/P_{j-1}\) is a direct sum of shifted representables, and
+\(P_{j-1}\to P_j\to P_j/P_{j-1}\) is part of a triangle by the
+cone-to-cokernel argument of Result~\ref{res:G09}. Therefore a
+subcategory with the stated closure contains each \(P_j\).
+It contains the telescope, which represents \(P\) by
+Result~\ref{res:G09}, and hence contains \(N\). Alternatively,
+vanishing of the displayed Hom groups says that \(N\) is
+objectwise acyclic, so \(N\) is zero in the localization.
+\end{proof}
+
+\begin{theorem}[Compact objects and finite cells]\label{res:G11}
+An object of \(D(\mathcal A)\) is compact if and only if it is
+a retract in \(D(\mathcal A)\) of a semi-free module with only
+finitely many cells.
+\end{theorem}
+\begin{proof}
+Finite-cell objects are obtained by finite sums, shifts, and
+cones from representables. Compact objects are closed under
+those operations by the exact Hom sequences of triangles and
+exactness of direct sums of groups. A retract is compact because
+the coproduct comparison map for a retract is a retract of the
+same map for the original object.
+
+Conversely let \(C\) be compact and choose a semi-free
+representative \(P\) of \(C\). By Result~\ref{res:G09} its identity
+factors in \(D(\mathcal A)\) through one finite stage \(P_j\) of
+the cell filtration, which may itself contain infinitely many
+cells. At a fixed stage \(j\), call a finite subset of cells
+closed if it contains all the cells occurring in the differential of
+every cell in it. Every finite subset can be enlarged to a finite
+closed subset by recursively adding the finite differential
+supports, which lie at strictly earlier stages. Finite closed
+subsets form a filtered system under unions. For such a subset
+\(E\), let \(P_{j,E}\) be its finite-cell submodule.
+
+For every \(t\) there is an isomorphism
+\[
+ \varinjlim_E\operatorname{Hom}_{D(\mathcal A)}(C,P_{j,E}[t])
+     \ \cong\ \operatorname{Hom}_{D(\mathcal A)}(C,P_j[t]).
+\]
+Prove it by induction on \(j\). For stage zero it is compactness
+on a sum of shifted representables, since each element of the sum
+has finite support. At stage \(j\), the first \(j-1\) stages for a
+finite \(E\) form \(P_{j-1,E\cap P_{j-1}}\), and the quotient is a
+finite sum of cells from stage \(j\). The associated triangles,
+including all shifts, give a comparison of long exact Hom sequences
+after taking the filtered colimit. Filtered colimits of groups
+are exact, since a finite relation between representatives holds
+at a sufficiently late common stage. The group maps for the
+lower-stage terms are isomorphisms by induction. The system of
+intersections is cofinal among finite closed subsets of the
+lower stage, since any such subset can itself be used as \(E\).
+The quotient term maps are isomorphisms by compactness, since
+each finite subset of top-stage cells can be enlarged to a finite
+closed subset. Exactness on the two sides implies the middle
+group maps are isomorphisms by the five-term diagram argument.
+This proves the displayed comparison.
+
+Consequently the factorization of the identity through \(P_j\)
+factors further through a finite-cell \(P_{j,E}\). Its composite
+back to \(C\) is the identity, as required.
+\end{proof}
+
+\begin{proposition}[The pretriangulated hull and perfect objects]\label{res:G12}
+There is a small full dg category \(\operatorname{pretr}(\mathcal A)\)
+of finite-cell semi-free modules that contains the Yoneda image,
+represents all finite-cell semi-free modules up to dg isomorphism,
+and is closed under zero, shifts, finite sums, and cones of closed
+degree-zero maps. Its homotopy category embeds as a triangulated
+subcategory of \(D(\mathcal A)\). The perfect subcategory,
+obtained by also taking retracts in \(D(\mathcal A)\), is exactly
+the subcategory of compact objects. The Yoneda map
+\(\mathcal A\to\operatorname{pretr}(\mathcal A)\) is a quasi-equivalence
+precisely when all finite-cell objects are represented, up to
+homotopy, by objects of \(\mathcal A\).
+\end{proposition}
+\begin{proof}
+The cone of a map from \(P\) to \(Q\) has graded module
+\(Q\oplus P[1]\). Order all cells of \(Q\) first and then those
+of \(P[1]\) in their existing order of stages. The shifted
+\(P\)-differential lowers these latter stages, and the cone's
+off-diagonal term lies in \(Q\). This orders the cone as a
+finite-cell module. Shifts preserve the decreasing property of
+the cell differential, and finite sums admit an ordering by
+the original stages. Conversely attaching one cell of degree
+\(n\) with boundary \(z\) is the cone of
+\(h_a[-n-1]\to P\) carrying the generator to \(z\), by the cone
+formula. Finite-cell modules are therefore exactly the finite
+constructions generated by the representables in this model,
+up to choices of graded cell presentations. For smallness,
+start with the set of written representables and zero. At
+each finite stage adjoin the written shifts, finite sums and
+cones of every closed degree-zero map among the present objects,
+using the formulas of Result~\ref{res:G04}. These data range
+over sets because each Hom is a set. The union over stages
+is a set closed under the stated operations. Take the full
+dg subcategory on this set.
+
+All finite-cell modules are \(K\)-projective. By
+Result~\ref{res:G08} their homotopy morphisms compute the
+derived morphisms, and by the cone calculation the full image
+is triangulated. Result~\ref{res:G11} gives the assertion about
+perfect objects. A dg functor is a quasi-equivalence if it
+induces quasi-isomorphisms on all morphism complexes and is
+essentially surjective on \(H^0\). Yoneda is already an
+isomorphism on the morphism complexes, so the condition is
+exactly the stated representability up to homotopy. In this
+case the triangulation transports to \(H^0(\mathcal A)\).
+\end{proof}
+
+\section{Derived tensor functors and Morita equivalence}
+
+Let \(\mathcal A,\mathcal B\) be small dg categories over \(k\).
+An \(\mathcal A\)-\(\mathcal B\) dg bimodule will be described by a
+dg functor \(T:\mathcal A\to \mathrm{dgMod}\text{-}\mathcal B\).
+In particular \(u:a\to b\) acts as \(T(u):T(a)\to T(b)\) of the
+same degree as \(u\), in the Hom convention of Result~\ref{res:G03}.
+
+\begin{proposition}[The signed bimodule adjunction]\label{res:G13}
+For a right dg \(\mathcal A\)-module \(M\), \(M\otimes_\mathcal A T\)
+is the quotient of \(\bigoplus_a M(a)\otimes_k T(a)\) by the
+homogeneous balancing relations
+\((m u)\otimes t=m\otimes T(u)t\).
+For a right dg \(\mathcal B\)-module \(N\), put
+\(G(N)(a)=\underline{\operatorname{Hom}}_\mathcal B(T(a),N)\)
+with right \(\mathcal A\)-action by precomposition. There is a
+natural isomorphism of complexes
+\[
+ \underline{\operatorname{Hom}}_\mathcal B(M\otimes_\mathcal A T,N)
+    \cong \underline{\operatorname{Hom}}_\mathcal A(M,G(N)).
+\]
+If each \(T(a)\) is \(K\)-projective, \(G\) sends quasi-isomorphisms
+to quasi-isomorphisms. Computing the tensor on a \(K\)-projective
+replacement yields an exact left adjoint
+\(L_T:D(\mathcal A)\to D(\mathcal B)\) to \(G\) on derived categories.
+Moreover \(L_T(h_a)\cong T(a)\).
+\end{proposition}
+\begin{proof}
+The differential on the direct sum is the tensor differential.
+It preserves the balancing relation because its derivative splits
+into the three relations for \(dm,u,t\), \(m,du,t\), and \(m,u,dt\),
+with coefficients \(1,(-1)^{|m|}\), and \((-1)^{|m|+|u|}\).
+This uses
+\(d(T(u)t)=T(du)t+(-1)^{|u|}T(u)dt\), which says that \(T\) is dg.
+The right \(\mathcal B\)-action on the second tensor factor
+respects balancing, since each \(T(u)\) is graded right-linear.
+The tensor differential obeys the right Leibniz rule for this
+action. For the right \(\mathcal A\)-module \(G(N)\), write
+\(g u=g\circ T(u)\). The Hom composition rule of
+Result~\ref{res:G03} gives its Leibniz rule.
+
+If \(F:M\otimes_\mathcal A T\to N\) has degree \(r\), send it to
+the graded map \(m\mapsto (t\mapsto F(m\otimes t))\). Balancing
+is precisely \(\mathcal A\)-linearity of the curried map, and its
+values are \(\mathcal B\)-linear maps. Conversely these two
+linearity conditions define the balanced uncurried map.
+For the differential, evaluating the curried differential
+on \(m,t\) gives
+\[
+ d_N F(m\otimes t)-(-1)^r F(dm\otimes t)
+       -(-1)^{r+|m|}F(m\otimes dt),
+\]
+which is the currying of the uncurried Hom differential.
+This proves the isomorphism and its compatibility with closed
+maps. The unit and counit are \(m\mapsto[t\mapsto m\otimes t]\)
+and \(g\otimes t\mapsto g(t)\). Their composites on evaluated
+tensors and maps are identities.
+
+Now suppose the \(T(a)\) are \(K\)-projective. The formula of
+Result~\ref{res:G08} for applying Hom from such modules shows
+that \(G\) takes acyclics to acyclics and quasi-isomorphisms to
+quasi-isomorphisms. For \(K\)-projective \(P\), the adjunction
+of complexes shows \(P\otimes_\mathcal A T\) is \(K\)-projective
+because its Hom into an acyclic \(N\) is Hom from \(P\) into the
+acyclic \(G(N)\). The tensor takes homotopy equivalences to
+homotopy equivalences by tensoring the homotopy with the identity.
+Thus compute \(L_T\) on \(K\)-projective representatives.
+The comparison of derived Hom groups in Result~\ref{res:G08}
+now gives the derived adjunction. Tensoring commutes with shifts
+and cones by the differential formulas, so \(L_T\) is exact.
+For \(G\), the cone and shift in the target of Hom are likewise
+the cone and shift of Hom, hence \(G\) is exact on the derived
+categories. Finally \(h_a\otimes_\mathcal A T\to T(a)\) is
+given by \(u\otimes t\mapsto T(u)t\), with inverse
+\(t\mapsto 1_a\otimes t\). Balancing proves both composites are
+identities and the maps commute with differentials.
+\end{proof}
+
+\begin{theorem}[A derived Morita criterion]\label{res:G14}
+Assume each \(T(a)\) is \(K\)-projective, as in
+Result~\ref{res:G13}. The derived adjunction is an equivalence
+if the following conditions hold.
+\begin{enumerate}
+\item Each \(T(a)\) is compact in \(D(\mathcal B)\).
+\item For every \(a,b\), the map of complexes
+\[
+  \mathcal A(a,b)\longrightarrow
+     \underline{\operatorname{Hom}}_\mathcal B(T(a),T(b))
+\]
+induced by \(T\) is a quasi-isomorphism.
+\item The shifted objects \(T(a)[n]\) detect zero in \(D(\mathcal B)\).
+\end{enumerate}
+Conversely, if \(L_T\) is an equivalence, these conditions hold.
+\end{theorem}
+\begin{proof}
+Compactness and Result~\ref{res:G08} show that the natural map
+\(\bigoplus_i G(N_i)\to G(\bigoplus_i N_i)\) is a quasi-isomorphism.
+Indeed its cohomology at each \(a,n\) is the coproduct comparison
+for maps from \(T(a)[-n]\), which is compact since \(T(a)\) is.
+The functor \(L_T\) commutes with coproducts by the adjunction
+or the tensor formula. Both functors are exact by
+Result~\ref{res:G13}. In particular the full subcategory where
+the unit \(X\to G(L_T(X))\) is an isomorphism is closed under
+shifts, cones, isomorphisms, and coproducts. Closure under cones
+follows by applying the Hom exact sequences to the comparison
+of triangles. The unit on \(h_b\), evaluated at \(a\), is
+exactly the map in condition (2), by the formula for the unit and
+the evaluation \(h_b\otimes_\mathcal A T\cong T(b)\).
+Thus this subcategory is all of \(D(\mathcal A)\) by
+Result~\ref{res:G10}.
+
+For \(Y\in D(\mathcal B)\) apply \(G\) to the counit
+\(L_T G(Y)\to Y\). The triangular identity identifies this as
+the inverse of the unit on \(G(Y)\). Condition (3) implies \(G\)
+detects zero by computing its cohomology at each \(a\) using
+maps from the shifts of \(T(a)\). Since it is exact it detects
+isomorphisms by applying the zero detection to the cone.
+Thus the counit is an isomorphism. This proves equivalence.
+
+Conversely \(L_T\) carries each \(h_a\) to \(T(a)\).
+An exact equivalence preserves coproducts and the compact
+generation and detection properties in Result~\ref{res:G10}.
+Full faithfulness on all shifted representables identifies the
+cohomology in every degree of the map in condition (2) with
+an isomorphism of derived morphism groups. This identification
+uses the Yoneda evaluation on the source and the
+\(K\)-projectivity of \(T(a)\) on the target. Hence that map is
+a quasi-isomorphism.
+\end{proof}
+
+\begin{corollary}[Invariance under quasi-equivalence]\label{res:G15}
+A quasi-equivalence \(F:\mathcal A\to\mathcal B\) induces an
+equivalence of derived categories by extension of scalars, with
+restriction along \(F\) as inverse.
+\end{corollary}
+\begin{proof}
+Use \(T(a)=h_{F(a)}\) with its Yoneda functoriality. Enriched Yoneda
+identifies \(G\) with restriction. Each \(T(a)\) is a compact
+\(K\)-projective module. The quasi-isomorphism condition on
+morphism complexes of \(F\) is condition (2) of
+Result~\ref{res:G14}. Every \(b\) is isomorphic to some \(F(a)\)
+in \(H^0(\mathcal B)\), so every \(h_b\) is isomorphic to
+some \(T(a)\) in the derived category. The detection assertion
+of Result~\ref{res:G10} gives condition (3).
+\end{proof}
+
+\begin{corollary}[An endomorphism dg algebra of a generator]\label{res:G16}
+Let \(P\) be a compact \(K\)-projective right \(\mathcal B\)-module
+whose shifts detect zero. Then \(D(\mathcal B)\) is equivalent
+to \(D(\underline{\operatorname{End}}_\mathcal B(P))\).
+Also the inclusion of \(\mathcal A\) into its pretriangulated
+hull induces an equivalence of derived categories.
+\end{corollary}
+\begin{proof}
+Regard \(\underline{\operatorname{End}}_\mathcal B(P)\) as a
+one-object dg category acting on \(P\). Its map in condition (2)
+of Result~\ref{res:G14} is the identity. The remaining conditions
+are the hypotheses on \(P\), proving the first assertion.
+For the hull, use Yoneda in \(\operatorname{pretr}(\mathcal A)\)
+on each object \(h_a\) in the image of \(\mathcal A\).
+The induced maps of morphism complexes are isomorphisms.
+A finite-cell object of the hull is formed by shifts and cones
+from the \(h_a\). The representable module of that finite-cell
+object belongs to the triangulated subcategory generated by
+the representables of \(h_a\). In fact Hom into a shift is a
+shift of Hom, and Hom into a cone is the corresponding cone
+objectwise, by the differential of Result~\ref{res:G03}.
+Thus the representables of \(h_a\) detect zero in
+\(D(\operatorname{pretr}(\mathcal A))\) by Result~\ref{res:G10}
+and exact Hom from triangles. Apply Result~\ref{res:G14} again.
+\end{proof}
+
+For a concrete application take a field \(k\) and \(P=k^m\)
+over \(k\) with \(m\geq2\). It is \(K\)-projective, compact,
+and its shifts detect zero since \(k\) is a direct summand.
+Its endomorphism dg algebra is \(\operatorname{Mat}_m(k)\)
+in degree zero. Thus \(D(k)\) and \(D(\operatorname{Mat}_m(k))\)
+are equivalent by Result~\ref{res:G16}. Any quasi-equivalence
+of the corresponding one-object dg categories would give an
+isomorphism of their degree-zero endomorphism \(k\)-algebras,
+which have different dimensions. Even a zigzag of
+quasi-equivalences induces equivalences of the \(H^0\) categories
+and would give the same impossible isomorphism. This illustrates
+the distinction between quasi-equivalence and derived Morita
+equivalence. The criterion above concerns an explicit bimodule
+functor, so its conclusion also records the dg structure used
+to induce the equivalence.
+
+The dg-category localization at Morita equivalences and the
+comparison of arbitrary enhancements involve further structure.
+See \cite[\S\S3.8, 4.5]{keller} for these developments.

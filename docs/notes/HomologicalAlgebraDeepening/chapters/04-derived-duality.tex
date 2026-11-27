@@ -1,0 +1,539 @@
+\chapter{Perfect and finite duality}
+\label{ch:derived-duality}
+
+All rings in the affine part of this chapter are commutative.
+We distinguish internal Hom over a ring from the Hom groups in its
+derived category. For a map \(A\to B\) we keep the \(B\)-action on
+the right adjoint explicitly.
+
+\section{Perfect complexes}
+
+\begin{theorem}[Evaluation and duals of perfect complexes]\label{res:U10}
+Let \(P\in D(R)\) be represented by a bounded complex of finitely
+generated projective modules. Define
+\(P^\vee=\mathbf R\mathrm{Hom}_R(P,R)\).
+Then \(P^\vee\) is perfect, the natural evaluation comparison
+\[
+ Y\otimes_R^{\mathbf L}P^\vee
+     \longrightarrow\mathbf R\mathrm{Hom}_R(P,Y)
+\]
+is an isomorphism for every \(Y\), and \(P\) is dualizable
+with dual \(P^\vee\). Biduality \(P\to(P^\vee)^\vee\) is an
+isomorphism.
+\end{theorem}
+\begin{proof}
+Use the bounded finite projective representative for \(P\).
+It is K-projective by \cite[R03]{ha-core} and K-flat by
+Proposition~\ref{res:U03}. The ordinary dual
+\(D=\underline{\mathrm{Hom}}_R(P,R)\) is bounded finite
+projective. The comparison in total degree \(q\) sends
+\(y\otimes f\) to the map \(x\mapsto y f(x)\) for
+\(|y|+|f|=q\). Expanding the differential gives
+\(d y\, f-(-1)^{|y|+|f|} y f d_P\), as required.
+It is a termwise isomorphism, since each degree of \(P\)
+is finitely generated projective and the diagonals involving
+\(P\) are finite. The standard evaluation \(D\otimes_R P\to R\)
+sends \(f\otimes x\) to \(f(x)\). Applying the isomorphism just
+proved with \(Y=P\), the identity of \(P\) corresponds to a
+degree-zero cycle in \(P\otimes D\). This defines coevaluation
+\(R\to P\otimes D\). In each degree choose a finite dual basis.
+The cycle is the sum of the dual basis tensors over the
+finitely many degrees. Both triangle identities now follow
+by the dual basis expansions in each degree, with evaluation
+on the adjacent \(D,P\) factors. In particular the identities
+hold already on the complexes. The bidual map is the
+degreewise finite projective double dual, with the symmetry
+sign \(x\mapsto[f\mapsto(-1)^{|x||f|}f(x)]\).
+It is a chain map by the Hom differential and a
+termwise isomorphism.
+\end{proof}
+
+\begin{proposition}[Projection through a perfect factor and base change]\label{res:U11}
+If \(P\) is perfect, the natural comparison
+\[
+ P\otimes_R^{\mathbf L}\mathbf R\mathrm{Hom}_R(X,Y)
+ \longrightarrow
+ \mathbf R\mathrm{Hom}_R(X,P\otimes_R^{\mathbf L}Y)
+\]
+is an isomorphism. Also, for any \(R\to S\) the natural
+change-of-rings map
+\[
+ S\otimes_R^{\mathbf L}\mathbf R\mathrm{Hom}_R(P,Y)
+  \longrightarrow
+ \mathbf R\mathrm{Hom}_S(S\otimes_R^{\mathbf L}P,
+                          S\otimes_R^{\mathbf L}Y)
+\]
+is an isomorphism.
+\end{proposition}
+\begin{proof}
+For the first assertion test by morphisms from any \(Z\).
+Using Theorem~\ref{res:U10}, morphisms from \(Z\) to the
+left side are morphisms from \(P^\vee\otimes^{\mathbf L}Z\)
+to \(\mathbf R\mathrm{Hom}_R(X,Y)\). The closed adjunction
+in Theorem~\ref{res:U08} and associativity identify them with
+morphisms from \(P^\vee\otimes^{\mathbf L}(Z\otimes^{\mathbf L}X)\)
+to \(Y\). Applying the same duality a second time and
+then the closed adjunction gives morphisms from \(Z\) to the
+right side. The composite is the canonical tensor-evaluation
+comparison, since each step takes adjoints under evaluation
+or coevaluation. The isomorphism follows by Yoneda.
+For base change, extend scalars on a bounded finite
+projective representative for \(P\) and its ordinary dual.
+Finite projective duals commute termwise with extension,
+and the comparison is compatible with evaluation.
+Proposition~\ref{res:U09} transports the evaluation comparison
+of Theorem~\ref{res:U10} to the evaluation comparison over \(S\).
+This proves the assertion even if \(S\) is not flat over \(R\).
+\end{proof}
+
+\begin{example}[Termwise free need not be K-flat]\label{res:U12}
+Let \(k\) be a field and \(R=k[\epsilon]/(\epsilon^2)\).
+The unbounded complex \(A\) having \(R\) in every degree and
+differential multiplication by \(\epsilon\) is acyclic.
+It is neither K-projective nor K-flat.
+\end{example}
+\begin{proof}
+Its cycles and boundaries are both \(\epsilon R\) in every degree.
+It cannot be K-projective, since its identity is not null-homotopic.
+In any proposed homotopy \(d h+h d\) has image in \(\epsilon R\).
+For the tensor complex \(A\otimes A\), use in degree \(n\) the
+finitely supported basis \(e_i^{(n)}\), indexed by \((i,n-i)\).
+Then
+\[
+ d(e_i^{(n)})=\epsilon e_{i+1}^{(n+1)}
+                 +(-1)^i\epsilon e_i^{(n+1)}.
+\]
+The element \(\epsilon e_0^{(n)}\) is a cycle. If it were a boundary,
+a nonzero finitely supported sequence \((a_i)_i\) over \(k\)
+would have image \(e_0^{(n)}\) under
+\(e_i^{(n-1)}\mapsto e_{i+1}^{(n)}+(-1)^i e_i^{(n)}\).
+For such a sequence the least and greatest image indices are its
+least index and one more than its greatest index. They are
+distinct, a contradiction. This shows directly that \(A\otimes A\)
+is not acyclic.
+\end{proof}
+
+\begin{example}[An infinite source in Hom base change]\label{res:U13}
+Let \(R=k\) be a field, \(S=k[t]\), \(P=\bigoplus_{n\geq0}k\),
+and \(Y=k\), all in degree zero. The canonical Hom base-change
+map for \(P,Y\) is not surjective.
+\end{example}
+\begin{proof}
+The map is \(k[t]\otimes_k\prod_{n\geq0}k\to\prod_{n\geq0}k[t]\),
+by ordinary projectivity and flatness. Any element of its image
+has a common bound on the degrees of its entries, since it is a
+finite sum of polynomial multiples of scalar sequences.
+The sequence \((t^n)_{n\geq0}\) violates that condition.
+\end{proof}
+
+\section{Finite affine adjunction and traces}
+
+\begin{theorem}[Derived coinduction and its trace]\label{res:U14}
+For a ring map \(A\to B\) let \(f_*:D(B)\to D(A)\) be
+restriction of scalars. It has a right adjoint \(f^!\).
+If \(Y\to I\) is a K-injective replacement over \(A\), it is computed
+by \(f^!Y=\underline{\mathrm{Hom}}_A(B,I)\) with
+\((b\cdot\varphi)(b')=\varphi(bb')\).
+The counit \(f_*f^!Y\to Y\) is evaluation at \(1\).
+Under successive ring maps these right adjoints compose and
+the counits compose by successive evaluations at \(1\).
+\end{theorem}
+\begin{proof}
+For any \(B\)-complex \(M\) there is an isomorphism of Hom complexes
+\[
+ \underline{\mathrm{Hom}}_B
+  (M,\underline{\mathrm{Hom}}_A(B,I))
+ \longrightarrow \underline{\mathrm{Hom}}_A(f_*M,I),
+ \qquad u\longmapsto [m\mapsto u(m)(1)].
+\]
+Its inverse sends \(v\) to \(m\mapsto[b\mapsto v(bm)]\).
+Since \(B\) is in degree zero both are chain maps by the ordinary
+Hom differential. Exactness of restriction and K-injectivity
+of \(I\) show that \(\underline{\mathrm{Hom}}_A(B,I)\)
+is K-injective over \(B\). The displayed isomorphism of degree-zero
+cohomologies therefore gives the derived adjunction by
+\cite[R04]{ha-core}. It identifies the image of the identity
+with evaluation at \(1\), hence gives the counit.
+For \(A\to B\to C\) apply the same expression with \(M=C[0]\).
+It gives a \(C\)-linear isomorphism
+\[
+ \underline{\mathrm{Hom}}_B(C,\underline{\mathrm{Hom}}_A(B,I))
+ \cong\underline{\mathrm{Hom}}_A(C,I).
+\]
+The inner model on the left is K-injective, so the left side indeed
+computes the composite. Since evaluation at \(1_C\) in the
+image means evaluating first at \(1_C\) and then at \(1_B\),
+the trace statement follows.
+\end{proof}
+
+\begin{proposition}[Finite relative dual under a perfectness hypothesis]\label{res:U15}
+If \(B\) is perfect as an \(A\)-complex, put
+\(D_{B/A}=f^! A\in D(B)\).
+For every \(Y\in D(A)\) the natural \(B\)-linear map
+\[
+ D_{B/A}\otimes_B^{\mathbf L}(B\otimes_A^{\mathbf L}Y)
+     \longrightarrow f^!Y
+\]
+is an isomorphism.
+\end{proposition}
+\begin{proof}
+Choose a K-injective representative \(I\) of \(A\) and a
+semifree representative \(P_Y\) for \(Y\).
+The left side is represented by
+\(\underline{\mathrm{Hom}}_A(B,I)\otimes_A P_Y\)
+because \(B\otimes_A P_Y\) is K-flat over \(B\) by the proof
+of Proposition~\ref{res:U09}. Its canonical map to
+\(\underline{\mathrm{Hom}}_A(B,I\otimes_A P_Y)\)
+sends a pure tensor \(\varphi\otimes p\) to
+\([b\mapsto\varphi(b)\otimes p]\).
+The corresponding map for a general complex \(Q\) in place of
+\(B\) uses \((-1)^{|p||q|}\varphi(q)\otimes p\) on \(q\in Q\).
+This is a chain map by the two differentials of
+Definition~\ref{res:U01}. Compose with Hom of a
+K-injective replacement of \(I\otimes_A P_Y\), which represents
+\(Y\). To see this map is a quasi-isomorphism, forget to
+\(A\) and resolve \(B\) by a bounded finite projective complex
+\(Q\). Replacing \(B\) by \(Q\) in the two Hom complexes with
+K-injective targets is a quasi-isomorphism by
+Proposition~\ref{res:U03}. Tensoring the comparison for \(I\)
+with \(P_Y\) preserves this property. For the \(Q\)-model,
+ordinary tensor evaluation is an isomorphism by
+Theorem~\ref{res:U10}, and Hom from \(Q\) to the chosen
+replacement is a quasi-isomorphism by its K-projectivity.
+Commutativity of the comparison squares proves the original map
+is a quasi-isomorphism. This construction retains \(B\)-linearity
+because the map on the unreplaced \(B\)-models does.
+\end{proof}
+
+\begin{proposition}[Flat base change for a finite algebra]\label{res:U16}
+Let \(A\) be Noetherian, \(B\) be a finite \(A\)-algebra,
+and \(A\to A'\) be flat. Set \(B'=A'\otimes_A B\).
+For \(Y\in D^+(A)\), coinduction satisfies the \(B'\)-linear
+base-change isomorphism
+\[
+ B'\otimes_B^{\mathbf L}f^!Y
+   \ \cong\ f'^!(A'\otimes_A^{\mathbf L}Y).
+\]
+It identifies the two evaluation-at-\(1\) traces.
+\end{proposition}
+\begin{proof}
+Take a bounded-below termwise injective representative \(I\) of
+\(Y\) and a bounded-below injective replacement \(I'\) of
+\(A'\otimes_A I\), using \cite[R01, R03]{ha-core}.
+Since \(B\) is finitely presented as an \(A\)-module, flat
+extension commutes with \(\mathrm{Hom}_A(B,I^q)\) in each
+degree, by taking the kernel of Hom applied to a finite
+presentation. Thus the comparison is the ordinary Hom
+of \(B'\) with \(A'\otimes_A I\to I'\) on these models.
+The \(B\)-base change is underived on every term because
+\(B'\) is \(B\)-flat.
+
+For the quasi-isomorphism assertion resolve \(B\) over \(A\)
+by a resolution \(P_B\) in nonpositive degrees of finite free
+modules. Such a resolution is available by iterating finite
+free surjections onto successive finite kernels over the
+Noetherian ring. Its scalar extension resolves \(B'\)
+by flatness. In each total degree the products in
+\(\underline{\mathrm{Hom}}_A(P_B,I)\) are finite because
+\(P_B\) is bounded above and \(I\) bounded below. Hence
+ordinary Hom on this model commutes with scalar extension
+termwise. On the base-changed model, Hom from the
+bounded-above projective resolution to \(A'\otimes I\to I'\)
+is a quasi-isomorphism by \cite[R03]{ha-core}.
+Comparing the two projective models with Hom against
+the injective targets proves the claim, since flat tensor
+preserves the comparison on the \(A\)-side.
+For trace, evaluation at \(1_B\) commutes with change of
+scalars and comparison of the target complexes. That is the
+counit of Theorem~\ref{res:U14}.
+\end{proof}
+
+\begin{corollary}[A quotient by a regular sequence]\label{res:U17}
+Let \(A\) be Noetherian, \(J=(a_1,\ldots,a_c)\) be generated
+by an \(A\)-regular sequence, and \(B=A/J\).
+Then
+\[
+  f^!Y\ \cong\
+  \bigl(\textstyle\bigwedge\nolimits^c_B(J/J^2)\bigr)^\vee[-c]
+       \otimes_B^{\mathbf L}(B\otimes_A^{\mathbf L}Y).
+\]
+Here the dual on the determinant line is its ordinary module dual.
+\end{corollary}
+\begin{proof}
+The Koszul complex on the \(a_i\) resolves \(B\) in degrees
+\(-c,\ldots,0\) by \cite[RK-07]{ca-core}. Its graded free
+algebra is the exterior algebra on a free module \(F\) with
+basis sent to the \(a_i\). In degree \(i\), identify the dual
+Koszul term with \(\bigwedge^{c-i}F\otimes(\bigwedge^c F)^\vee\)
+by \(z\otimes\lambda\mapsto[x\mapsto\lambda(z\wedge x)]\).
+For \(x\in\bigwedge^{i+1}F\) the identity
+\(d(z\wedge x)=d z\wedge x+(-1)^{c-i}z\wedge d x=0\)
+shows that the Hom differential acts on \(z\) as
+\((-1)^{i+1}(-1)^{c-i+1}d z=(-1)^c d z\).
+This is the shift by \(-c\). Thus
+its cohomology vanishes outside degree \(c\), where it is
+\(B\otimes_A(\bigwedge^c F)^\vee\). The action of \(B\) on
+this Ext group is the coinduction action. To check it, lift an
+element of \(B\) to \(A\). Multiplication on the resolution
+by the lift is a chain map lifting multiplication on \(B\),
+and induces the ordinary scalar action on cohomology.
+If the lift differs by an element of \(J\), the corresponding
+multiplication is null-homotopic on the Koszul resolution by
+wedge with the corresponding degree \(-1\) element.
+
+The basis of \(F\otimes_A B\) identifies with the classes of
+the \(a_i\) in \(J/J^2\). To justify independence, whenever
+\(\sum_i b_i a_i\) lies in \(J^2\), subtract a relation with
+coefficients in \(J\). The remaining exact relation is in
+the image of the degree-two Koszul differential and hence its
+coefficients lie in \(J\). Surjectivity follows from generation.
+A change of regular generators induces the corresponding
+matrix on this conormal module. Lifting its coefficients
+gives a comparison of Koszul complexes whose exterior
+powers identify the top Ext via the dual determinant of
+that same matrix. It follows that the top Ext identification
+is canonical. A complex of \(B\)-modules with this unique
+nonzero cohomology is canonically represented in \(D(B)\)
+by that module in degree \(c\), by good truncation.
+The Koszul resolution makes \(B\) perfect over \(A\), so
+Proposition~\ref{res:U15} gives the formula for \(Y\).
+\end{proof}
+
+\section{Comparison with geometric and local duality}
+
+\begin{proposition}[The finite morphism between affines]\label{res:U18}
+Let \(f:\mathrm{Spec}(B)\to\mathrm{Spec}(A)\) be finite.
+On the derived categories of complexes of quasi-coherent
+modules on these affine schemes, \(f_*\), \(\mathbf Lf^*\),
+and the right adjoint to \(f_*\) correspond respectively to
+restriction, derived scalar extension, and the coinduction
+in Theorem~\ref{res:U14}. The finite trace in this adjunction
+corresponds to evaluation at \(1\).
+\end{proposition}
+\begin{proof}
+We recall the needed exact affine correspondence.
+For an \(A\)-module \(M\), the module sheaf \(\widetilde M\)
+has sections \(M_a\) on \(D(a)\).
+Conversely for a quasi-coherent \(\mathcal F\) choose a finite
+distinguished affine cover on which it is a module sheaf.
+Writing the sheaf equalizer for sections over this cover
+and then localizing at \(a\) gives the equalizer for the
+induced cover of \(D(a)\), since localization is exact
+and the products in this equalizer are finite. Hence
+\(\Gamma(X,\mathcal F)_a=\Gamma(D(a),\mathcal F)\).
+The canonical map \(\widetilde{\Gamma(X,\mathcal F)}\to
+\mathcal F\) is an isomorphism on the distinguished basis.
+This equivalence is exact because the module sheaf functor
+is exact on each stalk by exactness of localization. It
+induces an exact equivalence on derived categories by
+termwise application and localization. Preimages of \(D(a)\)
+under \(f\) are \(D(a)\) in \(\mathrm{Spec}(B)\), where \(a\)
+is viewed in \(B\). Direct image thus corresponds to
+restriction of scalars, while ordinary pullback on affines
+is extension of scalars by its tensor description.
+Apply Proposition~\ref{res:U09} and
+Theorem~\ref{res:U14}. The trace is their adjunction counit,
+hence the requested evaluation.
+\end{proof}
+
+\begin{theorem}[Comparison with complete local duality]\label{res:U19}
+Let \((R,\mathfrak m,k)\) be a complete Noetherian local ring.
+Choose a surjective local map \(f:S\to R\) from a complete
+regular local ring \((S,\mathfrak n,k)\) of dimension \(d\),
+with the same residue field. Then
+\[
+ D_R=f^!(S[d])=\mathbf R\mathrm{Hom}_S(R,S[d])
+\]
+is the normalized dualizing complex of
+\cite[D05]{ca-topics}. For finite \(R\)-modules \(M\)
+there are natural isomorphisms
+\[
+ \begin{split}
+ \mathbf R\mathrm{Hom}_R(M,D_R)
+      &\cong \mathbf R\mathrm{Hom}_S(M,S[d]),\\
+ H^{-q}\mathbf R\mathrm{Hom}_R(M,D_R)
+      &\cong \mathrm{Hom}_R(H^q_{\mathfrak m}(M),E_R(k)).
+ \end{split}
+\]
+In the first line the \(R\)-action on the right is by
+precomposition on \(M\). The finite trace is the same
+evaluation as in Theorem~\ref{res:U14}.
+\end{theorem}
+\begin{proof}
+The regular cover and the identification of the normalized
+dualizing complex are \cite[C04, D05]{ca-topics}.
+The first isomorphism is the complex-level adjunction of
+Theorem~\ref{res:U14}. Multiplication on the \(R\)-factor
+there gives multiplication by precomposition on \(M\),
+as seen from the inverse formula for \(v\).
+
+Here is a direct comparison with the local cohomology
+proof. Put \(E_S=E_S(k)\) and let \(C_{\mathfrak n}\)
+be the finite flat augmented \v{C}ech complex for
+generators of \(\mathfrak n\). By
+\cite[L05, D01, M03]{ca-topics}, \(C_{\mathfrak n}\)
+represents \(E_S[-d]\) and
+\(\mathrm{End}_S(E_S)=S\).
+The complex \(W=\underline{\mathrm{Hom}}_S(C_{\mathfrak n},E_S)\)
+is bounded and termwise injective, since Hom from a flat
+module into an injective module is injective by tensor--Hom
+adjunction and flatness. Exactness of dualization into
+\(E_S\) shows that \(W\) has only one nonzero cohomology
+module, the copy of \(S\) in degree \(-d\). A cycle representing
+its generator \(1\) gives a quasi-isomorphism \(S[d]\to W\).
+Thus it may be used for the K-injective model in
+Theorem~\ref{res:U14}. Since the images of the generators
+generate \(\mathfrak m\), scalar extension identifies
+\(R\otimes_S C_{\mathfrak n}=C_{\mathfrak m}\)
+by localization. Coinduction identifies
+\(E_R(k)\cong\mathrm{Hom}_S(R,E_S)\) by
+\cite[D04]{ca-topics}. The complex adjunction yields
+\[
+ \underline{\mathrm{Hom}}_S(R,W)
+    \cong \underline{\mathrm{Hom}}_R(C_{\mathfrak m},E_R).
+\]
+This is a K-injective \(R\)-model by Theorem~\ref{res:U14}.
+Applying \(\underline{\mathrm{Hom}}_R(M,-)\) gives
+\(\underline{\mathrm{Hom}}_R(M\otimes_R C_{\mathfrak m},E_R)\).
+Taking degree \(-q\) cohomology gives the displayed Matlis
+dual, since Hom into an injective module is exact and the
+tensor computes local cohomology. The comparison agrees
+with \cite[D06]{ca-topics}, using the same bounded
+injective model and the same change of scalars. The trace
+on the coinduced model is evaluation at \(1_R\) as claimed.
+\end{proof}
+
+\begin{corollary}[Completion and the Cohen--Macaulay form]\label{res:U20}
+For a Noetherian local ring \(R\) and a finite \(R\)-module \(M\)
+there is an isomorphism
+\[
+ \mathrm{Hom}_R(H^q_{\mathfrak m}(M),E_R)
+   \cong H^{-q}\mathbf R\mathrm{Hom}_{\widehat R}
+                             (\widehat M,D_{\widehat R})
+\]
+of \(\widehat R\)-modules. If \(R\) is complete Cohen--Macaulay
+of dimension \(e\), this becomes
+\(\mathrm{Ext}^{e-q}_R(M,\omega_R)\), where
+\(\omega_R=H^{-e}(D_R)\).
+\end{corollary}
+\begin{proof}
+The local cohomology groups are \(\mathfrak m\)-power torsion
+and are unchanged on completing \(M\), by \cite[L02, L09]{ca-topics}.
+Every \(R\)-linear map between \(\mathfrak m\)-power torsion
+modules is \(\widehat R\)-linear. This follows by using
+\(R/\mathfrak m^r=\widehat R/(\mathfrak m\widehat R)^r\)
+on submodules annihilated by \(\mathfrak m^r\). The
+\(\widehat R\)-injective envelope of \(k\) restricts
+to the \(R\)-injective envelope, as in \cite[M06]{ca-topics}.
+Thus the first isomorphism follows by applying
+Theorem~\ref{res:U19} to \(\widehat R\). For the second,
+Theorem~\ref{res:U19} with \(M=R\) and the
+Cohen--Macaulay cohomology criterion \cite[V07]{ca-topics}
+show that \(D_R\) has a single nonzero cohomology
+module in degree \(-e\). The module is the canonical
+module by \cite[D08]{ca-topics}, and good truncation
+identifies \(D_R\) with \(\omega_R[e]\). Now the
+cohomology shift gives the claimed Ext group. These
+are the completions and shifts of \cite[D07--D09]{ca-topics}.
+\end{proof}
+
+\section{An explicit projective case}
+
+\begin{theorem}[Laurent monomials compute the twists on projective space]\label{res:U21}
+Let \(k\) be a field, \(n\geq1\), \(X=\mathbf P^n_k\),
+and \(S=k[x_0,\ldots,x_n]\) with its usual grading.
+For \(m\in\mathbb Z\), the cohomology of \(\mathcal O_X(m)\)
+is \(S_m\) in degree zero, vanishes for \(0<q<n\)
+and for \(q>n\), and has basis
+\[
+   \{x_0^{a_0}\cdots x_n^{a_n}:\ a_i<0,\
+           a_0+\cdots+a_n=m\}
+\]
+in degree \(n\).
+\end{theorem}
+\begin{proof}
+Use the cover \(D_+(x_i)\). Its nonempty intersections
+are affine Noetherian schemes, since the one-variable
+dehomogenizations on a chart are polynomial rings and
+localizations. Sections of \(\mathcal O(m)\) on the
+intersection indexed by a nonempty subset \(J\) are the
+degree-\(m\) part of \(S[x_j^{-1}:j\in J]\), by the
+construction of the twisting sheaf. Quasi-coherent
+modules on these affine intersections have vanishing
+positive cohomology by the affine acyclicity argument of
+\cite[L10]{ca-topics}. The \v{C}ech comparison
+\cite[H02--H04]{ha-core} thus computes the cohomology.
+
+In the \v{C}ech complex, decompose into exponent vectors
+\(\mathbf a=(a_0,\ldots,a_n)\) of total degree \(m\).
+The term for a subset \(J\) has a basis vector for
+\(\mathbf a\) precisely when it contains the set
+\(N=\{i:a_i<0\}\). Restrictions either carry the basis
+vector to itself or have zero source, so each vector
+gives a subcomplex. When \(N\) is nonempty and proper,
+choose \(j\notin N\). The alternating simplex homotopy
+pairs the components \(J\) not containing \(j\) with
+\(J\cup\{j\}\). Explicitly the degree-minus-one map
+takes the component at \(J\cup\{j\}\) to the component
+at \(J\) with sign \((-1)^{|\{i\in J:i<j\}|}\), and has
+zero component at \(J\) if \(j\in J\).
+Both paired sets are admissible, because \(J\) contains
+\(N\) and is therefore nonempty. Expanding the
+alternating differential gives the identity on the
+insertion of \(j\), while insertions of indices other
+than \(j\) occur twice with opposite signs. Thus this
+summand is acyclic. For \(N=\varnothing\), the same
+homotopy works after adding the empty subset in
+degree \(-1\), leaving exactly one copy of \(k\) in
+degree zero of the unaugmented subcomplex.
+For \(N\) the full set only the top-degree term remains.
+Degreewise direct sums over exponent vectors preserve
+cohomology. This proves the formulas.
+\end{proof}
+
+\begin{corollary}[Trace and duality for the twists]\label{res:U22}
+In the situation of Theorem~\ref{res:U21}, the coefficient
+of \((x_0\cdots x_n)^{-1}\) specifies a trace
+\(H^n(X,\mathcal O_X(-n-1))\to k\).
+Multiplication followed by trace gives perfect pairings
+\[
+ H^q(X,\mathcal O_X(m))\ \otimes_k\
+ H^{n-q}(X,\mathcal O_X(-m-n-1))\ \longrightarrow k
+ \qquad (0\leq q\leq n).
+\]
+The sheaf \(\mathcal O_X(-n-1)\) identifies with the
+top differential forms \(\Omega^n_{X/k}\).
+\end{corollary}
+\begin{proof}
+The trace space is one-dimensional by
+Theorem~\ref{res:U21}. The only potentially nonzero
+pairings are \(q=0,n\). In each of them multiplication
+by a global section acts on the Laurent \v{C}ech
+representative by ordinary multiplication. If \(x^{\mathbf a}\)
+has all exponents nonnegative, its unique complementary
+basis vector has exponents \(-1-a_i\) at each coordinate.
+Their product gives coefficient \(1\), while any other
+basis product gives coefficient zero. Thus the bases in
+the two factors are dual. The formula also covers degrees
+for which both spaces are zero.
+
+For the top forms, on \(U_i=D_+(x_i)\) write
+\(t_a=x_a/x_i\) and use the generator
+\[
+ \eta_i=(-1)^i\,d t_0\wedge\cdots
+                   \wedge\widehat{d t_i}\wedge\cdots\wedge d t_n .
+\]
+For \(j\ne i\) put \(z=t_j=x_j/x_i\), a unit on the overlap.
+The new coordinate indexed by \(i\) is \(1/z\), with
+differential \(-z^{-2}dz\). Every other coordinate indexed
+by \(a\ne i,j\) is \(t_a/z\), with differential
+\(z^{-1}d t_a-z^{-2}t_a\,dz\). In wedging the new
+differentials the summands with a second \(dz\) vanish.
+The scalar factor without its sign is \(z^{-n-1}\), and
+the sign of \(-d z\) moved from the \(i\)-slot to the \(j\)-slot
+is \((-1)^{i+j}\). The factors \((-1)^i,(-1)^j\)
+in the two generators cancel that sign. Hence
+\(\eta_j=z^{-n-1}\eta_i\), the transition function of
+the frame \(x_i^{-n-1}\) for \(\mathcal O(-n-1)\).
+This gives the asserted identification.
+\end{proof}

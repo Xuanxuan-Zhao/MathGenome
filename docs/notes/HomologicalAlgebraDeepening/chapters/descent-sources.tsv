@@ -1,0 +1,10 @@
+id	source	dependencies
+F01	Stacks, Descent for modules §35.3 (023F), archived Descent PDF pp. 4–9; alternating Amitsur differential	Tensor associativity and unit insertions
+F02	Stacks, Descent for modules §35.3, archived Descent PDF pp. 4–9; faithfully flat descent proof	F01; faithful exact tensor and extra degeneracy
+F03	Stacks, Descent for modules §35.3 (023F), archived Descent PDF pp. 4–9; Toën–Vezzosi §1.2.12 for homotopy comparison	Tensor positions and base change of a module
+F04	Stacks, Descent for modules §35.3 (023F), archived Descent PDF pp. 4–9	F02, F03; faithful flatness preserves finite equalizers
+F05	Stacks, Descent §§35.3 and 35.14 (02KJ); finite projective descent	Faithful flatness; core Nakayama and Tor; finite presentations
+F06	Stacks, Descent for modules §35.3 and quasi-coherent descent §35.5, archived PDF pp. 17–20; extension degree by degree	F04; cohomology under flat base change
+F07	Toën–Vezzosi, HAG II §1.2.12, archived PDF p. 61; original explicit unbounded Amitsur proof	F02, Q17; HA core good truncation D05 and totalization B01–B04; cone of tower difference
+F08	Toën–Vezzosi, HAG II §1.2.12, archived PDF p. 61; finite-projective coefficient comparison	F07; HA core R03–R04 and finite-projective Hom base change
+F09	Stacks, Descent of quasi-coherent sheaves §35.5, archived PDF pp. 17–20; localization example	F02, F04; P1-03 ALG-05-C01-S01/S02

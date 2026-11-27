@@ -1,0 +1,288 @@
+\chapter{Unbounded derived tensor and internal Hom}
+\label{ch:unbounded}
+
+Throughout the chapter \(R\) is a commutative ring. Complexes are
+cochain complexes, with \(X[s]^i=X^{i+s}\) and
+\(d_{X[s]}=(-1)^s d_X\). Modules are placed in degree zero. We use the
+construction of bounded-below injective replacements and the homotopy
+calculus of \cite[R01, R03, R04]{ha-core}. In particular, no assumption
+of Noetherianity is needed in this chapter.
+
+\section{Complexes and free cells}
+
+\begin{definition}[Tensor, internal Hom, and good models]\label{res:U01}
+The tensor complex is totalized by direct sums, with
+\(d(x\otimes y)=d x\otimes y+(-1)^{|x|}x\otimes d y\).
+The internal Hom complex is
+\[
+ \underline{\mathrm{Hom}}_R(X,Y)^q
+   =\prod_i\mathrm{Hom}_R(X^i,Y^{i+q}),\qquad
+ \partial f=d_Y f-(-1)^q f d_X .
+\]
+A complex \(P\) is K-projective when
+\(\underline{\mathrm{Hom}}_R(P,A)\) is acyclic for every acyclic \(A\).
+A complex \(F\) is K-flat when \(A\otimes_R F\) is acyclic for every
+acyclic \(A\). A complex \(I\) is K-injective when
+\(\underline{\mathrm{Hom}}_R(A,I)\) is acyclic for every acyclic \(A\).
+\end{definition}
+
+Expanding the two differentials proves that their squares are zero.
+For the Hom differential, the two terms containing \(d_Y f d_X\)
+cancel. Cycles in degree zero are chain maps, and degree-zero
+boundaries are null-homotopic maps. The vanishing condition in all
+degrees is thus the usual orthogonality to all shifts of acyclic
+complexes. Direct sums in the tensor and products in the Hom are
+essential when both arguments are unbounded. For example the
+degree-\(q\) tensor--Hom adjunction is the correspondence
+\[
+ u(x\otimes y)\ \longleftrightarrow\ [x\longmapsto(y\longmapsto
+ u(x\otimes y))].
+\]
+For \(u\) of degree \(q\), each inner map has degree \(q+|x|\).
+Expanding \(\partial u\) gives the three terms acting on the target,
+on \(x\), and on \(y\), with coefficients \(1,-(-1)^q\),
+and \(-(-1)^{q+|x|}\), respectively. This is exactly the Hom
+differential on the curried expression. The constructions and the
+adjunction carry chain homotopies to chain homotopies.
+
+\begin{theorem}[A semifree replacement without bounds]\label{res:U02}
+Every complex \(X\) admits a degreewise surjective quasi-isomorphism
+\(F\to X\) such that
+\(F\) has an increasing filtration by subcomplexes
+\(0\subset F_0\subset F_1\subset\cdots\) with union \(F\).
+Each inclusion is split on the underlying graded modules and the
+successive quotients are sums of shifts of \(R\).
+The complex \(F\) is both K-projective and K-flat.
+\end{theorem}
+\begin{proof}
+View \(R\) as a one-object dg category in degree zero.
+Its representable module is the complex \(R[0]\).
+Theorems~\ref{res:G06} and \ref{res:G07} give the
+graded-split filtration, quasi-isomorphism, and K-projectivity.
+
+Tensor the filtration with \(A\). Splitting on graded modules makes
+each successive sequence exact as complexes. Each quotient is a
+direct sum of shifts of \(A\), hence acyclic. The finite-stage tensor
+complexes are therefore acyclic by induction and their filtered
+union remains so, since filtered colimits are exact for modules.
+Thus \(F\) is K-flat.
+\end{proof}
+
+\begin{proposition}[Invariance and bounded tests]\label{res:U03}
+The functors \(P\otimes_R-\), \(\underline{\mathrm{Hom}}_R(P,-)\),
+and \(\underline{\mathrm{Hom}}_R(-,I)\) preserve quasi-isomorphisms
+when \(P\) is K-flat, \(P\) is K-projective, and \(I\) is
+K-injective, respectively. A bounded-above complex of flat modules
+is K-flat. Every K-projective complex is K-flat.
+\end{proposition}
+\begin{proof}
+The cone of a quasi-isomorphism is acyclic. Tensor takes a cone to
+the cone of the tensor map, up to the canonical shift sign.
+In the component involving \(x\in P^i\) and the shifted input the
+comparison is \((-1)^i\), as is seen by expanding the differential
+in Definition~\ref{res:U01}. Internal Hom in either variable
+gives the corresponding cone up to shift, since the cone uses
+a graded finite direct sum and its differential contains the
+original map as off-diagonal entry. Thus the three acyclicity
+conditions imply the asserted invariance.
+
+For a bounded-above complex of flats, first cut off the degrees
+below \(m\) by the subcomplex consisting of its terms in degrees
+at least \(m\). This is a bounded complex filtered by degree tails,
+whose one-term quotients are shifts of flat modules. Tensoring with
+an acyclic complex preserves those graded-split exact sequences,
+and each one-term quotient gives an acyclic tensor by flatness.
+As \(m\) decreases the union is the original complex, so exactness
+of filtered colimits proves K-flatness. Finally, apply
+Theorem~\ref{res:U02} to a K-projective complex. The quasi-isomorphism
+from its semifree replacement is between K-projectives, hence is a
+homotopy equivalence by \cite[R04]{ha-core}. Tensor with an acyclic
+complex preserves that homotopy equivalence. 
+\end{proof}
+
+\section{Injective replacements from a tower}
+
+\begin{lemma}[Strict extension to an injective model]\label{res:U04}
+Let \(i:X\hookrightarrow J\) be a termwise monic quasi-isomorphism.
+If \(I\) is a K-injective complex with injective terms, every
+chain map \(f:X\to I\) extends to a chain map \(J\to I\).
+\end{lemma}
+\begin{proof}
+Extend the components first, using injectivity, to obtain a graded
+map \(u:J\to I\) of degree zero. Since \(u i=f\), the degree-one
+map \(\partial u\) vanishes on \(X\) and factors through \(J/X\)
+as a cycle in \(\underline{\mathrm{Hom}}_R(J/X,I)\).
+The quotient \(J/X\) is acyclic by the long exact sequence.
+K-injectivity makes this cycle the differential of a degree-zero
+map \(v:J/X\to I\). Subtract \(v\) composed with the quotient
+map from \(u\). The result extends \(f\) and is closed.
+\end{proof}
+
+\begin{lemma}[Countable towers of complexes]\label{res:U05}
+For a tower of complexes \(A_0\leftarrow A_1\leftarrow\cdots\)
+whose transition maps are degreewise surjective, there is a short
+exact sequence of complexes
+\[
+ 0\longrightarrow\varprojlim_n A_n\longrightarrow
+ \prod_{n\geq0} A_n
+ \xrightarrow{\ 1-s\ }\prod_{n\geq0} A_n
+ \longrightarrow0,
+\qquad
+ s((a_n)_n)=(t_n(a_{n+1}))_n .
+\]
+A degreewise surjective tower of acyclic complexes has acyclic
+limit. A map between degreewise surjective towers that is a
+quasi-isomorphism at each stage gives a quasi-isomorphism of
+limits. If all \(A_n\) are K-injective and transitions split
+in each degree, then the limit is K-injective.
+\end{lemma}
+\begin{proof}
+In each degree the kernel is the compatible families.
+To solve \(a_n-t_n(a_{n+1})=b_n\), choose \(a_0\) and then
+lift \(a_n-b_n\) recursively. Products of modules are exact,
+since surjectivity can be tested in each component. They
+therefore commute with taking cohomology of complexes.
+The first two consequences follow from the long cohomology
+sequences of the displayed short exact sequence.
+For the last one, if \(C\) is acyclic pass to the tower
+\(\underline{\mathrm{Hom}}_R(C,A_n)\). Its terms are acyclic,
+its transition maps are surjective by the degreewise splittings,
+and its limit is \(\underline{\mathrm{Hom}}_R(C,\varprojlim A_n)\)
+since limits commute with products and with Hom in the target.
+Apply the first consequence.
+\end{proof}
+
+\begin{theorem}[Unbounded K-injective replacement over a ring]\label{res:U06}
+Every complex \(X\) of \(R\)-modules admits a termwise monic
+quasi-isomorphism to a K-injective complex with injective terms.
+\end{theorem}
+\begin{proof}
+Put \(T_n=\tau_{\geq -n}X\), where the cutoff term in degree
+\(-n\) is \(X^{-n}/d X^{-n-1}\). The maps
+\(T_{n+1}\to T_n\) are surjective in each degree, and for
+each fixed degree the tower stabilizes at the corresponding
+term of \(X\). Thus \(\varprojlim T_n=X\).
+
+We construct compatible termwise monic quasi-isomorphisms
+\(T_n\to I_n\) to bounded-below complexes of injectives
+whose transitions are split epimorphisms in each degree.
+Start with a bounded-below replacement of \(T_0\) by
+\cite[R01]{ha-core}. Given \(I_n\), choose a bounded-below
+replacement \(T_{n+1}\hookrightarrow J\).
+The composite \(T_{n+1}\to T_n\to I_n\) extends to \(g:J\to I_n\)
+by Lemma~\ref{res:U04} and bounded-below K-injectivity
+\cite[R03]{ha-core}. Put \(C=\mathrm{Cone}(1_{I_n})[-1]\).
+With degree-\(i\) term \(I_n^i\oplus I_n^{i-1}\), its differential is
+\((a,b)\mapsto(d a,-a-d b)\). Projection onto the first entry is a
+chain map \(C\to I_n\) and is surjective with a graded section.
+The homotopy \((a,b)\mapsto(-b,0)\) contracts \(C\).
+Use \(I_{n+1}=J\oplus C\), map \(T_{n+1}\) into the first summand,
+and take transition \(g+\mathrm{pr}_1\).
+The map from \(T_{n+1}\) is monic and a quasi-isomorphism,
+and commutativity with the transition to \(I_n\) is strict.
+
+Let \(I=\varprojlim I_n\).
+Lemma~\ref{res:U05} proves that the natural map \(X\to I\)
+is a quasi-isomorphism and that \(I\) is K-injective.
+It is monic termwise by compatibility with all the monomorphisms
+\(T_n\hookrightarrow I_n\) and \(\varprojlim T_n=X\).
+For each degree \(i\), choose splittings of the transition maps
+\(I_{n+1}^i\to I_n^i\). Then \(I^i\) is isomorphic as a module to
+\(I_0^i\) times the product of their kernels. Each kernel is a direct
+summand of an injective module. A product of injectives is injective,
+since one can extend a map along a monomorphism in each coordinate.
+This proves the final assertion.
+\end{proof}
+
+\section{The closed derived structure}
+
+\begin{theorem}[Unbounded derived tensor]\label{res:U07}
+There is a symmetric monoidal product
+\(\otimes_R^{\mathbf L}:D(R)\times D(R)\to D(R)\) with unit \(R[0]\).
+It is computed by replacing both arguments with the models in
+Theorem~\ref{res:U02}. If either argument is already K-flat, one
+may use the ordinary tensor product without replacing the other.
+\end{theorem}
+\begin{proof}
+By \cite[R04]{ha-core}, K-projective models lift all derived
+morphisms uniquely as homotopy classes of chain maps.
+Tensoring those classes produces a bifunctor taking values in
+\(D(R)\), and the lifted equivalences between models provide its
+natural comparison isomorphisms. If \(P,Q\) are K-flat, then
+\(P\otimes Q\) is K-flat: associate its tensor with an acyclic
+complex and use acyclicity successively. The ordinary chain
+associativity, unit and symmetry
+\(x\otimes y\mapsto(-1)^{|x||y|}y\otimes x\)
+therefore descend, and satisfy the coherence identities because
+they already do so on the chain models. Alternatively, after
+replacing one of two K-flat complexes by a K-projective model,
+the ordinary comparison remains a quasi-isomorphism by the
+K-flatness of the other, by Proposition~\ref{res:U03}.
+This proves the step needed to iterate the bifunctor independently
+of choices. For a K-flat factor tensoring the replacement map in
+the other factor is a quasi-isomorphism, again by that proposition.
+\end{proof}
+
+\begin{theorem}[Internal derived Hom and adjunction]\label{res:U08}
+Write \(\mathbf R\mathrm{Hom}_R(X,Y)\in D(R)\) for internal
+derived Hom. It can be computed by
+\(\underline{\mathrm{Hom}}_R(P_X,Y)\) with \(P_X\) K-projective,
+or by \(\underline{\mathrm{Hom}}_R(X,I_Y)\) with \(I_Y\)
+K-injective. Both agree naturally, and
+\[
+ \mathrm{Hom}_{D(R)}(Z\otimes_R^{\mathbf L}X,Y)
+  \cong \mathrm{Hom}_{D(R)}(Z,\mathbf R\mathrm{Hom}_R(X,Y)).
+\]
+In particular
+\(
+ H^q\mathbf R\mathrm{Hom}_R(X,Y)
+   \cong\mathrm{Hom}_{D(R)}(X,Y[q]).
+\)
+\end{theorem}
+\begin{proof}
+Take the two replacements. The expression
+\(\underline{\mathrm{Hom}}_R(P_X,I_Y)\) defines a bifunctor
+on derived morphisms by \cite[R04]{ha-core} and passage of Hom
+through chain homotopy classes. The two single replacement
+expressions compare to this one by quasi-isomorphisms by
+Proposition~\ref{res:U03}. If \(P\) is K-flat and \(I\) is
+K-injective, then \(\underline{\mathrm{Hom}}_R(P,I)\) is
+K-injective. Indeed its Hom from an acyclic \(A\) identifies
+as a complex with the Hom from \(A\otimes P\) to \(I\), by the
+adjunction of Definition~\ref{res:U01}. That complex is acyclic.
+For the adjunction take \(P_X,I_Y\) and use the ordinary
+chain tensor--Hom adjunction in the homotopy category.
+On the left, \(Z\otimes P_X\) computes derived tensor by
+Theorem~\ref{res:U07}, and on the right the Hom target is
+K-injective by the preceding argument. Both morphism sets
+are therefore derived morphism sets by \cite[R04]{ha-core}.
+The last assertion follows from the cycle and boundary description
+in Definition~\ref{res:U01}, also with the shift of \(Y\).
+\end{proof}
+
+\begin{proposition}[Derived extension of scalars]\label{res:U09}
+For a homomorphism of commutative rings \(R\to S\), put
+\(L(X)=S\otimes_R^{\mathbf L}X\in D(S)\).
+Then \(L\) is left adjoint to restriction of scalars, and has the
+natural symmetric monoidal comparison
+\[
+ L(X\otimes_R^{\mathbf L}Y)\ \cong\
+ L(X)\otimes_S^{\mathbf L} L(Y).
+\]
+For successive changes of commutative rings \(R\to S\to T\), the two left extensions
+compose to \(T\otimes_R^{\mathbf L}(-)\).
+\end{proposition}
+\begin{proof}
+If \(P\) is K-flat over \(R\), \(S\otimes_R P\) is K-flat over \(S\)
+by associativity tested against acyclic \(S\)-complexes.
+Similarly extension of a K-projective is K-projective, using the
+underived Hom adjunction against an acyclic \(S\)-complex and
+exactness of restriction. On a K-projective source the chain Hom
+adjunction therefore computes the derived morphisms on both sides.
+Choose semifree \(P_X,P_Y\) for the monoidal formula. Both tensors
+are computed by the displayed model comparisons, and their
+identification is the associativity isomorphism for ordinary
+change of rings. It commutes with symmetry, multiplication and the
+unit on the chain models, since \(S\) is concentrated in degree zero.
+The same base-changed models give transitivity.
+\end{proof}

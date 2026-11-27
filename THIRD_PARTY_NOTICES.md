@@ -227,3 +227,9 @@ The later source is from [Mathlib PR #43046](https://github.com/leanprover-commu
 [NumberTheory/LocalField/Basic.lean](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/NumberTheory/LocalField/Basic.lean#L142-L150) · Andrew Yang. Copyright (c) 2025 Andrew Yang. All rights reserved. [Apache-2.0](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/LICENSE).
 
 - [`TrialitarianAlbertApplication.lean`](MathGenome/Internal/LinearAlgebraicGroups/LinearAlgebraicGroups/Arithmetic/TrialitarianAlbertApplication.lean#L207-L217). Retains the explicit rank-one valuation and uniform-space setup from the finite-residue-field instance. Uses it to obtain a proper normed topology and establish smallness.
+
+### ALG-10-D · Mapping triangles with an explicit shift isomorphism
+
+[CategoryTheory/Triangulated/Functor.lean](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/Mathlib/CategoryTheory/Triangulated/Functor.lean#L39-L53) · Joël Riou. Copyright (c) 2023 Joël Riou. All rights reserved. [Apache-2.0](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/LICENSE).
+
+- [`CotangentTransitivity.lean`](MathGenome/Internal/HomologicalAlgebraDeepening/Specs/DerivedFormalization/Affine/CotangentTransitivity.lean#L492-L510) adapts `mapTriangle` to take an explicit shift-by-one isomorphism and retains the componentwise action and commutativity proofs.

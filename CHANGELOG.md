@@ -1,3 +1,9 @@
+# 0.29.0 — Topics in Homological Algebra
+
+- Add the ALG-10 deepening development with 186 checked proof goals across 76 numbered lecture results.
+- Cover DG categories, derived functors, duality, model categories, descent, and derived affine geometry.
+- Add `MathGenome.HomologicalAlgebraDeepening`, the 44-page PDF, LaTeX, and reviewed source links.
+
 # 0.28.0 — Topics in Commutative Algebra
 
 - Add the ALG-05 deepening development with 191 checked proof goals across 95 numbered lecture results.

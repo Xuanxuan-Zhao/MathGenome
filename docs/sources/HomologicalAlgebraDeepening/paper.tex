@@ -1,0 +1,2931 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,xcolor,titlesec,fancyhdr,etoolbox,hyperref}
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome Topics in Homological Algebra 2026-11-20}
+\fi
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\hypersetup{colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Topics in Homological Algebra},pdfauthor={MathGenome},
+  pdfsubject={ALG-10-D01 to ALG-10-D03},bookmarksnumbered=true}
+\setcounter{tocdepth}{1}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{9pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{6pt}{24pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\thispdfpagelabel{Cover}
+\begin{flushleft}
+\vspace*{0.68in}
+{\large\scshape\color{deepgreen}MathGenome\par}
+\vspace{0.35in}
+{\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+\vspace{0.42in}
+{\color{ink}\fontsize{35}{41}\selectfont\bfseries
+Topics in\\[4pt] Homological Algebra\par}
+\vspace{0.3in}
+{\color{deepgreen}\Large Differential graded categories,\\[4pt]
+unbounded derived functors, and descent\par}
+\vfill
+{\large Mathematical lecture notes\par}
+\vspace{0.16in}
+{\normalsize ALG-10-D01 through ALG-10-D03\par}
+\vspace*{0.45in}
+\end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\makeatletter
+\patchcmd{\l@chapter}{\vskip 1.0em \@plus\p@}
+  {\vskip 0.45em \@plus 0.25\p@}{}{}
+\makeatother
+\tableofcontents
+\endgroup
+
+\chapter*{Scope and conventions}
+\addcontentsline{toc}{chapter}{Scope and conventions}
+These notes continue the MathGenome volume \emph{Advanced Homological
+Algebra}. They develop differential graded modules and categories, unbounded
+derived tensor and internal Hom, and explicit constructions for model
+categories, descent and derived affines. The source map records each
+numbered result with its hypotheses, location and proof prerequisites.
+
+We use cochain grading and \(H^i(X[s])=H^{i+s}(X)\).
+Standard complexes of modules and their tensor products use the Koszul
+sign rule. Certain model-category arguments are stated for modules over an
+ordinary commutative ring. The derived-affine chapter uses commutative dg
+algebras in nonpositive cochain degrees over a characteristic-zero field.
+The text identifies the hypotheses whenever it changes base category.
+A reference to an earlier MathGenome result by its alphanumeric label
+uses the specific proved form of that result.
+
+The theory is developed through finite affine duality, Serre duality
+for twists on projective space, explicit faithfully flat descent, and
+cotangent and intersection calculations on derived affines. For the
+right adjoint to proper pushforward and its perfectness and base-change
+hypotheses see \cite[\S\S12--13]{st-duality}. The literature notes
+locate homotopy-coherent descent and derived-stack theory.
+
+\mainmatter
+\chapter{Differential graded modules and resolutions}
+\label{ch:dg-modules}
+
+Fix a commutative ring \(k\). All gradings are cohomological and may be
+unbounded in both directions. For a homogeneous element \(x\) we write
+\(|x|\) for its degree. The tensor differential on complexes of
+\(k\)-modules is
+\[
+ d(x\otimes y)=dx\otimes y+(-1)^{|x|}x\otimes dy .
+\]
+The sign rule for this tensor product is also the sign rule for module
+actions and for composition. Throughout Chapter~\ref{ch:dg-modules}
+we work with right modules. See \cite[\S\S2.2, 3.1--3.2]{keller}
+and \cite[\S\S3.3--3.4]{yekutieli} for the background.
+
+\section{Actions, maps, and cones}
+
+\begin{definition}[Differential graded algebras and categories]\label{res:G01}
+A differential graded algebra \(A\) is a unital graded \(k\)-algebra
+with a differential of degree \(1\) satisfying \(d^2=0\), \(d1=0\), and
+\[
+ d(ab)=d(a)b+(-1)^{|a|}a\,d(b).
+\]
+A small dg category \(\mathcal A\) has a set of objects, a complex
+\(\mathcal A(a,b)\) for each pair, closed identities of degree \(0\),
+and associative unital composition satisfying the same rule with
+\(ab\) read as \(a\circ b\). Its category \(H^0(\mathcal A)\) has morphisms
+\(H^0(\mathcal A(a,b))\). A dg functor preserves identities,
+composition, and the differentials. The one-object construction
+identifies dg algebras with one-object dg categories.
+\end{definition}
+The Leibniz rule makes composition a chain map on the tensor product.
+It also shows that composing a boundary with a closed degree-zero
+morphism yields a boundary. Hence \(H^0(\mathcal A)\) really is a category.
+
+\begin{definition}[Right modules over a dg category]\label{res:G02}
+A right dg \(\mathcal A\)-module \(M\) consists of complexes \(M(a)\)
+with associative unital actions
+\(M(b)\otimes_k\mathcal A(a,b)\to M(a)\). Write an action as \(x u\).
+It satisfies
+\[
+        d(xu)=d(x)u+(-1)^{|x|}x\,d(u).
+\]
+The action axioms require \((x u)v=x(u\circ v)\) for composable arrows.
+A closed degree-zero map of modules is a family of chain maps
+preserving these actions. A quasi-isomorphism of modules is a map
+inducing cohomology isomorphisms objectwise.
+\end{definition}
+The definition for a one-object \(\mathcal A\) is exactly a right dg
+module over \(A\). Kernels and cokernels of the degree-zero maps are
+objectwise because they are stable under the actions and differentials.
+
+\begin{proposition}[Hom complex and homotopy]\label{res:G03}
+There is a dg category of right dg modules whose morphism complex
+\(\underline{\operatorname{Hom}}_{\mathcal A}(M,N)\) in degree \(r\)
+consists of families of degree-\(r\) graded \(k\)-module maps
+\(f_a\) satisfying \(f(xu)=f(x)u\). Its differential is
+\[
+        \partial f=d_N f-(-1)^r f d_M .
+\]
+In \(K(\mathcal A)=H^0(\mathrm{dgMod}\text{-}\mathcal A)\), two chain
+maps are equal precisely when their difference is \(d_Nh+hd_M\)
+for a degree-\(-1\) map \(h\) preserving the right action.
+\end{proposition}
+\begin{proof}
+We use the sign convention with no extra sign in graded
+right-linearity. On the expression for \((\partial f)(xu)\),
+the two terms involving \(d(u)\) are
+\((-1)^{|x|+r}f(x)d(u)\) and
+\(-(-1)^{r+|x|}f(x)d(u)\). They cancel, so \(\partial f\) is
+again right-linear. Substituting \(\partial f\) into the same
+formula gives \(\partial^2f=0\), since \(d_N^2=d_M^2=0\) and
+the middle terms have opposite signs. For homogeneous \(g\)
+of degree \(s\) we have
+\[
+ \partial(gf)
+ =d_Pgf-(-1)^{s+r}gfd_M
+ =(\partial g)f+(-1)^s g(\partial f)
+\]
+where \(P\) is the target of \(g\). This verifies the dg category
+structure. The statement about \(K(\mathcal A)\) follows by taking
+the degree-zero cycles and boundaries in this very complex.
+\end{proof}
+
+\begin{proposition}[Shift, cone, and the acyclicity test]\label{res:G04}
+For \(s\in\mathbb Z\), put \(M[s]^i=M^{i+s}\) with differential
+\((-1)^s d_M\) and the same right action. For a closed degree-zero
+map \(f:M\to N\), its cone is \(N\oplus M[1]\) with differential
+\[
+ d(y,x)=(d_N y+f(x),-d_M x).
+\]
+The map \(f\) is a quasi-isomorphism if and only if its cone is
+acyclic. The cone and shift act objectwise. The homotopy category
+\(K(\mathcal A)\) is triangulated with the triangles isomorphic to
+these cone triangles.
+\end{proposition}
+\begin{proof}
+After a shift the Leibniz term acquires the sign
+\((-1)^{s+|x|_M}=(-1)^{|x|_{M[s]}}\). The shift thus respects the
+right action. On a homogeneous map of degree \(r\), multiplication
+by \((-1)^{sr}\) upon reindexing gives the dg shift functor, as
+substitution into \(\partial\) verifies. The cone differential
+squares to zero since \(f\) is a chain map, and the term \(f(xu)\)
+equals \(f(x)u\). Thus the cone is a dg module. The short exact
+sequence \(0\to N(a)\to C(f)(a)\to M(a)[1]\to 0\) identifies
+its connecting homomorphism with \(H(f(a))\) by lifting a cycle
+as \((0,x)\). Exactness gives the equivalence.
+
+The cone proof of the triangulated axioms in
+\cite[K01--K06]{ha-core} applies with right-linear components.
+More precisely, the comparison of homotopic maps, the rotation,
+the map of cones obtained from a specified homotopy of squares,
+and the octahedral maps there use only identities, compositions,
+sums, shifts and the cone matrix. All these formulas preserve
+right-linearity by the verifications above. The component
+homotopies in the cone proof are also right-linear, since they
+are matrices formed from the same operations on the input
+homotopies. Therefore these are triangles and the same comparison
+maps inside \(K(\mathcal A)\).
+\end{proof}
+
+\section{Representables and free cells}
+
+\begin{lemma}[Enriched Yoneda for right modules]\label{res:G05}
+For \(a\in\mathcal A\) put \(h_a(b)=\mathcal A(b,a)\) with the
+right action by composition. Evaluation at \(1_a\) is a natural
+isomorphism of complexes
+\[
+     \underline{\operatorname{Hom}}_{\mathcal A}(h_a,M)
+        \longrightarrow M(a).
+\]
+The assignment \(a\mapsto h_a\) is a fully faithful dg functor.
+\end{lemma}
+\begin{proof}
+For \(m\in M(a)^r\), its inverse map has components
+\(u\mapsto m u\) on \(\mathcal A(b,a)\). This is graded right-linear.
+Any graded map out of \(h_a\) must have that formula since
+\(u=1_a u\). The terms involving \(d u\) in its Hom differential
+cancel by the Leibniz rule, leaving the map \(u\mapsto (d m)u\).
+On representables the Yoneda map takes composition to composition
+as \((m u)v=m(u\circ v)\). These checks give the asserted dg
+functor and full faithfulness.
+\end{proof}
+
+A free graded cell of degree \(n\) at \(a\) is a copy of
+\(h_a[-n]\) with a named element \(e\) corresponding to \(1_a\).
+One can adjoin it to a dg module \(P\) by setting \(de=z\) for
+a chosen cycle \(z\in P(a)^{n+1}\). On products the
+differential must be
+\[
+                 d(eu)=z u+(-1)^n e\,d u.
+\]
+This formula squares to zero. Indeed \(d(z u)=(-1)^{n+1}z\,du\),
+which cancels the contribution from differentiating the other
+term. The underlying graded module is the direct sum with the
+new cell. Its quotient by \(P\) is \(h_a[-n]\). A semi-free module
+here has an exhaustive filtration
+\(0=P_{-1}\subset P_0\subset P_1\subset\cdots\)
+obtained by adjoining arbitrary sets of such cells, each with
+differential in the preceding stage. All sums are direct sums of
+graded modules, so each element involves finitely many cells.
+
+\begin{theorem}[Unbounded semi-free resolution]\label{res:G06}
+Every dg \(\mathcal A\)-module \(M\) admits a degreewise surjective
+quasi-isomorphism \(P\to M\) from a semi-free module.
+\end{theorem}
+\begin{proof}
+Put in stage zero a cell of degree \(n\) with zero differential
+for every cycle in \(M(a)^n\) at every object and every degree.
+Map the generator to that cycle. Suppose \(p_j:P_j\to M\) is
+defined. For each \(z\in P_j(a)^n\) with \(dz=0\), and each
+\(x\in M(a)^{n-1}\) satisfying \(dx=p_j(z)\), adjoin in stage \(j+1\)
+a generator \(e\) of degree \(n-1\) with \(de=z\) and send it to \(x\).
+The displayed cell formula and the equation on the proposed image
+make this a chain map. The indexing uses only sets because
+\(\mathcal A\) is small.
+
+Any class in \(H^n(M(a))\) is represented by a cycle from stage zero.
+A cycle of \(P(a)\) whose image is a boundary is already a cycle
+at a finite stage because the filtrations consist of injections
+and each element has finite support. At the next stage a cell
+with a chosen primitive of its image kills that cycle. Hence
+\(H^n(P(a))\to H^n(M(a))\) is both surjective and injective.
+Finally, for an arbitrary \(x\in M(a)^n\) the cycle \(dx\) was
+represented in stage zero. The new cell attached for this cycle
+and \(x\) gives a degree-\(n\) preimage at stage one. This proves
+degreewise surjectivity.
+\end{proof}
+\chapter{Derived dg categories and Morita theory}
+\label{ch:dg-categories}
+
+The representable resolutions above let us compute the derived
+category without any boundedness condition. Its compact objects
+recover the finite shifts, cones, and retracts of the representables.
+We then use the signed tensor--Hom adjunction to compare derived
+categories of different dg categories.
+
+\section{Homotopy-projectivity and the derived category}
+
+\begin{theorem}[Semi-free modules are \(K\)-projective]\label{res:G07}
+A dg module \(P\) is called \(K\)-projective if
+\(\underline{\operatorname{Hom}}_{\mathcal A}(P,N)\) is acyclic for
+every acyclic \(N\). Every semi-free module is \(K\)-projective.
+The class of \(K\)-projective modules is closed under shifts,
+cones of closed degree-zero maps, and arbitrary direct sums.
+\end{theorem}
+\begin{proof}
+Let \(N\) be acyclic and let \(f:P\to N\) be a graded map of
+degree \(r\) with \(\partial f=0\), where \(P\) is semi-free.
+Construct a graded map \(h\) of degree \(r-1\) on successive
+cell stages with \(\partial h=f\). At a new generator \(e\)
+of degree \(n\) at \(a\), take \(z=de\) in the previous stage.
+The requirement is
+\[
+          d_N h(e)= f(e)-(-1)^r h(z).
+\]
+The right side is closed because
+\(d_N f(e)=(-1)^r f(z)\), and the already constructed homotopy
+gives \(d_N h(z)=f(z)\) since \(dz=0\). Acyclicity of \(N(a)\)
+gives a primitive, which we choose as \(h(e)\). Extending
+right-linearly over the new cells is well-defined, and verification
+on generators suffices by Result~\ref{res:G03}. Taking the union yields
+\(\partial h=f\) at every degree. This proves \(K\)-projectivity.
+
+Shifts preserve the condition by reindexing Hom complexes with
+the shift signs of Result~\ref{res:G04}. For a cone \(C\) of
+\(P_1\to P_2\), the degreewise split sequence
+\(P_2\to C\to P_1[1]\) gives a short exact sequence of Hom complexes
+into \(N\), in the reverse order, since its splitting exists
+in graded \(\mathcal A\)-modules. The end complexes are acyclic.
+For a sum of \(P_i\), Hom becomes the product of their Hom
+complexes. A product of acyclic complexes of modules is acyclic
+by choosing a primitive in every component of a cycle.
+\end{proof}
+
+\begin{theorem}[Computing the derived category by resolutions]\label{res:G08}
+Let \(D(\mathcal A)\) be the localization of \(K(\mathcal A)\)
+at the objectwise quasi-isomorphisms. The full homotopy subcategory
+of \(K\)-projective modules maps equivalently onto \(D(\mathcal A)\).
+If \(P\to M\) is a \(K\)-projective replacement, then
+\[
+ \operatorname{Hom}_{D(\mathcal A)}(M,N)
+      \cong H^0\underline{\operatorname{Hom}}_{\mathcal A}(P,N).
+\]
+Cones of maps of \(K\)-projective modules represent distinguished
+triangles, and coproducts of arbitrary derived objects are
+represented by direct sums of their modules.
+\end{theorem}
+\begin{proof}
+For a quasi-isomorphism \(u:N'\to N\) and \(K\)-projective \(P\),
+\(\underline{\operatorname{Hom}}_{\mathcal A}(P,u)\) is a
+quasi-isomorphism. Its cone is identified with Hom into the cone
+of \(u\) using the Hom and shift formulas, hence is acyclic.
+An acyclic \(K\)-projective module is contractible since its
+identity represents a class in \(H^0\) of its own acyclic Hom
+complex. By the closure in Result~\ref{res:G07}, the cone of a
+quasi-isomorphism between \(K\)-projective modules is contractible,
+so that quasi-isomorphism is a homotopy equivalence.
+
+For every \(M\) choose \(p_M:P_M\to M\) as in Result~\ref{res:G06},
+taking the identity when \(M\) is already \(K\)-projective.
+For a homotopy class \(M\to N\), the isomorphism
+\(\operatorname{Hom}_{K(\mathcal A)}(P_M,P_N)\to
+  \operatorname{Hom}_{K(\mathcal A)}(P_M,N)\)
+induced by \(p_N\) gives a unique lifted homotopy class
+\(P_M\to P_N\). Uniqueness proves the composition law and
+naturality of the \(p_M\). If the original map is a quasi-isomorphism,
+so is its lift by the comparison square, and this lift is
+invertible in the homotopy category. The lift functor therefore
+factors through the localization. The comparisons \(p_M\) give a
+natural isomorphism from its composite with inclusion to the
+identity on the localization. In the other order the composite
+is the identity on the \(K\)-projective subcategory. This proves
+the equivalence and the stated Hom formula, since \(N\) can be
+compared with \(P_N\) after applying Hom from \(P_M\).
+
+The \(K\)-projective homotopy subcategory is triangulated by
+Results~\ref{res:G04} and~\ref{res:G07}. It gives the cone
+triangulation on the localization. Indeed a closed map between
+arbitrary modules is represented by the lifted map between
+replacements. A comparison with its original cone exists from
+the degree-\(-1\) homotopy in the comparison square and the
+usual cone matrix in \cite[K05]{ha-core}. It is a quasi-isomorphism
+by the long exact sequences for the two cones. Direct sums of
+\(K\)-projective modules are \(K\)-projective, and direct sums preserve
+objectwise quasi-isomorphisms. Hom from a sum of replacements is
+the product of the corresponding Hom groups, as \(H^0\) commutes
+with products of complexes of modules. Hence the sum of the
+chosen replacements computes the coproduct, and its map to the
+sum of original modules is a quasi-isomorphism.
+\end{proof}
+
+\section{Compactness and the pretriangulated hull}
+
+\begin{lemma}[The telescope of a sequence of strict maps]\label{res:G09}
+Let \(M_0\to M_1\to\cdots\) be a sequence of dg modules and closed
+degree-zero maps. On \(U=\bigoplus_{j\geq0}M_j\) let \(s\) send
+the \(j\)-th summand to the \((j+1)\)-st by the transition.
+Then \(\operatorname{Cone}(1-s)\to\varinjlim_j M_j\) is an
+objectwise quasi-isomorphism. If \(C\) is compact in
+\(D(\mathcal A)\), any map from \(C\) to this telescope in
+\(D(\mathcal A)\) comes from a single \(M_j\). In fact its group
+of maps is the colimit of the groups of maps into \(M_j\).
+\end{lemma}
+\begin{proof}
+The map \(1-s\) is injective in each degree by considering the
+first nonzero component of a finite-support element. Its cokernel
+imposes exactly the relations identifying an element and its
+successor, which presents the colimit. For any injective dg map
+\(U'\to U''\), the natural map from its cone to its cokernel
+has kernel the cone of the identity of \(U'\). That cone is
+contractible by the right-linear homotopy
+\((y,x)\mapsto(0,y)\). This proves the claim for \(1-s\).
+
+Compactness means that \(\operatorname{Hom}(C,-)\) takes arbitrary
+sums to direct sums, and this also applies to the objects \(M_j[1]\).
+In the Hom exact sequence of the cone of \(1-s\), the map
+\(1-s\) on the direct sum of the groups
+\(\operatorname{Hom}(C,M_j[1])\) is injective by the same first
+component argument. Thus \(\operatorname{Hom}(C,\operatorname{Cone}(1-s))\)
+is the cokernel of \(1-s\) on the unshifted Hom groups. This is
+their colimit. An element in a sequential colimit of groups
+can be represented at a single stage.
+\end{proof}
+
+\begin{theorem}[Representables are compact generators]\label{res:G10}
+Each \(h_a\) is a compact object of \(D(\mathcal A)\). For every
+\(N\) and \(n\in\mathbb Z\),
+\[
+       \operatorname{Hom}_{D(\mathcal A)}(h_a[-n],N)
+           \cong H^n(N(a)).
+\]
+The smallest full triangulated subcategory closed under
+isomorphisms and coproducts and containing the \(h_a\) is all of
+\(D(\mathcal A)\). In particular the shifted representables detect
+the zero object.
+\end{theorem}
+\begin{proof}
+The Hom formula follows from enriched Yoneda and
+Results~\ref{res:G05} and~\ref{res:G08}. Explicitly a map out of
+the shifted cell is determined by a degree-\(n\) element, closed
+for a chain map, and homotopy identifies classes modulo boundaries.
+Since cohomology of modules commutes with direct sums, the formula
+also proves compactness by the coproduct description of
+Result~\ref{res:G08}.
+
+For generation resolve \(N\) by a semi-free module \(P\). Each
+\(P_j/P_{j-1}\) is a direct sum of shifted representables, and
+\(P_{j-1}\to P_j\to P_j/P_{j-1}\) is part of a triangle by the
+cone-to-cokernel argument of Result~\ref{res:G09}. Therefore a
+subcategory with the stated closure contains each \(P_j\).
+It contains the telescope, which represents \(P\) by
+Result~\ref{res:G09}, and hence contains \(N\). Alternatively,
+vanishing of the displayed Hom groups says that \(N\) is
+objectwise acyclic, so \(N\) is zero in the localization.
+\end{proof}
+
+\begin{theorem}[Compact objects and finite cells]\label{res:G11}
+An object of \(D(\mathcal A)\) is compact if and only if it is
+a retract in \(D(\mathcal A)\) of a semi-free module with only
+finitely many cells.
+\end{theorem}
+\begin{proof}
+Finite-cell objects are obtained by finite sums, shifts, and
+cones from representables. Compact objects are closed under
+those operations by the exact Hom sequences of triangles and
+exactness of direct sums of groups. A retract is compact because
+the coproduct comparison map for a retract is a retract of the
+same map for the original object.
+
+Conversely let \(C\) be compact and choose a semi-free
+representative \(P\) of \(C\). By Result~\ref{res:G09} its identity
+factors in \(D(\mathcal A)\) through one finite stage \(P_j\) of
+the cell filtration, which may itself contain infinitely many
+cells. At a fixed stage \(j\), call a finite subset of cells
+closed if it contains all the cells occurring in the differential of
+every cell in it. Every finite subset can be enlarged to a finite
+closed subset by recursively adding the finite differential
+supports, which lie at strictly earlier stages. Finite closed
+subsets form a filtered system under unions. For such a subset
+\(E\), let \(P_{j,E}\) be its finite-cell submodule.
+
+For every \(t\) there is an isomorphism
+\[
+ \varinjlim_E\operatorname{Hom}_{D(\mathcal A)}(C,P_{j,E}[t])
+     \ \cong\ \operatorname{Hom}_{D(\mathcal A)}(C,P_j[t]).
+\]
+Prove it by induction on \(j\). For stage zero it is compactness
+on a sum of shifted representables, since each element of the sum
+has finite support. At stage \(j\), the first \(j-1\) stages for a
+finite \(E\) form \(P_{j-1,E\cap P_{j-1}}\), and the quotient is a
+finite sum of cells from stage \(j\). The associated triangles,
+including all shifts, give a comparison of long exact Hom sequences
+after taking the filtered colimit. Filtered colimits of groups
+are exact, since a finite relation between representatives holds
+at a sufficiently late common stage. The group maps for the
+lower-stage terms are isomorphisms by induction. The system of
+intersections is cofinal among finite closed subsets of the
+lower stage, since any such subset can itself be used as \(E\).
+The quotient term maps are isomorphisms by compactness, since
+each finite subset of top-stage cells can be enlarged to a finite
+closed subset. Exactness on the two sides implies the middle
+group maps are isomorphisms by the five-term diagram argument.
+This proves the displayed comparison.
+
+Consequently the factorization of the identity through \(P_j\)
+factors further through a finite-cell \(P_{j,E}\). Its composite
+back to \(C\) is the identity, as required.
+\end{proof}
+
+\begin{proposition}[The pretriangulated hull and perfect objects]\label{res:G12}
+There is a small full dg category \(\operatorname{pretr}(\mathcal A)\)
+of finite-cell semi-free modules that contains the Yoneda image,
+represents all finite-cell semi-free modules up to dg isomorphism,
+and is closed under zero, shifts, finite sums, and cones of closed
+degree-zero maps. Its homotopy category embeds as a triangulated
+subcategory of \(D(\mathcal A)\). The perfect subcategory,
+obtained by also taking retracts in \(D(\mathcal A)\), is exactly
+the subcategory of compact objects. The Yoneda map
+\(\mathcal A\to\operatorname{pretr}(\mathcal A)\) is a quasi-equivalence
+precisely when all finite-cell objects are represented, up to
+homotopy, by objects of \(\mathcal A\).
+\end{proposition}
+\begin{proof}
+The cone of a map from \(P\) to \(Q\) has graded module
+\(Q\oplus P[1]\). Order all cells of \(Q\) first and then those
+of \(P[1]\) in their existing order of stages. The shifted
+\(P\)-differential lowers these latter stages, and the cone's
+off-diagonal term lies in \(Q\). This orders the cone as a
+finite-cell module. Shifts preserve the decreasing property of
+the cell differential, and finite sums admit an ordering by
+the original stages. Conversely attaching one cell of degree
+\(n\) with boundary \(z\) is the cone of
+\(h_a[-n-1]\to P\) carrying the generator to \(z\), by the cone
+formula. Finite-cell modules are therefore exactly the finite
+constructions generated by the representables in this model,
+up to choices of graded cell presentations. For smallness,
+start with the set of written representables and zero. At
+each finite stage adjoin the written shifts, finite sums and
+cones of every closed degree-zero map among the present objects,
+using the formulas of Result~\ref{res:G04}. These data range
+over sets because each Hom is a set. The union over stages
+is a set closed under the stated operations. Take the full
+dg subcategory on this set.
+
+All finite-cell modules are \(K\)-projective. By
+Result~\ref{res:G08} their homotopy morphisms compute the
+derived morphisms, and by the cone calculation the full image
+is triangulated. Result~\ref{res:G11} gives the assertion about
+perfect objects. A dg functor is a quasi-equivalence if it
+induces quasi-isomorphisms on all morphism complexes and is
+essentially surjective on \(H^0\). Yoneda is already an
+isomorphism on the morphism complexes, so the condition is
+exactly the stated representability up to homotopy. In this
+case the triangulation transports to \(H^0(\mathcal A)\).
+\end{proof}
+
+\section{Derived tensor functors and Morita equivalence}
+
+Let \(\mathcal A,\mathcal B\) be small dg categories over \(k\).
+An \(\mathcal A\)-\(\mathcal B\) dg bimodule will be described by a
+dg functor \(T:\mathcal A\to \mathrm{dgMod}\text{-}\mathcal B\).
+In particular \(u:a\to b\) acts as \(T(u):T(a)\to T(b)\) of the
+same degree as \(u\), in the Hom convention of Result~\ref{res:G03}.
+
+\begin{proposition}[The signed bimodule adjunction]\label{res:G13}
+For a right dg \(\mathcal A\)-module \(M\), \(M\otimes_\mathcal A T\)
+is the quotient of \(\bigoplus_a M(a)\otimes_k T(a)\) by the
+homogeneous balancing relations
+\((m u)\otimes t=m\otimes T(u)t\).
+For a right dg \(\mathcal B\)-module \(N\), put
+\(G(N)(a)=\underline{\operatorname{Hom}}_\mathcal B(T(a),N)\)
+with right \(\mathcal A\)-action by precomposition. There is a
+natural isomorphism of complexes
+\[
+ \underline{\operatorname{Hom}}_\mathcal B(M\otimes_\mathcal A T,N)
+    \cong \underline{\operatorname{Hom}}_\mathcal A(M,G(N)).
+\]
+If each \(T(a)\) is \(K\)-projective, \(G\) sends quasi-isomorphisms
+to quasi-isomorphisms. Computing the tensor on a \(K\)-projective
+replacement yields an exact left adjoint
+\(L_T:D(\mathcal A)\to D(\mathcal B)\) to \(G\) on derived categories.
+Moreover \(L_T(h_a)\cong T(a)\).
+\end{proposition}
+\begin{proof}
+The differential on the direct sum is the tensor differential.
+It preserves the balancing relation because its derivative splits
+into the three relations for \(dm,u,t\), \(m,du,t\), and \(m,u,dt\),
+with coefficients \(1,(-1)^{|m|}\), and \((-1)^{|m|+|u|}\).
+This uses
+\(d(T(u)t)=T(du)t+(-1)^{|u|}T(u)dt\), which says that \(T\) is dg.
+The right \(\mathcal B\)-action on the second tensor factor
+respects balancing, since each \(T(u)\) is graded right-linear.
+The tensor differential obeys the right Leibniz rule for this
+action. For the right \(\mathcal A\)-module \(G(N)\), write
+\(g u=g\circ T(u)\). The Hom composition rule of
+Result~\ref{res:G03} gives its Leibniz rule.
+
+If \(F:M\otimes_\mathcal A T\to N\) has degree \(r\), send it to
+the graded map \(m\mapsto (t\mapsto F(m\otimes t))\). Balancing
+is precisely \(\mathcal A\)-linearity of the curried map, and its
+values are \(\mathcal B\)-linear maps. Conversely these two
+linearity conditions define the balanced uncurried map.
+For the differential, evaluating the curried differential
+on \(m,t\) gives
+\[
+ d_N F(m\otimes t)-(-1)^r F(dm\otimes t)
+       -(-1)^{r+|m|}F(m\otimes dt),
+\]
+which is the currying of the uncurried Hom differential.
+This proves the isomorphism and its compatibility with closed
+maps. The unit and counit are \(m\mapsto[t\mapsto m\otimes t]\)
+and \(g\otimes t\mapsto g(t)\). Their composites on evaluated
+tensors and maps are identities.
+
+Now suppose the \(T(a)\) are \(K\)-projective. The formula of
+Result~\ref{res:G08} for applying Hom from such modules shows
+that \(G\) takes acyclics to acyclics and quasi-isomorphisms to
+quasi-isomorphisms. For \(K\)-projective \(P\), the adjunction
+of complexes shows \(P\otimes_\mathcal A T\) is \(K\)-projective
+because its Hom into an acyclic \(N\) is Hom from \(P\) into the
+acyclic \(G(N)\). The tensor takes homotopy equivalences to
+homotopy equivalences by tensoring the homotopy with the identity.
+Thus compute \(L_T\) on \(K\)-projective representatives.
+The comparison of derived Hom groups in Result~\ref{res:G08}
+now gives the derived adjunction. Tensoring commutes with shifts
+and cones by the differential formulas, so \(L_T\) is exact.
+For \(G\), the cone and shift in the target of Hom are likewise
+the cone and shift of Hom, hence \(G\) is exact on the derived
+categories. Finally \(h_a\otimes_\mathcal A T\to T(a)\) is
+given by \(u\otimes t\mapsto T(u)t\), with inverse
+\(t\mapsto 1_a\otimes t\). Balancing proves both composites are
+identities and the maps commute with differentials.
+\end{proof}
+
+\begin{theorem}[A derived Morita criterion]\label{res:G14}
+Assume each \(T(a)\) is \(K\)-projective, as in
+Result~\ref{res:G13}. The derived adjunction is an equivalence
+if the following conditions hold.
+\begin{enumerate}
+\item Each \(T(a)\) is compact in \(D(\mathcal B)\).
+\item For every \(a,b\), the map of complexes
+\[
+  \mathcal A(a,b)\longrightarrow
+     \underline{\operatorname{Hom}}_\mathcal B(T(a),T(b))
+\]
+induced by \(T\) is a quasi-isomorphism.
+\item The shifted objects \(T(a)[n]\) detect zero in \(D(\mathcal B)\).
+\end{enumerate}
+Conversely, if \(L_T\) is an equivalence, these conditions hold.
+\end{theorem}
+\begin{proof}
+Compactness and Result~\ref{res:G08} show that the natural map
+\(\bigoplus_i G(N_i)\to G(\bigoplus_i N_i)\) is a quasi-isomorphism.
+Indeed its cohomology at each \(a,n\) is the coproduct comparison
+for maps from \(T(a)[-n]\), which is compact since \(T(a)\) is.
+The functor \(L_T\) commutes with coproducts by the adjunction
+or the tensor formula. Both functors are exact by
+Result~\ref{res:G13}. In particular the full subcategory where
+the unit \(X\to G(L_T(X))\) is an isomorphism is closed under
+shifts, cones, isomorphisms, and coproducts. Closure under cones
+follows by applying the Hom exact sequences to the comparison
+of triangles. The unit on \(h_b\), evaluated at \(a\), is
+exactly the map in condition (2), by the formula for the unit and
+the evaluation \(h_b\otimes_\mathcal A T\cong T(b)\).
+Thus this subcategory is all of \(D(\mathcal A)\) by
+Result~\ref{res:G10}.
+
+For \(Y\in D(\mathcal B)\) apply \(G\) to the counit
+\(L_T G(Y)\to Y\). The triangular identity identifies this as
+the inverse of the unit on \(G(Y)\). Condition (3) implies \(G\)
+detects zero by computing its cohomology at each \(a\) using
+maps from the shifts of \(T(a)\). Since it is exact it detects
+isomorphisms by applying the zero detection to the cone.
+Thus the counit is an isomorphism. This proves equivalence.
+
+Conversely \(L_T\) carries each \(h_a\) to \(T(a)\).
+An exact equivalence preserves coproducts and the compact
+generation and detection properties in Result~\ref{res:G10}.
+Full faithfulness on all shifted representables identifies the
+cohomology in every degree of the map in condition (2) with
+an isomorphism of derived morphism groups. This identification
+uses the Yoneda evaluation on the source and the
+\(K\)-projectivity of \(T(a)\) on the target. Hence that map is
+a quasi-isomorphism.
+\end{proof}
+
+\begin{corollary}[Invariance under quasi-equivalence]\label{res:G15}
+A quasi-equivalence \(F:\mathcal A\to\mathcal B\) induces an
+equivalence of derived categories by extension of scalars, with
+restriction along \(F\) as inverse.
+\end{corollary}
+\begin{proof}
+Use \(T(a)=h_{F(a)}\) with its Yoneda functoriality. Enriched Yoneda
+identifies \(G\) with restriction. Each \(T(a)\) is a compact
+\(K\)-projective module. The quasi-isomorphism condition on
+morphism complexes of \(F\) is condition (2) of
+Result~\ref{res:G14}. Every \(b\) is isomorphic to some \(F(a)\)
+in \(H^0(\mathcal B)\), so every \(h_b\) is isomorphic to
+some \(T(a)\) in the derived category. The detection assertion
+of Result~\ref{res:G10} gives condition (3).
+\end{proof}
+
+\begin{corollary}[An endomorphism dg algebra of a generator]\label{res:G16}
+Let \(P\) be a compact \(K\)-projective right \(\mathcal B\)-module
+whose shifts detect zero. Then \(D(\mathcal B)\) is equivalent
+to \(D(\underline{\operatorname{End}}_\mathcal B(P))\).
+Also the inclusion of \(\mathcal A\) into its pretriangulated
+hull induces an equivalence of derived categories.
+\end{corollary}
+\begin{proof}
+Regard \(\underline{\operatorname{End}}_\mathcal B(P)\) as a
+one-object dg category acting on \(P\). Its map in condition (2)
+of Result~\ref{res:G14} is the identity. The remaining conditions
+are the hypotheses on \(P\), proving the first assertion.
+For the hull, use Yoneda in \(\operatorname{pretr}(\mathcal A)\)
+on each object \(h_a\) in the image of \(\mathcal A\).
+The induced maps of morphism complexes are isomorphisms.
+A finite-cell object of the hull is formed by shifts and cones
+from the \(h_a\). The representable module of that finite-cell
+object belongs to the triangulated subcategory generated by
+the representables of \(h_a\). In fact Hom into a shift is a
+shift of Hom, and Hom into a cone is the corresponding cone
+objectwise, by the differential of Result~\ref{res:G03}.
+Thus the representables of \(h_a\) detect zero in
+\(D(\operatorname{pretr}(\mathcal A))\) by Result~\ref{res:G10}
+and exact Hom from triangles. Apply Result~\ref{res:G14} again.
+\end{proof}
+
+For a concrete application take a field \(k\) and \(P=k^m\)
+over \(k\) with \(m\geq2\). It is \(K\)-projective, compact,
+and its shifts detect zero since \(k\) is a direct summand.
+Its endomorphism dg algebra is \(\operatorname{Mat}_m(k)\)
+in degree zero. Thus \(D(k)\) and \(D(\operatorname{Mat}_m(k))\)
+are equivalent by Result~\ref{res:G16}. Any quasi-equivalence
+of the corresponding one-object dg categories would give an
+isomorphism of their degree-zero endomorphism \(k\)-algebras,
+which have different dimensions. Even a zigzag of
+quasi-equivalences induces equivalences of the \(H^0\) categories
+and would give the same impossible isomorphism. This illustrates
+the distinction between quasi-equivalence and derived Morita
+equivalence. The criterion above concerns an explicit bimodule
+functor, so its conclusion also records the dg structure used
+to induce the equivalence.
+
+The dg-category localization at Morita equivalences and the
+comparison of arbitrary enhancements involve further structure.
+See \cite[\S\S3.8, 4.5]{keller} for these developments.
+\chapter{Unbounded derived tensor and internal Hom}
+\label{ch:unbounded}
+
+Throughout the chapter \(R\) is a commutative ring. Complexes are
+cochain complexes, with \(X[s]^i=X^{i+s}\) and
+\(d_{X[s]}=(-1)^s d_X\). Modules are placed in degree zero. We use the
+construction of bounded-below injective replacements and the homotopy
+calculus of \cite[R01, R03, R04]{ha-core}. In particular, no assumption
+of Noetherianity is needed in this chapter.
+
+\section{Complexes and free cells}
+
+\begin{definition}[Tensor, internal Hom, and good models]\label{res:U01}
+The tensor complex is totalized by direct sums, with
+\(d(x\otimes y)=d x\otimes y+(-1)^{|x|}x\otimes d y\).
+The internal Hom complex is
+\[
+ \underline{\mathrm{Hom}}_R(X,Y)^q
+   =\prod_i\mathrm{Hom}_R(X^i,Y^{i+q}),\qquad
+ \partial f=d_Y f-(-1)^q f d_X .
+\]
+A complex \(P\) is K-projective when
+\(\underline{\mathrm{Hom}}_R(P,A)\) is acyclic for every acyclic \(A\).
+A complex \(F\) is K-flat when \(A\otimes_R F\) is acyclic for every
+acyclic \(A\). A complex \(I\) is K-injective when
+\(\underline{\mathrm{Hom}}_R(A,I)\) is acyclic for every acyclic \(A\).
+\end{definition}
+
+Expanding the two differentials proves that their squares are zero.
+For the Hom differential, the two terms containing \(d_Y f d_X\)
+cancel. Cycles in degree zero are chain maps, and degree-zero
+boundaries are null-homotopic maps. The vanishing condition in all
+degrees is thus the usual orthogonality to all shifts of acyclic
+complexes. Direct sums in the tensor and products in the Hom are
+essential when both arguments are unbounded. For example the
+degree-\(q\) tensor--Hom adjunction is the correspondence
+\[
+ u(x\otimes y)\ \longleftrightarrow\ [x\longmapsto(y\longmapsto
+ u(x\otimes y))].
+\]
+For \(u\) of degree \(q\), each inner map has degree \(q+|x|\).
+Expanding \(\partial u\) gives the three terms acting on the target,
+on \(x\), and on \(y\), with coefficients \(1,-(-1)^q\),
+and \(-(-1)^{q+|x|}\), respectively. This is exactly the Hom
+differential on the curried expression. The constructions and the
+adjunction carry chain homotopies to chain homotopies.
+
+\begin{theorem}[A semifree replacement without bounds]\label{res:U02}
+Every complex \(X\) admits a degreewise surjective quasi-isomorphism
+\(F\to X\) such that
+\(F\) has an increasing filtration by subcomplexes
+\(0\subset F_0\subset F_1\subset\cdots\) with union \(F\).
+Each inclusion is split on the underlying graded modules and the
+successive quotients are sums of shifts of \(R\).
+The complex \(F\) is both K-projective and K-flat.
+\end{theorem}
+\begin{proof}
+View \(R\) as a one-object dg category in degree zero.
+Its representable module is the complex \(R[0]\).
+Theorems~\ref{res:G06} and \ref{res:G07} give the
+graded-split filtration, quasi-isomorphism, and K-projectivity.
+
+Tensor the filtration with \(A\). Splitting on graded modules makes
+each successive sequence exact as complexes. Each quotient is a
+direct sum of shifts of \(A\), hence acyclic. The finite-stage tensor
+complexes are therefore acyclic by induction and their filtered
+union remains so, since filtered colimits are exact for modules.
+Thus \(F\) is K-flat.
+\end{proof}
+
+\begin{proposition}[Invariance and bounded tests]\label{res:U03}
+The functors \(P\otimes_R-\), \(\underline{\mathrm{Hom}}_R(P,-)\),
+and \(\underline{\mathrm{Hom}}_R(-,I)\) preserve quasi-isomorphisms
+when \(P\) is K-flat, \(P\) is K-projective, and \(I\) is
+K-injective, respectively. A bounded-above complex of flat modules
+is K-flat. Every K-projective complex is K-flat.
+\end{proposition}
+\begin{proof}
+The cone of a quasi-isomorphism is acyclic. Tensor takes a cone to
+the cone of the tensor map, up to the canonical shift sign.
+In the component involving \(x\in P^i\) and the shifted input the
+comparison is \((-1)^i\), as is seen by expanding the differential
+in Definition~\ref{res:U01}. Internal Hom in either variable
+gives the corresponding cone up to shift, since the cone uses
+a graded finite direct sum and its differential contains the
+original map as off-diagonal entry. Thus the three acyclicity
+conditions imply the asserted invariance.
+
+For a bounded-above complex of flats, first cut off the degrees
+below \(m\) by the subcomplex consisting of its terms in degrees
+at least \(m\). This is a bounded complex filtered by degree tails,
+whose one-term quotients are shifts of flat modules. Tensoring with
+an acyclic complex preserves those graded-split exact sequences,
+and each one-term quotient gives an acyclic tensor by flatness.
+As \(m\) decreases the union is the original complex, so exactness
+of filtered colimits proves K-flatness. Finally, apply
+Theorem~\ref{res:U02} to a K-projective complex. The quasi-isomorphism
+from its semifree replacement is between K-projectives, hence is a
+homotopy equivalence by \cite[R04]{ha-core}. Tensor with an acyclic
+complex preserves that homotopy equivalence. 
+\end{proof}
+
+\section{Injective replacements from a tower}
+
+\begin{lemma}[Strict extension to an injective model]\label{res:U04}
+Let \(i:X\hookrightarrow J\) be a termwise monic quasi-isomorphism.
+If \(I\) is a K-injective complex with injective terms, every
+chain map \(f:X\to I\) extends to a chain map \(J\to I\).
+\end{lemma}
+\begin{proof}
+Extend the components first, using injectivity, to obtain a graded
+map \(u:J\to I\) of degree zero. Since \(u i=f\), the degree-one
+map \(\partial u\) vanishes on \(X\) and factors through \(J/X\)
+as a cycle in \(\underline{\mathrm{Hom}}_R(J/X,I)\).
+The quotient \(J/X\) is acyclic by the long exact sequence.
+K-injectivity makes this cycle the differential of a degree-zero
+map \(v:J/X\to I\). Subtract \(v\) composed with the quotient
+map from \(u\). The result extends \(f\) and is closed.
+\end{proof}
+
+\begin{lemma}[Countable towers of complexes]\label{res:U05}
+For a tower of complexes \(A_0\leftarrow A_1\leftarrow\cdots\)
+whose transition maps are degreewise surjective, there is a short
+exact sequence of complexes
+\[
+ 0\longrightarrow\varprojlim_n A_n\longrightarrow
+ \prod_{n\geq0} A_n
+ \xrightarrow{\ 1-s\ }\prod_{n\geq0} A_n
+ \longrightarrow0,
+\qquad
+ s((a_n)_n)=(t_n(a_{n+1}))_n .
+\]
+A degreewise surjective tower of acyclic complexes has acyclic
+limit. A map between degreewise surjective towers that is a
+quasi-isomorphism at each stage gives a quasi-isomorphism of
+limits. If all \(A_n\) are K-injective and transitions split
+in each degree, then the limit is K-injective.
+\end{lemma}
+\begin{proof}
+In each degree the kernel is the compatible families.
+To solve \(a_n-t_n(a_{n+1})=b_n\), choose \(a_0\) and then
+lift \(a_n-b_n\) recursively. Products of modules are exact,
+since surjectivity can be tested in each component. They
+therefore commute with taking cohomology of complexes.
+The first two consequences follow from the long cohomology
+sequences of the displayed short exact sequence.
+For the last one, if \(C\) is acyclic pass to the tower
+\(\underline{\mathrm{Hom}}_R(C,A_n)\). Its terms are acyclic,
+its transition maps are surjective by the degreewise splittings,
+and its limit is \(\underline{\mathrm{Hom}}_R(C,\varprojlim A_n)\)
+since limits commute with products and with Hom in the target.
+Apply the first consequence.
+\end{proof}
+
+\begin{theorem}[Unbounded K-injective replacement over a ring]\label{res:U06}
+Every complex \(X\) of \(R\)-modules admits a termwise monic
+quasi-isomorphism to a K-injective complex with injective terms.
+\end{theorem}
+\begin{proof}
+Put \(T_n=\tau_{\geq -n}X\), where the cutoff term in degree
+\(-n\) is \(X^{-n}/d X^{-n-1}\). The maps
+\(T_{n+1}\to T_n\) are surjective in each degree, and for
+each fixed degree the tower stabilizes at the corresponding
+term of \(X\). Thus \(\varprojlim T_n=X\).
+
+We construct compatible termwise monic quasi-isomorphisms
+\(T_n\to I_n\) to bounded-below complexes of injectives
+whose transitions are split epimorphisms in each degree.
+Start with a bounded-below replacement of \(T_0\) by
+\cite[R01]{ha-core}. Given \(I_n\), choose a bounded-below
+replacement \(T_{n+1}\hookrightarrow J\).
+The composite \(T_{n+1}\to T_n\to I_n\) extends to \(g:J\to I_n\)
+by Lemma~\ref{res:U04} and bounded-below K-injectivity
+\cite[R03]{ha-core}. Put \(C=\mathrm{Cone}(1_{I_n})[-1]\).
+With degree-\(i\) term \(I_n^i\oplus I_n^{i-1}\), its differential is
+\((a,b)\mapsto(d a,-a-d b)\). Projection onto the first entry is a
+chain map \(C\to I_n\) and is surjective with a graded section.
+The homotopy \((a,b)\mapsto(-b,0)\) contracts \(C\).
+Use \(I_{n+1}=J\oplus C\), map \(T_{n+1}\) into the first summand,
+and take transition \(g+\mathrm{pr}_1\).
+The map from \(T_{n+1}\) is monic and a quasi-isomorphism,
+and commutativity with the transition to \(I_n\) is strict.
+
+Let \(I=\varprojlim I_n\).
+Lemma~\ref{res:U05} proves that the natural map \(X\to I\)
+is a quasi-isomorphism and that \(I\) is K-injective.
+It is monic termwise by compatibility with all the monomorphisms
+\(T_n\hookrightarrow I_n\) and \(\varprojlim T_n=X\).
+For each degree \(i\), choose splittings of the transition maps
+\(I_{n+1}^i\to I_n^i\). Then \(I^i\) is isomorphic as a module to
+\(I_0^i\) times the product of their kernels. Each kernel is a direct
+summand of an injective module. A product of injectives is injective,
+since one can extend a map along a monomorphism in each coordinate.
+This proves the final assertion.
+\end{proof}
+
+\section{The closed derived structure}
+
+\begin{theorem}[Unbounded derived tensor]\label{res:U07}
+There is a symmetric monoidal product
+\(\otimes_R^{\mathbf L}:D(R)\times D(R)\to D(R)\) with unit \(R[0]\).
+It is computed by replacing both arguments with the models in
+Theorem~\ref{res:U02}. If either argument is already K-flat, one
+may use the ordinary tensor product without replacing the other.
+\end{theorem}
+\begin{proof}
+By \cite[R04]{ha-core}, K-projective models lift all derived
+morphisms uniquely as homotopy classes of chain maps.
+Tensoring those classes produces a bifunctor taking values in
+\(D(R)\), and the lifted equivalences between models provide its
+natural comparison isomorphisms. If \(P,Q\) are K-flat, then
+\(P\otimes Q\) is K-flat: associate its tensor with an acyclic
+complex and use acyclicity successively. The ordinary chain
+associativity, unit and symmetry
+\(x\otimes y\mapsto(-1)^{|x||y|}y\otimes x\)
+therefore descend, and satisfy the coherence identities because
+they already do so on the chain models. Alternatively, after
+replacing one of two K-flat complexes by a K-projective model,
+the ordinary comparison remains a quasi-isomorphism by the
+K-flatness of the other, by Proposition~\ref{res:U03}.
+This proves the step needed to iterate the bifunctor independently
+of choices. For a K-flat factor tensoring the replacement map in
+the other factor is a quasi-isomorphism, again by that proposition.
+\end{proof}
+
+\begin{theorem}[Internal derived Hom and adjunction]\label{res:U08}
+Write \(\mathbf R\mathrm{Hom}_R(X,Y)\in D(R)\) for internal
+derived Hom. It can be computed by
+\(\underline{\mathrm{Hom}}_R(P_X,Y)\) with \(P_X\) K-projective,
+or by \(\underline{\mathrm{Hom}}_R(X,I_Y)\) with \(I_Y\)
+K-injective. Both agree naturally, and
+\[
+ \mathrm{Hom}_{D(R)}(Z\otimes_R^{\mathbf L}X,Y)
+  \cong \mathrm{Hom}_{D(R)}(Z,\mathbf R\mathrm{Hom}_R(X,Y)).
+\]
+In particular
+\(
+ H^q\mathbf R\mathrm{Hom}_R(X,Y)
+   \cong\mathrm{Hom}_{D(R)}(X,Y[q]).
+\)
+\end{theorem}
+\begin{proof}
+Take the two replacements. The expression
+\(\underline{\mathrm{Hom}}_R(P_X,I_Y)\) defines a bifunctor
+on derived morphisms by \cite[R04]{ha-core} and passage of Hom
+through chain homotopy classes. The two single replacement
+expressions compare to this one by quasi-isomorphisms by
+Proposition~\ref{res:U03}. If \(P\) is K-flat and \(I\) is
+K-injective, then \(\underline{\mathrm{Hom}}_R(P,I)\) is
+K-injective. Indeed its Hom from an acyclic \(A\) identifies
+as a complex with the Hom from \(A\otimes P\) to \(I\), by the
+adjunction of Definition~\ref{res:U01}. That complex is acyclic.
+For the adjunction take \(P_X,I_Y\) and use the ordinary
+chain tensor--Hom adjunction in the homotopy category.
+On the left, \(Z\otimes P_X\) computes derived tensor by
+Theorem~\ref{res:U07}, and on the right the Hom target is
+K-injective by the preceding argument. Both morphism sets
+are therefore derived morphism sets by \cite[R04]{ha-core}.
+The last assertion follows from the cycle and boundary description
+in Definition~\ref{res:U01}, also with the shift of \(Y\).
+\end{proof}
+
+\begin{proposition}[Derived extension of scalars]\label{res:U09}
+For a homomorphism of commutative rings \(R\to S\), put
+\(L(X)=S\otimes_R^{\mathbf L}X\in D(S)\).
+Then \(L\) is left adjoint to restriction of scalars, and has the
+natural symmetric monoidal comparison
+\[
+ L(X\otimes_R^{\mathbf L}Y)\ \cong\
+ L(X)\otimes_S^{\mathbf L} L(Y).
+\]
+For successive changes of commutative rings \(R\to S\to T\), the two left extensions
+compose to \(T\otimes_R^{\mathbf L}(-)\).
+\end{proposition}
+\begin{proof}
+If \(P\) is K-flat over \(R\), \(S\otimes_R P\) is K-flat over \(S\)
+by associativity tested against acyclic \(S\)-complexes.
+Similarly extension of a K-projective is K-projective, using the
+underived Hom adjunction against an acyclic \(S\)-complex and
+exactness of restriction. On a K-projective source the chain Hom
+adjunction therefore computes the derived morphisms on both sides.
+Choose semifree \(P_X,P_Y\) for the monoidal formula. Both tensors
+are computed by the displayed model comparisons, and their
+identification is the associativity isomorphism for ordinary
+change of rings. It commutes with symmetry, multiplication and the
+unit on the chain models, since \(S\) is concentrated in degree zero.
+The same base-changed models give transitivity.
+\end{proof}
+\chapter{Perfect and finite duality}
+\label{ch:derived-duality}
+
+All rings in the affine part of this chapter are commutative.
+We distinguish internal Hom over a ring from the Hom groups in its
+derived category. For a map \(A\to B\) we keep the \(B\)-action on
+the right adjoint explicitly.
+
+\section{Perfect complexes}
+
+\begin{theorem}[Evaluation and duals of perfect complexes]\label{res:U10}
+Let \(P\in D(R)\) be represented by a bounded complex of finitely
+generated projective modules. Define
+\(P^\vee=\mathbf R\mathrm{Hom}_R(P,R)\).
+Then \(P^\vee\) is perfect, the natural evaluation comparison
+\[
+ Y\otimes_R^{\mathbf L}P^\vee
+     \longrightarrow\mathbf R\mathrm{Hom}_R(P,Y)
+\]
+is an isomorphism for every \(Y\), and \(P\) is dualizable
+with dual \(P^\vee\). Biduality \(P\to(P^\vee)^\vee\) is an
+isomorphism.
+\end{theorem}
+\begin{proof}
+Use the bounded finite projective representative for \(P\).
+It is K-projective by \cite[R03]{ha-core} and K-flat by
+Proposition~\ref{res:U03}. The ordinary dual
+\(D=\underline{\mathrm{Hom}}_R(P,R)\) is bounded finite
+projective. The comparison in total degree \(q\) sends
+\(y\otimes f\) to the map \(x\mapsto y f(x)\) for
+\(|y|+|f|=q\). Expanding the differential gives
+\(d y\, f-(-1)^{|y|+|f|} y f d_P\), as required.
+It is a termwise isomorphism, since each degree of \(P\)
+is finitely generated projective and the diagonals involving
+\(P\) are finite. The standard evaluation \(D\otimes_R P\to R\)
+sends \(f\otimes x\) to \(f(x)\). Applying the isomorphism just
+proved with \(Y=P\), the identity of \(P\) corresponds to a
+degree-zero cycle in \(P\otimes D\). This defines coevaluation
+\(R\to P\otimes D\). In each degree choose a finite dual basis.
+The cycle is the sum of the dual basis tensors over the
+finitely many degrees. Both triangle identities now follow
+by the dual basis expansions in each degree, with evaluation
+on the adjacent \(D,P\) factors. In particular the identities
+hold already on the complexes. The bidual map is the
+degreewise finite projective double dual, with the symmetry
+sign \(x\mapsto[f\mapsto(-1)^{|x||f|}f(x)]\).
+It is a chain map by the Hom differential and a
+termwise isomorphism.
+\end{proof}
+
+\begin{proposition}[Projection through a perfect factor and base change]\label{res:U11}
+If \(P\) is perfect, the natural comparison
+\[
+ P\otimes_R^{\mathbf L}\mathbf R\mathrm{Hom}_R(X,Y)
+ \longrightarrow
+ \mathbf R\mathrm{Hom}_R(X,P\otimes_R^{\mathbf L}Y)
+\]
+is an isomorphism. Also, for any \(R\to S\) the natural
+change-of-rings map
+\[
+ S\otimes_R^{\mathbf L}\mathbf R\mathrm{Hom}_R(P,Y)
+  \longrightarrow
+ \mathbf R\mathrm{Hom}_S(S\otimes_R^{\mathbf L}P,
+                          S\otimes_R^{\mathbf L}Y)
+\]
+is an isomorphism.
+\end{proposition}
+\begin{proof}
+For the first assertion test by morphisms from any \(Z\).
+Using Theorem~\ref{res:U10}, morphisms from \(Z\) to the
+left side are morphisms from \(P^\vee\otimes^{\mathbf L}Z\)
+to \(\mathbf R\mathrm{Hom}_R(X,Y)\). The closed adjunction
+in Theorem~\ref{res:U08} and associativity identify them with
+morphisms from \(P^\vee\otimes^{\mathbf L}(Z\otimes^{\mathbf L}X)\)
+to \(Y\). Applying the same duality a second time and
+then the closed adjunction gives morphisms from \(Z\) to the
+right side. The composite is the canonical tensor-evaluation
+comparison, since each step takes adjoints under evaluation
+or coevaluation. The isomorphism follows by Yoneda.
+For base change, extend scalars on a bounded finite
+projective representative for \(P\) and its ordinary dual.
+Finite projective duals commute termwise with extension,
+and the comparison is compatible with evaluation.
+Proposition~\ref{res:U09} transports the evaluation comparison
+of Theorem~\ref{res:U10} to the evaluation comparison over \(S\).
+This proves the assertion even if \(S\) is not flat over \(R\).
+\end{proof}
+
+\begin{example}[Termwise free need not be K-flat]\label{res:U12}
+Let \(k\) be a field and \(R=k[\epsilon]/(\epsilon^2)\).
+The unbounded complex \(A\) having \(R\) in every degree and
+differential multiplication by \(\epsilon\) is acyclic.
+It is neither K-projective nor K-flat.
+\end{example}
+\begin{proof}
+Its cycles and boundaries are both \(\epsilon R\) in every degree.
+It cannot be K-projective, since its identity is not null-homotopic.
+In any proposed homotopy \(d h+h d\) has image in \(\epsilon R\).
+For the tensor complex \(A\otimes A\), use in degree \(n\) the
+finitely supported basis \(e_i^{(n)}\), indexed by \((i,n-i)\).
+Then
+\[
+ d(e_i^{(n)})=\epsilon e_{i+1}^{(n+1)}
+                 +(-1)^i\epsilon e_i^{(n+1)}.
+\]
+The element \(\epsilon e_0^{(n)}\) is a cycle. If it were a boundary,
+a nonzero finitely supported sequence \((a_i)_i\) over \(k\)
+would have image \(e_0^{(n)}\) under
+\(e_i^{(n-1)}\mapsto e_{i+1}^{(n)}+(-1)^i e_i^{(n)}\).
+For such a sequence the least and greatest image indices are its
+least index and one more than its greatest index. They are
+distinct, a contradiction. This shows directly that \(A\otimes A\)
+is not acyclic.
+\end{proof}
+
+\begin{example}[An infinite source in Hom base change]\label{res:U13}
+Let \(R=k\) be a field, \(S=k[t]\), \(P=\bigoplus_{n\geq0}k\),
+and \(Y=k\), all in degree zero. The canonical Hom base-change
+map for \(P,Y\) is not surjective.
+\end{example}
+\begin{proof}
+The map is \(k[t]\otimes_k\prod_{n\geq0}k\to\prod_{n\geq0}k[t]\),
+by ordinary projectivity and flatness. Any element of its image
+has a common bound on the degrees of its entries, since it is a
+finite sum of polynomial multiples of scalar sequences.
+The sequence \((t^n)_{n\geq0}\) violates that condition.
+\end{proof}
+
+\section{Finite affine adjunction and traces}
+
+\begin{theorem}[Derived coinduction and its trace]\label{res:U14}
+For a ring map \(A\to B\) let \(f_*:D(B)\to D(A)\) be
+restriction of scalars. It has a right adjoint \(f^!\).
+If \(Y\to I\) is a K-injective replacement over \(A\), it is computed
+by \(f^!Y=\underline{\mathrm{Hom}}_A(B,I)\) with
+\((b\cdot\varphi)(b')=\varphi(bb')\).
+The counit \(f_*f^!Y\to Y\) is evaluation at \(1\).
+Under successive ring maps these right adjoints compose and
+the counits compose by successive evaluations at \(1\).
+\end{theorem}
+\begin{proof}
+For any \(B\)-complex \(M\) there is an isomorphism of Hom complexes
+\[
+ \underline{\mathrm{Hom}}_B
+  (M,\underline{\mathrm{Hom}}_A(B,I))
+ \longrightarrow \underline{\mathrm{Hom}}_A(f_*M,I),
+ \qquad u\longmapsto [m\mapsto u(m)(1)].
+\]
+Its inverse sends \(v\) to \(m\mapsto[b\mapsto v(bm)]\).
+Since \(B\) is in degree zero both are chain maps by the ordinary
+Hom differential. Exactness of restriction and K-injectivity
+of \(I\) show that \(\underline{\mathrm{Hom}}_A(B,I)\)
+is K-injective over \(B\). The displayed isomorphism of degree-zero
+cohomologies therefore gives the derived adjunction by
+\cite[R04]{ha-core}. It identifies the image of the identity
+with evaluation at \(1\), hence gives the counit.
+For \(A\to B\to C\) apply the same expression with \(M=C[0]\).
+It gives a \(C\)-linear isomorphism
+\[
+ \underline{\mathrm{Hom}}_B(C,\underline{\mathrm{Hom}}_A(B,I))
+ \cong\underline{\mathrm{Hom}}_A(C,I).
+\]
+The inner model on the left is K-injective, so the left side indeed
+computes the composite. Since evaluation at \(1_C\) in the
+image means evaluating first at \(1_C\) and then at \(1_B\),
+the trace statement follows.
+\end{proof}
+
+\begin{proposition}[Finite relative dual under a perfectness hypothesis]\label{res:U15}
+If \(B\) is perfect as an \(A\)-complex, put
+\(D_{B/A}=f^! A\in D(B)\).
+For every \(Y\in D(A)\) the natural \(B\)-linear map
+\[
+ D_{B/A}\otimes_B^{\mathbf L}(B\otimes_A^{\mathbf L}Y)
+     \longrightarrow f^!Y
+\]
+is an isomorphism.
+\end{proposition}
+\begin{proof}
+Choose a K-injective representative \(I\) of \(A\) and a
+semifree representative \(P_Y\) for \(Y\).
+The left side is represented by
+\(\underline{\mathrm{Hom}}_A(B,I)\otimes_A P_Y\)
+because \(B\otimes_A P_Y\) is K-flat over \(B\) by the proof
+of Proposition~\ref{res:U09}. Its canonical map to
+\(\underline{\mathrm{Hom}}_A(B,I\otimes_A P_Y)\)
+sends a pure tensor \(\varphi\otimes p\) to
+\([b\mapsto\varphi(b)\otimes p]\).
+The corresponding map for a general complex \(Q\) in place of
+\(B\) uses \((-1)^{|p||q|}\varphi(q)\otimes p\) on \(q\in Q\).
+This is a chain map by the two differentials of
+Definition~\ref{res:U01}. Compose with Hom of a
+K-injective replacement of \(I\otimes_A P_Y\), which represents
+\(Y\). To see this map is a quasi-isomorphism, forget to
+\(A\) and resolve \(B\) by a bounded finite projective complex
+\(Q\). Replacing \(B\) by \(Q\) in the two Hom complexes with
+K-injective targets is a quasi-isomorphism by
+Proposition~\ref{res:U03}. Tensoring the comparison for \(I\)
+with \(P_Y\) preserves this property. For the \(Q\)-model,
+ordinary tensor evaluation is an isomorphism by
+Theorem~\ref{res:U10}, and Hom from \(Q\) to the chosen
+replacement is a quasi-isomorphism by its K-projectivity.
+Commutativity of the comparison squares proves the original map
+is a quasi-isomorphism. This construction retains \(B\)-linearity
+because the map on the unreplaced \(B\)-models does.
+\end{proof}
+
+\begin{proposition}[Flat base change for a finite algebra]\label{res:U16}
+Let \(A\) be Noetherian, \(B\) be a finite \(A\)-algebra,
+and \(A\to A'\) be flat. Set \(B'=A'\otimes_A B\).
+For \(Y\in D^+(A)\), coinduction satisfies the \(B'\)-linear
+base-change isomorphism
+\[
+ B'\otimes_B^{\mathbf L}f^!Y
+   \ \cong\ f'^!(A'\otimes_A^{\mathbf L}Y).
+\]
+It identifies the two evaluation-at-\(1\) traces.
+\end{proposition}
+\begin{proof}
+Take a bounded-below termwise injective representative \(I\) of
+\(Y\) and a bounded-below injective replacement \(I'\) of
+\(A'\otimes_A I\), using \cite[R01, R03]{ha-core}.
+Since \(B\) is finitely presented as an \(A\)-module, flat
+extension commutes with \(\mathrm{Hom}_A(B,I^q)\) in each
+degree, by taking the kernel of Hom applied to a finite
+presentation. Thus the comparison is the ordinary Hom
+of \(B'\) with \(A'\otimes_A I\to I'\) on these models.
+The \(B\)-base change is underived on every term because
+\(B'\) is \(B\)-flat.
+
+For the quasi-isomorphism assertion resolve \(B\) over \(A\)
+by a resolution \(P_B\) in nonpositive degrees of finite free
+modules. Such a resolution is available by iterating finite
+free surjections onto successive finite kernels over the
+Noetherian ring. Its scalar extension resolves \(B'\)
+by flatness. In each total degree the products in
+\(\underline{\mathrm{Hom}}_A(P_B,I)\) are finite because
+\(P_B\) is bounded above and \(I\) bounded below. Hence
+ordinary Hom on this model commutes with scalar extension
+termwise. On the base-changed model, Hom from the
+bounded-above projective resolution to \(A'\otimes I\to I'\)
+is a quasi-isomorphism by \cite[R03]{ha-core}.
+Comparing the two projective models with Hom against
+the injective targets proves the claim, since flat tensor
+preserves the comparison on the \(A\)-side.
+For trace, evaluation at \(1_B\) commutes with change of
+scalars and comparison of the target complexes. That is the
+counit of Theorem~\ref{res:U14}.
+\end{proof}
+
+\begin{corollary}[A quotient by a regular sequence]\label{res:U17}
+Let \(A\) be Noetherian, \(J=(a_1,\ldots,a_c)\) be generated
+by an \(A\)-regular sequence, and \(B=A/J\).
+Then
+\[
+  f^!Y\ \cong\
+  \bigl(\textstyle\bigwedge\nolimits^c_B(J/J^2)\bigr)^\vee[-c]
+       \otimes_B^{\mathbf L}(B\otimes_A^{\mathbf L}Y).
+\]
+Here the dual on the determinant line is its ordinary module dual.
+\end{corollary}
+\begin{proof}
+The Koszul complex on the \(a_i\) resolves \(B\) in degrees
+\(-c,\ldots,0\) by \cite[RK-07]{ca-core}. Its graded free
+algebra is the exterior algebra on a free module \(F\) with
+basis sent to the \(a_i\). In degree \(i\), identify the dual
+Koszul term with \(\bigwedge^{c-i}F\otimes(\bigwedge^c F)^\vee\)
+by \(z\otimes\lambda\mapsto[x\mapsto\lambda(z\wedge x)]\).
+For \(x\in\bigwedge^{i+1}F\) the identity
+\(d(z\wedge x)=d z\wedge x+(-1)^{c-i}z\wedge d x=0\)
+shows that the Hom differential acts on \(z\) as
+\((-1)^{i+1}(-1)^{c-i+1}d z=(-1)^c d z\).
+This is the shift by \(-c\). Thus
+its cohomology vanishes outside degree \(c\), where it is
+\(B\otimes_A(\bigwedge^c F)^\vee\). The action of \(B\) on
+this Ext group is the coinduction action. To check it, lift an
+element of \(B\) to \(A\). Multiplication on the resolution
+by the lift is a chain map lifting multiplication on \(B\),
+and induces the ordinary scalar action on cohomology.
+If the lift differs by an element of \(J\), the corresponding
+multiplication is null-homotopic on the Koszul resolution by
+wedge with the corresponding degree \(-1\) element.
+
+The basis of \(F\otimes_A B\) identifies with the classes of
+the \(a_i\) in \(J/J^2\). To justify independence, whenever
+\(\sum_i b_i a_i\) lies in \(J^2\), subtract a relation with
+coefficients in \(J\). The remaining exact relation is in
+the image of the degree-two Koszul differential and hence its
+coefficients lie in \(J\). Surjectivity follows from generation.
+A change of regular generators induces the corresponding
+matrix on this conormal module. Lifting its coefficients
+gives a comparison of Koszul complexes whose exterior
+powers identify the top Ext via the dual determinant of
+that same matrix. It follows that the top Ext identification
+is canonical. A complex of \(B\)-modules with this unique
+nonzero cohomology is canonically represented in \(D(B)\)
+by that module in degree \(c\), by good truncation.
+The Koszul resolution makes \(B\) perfect over \(A\), so
+Proposition~\ref{res:U15} gives the formula for \(Y\).
+\end{proof}
+
+\section{Comparison with geometric and local duality}
+
+\begin{proposition}[The finite morphism between affines]\label{res:U18}
+Let \(f:\mathrm{Spec}(B)\to\mathrm{Spec}(A)\) be finite.
+On the derived categories of complexes of quasi-coherent
+modules on these affine schemes, \(f_*\), \(\mathbf Lf^*\),
+and the right adjoint to \(f_*\) correspond respectively to
+restriction, derived scalar extension, and the coinduction
+in Theorem~\ref{res:U14}. The finite trace in this adjunction
+corresponds to evaluation at \(1\).
+\end{proposition}
+\begin{proof}
+We recall the needed exact affine correspondence.
+For an \(A\)-module \(M\), the module sheaf \(\widetilde M\)
+has sections \(M_a\) on \(D(a)\).
+Conversely for a quasi-coherent \(\mathcal F\) choose a finite
+distinguished affine cover on which it is a module sheaf.
+Writing the sheaf equalizer for sections over this cover
+and then localizing at \(a\) gives the equalizer for the
+induced cover of \(D(a)\), since localization is exact
+and the products in this equalizer are finite. Hence
+\(\Gamma(X,\mathcal F)_a=\Gamma(D(a),\mathcal F)\).
+The canonical map \(\widetilde{\Gamma(X,\mathcal F)}\to
+\mathcal F\) is an isomorphism on the distinguished basis.
+This equivalence is exact because the module sheaf functor
+is exact on each stalk by exactness of localization. It
+induces an exact equivalence on derived categories by
+termwise application and localization. Preimages of \(D(a)\)
+under \(f\) are \(D(a)\) in \(\mathrm{Spec}(B)\), where \(a\)
+is viewed in \(B\). Direct image thus corresponds to
+restriction of scalars, while ordinary pullback on affines
+is extension of scalars by its tensor description.
+Apply Proposition~\ref{res:U09} and
+Theorem~\ref{res:U14}. The trace is their adjunction counit,
+hence the requested evaluation.
+\end{proof}
+
+\begin{theorem}[Comparison with complete local duality]\label{res:U19}
+Let \((R,\mathfrak m,k)\) be a complete Noetherian local ring.
+Choose a surjective local map \(f:S\to R\) from a complete
+regular local ring \((S,\mathfrak n,k)\) of dimension \(d\),
+with the same residue field. Then
+\[
+ D_R=f^!(S[d])=\mathbf R\mathrm{Hom}_S(R,S[d])
+\]
+is the normalized dualizing complex of
+\cite[D05]{ca-topics}. For finite \(R\)-modules \(M\)
+there are natural isomorphisms
+\[
+ \begin{split}
+ \mathbf R\mathrm{Hom}_R(M,D_R)
+      &\cong \mathbf R\mathrm{Hom}_S(M,S[d]),\\
+ H^{-q}\mathbf R\mathrm{Hom}_R(M,D_R)
+      &\cong \mathrm{Hom}_R(H^q_{\mathfrak m}(M),E_R(k)).
+ \end{split}
+\]
+In the first line the \(R\)-action on the right is by
+precomposition on \(M\). The finite trace is the same
+evaluation as in Theorem~\ref{res:U14}.
+\end{theorem}
+\begin{proof}
+The regular cover and the identification of the normalized
+dualizing complex are \cite[C04, D05]{ca-topics}.
+The first isomorphism is the complex-level adjunction of
+Theorem~\ref{res:U14}. Multiplication on the \(R\)-factor
+there gives multiplication by precomposition on \(M\),
+as seen from the inverse formula for \(v\).
+
+Here is a direct comparison with the local cohomology
+proof. Put \(E_S=E_S(k)\) and let \(C_{\mathfrak n}\)
+be the finite flat augmented \v{C}ech complex for
+generators of \(\mathfrak n\). By
+\cite[L05, D01, M03]{ca-topics}, \(C_{\mathfrak n}\)
+represents \(E_S[-d]\) and
+\(\mathrm{End}_S(E_S)=S\).
+The complex \(W=\underline{\mathrm{Hom}}_S(C_{\mathfrak n},E_S)\)
+is bounded and termwise injective, since Hom from a flat
+module into an injective module is injective by tensor--Hom
+adjunction and flatness. Exactness of dualization into
+\(E_S\) shows that \(W\) has only one nonzero cohomology
+module, the copy of \(S\) in degree \(-d\). A cycle representing
+its generator \(1\) gives a quasi-isomorphism \(S[d]\to W\).
+Thus it may be used for the K-injective model in
+Theorem~\ref{res:U14}. Since the images of the generators
+generate \(\mathfrak m\), scalar extension identifies
+\(R\otimes_S C_{\mathfrak n}=C_{\mathfrak m}\)
+by localization. Coinduction identifies
+\(E_R(k)\cong\mathrm{Hom}_S(R,E_S)\) by
+\cite[D04]{ca-topics}. The complex adjunction yields
+\[
+ \underline{\mathrm{Hom}}_S(R,W)
+    \cong \underline{\mathrm{Hom}}_R(C_{\mathfrak m},E_R).
+\]
+This is a K-injective \(R\)-model by Theorem~\ref{res:U14}.
+Applying \(\underline{\mathrm{Hom}}_R(M,-)\) gives
+\(\underline{\mathrm{Hom}}_R(M\otimes_R C_{\mathfrak m},E_R)\).
+Taking degree \(-q\) cohomology gives the displayed Matlis
+dual, since Hom into an injective module is exact and the
+tensor computes local cohomology. The comparison agrees
+with \cite[D06]{ca-topics}, using the same bounded
+injective model and the same change of scalars. The trace
+on the coinduced model is evaluation at \(1_R\) as claimed.
+\end{proof}
+
+\begin{corollary}[Completion and the Cohen--Macaulay form]\label{res:U20}
+For a Noetherian local ring \(R\) and a finite \(R\)-module \(M\)
+there is an isomorphism
+\[
+ \mathrm{Hom}_R(H^q_{\mathfrak m}(M),E_R)
+   \cong H^{-q}\mathbf R\mathrm{Hom}_{\widehat R}
+                             (\widehat M,D_{\widehat R})
+\]
+of \(\widehat R\)-modules. If \(R\) is complete Cohen--Macaulay
+of dimension \(e\), this becomes
+\(\mathrm{Ext}^{e-q}_R(M,\omega_R)\), where
+\(\omega_R=H^{-e}(D_R)\).
+\end{corollary}
+\begin{proof}
+The local cohomology groups are \(\mathfrak m\)-power torsion
+and are unchanged on completing \(M\), by \cite[L02, L09]{ca-topics}.
+Every \(R\)-linear map between \(\mathfrak m\)-power torsion
+modules is \(\widehat R\)-linear. This follows by using
+\(R/\mathfrak m^r=\widehat R/(\mathfrak m\widehat R)^r\)
+on submodules annihilated by \(\mathfrak m^r\). The
+\(\widehat R\)-injective envelope of \(k\) restricts
+to the \(R\)-injective envelope, as in \cite[M06]{ca-topics}.
+Thus the first isomorphism follows by applying
+Theorem~\ref{res:U19} to \(\widehat R\). For the second,
+Theorem~\ref{res:U19} with \(M=R\) and the
+Cohen--Macaulay cohomology criterion \cite[V07]{ca-topics}
+show that \(D_R\) has a single nonzero cohomology
+module in degree \(-e\). The module is the canonical
+module by \cite[D08]{ca-topics}, and good truncation
+identifies \(D_R\) with \(\omega_R[e]\). Now the
+cohomology shift gives the claimed Ext group. These
+are the completions and shifts of \cite[D07--D09]{ca-topics}.
+\end{proof}
+
+\section{An explicit projective case}
+
+\begin{theorem}[Laurent monomials compute the twists on projective space]\label{res:U21}
+Let \(k\) be a field, \(n\geq1\), \(X=\mathbf P^n_k\),
+and \(S=k[x_0,\ldots,x_n]\) with its usual grading.
+For \(m\in\mathbb Z\), the cohomology of \(\mathcal O_X(m)\)
+is \(S_m\) in degree zero, vanishes for \(0<q<n\)
+and for \(q>n\), and has basis
+\[
+   \{x_0^{a_0}\cdots x_n^{a_n}:\ a_i<0,\
+           a_0+\cdots+a_n=m\}
+\]
+in degree \(n\).
+\end{theorem}
+\begin{proof}
+Use the cover \(D_+(x_i)\). Its nonempty intersections
+are affine Noetherian schemes, since the one-variable
+dehomogenizations on a chart are polynomial rings and
+localizations. Sections of \(\mathcal O(m)\) on the
+intersection indexed by a nonempty subset \(J\) are the
+degree-\(m\) part of \(S[x_j^{-1}:j\in J]\), by the
+construction of the twisting sheaf. Quasi-coherent
+modules on these affine intersections have vanishing
+positive cohomology by the affine acyclicity argument of
+\cite[L10]{ca-topics}. The \v{C}ech comparison
+\cite[H02--H04]{ha-core} thus computes the cohomology.
+
+In the \v{C}ech complex, decompose into exponent vectors
+\(\mathbf a=(a_0,\ldots,a_n)\) of total degree \(m\).
+The term for a subset \(J\) has a basis vector for
+\(\mathbf a\) precisely when it contains the set
+\(N=\{i:a_i<0\}\). Restrictions either carry the basis
+vector to itself or have zero source, so each vector
+gives a subcomplex. When \(N\) is nonempty and proper,
+choose \(j\notin N\). The alternating simplex homotopy
+pairs the components \(J\) not containing \(j\) with
+\(J\cup\{j\}\). Explicitly the degree-minus-one map
+takes the component at \(J\cup\{j\}\) to the component
+at \(J\) with sign \((-1)^{|\{i\in J:i<j\}|}\), and has
+zero component at \(J\) if \(j\in J\).
+Both paired sets are admissible, because \(J\) contains
+\(N\) and is therefore nonempty. Expanding the
+alternating differential gives the identity on the
+insertion of \(j\), while insertions of indices other
+than \(j\) occur twice with opposite signs. Thus this
+summand is acyclic. For \(N=\varnothing\), the same
+homotopy works after adding the empty subset in
+degree \(-1\), leaving exactly one copy of \(k\) in
+degree zero of the unaugmented subcomplex.
+For \(N\) the full set only the top-degree term remains.
+Degreewise direct sums over exponent vectors preserve
+cohomology. This proves the formulas.
+\end{proof}
+
+\begin{corollary}[Trace and duality for the twists]\label{res:U22}
+In the situation of Theorem~\ref{res:U21}, the coefficient
+of \((x_0\cdots x_n)^{-1}\) specifies a trace
+\(H^n(X,\mathcal O_X(-n-1))\to k\).
+Multiplication followed by trace gives perfect pairings
+\[
+ H^q(X,\mathcal O_X(m))\ \otimes_k\
+ H^{n-q}(X,\mathcal O_X(-m-n-1))\ \longrightarrow k
+ \qquad (0\leq q\leq n).
+\]
+The sheaf \(\mathcal O_X(-n-1)\) identifies with the
+top differential forms \(\Omega^n_{X/k}\).
+\end{corollary}
+\begin{proof}
+The trace space is one-dimensional by
+Theorem~\ref{res:U21}. The only potentially nonzero
+pairings are \(q=0,n\). In each of them multiplication
+by a global section acts on the Laurent \v{C}ech
+representative by ordinary multiplication. If \(x^{\mathbf a}\)
+has all exponents nonnegative, its unique complementary
+basis vector has exponents \(-1-a_i\) at each coordinate.
+Their product gives coefficient \(1\), while any other
+basis product gives coefficient zero. Thus the bases in
+the two factors are dual. The formula also covers degrees
+for which both spaces are zero.
+
+For the top forms, on \(U_i=D_+(x_i)\) write
+\(t_a=x_a/x_i\) and use the generator
+\[
+ \eta_i=(-1)^i\,d t_0\wedge\cdots
+                   \wedge\widehat{d t_i}\wedge\cdots\wedge d t_n .
+\]
+For \(j\ne i\) put \(z=t_j=x_j/x_i\), a unit on the overlap.
+The new coordinate indexed by \(i\) is \(1/z\), with
+differential \(-z^{-2}dz\). Every other coordinate indexed
+by \(a\ne i,j\) is \(t_a/z\), with differential
+\(z^{-1}d t_a-z^{-2}t_a\,dz\). In wedging the new
+differentials the summands with a second \(dz\) vanish.
+The scalar factor without its sign is \(z^{-n-1}\), and
+the sign of \(-d z\) moved from the \(i\)-slot to the \(j\)-slot
+is \((-1)^{i+j}\). The factors \((-1)^i,(-1)^j\)
+in the two generators cancel that sign. Hence
+\(\eta_j=z^{-n-1}\eta_i\), the transition function of
+the frame \(x_i^{-n-1}\) for \(\mathcal O(-n-1)\).
+This gives the asserted identification.
+\end{proof}
+\chapter{Model Categories and Projective Complexes}
+\label{ch:model-categories}
+
+A model category organizes localization by giving two compatible
+procedures for changing an object or a map. We develop the homotopy
+category and the Quillen adjunction directly from lifting, then establish
+the unbounded projective model on complexes. Throughout, maps of
+complexes have degree zero, and cochain differentials raise degree.
+The conventions for model categories are those of \cite[Chapter 1]{hovey}
+and \cite[Section 11.3]{riehl}.
+
+\section{Lifting and homotopy}
+
+For two maps \(i:A\to B\) and \(p:X\to Y\), write \(i\perp p\)
+when every commutative square with \(i\) on the left and \(p\) on
+the right has a diagonal filler \(B\to X\). A retract of arrows is
+a retract in the category of commutative squares.
+
+\begin{definition}[Model structure]\label{res:Q01}
+A model category in this chapter is a complete and cocomplete category
+with classes \(W\), \(\operatorname{Cof}\), and \(\operatorname{Fib}\)
+of weak equivalences, cofibrations, and fibrations. The classes contain
+isomorphisms and are closed under retracts. The class \(W\) satisfies
+two-out-of-three. Call a map \emph{trivial} when it belongs to \(W\).
+Cofibrations lift against trivial fibrations, and trivial cofibrations
+lift against fibrations. Each map has functorial factorizations as a
+cofibration followed by a trivial fibration and as a trivial cofibration
+followed by a fibration.
+Write \(0\) and \(1\) for the initial and terminal objects. An object
+\(A\) is cofibrant if \(0\to A\) is a cofibration and fibrant if
+\(A\to1\) is a fibration.
+\end{definition}
+
+The two lifting pairs determine their classes by orthogonality. Indeed,
+if \(h\perp\operatorname{Fib}\), factor \(h=p i\) with \(i\) a
+trivial cofibration and \(p\) a fibration. The lift against \(p\)
+exhibits \(h\) as a retract of \(i\). The argument for the other
+left class uses the other factorization, and duality gives the
+right classes. A left class so determined is closed under pushout,
+composition, transfinite composition, and retract. For a pushout,
+the lift for the old map extends by the defining pushout. For an
+ordinal sequence choose lifts successively and use the defining
+colimit at limits. A right class has the dual closures, in
+particular pullback and composition. These arguments supply the
+closure properties used below.
+
+\begin{proposition}[Cylinder and path objects]\label{res:Q02}
+A cylinder for \(A\) is a factorization
+\[
+ A\amalg A\xrightarrow{(j_0,j_1)} C\xrightarrow{r}A
+\]
+of the fold map with first map a cofibration and \(r\in W\).
+It is called good when \(r\) is a trivial fibration.
+A path object for \(B\) is a factorization
+\[
+ B\xrightarrow{s} P\xrightarrow{(e_0,e_1)}B\times B
+\]
+of the diagonal with \(s\in W\) and second map a fibration.
+It is called good when \(s\) is a trivial cofibration.
+Good choices exist functorially. If \(A\) is cofibrant, the
+two endpoints of any cylinder are trivial cofibrations. If \(B\)
+is fibrant, both evaluations of any path object are trivial
+fibrations.
+\end{proposition}
+\begin{proof}
+Apply the two factorizations of \ref{res:Q01}. For cofibrant \(A\)
+each coproduct inclusion into \(A\amalg A\) is a cofibration by
+pushout from \(0\to A\). Therefore \(j_i\) is a cofibration,
+and \(rj_i=\mathrm{id}\) gives \(j_i\in W\). For fibrant \(B\),
+each product projection out of \(B\times B\) is a fibration
+by pullback from \(B\to1\). Now \(e_i s=\mathrm{id}\) gives
+\(e_i\in W\).
+\end{proof}
+
+\begin{theorem}[The homotopy relation]\label{res:Q03}
+For cofibrant \(A\) and fibrant \(B\), left homotopy and right
+homotopy are the same equivalence relation on maps \(A\to B\).
+Left homotopy from \(f\) to \(g\) is a map \(C\to B\) extending
+\((f,g)\) on the two ends of a cylinder. Right homotopy is a
+map \(A\to P\) with evaluations \(f,g\). Any fixed cylinder
+or path object may be used. Homotopy is preserved by
+precomposition from a cofibrant object and postcomposition
+into a fibrant object. If \(f\) and \(g\) are homotopic,
+then \(f\in W\) if and only if \(g\in W\).
+\end{theorem}
+\begin{proof}
+Suppose a left homotopy \(H:C\to B\) is provided. Factor \(r\)
+as a trivial cofibration \(C\to C'\) followed by a fibration
+\(C'\to A\), which is trivial by two-out-of-three. The first map
+allows \(H\) to extend, since \(B\) is fibrant. This gives a
+homotopy on a good cylinder. A map from any fixed cylinder to
+that good cylinder, preserving both ends and commuting with the
+collapse to \(A\), is obtained by lifting. Thus every fixed
+cylinder realizes the same left relation. Dually every fixed
+path object realizes the same right relation if \(A\) is
+cofibrant.
+
+For the equivalence of the relations, choose a good cylinder
+and a good path object. A left homotopy \(H\) gives a lift
+\(C\to P\) against \(P\to B\times B\) with top map \(s f\)
+on the \(j_0\) end and bottom map \((fr,H)\).
+Its restriction to \(j_1\) is a right homotopy. Conversely
+if \(K:A\to P\) is a right homotopy, lift
+\((s f,K):A\amalg A\to P\) against \(e_0:P\to B\)
+with bottom map \(fr:C\to B\). Composing the lift with
+\(e_1\) gives the left homotopy.
+
+Reflexivity uses \(fr\) and symmetry interchanges the ends.
+For transitivity glue two cylinders along the second end
+of the first and first end of the second. The outer end
+inclusion is a cofibration. It factors through the first
+cylinder together with one extra copy of \(A\), after which
+one pushes out the boundary inclusion of the second cylinder.
+The inclusion of the first cylinder into the glued object
+is a pushout of a trivial endpoint cofibration. Hence the
+common collapse of the glued object is in \(W\) by
+two-out-of-three. The two homotopies agree on the middle end,
+so they glue to a homotopy on this cylinder.
+
+Postcomposition of left homotopies is literal. For
+precomposition along \(A'\to A\) with \(A'\) cofibrant,
+use a good cylinder on \(A\) and lift from a cylinder on
+\(A'\), preserving the two new end maps. Finally the
+endpoints are both weak equivalences by \ref{res:Q02}.
+Apply two-out-of-three to their composites with \(H\).
+\end{proof}
+
+\begin{proposition}[Whitehead criterion]\label{res:Q04}
+A map between cofibrant fibrant objects is a weak equivalence
+if and only if it admits a homotopy inverse.
+\end{proposition}
+\begin{proof}
+For a trivial cofibration \(i:A\to Z\) between such objects,
+lift against \(A\to1\) to obtain a retraction \(u:Z\to A\).
+Lift along \(i\) into a path object of \(Z\) with endpoints
+\((iu,\mathrm{id}_Z)\), using the constant path on \(i\).
+This gives \(iu\simeq\mathrm{id}_Z\). Dually a trivial
+fibration \(p:Z\to B\) between such objects has a section
+which is a homotopy inverse. Factoring an arbitrary weak
+equivalence as a trivial cofibration followed by a fibration
+gives a trivial fibration by two-out-of-three, with
+intermediate object again cofibrant fibrant.
+
+Conversely factor a map having a homotopy inverse as a
+cofibration \(i:A\to Z\) followed by a trivial
+fibration \(p:Z\to B\). The intermediate object is again
+cofibrant fibrant. As \(p\) has a homotopy inverse, so does
+\(i\), say \(u_0\). Choose a right homotopy from
+\(u_0 i\) to \(\mathrm{id}_A\). Lift it along \(i\) against
+the first evaluation from a path object of \(A\), with
+bottom map \(u_0\). Its other evaluation gives
+\(u:Z\to A\) with \(ui=\mathrm{id}_A\) and \(u\simeq u_0\).
+Thus \(iu\simeq\mathrm{id}_Z\), and \(iu\in W\) by
+\ref{res:Q03}. The map \(i\) is a retract of the arrow \(iu\)
+via the pairs \((i,\mathrm{id}_Z)\) and
+\((u,\mathrm{id}_Z)\). Therefore \(i\), and hence \(pi\),
+belongs to \(W\).
+\end{proof}
+
+\begin{theorem}[Localization by homotopy classes]\label{res:Q05}
+The category of cofibrant fibrant objects with morphisms the
+homotopy classes is a localization of the model category at
+\(W\). A map of the model category becomes an isomorphism
+in this localization exactly when it belongs to \(W\).
+\end{theorem}
+\begin{proof}
+Composition is well-defined by \ref{res:Q03}. Choose a
+functorial cofibrant replacement \(QX\to X\), a trivial
+fibration, and a functorial fibrant replacement \(X\to RX\),
+a trivial cofibration. The object \(RQX\) is cofibrant
+fibrant. Naturality and two-out-of-three show that the
+replacement functors preserve \(W\) and reflect it on
+the maps in the two natural replacement squares.
+The functor \(X\mapsto RQX\) followed by passage to homotopy
+classes inverts \(W\) by \ref{res:Q04}.
+
+For a functor \(F\) inverting \(W\), its restriction to the
+cofibrant fibrant objects passes through homotopy classes.
+Indeed a cylinder collapse goes to an isomorphism and its two
+sections consequently go to the same map. The resulting
+factorization of \(F\) is natural up to the natural
+isomorphisms induced by \(QX\to X\) and \(QX\to RQX\).
+For \(X\) already cofibrant fibrant, \(QX\) is also fibrant
+because \(QX\to X\) is a fibration. The two replacement maps
+therefore identify, naturally in the homotopy category,
+the original cofibrant fibrant object and its new replacement.
+Restriction and replacement are thus inverse up to natural
+isomorphism on functors that invert \(W\), including natural
+transformations. This proves the localization property.
+If the image of \(f\) is invertible, the representative
+\(RQf\) is a homotopy equivalence, so is in \(W\) by
+\ref{res:Q04}. Two-out-of-three in the replacement squares
+gives \(f\in W\).
+\end{proof}
+
+\begin{proposition}[Cofibrant source and fibrant target]\label{res:Q06}
+For cofibrant \(A\) and fibrant \(B\), homotopy classes of
+actual maps \(A\to B\) map bijectively to morphisms
+\(\operatorname{Ho}(\mathcal C)(A,B)\).
+\end{proposition}
+\begin{proof}
+Replace \(A\) by \(A\hookrightarrow RA\), a trivial
+cofibration into a cofibrant fibrant object. Every map to
+\(B\) extends. If the restrictions of two extensions are
+right homotopic, extend the homotopy along \(A\to RA\)
+by lifting against \(P\to B\times B\), with the two
+extensions as endpoints. Thus this replacement gives a
+bijection on homotopy classes. Replace \(B\) by a trivial
+fibration \(QB\to B\), so that \(QB\) is cofibrant
+fibrant. For source \(RA\), maps lift against this
+trivial fibration. If two composites are left homotopic,
+lift the cylinder homotopy with the two maps to \(QB\)
+as endpoints. Therefore this replacement also gives a
+bijection on classes. Both replacements induce
+isomorphisms in the localization of \ref{res:Q05}.
+This identifies the stated map with a composite of
+bijections. In particular the identification is natural
+on maps of cofibrant sources and fibrant targets.
+\end{proof}
+
+\section{Quillen adjunctions}
+
+\begin{lemma}[Brown's lemma on cofibrant objects]\label{res:Q07}
+A functor on the cofibrant objects which carries trivial
+cofibrations to weak equivalences carries every weak
+equivalence there to a weak equivalence, assuming two-out-of-three
+in the target. The corresponding assertion for fibrant
+objects and trivial fibrations holds dually.
+\end{lemma}
+\begin{proof}
+Let \(f:X\to Y\) be a weak equivalence of cofibrant objects.
+Factor \((f,\mathrm{id}_Y):X\amalg Y\to Y\) as a
+cofibration followed by a trivial fibration \(p:Z\to Y\).
+Both maps \(X\to Z\) and \(Y\to Z\) are trivial
+cofibrations by two-out-of-three, and \(Z\) is cofibrant.
+The image of \(p\) is weak because its composite with
+the image of \(Y\to Z\) is the identity. The same then
+holds for the image of \(f\).
+\end{proof}
+
+An adjunction \(L:\mathcal C\rightleftarrows\mathcal D:U\)
+is Quillen when \(L\) preserves cofibrations and trivial
+cofibrations, equivalently when \(U\) preserves fibrations
+and trivial fibrations. This equivalence follows by
+transporting lifting squares along the adjunction and
+using the orthogonality observation after \ref{res:Q01}.
+
+\begin{theorem}[Derived Quillen adjunction]\label{res:Q08}
+A Quillen adjunction induces an adjunction
+\[
+ \mathbf L L:\operatorname{Ho}(\mathcal C)
+ \rightleftarrows \operatorname{Ho}(\mathcal D):\mathbf R U.
+\]
+It is computed by \(LQ\) and \(UR\), where \(Q\) is
+cofibrant replacement in \(\mathcal C\) and \(R\)
+is fibrant replacement in \(\mathcal D\).
+\end{theorem}
+\begin{proof}
+The two composites preserve weak equivalences by
+\ref{res:Q07} and hence descend by \ref{res:Q05}.
+The functors \(L\) and \(U\) preserve respectively
+cofibrancy and fibrancy because they preserve the relevant
+structure maps and initial or terminal objects.
+For cofibrant \(X\) and fibrant \(Y\), the ordinary adjunction
+identifies maps \(LX\to Y\) with maps \(X\to UY\).
+Apply \(L\) to a cylinder of \(X\). Its end inclusion
+is a cofibration and the collapse is a weak equivalence
+by \ref{res:Q07}, since both ends of the collapse map
+are cofibrant. It is a cylinder of \(LX\) because \(L\)
+preserves the coproduct. The ordinary adjunction identifies
+maps out of this cylinder with maps out of the original
+cylinder on the other side and respects endpoint maps.
+By \ref{res:Q03}, the adjunction therefore identifies
+the two homotopy relations. Applying \ref{res:Q06} gives
+the adjunction on homotopy categories. Replacing both
+variables supplies this bijection for arbitrary objects,
+naturally by the functorial choices and the natural
+identification of \ref{res:Q06}.
+\end{proof}
+
+\begin{theorem}[Quillen equivalence criterion]\label{res:Q09}
+The derived adjunction of \ref{res:Q08} is an equivalence
+if and only if the following condition holds. For every
+cofibrant \(X\) and fibrant \(Y\), a map \(LX\to Y\) is
+a weak equivalence exactly when its adjoint \(X\to UY\)
+is a weak equivalence.
+\end{theorem}
+\begin{proof}
+Assume the condition. For cofibrant \(X\), choose a
+fibrant replacement \(LX\to R LX\). Its adjoint is
+weak by the condition, and represents the derived unit.
+For fibrant \(Y\), choose a cofibrant replacement
+\(Q UY\to UY\). Its adjoint is weak and represents
+the derived counit. Thus the unit and counit are
+isomorphisms by \ref{res:Q05}, and functorial
+replacement gives this conclusion on all objects.
+Conversely, an adjunction which is an equivalence
+identifies isomorphisms with isomorphisms under the
+adjunction bijection. Apply \ref{res:Q05} to both
+maps in the claimed criterion. This proof uses the
+unit at a fibrant replacement of \(LX\) and the
+counit at a cofibrant replacement of \(UY\), in agreement
+with \cite[correction to Corollary 1.3.16]{hovey-errata}.
+\end{proof}
+
+
+\section{Cochain complexes over a ring}
+
+Let \(A\) be a ring with identity. Write \(\operatorname{Ch}(A)\)
+for the category of unbounded cochain complexes of left \(A\)-modules.
+It has all small limits and colimits, obtained degree by degree.
+We use quasi-isomorphisms as weak equivalences and reindex the
+projective disk generators of \cite[Section 2.3]{hovey} cohomologically.
+
+\begin{proposition}[Spheres, disks, and their lifts]\label{res:Q10}
+Let \(S^n\) be \(A\) in degree \(n\) and \(D^n\) be
+\(A\xrightarrow{\mathrm{id}} A\) in degrees \(n,n+1\).
+Use the sets of maps
+\[
+ I=\{S^{n+1}\longrightarrow D^n:n\in\mathbb Z\},
+ \qquad
+ J=\{0\longrightarrow D^n:n\in\mathbb Z\},
+\]
+where \(S^{n+1}\to D^n\) includes the upper degree. A map has
+the right lifting property against \(J\) precisely when it is
+degreewise surjective. It has the right lifting property against
+\(I\) precisely when it is a degreewise surjective quasi-isomorphism.
+\end{proposition}
+\begin{proof}
+A map out of \(D^n\) specifies any element in degree \(n\).
+Lifting against \(J\) thus tests degreewise surjectivity.
+A square against \(S^{n+1}\to D^n\) for \(p:X\to Y\) specifies
+\(z\in Z^{n+1}(X)\) and \(y\in Y^n\) such that \(p(z)=dy\).
+A lift is \(x\in X^n\) with \(p(x)=y\) and \(dx=z\).
+Taking \(z=0\) gives surjectivity on cycles in degree \(n\).
+For general \(y\), first lift the cycle \(dy\) and then
+lift \(y\), obtaining degreewise surjectivity. Taking \(y=0\)
+shows that the kernel has zero cohomology.
+
+Conversely suppose \(p\) is degreewise surjective and a
+quasi-isomorphism. Its kernel is acyclic by the long exact
+sequence of cohomology. Start with a graded lift \(x_0\) of
+\(y\). The difference \(z-dx_0\) is a cycle in the kernel,
+hence the differential of some \(u\) in the kernel. Then
+\(x=x_0+u\) gives the required lift.
+\end{proof}
+
+\begin{lemma}[Free cell factorizations]\label{res:Q11}
+Every cochain map factors functorially both as an \(I\)-cell
+map followed by an \(I\)-right lifting map and as a \(J\)-cell
+map followed by a \(J\)-right lifting map. Here a cell is
+attached by pushing out a coproduct of generators, and a
+cell map is a sequential composite of such attachments.
+An \(I\)-cell map is obtained by adjoining free graded
+generators with differential in the previous stage.
+A \(J\)-cell map adjoins a direct sum of disks.
+\end{lemma}
+\begin{proof}
+Start with the given arrow \(X_0\to Y\). Given \(X_t\to Y\),
+take the coproduct of one copy of each generator for every
+commutative square from that generator to \(X_t\to Y\).
+Push out its domain map to obtain \(X_{t+1}\), with the
+induced map to \(Y\). In degree \(n\), an \(I\)-attachment
+adjoins one free generator \(e\) of degree \(n\) for each
+corresponding square, imposing \(de=z\) where \(z\) is the
+image of the sphere generator. This is consistent because
+\(z\) is closed. For \(J\), the whole disk is added freely
+as a direct summand of complexes. Take the sequential
+colimit \(X_\infty\). The domain of an \(I\)-generator is
+one cycle generator. A map from it to \(X_\infty\) is
+represented at a finite stage because the cycle condition
+becomes true at some finite stage. A \(J\)-domain is zero.
+Thus any square at the colimit factors through a finite
+stage, after which it acquires its filler. Using all
+squares at each stage makes the factorizations functorial.
+\end{proof}
+
+\begin{theorem}[The unbounded projective model structure]\label{res:Q12}
+There is a model structure on \(\operatorname{Ch}(A)\)
+with weak equivalences the quasi-isomorphisms, fibrations
+the degreewise surjections, and cofibrations the maps
+lifting against degreewise surjective quasi-isomorphisms.
+Every object is fibrant. Its homotopy category is
+\(\mathrm D(A)\).
+\end{theorem}
+\begin{proof}
+The weak equivalences have two-out-of-three and are
+retract-closed by functorial cohomology. The lifting-defined
+classes are retract-closed. By \ref{res:Q10}, the two
+factorizations of \ref{res:Q11} have the required right
+classes. Every \(I\)-cell map is a cofibration by its
+lifting property. Every \(J\)-generator is an \(I\)-cell
+map, since \(0\to S^{n+1}\) is the pushout of
+\(S^{n+2}\to D^{n+1}\) along the zero map and
+\(S^{n+1}\to D^n\) is itself a generator. Consequently
+\(J\)-cell maps are cofibrations. They are also
+quasi-isomorphisms since adjoining a direct sum of disks
+does not change cohomology.
+
+It remains to identify the left lifting class against
+fibrations. Every map in this class is a retract of its
+\(J\)-cell factor by the lift against the right factor.
+It is therefore a trivial cofibration. Conversely
+factor a trivial cofibration \(i\) as \(i=pj\) with \(j\)
+a \(J\)-cell map and \(p\) a fibration. As \(i\) and \(j\)
+are quasi-isomorphisms, \(p\) is a trivial fibration.
+The lift furnished by \(i\) exhibits \(i\) as a retract
+of \(j\), which has the left lifting property against
+every fibration. This verifies both lifting classes and
+all the axioms of \ref{res:Q01}. All maps to the zero complex
+are surjective. The final assertion follows from \ref{res:Q05}
+and the definition of the derived category by localization.
+\end{proof}
+
+\begin{proposition}[Cofibrations and acyclic targets]\label{res:Q13}
+A map of complexes is a cofibration in \ref{res:Q12}
+if and only if it is a degreewise split injection whose
+cokernel \(P\) is degreewise projective and \(K\)-projective.
+Here \(K\)-projective means that
+\(\operatorname{Hom}_A^\bullet(P,E)\) is acyclic for every
+acyclic \(E\). The cokernel is also \(K\)-flat, meaning
+that \(E\otimes_A P\) is acyclic for every acyclic complex
+of right \(A\)-modules.
+\end{proposition}
+\begin{proof}
+A cofibration is a retract of its \(I\)-cell factor.
+An \(I\)-cell map is split injective as a graded map,
+and its cokernel has a filtration with graded-split
+inclusions and freely adjoined generators whose
+differentials land in earlier stages. A cochain map \(f\)
+from such a cokernel to an acyclic \(E\) is null homotopic.
+At the stage adjoining \(e\), with \(de\) already present,
+the equation \(f(e)=d h(e)+h(de)\) is solvable because
+\(f(e)-h(de)\) is a cycle. Indeed
+\(d f(e)-d h(de)=f(de)-f(de)+h(d^2e)=0\)
+using the equation on the prior stage. Choose these values
+on all generators and extend linearly. The same argument
+applied to all shifts of \(E\) is precisely acyclicity
+of the Hom complex. The cokernel is \(K\)-flat because
+tensoring the graded-split filtration with \(E\) gives
+a filtration by complexes with acyclic quotients, direct
+sums of shifts of \(E\). Each finite stage is acyclic
+by the long exact sequence and the union is acyclic
+by exactness of filtered colimits of modules. Taking
+retracts preserves all these conditions, which proves
+necessity.
+
+For sufficiency let \(i:A_0\to B_0\) have the stated
+properties and consider a lifting square against a
+surjective quasi-isomorphism \(q:X\to Y\). Using the
+graded splitting of \(i\) and degreewise projectivity
+of \(P=B_0/A_0\), choose a graded lift \(u:B_0\to X\)
+extending the prescribed map on \(A_0\).
+Its defect \(d_Xu-u d_{B_0}\) vanishes on \(A_0\)
+and has image in \(\ker q\). It defines a degree-one
+cocycle of \(\operatorname{Hom}_A^\bullet(P,\ker q)\).
+The identity on two successive differentials gives the
+cocycle equation. By \ref{res:Q10}, the kernel is
+acyclic. Thus the defect is the Hom differential of
+a degree-zero map \(P\to\ker q\). Subtract this
+map after quotient and inclusion to correct \(u\)
+to a cochain map and complete the lift.
+\end{proof}
+
+\begin{corollary}[Chain homotopy in the projective model]\label{res:Q14}
+For cofibrant \(X\), the morphisms from \(X\) to any
+complex \(Y\) in \(\mathrm D(A)\) are cochain maps modulo
+ordinary cochain homotopy.
+\end{corollary}
+\begin{proof}
+Use the path complex
+\[
+ P(Y)^n=Y^n\oplus Y^n\oplus Y^{n-1},\qquad
+ d(y_0,y_1,b)=(dy_0,dy_1,y_1-y_0-db).
+\]
+Its third component after two applications of \(d\) is
+zero, and its evaluations are the two projections. They
+together form a degreewise surjection to \(Y\times Y\).
+The first evaluation has contractible kernel, since in
+coordinates \((a,b)\) that kernel has differential
+\((da,a-db)\) and contracting homotopy \((a,b)\mapsto(b,0)\).
+The diagonal \(y\mapsto(y,y,0)\) is therefore a
+quasi-isomorphism. A cochain map \(X\to P(Y)\) with
+first two coordinates \(f,g\) has third coordinate
+\(h\) with \(g-f=d h+h d\). Now apply \ref{res:Q03}
+and \ref{res:Q06}, using fibrancy of all complexes.
+\end{proof}
+
+\section{Tensor products and homotopy limits}
+
+\begin{theorem}[Tensor compatibility]\label{res:Q15}
+If \(A\) is commutative, the projective model structure
+is a closed symmetric monoidal model structure for the
+usual tensor product of cochain complexes. In particular,
+the pushout product of two cofibrations is a cofibration
+and is trivial if either is trivial.
+\end{theorem}
+\begin{proof}
+The tensor product uses direct sums in total degree and
+the signed differential. Its internal Hom uses products
+in each degree with differential
+\(d(h)=d h-(-1)^{|h|}h d\). Evaluation and currying give
+the adjunction by expansion of the cochain identities.
+Symmetry is \(x\otimes y\mapsto(-1)^{|x||y|}y\otimes x\).
+
+For \(a:A_0\to B_0\), \(b:C_0\to D_0\), their
+pushout product is
+\[
+ (B_0\otimes C_0)\amalg_{A_0\otimes C_0}(A_0\otimes D_0)
+ \longrightarrow B_0\otimes D_0.
+\]
+For \(a,b\in I\), the inclusion has the product of the
+two lower disk generators as its only new generator.
+Its differential lies in the source, so this is a
+single \(I\)-attachment. For \(a\in I\), \(b\in J\),
+the inclusion splits degreewise and its quotient is
+a shift of a disk, from the lower sphere of the
+\(I\)-cokernel tensored with the disk of \(b\).
+The sign is absorbed by changing the sign of one disk
+generator. The quotient is acyclic, degreewise free
+and \(K\)-projective by contractibility. Thus the
+pushout product is a trivial cofibration by
+\ref{res:Q13}. Symmetry handles \(I,J\) in the other order.
+
+For fixed \(a\), the operation \(a\square -\)
+preserves pushouts of arrows by separate cocontinuity
+of the tensor product. For a composite \(C\to D\to E\)
+in the other variable, first pass through
+\[
+ (B_0\otimes D)\amalg_{A_0\otimes D}(A_0\otimes E)
+\]
+on the way to \(B_0\otimes E\). The first map in
+this factorization is a pushout of the pushout product
+for \(C\to D\), and the second is the pushout product
+for \(D\to E\). For a sequence of attachments use these
+same intermediates with its final object \(E\), taking
+colimits at limit stages. This proves closure under
+the cell operations in either variable. Retracts are
+preserved because the pushout product is functorial
+on pairs of arrows. Since cofibrations are retracts
+of \(I\)-cell maps and trivial cofibrations retracts
+of \(J\)-cell maps by \ref{res:Q12}, the generator
+calculations prove the assertion. The unit \(A[0]\)
+is cofibrant by \ref{res:Q13}, so the identity unit
+replacement verifies the unit axiom. For any weak
+cofibrant replacement of this unit the same conclusion
+follows from \ref{res:Q07} applied to tensor with a
+cofibrant object, which is left Quillen by the
+pushout-product statement.
+\end{proof}
+
+Use the cone convention
+\(\operatorname{Cone}(h)^n=Z^n\oplus T^{n+1}\)
+for \(h:T\to Z\), with differential
+\(d(z,t)=(dz+h(t),-dt)\).
+The cochain shift \([-1]\) negates the differential.
+For the general homotopy-limit viewpoint see
+\cite[Chapters 5--6]{riehl}. The explicit models below use exact
+products in module categories, as in \cite[Section 34]{st-derived}.
+
+\begin{proposition}[Homotopy pullbacks of complexes]\label{res:Q16}
+For a span \(X\xrightarrow{f} Z\xleftarrow{g}Y\),
+a homotopy pullback is
+\[
+ \operatorname{Cone}(f-g:X\oplus Y\longrightarrow Z)[-1].
+\]
+It is functorial on strict maps of spans and invariant under
+objectwise quasi-isomorphism. When either leg is a fibration,
+the strict pullback maps to this model by a quasi-isomorphism.
+\end{proposition}
+\begin{proof}
+Put \(C^n=Z^n\oplus Z^{n-1}\) with differential
+\((a,b)\mapsto(da,a-db)\). The homotopy
+\((a,b)\mapsto(b,0)\) contracts \(C\). Replace \(f\)
+by the surjection \(X\oplus C\to Z\) given by
+\((x,a,b)\mapsto f(x)+a\). The original \(X\) includes
+by a quasi-isomorphism over \(Z\). The strict pullback
+of the resulting span consists of triples
+\((x,y,b)\) with \(a=g(y)-f(x)\), and its differential
+is \((dx,dy,g(y)-f(x)-db)\). This is precisely the
+stated cone with the coordinates reordered.
+A strict objectwise quasi-isomorphism of spans induces
+one on cones by the cone cohomology sequence.
+If a leg was already surjective, then \(f-g\)
+is surjective and its kernel is the ordinary pullback.
+The short exact sequence with this kernel identifies
+its inclusion into the shifted cone as a quasi-isomorphism.
+These statements show that fibrational replacement
+of one leg followed by ordinary pullback gives a
+homotopy-invariant model and that this agrees with
+ordinary pullback on spans having that leg fibrant.
+\end{proof}
+
+\begin{theorem}[Sequential homotopy limits]\label{res:Q17}
+For a tower \(X_0\leftarrow X_1\leftarrow\cdots\) of
+complexes, let \(s:\prod_n X_n\to\prod_n X_n\) carry the
+\((n+1)\)-st coordinate to the \(n\)-th by the transition map.
+A model for \(\operatorname{holim}_n X_n\) is
+\[
+ \operatorname{Cone}\bigl(1-s:\prod_n X_n\to\prod_n X_n\bigr)[-1].
+\]
+If all transition maps are degreewise surjective, the
+ordinary inverse limit maps quasi-isomorphically to this
+model. In each degree \(q\) there is a natural short
+exact sequence
+\[
+ 0\longrightarrow\lim\nolimits^1_n H^{q-1}(X_n)
+ \longrightarrow H^q(\operatorname{holim}_n X_n)
+ \longrightarrow\lim_n H^q(X_n)\longrightarrow0 ,
+\]
+where for a sequential system of modules
+\(\lim^1\) denotes the cokernel of \(1-s\) on their product.
+\end{theorem}
+\begin{proof}
+Products of modules are exact. Taking the cone therefore
+gives an objectwise quasi-isomorphism invariant construction.
+For a degreewise surjective tower, given a tuple \((b_n)\),
+choose \(a_0=0\) and solve
+\(s_n(a_{n+1})=a_n-b_n\) recursively in each degree.
+Hence \(1-s\) is degreewise surjective and its kernel
+is the ordinary inverse limit. The short exact sequence
+of complexes proves the asserted comparison with the shifted
+cone. Every tower admits a functorial levelwise
+quasi-isomorphism to such a tower. Start with
+\(Y_0=X_0\). At each subsequent stage factor the composite
+\(X_n\to X_{n-1}\to Y_{n-1}\) as a trivial cofibration
+\(X_n\to Y_n\) followed by a fibration \(Y_n\to Y_{n-1}\)
+using \ref{res:Q12}. Thus taking the ordinary limit
+after this replacement is equivalent to the cone model.
+Taking cohomology of the cone exact sequence gives the
+displayed short exact sequence, since cohomology commutes
+with products and the kernel of \(1-s\) on a product
+is the ordinary inverse limit.
+\end{proof}
+
+\paragraph{Scope.}
+The construction above concerns the projective model structure on
+module complexes. The unbounded injective resolutions used for
+derived Hom are constructed in the derived-functor chapter. The
+existence of an injective model structure on sheaf complexes has
+different hypotheses and does not enter these proofs.
+\chapter{Faithfully flat descent for modules and complexes}
+\label{ch:flat-descent}
+
+Let \(A\to B\) be a faithfully flat map of commutative rings. A
+quasi-isomorphism can be checked after this base change because flatness
+commutes with cohomology and faithfulness detects the zero module. This
+chapter will also reconstruct an object from a strict cocycle and recover
+an arbitrary unbounded complex from its augmented Amitsur diagram.
+
+\section{The augmented complex and effective module descent}
+
+\begin{definition}[The augmented Amitsur complex]\label{res:F01}
+For an \(A\)-module \(M\), put \(C^{-1}(M)=M\) and
+\(C^p(M)=B^{\otimes_A(p+1)}\otimes_A M\) for \(p\geq0\). The
+map from degree \(-1\) inserts \(1\), and the map from degree \(p\)
+is \(\delta=\sum_{i=0}^{p+1}(-1)^id^i\), where \(d^i\) inserts a
+unit in position \(i\), counted from zero. This is a complex.
+\end{definition}
+\begin{proof}
+Insertion in two ordered positions \(i<j\) can also be performed by
+first inserting in position \(j-1\) and then in position \(i\).
+The signs of the two resulting terms of the composite are opposite.
+This cancels every term, including the two equal insertions after the
+augmentation.
+\end{proof}
+
+\begin{theorem}[Exactness after faithfully flat descent]\label{res:F02}
+The augmented Amitsur complex of every \(A\)-module is exact.
+\end{theorem}
+\begin{proof}
+After tensoring on the left with \(B\), there is a contraction that
+multiplies the new left factor with the first old factor:
+\[
+ h(b\otimes b_0\otimes\cdots\otimes b_p\otimes m)
+   =bb_0\otimes b_1\otimes\cdots\otimes b_p\otimes m .
+\]
+In degree zero the right hand side is \(bb_0\otimes m\) in the
+base-changed augmented term. We have \(hd^0=1\) and
+\(hd^i=d^{i-1}h\) for \(i>0\). Therefore
+\(h\delta+\delta h=1\), including \(h\delta=1\) on the augmented
+term. By faithful flatness, homology of the original complex
+must be zero.
+\end{proof}
+
+\begin{definition}[Strict module descent data]\label{res:F03}
+Write \(B_2=B\otimes_A B\) and \(B_3=B^{\otimes_A3}\). A descent
+datum on a \(B\)-module \(N\) is a \(B_2\)-linear isomorphism
+\[
+ \theta:N\otimes_A B\longrightarrow B\otimes_A N
+\]
+such that the pullback along multiplication \(B_2\to B\) is the
+identity, and \(\theta_{23}\theta_{12}=\theta_{13}\) over \(B_3\).
+Subscripts indicate the positions of the old and new \(N\)-factor.
+A morphism is a \(B\)-linear map commuting with this isomorphism.
+\end{definition}
+
+\begin{theorem}[Effective descent for modules]\label{res:F04}
+The functor \(M\mapsto B\otimes_A M\), with its canonical tensor
+position isomorphism, is an equivalence onto modules with the
+data of Result~\ref{res:F03}. The inverse sends \(N\) to
+\[
+ M=\{n\in N:\rho(n)=1\otimes n\},\qquad
+ \rho(n)=\theta(n\otimes1).
+\]
+\end{theorem}
+\begin{proof}
+The map \(\rho\) is \(B\)-linear for the first factor of \(B\otimes_A N\).
+The diagonal condition gives \(\mu\rho=1_N\), where \(\mu\) is
+multiplication of scalars. If \(\rho(n)=\sum_j b_j\otimes n_j\),
+evaluate the cocycle on \(n\otimes1\otimes1\) to get
+\[
+ (1\otimes\rho)\rho(n)=\sum_j b_j\otimes1\otimes n_j .
+\]
+Flatness identifies \(B\otimes_A M\) with the submodule of
+\(B\otimes_A N\) whose elements \(z\) satisfy
+\((1\otimes\rho)(z)=\sum b\otimes1\otimes n\), with
+\(z=\sum b\otimes n\). The identity above places \(\rho(N)\)
+in this equalizer. Conversely multiplying the first two factors in
+the equalizer relation gives \(\rho(\mu z)=z\), using the \(B\)-linearity
+of \(\rho\). Thus the natural map \(B\otimes_A M\to N\) is an isomorphism
+with inverse \(\rho\) interpreted in the equalizer.
+It respects the cocycle because for \(m\in M\) one has
+\(\theta(m\otimes1)=1\otimes m\), and \(B_2\)-linearity determines
+the isomorphism on all elements. In the canonical case
+\(N=B\otimes_A M_0\), the equalizer is \(M_0\) by
+Result~\ref{res:F02} in degrees \(-1,0\).
+Both constructions are functorial since a map commuting with
+\(\theta\) commutes with \(\rho\) and with \(\mu\).
+\end{proof}
+
+\begin{corollary}[Descent of finite projective modules]\label{res:F05}
+For an \(A\)-module \(M\), if \(B\otimes_A M\) is finite projective
+over \(B\), then \(M\) is finite projective over \(A\).
+\end{corollary}
+\begin{proof}
+Express finitely many generators after base change using finitely many
+elements of \(M\). The quotient by the module they generate has zero
+base change, hence is zero. Choose a finite free surjection to \(M\).
+Its kernel becomes finitely generated after base change, since the
+surjection then splits and the kernel is a summand of a finite free
+module. Apply the same finite-generation argument to this kernel.
+Thus \(M\) is finitely presented.
+It is flat because for any injection of \(A\)-modules, the kernel of
+its tensor with \(M\) becomes zero over \(B\).
+For completeness, a finitely presented flat module is projective.
+At every localization at a prime, lifts of a residue-field basis
+give a free surjection by Nakayama. Its finite kernel has zero
+residue since flatness makes tensoring the sequence injective on
+the left, so the kernel vanishes by Nakayama. A finite presentation
+clears the denominators of this basis and its inverse on a
+distinguished neighbourhood of the prime. The chosen finite free
+surjection to \(M\) therefore splits over a finite distinguished
+cover \(D(f_i)\). By finite presentation, clear denominators in the
+local splittings to get maps \(\sigma_i:M\to A^n\) whose composites
+with \(A^n\to M\) are \(f_i^{r_i}\mathrm{id}_M\) for sufficiently
+large \(r_i\). These powers generate the unit ideal. A linear
+combination of the \(\sigma_i\) gives a global splitting.
+\end{proof}
+
+\section{The unbounded descent calculation}
+
+\begin{proposition}[Strict descent data for complexes]\label{res:F06}
+Chain complexes of \(A\)-modules are equivalent to complexes of
+\(B\)-modules equipped with the strict data of Result~\ref{res:F03}
+by chain maps. The equivalence also identifies their localizations
+at quasi-isomorphisms.
+\end{proposition}
+\begin{proof}
+Apply Result~\ref{res:F04} in each degree. All differentials descend
+as morphisms of the descent data. Their composites are zero by the
+faithfulness of the equivalence. Tensoring with \(B\) commutes with
+cohomology and reflects the zero module, so a map is a
+quasi-isomorphism exactly when its base change is one.
+The two functors and their comparison isomorphisms consequently
+descend to the stated localizations.
+\end{proof}
+
+For a cochain complex \(X\) and an integer \(p\geq0\), put
+\(C^{p,q}(X)=B^{\otimes_A(p+1)}\otimes_A X^q\).
+Horizontal and vertical differentials commute before taking total
+signs. Use the differential \(\delta+(-1)^pd_X\) on column \(p\),
+and the product over \(p\) in each total degree.
+This uses an actual product of modules, not a tensor product with
+an already infinite product.
+
+\begin{theorem}[Unbounded Amitsur totalization]\label{res:F07}
+For every cochain complex \(X\) the natural augmentation is a
+quasi-isomorphism
+\[
+       X\longrightarrow \operatorname{Tot}^{\Pi} C^{\bullet,\bullet}(X).
+\]
+The target is also the homotopy limit in \(D(A)\) of totalizations
+truncated to the first finitely many columns.
+\end{theorem}
+\begin{proof}
+For bounded-below \(X\), add the augmented column \(p=-1\) with
+vertical sign \(-1\). The augmented total complex has acyclic rows
+by Result~\ref{res:F02}. The lower bound on the vertical degree
+and the finite number of columns in each total degree justify
+the row filtration argument of \cite[B01--B04]{ha-core}. The
+augmented total complex is the cone of the augmentation, with
+column \(p=-1\) equal to \(X[1]\) and carrying differential \(-d_X\).
+Its acyclicity proves the first assertion for bounded-below \(X\).
+
+For general \(X\) put \(X_n=\tau_{\geq-n}X\) for \(n\geq0\), using
+the quotient by boundaries at degree \(-n\), zero below and the
+original modules above. The canonical tower maps \(X_{n+1}\to X_n\)
+are degreewise surjective, the inverse limit is \(X\), and these
+maps eventually become the identity in each fixed degree.
+The augmentation maps for \(X_n\) form a map of towers.
+For each column and each internal degree, tensoring with the indicated
+finite tensor power of \(B\) commutes with this inverse limit because
+the tower in that fixed degree is eventually constant.
+Products commute with inverse limits, so the limit of the product
+totalizations of the \(X_n\) is exactly the displayed product
+totalization. Their transitions are degreewise surjective because
+they are products of surjections.
+
+For a tower \(Y_n\) with degreewise surjective transitions \(u_n\),
+there is a short exact sequence of complexes
+\[
+ 0\to\varprojlim_n Y_n\to\prod_{n\geq0}Y_n
+ \xrightarrow{1-\mathrm{shift}}\prod_{n\geq0}Y_n\to0,
+ \qquad (1-\mathrm{shift})(y)_n=y_n-u_n(y_{n+1}).
+\]
+Surjectivity follows by solving from \(n=0\) onwards. Products of
+module complexes preserve quasi-isomorphisms because products of
+surjections are surjective and kernels are products of kernels.
+Apply this short exact sequence to the map of towers
+\(X_n\to\operatorname{Tot}^{\Pi} C(X_n)\). The two product maps are
+quasi-isomorphisms, so the long exact sequence gives the claim on
+their inverse limits. This argument does not require \(B\otimes_A-\)
+to preserve infinite products.
+
+Finally truncate at horizontal column \(p=n\), by quotienting the
+subcomplex of later columns. The projections between truncated
+totalizations are surjective termwise, and the ordinary inverse
+limit is the product totalization. The same short exact sequence
+identifies that limit with the shifted cone of \(1-\mathrm{shift}\),
+the sequential homotopy-limit model of Result~\ref{res:Q17}.
+\end{proof}
+
+\begin{corollary}[Descent of perfect-coefficient mapping complexes]\label{res:F08}
+Let \(P\) be a bounded complex of finite projective \(A\)-modules
+and \(X\) any complex. With \(B_p=B^{\otimes_A(p+1)}\) there is an
+isomorphism in \(D(A)\)
+\[
+ \mathrm{RHom}_A(P,X)\simeq
+ \operatorname{Tot}^{\Pi}_{p\geq0}
+ \mathrm{RHom}_{B_p}(B_p\otimes_A P,B_p\otimes_A X),
+\]
+where the right hand side uses the cofaces of Result~\ref{res:F01}
+on the compatible ordinary Hom models.
+\end{corollary}
+\begin{proof}
+Bounded complexes of projectives are K-projective by the finite
+filtration by degree tails. Thus the ordinary Hom complexes
+compute each term. A finite projective module is a direct summand
+of a finite free one. This gives
+\(B_p\otimes_A\operatorname{Hom}_A(P^j,X^q)
+=\operatorname{Hom}_{B_p}(B_p\otimes P^j,B_p\otimes X^q)\)
+canonically, with equality here denoting the base-change isomorphism.
+Each Hom degree uses only finitely many \(j\), so this remains
+compatible with the Hom differential, multiplication and unit
+on the base rings. Apply Result~\ref{res:F07} to
+\(\operatorname{Hom}_A^\bullet(P,X)\).
+\end{proof}
+
+\begin{example}[Localization covers and the need for faithfulness]\label{res:F09}
+If \(f_1,\ldots,f_s\) generate the unit ideal of \(A\), then
+\(B=\prod_i A_{f_i}\) is faithfully flat and its Amitsur diagram
+is the full ordered affine-intersection diagram of the cover by
+\(D(f_i)\). In contrast, the flat map \(\mathbb Z\to\mathbb Q\)
+does not detect the nonzero complex \(\mathbb Z/\ell\) in degree
+zero for a prime \(\ell\).
+\end{example}
+\begin{proof}
+The product is finite, hence a direct sum of flat modules as an
+\(A\)-module. If \(m\) vanishes at each localization then it is
+killed by a positive power of each \(f_i\). Those powers generate
+the unit ideal, so \(m=0\). In particular base change reflects
+zero modules, proving faithful flatness. The tensor product
+distributes over the finite ring factors, and the tensor product
+of the corresponding localizations is localization at the
+product \(f_{i_0}\cdots f_{i_p}\). In the component indexed by a
+longer ordered tuple, insertion of \(1\) restricts from the
+intersection obtained by omitting that entry to the full intersection.
+Finally \(\ell\) acts invertibly over \(\mathbb Q\), so tensoring
+\(\mathbb Z/\ell\) with \(\mathbb Q\) gives zero.
+\end{proof}
+
+These are strict and explicit forms of descent. The general
+homotopy-coherent formulation replaces ordinary compatibility by
+a descent datum valued in a homotopy limit of higher categories.
+Derived stacks and hypercovers use that framework
+\cite[\S1.2.12]{hag}. The product calculation above already records
+the higher Amitsur degrees and their total signs for affine
+complexes.
+\chapter{Derived affine intersections and cotangent complexes}
+\label{ch:derived-affines}
+
+Let \(k\) be a field of characteristic zero. In this chapter algebras
+are commutative dg \(k\)-algebras in cochain degrees \(\leq0\),
+with \(ab=(-1)^{|a||b|}ba\). An ordinary \(k\)-algebra is placed
+in degree zero. All constructions use graded commutativity and
+specified dg algebra maps. The affine convention reverses algebra
+maps. We call the object represented by \(B\) a derived affine and
+regard quasi-isomorphic algebras as equivalent. We prove the affine
+calculations underlying this notation, following the scope of
+\cite[\S\S2.2 and 4.1]{toen}.
+
+\section{Semifree resolutions of commutative dg algebras}
+
+\begin{definition}[Semifree algebra extension]\label{res:A01}
+A semifree extension of \(A\) is a graded-commutative polynomial
+extension on homogeneous variables adjoined in stages, with
+the differential of a variable in the algebra at earlier stages.
+The free graded-commutative algebra is polynomial in even variables
+and exterior in odd variables. If prescribed differentials are
+cycles of the required degrees, the unique graded derivation extending
+them is a differential.
+\end{definition}
+\begin{proof}
+The Koszul sign rule gives a well-defined derivation on the free
+graded-commutative algebra. In particular for an odd variable \(x\),
+\(d(x^2)=d(x)x-xd(x)=0\) since \(d(x)\) is even.
+The cross terms in applying a degree-one derivation twice cancel.
+Thus \(d^2\) vanishes on every monomial if it vanishes on the base
+and each variable. Each specified cycle ensures that condition.
+\end{proof}
+
+\begin{theorem}[Semifree resolution and lifting]\label{res:A02}
+Every map \(A\to B\) admits a factorization
+\(A\to P\twoheadrightarrow B\) with \(P\) semifree over \(A\)
+and the second arrow a degreewise surjective quasi-isomorphism.
+A map from a semifree extension lifts through any such surjective
+quasi-isomorphism of \(A\)-algebras.
+\end{theorem}
+\begin{proof}
+In degree zero adjoin cycles mapping to all elements of \(B^0\).
+For each \(b\in B^n\), \(n<0\), first adjoin a cycle \(v_b\)
+in degree \(n+1\) mapping to \(db\), then \(u_b\) in degree \(n\)
+with \(du_b=v_b\), mapping to \(b\). This makes the map onto \(B\)
+surjective in every degree. At the next stage, for every homogeneous
+cycle \(z\) in the kernel adjoin a generator of degree \(|z|-1\)
+with differential \(z\) and image zero. Repeat countably many times.
+Every element is a finite polynomial using finitely many stages.
+Thus every kernel cycle in the union occurred at a stage and became
+a boundary at the next. The kernel is acyclic and the surjection is
+a quasi-isomorphism.
+
+For lifting through \(C\twoheadrightarrow D\), choose the lift of a
+generator \(x\) after all generators in \(dx\) have been lifted.
+A candidate lift \(c\) has \(dc-\widetilde{dx}\) a cycle in the kernel.
+Subtract a primitive of that cycle to get the required lift. Proceed
+through the stages. In degree zero the candidate is already a cycle
+because the target is nonpositive. The construction respects the base
+and is defined on the union.
+\end{proof}
+
+\begin{lemma}[K-flatness of a semifree algebra]\label{res:A03}
+A semifree \(P\) over \(A\), regarded as a dg \(A\)-module,
+is K-flat.
+\end{lemma}
+\begin{proof}
+At one adjoining stage use the increasing filtration by total degree
+in the new variables. Differentiating such a variable removes it and
+gives a coefficient from the previous stage. Each graded quotient of
+the filtration is therefore a direct sum of shifts of the previous
+stage as a dg module. The inclusions are split as graded modules by
+the monomial bases. Tensor with an acyclic dg \(A\)-module. Starting
+from \(A\), the quotients after tensoring are acyclic and the graded
+splittings preserve exactness of successive sequences after tensoring.
+The long exact sequence and then an exact filtered union prove
+acyclicity at that adjoining stage. Induct through the stages, using
+filtered exactness at their unions.
+\end{proof}
+
+\section{Derived base change and intersection}
+
+\begin{proposition}[Tensor model for a derived affine base change]\label{res:A04}
+For \(A\to B\) and \(A\to C\), a model of the derived tensor product
+is \(P\otimes_A C\) for a semifree surjection \(P\to B\) as in
+Result~\ref{res:A02}. A change of models gives a zigzag of algebra
+quasi-isomorphisms. Its zeroth cohomology is
+\[
+ H^0(P\otimes_A C)
+   \cong H^0(B)\otimes_{H^0(A)} H^0(C).
+\]
+\end{proposition}
+\begin{proof}
+Choose semifree surjective resolutions of both \(B\) and \(C\).
+Tensoring the two resolutions computes the derived tensor product of
+dg \(A\)-modules by Result~\ref{res:A03}. Replacing the second one
+by \(C\) is then a quasi-isomorphism by K-flatness of \(P\).
+For two choices for \(B\), lift the augmentation from one to the
+other by Result~\ref{res:A02}; the lifted map is a quasi-isomorphism
+by the comparison to \(B\). Tensor with the semifree model for \(C\)
+and use its K-flatness. This gives the stated zigzag of maps of
+commutative dg algebras, and the argument is symmetric in the two
+inputs. We use this construction as the derived affine fibre product
+model.
+
+Since all degrees are nonpositive, degree zero of the tensor is
+generated by \(P^0\otimes_{A^0}C^0\), and its boundaries are exactly
+the images obtained by using \(dP^{-1}\) in the first factor or
+\(dC^{-1}\) in the second. The balancing relations in degree zero
+come from \(A^0\). Its boundaries act as zero after the two
+quotients, so the result factors over \(H^0(A)\), giving the formula.
+\end{proof}
+
+\begin{example}[The Koszul model of a derived zero locus]\label{res:A05}
+Let \(A\) be ordinary and let \(f_1,\ldots,f_r\in A\).
+Regard \(A\) as an algebra over \(k[t_1,\ldots,t_r]\) by \(t_i\mapsto f_i\).
+The derived fibre over the zero section has algebra
+\[
+     A[e_1,\ldots,e_r],\qquad |e_i|=-1,\qquad de_i=f_i .
+\]
+If \(f_i\) form an \(A\)-regular sequence then this algebra resolves
+\(A/(f_1,\ldots,f_r)\). In that case the derived self-intersection
+of the closed locus over \(A\) has exterior generators in degree
+\(-1\) and zero differential over \(A/(f_1,\ldots,f_r)\).
+\end{example}
+\begin{proof}
+The analogous algebra with differential \(de_i=t_i\) is the Koszul
+resolution of \(k\) over the polynomial ring, because the variables
+are regular. The exactness is the Koszul resolution calculation
+\cite[RK-07]{ca-core}. It is semifree, so tensoring with \(A\)
+gives the derived fibre by Result~\ref{res:A04}.
+For a regular sequence in \(A\), the same Koszul exactness applies
+over \(A\). The displayed algebra is then a semifree resolution of
+the quotient over \(A\). Tensor with the quotient, which sends
+each \(f_i\) to zero. For example the derived self-intersection of
+the origin in \(\mathbb A^1_k\) has \(H^0=k\) and \(H^{-1}=k e_1\).
+\end{proof}
+
+\section{The cotangent calculation}
+
+Use \(\partial\) for a K\"ahler differential and \(d\) for the
+cochain differential. For a dg \(P\)-module, the usual graded Hom
+complex is formed using the Koszul rule for the degree of a
+homogeneous linear map.
+
+\begin{lemma}[Differentials on a semifree algebra]\label{res:A06}
+For \(A\to P\) semifree, the dg module \(\Omega_{P/A}\) is free
+as a graded \(P\)-module on \(\partial x\) for the variables \(x\),
+where \(|\partial x|=|x|\) and \(d(\partial x)=\partial(dx)\).
+It is a semifree \(P\)-module. Its base change to any dg \(P\)-algebra
+is again semifree. The complex
+\(\operatorname{Hom}^{\bullet}_P(\Omega_{P/A},M)\) identifies with
+graded \(A\)-derivations \(P\to M\) with differential the graded
+commutator with \(d\).
+\end{lemma}
+\begin{proof}
+The graded Leibniz relation extends arbitrary values on the free
+generators uniquely to a graded derivation, and it respects
+the symmetric and exterior relations. Hence the graded module of
+differentials has the stated basis. The relation requiring
+\(\partial\) to commute with the cochain differential determines
+the formula for \(d\) on that basis. The derivative of \(dx\) uses
+only earlier generators, so the corresponding filtration gives
+semifreeness and is preserved by base change. The Hom--derivation
+identification now commutes with its differential by evaluating
+the commutators on the same basis.
+\end{proof}
+
+\begin{lemma}[A relative polynomial path comparison]\label{res:A07}
+Let \(Q\twoheadrightarrow B\) be a surjective quasi-isomorphism of
+nonpositive dg algebras. Let \(A\to P\) be semifree with a map
+\(P\to B\).
+Any two \(A\)-algebra maps \(P\to Q\) over \(B\) are joined by a
+polynomial dg path over \(B\). Consequently their induced maps
+\[
+ B\otimes_P\Omega_{P/A}\longrightarrow B\otimes_Q\Omega_{Q/A}
+\]
+are chain homotopic as maps of dg \(B\)-modules.
+\end{lemma}
+\begin{proof}
+Let \(k[t,dt]\) have \(|t|=0\), \(|dt|=1\) and differential
+\(d(t)=dt\), with \(dt\) exterior. Endpoints set \(t=0,1\) and
+\(dt=0\). The inclusion of constants and either evaluation are
+mutual homotopy inverses as complexes by polynomial integration.
+On a homogeneous coefficient \(y\), the integration of
+\(y\,g(t)dt\) has sign \((-1)^{|y|}\).
+The identity \(dH+Hd=\operatorname{ev}_1-\operatorname{ev}_0\)
+for this integration follows by the fundamental formula for a
+polynomial derivative and the opposite signs on the two terms
+containing \(d y\). Integers are invertible in \(k\).
+
+Take the relative path algebra
+\[
+ T=\tau_{\leq0}\bigl(Q[t,dt]\times_{B[t,dt]} B\bigr),
+\]
+where the truncation keeps the kernel of \(d\) in degree zero and
+all degrees below zero. This is a subalgebra. Write \(K\) for the
+acyclic kernel of \(Q\to B\). Before truncation, evaluation at zero
+has section given by constants and kernel
+\(K\otimes_k\ker(k[t,dt]\to k)\) for evaluation at zero.
+This kernel is contractible using integration from zero to \(t\).
+The good truncation preserves the cohomology comparison to \(Q\).
+The projection \(Q\times_B Q\to Q\) is also a quasi-isomorphism
+since its kernel is \(K\). Therefore
+\(\operatorname{ev}_{01}:T\to Q\times_B Q\) is a quasi-isomorphism.
+It is surjective in negative degrees using linear interpolation
+of endpoints. In degree zero, if endpoints differ by \(w\in K^0\),
+pick \(z\in K^{-1}\) with \(dz=w\). Then the path
+\(q_0+tw-z\,dt\) is closed and has the required endpoints.
+Use the lifting part of Result~\ref{res:A02} for \(P\) to get the
+path.
+
+To compare on differentials, differentiate in the \(Q\)-variable
+of the path, leaving \(t,dt\) constant. This maps differentials
+into \(\Omega_{Q/A}[t,dt]\). After extension along \(Q\to B\), the
+original path has constant image in \(B[t,dt]\). The derivative
+therefore induces a dg \(B\)-linear map into
+\((B\otimes_Q\Omega_{Q/A})[t,dt]\). Its endpoint maps are the two
+maps in the statement. Integration gives a graded \(B\)-linear
+chain homotopy between them.
+\end{proof}
+
+\begin{theorem}[The affine cotangent complex]\label{res:A08}
+For a semifree surjective resolution \(P\to B\) over \(A\), the
+object
+\[
+       L_{B/A}=B\otimes_P\Omega_{P/A}
+\]
+is independent of the resolution up to canonical isomorphism in
+the homotopy category of dg \(B\)-modules. It is represented by
+a K-projective, K-flat dg \(B\)-module.
+\end{theorem}
+\begin{proof}
+For two resolutions lift the maps over \(B\) in both directions
+by Result~\ref{res:A02}. Their composites and the identities
+agree after augmentation. Result~\ref{res:A07} proves that their
+differential maps are mutual homotopy inverses and independent
+of the chosen lifts. Composing three comparisons respects these
+homotopy classes, giving the canonical isomorphisms.
+The dg module in the statement is semifree by
+Result~\ref{res:A06}. A semifree dg module is K-flat by its
+filtration with shifted free quotients. To see K-projectivity,
+a cocycle map from it into an acyclic dg module can be made
+nullhomotopic successively on generators. On a new generator,
+subtract the already specified homotopy on its differential.
+The resulting prescribed boundary equation has a cycle on
+its left, so acyclicity supplies a primitive. The Koszul sign
+determines the module-linear extension of the homotopy.
+Apply this in every degree by shifting the target. Thus the
+Hom complex into an acyclic dg module is acyclic.
+\end{proof}
+
+\begin{theorem}[Transitivity and base change of the cotangent complex]\label{res:A09}
+For \(A\to B\to C\) as above there is a natural triangle in \(D(C)\)
+\[
+ C\otimes_B^{\mathbf L}L_{B/A}\longrightarrow L_{C/A}
+ \longrightarrow L_{C/B}\longrightarrow
+ (C\otimes_B^{\mathbf L}L_{B/A})[1].
+\]
+For \(A\to A'\), if \(P\to B\) is semifree and
+\(B'=A'\otimes_A P\) is the derived base-change model, then
+\[
+       L_{B'/A'}\simeq B'\otimes_P \Omega_{P/A}.
+\]
+In the flat ordinary base-change case, the second formula identifies
+with extension of scalars on \(L_{B/A}\) along \(B\to A'\otimes_A B\).
+\end{theorem}
+\begin{proof}
+Choose \(P\to B\) semifree over \(A\), then resolve \(C\) by \(Q\)
+semifree over \(P\) along \(P\to B\to C\), using
+Result~\ref{res:A02}. Concatenation makes \(Q\) semifree over \(A\).
+The variable bases give a graded-split exact sequence of dg modules
+\[
+ 0\longrightarrow Q\otimes_P\Omega_{P/A}
+ \longrightarrow \Omega_{Q/A}
+ \longrightarrow \Omega_{Q/P}\longrightarrow0 .
+\]
+The first submodule is a subcomplex since the differential of
+a \(P\)-variable uses only \(P\)-variables. The quotient is specified
+by setting \(\partial x=0\) for each \(P\)-variable \(x\).
+Tensor with \(C\) over \(Q\); graded splitness preserves exactness.
+The first resulting term equals
+\(C\otimes_B(B\otimes_P\Omega_{P/A})\), with the factor in parentheses
+K-flat by Result~\ref{res:A08}. The middle term computes \(L_{C/A}\).
+For the last term \(B\otimes_P Q\) is semifree over \(B\) and
+quasi-isomorphic to \(C\): the map from \(Q\) is a quasi-isomorphism
+by Result~\ref{res:A03}, and \(Q\to C\) is a quasi-isomorphism.
+The map \(B\otimes_PQ\to C\) is surjective since \(Q\to C\) is.
+Relative differentials commute with extension of scalars by the
+variable formula. Thus the last term computes \(L_{C/B}\).
+The exact sequence supplies the triangle. To compare two resolved
+diagrams, lift first on \(P\) and then on the variables of \(Q\),
+over the prescribed maps on \(B,C\). Such a comparison commutes
+with the injection and quotient maps on differentials. For two
+choices of comparison to \(P'\to Q'\), choose a relative path
+between the two maps on \(P\) over \(B'\) by
+Result~\ref{res:A07}. The map \(P'\to Q'\) carries it to the
+relative path algebra of \(Q'\to C'\), which now has a \(P\)-algebra
+structure. The endpoint map to \(Q'\times_{C'}Q'\) is a surjective
+quasi-isomorphism. Lift through it using the semifree \(Q\)-cells
+over \(P\). This yields a path of diagram comparisons with the
+chosen path on \(P\). Differentiation and integration as in
+Result~\ref{res:A07} give compatible homotopies on the short exact
+sequences, proving independence and naturality in the derived
+category (with extension of scalars on the target modules).
+
+Finally \(A'\otimes_A P\) is itself semifree over \(A'\);
+the relative variables give the claimed expression on the same
+generators and differential. For flat ordinary base change the
+map \(A'\otimes_A P\to A'\otimes_A B\) is a surjective
+quasi-isomorphism. Using this resolution and the associativity
+of tensor gives the final identification.
+\end{proof}
+
+\begin{proposition}[Square-zero tangent calculation]\label{res:A10}
+Let \(M\) be a nonpositive dg \(B\)-module. Augmented maps
+\(P\to B\ltimes M\) of \(A\)-algebras over the fixed augmentation
+\(P\to B\) are naturally the degree-zero cycles in
+\(\operatorname{Hom}_B^\bullet(L_{B/A},M)\) for the model of
+Result~\ref{res:A08}. Their classes modulo polynomial dg homotopy
+over \(B\) are \(H^0\mathrm{RHom}_B(L_{B/A},M)\).
+All groups \(H^i\mathrm{RHom}_B(L_{B/A},M)\) are computed by the
+same Hom complex.
+\end{proposition}
+\begin{proof}
+The multiplication on \(B\ltimes M\) has square-zero ideal \(M\).
+The difference of an augmented map from the map with zero
+\(M\)-component is therefore an \(A\)-derivation by the Leibniz rule.
+Commutation with the differential is its degree-zero cocycle
+condition. Result~\ref{res:A06} gives the correspondence, and
+K-projectivity in Result~\ref{res:A08} computes the derived Hom.
+
+For the assertion on classes, a polynomial path is a closed
+degree-zero derivation with values in \(M[t,dt]\) over the
+constant augmentation, with a good truncation if necessary.
+Integration as in Result~\ref{res:A07} makes the endpoints differ
+by a Hom boundary. Conversely, if two cocycles \(f_0,f_1\) have
+\(f_1-f_0=d_{\rm Hom}h\) for \(h\) of degree \(-1\), the path
+\(f_0+t(f_1-f_0)-h\,dt\), using the tensor sign convention, is
+closed of degree zero. Here the expression means the map into
+\(M\otimes_k k[t,dt]\) obtained by tensoring graded maps with the
+specified forms. It is well-defined by the graded tensor sign
+on homogeneous arguments. Its degree-zero values on closed
+elements are closed, so it factors through the good truncation.
+It therefore gives the required dg algebra path. This proves
+the quotient identification.
+\end{proof}
+
+\section{Complete intersections and compatibility with descent}
+
+\begin{example}[The conormal complex and its tangent space]\label{res:A11}
+Let \(B=S/(f_1,\ldots,f_r)\) with \(S=k[x_1,\ldots,x_s]\) and
+\(f_i\) regular in \(S\). Then \(L_{B/k}\) is represented by
+\[
+    [\,B^r\xrightarrow{(\partial f_i/\partial x_j)}B^s\,]
+\]
+in degrees \(-1,0\), with column \(i\) the derivative of \(f_i\).
+In particular \(H^1\mathrm{RHom}_B(L_{B/k},B)\) is the first-order
+deformation space of the marked algebra in
+\cite[T04]{ca-topics}.
+\end{example}
+\begin{proof}
+Use the semifree Koszul algebra over \(S\) of Result~\ref{res:A05}
+and regard the variables \(x_j\) as its first cells over \(k\).
+The differential on \(\partial e_i\) is \(\partial f_i\);
+the differentials on \(\partial x_j\) vanish. Tensor with \(B\)
+to get precisely the two-term complex.
+Taking Hom into \(B\) gives in degree one the cokernel of
+the transposed Jacobian. The explicit square-zero presentation
+calculation in \cite[T02--T04]{ca-topics} identifies that cokernel
+with the deformation classes over the dual numbers.
+\end{proof}
+
+\begin{proposition}[Faithfully flat locality of the affine tangent calculation]\label{res:A12}
+Let \(A\) be an ordinary \(k\)-algebra, \(A\to C\) faithfully
+flat, and \(B\) an ordinary \(A\)-algebra. Assume the affine
+cotangent complex \(L_{B/A}\) is represented by a bounded complex
+\(P_L\) of finite projective \(B\)-modules. Set
+\(C_p=C^{\otimes_A(p+1)}\) and \(B_p=B\otimes_A C_p\).
+For any complex \(M\) of \(B\)-modules there is a comparison
+\[
+ \mathrm{RHom}_B(L_{B/A},M)
+ \simeq \operatorname{Tot}^{\Pi}_{p\geq0}
+     \mathrm{RHom}_{B_p}(L_{B_p/C_p}, B_p\otimes_B M).
+\]
+When all local tangent calculations are made in the ordinary
+degree-zero case, this compares their classes and higher
+cohomology by the indicated full total complex.
+\end{proposition}
+\begin{proof}
+Base change \(B\to B\otimes_A C\) is faithfully flat.
+Each \(C_p\) is flat over \(A\). The base-change part of
+Result~\ref{res:A09} uses a single semifree model over \(A\)
+and its compatible scalar extensions to the whole Amitsur diagram.
+Thus \(B_p\otimes_B P_L\) represents \(L_{B_p/C_p}\).
+A comparison from \(P_L\) to the cofibrant cotangent model can
+be chosen as a chain map since \(P_L\) is K-projective, and its
+flat scalar extensions commute with the cofaces. Apply
+Result~\ref{res:F08} over \(B\) to \(P_L\) and \(M\), interpreting
+the Hom complexes using these common models.
+\end{proof}
+
+The affine calculations here use a characteristic-zero commutative
+dg model. In general, derived stacks involve functors of points,
+homotopy-coherent descent and representability. These broader
+constructions, as well as the all-characteristic simplicial
+setting, are developed in \cite[\S\S1.2.12 and 2.2.3]{hag} and
+\cite[\S\S2 and 4]{toen}.
+\backmatter
+\begingroup
+\small
+\begin{thebibliography}{20}
+\setlength{\itemsep}{0.2\baselineskip}
+\setlength{\parsep}{0pt}
+\bibitem{p103} MathGenome. \emph{Algebra Core} (P1-03). v0.22.0,
+  Chapters 2, 4, 6--7, 10--11.
+\bibitem{ha-core} MathGenome. \emph{Advanced Homological Algebra}.
+  Independently audited notes, 19 November 2026 snapshot.
+\bibitem{ca-core} MathGenome. \emph{Advanced Commutative Algebra:
+  Differentials, Smoothness, and Local Algebra}. Independently audited
+  notes, 19 November 2026 snapshot.
+\bibitem{ca-topics} MathGenome. \emph{Topics in Commutative Algebra}.
+  20 November 2026, results L01--L11, D01--D09 and T01--T04.
+\bibitem{keller} B. Keller. On differential graded categories.
+  In \emph{Proceedings of the International Congress of Mathematicians},
+  Madrid, Vol. II, 2006, pp. 151--190. \url{https://arxiv.org/abs/math/0601185}.
+\bibitem{yekutieli} A. Yekutieli. \emph{Derived Categories}.
+  Cambridge University Press, 2020, Chapters 3, 12 and 13.
+\bibitem{hovey} M. Hovey. \emph{Model Categories}.
+  Mathematical Surveys and Monographs 63, American Mathematical Society,
+  1999. Author manuscript archived with the accompanying corrections.
+\bibitem{hovey-errata} M. Hovey. Corrections to \emph{Model Categories}.
+  Author's errata.
+\bibitem{riehl} E. Riehl. \emph{Categorical Homotopy Theory}.
+  New Mathematical Monographs 24, Cambridge University Press, 2014.
+\bibitem{st-derived} The Stacks Project Authors. \emph{Derived Categories}.
+  \url{https://stacks.math.columbia.edu/tag/05QI}.
+\bibitem{st-sheaf} The Stacks Project Authors. \emph{Cohomology of Sheaves}.
+  \url{https://stacks.math.columbia.edu/tag/01DW}.
+\bibitem{st-duality} The Stacks Project Authors. \emph{Duality for Schemes}.
+  \url{https://stacks.math.columbia.edu/tag/0DWE}.
+\bibitem{st-descent} The Stacks Project Authors. \emph{Descent for modules}
+  and \emph{Descent of quasi-coherent sheaves}, Chapter 35, \S\S3--5.
+  \url{https://stacks.math.columbia.edu/tag/023F}.
+\bibitem{toen} B. To\"en. Derived algebraic geometry.
+  \emph{EMS Surveys in Mathematical Sciences} 1 (2014), 153--240.
+  \url{https://arxiv.org/abs/1401.1044}.
+\bibitem{hag} B. To\"en and G. Vezzosi.
+  \emph{Homotopical Algebraic Geometry II}.
+  Memoirs of the American Mathematical Society 193 (2008), no.\ 902.
+  \url{https://arxiv.org/abs/math/0404373}.
+\end{thebibliography}
+\endgroup
+\end{document}

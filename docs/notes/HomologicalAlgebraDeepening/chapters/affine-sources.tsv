@@ -1,0 +1,13 @@
+id	source	dependencies
+A01	Toën, Derived Algebraic Geometry §2.2 and characteristic-zero discussion, archived PDF pp. 30–33, 48–50	Koszul signs and free graded-commutative algebra
+A02	Toën, Derived Algebraic Geometry §2.2, archived PDF p. 30; explicit semifree factorization and lifting	A01; adjoining generators and acyclic kernels
+A03	Stacks, Cohomology of Sheaves §26 K-flat complexes; semifree algebra filtration here	A01; exact filtered colimits and monomial filtration
+A04	Toën, Derived Algebraic Geometry §§2.2, 3.1, archived PDF pp. 30–32, 35–37	A02, A03; two semifree replacements
+A05	Toën, Derived Algebraic Geometry §§1, 3.1; core Advanced Commutative Algebra RK-07	A02, A04; core RK-07 Koszul exactness
+A06	Toën, Derived Algebraic Geometry §4.1, archived PDF pp. 50–52; explicit variable differential	A01; graded Leibniz rule
+A07	Toën, Derived Algebraic Geometry §4.1, archived PDF pp. 50–52; elementary relative path comparison here	A02, A06; polynomial de Rham contraction and acyclic kernel
+A08	Toën, Derived Algebraic Geometry §4.1, archived PDF pp. 50–52	A06, A07; cellwise proof of K-projectivity
+A09	Toën, Derived Algebraic Geometry §4.1, archived PDF pp. 50–52; graded-split relative differential sequence	A02, A03, A06, A07, A08; exact sequence triangle
+A10	Toën, Derived Algebraic Geometry §4.1, archived PDF pp. 50–52; square-zero calculation	A06, A07, A08; Hom differential and polynomial homotopy
+A11	Toën, Derived Algebraic Geometry §4.1; MathGenome Topics in Commutative Algebra T02–T04	A05, A08; Topics in Commutative Algebra T02–T04
+A12	Toën–Vezzosi HAG II §§1.2.12, 2.2.3, archived PDF pp. 61, 158; perfect-coefficient affine comparison	A09, F08; faithful flatness and comparison of K-projective models

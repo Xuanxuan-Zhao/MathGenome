@@ -1,0 +1,408 @@
+\chapter{Derived affine intersections and cotangent complexes}
+\label{ch:derived-affines}
+
+Let \(k\) be a field of characteristic zero. In this chapter algebras
+are commutative dg \(k\)-algebras in cochain degrees \(\leq0\),
+with \(ab=(-1)^{|a||b|}ba\). An ordinary \(k\)-algebra is placed
+in degree zero. All constructions use graded commutativity and
+specified dg algebra maps. The affine convention reverses algebra
+maps. We call the object represented by \(B\) a derived affine and
+regard quasi-isomorphic algebras as equivalent. We prove the affine
+calculations underlying this notation, following the scope of
+\cite[\S\S2.2 and 4.1]{toen}.
+
+\section{Semifree resolutions of commutative dg algebras}
+
+\begin{definition}[Semifree algebra extension]\label{res:A01}
+A semifree extension of \(A\) is a graded-commutative polynomial
+extension on homogeneous variables adjoined in stages, with
+the differential of a variable in the algebra at earlier stages.
+The free graded-commutative algebra is polynomial in even variables
+and exterior in odd variables. If prescribed differentials are
+cycles of the required degrees, the unique graded derivation extending
+them is a differential.
+\end{definition}
+\begin{proof}
+The Koszul sign rule gives a well-defined derivation on the free
+graded-commutative algebra. In particular for an odd variable \(x\),
+\(d(x^2)=d(x)x-xd(x)=0\) since \(d(x)\) is even.
+The cross terms in applying a degree-one derivation twice cancel.
+Thus \(d^2\) vanishes on every monomial if it vanishes on the base
+and each variable. Each specified cycle ensures that condition.
+\end{proof}
+
+\begin{theorem}[Semifree resolution and lifting]\label{res:A02}
+Every map \(A\to B\) admits a factorization
+\(A\to P\twoheadrightarrow B\) with \(P\) semifree over \(A\)
+and the second arrow a degreewise surjective quasi-isomorphism.
+A map from a semifree extension lifts through any such surjective
+quasi-isomorphism of \(A\)-algebras.
+\end{theorem}
+\begin{proof}
+In degree zero adjoin cycles mapping to all elements of \(B^0\).
+For each \(b\in B^n\), \(n<0\), first adjoin a cycle \(v_b\)
+in degree \(n+1\) mapping to \(db\), then \(u_b\) in degree \(n\)
+with \(du_b=v_b\), mapping to \(b\). This makes the map onto \(B\)
+surjective in every degree. At the next stage, for every homogeneous
+cycle \(z\) in the kernel adjoin a generator of degree \(|z|-1\)
+with differential \(z\) and image zero. Repeat countably many times.
+Every element is a finite polynomial using finitely many stages.
+Thus every kernel cycle in the union occurred at a stage and became
+a boundary at the next. The kernel is acyclic and the surjection is
+a quasi-isomorphism.
+
+For lifting through \(C\twoheadrightarrow D\), choose the lift of a
+generator \(x\) after all generators in \(dx\) have been lifted.
+A candidate lift \(c\) has \(dc-\widetilde{dx}\) a cycle in the kernel.
+Subtract a primitive of that cycle to get the required lift. Proceed
+through the stages. In degree zero the candidate is already a cycle
+because the target is nonpositive. The construction respects the base
+and is defined on the union.
+\end{proof}
+
+\begin{lemma}[K-flatness of a semifree algebra]\label{res:A03}
+A semifree \(P\) over \(A\), regarded as a dg \(A\)-module,
+is K-flat.
+\end{lemma}
+\begin{proof}
+At one adjoining stage use the increasing filtration by total degree
+in the new variables. Differentiating such a variable removes it and
+gives a coefficient from the previous stage. Each graded quotient of
+the filtration is therefore a direct sum of shifts of the previous
+stage as a dg module. The inclusions are split as graded modules by
+the monomial bases. Tensor with an acyclic dg \(A\)-module. Starting
+from \(A\), the quotients after tensoring are acyclic and the graded
+splittings preserve exactness of successive sequences after tensoring.
+The long exact sequence and then an exact filtered union prove
+acyclicity at that adjoining stage. Induct through the stages, using
+filtered exactness at their unions.
+\end{proof}
+
+\section{Derived base change and intersection}
+
+\begin{proposition}[Tensor model for a derived affine base change]\label{res:A04}
+For \(A\to B\) and \(A\to C\), a model of the derived tensor product
+is \(P\otimes_A C\) for a semifree surjection \(P\to B\) as in
+Result~\ref{res:A02}. A change of models gives a zigzag of algebra
+quasi-isomorphisms. Its zeroth cohomology is
+\[
+ H^0(P\otimes_A C)
+   \cong H^0(B)\otimes_{H^0(A)} H^0(C).
+\]
+\end{proposition}
+\begin{proof}
+Choose semifree surjective resolutions of both \(B\) and \(C\).
+Tensoring the two resolutions computes the derived tensor product of
+dg \(A\)-modules by Result~\ref{res:A03}. Replacing the second one
+by \(C\) is then a quasi-isomorphism by K-flatness of \(P\).
+For two choices for \(B\), lift the augmentation from one to the
+other by Result~\ref{res:A02}; the lifted map is a quasi-isomorphism
+by the comparison to \(B\). Tensor with the semifree model for \(C\)
+and use its K-flatness. This gives the stated zigzag of maps of
+commutative dg algebras, and the argument is symmetric in the two
+inputs. We use this construction as the derived affine fibre product
+model.
+
+Since all degrees are nonpositive, degree zero of the tensor is
+generated by \(P^0\otimes_{A^0}C^0\), and its boundaries are exactly
+the images obtained by using \(dP^{-1}\) in the first factor or
+\(dC^{-1}\) in the second. The balancing relations in degree zero
+come from \(A^0\). Its boundaries act as zero after the two
+quotients, so the result factors over \(H^0(A)\), giving the formula.
+\end{proof}
+
+\begin{example}[The Koszul model of a derived zero locus]\label{res:A05}
+Let \(A\) be ordinary and let \(f_1,\ldots,f_r\in A\).
+Regard \(A\) as an algebra over \(k[t_1,\ldots,t_r]\) by \(t_i\mapsto f_i\).
+The derived fibre over the zero section has algebra
+\[
+     A[e_1,\ldots,e_r],\qquad |e_i|=-1,\qquad de_i=f_i .
+\]
+If \(f_i\) form an \(A\)-regular sequence then this algebra resolves
+\(A/(f_1,\ldots,f_r)\). In that case the derived self-intersection
+of the closed locus over \(A\) has exterior generators in degree
+\(-1\) and zero differential over \(A/(f_1,\ldots,f_r)\).
+\end{example}
+\begin{proof}
+The analogous algebra with differential \(de_i=t_i\) is the Koszul
+resolution of \(k\) over the polynomial ring, because the variables
+are regular. The exactness is the Koszul resolution calculation
+\cite[RK-07]{ca-core}. It is semifree, so tensoring with \(A\)
+gives the derived fibre by Result~\ref{res:A04}.
+For a regular sequence in \(A\), the same Koszul exactness applies
+over \(A\). The displayed algebra is then a semifree resolution of
+the quotient over \(A\). Tensor with the quotient, which sends
+each \(f_i\) to zero. For example the derived self-intersection of
+the origin in \(\mathbb A^1_k\) has \(H^0=k\) and \(H^{-1}=k e_1\).
+\end{proof}
+
+\section{The cotangent calculation}
+
+Use \(\partial\) for a K\"ahler differential and \(d\) for the
+cochain differential. For a dg \(P\)-module, the usual graded Hom
+complex is formed using the Koszul rule for the degree of a
+homogeneous linear map.
+
+\begin{lemma}[Differentials on a semifree algebra]\label{res:A06}
+For \(A\to P\) semifree, the dg module \(\Omega_{P/A}\) is free
+as a graded \(P\)-module on \(\partial x\) for the variables \(x\),
+where \(|\partial x|=|x|\) and \(d(\partial x)=\partial(dx)\).
+It is a semifree \(P\)-module. Its base change to any dg \(P\)-algebra
+is again semifree. The complex
+\(\operatorname{Hom}^{\bullet}_P(\Omega_{P/A},M)\) identifies with
+graded \(A\)-derivations \(P\to M\) with differential the graded
+commutator with \(d\).
+\end{lemma}
+\begin{proof}
+The graded Leibniz relation extends arbitrary values on the free
+generators uniquely to a graded derivation, and it respects
+the symmetric and exterior relations. Hence the graded module of
+differentials has the stated basis. The relation requiring
+\(\partial\) to commute with the cochain differential determines
+the formula for \(d\) on that basis. The derivative of \(dx\) uses
+only earlier generators, so the corresponding filtration gives
+semifreeness and is preserved by base change. The Hom--derivation
+identification now commutes with its differential by evaluating
+the commutators on the same basis.
+\end{proof}
+
+\begin{lemma}[A relative polynomial path comparison]\label{res:A07}
+Let \(Q\twoheadrightarrow B\) be a surjective quasi-isomorphism of
+nonpositive dg algebras. Let \(A\to P\) be semifree with a map
+\(P\to B\).
+Any two \(A\)-algebra maps \(P\to Q\) over \(B\) are joined by a
+polynomial dg path over \(B\). Consequently their induced maps
+\[
+ B\otimes_P\Omega_{P/A}\longrightarrow B\otimes_Q\Omega_{Q/A}
+\]
+are chain homotopic as maps of dg \(B\)-modules.
+\end{lemma}
+\begin{proof}
+Let \(k[t,dt]\) have \(|t|=0\), \(|dt|=1\) and differential
+\(d(t)=dt\), with \(dt\) exterior. Endpoints set \(t=0,1\) and
+\(dt=0\). The inclusion of constants and either evaluation are
+mutual homotopy inverses as complexes by polynomial integration.
+On a homogeneous coefficient \(y\), the integration of
+\(y\,g(t)dt\) has sign \((-1)^{|y|}\).
+The identity \(dH+Hd=\operatorname{ev}_1-\operatorname{ev}_0\)
+for this integration follows by the fundamental formula for a
+polynomial derivative and the opposite signs on the two terms
+containing \(d y\). Integers are invertible in \(k\).
+
+Take the relative path algebra
+\[
+ T=\tau_{\leq0}\bigl(Q[t,dt]\times_{B[t,dt]} B\bigr),
+\]
+where the truncation keeps the kernel of \(d\) in degree zero and
+all degrees below zero. This is a subalgebra. Write \(K\) for the
+acyclic kernel of \(Q\to B\). Before truncation, evaluation at zero
+has section given by constants and kernel
+\(K\otimes_k\ker(k[t,dt]\to k)\) for evaluation at zero.
+This kernel is contractible using integration from zero to \(t\).
+The good truncation preserves the cohomology comparison to \(Q\).
+The projection \(Q\times_B Q\to Q\) is also a quasi-isomorphism
+since its kernel is \(K\). Therefore
+\(\operatorname{ev}_{01}:T\to Q\times_B Q\) is a quasi-isomorphism.
+It is surjective in negative degrees using linear interpolation
+of endpoints. In degree zero, if endpoints differ by \(w\in K^0\),
+pick \(z\in K^{-1}\) with \(dz=w\). Then the path
+\(q_0+tw-z\,dt\) is closed and has the required endpoints.
+Use the lifting part of Result~\ref{res:A02} for \(P\) to get the
+path.
+
+To compare on differentials, differentiate in the \(Q\)-variable
+of the path, leaving \(t,dt\) constant. This maps differentials
+into \(\Omega_{Q/A}[t,dt]\). After extension along \(Q\to B\), the
+original path has constant image in \(B[t,dt]\). The derivative
+therefore induces a dg \(B\)-linear map into
+\((B\otimes_Q\Omega_{Q/A})[t,dt]\). Its endpoint maps are the two
+maps in the statement. Integration gives a graded \(B\)-linear
+chain homotopy between them.
+\end{proof}
+
+\begin{theorem}[The affine cotangent complex]\label{res:A08}
+For a semifree surjective resolution \(P\to B\) over \(A\), the
+object
+\[
+       L_{B/A}=B\otimes_P\Omega_{P/A}
+\]
+is independent of the resolution up to canonical isomorphism in
+the homotopy category of dg \(B\)-modules. It is represented by
+a K-projective, K-flat dg \(B\)-module.
+\end{theorem}
+\begin{proof}
+For two resolutions lift the maps over \(B\) in both directions
+by Result~\ref{res:A02}. Their composites and the identities
+agree after augmentation. Result~\ref{res:A07} proves that their
+differential maps are mutual homotopy inverses and independent
+of the chosen lifts. Composing three comparisons respects these
+homotopy classes, giving the canonical isomorphisms.
+The dg module in the statement is semifree by
+Result~\ref{res:A06}. A semifree dg module is K-flat by its
+filtration with shifted free quotients. To see K-projectivity,
+a cocycle map from it into an acyclic dg module can be made
+nullhomotopic successively on generators. On a new generator,
+subtract the already specified homotopy on its differential.
+The resulting prescribed boundary equation has a cycle on
+its left, so acyclicity supplies a primitive. The Koszul sign
+determines the module-linear extension of the homotopy.
+Apply this in every degree by shifting the target. Thus the
+Hom complex into an acyclic dg module is acyclic.
+\end{proof}
+
+\begin{theorem}[Transitivity and base change of the cotangent complex]\label{res:A09}
+For \(A\to B\to C\) as above there is a natural triangle in \(D(C)\)
+\[
+ C\otimes_B^{\mathbf L}L_{B/A}\longrightarrow L_{C/A}
+ \longrightarrow L_{C/B}\longrightarrow
+ (C\otimes_B^{\mathbf L}L_{B/A})[1].
+\]
+For \(A\to A'\), if \(P\to B\) is semifree and
+\(B'=A'\otimes_A P\) is the derived base-change model, then
+\[
+       L_{B'/A'}\simeq B'\otimes_P \Omega_{P/A}.
+\]
+In the flat ordinary base-change case, the second formula identifies
+with extension of scalars on \(L_{B/A}\) along \(B\to A'\otimes_A B\).
+\end{theorem}
+\begin{proof}
+Choose \(P\to B\) semifree over \(A\), then resolve \(C\) by \(Q\)
+semifree over \(P\) along \(P\to B\to C\), using
+Result~\ref{res:A02}. Concatenation makes \(Q\) semifree over \(A\).
+The variable bases give a graded-split exact sequence of dg modules
+\[
+ 0\longrightarrow Q\otimes_P\Omega_{P/A}
+ \longrightarrow \Omega_{Q/A}
+ \longrightarrow \Omega_{Q/P}\longrightarrow0 .
+\]
+The first submodule is a subcomplex since the differential of
+a \(P\)-variable uses only \(P\)-variables. The quotient is specified
+by setting \(\partial x=0\) for each \(P\)-variable \(x\).
+Tensor with \(C\) over \(Q\); graded splitness preserves exactness.
+The first resulting term equals
+\(C\otimes_B(B\otimes_P\Omega_{P/A})\), with the factor in parentheses
+K-flat by Result~\ref{res:A08}. The middle term computes \(L_{C/A}\).
+For the last term \(B\otimes_P Q\) is semifree over \(B\) and
+quasi-isomorphic to \(C\): the map from \(Q\) is a quasi-isomorphism
+by Result~\ref{res:A03}, and \(Q\to C\) is a quasi-isomorphism.
+The map \(B\otimes_PQ\to C\) is surjective since \(Q\to C\) is.
+Relative differentials commute with extension of scalars by the
+variable formula. Thus the last term computes \(L_{C/B}\).
+The exact sequence supplies the triangle. To compare two resolved
+diagrams, lift first on \(P\) and then on the variables of \(Q\),
+over the prescribed maps on \(B,C\). Such a comparison commutes
+with the injection and quotient maps on differentials. For two
+choices of comparison to \(P'\to Q'\), choose a relative path
+between the two maps on \(P\) over \(B'\) by
+Result~\ref{res:A07}. The map \(P'\to Q'\) carries it to the
+relative path algebra of \(Q'\to C'\), which now has a \(P\)-algebra
+structure. The endpoint map to \(Q'\times_{C'}Q'\) is a surjective
+quasi-isomorphism. Lift through it using the semifree \(Q\)-cells
+over \(P\). This yields a path of diagram comparisons with the
+chosen path on \(P\). Differentiation and integration as in
+Result~\ref{res:A07} give compatible homotopies on the short exact
+sequences, proving independence and naturality in the derived
+category (with extension of scalars on the target modules).
+
+Finally \(A'\otimes_A P\) is itself semifree over \(A'\);
+the relative variables give the claimed expression on the same
+generators and differential. For flat ordinary base change the
+map \(A'\otimes_A P\to A'\otimes_A B\) is a surjective
+quasi-isomorphism. Using this resolution and the associativity
+of tensor gives the final identification.
+\end{proof}
+
+\begin{proposition}[Square-zero tangent calculation]\label{res:A10}
+Let \(M\) be a nonpositive dg \(B\)-module. Augmented maps
+\(P\to B\ltimes M\) of \(A\)-algebras over the fixed augmentation
+\(P\to B\) are naturally the degree-zero cycles in
+\(\operatorname{Hom}_B^\bullet(L_{B/A},M)\) for the model of
+Result~\ref{res:A08}. Their classes modulo polynomial dg homotopy
+over \(B\) are \(H^0\mathrm{RHom}_B(L_{B/A},M)\).
+All groups \(H^i\mathrm{RHom}_B(L_{B/A},M)\) are computed by the
+same Hom complex.
+\end{proposition}
+\begin{proof}
+The multiplication on \(B\ltimes M\) has square-zero ideal \(M\).
+The difference of an augmented map from the map with zero
+\(M\)-component is therefore an \(A\)-derivation by the Leibniz rule.
+Commutation with the differential is its degree-zero cocycle
+condition. Result~\ref{res:A06} gives the correspondence, and
+K-projectivity in Result~\ref{res:A08} computes the derived Hom.
+
+For the assertion on classes, a polynomial path is a closed
+degree-zero derivation with values in \(M[t,dt]\) over the
+constant augmentation, with a good truncation if necessary.
+Integration as in Result~\ref{res:A07} makes the endpoints differ
+by a Hom boundary. Conversely, if two cocycles \(f_0,f_1\) have
+\(f_1-f_0=d_{\rm Hom}h\) for \(h\) of degree \(-1\), the path
+\(f_0+t(f_1-f_0)-h\,dt\), using the tensor sign convention, is
+closed of degree zero. Here the expression means the map into
+\(M\otimes_k k[t,dt]\) obtained by tensoring graded maps with the
+specified forms. It is well-defined by the graded tensor sign
+on homogeneous arguments. Its degree-zero values on closed
+elements are closed, so it factors through the good truncation.
+It therefore gives the required dg algebra path. This proves
+the quotient identification.
+\end{proof}
+
+\section{Complete intersections and compatibility with descent}
+
+\begin{example}[The conormal complex and its tangent space]\label{res:A11}
+Let \(B=S/(f_1,\ldots,f_r)\) with \(S=k[x_1,\ldots,x_s]\) and
+\(f_i\) regular in \(S\). Then \(L_{B/k}\) is represented by
+\[
+    [\,B^r\xrightarrow{(\partial f_i/\partial x_j)}B^s\,]
+\]
+in degrees \(-1,0\), with column \(i\) the derivative of \(f_i\).
+In particular \(H^1\mathrm{RHom}_B(L_{B/k},B)\) is the first-order
+deformation space of the marked algebra in
+\cite[T04]{ca-topics}.
+\end{example}
+\begin{proof}
+Use the semifree Koszul algebra over \(S\) of Result~\ref{res:A05}
+and regard the variables \(x_j\) as its first cells over \(k\).
+The differential on \(\partial e_i\) is \(\partial f_i\);
+the differentials on \(\partial x_j\) vanish. Tensor with \(B\)
+to get precisely the two-term complex.
+Taking Hom into \(B\) gives in degree one the cokernel of
+the transposed Jacobian. The explicit square-zero presentation
+calculation in \cite[T02--T04]{ca-topics} identifies that cokernel
+with the deformation classes over the dual numbers.
+\end{proof}
+
+\begin{proposition}[Faithfully flat locality of the affine tangent calculation]\label{res:A12}
+Let \(A\) be an ordinary \(k\)-algebra, \(A\to C\) faithfully
+flat, and \(B\) an ordinary \(A\)-algebra. Assume the affine
+cotangent complex \(L_{B/A}\) is represented by a bounded complex
+\(P_L\) of finite projective \(B\)-modules. Set
+\(C_p=C^{\otimes_A(p+1)}\) and \(B_p=B\otimes_A C_p\).
+For any complex \(M\) of \(B\)-modules there is a comparison
+\[
+ \mathrm{RHom}_B(L_{B/A},M)
+ \simeq \operatorname{Tot}^{\Pi}_{p\geq0}
+     \mathrm{RHom}_{B_p}(L_{B_p/C_p}, B_p\otimes_B M).
+\]
+When all local tangent calculations are made in the ordinary
+degree-zero case, this compares their classes and higher
+cohomology by the indicated full total complex.
+\end{proposition}
+\begin{proof}
+Base change \(B\to B\otimes_A C\) is faithfully flat.
+Each \(C_p\) is flat over \(A\). The base-change part of
+Result~\ref{res:A09} uses a single semifree model over \(A\)
+and its compatible scalar extensions to the whole Amitsur diagram.
+Thus \(B_p\otimes_B P_L\) represents \(L_{B_p/C_p}\).
+A comparison from \(P_L\) to the cofibrant cotangent model can
+be chosen as a chain map since \(P_L\) is K-projective, and its
+flat scalar extensions commute with the cofaces. Apply
+Result~\ref{res:F08} over \(B\) to \(P_L\) and \(M\), interpreting
+the Hom complexes using these common models.
+\end{proof}
+
+The affine calculations here use a characteristic-zero commutative
+dg model. In general, derived stacks involve functors of points,
+homotopy-coherent descent and representability. These broader
+constructions, as well as the all-characteristic simplicial
+setting, are developed in \cite[\S\S1.2.12 and 2.2.3]{hag} and
+\cite[\S\S2 and 4]{toen}.

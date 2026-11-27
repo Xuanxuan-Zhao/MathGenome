@@ -1,6 +1,6 @@
 # Lecture notes
 
-The table lists the lecture notes accompanying MathGenome v0.28.0. The PDF and LaTeX files incorporate the checked lecture errata.
+The table lists the lecture notes accompanying MathGenome v0.29.0. The PDF and LaTeX files incorporate the checked lecture errata.
 
 | Area | Lecture notes | PDF pages | LaTeX entry point |
 | --- | --- | ---: | --- |
@@ -35,6 +35,7 @@ The table lists the lecture notes accompanying MathGenome v0.28.0. The PDF and L
 | ALG-03 | [Rings, Modules, and Associative Algebras](notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.pdf) | 19 | [`ring-module-associative-algebra.tex`](notes/RingModuleAssociativeAlgebra/ring-module-associative-algebra.tex) |
 | ALG-09 | [Linear Algebraic Groups](notes/LinearAlgebraicGroups/linear-algebraic-groups.pdf) | 156 | [`paper.tex`](sources/LinearAlgebraicGroups/paper.tex) |
 | ALG-05-D | [Topics in Commutative Algebra](notes/CommutativeAlgebraDeepening/topics-in-commutative-algebra.pdf) | 56 | [`paper.tex`](sources/CommutativeAlgebraDeepening/paper.tex) |
+| ALG-10-D | [Topics in Homological Algebra](notes/HomologicalAlgebraDeepening/topics-in-homological-algebra.pdf) | 44 | [`paper.tex`](sources/HomologicalAlgebraDeepening/paper.tex) |
 
 Compile a LaTeX entry point from its own directory with `latexmk -pdf -interaction=nonstopmode -halt-on-error <entry-point>.tex`. The D03 and D07 sources use sibling files and chapter subdirectories.
 
@@ -71,6 +72,8 @@ The [ALG-03 reviewed source map](notes/RingModuleAssociativeAlgebra/reviewed-sou
 The [ALG-09 reviewed source map](notes/LinearAlgebraicGroups/reviewed-source-map.json) links each numbered result to its PDF destination, LaTeX source, and Lean declarations.
 
 The [ALG-05 deepening source map](notes/CommutativeAlgebraDeepening/reviewed-source-map.json) links all 95 numbered results to their PDF destinations, LaTeX sources, and Lean declarations. The [split LaTeX edition](notes/CommutativeAlgebraDeepening/topics-in-commutative-algebra.tex) and its chapter files under `notes/CommutativeAlgebraDeepening/chapters/` reproduce the same lecture.
+
+The [ALG-10 deepening source map](notes/HomologicalAlgebraDeepening/reviewed-source-map.json) links all 76 numbered results to their PDF destinations, LaTeX sources, and Lean declarations. The [split LaTeX edition](notes/HomologicalAlgebraDeepening/topics-in-homological-algebra.tex) and its chapter files under `notes/HomologicalAlgebraDeepening/chapters/` reproduce the same lecture. MathGenome authored the notes.
 
 The original lecture notes are licensed under CC BY 4.0.
 The P1-05 table entry uses the corrected publication copy. Its [source map](notes/ProbabilityFoundations/SOURCE_MAP.json) locates the current TeX and PDF. The accepted delivery remains in [provenance](../provenance/components/ProbabilityFoundations/delivery/paper.tex).

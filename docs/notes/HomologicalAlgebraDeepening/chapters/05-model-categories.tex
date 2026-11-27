@@ -1,0 +1,641 @@
+\chapter{Model Categories and Projective Complexes}
+\label{ch:model-categories}
+
+A model category organizes localization by giving two compatible
+procedures for changing an object or a map. We develop the homotopy
+category and the Quillen adjunction directly from lifting, then establish
+the unbounded projective model on complexes. Throughout, maps of
+complexes have degree zero, and cochain differentials raise degree.
+The conventions for model categories are those of \cite[Chapter 1]{hovey}
+and \cite[Section 11.3]{riehl}.
+
+\section{Lifting and homotopy}
+
+For two maps \(i:A\to B\) and \(p:X\to Y\), write \(i\perp p\)
+when every commutative square with \(i\) on the left and \(p\) on
+the right has a diagonal filler \(B\to X\). A retract of arrows is
+a retract in the category of commutative squares.
+
+\begin{definition}[Model structure]\label{res:Q01}
+A model category in this chapter is a complete and cocomplete category
+with classes \(W\), \(\operatorname{Cof}\), and \(\operatorname{Fib}\)
+of weak equivalences, cofibrations, and fibrations. The classes contain
+isomorphisms and are closed under retracts. The class \(W\) satisfies
+two-out-of-three. Call a map \emph{trivial} when it belongs to \(W\).
+Cofibrations lift against trivial fibrations, and trivial cofibrations
+lift against fibrations. Each map has functorial factorizations as a
+cofibration followed by a trivial fibration and as a trivial cofibration
+followed by a fibration.
+Write \(0\) and \(1\) for the initial and terminal objects. An object
+\(A\) is cofibrant if \(0\to A\) is a cofibration and fibrant if
+\(A\to1\) is a fibration.
+\end{definition}
+
+The two lifting pairs determine their classes by orthogonality. Indeed,
+if \(h\perp\operatorname{Fib}\), factor \(h=p i\) with \(i\) a
+trivial cofibration and \(p\) a fibration. The lift against \(p\)
+exhibits \(h\) as a retract of \(i\). The argument for the other
+left class uses the other factorization, and duality gives the
+right classes. A left class so determined is closed under pushout,
+composition, transfinite composition, and retract. For a pushout,
+the lift for the old map extends by the defining pushout. For an
+ordinal sequence choose lifts successively and use the defining
+colimit at limits. A right class has the dual closures, in
+particular pullback and composition. These arguments supply the
+closure properties used below.
+
+\begin{proposition}[Cylinder and path objects]\label{res:Q02}
+A cylinder for \(A\) is a factorization
+\[
+ A\amalg A\xrightarrow{(j_0,j_1)} C\xrightarrow{r}A
+\]
+of the fold map with first map a cofibration and \(r\in W\).
+It is called good when \(r\) is a trivial fibration.
+A path object for \(B\) is a factorization
+\[
+ B\xrightarrow{s} P\xrightarrow{(e_0,e_1)}B\times B
+\]
+of the diagonal with \(s\in W\) and second map a fibration.
+It is called good when \(s\) is a trivial cofibration.
+Good choices exist functorially. If \(A\) is cofibrant, the
+two endpoints of any cylinder are trivial cofibrations. If \(B\)
+is fibrant, both evaluations of any path object are trivial
+fibrations.
+\end{proposition}
+\begin{proof}
+Apply the two factorizations of \ref{res:Q01}. For cofibrant \(A\)
+each coproduct inclusion into \(A\amalg A\) is a cofibration by
+pushout from \(0\to A\). Therefore \(j_i\) is a cofibration,
+and \(rj_i=\mathrm{id}\) gives \(j_i\in W\). For fibrant \(B\),
+each product projection out of \(B\times B\) is a fibration
+by pullback from \(B\to1\). Now \(e_i s=\mathrm{id}\) gives
+\(e_i\in W\).
+\end{proof}
+
+\begin{theorem}[The homotopy relation]\label{res:Q03}
+For cofibrant \(A\) and fibrant \(B\), left homotopy and right
+homotopy are the same equivalence relation on maps \(A\to B\).
+Left homotopy from \(f\) to \(g\) is a map \(C\to B\) extending
+\((f,g)\) on the two ends of a cylinder. Right homotopy is a
+map \(A\to P\) with evaluations \(f,g\). Any fixed cylinder
+or path object may be used. Homotopy is preserved by
+precomposition from a cofibrant object and postcomposition
+into a fibrant object. If \(f\) and \(g\) are homotopic,
+then \(f\in W\) if and only if \(g\in W\).
+\end{theorem}
+\begin{proof}
+Suppose a left homotopy \(H:C\to B\) is provided. Factor \(r\)
+as a trivial cofibration \(C\to C'\) followed by a fibration
+\(C'\to A\), which is trivial by two-out-of-three. The first map
+allows \(H\) to extend, since \(B\) is fibrant. This gives a
+homotopy on a good cylinder. A map from any fixed cylinder to
+that good cylinder, preserving both ends and commuting with the
+collapse to \(A\), is obtained by lifting. Thus every fixed
+cylinder realizes the same left relation. Dually every fixed
+path object realizes the same right relation if \(A\) is
+cofibrant.
+
+For the equivalence of the relations, choose a good cylinder
+and a good path object. A left homotopy \(H\) gives a lift
+\(C\to P\) against \(P\to B\times B\) with top map \(s f\)
+on the \(j_0\) end and bottom map \((fr,H)\).
+Its restriction to \(j_1\) is a right homotopy. Conversely
+if \(K:A\to P\) is a right homotopy, lift
+\((s f,K):A\amalg A\to P\) against \(e_0:P\to B\)
+with bottom map \(fr:C\to B\). Composing the lift with
+\(e_1\) gives the left homotopy.
+
+Reflexivity uses \(fr\) and symmetry interchanges the ends.
+For transitivity glue two cylinders along the second end
+of the first and first end of the second. The outer end
+inclusion is a cofibration. It factors through the first
+cylinder together with one extra copy of \(A\), after which
+one pushes out the boundary inclusion of the second cylinder.
+The inclusion of the first cylinder into the glued object
+is a pushout of a trivial endpoint cofibration. Hence the
+common collapse of the glued object is in \(W\) by
+two-out-of-three. The two homotopies agree on the middle end,
+so they glue to a homotopy on this cylinder.
+
+Postcomposition of left homotopies is literal. For
+precomposition along \(A'\to A\) with \(A'\) cofibrant,
+use a good cylinder on \(A\) and lift from a cylinder on
+\(A'\), preserving the two new end maps. Finally the
+endpoints are both weak equivalences by \ref{res:Q02}.
+Apply two-out-of-three to their composites with \(H\).
+\end{proof}
+
+\begin{proposition}[Whitehead criterion]\label{res:Q04}
+A map between cofibrant fibrant objects is a weak equivalence
+if and only if it admits a homotopy inverse.
+\end{proposition}
+\begin{proof}
+For a trivial cofibration \(i:A\to Z\) between such objects,
+lift against \(A\to1\) to obtain a retraction \(u:Z\to A\).
+Lift along \(i\) into a path object of \(Z\) with endpoints
+\((iu,\mathrm{id}_Z)\), using the constant path on \(i\).
+This gives \(iu\simeq\mathrm{id}_Z\). Dually a trivial
+fibration \(p:Z\to B\) between such objects has a section
+which is a homotopy inverse. Factoring an arbitrary weak
+equivalence as a trivial cofibration followed by a fibration
+gives a trivial fibration by two-out-of-three, with
+intermediate object again cofibrant fibrant.
+
+Conversely factor a map having a homotopy inverse as a
+cofibration \(i:A\to Z\) followed by a trivial
+fibration \(p:Z\to B\). The intermediate object is again
+cofibrant fibrant. As \(p\) has a homotopy inverse, so does
+\(i\), say \(u_0\). Choose a right homotopy from
+\(u_0 i\) to \(\mathrm{id}_A\). Lift it along \(i\) against
+the first evaluation from a path object of \(A\), with
+bottom map \(u_0\). Its other evaluation gives
+\(u:Z\to A\) with \(ui=\mathrm{id}_A\) and \(u\simeq u_0\).
+Thus \(iu\simeq\mathrm{id}_Z\), and \(iu\in W\) by
+\ref{res:Q03}. The map \(i\) is a retract of the arrow \(iu\)
+via the pairs \((i,\mathrm{id}_Z)\) and
+\((u,\mathrm{id}_Z)\). Therefore \(i\), and hence \(pi\),
+belongs to \(W\).
+\end{proof}
+
+\begin{theorem}[Localization by homotopy classes]\label{res:Q05}
+The category of cofibrant fibrant objects with morphisms the
+homotopy classes is a localization of the model category at
+\(W\). A map of the model category becomes an isomorphism
+in this localization exactly when it belongs to \(W\).
+\end{theorem}
+\begin{proof}
+Composition is well-defined by \ref{res:Q03}. Choose a
+functorial cofibrant replacement \(QX\to X\), a trivial
+fibration, and a functorial fibrant replacement \(X\to RX\),
+a trivial cofibration. The object \(RQX\) is cofibrant
+fibrant. Naturality and two-out-of-three show that the
+replacement functors preserve \(W\) and reflect it on
+the maps in the two natural replacement squares.
+The functor \(X\mapsto RQX\) followed by passage to homotopy
+classes inverts \(W\) by \ref{res:Q04}.
+
+For a functor \(F\) inverting \(W\), its restriction to the
+cofibrant fibrant objects passes through homotopy classes.
+Indeed a cylinder collapse goes to an isomorphism and its two
+sections consequently go to the same map. The resulting
+factorization of \(F\) is natural up to the natural
+isomorphisms induced by \(QX\to X\) and \(QX\to RQX\).
+For \(X\) already cofibrant fibrant, \(QX\) is also fibrant
+because \(QX\to X\) is a fibration. The two replacement maps
+therefore identify, naturally in the homotopy category,
+the original cofibrant fibrant object and its new replacement.
+Restriction and replacement are thus inverse up to natural
+isomorphism on functors that invert \(W\), including natural
+transformations. This proves the localization property.
+If the image of \(f\) is invertible, the representative
+\(RQf\) is a homotopy equivalence, so is in \(W\) by
+\ref{res:Q04}. Two-out-of-three in the replacement squares
+gives \(f\in W\).
+\end{proof}
+
+\begin{proposition}[Cofibrant source and fibrant target]\label{res:Q06}
+For cofibrant \(A\) and fibrant \(B\), homotopy classes of
+actual maps \(A\to B\) map bijectively to morphisms
+\(\operatorname{Ho}(\mathcal C)(A,B)\).
+\end{proposition}
+\begin{proof}
+Replace \(A\) by \(A\hookrightarrow RA\), a trivial
+cofibration into a cofibrant fibrant object. Every map to
+\(B\) extends. If the restrictions of two extensions are
+right homotopic, extend the homotopy along \(A\to RA\)
+by lifting against \(P\to B\times B\), with the two
+extensions as endpoints. Thus this replacement gives a
+bijection on homotopy classes. Replace \(B\) by a trivial
+fibration \(QB\to B\), so that \(QB\) is cofibrant
+fibrant. For source \(RA\), maps lift against this
+trivial fibration. If two composites are left homotopic,
+lift the cylinder homotopy with the two maps to \(QB\)
+as endpoints. Therefore this replacement also gives a
+bijection on classes. Both replacements induce
+isomorphisms in the localization of \ref{res:Q05}.
+This identifies the stated map with a composite of
+bijections. In particular the identification is natural
+on maps of cofibrant sources and fibrant targets.
+\end{proof}
+
+\section{Quillen adjunctions}
+
+\begin{lemma}[Brown's lemma on cofibrant objects]\label{res:Q07}
+A functor on the cofibrant objects which carries trivial
+cofibrations to weak equivalences carries every weak
+equivalence there to a weak equivalence, assuming two-out-of-three
+in the target. The corresponding assertion for fibrant
+objects and trivial fibrations holds dually.
+\end{lemma}
+\begin{proof}
+Let \(f:X\to Y\) be a weak equivalence of cofibrant objects.
+Factor \((f,\mathrm{id}_Y):X\amalg Y\to Y\) as a
+cofibration followed by a trivial fibration \(p:Z\to Y\).
+Both maps \(X\to Z\) and \(Y\to Z\) are trivial
+cofibrations by two-out-of-three, and \(Z\) is cofibrant.
+The image of \(p\) is weak because its composite with
+the image of \(Y\to Z\) is the identity. The same then
+holds for the image of \(f\).
+\end{proof}
+
+An adjunction \(L:\mathcal C\rightleftarrows\mathcal D:U\)
+is Quillen when \(L\) preserves cofibrations and trivial
+cofibrations, equivalently when \(U\) preserves fibrations
+and trivial fibrations. This equivalence follows by
+transporting lifting squares along the adjunction and
+using the orthogonality observation after \ref{res:Q01}.
+
+\begin{theorem}[Derived Quillen adjunction]\label{res:Q08}
+A Quillen adjunction induces an adjunction
+\[
+ \mathbf L L:\operatorname{Ho}(\mathcal C)
+ \rightleftarrows \operatorname{Ho}(\mathcal D):\mathbf R U.
+\]
+It is computed by \(LQ\) and \(UR\), where \(Q\) is
+cofibrant replacement in \(\mathcal C\) and \(R\)
+is fibrant replacement in \(\mathcal D\).
+\end{theorem}
+\begin{proof}
+The two composites preserve weak equivalences by
+\ref{res:Q07} and hence descend by \ref{res:Q05}.
+The functors \(L\) and \(U\) preserve respectively
+cofibrancy and fibrancy because they preserve the relevant
+structure maps and initial or terminal objects.
+For cofibrant \(X\) and fibrant \(Y\), the ordinary adjunction
+identifies maps \(LX\to Y\) with maps \(X\to UY\).
+Apply \(L\) to a cylinder of \(X\). Its end inclusion
+is a cofibration and the collapse is a weak equivalence
+by \ref{res:Q07}, since both ends of the collapse map
+are cofibrant. It is a cylinder of \(LX\) because \(L\)
+preserves the coproduct. The ordinary adjunction identifies
+maps out of this cylinder with maps out of the original
+cylinder on the other side and respects endpoint maps.
+By \ref{res:Q03}, the adjunction therefore identifies
+the two homotopy relations. Applying \ref{res:Q06} gives
+the adjunction on homotopy categories. Replacing both
+variables supplies this bijection for arbitrary objects,
+naturally by the functorial choices and the natural
+identification of \ref{res:Q06}.
+\end{proof}
+
+\begin{theorem}[Quillen equivalence criterion]\label{res:Q09}
+The derived adjunction of \ref{res:Q08} is an equivalence
+if and only if the following condition holds. For every
+cofibrant \(X\) and fibrant \(Y\), a map \(LX\to Y\) is
+a weak equivalence exactly when its adjoint \(X\to UY\)
+is a weak equivalence.
+\end{theorem}
+\begin{proof}
+Assume the condition. For cofibrant \(X\), choose a
+fibrant replacement \(LX\to R LX\). Its adjoint is
+weak by the condition, and represents the derived unit.
+For fibrant \(Y\), choose a cofibrant replacement
+\(Q UY\to UY\). Its adjoint is weak and represents
+the derived counit. Thus the unit and counit are
+isomorphisms by \ref{res:Q05}, and functorial
+replacement gives this conclusion on all objects.
+Conversely, an adjunction which is an equivalence
+identifies isomorphisms with isomorphisms under the
+adjunction bijection. Apply \ref{res:Q05} to both
+maps in the claimed criterion. This proof uses the
+unit at a fibrant replacement of \(LX\) and the
+counit at a cofibrant replacement of \(UY\), in agreement
+with \cite[correction to Corollary 1.3.16]{hovey-errata}.
+\end{proof}
+
+
+\section{Cochain complexes over a ring}
+
+Let \(A\) be a ring with identity. Write \(\operatorname{Ch}(A)\)
+for the category of unbounded cochain complexes of left \(A\)-modules.
+It has all small limits and colimits, obtained degree by degree.
+We use quasi-isomorphisms as weak equivalences and reindex the
+projective disk generators of \cite[Section 2.3]{hovey} cohomologically.
+
+\begin{proposition}[Spheres, disks, and their lifts]\label{res:Q10}
+Let \(S^n\) be \(A\) in degree \(n\) and \(D^n\) be
+\(A\xrightarrow{\mathrm{id}} A\) in degrees \(n,n+1\).
+Use the sets of maps
+\[
+ I=\{S^{n+1}\longrightarrow D^n:n\in\mathbb Z\},
+ \qquad
+ J=\{0\longrightarrow D^n:n\in\mathbb Z\},
+\]
+where \(S^{n+1}\to D^n\) includes the upper degree. A map has
+the right lifting property against \(J\) precisely when it is
+degreewise surjective. It has the right lifting property against
+\(I\) precisely when it is a degreewise surjective quasi-isomorphism.
+\end{proposition}
+\begin{proof}
+A map out of \(D^n\) specifies any element in degree \(n\).
+Lifting against \(J\) thus tests degreewise surjectivity.
+A square against \(S^{n+1}\to D^n\) for \(p:X\to Y\) specifies
+\(z\in Z^{n+1}(X)\) and \(y\in Y^n\) such that \(p(z)=dy\).
+A lift is \(x\in X^n\) with \(p(x)=y\) and \(dx=z\).
+Taking \(z=0\) gives surjectivity on cycles in degree \(n\).
+For general \(y\), first lift the cycle \(dy\) and then
+lift \(y\), obtaining degreewise surjectivity. Taking \(y=0\)
+shows that the kernel has zero cohomology.
+
+Conversely suppose \(p\) is degreewise surjective and a
+quasi-isomorphism. Its kernel is acyclic by the long exact
+sequence of cohomology. Start with a graded lift \(x_0\) of
+\(y\). The difference \(z-dx_0\) is a cycle in the kernel,
+hence the differential of some \(u\) in the kernel. Then
+\(x=x_0+u\) gives the required lift.
+\end{proof}
+
+\begin{lemma}[Free cell factorizations]\label{res:Q11}
+Every cochain map factors functorially both as an \(I\)-cell
+map followed by an \(I\)-right lifting map and as a \(J\)-cell
+map followed by a \(J\)-right lifting map. Here a cell is
+attached by pushing out a coproduct of generators, and a
+cell map is a sequential composite of such attachments.
+An \(I\)-cell map is obtained by adjoining free graded
+generators with differential in the previous stage.
+A \(J\)-cell map adjoins a direct sum of disks.
+\end{lemma}
+\begin{proof}
+Start with the given arrow \(X_0\to Y\). Given \(X_t\to Y\),
+take the coproduct of one copy of each generator for every
+commutative square from that generator to \(X_t\to Y\).
+Push out its domain map to obtain \(X_{t+1}\), with the
+induced map to \(Y\). In degree \(n\), an \(I\)-attachment
+adjoins one free generator \(e\) of degree \(n\) for each
+corresponding square, imposing \(de=z\) where \(z\) is the
+image of the sphere generator. This is consistent because
+\(z\) is closed. For \(J\), the whole disk is added freely
+as a direct summand of complexes. Take the sequential
+colimit \(X_\infty\). The domain of an \(I\)-generator is
+one cycle generator. A map from it to \(X_\infty\) is
+represented at a finite stage because the cycle condition
+becomes true at some finite stage. A \(J\)-domain is zero.
+Thus any square at the colimit factors through a finite
+stage, after which it acquires its filler. Using all
+squares at each stage makes the factorizations functorial.
+\end{proof}
+
+\begin{theorem}[The unbounded projective model structure]\label{res:Q12}
+There is a model structure on \(\operatorname{Ch}(A)\)
+with weak equivalences the quasi-isomorphisms, fibrations
+the degreewise surjections, and cofibrations the maps
+lifting against degreewise surjective quasi-isomorphisms.
+Every object is fibrant. Its homotopy category is
+\(\mathrm D(A)\).
+\end{theorem}
+\begin{proof}
+The weak equivalences have two-out-of-three and are
+retract-closed by functorial cohomology. The lifting-defined
+classes are retract-closed. By \ref{res:Q10}, the two
+factorizations of \ref{res:Q11} have the required right
+classes. Every \(I\)-cell map is a cofibration by its
+lifting property. Every \(J\)-generator is an \(I\)-cell
+map, since \(0\to S^{n+1}\) is the pushout of
+\(S^{n+2}\to D^{n+1}\) along the zero map and
+\(S^{n+1}\to D^n\) is itself a generator. Consequently
+\(J\)-cell maps are cofibrations. They are also
+quasi-isomorphisms since adjoining a direct sum of disks
+does not change cohomology.
+
+It remains to identify the left lifting class against
+fibrations. Every map in this class is a retract of its
+\(J\)-cell factor by the lift against the right factor.
+It is therefore a trivial cofibration. Conversely
+factor a trivial cofibration \(i\) as \(i=pj\) with \(j\)
+a \(J\)-cell map and \(p\) a fibration. As \(i\) and \(j\)
+are quasi-isomorphisms, \(p\) is a trivial fibration.
+The lift furnished by \(i\) exhibits \(i\) as a retract
+of \(j\), which has the left lifting property against
+every fibration. This verifies both lifting classes and
+all the axioms of \ref{res:Q01}. All maps to the zero complex
+are surjective. The final assertion follows from \ref{res:Q05}
+and the definition of the derived category by localization.
+\end{proof}
+
+\begin{proposition}[Cofibrations and acyclic targets]\label{res:Q13}
+A map of complexes is a cofibration in \ref{res:Q12}
+if and only if it is a degreewise split injection whose
+cokernel \(P\) is degreewise projective and \(K\)-projective.
+Here \(K\)-projective means that
+\(\operatorname{Hom}_A^\bullet(P,E)\) is acyclic for every
+acyclic \(E\). The cokernel is also \(K\)-flat, meaning
+that \(E\otimes_A P\) is acyclic for every acyclic complex
+of right \(A\)-modules.
+\end{proposition}
+\begin{proof}
+A cofibration is a retract of its \(I\)-cell factor.
+An \(I\)-cell map is split injective as a graded map,
+and its cokernel has a filtration with graded-split
+inclusions and freely adjoined generators whose
+differentials land in earlier stages. A cochain map \(f\)
+from such a cokernel to an acyclic \(E\) is null homotopic.
+At the stage adjoining \(e\), with \(de\) already present,
+the equation \(f(e)=d h(e)+h(de)\) is solvable because
+\(f(e)-h(de)\) is a cycle. Indeed
+\(d f(e)-d h(de)=f(de)-f(de)+h(d^2e)=0\)
+using the equation on the prior stage. Choose these values
+on all generators and extend linearly. The same argument
+applied to all shifts of \(E\) is precisely acyclicity
+of the Hom complex. The cokernel is \(K\)-flat because
+tensoring the graded-split filtration with \(E\) gives
+a filtration by complexes with acyclic quotients, direct
+sums of shifts of \(E\). Each finite stage is acyclic
+by the long exact sequence and the union is acyclic
+by exactness of filtered colimits of modules. Taking
+retracts preserves all these conditions, which proves
+necessity.
+
+For sufficiency let \(i:A_0\to B_0\) have the stated
+properties and consider a lifting square against a
+surjective quasi-isomorphism \(q:X\to Y\). Using the
+graded splitting of \(i\) and degreewise projectivity
+of \(P=B_0/A_0\), choose a graded lift \(u:B_0\to X\)
+extending the prescribed map on \(A_0\).
+Its defect \(d_Xu-u d_{B_0}\) vanishes on \(A_0\)
+and has image in \(\ker q\). It defines a degree-one
+cocycle of \(\operatorname{Hom}_A^\bullet(P,\ker q)\).
+The identity on two successive differentials gives the
+cocycle equation. By \ref{res:Q10}, the kernel is
+acyclic. Thus the defect is the Hom differential of
+a degree-zero map \(P\to\ker q\). Subtract this
+map after quotient and inclusion to correct \(u\)
+to a cochain map and complete the lift.
+\end{proof}
+
+\begin{corollary}[Chain homotopy in the projective model]\label{res:Q14}
+For cofibrant \(X\), the morphisms from \(X\) to any
+complex \(Y\) in \(\mathrm D(A)\) are cochain maps modulo
+ordinary cochain homotopy.
+\end{corollary}
+\begin{proof}
+Use the path complex
+\[
+ P(Y)^n=Y^n\oplus Y^n\oplus Y^{n-1},\qquad
+ d(y_0,y_1,b)=(dy_0,dy_1,y_1-y_0-db).
+\]
+Its third component after two applications of \(d\) is
+zero, and its evaluations are the two projections. They
+together form a degreewise surjection to \(Y\times Y\).
+The first evaluation has contractible kernel, since in
+coordinates \((a,b)\) that kernel has differential
+\((da,a-db)\) and contracting homotopy \((a,b)\mapsto(b,0)\).
+The diagonal \(y\mapsto(y,y,0)\) is therefore a
+quasi-isomorphism. A cochain map \(X\to P(Y)\) with
+first two coordinates \(f,g\) has third coordinate
+\(h\) with \(g-f=d h+h d\). Now apply \ref{res:Q03}
+and \ref{res:Q06}, using fibrancy of all complexes.
+\end{proof}
+
+\section{Tensor products and homotopy limits}
+
+\begin{theorem}[Tensor compatibility]\label{res:Q15}
+If \(A\) is commutative, the projective model structure
+is a closed symmetric monoidal model structure for the
+usual tensor product of cochain complexes. In particular,
+the pushout product of two cofibrations is a cofibration
+and is trivial if either is trivial.
+\end{theorem}
+\begin{proof}
+The tensor product uses direct sums in total degree and
+the signed differential. Its internal Hom uses products
+in each degree with differential
+\(d(h)=d h-(-1)^{|h|}h d\). Evaluation and currying give
+the adjunction by expansion of the cochain identities.
+Symmetry is \(x\otimes y\mapsto(-1)^{|x||y|}y\otimes x\).
+
+For \(a:A_0\to B_0\), \(b:C_0\to D_0\), their
+pushout product is
+\[
+ (B_0\otimes C_0)\amalg_{A_0\otimes C_0}(A_0\otimes D_0)
+ \longrightarrow B_0\otimes D_0.
+\]
+For \(a,b\in I\), the inclusion has the product of the
+two lower disk generators as its only new generator.
+Its differential lies in the source, so this is a
+single \(I\)-attachment. For \(a\in I\), \(b\in J\),
+the inclusion splits degreewise and its quotient is
+a shift of a disk, from the lower sphere of the
+\(I\)-cokernel tensored with the disk of \(b\).
+The sign is absorbed by changing the sign of one disk
+generator. The quotient is acyclic, degreewise free
+and \(K\)-projective by contractibility. Thus the
+pushout product is a trivial cofibration by
+\ref{res:Q13}. Symmetry handles \(I,J\) in the other order.
+
+For fixed \(a\), the operation \(a\square -\)
+preserves pushouts of arrows by separate cocontinuity
+of the tensor product. For a composite \(C\to D\to E\)
+in the other variable, first pass through
+\[
+ (B_0\otimes D)\amalg_{A_0\otimes D}(A_0\otimes E)
+\]
+on the way to \(B_0\otimes E\). The first map in
+this factorization is a pushout of the pushout product
+for \(C\to D\), and the second is the pushout product
+for \(D\to E\). For a sequence of attachments use these
+same intermediates with its final object \(E\), taking
+colimits at limit stages. This proves closure under
+the cell operations in either variable. Retracts are
+preserved because the pushout product is functorial
+on pairs of arrows. Since cofibrations are retracts
+of \(I\)-cell maps and trivial cofibrations retracts
+of \(J\)-cell maps by \ref{res:Q12}, the generator
+calculations prove the assertion. The unit \(A[0]\)
+is cofibrant by \ref{res:Q13}, so the identity unit
+replacement verifies the unit axiom. For any weak
+cofibrant replacement of this unit the same conclusion
+follows from \ref{res:Q07} applied to tensor with a
+cofibrant object, which is left Quillen by the
+pushout-product statement.
+\end{proof}
+
+Use the cone convention
+\(\operatorname{Cone}(h)^n=Z^n\oplus T^{n+1}\)
+for \(h:T\to Z\), with differential
+\(d(z,t)=(dz+h(t),-dt)\).
+The cochain shift \([-1]\) negates the differential.
+For the general homotopy-limit viewpoint see
+\cite[Chapters 5--6]{riehl}. The explicit models below use exact
+products in module categories, as in \cite[Section 34]{st-derived}.
+
+\begin{proposition}[Homotopy pullbacks of complexes]\label{res:Q16}
+For a span \(X\xrightarrow{f} Z\xleftarrow{g}Y\),
+a homotopy pullback is
+\[
+ \operatorname{Cone}(f-g:X\oplus Y\longrightarrow Z)[-1].
+\]
+It is functorial on strict maps of spans and invariant under
+objectwise quasi-isomorphism. When either leg is a fibration,
+the strict pullback maps to this model by a quasi-isomorphism.
+\end{proposition}
+\begin{proof}
+Put \(C^n=Z^n\oplus Z^{n-1}\) with differential
+\((a,b)\mapsto(da,a-db)\). The homotopy
+\((a,b)\mapsto(b,0)\) contracts \(C\). Replace \(f\)
+by the surjection \(X\oplus C\to Z\) given by
+\((x,a,b)\mapsto f(x)+a\). The original \(X\) includes
+by a quasi-isomorphism over \(Z\). The strict pullback
+of the resulting span consists of triples
+\((x,y,b)\) with \(a=g(y)-f(x)\), and its differential
+is \((dx,dy,g(y)-f(x)-db)\). This is precisely the
+stated cone with the coordinates reordered.
+A strict objectwise quasi-isomorphism of spans induces
+one on cones by the cone cohomology sequence.
+If a leg was already surjective, then \(f-g\)
+is surjective and its kernel is the ordinary pullback.
+The short exact sequence with this kernel identifies
+its inclusion into the shifted cone as a quasi-isomorphism.
+These statements show that fibrational replacement
+of one leg followed by ordinary pullback gives a
+homotopy-invariant model and that this agrees with
+ordinary pullback on spans having that leg fibrant.
+\end{proof}
+
+\begin{theorem}[Sequential homotopy limits]\label{res:Q17}
+For a tower \(X_0\leftarrow X_1\leftarrow\cdots\) of
+complexes, let \(s:\prod_n X_n\to\prod_n X_n\) carry the
+\((n+1)\)-st coordinate to the \(n\)-th by the transition map.
+A model for \(\operatorname{holim}_n X_n\) is
+\[
+ \operatorname{Cone}\bigl(1-s:\prod_n X_n\to\prod_n X_n\bigr)[-1].
+\]
+If all transition maps are degreewise surjective, the
+ordinary inverse limit maps quasi-isomorphically to this
+model. In each degree \(q\) there is a natural short
+exact sequence
+\[
+ 0\longrightarrow\lim\nolimits^1_n H^{q-1}(X_n)
+ \longrightarrow H^q(\operatorname{holim}_n X_n)
+ \longrightarrow\lim_n H^q(X_n)\longrightarrow0 ,
+\]
+where for a sequential system of modules
+\(\lim^1\) denotes the cokernel of \(1-s\) on their product.
+\end{theorem}
+\begin{proof}
+Products of modules are exact. Taking the cone therefore
+gives an objectwise quasi-isomorphism invariant construction.
+For a degreewise surjective tower, given a tuple \((b_n)\),
+choose \(a_0=0\) and solve
+\(s_n(a_{n+1})=a_n-b_n\) recursively in each degree.
+Hence \(1-s\) is degreewise surjective and its kernel
+is the ordinary inverse limit. The short exact sequence
+of complexes proves the asserted comparison with the shifted
+cone. Every tower admits a functorial levelwise
+quasi-isomorphism to such a tower. Start with
+\(Y_0=X_0\). At each subsequent stage factor the composite
+\(X_n\to X_{n-1}\to Y_{n-1}\) as a trivial cofibration
+\(X_n\to Y_n\) followed by a fibration \(Y_n\to Y_{n-1}\)
+using \ref{res:Q12}. Thus taking the ordinary limit
+after this replacement is equivalent to the cone model.
+Taking cohomology of the cone exact sequence gives the
+displayed short exact sequence, since cohomology commutes
+with products and the kernel of \(1-s\) on a product
+is the ordinary inverse limit.
+\end{proof}
+
+\paragraph{Scope.}
+The construction above concerns the projective model structure on
+module complexes. The unbounded injective resolutions used for
+derived Hom are constructed in the derived-functor chapter. The
+existence of an injective model structure on sheaf complexes has
+different hypotheses and does not enter these proofs.

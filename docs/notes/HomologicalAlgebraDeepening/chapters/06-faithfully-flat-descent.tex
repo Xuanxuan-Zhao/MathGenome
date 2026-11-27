@@ -1,0 +1,258 @@
+\chapter{Faithfully flat descent for modules and complexes}
+\label{ch:flat-descent}
+
+Let \(A\to B\) be a faithfully flat map of commutative rings. A
+quasi-isomorphism can be checked after this base change because flatness
+commutes with cohomology and faithfulness detects the zero module. This
+chapter will also reconstruct an object from a strict cocycle and recover
+an arbitrary unbounded complex from its augmented Amitsur diagram.
+
+\section{The augmented complex and effective module descent}
+
+\begin{definition}[The augmented Amitsur complex]\label{res:F01}
+For an \(A\)-module \(M\), put \(C^{-1}(M)=M\) and
+\(C^p(M)=B^{\otimes_A(p+1)}\otimes_A M\) for \(p\geq0\). The
+map from degree \(-1\) inserts \(1\), and the map from degree \(p\)
+is \(\delta=\sum_{i=0}^{p+1}(-1)^id^i\), where \(d^i\) inserts a
+unit in position \(i\), counted from zero. This is a complex.
+\end{definition}
+\begin{proof}
+Insertion in two ordered positions \(i<j\) can also be performed by
+first inserting in position \(j-1\) and then in position \(i\).
+The signs of the two resulting terms of the composite are opposite.
+This cancels every term, including the two equal insertions after the
+augmentation.
+\end{proof}
+
+\begin{theorem}[Exactness after faithfully flat descent]\label{res:F02}
+The augmented Amitsur complex of every \(A\)-module is exact.
+\end{theorem}
+\begin{proof}
+After tensoring on the left with \(B\), there is a contraction that
+multiplies the new left factor with the first old factor:
+\[
+ h(b\otimes b_0\otimes\cdots\otimes b_p\otimes m)
+   =bb_0\otimes b_1\otimes\cdots\otimes b_p\otimes m .
+\]
+In degree zero the right hand side is \(bb_0\otimes m\) in the
+base-changed augmented term. We have \(hd^0=1\) and
+\(hd^i=d^{i-1}h\) for \(i>0\). Therefore
+\(h\delta+\delta h=1\), including \(h\delta=1\) on the augmented
+term. By faithful flatness, homology of the original complex
+must be zero.
+\end{proof}
+
+\begin{definition}[Strict module descent data]\label{res:F03}
+Write \(B_2=B\otimes_A B\) and \(B_3=B^{\otimes_A3}\). A descent
+datum on a \(B\)-module \(N\) is a \(B_2\)-linear isomorphism
+\[
+ \theta:N\otimes_A B\longrightarrow B\otimes_A N
+\]
+such that the pullback along multiplication \(B_2\to B\) is the
+identity, and \(\theta_{23}\theta_{12}=\theta_{13}\) over \(B_3\).
+Subscripts indicate the positions of the old and new \(N\)-factor.
+A morphism is a \(B\)-linear map commuting with this isomorphism.
+\end{definition}
+
+\begin{theorem}[Effective descent for modules]\label{res:F04}
+The functor \(M\mapsto B\otimes_A M\), with its canonical tensor
+position isomorphism, is an equivalence onto modules with the
+data of Result~\ref{res:F03}. The inverse sends \(N\) to
+\[
+ M=\{n\in N:\rho(n)=1\otimes n\},\qquad
+ \rho(n)=\theta(n\otimes1).
+\]
+\end{theorem}
+\begin{proof}
+The map \(\rho\) is \(B\)-linear for the first factor of \(B\otimes_A N\).
+The diagonal condition gives \(\mu\rho=1_N\), where \(\mu\) is
+multiplication of scalars. If \(\rho(n)=\sum_j b_j\otimes n_j\),
+evaluate the cocycle on \(n\otimes1\otimes1\) to get
+\[
+ (1\otimes\rho)\rho(n)=\sum_j b_j\otimes1\otimes n_j .
+\]
+Flatness identifies \(B\otimes_A M\) with the submodule of
+\(B\otimes_A N\) whose elements \(z\) satisfy
+\((1\otimes\rho)(z)=\sum b\otimes1\otimes n\), with
+\(z=\sum b\otimes n\). The identity above places \(\rho(N)\)
+in this equalizer. Conversely multiplying the first two factors in
+the equalizer relation gives \(\rho(\mu z)=z\), using the \(B\)-linearity
+of \(\rho\). Thus the natural map \(B\otimes_A M\to N\) is an isomorphism
+with inverse \(\rho\) interpreted in the equalizer.
+It respects the cocycle because for \(m\in M\) one has
+\(\theta(m\otimes1)=1\otimes m\), and \(B_2\)-linearity determines
+the isomorphism on all elements. In the canonical case
+\(N=B\otimes_A M_0\), the equalizer is \(M_0\) by
+Result~\ref{res:F02} in degrees \(-1,0\).
+Both constructions are functorial since a map commuting with
+\(\theta\) commutes with \(\rho\) and with \(\mu\).
+\end{proof}
+
+\begin{corollary}[Descent of finite projective modules]\label{res:F05}
+For an \(A\)-module \(M\), if \(B\otimes_A M\) is finite projective
+over \(B\), then \(M\) is finite projective over \(A\).
+\end{corollary}
+\begin{proof}
+Express finitely many generators after base change using finitely many
+elements of \(M\). The quotient by the module they generate has zero
+base change, hence is zero. Choose a finite free surjection to \(M\).
+Its kernel becomes finitely generated after base change, since the
+surjection then splits and the kernel is a summand of a finite free
+module. Apply the same finite-generation argument to this kernel.
+Thus \(M\) is finitely presented.
+It is flat because for any injection of \(A\)-modules, the kernel of
+its tensor with \(M\) becomes zero over \(B\).
+For completeness, a finitely presented flat module is projective.
+At every localization at a prime, lifts of a residue-field basis
+give a free surjection by Nakayama. Its finite kernel has zero
+residue since flatness makes tensoring the sequence injective on
+the left, so the kernel vanishes by Nakayama. A finite presentation
+clears the denominators of this basis and its inverse on a
+distinguished neighbourhood of the prime. The chosen finite free
+surjection to \(M\) therefore splits over a finite distinguished
+cover \(D(f_i)\). By finite presentation, clear denominators in the
+local splittings to get maps \(\sigma_i:M\to A^n\) whose composites
+with \(A^n\to M\) are \(f_i^{r_i}\mathrm{id}_M\) for sufficiently
+large \(r_i\). These powers generate the unit ideal. A linear
+combination of the \(\sigma_i\) gives a global splitting.
+\end{proof}
+
+\section{The unbounded descent calculation}
+
+\begin{proposition}[Strict descent data for complexes]\label{res:F06}
+Chain complexes of \(A\)-modules are equivalent to complexes of
+\(B\)-modules equipped with the strict data of Result~\ref{res:F03}
+by chain maps. The equivalence also identifies their localizations
+at quasi-isomorphisms.
+\end{proposition}
+\begin{proof}
+Apply Result~\ref{res:F04} in each degree. All differentials descend
+as morphisms of the descent data. Their composites are zero by the
+faithfulness of the equivalence. Tensoring with \(B\) commutes with
+cohomology and reflects the zero module, so a map is a
+quasi-isomorphism exactly when its base change is one.
+The two functors and their comparison isomorphisms consequently
+descend to the stated localizations.
+\end{proof}
+
+For a cochain complex \(X\) and an integer \(p\geq0\), put
+\(C^{p,q}(X)=B^{\otimes_A(p+1)}\otimes_A X^q\).
+Horizontal and vertical differentials commute before taking total
+signs. Use the differential \(\delta+(-1)^pd_X\) on column \(p\),
+and the product over \(p\) in each total degree.
+This uses an actual product of modules, not a tensor product with
+an already infinite product.
+
+\begin{theorem}[Unbounded Amitsur totalization]\label{res:F07}
+For every cochain complex \(X\) the natural augmentation is a
+quasi-isomorphism
+\[
+       X\longrightarrow \operatorname{Tot}^{\Pi} C^{\bullet,\bullet}(X).
+\]
+The target is also the homotopy limit in \(D(A)\) of totalizations
+truncated to the first finitely many columns.
+\end{theorem}
+\begin{proof}
+For bounded-below \(X\), add the augmented column \(p=-1\) with
+vertical sign \(-1\). The augmented total complex has acyclic rows
+by Result~\ref{res:F02}. The lower bound on the vertical degree
+and the finite number of columns in each total degree justify
+the row filtration argument of \cite[B01--B04]{ha-core}. The
+augmented total complex is the cone of the augmentation, with
+column \(p=-1\) equal to \(X[1]\) and carrying differential \(-d_X\).
+Its acyclicity proves the first assertion for bounded-below \(X\).
+
+For general \(X\) put \(X_n=\tau_{\geq-n}X\) for \(n\geq0\), using
+the quotient by boundaries at degree \(-n\), zero below and the
+original modules above. The canonical tower maps \(X_{n+1}\to X_n\)
+are degreewise surjective, the inverse limit is \(X\), and these
+maps eventually become the identity in each fixed degree.
+The augmentation maps for \(X_n\) form a map of towers.
+For each column and each internal degree, tensoring with the indicated
+finite tensor power of \(B\) commutes with this inverse limit because
+the tower in that fixed degree is eventually constant.
+Products commute with inverse limits, so the limit of the product
+totalizations of the \(X_n\) is exactly the displayed product
+totalization. Their transitions are degreewise surjective because
+they are products of surjections.
+
+For a tower \(Y_n\) with degreewise surjective transitions \(u_n\),
+there is a short exact sequence of complexes
+\[
+ 0\to\varprojlim_n Y_n\to\prod_{n\geq0}Y_n
+ \xrightarrow{1-\mathrm{shift}}\prod_{n\geq0}Y_n\to0,
+ \qquad (1-\mathrm{shift})(y)_n=y_n-u_n(y_{n+1}).
+\]
+Surjectivity follows by solving from \(n=0\) onwards. Products of
+module complexes preserve quasi-isomorphisms because products of
+surjections are surjective and kernels are products of kernels.
+Apply this short exact sequence to the map of towers
+\(X_n\to\operatorname{Tot}^{\Pi} C(X_n)\). The two product maps are
+quasi-isomorphisms, so the long exact sequence gives the claim on
+their inverse limits. This argument does not require \(B\otimes_A-\)
+to preserve infinite products.
+
+Finally truncate at horizontal column \(p=n\), by quotienting the
+subcomplex of later columns. The projections between truncated
+totalizations are surjective termwise, and the ordinary inverse
+limit is the product totalization. The same short exact sequence
+identifies that limit with the shifted cone of \(1-\mathrm{shift}\),
+the sequential homotopy-limit model of Result~\ref{res:Q17}.
+\end{proof}
+
+\begin{corollary}[Descent of perfect-coefficient mapping complexes]\label{res:F08}
+Let \(P\) be a bounded complex of finite projective \(A\)-modules
+and \(X\) any complex. With \(B_p=B^{\otimes_A(p+1)}\) there is an
+isomorphism in \(D(A)\)
+\[
+ \mathrm{RHom}_A(P,X)\simeq
+ \operatorname{Tot}^{\Pi}_{p\geq0}
+ \mathrm{RHom}_{B_p}(B_p\otimes_A P,B_p\otimes_A X),
+\]
+where the right hand side uses the cofaces of Result~\ref{res:F01}
+on the compatible ordinary Hom models.
+\end{corollary}
+\begin{proof}
+Bounded complexes of projectives are K-projective by the finite
+filtration by degree tails. Thus the ordinary Hom complexes
+compute each term. A finite projective module is a direct summand
+of a finite free one. This gives
+\(B_p\otimes_A\operatorname{Hom}_A(P^j,X^q)
+=\operatorname{Hom}_{B_p}(B_p\otimes P^j,B_p\otimes X^q)\)
+canonically, with equality here denoting the base-change isomorphism.
+Each Hom degree uses only finitely many \(j\), so this remains
+compatible with the Hom differential, multiplication and unit
+on the base rings. Apply Result~\ref{res:F07} to
+\(\operatorname{Hom}_A^\bullet(P,X)\).
+\end{proof}
+
+\begin{example}[Localization covers and the need for faithfulness]\label{res:F09}
+If \(f_1,\ldots,f_s\) generate the unit ideal of \(A\), then
+\(B=\prod_i A_{f_i}\) is faithfully flat and its Amitsur diagram
+is the full ordered affine-intersection diagram of the cover by
+\(D(f_i)\). In contrast, the flat map \(\mathbb Z\to\mathbb Q\)
+does not detect the nonzero complex \(\mathbb Z/\ell\) in degree
+zero for a prime \(\ell\).
+\end{example}
+\begin{proof}
+The product is finite, hence a direct sum of flat modules as an
+\(A\)-module. If \(m\) vanishes at each localization then it is
+killed by a positive power of each \(f_i\). Those powers generate
+the unit ideal, so \(m=0\). In particular base change reflects
+zero modules, proving faithful flatness. The tensor product
+distributes over the finite ring factors, and the tensor product
+of the corresponding localizations is localization at the
+product \(f_{i_0}\cdots f_{i_p}\). In the component indexed by a
+longer ordered tuple, insertion of \(1\) restricts from the
+intersection obtained by omitting that entry to the full intersection.
+Finally \(\ell\) acts invertibly over \(\mathbb Q\), so tensoring
+\(\mathbb Z/\ell\) with \(\mathbb Q\) gives zero.
+\end{proof}
+
+These are strict and explicit forms of descent. The general
+homotopy-coherent formulation replaces ordinary compatibility by
+a descent datum valued in a homotopy limit of higher categories.
+Derived stacks and hypercovers use that framework
+\cite[\S1.2.12]{hag}. The product calculation above already records
+the higher Amitsur degrees and their total signs for affine
+complexes.

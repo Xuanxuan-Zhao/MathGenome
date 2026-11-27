@@ -1,0 +1,188 @@
+\chapter{Differential graded modules and resolutions}
+\label{ch:dg-modules}
+
+Fix a commutative ring \(k\). All gradings are cohomological and may be
+unbounded in both directions. For a homogeneous element \(x\) we write
+\(|x|\) for its degree. The tensor differential on complexes of
+\(k\)-modules is
+\[
+ d(x\otimes y)=dx\otimes y+(-1)^{|x|}x\otimes dy .
+\]
+The sign rule for this tensor product is also the sign rule for module
+actions and for composition. Throughout Chapter~\ref{ch:dg-modules}
+we work with right modules. See \cite[\S\S2.2, 3.1--3.2]{keller}
+and \cite[\S\S3.3--3.4]{yekutieli} for the background.
+
+\section{Actions, maps, and cones}
+
+\begin{definition}[Differential graded algebras and categories]\label{res:G01}
+A differential graded algebra \(A\) is a unital graded \(k\)-algebra
+with a differential of degree \(1\) satisfying \(d^2=0\), \(d1=0\), and
+\[
+ d(ab)=d(a)b+(-1)^{|a|}a\,d(b).
+\]
+A small dg category \(\mathcal A\) has a set of objects, a complex
+\(\mathcal A(a,b)\) for each pair, closed identities of degree \(0\),
+and associative unital composition satisfying the same rule with
+\(ab\) read as \(a\circ b\). Its category \(H^0(\mathcal A)\) has morphisms
+\(H^0(\mathcal A(a,b))\). A dg functor preserves identities,
+composition, and the differentials. The one-object construction
+identifies dg algebras with one-object dg categories.
+\end{definition}
+The Leibniz rule makes composition a chain map on the tensor product.
+It also shows that composing a boundary with a closed degree-zero
+morphism yields a boundary. Hence \(H^0(\mathcal A)\) really is a category.
+
+\begin{definition}[Right modules over a dg category]\label{res:G02}
+A right dg \(\mathcal A\)-module \(M\) consists of complexes \(M(a)\)
+with associative unital actions
+\(M(b)\otimes_k\mathcal A(a,b)\to M(a)\). Write an action as \(x u\).
+It satisfies
+\[
+        d(xu)=d(x)u+(-1)^{|x|}x\,d(u).
+\]
+The action axioms require \((x u)v=x(u\circ v)\) for composable arrows.
+A closed degree-zero map of modules is a family of chain maps
+preserving these actions. A quasi-isomorphism of modules is a map
+inducing cohomology isomorphisms objectwise.
+\end{definition}
+The definition for a one-object \(\mathcal A\) is exactly a right dg
+module over \(A\). Kernels and cokernels of the degree-zero maps are
+objectwise because they are stable under the actions and differentials.
+
+\begin{proposition}[Hom complex and homotopy]\label{res:G03}
+There is a dg category of right dg modules whose morphism complex
+\(\underline{\operatorname{Hom}}_{\mathcal A}(M,N)\) in degree \(r\)
+consists of families of degree-\(r\) graded \(k\)-module maps
+\(f_a\) satisfying \(f(xu)=f(x)u\). Its differential is
+\[
+        \partial f=d_N f-(-1)^r f d_M .
+\]
+In \(K(\mathcal A)=H^0(\mathrm{dgMod}\text{-}\mathcal A)\), two chain
+maps are equal precisely when their difference is \(d_Nh+hd_M\)
+for a degree-\(-1\) map \(h\) preserving the right action.
+\end{proposition}
+\begin{proof}
+We use the sign convention with no extra sign in graded
+right-linearity. On the expression for \((\partial f)(xu)\),
+the two terms involving \(d(u)\) are
+\((-1)^{|x|+r}f(x)d(u)\) and
+\(-(-1)^{r+|x|}f(x)d(u)\). They cancel, so \(\partial f\) is
+again right-linear. Substituting \(\partial f\) into the same
+formula gives \(\partial^2f=0\), since \(d_N^2=d_M^2=0\) and
+the middle terms have opposite signs. For homogeneous \(g\)
+of degree \(s\) we have
+\[
+ \partial(gf)
+ =d_Pgf-(-1)^{s+r}gfd_M
+ =(\partial g)f+(-1)^s g(\partial f)
+\]
+where \(P\) is the target of \(g\). This verifies the dg category
+structure. The statement about \(K(\mathcal A)\) follows by taking
+the degree-zero cycles and boundaries in this very complex.
+\end{proof}
+
+\begin{proposition}[Shift, cone, and the acyclicity test]\label{res:G04}
+For \(s\in\mathbb Z\), put \(M[s]^i=M^{i+s}\) with differential
+\((-1)^s d_M\) and the same right action. For a closed degree-zero
+map \(f:M\to N\), its cone is \(N\oplus M[1]\) with differential
+\[
+ d(y,x)=(d_N y+f(x),-d_M x).
+\]
+The map \(f\) is a quasi-isomorphism if and only if its cone is
+acyclic. The cone and shift act objectwise. The homotopy category
+\(K(\mathcal A)\) is triangulated with the triangles isomorphic to
+these cone triangles.
+\end{proposition}
+\begin{proof}
+After a shift the Leibniz term acquires the sign
+\((-1)^{s+|x|_M}=(-1)^{|x|_{M[s]}}\). The shift thus respects the
+right action. On a homogeneous map of degree \(r\), multiplication
+by \((-1)^{sr}\) upon reindexing gives the dg shift functor, as
+substitution into \(\partial\) verifies. The cone differential
+squares to zero since \(f\) is a chain map, and the term \(f(xu)\)
+equals \(f(x)u\). Thus the cone is a dg module. The short exact
+sequence \(0\to N(a)\to C(f)(a)\to M(a)[1]\to 0\) identifies
+its connecting homomorphism with \(H(f(a))\) by lifting a cycle
+as \((0,x)\). Exactness gives the equivalence.
+
+The cone proof of the triangulated axioms in
+\cite[K01--K06]{ha-core} applies with right-linear components.
+More precisely, the comparison of homotopic maps, the rotation,
+the map of cones obtained from a specified homotopy of squares,
+and the octahedral maps there use only identities, compositions,
+sums, shifts and the cone matrix. All these formulas preserve
+right-linearity by the verifications above. The component
+homotopies in the cone proof are also right-linear, since they
+are matrices formed from the same operations on the input
+homotopies. Therefore these are triangles and the same comparison
+maps inside \(K(\mathcal A)\).
+\end{proof}
+
+\section{Representables and free cells}
+
+\begin{lemma}[Enriched Yoneda for right modules]\label{res:G05}
+For \(a\in\mathcal A\) put \(h_a(b)=\mathcal A(b,a)\) with the
+right action by composition. Evaluation at \(1_a\) is a natural
+isomorphism of complexes
+\[
+     \underline{\operatorname{Hom}}_{\mathcal A}(h_a,M)
+        \longrightarrow M(a).
+\]
+The assignment \(a\mapsto h_a\) is a fully faithful dg functor.
+\end{lemma}
+\begin{proof}
+For \(m\in M(a)^r\), its inverse map has components
+\(u\mapsto m u\) on \(\mathcal A(b,a)\). This is graded right-linear.
+Any graded map out of \(h_a\) must have that formula since
+\(u=1_a u\). The terms involving \(d u\) in its Hom differential
+cancel by the Leibniz rule, leaving the map \(u\mapsto (d m)u\).
+On representables the Yoneda map takes composition to composition
+as \((m u)v=m(u\circ v)\). These checks give the asserted dg
+functor and full faithfulness.
+\end{proof}
+
+A free graded cell of degree \(n\) at \(a\) is a copy of
+\(h_a[-n]\) with a named element \(e\) corresponding to \(1_a\).
+One can adjoin it to a dg module \(P\) by setting \(de=z\) for
+a chosen cycle \(z\in P(a)^{n+1}\). On products the
+differential must be
+\[
+                 d(eu)=z u+(-1)^n e\,d u.
+\]
+This formula squares to zero. Indeed \(d(z u)=(-1)^{n+1}z\,du\),
+which cancels the contribution from differentiating the other
+term. The underlying graded module is the direct sum with the
+new cell. Its quotient by \(P\) is \(h_a[-n]\). A semi-free module
+here has an exhaustive filtration
+\(0=P_{-1}\subset P_0\subset P_1\subset\cdots\)
+obtained by adjoining arbitrary sets of such cells, each with
+differential in the preceding stage. All sums are direct sums of
+graded modules, so each element involves finitely many cells.
+
+\begin{theorem}[Unbounded semi-free resolution]\label{res:G06}
+Every dg \(\mathcal A\)-module \(M\) admits a degreewise surjective
+quasi-isomorphism \(P\to M\) from a semi-free module.
+\end{theorem}
+\begin{proof}
+Put in stage zero a cell of degree \(n\) with zero differential
+for every cycle in \(M(a)^n\) at every object and every degree.
+Map the generator to that cycle. Suppose \(p_j:P_j\to M\) is
+defined. For each \(z\in P_j(a)^n\) with \(dz=0\), and each
+\(x\in M(a)^{n-1}\) satisfying \(dx=p_j(z)\), adjoin in stage \(j+1\)
+a generator \(e\) of degree \(n-1\) with \(de=z\) and send it to \(x\).
+The displayed cell formula and the equation on the proposed image
+make this a chain map. The indexing uses only sets because
+\(\mathcal A\) is small.
+
+Any class in \(H^n(M(a))\) is represented by a cycle from stage zero.
+A cycle of \(P(a)\) whose image is a boundary is already a cycle
+at a finite stage because the filtrations consist of injections
+and each element has finite support. At the next stage a cell
+with a chosen primitive of its image kills that cycle. Hence
+\(H^n(P(a))\to H^n(M(a))\) is both surjective and injective.
+Finally, for an arbitrary \(x\in M(a)^n\) the cycle \(dx\) was
+represented in stage zero. The new cell attached for this cycle
+and \(x\) gives a degree-\(n\) preimage at stage one. This proves
+degreewise surjectivity.
+\end{proof}

@@ -1,0 +1,17 @@
+id	source	dependencies
+G01	Keller, On Differential Graded Categories §2.2, archived PDF pp. 3–4; Yekutieli, Derived Categories §§3.3–3.4, archived PDF pp. 88–94	Cohomological complexes, tensor differential and graded composition
+G02	Keller §3.1, archived PDF pp. 5–6; Yekutieli §§3.3–3.4, archived PDF pp. 88–94	G01; right composition convention
+G03	Keller §§2.2 and 3.1, archived PDF pp. 3–4, 5–6; Yekutieli §3.3, archived PDF pp. 88–91	G01, G02; homogeneous right-linearity and the Hom differential
+G04	Keller §3.4, archived PDF p. 7; MathGenome Advanced Homological Algebra K01–K06	G02, G03; core K01–K06 cone matrices and long exact cohomology sequence
+G05	Keller §3.1, archived PDF pp. 5–6; Yekutieli §3.4, archived PDF pp. 92–94	G01–G03; evaluation at the closed identity and composition
+G06	Keller §3.2, archived PDF p. 6; explicit semi-free construction in the text	G02, G04, G05; cycle cells, later boundary cells, and finite support of graded sums
+G07	Keller §3.2, archived PDF p. 6; direct null-homotopy proof in the text	G03, G04, G06; acyclicity objectwise, recursion on the cell filtration, and exact products
+G08	Keller §§3.2–3.4, archived PDF pp. 6–7; MathGenome Advanced Homological Algebra K05 and D01–D03 for the ordinary complex setting	G03, G04, G06, G07; homotopy resolution functor and cone comparison
+G09	Keller §§3.4–3.5, archived PDF pp. 7–8; sequential mapping-telescope construction	G04, G08; degreewise exact cokernel and long exact Hom sequence
+G10	Keller §3.5, archived PDF pp. 7–8	G05–G09; Yoneda on shifts and the sequential semi-free filtration
+G11	Keller §3.5, Theorem 3.4, archived PDF p. 8; finite-cell factorization proof in the text	G04, G06, G08–G10; finite closed cell subsets, compactness, and filtered exactness
+G12	Keller §4.5, archived PDF pp. 17–18	G04, G05, G07, G08, G11; finite ordering of cone cells and retracing attaching maps
+G13	Keller §3.8, archived PDF p. 11	G03, G04, G07, G08; graded balanced tensor, curried Hom differential, evaluation unit and counit
+G14	Keller §3.8, Theorem 3.11, archived PDF pp. 11–12	G05, G08, G10, G13; localizing subcategory of unit isomorphisms and conservative right adjoint
+G15	Keller §§2.3 and 3.8, archived PDF pp. 4, 11–12	G05, G07, G10, G13, G14; representables of the image and restriction
+G16	Keller §§3.8, 4.5, archived PDF pp. 11–12, 17–18; one-object matrix example in the text	G03, G05, G10, G12, G13, G14; endomorphism action and exact Yoneda on cones
