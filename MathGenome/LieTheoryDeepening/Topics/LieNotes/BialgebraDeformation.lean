@@ -1,0 +1,4 @@
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.BialgebraDeformation.CompletedPolynomialMaps
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.BialgebraDeformation.FirstOrder
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.BialgebraDeformation.NontrivialPolynomial
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.BialgebraDeformation.SkewPrimitiveHopf

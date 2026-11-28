@@ -1,0 +1,118 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,xcolor,titlesec,fancyhdr,etoolbox,needspace}
+\usepackage{hyperref}
+
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome Topics in Lie Theory}
+\fi
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\hypersetup{colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Topics in Lie Theory},pdfauthor={MathGenome},
+  pdfsubject={ALG-08-D01 through ALG-08-D03},bookmarksnumbered=true}
+\setcounter{tocdepth}{1}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+\newcommand{\runningchapter}{}
+\raggedbottom
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{8pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{7pt}{22pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\runningchapter}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\renewcommand{\runningchapter}{\chaptername\ \thechapter}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand*\keeptheoremheading[1]{\BeforeBeginEnvironment{#1}{\Needspace{4\baselineskip}}}
+\forcsvlist{\keeptheoremheading}{theorem,lemma,proposition,corollary,definition,example,remark}
+\pretocmd{\section}{\Needspace{7\baselineskip}}{}{}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\thispdfpagelabel{Cover}
+\begin{flushleft}
+\vspace*{0.72in}
+{\large\scshape\color{deepgreen}MathGenome\par}
+\vspace{0.36in}
+{\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+\vspace{0.46in}
+{\color{ink}\fontsize{35}{41}\selectfont\bfseries
+  Topics in Lie Theory\par}
+\vspace{0.34in}
+{\color{deepgreen}\Large Infinite-dimensional, super, and restricted Lie algebras,\\[4pt]
+  quantum groups, and deformations\par}
+\vfill
+{\normalsize ALG-08-D01 through ALG-08-D03\par}
+\vspace*{0.50in}
+\end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\makeatletter
+\patchcmd{\l@chapter}{\vskip 1.0em \@plus \p@}
+  {\vskip 0.45em \@plus 0.25\p@}{}{}
+\makeatother
+\tableofcontents
+\endgroup
+
+\chapter*{Scope and conventions}
+\phantomsection
+\addcontentsline{toc}{chapter}{Scope and conventions}
+\renewcommand{\runningchapter}{Scope and conventions}
+
+These notes continue \emph{Lie Algebras and Finite-Dimensional
+Representations}. The first chapter constructs infinite-dimensional
+Lie algebras from generalized Cartan data and studies the Witt and
+Virasoro algebras. The affine loop model and the classification of its
+integrable highest weights are supplied by the specified results of
+\emph{Topics in Representation Theory}.
+
+The second chapter treats the sign rules and enveloping algebra of a
+Lie superalgebra, then the distinct restrictions that arise in
+characteristic \(p\). It uses examples in which the defining relations
+can be checked explicitly. The third chapter studies the quantized
+enveloping algebra in type \(A_2\) and its relation to the classical
+algebra. The fourth chapter computes obstruction classes for a Lie
+bracket and for a deformation of the coproduct.
+
+Each chapter states its base field and characteristic. We use the
+coefficient conventions of the earlier MathGenome notes for each
+numbered prerequisite and state sign conventions when passing to a
+super bracket, a Lie bialgebra, or a skew coproduct. The source map
+locates each numbered result and records the prerequisites of its
+proof.
+
+\mainmatter
+\input{chapters/01-infinite}
+\input{chapters/02-super-restricted}
+\input{chapters/03-quantum}
+\input{chapters/04-deformations}
+\backmatter
+\input{bibliography}
+\end{document}

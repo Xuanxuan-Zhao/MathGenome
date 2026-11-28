@@ -1,6 +1,6 @@
 # Lecture notes
 
-The table lists the lecture notes accompanying MathGenome v0.31.0. The PDF and LaTeX files incorporate the checked lecture errata.
+The table lists the lecture notes accompanying MathGenome v0.32.0. The PDF and LaTeX files incorporate the checked lecture errata.
 
 | Area | Lecture notes | PDF pages | LaTeX entry point |
 | --- | --- | ---: | --- |
@@ -38,6 +38,7 @@ The table lists the lecture notes accompanying MathGenome v0.31.0. The PDF and L
 | ALG-10-D | [Topics in Homological Algebra](notes/HomologicalAlgebraDeepening/topics-in-homological-algebra.pdf) | 44 | [`paper.tex`](sources/HomologicalAlgebraDeepening/paper.tex) |
 | ALG-04-D | [Topics in Field and Galois Theory](notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.pdf) | 31 | [`paper.tex`](sources/FieldAndGaloisTheoryDeepening/paper.tex) |
 | ALG-07-D | [Topics in Representation Theory](notes/RepresentationTheoryDeepening/topics-in-representation-theory.pdf) | 37 | [`paper.tex`](sources/RepresentationTheoryDeepening/paper.tex) |
+| ALG-08-D | [Topics in Lie Theory](notes/LieTheoryDeepening/topics-in-lie-theory.pdf) | 31 | [`paper.tex`](sources/LieTheoryDeepening/paper.tex) |
 
 Compile a LaTeX entry point from its own directory with `latexmk -pdf -interaction=nonstopmode -halt-on-error <entry-point>.tex`. The D03 and D07 sources use sibling files and chapter subdirectories.
 
@@ -80,6 +81,8 @@ The [ALG-10 deepening source map](notes/HomologicalAlgebraDeepening/reviewed-sou
 The [ALG-04 deepening source map](notes/FieldAndGaloisTheoryDeepening/reviewed-source-map.json) links all 52 numbered results to their PDF destinations, LaTeX sources, and Lean declarations. The [split LaTeX edition](notes/FieldAndGaloisTheoryDeepening/topics-in-field-and-galois-theory.tex) and its chapter files under `notes/FieldAndGaloisTheoryDeepening/chapters/` reproduce the same lecture. MathGenome authored the notes.
 
 The [ALG-07 deepening source map](notes/RepresentationTheoryDeepening/reviewed-source-map.json) links all 58 numbered results to their PDF destinations, LaTeX sources, and Lean declarations. The [standalone LaTeX edition](notes/RepresentationTheoryDeepening/topics-in-representation-theory.tex) reproduces the same lecture. MathGenome authored the notes.
+
+The [ALG-08 deepening source map](notes/LieTheoryDeepening/reviewed-source-map.json) links all 43 numbered results to their PDF destinations, LaTeX sources, and Lean declarations. The [split LaTeX edition](notes/LieTheoryDeepening/topics-in-lie-theory.tex) reproduces the same lecture. MathGenome authored the notes. The bibliography identifies external books and papers used as references.
 
 The original lecture notes are licensed under CC BY 4.0.
 The P1-05 table entry uses the corrected publication copy. Its [source map](notes/ProbabilityFoundations/SOURCE_MAP.json) locates the current TeX and PDF. The accepted delivery remains in [provenance](../provenance/components/ProbabilityFoundations/delivery/paper.tex).

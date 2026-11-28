@@ -1,0 +1,340 @@
+\chapter{Cohomology and Explicit Deformations}
+
+Work over a field \(k\) of characteristic zero. For Lie brackets,
+our convention for the Chevalley--Eilenberg differential, changes
+of basis, and obstruction classes is that of
+\emph{Lie Algebras and Finite-Dimensional Representations},
+Results I02--I03~\cite[PDF pp.~56--57]{mg-lie}.
+We use those results to compute an entire first-order obstruction
+locus in a small example. We then turn to Lie bialgebras and
+deformations of the coproduct. In that setting multiplication
+and comultiplication must satisfy a compatibility equation
+in addition to their separate associativity conditions.
+
+\section{An adjoint cohomology calculation}
+
+\begin{proposition}[Adjoint cohomology of the three-dimensional Heisenberg algebra]
+\label{res:LD01}
+Let \(\mathfrak h\) have basis \(x,y,z\) with
+\([x,y]=z\) and \(z\) central. Then
+\(\dim H^2(\mathfrak h,\mathfrak h)=5\) and
+\(\dim H^3(\mathfrak h,\mathfrak h)=2\), with adjoint
+coefficients. Each class in degree two has a unique representative
+\(\phi\) of the form
+\[
+ \phi(x,y)=0,\qquad
+ \phi(x,z)=a x+b y+c z,\qquad
+ \phi(y,z)=d x-a y+e z .
+\]
+In degree three evaluation on \((x,y,z)\) identifies
+\(H^3\) with \(\mathfrak h/kz\).
+\end{proposition}
+\begin{proof}
+For an alternating \(2\)-cochain \(\psi\), write
+\(A=\psi(x,y)\), \(B=\psi(x,z)\), and \(C=\psi(y,z)\).
+The argument with a bracket in the Chevalley--Eilenberg
+formula is zero: the only nonzero bracket of two basis vectors
+in the triple is \([x,y]=z\), and \(\psi(z,z)=0\).
+Hence
+\[
+ (d\psi)(x,y,z)=[x,C]-[y,B]
+               =(C_y+B_x)z .
+\]
+Here subscripts denote coordinates in the fixed basis.
+Thus the cocycle space has dimension \(8\). The image in
+degree three is exactly \(kz\), and there are no degree-four
+cochains, proving the degree-three assertion.
+
+For a linear \(1\)-cochain \(f\) write
+\(f(z)=u x+v y+w z\). Its differential is
+\[
+ \begin{aligned}
+ (df)(x,y)&=-u x-v y+(f(y)_y+f(x)_x-w)z,\\
+ (df)(x,z)&=v z,\\
+ (df)(y,z)&=-u z.
+ \end{aligned}
+\]
+Thus a coboundary is determined by its value on \((x,y)\),
+and that value ranges over all of \(\mathfrak h\), for instance
+by taking \(f(x)=f(y)=0\) and varying \(f(z)\).
+Subtract the unique coboundary matching \(A\). In the resulting
+normalized cocycle \(A=0\), the only equation is
+\(C_y=-B_x\). This gives the claimed parameters and uniqueness.
+\end{proof}
+
+\begin{theorem}[Exactly which of these first-order classes extend]
+\label{res:LD02}
+In the coordinates of Proposition~\ref{res:LD01}, a first-order
+bracket deformation of \(\mathfrak h\) extends modulo \(t^3\)
+if and only if
+\[
+                  cd-ea=0,\qquad eb+ca=0 .
+\]
+When both equations hold, the bracket \([\, ,\,]+t\phi\)
+already satisfies Jacobi over \(k[t]\), and in particular gives
+a formal extension over \(k[[t]]\).
+\end{theorem}
+\begin{proof}
+First take the unique normalized representative. In Jacobi,
+use the cyclic expression \(\sum_{\mathrm{cyc}}[[x,y],z]\)
+as in Results I02--I03 of \cite{mg-lie}.
+The coefficient in order \(t\) is zero since \(\phi\) is
+a cocycle. At order \(t^2\), the contribution of the first-order
+cochain on \((x,y,z)\) is
+\[
+ \begin{aligned}
+   \sum_{\mathrm{cyc}}\phi(\phi(x,y),z)
+    &= -e\,\phi(x,z)+c\,\phi(y,z)\\
+    &= (cd-ea)x-(eb+ca)y .
+ \end{aligned}
+\]
+If a \(t^2\)-cochain is added to the bracket, its contribution
+at that order is the negative of its differential, by
+Result I03. By Proposition~\ref{res:LD01}, every such differential
+takes values in \(kz\) on \((x,y,z)\). It can cancel the
+displayed vector only if both its coordinates are zero.
+
+When both vanish, Jacobi for the bracket with only the linear
+term is identically zero: its coefficients have degrees \(0,1,2\),
+and each has vanished on an exterior basis for triples.
+Changing the representative of the first-order class by a
+coboundary preserves existence of either extension. The first-order
+change is \(1+t f\), as in Result I02, and the same linear
+operator is invertible modulo \(t^3\) and over \(k[[t]]\) by
+inverting it as a formal power series. Transport the extension
+by that change of basis.
+\end{proof}
+
+\begin{example}[Two extendable classes with an obstructed sum]
+\label{res:LD03}
+Let \(\phi_1(x,z)=x,\phi_1(y,z)=-y\), and
+\(\phi_2(x,z)=0,\phi_2(y,z)=z\), with both cochains zero
+on \((x,y)\). Each extends, but their sum is obstructed
+already in degree two.
+The extension defined by \(\phi_1\) specializes at \(t=0\)
+to \(\mathfrak h\) and is isomorphic to
+\(\mathfrak{sl}_2(k((t)))\) over the Laurent series field.
+\end{example}
+\begin{proof}
+For \(\phi_1\) only \(a=1\) is nonzero, and for \(\phi_2\)
+only \(e=1\) is nonzero. The equations of
+Theorem~\ref{res:LD02} both hold in either case.
+For their sum the obstruction vector is \(-x\), nonzero
+in the quotient in Proposition~\ref{res:LD01}.
+For the generic \(\phi_1\)-bracket put
+\(H=-2z/t\), \(E=x\), \(F=-2y/t\). These form a basis over
+\(k((t))\), and its brackets are \([H,E]=2E\),
+\([H,F]=-2F\), and \([E,F]=H\), precisely the displayed
+matrix-basis brackets of \(\mathfrak{sl}_2\).
+\end{proof}
+
+The general obstruction formalism for deformations over Artinian
+bases is developed by Fialowski--Fuchs~\cite[Sections 1 and 3]{fialowski-fuchs}.
+The calculation above concerns extensions of each first-order class
+over one parameter.
+
+\section{Coboundary Lie bialgebras}
+
+\begin{definition}[Lie bialgebras and coboundary cobrackets]
+\label{res:LD04}
+For a finite-dimensional Lie algebra \(\mathfrak g\), put
+\(x\cdot(y\wedge z)=[x,y]\wedge z+y\wedge[x,z]\).
+A Lie bialgebra cobracket is a linear map
+\(\delta:\mathfrak g\to\bigwedge^2\mathfrak g\)
+such that
+\[
+ \delta([x,y])=x\cdot\delta(y)-y\cdot\delta(x)
+\]
+and the dual operation, given by
+\(\langle[\alpha,\beta]_\delta,x\rangle
+=\langle\alpha\wedge\beta,\delta(x)\rangle\), is a Lie bracket.
+For \(r\in\bigwedge^2\mathfrak g\) the coboundary map
+\(\delta_r(x)=x\cdot r\) always satisfies the first condition.
+\end{definition}
+
+\begin{proposition}[The invariant Schouten-square criterion]
+\label{res:LD05}
+Define a symmetric bracket on bivectors by bilinear extension of
+\[
+ \begin{aligned}
+ [a\wedge b,c\wedge d]_{\mathrm S}
+   ={}&[a,c]\wedge b\wedge d-[a,d]\wedge b\wedge c\\
+      &-[b,c]\wedge a\wedge d+[b,d]\wedge a\wedge c .
+ \end{aligned}
+\]
+The map \(\delta_r\) is a Lie bialgebra cobracket if and only if
+\([r,r]_{\mathrm S}\) is fixed by the adjoint action
+on \(\bigwedge^3\mathfrak g\).
+\end{proposition}
+\begin{proof}
+The displayed formula is alternating in the two factors of
+each bivector, so it descends to the exterior squares.
+Interchanging the two bivectors changes the sign of the Lie
+bracket and of the necessary permutation of the two remaining
+vectors, making the formula symmetric. Applying
+\(\operatorname{ad}_x\) to each term gives
+\[
+ x\cdot[r,s]_{\mathrm S}=[x\cdot r,s]_{\mathrm S}
+                         +[r,x\cdot s]_{\mathrm S},
+\]
+using the Lie Jacobi identity in the bracketed factor.
+
+For any \(\delta\), extend it in degree two by
+\(\partial_\delta(y\wedge z)=\delta(y)\wedge z-y\wedge\delta(z)\).
+Pairing \(\partial_\delta\delta(x)\) with \(\alpha\wedge\beta\wedge\gamma\)
+gives the pairing of \(x\) with the cyclic sum
+\(\sum_{\mathrm{cyc}}[[\alpha,\beta]_\delta,\gamma]_\delta\).
+Indeed for a term \(u\wedge v\) of \(\delta(x)\) the pairing of
+\(\delta(u)\wedge v-u\wedge\delta(v)\) is the cyclic sum of
+\(
+\langle[\alpha,\beta]_\delta,u\rangle\langle\gamma,v\rangle
+-\langle[\alpha,\beta]_\delta,v\rangle\langle\gamma,u\rangle
+\).
+These pairings detect every trivector, so the dual Jacobi
+identity is equivalent to \(\partial_\delta\delta=0\).
+
+The bivector formula gives
+\([r,y\wedge z]_{\mathrm S}=-\delta_r(y)\wedge z+
+y\wedge\delta_r(z)\), first for a decomposable \(r\)
+and then by linearity. Consequently
+\[
+ \partial_{\delta_r}\delta_r(x)
+      =-[r,x\cdot r]_{\mathrm S}
+      =-\tfrac12 x\cdot[r,r]_{\mathrm S}.
+\]
+The \(1\)-cocycle condition also holds because the adjoint
+action is a representation. This proves the criterion.
+\end{proof}
+
+\begin{example}[Two cobrackets on the split rank-one algebra]
+\label{res:LD06}
+For the basis \(H,E,F\) with \([H,E]=2E\),
+\([H,F]=-2F\), \([E,F]=H\), there are Lie bialgebra
+structures from \(r_1=F\wedge E\) and \(r_2=H\wedge E\).
+The first has
+\(\delta_{r_1}(H)=0\), \(\delta_{r_1}(E)=H\wedge E\),
+and \(\delta_{r_1}(F)=H\wedge F\).
+The second has Schouten square zero and has
+\(\delta_{r_2}(H)=2H\wedge E\), \(\delta_{r_2}(E)=0\),
+and \(\delta_{r_2}(F)=-2E\wedge F\).
+\end{example}
+\begin{proof}
+For \(r=u\wedge v\), the formula of
+Proposition~\ref{res:LD05} gives
+\([r,r]_{\mathrm S}=2[u,v]\wedge u\wedge v\).
+For \(r_1\), this is a scalar multiple of \(H\wedge E\wedge F\).
+The adjoint action of \(H\) on that trivector cancels the
+weights \(2,-2\). The adjoint actions of \(E\) and \(F\)
+each give repeated factors, so the trivector is invariant.
+For \(r_2\), \([H,E]=2E\) gives a repeated factor in the square.
+The criterion gives both bialgebras. Acting on the two
+bivectors with the basis vectors gives the claimed formulas.
+The first convention agrees with the simple-root normalization
+of the preceding quantum chapter.
+\end{proof}
+
+\section{First-order changes of a bialgebra}
+
+\begin{proposition}[Linearized associativity, coassociativity, and compatibility]
+\label{res:LD07}
+Let \(B\) be a bialgebra with multiplication \(m\), coproduct \(\Delta\),
+unit \(1\), and counit \(\epsilon_B\).
+Over \(k[s]/(s^2)\), write \(m_s=m+sf\), \(\Delta_s=\Delta+sg\)
+and keep the unit and counit fixed. Let
+\(J=1\otimes\tau\otimes1\) on \(B^{\otimes4}\), where
+\(\tau\) interchanges the middle factors.
+The bialgebra identities hold precisely when
+\[
+ \begin{aligned}
+ &f(1,b)=f(b,1)=0,\quad \epsilon_B f=0,\quad
+   g(1)=0,\quad (\epsilon_B\otimes1)g=(1\otimes\epsilon_B)g=0,\\
+ &a f(b,c)-f(ab,c)+f(a,bc)-f(a,b)c=0,\\
+ &(\Delta\otimes1)g+(g\otimes1)\Delta
+        -(1\otimes\Delta)g-(1\otimes g)\Delta=0,\\
+ &\Delta f+gm=(f\otimes m+m\otimes f)J(\Delta\otimes\Delta)
+             +(m\otimes m)J(g\otimes\Delta+\Delta\otimes g).
+ \end{aligned}
+\]
+Under pullback by \(1+s u\) with \(u(1)=0\) and
+\(\epsilon_B u=0\), the two cochains change by
+\[
+ \begin{aligned}
+ f&\longmapsto f+m(u\otimes1+1\otimes u)-u m,\\
+ g&\longmapsto g+\Delta u-(u\otimes1+1\otimes u)\Delta.
+ \end{aligned}
+\]
+\end{proposition}
+\begin{proof}
+Keeping the unit and counit supplies the first line, including
+the condition that the coproduct is unital and the counit is
+multiplicative. For associativity compare
+\(m_s(m_s\otimes1)\) and \(m_s(1\otimes m_s)\);
+their difference in degree one gives the second line up to
+an overall sign. The degree-one part of
+\((\Delta_s\otimes1)\Delta_s=(1\otimes\Delta_s)\Delta_s\)
+is the third line. For compatibility, start from
+\(\Delta_s m_s=(m_s\otimes m_s)J(\Delta_s\otimes\Delta_s)\).
+On the left, the \(s\)-terms are \(\Delta f\) and \(gm\).
+On the right one changes one of the four indicated operations
+at a time. This gives the last line, and terms with two changes
+are zero. These expansions exhaust the bialgebra identities.
+In the pullback formulas use the inverse \(1-su\). Apply it
+after multiplication and in both factors after comultiplication;
+their linear terms are exactly the two displayed changes.
+\end{proof}
+
+These equations give the two operation components and change of
+coordinates of the normalized bialgebra deformation complex.
+For the general cohomology and higher brackets see
+Markl~\cite[Section 6]{markl}.
+
+\begin{theorem}[A nontrivial coproduct deformation of a polynomial Hopf algebra]
+\label{res:LD08}
+Let \(B=k[x,y]\) with \(x,y\) primitive. With multiplication
+unchanged, the \(t\)-adically completed algebra \(B[[t]]\)
+admits a Hopf structure extending the original one:
+\[
+ \Delta_t(x)=x\otimes1+1\otimes x,\qquad
+ \Delta_t(y)=y\otimes1+\exp(tx)\otimes y .
+\]
+The counit still vanishes on \(x,y\). Its first-order class
+as a bialgebra deformation is nonzero. On primitives of
+degree one the linearized skew coproduct gives
+\(\delta(x)=0\) and \(\delta(y)=x\wedge y\).
+\end{theorem}
+\begin{proof}
+The formulas determine a continuous algebra map to
+\((B\otimes B)[[t]]\), since the target is commutative and
+both images have prescribed constant terms. As \(x\) is
+primitive, the formal series \(a=\exp(tx)\) is group-like:
+the exponential of the sum of the two commuting copies of
+\(tx\) is the product of their exponentials.
+Both iterated coproducts of \(y\) are
+\[
+ y\otimes1\otimes1+a\otimes y\otimes1+a\otimes a\otimes y,
+\]
+and they agree on \(x\) by primitivity. The counit
+identities follow on generators. Define the continuous algebra
+map \(S\) by \(S(x)=-x\), \(S(y)=-a^{-1}y\), so \(S(a)=a^{-1}\).
+The two antipode identities hold on \(x\) and \(y\):
+on \(y\) the sums are \(S(y)+a^{-1}y=0\) and
+\(y+aS(y)=0\). The two sides are algebra maps by commutativity,
+so the identities hold throughout the completion.
+
+At first order the coefficient of \(t\) sends \(y\) to
+\(x\otimes y\). The difference of this tensor and its flip
+is \(x\otimes y-y\otimes x\), identified with \(x\wedge y\).
+Since
+\(\Delta\) is cocommutative, the second change of cochains
+in Proposition~\ref{res:LD07} is symmetric under the flip,
+for every \(u\). Thus the skew part cannot be removed by
+a first-order change of coordinates. Its values on \(x,y\)
+give the asserted cobracket on the abelian two-dimensional
+Lie algebra they span. Its dual is a Lie bracket, since the
+Jacobiator is alternating on a two-dimensional space.
+\end{proof}
+
+For the quantization problem with a prescribed Lie bialgebra
+and its classical limit, see the definition and existence
+theorem of Etingof--Kazhdan
+~\cite[Section 3 and Theorem 9.6]{etingof-kazhdan}.

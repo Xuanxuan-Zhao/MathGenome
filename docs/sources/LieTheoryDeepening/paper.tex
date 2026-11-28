@@ -1,0 +1,2219 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,xcolor,titlesec,fancyhdr,etoolbox,needspace}
+\usepackage{hyperref}
+
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome Topics in Lie Theory}
+\fi
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\hypersetup{colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Topics in Lie Theory},pdfauthor={MathGenome},
+  pdfsubject={ALG-08-D01 through ALG-08-D03},bookmarksnumbered=true}
+\setcounter{tocdepth}{1}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+\newcommand{\runningchapter}{}
+\raggedbottom
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{8pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{7pt}{22pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\runningchapter}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\renewcommand{\runningchapter}{\chaptername\ \thechapter}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand*\keeptheoremheading[1]{\BeforeBeginEnvironment{#1}{\Needspace{4\baselineskip}}}
+\forcsvlist{\keeptheoremheading}{theorem,lemma,proposition,corollary,definition,example,remark}
+\pretocmd{\section}{\Needspace{7\baselineskip}}{}{}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\thispdfpagelabel{Cover}
+\begin{flushleft}
+\vspace*{0.72in}
+{\large\scshape\color{deepgreen}MathGenome\par}
+\vspace{0.36in}
+{\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+\vspace{0.46in}
+{\color{ink}\fontsize{35}{41}\selectfont\bfseries
+  Topics in Lie Theory\par}
+\vspace{0.34in}
+{\color{deepgreen}\Large Infinite-dimensional, super, and restricted Lie algebras,\\[4pt]
+  quantum groups, and deformations\par}
+\vfill
+{\normalsize ALG-08-D01 through ALG-08-D03\par}
+\vspace*{0.50in}
+\end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\makeatletter
+\patchcmd{\l@chapter}{\vskip 1.0em \@plus \p@}
+  {\vskip 0.45em \@plus 0.25\p@}{}{}
+\makeatother
+\tableofcontents
+\endgroup
+
+\chapter*{Scope and conventions}
+\phantomsection
+\addcontentsline{toc}{chapter}{Scope and conventions}
+\renewcommand{\runningchapter}{Scope and conventions}
+
+These notes continue \emph{Lie Algebras and Finite-Dimensional
+Representations}. The first chapter constructs infinite-dimensional
+Lie algebras from generalized Cartan data and studies the Witt and
+Virasoro algebras. The affine loop model and the classification of its
+integrable highest weights are supplied by the specified results of
+\emph{Topics in Representation Theory}.
+
+The second chapter treats the sign rules and enveloping algebra of a
+Lie superalgebra, then the distinct restrictions that arise in
+characteristic \(p\). It uses examples in which the defining relations
+can be checked explicitly. The third chapter studies the quantized
+enveloping algebra in type \(A_2\) and its relation to the classical
+algebra. The fourth chapter computes obstruction classes for a Lie
+bracket and for a deformation of the coproduct.
+
+Each chapter states its base field and characteristic. We use the
+coefficient conventions of the earlier MathGenome notes for each
+numbered prerequisite and state sign conventions when passing to a
+super bracket, a Lie bialgebra, or a skew coproduct. The source map
+locates each numbered result and records the prerequisites of its
+proof.
+
+\mainmatter
+\chapter{Contragredient Algebras and Virasoro}
+
+All vector spaces in this chapter are over \(\mathbb C\).
+The contragredient construction starts from a matrix and retains the
+Cartan subalgebra while discarding the largest ideal disjoint from it.
+This gives the structural meaning of the simple-root relations beyond
+finite type. The second half constructs the Witt and Virasoro algebras
+and computes their first highest-weight singular vectors.
+For the loop bracket, the degree derivation and the concrete untwisted
+affine highest-weight results we use \emph{Topics in Representation
+Theory}, LO09--LO14 \cite[PDF pp.~26--28]{mg-reptopics}.
+
+\section{Cartan data and the contragredient quotient}
+
+\begin{definition}[Generalized Cartan matrices and realizations]
+\label{res:KM01}
+A generalized Cartan matrix \(A=(a_{ij})_{1\le i,j\le n}\) has
+integer entries, \(a_{ii}=2\), \(a_{ij}\le0\) for \(i\ne j\), and
+\(a_{ij}=0\) if and only if \(a_{ji}=0\). It is symmetrizable
+if there are positive real numbers \(d_i\) such that
+\(d_i a_{ij}=d_j a_{ji}\). A realization is a vector space
+\(\mathfrak h\) with independent elements \(h_i\) and independent
+linear forms \(\alpha_i\) such that
+\(\alpha_j(h_i)=a_{ij}\). It is minimal when
+\(\dim\mathfrak h=2n-\operatorname{rank}A\).
+\end{definition}
+
+\begin{lemma}[Existence and uniqueness of a minimal realization]
+\label{res:KM02}
+Every generalized Cartan matrix has a minimal realization. Any
+two such realizations are related by an isomorphism carrying each
+\(h_i\) to its counterpart and pulling back each counterpart of
+\(\alpha_i\) to \(\alpha_i\). In a minimal realization,
+\(\bigcap_i\ker\alpha_i\) has dimension \(n-\operatorname{rank}A\).
+\end{lemma}
+
+\begin{proof}
+Let \(\mathfrak h_0\) have basis \(h_i\), and define
+\(T_0:\mathfrak h_0\to\mathbb C^n\) by
+\(T_0(h_i)=(a_{i1},\ldots,a_{in})\).
+Choose a complement \(E\) of its image in \(\mathbb C^n\),
+set \(\mathfrak h=\mathfrak h_0\oplus E\), and let
+\(T(h,e)=T_0(h)+e\). The coordinate forms of \(T\) are independent
+because \(T\) is onto. In any realization, the restriction of
+\(T=(\alpha_i)_i\) to \(\mathfrak h_0\) has rank
+\(\operatorname{rank}A\); surjectivity forces
+\(\dim(\mathfrak h/\mathfrak h_0)\ge n-\operatorname{rank}A\).
+For a minimal realization, choose a linear section of \(T\) over the
+same complementary space \(E\). Its image is disjoint from
+\(\mathfrak h_0\) and complements it by dimension. Thus the above
+model identifies the realizations. The dimension of the common
+kernel is rank-nullity for \(T\).
+\end{proof}
+
+\begin{proposition}[The universal algebra before the quotient]
+\label{res:KM03}
+Let \(\widetilde{\mathfrak g}\) be generated by the vector space
+\(\mathfrak h\) and symbols \(e_i,f_i\), with relations
+\[
+ \begin{gathered}
+ [h,h']=0,\qquad [h,e_i]=\alpha_i(h)e_i,\qquad
+ [h,f_i]=-\alpha_i(h)f_i,\\
+ [e_i,f_j]=\delta_{ij}h_i .
+ \end{gathered}
+\]
+The displayed copy of \(\mathfrak h\) embeds,
+and there is a vector space decomposition
+\[
+ \widetilde{\mathfrak g}
+   =\widetilde{\mathfrak n}^-\oplus\mathfrak h
+      \oplus\widetilde{\mathfrak n}^+ ,
+\]
+where the Lie subalgebras generated by the \(f_i\) and \(e_i\)
+respectively are free on those generators. With
+\(Q=\bigoplus_i\mathbb Z\alpha_i\), the grading has
+\(\deg h=0\), \(\deg e_i=\alpha_i\), and
+\(\deg f_i=-\alpha_i\). Each homogeneous space is the
+corresponding weight space for the adjoint action of \(\mathfrak h\).
+\end{proposition}
+
+\begin{proof}
+We use A05 and A07 of \emph{Lie Algebras and Finite-Dimensional
+Representations} for PBW and the embedding of a free Lie algebra
+in the corresponding tensor algebra \cite[PDF pp.~8--9]{mg-lie}.
+Take the tensor space on symbols \(F_i\) and its vacuum \(v_\lambda\)
+for any \(\lambda\in\mathfrak h^*\). On a word \(w\) let
+\(\gamma(w)\) be the sum of the \(\alpha_j\) labeling its letters.
+Let \(f_i\) prefix \(F_i\) and let \(h\) act diagonally on \(w\) by
+\((\lambda-\gamma(w))(h)\). Define \(e_i\) to kill the vacuum and
+recursively set
+\[
+ e_i(F_j w)=F_j(e_i w)
+               +\delta_{ij}(\lambda-\gamma(w))(h_i)\,w.
+\]
+Every nonzero term of \(e_i w\) has \(\gamma\)-degree
+\(\gamma(w)-\alpha_i\), by induction on the length. The weight
+shift gives the required \(h,e_i\) bracket, and the recursion
+gives exactly the \(e_i,f_j\) bracket. Thus these operators realize
+the relations. If an \(h\) acts as zero for all \(\lambda\), its value
+on each vacuum is zero, so \(h=0\). The action of words in the
+\(f_i\) on the vacuum is free associative prefixing. Restricting
+that action to the free Lie subalgebra proves freeness of
+\(\widetilde{\mathfrak n}^-\). Interchanging \(e_i,f_i\) and sending
+\(h\) to \(-h\) preserves the relations, hence gives freeness of
+\(\widetilde{\mathfrak n}^+\) as well.
+
+By induction on bracket length the relation for \([e_i,f_j]\)
+gives \([e_i,\widetilde{\mathfrak n}^-]\subseteq
+\mathfrak h+\widetilde{\mathfrak n}^-\): expand the bracket with
+a Lie word into two terms by Jacobi. The induction terms
+bracket elements of \(\mathfrak h\) or \(\widetilde{\mathfrak n}^-\)
+with smaller negative words. The interchange gives the opposite
+containment for \([f_i,\widetilde{\mathfrak n}^+]\).
+The sum of the three subspaces contains the generators and is stable
+under their adjoints. Iterated adjoints of the generators applied to
+generators span the presented Lie algebra by Jacobi, so the sum
+is all of it. The relations are homogeneous for \(Q\); the three
+subspaces have only strictly negative, zero and strictly positive
+degrees respectively. This gives directness. On a bracket word
+the adjoint \(h\)-weight is its degree, by the derivation rule.
+Independence of the \(\alpha_i\) identifies distinct degrees
+with distinct weights.
+\end{proof}
+
+\begin{theorem}[The Cartan-disjoint ideal and the center]
+\label{res:KM04}
+There is a largest ideal \(\mathfrak r\) of
+\(\widetilde{\mathfrak g}\) with \(\mathfrak r\cap\mathfrak h=0\).
+The contragredient Lie algebra
+\(\mathfrak g(A)=\widetilde{\mathfrak g}/\mathfrak r\) inherits
+the triangular decomposition and the \(Q\)-grading.
+Its center is \(\bigcap_i\ker\alpha_i\subset\mathfrak h\).
+For a minimal realization its dimension is
+\(n-\operatorname{rank}A\). Any ideal of \(\mathfrak g(A)\)
+disjoint from \(\mathfrak h\) is zero.
+\end{theorem}
+
+\begin{proof}
+Each ideal is a direct sum of its intersections with the weight
+spaces. Indeed an element has only finitely many weight components.
+Choose \(h\) separating their values, which is possible by avoiding
+finitely many proper hyperplanes, and extract those components
+as polynomial projections in \(\operatorname{ad}h\). Stability
+under the adjoint keeps them in the ideal. Thus an ideal disjoint
+from \(\mathfrak h\) has zero degree-zero component by
+Proposition~\ref{res:KM03}. The sum of all these ideals still has
+zero degree-zero component, and is the required largest ideal.
+In the quotient, the triangular summands survive as the corresponding
+degree ranges, including all of \(\mathfrak h\). A central vector is
+of degree zero because it commutes with \(\mathfrak h\).
+The \(e_i,f_i\) in the quotient are nonzero since
+\([e_i,f_i]=h_i\ne0\); hence a vector of \(\mathfrak h\) commutes
+with them precisely when all the \(\alpha_i\) vanish on it.
+Lemma~\ref{res:KM02} gives the dimension. Finally the preimage of a
+Cartan-disjoint ideal of the quotient is itself Cartan-disjoint and
+contains \(\mathfrak r\), so it equals \(\mathfrak r\).
+\end{proof}
+
+\section{Simple reflections and highest weights}
+
+\begin{theorem}[Serre relations in the quotient]
+\label{res:KM05}
+For \(i\ne j\), the simple generators of \(\mathfrak g(A)\) satisfy
+\[
+ (\operatorname{ad}e_i)^{1-a_{ij}} e_j=0,\qquad
+ (\operatorname{ad}f_i)^{1-a_{ij}} f_j=0 .
+\]
+Each \(\operatorname{ad}e_i\) and \(\operatorname{ad}f_i\) is locally
+nilpotent on \(\mathfrak g(A)\).
+\end{theorem}
+
+\begin{proof}
+In \(\widetilde{\mathfrak g}\) write
+\(v_s=(\operatorname{ad}e_i)^s e_j\) and \(m=1-a_{ij}\).
+One has \([f_i,v_0]=0\) and \(v_s\) has \(h_i\)-weight
+\(a_{ij}+2s\). Thus induction gives
+\[
+ [f_i,v_s]=-s(a_{ij}+s-1)v_{s-1}\qquad(s\ge1),
+\]
+by expanding \([f_i,[e_i,v_{s-1}]]\) using Jacobi and
+\([f_i,e_i]=-h_i\). At \(s=m\) this is zero.
+For \(k\notin\{i,j\}\) the adjoint of \(f_k\) commutes with
+\(\operatorname{ad}e_i\) and kills \(e_j\), so it kills \(v_m\).
+The \(f_j\)-bracket is \(-(\operatorname{ad}e_i)^m h_j\).
+It vanishes when \(m\ge2\), since the first bracket is already a
+multiple of \(e_i\). When \(m=1\), \(a_{ij}=0\) gives
+\(a_{ji}=0\), so it still vanishes.
+
+Take the span of \(v_m\) and all successive adjoints of the
+\(e_k\) on it. It is stable under \(\mathfrak h\) by homogeneity,
+and under the \(e_k\) by construction. It is stable under each
+\(\operatorname{ad}f_k\), by commuting this operator past the
+first \(\operatorname{ad}e_\ell\) and using
+\([f_k,e_\ell]=-\delta_{k\ell}h_k\); induction uses that \(f_k\)
+kills \(v_m\). This span is therefore an ideal, with strictly
+positive degrees, and lies in the ideal of
+Theorem~\ref{res:KM04}. The interchange \(e_i\leftrightarrow f_i\),
+\(h\mapsto-h\), preserves \(\mathfrak r\) by its maximality, and
+gives the negative relations. On the simple generators, local
+nilpotence of an adjoint \(\operatorname{ad}e_i\) follows from
+these relations, from \([e_i,f_j]=\delta_{ij}h_i\), and from
+\([e_i,h]=-\alpha_i(h)e_i\). The derivation rule makes it
+locally nilpotent on every bracket word, because a sufficiently
+high iterate then hits some generator beyond its bound.
+The negative case follows by interchange.
+\end{proof}
+
+\begin{proposition}[Reflection automorphisms and real roots]
+\label{res:KM06}
+For each \(i\) there is an automorphism
+\[
+ r_i=\exp(\operatorname{ad}e_i)
+      \exp(-\operatorname{ad}f_i)\exp(\operatorname{ad}e_i)
+\]
+whose restriction to \(\mathfrak h\) sends
+\(h\) to \(h-\alpha_i(h)h_i\).
+It takes the root space of \(\beta\) isomorphically to that
+of \(s_i\beta=\beta-\beta(h_i)\alpha_i\). All roots in the
+orbits of the simple roots under the \(s_i\) have multiplicity one.
+If \(A\) is symmetrizable, the form on the real span of the
+root lattice with
+\((\alpha_i,\alpha_j)=d_i a_{ij}\) is invariant under each
+\(s_i\). In this case a root in the orbit of \(\alpha_i\)
+has squared length \(2d_i\), even when the form is degenerate.
+\end{proposition}
+
+\begin{proof}
+All exponentials are finite sums on each vector by
+Theorem~\ref{res:KM05}. The iterated derivation rule for brackets
+shows \(\exp(D)[x,y]=[\exp(D)x,\exp(D)y]\); the inverse is
+\(\exp(-D)\), by the binomial identity. In the three factors above,
+the first applied to \(h\) gives \(h-\alpha_i(h)e_i\),
+the second sends \(h\) to \(h-\alpha_i(h)f_i\) and \(e_i\) to
+\(e_i+h_i-f_i\). Applying the last factor gives \(h-\alpha_i(h)h_i\),
+using \([h_i,e_i]=2e_i\). This map on \(\mathfrak h\) is an
+involution, so the new weight of \(r_i x\), for \(x\) of
+weight \(\beta\), is \(\beta\) composed with that map. The
+\(\alpha_i\) root space is the line \(\mathbb C e_i\): a bracket
+word of that degree uses just \(e_i\), and \(e_i\ne0\).
+Its orbit thus has the indicated multiplicities. The formula
+\(\beta(h_i)= (\alpha_i,\beta)/d_i\) expresses \(s_i\) as
+reflection in \(\alpha_i\) for the symmetric form. Direct
+expansion preserves the form since
+\((\alpha_i,\alpha_i)=2d_i\); no inverse of the form is used.
+\end{proof}
+
+\begin{example}[An infinite rank-two root orbit]
+\label{res:KM07}
+For \(a,b>0\) integers with \(ab\ge4\), let
+\(A=\left(\begin{smallmatrix}2&-a\\-b&2\end{smallmatrix}\right)\).
+The algebra \(\mathfrak g(A)\) is infinite-dimensional.
+\end{example}
+
+\begin{proof}
+In simple-root coordinates the matrix of \(s_1s_2\) is
+\(\left(\begin{smallmatrix}ab-1&-a\\ b&-1\end{smallmatrix}\right)\),
+of determinant \(1\) and trace \(ab-2\). If \(ab>4\), its
+two eigenvalues are positive reciprocal real numbers, different
+from \(1\). Thus no nonzero vector is fixed by any positive
+power of this matrix. If \(ab=4\), the matrix is \(I+N\) with
+\(N^2=0\) by its characteristic polynomial, and
+\(N\alpha_1=2\alpha_1+b\alpha_2\ne0\).
+Then \((I+N)^j\alpha_1=\alpha_1+jN\alpha_1\) are all distinct.
+In either case Proposition~\ref{res:KM06} gives infinitely many
+nonzero, distinct root spaces in the orbit of \(\alpha_1\).
+\end{proof}
+
+\begin{theorem}[Highest-weight modules and integrability]
+\label{res:KM08}
+For \(\lambda\in\mathfrak h^*\), the Verma module induced from the
+one-dimensional \(\mathfrak h\oplus\mathfrak n^+\)-module of
+weight \(\lambda\) has finite-dimensional weight spaces,
+one-dimensional top, and a unique simple quotient \(L(\lambda)\).
+On this simple quotient all \(e_i,f_i\) are locally nilpotent
+if and only if \(\lambda(h_i)\in\mathbb Z_{\ge0}\) for all \(i\).
+In that case the multiplicities of its weight spaces are invariant
+under the reflections \(s_i\) of Proposition~\ref{res:KM06}.
+\end{theorem}
+
+\begin{proof}
+PBW, Result A05 of \cite[PDF pp.~8--9]{mg-lie}, for an order
+with the negative-root basis first gives the
+Verma module as \(U(\mathfrak n^-)\) applied freely to the
+highest vector. Every nonzero degree in the negative algebra
+is a strictly negative combination of the simple degrees.
+For a given weight difference \(\gamma=\sum_i m_i\alpha_i\)
+with \(m_i\ge0\), its negative enveloping component is spanned
+by words in the \(f_i\) with exactly \(m_i\) occurrences of
+each \(i\), of which there are finitely many.
+The degree of the vacuum is zero, and every proper submodule
+misses the vacuum. Such submodules are sums of weight components,
+by the polynomial extraction used in Theorem~\ref{res:KM04}.
+Their sum is therefore still proper and is the unique maximal
+submodule.
+
+On a highest vector \(v\) the rank-one relation gives
+\[
+ e_i f_i^r v
+   =r(\lambda(h_i)-r+1)f_i^{r-1}v
+\]
+by induction, as in the affine criterion LO12
+\cite[PDF p.~27]{mg-reptopics}. If \(r>0\) is minimal with
+\(f_i^r v=0\), its coefficient must vanish, proving necessity.
+Conversely, for \(m=\lambda(h_i)\in\mathbb Z_{\ge0}\),
+the vector \(f_i^{m+1}v\) in the Verma module is killed by \(e_i\)
+by the formula, and by every other \(e_j\) since \([e_j,f_i]=0\).
+It generates a proper submodule: PBW shows that the generated
+weights are at most its own lower weight. It therefore vanishes
+in the simple quotient. Each \(e_i\) already kills its highest
+vector. For \(x=e_i\) or \(f_i\), Theorem~\ref{res:KM05} and the
+derivation rule give local nilpotence of \(\operatorname{ad}x\)
+on \(U(\mathfrak g(A))\). Now
+\[
+ x^N(uv)=\sum_{j=0}^N\binom Nj
+       (\operatorname{ad}x)^j(u)x^{N-j}v
+\]
+proves local nilpotence on the entire module by taking \(N\)
+large enough for both bounds. On an integrable module the
+products \(\exp(e_i)\exp(-f_i)\exp(e_i)\) act invertibly.
+The same binomial formula shows that conjugation by
+\(\exp(x)\) on the action of an algebra element is
+the action of \(\exp(\operatorname{ad}x)\). In particular the
+product intertwines the action of \(\mathfrak h\) with that
+of its image under \(r_i\). It therefore takes the weight
+space of \(\mu\) isomorphically to that of \(s_i\mu\).
+\end{proof}
+
+\section{Comparison with the untwisted affine model}
+
+\begin{proposition}[The contragredient affine algebra is the loop model]
+\label{res:KM09}
+Let \(\mathfrak a\) be finite-dimensional complex simple and take
+the untwisted affine loop algebra with its degree derivation
+as in LO09--LO10. The simple forms
+\(\alpha_0=\delta-\theta,\alpha_1,\ldots,\alpha_\ell\) and
+coroots \(h_0=K-h_\theta,h_1,\ldots,h_\ell\) give a
+minimal realization of a symmetrizable generalized Cartan
+matrix. The associated \(\mathfrak g(A)\) is the full loop
+model, with the center and the derivation kept distinct.
+\end{proposition}
+
+\begin{proof}
+Use the construction and conventions of LO09--LO10
+\cite[PDF p.~26]{mg-reptopics}. Here \(\theta\) is the highest
+finite root. The simple forms are independent since
+\(\alpha_0(d)=1\) and all finite simple forms vanish on \(d\).
+The coroots are independent by the coefficient of \(K\).
+The finite simple Cartan block is invertible. The full matrix
+has rank \(\ell\): the nonzero element \(K\) in the span of the
+coroots is annihilated by all simple forms, and the finite block
+gives the lower bound. Thus the realization of dimension
+\(\ell+2\) is minimal. In the entries involving \(0\) and a
+finite simple index, the two off-diagonal entries are
+\(-\alpha_i(h_\theta)\) and \(-\theta(h_i)\), both nonpositive
+integers by the root strings and dominance of \(\theta\), and
+both zero exactly when \((\theta,\alpha_i)=0\), using D04 and
+E09 of \cite[PDF pp.~24--25, 34--35]{mg-lie}.
+The \(0,0\) entry is \(2\). Extending the finite root form
+by making \(\delta\) orthogonal to everything gives
+\(a_{ij}=2(\alpha_i,\alpha_j)/(\alpha_i,\alpha_i)\).
+Thus the positive half-squared lengths symmetrize the full matrix.
+
+The simple triples and the affine Cartan subalgebra satisfy the
+relations of Proposition~\ref{res:KM03}, and generate the loop
+model by LO10. The resulting surjection is injective on
+\(\mathfrak h\). To see that its kernel is the largest
+Cartan-disjoint ideal, any nonzero ideal of the loop model
+contains a nonzero weight vector by polynomial weight
+extraction. A nonzero real root vector
+\(x_\alpha\otimes t^m\) brackets with a suitable opposite
+root vector in degree \(-m\) to give a nonzero Cartan
+element: the finite component is a nonzero multiple of
+\(h_\alpha\). An imaginary degree vector
+\(h\otimes t^m\) with \(m\ne0\) brackets with some
+\(h'\otimes t^{-m}\) to give
+\(m B(h,h')K\ne0\), since the invariant form is nondegenerate
+on the finite Cartan. A nonzero element of weight zero
+already lies in the affine Cartan. The largest ideal
+\(\mathfrak r\) of Theorem~\ref{res:KM04} contains the kernel,
+and its image has zero intersection with the affine Cartan:
+lift a purported Cartan element along the isomorphism on
+\(\mathfrak h\) and subtract that lift to land in the
+kernel. Thus the image of \(\mathfrak r\) is zero, proving
+the comparison.
+\end{proof}
+
+\section{Witt and its universal central extension}
+
+\begin{proposition}[The Witt algebra is simple and perfect]
+\label{res:KM10}
+Every derivation of \(\mathbb C[t,t^{-1}]\) is a finite linear
+combination of the elements \(L_m=-t^{m+1}\partial_t\),
+\(m\in\mathbb Z\). These form the Witt algebra \(W\) with bracket
+\([L_m,L_n]=(m-n)L_{m+n}\). The Lie algebra \(W\) is simple
+and equals its derived algebra.
+\end{proposition}
+
+\begin{proof}
+A derivation is determined by its value at \(t\), because the
+Leibniz rule gives its values on \(t^n\) for positive powers
+and \(D(t^{-1})=-t^{-2}D(t)\). The commutator of the
+displayed derivations is computed at \(t\), giving the bracket.
+The eigenvalues \(-m\) of \(\operatorname{ad}L_0\) are distinct.
+Every element has finite support, so any nonzero ideal contains
+some \(L_m\) by polynomial weight extraction. If \(m\ne0\)
+then \([L_m,L_{-m}]=2mL_0\) lies in the ideal. With \(L_0\)
+in the ideal, all \(L_n\), \(n\ne0\), are obtained by brackets.
+The same two bracket formulas show that \(W=[W,W]\).
+\end{proof}
+
+\begin{theorem}[The Virasoro cocycle and the universal extension]
+\label{res:KM11}
+For an arbitrary complex vector space \(Z\) with trivial \(W\)-action,
+every central \(Z\)-valued Lie \(2\)-cocycle of \(W\), modulo
+coboundaries, has a unique representative of the form
+\[
+ c(L_m,L_n)=\delta_{m,-n}\frac{m^3-m}{12}\,z,\qquad z\in Z.
+\]
+In particular \(H^2(W,\mathbb C)\) has dimension one.
+The Lie algebra \(\operatorname{Vir}=W\oplus\mathbb C C\)
+with bracket
+\[
+ [L_m,L_n]=(m-n)L_{m+n}
+             +\delta_{m,-n}\frac{m^3-m}{12}C,\qquad [C,L_m]=0 ,
+\]
+is perfect, has center \(\mathbb C C\), and is the universal
+central extension of \(W\).
+\end{theorem}
+
+\begin{proof}
+For trivial coefficients a cocycle is an alternating bilinear map
+satisfying
+\[
+ c([x,y],u)+c([y,u],x)+c([u,x],y)=0 .
+\]
+Replacing it by \(c-\phi\circ[-,-]\) corresponds to changing
+the linear section of a central extension by \(\phi\).
+For \(j\ne0\) choose
+\(\phi(L_j)=-c(L_0,L_j)/j\), so that after the change
+\(c(L_0,L_j)=0\) for every \(j\). The cocycle equation on
+\((L_0,L_m,L_n)\) now gives
+\((m+n)c(L_m,L_n)=0\). Set \(b_m=c(L_m,L_{-m})\).
+A further change with \(\phi\) supported at \(L_0\) and
+\(\phi(L_0)=b_1/2\) makes \(b_1=0\) and retains the first
+normalization. Then \(b_{-m}=-b_m\). On
+\((L_m,L_n,L_{-m-n})\) the cocycle equation is
+\[
+ (m-n)b_{m+n}-(m+2n)b_m+(2m+n)b_n=0 .
+\]
+With \(n=1\) and \(m\ge2\) this gives
+\((m-1)b_{m+1}=(m+2)b_m\). The unique solution for \(m\ge2\)
+is \(b_m=(m^3-m)b_2/6\); the normalized values for
+\(m=0,\pm1\) and antisymmetry give all integers. Conversely
+those values satisfy the three-term relation for every \(m,n\),
+as follows by expanding the cubic polynomial, and the cocycle
+equation is zero off total index zero. This proves existence
+and the stated form with \(z=2b_2\). A coboundary preserving
+the first normalization has \(\phi(L_j)=0\) for \(j\ne0\),
+and preserving \(b_1=0\) forces \(\phi(L_0)=0\).
+Thus the normalized representative is unique.
+
+The displayed bracket on \(\operatorname{Vir}\) is therefore
+Lie. Its center is exactly \(\mathbb C C\) by simplicity and
+noncommutativity of \(W\). In \(\operatorname{Vir}\), all
+\(L_m\) and \(C\) are brackets or linear combinations thereof:
+use first the brackets of \(L_0\) with \(L_n\), then
+\([L_1,L_{-1}]=2L_0\) and
+\([L_2,L_{-2}]=4L_0+C/2\). For any central extension
+\(E\to W\), choose a linear section and form the cocycle with
+values in its central kernel \(Z\).
+After normalization, the chosen lifts of \(L_m\) and the vector
+\(z\in Z\) define a Lie homomorphism
+\(\operatorname{Vir}\to E\) over \(W\) by sending \(C\) to \(z\).
+Two such homomorphisms differ by a central-valued linear map
+and so agree on every bracket. Perfectness implies their equality.
+This is the asserted universal property.
+\end{proof}
+
+\begin{proposition}[Witt derivations lift to the affine central extension]
+\label{res:KM12}
+In the loop model from Proposition~\ref{res:KM09}, before adjoining
+the degree derivation, write \(x_i=x\otimes t^i\).
+The assignments
+\[
+ D_m(x_i)=-i x_{m+i},\qquad D_m(K)=0
+\]
+give an action of \(W\) by derivations on the central extension
+of the loop algebra. They therefore give a semidirect Lie algebra
+with \(\operatorname{Vir}\) acting through \(W\); in this action
+\(D_0\) is the negative of the loop degree derivation.
+\end{proposition}
+
+\begin{proof}
+For the loop part, \(D_m\) applies \(L_m\) to the Laurent-polynomial
+factor, so it is a derivation and the commutators give the Witt
+action of Proposition~\ref{res:KM10}. For \(x_i,y_j\), the central
+terms on the right side of the derivation identity sum to
+\[
+ \bigl(-i(m+i)-ji\bigr)\delta_{m+i+j,0}B(x,y)K=0 .
+\]
+This uses exactly the old loop cocycle of LO09. The central
+term on the left side also vanishes since \(D_m(K)=0\).
+The commutator equalities extend to \(K\), where all operators
+vanish. Composing with the quotient
+\(\operatorname{Vir}\to W\) gives an action of \(\operatorname{Vir}\);
+the semidirect bracket satisfies Jacobi by the derivation and
+commutator identities. The degree formula is immediate from
+\(D_0(x_i)=-i x_i\).
+\end{proof}
+
+\section{Virasoro highest weights}
+
+\begin{theorem}[Virasoro Verma modules]
+\label{res:KM13}
+For \(c,h\in\mathbb C\), there is a universal cyclic
+highest-weight module \(M(c,h)\) with vector \(v\) satisfying
+\(Cv=cv\), \(L_0v=hv\), \(L_jv=0\) for \(j>0\).
+It has a basis
+\[
+ L_{-i_1}\cdots L_{-i_s}v,\qquad
+       1\le i_1\le\cdots\le i_s,\quad s\ge0 .
+\]
+The weight of this vector for \(L_0\) is \(h+i_1+\cdots+i_s\).
+Consequently the graded dimension with the top in degree zero is
+\(\prod_{i\ge1}(1-q^i)^{-1}\) as a formal power series,
+and \(M(c,h)\) has a unique simple quotient.
+\end{theorem}
+
+\begin{proof}
+Induce the one-dimensional module of
+\(\mathbb C C\oplus\bigoplus_{j\ge0}\mathbb C L_j\)
+with the specified action. The bracket relations of
+Theorem~\ref{res:KM11} show that this one-dimensional action
+is well-defined. Induction gives universality. PBW, Result A05 of
+\cite[PDF pp.~8--9]{mg-lie}, for a total order with the negative
+generators first gives the indicated basis.
+The bracket \([L_0,L_{-i}]=iL_{-i}\) gives the weight.
+Choosing the number of occurrences of each \(i\) gives the product
+of geometric series, and each degree has only finitely many such
+choices. A proper submodule misses the top since the top generates,
+and it splits into weight spaces by polynomial extraction.
+The sum of all proper submodules thus still misses the top
+and gives the unique simple quotient.
+\end{proof}
+
+\begin{example}[Singular vectors in degrees one and two]
+\label{res:KM14}
+In \(M(c,h)\), a nonzero vector of degree \(1\) killed by all
+\(L_j\) with \(j>0\) exists exactly when \(h=0\). In degree \(2\)
+such a vector exists exactly when
+\[
+ 18h-(4h+2)(4h+c/2)=0 .
+\]
+In that case the space of these vectors is the line spanned by
+\[
+ 3 L_{-1}^{\,2}v-(4h+2)L_{-2}v .
+\]
+Both kinds of vectors generate proper submodules. In particular,
+at \((c,h)=(1,1/4)\) the first such degree is \(2\), where the
+vector is proportional to \(L_{-1}^{\,2}v-L_{-2}v\).
+\end{example}
+
+\begin{proof}
+In degree \(1\) the basis is \(L_{-1}v\) and \(L_1L_{-1}v=2hv\).
+Higher \(L_j\) kill this vector by their weight shifts.
+In degree \(2\), take the ordered basis
+\((L_{-2}v,L_{-1}^2v)\). The maps \(L_1,L_2\) to the
+degrees \(1,0\), respectively, have rows
+\[
+ (3,4h+2), \qquad (4h+c/2,6h).
+\]
+For instance \([L_1,L_{-2}]=3L_{-1}\);
+commuting \(L_1\) past both factors of \(L_{-1}^2\)
+gives \(2(L_0L_{-1}+L_{-1}L_0)v=(4h+2)L_{-1}v\).
+Similarly \([L_2,L_{-2}]=4L_0+C/2\) and commuting
+\(L_2\) past both factors of \(L_{-1}^2\) gives \(6hv\).
+The maps \(L_j\) for \(j\ge3\) again kill this space by degree.
+The determinant of the two rows gives the criterion, and since
+the first entry of the first row is \(3\), its nullspace is the
+displayed line when the determinant is zero.
+PBW moves all positive generators to the right of a word
+applied to a singular vector, where they kill it, and moves
+the Cartan factors to act as scalars. Thus the submodule generated
+in either positive degree cannot contain the original top.
+Substituting \(c=1,h=1/4\) gives the example.
+\end{proof}
+
+The contragredient construction and root symmetries are compared with
+Kac, Chapter 1 and Sections 3.1--3.7 \cite{kac}.
+The untwisted affine convention agrees with Hernandez,
+Sections 3--4 \cite{hernandez-affine}. For Virasoro and highest
+weights, see Kac, Sections 7.3 and 9.14 \cite{kac}.
+The converse assertion that the Serre ideal already equals the
+Cartan-disjoint ideal in symmetrizable type, the Weyl--Kac character
+formula, and the higher-degree classification of Virasoro singular
+vectors are further topics.
+\chapter{Lie Superalgebras and Restricted Lie Algebras}
+
+The two theories in this chapter modify different parts of the ordinary
+Lie algebra formalism. A superalgebra changes the interchange law for
+homogeneous elements. In positive characteristic an ordinary Lie
+algebra can carry a \(p\)-operation that is compatible with the
+\(p\)-th power in an associative algebra. We prove the corresponding
+basis theorems for both enveloping algebras and use them in small
+rank examples.
+
+\section{Parity and super enveloping algebras}
+
+\begin{definition}[Lie superalgebras and their modules]
+\label{res:SR01}
+Let \(k\) be a field of characteristic different from two.
+A Lie superalgebra is a graded vector space
+\(\mathfrak a=\mathfrak a_{\overline 0}\oplus\mathfrak a_{\overline 1}\)
+with an even bilinear bracket, meaning that degrees add. For
+homogeneous \(x,y,z\), write
+\(\epsilon_{xy}=(-1)^{|x||y|}\).
+The identities are
+\[
+ [x,y]=-\epsilon_{xy}[y,x],
+ \qquad [x,[y,z]]=[[x,y],z]+\epsilon_{xy}[y,[x,z]].
+\]
+In characteristic three we also require
+\([x,[x,x]]=0\) for each odd \(x\). In other allowed characteristics
+this follows from the first two identities. A graded module is a
+graded vector space \(M\) with maps \(x\mapsto \rho(x)\) carrying
+parity \(|x|\), satisfying
+\(\rho([x,y])=\rho(x)\rho(y)-\epsilon_{xy}\rho(y)\rho(x)\).
+Morphisms preserve the grading.
+\end{definition}
+
+Throughout the examples involving complex representations, the
+ground field is \(\mathbb C\). The parity and basis arguments
+use only the hypotheses of Definition~\ref{res:SR01}.
+For the superalgebra conventions see Musson
+~\cite[Section 1.1, PDF pp.~22--24]{musson}
+and Serganova~\cite[Section 2]{serganova}.
+
+\begin{proposition}[The supercommutator and the smallest matrix example]
+\label{res:SR02}
+In an associative graded algebra the bracket
+\([x,y]=xy-\epsilon_{xy}yx\) makes its graded vector space a
+Lie superalgebra. In \(\mathfrak{gl}(1|1)\), with even
+generators \(z=E_{11}+E_{22}\), \(h=E_{11}\) and odd
+generators \(e=E_{12}\), \(f=E_{21}\), the nonzero brackets
+up to graded skew symmetry are
+\[
+ [h,e]=e,\qquad [h,f]=-f,\qquad [e,f]=z .
+\]
+In particular \(z\) is central and \(e,f\) are odd with
+zero self-bracket. The supertrace is a linear functional
+on \(\mathfrak{gl}(1|1)\) vanishing on every bracket, with
+kernel \(\operatorname{span}_k(z,e,f)\).
+\end{proposition}
+
+\begin{proof}
+Skew symmetry follows by interchanging the two products.
+Expanding the derivation identity for \([x,-]\) on a
+product gives
+\[
+ [x,yz]=[x,y]z+\epsilon_{xy}y[x,z]:
+\]
+the intermediate \(yxz\) terms cancel. Apply this to both
+products in \([y,z]\) and use
+\(\epsilon_{x,yz}=\epsilon_{xy}\epsilon_{xz}\) to obtain
+the graded Jacobi identity. If \(x\) is odd then
+\([x,x]=2x^2\), which commutes with \(x\). This also
+verifies the extra identity in characteristic three.
+For an abstract odd \(x\), substituting \(x=y=z\) into
+Jacobi and using skew symmetry gives \(3[x,[x,x]]=0\).
+
+For matrices take block-diagonal elements to be even
+and off-diagonal elements odd. Multiplication of the
+matrix units gives the displayed brackets
+and \(e^2=f^2=0\).
+The supertrace sends \(\operatorname{diag}(a,b)\)
+to \(a-b\) and sends odd elements to zero. The
+bracket table shows directly that its kernel is
+the asserted span and contains the bracket subspace.
+\end{proof}
+
+\begin{theorem}[Super Poincare--Birkhoff--Witt]
+\label{res:SR03}
+Let \(\mathfrak a\) satisfy Definition~\ref{res:SR01}, and
+order a homogeneous basis. Its enveloping superalgebra is
+the quotient of \(T_k(\mathfrak a)\) by
+\[
+ xy-\epsilon_{xy}yx-[x,y]\qquad(x,y\text{ homogeneous}).
+\]
+The weakly increasing words in this basis, with each
+odd basis element appearing at most once, form a basis.
+For the word-length filtration its associated graded is
+\[
+ \operatorname{gr} U(\mathfrak a)
+   \cong S(\mathfrak a_{\overline 0})
+              \otimes_k\bigwedge(\mathfrak a_{\overline 1})
+\]
+as graded superalgebras. Graded modules over the enveloping
+algebra and graded Lie superalgebra modules agree.
+\end{theorem}
+
+\begin{proof}
+For a descending pair \(a>b\) replace \(ab\) by
+\(\epsilon_{ab}ba+[a,b]\). For an odd repeated letter
+replace \(aa\) by \([a,a]/2\). Order reductions first
+by length and then by number of inversions. Each
+replacement has smaller terms for this order, so
+recursive reduction terminates. The relations of the
+presentation are generated by these replacements:
+for a weakly increasing pair use graded skew symmetry
+or the repeated-letter relation, and extend bilinearly.
+
+Disjoint adjacent replacements commute. Two overlapping
+replacements have input \(abc\) with \(a\ge b\ge c\),
+where a repeated adjacent pair must be odd. If all
+three are distinct, reorder the three-letter term to
+\(\epsilon_{ab}\epsilon_{ac}\epsilon_{bc}cba\) in
+both paths. The difference of the shorter terms reduces
+to
+\[
+ [[a,b],c]+\epsilon_{ab}[b,[a,c]]-[a,[b,c]]=0.
+\]
+Indeed the respective pairs of shorter terms are
+\([a,b]c-\epsilon_{ac}\epsilon_{bc}c[a,b]\),
+\(\epsilon_{ab}b[a,c]-\epsilon_{bc}[a,c]b\), and
+\(\epsilon_{ab}\epsilon_{ac}[b,c]a-a[b,c]\).
+For input \(aac\) with \(a\) odd, the difference reduces to
+\(\tfrac12[[a,a],c]-[a,[a,c]]=0\).
+For \(abb\) with \(b\) odd, it reduces to
+\([[a,b],b]-\tfrac12[a,[b,b]]=0\).
+These equalities are Jacobi with repeated odd entries.
+Finally for \(aaa\) with \(a\) odd the difference reduces to
+\(\tfrac12[[a,a],a]=0\), using the odd triple identity.
+The checks are valid for bracket values that are sums of
+basis elements by linearity.
+
+Induct on the length-inversion order to compare any two possible
+first steps. In the disjoint case the two paths have the same
+common expansion. In the overlap case the expansion comparison
+above leaves terms of smaller length, whose reductions agree by
+induction. Prefixes and suffixes preserve this smaller-length
+comparison. This gives a unique linear normal form. It kills
+each replacement relation with every prefix and suffix by
+the just-proved independence of first step, and so kills
+their two-sided ideal. Conversely each reduction differs
+from its input by an element of that ideal. Thus the normal
+words are a basis of the quotient. Their leading symbols
+give the displayed symmetric and exterior factors:
+the leading relations say that even letters commute and
+odd letters anticommute and square to zero. The tensor
+algebra action on a graded module descends exactly when it
+satisfies the signed bracket identity in
+Definition~\ref{res:SR01}, giving the module claim.
+\end{proof}
+
+\begin{example}[Simple graded modules for the complex \(\mathfrak{gl}(1|1)\)]
+\label{res:SR04}
+On a finite-dimensional simple graded module the central \(z\)
+acts as a scalar \(\gamma\). If \(\gamma=0\), the module is
+one-dimensional, with \(e=f=0\) and \(h\) an arbitrary scalar
+\(\lambda\). If \(\gamma\ne0\), it has a homogeneous basis
+\(v,w\) of opposite parities on which
+\[
+\begin{gathered}
+ hv=\lambda v,\qquad hw=(\lambda-1)w,\qquad
+ fv=w,\qquad fw=0,\\
+ ev=0,\qquad ew=\gamma v,\qquad
+ zv=\gamma v,\qquad zw=\gamma w .
+\end{gathered}
+\]
+In each case the scalar data and the parity of \(v\)
+determine the isomorphism class in the graded category.
+\end{example}
+
+\begin{proof}
+The kernel of \(z-\gamma\) for an eigenvalue \(\gamma\)
+is a nonzero graded submodule, hence is the whole module.
+Since \(e^2=0\), \(\ker e\ne0\). It is graded and
+stable under \(h\), so over \(\mathbb C\) it contains a
+homogeneous \(h\)-eigenvector \(v\), of weight \(\lambda\).
+The table in Proposition~\ref{res:SR02} gives
+\(e(fv)=\gamma v\), \(f^2v=0\), and \(h(fv)=(\lambda-1)fv\).
+Thus \(\operatorname{span}(v,fv)\) is the whole simple module.
+If \(\gamma=0\) and \(fv\ne0\), the line it spans would be a
+nonzero proper graded submodule. If \(\gamma\ne0\), the
+vector \(w=fv\) is nonzero. The displayed formulas define
+a graded representation by the bracket table. It is simple
+because either weight line generates both lines, and a nonzero
+invariant subspace has a weight vector by interpolation in \(h\).
+The weight and parity of the one-dimensional kernel of \(e\)
+distinguish the parameters. In this two-dimensional case the
+opposite choice of positive odd root instead uses \(\ker f\),
+so changes the highest weight to \(\lambda-1\) and changes
+its parity. On the one-dimensional modules both choices
+give the same highest line.
+\end{proof}
+
+\section{The \texorpdfstring{\(p\)}{p}-operation}
+
+For the rest of the chapter, \(k\) has characteristic \(p>0\),
+and all Lie algebras are ordinary. Write \(U(\mathfrak g)\)
+for the ordinary universal enveloping algebra. We use the
+ordered-basis and associated-graded parts of the ordinary PBW
+theorem in \emph{Lie Algebras and Finite-Dimensional
+Representations}, Result A05~\cite[PDF pp.~8--9]{mg-lie}.
+That proof applies to any characteristic for a Lie algebra
+with an ordered \(k\)-basis.
+
+\begin{lemma}[Associative \(p\)-powers and the Jacobson polynomials]
+\label{res:SR05}
+Let \(B\) be an associative \(k\)-algebra, with ordinary
+commutator bracket. For \(1\le i\le p-1\), define
+\(s_i(x,y)\) by specifying that \(i\,s_i(x,y)\) is the
+coefficient of \(t^{i-1}\) in
+\((\operatorname{ad}(t x+y))^{p-1}(x)\).
+These are Lie polynomials in \(x,y\). One has
+\[
+ (\operatorname{ad}x)^p=\operatorname{ad}(x^p),\qquad
+ (x+y)^p=x^p+y^p+\sum_{i=1}^{p-1}s_i(x,y).
+\]
+\end{lemma}
+
+\begin{proof}
+Left and right multiplication by \(x\) commute.
+In characteristic \(p\) the \(p\)-th power of their
+difference is the difference of their \(p\)-th powers,
+proving the first equality. Set \(X=t x+y\) in \(B[t]\).
+Formal differentiation of \(X^p\), using a central variable,
+gives
+\[
+ \frac{d}{dt}X^p=\sum_{j=0}^{p-1}X^{p-1-j}xX^j
+          =(\operatorname{ad}X)^{p-1}(x),
+\]
+since \((-1)^j\binom{p-1}{j}=1\) in \(k\).
+The constant and degree-\(p\) coefficients of \(X^p\)
+are \(y^p,x^p\). They contribute zero to the derivative.
+For each intermediate coefficient, differentiation
+multiplies it by the corresponding invertible integer \(i\).
+It is therefore \(s_i(x,y)\). Evaluating at \(t=1\)
+gives the second equality. The iterated-commutator
+description proves that these coefficients are Lie
+polynomials and makes their definition available in any
+ordinary Lie algebra.
+\end{proof}
+
+\begin{definition}[Restricted Lie algebras]
+\label{res:SR06}
+A restricted Lie algebra is an ordinary Lie algebra with a map
+\(x\mapsto x^{[p]}\) satisfying
+\[
+\begin{aligned}
+\operatorname{ad}(x^{[p]})&=(\operatorname{ad}x)^p,\\
+(a x)^{[p]}&=a^p x^{[p]},\\
+(x+y)^{[p]}&=x^{[p]}+y^{[p]}+\sum_{i=1}^{p-1}s_i(x,y),
+\end{aligned}
+\]
+with the same polynomials as in Lemma~\ref{res:SR05}.
+A Lie subalgebra closed under the operation inherits it.
+\end{definition}
+
+\begin{proposition}[Matrix and derivation \(p\)-operations]
+\label{res:SR07}
+Associative \(p\)-th powers restrict to \(\mathfrak{sl}_n(k)\)
+inside the full matrix algebra and give a restricted
+structure there. They also give a restricted structure on
+\(\operatorname{Der}_k(A)\) for a commutative \(k\)-algebra \(A\),
+using composition in \(\operatorname{End}_k(A)\).
+In particular for \(A=k[t]/(t^p)\) and
+\(D_i=t^{i+1}\frac{d}{dt}\), \(-1\le i\le p-2\), one has
+\[
+ D_0^{[p]}=D_0,\qquad D_i^{[p]}=0\quad(i\ne0).
+\]
+\end{proposition}
+
+\begin{proof}
+Over an algebraic closure a matrix is triangularizable by
+inductively choosing an eigenline and passing to the quotient.
+Its \(p\)-th power has the \(p\)-th powers of its eigenvalues
+on the diagonal. Thus
+\(\operatorname{tr}(X^p)=\operatorname{tr}(X)^p\), an identity
+which holds already over \(k\). The traceless Lie subalgebra
+is therefore closed under the power. For a derivation \(D\),
+repeated Leibniz gives
+\[
+ D^p(ab)=\sum_{j=0}^p\binom pj D^j(a)D^{p-j}(b)
+         =D^p(a)b+aD^p(b).
+\]
+In both cases the restricted identities are those of
+Lemma~\ref{res:SR05} and scaling.
+
+Every derivation of \(k[t]/(t^p)\) is determined by the
+image of \(t\), which can be arbitrary since the derivative
+of \(t^p\) is zero. The displayed \(D_i\) form a basis.
+The operator \(D_0\) acts on \(t^m\) by the scalar
+\(m\in\mathbb F_p\), whose \(p\)-th power is itself.
+On monomials \(D_{-1}\) lowers their degree, and \(D_i\)
+with \(i>0\) raises it until the monomial vanishes in
+the quotient. Their \(p\)-fold compositions are zero.
+For \(p>3\), the simplicity and vanishing Killing form
+of this Witt algebra were proved in the earlier volume,
+Result J09~\cite[PDF p.~72]{mg-lie}.
+\end{proof}
+
+\section{The \texorpdfstring{\(p\)}{p}-center and reduced enveloping algebras}
+
+\begin{theorem}[Polynomial \(p\)-center and reduced PBW]
+\label{res:SR08}
+Let \(\mathfrak g\) be a restricted Lie algebra of dimension
+\(n<\infty\). The function
+\[
+ z(x)=x^p-x^{[p]}\in U(\mathfrak g)
+\]
+is central, additive and \(p\)-semilinear:
+\(z(a x)=a^p z(x)\). If \(x_1,\ldots,x_n\) is a basis,
+the subalgebra \(Z_p\) generated by all \(z(x)\) is the
+polynomial ring on \(z(x_1),\ldots,z(x_n)\).
+The algebra \(U(\mathfrak g)\) is free over \(Z_p\) on the
+ordered monomials with each exponent less than \(p\).
+
+For a linear functional \(\chi:\mathfrak g\to k\), set
+\[
+ u_\chi(\mathfrak g)
+   = U(\mathfrak g)\big/\bigl(z(x)-\chi(x)^p:x\in\mathfrak g\bigr).
+\]
+The images of those same ordered monomials are a
+\(k\)-basis, so the dimension is \(p^n\). In particular
+\(u_0(\mathfrak g)\) is the restricted enveloping algebra.
+\end{theorem}
+
+\begin{proof}
+For \(y\in\mathfrak g\), Lemma~\ref{res:SR05} and the
+restricted adjoint identity give
+\([x^p,y]=(\operatorname{ad}x)^p(y)=[x^{[p]},y]\);
+the \(y\)'s generate \(U(\mathfrak g)\). The two
+Jacobson sum formulas for associative powers and the
+restricted map cancel upon subtraction, proving additivity.
+The scaling identity is immediate. Thus the \(z(x_i)\)
+already generate \(Z_p\).
+
+In the associated graded algebra of ordinary PBW,
+the leading symbol of \(z(x_i)\) is \(x_i^p\), since
+the subtracted term has filtration degree at most one.
+Write \(a_i=p b_i+r_i\) with \(0\le r_i<p\) for any
+ordinary PBW word of exponents \((a_i)\).
+The element
+\(\prod_i z(x_i)^{b_i}\prod_i x_i^{r_i}\),
+with the \(x_i\) in their fixed order, has that word's
+leading symbol. Subtract and use induction on the degree
+to express every element as a linear combination of these
+products. For independence, distinct pairs \((b,r)\)
+have distinct associated-graded leading monomials.
+In a finite relation the terms of maximal degree cannot
+cancel there. This proves polynomial independence and
+the freeness assertion.
+
+By \(p\)-semilinearity the ideal in the definition of
+\(u_\chi\) is generated by the central elements
+\(z(x_i)-\chi(x_i)^p\). On the free \(Z_p\)-module just
+constructed, quotienting by that ideal specializes each
+polynomial variable to \(\chi(x_i)^p\). This leaves exactly
+the stated basis over \(k\).
+\end{proof}
+
+\begin{corollary}[The \(p\)-character of a finite-dimensional simple module]
+\label{res:SR09}
+If \(k\) is algebraically closed, every finite-dimensional simple
+\(\mathfrak g\)-module has a unique linear functional \(\chi\)
+such that it is a module over \(u_\chi(\mathfrak g)\).
+Conversely a simple module of any \(u_\chi(\mathfrak g)\) is
+a finite-dimensional simple \(\mathfrak g\)-module with this
+\(p\)-character.
+\end{corollary}
+
+\begin{proof}
+On a finite-dimensional simple, each central \(z(x_i)\)
+acts as a scalar \(c_i\): a nonzero eigenspace is a
+submodule. The \(p\)-power map on an algebraically closed
+field of characteristic \(p\) is bijective, since it
+is injective on a field and every \(T^p-c_i\) has a root.
+There is a unique linear \(\chi\) with
+\(\chi(x_i)^p=c_i\), and Lemma~\ref{res:SR05} and
+Theorem~\ref{res:SR08} ensure the remaining relations
+by semilinearity. Conversely \(u_\chi\) is finite-dimensional
+and a simple module is generated by any one nonzero vector,
+so is finite-dimensional. Submodules for the quotient are
+the same as invariant subspaces for the Lie generators,
+proving simplicity and the assertion about \(\chi\).
+\end{proof}
+
+For the restricted identities and reduced algebra see
+Jantzen~\cite[Sections A.1--A.3 and A.7, PDF pp.~1--3 and 4--5]{jantzen-modular}
+and Strade--Farnsteiner~\cite[Sections 2.1, 2.5 and 5.3]{stradefarnsteiner}.
+
+\section{Baby Verma modules for \texorpdfstring{\(\mathfrak{sl}_2\)}{sl(2)}}
+
+Assume now that \(k\) is algebraically closed and \(p>2\).
+Put \(e=E_{12}\), \(f=E_{21}\), and \(h=E_{11}-E_{22}\).
+The brackets are \([h,e]=2e\), \([h,f]=-2f\), and
+\([e,f]=h\). By Proposition~\ref{res:SR07} one has
+\(e^{[p]}=f^{[p]}=0\) and \(h^{[p]}=h\).
+This section computes the simple reduced modules in all
+three types of \(p\)-character, separating their highest
+weight labels from the characteristic-zero labels.
+
+\begin{proposition}[Baby Verma induction]
+\label{res:SR10}
+Suppose \(\chi(e)=0\). Write \(\eta=\chi(h)\) and
+\(\xi=\chi(f)\). For each root \(\lambda\) of
+\(\lambda^p-\lambda=\eta^p\), there is a module \(Z_\chi(\lambda)\)
+with basis \(v_i=f^i v_0\), \(0\le i<p\), and
+\[
+\begin{aligned}
+ hv_i&=(\lambda-2i)v_i,\\
+ ev_0&=0,\qquad ev_i=i(\lambda-i+1)v_{i-1}\quad(1\le i<p),\\
+ fv_i&=v_{i+1}\quad(i<p-1),\qquad fv_{p-1}=\xi^p v_0.
+\end{aligned}
+\]
+Every simple \(u_\chi(\mathfrak{sl}_2)\)-module is a
+quotient of one of these modules.
+\end{proposition}
+
+\begin{proof}
+For \(\mathfrak b=k h+k e\), the one-dimensional space
+with \(h\) acting by \(\lambda\) and \(e\) by zero respects
+the bracket and the reduced power identities, so is a
+\(u_{\chi|_{\mathfrak b}}(\mathfrak b)\)-module. Here
+\(\mathfrak b\) is closed under the \(p\)-map because powers
+of an upper triangular matrix stay upper triangular.
+Order the reduced PBW monomials as \(f^i h^j e^\ell\).
+The basis in Theorem~\ref{res:SR08} identifies the reduced
+algebra of \(\mathfrak b\) with its subalgebra in the
+reduced algebra of \(\mathfrak{sl}_2\), and shows the
+latter is free as a right module over it on \(f^i\).
+Inducing the one-dimensional module therefore gives a
+\(p\)-dimensional module with the asserted basis.
+The \(h\) and \(f\) formulas follow from the bracket
+and the defining reduced relations. Commuting \(e\)
+past one further \(f\), the coefficient in
+\(e f^{i+1}v_0\) is
+\((\lambda-2i)+i(\lambda-i+1)=(i+1)(\lambda-i)\).
+This proves the \(e\) formula by induction.
+
+On any simple \(u_\chi(\mathfrak{sl}_2)\)-module \(e^p=0\), so
+\(\ker e\ne0\), and \([h,e]=2e\) implies this kernel
+is \(h\)-stable. Choose an \(h\)-eigenvector in it.
+Its weight satisfies the reduced relation for \(h\).
+The induced module with that weight maps onto the simple,
+because the nonzero vector generates it.
+\end{proof}
+
+\begin{theorem}[The zero \(p\)-character]
+\label{res:SR11}
+For \(\chi=0\) the simple modules are \(L(m)\) for
+\(m=0,\ldots,p-1\). They have dimensions \(m+1\).
+For \(\lambda=m\) in the prime field, \(L(m)\) is the
+quotient of \(Z_0(m)\) by the span of
+\(v_{m+1},\ldots,v_{p-1}\), with empty span for \(m=p-1\).
+\end{theorem}
+
+\begin{proof}
+The solutions of \(\lambda^p-\lambda=0\) are the prime
+field elements. The \(p\) weights of \(Z_0(m)\) are
+distinct because \(2\ne0\) in \(k\). The displayed tail
+is stable: its first vector is killed by \(e\), and \(f\)
+kills \(v_{p-1}\). In the quotient a nonzero submodule
+contains a weight vector \(v_i\) with \(0\le i\le m\),
+since projections onto the finitely many weight spaces
+are polynomials in \(h\). For this range every noninitial
+\(e\)-coefficient is nonzero. Repeated application of \(e\)
+reaches \(v_0\) and \(f\) then produces the entire quotient.
+This proves simplicity. The same argument in \(Z_0(m)\)
+shows that any submodule containing a vector with nonzero
+component in one of the first \(m+1\) weight spaces is
+the whole module. Thus its proper submodules all lie in
+the tail and the simple quotient is unique.
+The modules \(L(m)\) are pairwise nonisomorphic by their
+distinct dimensions, and Proposition~\ref{res:SR10}
+gives exhaustion.
+\end{proof}
+
+\begin{theorem}[Nonzero semisimple and nilpotent \(p\)-characters]
+\label{res:SR12}
+There are the following two nonzero cases, after a change
+of basis by conjugation of matrices.
+
+\emph{Semisimple case.} Suppose
+\(\chi(e)=\chi(f)=0\), \(\eta=\chi(h)\ne0\).
+The \(p\) modules \(Z_\chi(\lambda)\) for the roots of
+\(\lambda^p-\lambda=\eta^p\) are simple and pairwise
+nonisomorphic, each of dimension \(p\).
+
+\emph{Nilpotent case.} Suppose
+\(\chi(e)=\chi(h)=0\), \(\chi(f)=1\).
+All \(p\) baby Verma modules \(Z_\chi(m)\), \(m\in\mathbb F_p\),
+are simple of dimension \(p\). The isomorphism classes
+are indexed by the orbits of \(m\mapsto -m-2\), giving
+\((p+1)/2\) classes.
+\end{theorem}
+
+\begin{proof}
+In the semisimple case the polynomial of the weights is
+separable of degree \(p\) and has no root in the prime field.
+All \(e\)-coefficients for \(1\le i<p\) in
+Proposition~\ref{res:SR10} are nonzero. A nonzero
+submodule contains a weight line, and repeated applications
+of \(e\) and \(f\) generate the entire basis. The kernel of
+\(e\) is only the highest line, whose weight distinguishes
+the \(p\) modules. They exhaust by induction.
+
+In the nilpotent case the \(h\)-weights are still distinct
+and \(f\) cyclically permutes the \(p\) weight lines since
+\(f^p=1\). A submodule containing one weight line therefore
+contains them all. For \(m\ne-1\) the kernel of \(e\) is
+spanned by \(v_0,v_{m+1}\), where \(m\) is represented by
+its integer in \(0,\ldots,p-2\). Their weights are \(m\)
+and \(m-2(m+1)=-m-2\). Each is a highest line and induces
+a map onto the simple, so the modules with these two labels
+are isomorphic. For \(m=-1\) only \(v_0\) is killed by \(e\).
+Every isomorphism preserves the weights in \(\ker e\), so
+there are no other identifications. There is exactly one
+fixed element of the involution, \(-1\), giving the count.
+
+Finally the trace pairing on \(\mathfrak{sl}_2(k)\) is
+nondegenerate: it pairs \(e\) with \(f\) and has
+\(\operatorname{tr}(h^2)=2\). Every \(\chi\) is therefore
+\(\operatorname{tr}(X\,\cdot)\) for one traceless \(X\).
+A nonzero such matrix is conjugate either to
+\(\operatorname{diag}(a,-a)\) with \(a\ne0\) or to
+\(E_{12}\), according as its two eigenvalues are distinct
+or both zero. The displayed parameters follow from the
+pairing. Conjugation preserves the bracket and matrix
+\(p\)-power, so it transports the corresponding reduced
+algebras and their modules. This proves the scope of the
+two cases.
+\end{proof}
+
+The inductive construction follows the setting of
+Jantzen~\cite[Sections B.3--B.4, B.10 and C.3,
+PDF pp.~6--7 and 9--11]{jantzen-modular}.
+General classification of simple modular Lie algebras and of
+simple modules for higher-rank reduced enveloping algebras
+uses further hypotheses and results. Here the module
+classifications are for \(\mathfrak{gl}(1|1)\) over
+\(\mathbb C\) and for ordinary \(\mathfrak{sl}_2\) over an
+algebraically closed field of characteristic greater than two.
+\chapter[The Type A2 Quantum Enveloping Algebra]{The Type \(A_2\) Quantum Enveloping Algebra}
+\label{ch:quantum-enveloping}
+
+We construct the two-root quantum enveloping algebra and its formal
+classical limit. The transition from one simple root to two requires
+the quantum Serre relations as well as the Cartan and mixed
+commutator relations. The rank-one algebra, its Hopf structure,
+and its finite-dimensional type-1 representations are treated
+in Results H10--H15 of \emph{Topics in Rings, Modules, and
+Associative Algebras}~\cite[PDF pp.~25--28]{mg-rm03d}.
+Here the main tasks are to prove a basis for the two-root algebra,
+check the coproduct on the new relations, and compute its
+first-order skew part. The constructions below use
+\(\Delta^{\mathrm{op}}\) for tensor factor exchange applied to
+\(\Delta\), and \(a\wedge b=a\otimes b-b\otimes a\).
+
+\section{The quantum Serre relations and the positive part}
+
+Let \(A\) be a commutative coefficient ring and \(q\in A^\times\).
+Write \(c=q+q^{-1}\) and put
+\[
+ \mathcal S(x,y)=x^2y-cxyx+yx^2 .
+\]
+
+\begin{theorem}[The two-generator positive part]
+\label{res:UQ01}
+The \(A\)-algebra on \(x,y\) with relations
+\(\mathcal S(x,y)=\mathcal S(y,x)=0\) is free as an
+\(A\)-module with basis \(x^a z^b y^d\), where
+\[
+ z=xy-q^{-1}yx,\qquad a,b,d\in\mathbb Z_{\ge0}.
+\]
+In this algebra \(xz=qzx\), \(zy=qyz\), and \(yx=qxy-qz\).
+This basis and presentation commute with arbitrary base change
+on \(A\) carrying \(q\) to a unit.
+\end{theorem}
+\begin{proof}
+The expressions \(xz-qzx\) and \(zy-qyz\) expand to
+\(\mathcal S(x,y)\) and \(\mathcal S(y,x)\), respectively.
+The remaining relation is the defining formula for \(z\)
+solved for \(yx\). Conversely these three relations for
+\(x,z,y\) eliminate \(z\) and give precisely the two Serre
+relations.
+
+Adjoin \(z\) to \(A[x]\) with \(zx=q^{-1}xz\).
+On the resulting algebra let \(\sigma(x)=qx\) and
+\(\sigma(z)=q^{-1}z\). This preserves the relation and
+has inverse given by reciprocal scalars. Define the
+\(\sigma\)-derivation by \(\delta(x)=-qz\), \(\delta(z)=0\),
+where \(\delta(ab)=\sigma(a)\delta(b)+\delta(a)b\).
+It respects the relation because both \(\delta(zx)\) and
+\(\delta(q^{-1}xz)\) are \(-z^2\). Hence adjoining \(y\)
+with \(ya=\sigma(a)y+\delta(a)\) gives the second pair
+of commutation rules. The Ore normal form in
+\emph{Topics in Rings, Modules, and Associative Algebras},
+Result O11~\cite[PDF p.~34]{mg-rm03d}, makes the indicated
+monomials a free basis. Every relation and each basis
+applies over the new coefficient ring by the same construction.
+\end{proof}
+
+At \(q=1\), the generator \(z\) is \([x,y]\) and commutes with
+\(x,y\). In the matrix realization of \(\mathfrak{sl}_3\), the
+assignment \(x\mapsto e_{12}\), \(y\mapsto e_{23}\),
+\(z\mapsto e_{13}\) then identifies this presentation
+with the enveloping algebra of the positive nilpotent subalgebra.
+The commutation rules and the basis on each side prove the
+identification, using the ordered PBW basis of
+\emph{Lie Algebras and Finite-Dimensional Representations},
+Result A05~\cite[PDF pp.~8--9]{mg-lie}, on the classical side.
+
+\section{The Cartan coefficients and triangular normal form}
+
+The common Cartan matrix will be \(C=(a_{ij})_{1\le i,j\le 2}\),
+with \(a_{11}=a_{22}=2\) and \(a_{12}=a_{21}=-1\).
+We give parallel coefficient choices so that the normal-form
+argument can also be used to justify the formal limit.
+
+\begin{definition}[The generic and truncated formal presentations]
+\label{res:UQ02}
+Fix a field \(k\) of characteristic zero. The generic choice is
+\(A=k\) with a parameter \(q\in k^\times\), \(q^2\ne1\), or
+\(A=k(q)\) with \(q\) indeterminate. It uses
+\[
+ T=A[K_1^{\pm1},K_2^{\pm1}],\qquad
+ \tau_i(K_l)=q^{a_{li}}K_l,\qquad
+ D_i=\frac{K_i-K_i^{-1}}{q-q^{-1}} .
+\]
+The other choice, for an integer \(N\ge1\), uses
+\[
+ \begin{gathered}
+ A=k[h]/(h^N),\qquad T=A[H_1,H_2],\qquad
+ q=e^h,\qquad K_i=e^{hH_i},\\
+ \tau_i(H_l)=H_l+a_{li},\qquad
+ D_i=\frac{\sinh(hH_i)/h}{\sinh(h)/h}\pmod {h^N}.
+ \end{gathered}
+\]
+The divided series are first formed in \(k[H_1,H_2][[h]]\);
+the denominator there has constant term \(1\).
+Both choices have \(\tau_i(K_l)=q^{a_{li}}K_l\), and the
+\(\tau_i\) commute. The basic relations on \(T\) and \(E_i,F_i\) are
+\[
+ t F_j=F_j\tau_j^{-1}(t),\qquad
+ E_i t=\tau_i^{-1}(t)E_i,\qquad
+ [E_i,F_j]=\delta_{ij}D_i \quad (t\in T).
+\]
+The quantum enveloping algebra is obtained by also imposing
+\(\mathcal S(E_i,E_j)=\mathcal S(F_i,F_j)=0\) for \(i\ne j\).
+Write \(U\) for the generic choice and \(U_N\) for the truncated
+formal choice.
+\end{definition}
+
+\begin{lemma}[Normal form before the Serre quotient]
+\label{res:UQ03}
+With the coefficients of Definition~\ref{res:UQ02},
+let \(B_0\) impose only the basic relations on \(T,E_i,F_i\).
+Multiplication identifies \(B_0\), as an \(A\)-module, with
+\[
+ A\langle F_1,F_2\rangle\otimes_A T
+       \otimes_A A\langle E_1,E_2\rangle .
+\]
+There is an algebra involution \(\omega\) interchanging
+\(E_i,F_i\) and inverting the Cartan generators
+(\(K_i\mapsto K_i^{-1}\) or \(H_i\mapsto-H_i\)).
+There is also an algebra anti-involution \(\eta\) interchanging
+\(E_i,F_i\) and fixing \(T\).
+\end{lemma}
+\begin{proof}
+Use the basic relations to move all negative letters left of
+the \(T\)-coefficient and all positive letters right of it,
+and combine adjacent \(T\)-coefficients. To see termination,
+first count the total number of \(E,F\) letters, then the
+total number of factors, and then inversions relative to the
+order negative, Cartan, positive. Replacing \(E_iF_j\) by its
+commutator term lowers the first count. Combining adjacent
+Cartan factors lowers the second. Every remaining interchange
+lowers the inversion count. One can start with Cartan factors
+from a monomial basis of \(T\) and expand all replacements
+linearly.
+
+Disjoint replacements commute. Overlaps with adjacent
+Cartan factors are compatible with multiplication since the
+\(\tau_i\) are algebra automorphisms. The only remaining
+overlap is \(E_i tF_j\). In the two orders the leading term
+is \(F_j\tau_i^{-1}\tau_j^{-1}(t)E_i\); the other term in
+one order is \(\delta_{ij}\tau_i^{-1}(t)D_i\) and in
+the other is \(\delta_{ij}D_i\tau_j^{-1}(t)\).
+These coincide by commutativity of the translations and
+of \(T\). The normal form is therefore independent of reductions:
+induct on the ordered counts and compare the first two choices,
+using the overlap computation or commuting them when disjoint.
+Normalizing all terms in a defining relation inserted into
+a word gives zero, so the normal form descends to the
+presented algebra and proves independence as well as spanning.
+
+Cartan inversion \(\kappa\) satisfies
+\(\kappa\tau_i=\tau_i^{-1}\kappa\) and \(\kappa(D_i)=-D_i\).
+These identities check the two Cartan and mixed relations
+after the swap defining \(\omega\). Reversing all products
+while interchanging \(E,F\) gives the Cartan relations in
+the opposite order, and sends
+\([E_i,F_j]\) to \([E_j,F_i]\). This checks \(\eta\).
+\end{proof}
+
+\begin{lemma}[Crossing the Serre ideal]
+\label{res:UQ04}
+In the algebra \(B_0\) of Lemma~\ref{res:UQ03},
+\(\mathcal S(E_i,E_j)\) commutes with every \(F_l\), and
+\(\mathcal S(F_i,F_j)\) commutes with every \(E_l\).
+Under the same normal form, the two-sided ideal generated
+by the positive and negative Serre polynomials is the sum
+of the submodules obtained by putting the corresponding
+free-algebra Serre ideal in a positive or negative factor.
+\end{lemma}
+\begin{proof}
+Put \(S=\mathcal S(E_i,E_j)\), \(i\ne j\).
+For \(l=j\) use
+\(
+ [S,F_j]=(\tau_i^{-2}D_j-c\tau_i^{-1}D_j+D_j)E_i^2.
+\)
+For \(l=i\), the commutator rule
+\([ab,F]=a[b,F]+[a,F]b\) gives
+\[
+\begin{split}
+ [S,F_i]
+ &=\bigl(D_i+\tau_i^{-1}D_i-c\tau_i^{-1}\tau_j^{-1}D_i\bigr)E_iE_j\\
+ &\quad+\bigl(\tau_j^{-1}(D_i+\tau_i^{-1}D_i)-cD_i\bigr)E_jE_i .
+\end{split}
+\]
+Every displayed coefficient is zero. In the generic case,
+clear \(q-q^{-1}\) and evaluate each coefficient on
+the terms \(K_l^s\) with \(s=1,-1\).
+The three scalar identities are
+\[
+ q^{2s}-c q^s+1=0,\qquad
+ 1+q^{-2s}-c q^{-s}=0,\qquad
+ q^s(1+q^{-2s})-c=0 .
+\]
+They follow directly from \(c=q+q^{-1}\).
+In the formal case do the same calculation on
+\(K_l^s=e^{shH_l}\) before reduction.
+The relations with \(D_l\) then follow by cancellation
+of \(e^h-e^{-h}\) in the formal coefficient domain,
+so they hold in every truncation. Applying \(\omega\)
+gives the negative commutators.
+
+To check the ideal statement, take the submodule with
+positive Serre ideal in the positive factor. Left
+multiplication by \(F_l\) and right multiplication by \(E_l\)
+preserve it at once. Cartan factors shift across a word
+according to the total number of its root letters; a Serre
+polynomial is homogeneous for those counts.
+Thus left or right Cartan multiplication preserves
+the submodule. Moving a left \(E_l\) across a negative
+word uses only the basic relations and produces either
+a remaining positive letter or shorter negative words
+with Cartan coefficients. This also preserves the positive
+ideal factor. For right multiplication by \(F_l\), it
+suffices to move it across a positive expression \(pSq\).
+The commutators \([p,F_l]\) and \([q,F_l]\) have only
+Cartan coefficients and positive words. The commutator
+\([S,F_l]\) is zero, and moving a Cartan coefficient
+across \(S\) preserves its Serre factor by homogeneity.
+This proves closure on both sides. Applying \(\eta\) gives
+the same result for the negative submodule without changing
+the factor order. Their sum is a two-sided ideal containing
+the generators, and all its basis-type terms already
+belong to the generated ideal.
+\end{proof}
+
+\begin{theorem}[Triangular PBW in type \(A_2\)]
+\label{res:UQ05}
+For either coefficient choice of Definition~\ref{res:UQ02},
+multiplication is an \(A\)-module isomorphism from
+the negative Serre algebra tensored with \(T\) and then
+with the positive Serre algebra onto the quantum
+enveloping algebra. In particular, writing
+\(z_-=F_1F_2-q^{-1}F_2F_1\) and
+\(z_+=E_1E_2-q^{-1}E_2E_1\), a basis consists of
+\[
+ F_1^a z_-^b F_2^d\, T_0\, E_1^{a'} z_+^{b'} E_2^{d'},
+\]
+where the six root exponents are nonnegative integers and
+\(T_0\) ranges over the indicated Cartan monomials.
+In the generic case the subalgebra generated by
+\(F_i,K_i^{\pm1},E_i\) is the rank-one algebra
+\(U_q(\mathfrak{sl}_2)\).
+\end{theorem}
+\begin{proof}
+Apply Lemmas~\ref{res:UQ03} and \ref{res:UQ04};
+passing to the Serre quotient in either factor gives
+the asserted tensor product by right exactness of
+tensoring. Theorem~\ref{res:UQ01} supplies the bases
+of the two Serre factors, and \(T\) has its evident
+monomial basis. The fixed-index generators satisfy the
+rank-one relations, and the corresponding monomials
+\(F_i^aK_i^bE_i^d\) are a subset of the independent
+displayed family. This proves that the rank-one map is
+injective by the rank-one PBW result H10
+~\cite[PDF p.~25]{mg-rm03d}.
+\end{proof}
+
+\section{The Hopf structure}
+
+\begin{theorem}[Coproduct and antipode in type \(A_2\)]
+\label{res:UQ06}
+The formulas
+\[
+\begin{aligned}
+ \Delta(E_i)&=E_i\otimes1+K_i\otimes E_i, &
+ \Delta(F_i)&=F_i\otimes K_i^{-1}+1\otimes F_i,\\
+ \epsilon(E_i)&=\epsilon(F_i)=0, &
+ S(E_i)&=-K_i^{-1}E_i,\qquad S(F_i)=-F_iK_i
+\end{aligned}
+\]
+give Hopf structures on \(U\) and \(U_N\) from
+Definition~\ref{res:UQ02}. In the generic case \(K_i\)
+is group-like with counit \(1\) and antipode \(K_i^{-1}\).
+In the formal case \(H_i\) is primitive with counit
+zero and antipode \(-H_i\), so \(K_i=e^{hH_i}\) is
+group-like. The antipodes are bijective, and the formal
+structures commute with reduction in \(N\).
+\end{theorem}
+\begin{proof}
+The proposed Cartan coproduct preserves its own relations.
+For the generic case, conjugation by \(K_l\otimes K_l\)
+scales the images of \(E_i,F_i\) by \(q^{a_{li}},q^{-a_{li}}\).
+For the formal case, commuting with \(H_l\otimes1+1\otimes H_l\)
+gives the same two weights in additive form. Thus the
+Cartan-root relations hold. In the commutator of
+\(\Delta(E_i),\Delta(F_j)\) the mixed term
+\([K_i\otimes E_i,F_j\otimes K_j^{-1}]\) vanishes:
+the factors needed to interchange the two products
+are \(q^{-a_{ij}}\) and \(q^{a_{ji}}\), which cancel.
+The term \([E_i\otimes1,1\otimes F_j]\) also vanishes.
+The other terms are therefore
+\[
+ \delta_{ij}\bigl(D_i\otimes K_i^{-1}+K_i\otimes D_i\bigr)
+       =\delta_{ij}\Delta(D_i).
+\]
+For Laurent polynomials this last identity follows from
+multiplying by \(q-q^{-1}\) and using \(\Delta(K_i)=K_i\otimes K_i\).
+In the formal case it follows by the same calculation
+before cancellation of \(e^h-e^{-h}\) in the
+formal series ring in the two Cartan sets, then reduction.
+
+For the positive Serre relation take \(i\ne j\) and put
+\[
+ x=E_i\otimes1,\quad u=K_i\otimes E_i,\qquad
+ y=E_j\otimes1,\quad v=K_j\otimes E_j.
+\]
+We need \(\mathcal S(x+u,y+v)=0\). The pure parts are
+\(\mathcal S(x,y)\) and \(\mathcal S(u,v)\); the latter
+is zero because the first-factor \(K\)'s commute and
+the second factor is the Serre polynomial.
+Use \(ux=q^2xu,\ uy=q^{-1}yu,\ vx=q^{-1}xv\).
+Terms with \(y\) and two copies of \(u\), or with \(v\) and two
+copies of \(x\), have scalar factor \(1-cq^{-1}+q^{-2}=0\).
+Terms with \(y\) and one copy each of \(x,u\) sum to
+\[
+ cxyu-c(xyu+qyxu)+(1+q^2)yxu=0.
+\]
+Those with \(v\) and one copy each of \(x,u\) sum to
+\[
+ (1+q^2)xuv-c(xvu+qxuv)+cxvu=0 .
+\]
+This covers every term. The negative relation follows
+by \(\omega\) from Lemma~\ref{res:UQ03} on both factors
+and then tensor-factor exchange. Those transformations
+send the displayed positive coproduct formula to the
+negative one. Hence \(\Delta\) is an algebra map.
+
+The counit respects the relations, including \(\epsilon(D_i)=0\).
+Coassociativity follows on the generators: for \(E_i\) each
+iterate is \(E_i\otimes1\otimes1+K_i\otimes E_i\otimes1+
+K_i\otimes K_i\otimes E_i\); the \(F_i\) expansion similarly
+puts \(K_i^{-1}\) after each \(F_i\). The formulas for group-like
+and primitive elements are coassociative directly. The counit
+identities also hold on the generators.
+
+To check that \(S\) extends anti-multiplicatively, use the
+Cartan inversion \(\kappa\) of Lemma~\ref{res:UQ03}.
+The identity \(\kappa\tau_i=\tau_i^{-1}\kappa\) checks
+the reversed Cartan-root relations, since \(S(E_i)\)
+and \(S(F_i)\) have their respective original weights.
+For the mixed relation, move \(K_i^{-1}\) to the left
+and \(K_j\) to the right. Symmetry of \(a_{ij}\) gives
+\[
+ [S(F_j),S(E_i)]
+    =K_i^{-1}(F_jE_i-E_iF_j)K_j=-\delta_{ij}D_i,
+\]
+which is the required value of \(S(\delta_{ij}D_i)\).
+For each reversed word in a positive Serre polynomial,
+move all \(K^{-1}\)'s to the left. The scalar in addition
+to the three minus signs is the product of \(q^{a_{rs}}\)
+over the three pairs of letters. This is independent of
+their order because \(a_{rs}=a_{sr}\). Here the pair sum
+is \(2-1-1=0\). The result is the common Cartan monomial
+times the reversed Serre polynomial, which is zero.
+The negative check moves all \(K\)'s to the right,
+with the reciprocal scalar, and gives the same conclusion.
+
+The two antipode products give the counit times \(1\)
+on every generator by substitution. They extend to products
+by anti-multiplicativity: for instance in
+\(\sum S((ab)_{(1)})(ab)_{(2)}\) the two contributions of
+\(a\) occur next to one another, giving \(\epsilon(a)\),
+and then the contributions of \(b\) give \(\epsilon(b)\).
+For the other product the contributions of \(b\) occur
+first. Finally \(S^2\) fixes \(T\) and scales \(E_i,F_i\)
+by \(q^{-2},q^2\), respectively. These reciprocal scalings
+preserve the defining relations and have inverses.
+Thus \(S^2\) is invertible and \(S\) is bijective.
+All formulas in the formal choice use reductions of the
+same series, so they commute with reduction in \(N\).
+\end{proof}
+
+\section{The formal classical limit}
+
+\begin{theorem}[A topologically free quantization of the enveloping algebra]
+\label{res:UQ07}
+Use the compatible truncations of Definition~\ref{res:UQ02}
+and set \(U_h=\varprojlim_N U_N\).
+It is a topologically free \(k[[h]]\)-module carrying the
+completed Hopf structure of Theorem~\ref{res:UQ06}.
+Its reduction modulo \(h\) is \(U(\mathfrak{sl}_3(k))\),
+as a Hopf algebra. Here the completed tensor product
+is the inverse limit of \(U_N\otimes_{k[h]/(h^N)} U_N\).
+\end{theorem}
+\begin{proof}
+The monomials in Theorem~\ref{res:UQ05} have compatible
+reductions. Thus each \(U_N\) is the free module on the
+same index set over \(k[h]/(h^N)\), and reduction is
+coefficientwise. An element of the limit is a series
+\(\sum_{n\ge0}h^n v_n\), where each \(v_n\) is a finite
+\(k\)-linear combination of the indexed monomials.
+Indeed, a finite truncation has finite support and
+conversely a finite list of such \(v_n\)'s has finite
+total support. This proves topological freeness and
+identifies the quotient by \(h\) with \(U_1\).
+The same statement with pairs of basis indices proves
+topological freeness of the completed tensor product.
+The Hopf maps are the compatible maps in the theorem
+cited above, so their identities pass to inverse limits.
+
+Modulo \(h\), the Cartan commutators in Definition~\ref{res:UQ02}
+give \([H_l,E_i]=a_{li}E_i\), \([H_l,F_i]=-a_{li}F_i\),
+and \([E_i,F_j]=\delta_{ij}H_i\). The Serre relations
+become the ordinary double commutator relations.
+The assignment to \(\mathfrak{sl}_3(k)\) sends
+\[
+ E_1\mapsto e_{12},\quad E_2\mapsto e_{23},\quad
+ F_1\mapsto e_{21},\quad F_2\mapsto e_{32},\quad
+ H_i\mapsto e_{ii}-e_{i+1,i+1},
+\]
+where \(e_{ij}\) is a matrix unit. These matrices satisfy
+the displayed relations by matrix multiplication.
+The resulting algebra map to \(U(\mathfrak{sl}_3(k))\)
+sends \(z_+,z_-\) to \(e_{13},-e_{31}\).
+Its basis maps precisely to the ordered PBW monomials
+for this basis of \(\mathfrak{sl}_3(k)\), by Result A05 of
+\emph{Lie Algebras and Finite-Dimensional Representations}
+~\cite[PDF pp.~8--9]{mg-lie}. Thus the map is an
+isomorphism. The coproduct reduces to the primitive formula
+on the indicated generators, and the counit and antipode
+reduce to the standard ones. This also proves the
+Hopf assertion.
+\end{proof}
+
+\begin{theorem}[The first-order cobracket on \(\mathfrak{sl}_3\)]
+\label{res:UQ08}
+On the specialization of Theorem~\ref{res:UQ07}, use
+lowercase \(e_i,f_i,h_i\) for the images of \(E_i,F_i,H_i\).
+For a lift \(X\in U_h\) of \(x\), put
+\[
+ \delta(x)=\frac{\Delta(X)-\Delta^{\mathrm{op}}(X)}h
+             \pmod h .
+\]
+Its restriction to \(\mathfrak{sl}_3(k)\) is a Lie
+bialgebra cobracket. We identify \(x\wedge y\) with
+\(x\otimes y-y\otimes x\). Explicitly,
+\[
+\begin{aligned}
+ \delta(h_i)&=0, &
+ \delta(e_i)&=h_i\wedge e_i, &
+ \delta(f_i)&=h_i\wedge f_i,\\
+ \delta([e_1,e_2])&=(h_1+h_2)\wedge[e_1,e_2]+2e_1\wedge e_2,\\
+ \delta([f_1,f_2])&=(h_1+h_2)\wedge[f_1,f_2]-2f_1\wedge f_2 .
+\end{aligned}
+\]
+\end{theorem}
+\begin{proof}
+The specialization is cocommutative, so the numerator
+is divisible by \(h\). The completed tensor product
+is \(h\)-torsion-free by Theorem~\ref{res:UQ07}.
+Replacing a lift by \(X+hY\) does not change the
+answer, since the specialization of
+\(\Delta(Y)-\Delta^{\mathrm{op}}(Y)\) is zero.
+Expanding \(K_i=1+hH_i+O(h^2)\) and
+\(K_i^{-1}=1-hH_i+O(h^2)\) in Theorem~\ref{res:UQ06}
+gives the displayed simple-root and Cartan values.
+
+Write \(\Delta_0\) for the specialized coproduct.
+Multiplicativity of \(\Delta,\Delta^{\mathrm{op}}\)
+and division of their skew difference give
+\[
+ \delta([x,y])=[\Delta_0(x),\delta(y)]
+                  +[\delta(x),\Delta_0(y)] .
+\]
+For primitive \(x,y\) the right-hand side is
+\(\operatorname{ad}_x\delta(y)-\operatorname{ad}_y\delta(x)\)
+for the adjoint action on both factors. Using the
+two off-diagonal Cartan entries \(-1\) gives
+the two remaining displayed formulas. The eight
+matrix basis elements from the preceding proof are thus
+sent into the skew part of \(\mathfrak{sl}_3\otimes\mathfrak{sl}_3\).
+The commutator identity gives the Lie-algebra cocycle rule
+on that subspace.
+
+Here is the co-Jacobi check. Write \(B=\Delta-\Delta^{\mathrm{op}}\)
+and \(D=(\Delta\otimes1)\Delta=(1\otimes\Delta)\Delta\).
+In tensor notation, write \(D\) as \(123\) and denote
+its factor permutations by their orders. Expansion gives
+\((B\otimes1)B=123-213-231+321\).
+The sum of its three cyclic permutes is zero, because
+\(123,231\) are cyclic permutations and \(213,321\) are
+also cyclic permutations. The same coefficientwise
+description of the triple completed tensor product
+shows it is \(h\)-torsion-free. Dividing by \(h^2\)
+and reducing gives the co-Jacobi identity for \(\delta\).
+Pairing this cyclic identity with triples of linear forms
+gives the Jacobi identity for the dual bracket. Together
+with the skew and cocycle rules this proves the Lie
+bialgebra assertion.
+\end{proof}
+
+\begin{corollary}[The coboundary tensor in the matrix model]
+\label{res:UQ09}
+With the convention of Theorem~\ref{res:UQ08},
+the same cobracket on \(\mathfrak{sl}_3\) is
+\(\delta(x)=\operatorname{ad}_x(r)\), where
+\[
+ r=-e_{12}\wedge e_{21}-e_{23}\wedge e_{32}-e_{13}\wedge e_{31}.
+\]
+\end{corollary}
+\begin{proof}
+The matrix-unit rule is
+\([e_{ij},e_{lm}]=\delta_{jl}e_{im}-\delta_{mi}e_{lj}\).
+Each wedge in \(r\) has total weight zero, giving
+\(\operatorname{ad}_{h_i}(r)=0\).
+For \(e_1=e_{12}\), the first wedge with its minus sign
+contributes \(h_1\wedge e_1\); the other two contributions
+are \(-e_{13}\wedge e_{32}\) and \(e_{13}\wedge e_{32}\).
+The same computation for \(e_2=e_{23}\) gives
+\(h_2\wedge e_2\), with cross contributions
+\(e_{13}\wedge e_{21}\) and \(-e_{13}\wedge e_{21}\).
+The Lie algebra automorphism \(x\mapsto-x^{\mathsf T}\)
+sends \(r\) to \(-r\), \(e_i\) to \(-f_i\) and
+\(h_i\) to \(-h_i\). Applying it to the identities for
+\(e_i\) gives \(\operatorname{ad}_{f_i}(r)=h_i\wedge f_i\).
+Both cobrackets satisfy the cocycle identity, for
+\(\operatorname{ad}_x(r)\) by the Jacobi identity.
+Their equality on the six generators therefore
+implies equality on all of \(\mathfrak{sl}_3\).
+\end{proof}
+
+\paragraph{Sources.}
+Kassel~\cite[Sections XVI.5 and XVII.2]{kassel} gives the
+general Drinfeld--Jimbo constructions. Etingof--Semenyakin
+~\cite[Sections 4.1--4.2]{etingof-semenyakin} treats the
+Serre presentation and quantization in general.
+This chapter proves the full normal form and formal limit
+for type \(A_2\) directly, with a specified skew-coproduct
+convention.
+\chapter{Cohomology and Explicit Deformations}
+
+Work over a field \(k\) of characteristic zero. For Lie brackets,
+our convention for the Chevalley--Eilenberg differential, changes
+of basis, and obstruction classes is that of
+\emph{Lie Algebras and Finite-Dimensional Representations},
+Results I02--I03~\cite[PDF pp.~56--57]{mg-lie}.
+We use those results to compute an entire first-order obstruction
+locus in a small example. We then turn to Lie bialgebras and
+deformations of the coproduct. In that setting multiplication
+and comultiplication must satisfy a compatibility equation
+in addition to their separate associativity conditions.
+
+\section{An adjoint cohomology calculation}
+
+\begin{proposition}[Adjoint cohomology of the three-dimensional Heisenberg algebra]
+\label{res:LD01}
+Let \(\mathfrak h\) have basis \(x,y,z\) with
+\([x,y]=z\) and \(z\) central. Then
+\(\dim H^2(\mathfrak h,\mathfrak h)=5\) and
+\(\dim H^3(\mathfrak h,\mathfrak h)=2\), with adjoint
+coefficients. Each class in degree two has a unique representative
+\(\phi\) of the form
+\[
+ \phi(x,y)=0,\qquad
+ \phi(x,z)=a x+b y+c z,\qquad
+ \phi(y,z)=d x-a y+e z .
+\]
+In degree three evaluation on \((x,y,z)\) identifies
+\(H^3\) with \(\mathfrak h/kz\).
+\end{proposition}
+\begin{proof}
+For an alternating \(2\)-cochain \(\psi\), write
+\(A=\psi(x,y)\), \(B=\psi(x,z)\), and \(C=\psi(y,z)\).
+The argument with a bracket in the Chevalley--Eilenberg
+formula is zero: the only nonzero bracket of two basis vectors
+in the triple is \([x,y]=z\), and \(\psi(z,z)=0\).
+Hence
+\[
+ (d\psi)(x,y,z)=[x,C]-[y,B]
+               =(C_y+B_x)z .
+\]
+Here subscripts denote coordinates in the fixed basis.
+Thus the cocycle space has dimension \(8\). The image in
+degree three is exactly \(kz\), and there are no degree-four
+cochains, proving the degree-three assertion.
+
+For a linear \(1\)-cochain \(f\) write
+\(f(z)=u x+v y+w z\). Its differential is
+\[
+ \begin{aligned}
+ (df)(x,y)&=-u x-v y+(f(y)_y+f(x)_x-w)z,\\
+ (df)(x,z)&=v z,\\
+ (df)(y,z)&=-u z.
+ \end{aligned}
+\]
+Thus a coboundary is determined by its value on \((x,y)\),
+and that value ranges over all of \(\mathfrak h\), for instance
+by taking \(f(x)=f(y)=0\) and varying \(f(z)\).
+Subtract the unique coboundary matching \(A\). In the resulting
+normalized cocycle \(A=0\), the only equation is
+\(C_y=-B_x\). This gives the claimed parameters and uniqueness.
+\end{proof}
+
+\begin{theorem}[Exactly which of these first-order classes extend]
+\label{res:LD02}
+In the coordinates of Proposition~\ref{res:LD01}, a first-order
+bracket deformation of \(\mathfrak h\) extends modulo \(t^3\)
+if and only if
+\[
+                  cd-ea=0,\qquad eb+ca=0 .
+\]
+When both equations hold, the bracket \([\, ,\,]+t\phi\)
+already satisfies Jacobi over \(k[t]\), and in particular gives
+a formal extension over \(k[[t]]\).
+\end{theorem}
+\begin{proof}
+First take the unique normalized representative. In Jacobi,
+use the cyclic expression \(\sum_{\mathrm{cyc}}[[x,y],z]\)
+as in Results I02--I03 of \cite{mg-lie}.
+The coefficient in order \(t\) is zero since \(\phi\) is
+a cocycle. At order \(t^2\), the contribution of the first-order
+cochain on \((x,y,z)\) is
+\[
+ \begin{aligned}
+   \sum_{\mathrm{cyc}}\phi(\phi(x,y),z)
+    &= -e\,\phi(x,z)+c\,\phi(y,z)\\
+    &= (cd-ea)x-(eb+ca)y .
+ \end{aligned}
+\]
+If a \(t^2\)-cochain is added to the bracket, its contribution
+at that order is the negative of its differential, by
+Result I03. By Proposition~\ref{res:LD01}, every such differential
+takes values in \(kz\) on \((x,y,z)\). It can cancel the
+displayed vector only if both its coordinates are zero.
+
+When both vanish, Jacobi for the bracket with only the linear
+term is identically zero: its coefficients have degrees \(0,1,2\),
+and each has vanished on an exterior basis for triples.
+Changing the representative of the first-order class by a
+coboundary preserves existence of either extension. The first-order
+change is \(1+t f\), as in Result I02, and the same linear
+operator is invertible modulo \(t^3\) and over \(k[[t]]\) by
+inverting it as a formal power series. Transport the extension
+by that change of basis.
+\end{proof}
+
+\begin{example}[Two extendable classes with an obstructed sum]
+\label{res:LD03}
+Let \(\phi_1(x,z)=x,\phi_1(y,z)=-y\), and
+\(\phi_2(x,z)=0,\phi_2(y,z)=z\), with both cochains zero
+on \((x,y)\). Each extends, but their sum is obstructed
+already in degree two.
+The extension defined by \(\phi_1\) specializes at \(t=0\)
+to \(\mathfrak h\) and is isomorphic to
+\(\mathfrak{sl}_2(k((t)))\) over the Laurent series field.
+\end{example}
+\begin{proof}
+For \(\phi_1\) only \(a=1\) is nonzero, and for \(\phi_2\)
+only \(e=1\) is nonzero. The equations of
+Theorem~\ref{res:LD02} both hold in either case.
+For their sum the obstruction vector is \(-x\), nonzero
+in the quotient in Proposition~\ref{res:LD01}.
+For the generic \(\phi_1\)-bracket put
+\(H=-2z/t\), \(E=x\), \(F=-2y/t\). These form a basis over
+\(k((t))\), and its brackets are \([H,E]=2E\),
+\([H,F]=-2F\), and \([E,F]=H\), precisely the displayed
+matrix-basis brackets of \(\mathfrak{sl}_2\).
+\end{proof}
+
+The general obstruction formalism for deformations over Artinian
+bases is developed by Fialowski--Fuchs~\cite[Sections 1 and 3]{fialowski-fuchs}.
+The calculation above concerns extensions of each first-order class
+over one parameter.
+
+\section{Coboundary Lie bialgebras}
+
+\begin{definition}[Lie bialgebras and coboundary cobrackets]
+\label{res:LD04}
+For a finite-dimensional Lie algebra \(\mathfrak g\), put
+\(x\cdot(y\wedge z)=[x,y]\wedge z+y\wedge[x,z]\).
+A Lie bialgebra cobracket is a linear map
+\(\delta:\mathfrak g\to\bigwedge^2\mathfrak g\)
+such that
+\[
+ \delta([x,y])=x\cdot\delta(y)-y\cdot\delta(x)
+\]
+and the dual operation, given by
+\(\langle[\alpha,\beta]_\delta,x\rangle
+=\langle\alpha\wedge\beta,\delta(x)\rangle\), is a Lie bracket.
+For \(r\in\bigwedge^2\mathfrak g\) the coboundary map
+\(\delta_r(x)=x\cdot r\) always satisfies the first condition.
+\end{definition}
+
+\begin{proposition}[The invariant Schouten-square criterion]
+\label{res:LD05}
+Define a symmetric bracket on bivectors by bilinear extension of
+\[
+ \begin{aligned}
+ [a\wedge b,c\wedge d]_{\mathrm S}
+   ={}&[a,c]\wedge b\wedge d-[a,d]\wedge b\wedge c\\
+      &-[b,c]\wedge a\wedge d+[b,d]\wedge a\wedge c .
+ \end{aligned}
+\]
+The map \(\delta_r\) is a Lie bialgebra cobracket if and only if
+\([r,r]_{\mathrm S}\) is fixed by the adjoint action
+on \(\bigwedge^3\mathfrak g\).
+\end{proposition}
+\begin{proof}
+The displayed formula is alternating in the two factors of
+each bivector, so it descends to the exterior squares.
+Interchanging the two bivectors changes the sign of the Lie
+bracket and of the necessary permutation of the two remaining
+vectors, making the formula symmetric. Applying
+\(\operatorname{ad}_x\) to each term gives
+\[
+ x\cdot[r,s]_{\mathrm S}=[x\cdot r,s]_{\mathrm S}
+                         +[r,x\cdot s]_{\mathrm S},
+\]
+using the Lie Jacobi identity in the bracketed factor.
+
+For any \(\delta\), extend it in degree two by
+\(\partial_\delta(y\wedge z)=\delta(y)\wedge z-y\wedge\delta(z)\).
+Pairing \(\partial_\delta\delta(x)\) with \(\alpha\wedge\beta\wedge\gamma\)
+gives the pairing of \(x\) with the cyclic sum
+\(\sum_{\mathrm{cyc}}[[\alpha,\beta]_\delta,\gamma]_\delta\).
+Indeed for a term \(u\wedge v\) of \(\delta(x)\) the pairing of
+\(\delta(u)\wedge v-u\wedge\delta(v)\) is the cyclic sum of
+\(
+\langle[\alpha,\beta]_\delta,u\rangle\langle\gamma,v\rangle
+-\langle[\alpha,\beta]_\delta,v\rangle\langle\gamma,u\rangle
+\).
+These pairings detect every trivector, so the dual Jacobi
+identity is equivalent to \(\partial_\delta\delta=0\).
+
+The bivector formula gives
+\([r,y\wedge z]_{\mathrm S}=-\delta_r(y)\wedge z+
+y\wedge\delta_r(z)\), first for a decomposable \(r\)
+and then by linearity. Consequently
+\[
+ \partial_{\delta_r}\delta_r(x)
+      =-[r,x\cdot r]_{\mathrm S}
+      =-\tfrac12 x\cdot[r,r]_{\mathrm S}.
+\]
+The \(1\)-cocycle condition also holds because the adjoint
+action is a representation. This proves the criterion.
+\end{proof}
+
+\begin{example}[Two cobrackets on the split rank-one algebra]
+\label{res:LD06}
+For the basis \(H,E,F\) with \([H,E]=2E\),
+\([H,F]=-2F\), \([E,F]=H\), there are Lie bialgebra
+structures from \(r_1=F\wedge E\) and \(r_2=H\wedge E\).
+The first has
+\(\delta_{r_1}(H)=0\), \(\delta_{r_1}(E)=H\wedge E\),
+and \(\delta_{r_1}(F)=H\wedge F\).
+The second has Schouten square zero and has
+\(\delta_{r_2}(H)=2H\wedge E\), \(\delta_{r_2}(E)=0\),
+and \(\delta_{r_2}(F)=-2E\wedge F\).
+\end{example}
+\begin{proof}
+For \(r=u\wedge v\), the formula of
+Proposition~\ref{res:LD05} gives
+\([r,r]_{\mathrm S}=2[u,v]\wedge u\wedge v\).
+For \(r_1\), this is a scalar multiple of \(H\wedge E\wedge F\).
+The adjoint action of \(H\) on that trivector cancels the
+weights \(2,-2\). The adjoint actions of \(E\) and \(F\)
+each give repeated factors, so the trivector is invariant.
+For \(r_2\), \([H,E]=2E\) gives a repeated factor in the square.
+The criterion gives both bialgebras. Acting on the two
+bivectors with the basis vectors gives the claimed formulas.
+The first convention agrees with the simple-root normalization
+of the preceding quantum chapter.
+\end{proof}
+
+\section{First-order changes of a bialgebra}
+
+\begin{proposition}[Linearized associativity, coassociativity, and compatibility]
+\label{res:LD07}
+Let \(B\) be a bialgebra with multiplication \(m\), coproduct \(\Delta\),
+unit \(1\), and counit \(\epsilon_B\).
+Over \(k[s]/(s^2)\), write \(m_s=m+sf\), \(\Delta_s=\Delta+sg\)
+and keep the unit and counit fixed. Let
+\(J=1\otimes\tau\otimes1\) on \(B^{\otimes4}\), where
+\(\tau\) interchanges the middle factors.
+The bialgebra identities hold precisely when
+\[
+ \begin{aligned}
+ &f(1,b)=f(b,1)=0,\quad \epsilon_B f=0,\quad
+   g(1)=0,\quad (\epsilon_B\otimes1)g=(1\otimes\epsilon_B)g=0,\\
+ &a f(b,c)-f(ab,c)+f(a,bc)-f(a,b)c=0,\\
+ &(\Delta\otimes1)g+(g\otimes1)\Delta
+        -(1\otimes\Delta)g-(1\otimes g)\Delta=0,\\
+ &\Delta f+gm=(f\otimes m+m\otimes f)J(\Delta\otimes\Delta)
+             +(m\otimes m)J(g\otimes\Delta+\Delta\otimes g).
+ \end{aligned}
+\]
+Under pullback by \(1+s u\) with \(u(1)=0\) and
+\(\epsilon_B u=0\), the two cochains change by
+\[
+ \begin{aligned}
+ f&\longmapsto f+m(u\otimes1+1\otimes u)-u m,\\
+ g&\longmapsto g+\Delta u-(u\otimes1+1\otimes u)\Delta.
+ \end{aligned}
+\]
+\end{proposition}
+\begin{proof}
+Keeping the unit and counit supplies the first line, including
+the condition that the coproduct is unital and the counit is
+multiplicative. For associativity compare
+\(m_s(m_s\otimes1)\) and \(m_s(1\otimes m_s)\);
+their difference in degree one gives the second line up to
+an overall sign. The degree-one part of
+\((\Delta_s\otimes1)\Delta_s=(1\otimes\Delta_s)\Delta_s\)
+is the third line. For compatibility, start from
+\(\Delta_s m_s=(m_s\otimes m_s)J(\Delta_s\otimes\Delta_s)\).
+On the left, the \(s\)-terms are \(\Delta f\) and \(gm\).
+On the right one changes one of the four indicated operations
+at a time. This gives the last line, and terms with two changes
+are zero. These expansions exhaust the bialgebra identities.
+In the pullback formulas use the inverse \(1-su\). Apply it
+after multiplication and in both factors after comultiplication;
+their linear terms are exactly the two displayed changes.
+\end{proof}
+
+These equations give the two operation components and change of
+coordinates of the normalized bialgebra deformation complex.
+For the general cohomology and higher brackets see
+Markl~\cite[Section 6]{markl}.
+
+\begin{theorem}[A nontrivial coproduct deformation of a polynomial Hopf algebra]
+\label{res:LD08}
+Let \(B=k[x,y]\) with \(x,y\) primitive. With multiplication
+unchanged, the \(t\)-adically completed algebra \(B[[t]]\)
+admits a Hopf structure extending the original one:
+\[
+ \Delta_t(x)=x\otimes1+1\otimes x,\qquad
+ \Delta_t(y)=y\otimes1+\exp(tx)\otimes y .
+\]
+The counit still vanishes on \(x,y\). Its first-order class
+as a bialgebra deformation is nonzero. On primitives of
+degree one the linearized skew coproduct gives
+\(\delta(x)=0\) and \(\delta(y)=x\wedge y\).
+\end{theorem}
+\begin{proof}
+The formulas determine a continuous algebra map to
+\((B\otimes B)[[t]]\), since the target is commutative and
+both images have prescribed constant terms. As \(x\) is
+primitive, the formal series \(a=\exp(tx)\) is group-like:
+the exponential of the sum of the two commuting copies of
+\(tx\) is the product of their exponentials.
+Both iterated coproducts of \(y\) are
+\[
+ y\otimes1\otimes1+a\otimes y\otimes1+a\otimes a\otimes y,
+\]
+and they agree on \(x\) by primitivity. The counit
+identities follow on generators. Define the continuous algebra
+map \(S\) by \(S(x)=-x\), \(S(y)=-a^{-1}y\), so \(S(a)=a^{-1}\).
+The two antipode identities hold on \(x\) and \(y\):
+on \(y\) the sums are \(S(y)+a^{-1}y=0\) and
+\(y+aS(y)=0\). The two sides are algebra maps by commutativity,
+so the identities hold throughout the completion.
+
+At first order the coefficient of \(t\) sends \(y\) to
+\(x\otimes y\). The difference of this tensor and its flip
+is \(x\otimes y-y\otimes x\), identified with \(x\wedge y\).
+Since
+\(\Delta\) is cocommutative, the second change of cochains
+in Proposition~\ref{res:LD07} is symmetric under the flip,
+for every \(u\). Thus the skew part cannot be removed by
+a first-order change of coordinates. Its values on \(x,y\)
+give the asserted cobracket on the abelian two-dimensional
+Lie algebra they span. Its dual is a Lie bracket, since the
+Jacobiator is alternating on a two-dimensional space.
+\end{proof}
+
+For the quantization problem with a prescribed Lie bialgebra
+and its classical limit, see the definition and existence
+theorem of Etingof--Kazhdan
+~\cite[Section 3 and Theorem 9.6]{etingof-kazhdan}.
+\backmatter
+\begingroup
+\footnotesize
+\begin{thebibliography}{99}
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\renewcommand{\runningchapter}{Bibliography}
+\setlength{\itemsep}{2pt}
+
+\bibitem{etingof-kazhdan}
+P. Etingof and D. Kazhdan.
+\emph{Quantization of Lie Bialgebras, I}.
+Selecta Mathematica, 1996. Archived as arXiv:q-alg/9506005v5.
+
+\bibitem{etingof-semenyakin}
+P. Etingof and M. Semenyakin.
+\emph{A Brief Introduction to Quantum Groups}.
+Lecture notes, archived author's version.
+
+\bibitem{fialowski-fuchs}
+A. Fialowski and D. Fuchs.
+\emph{Construction of Miniversal Deformations of Lie Algebras}.
+Journal of Functional Analysis, 1999. Archived as arXiv:math/0006117v1.
+
+\bibitem{hernandez-affine}
+D. Hernandez.
+\emph{An Introduction to Affine Kac--Moody Algebras}.
+CTQM Master Class Series 2, 2006.
+
+\bibitem{jantzen-alggroup}
+J.~C. Jantzen.
+\emph{Representations of Algebraic Groups}.
+Second edition, American Mathematical Society, 2007 reprint.
+
+\bibitem{jantzen-modular}
+J.~C. Jantzen.
+\emph{Representations of Lie Algebras in Positive Characteristic}.
+Archived author's notes.
+
+\bibitem{kac}
+V.~G. Kac.
+\emph{Infinite-Dimensional Lie Algebras}.
+Third edition, Cambridge University Press, 1990, corrected reprint, 1995.
+
+\bibitem{kassel}
+C. Kassel.
+\emph{Quantum Groups}.
+Graduate Texts in Mathematics 155, Springer, 1995.
+
+\bibitem{markl}
+M. Markl.
+\emph{Intrinsic Brackets and the \(L_\infty\) Deformation Theory of Bialgebras}.
+Archived as arXiv:math/0411456v7.
+
+\bibitem{musson}
+I.~M. Musson.
+\emph{Lie Superalgebras and Enveloping Algebras}.
+Graduate Studies in Mathematics 131, American Mathematical Society, 2012.
+
+\bibitem{serganova}
+V. Serganova.
+\emph{Kac--Moody Superalgebras and Integrability}.
+Archived author's manuscript.
+
+\bibitem{stradefarnsteiner}
+H. Strade and R. Farnsteiner.
+\emph{Modular Lie Algebras and Their Representations}.
+Monographs and Textbooks in Pure and Applied Mathematics 116, Dekker, 1988.
+
+\bibitem{mg-algebra-core}
+MathGenome.
+\emph{Algebra Core}. P1-03, revision in MathGenome v0.25.0.
+
+\bibitem{mg-lie}
+MathGenome.
+\emph{Lie Algebras and Finite-Dimensional Representations}.
+ALG-08, 74-page revision, 2026.
+
+\bibitem{mg-reptopics}
+MathGenome.
+\emph{Topics in Representation Theory}.
+ALG-07, 37-page revision, 2026. Results LO09--LO14 concern untwisted affine algebras.
+
+\bibitem{mg-rm03d}
+MathGenome.
+\emph{Topics in Rings, Modules, and Associative Algebras}.
+ALG-03, 38-page revision, 2026. Chapter 3 includes \(U_q(\mathfrak{sl}_2)\).
+
+\end{thebibliography}
+\endgroup
+\end{document}

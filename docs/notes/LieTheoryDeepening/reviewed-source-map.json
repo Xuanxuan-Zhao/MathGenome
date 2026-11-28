@@ -1,0 +1,3607 @@
+{
+  "component": "LieTheoryDeepening",
+  "paper": "docs/sources/LieTheoryDeepening/paper.tex",
+  "paper_sha256": "1d9a5d75731dc482a866f372a7adf666ea70159ca12d24c5443f425a6e730ba4",
+  "pdf": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+  "pdf_sha256": "624163450759dda4de8f477e6d70e7c9329d8c3bf9b557b7e5d5964c7c89c0dd",
+  "physical_pages": 31,
+  "public_declarations_checked": 529,
+  "results": [
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/CartanData.lean",
+              "name": "LieNotes.Contragredient.IsGeneralizedCartanMatrix",
+              "line": 13,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/CartanData.lean",
+              "name": "LieNotes.Contragredient.IsSymmetrizable",
+              "line": 14,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/CartanData.lean",
+              "name": "LieNotes.Contragredient.Realization",
+              "line": 15,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/CartanData.lean",
+              "name": "LieNotes.Contragredient.Realization.IsMinimal",
+              "line": 26,
+              "end_line": 26
+            }
+          ],
+          "id": "LieTheoryDeepening:KM01",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Contragredient",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 126,
+            "line_end": 137
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM01",
+      "kind": "definition",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM01",
+      "latex_line": 16,
+      "number": "1.1",
+      "paper_line": 127,
+      "pdf_destination": "definition.1.1",
+      "pdf_page": 4,
+      "title": "Generalized Cartan matrices and realizations"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/MinimalRealization.lean",
+              "name": "LieNotes.Contragredient.exists_minimal_realization",
+              "line": 39,
+              "end_line": 59
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/MinimalRealization.lean",
+              "name": "LieNotes.Contragredient.minimal_realization_common_kernel_finrank",
+              "line": 126,
+              "end_line": 133
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/MinimalRealization.lean",
+              "name": "LieNotes.Contragredient.minimal_realization_equiv",
+              "line": 106,
+              "end_line": 123
+            }
+          ],
+          "id": "LieTheoryDeepening:KM02",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Contragredient",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 139,
+            "line_end": 146
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM02",
+      "kind": "lemma",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM02",
+      "latex_line": 29,
+      "number": "1.2",
+      "paper_line": 140,
+      "pdf_destination": "lemma.1.2",
+      "pdf_page": 4,
+      "title": "Existence and uniqueness of a minimal realization"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/Presentation.lean",
+              "name": "LieNotes.Contragredient.Presentation.Algebra",
+              "line": 53,
+              "end_line": 53
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/Presentation.lean",
+              "name": "LieNotes.Contragredient.Presentation.cartan",
+              "line": 55,
+              "end_line": 56
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/Presentation.lean",
+              "name": "LieNotes.Contragredient.Presentation.definingRelations",
+              "line": 81,
+              "end_line": 99
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/Presentation.lean",
+              "name": "LieNotes.Contragredient.Presentation.e",
+              "line": 58,
+              "end_line": 59
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/Presentation.lean",
+              "name": "LieNotes.Contragredient.Presentation.f",
+              "line": 61,
+              "end_line": 62
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/Presentation.lean",
+              "name": "LieNotes.Contragredient.Presentation.generated",
+              "line": 191,
+              "end_line": 210
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/Presentation.lean",
+              "name": "LieNotes.Contragredient.Presentation.universalProperty",
+              "line": 184,
+              "end_line": 188
+            }
+          ],
+          "id": "LieTheoryDeepening:KM03",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Contragredient",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 166,
+            "line_end": 176
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM03",
+      "kind": "proposition",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM03",
+      "latex_line": 56,
+      "number": "1.3",
+      "paper_line": 167,
+      "pdf_destination": "proposition.1.3",
+      "pdf_page": 4,
+      "title": "The universal algebra before the quotient"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/CartanQuotient.lean",
+              "name": "LieNotes.Contragredient.CartanQuotient.cartanDisjointIdeal",
+              "line": 15,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/CartanQuotient.lean",
+              "name": "LieNotes.Contragredient.CartanQuotient.cartanDisjointIdeal_isGreatest",
+              "line": 68,
+              "end_line": 84
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/WeightExtraction.lean",
+              "name": "LieNotes.Contragredient.iSup_inf_weightSpace_eq",
+              "line": 90,
+              "end_line": 103
+            }
+          ],
+          "id": "LieTheoryDeepening:KM04",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 236,
+            "line_end": 239
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM04",
+      "kind": "theorem",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM04",
+      "latex_line": 126,
+      "number": "1.4",
+      "paper_line": 237,
+      "pdf_destination": "theorem.1.4",
+      "pdf_page": 5,
+      "title": "The Cartan-disjoint ideal and the center"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/AdjointNilpotence.lean",
+              "name": "LieNotes.Contragredient.AdjointNilpotence.ad_e_locally_nilpotent",
+              "line": 71,
+              "end_line": 91
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/AdjointNilpotence.lean",
+              "name": "LieNotes.Contragredient.AdjointNilpotence.ad_f_locally_nilpotent",
+              "line": 94,
+              "end_line": 104
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/AdjointNilpotence.lean",
+              "name": "LieNotes.Contragredient.AdjointNilpotence.negative_serre",
+              "line": 65,
+              "end_line": 68
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/AdjointNilpotence.lean",
+              "name": "LieNotes.Contragredient.AdjointNilpotence.positive_serre",
+              "line": 59,
+              "end_line": 62
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/SerreRelations.lean",
+              "name": "LieNotes.Contragredient.SerreRelations.exponent_pos",
+              "line": 14,
+              "end_line": 18
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/SerreRelations.lean",
+              "name": "LieNotes.Contragredient.SerreRelations.negative_serre",
+              "line": 168,
+              "end_line": 178
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/SerreRelations.lean",
+              "name": "LieNotes.Contragredient.SerreRelations.positive_serre",
+              "line": 152,
+              "end_line": 166
+            }
+          ],
+          "id": "LieTheoryDeepening:KM05",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 272,
+            "line_end": 281
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM05",
+      "kind": "theorem",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM05",
+      "latex_line": 162,
+      "number": "1.5",
+      "paper_line": 273,
+      "pdf_destination": "theorem.1.5",
+      "pdf_page": 6,
+      "title": "Serre relations in the quotient"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/LocallyNilpotentExponential.lean",
+              "name": "LieNotes.Contragredient.LocallyNilpotentExponential.exp_apply",
+              "line": 16,
+              "end_line": 19
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/LocallyNilpotentExponential.lean",
+              "name": "LieNotes.Contragredient.LocallyNilpotentExponential.exp_inverse",
+              "line": 110,
+              "end_line": 113
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/LocallyNilpotentExponential.lean",
+              "name": "LieNotes.Contragredient.LocallyNilpotentExponential.exp_map_lie",
+              "line": 188,
+              "end_line": 193
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/CartanData.lean",
+              "name": "LieNotes.Contragredient.Realization.weightReflection_apply",
+              "line": 76,
+              "end_line": 78
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/ReflectionAutomorphisms.lean",
+              "name": "LieNotes.Contragredient.ReflectionAutomorphisms.IsReflectionAutomorphism",
+              "line": 22,
+              "end_line": 24
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/ReflectionAutomorphisms.lean",
+              "name": "LieNotes.Contragredient.ReflectionAutomorphisms.cartanReflection",
+              "line": 19,
+              "end_line": 20
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/ReflectionAutomorphisms.lean",
+              "name": "LieNotes.Contragredient.ReflectionAutomorphisms.cartanReflection_apply",
+              "line": 26,
+              "end_line": 28
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/ReflectionAutomorphisms.lean",
+              "name": "LieNotes.Contragredient.ReflectionAutomorphisms.realRoot_multiplicity",
+              "line": 322,
+              "end_line": 335
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/ReflectionAutomorphisms.lean",
+              "name": "LieNotes.Contragredient.ReflectionAutomorphisms.reflectionAutomorphism_existsUnique",
+              "line": 76,
+              "end_line": 83
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/ReflectionAutomorphisms.lean",
+              "name": "LieNotes.Contragredient.ReflectionAutomorphisms.reflectionAutomorphism_onCartan",
+              "line": 108,
+              "end_line": 153
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/ReflectionAutomorphisms.lean",
+              "name": "LieNotes.Contragredient.ReflectionAutomorphisms.reflectionAutomorphism_onWeightSpaces",
+              "line": 161,
+              "end_line": 189
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/ReflectionAutomorphisms.lean",
+              "name": "LieNotes.Contragredient.ReflectionAutomorphisms.rootLattice_preserved",
+              "line": 191,
+              "end_line": 200
+            }
+          ],
+          "id": "LieTheoryDeepening:KM06",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 319,
+            "line_end": 330
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM06",
+      "kind": "proposition",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM06",
+      "latex_line": 209,
+      "number": "1.6",
+      "paper_line": 320,
+      "pdf_destination": "proposition.1.6",
+      "pdf_page": 6,
+      "title": "Reflection automorphisms and real roots"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/InfiniteRankTwo.lean",
+              "name": "LieNotes.Contragredient.InfiniteRankTwo.cartanMatrix",
+              "line": 18,
+              "end_line": 18
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/InfiniteRankTwo.lean",
+              "name": "LieNotes.Contragredient.InfiniteRankTwo.infiniteDimensional",
+              "line": 202,
+              "end_line": 210
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/InfiniteRankTwo.lean",
+              "name": "LieNotes.Contragredient.InfiniteRankTwo.infiniteRootOrbit",
+              "line": 178,
+              "end_line": 200
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/InfiniteRankTwo.lean",
+              "name": "LieNotes.Contragredient.InfiniteRankTwo.minimalInfiniteDimensional",
+              "line": 212,
+              "end_line": 219
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/InfiniteRankTwo.lean",
+              "name": "LieNotes.Contragredient.InfiniteRankTwo.orbitWeight",
+              "line": 20,
+              "end_line": 22
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/InfiniteRankTwo.lean",
+              "name": "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct",
+              "line": 19,
+              "end_line": 19
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/InfiniteRankTwo.lean",
+              "name": "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct_at_four",
+              "line": 94,
+              "end_line": 111
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/InfiniteRankTwo.lean",
+              "name": "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct_coordinates",
+              "line": 57,
+              "end_line": 68
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/InfiniteRankTwo.lean",
+              "name": "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct_det_trace",
+              "line": 70,
+              "end_line": 75
+            }
+          ],
+          "id": "LieTheoryDeepening:KM07",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Contragredient",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 358,
+            "line_end": 376
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM07",
+      "kind": "example",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM07",
+      "latex_line": 248,
+      "number": "1.7",
+      "paper_line": 359,
+      "pdf_destination": "example.1.7",
+      "pdf_page": 7,
+      "title": "An infinite rank-two root orbit"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/HighestWeightTheorem.lean",
+              "name": "LieNotes.Contragredient.HighestWeightTheorem.highestWeightTheorem",
+              "line": 143,
+              "end_line": 144
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/SimpleHighestWeight.lean",
+              "name": "LieNotes.Contragredient.SimpleHighestWeight.L",
+              "line": 22,
+              "end_line": 22
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/SimpleHighestWeight.lean",
+              "name": "LieNotes.Contragredient.SimpleHighestWeight.quotientMap",
+              "line": 23,
+              "end_line": 23
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/SimpleHighestWeight.lean",
+              "name": "LieNotes.Contragredient.SimpleHighestWeight.radicalIsGreatest",
+              "line": 80,
+              "end_line": 87
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/SimpleHighestWeight.lean",
+              "name": "LieNotes.Contragredient.SimpleHighestWeight.simpleModule",
+              "line": 95,
+              "end_line": 97
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/SimpleHighestWeight.lean",
+              "name": "LieNotes.Contragredient.SimpleHighestWeight.topHighest",
+              "line": 99,
+              "end_line": 111
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/SimpleHighestWeight.lean",
+              "name": "LieNotes.Contragredient.SimpleHighestWeight.uniqueSimpleQuotient",
+              "line": 113,
+              "end_line": 131
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/VermaModules.lean",
+              "name": "LieNotes.Contragredient.VermaModules.Verma",
+              "line": 26,
+              "end_line": 26
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/VermaModules.lean",
+              "name": "LieNotes.Contragredient.VermaModules.borel",
+              "line": 23,
+              "end_line": 23
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/VermaModules.lean",
+              "name": "LieNotes.Contragredient.VermaModules.borelUnderlying",
+              "line": 84,
+              "end_line": 89
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/VermaModules.lean",
+              "name": "LieNotes.Contragredient.VermaModules.characterModule",
+              "line": 25,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/VermaModules.lean",
+              "name": "LieNotes.Contragredient.VermaModules.finiteWeightSpaces",
+              "line": 499,
+              "end_line": 512
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/VermaModules.lean",
+              "name": "LieNotes.Contragredient.VermaModules.highestWeightUniversal",
+              "line": 241,
+              "end_line": 294
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/VermaModules.lean",
+              "name": "LieNotes.Contragredient.VermaModules.inductionUniversal",
+              "line": 178,
+              "end_line": 183
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/VermaModules.lean",
+              "name": "LieNotes.Contragredient.VermaModules.pbw",
+              "line": 201,
+              "end_line": 205
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/VermaModules.lean",
+              "name": "LieNotes.Contragredient.VermaModules.top",
+              "line": 27,
+              "end_line": 27
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/VermaModules.lean",
+              "name": "LieNotes.Contragredient.VermaModules.topWeightSpace",
+              "line": 514,
+              "end_line": 537
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Contragredient/VermaModules.lean",
+              "name": "LieNotes.Contragredient.VermaModules.weightCharacterExists",
+              "line": 117,
+              "end_line": 166
+            }
+          ],
+          "id": "LieTheoryDeepening:KM08",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 379,
+            "line_end": 384
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM08",
+      "kind": "theorem",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM08",
+      "latex_line": 269,
+      "number": "1.8",
+      "paper_line": 380,
+      "pdf_destination": "theorem.1.8",
+      "pdf_page": 7,
+      "title": "Highest-weight modules and integrability"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Affine/CartanRealization.lean",
+              "name": "LieNotes.Affine.affineCartanRealization",
+              "line": 251,
+              "end_line": 430
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Affine/ContragredientComparison.lean",
+              "name": "LieNotes.Affine.affineContragredientComparison",
+              "line": 246,
+              "end_line": 296
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Affine/CartanRealization.lean",
+              "name": "LieNotes.Affine.existsNormalizedForm",
+              "line": 136,
+              "end_line": 177
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Affine/NoCartanDisjointIdeals.lean",
+              "name": "LieNotes.Affine.nonzeroIdeal_meets_affineCartan",
+              "line": 56,
+              "end_line": 126
+            }
+          ],
+          "id": "LieTheoryDeepening:KM09",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 441,
+            "line_end": 476
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM09",
+      "kind": "proposition",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM09",
+      "latex_line": 331,
+      "number": "1.9",
+      "paper_line": 442,
+      "pdf_destination": "proposition.1.9",
+      "pdf_page": 8,
+      "title": "The contragredient affine algebra is the loop model"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittAlgebra.lean",
+              "name": "LieNotes.Virasoro.Witt.L",
+              "line": 20,
+              "end_line": 20
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittAlgebra.lean",
+              "name": "LieNotes.Virasoro.Witt.L_apply_T",
+              "line": 27,
+              "end_line": 31
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittAlgebra.lean",
+              "name": "LieNotes.Virasoro.Witt.W",
+              "line": 14,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittAlgebra.lean",
+              "name": "LieNotes.Virasoro.Witt.derivative",
+              "line": 17,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittSimplicity.lean",
+              "name": "LieNotes.Virasoro.Witt.derived_eq_top",
+              "line": 89,
+              "end_line": 99
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittAlgebra.lean",
+              "name": "LieNotes.Virasoro.Witt.evalT_bijective",
+              "line": 64,
+              "end_line": 66
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittAlgebra.lean",
+              "name": "LieNotes.Virasoro.Witt.exists_mode_basis",
+              "line": 99,
+              "end_line": 100
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittSimplicity.lean",
+              "name": "LieNotes.Virasoro.Witt.isSimple",
+              "line": 68,
+              "end_line": 86
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittAlgebra.lean",
+              "name": "LieNotes.Virasoro.Witt.lie_L",
+              "line": 111,
+              "end_line": 120
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittAlgebra.lean",
+              "name": "LieNotes.Virasoro.Witt.mode_expansion",
+              "line": 102,
+              "end_line": 108
+            }
+          ],
+          "id": "LieTheoryDeepening:KM10",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 500,
+            "line_end": 507
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM10",
+      "kind": "proposition",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM10",
+      "latex_line": 390,
+      "number": "1.10",
+      "paper_line": 501,
+      "pdf_destination": "proposition.1.10",
+      "pdf_page": 8,
+      "title": "The Witt algebra is simple and perfect"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/VirasoroCocycle.lean",
+              "name": "LieNotes.Virasoro.coboundary_apply_trivial",
+              "line": 124,
+              "end_line": 125
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/VirasoroCocycle.lean",
+              "name": "LieNotes.Virasoro.exists_omega",
+              "line": 104,
+              "end_line": 105
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/VirasoroCocycle.lean",
+              "name": "LieNotes.Virasoro.omegaForm_modes",
+              "line": 18,
+              "end_line": 26
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittCohomology.lean",
+              "name": "LieNotes.Virasoro.witt_cocycle_classification",
+              "line": 194,
+              "end_line": 201
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittCohomology.lean",
+              "name": "LieNotes.Virasoro.witt_cohomology_equivalence",
+              "line": 240,
+              "end_line": 245
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/WittCohomology.lean",
+              "name": "LieNotes.Virasoro.witt_scalar_cohomology_dimension",
+              "line": 247,
+              "end_line": 250
+            }
+          ],
+          "id": "LieTheoryDeepening:KM11",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 522,
+            "line_end": 530
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM11",
+      "kind": "theorem",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM11",
+      "latex_line": 412,
+      "number": "1.11",
+      "paper_line": 523,
+      "pdf_destination": "theorem.1.11",
+      "pdf_page": 9,
+      "title": "The Virasoro cocycle and the universal extension"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/AffineWittAction.lean",
+              "name": "LieNotes.Virasoro.AffineWitt.Semidirect",
+              "line": 204,
+              "end_line": 204
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/AffineWittAction.lean",
+              "name": "LieNotes.Virasoro.AffineWitt.lie_mode",
+              "line": 128,
+              "end_line": 140
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/AffineWittAction.lean",
+              "name": "LieNotes.Virasoro.AffineWitt.liftToAffineCentralExtension",
+              "line": 206,
+              "end_line": 218
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/AffineWittAction.lean",
+              "name": "LieNotes.Virasoro.AffineWitt.mode",
+              "line": 116,
+              "end_line": 118
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/AffineWittAction.lean",
+              "name": "LieNotes.Virasoro.AffineWitt.mode_central",
+              "line": 124,
+              "end_line": 126
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/AffineWittAction.lean",
+              "name": "LieNotes.Virasoro.AffineWitt.mode_homogeneous",
+              "line": 120,
+              "end_line": 122
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/AffineWittAction.lean",
+              "name": "LieNotes.Virasoro.AffineWitt.mode_zero",
+              "line": 184,
+              "end_line": 197
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/AffineWittAction.lean",
+              "name": "LieNotes.Virasoro.AffineWitt.virasoroAction",
+              "line": 200,
+              "end_line": 201
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/AffineWittAction.lean",
+              "name": "LieNotes.Virasoro.AffineWitt.wittAction",
+              "line": 164,
+              "end_line": 166
+            }
+          ],
+          "id": "LieTheoryDeepening:KM12",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Virasoro",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 590,
+            "line_end": 602
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM12",
+      "kind": "proposition",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM12",
+      "latex_line": 480,
+      "number": "1.12",
+      "paper_line": 591,
+      "pdf_destination": "proposition.1.12",
+      "pdf_page": 10,
+      "title": "Witt derivations lift to the affine central extension"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/VermaModules.lean",
+              "name": "LieNotes.Virasoro.Verma.M",
+              "line": 237,
+              "end_line": 237
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/VermaModules.lean",
+              "name": "LieNotes.Virasoro.Verma.cyclic",
+              "line": 334,
+              "end_line": 347
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/VermaModules.lean",
+              "name": "LieNotes.Virasoro.Verma.highestWeight",
+              "line": 275,
+              "end_line": 293
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/VermaModules.lean",
+              "name": "LieNotes.Virasoro.Verma.inducingData",
+              "line": 214,
+              "end_line": 234
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/VermaModules.lean",
+              "name": "LieNotes.Virasoro.Verma.modelExists",
+              "line": 581,
+              "end_line": 583
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/VermaModules.lean",
+              "name": "LieNotes.Virasoro.Verma.top",
+              "line": 240,
+              "end_line": 240
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/VermaModules.lean",
+              "name": "LieNotes.Virasoro.Verma.universal",
+              "line": 518,
+              "end_line": 561
+            }
+          ],
+          "id": "LieTheoryDeepening:KM13",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Virasoro",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 624,
+            "line_end": 628
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM13",
+      "kind": "theorem",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM13",
+      "latex_line": 514,
+      "number": "1.13",
+      "paper_line": 625,
+      "pdf_destination": "theorem.1.13",
+      "pdf_page": 10,
+      "title": "Virasoro Verma modules"
+    },
+    {
+      "chapter": "1",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/LowDegreeSingularVectors.lean",
+              "name": "LieNotes.Virasoro.Singular.canonical",
+              "line": 355,
+              "end_line": 356
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/LowDegreeSingularVectors.lean",
+              "name": "LieNotes.Virasoro.Singular.canonicalResult",
+              "line": 358,
+              "end_line": 360
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/LowDegreeSingularVectors.lean",
+              "name": "LieNotes.Virasoro.Singular.resultsOnModels",
+              "line": 321,
+              "end_line": 352
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Virasoro/VermaModules.lean",
+              "name": "LieNotes.Virasoro.Verma.modelProperties",
+              "line": 566,
+              "end_line": 579
+            }
+          ],
+          "id": "LieTheoryDeepening:KM14",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Virasoro",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 657,
+            "line_end": 672
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D01",
+      "id": "KM14",
+      "kind": "example",
+      "latex_file": "chapters/01-infinite.tex",
+      "latex_label": "res:KM14",
+      "latex_line": 547,
+      "number": "1.14",
+      "paper_line": 658,
+      "pdf_destination": "example.1.14",
+      "pdf_page": 10,
+      "title": "Singular vectors in degrees one and two"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperLie.lean",
+              "name": "LieNotes.SuperRestricted.LieSuperalgebra.oddTriple",
+              "line": 72,
+              "end_line": 76
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperLie.lean",
+              "name": "LieNotes.SuperRestricted.SuperLie.Grading",
+              "line": 9,
+              "end_line": 9
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperLie.lean",
+              "name": "LieNotes.SuperRestricted.SuperLie.LieSuperalgebra",
+              "line": 10,
+              "end_line": 10
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperLie.lean",
+              "name": "LieNotes.SuperRestricted.SuperLie.paritySign",
+              "line": 8,
+              "end_line": 8
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperLie.lean",
+              "name": "LieNotes.SuperRestricted.oddTriple_of_char_ne_three",
+              "line": 63,
+              "end_line": 70
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperLie.lean",
+              "name": "LieNotes.SuperRestricted.three_smul_oddTriple_eq_zero",
+              "line": 40,
+              "end_line": 61
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperLie.lean",
+              "name": "LieNotes.SuperRestricted.two_ne_zero_iff_char_ne_two",
+              "line": 27,
+              "end_line": 33
+            }
+          ],
+          "id": "LieTheoryDeepening:SR01",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 720,
+            "line_end": 735
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR01",
+      "kind": "definition",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR01",
+      "latex_line": 14,
+      "number": "2.1",
+      "paper_line": 721,
+      "pdf_destination": "definition.2.1",
+      "pdf_page": 12,
+      "title": "Lie superalgebras and their modules"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/Supercommutator.lean",
+              "name": "LieNotes.SuperRestricted.Supercommutator.bracket",
+              "line": 24,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/Supercommutator.lean",
+              "name": "LieNotes.SuperRestricted.Supercommutator.bracket_graded",
+              "line": 40,
+              "end_line": 44
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/Supercommutator.lean",
+              "name": "LieNotes.SuperRestricted.Supercommutator.bracket_jacobi",
+              "line": 62,
+              "end_line": 71
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/Supercommutator.lean",
+              "name": "LieNotes.SuperRestricted.Supercommutator.bracket_odd_self",
+              "line": 73,
+              "end_line": 76
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/Supercommutator.lean",
+              "name": "LieNotes.SuperRestricted.Supercommutator.bracket_of_mem",
+              "line": 27,
+              "end_line": 38
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/Supercommutator.lean",
+              "name": "LieNotes.SuperRestricted.Supercommutator.bracket_skew",
+              "line": 55,
+              "end_line": 60
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/Supercommutator.lean",
+              "name": "LieNotes.SuperRestricted.Supercommutator.exists_lieSuperalgebra",
+              "line": 94,
+              "end_line": 96
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/Supercommutator.lean",
+              "name": "LieNotes.SuperRestricted.Supercommutator.oddTriple",
+              "line": 78,
+              "end_line": 82
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/Supercommutator.lean",
+              "name": "LieNotes.SuperRestricted.Supercommutator.toLieSuperalgebra",
+              "line": 85,
+              "end_line": 92
+            }
+          ],
+          "id": "LieTheoryDeepening:SR02",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 749,
+            "line_end": 753
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR02",
+      "kind": "proposition",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR02",
+      "latex_line": 43,
+      "number": "2.2",
+      "paper_line": 750,
+      "pdf_destination": "proposition.2.2",
+      "pdf_page": 12,
+      "title": "The supercommutator and the smallest matrix example"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.Construction.envelopingGradedAlgebra",
+              "line": 225,
+              "end_line": 226
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.Construction.tensorGradedAlgebra",
+              "line": 222,
+              "end_line": 223
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.Enveloping",
+              "line": 14,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.filtration",
+              "line": 23,
+              "end_line": 23
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.generator_relation",
+              "line": 47,
+              "end_line": 53
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.piece",
+              "line": 20,
+              "end_line": 20
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.quotientMap",
+              "line": 15,
+              "end_line": 15
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.quotientMap_eq_zero_iff",
+              "line": 43,
+              "end_line": 45
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.relationIdeal",
+              "line": 13,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.relations",
+              "line": 12,
+              "end_line": 12
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.relator",
+              "line": 11,
+              "end_line": 11
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.relator_mem_tensorPiece",
+              "line": 55,
+              "end_line": 58
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.tensorPiece",
+              "line": 18,
+              "end_line": 18
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.tensorPiece_image",
+              "line": 83,
+              "end_line": 105
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.tensorWord_mem",
+              "line": 62,
+              "end_line": 73
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.ι",
+              "line": 16,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.SuperEnveloping.ι_mem_piece",
+              "line": 107,
+              "end_line": 109
+            }
+          ],
+          "id": "LieTheoryDeepening:SR03",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 792,
+            "line_end": 799
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR03",
+      "kind": "theorem",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR03",
+      "latex_line": 86,
+      "number": "2.3",
+      "paper_line": 793,
+      "pdf_destination": "theorem.2.3",
+      "pdf_page": 13,
+      "title": "Super Poincare–Birkhoff–Witt"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperRankOneSimples.lean",
+              "name": "LieNotes.SuperRestricted.SuperRankOneSimples.concrete_model",
+              "line": 23,
+              "end_line": 23
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperRankOneSimples.lean",
+              "name": "LieNotes.SuperRestricted.SuperRankOneSimples.exhaust",
+              "line": 205,
+              "end_line": 262
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperRankOneSimples.lean",
+              "name": "LieNotes.SuperRestricted.SuperRankOneSimples.existence",
+              "line": 665,
+              "end_line": 738
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperRankOneSimples.lean",
+              "name": "LieNotes.SuperRestricted.SuperRankOneSimples.form_basis",
+              "line": 347,
+              "end_line": 368
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperRankOneSimples.lean",
+              "name": "LieNotes.SuperRestricted.SuperRankOneSimples.forms_simple",
+              "line": 324,
+              "end_line": 345
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SuperRankOneSimples.lean",
+              "name": "LieNotes.SuperRestricted.SuperRankOneSimples.isomorphic",
+              "line": 476,
+              "end_line": 495
+            }
+          ],
+          "id": "LieTheoryDeepening:SR04",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 866,
+            "line_end": 883
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR04",
+      "kind": "example",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR04",
+      "latex_line": 160,
+      "number": "2.4",
+      "paper_line": 867,
+      "pdf_destination": "example.2.4",
+      "pdf_page": 14,
+      "title": "Simple graded modules for complex gl(1|1)"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/AssociativePrimePowers.lean",
+              "name": "LieNotes.SuperRestricted.AssociativePrimePowers.ad_pow",
+              "line": 20,
+              "end_line": 24
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/AssociativePrimePowers.lean",
+              "name": "LieNotes.SuperRestricted.AssociativePrimePowers.jacobsonTerm_polynomial",
+              "line": 27,
+              "end_line": 35
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/AssociativePrimePowers.lean",
+              "name": "LieNotes.SuperRestricted.AssociativePrimePowers.pow_add",
+              "line": 38,
+              "end_line": 44
+            }
+          ],
+          "id": "LieTheoryDeepening:SR05",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 919,
+            "line_end": 931
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/AssociativePrimePowers.lean",
+              "name": "LieNotes.SuperRestricted.AssociativePrimePowers.jacobsonTerm_polynomial",
+              "line": 27,
+              "end_line": 35
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/JacobsonPolynomials.lean",
+              "name": "LieNotes.SuperRestricted.JacobsonPolynomials.coeff_adjointPolynomial",
+              "line": 41,
+              "end_line": 50
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/JacobsonPolynomials.lean",
+              "name": "LieNotes.SuperRestricted.JacobsonPolynomials.jacobsonTerm",
+              "line": 18,
+              "end_line": 20
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/JacobsonPolynomials.lean",
+              "name": "LieNotes.SuperRestricted.JacobsonPolynomials.jacobsonTerm_isLiePolynomial",
+              "line": 75,
+              "end_line": 82
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/JacobsonPolynomials.lean",
+              "name": "LieNotes.SuperRestricted.JacobsonPolynomials.jacobsonTerm_spec",
+              "line": 53,
+              "end_line": 66
+            }
+          ],
+          "id": "LieTheoryDeepening:SR05_JACOBSON_POLYNOMIALS",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 919,
+            "line_end": 954
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR05",
+      "kind": "lemma",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR05",
+      "latex_line": 213,
+      "number": "2.5",
+      "paper_line": 920,
+      "pdf_destination": "lemma.2.5",
+      "pdf_page": 14,
+      "title": "Associative p-powers and the Jacobson polynomials"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedLie.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedLie.RestrictedPower",
+              "line": 15,
+              "end_line": 15
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedLie.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedLie.isRestrictedPower_iff",
+              "line": 21,
+              "end_line": 27
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedLie.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedLie.restrict",
+              "line": 48,
+              "end_line": 68
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedLie.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedLie.subalgebra_inherits",
+              "line": 76,
+              "end_line": 79
+            }
+          ],
+          "id": "LieTheoryDeepening:SR06",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 956,
+            "line_end": 969
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR06",
+      "kind": "definition",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR06",
+      "latex_line": 250,
+      "number": "2.6",
+      "paper_line": 957,
+      "pdf_destination": "definition.2.6",
+      "pdf_page": 15,
+      "title": "Restricted Lie algebras"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedMatrices.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedMatrices.coe_restrictedPower_apply",
+              "line": 82,
+              "end_line": 84
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedMatrices.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedMatrices.pow_mem_sl",
+              "line": 65,
+              "end_line": 68
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedMatrices.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedMatrices.restrictedPower",
+              "line": 78,
+              "end_line": 79
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedMatrices.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedMatrices.sl_admits_restrictedPower",
+              "line": 87,
+              "end_line": 90
+            }
+          ],
+          "id": "LieTheoryDeepening:SR07",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 971,
+            "line_end": 975
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR07",
+      "kind": "proposition",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR07",
+      "latex_line": 265,
+      "number": "2.7",
+      "paper_line": 972,
+      "pdf_destination": "proposition.2.7",
+      "pdf_page": 15,
+      "title": "Matrix and derivation p-operations"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/ReducedEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.ReducedEnveloping.pCenter",
+              "line": 17,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/ReducedEnveloping.lean",
+              "name": "LieNotes.SuperRestricted.ReducedEnveloping.pCenterElement",
+              "line": 16,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/ReducedPbw.lean",
+              "name": "LieNotes.SuperRestricted.ReducedPbw.polynomialCenterAndReducedPbw",
+              "line": 164,
+              "end_line": 169
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedCenter.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedCenter.pCenterElement_add",
+              "line": 60,
+              "end_line": 68
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedCenter.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedCenter.pCenterElement_commute",
+              "line": 39,
+              "end_line": 49
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedCenter.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedCenter.pCenterElement_smul",
+              "line": 71,
+              "end_line": 74
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedCenter.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedCenter.pCenter_eq_adjoin_basis",
+              "line": 77,
+              "end_line": 101
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedCenter.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedCenter.pCenter_le_center",
+              "line": 52,
+              "end_line": 57
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/RestrictedPolynomialBasis.lean",
+              "name": "LieNotes.SuperRestricted.RestrictedPolynomialBasis.polynomialBasis",
+              "line": 279,
+              "end_line": 357
+            }
+          ],
+          "id": "LieTheoryDeepening:SR08",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1016,
+            "line_end": 1026
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR08",
+      "kind": "theorem",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR08",
+      "latex_line": 310,
+      "number": "2.8",
+      "paper_line": 1017,
+      "pdf_destination": "theorem.2.8",
+      "pdf_page": 16,
+      "title": "Polynomial p-center and reduced PBW"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/PCharacter.lean",
+              "name": "LieNotes.SuperRestricted.PCharacter.existsUnique_pCharacter",
+              "line": 91,
+              "end_line": 107
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/PCharacter.lean",
+              "name": "LieNotes.SuperRestricted.PCharacter.simple_restrict_pCharacter",
+              "line": 135,
+              "end_line": 175
+            }
+          ],
+          "id": "LieTheoryDeepening:SR09",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1074,
+            "line_end": 1082
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR09",
+      "kind": "corollary",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR09",
+      "latex_line": 368,
+      "number": "2.9",
+      "paper_line": 1075,
+      "pdf_destination": "corollary.2.9",
+      "pdf_page": 16,
+      "title": "The p-character of a finite-dimensional simple module"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/BabyVermaInduction.lean",
+              "name": "LieNotes.SuperRestricted.BabyVermaInduction.BabyVerma",
+              "line": 22,
+              "end_line": 22
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/BabyVermaInduction.lean",
+              "name": "LieNotes.SuperRestricted.BabyVermaInduction.Induced",
+              "line": 21,
+              "end_line": 21
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/BabyVermaInduction.lean",
+              "name": "LieNotes.SuperRestricted.BabyVermaInduction.babyVermaInduction",
+              "line": 586,
+              "end_line": 597
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/BabyVermaInduction.lean",
+              "name": "LieNotes.SuperRestricted.BabyVermaInduction.borel",
+              "line": 20,
+              "end_line": 20
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/BabyVermaInduction.lean",
+              "name": "LieNotes.SuperRestricted.BabyVermaInduction.borelBasis",
+              "line": 27,
+              "end_line": 77
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/BabyVermaInduction.lean",
+              "name": "LieNotes.SuperRestricted.BabyVermaInduction.tensor_balance",
+              "line": 106,
+              "end_line": 112
+            }
+          ],
+          "id": "LieTheoryDeepening:SR10",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1115,
+            "line_end": 1145
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR10",
+      "kind": "proposition",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR10",
+      "latex_line": 409,
+      "number": "2.10",
+      "paper_line": 1116,
+      "pdf_destination": "proposition.2.10",
+      "pdf_page": 17,
+      "title": "Baby Verma induction"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/BabyVermaZero.lean",
+              "name": "LieNotes.SuperRestricted.BabyVermaZero.babyVermaZero",
+              "line": 295,
+              "end_line": 334
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/BabyVermaZero.lean",
+              "name": "LieNotes.SuperRestricted.BabyVermaZero.primeFieldRoots",
+              "line": 29,
+              "end_line": 59
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/BabyVermaZero.lean",
+              "name": "LieNotes.SuperRestricted.BabyVermaZero.simpleQuotient",
+              "line": 23,
+              "end_line": 23
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/BabyVermaZero.lean",
+              "name": "LieNotes.SuperRestricted.BabyVermaZero.tail",
+              "line": 21,
+              "end_line": 21
+            }
+          ],
+          "id": "LieTheoryDeepening:SR11",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1161,
+            "line_end": 1168
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR11",
+      "kind": "theorem",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR11",
+      "latex_line": 455,
+      "number": "2.11",
+      "paper_line": 1162,
+      "pdf_destination": "theorem.2.11",
+      "pdf_page": 17,
+      "title": "The zero p-character"
+    },
+    {
+      "chapter": "2",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/BabyVermaNonzero.lean",
+              "name": "LieNotes.SuperRestricted.BabyVermaNonzero.babyVermaNonzero",
+              "line": 76,
+              "end_line": 98
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SlTwoCharacterNormalForms.lean",
+              "name": "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.characterNormalForms",
+              "line": 227,
+              "end_line": 264
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SlTwoCharacterNormalForms.lean",
+              "name": "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.conjugation",
+              "line": 127,
+              "end_line": 129
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SlTwoCharacterNormalForms.lean",
+              "name": "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.moduleTransport",
+              "line": 388,
+              "end_line": 406
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SlTwoCharacterNormalForms.lean",
+              "name": "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.reducedConjugation",
+              "line": 335,
+              "end_line": 361
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SlTwoCharacterNormalForms.lean",
+              "name": "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.traceDuality",
+              "line": 62,
+              "end_line": 88
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/SuperRestricted/SlTwoCharacterNormalForms.lean",
+              "name": "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.tracePairing",
+              "line": 20,
+              "end_line": 20
+            }
+          ],
+          "id": "LieTheoryDeepening:SR12",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1191,
+            "line_end": 1244
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D02",
+      "id": "SR12",
+      "kind": "theorem",
+      "latex_file": "chapters/02-super-restricted.tex",
+      "latex_label": "res:SR12",
+      "latex_line": 485,
+      "number": "2.12",
+      "paper_line": 1192,
+      "pdf_destination": "theorem.2.12",
+      "pdf_page": 18,
+      "title": "Nonzero semisimple and nilpotent p-characters"
+    },
+    {
+      "chapter": "3",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerreBasis.lean",
+              "name": "LieNotes.Quantum.SerreBasis.baseChange_exists",
+              "line": 515,
+              "end_line": 520
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerreBasis.lean",
+              "name": "LieNotes.Quantum.SerreBasis.basis_exists",
+              "line": 405,
+              "end_line": 406
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerreBasis.lean",
+              "name": "LieNotes.Quantum.SerreBasis.orderedBaseChange_exists",
+              "line": 542,
+              "end_line": 545
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerreBasis.lean",
+              "name": "LieNotes.Quantum.SerreBasis.orderedPresentation",
+              "line": 179,
+              "end_line": 182
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerreBasis.lean",
+              "name": "LieNotes.Quantum.SerreBasis.relations",
+              "line": 51,
+              "end_line": 52
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerrePresentation.lean",
+              "name": "LieNotes.Quantum.SerrePresentation.SerreAlgebra",
+              "line": 13,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerrePresentation.lean",
+              "name": "LieNotes.Quantum.SerrePresentation.relationXY_zero",
+              "line": 38,
+              "end_line": 42
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerrePresentation.lean",
+              "name": "LieNotes.Quantum.SerrePresentation.relationYX_zero",
+              "line": 45,
+              "end_line": 49
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerrePresentation.lean",
+              "name": "LieNotes.Quantum.SerrePresentation.serreIdeal",
+              "line": 12,
+              "end_line": 12
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerrePresentation.lean",
+              "name": "LieNotes.Quantum.SerrePresentation.universalProperty",
+              "line": 76,
+              "end_line": 89
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerrePresentation.lean",
+              "name": "LieNotes.Quantum.SerrePresentation.x",
+              "line": 16,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerrePresentation.lean",
+              "name": "LieNotes.Quantum.SerrePresentation.y",
+              "line": 17,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerrePresentation.lean",
+              "name": "LieNotes.Quantum.SerrePresentation.z",
+              "line": 18,
+              "end_line": 18
+            }
+          ],
+          "id": "LieTheoryDeepening:UQ01",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1280,
+            "line_end": 1291
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "UQ01",
+      "kind": "theorem",
+      "latex_file": "chapters/03-quantum.tex",
+      "latex_label": "res:UQ01",
+      "latex_line": 26,
+      "number": "3.1",
+      "paper_line": 1281,
+      "pdf_destination": "theorem.3.1",
+      "pdf_page": 19,
+      "title": "The two-generator positive part"
+    },
+    {
+      "chapter": "3",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.B₀",
+              "line": 30,
+              "end_line": 30
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.Laurent",
+              "line": 16,
+              "end_line": 16
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.Root",
+              "line": 13,
+              "end_line": 13
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.TruncatedCartan",
+              "line": 23,
+              "end_line": 23
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.U",
+              "line": 31,
+              "end_line": 31
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.Uₙ",
+              "line": 32,
+              "end_line": 32
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.basicIdeal",
+              "line": 33,
+              "end_line": 33
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.basic_relations",
+              "line": 360,
+              "end_line": 361
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.basic_universal",
+              "line": 405,
+              "end_line": 414
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.cartanMatrix",
+              "line": 15,
+              "end_line": 15
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.dividedSinh",
+              "line": 28,
+              "end_line": 28
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.generic",
+              "line": 18,
+              "end_line": 18
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.generic_commute",
+              "line": 93,
+              "end_line": 101
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.generic_denominator_ne_zero",
+              "line": 68,
+              "end_line": 74
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.generic_scale",
+              "line": 86,
+              "end_line": 91
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.indeterminate",
+              "line": 20,
+              "end_line": 20
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.laurentBasis",
+              "line": 17,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.laurentBasis_apply",
+              "line": 51,
+              "end_line": 53
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.mixed",
+              "line": 43,
+              "end_line": 43
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.polynomialBasis_apply",
+              "line": 55,
+              "end_line": 62
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.rationalQ",
+              "line": 19,
+              "end_line": 19
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.reduce",
+              "line": 456,
+              "end_line": 456
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.reduce_E",
+              "line": 473,
+              "end_line": 475
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.reduce_F",
+              "line": 477,
+              "end_line": 479
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.reduce_cartan",
+              "line": 469,
+              "end_line": 471
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.reduce_scalar",
+              "line": 481,
+              "end_line": 484
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.relations",
+              "line": 363,
+              "end_line": 364
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.serreIdeal",
+              "line": 35,
+              "end_line": 35
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.serre_relations",
+              "line": 366,
+              "end_line": 367
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.sinhRatio",
+              "line": 29,
+              "end_line": 29
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.truncated",
+              "line": 27,
+              "end_line": 27
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.truncatedD",
+              "line": 26,
+              "end_line": 26
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.truncatedK",
+              "line": 25,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.truncatedQ",
+              "line": 24,
+              "end_line": 24
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.truncated_commute",
+              "line": 254,
+              "end_line": 261
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.truncated_scale",
+              "line": 317,
+              "end_line": 351
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.truncated_tau_H",
+              "line": 245,
+              "end_line": 248
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.universal",
+              "line": 416,
+              "end_line": 425
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Truncations.lean",
+              "name": "LieNotes.Quantum.Truncations.A",
+              "line": 8,
+              "end_line": 8
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Truncations.lean",
+              "name": "LieNotes.Quantum.Truncations.cartanTruncate",
+              "line": 14,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Truncations.lean",
+              "name": "LieNotes.Quantum.Truncations.cartanTruncate_eq_sum",
+              "line": 162,
+              "end_line": 167
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Truncations.lean",
+              "name": "LieNotes.Quantum.Truncations.coeff_expH",
+              "line": 216,
+              "end_line": 219
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Truncations.lean",
+              "name": "LieNotes.Quantum.Truncations.expH",
+              "line": 17,
+              "end_line": 17
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Truncations.lean",
+              "name": "LieNotes.Quantum.Truncations.h",
+              "line": 10,
+              "end_line": 10
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Truncations.lean",
+              "name": "LieNotes.Quantum.Truncations.truncate",
+              "line": 12,
+              "end_line": 12
+            }
+          ],
+          "id": "LieTheoryDeepening:UQ02",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1328,
+            "line_end": 1365
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "UQ02",
+      "kind": "definition",
+      "latex_file": "chapters/03-quantum.tex",
+      "latex_label": "res:UQ02",
+      "latex_line": 79,
+      "number": "3.2",
+      "paper_line": 1334,
+      "pdf_destination": "definition.3.2",
+      "pdf_page": 20,
+      "title": "The generic and truncated formal presentations"
+    },
+    {
+      "chapter": "3",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/BasicNormalForm.lean",
+              "name": "LieNotes.Quantum.BasicNormalForm.generic_normalForm",
+              "line": 335,
+              "end_line": 338
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/BasicNormalForm.lean",
+              "name": "LieNotes.Quantum.BasicNormalForm.generic_symmetries",
+              "line": 356,
+              "end_line": 359
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/BasicNormalForm.lean",
+              "name": "LieNotes.Quantum.BasicNormalForm.indeterminate_normalForm",
+              "line": 340,
+              "end_line": 344
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/BasicNormalForm.lean",
+              "name": "LieNotes.Quantum.BasicNormalForm.indeterminate_symmetries",
+              "line": 361,
+              "end_line": 365
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/BasicNormalForm.lean",
+              "name": "LieNotes.Quantum.BasicNormalForm.truncated_normalForm",
+              "line": 346,
+              "end_line": 349
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/BasicNormalForm.lean",
+              "name": "LieNotes.Quantum.BasicNormalForm.truncated_symmetries",
+              "line": 367,
+              "end_line": 370
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.B₀",
+              "line": 30,
+              "end_line": 30
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.basic_universal",
+              "line": 405,
+              "end_line": 414
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/PresentationSymmetries.lean",
+              "name": "LieNotes.Quantum.PresentationSymmetries.generic_symmetries",
+              "line": 289,
+              "end_line": 292
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/PresentationSymmetries.lean",
+              "name": "LieNotes.Quantum.PresentationSymmetries.indeterminate_symmetries",
+              "line": 294,
+              "end_line": 298
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/PresentationSymmetries.lean",
+              "name": "LieNotes.Quantum.PresentationSymmetries.truncated_symmetries",
+              "line": 300,
+              "end_line": 303
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/Quantum/BasicNormalForm.lean",
+              "name": "Specs.LieNotes.Quantum.BasicNormalForm.normalFormEquiv_tmul",
+              "line": 47,
+              "end_line": 51
+            }
+          ],
+          "id": "LieTheoryDeepening:UQ03",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1367,
+            "line_end": 1381
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "UQ03",
+      "kind": "lemma",
+      "latex_file": "chapters/03-quantum.tex",
+      "latex_label": "res:UQ03",
+      "latex_line": 113,
+      "number": "3.3",
+      "paper_line": 1368,
+      "pdf_destination": "lemma.3.3",
+      "pdf_page": 20,
+      "title": "Normal form before the Serre quotient"
+    },
+    {
+      "chapter": "3",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/BasicNormalForm.lean",
+              "name": "LieNotes.Quantum.BasicNormalForm.generic_normalForm",
+              "line": 335,
+              "end_line": 338
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/BasicNormalForm.lean",
+              "name": "LieNotes.Quantum.BasicNormalForm.indeterminate_normalForm",
+              "line": 340,
+              "end_line": 344
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/BasicNormalForm.lean",
+              "name": "LieNotes.Quantum.BasicNormalForm.truncated_normalForm",
+              "line": 346,
+              "end_line": 349
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerreCrossCommutators.lean",
+              "name": "LieNotes.Quantum.SerreCrossCommutators.generic_crossCommutators",
+              "line": 139,
+              "end_line": 161
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerreCrossCommutators.lean",
+              "name": "LieNotes.Quantum.SerreCrossCommutators.indeterminate_crossCommutators",
+              "line": 165,
+              "end_line": 167
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerreCrossCommutators.lean",
+              "name": "LieNotes.Quantum.SerreCrossCommutators.truncated_crossCommutators",
+              "line": 214,
+              "end_line": 247
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerreIdeal.lean",
+              "name": "LieNotes.Quantum.SerreIdeal.generic_crossingSerreIdeal",
+              "line": 509,
+              "end_line": 512
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerreIdeal.lean",
+              "name": "LieNotes.Quantum.SerreIdeal.indeterminate_crossingSerreIdeal",
+              "line": 514,
+              "end_line": 517
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SerreIdeal.lean",
+              "name": "LieNotes.Quantum.SerreIdeal.truncated_crossingSerreIdeal",
+              "line": 519,
+              "end_line": 522
+            }
+          ],
+          "id": "LieTheoryDeepening:UQ04",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1419,
+            "line_end": 1428
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "UQ04",
+      "kind": "lemma",
+      "latex_file": "chapters/03-quantum.tex",
+      "latex_label": "res:UQ04",
+      "latex_line": 165,
+      "number": "3.4",
+      "paper_line": 1420,
+      "pdf_destination": "lemma.3.4",
+      "pdf_page": 21,
+      "title": "Crossing the Serre ideal"
+    },
+    {
+      "chapter": "3",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.laurentBasis_apply",
+              "line": 51,
+              "end_line": 53
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Presentation.lean",
+              "name": "LieNotes.Quantum.Presentation.polynomialBasis_apply",
+              "line": 55,
+              "end_line": 62
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/TriangularPBW.lean",
+              "name": "LieNotes.Quantum.TriangularPBW.generic",
+              "line": 117,
+              "end_line": 120
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/TriangularPBW.lean",
+              "name": "LieNotes.Quantum.TriangularPBW.indeterminate",
+              "line": 122,
+              "end_line": 124
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/TriangularPBW.lean",
+              "name": "LieNotes.Quantum.TriangularPBW.truncated",
+              "line": 126,
+              "end_line": 134
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/Quantum/TriangularPBW.lean",
+              "name": "Specs.LieNotes.Quantum.TriangularPBW.multiplicationEquiv",
+              "line": 38,
+              "end_line": 40
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/Quantum/TriangularPBW.lean",
+              "name": "Specs.LieNotes.Quantum.TriangularPBW.orderedMonomial",
+              "line": 53,
+              "end_line": 55
+            }
+          ],
+          "id": "LieTheoryDeepening:UQ05",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1485,
+            "line_end": 1498
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "UQ05",
+      "kind": "theorem",
+      "latex_file": "chapters/03-quantum.tex",
+      "latex_label": "res:UQ05",
+      "latex_line": 231,
+      "number": "3.5",
+      "paper_line": 1486,
+      "pdf_destination": "theorem.3.5",
+      "pdf_page": 22,
+      "title": "Triangular PBW in type A2"
+    },
+    {
+      "chapter": "3",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/AntipodeMap.lean",
+              "name": "LieNotes.Quantum.AntipodeMap.genericAntipode_spec",
+              "line": 422,
+              "end_line": 428
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/AntipodeMap.lean",
+              "name": "LieNotes.Quantum.AntipodeMap.indeterminateAntipode_spec",
+              "line": 430,
+              "end_line": 434
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/AntipodeMap.lean",
+              "name": "LieNotes.Quantum.AntipodeMap.reduceAntipode_spec",
+              "line": 482,
+              "end_line": 509
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/AntipodeMap.lean",
+              "name": "LieNotes.Quantum.AntipodeMap.truncatedAntipode_spec",
+              "line": 436,
+              "end_line": 442
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Coproduct.lean",
+              "name": "LieNotes.Quantum.Coproduct.generic_coproduct",
+              "line": 602,
+              "end_line": 602
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Coproduct.lean",
+              "name": "LieNotes.Quantum.Coproduct.indeterminate_coproduct",
+              "line": 604,
+              "end_line": 605
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Coproduct.lean",
+              "name": "LieNotes.Quantum.Coproduct.truncated_compatibility",
+              "line": 946,
+              "end_line": 989
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Coproduct.lean",
+              "name": "LieNotes.Quantum.Coproduct.truncated_coproduct",
+              "line": 894,
+              "end_line": 896
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Hopf.lean",
+              "name": "LieNotes.Quantum.Hopf.generic_hopf",
+              "line": 327,
+              "end_line": 328
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Hopf.lean",
+              "name": "LieNotes.Quantum.Hopf.indeterminate_hopf",
+              "line": 329,
+              "end_line": 330
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Hopf.lean",
+              "name": "LieNotes.Quantum.Hopf.truncated_compatibility",
+              "line": 331,
+              "end_line": 332
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Hopf.lean",
+              "name": "LieNotes.Quantum.Hopf.truncated_hopf",
+              "line": 333,
+              "end_line": 334
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/Quantum/Hopf.lean",
+              "name": "Specs.LieNotes.Quantum.Hopf.Data.toHopfAlgebra",
+              "line": 39,
+              "end_line": 44
+            }
+          ],
+          "id": "LieTheoryDeepening:UQ06",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1519,
+            "line_end": 1537
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "UQ06",
+      "kind": "theorem",
+      "latex_file": "chapters/03-quantum.tex",
+      "latex_label": "res:UQ06",
+      "latex_line": 265,
+      "number": "3.6",
+      "paper_line": 1520,
+      "pdf_destination": "theorem.3.6",
+      "pdf_page": 22,
+      "title": "Coproduct and antipode in type A2"
+    },
+    {
+      "chapter": "3",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/ClassicalLimit.lean",
+              "name": "LieNotes.Quantum.ClassicalLimit.classical_limit",
+              "line": 89,
+              "end_line": 125
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/ClassicalLimit.lean",
+              "name": "LieNotes.Quantum.ClassicalLimit.equiv_formalE",
+              "line": 63,
+              "end_line": 66
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/ClassicalLimit.lean",
+              "name": "LieNotes.Quantum.ClassicalLimit.equiv_formalF",
+              "line": 68,
+              "end_line": 71
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/ClassicalLimit.lean",
+              "name": "LieNotes.Quantum.ClassicalLimit.equiv_formalH",
+              "line": 73,
+              "end_line": 76
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Completion.lean",
+              "name": "LieNotes.Quantum.Completion.CompletedSquare",
+              "line": 11,
+              "end_line": 11
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Completion.lean",
+              "name": "LieNotes.Quantum.Completion.Uh",
+              "line": 10,
+              "end_line": 10
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Completion.lean",
+              "name": "LieNotes.Quantum.Completion.compatible_bases",
+              "line": 73,
+              "end_line": 114
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Completion.lean",
+              "name": "LieNotes.Quantum.Completion.completed_hopf",
+              "line": 1007,
+              "end_line": 1015
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Completion.lean",
+              "name": "LieNotes.Quantum.Completion.project",
+              "line": 14,
+              "end_line": 14
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Completion.lean",
+              "name": "LieNotes.Quantum.Completion.reduction",
+              "line": 556,
+              "end_line": 569
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Completion.lean",
+              "name": "LieNotes.Quantum.Completion.scalar_convolution",
+              "line": 177,
+              "end_line": 197
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Completion.lean",
+              "name": "LieNotes.Quantum.Completion.series_coefficients",
+              "line": 173,
+              "end_line": 175
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Completion.lean",
+              "name": "LieNotes.Quantum.Completion.series_description",
+              "line": 406,
+              "end_line": 410
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Completion.lean",
+              "name": "LieNotes.Quantum.Completion.topological_algebras",
+              "line": 612,
+              "end_line": 633
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Completion.lean",
+              "name": "LieNotes.Quantum.Completion.transition_laws",
+              "line": 144,
+              "end_line": 159
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/MatrixSpecialization.lean",
+              "name": "LieNotes.Quantum.MatrixSpecialization.levelOne_relations",
+              "line": 116,
+              "end_line": 118
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/MatrixSpecialization.lean",
+              "name": "LieNotes.Quantum.MatrixSpecialization.matrix_relations",
+              "line": 149,
+              "end_line": 150
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/MatrixSpecialization.lean",
+              "name": "LieNotes.Quantum.MatrixSpecialization.specialization",
+              "line": 709,
+              "end_line": 718
+            }
+          ],
+          "id": "LieTheoryDeepening:UQ07",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1634,
+            "line_end": 1681
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "UQ07",
+      "kind": "theorem",
+      "latex_file": "chapters/03-quantum.tex",
+      "latex_label": "res:UQ07",
+      "latex_line": 380,
+      "number": "3.7",
+      "paper_line": 1635,
+      "pdf_destination": "theorem.3.7",
+      "pdf_page": 24,
+      "title": "A topologically free quantization of the enveloping algebra"
+    },
+    {
+      "chapter": "3",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.alternatingTensor_wedge₂",
+              "line": 44,
+              "end_line": 49
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/DualJacobi.lean",
+              "name": "LieNotes.Coboundary.dualJacobi_iff_tensorCoJacobi",
+              "line": 324,
+              "end_line": 327
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/Cobracket.lean",
+              "name": "LieNotes.Quantum.Cobracket.cobracket",
+              "line": 603,
+              "end_line": 604
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/RootCobracket.lean",
+              "name": "LieNotes.Quantum.RootCobracket.root_cobracket",
+              "line": 412,
+              "end_line": 413
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/SkewReduction.lean",
+              "name": "LieNotes.Quantum.SkewReduction.skew_reduction",
+              "line": 275,
+              "end_line": 276
+            }
+          ],
+          "id": "LieTheoryDeepening:UQ08",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1684,
+            "line_end": 1712
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "UQ08",
+      "kind": "theorem",
+      "latex_file": "chapters/03-quantum.tex",
+      "latex_label": "res:UQ08",
+      "latex_line": 430,
+      "number": "3.8",
+      "paper_line": 1685,
+      "pdf_destination": "theorem.3.8",
+      "pdf_page": 24,
+      "title": "The first-order cobracket on sl3"
+    },
+    {
+      "chapter": "3",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/MatrixCoboundary.lean",
+              "name": "LieNotes.Quantum.MatrixCoboundary.cobracket_is_coboundary",
+              "line": 134,
+              "end_line": 140
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/MatrixCoboundary.lean",
+              "name": "LieNotes.Quantum.MatrixCoboundary.restriction_eq_coboundary",
+              "line": 107,
+              "end_line": 131
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Quantum/MatrixCoboundary.lean",
+              "name": "LieNotes.Quantum.MatrixCoboundary.standardTensor",
+              "line": 23,
+              "end_line": 24
+            }
+          ],
+          "id": "LieTheoryDeepening:UQ09",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Quantum",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1751,
+            "line_end": 1759
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "UQ09",
+      "kind": "corollary",
+      "latex_file": "chapters/03-quantum.tex",
+      "latex_label": "res:UQ09",
+      "latex_line": 497,
+      "number": "3.9",
+      "paper_line": 1752,
+      "pdf_destination": "corollary.3.9",
+      "pdf_page": 25,
+      "title": "The coboundary tensor in the matrix model"
+    },
+    {
+      "chapter": "4",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/AdjointCohomology.lean",
+              "name": "LieNotes.Heisenberg.AdjointCohomology.d_formula",
+              "line": 21,
+              "end_line": 22
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/AdjointCohomology.lean",
+              "name": "LieNotes.Heisenberg.AdjointCohomology.d_squared",
+              "line": 24,
+              "end_line": 26
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/AdjointCohomology.lean",
+              "name": "LieNotes.Heisenberg.AdjointCohomology.dimensions",
+              "line": 428,
+              "end_line": 438
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/AdjointCohomology.lean",
+              "name": "LieNotes.Heisenberg.AdjointCohomology.model_normal_form",
+              "line": 412,
+              "end_line": 426
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/AdjointCohomology.lean",
+              "name": "LieNotes.Heisenberg.AdjointCohomology.normal_form",
+              "line": 393,
+              "end_line": 410
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/Basic.lean",
+              "name": "LieNotes.Heisenberg.basisLieEquiv",
+              "line": 105,
+              "end_line": 108
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/Basic.lean",
+              "name": "LieNotes.Heisenberg.basisLieEquiv_apply_basis",
+              "line": 110,
+              "end_line": 114
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/Basic.lean",
+              "name": "LieNotes.Heisenberg.basis_vectors",
+              "line": 42,
+              "end_line": 44
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/Basic.lean",
+              "name": "LieNotes.Heisenberg.bracket_table",
+              "line": 67,
+              "end_line": 68
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/Basic.lean",
+              "name": "LieNotes.Heisenberg.phi_pairs",
+              "line": 142,
+              "end_line": 146
+            }
+          ],
+          "id": "LieTheoryDeepening:LD01",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1804,
+            "line_end": 1816
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/AdjointCohomology.lean",
+              "name": "LieNotes.Heisenberg.AdjointCohomology.cochains_four_zero",
+              "line": 203,
+              "end_line": 205
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/AdjointCohomology.lean",
+              "name": "LieNotes.Heisenberg.AdjointCohomology.differential_two_image",
+              "line": 189,
+              "end_line": 191
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/AdjointCohomology.lean",
+              "name": "LieNotes.Heisenberg.AdjointCohomology.dimensions",
+              "line": 428,
+              "end_line": 438
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/AdjointCohomology.lean",
+              "name": "LieNotes.Heisenberg.AdjointCohomology.evaluation_three",
+              "line": 266,
+              "end_line": 279
+            }
+          ],
+          "id": "LieTheoryDeepening:LD01_H3",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Heisenberg",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1804,
+            "line_end": 1819
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "LD01",
+      "kind": "proposition",
+      "latex_file": "chapters/04-deformations.tex",
+      "latex_label": "res:LD01",
+      "latex_line": 17,
+      "number": "4.1",
+      "paper_line": 1805,
+      "pdf_destination": "proposition.4.1",
+      "pdf_page": 26,
+      "title": "Adjoint cohomology of the three-dimensional Heisenberg algebra"
+    },
+    {
+      "chapter": "4",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/DeformationTransport.lean",
+              "name": "LieNotes.Heisenberg.DeformationTransport.modTwoReductions",
+              "line": 86,
+              "end_line": 127
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/DeformationTransport.lean",
+              "name": "LieNotes.Heisenberg.DeformationTransport.tensorCoordinates",
+              "line": 26,
+              "end_line": 27
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/DeformationTransport.lean",
+              "name": "LieNotes.Heisenberg.DeformationTransport.truncatedTransport",
+              "line": 153,
+              "end_line": 185
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/ExtensionLocus.lean",
+              "name": "LieNotes.Heisenberg.ExtensionLocus.extension_locus",
+              "line": 426,
+              "end_line": 465
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/ExtensionLocus.lean",
+              "name": "LieNotes.Heisenberg.ExtensionLocus.normalized_extension",
+              "line": 276,
+              "end_line": 284
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/NormalizedObstruction.lean",
+              "name": "LieNotes.Heisenberg.NormalizedObstruction.obstruction_xyz",
+              "line": 85,
+              "end_line": 97
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/NormalizedObstruction.lean",
+              "name": "LieNotes.Heisenberg.NormalizedObstruction.order_two",
+              "line": 107,
+              "end_line": 112
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/NormalizedObstruction.lean",
+              "name": "LieNotes.Heisenberg.NormalizedObstruction.quotient_comparison",
+              "line": 279,
+              "end_line": 303
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/Basic.lean",
+              "name": "LieNotes.Heisenberg.basisLieEquiv",
+              "line": 105,
+              "end_line": 108
+            }
+          ],
+          "id": "LieTheoryDeepening:LD02",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1853,
+            "line_end": 1860
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "LD02",
+      "kind": "theorem",
+      "latex_file": "chapters/04-deformations.tex",
+      "latex_label": "res:LD02",
+      "latex_line": 66,
+      "number": "4.2",
+      "paper_line": 1854,
+      "pdf_destination": "theorem.4.2",
+      "pdf_page": 27,
+      "title": "Exactly which of these first-order classes extend"
+    },
+    {
+      "chapter": "4",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/Examples.lean",
+              "name": "LieNotes.Heisenberg.Examples.class_examples",
+              "line": 386,
+              "end_line": 387
+            }
+          ],
+          "id": "LieTheoryDeepening:LD03",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Heisenberg",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1896,
+            "line_end": 1901
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/Examples.lean",
+              "name": "LieNotes.Heisenberg.Examples.class_examples",
+              "line": 386,
+              "end_line": 387
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Heisenberg/Examples.lean",
+              "name": "LieNotes.Heisenberg.Examples.fibers",
+              "line": 388,
+              "end_line": 389
+            }
+          ],
+          "id": "LieTheoryDeepening:LD03_GENERIC_SL2",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Heisenberg",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1896,
+            "line_end": 1905
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "LD03",
+      "kind": "example",
+      "latex_file": "chapters/04-deformations.tex",
+      "latex_label": "res:LD03",
+      "latex_line": 109,
+      "number": "4.3",
+      "paper_line": 1897,
+      "pdf_destination": "example.4.3",
+      "pdf_page": 27,
+      "title": "Two extendable classes with an obstructed sum"
+    },
+    {
+      "chapter": "4",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.dualBracket",
+              "line": 52,
+              "end_line": 55
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.dualBracket_apply",
+              "line": 57,
+              "end_line": 61
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.dualBracket_self",
+              "line": 64,
+              "end_line": 67
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.dualJacobi",
+              "line": 84,
+              "end_line": 88
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.exteriorAdjoint",
+              "line": 97,
+              "end_line": 98
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.exteriorAdjoint_wedge₂",
+              "line": 109,
+              "end_line": 112
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.isCobracketCocycle",
+              "line": 126,
+              "end_line": 127
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.isLieBialgebraCobracket",
+              "line": 131,
+              "end_line": 132
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.pairing_wedge₂_wedge₂",
+              "line": 76,
+              "end_line": 81
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.wedge₂",
+              "line": 17,
+              "end_line": 18
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.wedge₂_apply",
+              "line": 20,
+              "end_line": 24
+            }
+          ],
+          "id": "LieTheoryDeepening:LD04",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1926,
+            "line_end": 1938
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "LD04",
+      "kind": "definition",
+      "latex_file": "chapters/04-deformations.tex",
+      "latex_label": "res:LD04",
+      "latex_line": 139,
+      "number": "4.4",
+      "paper_line": 1927,
+      "pdf_destination": "definition.4.4",
+      "pdf_page": 28,
+      "title": "Lie bialgebras and coboundary cobrackets"
+    },
+    {
+      "chapter": "4",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Schouten.lean",
+              "name": "LieNotes.Coboundary.schouten",
+              "line": 20,
+              "end_line": 21
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Schouten.lean",
+              "name": "LieNotes.Coboundary.schouten_symmetric",
+              "line": 90,
+              "end_line": 99
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Schouten.lean",
+              "name": "LieNotes.Coboundary.schouten_wedge₂_wedge₂",
+              "line": 46,
+              "end_line": 50
+            }
+          ],
+          "id": "LieTheoryDeepening:LD05",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1943,
+            "line_end": 1952
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/InvariantSquare.lean",
+              "name": "LieNotes.Coboundary.coboundary_isLieBialgebra_iff_invariantSquare",
+              "line": 65,
+              "end_line": 75
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/InvariantSquare.lean",
+              "name": "LieNotes.Coboundary.cobracketDifferential_coboundary",
+              "line": 55,
+              "end_line": 62
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/DualJacobi.lean",
+              "name": "LieNotes.Coboundary.dualJacobi_iff_cobracketDifferential",
+              "line": 283,
+              "end_line": 307
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Schouten.lean",
+              "name": "LieNotes.Coboundary.exteriorAdjoint_schouten",
+              "line": 107,
+              "end_line": 121
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.exteriorAdjoint_wedge₃",
+              "line": 115,
+              "end_line": 123
+            }
+          ],
+          "id": "LieTheoryDeepening:LD05_INVARIANT_SQUARE_CRITERION",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1943,
+            "line_end": 1956
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "LD05",
+      "kind": "proposition",
+      "latex_file": "chapters/04-deformations.tex",
+      "latex_label": "res:LD05",
+      "latex_line": 156,
+      "number": "4.5",
+      "paper_line": 1944,
+      "pdf_destination": "proposition.4.5",
+      "pdf_page": 28,
+      "title": "The invariant Schouten-square criterion"
+    },
+    {
+      "chapter": "4",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/SplitRankOne.lean",
+              "name": "LieNotes.Coboundary.SplitRankOne.r₁",
+              "line": 25,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/SplitRankOne.lean",
+              "name": "LieNotes.Coboundary.SplitRankOne.standardCobracket",
+              "line": 109,
+              "end_line": 126
+            }
+          ],
+          "id": "LieTheoryDeepening:LD06",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1997,
+            "line_end": 2004
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/SplitRankOne.lean",
+              "name": "LieNotes.Coboundary.SplitRankOne.r₂",
+              "line": 28,
+              "end_line": 28
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/SplitRankOne.lean",
+              "name": "LieNotes.Coboundary.SplitRankOne.triangularCobracket",
+              "line": 129,
+              "end_line": 148
+            }
+          ],
+          "id": "LieTheoryDeepening:LD06_SPLIT_RANK_ONE_SECOND_COBRACKET",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 1997,
+            "line_end": 2008
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "LD06",
+      "kind": "example",
+      "latex_file": "chapters/04-deformations.tex",
+      "latex_label": "res:LD06",
+      "latex_line": 210,
+      "number": "4.6",
+      "paper_line": 1998,
+      "pdf_destination": "example.4.6",
+      "pdf_page": 28,
+      "title": "Two cobrackets on the split rank-one algebra"
+    },
+    {
+      "chapter": "4",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.Laws",
+              "line": 66,
+              "end_line": 82
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.Linearized",
+              "line": 129,
+              "end_line": 144
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.coefficient_decomposition",
+              "line": 56,
+              "end_line": 58
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.deformedComul",
+              "line": 110,
+              "end_line": 112
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.deformedMul",
+              "line": 106,
+              "end_line": 108
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.fixedCounit",
+              "line": 118,
+              "end_line": 120
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.fixedUnit",
+              "line": 114,
+              "end_line": 116
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.jet",
+              "line": 22,
+              "end_line": 24
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.laws_iff",
+              "line": 668,
+              "end_line": 670
+            }
+          ],
+          "id": "LieTheoryDeepening:LD07",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.BialgebraDeformation",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 2026,
+            "line_end": 2045
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.allowed_iff",
+              "line": 399,
+              "end_line": 415
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.changedComul",
+              "line": 179,
+              "end_line": 180
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.changedMul",
+              "line": 176,
+              "end_line": 177
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.coordinate_change",
+              "line": 422,
+              "end_line": 424
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.equivalent_iff",
+              "line": 449,
+              "end_line": 462
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.pullback",
+              "line": 430,
+              "end_line": 447
+            }
+          ],
+          "id": "LieTheoryDeepening:LD07_LINEARIZED_PULLBACK",
+          "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.BialgebraDeformation",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 2026,
+            "line_end": 2054
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "LD07",
+      "kind": "proposition",
+      "latex_file": "chapters/04-deformations.tex",
+      "latex_label": "res:LD07",
+      "latex_line": 239,
+      "number": "4.7",
+      "paper_line": 2027,
+      "pdf_destination": "proposition.4.7",
+      "pdf_page": 29,
+      "title": "Linearized associativity, coassociativity, and compatibility"
+    },
+    {
+      "chapter": "4",
+      "claims": [
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/SkewPrimitiveHopf.lean",
+              "name": "LieNotes.BialgebraDeformation.CompletedPlaneHopf",
+              "line": 76,
+              "end_line": 129
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/SkewPrimitiveHopf.lean",
+              "name": "LieNotes.BialgebraDeformation.completedPlaneHopf",
+              "line": 476,
+              "end_line": 504
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/CompletedPolynomialMaps.lean",
+              "name": "LieNotes.BialgebraDeformation.polynomialCompletion",
+              "line": 387,
+              "end_line": 420
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/CompletedPolynomialMaps.lean",
+              "name": "LieNotes.BialgebraDeformation.seriesAdicTopology",
+              "line": 275,
+              "end_line": 307
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/CompletedPolynomialMaps.lean",
+              "name": "LieNotes.BialgebraDeformation.seriesTensorMaps",
+              "line": 205,
+              "end_line": 231
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/CompletedPolynomialMaps.lean",
+              "name": "LieNotes.BialgebraDeformation.tensorCompletion",
+              "line": 670,
+              "end_line": 685
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/CompletedPolynomialMaps.lean",
+              "name": "LieNotes.BialgebraDeformation.tensorTruncation",
+              "line": 598,
+              "end_line": 668
+            }
+          ],
+          "id": "LieTheoryDeepening:LD08",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 2079,
+            "line_end": 2088
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/SkewPrimitiveHopf.lean",
+              "name": "LieNotes.BialgebraDeformation.completedPlaneHopf",
+              "line": 476,
+              "end_line": 504
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/FirstOrder.lean",
+              "name": "LieNotes.BialgebraDeformation.equivalent_iff",
+              "line": 449,
+              "end_line": 462
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/NontrivialPolynomial.lean",
+              "name": "LieNotes.BialgebraDeformation.firstOrderSeries_reduction",
+              "line": 31,
+              "end_line": 92
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/NontrivialPolynomial.lean",
+              "name": "LieNotes.BialgebraDeformation.firstOrderSeries_tensor",
+              "line": 145,
+              "end_line": 151
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/NontrivialPolynomial.lean",
+              "name": "LieNotes.BialgebraDeformation.nontrivialPolynomial",
+              "line": 509,
+              "end_line": 527
+            }
+          ],
+          "id": "LieTheoryDeepening:LD08_NONTRIVIAL_FIRST_ORDER_CLASS",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 2079,
+            "line_end": 2089
+          }
+        },
+        {
+          "declarations": [
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/NontrivialPolynomial.lean",
+              "name": "LieNotes.BialgebraDeformation.PrimitiveDegreeOne",
+              "line": 28,
+              "end_line": 29
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/Specs/LieNotes/BialgebraDeformation/NontrivialPolynomial.lean",
+              "name": "LieNotes.BialgebraDeformation.firstOrderPlaneComul",
+              "line": 23,
+              "end_line": 25
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/BialgebraDeformation/NontrivialPolynomial.lean",
+              "name": "LieNotes.BialgebraDeformation.nontrivialPolynomial",
+              "line": 509,
+              "end_line": 527
+            },
+            {
+              "file": "MathGenome/Internal/LieTheoryDeepening/LieNotes/Coboundary/Basic.lean",
+              "name": "LieNotes.Coboundary.alternatingTensor_wedge₂",
+              "line": 44,
+              "end_line": 49
+            }
+          ],
+          "id": "LieTheoryDeepening:LD08_SKEW_LINEARIZED_COBRACKET",
+          "import": "MathGenome.LieTheoryDeepening",
+          "source": {
+            "file": "docs/sources/LieTheoryDeepening/paper.tex",
+            "line": 2079,
+            "line_end": 2123
+          }
+        }
+      ],
+      "framework_module": "ALG-08-D03",
+      "id": "LD08",
+      "kind": "theorem",
+      "latex_file": "chapters/04-deformations.tex",
+      "latex_label": "res:LD08",
+      "latex_line": 292,
+      "number": "4.8",
+      "paper_line": 2080,
+      "pdf_destination": "theorem.4.8",
+      "pdf_page": 29,
+      "title": "A nontrivial coproduct deformation of a polynomial Hopf algebra"
+    }
+  ],
+  "reviewed_catalog_entries": 103
+}

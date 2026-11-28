@@ -1,0 +1,533 @@
+\chapter[The Type A2 Quantum Enveloping Algebra]{The Type \(A_2\) Quantum Enveloping Algebra}
+\label{ch:quantum-enveloping}
+
+We construct the two-root quantum enveloping algebra and its formal
+classical limit. The transition from one simple root to two requires
+the quantum Serre relations as well as the Cartan and mixed
+commutator relations. The rank-one algebra, its Hopf structure,
+and its finite-dimensional type-1 representations are treated
+in Results H10--H15 of \emph{Topics in Rings, Modules, and
+Associative Algebras}~\cite[PDF pp.~25--28]{mg-rm03d}.
+Here the main tasks are to prove a basis for the two-root algebra,
+check the coproduct on the new relations, and compute its
+first-order skew part. The constructions below use
+\(\Delta^{\mathrm{op}}\) for tensor factor exchange applied to
+\(\Delta\), and \(a\wedge b=a\otimes b-b\otimes a\).
+
+\section{The quantum Serre relations and the positive part}
+
+Let \(A\) be a commutative coefficient ring and \(q\in A^\times\).
+Write \(c=q+q^{-1}\) and put
+\[
+ \mathcal S(x,y)=x^2y-cxyx+yx^2 .
+\]
+
+\begin{theorem}[The two-generator positive part]
+\label{res:UQ01}
+The \(A\)-algebra on \(x,y\) with relations
+\(\mathcal S(x,y)=\mathcal S(y,x)=0\) is free as an
+\(A\)-module with basis \(x^a z^b y^d\), where
+\[
+ z=xy-q^{-1}yx,\qquad a,b,d\in\mathbb Z_{\ge0}.
+\]
+In this algebra \(xz=qzx\), \(zy=qyz\), and \(yx=qxy-qz\).
+This basis and presentation commute with arbitrary base change
+on \(A\) carrying \(q\) to a unit.
+\end{theorem}
+\begin{proof}
+The expressions \(xz-qzx\) and \(zy-qyz\) expand to
+\(\mathcal S(x,y)\) and \(\mathcal S(y,x)\), respectively.
+The remaining relation is the defining formula for \(z\)
+solved for \(yx\). Conversely these three relations for
+\(x,z,y\) eliminate \(z\) and give precisely the two Serre
+relations.
+
+Adjoin \(z\) to \(A[x]\) with \(zx=q^{-1}xz\).
+On the resulting algebra let \(\sigma(x)=qx\) and
+\(\sigma(z)=q^{-1}z\). This preserves the relation and
+has inverse given by reciprocal scalars. Define the
+\(\sigma\)-derivation by \(\delta(x)=-qz\), \(\delta(z)=0\),
+where \(\delta(ab)=\sigma(a)\delta(b)+\delta(a)b\).
+It respects the relation because both \(\delta(zx)\) and
+\(\delta(q^{-1}xz)\) are \(-z^2\). Hence adjoining \(y\)
+with \(ya=\sigma(a)y+\delta(a)\) gives the second pair
+of commutation rules. The Ore normal form in
+\emph{Topics in Rings, Modules, and Associative Algebras},
+Result O11~\cite[PDF p.~34]{mg-rm03d}, makes the indicated
+monomials a free basis. Every relation and each basis
+applies over the new coefficient ring by the same construction.
+\end{proof}
+
+At \(q=1\), the generator \(z\) is \([x,y]\) and commutes with
+\(x,y\). In the matrix realization of \(\mathfrak{sl}_3\), the
+assignment \(x\mapsto e_{12}\), \(y\mapsto e_{23}\),
+\(z\mapsto e_{13}\) then identifies this presentation
+with the enveloping algebra of the positive nilpotent subalgebra.
+The commutation rules and the basis on each side prove the
+identification, using the ordered PBW basis of
+\emph{Lie Algebras and Finite-Dimensional Representations},
+Result A05~\cite[PDF pp.~8--9]{mg-lie}, on the classical side.
+
+\section{The Cartan coefficients and triangular normal form}
+
+The common Cartan matrix will be \(C=(a_{ij})_{1\le i,j\le 2}\),
+with \(a_{11}=a_{22}=2\) and \(a_{12}=a_{21}=-1\).
+We give parallel coefficient choices so that the normal-form
+argument can also be used to justify the formal limit.
+
+\begin{definition}[The generic and truncated formal presentations]
+\label{res:UQ02}
+Fix a field \(k\) of characteristic zero. The generic choice is
+\(A=k\) with a parameter \(q\in k^\times\), \(q^2\ne1\), or
+\(A=k(q)\) with \(q\) indeterminate. It uses
+\[
+ T=A[K_1^{\pm1},K_2^{\pm1}],\qquad
+ \tau_i(K_l)=q^{a_{li}}K_l,\qquad
+ D_i=\frac{K_i-K_i^{-1}}{q-q^{-1}} .
+\]
+The other choice, for an integer \(N\ge1\), uses
+\[
+ \begin{gathered}
+ A=k[h]/(h^N),\qquad T=A[H_1,H_2],\qquad
+ q=e^h,\qquad K_i=e^{hH_i},\\
+ \tau_i(H_l)=H_l+a_{li},\qquad
+ D_i=\frac{\sinh(hH_i)/h}{\sinh(h)/h}\pmod {h^N}.
+ \end{gathered}
+\]
+The divided series are first formed in \(k[H_1,H_2][[h]]\);
+the denominator there has constant term \(1\).
+Both choices have \(\tau_i(K_l)=q^{a_{li}}K_l\), and the
+\(\tau_i\) commute. The basic relations on \(T\) and \(E_i,F_i\) are
+\[
+ t F_j=F_j\tau_j^{-1}(t),\qquad
+ E_i t=\tau_i^{-1}(t)E_i,\qquad
+ [E_i,F_j]=\delta_{ij}D_i \quad (t\in T).
+\]
+The quantum enveloping algebra is obtained by also imposing
+\(\mathcal S(E_i,E_j)=\mathcal S(F_i,F_j)=0\) for \(i\ne j\).
+Write \(U\) for the generic choice and \(U_N\) for the truncated
+formal choice.
+\end{definition}
+
+\begin{lemma}[Normal form before the Serre quotient]
+\label{res:UQ03}
+With the coefficients of Definition~\ref{res:UQ02},
+let \(B_0\) impose only the basic relations on \(T,E_i,F_i\).
+Multiplication identifies \(B_0\), as an \(A\)-module, with
+\[
+ A\langle F_1,F_2\rangle\otimes_A T
+       \otimes_A A\langle E_1,E_2\rangle .
+\]
+There is an algebra involution \(\omega\) interchanging
+\(E_i,F_i\) and inverting the Cartan generators
+(\(K_i\mapsto K_i^{-1}\) or \(H_i\mapsto-H_i\)).
+There is also an algebra anti-involution \(\eta\) interchanging
+\(E_i,F_i\) and fixing \(T\).
+\end{lemma}
+\begin{proof}
+Use the basic relations to move all negative letters left of
+the \(T\)-coefficient and all positive letters right of it,
+and combine adjacent \(T\)-coefficients. To see termination,
+first count the total number of \(E,F\) letters, then the
+total number of factors, and then inversions relative to the
+order negative, Cartan, positive. Replacing \(E_iF_j\) by its
+commutator term lowers the first count. Combining adjacent
+Cartan factors lowers the second. Every remaining interchange
+lowers the inversion count. One can start with Cartan factors
+from a monomial basis of \(T\) and expand all replacements
+linearly.
+
+Disjoint replacements commute. Overlaps with adjacent
+Cartan factors are compatible with multiplication since the
+\(\tau_i\) are algebra automorphisms. The only remaining
+overlap is \(E_i tF_j\). In the two orders the leading term
+is \(F_j\tau_i^{-1}\tau_j^{-1}(t)E_i\); the other term in
+one order is \(\delta_{ij}\tau_i^{-1}(t)D_i\) and in
+the other is \(\delta_{ij}D_i\tau_j^{-1}(t)\).
+These coincide by commutativity of the translations and
+of \(T\). The normal form is therefore independent of reductions:
+induct on the ordered counts and compare the first two choices,
+using the overlap computation or commuting them when disjoint.
+Normalizing all terms in a defining relation inserted into
+a word gives zero, so the normal form descends to the
+presented algebra and proves independence as well as spanning.
+
+Cartan inversion \(\kappa\) satisfies
+\(\kappa\tau_i=\tau_i^{-1}\kappa\) and \(\kappa(D_i)=-D_i\).
+These identities check the two Cartan and mixed relations
+after the swap defining \(\omega\). Reversing all products
+while interchanging \(E,F\) gives the Cartan relations in
+the opposite order, and sends
+\([E_i,F_j]\) to \([E_j,F_i]\). This checks \(\eta\).
+\end{proof}
+
+\begin{lemma}[Crossing the Serre ideal]
+\label{res:UQ04}
+In the algebra \(B_0\) of Lemma~\ref{res:UQ03},
+\(\mathcal S(E_i,E_j)\) commutes with every \(F_l\), and
+\(\mathcal S(F_i,F_j)\) commutes with every \(E_l\).
+Under the same normal form, the two-sided ideal generated
+by the positive and negative Serre polynomials is the sum
+of the submodules obtained by putting the corresponding
+free-algebra Serre ideal in a positive or negative factor.
+\end{lemma}
+\begin{proof}
+Put \(S=\mathcal S(E_i,E_j)\), \(i\ne j\).
+For \(l=j\) use
+\(
+ [S,F_j]=(\tau_i^{-2}D_j-c\tau_i^{-1}D_j+D_j)E_i^2.
+\)
+For \(l=i\), the commutator rule
+\([ab,F]=a[b,F]+[a,F]b\) gives
+\[
+\begin{split}
+ [S,F_i]
+ &=\bigl(D_i+\tau_i^{-1}D_i-c\tau_i^{-1}\tau_j^{-1}D_i\bigr)E_iE_j\\
+ &\quad+\bigl(\tau_j^{-1}(D_i+\tau_i^{-1}D_i)-cD_i\bigr)E_jE_i .
+\end{split}
+\]
+Every displayed coefficient is zero. In the generic case,
+clear \(q-q^{-1}\) and evaluate each coefficient on
+the terms \(K_l^s\) with \(s=1,-1\).
+The three scalar identities are
+\[
+ q^{2s}-c q^s+1=0,\qquad
+ 1+q^{-2s}-c q^{-s}=0,\qquad
+ q^s(1+q^{-2s})-c=0 .
+\]
+They follow directly from \(c=q+q^{-1}\).
+In the formal case do the same calculation on
+\(K_l^s=e^{shH_l}\) before reduction.
+The relations with \(D_l\) then follow by cancellation
+of \(e^h-e^{-h}\) in the formal coefficient domain,
+so they hold in every truncation. Applying \(\omega\)
+gives the negative commutators.
+
+To check the ideal statement, take the submodule with
+positive Serre ideal in the positive factor. Left
+multiplication by \(F_l\) and right multiplication by \(E_l\)
+preserve it at once. Cartan factors shift across a word
+according to the total number of its root letters; a Serre
+polynomial is homogeneous for those counts.
+Thus left or right Cartan multiplication preserves
+the submodule. Moving a left \(E_l\) across a negative
+word uses only the basic relations and produces either
+a remaining positive letter or shorter negative words
+with Cartan coefficients. This also preserves the positive
+ideal factor. For right multiplication by \(F_l\), it
+suffices to move it across a positive expression \(pSq\).
+The commutators \([p,F_l]\) and \([q,F_l]\) have only
+Cartan coefficients and positive words. The commutator
+\([S,F_l]\) is zero, and moving a Cartan coefficient
+across \(S\) preserves its Serre factor by homogeneity.
+This proves closure on both sides. Applying \(\eta\) gives
+the same result for the negative submodule without changing
+the factor order. Their sum is a two-sided ideal containing
+the generators, and all its basis-type terms already
+belong to the generated ideal.
+\end{proof}
+
+\begin{theorem}[Triangular PBW in type \(A_2\)]
+\label{res:UQ05}
+For either coefficient choice of Definition~\ref{res:UQ02},
+multiplication is an \(A\)-module isomorphism from
+the negative Serre algebra tensored with \(T\) and then
+with the positive Serre algebra onto the quantum
+enveloping algebra. In particular, writing
+\(z_-=F_1F_2-q^{-1}F_2F_1\) and
+\(z_+=E_1E_2-q^{-1}E_2E_1\), a basis consists of
+\[
+ F_1^a z_-^b F_2^d\, T_0\, E_1^{a'} z_+^{b'} E_2^{d'},
+\]
+where the six root exponents are nonnegative integers and
+\(T_0\) ranges over the indicated Cartan monomials.
+In the generic case the subalgebra generated by
+\(F_i,K_i^{\pm1},E_i\) is the rank-one algebra
+\(U_q(\mathfrak{sl}_2)\).
+\end{theorem}
+\begin{proof}
+Apply Lemmas~\ref{res:UQ03} and \ref{res:UQ04};
+passing to the Serre quotient in either factor gives
+the asserted tensor product by right exactness of
+tensoring. Theorem~\ref{res:UQ01} supplies the bases
+of the two Serre factors, and \(T\) has its evident
+monomial basis. The fixed-index generators satisfy the
+rank-one relations, and the corresponding monomials
+\(F_i^aK_i^bE_i^d\) are a subset of the independent
+displayed family. This proves that the rank-one map is
+injective by the rank-one PBW result H10
+~\cite[PDF p.~25]{mg-rm03d}.
+\end{proof}
+
+\section{The Hopf structure}
+
+\begin{theorem}[Coproduct and antipode in type \(A_2\)]
+\label{res:UQ06}
+The formulas
+\[
+\begin{aligned}
+ \Delta(E_i)&=E_i\otimes1+K_i\otimes E_i, &
+ \Delta(F_i)&=F_i\otimes K_i^{-1}+1\otimes F_i,\\
+ \epsilon(E_i)&=\epsilon(F_i)=0, &
+ S(E_i)&=-K_i^{-1}E_i,\qquad S(F_i)=-F_iK_i
+\end{aligned}
+\]
+give Hopf structures on \(U\) and \(U_N\) from
+Definition~\ref{res:UQ02}. In the generic case \(K_i\)
+is group-like with counit \(1\) and antipode \(K_i^{-1}\).
+In the formal case \(H_i\) is primitive with counit
+zero and antipode \(-H_i\), so \(K_i=e^{hH_i}\) is
+group-like. The antipodes are bijective, and the formal
+structures commute with reduction in \(N\).
+\end{theorem}
+\begin{proof}
+The proposed Cartan coproduct preserves its own relations.
+For the generic case, conjugation by \(K_l\otimes K_l\)
+scales the images of \(E_i,F_i\) by \(q^{a_{li}},q^{-a_{li}}\).
+For the formal case, commuting with \(H_l\otimes1+1\otimes H_l\)
+gives the same two weights in additive form. Thus the
+Cartan-root relations hold. In the commutator of
+\(\Delta(E_i),\Delta(F_j)\) the mixed term
+\([K_i\otimes E_i,F_j\otimes K_j^{-1}]\) vanishes:
+the factors needed to interchange the two products
+are \(q^{-a_{ij}}\) and \(q^{a_{ji}}\), which cancel.
+The term \([E_i\otimes1,1\otimes F_j]\) also vanishes.
+The other terms are therefore
+\[
+ \delta_{ij}\bigl(D_i\otimes K_i^{-1}+K_i\otimes D_i\bigr)
+       =\delta_{ij}\Delta(D_i).
+\]
+For Laurent polynomials this last identity follows from
+multiplying by \(q-q^{-1}\) and using \(\Delta(K_i)=K_i\otimes K_i\).
+In the formal case it follows by the same calculation
+before cancellation of \(e^h-e^{-h}\) in the
+formal series ring in the two Cartan sets, then reduction.
+
+For the positive Serre relation take \(i\ne j\) and put
+\[
+ x=E_i\otimes1,\quad u=K_i\otimes E_i,\qquad
+ y=E_j\otimes1,\quad v=K_j\otimes E_j.
+\]
+We need \(\mathcal S(x+u,y+v)=0\). The pure parts are
+\(\mathcal S(x,y)\) and \(\mathcal S(u,v)\); the latter
+is zero because the first-factor \(K\)'s commute and
+the second factor is the Serre polynomial.
+Use \(ux=q^2xu,\ uy=q^{-1}yu,\ vx=q^{-1}xv\).
+Terms with \(y\) and two copies of \(u\), or with \(v\) and two
+copies of \(x\), have scalar factor \(1-cq^{-1}+q^{-2}=0\).
+Terms with \(y\) and one copy each of \(x,u\) sum to
+\[
+ cxyu-c(xyu+qyxu)+(1+q^2)yxu=0.
+\]
+Those with \(v\) and one copy each of \(x,u\) sum to
+\[
+ (1+q^2)xuv-c(xvu+qxuv)+cxvu=0 .
+\]
+This covers every term. The negative relation follows
+by \(\omega\) from Lemma~\ref{res:UQ03} on both factors
+and then tensor-factor exchange. Those transformations
+send the displayed positive coproduct formula to the
+negative one. Hence \(\Delta\) is an algebra map.
+
+The counit respects the relations, including \(\epsilon(D_i)=0\).
+Coassociativity follows on the generators: for \(E_i\) each
+iterate is \(E_i\otimes1\otimes1+K_i\otimes E_i\otimes1+
+K_i\otimes K_i\otimes E_i\); the \(F_i\) expansion similarly
+puts \(K_i^{-1}\) after each \(F_i\). The formulas for group-like
+and primitive elements are coassociative directly. The counit
+identities also hold on the generators.
+
+To check that \(S\) extends anti-multiplicatively, use the
+Cartan inversion \(\kappa\) of Lemma~\ref{res:UQ03}.
+The identity \(\kappa\tau_i=\tau_i^{-1}\kappa\) checks
+the reversed Cartan-root relations, since \(S(E_i)\)
+and \(S(F_i)\) have their respective original weights.
+For the mixed relation, move \(K_i^{-1}\) to the left
+and \(K_j\) to the right. Symmetry of \(a_{ij}\) gives
+\[
+ [S(F_j),S(E_i)]
+    =K_i^{-1}(F_jE_i-E_iF_j)K_j=-\delta_{ij}D_i,
+\]
+which is the required value of \(S(\delta_{ij}D_i)\).
+For each reversed word in a positive Serre polynomial,
+move all \(K^{-1}\)'s to the left. The scalar in addition
+to the three minus signs is the product of \(q^{a_{rs}}\)
+over the three pairs of letters. This is independent of
+their order because \(a_{rs}=a_{sr}\). Here the pair sum
+is \(2-1-1=0\). The result is the common Cartan monomial
+times the reversed Serre polynomial, which is zero.
+The negative check moves all \(K\)'s to the right,
+with the reciprocal scalar, and gives the same conclusion.
+
+The two antipode products give the counit times \(1\)
+on every generator by substitution. They extend to products
+by anti-multiplicativity: for instance in
+\(\sum S((ab)_{(1)})(ab)_{(2)}\) the two contributions of
+\(a\) occur next to one another, giving \(\epsilon(a)\),
+and then the contributions of \(b\) give \(\epsilon(b)\).
+For the other product the contributions of \(b\) occur
+first. Finally \(S^2\) fixes \(T\) and scales \(E_i,F_i\)
+by \(q^{-2},q^2\), respectively. These reciprocal scalings
+preserve the defining relations and have inverses.
+Thus \(S^2\) is invertible and \(S\) is bijective.
+All formulas in the formal choice use reductions of the
+same series, so they commute with reduction in \(N\).
+\end{proof}
+
+\section{The formal classical limit}
+
+\begin{theorem}[A topologically free quantization of the enveloping algebra]
+\label{res:UQ07}
+Use the compatible truncations of Definition~\ref{res:UQ02}
+and set \(U_h=\varprojlim_N U_N\).
+It is a topologically free \(k[[h]]\)-module carrying the
+completed Hopf structure of Theorem~\ref{res:UQ06}.
+Its reduction modulo \(h\) is \(U(\mathfrak{sl}_3(k))\),
+as a Hopf algebra. Here the completed tensor product
+is the inverse limit of \(U_N\otimes_{k[h]/(h^N)} U_N\).
+\end{theorem}
+\begin{proof}
+The monomials in Theorem~\ref{res:UQ05} have compatible
+reductions. Thus each \(U_N\) is the free module on the
+same index set over \(k[h]/(h^N)\), and reduction is
+coefficientwise. An element of the limit is a series
+\(\sum_{n\ge0}h^n v_n\), where each \(v_n\) is a finite
+\(k\)-linear combination of the indexed monomials.
+Indeed, a finite truncation has finite support and
+conversely a finite list of such \(v_n\)'s has finite
+total support. This proves topological freeness and
+identifies the quotient by \(h\) with \(U_1\).
+The same statement with pairs of basis indices proves
+topological freeness of the completed tensor product.
+The Hopf maps are the compatible maps in the theorem
+cited above, so their identities pass to inverse limits.
+
+Modulo \(h\), the Cartan commutators in Definition~\ref{res:UQ02}
+give \([H_l,E_i]=a_{li}E_i\), \([H_l,F_i]=-a_{li}F_i\),
+and \([E_i,F_j]=\delta_{ij}H_i\). The Serre relations
+become the ordinary double commutator relations.
+The assignment to \(\mathfrak{sl}_3(k)\) sends
+\[
+ E_1\mapsto e_{12},\quad E_2\mapsto e_{23},\quad
+ F_1\mapsto e_{21},\quad F_2\mapsto e_{32},\quad
+ H_i\mapsto e_{ii}-e_{i+1,i+1},
+\]
+where \(e_{ij}\) is a matrix unit. These matrices satisfy
+the displayed relations by matrix multiplication.
+The resulting algebra map to \(U(\mathfrak{sl}_3(k))\)
+sends \(z_+,z_-\) to \(e_{13},-e_{31}\).
+Its basis maps precisely to the ordered PBW monomials
+for this basis of \(\mathfrak{sl}_3(k)\), by Result A05 of
+\emph{Lie Algebras and Finite-Dimensional Representations}
+~\cite[PDF pp.~8--9]{mg-lie}. Thus the map is an
+isomorphism. The coproduct reduces to the primitive formula
+on the indicated generators, and the counit and antipode
+reduce to the standard ones. This also proves the
+Hopf assertion.
+\end{proof}
+
+\begin{theorem}[The first-order cobracket on \(\mathfrak{sl}_3\)]
+\label{res:UQ08}
+On the specialization of Theorem~\ref{res:UQ07}, use
+lowercase \(e_i,f_i,h_i\) for the images of \(E_i,F_i,H_i\).
+For a lift \(X\in U_h\) of \(x\), put
+\[
+ \delta(x)=\frac{\Delta(X)-\Delta^{\mathrm{op}}(X)}h
+             \pmod h .
+\]
+Its restriction to \(\mathfrak{sl}_3(k)\) is a Lie
+bialgebra cobracket. We identify \(x\wedge y\) with
+\(x\otimes y-y\otimes x\). Explicitly,
+\[
+\begin{aligned}
+ \delta(h_i)&=0, &
+ \delta(e_i)&=h_i\wedge e_i, &
+ \delta(f_i)&=h_i\wedge f_i,\\
+ \delta([e_1,e_2])&=(h_1+h_2)\wedge[e_1,e_2]+2e_1\wedge e_2,\\
+ \delta([f_1,f_2])&=(h_1+h_2)\wedge[f_1,f_2]-2f_1\wedge f_2 .
+\end{aligned}
+\]
+\end{theorem}
+\begin{proof}
+The specialization is cocommutative, so the numerator
+is divisible by \(h\). The completed tensor product
+is \(h\)-torsion-free by Theorem~\ref{res:UQ07}.
+Replacing a lift by \(X+hY\) does not change the
+answer, since the specialization of
+\(\Delta(Y)-\Delta^{\mathrm{op}}(Y)\) is zero.
+Expanding \(K_i=1+hH_i+O(h^2)\) and
+\(K_i^{-1}=1-hH_i+O(h^2)\) in Theorem~\ref{res:UQ06}
+gives the displayed simple-root and Cartan values.
+
+Write \(\Delta_0\) for the specialized coproduct.
+Multiplicativity of \(\Delta,\Delta^{\mathrm{op}}\)
+and division of their skew difference give
+\[
+ \delta([x,y])=[\Delta_0(x),\delta(y)]
+                  +[\delta(x),\Delta_0(y)] .
+\]
+For primitive \(x,y\) the right-hand side is
+\(\operatorname{ad}_x\delta(y)-\operatorname{ad}_y\delta(x)\)
+for the adjoint action on both factors. Using the
+two off-diagonal Cartan entries \(-1\) gives
+the two remaining displayed formulas. The eight
+matrix basis elements from the preceding proof are thus
+sent into the skew part of \(\mathfrak{sl}_3\otimes\mathfrak{sl}_3\).
+The commutator identity gives the Lie-algebra cocycle rule
+on that subspace.
+
+Here is the co-Jacobi check. Write \(B=\Delta-\Delta^{\mathrm{op}}\)
+and \(D=(\Delta\otimes1)\Delta=(1\otimes\Delta)\Delta\).
+In tensor notation, write \(D\) as \(123\) and denote
+its factor permutations by their orders. Expansion gives
+\((B\otimes1)B=123-213-231+321\).
+The sum of its three cyclic permutes is zero, because
+\(123,231\) are cyclic permutations and \(213,321\) are
+also cyclic permutations. The same coefficientwise
+description of the triple completed tensor product
+shows it is \(h\)-torsion-free. Dividing by \(h^2\)
+and reducing gives the co-Jacobi identity for \(\delta\).
+Pairing this cyclic identity with triples of linear forms
+gives the Jacobi identity for the dual bracket. Together
+with the skew and cocycle rules this proves the Lie
+bialgebra assertion.
+\end{proof}
+
+\begin{corollary}[The coboundary tensor in the matrix model]
+\label{res:UQ09}
+With the convention of Theorem~\ref{res:UQ08},
+the same cobracket on \(\mathfrak{sl}_3\) is
+\(\delta(x)=\operatorname{ad}_x(r)\), where
+\[
+ r=-e_{12}\wedge e_{21}-e_{23}\wedge e_{32}-e_{13}\wedge e_{31}.
+\]
+\end{corollary}
+\begin{proof}
+The matrix-unit rule is
+\([e_{ij},e_{lm}]=\delta_{jl}e_{im}-\delta_{mi}e_{lj}\).
+Each wedge in \(r\) has total weight zero, giving
+\(\operatorname{ad}_{h_i}(r)=0\).
+For \(e_1=e_{12}\), the first wedge with its minus sign
+contributes \(h_1\wedge e_1\); the other two contributions
+are \(-e_{13}\wedge e_{32}\) and \(e_{13}\wedge e_{32}\).
+The same computation for \(e_2=e_{23}\) gives
+\(h_2\wedge e_2\), with cross contributions
+\(e_{13}\wedge e_{21}\) and \(-e_{13}\wedge e_{21}\).
+The Lie algebra automorphism \(x\mapsto-x^{\mathsf T}\)
+sends \(r\) to \(-r\), \(e_i\) to \(-f_i\) and
+\(h_i\) to \(-h_i\). Applying it to the identities for
+\(e_i\) gives \(\operatorname{ad}_{f_i}(r)=h_i\wedge f_i\).
+Both cobrackets satisfy the cocycle identity, for
+\(\operatorname{ad}_x(r)\) by the Jacobi identity.
+Their equality on the six generators therefore
+implies equality on all of \(\mathfrak{sl}_3\).
+\end{proof}
+
+\paragraph{Sources.}
+Kassel~\cite[Sections XVI.5 and XVII.2]{kassel} gives the
+general Drinfeld--Jimbo constructions. Etingof--Semenyakin
+~\cite[Sections 4.1--4.2]{etingof-semenyakin} treats the
+Serre presentation and quantization in general.
+This chapter proves the full normal form and formal limit
+for type \(A_2\) directly, with a specified skew-coproduct
+convention.

@@ -3,8 +3,8 @@
   "counts": {
     "D05_entries": 249,
     "D07_entries": 408,
-    "declarations": 497632,
-    "entries": 7157,
+    "declarations": 502216,
+    "entries": 7255,
     "project_goals": 1710,
     "registered_bindings": 42901,
     "searchable_project_declarations": 10053,
@@ -300417,6 +300417,3336 @@
         "RepTheorySurvey.Geometric.ConvolutionSurface.openOrbitIsomorphism"
       ],
       "title": "The only positive-dimensional fibre of the terminal map has twice its dimension equal to the codimension of its image stratum."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:PAPER_FRONT_CONTEXT",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "PAPER_FRONT_CONTEXT",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1,
+        "line_end": 109
+      },
+      "source_declarations": [],
+      "title": "Typesetting, title and contents, overview of the locked volume, and conventions for fields and prior references."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:KM_CONTEXT",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM_CONTEXT",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 112,
+        "line_end": 122
+      },
+      "source_declarations": [],
+      "title": "Chapter overview and references to prior affine results. The complex base field applies throughout this chapter."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.IsGeneralizedCartanMatrix",
+        "LieNotes.Contragredient.IsSymmetrizable",
+        "LieNotes.Contragredient.Realization",
+        "LieNotes.Contragredient.Realization.IsMinimal"
+      ],
+      "goal_ids": [
+        "KM01"
+      ],
+      "id": "LieTheoryDeepening:KM01",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Contragredient",
+      "key": "KM01",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 126,
+        "line_end": 137,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "definition.1.1"
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.IsGeneralizedCartanMatrix",
+        "LieNotes.Contragredient.IsSymmetrizable",
+        "LieNotes.Contragredient.Realization",
+        "LieNotes.Contragredient.Realization.IsMinimal"
+      ],
+      "title": "A generalized Cartan matrix A=(a_ij) of size n has integer entries, diagonal entries 2, off-diagonal entries ≤0, and a_ij=0 if and only if a_ji=0. It is symmetrizable when positive real d_i exist with d_i a_ij=d_j a_ji. A complex realization consists of a vector space h, independent elements h_i in h and independent forms α_i in h* with α_j(h_i)=a_ij. It is minimal if dim h=2n−rank A."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.exists_minimal_realization",
+        "LieNotes.Contragredient.minimal_realization_common_kernel_finrank",
+        "LieNotes.Contragredient.minimal_realization_equiv"
+      ],
+      "goal_ids": [
+        "KM02"
+      ],
+      "id": "LieTheoryDeepening:KM02",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Contragredient",
+      "key": "KM02",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 139,
+        "line_end": 146,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "lemma.1.2"
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.exists_minimal_realization",
+        "LieNotes.Contragredient.minimal_realization_common_kernel_finrank",
+        "LieNotes.Contragredient.minimal_realization_equiv"
+      ],
+      "title": "Every generalized Cartan matrix has a minimal complex realization. Between any two such realizations there is a complex linear isomorphism sending each h_i to its counterpart and pulling back each counterpart of α_i to α_i. In a minimal realization the common kernel of the α_i has dimension n−rank A."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.Presentation.Algebra",
+        "LieNotes.Contragredient.Presentation.cartan",
+        "LieNotes.Contragredient.Presentation.definingRelations",
+        "LieNotes.Contragredient.Presentation.e",
+        "LieNotes.Contragredient.Presentation.f",
+        "LieNotes.Contragredient.Presentation.generated",
+        "LieNotes.Contragredient.Presentation.universalProperty"
+      ],
+      "goal_ids": [
+        "KM03-Presentation"
+      ],
+      "id": "LieTheoryDeepening:KM03",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Contragredient",
+      "key": "KM03",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 166,
+        "line_end": 176,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 4,
+        "pdf_destination": "proposition.1.3"
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.Presentation.Algebra",
+        "LieNotes.Contragredient.Presentation.cartan",
+        "LieNotes.Contragredient.Presentation.definingRelations",
+        "LieNotes.Contragredient.Presentation.e",
+        "LieNotes.Contragredient.Presentation.f",
+        "LieNotes.Contragredient.Presentation.generated",
+        "LieNotes.Contragredient.Presentation.universalProperty"
+      ],
+      "title": "For the complex realization of A, define the universal Lie algebra g̃ by generators the vector space h and e_i,f_i, with [h,h′]=0, [h,e_i]=α_i(h)e_i, [h,f_i]=−α_i(h)f_i, and [e_i,f_j]=δ_ij h_i. The generators from h depend linearly on h."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.Presentation.cartan_injective",
+        "LieNotes.Contragredient.Presentation.cartan_mem_grade",
+        "LieNotes.Contragredient.Presentation.e_mem_grade",
+        "LieNotes.Contragredient.Presentation.exists_triangularAdditionEquiv",
+        "LieNotes.Contragredient.Presentation.f_mem_grade",
+        "LieNotes.Contragredient.Presentation.grade_isInternal",
+        "LieNotes.Contragredient.Presentation.lie_mem_grade",
+        "LieNotes.Contragredient.Presentation.mem_grade",
+        "LieNotes.Contragredient.Presentation.negative_isFree",
+        "LieNotes.Contragredient.Presentation.positive_isFree",
+        "LieNotes.Contragredient.Presentation.triangularAdd_apply",
+        "LieNotes.Contragredient.Presentation.universalAlgebra",
+        "LieNotes.Contragredient.Presentation.weightSpace_eq_bot_of_notMem_range",
+        "LieNotes.Contragredient.Realization.rootWeight_injective"
+      ],
+      "goal_ids": [
+        "KM01",
+        "KM03",
+        "KM03-CartanFreeness",
+        "KM03-Triangular"
+      ],
+      "id": "LieTheoryDeepening:KM03_STRUCTURE",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM03_STRUCTURE",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 177,
+        "line_end": 190
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.Presentation.cartan_injective",
+        "LieNotes.Contragredient.Presentation.cartan_mem_grade",
+        "LieNotes.Contragredient.Presentation.e_mem_grade",
+        "LieNotes.Contragredient.Presentation.exists_triangularAdditionEquiv",
+        "LieNotes.Contragredient.Presentation.f_mem_grade",
+        "LieNotes.Contragredient.Presentation.grade_isInternal",
+        "LieNotes.Contragredient.Presentation.lie_mem_grade",
+        "LieNotes.Contragredient.Presentation.mem_grade",
+        "LieNotes.Contragredient.Presentation.negative_isFree",
+        "LieNotes.Contragredient.Presentation.positive_isFree",
+        "LieNotes.Contragredient.Presentation.triangularAdd_apply",
+        "LieNotes.Contragredient.Presentation.universalAlgebra",
+        "LieNotes.Contragredient.Presentation.weightSpace_eq_bot_of_notMem_range",
+        "LieNotes.Contragredient.Realization.rootWeight_injective"
+      ],
+      "title": "The Cartan map h→g̃ is injective and g̃ is the vector-space direct sum ñ⁻⊕h⊕ñ⁺, with ñ⁻ and ñ⁺ the free Lie algebras generated by the f_i and e_i respectively. The Q=⊕_i ℤα_i grading has degrees 0, α_i, −α_i for h, e_i, f_i respectively. Every homogeneous space is the corresponding adjoint h-weight space."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.CartanQuotient.cartanDisjointIdeal",
+        "LieNotes.Contragredient.CartanQuotient.cartanDisjointIdeal_isGreatest",
+        "LieNotes.Contragredient.iSup_inf_weightSpace_eq"
+      ],
+      "goal_ids": [
+        "KM-Weights",
+        "KM04-Quotient"
+      ],
+      "id": "LieTheoryDeepening:KM04",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM04",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 236,
+        "line_end": 239,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 5,
+        "pdf_destination": "theorem.1.4"
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.CartanQuotient.cartanDisjointIdeal",
+        "LieNotes.Contragredient.CartanQuotient.cartanDisjointIdeal_isGreatest",
+        "LieNotes.Contragredient.iSup_inf_weightSpace_eq"
+      ],
+      "title": "There is a largest ideal r of g̃ with r∩h=0."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.CartanQuotient.Algebra",
+        "LieNotes.Contragredient.CartanQuotient.cartan",
+        "LieNotes.Contragredient.CartanQuotient.cartan_injective",
+        "LieNotes.Contragredient.CartanQuotient.grade_eq_map",
+        "LieNotes.Contragredient.CartanQuotient.grade_isInternal",
+        "LieNotes.Contragredient.CartanQuotient.grade_zero",
+        "LieNotes.Contragredient.CartanQuotient.iSup_negative_grade",
+        "LieNotes.Contragredient.CartanQuotient.iSup_positive_grade",
+        "LieNotes.Contragredient.CartanQuotient.lie_mem_grade",
+        "LieNotes.Contragredient.CartanQuotient.mem_grade",
+        "LieNotes.Contragredient.CartanQuotient.negative",
+        "LieNotes.Contragredient.CartanQuotient.positive",
+        "LieNotes.Contragredient.CartanQuotient.quotientMap",
+        "LieNotes.Contragredient.CartanQuotient.quotientMap_ker",
+        "LieNotes.Contragredient.CartanQuotient.triangularAdd_bijective",
+        "LieNotes.Contragredient.CartanQuotient.triangularAdditionEquiv"
+      ],
+      "goal_ids": [
+        "KM04-Quotient"
+      ],
+      "id": "LieTheoryDeepening:KM04_QUOTIENT",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Contragredient",
+      "key": "KM04_QUOTIENT",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 240,
+        "line_end": 242
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.CartanQuotient.Algebra",
+        "LieNotes.Contragredient.CartanQuotient.cartan",
+        "LieNotes.Contragredient.CartanQuotient.cartan_injective",
+        "LieNotes.Contragredient.CartanQuotient.grade_eq_map",
+        "LieNotes.Contragredient.CartanQuotient.grade_isInternal",
+        "LieNotes.Contragredient.CartanQuotient.grade_zero",
+        "LieNotes.Contragredient.CartanQuotient.iSup_negative_grade",
+        "LieNotes.Contragredient.CartanQuotient.iSup_positive_grade",
+        "LieNotes.Contragredient.CartanQuotient.lie_mem_grade",
+        "LieNotes.Contragredient.CartanQuotient.mem_grade",
+        "LieNotes.Contragredient.CartanQuotient.negative",
+        "LieNotes.Contragredient.CartanQuotient.positive",
+        "LieNotes.Contragredient.CartanQuotient.quotientMap",
+        "LieNotes.Contragredient.CartanQuotient.quotientMap_ker",
+        "LieNotes.Contragredient.CartanQuotient.triangularAdd_bijective",
+        "LieNotes.Contragredient.CartanQuotient.triangularAdditionEquiv"
+      ],
+      "title": "Define the contragredient Lie algebra g(A)=g̃/r for the given realization, with Cartan h identified with its embedded image. It inherits the triangular decomposition into the images n⁻, h, n⁺ and the Q-grading."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.CartanQuotient.eq_bot_of_disjoint_cartan",
+        "LieNotes.Contragredient.Center.cartan_disjoint_ideal_and_center",
+        "LieNotes.Contragredient.Center.center_eq_map_common_kernel",
+        "LieNotes.Contragredient.Center.minimal_realization_center_finrank"
+      ],
+      "goal_ids": [
+        "KM04",
+        "KM04-Quotient"
+      ],
+      "id": "LieTheoryDeepening:KM04_CENTER_AND_IDEALS",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM04_CENTER_AND_IDEALS",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 243,
+        "line_end": 247
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.CartanQuotient.eq_bot_of_disjoint_cartan",
+        "LieNotes.Contragredient.Center.cartan_disjoint_ideal_and_center",
+        "LieNotes.Contragredient.Center.center_eq_map_common_kernel",
+        "LieNotes.Contragredient.Center.minimal_realization_center_finrank"
+      ],
+      "title": "The center of g(A) is exactly the common kernel of the α_i inside h. For a minimal realization its dimension is n−rank A. Every ideal of g(A) disjoint from h is zero."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.AdjointNilpotence.ad_e_locally_nilpotent",
+        "LieNotes.Contragredient.AdjointNilpotence.ad_f_locally_nilpotent",
+        "LieNotes.Contragredient.AdjointNilpotence.negative_serre",
+        "LieNotes.Contragredient.AdjointNilpotence.positive_serre",
+        "LieNotes.Contragredient.SerreRelations.exponent_pos",
+        "LieNotes.Contragredient.SerreRelations.negative_serre",
+        "LieNotes.Contragredient.SerreRelations.positive_serre"
+      ],
+      "goal_ids": [
+        "KM05",
+        "KM05-Relations"
+      ],
+      "id": "LieTheoryDeepening:KM05",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM05",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 272,
+        "line_end": 281,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 6,
+        "pdf_destination": "theorem.1.5"
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.AdjointNilpotence.ad_e_locally_nilpotent",
+        "LieNotes.Contragredient.AdjointNilpotence.ad_f_locally_nilpotent",
+        "LieNotes.Contragredient.AdjointNilpotence.negative_serre",
+        "LieNotes.Contragredient.AdjointNilpotence.positive_serre",
+        "LieNotes.Contragredient.SerreRelations.exponent_pos",
+        "LieNotes.Contragredient.SerreRelations.negative_serre",
+        "LieNotes.Contragredient.SerreRelations.positive_serre"
+      ],
+      "title": "For every pair i≠j, the simple generators in g(A) satisfy (ad e_i)^(1−a_ij)e_j=0 and (ad f_i)^(1−a_ij)f_j=0. For every i the endomorphisms ad e_i and ad f_i are locally nilpotent on g(A)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.LocallyNilpotentExponential.exp_apply",
+        "LieNotes.Contragredient.LocallyNilpotentExponential.exp_inverse",
+        "LieNotes.Contragredient.LocallyNilpotentExponential.exp_map_lie",
+        "LieNotes.Contragredient.Realization.weightReflection_apply",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.IsReflectionAutomorphism",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.cartanReflection",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.cartanReflection_apply",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.realRoot_multiplicity",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.reflectionAutomorphism_existsUnique",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.reflectionAutomorphism_onCartan",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.reflectionAutomorphism_onWeightSpaces",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.rootLattice_preserved"
+      ],
+      "goal_ids": [
+        "KM-Expo",
+        "KM01",
+        "KM06-Reflections"
+      ],
+      "id": "LieTheoryDeepening:KM06",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM06",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 319,
+        "line_end": 330,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 6,
+        "pdf_destination": "proposition.1.6"
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.LocallyNilpotentExponential.exp_apply",
+        "LieNotes.Contragredient.LocallyNilpotentExponential.exp_inverse",
+        "LieNotes.Contragredient.LocallyNilpotentExponential.exp_map_lie",
+        "LieNotes.Contragredient.Realization.weightReflection_apply",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.IsReflectionAutomorphism",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.cartanReflection",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.cartanReflection_apply",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.realRoot_multiplicity",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.reflectionAutomorphism_existsUnique",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.reflectionAutomorphism_onCartan",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.reflectionAutomorphism_onWeightSpaces",
+        "LieNotes.Contragredient.ReflectionAutomorphisms.rootLattice_preserved"
+      ],
+      "title": "For each i, r_i=exp(ad e_i) exp(−ad f_i) exp(ad e_i) is a Lie automorphism of g(A), with exponentials evaluated as finite sums on each vector. On h it sends h to h−α_i(h)h_i and maps the root space of β isomorphically onto the root space of s_iβ=β−β(h_i)α_i. Every root in an orbit of a simple root under these s_i has multiplicity one."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.InvariantRootForm.invariantFormAndLengths",
+        "LieNotes.Contragredient.InvariantRootForm.realRootSpan_identification",
+        "LieNotes.Contragredient.InvariantRootForm.reflectionAutomorphismsAndRealRoots",
+        "LieNotes.Contragredient.InvariantRootForm.rootForm"
+      ],
+      "goal_ids": [
+        "KM06"
+      ],
+      "id": "LieTheoryDeepening:KM06_FORM",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Contragredient",
+      "key": "KM06_FORM",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 331,
+        "line_end": 336
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.InvariantRootForm.invariantFormAndLengths",
+        "LieNotes.Contragredient.InvariantRootForm.realRootSpan_identification",
+        "LieNotes.Contragredient.InvariantRootForm.reflectionAutomorphismsAndRealRoots",
+        "LieNotes.Contragredient.InvariantRootForm.rootForm"
+      ],
+      "title": "For symmetrizable A with positive symmetrizer d_i, the form on the real span of Q specified by (α_i,α_j)=d_i a_ij is preserved by every s_i. Every root in the orbit of α_i has squared length 2d_i, also when the form is degenerate."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.InfiniteRankTwo.cartanMatrix",
+        "LieNotes.Contragredient.InfiniteRankTwo.infiniteDimensional",
+        "LieNotes.Contragredient.InfiniteRankTwo.infiniteRootOrbit",
+        "LieNotes.Contragredient.InfiniteRankTwo.minimalInfiniteDimensional",
+        "LieNotes.Contragredient.InfiniteRankTwo.orbitWeight",
+        "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct",
+        "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct_at_four",
+        "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct_coordinates",
+        "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct_det_trace"
+      ],
+      "goal_ids": [
+        "KM07"
+      ],
+      "id": "LieTheoryDeepening:KM07",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Contragredient",
+      "key": "KM07",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 358,
+        "line_end": 376,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "example.1.7"
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.InfiniteRankTwo.cartanMatrix",
+        "LieNotes.Contragredient.InfiniteRankTwo.infiniteDimensional",
+        "LieNotes.Contragredient.InfiniteRankTwo.infiniteRootOrbit",
+        "LieNotes.Contragredient.InfiniteRankTwo.minimalInfiniteDimensional",
+        "LieNotes.Contragredient.InfiniteRankTwo.orbitWeight",
+        "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct",
+        "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct_at_four",
+        "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct_coordinates",
+        "LieNotes.Contragredient.InfiniteRankTwo.reflectionProduct_det_trace"
+      ],
+      "title": "For positive integers a,b with ab≥4, the matrix A=((2,−a),(−b,2)) has an infinite simple-root orbit (in particular the s_1s_2 iterates of α_1 are distinct roots), and its complex contragredient algebra g(A) is infinite-dimensional. This includes ab=4."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.HighestWeightTheorem.highestWeightTheorem",
+        "LieNotes.Contragredient.SimpleHighestWeight.L",
+        "LieNotes.Contragredient.SimpleHighestWeight.quotientMap",
+        "LieNotes.Contragredient.SimpleHighestWeight.radicalIsGreatest",
+        "LieNotes.Contragredient.SimpleHighestWeight.simpleModule",
+        "LieNotes.Contragredient.SimpleHighestWeight.topHighest",
+        "LieNotes.Contragredient.SimpleHighestWeight.uniqueSimpleQuotient",
+        "LieNotes.Contragredient.VermaModules.Verma",
+        "LieNotes.Contragredient.VermaModules.borel",
+        "LieNotes.Contragredient.VermaModules.borelUnderlying",
+        "LieNotes.Contragredient.VermaModules.characterModule",
+        "LieNotes.Contragredient.VermaModules.finiteWeightSpaces",
+        "LieNotes.Contragredient.VermaModules.highestWeightUniversal",
+        "LieNotes.Contragredient.VermaModules.inductionUniversal",
+        "LieNotes.Contragredient.VermaModules.pbw",
+        "LieNotes.Contragredient.VermaModules.top",
+        "LieNotes.Contragredient.VermaModules.topWeightSpace",
+        "LieNotes.Contragredient.VermaModules.weightCharacterExists"
+      ],
+      "goal_ids": [
+        "KM08",
+        "KM08-Simple",
+        "KM08-Verma"
+      ],
+      "id": "LieTheoryDeepening:KM08",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM08",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 379,
+        "line_end": 384,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 7,
+        "pdf_destination": "theorem.1.8"
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.HighestWeightTheorem.highestWeightTheorem",
+        "LieNotes.Contragredient.SimpleHighestWeight.L",
+        "LieNotes.Contragredient.SimpleHighestWeight.quotientMap",
+        "LieNotes.Contragredient.SimpleHighestWeight.radicalIsGreatest",
+        "LieNotes.Contragredient.SimpleHighestWeight.simpleModule",
+        "LieNotes.Contragredient.SimpleHighestWeight.topHighest",
+        "LieNotes.Contragredient.SimpleHighestWeight.uniqueSimpleQuotient",
+        "LieNotes.Contragredient.VermaModules.Verma",
+        "LieNotes.Contragredient.VermaModules.borel",
+        "LieNotes.Contragredient.VermaModules.borelUnderlying",
+        "LieNotes.Contragredient.VermaModules.characterModule",
+        "LieNotes.Contragredient.VermaModules.finiteWeightSpaces",
+        "LieNotes.Contragredient.VermaModules.highestWeightUniversal",
+        "LieNotes.Contragredient.VermaModules.inductionUniversal",
+        "LieNotes.Contragredient.VermaModules.pbw",
+        "LieNotes.Contragredient.VermaModules.top",
+        "LieNotes.Contragredient.VermaModules.topWeightSpace",
+        "LieNotes.Contragredient.VermaModules.weightCharacterExists"
+      ],
+      "title": "For any λ in h*, form the Verma g(A)-module induced from the one-dimensional h⊕n⁺-module on which h acts by λ and n⁺ acts by zero. Its weight spaces are finite-dimensional, its highest-weight space has dimension one, and it has a unique simple highest-weight quotient L(λ)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Contragredient.HighestWeightTheorem.highestWeightTheorem",
+        "LieNotes.Contragredient.IntegrableHighestWeight.integrabilityCriterion",
+        "LieNotes.Contragredient.IntegrableHighestWeight.rankOneIdentity",
+        "LieNotes.Contragredient.LocallyNilpotentExponential.exp_conjugation",
+        "LieNotes.Contragredient.SimpleHighestWeight.weightSpaceImage"
+      ],
+      "goal_ids": [
+        "KM-Expo",
+        "KM08",
+        "KM08-Integrability",
+        "KM08-Simple"
+      ],
+      "id": "LieTheoryDeepening:KM08_INTEGRABILITY",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM08_INTEGRABILITY",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 385,
+        "line_end": 389
+      },
+      "source_declarations": [
+        "LieNotes.Contragredient.HighestWeightTheorem.highestWeightTheorem",
+        "LieNotes.Contragredient.IntegrableHighestWeight.integrabilityCriterion",
+        "LieNotes.Contragredient.IntegrableHighestWeight.rankOneIdentity",
+        "LieNotes.Contragredient.LocallyNilpotentExponential.exp_conjugation",
+        "LieNotes.Contragredient.SimpleHighestWeight.weightSpaceImage"
+      ],
+      "title": "Every e_i and f_i acts locally nilpotently on L(λ) if and only if each λ(h_i) is a nonnegative integer. Under that condition each s_i preserves weight multiplicities, with the spaces at weights μ and s_iμ having the same dimension."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Affine.affineCartanRealization",
+        "LieNotes.Affine.affineContragredientComparison",
+        "LieNotes.Affine.existsNormalizedForm",
+        "LieNotes.Affine.nonzeroIdeal_meets_affineCartan"
+      ],
+      "goal_ids": [
+        "KM09",
+        "KM09-NoDisjointIdeals",
+        "KM09-Realization"
+      ],
+      "id": "LieTheoryDeepening:KM09",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM09",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 441,
+        "line_end": 476,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 8,
+        "pdf_destination": "proposition.1.9"
+      },
+      "source_declarations": [
+        "LieNotes.Affine.affineCartanRealization",
+        "LieNotes.Affine.affineContragredientComparison",
+        "LieNotes.Affine.existsNormalizedForm",
+        "LieNotes.Affine.nonzeroIdeal_meets_affineCartan"
+      ],
+      "title": "Let a be a finite-dimensional complex simple Lie algebra. Take the full untwisted affine model (a⊗ℂ[t,t⁻¹])⊕ℂK⊕ℂd of LO09–LO10, with K central, [x⊗t^m,y⊗t^n]=[x,y]⊗t^(m+n)+m δ_(m+n,0)B(x,y)K for the invariant form B of that model, and [d,x⊗t^m]=m x⊗t^m. On its affine Cartan the forms α_0=δ−θ, α_1,…,α_ℓ and the coroots h_0=K−h_θ, h_1,…,h_ℓ give a minimal realization of the symmetrizable generalized Cartan matrix a_ij=α_j(h_i). Here θ is the highest finite root and δ is zero on the finite Cartan and K and sends d to 1. The associated g(A) is isomorphic to this full loop model under the comparison on the Cartan and corresponding simple triples, with the central and degree generators kept distinct."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Virasoro.Witt.L",
+        "LieNotes.Virasoro.Witt.L_apply_T",
+        "LieNotes.Virasoro.Witt.W",
+        "LieNotes.Virasoro.Witt.derivative",
+        "LieNotes.Virasoro.Witt.derived_eq_top",
+        "LieNotes.Virasoro.Witt.evalT_bijective",
+        "LieNotes.Virasoro.Witt.exists_mode_basis",
+        "LieNotes.Virasoro.Witt.isSimple",
+        "LieNotes.Virasoro.Witt.lie_L",
+        "LieNotes.Virasoro.Witt.mode_expansion"
+      ],
+      "goal_ids": [
+        "KM10",
+        "KM10-Witt"
+      ],
+      "id": "LieTheoryDeepening:KM10",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM10",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 500,
+        "line_end": 507,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 8,
+        "pdf_destination": "proposition.1.10"
+      },
+      "source_declarations": [
+        "LieNotes.Virasoro.Witt.L",
+        "LieNotes.Virasoro.Witt.L_apply_T",
+        "LieNotes.Virasoro.Witt.W",
+        "LieNotes.Virasoro.Witt.derivative",
+        "LieNotes.Virasoro.Witt.derived_eq_top",
+        "LieNotes.Virasoro.Witt.evalT_bijective",
+        "LieNotes.Virasoro.Witt.exists_mode_basis",
+        "LieNotes.Virasoro.Witt.isSimple",
+        "LieNotes.Virasoro.Witt.lie_L",
+        "LieNotes.Virasoro.Witt.mode_expansion"
+      ],
+      "title": "For ℂ[t,t⁻¹], its complex derivations form the Witt Lie algebra W. The derivations L_m=−t^(m+1)∂_t for m∈ℤ form a basis (finite linear combinations) and satisfy [L_m,L_n]=(m−n)L_(m+n). W is simple and perfect."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Virasoro.coboundary_apply_trivial",
+        "LieNotes.Virasoro.exists_omega",
+        "LieNotes.Virasoro.omegaForm_modes",
+        "LieNotes.Virasoro.witt_cocycle_classification",
+        "LieNotes.Virasoro.witt_cohomology_equivalence",
+        "LieNotes.Virasoro.witt_scalar_cohomology_dimension"
+      ],
+      "goal_ids": [
+        "KM11-Classification",
+        "KM11-Cocycle"
+      ],
+      "id": "LieTheoryDeepening:KM11",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM11",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 522,
+        "line_end": 530,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 9,
+        "pdf_destination": "theorem.1.11"
+      },
+      "source_declarations": [
+        "LieNotes.Virasoro.coboundary_apply_trivial",
+        "LieNotes.Virasoro.exists_omega",
+        "LieNotes.Virasoro.omegaForm_modes",
+        "LieNotes.Virasoro.witt_cocycle_classification",
+        "LieNotes.Virasoro.witt_cohomology_equivalence",
+        "LieNotes.Virasoro.witt_scalar_cohomology_dimension"
+      ],
+      "title": "For every complex vector space Z with trivial W-action, each cohomology class of central Z-valued Lie 2-cocycles of W has a unique representative c_z with c_z(L_m,L_n)=δ_(m,−n)(m³−m)z/12, parametrized by z∈Z. The displayed cocycles all occur, and H²(W,ℂ) has dimension one."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Virasoro.Vir",
+        "LieNotes.Virasoro.Vir.C",
+        "LieNotes.Virasoro.Vir.C_ne_zero",
+        "LieNotes.Virasoro.Vir.L",
+        "LieNotes.Virasoro.Vir.canonicalLieProjection",
+        "LieNotes.Virasoro.Vir.center_eq_span",
+        "LieNotes.Virasoro.Vir.coordinates",
+        "LieNotes.Virasoro.Vir.coordinates_lie",
+        "LieNotes.Virasoro.Vir.derived_eq_top",
+        "LieNotes.Virasoro.Vir.existsUnique_lift",
+        "LieNotes.Virasoro.Vir.lie_C",
+        "LieNotes.Virasoro.Vir.lie_L",
+        "LieNotes.Virasoro.Vir.mem_center_iff_mem_span",
+        "LieNotes.Virasoro.Vir.proj",
+        "LieNotes.Virasoro.Vir.proj_central_kernel",
+        "LieNotes.Virasoro.Vir.proj_eq_zero_iff",
+        "LieNotes.Virasoro.Vir.proj_surjective",
+        "LieNotes.Virasoro.Vir.span_brackets_eq_top",
+        "LieNotes.Virasoro.Vir.universal_property",
+        "LieNotes.Virasoro.virasoro_theorem"
+      ],
+      "goal_ids": [
+        "KM11",
+        "KM11-Cocycle",
+        "KM11-PerfectCenter"
+      ],
+      "id": "LieTheoryDeepening:KM11_VIRASORO",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM11_VIRASORO",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 531,
+        "line_end": 539
+      },
+      "source_declarations": [
+        "LieNotes.Virasoro.Vir",
+        "LieNotes.Virasoro.Vir.C",
+        "LieNotes.Virasoro.Vir.C_ne_zero",
+        "LieNotes.Virasoro.Vir.L",
+        "LieNotes.Virasoro.Vir.canonicalLieProjection",
+        "LieNotes.Virasoro.Vir.center_eq_span",
+        "LieNotes.Virasoro.Vir.coordinates",
+        "LieNotes.Virasoro.Vir.coordinates_lie",
+        "LieNotes.Virasoro.Vir.derived_eq_top",
+        "LieNotes.Virasoro.Vir.existsUnique_lift",
+        "LieNotes.Virasoro.Vir.lie_C",
+        "LieNotes.Virasoro.Vir.lie_L",
+        "LieNotes.Virasoro.Vir.mem_center_iff_mem_span",
+        "LieNotes.Virasoro.Vir.proj",
+        "LieNotes.Virasoro.Vir.proj_central_kernel",
+        "LieNotes.Virasoro.Vir.proj_eq_zero_iff",
+        "LieNotes.Virasoro.Vir.proj_surjective",
+        "LieNotes.Virasoro.Vir.span_brackets_eq_top",
+        "LieNotes.Virasoro.Vir.universal_property",
+        "LieNotes.Virasoro.virasoro_theorem"
+      ],
+      "title": "The displayed bracket defines the Virasoro Lie algebra Vir=W⊕ℂC, with [L_m,L_n]=(m−n)L_(m+n)+δ_(m,−n)(m³−m)C/12 and C central. Vir is perfect, has center exactly ℂC, and the projection Vir→W is the universal central extension. For every central extension E→W there is a unique Lie homomorphism Vir→E over W."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Virasoro.AffineWitt.Semidirect",
+        "LieNotes.Virasoro.AffineWitt.lie_mode",
+        "LieNotes.Virasoro.AffineWitt.liftToAffineCentralExtension",
+        "LieNotes.Virasoro.AffineWitt.mode",
+        "LieNotes.Virasoro.AffineWitt.mode_central",
+        "LieNotes.Virasoro.AffineWitt.mode_homogeneous",
+        "LieNotes.Virasoro.AffineWitt.mode_zero",
+        "LieNotes.Virasoro.AffineWitt.virasoroAction",
+        "LieNotes.Virasoro.AffineWitt.wittAction"
+      ],
+      "goal_ids": [
+        "KM12"
+      ],
+      "id": "LieTheoryDeepening:KM12",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Virasoro",
+      "key": "KM12",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 590,
+        "line_end": 602,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 10,
+        "pdf_destination": "proposition.1.12"
+      },
+      "source_declarations": [
+        "LieNotes.Virasoro.AffineWitt.Semidirect",
+        "LieNotes.Virasoro.AffineWitt.lie_mode",
+        "LieNotes.Virasoro.AffineWitt.liftToAffineCentralExtension",
+        "LieNotes.Virasoro.AffineWitt.mode",
+        "LieNotes.Virasoro.AffineWitt.mode_central",
+        "LieNotes.Virasoro.AffineWitt.mode_homogeneous",
+        "LieNotes.Virasoro.AffineWitt.mode_zero",
+        "LieNotes.Virasoro.AffineWitt.virasoroAction",
+        "LieNotes.Virasoro.AffineWitt.wittAction"
+      ],
+      "title": "On the central extension of the loop algebra from KM09 before adjoining d, write x_i=x⊗t^i for each integer i. The maps D_m(x_i)=−i x_(m+i) and D_m(K)=0 give a Lie action L_m↦D_m of W by derivations. They give the semidirect Lie algebra with Vir acting through its quotient W. The action of L_0 is the negative of the loop degree derivation."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Virasoro.Verma.M",
+        "LieNotes.Virasoro.Verma.cyclic",
+        "LieNotes.Virasoro.Verma.highestWeight",
+        "LieNotes.Virasoro.Verma.inducingData",
+        "LieNotes.Virasoro.Verma.modelExists",
+        "LieNotes.Virasoro.Verma.top",
+        "LieNotes.Virasoro.Verma.universal"
+      ],
+      "goal_ids": [
+        "KM13-Model"
+      ],
+      "id": "LieTheoryDeepening:KM13",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Virasoro",
+      "key": "KM13",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 624,
+        "line_end": 628,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 10,
+        "pdf_destination": "theorem.1.13"
+      },
+      "source_declarations": [
+        "LieNotes.Virasoro.Verma.M",
+        "LieNotes.Virasoro.Verma.cyclic",
+        "LieNotes.Virasoro.Verma.highestWeight",
+        "LieNotes.Virasoro.Verma.inducingData",
+        "LieNotes.Virasoro.Verma.modelExists",
+        "LieNotes.Virasoro.Verma.top",
+        "LieNotes.Virasoro.Verma.universal"
+      ],
+      "title": "For every c,h∈ℂ there is a universal cyclic Virasoro highest-weight module M(c,h) generated by v with Cv=cv, L_0v=hv, and L_jv=0 for every j>0. Its universal property sends v to a chosen vector satisfying those equations by a unique module map."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Virasoro.Verma.basis",
+        "LieNotes.Virasoro.Verma.degree_span",
+        "LieNotes.Virasoro.Verma.modelExists",
+        "LieNotes.Virasoro.Verma.modelProperties",
+        "LieNotes.Virasoro.Verma.word_weight",
+        "LieNotes.Virasoro.VermaCharacter.characterModelExists",
+        "LieNotes.Virasoro.VermaCharacter.eulerFactorInverse",
+        "LieNotes.Virasoro.VermaCharacter.hasCharacter",
+        "LieNotes.Virasoro.VermaCharacter.hasUniqueSimpleQuotient"
+      ],
+      "goal_ids": [
+        "KM13",
+        "KM13-Model"
+      ],
+      "id": "LieTheoryDeepening:KM13_BASIS_AND_QUOTIENT",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM13_BASIS_AND_QUOTIENT",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 629,
+        "line_end": 638
+      },
+      "source_declarations": [
+        "LieNotes.Virasoro.Verma.basis",
+        "LieNotes.Virasoro.Verma.degree_span",
+        "LieNotes.Virasoro.Verma.modelExists",
+        "LieNotes.Virasoro.Verma.modelProperties",
+        "LieNotes.Virasoro.Verma.word_weight",
+        "LieNotes.Virasoro.VermaCharacter.characterModelExists",
+        "LieNotes.Virasoro.VermaCharacter.eulerFactorInverse",
+        "LieNotes.Virasoro.VermaCharacter.hasCharacter",
+        "LieNotes.Virasoro.VermaCharacter.hasUniqueSimpleQuotient"
+      ],
+      "title": "The vectors L_(−i_1)⋯L_(−i_s)v with s≥0 and 1≤i_1≤⋯≤i_s form a basis of M(c,h) and have L_0-weight h+i_1+⋯+i_s. With v in degree zero the graded dimension is the formal power series ∏_(i≥1)(1−q^i)⁻¹. The module has a unique simple quotient."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Virasoro.Singular.canonical",
+        "LieNotes.Virasoro.Singular.canonicalResult",
+        "LieNotes.Virasoro.Singular.resultsOnModels",
+        "LieNotes.Virasoro.Verma.modelProperties"
+      ],
+      "goal_ids": [
+        "KM14"
+      ],
+      "id": "LieTheoryDeepening:KM14",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Virasoro",
+      "key": "KM14",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 657,
+        "line_end": 672,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 10,
+        "pdf_destination": "example.1.14"
+      },
+      "source_declarations": [
+        "LieNotes.Virasoro.Singular.canonical",
+        "LieNotes.Virasoro.Singular.canonicalResult",
+        "LieNotes.Virasoro.Singular.resultsOnModels",
+        "LieNotes.Virasoro.Verma.modelProperties"
+      ],
+      "title": "For every c,h∈ℂ, M(c,h) has a nonzero degree-one vector killed by every L_j (j>0) if and only if h=0. A nonzero such vector in degree two exists if and only if 18h−(4h+2)(4h+c/2)=0. In that case the degree-two singular space is the line spanned by 3L_(−1)²v−(4h+2)L_(−2)v. Each nonzero singular vector of either positive degree generates a proper submodule. For c=1 and h=1/4 the first positive singular degree is two and its vector is proportional to L_(−1)²v−L_(−2)v."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:KM_FURTHER_CONTEXT",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "KM_FURTHER_CONTEXT",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 699,
+        "line_end": 707
+      },
+      "source_declarations": [],
+      "title": "Bibliographic context and explicit further topics: equality of the Serre and Cartan-disjoint ideals in symmetrizable type, the Weyl–Kac character formula, and higher-degree Virasoro singular-vector classification."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:CTX_CHAPTER2_INTRODUCTION",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "CTX_CHAPTER2_INTRODUCTION",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 708,
+        "line_end": 716
+      },
+      "source_declarations": [],
+      "title": "Chapter overview of parity, associative p-power and the forthcoming basis theorems and examples."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.LieSuperalgebra.oddTriple",
+        "LieNotes.SuperRestricted.SuperLie.Grading",
+        "LieNotes.SuperRestricted.SuperLie.LieSuperalgebra",
+        "LieNotes.SuperRestricted.SuperLie.paritySign",
+        "LieNotes.SuperRestricted.oddTriple_of_char_ne_three",
+        "LieNotes.SuperRestricted.three_smul_oddTriple_eq_zero",
+        "LieNotes.SuperRestricted.two_ne_zero_iff_char_ne_two"
+      ],
+      "goal_ids": [
+        "SR01"
+      ],
+      "id": "LieTheoryDeepening:SR01",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR01",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 720,
+        "line_end": 735,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 12,
+        "pdf_destination": "definition.2.1"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.LieSuperalgebra.oddTriple",
+        "LieNotes.SuperRestricted.SuperLie.Grading",
+        "LieNotes.SuperRestricted.SuperLie.LieSuperalgebra",
+        "LieNotes.SuperRestricted.SuperLie.paritySign",
+        "LieNotes.SuperRestricted.oddTriple_of_char_ne_three",
+        "LieNotes.SuperRestricted.three_smul_oddTriple_eq_zero",
+        "LieNotes.SuperRestricted.two_ne_zero_iff_char_ne_two"
+      ],
+      "title": "Over any field k of characteristic different from 2, a Lie superalgebra is a Z/2-graded k-vector space a = a₀ ⊕ a₁ with an even k-bilinear bracket. For homogeneous x,y,z, let ε_xy = (−1)^(|x||y|). Require [x,y] = −ε_xy[y,x] and [x,[y,z]] = [[x,y],z] + ε_xy[y,[x,z]]. In characteristic 3 also require [x,[x,x]] = 0 for every odd x. In the other allowed characteristics the first two identities imply the odd triple identity."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.SuperLie.GradedModule",
+        "LieNotes.SuperRestricted.SuperLie.GradedModuleHom"
+      ],
+      "goal_ids": [
+        "SR01"
+      ],
+      "id": "LieTheoryDeepening:SR01_GRADED_MODULE",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR01_GRADED_MODULE",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 735,
+        "line_end": 740
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.SuperLie.GradedModule",
+        "LieNotes.SuperRestricted.SuperLie.GradedModuleHom"
+      ],
+      "title": "A graded module of such a Lie superalgebra is a Z/2-graded k-vector space M and a k-linear action ρ such that ρ(x) carries parity |x| for every homogeneous x, with ρ([x,y]) = ρ(x)ρ(y) − ε_xyρ(y)ρ(x) for all homogeneous x,y. Module morphisms are the grading-preserving action intertwiners."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:CTX_CHAPTER2_SUPER_REFERENCES",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "CTX_CHAPTER2_SUPER_REFERENCES",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 742,
+        "line_end": 747
+      },
+      "source_declarations": [],
+      "title": "Base-field reminders and bibliographic orientation for the superalgebra conventions."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.Supercommutator.bracket",
+        "LieNotes.SuperRestricted.Supercommutator.bracket_graded",
+        "LieNotes.SuperRestricted.Supercommutator.bracket_jacobi",
+        "LieNotes.SuperRestricted.Supercommutator.bracket_odd_self",
+        "LieNotes.SuperRestricted.Supercommutator.bracket_of_mem",
+        "LieNotes.SuperRestricted.Supercommutator.bracket_skew",
+        "LieNotes.SuperRestricted.Supercommutator.exists_lieSuperalgebra",
+        "LieNotes.SuperRestricted.Supercommutator.oddTriple",
+        "LieNotes.SuperRestricted.Supercommutator.toLieSuperalgebra"
+      ],
+      "goal_ids": [
+        "SR02-Associative"
+      ],
+      "id": "LieTheoryDeepening:SR02",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR02",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 749,
+        "line_end": 753,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 12,
+        "pdf_destination": "proposition.2.2"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.Supercommutator.bracket",
+        "LieNotes.SuperRestricted.Supercommutator.bracket_graded",
+        "LieNotes.SuperRestricted.Supercommutator.bracket_jacobi",
+        "LieNotes.SuperRestricted.Supercommutator.bracket_odd_self",
+        "LieNotes.SuperRestricted.Supercommutator.bracket_of_mem",
+        "LieNotes.SuperRestricted.Supercommutator.bracket_skew",
+        "LieNotes.SuperRestricted.Supercommutator.exists_lieSuperalgebra",
+        "LieNotes.SuperRestricted.Supercommutator.oddTriple",
+        "LieNotes.SuperRestricted.Supercommutator.toLieSuperalgebra"
+      ],
+      "title": "For any associative Z/2-graded algebra over k of characteristic different from 2, the graded vector space is a Lie superalgebra with the k-bilinear bracket given by [x,y] = xy − (−1)^(|x||y|)yx on homogeneous elements. This includes the extra odd triple identity in characteristic 3."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.SuperMatrices.basis",
+        "LieNotes.SuperRestricted.SuperMatrices.bracket_table",
+        "LieNotes.SuperRestricted.SuperMatrices.central",
+        "LieNotes.SuperRestricted.SuperMatrices.e",
+        "LieNotes.SuperRestricted.SuperMatrices.exists_basis",
+        "LieNotes.SuperRestricted.SuperMatrices.exists_gl",
+        "LieNotes.SuperRestricted.SuperMatrices.f",
+        "LieNotes.SuperRestricted.SuperMatrices.generator_mem",
+        "LieNotes.SuperRestricted.SuperMatrices.gl",
+        "LieNotes.SuperRestricted.SuperMatrices.grading",
+        "LieNotes.SuperRestricted.SuperMatrices.h",
+        "LieNotes.SuperRestricted.SuperMatrices.mem_even",
+        "LieNotes.SuperRestricted.SuperMatrices.mem_odd",
+        "LieNotes.SuperRestricted.SuperMatrices.supertrace",
+        "LieNotes.SuperRestricted.SuperMatrices.supertrace_bracket",
+        "LieNotes.SuperRestricted.SuperMatrices.supertrace_ker",
+        "LieNotes.SuperRestricted.SuperMatrices.z"
+      ],
+      "goal_ids": [
+        "SR02"
+      ],
+      "id": "LieTheoryDeepening:SR02_GL11",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR02_GL11",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 753,
+        "line_end": 764
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.SuperMatrices.basis",
+        "LieNotes.SuperRestricted.SuperMatrices.bracket_table",
+        "LieNotes.SuperRestricted.SuperMatrices.central",
+        "LieNotes.SuperRestricted.SuperMatrices.e",
+        "LieNotes.SuperRestricted.SuperMatrices.exists_basis",
+        "LieNotes.SuperRestricted.SuperMatrices.exists_gl",
+        "LieNotes.SuperRestricted.SuperMatrices.f",
+        "LieNotes.SuperRestricted.SuperMatrices.generator_mem",
+        "LieNotes.SuperRestricted.SuperMatrices.gl",
+        "LieNotes.SuperRestricted.SuperMatrices.grading",
+        "LieNotes.SuperRestricted.SuperMatrices.h",
+        "LieNotes.SuperRestricted.SuperMatrices.mem_even",
+        "LieNotes.SuperRestricted.SuperMatrices.mem_odd",
+        "LieNotes.SuperRestricted.SuperMatrices.supertrace",
+        "LieNotes.SuperRestricted.SuperMatrices.supertrace_bracket",
+        "LieNotes.SuperRestricted.SuperMatrices.supertrace_ker",
+        "LieNotes.SuperRestricted.SuperMatrices.z"
+      ],
+      "title": "In the Lie superalgebra gl(1|1) of 1|1 block matrices over k of characteristic different from 2, diagonal matrices are even and off-diagonal matrices odd. With even basis z = E₁₁ + E₂₂, h = E₁₁ and odd basis e = E₁₂, f = E₂₁, the nonzero brackets up to graded skew symmetry are [h,e] = e, [h,f] = −f and [e,f] = z. In particular z is central and [e,e] = [f,f] = 0. The linear supertrace X ↦ X₁₁ − X₂₂ vanishes on every bracket and has kernel span_k(z,e,f)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.SuperEnveloping.Construction.envelopingGradedAlgebra",
+        "LieNotes.SuperRestricted.SuperEnveloping.Construction.tensorGradedAlgebra",
+        "LieNotes.SuperRestricted.SuperEnveloping.Enveloping",
+        "LieNotes.SuperRestricted.SuperEnveloping.filtration",
+        "LieNotes.SuperRestricted.SuperEnveloping.generator_relation",
+        "LieNotes.SuperRestricted.SuperEnveloping.piece",
+        "LieNotes.SuperRestricted.SuperEnveloping.quotientMap",
+        "LieNotes.SuperRestricted.SuperEnveloping.quotientMap_eq_zero_iff",
+        "LieNotes.SuperRestricted.SuperEnveloping.relationIdeal",
+        "LieNotes.SuperRestricted.SuperEnveloping.relations",
+        "LieNotes.SuperRestricted.SuperEnveloping.relator",
+        "LieNotes.SuperRestricted.SuperEnveloping.relator_mem_tensorPiece",
+        "LieNotes.SuperRestricted.SuperEnveloping.tensorPiece",
+        "LieNotes.SuperRestricted.SuperEnveloping.tensorPiece_image",
+        "LieNotes.SuperRestricted.SuperEnveloping.tensorWord_mem",
+        "LieNotes.SuperRestricted.SuperEnveloping.ι",
+        "LieNotes.SuperRestricted.SuperEnveloping.ι_mem_piece"
+      ],
+      "goal_ids": [
+        "SR03-Enveloping"
+      ],
+      "id": "LieTheoryDeepening:SR03",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR03",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 792,
+        "line_end": 799,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 13,
+        "pdf_destination": "theorem.2.3"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.SuperEnveloping.Construction.envelopingGradedAlgebra",
+        "LieNotes.SuperRestricted.SuperEnveloping.Construction.tensorGradedAlgebra",
+        "LieNotes.SuperRestricted.SuperEnveloping.Enveloping",
+        "LieNotes.SuperRestricted.SuperEnveloping.filtration",
+        "LieNotes.SuperRestricted.SuperEnveloping.generator_relation",
+        "LieNotes.SuperRestricted.SuperEnveloping.piece",
+        "LieNotes.SuperRestricted.SuperEnveloping.quotientMap",
+        "LieNotes.SuperRestricted.SuperEnveloping.quotientMap_eq_zero_iff",
+        "LieNotes.SuperRestricted.SuperEnveloping.relationIdeal",
+        "LieNotes.SuperRestricted.SuperEnveloping.relations",
+        "LieNotes.SuperRestricted.SuperEnveloping.relator",
+        "LieNotes.SuperRestricted.SuperEnveloping.relator_mem_tensorPiece",
+        "LieNotes.SuperRestricted.SuperEnveloping.tensorPiece",
+        "LieNotes.SuperRestricted.SuperEnveloping.tensorPiece_image",
+        "LieNotes.SuperRestricted.SuperEnveloping.tensorWord_mem",
+        "LieNotes.SuperRestricted.SuperEnveloping.ι",
+        "LieNotes.SuperRestricted.SuperEnveloping.ι_mem_piece"
+      ],
+      "title": "For a Lie superalgebra a over k as in SR01, construct its enveloping superalgebra U(a) as the tensor algebra T_k(a) with its induced parity grading, quotiented by the two-sided ideal generated by xy − (−1)^(|x||y|)yx − [x,y] for homogeneous x,y."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.SuperEnveloping.AssociatedGraded",
+        "LieNotes.SuperRestricted.SuperEnveloping.GradedPiece",
+        "LieNotes.SuperRestricted.SuperEnveloping.filtration",
+        "LieNotes.SuperRestricted.SuperEnveloping.filtration_isInternal",
+        "LieNotes.SuperRestricted.SuperEnveloping.gradedProduct_eq_symbol",
+        "LieNotes.SuperRestricted.SuperEnveloping.lower_eq",
+        "LieNotes.SuperRestricted.SuperEnveloping.ofSymbol_mul",
+        "LieNotes.SuperRestricted.SuperPbw.associatedGraded",
+        "LieNotes.SuperRestricted.SuperPbw.superPbw",
+        "LieNotes.SuperRestricted.SuperPbwBasis.OrderedWord",
+        "LieNotes.SuperRestricted.SuperPbwBasis.filtration_eq_span",
+        "LieNotes.SuperRestricted.SuperPbwBasis.orderedBasis_exists"
+      ],
+      "goal_ids": [
+        "SR03",
+        "SR03-Enveloping",
+        "SR03-PBW"
+      ],
+      "id": "LieTheoryDeepening:SR03_SUPER_PBW",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "SR03_SUPER_PBW",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 794,
+        "line_end": 807
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.SuperEnveloping.AssociatedGraded",
+        "LieNotes.SuperRestricted.SuperEnveloping.GradedPiece",
+        "LieNotes.SuperRestricted.SuperEnveloping.filtration",
+        "LieNotes.SuperRestricted.SuperEnveloping.filtration_isInternal",
+        "LieNotes.SuperRestricted.SuperEnveloping.gradedProduct_eq_symbol",
+        "LieNotes.SuperRestricted.SuperEnveloping.lower_eq",
+        "LieNotes.SuperRestricted.SuperEnveloping.ofSymbol_mul",
+        "LieNotes.SuperRestricted.SuperPbw.associatedGraded",
+        "LieNotes.SuperRestricted.SuperPbw.superPbw",
+        "LieNotes.SuperRestricted.SuperPbwBasis.OrderedWord",
+        "LieNotes.SuperRestricted.SuperPbwBasis.filtration_eq_span",
+        "LieNotes.SuperRestricted.SuperPbwBasis.orderedBasis_exists"
+      ],
+      "title": "For any totally ordered homogeneous basis of a as in SR01, the weakly increasing finite words in its images in U(a), including the empty word, form a k-basis when each odd basis element is allowed at most once in a word. For the word-length filtration there is an isomorphism gr U(a) ≅ Sym_k(a₀) ⊗_k Λ_k(a₁) as degree-graded superalgebras, identifying each generator with its degree-one symbol."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.EnvelopingModule",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.EnvelopingModule.Hom",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.extend",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.gradedModulesAgree",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.homEquiv",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.intertwines_iff_on_generators",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.moduleEquiv",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.restrict"
+      ],
+      "goal_ids": [
+        "SR03-Modules"
+      ],
+      "id": "LieTheoryDeepening:SR03_MODULE_CORRESPONDENCE",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR03_MODULE_CORRESPONDENCE",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 808,
+        "line_end": 810
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.EnvelopingModule",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.EnvelopingModule.Hom",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.extend",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.gradedModulesAgree",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.homEquiv",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.intertwines_iff_on_generators",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.moduleEquiv",
+        "LieNotes.SuperRestricted.SuperEnvelopingModules.restrict"
+      ],
+      "title": "For a as in SR01, the restriction of a graded U(a)-action to a and the extension of a graded Lie superalgebra action from a to U(a) are inverse correspondences, with the same parity-preserving module morphisms."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.SuperRankOneSimples.concrete_model",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.exhaust",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.existence",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.form_basis",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.forms_simple",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.isomorphic"
+      ],
+      "goal_ids": [
+        "SR04"
+      ],
+      "id": "LieTheoryDeepening:SR04",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR04",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 866,
+        "line_end": 883,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 14,
+        "pdf_destination": "example.2.4"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.SuperRankOneSimples.concrete_model",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.exhaust",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.existence",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.form_basis",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.forms_simple",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.isomorphic"
+      ],
+      "title": "Classify all finite-dimensional simple graded modules for gl(1|1) over ℂ, with z acting by a scalar γ. For γ = 0 each is a one-dimensional homogeneous line of either parity, on which e = f = 0 and h acts by an arbitrary λ ∈ ℂ. For γ ≠ 0 each has a homogeneous basis v,w of opposite parity with hv = λv, hw = (λ − 1)w, fv = w, fw = 0, ev = 0, ew = γv, zv = γv and zw = γw. These formulas give a simple graded module for every indicated scalar and parity choice. Two such modules are isomorphic by a grading-preserving intertwiner exactly when γ, λ and the parity of v agree."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.SuperRankOneSimples.exhaust",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.opposite"
+      ],
+      "goal_ids": [
+        "SR04"
+      ],
+      "id": "LieTheoryDeepening:SR04_OPPOSITE_POSITIVE_ODD_ROOT",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR04_OPPOSITE_POSITIVE_ODD_ROOT",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 900,
+        "line_end": 905
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.SuperRankOneSimples.exhaust",
+        "LieNotes.SuperRestricted.SuperRankOneSimples.opposite"
+      ],
+      "title": "For the finite-dimensional simple graded complex gl(1|1) modules above, the positive-odd-root choice e has highest line ker e and the opposite choice f has highest line ker f. In the two-dimensional case these are respectively ℂv and ℂw, so switching changes the highest weight from λ to λ − 1 and reverses its parity. In the one-dimensional case both choices give the same highest line, weight and parity."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:CTX_CHAPTER2_RESTRICTED_PBW_REFERENCE",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "CTX_CHAPTER2_RESTRICTED_PBW_REFERENCE",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 910,
+        "line_end": 917
+      },
+      "source_declarations": [],
+      "title": "Standing convention for the ordinary positive-characteristic half of the chapter and reference to the ordinary PBW theorem in the earlier volume."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.AssociativePrimePowers.ad_pow",
+        "LieNotes.SuperRestricted.AssociativePrimePowers.jacobsonTerm_polynomial",
+        "LieNotes.SuperRestricted.AssociativePrimePowers.pow_add"
+      ],
+      "goal_ids": [
+        "SR05"
+      ],
+      "id": "LieTheoryDeepening:SR05",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR05",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 919,
+        "line_end": 931,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 14,
+        "pdf_destination": "lemma.2.5"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.AssociativePrimePowers.ad_pow",
+        "LieNotes.SuperRestricted.AssociativePrimePowers.jacobsonTerm_polynomial",
+        "LieNotes.SuperRestricted.AssociativePrimePowers.pow_add"
+      ],
+      "title": "For any associative k-algebra B over a field k of characteristic p > 0, with its ordinary commutator Lie bracket, and all x,y ∈ B, (ad x)^p = ad(x^p) as endomorphisms and (x+y)^p = x^p + y^p + ∑_(i=1)^(p−1) s_i(x,y)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.AssociativePrimePowers.jacobsonTerm_polynomial",
+        "LieNotes.SuperRestricted.JacobsonPolynomials.coeff_adjointPolynomial",
+        "LieNotes.SuperRestricted.JacobsonPolynomials.jacobsonTerm",
+        "LieNotes.SuperRestricted.JacobsonPolynomials.jacobsonTerm_isLiePolynomial",
+        "LieNotes.SuperRestricted.JacobsonPolynomials.jacobsonTerm_spec"
+      ],
+      "goal_ids": [
+        "SR05",
+        "SR05-Coefficients"
+      ],
+      "id": "LieTheoryDeepening:SR05_JACOBSON_POLYNOMIALS",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "SR05_JACOBSON_POLYNOMIALS",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 919,
+        "line_end": 954,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 14,
+        "pdf_destination": "lemma.2.5"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.AssociativePrimePowers.jacobsonTerm_polynomial",
+        "LieNotes.SuperRestricted.JacobsonPolynomials.coeff_adjointPolynomial",
+        "LieNotes.SuperRestricted.JacobsonPolynomials.jacobsonTerm",
+        "LieNotes.SuperRestricted.JacobsonPolynomials.jacobsonTerm_isLiePolynomial",
+        "LieNotes.SuperRestricted.JacobsonPolynomials.jacobsonTerm_spec"
+      ],
+      "title": "Over a field k of characteristic p > 0, for each 1 ≤ i ≤ p − 1 define the Lie polynomial s_i(x,y) by the requirement that i s_i(x,y) is the coefficient of t^(i−1) of (ad(tx + y))^(p−1)(x) with t a central formal variable. The formula gives Lie polynomials in any ordinary k-Lie algebra, in particular in the commutator Lie algebra of an associative k-algebra."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.RestrictedLie.RestrictedPower",
+        "LieNotes.SuperRestricted.RestrictedLie.isRestrictedPower_iff",
+        "LieNotes.SuperRestricted.RestrictedLie.restrict",
+        "LieNotes.SuperRestricted.RestrictedLie.subalgebra_inherits"
+      ],
+      "goal_ids": [
+        "SR06"
+      ],
+      "id": "LieTheoryDeepening:SR06",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR06",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 956,
+        "line_end": 969,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 15,
+        "pdf_destination": "definition.2.6"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.RestrictedLie.RestrictedPower",
+        "LieNotes.SuperRestricted.RestrictedLie.isRestrictedPower_iff",
+        "LieNotes.SuperRestricted.RestrictedLie.restrict",
+        "LieNotes.SuperRestricted.RestrictedLie.subalgebra_inherits"
+      ],
+      "title": "A restricted Lie algebra over a field k of characteristic p > 0 is an ordinary k-Lie algebra g with a map x ↦ x^[p] on g satisfying ad(x^[p]) = (ad x)^p, (a x)^[p] = a^p x^[p], and (x+y)^[p] = x^[p] + y^[p] + ∑_(i=1)^(p−1) s_i(x,y) for all x,y in g and a in k, using the Jacobson polynomials above. Every Lie subalgebra closed under the map inherits this restricted structure."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.RestrictedMatrices.coe_restrictedPower_apply",
+        "LieNotes.SuperRestricted.RestrictedMatrices.pow_mem_sl",
+        "LieNotes.SuperRestricted.RestrictedMatrices.restrictedPower",
+        "LieNotes.SuperRestricted.RestrictedMatrices.sl_admits_restrictedPower"
+      ],
+      "goal_ids": [
+        "SR07-Matrices"
+      ],
+      "id": "LieTheoryDeepening:SR07",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR07",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 971,
+        "line_end": 975,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 15,
+        "pdf_destination": "proposition.2.7"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.RestrictedMatrices.coe_restrictedPower_apply",
+        "LieNotes.SuperRestricted.RestrictedMatrices.pow_mem_sl",
+        "LieNotes.SuperRestricted.RestrictedMatrices.restrictedPower",
+        "LieNotes.SuperRestricted.RestrictedMatrices.sl_admits_restrictedPower"
+      ],
+      "title": "For k a field of characteristic p > 0, ordinary matrix p-th powers carry traceless n × n matrices to traceless matrices and furnish the restricted p-operation X^[p] = X^p on sl_n(k) with its commutator bracket."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.RestrictedDerivations.derivations_admit_restrictedPower"
+      ],
+      "goal_ids": [
+        "SR07-Derivations"
+      ],
+      "id": "LieTheoryDeepening:SR07_DERIVATIONS",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR07_DERIVATIONS",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 975,
+        "line_end": 977
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.RestrictedDerivations.derivations_admit_restrictedPower"
+      ],
+      "title": "For a commutative k-algebra A over a field k of characteristic p > 0, the Lie algebra Der_k(A) of k-linear derivations with commutator bracket is closed under composition p-th power in End_k(A), which supplies its restricted p-operation D^[p] = D^p."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.RestrictedWitt.proposition_SR07",
+        "LieNotes.SuperRestricted.RestrictedWitt.witt_admits_restrictedPower"
+      ],
+      "goal_ids": [
+        "SR07"
+      ],
+      "id": "LieTheoryDeepening:SR07_TRUNCATED_POLYNOMIAL_DERIVATIONS",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR07_TRUNCATED_POLYNOMIAL_DERIVATIONS",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 978,
+        "line_end": 1003
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.RestrictedWitt.proposition_SR07",
+        "LieNotes.SuperRestricted.RestrictedWitt.witt_admits_restrictedPower"
+      ],
+      "title": "For A = k[t]/(t^p) over a field of characteristic p > 0, the operators D_i = t^(i+1)d/dt for −1 ≤ i ≤ p−2 are the indicated basis of Der_k(A). With the composition restricted operation, D₀^[p] = D₀ and D_i^[p] = 0 for each i ≠ 0 in this index range."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:CTX_CHAPTER2_WITT_PRIOR_RESULT",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "CTX_CHAPTER2_WITT_PRIOR_RESULT",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1009,
+        "line_end": 1011
+      },
+      "source_declarations": [],
+      "title": "Reference to the older volume’s proof of simplicity and vanishing Killing form for the truncated Witt algebra when p > 3. The current proposition supplies its restricted operation."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.ReducedEnveloping.pCenter",
+        "LieNotes.SuperRestricted.ReducedEnveloping.pCenterElement",
+        "LieNotes.SuperRestricted.ReducedPbw.polynomialCenterAndReducedPbw",
+        "LieNotes.SuperRestricted.RestrictedCenter.pCenterElement_add",
+        "LieNotes.SuperRestricted.RestrictedCenter.pCenterElement_commute",
+        "LieNotes.SuperRestricted.RestrictedCenter.pCenterElement_smul",
+        "LieNotes.SuperRestricted.RestrictedCenter.pCenter_eq_adjoin_basis",
+        "LieNotes.SuperRestricted.RestrictedCenter.pCenter_le_center",
+        "LieNotes.SuperRestricted.RestrictedPolynomialBasis.polynomialBasis"
+      ],
+      "goal_ids": [
+        "SR08",
+        "SR08-Central",
+        "SR08-Definitions",
+        "SR08-PolynomialBasis"
+      ],
+      "id": "LieTheoryDeepening:SR08",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "SR08",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1016,
+        "line_end": 1026,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "theorem.2.8"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.ReducedEnveloping.pCenter",
+        "LieNotes.SuperRestricted.ReducedEnveloping.pCenterElement",
+        "LieNotes.SuperRestricted.ReducedPbw.polynomialCenterAndReducedPbw",
+        "LieNotes.SuperRestricted.RestrictedCenter.pCenterElement_add",
+        "LieNotes.SuperRestricted.RestrictedCenter.pCenterElement_commute",
+        "LieNotes.SuperRestricted.RestrictedCenter.pCenterElement_smul",
+        "LieNotes.SuperRestricted.RestrictedCenter.pCenter_eq_adjoin_basis",
+        "LieNotes.SuperRestricted.RestrictedCenter.pCenter_le_center",
+        "LieNotes.SuperRestricted.RestrictedPolynomialBasis.polynomialBasis"
+      ],
+      "title": "Let g be an n-dimensional restricted Lie algebra, n finite, over a field k of characteristic p > 0. For all x ∈ g define z(x) = x^p − x^[p] in U(g), using the canonical images of g. Each z(x) is central, and z(x+y) = z(x) + z(y) and z(a x) = a^p z(x) for all x,y and a. For any basis x₁,…,x_n the subalgebra Z_p generated by all z(x) is the polynomial algebra freely generated over k by z(x₁),…,z(x_n)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.RestrictedPolynomialBasis.centerBasis",
+        "LieNotes.SuperRestricted.RestrictedPolynomialBasis.polynomialBasis",
+        "LieNotes.SuperRestricted.RestrictedPolynomialBasis.restrictedMonomial"
+      ],
+      "goal_ids": [
+        "SR08-PolynomialBasis"
+      ],
+      "id": "LieTheoryDeepening:SR08_ENVELOPING_FREENESS",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR08_ENVELOPING_FREENESS",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1018,
+        "line_end": 1028
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.RestrictedPolynomialBasis.centerBasis",
+        "LieNotes.SuperRestricted.RestrictedPolynomialBasis.polynomialBasis",
+        "LieNotes.SuperRestricted.RestrictedPolynomialBasis.restrictedMonomial"
+      ],
+      "title": "For the same finite-dimensional restricted Lie algebra g and any ordered basis x₁,…,x_n, U(g) is free as a module over its central subalgebra Z_p on the monomials x₁^r₁⋯x_n^r_n with 0 ≤ r_i < p for all i."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.ReducedEnveloping.ReducedEnvelopingAlgebra",
+        "LieNotes.SuperRestricted.ReducedEnveloping.quotientMap",
+        "LieNotes.SuperRestricted.ReducedEnveloping.quotientMap_spec",
+        "LieNotes.SuperRestricted.ReducedEnveloping.reducedRelations",
+        "LieNotes.SuperRestricted.ReducedEnveloping.zeroCharacterEquiv",
+        "LieNotes.SuperRestricted.ReducedEnveloping.zeroCharacterEquiv_quotientMap"
+      ],
+      "goal_ids": [
+        "SR08-Definitions"
+      ],
+      "id": "LieTheoryDeepening:SR08_REDUCED_ENVELOPING",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR08_REDUCED_ENVELOPING",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1030,
+        "line_end": 1038
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.ReducedEnveloping.ReducedEnvelopingAlgebra",
+        "LieNotes.SuperRestricted.ReducedEnveloping.quotientMap",
+        "LieNotes.SuperRestricted.ReducedEnveloping.quotientMap_spec",
+        "LieNotes.SuperRestricted.ReducedEnveloping.reducedRelations",
+        "LieNotes.SuperRestricted.ReducedEnveloping.zeroCharacterEquiv",
+        "LieNotes.SuperRestricted.ReducedEnveloping.zeroCharacterEquiv_quotientMap"
+      ],
+      "title": "For each linear functional χ:g→k on an n-dimensional restricted Lie algebra over a field k of characteristic p > 0 with n finite, form the reduced enveloping algebra u_χ(g) = U(g)/(z(x) − χ(x)^p·1 : x ∈ g). At χ = 0 this is the restricted enveloping algebra, imposing x^p = x^[p] on the Lie generators."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.ReducedPbw.polynomialCenterAndReducedPbw",
+        "LieNotes.SuperRestricted.ReducedPbw.reducedBasis",
+        "LieNotes.SuperRestricted.ReducedPbw.reducedFinrank",
+        "LieNotes.SuperRestricted.ReducedPbw.reducedRelations_eq_span_basis"
+      ],
+      "goal_ids": [
+        "SR08"
+      ],
+      "id": "LieTheoryDeepening:SR08_REDUCED_PBW",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR08_REDUCED_PBW",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1030,
+        "line_end": 1038
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.ReducedPbw.polynomialCenterAndReducedPbw",
+        "LieNotes.SuperRestricted.ReducedPbw.reducedBasis",
+        "LieNotes.SuperRestricted.ReducedPbw.reducedFinrank",
+        "LieNotes.SuperRestricted.ReducedPbw.reducedRelations_eq_span_basis"
+      ],
+      "title": "For any such finite-dimensional g, any linear functional χ:g→k, and any ordered basis of g, the images in u_χ(g) of the ordered basis monomials with all exponents 0 ≤ r_i < p are a k-basis. Consequently dim_k u_χ(g) = p^n."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.PCharacter.existsUnique_pCharacter",
+        "LieNotes.SuperRestricted.PCharacter.simple_restrict_pCharacter"
+      ],
+      "goal_ids": [
+        "SR09"
+      ],
+      "id": "LieTheoryDeepening:SR09",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR09",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1074,
+        "line_end": 1082,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 16,
+        "pdf_destination": "corollary.2.9"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.PCharacter.existsUnique_pCharacter",
+        "LieNotes.SuperRestricted.PCharacter.simple_restrict_pCharacter"
+      ],
+      "title": "For a finite-dimensional restricted Lie algebra g over an algebraically closed field k of characteristic p > 0, every finite-dimensional simple g-module admits a unique linear functional χ:g→k such that its enveloping action factors through u_χ(g). Conversely every simple u_χ(g)-module restricts to a finite-dimensional simple g-module with that p-character χ."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:CTX_CHAPTER2_RESTRICTED_REFERENCES",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "CTX_CHAPTER2_RESTRICTED_REFERENCES",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1100,
+        "line_end": 1102
+      },
+      "source_declarations": [],
+      "title": "Bibliographic orientation for restricted identities and the reduced algebra."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.RestrictedSlTwo.basis",
+        "LieNotes.SuperRestricted.RestrictedSlTwo.brackets",
+        "LieNotes.SuperRestricted.RestrictedSlTwo.matrixRestrictedPowers"
+      ],
+      "goal_ids": [
+        "SR07-SL2"
+      ],
+      "id": "LieTheoryDeepening:SR_SL2_RESTRICTED_CONVENTIONS",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR_SL2_RESTRICTED_CONVENTIONS",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1104,
+        "line_end": 1113
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.RestrictedSlTwo.basis",
+        "LieNotes.SuperRestricted.RestrictedSlTwo.brackets",
+        "LieNotes.SuperRestricted.RestrictedSlTwo.matrixRestrictedPowers"
+      ],
+      "title": "Over an algebraically closed field k of characteristic p > 2, take the matrix-power restricted structure on sl₂(k) with basis e = E₁₂, f = E₂₁ and h = E₁₁ − E₂₂. The brackets are [h,e] = 2e, [h,f] = −2f and [e,f] = h, and e^[p] = f^[p] = 0 and h^[p] = h."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.BabyVermaInduction.BabyVerma",
+        "LieNotes.SuperRestricted.BabyVermaInduction.Induced",
+        "LieNotes.SuperRestricted.BabyVermaInduction.babyVermaInduction",
+        "LieNotes.SuperRestricted.BabyVermaInduction.borel",
+        "LieNotes.SuperRestricted.BabyVermaInduction.borelBasis",
+        "LieNotes.SuperRestricted.BabyVermaInduction.tensor_balance"
+      ],
+      "goal_ids": [
+        "SR10-Induced"
+      ],
+      "id": "LieTheoryDeepening:SR10",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR10",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1115,
+        "line_end": 1145,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "proposition.2.10"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.BabyVermaInduction.BabyVerma",
+        "LieNotes.SuperRestricted.BabyVermaInduction.Induced",
+        "LieNotes.SuperRestricted.BabyVermaInduction.babyVermaInduction",
+        "LieNotes.SuperRestricted.BabyVermaInduction.borel",
+        "LieNotes.SuperRestricted.BabyVermaInduction.borelBasis",
+        "LieNotes.SuperRestricted.BabyVermaInduction.tensor_balance"
+      ],
+      "title": "Over an algebraically closed field k of characteristic p > 2 for this restricted sl₂, assume χ(e) = 0 and set η = χ(h), ξ = χ(f). For each λ ∈ k satisfying λ^p − λ = η^p, the baby Verma u_χ(sl₂)-module Z_χ(λ) is induced from the one-dimensional reduced module of b = kh + ke with h acting by λ and e by zero. It has k-basis v_i = f^i v₀, 0 ≤ i < p, with hv_i = (λ − 2i)v_i, ev₀ = 0, ev_i = i(λ − i + 1)v_(i−1) for 1 ≤ i < p, fv_i = v_(i+1) for i < p−1, and fv_(p−1) = ξ^p v₀."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.BabyVermaQuotients.babyVermaQuotients"
+      ],
+      "goal_ids": [
+        "SR10"
+      ],
+      "id": "LieTheoryDeepening:SR10_SIMPLE_QUOTIENT_EXHAUSTION",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR10_SIMPLE_QUOTIENT_EXHAUSTION",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1117,
+        "line_end": 1130
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.BabyVermaQuotients.babyVermaQuotients"
+      ],
+      "title": "Over an algebraically closed field k of characteristic p > 2, for this restricted sl₂ and any χ with χ(e) = 0, every simple u_χ(sl₂)-module is a quotient of Z_χ(λ) for some root λ of λ^p − λ = χ(h)^p."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.BabyVermaZero.babyVermaZero",
+        "LieNotes.SuperRestricted.BabyVermaZero.primeFieldRoots",
+        "LieNotes.SuperRestricted.BabyVermaZero.simpleQuotient",
+        "LieNotes.SuperRestricted.BabyVermaZero.tail"
+      ],
+      "goal_ids": [
+        "SR11"
+      ],
+      "id": "LieTheoryDeepening:SR11",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.SuperRestricted",
+      "key": "SR11",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1161,
+        "line_end": 1168,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 17,
+        "pdf_destination": "theorem.2.11"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.BabyVermaZero.babyVermaZero",
+        "LieNotes.SuperRestricted.BabyVermaZero.primeFieldRoots",
+        "LieNotes.SuperRestricted.BabyVermaZero.simpleQuotient",
+        "LieNotes.SuperRestricted.BabyVermaZero.tail"
+      ],
+      "title": "Over an algebraically closed field k of characteristic p > 2, the simple u₀(sl₂)-modules up to isomorphism are the pairwise nonisomorphic modules L(m) for all integers 0 ≤ m < p, where m denotes its prime-field image as a highest weight. The unique simple quotient L(m) of Z₀(m) is the quotient by the span of v_(m+1),…,v_(p−1), with zero span for m = p−1, and has dimension m+1."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.BabyVermaNonzero.babyVermaNonzero",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.characterNormalForms",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.conjugation",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.moduleTransport",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.reducedConjugation",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.traceDuality",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.tracePairing"
+      ],
+      "goal_ids": [
+        "SR12",
+        "SR12-NormalForms"
+      ],
+      "id": "LieTheoryDeepening:SR12",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "SR12",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1191,
+        "line_end": 1244,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 18,
+        "pdf_destination": "theorem.2.12"
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.BabyVermaNonzero.babyVermaNonzero",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.characterNormalForms",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.conjugation",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.moduleTransport",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.reducedConjugation",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.traceDuality",
+        "LieNotes.SuperRestricted.SlTwoCharacterNormalForms.tracePairing"
+      ],
+      "title": "Over an algebraically closed field k of characteristic p > 2, every nonzero p-character χ of the matrix restricted sl₂(k) is carried by matrix conjugation to one of the two types: χ(e) = χ(f) = 0, χ(h) ≠ 0 (semisimple), or χ(e) = χ(h) = 0, χ(f) = 1 (nilpotent). The conjugation preserves bracket and p-operation and transports the corresponding reduced enveloping algebras and their modules with the character transported too."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.BabyVermaNonzero.babyVermaNonzero",
+        "LieNotes.SuperRestricted.BabyVermaQuotients.babyVermaQuotients",
+        "LieNotes.SuperRestricted.BabyVermaSemisimple.babyVermaSemisimple"
+      ],
+      "goal_ids": [
+        "SR10",
+        "SR12",
+        "SR12-Semisimple"
+      ],
+      "id": "LieTheoryDeepening:SR12_SEMISIMPLE_P_CHARACTER",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "SR12_SEMISIMPLE_P_CHARACTER",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1196,
+        "line_end": 1200
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.BabyVermaNonzero.babyVermaNonzero",
+        "LieNotes.SuperRestricted.BabyVermaQuotients.babyVermaQuotients",
+        "LieNotes.SuperRestricted.BabyVermaSemisimple.babyVermaSemisimple"
+      ],
+      "title": "Over an algebraically closed field k of characteristic p > 2, when χ(e) = χ(f) = 0 and η = χ(h) ≠ 0, λ^p − λ = η^p has p distinct roots. The p associated baby Verma modules Z_χ(λ) are simple, pairwise nonisomorphic, of dimension p each, and exhaust the simple u_χ(sl₂(k))-modules up to isomorphism."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.SuperRestricted.BabyVermaNilpotent.babyVermaNilpotent",
+        "LieNotes.SuperRestricted.BabyVermaNonzero.babyVermaNonzero",
+        "LieNotes.SuperRestricted.BabyVermaQuotients.babyVermaQuotients"
+      ],
+      "goal_ids": [
+        "SR10",
+        "SR12",
+        "SR12-Nilpotent"
+      ],
+      "id": "LieTheoryDeepening:SR12_NILPOTENT_P_CHARACTER",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "SR12_NILPOTENT_P_CHARACTER",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1202,
+        "line_end": 1207
+      },
+      "source_declarations": [
+        "LieNotes.SuperRestricted.BabyVermaNilpotent.babyVermaNilpotent",
+        "LieNotes.SuperRestricted.BabyVermaNonzero.babyVermaNonzero",
+        "LieNotes.SuperRestricted.BabyVermaQuotients.babyVermaQuotients"
+      ],
+      "title": "Over an algebraically closed field k of characteristic p > 2, when χ(e) = χ(h) = 0 and χ(f) = 1, all p baby Verma modules Z_χ(m) indexed by m in the prime field 𝔽_p are simple of dimension p and exhaust the simple u_χ(sl₂(k))-modules up to isomorphism. Z_χ(m) ≅ Z_χ(m′) exactly when m′ = m or m′ = −m−2, giving (p+1)/2 isomorphism classes."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:CTX_CHAPTER2_CLASSIFICATION_SCOPE",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "CTX_CHAPTER2_CLASSIFICATION_SCOPE",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1247,
+        "line_end": 1255
+      },
+      "source_declarations": [],
+      "title": "Bibliographic orientation for induction, and scope reminder limiting the classifications to complex gl(1|1) and sl₂ over algebraically closed fields in characteristic p > 2. General modular Lie algebras and higher-rank classifications are identified as further topics."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:UQ_CHAPTER_INTRODUCTION",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "UQ_CHAPTER_INTRODUCTION",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1256,
+        "line_end": 1268
+      },
+      "source_declarations": [],
+      "title": "The chapter introduces the type A₂ normal form, Hopf structure and skew classical limit. The referenced rank-one Hopf structure and finite-dimensional type-1 representation theory are prior-volume background."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.SerrePresentation.relationXY",
+        "LieNotes.Quantum.SerrePresentation.relationYX",
+        "LieNotes.Quantum.SerrePresentation.serrePolynomial"
+      ],
+      "goal_ids": [
+        "UQ01_Presentation"
+      ],
+      "id": "LieTheoryDeepening:UQ_SERRE_POLYNOMIAL",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Quantum",
+      "key": "UQ_SERRE_POLYNOMIAL",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1274,
+        "line_end": 1278
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.SerrePresentation.relationXY",
+        "LieNotes.Quantum.SerrePresentation.relationYX",
+        "LieNotes.Quantum.SerrePresentation.serrePolynomial"
+      ],
+      "title": "For a commutative coefficient ring A and a unit q in A, set c=q+q⁻¹ and define the noncommutative polynomial 𝒮(x,y)=x²y−cxyx+yx²."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.SerreBasis.baseChange_exists",
+        "LieNotes.Quantum.SerreBasis.basis_exists",
+        "LieNotes.Quantum.SerreBasis.orderedBaseChange_exists",
+        "LieNotes.Quantum.SerreBasis.orderedPresentation",
+        "LieNotes.Quantum.SerreBasis.relations",
+        "LieNotes.Quantum.SerrePresentation.SerreAlgebra",
+        "LieNotes.Quantum.SerrePresentation.relationXY_zero",
+        "LieNotes.Quantum.SerrePresentation.relationYX_zero",
+        "LieNotes.Quantum.SerrePresentation.serreIdeal",
+        "LieNotes.Quantum.SerrePresentation.universalProperty",
+        "LieNotes.Quantum.SerrePresentation.x",
+        "LieNotes.Quantum.SerrePresentation.y",
+        "LieNotes.Quantum.SerrePresentation.z"
+      ],
+      "goal_ids": [
+        "UQ01",
+        "UQ01_Presentation"
+      ],
+      "id": "LieTheoryDeepening:UQ01",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "UQ01",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1280,
+        "line_end": 1291,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 19,
+        "pdf_destination": "theorem.3.1"
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.SerreBasis.baseChange_exists",
+        "LieNotes.Quantum.SerreBasis.basis_exists",
+        "LieNotes.Quantum.SerreBasis.orderedBaseChange_exists",
+        "LieNotes.Quantum.SerreBasis.orderedPresentation",
+        "LieNotes.Quantum.SerreBasis.relations",
+        "LieNotes.Quantum.SerrePresentation.SerreAlgebra",
+        "LieNotes.Quantum.SerrePresentation.relationXY_zero",
+        "LieNotes.Quantum.SerrePresentation.relationYX_zero",
+        "LieNotes.Quantum.SerrePresentation.serreIdeal",
+        "LieNotes.Quantum.SerrePresentation.universalProperty",
+        "LieNotes.Quantum.SerrePresentation.x",
+        "LieNotes.Quantum.SerrePresentation.y",
+        "LieNotes.Quantum.SerrePresentation.z"
+      ],
+      "title": "For every commutative ring A and q∈Aˣ, the algebra A⟨x,y⟩/(𝒮(x,y),𝒮(y,x)) has the free A-basis xᵃzᵇyᵈ for all a,b,d≥0, with z=xy−q⁻¹yx. In this algebra xz=qzx, zy=qyz and yx=qxy−qz. For any base change A→A′ carrying q to a unit, the base-changed presentation is the indicated presentation over A′ and the displayed basis base-changes to the corresponding basis there."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.ClassicalPositive.classical_specialization",
+        "LieNotes.Quantum.ClassicalPositive.e12",
+        "LieNotes.Quantum.ClassicalPositive.e13",
+        "LieNotes.Quantum.ClassicalPositive.e23",
+        "LieNotes.Quantum.ClassicalPositive.positive",
+        "LieNotes.Quantum.ClassicalPositive.positive_le_sl",
+        "LieNotes.Quantum.ClassicalPositive.z_central",
+        "LieNotes.Quantum.ClassicalPositive.z_eq_lie"
+      ],
+      "goal_ids": [
+        "UQ01_ClassicalPositive"
+      ],
+      "id": "LieTheoryDeepening:UQ_POSITIVE_CLASSICAL_SPECIALIZATION",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Quantum",
+      "key": "UQ_POSITIVE_CLASSICAL_SPECIALIZATION",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1316,
+        "line_end": 1324
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.ClassicalPositive.classical_specialization",
+        "LieNotes.Quantum.ClassicalPositive.e12",
+        "LieNotes.Quantum.ClassicalPositive.e13",
+        "LieNotes.Quantum.ClassicalPositive.e23",
+        "LieNotes.Quantum.ClassicalPositive.positive",
+        "LieNotes.Quantum.ClassicalPositive.positive_le_sl",
+        "LieNotes.Quantum.ClassicalPositive.z_central",
+        "LieNotes.Quantum.ClassicalPositive.z_eq_lie"
+      ],
+      "title": "At q=1 the root element z becomes [x,y] and commutes with x and y. Under x↦e₁₂, y↦e₂₃ and z↦e₁₃, the specialized positive algebra is isomorphic to the enveloping algebra of the positive nilpotent subalgebra of matrix sl₃ over the coefficient ring."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.Presentation.B₀",
+        "LieNotes.Quantum.Presentation.Laurent",
+        "LieNotes.Quantum.Presentation.Root",
+        "LieNotes.Quantum.Presentation.TruncatedCartan",
+        "LieNotes.Quantum.Presentation.U",
+        "LieNotes.Quantum.Presentation.Uₙ",
+        "LieNotes.Quantum.Presentation.basicIdeal",
+        "LieNotes.Quantum.Presentation.basic_relations",
+        "LieNotes.Quantum.Presentation.basic_universal",
+        "LieNotes.Quantum.Presentation.cartanMatrix",
+        "LieNotes.Quantum.Presentation.dividedSinh",
+        "LieNotes.Quantum.Presentation.generic",
+        "LieNotes.Quantum.Presentation.generic_commute",
+        "LieNotes.Quantum.Presentation.generic_denominator_ne_zero",
+        "LieNotes.Quantum.Presentation.generic_scale",
+        "LieNotes.Quantum.Presentation.indeterminate",
+        "LieNotes.Quantum.Presentation.laurentBasis",
+        "LieNotes.Quantum.Presentation.laurentBasis_apply",
+        "LieNotes.Quantum.Presentation.mixed",
+        "LieNotes.Quantum.Presentation.polynomialBasis_apply",
+        "LieNotes.Quantum.Presentation.rationalQ",
+        "LieNotes.Quantum.Presentation.reduce",
+        "LieNotes.Quantum.Presentation.reduce_E",
+        "LieNotes.Quantum.Presentation.reduce_F",
+        "LieNotes.Quantum.Presentation.reduce_cartan",
+        "LieNotes.Quantum.Presentation.reduce_scalar",
+        "LieNotes.Quantum.Presentation.relations",
+        "LieNotes.Quantum.Presentation.serreIdeal",
+        "LieNotes.Quantum.Presentation.serre_relations",
+        "LieNotes.Quantum.Presentation.sinhRatio",
+        "LieNotes.Quantum.Presentation.truncated",
+        "LieNotes.Quantum.Presentation.truncatedD",
+        "LieNotes.Quantum.Presentation.truncatedK",
+        "LieNotes.Quantum.Presentation.truncatedQ",
+        "LieNotes.Quantum.Presentation.truncated_commute",
+        "LieNotes.Quantum.Presentation.truncated_scale",
+        "LieNotes.Quantum.Presentation.truncated_tau_H",
+        "LieNotes.Quantum.Presentation.universal",
+        "LieNotes.Quantum.Truncations.A",
+        "LieNotes.Quantum.Truncations.cartanTruncate",
+        "LieNotes.Quantum.Truncations.cartanTruncate_eq_sum",
+        "LieNotes.Quantum.Truncations.coeff_expH",
+        "LieNotes.Quantum.Truncations.expH",
+        "LieNotes.Quantum.Truncations.h",
+        "LieNotes.Quantum.Truncations.truncate"
+      ],
+      "goal_ids": [
+        "UQ02",
+        "UQ02_Truncations"
+      ],
+      "id": "LieTheoryDeepening:UQ02",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "UQ02",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1328,
+        "line_end": 1365,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 20,
+        "pdf_destination": "definition.3.2"
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.Presentation.B₀",
+        "LieNotes.Quantum.Presentation.Laurent",
+        "LieNotes.Quantum.Presentation.Root",
+        "LieNotes.Quantum.Presentation.TruncatedCartan",
+        "LieNotes.Quantum.Presentation.U",
+        "LieNotes.Quantum.Presentation.Uₙ",
+        "LieNotes.Quantum.Presentation.basicIdeal",
+        "LieNotes.Quantum.Presentation.basic_relations",
+        "LieNotes.Quantum.Presentation.basic_universal",
+        "LieNotes.Quantum.Presentation.cartanMatrix",
+        "LieNotes.Quantum.Presentation.dividedSinh",
+        "LieNotes.Quantum.Presentation.generic",
+        "LieNotes.Quantum.Presentation.generic_commute",
+        "LieNotes.Quantum.Presentation.generic_denominator_ne_zero",
+        "LieNotes.Quantum.Presentation.generic_scale",
+        "LieNotes.Quantum.Presentation.indeterminate",
+        "LieNotes.Quantum.Presentation.laurentBasis",
+        "LieNotes.Quantum.Presentation.laurentBasis_apply",
+        "LieNotes.Quantum.Presentation.mixed",
+        "LieNotes.Quantum.Presentation.polynomialBasis_apply",
+        "LieNotes.Quantum.Presentation.rationalQ",
+        "LieNotes.Quantum.Presentation.reduce",
+        "LieNotes.Quantum.Presentation.reduce_E",
+        "LieNotes.Quantum.Presentation.reduce_F",
+        "LieNotes.Quantum.Presentation.reduce_cartan",
+        "LieNotes.Quantum.Presentation.reduce_scalar",
+        "LieNotes.Quantum.Presentation.relations",
+        "LieNotes.Quantum.Presentation.serreIdeal",
+        "LieNotes.Quantum.Presentation.serre_relations",
+        "LieNotes.Quantum.Presentation.sinhRatio",
+        "LieNotes.Quantum.Presentation.truncated",
+        "LieNotes.Quantum.Presentation.truncatedD",
+        "LieNotes.Quantum.Presentation.truncatedK",
+        "LieNotes.Quantum.Presentation.truncatedQ",
+        "LieNotes.Quantum.Presentation.truncated_commute",
+        "LieNotes.Quantum.Presentation.truncated_scale",
+        "LieNotes.Quantum.Presentation.truncated_tau_H",
+        "LieNotes.Quantum.Presentation.universal",
+        "LieNotes.Quantum.Truncations.A",
+        "LieNotes.Quantum.Truncations.cartanTruncate",
+        "LieNotes.Quantum.Truncations.cartanTruncate_eq_sum",
+        "LieNotes.Quantum.Truncations.coeff_expH",
+        "LieNotes.Quantum.Truncations.expH",
+        "LieNotes.Quantum.Truncations.h",
+        "LieNotes.Quantum.Truncations.truncate"
+      ],
+      "title": "Let k be a field of characteristic zero and take the A₂ Cartan matrix (a_li) with diagonal entries 2 and off-diagonal entries −1. In the generic model A=k with q∈kˣ and q²≠1, or A=k(q) with q indeterminate, put T=A[K₁^{±1},K₂^{±1}], τ_i(K_l)=q^{a_li}K_l and D_i=(K_i−K_i⁻¹)/(q−q⁻¹). For each integer N≥1 the formal model has A=k[h]/(hᴺ), T=A[H₁,H₂], q=eʰ, K_i=e^{hH_i}, τ_i(H_l)=H_l+a_li, and D_i=[(sinh(hH_i)/h)/(sinh(h)/h)] mod hᴺ. The formal series are computed first in k[H₁,H₂][[h]], with the divided denominator having constant term 1. In both models the τ_i commute and satisfy τ_i(K_l)=q^{a_li}K_l. The A-algebra is generated by T and E_i,F_i for i=1,2, subject to the internal relations of T, tF_j=F_jτ_j⁻¹(t), E_i t=τ_i⁻¹(t)E_i and [E_i,F_j]=δ_ij D_i for every t∈T, and the Serre relations 𝒮(E_i,E_j)=𝒮(F_i,F_j)=0 for i≠j. Denote it by U in the generic case and U_N in each truncated case."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.BasicNormalForm.generic_normalForm",
+        "LieNotes.Quantum.BasicNormalForm.generic_symmetries",
+        "LieNotes.Quantum.BasicNormalForm.indeterminate_normalForm",
+        "LieNotes.Quantum.BasicNormalForm.indeterminate_symmetries",
+        "LieNotes.Quantum.BasicNormalForm.truncated_normalForm",
+        "LieNotes.Quantum.BasicNormalForm.truncated_symmetries",
+        "LieNotes.Quantum.Presentation.B₀",
+        "LieNotes.Quantum.Presentation.basic_universal",
+        "LieNotes.Quantum.PresentationSymmetries.generic_symmetries",
+        "LieNotes.Quantum.PresentationSymmetries.indeterminate_symmetries",
+        "LieNotes.Quantum.PresentationSymmetries.truncated_symmetries",
+        "Specs.LieNotes.Quantum.BasicNormalForm.normalFormEquiv_tmul"
+      ],
+      "goal_ids": [
+        "UQ02",
+        "UQ03",
+        "UQ03_Symmetries"
+      ],
+      "id": "LieTheoryDeepening:UQ03",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "UQ03",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1367,
+        "line_end": 1381,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 20,
+        "pdf_destination": "lemma.3.3"
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.BasicNormalForm.generic_normalForm",
+        "LieNotes.Quantum.BasicNormalForm.generic_symmetries",
+        "LieNotes.Quantum.BasicNormalForm.indeterminate_normalForm",
+        "LieNotes.Quantum.BasicNormalForm.indeterminate_symmetries",
+        "LieNotes.Quantum.BasicNormalForm.truncated_normalForm",
+        "LieNotes.Quantum.BasicNormalForm.truncated_symmetries",
+        "LieNotes.Quantum.Presentation.B₀",
+        "LieNotes.Quantum.Presentation.basic_universal",
+        "LieNotes.Quantum.PresentationSymmetries.generic_symmetries",
+        "LieNotes.Quantum.PresentationSymmetries.indeterminate_symmetries",
+        "LieNotes.Quantum.PresentationSymmetries.truncated_symmetries",
+        "Specs.LieNotes.Quantum.BasicNormalForm.normalFormEquiv_tmul"
+      ],
+      "title": "For either coefficient choice, let B₀ be the presented A-algebra on T,E_i,F_i with the basic Cartan and mixed relations only. Multiplication gives an A-module isomorphism A⟨F₁,F₂⟩⊗_A T⊗_A A⟨E₁,E₂⟩→B₀. There is an algebra involution ω interchanging E_i and F_i and taking K_i to K_i⁻¹ in the generic model or H_i to −H_i in the formal model. There is an algebra anti-involution η interchanging E_i and F_i and fixing T pointwise."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.BasicNormalForm.generic_normalForm",
+        "LieNotes.Quantum.BasicNormalForm.indeterminate_normalForm",
+        "LieNotes.Quantum.BasicNormalForm.truncated_normalForm",
+        "LieNotes.Quantum.SerreCrossCommutators.generic_crossCommutators",
+        "LieNotes.Quantum.SerreCrossCommutators.indeterminate_crossCommutators",
+        "LieNotes.Quantum.SerreCrossCommutators.truncated_crossCommutators",
+        "LieNotes.Quantum.SerreIdeal.generic_crossingSerreIdeal",
+        "LieNotes.Quantum.SerreIdeal.indeterminate_crossingSerreIdeal",
+        "LieNotes.Quantum.SerreIdeal.truncated_crossingSerreIdeal"
+      ],
+      "goal_ids": [
+        "UQ03",
+        "UQ04",
+        "UQ04_CrossCommutators"
+      ],
+      "id": "LieTheoryDeepening:UQ04",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "UQ04",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1419,
+        "line_end": 1428,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 21,
+        "pdf_destination": "lemma.3.4"
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.BasicNormalForm.generic_normalForm",
+        "LieNotes.Quantum.BasicNormalForm.indeterminate_normalForm",
+        "LieNotes.Quantum.BasicNormalForm.truncated_normalForm",
+        "LieNotes.Quantum.SerreCrossCommutators.generic_crossCommutators",
+        "LieNotes.Quantum.SerreCrossCommutators.indeterminate_crossCommutators",
+        "LieNotes.Quantum.SerreCrossCommutators.truncated_crossCommutators",
+        "LieNotes.Quantum.SerreIdeal.generic_crossingSerreIdeal",
+        "LieNotes.Quantum.SerreIdeal.indeterminate_crossingSerreIdeal",
+        "LieNotes.Quantum.SerreIdeal.truncated_crossingSerreIdeal"
+      ],
+      "title": "In B₀ for either coefficient choice, for every i≠j and l∈{1,2}, [𝒮(E_i,E_j),F_l]=0 and [𝒮(F_i,F_j),E_l]=0. Under the multiplication normal form, the two-sided ideal of B₀ generated by these positive and negative Serre polynomials is exactly J₋⊗_A T⊗_A A⟨E₁,E₂⟩ + A⟨F₁,F₂⟩⊗_A T⊗_A J₊, interpreted as the sum of the submodules given by the natural factor inclusions, where J₋ and J₊ are the corresponding two-sided ideals in the negative and positive free algebras."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.Presentation.laurentBasis_apply",
+        "LieNotes.Quantum.Presentation.polynomialBasis_apply",
+        "LieNotes.Quantum.TriangularPBW.generic",
+        "LieNotes.Quantum.TriangularPBW.indeterminate",
+        "LieNotes.Quantum.TriangularPBW.truncated",
+        "Specs.LieNotes.Quantum.TriangularPBW.multiplicationEquiv",
+        "Specs.LieNotes.Quantum.TriangularPBW.orderedMonomial"
+      ],
+      "goal_ids": [
+        "UQ02",
+        "UQ05"
+      ],
+      "id": "LieTheoryDeepening:UQ05",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "UQ05",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1485,
+        "line_end": 1498,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 22,
+        "pdf_destination": "theorem.3.5"
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.Presentation.laurentBasis_apply",
+        "LieNotes.Quantum.Presentation.polynomialBasis_apply",
+        "LieNotes.Quantum.TriangularPBW.generic",
+        "LieNotes.Quantum.TriangularPBW.indeterminate",
+        "LieNotes.Quantum.TriangularPBW.truncated",
+        "Specs.LieNotes.Quantum.TriangularPBW.multiplicationEquiv",
+        "Specs.LieNotes.Quantum.TriangularPBW.orderedMonomial"
+      ],
+      "title": "For either coefficient model, multiplication identifies the tensor product of the negative Serre algebra, T and the positive Serre algebra, in that order over A, with the quantum enveloping algebra as an A-module. With z₋=F₁F₂−q⁻¹F₂F₁ and z₊=E₁E₂−q⁻¹E₂E₁, the monomials F₁ᵃz₋ᵇF₂ᵈ T₀ E₁^{a′}z₊^{b′}E₂^{d′} form an A-basis, with each of the six root exponents independently nonnegative and T₀ ranging over K₁ᵐK₂ⁿ with m,n∈ℤ in the generic case or H₁ᵐH₂ⁿ with m,n≥0 in the formal case."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.TriangularPBW.generic_rankOne",
+        "LieNotes.Quantum.TriangularPBW.indeterminate_rankOne",
+        "Specs.LieNotes.Quantum.TriangularPBW.RankOne.QuantumAlgebra",
+        "Specs.LieNotes.Quantum.TriangularPBW.RankOne.subalgebra"
+      ],
+      "goal_ids": [
+        "UQ05"
+      ],
+      "id": "LieTheoryDeepening:UQ05_RANK_ONE",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Quantum",
+      "key": "UQ05_RANK_ONE",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1499,
+        "line_end": 1502
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.TriangularPBW.generic_rankOne",
+        "LieNotes.Quantum.TriangularPBW.indeterminate_rankOne",
+        "Specs.LieNotes.Quantum.TriangularPBW.RankOne.QuantumAlgebra",
+        "Specs.LieNotes.Quantum.TriangularPBW.RankOne.subalgebra"
+      ],
+      "title": "For each simple index i in the generic model, the map from U_q(sl₂) sending its standard F,K^{±1},E to F_i,K_i^{±1},E_i is an isomorphism onto the A-subalgebra generated by those images. The rank-one relations are KEK⁻¹=q²E, KFK⁻¹=q⁻²F and [E,F]=(K−K⁻¹)/(q−q⁻¹), with K invertible."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.AntipodeMap.genericAntipode_spec",
+        "LieNotes.Quantum.AntipodeMap.indeterminateAntipode_spec",
+        "LieNotes.Quantum.AntipodeMap.reduceAntipode_spec",
+        "LieNotes.Quantum.AntipodeMap.truncatedAntipode_spec",
+        "LieNotes.Quantum.Coproduct.generic_coproduct",
+        "LieNotes.Quantum.Coproduct.indeterminate_coproduct",
+        "LieNotes.Quantum.Coproduct.truncated_compatibility",
+        "LieNotes.Quantum.Coproduct.truncated_coproduct",
+        "LieNotes.Quantum.Hopf.generic_hopf",
+        "LieNotes.Quantum.Hopf.indeterminate_hopf",
+        "LieNotes.Quantum.Hopf.truncated_compatibility",
+        "LieNotes.Quantum.Hopf.truncated_hopf",
+        "Specs.LieNotes.Quantum.Hopf.Data.toHopfAlgebra"
+      ],
+      "goal_ids": [
+        "UQ06",
+        "UQ06_Antipode",
+        "UQ06_Coproduct"
+      ],
+      "id": "LieTheoryDeepening:UQ06",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "UQ06",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1519,
+        "line_end": 1537,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 22,
+        "pdf_destination": "theorem.3.6"
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.AntipodeMap.genericAntipode_spec",
+        "LieNotes.Quantum.AntipodeMap.indeterminateAntipode_spec",
+        "LieNotes.Quantum.AntipodeMap.reduceAntipode_spec",
+        "LieNotes.Quantum.AntipodeMap.truncatedAntipode_spec",
+        "LieNotes.Quantum.Coproduct.generic_coproduct",
+        "LieNotes.Quantum.Coproduct.indeterminate_coproduct",
+        "LieNotes.Quantum.Coproduct.truncated_compatibility",
+        "LieNotes.Quantum.Coproduct.truncated_coproduct",
+        "LieNotes.Quantum.Hopf.generic_hopf",
+        "LieNotes.Quantum.Hopf.indeterminate_hopf",
+        "LieNotes.Quantum.Hopf.truncated_compatibility",
+        "LieNotes.Quantum.Hopf.truncated_hopf",
+        "Specs.LieNotes.Quantum.Hopf.Data.toHopfAlgebra"
+      ],
+      "title": "The following prescriptions give Hopf algebras over A on both U and every U_N from UQ02. For each i, Δ(E_i)=E_i⊗1+K_i⊗E_i, Δ(F_i)=F_i⊗K_i⁻¹+1⊗F_i, ε(E_i)=ε(F_i)=0, S(E_i)=−K_i⁻¹E_i and S(F_i)=−F_iK_i. In the generic case K_i is group-like with counit 1 and antipode K_i⁻¹. In the formal case H_i is primitive with counit zero and antipode −H_i, and consequently K_i=e^{hH_i} is group-like. The antipodes are bijective, and the formal Hopf structures commute with all transition reductions in N."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.ClassicalLimit.classical_limit",
+        "LieNotes.Quantum.ClassicalLimit.equiv_formalE",
+        "LieNotes.Quantum.ClassicalLimit.equiv_formalF",
+        "LieNotes.Quantum.ClassicalLimit.equiv_formalH",
+        "LieNotes.Quantum.Completion.CompletedSquare",
+        "LieNotes.Quantum.Completion.Uh",
+        "LieNotes.Quantum.Completion.compatible_bases",
+        "LieNotes.Quantum.Completion.completed_hopf",
+        "LieNotes.Quantum.Completion.project",
+        "LieNotes.Quantum.Completion.reduction",
+        "LieNotes.Quantum.Completion.scalar_convolution",
+        "LieNotes.Quantum.Completion.series_coefficients",
+        "LieNotes.Quantum.Completion.series_description",
+        "LieNotes.Quantum.Completion.topological_algebras",
+        "LieNotes.Quantum.Completion.transition_laws",
+        "LieNotes.Quantum.MatrixSpecialization.levelOne_relations",
+        "LieNotes.Quantum.MatrixSpecialization.matrix_relations",
+        "LieNotes.Quantum.MatrixSpecialization.specialization"
+      ],
+      "goal_ids": [
+        "UQ07",
+        "UQ07_Completion",
+        "UQ07_MatrixSpecialization"
+      ],
+      "id": "LieTheoryDeepening:UQ07",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "UQ07",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1634,
+        "line_end": 1681,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 24,
+        "pdf_destination": "theorem.3.7"
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.ClassicalLimit.classical_limit",
+        "LieNotes.Quantum.ClassicalLimit.equiv_formalE",
+        "LieNotes.Quantum.ClassicalLimit.equiv_formalF",
+        "LieNotes.Quantum.ClassicalLimit.equiv_formalH",
+        "LieNotes.Quantum.Completion.CompletedSquare",
+        "LieNotes.Quantum.Completion.Uh",
+        "LieNotes.Quantum.Completion.compatible_bases",
+        "LieNotes.Quantum.Completion.completed_hopf",
+        "LieNotes.Quantum.Completion.project",
+        "LieNotes.Quantum.Completion.reduction",
+        "LieNotes.Quantum.Completion.scalar_convolution",
+        "LieNotes.Quantum.Completion.series_coefficients",
+        "LieNotes.Quantum.Completion.series_description",
+        "LieNotes.Quantum.Completion.topological_algebras",
+        "LieNotes.Quantum.Completion.transition_laws",
+        "LieNotes.Quantum.MatrixSpecialization.levelOne_relations",
+        "LieNotes.Quantum.MatrixSpecialization.matrix_relations",
+        "LieNotes.Quantum.MatrixSpecialization.specialization"
+      ],
+      "title": "For the compatible truncated formal algebras over characteristic-zero k, the inverse limit U_h=lim←_N U_N is a topologically free k[[h]]-module with the completed Hopf structure induced by UQ06. Its completed tensor square is lim←_N(U_N⊗_{k[h]/(hᴺ)}U_N). The reduction U_h/hU_h is isomorphic as a Hopf algebra to the ordinary U(sl₃(k)), with E₁,E₂,F₁,F₂ mapping to the matrix units e₁₂,e₂₃,e₂₁,e₃₂, respectively, and H_i mapping to e_{ii}−e_{i+1,i+1}. In the compatible PBW coordinates a series ∑_{n≥0}hⁿv_n has each v_n a finite k-linear combination of the common PBW monomials."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Coboundary.alternatingTensor_wedge₂",
+        "LieNotes.Coboundary.dualJacobi_iff_tensorCoJacobi",
+        "LieNotes.Quantum.Cobracket.cobracket",
+        "LieNotes.Quantum.RootCobracket.root_cobracket",
+        "LieNotes.Quantum.SkewReduction.skew_reduction"
+      ],
+      "goal_ids": [
+        "LD04",
+        "LD05_DualJacobi",
+        "UQ08",
+        "UQ08_RootValues",
+        "UQ08_SkewReduction"
+      ],
+      "id": "LieTheoryDeepening:UQ08",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "UQ08",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1684,
+        "line_end": 1712,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 24,
+        "pdf_destination": "theorem.3.8"
+      },
+      "source_declarations": [
+        "LieNotes.Coboundary.alternatingTensor_wedge₂",
+        "LieNotes.Coboundary.dualJacobi_iff_tensorCoJacobi",
+        "LieNotes.Quantum.Cobracket.cobracket",
+        "LieNotes.Quantum.RootCobracket.root_cobracket",
+        "LieNotes.Quantum.SkewReduction.skew_reduction"
+      ],
+      "title": "Over the characteristic-zero field k, in U_h/hU_h≅U(sl₃(k)), define the first-order skew coproduct on any x by δ(x)=[(Δ(X)−Δᵒᵖ(X))/h] mod h for any lift X∈U_h, where Δᵒᵖ exchanges tensor factors. This quotient is defined and independent of the lift. Its restriction to sl₃(k) is a Lie bialgebra cobracket with values in the skew Lie tensor square. For a∧b=a⊗b−b⊗a and e_i,f_i,h_i the images of E_i,F_i,H_i, its values are δ(h_i)=0, δ(e_i)=h_i∧e_i, δ(f_i)=h_i∧f_i, δ([e₁,e₂])=(h₁+h₂)∧[e₁,e₂]+2e₁∧e₂ and δ([f₁,f₂])=(h₁+h₂)∧[f₁,f₂]−2f₁∧f₂."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.MatrixCoboundary.cobracket_is_coboundary",
+        "LieNotes.Quantum.MatrixCoboundary.restriction_eq_coboundary",
+        "LieNotes.Quantum.MatrixCoboundary.standardTensor"
+      ],
+      "goal_ids": [
+        "UQ09"
+      ],
+      "id": "LieTheoryDeepening:UQ09",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Quantum",
+      "key": "UQ09",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1751,
+        "line_end": 1759,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 25,
+        "pdf_destination": "corollary.3.9"
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.MatrixCoboundary.cobracket_is_coboundary",
+        "LieNotes.Quantum.MatrixCoboundary.restriction_eq_coboundary",
+        "LieNotes.Quantum.MatrixCoboundary.standardTensor"
+      ],
+      "title": "In the matrix model of sl₃(k), the same cobracket of UQ08 satisfies δ(x)=ad_x(r) for every x∈sl₃(k), where the adjoint action is diagonal on tensors and r=−e₁₂∧e₂₁−e₂₃∧e₃₂−e₁₃∧e₃₁ with e_{ij} the matrix units."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:UQ_SOURCES",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "UQ_SOURCES",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1781,
+        "line_end": 1788
+      },
+      "source_declarations": [],
+      "title": "References and comparison with general Drinfeld–Jimbo presentations and quantization. They locate background for the type A₂ constructions and the skew convention."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:LD_CONTEXT_CONVENTIONS",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "LD_CONTEXT_CONVENTIONS",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1789,
+        "line_end": 1800
+      },
+      "source_declarations": [],
+      "title": "Chapter introduction and scope. The standing base is a characteristic-zero field k. The Chevalley–Eilenberg differential, changes of basis and obstruction-class conventions refer to Results I02–I03 in the cited Lie Algebras and Finite-Dimensional Representations."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Heisenberg.AdjointCohomology.d_formula",
+        "LieNotes.Heisenberg.AdjointCohomology.d_squared",
+        "LieNotes.Heisenberg.AdjointCohomology.dimensions",
+        "LieNotes.Heisenberg.AdjointCohomology.model_normal_form",
+        "LieNotes.Heisenberg.AdjointCohomology.normal_form",
+        "LieNotes.Heisenberg.basisLieEquiv",
+        "LieNotes.Heisenberg.basisLieEquiv_apply_basis",
+        "LieNotes.Heisenberg.basis_vectors",
+        "LieNotes.Heisenberg.bracket_table",
+        "LieNotes.Heisenberg.phi_pairs"
+      ],
+      "goal_ids": [
+        "LD01",
+        "LD01_Model"
+      ],
+      "id": "LieTheoryDeepening:LD01",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "LD01",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1804,
+        "line_end": 1816,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 26,
+        "pdf_destination": "proposition.4.1"
+      },
+      "source_declarations": [
+        "LieNotes.Heisenberg.AdjointCohomology.d_formula",
+        "LieNotes.Heisenberg.AdjointCohomology.d_squared",
+        "LieNotes.Heisenberg.AdjointCohomology.dimensions",
+        "LieNotes.Heisenberg.AdjointCohomology.model_normal_form",
+        "LieNotes.Heisenberg.AdjointCohomology.normal_form",
+        "LieNotes.Heisenberg.basisLieEquiv",
+        "LieNotes.Heisenberg.basisLieEquiv_apply_basis",
+        "LieNotes.Heisenberg.basis_vectors",
+        "LieNotes.Heisenberg.bracket_table",
+        "LieNotes.Heisenberg.phi_pairs"
+      ],
+      "title": "Let 𝔥 be the Lie algebra over a characteristic-zero field k with basis x,y,z, [x,y]=z and z central. With adjoint coefficients dimₖ H²(𝔥,𝔥)=5. Every degree-two class has a unique alternating cocycle representative φ with φ(x,y)=0, φ(x,z)=a x+b y+c z and φ(y,z)=d x−a y+e z. The five parameters a,b,c,d,e range freely over k."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Heisenberg.AdjointCohomology.cochains_four_zero",
+        "LieNotes.Heisenberg.AdjointCohomology.differential_two_image",
+        "LieNotes.Heisenberg.AdjointCohomology.dimensions",
+        "LieNotes.Heisenberg.AdjointCohomology.evaluation_three"
+      ],
+      "goal_ids": [
+        "LD01"
+      ],
+      "id": "LieTheoryDeepening:LD01_H3",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Heisenberg",
+      "key": "LD01_H3",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1804,
+        "line_end": 1819,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 26,
+        "pdf_destination": "proposition.4.1"
+      },
+      "source_declarations": [
+        "LieNotes.Heisenberg.AdjointCohomology.cochains_four_zero",
+        "LieNotes.Heisenberg.AdjointCohomology.differential_two_image",
+        "LieNotes.Heisenberg.AdjointCohomology.dimensions",
+        "LieNotes.Heisenberg.AdjointCohomology.evaluation_three"
+      ],
+      "title": "Let 𝔥 be the Lie algebra over a characteristic-zero field k with basis x,y,z, [x,y]=z and z central. With adjoint coefficients dimₖ H³(𝔥,𝔥)=2, and evaluation on (x,y,z), followed by quotient by kz, induces the isomorphism H³(𝔥,𝔥) ≅ 𝔥/kz."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Heisenberg.DeformationTransport.modTwoReductions",
+        "LieNotes.Heisenberg.DeformationTransport.tensorCoordinates",
+        "LieNotes.Heisenberg.DeformationTransport.truncatedTransport",
+        "LieNotes.Heisenberg.ExtensionLocus.extension_locus",
+        "LieNotes.Heisenberg.ExtensionLocus.normalized_extension",
+        "LieNotes.Heisenberg.NormalizedObstruction.obstruction_xyz",
+        "LieNotes.Heisenberg.NormalizedObstruction.order_two",
+        "LieNotes.Heisenberg.NormalizedObstruction.quotient_comparison",
+        "LieNotes.Heisenberg.basisLieEquiv"
+      ],
+      "goal_ids": [
+        "LD01_Model",
+        "LD02",
+        "LD02_Normalized",
+        "LD02_Transport"
+      ],
+      "id": "LieTheoryDeepening:LD02",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "LD02",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1853,
+        "line_end": 1860,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 27,
+        "pdf_destination": "theorem.4.2"
+      },
+      "source_declarations": [
+        "LieNotes.Heisenberg.DeformationTransport.modTwoReductions",
+        "LieNotes.Heisenberg.DeformationTransport.tensorCoordinates",
+        "LieNotes.Heisenberg.DeformationTransport.truncatedTransport",
+        "LieNotes.Heisenberg.ExtensionLocus.extension_locus",
+        "LieNotes.Heisenberg.ExtensionLocus.normalized_extension",
+        "LieNotes.Heisenberg.NormalizedObstruction.obstruction_xyz",
+        "LieNotes.Heisenberg.NormalizedObstruction.order_two",
+        "LieNotes.Heisenberg.NormalizedObstruction.quotient_comparison",
+        "LieNotes.Heisenberg.basisLieEquiv"
+      ],
+      "title": "Over characteristic-zero k, let a first-order bracket deformation of the three-dimensional Heisenberg algebra 𝔥 in LD01 be a Lie bracket [ , ]+tψ over k[t]/(t²). Write (a,b,c,d,e) for the coordinates of the unique normalized representative of the class of ψ. The deformation lifts to a Lie bracket deformation over k[t]/(t³) if and only if cd−ea=0 and eb+ca=0."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Heisenberg.DeformationTransport.actualExtensionsEquivalent",
+        "LieNotes.Heisenberg.DeformationTransport.formalTransport",
+        "LieNotes.Heisenberg.ExtensionLocus.extension_locus",
+        "LieNotes.Heisenberg.ExtensionLocus.normalized_extension",
+        "LieNotes.Heisenberg.NormalizedObstruction.extend_cochain",
+        "LieNotes.Heisenberg.NormalizedObstruction.polynomial_formal"
+      ],
+      "goal_ids": [
+        "LD02",
+        "LD02_Normalized",
+        "LD02_Transport"
+      ],
+      "id": "LieTheoryDeepening:LD02_POLYNOMIAL_AND_FORMAL_EXTENSION",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "LD02_POLYNOMIAL_AND_FORMAL_EXTENSION",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1855,
+        "line_end": 1894
+      },
+      "source_declarations": [
+        "LieNotes.Heisenberg.DeformationTransport.actualExtensionsEquivalent",
+        "LieNotes.Heisenberg.DeformationTransport.formalTransport",
+        "LieNotes.Heisenberg.ExtensionLocus.extension_locus",
+        "LieNotes.Heisenberg.ExtensionLocus.normalized_extension",
+        "LieNotes.Heisenberg.NormalizedObstruction.extend_cochain",
+        "LieNotes.Heisenberg.NormalizedObstruction.polynomial_formal"
+      ],
+      "title": "Over characteristic-zero k, for the normalized cocycle φ in LD01 with coordinates (a,b,c,d,e) satisfying cd−ea=eb+ca=0, the bracket [ , ]+tφ is a Lie bracket on 𝔥⊗ₖk[t] and furnishes a formal deformation over k[[t]] of the first-order class. Any representative of that first-order class has a formal extension, by the change-of-basis interpretation of the class."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Heisenberg.Examples.class_examples"
+      ],
+      "goal_ids": [
+        "LD03"
+      ],
+      "id": "LieTheoryDeepening:LD03",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Heisenberg",
+      "key": "LD03",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1896,
+        "line_end": 1901,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 27,
+        "pdf_destination": "example.4.3"
+      },
+      "source_declarations": [
+        "LieNotes.Heisenberg.Examples.class_examples"
+      ],
+      "title": "Over characteristic-zero k, for the Heisenberg basis x,y,z in LD01, let the alternating two-cochains φ₁ and φ₂ vanish on (x,y), with φ₁(x,z)=x, φ₁(y,z)=−y, φ₂(x,z)=0 and φ₂(y,z)=z. Their individual first-order classes extend formally. Their sum has a nonzero second-order obstruction to extension modulo t³."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Heisenberg.Examples.class_examples",
+        "LieNotes.Heisenberg.Examples.fibers"
+      ],
+      "goal_ids": [
+        "LD03"
+      ],
+      "id": "LieTheoryDeepening:LD03_GENERIC_SL2",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Heisenberg",
+      "key": "LD03_GENERIC_SL2",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1896,
+        "line_end": 1905,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 27,
+        "pdf_destination": "example.4.3"
+      },
+      "source_declarations": [
+        "LieNotes.Heisenberg.Examples.class_examples",
+        "LieNotes.Heisenberg.Examples.fibers"
+      ],
+      "title": "Over characteristic-zero k, the deformation [ , ]+tφ₁ of the Heisenberg algebra from LD03 specializes at t=0 to 𝔥. After scalar extension to the Laurent series field k((t)) it is isomorphic as a Lie algebra to 𝔰𝔩₂(k((t)))."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:LD_CONTEXT_ARTINIAN_DEFORMATION_REFERENCE",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "LD_CONTEXT_ARTINIAN_DEFORMATION_REFERENCE",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1919,
+        "line_end": 1922
+      },
+      "source_declarations": [],
+      "title": "Reference for the general Artinian-base obstruction formalism and explanation that the preceding calculation concerns one-parameter extensions."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Coboundary.dualBracket",
+        "LieNotes.Coboundary.dualBracket_apply",
+        "LieNotes.Coboundary.dualBracket_self",
+        "LieNotes.Coboundary.dualJacobi",
+        "LieNotes.Coboundary.exteriorAdjoint",
+        "LieNotes.Coboundary.exteriorAdjoint_wedge₂",
+        "LieNotes.Coboundary.isCobracketCocycle",
+        "LieNotes.Coboundary.isLieBialgebraCobracket",
+        "LieNotes.Coboundary.pairing_wedge₂_wedge₂",
+        "LieNotes.Coboundary.wedge₂",
+        "LieNotes.Coboundary.wedge₂_apply"
+      ],
+      "goal_ids": [
+        "LD04"
+      ],
+      "id": "LieTheoryDeepening:LD04",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+      "key": "LD04",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1926,
+        "line_end": 1938,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 28,
+        "pdf_destination": "definition.4.4"
+      },
+      "source_declarations": [
+        "LieNotes.Coboundary.dualBracket",
+        "LieNotes.Coboundary.dualBracket_apply",
+        "LieNotes.Coboundary.dualBracket_self",
+        "LieNotes.Coboundary.dualJacobi",
+        "LieNotes.Coboundary.exteriorAdjoint",
+        "LieNotes.Coboundary.exteriorAdjoint_wedge₂",
+        "LieNotes.Coboundary.isCobracketCocycle",
+        "LieNotes.Coboundary.isLieBialgebraCobracket",
+        "LieNotes.Coboundary.pairing_wedge₂_wedge₂",
+        "LieNotes.Coboundary.wedge₂",
+        "LieNotes.Coboundary.wedge₂_apply"
+      ],
+      "title": "For a finite-dimensional Lie algebra 𝔤 over a characteristic-zero field k, use the adjoint action x·(y∧z)=[x,y]∧z+y∧[x,z] on ∧²𝔤. A Lie bialgebra cobracket is a k-linear δ:𝔤→∧²𝔤 for which δ([x,y])=x·δ(y)−y·δ(x) for all x,y and the dual operation ⟨[α,β]δ,x⟩=⟨α∧β,δ(x)⟩ on 𝔤* is a Lie bracket."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Coboundary.coboundary",
+        "LieNotes.Coboundary.coboundary_apply",
+        "LieNotes.Coboundary.exteriorAdjoint_wedge₂"
+      ],
+      "goal_ids": [
+        "LD04"
+      ],
+      "id": "LieTheoryDeepening:LD04_COBOUNDARY_MAP",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+      "key": "LD04_COBOUNDARY_MAP",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1939,
+        "line_end": 1941
+      },
+      "source_declarations": [
+        "LieNotes.Coboundary.coboundary",
+        "LieNotes.Coboundary.coboundary_apply",
+        "LieNotes.Coboundary.exteriorAdjoint_wedge₂"
+      ],
+      "title": "For every bivector r∈∧²𝔤 in the finite-dimensional characteristic-zero setting of LD04, define its coboundary map by δᵣ(x)=x·r."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Coboundary.coboundary_isCocycle",
+        "LieNotes.Coboundary.exteriorAdjoint_wedge₂_lie"
+      ],
+      "goal_ids": [
+        "LD04_Cocycle"
+      ],
+      "id": "LieTheoryDeepening:LD04_COBOUNDARY_IS_COCYCLE",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+      "key": "LD04_COBOUNDARY_IS_COCYCLE",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1939,
+        "line_end": 1941
+      },
+      "source_declarations": [
+        "LieNotes.Coboundary.coboundary_isCocycle",
+        "LieNotes.Coboundary.exteriorAdjoint_wedge₂_lie"
+      ],
+      "title": "For every bivector r∈∧²𝔤 in the finite-dimensional characteristic-zero setting of LD04, δᵣ always satisfies δᵣ([x,y])=x·δᵣ(y)−y·δᵣ(x) for all x,y."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Coboundary.schouten",
+        "LieNotes.Coboundary.schouten_symmetric",
+        "LieNotes.Coboundary.schouten_wedge₂_wedge₂"
+      ],
+      "goal_ids": [
+        "LD05_Schouten"
+      ],
+      "id": "LieTheoryDeepening:LD05",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+      "key": "LD05",
+      "kind": "definition",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1943,
+        "line_end": 1952,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 28,
+        "pdf_destination": "proposition.4.5"
+      },
+      "source_declarations": [
+        "LieNotes.Coboundary.schouten",
+        "LieNotes.Coboundary.schouten_symmetric",
+        "LieNotes.Coboundary.schouten_wedge₂_wedge₂"
+      ],
+      "title": "In the finite-dimensional characteristic-zero setting of LD04, define the symmetric bilinear Schouten map ∧²𝔤×∧²𝔤→∧³𝔤 by [a∧b,c∧d]ₛ=[a,c]∧b∧d−[a,d]∧b∧c−[b,c]∧a∧d+[b,d]∧a∧c for every a,b,c,d∈𝔤."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Coboundary.coboundary_isLieBialgebra_iff_invariantSquare",
+        "LieNotes.Coboundary.cobracketDifferential_coboundary",
+        "LieNotes.Coboundary.dualJacobi_iff_cobracketDifferential",
+        "LieNotes.Coboundary.exteriorAdjoint_schouten",
+        "LieNotes.Coboundary.exteriorAdjoint_wedge₃"
+      ],
+      "goal_ids": [
+        "LD04",
+        "LD05",
+        "LD05_DualJacobi",
+        "LD05_Schouten"
+      ],
+      "id": "LieTheoryDeepening:LD05_INVARIANT_SQUARE_CRITERION",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "LD05_INVARIANT_SQUARE_CRITERION",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1943,
+        "line_end": 1956,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 28,
+        "pdf_destination": "proposition.4.5"
+      },
+      "source_declarations": [
+        "LieNotes.Coboundary.coboundary_isLieBialgebra_iff_invariantSquare",
+        "LieNotes.Coboundary.cobracketDifferential_coboundary",
+        "LieNotes.Coboundary.dualJacobi_iff_cobracketDifferential",
+        "LieNotes.Coboundary.exteriorAdjoint_schouten",
+        "LieNotes.Coboundary.exteriorAdjoint_wedge₃"
+      ],
+      "title": "For every r∈∧²𝔤, with 𝔤 finite-dimensional over characteristic-zero k, the coboundary map δᵣ is a Lie bialgebra cobracket if and only if [r,r]ₛ is fixed by the adjoint action on ∧³𝔤, that is x·[r,r]ₛ=0 for every x∈𝔤."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Coboundary.SplitRankOne.r₁",
+        "LieNotes.Coboundary.SplitRankOne.standardCobracket"
+      ],
+      "goal_ids": [
+        "LD06"
+      ],
+      "id": "LieTheoryDeepening:LD06",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+      "key": "LD06",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1997,
+        "line_end": 2004,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 28,
+        "pdf_destination": "example.4.6"
+      },
+      "source_declarations": [
+        "LieNotes.Coboundary.SplitRankOne.r₁",
+        "LieNotes.Coboundary.SplitRankOne.standardCobracket"
+      ],
+      "title": "For the characteristic-zero split rank-one Lie algebra with basis H,E,F and [H,E]=2E, [H,F]=−2F, [E,F]=H, the bivector r₁=F∧E gives a Lie bialgebra cobracket with δᵣ₁(H)=0, δᵣ₁(E)=H∧E and δᵣ₁(F)=H∧F."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Coboundary.SplitRankOne.r₂",
+        "LieNotes.Coboundary.SplitRankOne.triangularCobracket"
+      ],
+      "goal_ids": [
+        "LD06"
+      ],
+      "id": "LieTheoryDeepening:LD06_SPLIT_RANK_ONE_SECOND_COBRACKET",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+      "key": "LD06_SPLIT_RANK_ONE_SECOND_COBRACKET",
+      "kind": "example",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1997,
+        "line_end": 2008,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 28,
+        "pdf_destination": "example.4.6"
+      },
+      "source_declarations": [
+        "LieNotes.Coboundary.SplitRankOne.r₂",
+        "LieNotes.Coboundary.SplitRankOne.triangularCobracket"
+      ],
+      "title": "For the characteristic-zero split rank-one Lie algebra with basis H,E,F and [H,E]=2E, [H,F]=−2F, [E,F]=H, the bivector r₂=H∧E has Schouten square zero and gives a Lie bialgebra cobracket with δᵣ₂(H)=2H∧E, δᵣ₂(E)=0 and δᵣ₂(F)=−2E∧F."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.BialgebraDeformation.Laws",
+        "LieNotes.BialgebraDeformation.Linearized",
+        "LieNotes.BialgebraDeformation.coefficient_decomposition",
+        "LieNotes.BialgebraDeformation.deformedComul",
+        "LieNotes.BialgebraDeformation.deformedMul",
+        "LieNotes.BialgebraDeformation.fixedCounit",
+        "LieNotes.BialgebraDeformation.fixedUnit",
+        "LieNotes.BialgebraDeformation.jet",
+        "LieNotes.BialgebraDeformation.laws_iff"
+      ],
+      "goal_ids": [
+        "LD07"
+      ],
+      "id": "LieTheoryDeepening:LD07",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.BialgebraDeformation",
+      "key": "LD07",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 2026,
+        "line_end": 2045,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 29,
+        "pdf_destination": "proposition.4.7"
+      },
+      "source_declarations": [
+        "LieNotes.BialgebraDeformation.Laws",
+        "LieNotes.BialgebraDeformation.Linearized",
+        "LieNotes.BialgebraDeformation.coefficient_decomposition",
+        "LieNotes.BialgebraDeformation.deformedComul",
+        "LieNotes.BialgebraDeformation.deformedMul",
+        "LieNotes.BialgebraDeformation.fixedCounit",
+        "LieNotes.BialgebraDeformation.fixedUnit",
+        "LieNotes.BialgebraDeformation.jet",
+        "LieNotes.BialgebraDeformation.laws_iff"
+      ],
+      "title": "Let B be a bialgebra over characteristic-zero k with multiplication m, coproduct Δ, unit 1, and counit ε. For k-linear f:B⊗B→B and g:B→B⊗B, put mₛ=m+sf and Δₛ=Δ+sg over k[s]/(s²), fixing the unit and counit. Write J=id⊗τ⊗id for the swap of the middle tensor positions in B^⊗4. The deformed identities hold precisely when the following equations all hold. The normalization equations are f(1,b)=f(b,1)=0 for every b, εf=0, g(1)=0, and (ε⊗id)g=(id⊗ε)g=0. Linearized associativity is a f(b,c)−f(ab,c)+f(a,bc)−f(a,b)c=0 for every a,b,c. Linearized coassociativity is (Δ⊗id)g+(g⊗id)Δ−(id⊗Δ)g−(id⊗g)Δ=0. Linearized compatibility is Δf+gm=(f⊗m+m⊗f)J(Δ⊗Δ)+(m⊗m)J(g⊗Δ+Δ⊗g)."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.BialgebraDeformation.allowed_iff",
+        "LieNotes.BialgebraDeformation.changedComul",
+        "LieNotes.BialgebraDeformation.changedMul",
+        "LieNotes.BialgebraDeformation.coordinate_change",
+        "LieNotes.BialgebraDeformation.equivalent_iff",
+        "LieNotes.BialgebraDeformation.pullback"
+      ],
+      "goal_ids": [
+        "LD07"
+      ],
+      "id": "LieTheoryDeepening:LD07_LINEARIZED_PULLBACK",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.BialgebraDeformation",
+      "key": "LD07_LINEARIZED_PULLBACK",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 2026,
+        "line_end": 2054,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 29,
+        "pdf_destination": "proposition.4.7"
+      },
+      "source_declarations": [
+        "LieNotes.BialgebraDeformation.allowed_iff",
+        "LieNotes.BialgebraDeformation.changedComul",
+        "LieNotes.BialgebraDeformation.changedMul",
+        "LieNotes.BialgebraDeformation.coordinate_change",
+        "LieNotes.BialgebraDeformation.equivalent_iff",
+        "LieNotes.BialgebraDeformation.pullback"
+      ],
+      "title": "In the characteristic-zero fixed-unit-and-counit setting of LD07, for every k-linear u:B→B with u(1)=0 and ε∘u=0, pulling back by id+su changes the multiplication and coproduct cochains to f+m(u⊗id+id⊗u)−um and g+Δu−(u⊗id+id⊗u)Δ, respectively. These provide the normalized first-order changes of coordinates (2074–2075)."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:LD_CONTEXT_BIALGEBRA_COMPLEX_REFERENCE",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "LD_CONTEXT_BIALGEBRA_COMPLEX_REFERENCE",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 2076,
+        "line_end": 2077
+      },
+      "source_declarations": [],
+      "title": "Reference to Markl for general bialgebra cohomology and higher brackets."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.BialgebraDeformation.CompletedPlaneHopf",
+        "LieNotes.BialgebraDeformation.completedPlaneHopf",
+        "LieNotes.BialgebraDeformation.polynomialCompletion",
+        "LieNotes.BialgebraDeformation.seriesAdicTopology",
+        "LieNotes.BialgebraDeformation.seriesTensorMaps",
+        "LieNotes.BialgebraDeformation.tensorCompletion",
+        "LieNotes.BialgebraDeformation.tensorTruncation"
+      ],
+      "goal_ids": [
+        "LD08_CompletedHopf",
+        "LD08_CompletedMaps"
+      ],
+      "id": "LieTheoryDeepening:LD08",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "LD08",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 2079,
+        "line_end": 2088,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 29,
+        "pdf_destination": "theorem.4.8"
+      },
+      "source_declarations": [
+        "LieNotes.BialgebraDeformation.CompletedPlaneHopf",
+        "LieNotes.BialgebraDeformation.completedPlaneHopf",
+        "LieNotes.BialgebraDeformation.polynomialCompletion",
+        "LieNotes.BialgebraDeformation.seriesAdicTopology",
+        "LieNotes.BialgebraDeformation.seriesTensorMaps",
+        "LieNotes.BialgebraDeformation.tensorCompletion",
+        "LieNotes.BialgebraDeformation.tensorTruncation"
+      ],
+      "title": "Let k be a characteristic-zero field and B=k[x,y] with its primitive-generator polynomial Hopf structure. With the original multiplication, its t-adic completion B[[t]] admits a continuous Hopf structure over k[[t]], reducing to the original at t=0. Its coproduct into the completed tensor product (B⊗ₖ B)[[t]] is determined by Δₜ(x)=x⊗1+1⊗x and Δₜ(y)=y⊗1+exp(tx)⊗y, and its counit vanishes on x,y."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.BialgebraDeformation.completedPlaneHopf",
+        "LieNotes.BialgebraDeformation.equivalent_iff",
+        "LieNotes.BialgebraDeformation.firstOrderSeries_reduction",
+        "LieNotes.BialgebraDeformation.firstOrderSeries_tensor",
+        "LieNotes.BialgebraDeformation.nontrivialPolynomial"
+      ],
+      "goal_ids": [
+        "LD07",
+        "LD08",
+        "LD08_CompletedHopf"
+      ],
+      "id": "LieTheoryDeepening:LD08_NONTRIVIAL_FIRST_ORDER_CLASS",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "LD08_NONTRIVIAL_FIRST_ORDER_CLASS",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 2079,
+        "line_end": 2089,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 29,
+        "pdf_destination": "theorem.4.8"
+      },
+      "source_declarations": [
+        "LieNotes.BialgebraDeformation.completedPlaneHopf",
+        "LieNotes.BialgebraDeformation.equivalent_iff",
+        "LieNotes.BialgebraDeformation.firstOrderSeries_reduction",
+        "LieNotes.BialgebraDeformation.firstOrderSeries_tensor",
+        "LieNotes.BialgebraDeformation.nontrivialPolynomial"
+      ],
+      "title": "The specified formal Hopf deformation of B=k[x,y] over characteristic-zero k in LD08 has nonzero first-order bialgebra deformation class. In the fixed-unit-and-counit deformation setting of LD07, its reduction modulo t² and the undeformed bialgebra belong to distinct gauge classes under linear changes congruent to the identity modulo t."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.BialgebraDeformation.PrimitiveDegreeOne",
+        "LieNotes.BialgebraDeformation.firstOrderPlaneComul",
+        "LieNotes.BialgebraDeformation.nontrivialPolynomial",
+        "LieNotes.Coboundary.alternatingTensor_wedge₂"
+      ],
+      "goal_ids": [
+        "LD04",
+        "LD08"
+      ],
+      "id": "LieTheoryDeepening:LD08_SKEW_LINEARIZED_COBRACKET",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "LD08_SKEW_LINEARIZED_COBRACKET",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 2079,
+        "line_end": 2123,
+        "pdf_file": "docs/notes/LieTheoryDeepening/topics-in-lie-theory.pdf",
+        "pdf_page": 29,
+        "pdf_destination": "theorem.4.8"
+      },
+      "source_declarations": [
+        "LieNotes.BialgebraDeformation.PrimitiveDegreeOne",
+        "LieNotes.BialgebraDeformation.firstOrderPlaneComul",
+        "LieNotes.BialgebraDeformation.nontrivialPolynomial",
+        "LieNotes.Coboundary.alternatingTensor_wedge₂"
+      ],
+      "title": "For the specified formal Hopf deformation of B=k[x,y] over characteristic-zero k in LD08, the coefficient at order t of Δₜ−Δₜᵒᵖ, with u∧v represented by u⊗v−v⊗u, gives on the degree-one primitive span of x,y the cobracket δ(x)=0 and δ(y)=x∧y. The span of x,y, equipped with its abelian Lie bracket, thereby carries a Lie bialgebra structure."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:LD_CONTEXT_QUANTIZATION_REFERENCE",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "LD_CONTEXT_QUANTIZATION_REFERENCE",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 2125,
+        "line_end": 2128
+      },
+      "source_declarations": [],
+      "title": "Reference to the definition and general existence theorem of Etingof–Kazhdan for quantization with a prescribed Lie bialgebra and classical limit."
+    },
+    {
+      "aliases": [],
+      "declarations": [],
+      "goal_ids": [],
+      "id": "LieTheoryDeepening:PAPER_BIBLIOGRAPHY",
+      "import": "MathGenome.LieTheoryDeepening",
+      "key": "PAPER_BIBLIOGRAPHY",
+      "kind": "context",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 2129,
+        "line_end": 2219
+      },
+      "source_declarations": [],
+      "title": "Backmatter and bibliography listing external sources and cross-volume references."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Quantum.SerreBasis.orderedPresentation"
+      ],
+      "goal_ids": [
+        "UQ01"
+      ],
+      "id": "LieTheoryDeepening:additional:1:UQ01_ORDERED_PRESENTATION",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Quantum",
+      "key": "additional:1:UQ01_ORDERED_PRESENTATION",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1293,
+        "line_end": 1298
+      },
+      "source_declarations": [
+        "LieNotes.Quantum.SerreBasis.orderedPresentation"
+      ],
+      "title": "Over any commutative A with q a unit, the ordered quotient on x,z,y with xz=qzx, zy=qyz, yx=qxy−qz is isomorphic to the two-generator Serre quotient under z=xy−q⁻¹yx and the same x,y."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Coboundary.exteriorAdjoint_schouten"
+      ],
+      "goal_ids": [
+        "LD05_Schouten"
+      ],
+      "id": "LieTheoryDeepening:additional:1:LD05_SCHOUTEN_ADJOINT_EQUIVARIANCE",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+      "key": "additional:1:LD05_SCHOUTEN_ADJOINT_EQUIVARIANCE",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1962,
+        "line_end": 1968
+      },
+      "source_declarations": [
+        "LieNotes.Coboundary.exteriorAdjoint_schouten"
+      ],
+      "title": "The exterior adjoint differentiates the Schouten map on bivectors, x·[r,s]ₛ=[x·r,s]ₛ+[r,x·s]ₛ."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.Coboundary.cobracketDifferential_wedge₂",
+        "LieNotes.Coboundary.dualJacobi_iff_cobracketDifferential",
+        "LieNotes.Coboundary.pairing_cobracketDifferential"
+      ],
+      "goal_ids": [
+        "LD05_DualJacobi"
+      ],
+      "id": "LieTheoryDeepening:additional:1:LD05_EXTERIOR_DUAL_JACOBI",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.Coboundary",
+      "key": "additional:1:LD05_EXTERIOR_DUAL_JACOBI",
+      "kind": "result",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 1970,
+        "line_end": 1982
+      },
+      "source_declarations": [
+        "LieNotes.Coboundary.cobracketDifferential_wedge₂",
+        "LieNotes.Coboundary.dualJacobi_iff_cobracketDifferential",
+        "LieNotes.Coboundary.pairing_cobracketDifferential"
+      ],
+      "title": "For a linear exterior-square cobracket δ, the linear extension ∂δ(y∧z)=δ(y)∧z−y∧δ(z) satisfies ∂δ∘δ=0 exactly when the determinant-dual bracket satisfies Jacobi."
+    },
+    {
+      "aliases": [],
+      "declarations": [
+        "LieNotes.BialgebraDeformation.completedPlaneHopf"
+      ],
+      "goal_ids": [
+        "LD08_CompletedHopf"
+      ],
+      "id": "LieTheoryDeepening:additional:1:LD08_COMPLETED_ANTIPODE",
+      "import": "MathGenome.LieTheoryDeepening.Topics.LieNotes.BialgebraDeformation",
+      "key": "additional:1:LD08_COMPLETED_ANTIPODE",
+      "kind": "construction",
+      "preferred_mathlib_interfaces": [],
+      "source": {
+        "file": "docs/sources/LieTheoryDeepening/paper.tex",
+        "line": 2095,
+        "line_end": 2108
+      },
+      "source_declarations": [
+        "LieNotes.BialgebraDeformation.completedPlaneHopf"
+      ],
+      "title": "The continuous antipode in the completed polynomial Hopf deformation sends x to −x and y to −exp(−tx)y, and satisfies both convolution identities."
     }
   ],
   "environment": {
@@ -300481,7 +303811,7 @@
       "verified_bridge"
     ]
   },
-  "release": "0.31.0",
+  "release": "0.32.0",
   "scope": "Fixed Mathlib plus audited D05 linear algebra, corrected D07 abstract algebra and D03 single-variable analysis. Public entries describe stable result families; all source-coverage records and proof-route scope dispositions remain separately archived. Added source-audited component MultivariableAnalysis. Added source-audited component PointSetTopology. Added source-audited component RealAnalysis. Added source-audited component ComplexAnalysis. Added source-audited component ODEDynamics. Added source-audited component FunctionalAnalysis. Added source-audited component FourierSobolev. Added source-audited component AlgebraCore. Added source-audited component SmoothManifolds. Added source-audited component ProbabilityFoundations. Added source-audited component VariationalMethods. Added source-audited component LinearPDE. Added source-audited component TopologyRiemannianGeometry. Added source-audited component ElementaryNumberTheory. Added source-audited component FiniteCombinatorics. Added source-audited component ExtremalOptimization. Added source-audited component NumericalAnalysis. Added source-audited component DiscreteMarkovMartingales. Added source-audited component AdvancedCommutativeAlgebra. Added four source-audited algebra components with independent public imports. Added source-audited component LinearAlgebraSupplement. Added source-audited component GroupTheorySupplement.",
   "supplemental_entries": [
     {
@@ -301827,10 +305157,11 @@
     "declarations/022.json",
     "declarations/023.json",
     "declarations/024.json",
-    "declarations/025.json"
+    "declarations/025.json",
+    "declarations/026.json"
   ],
   "distribution": {
-    "release": "v0.31.0",
-    "archived_context_entries_omitted": 119
+    "release": "v0.32.0",
+    "archived_context_entries_omitted": 124
   }
 }

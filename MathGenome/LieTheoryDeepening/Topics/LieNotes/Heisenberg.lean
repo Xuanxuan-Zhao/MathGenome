@@ -1,0 +1,6 @@
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.Heisenberg.AdjointCohomology
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.Heisenberg.Basic
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.Heisenberg.DeformationTransport
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.Heisenberg.Examples
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.Heisenberg.ExtensionLocus
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.Heisenberg.NormalizedObstruction

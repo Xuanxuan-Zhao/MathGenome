@@ -1,3 +1,9 @@
+# 0.32.0 — Topics in Lie Theory
+
+- Add the ALG-08 deepening development with 95 checked proof goals across 43 numbered lecture results.
+- Cover infinite-dimensional Lie algebras, Lie superalgebras and restricted Lie algebras, Lie bialgebras, quantization, and deformation theory.
+- Add `MathGenome.LieTheoryDeepening`, the 31-page PDF, LaTeX, and reviewed source links.
+
 # 0.31.0 — Topics in Representation Theory
 
 - Add the ALG-07 deepening development with 192 checked proof goals across 58 numbered lecture results.

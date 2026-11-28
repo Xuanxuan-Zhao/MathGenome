@@ -15,7 +15,7 @@ MathGenome 是一座可查阅、可核验的数学知识库，收录用 Lean 形
 
 [Explore MathGenome](https://mathgenome.org).
 
-The current release, v0.31.0, adds Topics in Representation Theory, extending the ALG-07 collection.
+The current release, v0.32.0, adds Topics in Lie Theory, extending the ALG-08 collection.
 
 ## Library
 
@@ -55,6 +55,7 @@ The current release, v0.31.0, adds Topics in Representation Theory, extending th
 | Topics in Homological Algebra | `MathGenome.HomologicalAlgebraDeepening` |
 | Topics in Field and Galois Theory | `MathGenome.FieldAndGaloisTheoryDeepening` |
 | Topics in Representation Theory | `MathGenome.RepresentationTheoryDeepening` |
+| Topics in Lie Theory | `MathGenome.LieTheoryDeepening` |
 
 The [lecture notes index](docs/NOTES.md) links the PDF and LaTeX sources for each
 subject. The [revised notes edition registry](docs/notes-revisions/v0.13.0/index.json)
@@ -67,8 +68,8 @@ declaration from the repository root with Python 3:
 python tools/search.py Brouwer
 ```
 
-For full declaration search, download `mathgenome-v0.31.0-declarations.zip`
-from the [v0.31.0 Release](https://github.com/Xuanxuan-Zhao/MathGenome/releases/tag/v0.31.0)
+For full declaration search, download `mathgenome-v0.32.0-declarations.zip`
+from the [v0.32.0 Release](https://github.com/Xuanxuan-Zhao/MathGenome/releases/tag/v0.32.0)
 and save it in `catalog/`. The search tool reads the ZIP directly.
 
 ```sh
@@ -99,10 +100,10 @@ dependencies.
 ## Use in a Lean project
 
 Use the same Lean toolchain and pin MathGenome to a release tag in your
-`lakefile.lean`. For v0.31.0, add this dependency and run `lake update`.
+`lakefile.lean`. For v0.32.0, add this dependency and run `lake update`.
 
 ```lean
-require mathGenome from git "https://github.com/Xuanxuan-Zhao/MathGenome.git" @ "v0.31.0"
+require mathGenome from git "https://github.com/Xuanxuan-Zhao/MathGenome.git" @ "v0.32.0"
 ```
 
 Then import the subject you need.

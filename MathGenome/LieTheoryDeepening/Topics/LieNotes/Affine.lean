@@ -1,0 +1,3 @@
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.Affine.CartanRealization
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.Affine.ContragredientComparison
+import MathGenome.Internal.LieTheoryDeepening.LieNotes.Affine.NoCartanDisjointIdeals
