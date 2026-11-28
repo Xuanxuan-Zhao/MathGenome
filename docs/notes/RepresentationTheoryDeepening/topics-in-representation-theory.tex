@@ -1,0 +1,2725 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1.10in,includeheadfoot]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,xcolor,titlesec,fancyhdr,etoolbox,needspace}
+\usepackage{hyperref}
+
+\ifdefined\pdftrailerid
+  \pdftrailerid{MathGenome Topics in Representation Theory}
+\fi
+\definecolor{ink}{HTML}{172923}
+\definecolor{deepgreen}{HTML}{2B5242}
+\definecolor{rulegreen}{HTML}{8A9F92}
+\hypersetup{colorlinks=true,linkcolor=deepgreen,urlcolor=deepgreen,citecolor=deepgreen,
+  pdftitle={Topics in Representation Theory},pdfauthor={MathGenome},
+  pdfsubject={ALG-07-D01 through ALG-07-D05},bookmarksnumbered=true}
+\setcounter{tocdepth}{1}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+\newcommand{\runningchapter}{}
+\raggedbottom
+\titleformat{\chapter}[display]
+  {\normalfont\color{ink}}{\color{deepgreen}\large\scshape Chapter \thechapter}{8pt}
+  {\huge\bfseries}
+\titlespacing*{\chapter}{0pt}{7pt}{22pt}
+\titleformat{\section}{\normalfont\Large\bfseries\color{ink}}{\thesection}{0.7em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{deepgreen}MathGenome}
+\fancyhead[R]{\small\nouppercase{\runningchapter}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\chaptermark}[1]{\renewcommand{\runningchapter}{\chaptername\ \thechapter}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand*\keeptheoremheading[1]{\BeforeBeginEnvironment{#1}{\Needspace{4\baselineskip}}}
+\forcsvlist{\keeptheoremheading}{theorem,lemma,proposition,corollary,definition,example,remark}
+\allowdisplaybreaks[1]
+
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\thispdfpagelabel{Cover}
+\begin{flushleft}
+\vspace*{0.72in}
+{\large\scshape\color{deepgreen}MathGenome\par}
+\vspace{0.36in}
+{\color{rulegreen}\rule{0.94\textwidth}{0.65pt}\par}
+\vspace{0.46in}
+{\color{ink}\fontsize{35}{41}\selectfont\bfseries
+  Topics in\\[2pt]Representation Theory\par}
+\vspace{0.34in}
+{\color{deepgreen}\Large Modular representations, quivers, invariants,\\[4pt]
+  highest weights, and geometric Satake\par}
+\vfill
+{\normalsize ALG-07-D01 through ALG-07-D05\par}
+\vspace*{0.50in}
+\end{flushleft}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\makeatletter
+\patchcmd{\l@chapter}{\vskip 1.0em \@plus \p@}
+  {\vskip 0.45em \@plus 0.25\p@}{}{}
+\makeatother
+\tableofcontents
+\endgroup
+
+\chapter*{Scope and conventions}
+\phantomsection
+\addcontentsline{toc}{chapter}{Scope and conventions}
+\renewcommand{\runningchapter}{Scope and conventions}
+
+These notes continue the treatment of representations in
+\emph{Algebra Core}, \emph{Rings, Modules, and Associative Algebras},
+and \emph{The Symmetric Group and Schur--Weyl Duality}.
+The chapters treat five different uses of a representation category.
+For finite groups in characteristic \(p\), representations are
+compared with characteristic zero through Brauer characters and
+block idempotents. For quivers, reflection at sinks and sources
+reduces the finite-type classification to an integral quadratic form.
+
+The third chapter studies invariant rings and the effect of an
+invariant projection on finite generation. It also gives proofs that
+apply in modular examples where the projection can fail to exist.
+The fourth chapter works with highest-weight categories, moving from
+finite-dimensional semisimple Lie algebras to their untwisted affine
+counterparts. The last chapter proves geometric Satake for complex
+split tori with rational coefficients and studies positive-dimensional
+convolution geometry for \(GL_2\).
+
+Algebra modules are left modules unless stated otherwise. In the
+modular chapter the splitting hypotheses will be specified separately
+for the ordinary and modular coefficient fields. The proofs cite
+earlier MathGenome results where their hypotheses match the present
+argument. The bibliography provides references for each topic, and
+the accompanying map records the location and proof dependencies of
+each numbered statement.
+
+\mainmatter
+\chapter{Modular Characters and Blocks}
+\label{ch:modular-representations}
+
+Reduction from characteristic zero can turn an irreducible
+representation into a module with several composition factors.
+The Brauer character records those factors by evaluating on
+elements of order prime to the characteristic. The block
+decomposition then groups the simple modules and isolates the
+local \(p\)-subgroups that contribute to each block.
+
+We use the Jordan--H\"older theorem, the nilpotence of the
+radical of a finite-dimensional algebra, and the Wedderburn--Artin
+decomposition from \emph{Algebra Core}, Theorems~2.8, 3.3 and~3.4
+\cite[PDF pp.~11, 14--15]{mg-algebra-core}. Maschke's theorem and
+Schur's lemma are Theorems~8.2--8.3 there
+\cite[PDF pp.~38--39]{mg-algebra-core}.
+For Sylow existence, containment and conjugacy, we use D07
+\cite[PDF pp.~49--50]{mg-d07}.
+
+\section{Splitting systems and reduction}
+
+\begin{definition}[A splitting \(p\)-modular system]
+\label{res:MR01}
+Let \(G\) be finite and \(p\) prime. Put \(m=|G|_{p'}\), the
+largest divisor of \(|G|\) prime to \(p\). A splitting system for
+the discussion consists of a complete discrete valuation ring
+\(O\) with uniformizer \(\pi\), fraction field \(K\) of
+characteristic zero and residue field \(k=O/\pi O\) of
+characteristic \(p\). We assume that \(K\) contains the \(m\)-th
+roots of unity and that the group algebras are split in the
+following sense: \(KG\) and \(kG/J(kG)\) are finite products
+of matrix algebras over their respective ground fields.
+An element of \(G\) whose order is prime to \(p\) is called
+\emph{\(p\)-regular}. We write \(G_{p'}\) for the set of such
+elements.
+\end{definition}
+
+\begin{lemma}[Roots of unity and their residual lifts]
+\label{res:MR02}
+Reduction gives a group isomorphism from the \(m\)-th roots of
+unity in \(O\) to those in \(k\). For a root \(\lambda\) in
+\(k\), write \(\widehat{\lambda}\) for its unique lift.
+If \(g\in G_{p'}\), an action of \(g\) on a finite-dimensional
+\(k\)-representation is diagonalizable over \(k\) and its
+eigenvalues are in this group of roots.
+\end{lemma}
+
+\begin{proof}
+Every \(m\)-th root in \(K\) has valuation zero. If such a root
+\(u\) reduces to \(1\), then
+\[
+ (u-1)(1+u+\dots+u^{m-1})=0 ,
+\]
+and the second factor is a unit, as its reduction is \(m\).
+Hence \(u=1\). Applying this to the ratio of two roots shows
+that the reduction of the \(m\) roots in \(K\) is injective.
+Their images already account for every root of \(X^m-1\)
+in \(k\). The operator given by \(g\) satisfies the polynomial
+\(X^{|g|}-1\), which splits with distinct roots in \(k\).
+\end{proof}
+
+\begin{definition}[Brauer characters and ordinary characters]
+\label{res:MR03}
+For a finite-dimensional \(kG\)-module \(M\) and \(g\in G_{p'}\)
+with eigenvalues \(\lambda_1,\ldots,\lambda_d\) on \(M\) counted
+with multiplicities, its Brauer character is
+\[
+ \varphi_M(g)=\sum_{i=1}^{d}\widehat{\lambda_i}\in O.
+\]
+For a finite-dimensional \(KG\)-module \(V\), its ordinary
+character \(\chi_V\) has value
+\(\operatorname{tr}(g\mid V)\) on every \(g\in G\).
+\end{definition}
+
+\begin{lemma}[Additivity and reduction of a stable lattice]
+\label{res:MR04}
+Brauer characters are class functions on \(G_{p'}\) and are
+additive on short exact sequences of \(kG\)-modules.
+Every finite-dimensional \(KG\)-module \(V\) has a \(G\)-stable
+\(O\)-lattice \(L\), where a lattice is a finite free submodule
+spanning \(V\) over \(K\). For every such \(L\),
+\[
+ \varphi_{L/\pi L}=\chi_V|_{G_{p'}}.
+\]
+\end{lemma}
+
+\begin{proof}
+Conjugation of the matrix of \(g\) preserves its eigenvalues.
+For a submodule the matrix of \(g\), in a basis starting with
+a basis of that submodule, is block triangular. Its
+characteristic polynomial is the product for the submodule
+and the quotient. This proves additivity of the lifted sums.
+For a lattice, take the \(O\)-span \(L_0\) of a \(K\)-basis and
+put \(L=\sum_{g\in G}gL_0\). It is stable and spans \(V\).
+After multiplication by a large enough power of \(\pi\), it is
+a submodule of \(L_0\cong O^{\dim V}\). Such a submodule is free
+by induction on the number of coordinates: its first-coordinate
+image is a principal ideal, a lift of a generator of a nonzero
+image splits the projection, and the kernel lies in the
+remaining coordinates.
+
+For \(g\in G_{p'}\) the polynomial \(X^{|g|}-1\) also diagonalizes
+its action over \(K\). The characteristic polynomial in an
+\(O\)-basis of \(L\) reduces to the characteristic polynomial
+of the action on \(L/\pi L\). By Lemma~\ref{res:MR02}, the
+eigenvalues in \(K\) all lie in \(O\), and distinct ones reduce
+to distinct elements. Therefore each multiplicity is preserved
+and the resulting lifted trace is the ordinary trace.
+\end{proof}
+
+\begin{theorem}[Brauer characters of simple modules form a basis]
+\label{res:MR05}
+Let \(S_1,\ldots,S_r\) be representatives of the simple
+\(kG\)-modules up to isomorphism. The functions \(\varphi_{S_i}\)
+are a \(K\)-basis of the space of \(K\)-valued class functions on
+\(G_{p'}\). In particular \(r\) is the number of \(p\)-regular
+conjugacy classes of \(G\).
+\end{theorem}
+
+\begin{proof}
+Let \(t_i:kG\to k\) be the \(k\)-linear trace on \(S_i\).
+These linear forms are independent. Indeed the quotient
+\(kG/J(kG)\) is a product of full matrix algebras over \(k\),
+with one factor acting on each \(S_i\). A lift of a matrix unit
+in position \((1,1)\) in one factor has trace \(1\) on that
+simple and trace \(0\) on every other simple.
+
+For \(g\in G\), factor \(g=g_p g_{p'}\) inside the cyclic
+subgroup generated by \(g\), with \(g_p\) of \(p\)-power
+order and \(g_{p'}\) of order prime to \(p\). This follows by
+choosing the two complementary idempotent exponents modulo
+the order of \(g\) by the Chinese remainder theorem
+\cite[PDF p.~66]{mg-d07}.
+On the eigenspaces of \(g_{p'}\) in \(S_i\), the operator
+\(g_p\) is unipotent, since \(X^{p^a}-1=(X-1)^{p^a}\)
+in characteristic \(p\). Its trace on each eigenspace is the
+dimension of that eigenspace, interpreted in \(k\). It follows
+that \(t_i(g)=t_i(g_{p'})\). Hence a \(k\)-linear relation
+among the restrictions \(t_i|_{G_{p'}}\) would give a relation
+on the whole basis \(G\) of \(kG\) and then contradict independence.
+
+If the \(\varphi_{S_i}\) satisfy a nonzero \(K\)-linear
+relation, multiply the coefficients by a power of \(\pi\)
+so that they all belong to \(O\) and at least one is a unit.
+Reduction gives the corresponding nonzero relation among the
+\(t_i|_{G_{p'}}\), a contradiction.
+
+For spanning, the ordinary irreducible characters form a basis
+of the class functions on \(G\) over \(K\). Indeed the split
+matrix factors of \(KG\) give their independence by the trace
+of matrix units, and the dimension of the center is the
+number of factors. The center also has a basis of conjugacy
+class sums, so that number is exactly the dimension of the
+space of class functions. Every class function on \(G_{p'}\)
+extends to \(G\) by setting its value on the other classes to
+zero. Lemma~\ref{res:MR04} and a composition series of each
+reduced lattice express the restricted ordinary characters
+as linear combinations of the \(\varphi_{S_i}\).
+\end{proof}
+
+\begin{corollary}[The decomposition matrix]
+\label{res:MR06}
+For irreducible \(KG\)-modules \(V_\chi\), indexed by their
+ordinary characters, let \(d_{\chi i}\) be the multiplicity
+of \(S_i\) in a stable lattice for \(V_\chi\) reduced modulo
+\(\pi\). The integers \(d_{\chi i}\) are independent of
+the lattice and satisfy
+\[
+  \chi|_{G_{p'}}=\sum_{i=1}^{r} d_{\chi i}\varphi_{S_i}.
+\]
+The resulting map on the groups generated by module classes
+with short-exact-sequence relations is additive.
+\end{corollary}
+
+\begin{proof}
+Lemma~\ref{res:MR04} and additivity along a composition series
+give the displayed formula. Its coefficients are uniquely
+determined by Theorem~\ref{res:MR05}. The same argument works
+for any finite-dimensional \(KG\)-module. Additivity follows
+from the ordinary trace on short exact sequences and the
+uniqueness of the coefficients on restriction.
+\end{proof}
+
+\section{Integral idempotents and projectives}
+
+\begin{lemma}[Lifting an idempotent]
+\label{res:MR07}
+Suppose \(I\) is a nilpotent ideal of a unital ring \(R\), or
+that \(R\) is complete and separated in its \(I\)-adic
+topology. Every idempotent in \(R/I\) lifts to \(R\). If \(R\)
+is commutative, the lifting is unique.
+\end{lemma}
+
+\begin{proof}
+For a lift \(x\) put \(f=x^2-x\in I\). Then
+\((2x-1)^2=1+4f\) is a unit by the finite or convergent
+geometric series, so \(2x-1\) is a unit. All these elements
+and inverses commute with \(x\). Replace \(x\) by
+\(x'=x-(2x-1)^{-1}f\). Expanding the quadratic gives
+\[
+ x'^2-x'=(2x-1)^{-2}f^2 .
+\]
+Each step squares the power of \(I\) to which the error
+belongs. The iteration either gives an idempotent in finitely
+many steps or converges to one in the complete ring. In the
+commutative case, two idempotents \(e,e'\) with the same
+reduction give idempotents \(e(1-e')\) and \(e'(1-e)\) in
+\(I\). An idempotent in \(I\) lies in every positive power
+of \(I\), hence is zero in either case. Thus \(e=e'\).
+\end{proof}
+
+\begin{proposition}[Blocks and compatibility with reduction]
+\label{res:MR08}
+A block idempotent of \(kG\) is a primitive central
+idempotent \(\bar b\). The block algebra is \(kG\bar b\).
+The block idempotents are orthogonal, sum to \(1\), and
+each simple module belongs to exactly one block, the one
+whose idempotent acts as \(1\). Reduction gives a bijection
+from the primitive central idempotents of \(OG\) to the block
+idempotents of \(kG\). If \(V_\chi\) is an ordinary simple
+module on which the lift \(b\) acts as \(1\), then
+\(d_{\chi i}\) can be nonzero only for \(S_i\) in the block
+\(\bar b\).
+\end{proposition}
+
+\begin{proof}
+The finite-dimensional commutative algebra \(Z(kG)\) is a
+product of local Artinian algebras by the commutative part of
+the Artinian radical theorem cited above. The identities of
+these factors are precisely the primitive central idempotents.
+On a simple module every central idempotent has image zero or
+the whole module, proving the assertion about its block.
+
+Over \(O\) and over \(k\), the center of a group algebra has
+the conjugacy class sums as a basis. Reduction on the center
+is thus onto and has kernel \(\pi Z(OG)\); the latter center
+is complete and separated for the \(\pi\)-adic topology.
+Lemma~\ref{res:MR07} gives unique central lifts. Orthogonality
+follows by lifting products, and a primitive central
+idempotent on either side corresponds to one on the other
+side, since a decomposition into orthogonal central
+idempotents lifts or reduces. The only idempotent that
+reduces to zero is zero. The lifted family again sums to \(1\).
+
+If \(b\) acts as \(1\) on \(V_\chi\), then it acts as \(1\)
+on every stable lattice inside it: \(b\) acts on the lattice
+since \(b\in OG\). Therefore \(\bar b\) acts as \(1\) on the
+whole reduction and on all its composition factors. This
+gives the required zero entries of the decomposition matrix.
+\end{proof}
+
+\begin{theorem}[Brauer reciprocity and the Cartan matrix]
+\label{res:MR09}
+For \(A=kG\) choose an idempotent \(\bar e_i\in A\) lifting a
+rank-one matrix idempotent in the \(S_i\)-factor of \(A/J(A)\),
+with zero entries in the other factors. Put \(P_i=A\bar e_i\).
+Then \(P_i\) is a projective cover of \(S_i\). For an
+idempotent lift \(e_i\in OG\) of \(\bar e_i\), the
+multiplicity of \(V_\chi\) in \(KGe_i\) is \(d_{\chi i}\).
+Writing \(c_{ij}=[P_j:S_i]\) and \(D=(d_{\chi i})\), the
+Cartan matrix is \(C=(c_{ij})=D^{\mathsf T}D\).
+\end{theorem}
+
+\begin{proof}
+The lifts exist by Lemma~\ref{res:MR07}, first for the
+nilpotent ideal \(J(A)\) and then for the ideal \(\pi OG\).
+The left ideal \(P_i\) is a direct summand of the left
+regular module and is projective. Its quotient by
+\(J(A)P_i\) is the column module for the indicated simple
+matrix factor. If a submodule \(U\subseteq P_i\) surjects
+onto that column module, then \(P_i=U+J(A)P_i\), hence
+\(P_i/U=J(A)(P_i/U)\). Iterating and using nilpotence
+gives \(U=P_i\). This is the defining minimality of a
+projective cover.
+
+For any left \(A\)-module \(M\), evaluation at \(\bar e_i\)
+identifies \(\operatorname{Hom}_A(P_i,M)\) with
+\(\bar e_i M\) as \(k\)-vector spaces. The inverse sends
+\(v\in\bar e_i M\) to \(a\bar e_i\mapsto av\).
+The functor is exact by projectivity, and its value on
+\(S_j\) has dimension \(1\) if \(j=i\) and \(0\) otherwise.
+Hence \(\dim_k\bar e_i M=[M:S_i]\) for a finite-dimensional
+module \(M\). Similarly, for a split semisimple \(KG\)-module
+\(V\) one has
+\(\operatorname{Hom}_{KG}(KGe_i,V)\cong e_iV\).
+In particular, \(\dim_K e_i V_\chi\) is the multiplicity of
+\(V_\chi\) in \(KGe_i\) by the split endomorphism ring of
+each simple \(KG\)-module.
+
+Let \(L\) be a stable lattice in \(V_\chi\).
+Since \(e_iL\) is a direct summand of \(L\) as an
+\(O\)-module, its reduction is \(\bar e_i(L/\pi L)\).
+The rank of \(e_iL\) is both \(\dim_K e_iV_\chi\)
+and \(\dim_k\bar e_i(L/\pi L)=d_{\chi i}\). This proves
+the multiplicity assertion. Finally \(OGe_j\) is a stable
+lattice in \(KGe_j\) whose reduction is \(P_j\).
+By the multiplicity assertion the ordinary character of
+\(KGe_j\) is \(\sum_\chi d_{\chi j}\chi\). Using
+Corollary~\ref{res:MR06} on each summand and comparing
+coefficients of \(\varphi_{S_i}\) gives
+\(c_{ij}=\sum_\chi d_{\chi i}d_{\chi j}\).
+\end{proof}
+
+\section{The Brauer homomorphism and defect groups}
+
+Write \(A^P\) for the elements of \(A=kG\) fixed under
+conjugation by a subgroup \(P\). For \(Q\leq P\) define the
+relative trace \(\operatorname{Tr}_Q^P:A^Q\to A^P\) by
+\[
+ \operatorname{Tr}_Q^P(a)=\sum_{u\in P/Q}uau^{-1},
+\]
+where the notation in the sum means a choice of representatives
+of left cosets. Each summand depends only on the coset.
+
+\begin{proposition}[The Brauer homomorphism]
+\label{res:MR10}
+If \(P\leq G\) is a \(p\)-subgroup, the coefficient projection
+\[
+ \operatorname{Br}_P:A^P\longrightarrow kC_G(P),\qquad
+ \sum_{x\in G}a_xx\longmapsto\sum_{x\in C_G(P)}a_xx
+\]
+is a surjective algebra homomorphism. Its kernel is the sum
+of \(\operatorname{Tr}_Q^P(A^Q)\) over all proper subgroups
+\(Q<P\). It takes central elements of \(kG\) to central
+elements of \(kC_G(P)\) and commutes with transport by
+conjugation in \(G\).
+\end{proposition}
+
+\begin{proof}
+For \(z\in C_G(P)\) the pairs \(x,y\in G\) with \(xy=z\) form
+a \(P\)-set under simultaneous conjugation. If \(a,b\in A^P\),
+the product \(a_xb_y\) of their coefficients is constant on
+each orbit. Every orbit of size greater than one contributes
+zero in characteristic \(p\). A pair in a singleton orbit
+has \(x,y\in C_G(P)\), so the coefficient of \(z\) in \(ab\)
+is exactly the coefficient in
+\(\operatorname{Br}_P(a)\operatorname{Br}_P(b)\).
+The projection is the identity on the subalgebra \(kC_G(P)\),
+so it is unital and surjective.
+
+An invariant element is a linear combination of \(P\)-orbit
+sums. The singleton orbit sums are exactly the surviving basis
+elements under projection. The orbit sum of any other \(x\in G\)
+is \(\operatorname{Tr}_{C_P(x)}^P(x)\), from the proper
+stabilizer of \(x\). Conversely, each proper-subgroup trace
+has zero coefficient at every \(z\in C_G(P)\) because that
+coefficient is a multiple of \([P:Q]\). This proves the kernel
+formula. Conjugating the coefficients commutes with projection
+if one conjugates \(P\) at the same time. In particular every
+element of \(C_G(P)\) fixes the image of a central element.
+\end{proof}
+
+\begin{lemma}[Relative trace ideals in the center]
+\label{res:MR11}
+For a \(p\)-subgroup \(P\leq G\), put
+\(I_P=\operatorname{Tr}_P^G(A^P)\subseteq Z(A)\).
+It is an ideal of \(Z(A)\). For the class sum \(\kappa_x\)
+of the conjugacy class of \(x\), one has \(\kappa_x\in I_P\)
+if and only if a Sylow \(p\)-subgroup of \(C_G(x)\) is
+conjugate in \(G\) to a subgroup of \(P\). Such class sums
+form a basis of \(I_P\).
+\end{lemma}
+
+\begin{proof}
+Multiplication by a central element commutes with the
+relative trace, and the product in the domain is still
+\(P\)-invariant, so \(I_P\) is an ideal. On the \(P\)-orbit
+sum of \(x\) the trace is
+\[
+ \operatorname{Tr}_{P}^{G}
+    \bigl(\operatorname{Tr}_{C_P(x)}^P(x)\bigr)
+  = \operatorname{Tr}_{C_P(x)}^G(x)
+  = [C_G(x):C_P(x)]\kappa_x .
+\]
+The first equality follows by multiplying coset
+representatives. The last equality counts the cosets of
+\(C_P(x)\) over each coset of \(C_G(x)\).
+The integer scalar is nonzero in \(k\) exactly when
+\(C_P(x)\) is a Sylow \(p\)-subgroup of \(C_G(x)\).
+An orbit sum with this property occurs in the conjugacy
+class of \(x\) exactly when a conjugate of such a Sylow
+subgroup is contained in \(P\). Since the class sums are
+linearly independent, the trace images of the orbit-sum
+basis of \(A^P\) establish both assertions.
+\end{proof}
+
+\begin{theorem}[Defect groups and their conjugacy]
+\label{res:MR12}
+For each block idempotent \(b\in kG\) there exists a
+\(p\)-subgroup \(D\leq G\) such that for every \(p\)-subgroup
+\(P\leq G\),
+\[
+ \operatorname{Br}_P(b)\ne0
+ \quad\Longleftrightarrow\quad
+ P\text{ is contained in a conjugate of }D .
+\]
+In particular the inclusion-maximal \(P\) for which
+\(\operatorname{Br}_P(b)\ne0\) form one conjugacy class,
+called the defect groups of \(b\). A representative can
+be obtained as a Sylow \(p\)-subgroup of a centralizer
+\(C_G(x)\) of an element with a nonzero coefficient in \(b\).
+It has largest possible order among the Sylow subgroups of
+the centralizers of such elements.
+\end{theorem}
+
+\begin{proof}
+Write \(b=\sum_C a_C\kappa_C\) as a sum over conjugacy classes,
+restricting to \(a_C\ne0\). For each such \(C\) choose
+\(x_C\in C\) and a Sylow \(p\)-subgroup \(D_C\) of \(C_G(x_C)\).
+By Lemma~\ref{res:MR11}, \(\kappa_C\in I_{D_C}\).
+The ring \(b Z(A)\) is local, by the primitive central block
+decomposition in Proposition~\ref{res:MR08}. In this ring
+\[
+ b=b^2=\sum_C b a_C\kappa_C .
+\]
+At least one term on the right is a unit of \(bZ(A)\),
+since otherwise their sum belongs to its maximal ideal.
+For its class \(C\), multiplication by the inverse in \(bZ(A)\)
+shows \(b\in I_{D_C}\), because \(I_{D_C}\) is a central
+ideal. Put \(D=D_C\).
+
+Every class in the support of \(b\) now has a centralizer
+whose Sylow \(p\)-subgroups are conjugate into \(D\), again
+by the class-sum description of \(I_D\).
+If \(\operatorname{Br}_P(b)\ne0\), some element in the support
+of \(b\) centralizes \(P\). Then \(P\) is contained in a Sylow
+\(p\)-subgroup of its centralizer, hence in a conjugate of
+\(D\). Conversely \(x_C\) centralizes \(D\) and occurs in
+the support of \(b\). For any \(P\) contained in a conjugate
+of \(D\), a conjugate of \(x_C\) shows
+\(\operatorname{Br}_P(b)\ne0\). This also proves the
+maximality and order statements.
+\end{proof}
+
+\begin{corollary}[Principal blocks and defect zero]
+\label{res:MR13}
+The principal block, defined to be the block of the trivial
+representation, has as defect groups the Sylow \(p\)-subgroups
+of \(G\). A block has trivial defect groups if and only if
+its block algebra is semisimple.
+\end{corollary}
+
+\begin{proof}
+On the trivial representation a group algebra element acts by
+its augmentation, the sum of its coefficients. Thus the
+augmentation of the principal idempotent is \(1\).
+For an invariant element, projection \(\operatorname{Br}_P\)
+does not change its augmentation, since the dropped
+\(P\)-orbit sums contribute multiples of \(p\).
+For \(P\) Sylow in \(G\) this proves that the principal block
+has \(\operatorname{Br}_P(b)\ne0\).
+Theorem~\ref{res:MR12} gives the claimed defect groups.
+
+For the second assertion, Theorem~\ref{res:MR12} and
+Lemma~\ref{res:MR11} show that trivial defect is equivalent
+to \(b\in I_1\). If \(b=\operatorname{Tr}_1^G(a)\) and \(M\)
+is a finite-dimensional module in the block, consider the
+surjection \(A\otimes_k M\to M\), \(x\otimes m\mapsto xm\),
+where \(G\) acts on the first factor only. It has the
+\(G\)-linear section
+\[
+ m\longmapsto\sum_{g\in G} g\otimes a(g^{-1}m).
+\]
+Equivariance is a reindexing, and the composite is
+\(\operatorname{Tr}_1^G(a)\) acting on \(M\), namely the
+identity. Thus every such \(M\) is projective over \(A\).
+Splitting the simple quotients in a composition series of the
+left regular block module shows that the block is semisimple.
+
+Conversely, a split semisimple block \(bA\) consists of one
+matrix factor, since \(b\) is primitive central. Its simple
+column \(M\) is a summand of \(bA\), hence projective over \(A\).
+Choose an \(A\)-linear section \(s\) of the same surjection
+\(A\otimes_k M\to M\), and let \(f:M\to M\) be the
+coefficient at the basis element \(1\in G\) of \(s\).
+Equivariance makes the coefficient at \(g\) equal to
+\(f(g^{-1}m)\). Hence
+\(\sum_{g\in G}g f(g^{-1}m)=m\). The block \(bA\) acts on
+its column as the full endomorphism algebra, so \(f\) is
+the action of some \(a\in bA\). The central element
+\(\operatorname{Tr}_1^G(a)\) belongs to \(bA\) and acts as
+\(1\) on its column. The faithful column action then gives
+\(\operatorname{Tr}_1^G(a)=b\), so \(b\in I_1\).
+\end{proof}
+
+\section{An example at two different primes}
+
+\begin{example}[The symmetric group of degree three]
+\label{res:MR14}
+Over splitting systems as in Definition~\ref{res:MR01},
+the decomposition matrices and block defects for \(S_3\)
+are as follows. The ordinary rows in both matrices are
+the trivial, sign, and two-dimensional standard representations.
+At \(p=2\) the columns are the trivial and the simple
+two-dimensional representation. At \(p=3\) the columns
+are the trivial and sign representations.
+\[
+ D_2=\begin{pmatrix}1&0\\1&0\\0&1\end{pmatrix},
+ \qquad
+ D_3=\begin{pmatrix}1&0\\0&1\\1&1\end{pmatrix}.
+\]
+The respective Cartan matrices are
+\(\operatorname{diag}(2,1)\) and
+\(\left(\begin{smallmatrix}2&1\\1&2\end{smallmatrix}\right)\).
+At \(p=2\) there are two blocks, the principal block with
+Sylow defect and the other block with trivial defect.
+At \(p=3\) the principal block is the only block, with its
+Sylow subgroup of order three as defect group.
+\end{example}
+
+\begin{proof}
+Write \(c=(1\,2\,3)\) and \(t=(1\,2)\). The standard
+representation \(W\) in characteristic zero is the
+coordinate-sum-zero subspace of the permutation representation.
+Over a splitting field for \(c\) it has the two distinct
+eigenlines with nontrivial cube-root eigenvalues. They are
+interchanged by \(t\), since \(tct^{-1}=c^{-1}\).
+So \(W\) is absolutely irreducible. The three indicated
+ordinary simples account for the full algebra dimension
+\(1^2+1^2+2^2=6\). The traces on \(W\) at \(1,t,c\) are
+respectively \(2,0,-1\), by subtracting the trace of the
+complementary trivial representation from that of the permutation
+representation. The group-stable lattice in \(W\) given by
+the coordinate-sum-zero \(O\)-module reduces to the
+coordinate-sum-zero subspace of \(k^3\): the defining linear map
+to \(O\) is a split surjection of \(O\)-modules.
+
+In characteristic two this reduced \(W\) is simple, by the
+same two-eigenline argument. Those lines are defined over \(k\)
+by Lemma~\ref{res:MR02}. The \(2\)-regular classes are \(1\)
+and the class of \(c\), so Theorem~\ref{res:MR05} shows that
+the trivial module and \(W\) are the two simples. The restrictions
+of the ordinary trivial and sign characters coincide.
+The character identity of Corollary~\ref{res:MR06} gives
+the displayed \(D_2\). The class sum \(b=c+c^{-1}\) is central,
+and \(b^2=b\) in characteristic two. It acts as zero on the
+trivial module and as \(1\) on \(W\), since the sum of the
+nontrivial cube roots is \(-1=1\) in \(k\).
+Every nonzero central idempotent acts nontrivially on at least
+one simple module: otherwise it belongs to the nilpotent
+radical. Thus both \(b\) and \(1-b\) are primitive central,
+and \(1-b\) is the principal idempotent.
+The two elements in the support of \(b\) have centralizer
+of order three, so Theorem~\ref{res:MR12} gives trivial
+defect for \(b\). Corollary~\ref{res:MR13} gives the
+defect of \(1-b\).
+
+In characteristic three the \(3\)-regular classes are \(1\)
+and the class of \(t\). Trivial and sign are distinct simples
+and exhaust the simple modules by Theorem~\ref{res:MR05}.
+Their Brauer values at \(t\) are respectively \(1,-1\).
+Comparing the ordinary values at the two \(3\)-regular
+classes gives \(D_3\). In the reduction of \(W\), the
+constant-coordinate line is a trivial submodule, since a
+constant vector now has coordinate sum zero. The quotient
+has dimension one and is the sign module by the two
+composition factors found in \(D_3\).
+This extension does not split: both one-dimensional modules
+restrict trivially to \(\langle c\rangle\), whereas \(c\)
+acts nontrivially on the reduced \(W\), for example on the
+vector \((1,-1,0)\). A short exact sequence between modules
+in distinct blocks splits by applying the orthogonal central
+idempotents, so trivial and sign belong to the same block.
+There can be no other block, by the nontrivial action of
+a nonzero central idempotent on some simple. The Sylow
+defect follows as above.
+The Cartan matrices follow from Theorem~\ref{res:MR09}.
+\end{proof}
+
+\paragraph{Sources.}
+For the theory of stable lattices and Brauer characters see
+Webb \cite[Sections~9.4--9.5 and 10.1--10.3]{webb} and
+Serre \cite[Chapters~15--16 and 18]{serre-finrep}.
+For blocks, the relative-trace approach to defect, and the
+Brauer morphism, see Webb \cite[Sections~12.1--12.5]{webb}.
+\chapter{Quivers of Finite Representation Type}
+
+We retain the path convention of \emph{Rings, Modules, and Associative
+Algebras}, RM03-C06.02--05~\cite[PDF pp.~14--15]{mg-rm03}: an
+arrow \(i\to j\) acts from the \(i\)-space to the \(j\)-space in a
+left \(kQ\)-module. The quiver \(Q\) is finite and has no oriented
+cycles. Representations in this chapter are finite dimensional.
+The proof of Gabriel's theorem uses linear reflection functors and
+an integral quadratic form, so it keeps track of parallel edges
+and of arbitrary acyclic orientations.
+
+\section{An Euler form from the arrows}
+
+\begin{definition}[The Euler form and the Tits form]
+\label{res:QU01}
+For dimension vectors \(d,e\in\mathbb Z^{Q_0}\), put
+\[
+ \langle d,e\rangle=\sum_i d_i e_i-\sum_{a:i\to j}d_i e_j,
+ \qquad q(d)=\langle d,d\rangle.
+\]
+Write \(a_{ij}\) for the number of edges between \(i\) and \(j\),
+independent of their orientation. The symmetric matrix of the
+polarization of \(q\) has diagonal entries \(2\) and off-diagonal
+entries \(-a_{ij}\). Write \(e_i\) for the \(i\)-th unit vector
+when discussing dimension vectors and \(S_i\) for the representation
+with a copy of \(k\) at \(i\) and zero at the other vertices.
+\end{definition}
+
+\begin{proposition}[The two-term projective resolution]
+\label{res:QU02}
+For \(P_i=kQ e_i\) and a representation \(V\) there is an exact
+sequence of modules
+\[
+ 0\longrightarrow \bigoplus_{a:i\to j}P_j\otimes_k V_i
+   \xrightarrow{\partial}\bigoplus_i P_i\otimes_k V_i
+   \longrightarrow V\longrightarrow0,
+ \qquad
+ \partial(p\otimes v)=pa\otimes v-p\otimes V_a v .
+\]
+The final map sends a path generator \(p\otimes v\) to \(V_p v\).
+Consequently, writing \(d=\dim V\) and \(e=\dim W\), one has
+\[
+ \dim_k\operatorname{Hom}_{kQ}(V,W)
+   -\dim_k\operatorname{Ext}^1_{kQ}(V,W)=\langle d,e\rangle,
+ \qquad \operatorname{Ext}^r_{kQ}(V,W)=0\quad(r\ge2).
+\]
+\end{proposition}
+\begin{proof}
+By the path basis of RM03-C06.03, \(P_i\) has the paths starting
+at \(i\) as basis. The idempotents split \(kQ\) as the direct sum
+of the \(P_i\), so they are projective. The displayed maps are
+module maps and compose to zero. Every nontrivial path has a unique
+first arrow \(a\), followed by a path \(p\), and thus occurs in
+exactly one first term of \(\partial\). If a nonzero element on
+the left has a largest path length among its nonzero coefficients,
+the first terms of that length plus one in its image cannot cancel.
+This proves injectivity. In the cokernel the same relation reduces
+the length of paths, down to \(e_i\otimes v\). These remaining
+vectors map isomorphically to the direct sum of the vertex spaces.
+This proves exactness. The correspondence and vertexwise
+exactness are those of RM03-C06.05~\cite[PDF pp.~14--15]{mg-rm03}.
+
+Apply \(\operatorname{Hom}_{kQ}(-,W)\) to this resolution.
+Evaluation at \(e_i\) identifies
+\(\operatorname{Hom}_{kQ}(P_i\otimes V_j,W)\) with
+\(\operatorname{Hom}_k(V_j,W_i)\). The resulting two-term complex
+computes \(\operatorname{Ext}\), by the projective-resolution
+formula in Result R11 of \emph{Advanced Homological Algebra}
+~\cite[PDF p.~32]{mg-ha}. Its alternating dimension gives the
+claimed formula.
+\end{proof}
+
+\section{Reflection at a sink or a source}
+
+\begin{proposition}[The reflection equivalence]
+\label{res:QU03}
+At a sink \(i\), let \(m:\bigoplus_{a:j\to i}V_j\to V_i\)
+be the sum of the incoming arrow maps. Reverse the incident arrows
+and replace \(V_i\) by \(\ker m\). The new arrows are the
+projections out of this kernel. Dually, at a source replace the
+source space by the cokernel of the map to the sum of the
+outgoing target spaces. The new arrows are the inclusions followed
+by that quotient. These constructions, leaving the other arrows
+unchanged, are inverse equivalences on the full subcategories
+of representations with no summand \(S_i\).
+
+For a representation in those subcategories the new dimension
+vector is \(s_i(d)\), where
+\[
+ (s_i d)_j=d_j\quad(j\ne i),\qquad
+ (s_i d)_i=-d_i+\sum_j a_{ij}d_j.
+\]
+The map \(s_i\) is an involution preserving \(q\).
+\end{proposition}
+\begin{proof}
+At a sink, a complementary subspace to the image of \(m\) in
+\(V_i\) is a direct summand supported at \(i\). Thus having no
+\(S_i\)-summand means \(m\) is onto. At a source, a complementary
+subspace to the kernel of the outgoing map at \(i\) shows that
+the analogous condition is injectivity. Reflection at a sink
+produces an injective outgoing map. The next reflection at the
+same vertex takes its cokernel and recovers \(V_i\) and its
+incoming maps from the exact sequence of \(m\). Starting at a
+source uses the dual exact sequence. The identifications commute
+with all morphisms, since vertex maps preserve the respective
+kernels and induce maps on the cokernels. A direct summand of
+an object with no \(S_i\) again has no \(S_i\), so these
+equivalences preserve indecomposability. Rank-nullity gives the
+dimension rule. As a polynomial in \(d_i\), the form \(q\) is
+\[
+ d_i^2-d_i\sum_j a_{ij}d_j+q(d\text{ with its \(i\)-entry set to }0).
+\]
+Substitution of the new entry leaves this expression unchanged
+and applying the substitution twice recovers \(d_i\).
+\end{proof}
+
+\begin{lemma}[A full cycle of sink reflections]
+\label{res:QU04}
+Number the vertices \(1,\ldots,n\) so that all arrows point from
+higher to lower indices. Reflect in the order \(1,\ldots,n\).
+Each step takes place at a sink, and the quiver at the end has
+its original orientation. Put \(C=s_n\cdots s_1\) and let \(E\)
+be lower triangular with diagonal \(1\) and \((i,j)\)-entry
+\(-a_{ij}\) for \(i>j\). Then \(C=-E^{-1}E^{\mathsf T}\).
+If \(q\) is positive definite, \(C\) has finite order and no
+nonzero fixed vector. For every nonzero \(x\) with nonnegative
+coordinates, some power of \(C\) has a negative coordinate on \(x\).
+\end{lemma}
+\begin{proof}
+Acyclicity supplies the numbering by successively taking a sink
+of the remaining quiver. At stage \(i\), the edges to smaller
+indices have reversed and now point toward \(i\). The other
+edges still point toward \(i\). Every edge is reversed twice in
+the full cycle. If \(y=Cx\), at the \(i\)-th update the earlier
+entries are already \(y_j\) and the later ones are still \(x_j\).
+Thus
+\[
+  y_i-\sum_{j<i}a_{ij}y_j=-x_i+\sum_{j>i}a_{ij}x_j .
+\]
+This is \(Ey=-E^{\mathsf T}x\). Since \(E+E^{\mathsf T}\) is
+the positive definite matrix of the polarization, \(C-I\)
+is invertible over \(\mathbb R\). There are only finitely many
+integer vectors having any fixed \(q\)-value, since \(q\) bounds
+the Euclidean norm from below by a positive multiple of its
+square. Hence there are only finitely many integral invertible
+linear maps preserving \(q\), by considering the images of the
+unit vectors. In particular \(C^h=I\) for some \(h>0\).
+Multiplying the geometric sum by \(C-I\) shows that
+\(\sum_{j=0}^{h-1}C^j x=0\). This would be impossible if all its
+summands were entrywise nonnegative and \(x\ne 0\).
+\end{proof}
+
+\section{The form and finite representation type}
+
+\begin{proposition}[The positive definite graphs]
+\label{res:QU05}
+The form \(q\) is positive definite exactly when every connected
+component of the underlying graph is \(A_n,D_n,E_6,E_7\), or
+\(E_8\). Here \(D_n\) has \(n\ge4\), and an isolated vertex is \(A_1\).
+\end{proposition}
+\begin{proof}
+An edge of multiplicity at least two gives \(q\le0\) on the vector
+with value \(1\) at its endpoints and zero elsewhere. A cycle
+gives \(q\le0\) by assigning \(1\) on its vertices. A vertex of
+degree at least four gives \(q\le0\) by putting \(2\) there and
+\(1\) on four of its neighbors. In a tree with two trivalent
+vertices, put \(2\) along the path joining them and \(1\) at their
+four adjacent vertices off the path. If there are \(m\) path
+vertices, the sum of squares is \(4m+4\), which equals the sum of
+edge products \(4(m-1)+8\) on this support. Thus only paths and
+trees with a single trivalent vertex can be positive definite.
+
+On a path, twice the form is the sum of squares of successive
+differences after adjoining zero at both ends. On a tree with one
+trivalent vertex, let the arm lengths be \(p-1,r-1,s-1\) in
+edges and put \(x\) at the center. Attach a zero beyond each
+leaf. The same difference-square expression on the three arms,
+less \(x^2\), equals \(2q\), by expanding at the center where
+three squares meet. For an arm with \(p\) differences their
+sum is \(x\), up to sign. The minimum of their squared sum is
+\(x^2/p\), attained by the equally spaced values. Thus for
+\(x\ne0\) the least possible \(2q\) is
+\(x^2(1/p+1/r+1/s-1)\). For \(x=0\) every nonzero vector gives
+a positive value. With \(2\le p\le r\le s\), the strict inequality
+\(1/p+1/r+1/s>1\) forces \(p=2\). If \(r=2\) one obtains
+\((2,2,s)\), the \(D_{s+2}\) family. If \(r=3\) one needs
+\(s=3,4,5\), which gives \(E_6,E_7,E_8\). If \(r\ge4\) the
+sum is at most \(1\). These computations prove the classification.
+\end{proof}
+
+\begin{lemma}[A dimension obstruction to finite type]
+\label{res:QU06}
+Over an infinite field \(k\), if \(q\) is not positive definite
+then \(Q\) has infinitely many isomorphism classes of
+indecomposable finite-dimensional representations.
+\end{lemma}
+\begin{proof}
+There is a nonzero \(d\in\mathbb Z_{\ge0}^{Q_0}\) with \(q(d)\le0\).
+If \(q\) has negative values, choose a rational vector with
+negative value by continuity. If it is semidefinite and singular,
+the rational polarization matrix has a nontrivial rational
+kernel. In either case replace coordinates by their absolute
+values, which cannot increase \(q\), and clear denominators.
+
+For this \(d\), the arrow matrices form \(k^N\) with
+\(N=\sum_{a:i\to j}d_i d_j\). Isomorphism is the change-of-basis
+action of \(\prod_i GL_{d_i}(k)\), with \(D=\sum_i d_i^2\)
+matrix entries before imposing invertibility. Multiplying all
+basis matrices by the same scalar has no effect. Choose one
+vertex of positive dimension and cover the action by the finitely
+many choices of a nonzero entry of its basis matrix. Normalize
+that entry to \(1\) using the common scalar. In each such chart,
+the \(N\) arrow entries on the orbit of a fixed representation
+are rational functions of at most \(D-1<N\) variables, since
+\(q(d)=D-N\le0\). They are algebraically dependent over \(k\),
+by the transcendence-degree bound of D07
+~\cite[Theorem 21.35, PDF p.~176]{mg-d07}.
+A nonzero polynomial relation between them vanishes everywhere on
+the corresponding orbit chart. The product of these finitely
+many nonzero relations vanishes on the entire orbit.
+
+If there were only finitely many orbits, their polynomial
+relations would give a nonzero polynomial vanishing on all of
+\(k^N\). A polynomial over an infinite field vanishing at every
+point is zero, by induction on the number of variables and the
+root bound in one variable. This contradicts the relation.
+Every representation splits as a sum of indecomposables by
+induction on total dimension. If there were only finitely many
+indecomposables, then at a fixed total dimension only finitely
+many finite lists of them could occur. Thus there would be
+only finitely many orbits for \(d\), a contradiction.
+\end{proof}
+
+\begin{theorem}[Gabriel's theorem and the dimension-vector bijection]
+\label{res:QU07}
+Over an algebraically closed field \(k\), a finite acyclic quiver
+has finite representation type exactly when its underlying graph
+is a disjoint union of the Dynkin graphs \(A,D,E\).
+In that case the dimension-vector map is a bijection from
+isomorphism classes of indecomposables to the positive roots of
+the graph. In coordinates these are exactly the nonnegative
+integral vectors \(d\) with \(q(d)=1\).
+Every such indecomposable has endomorphism ring \(k\)
+and has no nonzero self-extension class.
+\end{theorem}
+\begin{proof}
+Suppose \(q\) is positive definite. Apply the cyclic sequence of
+sink reflections from Lemma~\ref{res:QU04} to an indecomposable.
+At a sink the process continues unless the representation is
+\(S_i\), by Proposition~\ref{res:QU03}. If it never stopped,
+every power of \(C\) would send its original dimension vector
+to a nonnegative vector. Lemma~\ref{res:QU04} rules this out.
+The indecomposable therefore reduces to a vertex simple, and
+preservation of \(q\) gives \(q(d)=1\). The equivalences also
+identify its endomorphism ring with that of the simple, namely
+\(k\). The self-extension assertion follows from
+Proposition~\ref{res:QU02}.
+
+Conversely take a nonnegative integral \(d\) with \(q(d)=1\).
+As long as its entries stay nonnegative, apply the same sink
+reflections to the vector. There is a first step producing a
+negative coordinate by Lemma~\ref{res:QU04}. Just before that
+step, the entry at its vertex \(i\) is strictly larger than
+\(\sum_j a_{ij}d_j\). The expression for \(q\) in
+Proposition~\ref{res:QU03} shows that the contribution from
+that coordinate is at least \(d_i\), and the remaining form is
+positive if any remaining entry is nonzero. Since \(q(d)=1\),
+the vector at that step is \(e_i\). Start with \(S_i\) at
+that stage and apply the inverse source reflections in reverse
+order. None of these inverse steps is obstructed: a source vector
+\(e_j\) at a step would reflect to \(-e_j\), contradicting the
+nonnegativity of the recorded previous vector. The functors
+therefore produce the required indecomposable. If two
+indecomposables have dimension \(d\), the common sequence ends
+at the same simple and gives an isomorphism back at the
+original orientation.
+
+Write \(W=\langle s_i\rangle\) and define the graph's root set
+as the union of the orbits \(W e_i\). These vectors span and
+have square length \(2\) for the polarized form. Reflection in
+\(w e_i\) is \(w s_i w^{-1}\), so it permutes the set. Integral
+pairings and equal lengths give the crystallographic and reduced
+conditions. The set is finite by positive definiteness. If an
+integral vector \(x\) has both signs, write \(x=x^+-x^-\) with
+disjoint nonnegative supports. The off-diagonal entries of the
+form give \(q(x)\ge q(x^+)+q(x^-)\ge2\). Thus these roots are
+positive or negative in the simple-vector basis. Every positive
+root has \(q=1\), and the preceding vector reduction expresses
+every nonnegative vector of \(q\)-value \(1\) as such an orbit point.
+There are finitely many such vectors by positive definiteness.
+Proposition~\ref{res:QU05} now gives the asserted types, and
+Lemma~\ref{res:QU06} proves the converse of finite type because
+an algebraically closed field is infinite.
+\end{proof}
+
+\begin{example}[The almost split sequence for a single arrow]
+\label{res:QU08}
+For \(1\to2\), the indecomposables are \(S_1,S_2\), and \(P_1\),
+where \(P_1\) has identity arrow between two copies of \(k\).
+The sequence
+\[
+ 0\longrightarrow S_2\longrightarrow P_1
+   \longrightarrow S_1\longrightarrow0
+\]
+is almost split.
+\end{example}
+\begin{proof}
+The three vectors of \(q\)-value \(1\) are \((1,0),(0,1),(1,1)\),
+as predicted by Theorem~\ref{res:QU07}. Over any field, the kernel,
+image and cokernel of a single linear map give a direct sum
+decomposition into copies of these three objects. The displayed sequence uses the
+inclusion at vertex \(2\) and the projection at vertex \(1\).
+It is exact at each vertex and nonsplit, since there is no
+nonzero map \(S_1\to P_1\) compatible with the arrow.
+For a map from a direct sum of indecomposables to \(S_1\) that is
+not a split epimorphism, the components from \(S_1\) vanish
+and those from \(S_2\) are zero. The remaining components
+from \(P_1\) are scalar multiples of the displayed projection,
+so the map factors through it. Dually, a map out of \(S_2\)
+that is not a split monomorphism has zero components to \(S_2\)
+and to \(S_1\). Each component to \(P_1\) is a scalar
+multiple of the inclusion, giving the other factorization.
+These are the two almost split properties. The general existence
+theorem for finite-dimensional algebras, with its nonprojective
+or noninjective endpoint hypotheses, is Result M14 in
+\emph{Topics in Rings, Modules, and Associative Algebras}
+~\cite[PDF p.~19]{mg-rm03d}.
+\end{proof}
+
+\paragraph{Sources.}
+For the Euler form and the reflection proof, see
+Etingof et al.~\cite[Sections 5.4--5.8]{etingof-rep}.
+For the path algebra and the general theory of almost split
+sequences see Assem--Simson--Skowro\'nski~\cite[Chapters II and IV]{assem}.
+\chapter{Invariant Rings and Reynolds Operators}
+
+Let \(k\) be a field. An action on a \(k\)-algebra acts by
+\(k\)-algebra automorphisms. For a smooth algebraic group over an
+algebraically closed field, we use rational actions and identify
+invariance with invariance under all of its \(k\)-points. A
+rational action is locally finite: for a vector \(v\), a
+coaction identity \(g(v)=\sum_j f_j(g)v_j\) with finitely many
+terms places its orbit in a finite-dimensional subspace, and
+the span of that orbit is stable. Finite abstract groups also
+act locally finitely. We use the Hilbert basis theorem in D07,
+Result K07.22.hilbert\_basis~\cite[Section 23.11, PDF p.~191]{mg-d07}.
+
+\section{Invariant projection and exactness}
+
+\begin{definition}[Invariants and Reynolds operators]
+\label{res:IN01}
+The invariants of a \(G\)-module \(M\) are \(M^G=\{v:gv=v
+\text{ for every }g\in G\}\). For a \(G\)-algebra \(A\), this is
+a subalgebra. A Reynolds operator on \(A\) is a \(G\)-equivariant
+\(A^G\)-linear map \(R:A\to A^G\) whose restriction to \(A^G\)
+is the identity. An action category is called linearly reductive
+when every finite-dimensional representation in it is a direct
+sum of simple representations.
+\end{definition}
+
+\begin{proposition}[Exact invariants and the canonical projection]
+\label{res:IN02}
+If the action category is linearly reductive, every locally finite
+representation \(M\) has a natural projection \(M\to M^G\). It
+kills every simple submodule with nontrivial action. On an algebra
+this projection is a Reynolds operator. Invariants are exact on
+locally finite representations in this case. Conversely, exactness
+on finite-dimensional representations implies complete reducibility.
+\end{proposition}
+\begin{proof}
+In a finite-dimensional semisimple representation take the sum of
+the trivial simple submodules and the sum of the other simple
+submodules. They form a direct sum, since a map from a nontrivial
+simple to a trivial one is zero, and the first sum equals the
+invariant subspace. Their projections are preserved by equivariant
+maps: a map of simple modules has image zero or an isomorphic
+simple. Any invariant subspace of finite dimension is contained
+in this system of compatible projections. On a locally finite
+module, use the projection of a finite-dimensional stable
+subspace containing the given vector. Two choices fit in their
+sum, so the projection is well defined. Multiplication by
+\(a\in A^G\) is equivariant, so naturality gives \(R(ax)=aR(x)\).
+
+For an equivariant surjection, project any lift of an invariant
+vector to obtain an invariant lift. Kernels of the invariants
+map are invariants in the kernel by the definition of fixed
+vectors. Conversely for a finite-dimensional equivariant
+surjection \(M\to N\), the map
+\(\operatorname{Hom}_k(N,M)\to\operatorname{Hom}_k(N,N)\)
+is onto by elementary linear algebra. It is equivariant for
+the conjugate action on the Hom spaces, and in the rational
+case the Hom spaces are again rational. Exactness on invariants
+lifts the identity of \(N\) to an equivariant section. Every
+short exact sequence of finite-dimensional representations
+therefore splits, yielding complete reducibility by induction
+on dimension.
+\end{proof}
+
+\begin{proposition}[Averaging for finite groups and split tori]
+\label{res:IN03}
+For a finite group \(G\) with \(|G|\) invertible in \(k\), the
+operator \(R(v)=|G|^{-1}\sum_{g\in G}gv\) gives exact invariants
+and the Reynolds operator of Proposition~\ref{res:IN02}.
+For a split torus \(\mathbb G_m^r\) acting rationally, projection
+to weight zero gives exact invariants in every characteristic.
+\end{proposition}
+\begin{proof}
+In the finite-group case, reindexing the sum gives equivariance
+and invariance, and the sum fixes an invariant vector. It is
+preserved by equivariant maps, so applying it to any lift of an
+invariant vector proves exactness. Proposition~\ref{res:IN02}
+then identifies it with the canonical projection.
+
+For a torus, write the coaction of \(m\) as
+\(\sum_{\lambda\in\mathbb Z^r}m_\lambda\otimes z^\lambda\),
+a finite sum of Laurent monomials. Coassociativity and the
+identities
+\(\Delta z^\lambda=z^\lambda\otimes z^\lambda\) show that
+each \(m_\lambda\) has weight \(\lambda\), by independence of
+the Laurent monomials. The counit gives \(m=\sum_\lambda m_\lambda\).
+Applying the coaction again makes the sum direct. Equivariant
+maps preserve each weight, which proves exactness and the
+claim about the projection. The same argument works over a
+finite \(k\) if invariants are taken for the algebraic group
+coaction, since weight zero is then the defining condition.
+\end{proof}
+
+\section{Finite generation}
+
+\begin{theorem}[Hilbert finite generation using Reynolds]
+\label{res:IN04}
+Let \(A=\bigoplus_{d\ge0} A_d\) be a finitely generated
+graded commutative \(k\)-algebra with \(A_0=k\).
+Suppose \(G\) preserves the grading and there is a
+degree-preserving Reynolds operator on \(A\). Then \(A^G\)
+is generated by finitely many homogeneous invariants.
+\end{theorem}
+\begin{proof}
+By the Hilbert basis theorem the ideal generated in \(A\)
+by all positive-degree homogeneous invariants is generated by
+finitely many of them, say \(f_1,\ldots,f_m\). Indeed any
+finite ideal generating set is made of sums using only
+finitely many of the original generators. For a homogeneous
+invariant \(f\) of positive degree, write \(f=\sum_i a_i f_i\).
+Taking components of degree \(\deg f\) makes each nonzero
+\(a_i\) homogeneous of lower degree. Apply \(R\) to obtain
+\(f=\sum_i R(a_i)f_i\). Induction on degree gives
+\(A^G=k[f_1,\ldots,f_m]\), since the fixed subring is the sum
+of its homogeneous components.
+\end{proof}
+
+\begin{corollary}[Rational actions of characteristic-zero reductive groups]
+\label{res:IN05}
+Let \(k\) be algebraically closed of characteristic zero and
+let \(G\) be a connected reductive algebraic group over \(k\).
+For every finitely generated commutative rational \(G\)-algebra
+\(A\), the invariant algebra \(A^G\) is finitely generated.
+The construction also applies to a rational split torus
+action in arbitrary characteristic over an algebraically
+closed field.
+\end{corollary}
+\begin{proof}
+Result E07 of \emph{Linear Algebraic Groups}
+~\cite[PDF p.~40]{mg-alggroup} gives complete reducibility for
+the first case. For the torus use Proposition~\ref{res:IN03}.
+Choose a finite-dimensional stable subspace \(V\subset A\)
+containing \(1\) and algebra generators. It exists by local
+finiteness. Let \(A_d'\) be the span of products of \(d\)
+elements of \(V\), with \(A_0'=k\). The spaces are nested
+because \(1\in V\) and have union \(A\).
+The algebra \(\bigoplus_{d\ge0}A_d' t^d\subseteq A[t]\)
+is generated by \(Vt\) and is graded with degree-zero part \(k\).
+The projection in Proposition~\ref{res:IN02} preserves each
+stable homogeneous degree. Apply Theorem~\ref{res:IN04}.
+For \(a\in A^G\) lying in \(A_d'\), the element \(at^d\) is
+invariant, and evaluation at \(t=1\) recovers \(a\).
+Evaluation therefore maps the finitely generated invariant
+algebra of the graded construction onto \(A^G\).
+\end{proof}
+
+\begin{theorem}[Finite-group invariants in arbitrary characteristic]
+\label{res:IN06}
+If a finite group acts on a finitely generated commutative
+\(k\)-algebra \(A\), then \(A^G\) is a finitely generated
+\(k\)-algebra and \(A\) is finite as an \(A^G\)-module.
+\end{theorem}
+\begin{proof}
+Choose algebra generators \(a_1,\ldots,a_n\). The coefficients
+of the monic orbit polynomial
+\(\prod_{g\in G}(T-g(a_i))\) are invariant. Let \(B\) be the
+\(k\)-subalgebra generated by all these coefficients.
+Each \(a_i\) satisfies its orbit polynomial, since the identity
+factor vanishes at \(T=a_i\). Thus bounded powers of the
+generators span \(A\) over \(B\): reduce high powers using those
+monic equations. The ring \(B\) is noetherian, so the
+\(B\)-submodule \(A^G\) is finite. Its module generators
+together with the listed generators of \(B\) generate it as
+a \(k\)-algebra. The same finite list that spans \(A\) over
+\(B\) spans it over \(A^G\).
+\end{proof}
+
+\begin{theorem}[The Noether bound in characteristic zero or large characteristic]
+\label{res:IN07}
+Let \(G\) have order \(m\) and act linearly on the
+degree-one space of \(S=k[x_1,\ldots,x_n]\). If \(k\) has
+characteristic zero or characteristic greater than \(m\),
+then \(S^G\) is generated by invariants of degrees at most \(m\).
+\end{theorem}
+\begin{proof}
+Let \(I\subset S\) be generated by the homogeneous invariants of
+degrees \(1,\ldots,m\). Take a formal linear combination
+\(z=\sum_i t_i x_i\) using variables fixed by \(G\). The
+coefficients in the \(t_i\) of the orbit polynomial coefficients
+of \(z\) are invariant in \(S\), of degrees \(1,\ldots,m\).
+Indeed each is an elementary symmetric sum of the \(g(z)\),
+and the action permutes these terms. Substitution \(T=z\)
+gives \(z^m\in I\,S[t_1,\ldots,t_n]\).
+Each degree-\(m\) monomial \(x^\alpha\) therefore belongs
+to \(I\), by comparing its coefficient of \(t^\alpha\)
+and dividing by the multinomial coefficient
+\(m!/\prod_i\alpha_i!\), which is invertible under the
+stated hypotheses. Hence every homogeneous element of
+degree at least \(m\) lies in \(I\). Choose bases of the
+finitely many invariant spaces of degrees at most \(m\).
+For a homogeneous invariant of larger degree express it
+in \(I\) using these bases, and apply the averaging of
+Proposition~\ref{res:IN03} to its coefficients.
+Induction as in Theorem~\ref{res:IN04} proves the bound.
+\end{proof}
+
+\section{Computations with and without averaging}
+
+\begin{proposition}[Molien's formula in characteristic zero]
+\label{res:IN08}
+For a finite group \(G\) acting on a finite-dimensional
+space \(W\) over a field of characteristic zero,
+\[
+ \sum_{d\ge0} \dim_k(\operatorname{Sym}^d W)^G\,t^d
+       =\frac{1}{|G|}\sum_{g\in G}\frac{1}{\det(1-tg|_W)}.
+\]
+The identity is one of formal power series over \(k\), using
+the integer dimensions as coefficients.
+\end{proposition}
+\begin{proof}
+The degree-\(d\) dimension equals the trace of the degree-\(d\)
+averaging projection, since a projection is identity on its
+image and zero on its kernel. For a fixed \(g\), extend scalars
+for the calculation to an algebraic closure. Its finite order
+in characteristic zero makes \(g\) diagonalizable, with
+eigenvalues \(\lambda_1,\ldots,\lambda_n\), since its minimal
+polynomial divides a separable polynomial \(X^{|G|}-1\).
+The trace on degree \(d\) sums \(\prod_i\lambda_i^{a_i}\) over
+\(\sum_i a_i=d\) by the monomial basis. Summing the geometric
+series gives \(\prod_i(1-\lambda_i t)^{-1}\) and hence the
+stated determinant. Average and use Proposition~\ref{res:IN03}.
+\end{proof}
+
+\begin{example}[A polynomial modular invariant ring without a Reynolds operator]
+\label{res:IN09}
+In characteristic \(p>0\), let a generator \(g\) of \(C_p\)
+act on \(k[x,y]\) by \(g(x)=x\) and \(g(y)=y+x\).
+Then the invariant ring is \(k[x,y^p-x^{p-1}y]\), and
+there is no equivariant projection onto it.
+\end{example}
+\begin{proof}
+The substitution has order \(p\) and fixes
+\(N=y^p-x^{p-1}y\) by the binomial formula. The polynomial
+ring is free over \(k[x,N]\) on \(1,y,\ldots,y^{p-1}\).
+The identity \(y^p=N+x^{p-1}y\) spans it, and independence
+follows from the distinct residues modulo \(p\) of the
+largest \(y\)-degrees in \(b_j(x,N)y^j\) for nonzero
+\(b_j\). If a fixed element has highest basis index
+\(j>0\), applying \(g-1\) gives coefficient \(jxb_j\) at
+\(y^{j-1}\), nonzero in the polynomial ring. Thus only
+the basis index \(0\) is possible. An equivariant
+projection \(P\) would satisfy
+\(P(x)=P((g-1)y)=(g-1)P(y)=0\), although \(P\) fixes
+the nonzero invariant \(x\).
+\end{proof}
+
+\begin{example}[Three vectors for the special linear group]
+\label{res:IN10}
+Let \(k\) be algebraically closed of any characteristic.
+For the diagonal action of \(\operatorname{SL}_2(k)\)
+on three column vectors \(v_1,v_2,v_3\in k^2\), the
+invariant polynomial functions form the polynomial ring
+on the three brackets \(d_{ij}=\det(v_i,v_j)\), \(i<j\).
+\end{example}
+\begin{proof}
+The brackets are invariant by the determinant.
+On the set \(d_{12}\ne0\), the matrix
+\(\operatorname{diag}(1,d_{12})[v_1\ v_2]^{-1}\) has determinant
+one. It takes the first two columns to \((1,0)^{\mathsf T}\)
+and \((0,d_{12})^{\mathsf T}\). In these coordinates the
+third is \((-d_{23}/d_{12},d_{13})^{\mathsf T}\).
+These normalized triples realize all values of
+\(d_{12}\in k^\times\) and \(d_{13},d_{23}\in k\).
+This proves independence of the brackets, because a
+polynomial vanishing for all these values is zero over
+the infinite field \(k\). An invariant polynomial, evaluated
+on the normalized triples, is a Laurent polynomial in
+\(d_{12}\) with polynomial dependence on the other two brackets.
+The equality on this open set is an equality of rational
+functions: after clearing denominators, multiply by \(d_{12}\)
+to get a polynomial vanishing at all triples, hence zero.
+
+Interchanging columns \(2\) and \(3\) gives the same assertion
+with denominator a power of \(d_{13}\). The intersection of the
+two localizations of the polynomial ring on the brackets is
+the polynomial ring itself. Indeed if
+\(a/d_{12}^u=b/d_{13}^v\), then
+\(a d_{13}^v=b d_{12}^u\); the two polynomial variables
+are relatively prime and prime, so \(d_{12}^u\) divides \(a\).
+This proves generation in every characteristic.
+\end{proof}
+
+\paragraph{Scope.}
+The general positive-characteristic reductive-group finite
+generation theorem uses geometric or power reductivity. Its
+statement and the power-surjectivity hypotheses are developed
+by van der Kallen~\cite[Theorem 8]{vdk}. For the Reynolds,
+degree-bound, and bracket calculations, see
+Derksen--Kemper~\cite[Sections 2.2, 3.1--3.2 and 4.5]{derksen}
+and Kraft--Procesi~\cite[Sections 1.6 and 8.4]{kraft-procesi}.
+\chapter[Category O and Affine Highest Weights]{Category \(\mathcal O\) and Affine Highest Weights}
+\label{ch:category-o}
+
+The finite-dimensional theory starts from a highest weight and asks
+when its simple module is finite-dimensional. Category \(\mathcal O\)
+keeps the Verma modules and their extensions, so that multiplicities
+in these modules can be compared with filtrations of projective covers.
+For an affine loop algebra the same triangular construction is available.
+The central charge and the additional simple root then enter the
+integrability condition.
+
+\section{Weight spaces and finite length}
+
+Work over \(\mathbb C\). In the finite-dimensional part,
+\(\mathfrak g\) is semisimple with a triangular decomposition
+\(\mathfrak n^-\oplus\mathfrak h\oplus\mathfrak n^+\), and
+\(e_i,f_i,h_i\) are its simple-root triples. We use the triangular
+PBW isomorphism and the universality and simple quotient of the
+Verma module \(M(\lambda)\) from \cite[Results G01--G03, PDF
+pp.~43--44]{mg-lie}. Write \(L(\lambda)\) for that simple quotient,
+\(Q=\sum_i\mathbb Z\alpha_i\) for the root lattice,
+\(Q_+=\sum_i\mathbb Z_{\ge0}\alpha_i\), and \(\nu\le\lambda\) if
+\(\lambda-\nu\in Q_+\).
+
+\begin{definition}[The category \(\mathcal O\)]
+\label{res:LO01}
+An object of \(\mathcal O\) is a finitely generated \(U(\mathfrak g)\)-module
+which is a direct sum of its \(\mathfrak h\)-weight spaces and on which
+\(\mathfrak n^+\) is locally finite. Local finiteness means that
+\(U(\mathfrak n^+)v\) is finite-dimensional for every vector \(v\).
+The morphisms are the \(U(\mathfrak g)\)-linear maps.
+\end{definition}
+
+\begin{theorem}[Bounds, simple objects and finite length]
+\label{res:LO02}
+Every object of \(\mathcal O\) has finite-dimensional weight spaces
+and has weights contained in a finite union of sets \(\lambda-Q_+\).
+The category is abelian, with kernels and cokernels as for modules,
+and its objects have finite length. Its simple objects are exactly
+the pairwise nonisomorphic \(L(\lambda)\).
+\end{theorem}
+\begin{proof}
+In any weight module each \(\mathfrak h\)-stable subspace is the
+sum of its intersections with the weight spaces. To see this,
+separate the finitely many weights of a vector by an element of
+\(\mathfrak h\) and project onto each component by polynomial
+interpolation. Thus weight spaces are exact under subquotients.
+
+Choose finitely many weight-vector generators of an object, by
+replacing each generator by its weight components. The sum \(E\) of
+their \(U(\mathfrak n^+)\)-spans is finite-dimensional and stable under
+\(\mathfrak b=\mathfrak h\oplus\mathfrak n^+\). The module is a quotient of
+\(U(\mathfrak g)\otimes_{U(\mathfrak b)}E\).
+By PBW the induced module is \(U(\mathfrak n^-)\otimes E\) as a
+weight space decomposition. For a fixed difference of weights, only
+finitely many negative-root monomials have that weight
+\cite[Result G02, PDF p.~44]{mg-lie}. This gives both asserted bounds.
+A Verma module belongs to \(\mathcal O\) because it is cyclic,
+has finite-dimensional weight spaces, and has only finitely many
+weights reachable by upward shifts from any fixed weight.
+A maximal weight exists in any nonempty subset of these supporting
+cones: above a given weight in the subset the union of the cones
+contains only finitely many weights. A vector at a maximal weight
+is killed by the positive root operators. In a simple module it
+generates, and the Verma universal property identifies the simple
+module with \(L(\lambda)\). The highest weights distinguish the simples.
+
+We prove finite length first for \(M(\lambda)\). Let \(Z\) be the
+center of \(U(\mathfrak g)\), let \(W\) be the finite Weyl group, and
+let \(\rho\) be half the sum of the positive roots. The center acts
+on \(M(\lambda)\) by \(\chi_\lambda\), and
+\(\chi_\nu=\chi_\lambda\) if and only if
+\(\nu+\rho\in W(\lambda+\rho)\), by the Harish--Chandra theorem
+\cite[Result H08, PDF pp.~54--55]{mg-lie}.
+Every nonzero subquotient of \(M(\lambda)\) has a maximal weight
+\(\nu\). A vector at that weight gives a nonzero map from
+\(M(\nu)\), so the scalar central actions on source and target
+agree. Set
+\(S=W(\lambda+\rho)-\rho\). Every nonzero subquotient therefore
+has positive sum of the dimensions of its weight spaces over \(S\).
+This sum is exact on short exact sequences and is finite on
+\(M(\lambda)\). It bounds the length of every strict chain of
+submodules, proving finite length.
+
+The finite weight module \(E\) above has a flag of
+\(\mathfrak b\)-submodules with one-dimensional weight quotients.
+Order its finitely many weights with larger weights first,
+then take a flag in each weight space. Positive root operators
+raise weights, so all terms are stable. Induction to
+\(\mathfrak g\) is exact because the right \(U(\mathfrak b)\)-module
+\(U(\mathfrak g)\) is free by PBW. It therefore turns the flag
+into a filtration by Verma modules. The induced module and its
+quotient have finite length.
+
+A submodule of a finite-length \(U(\mathfrak g)\)-module is finitely
+generated. Indeed it has finite length itself, and one can lift
+one cyclic generator of each simple factor. The weight and local
+finiteness properties pass to subquotients and finite direct sums.
+Hence the module kernels and cokernels are in \(\mathcal O\),
+with the usual identification of coimage and image.
+\end{proof}
+
+\begin{proposition}[Central character and root-lattice components]
+\label{res:LO03}
+Each object of \(\mathcal O\) decomposes functorially and exactly
+into a finite direct sum indexed by generalized central characters
+and cosets of \(Q\) in \(\mathfrak h^*\).
+In the component for \((\chi,\xi)\), the simple labels are those
+\(\mu\in\xi\) with \(\chi_\mu=\chi\). They form a finite set and
+have a common upper bound \(\Lambda\in\xi\). Every weight of every
+object in that component is at most \(\Lambda\).
+\end{proposition}
+\begin{proof}
+Root operators preserve the coset of each weight, and the bounds
+of Theorem~\ref{res:LO02} imply that only finitely many cosets occur.
+In a fixed object there are finitely many distinct central
+characters of simple factors. Choose \(z\in Z\) whose values on
+them are pairwise distinct, by choosing a linear combination of
+a finite set of separating central elements outside finitely many
+proper hyperplanes. On an object of length \(l\), the operator
+\(\prod_{\chi}(z-\chi(z))^l\) vanishes, since each factor for a
+simple quotient kills that quotient. The corresponding coprime
+polynomial factors give the generalized eigenspace decomposition,
+by the polynomial Bezout identity. On each term the simple factors
+all have the indicated character, so every \(z'\in Z\) acts there
+by \(\chi(z')\) plus a nilpotent operator. This intrinsic
+description proves functoriality. To verify exactness in a short
+exact sequence, use one separating \(z\) and a common exponent
+for all three objects. The resulting polynomial projectors commute
+with the maps of the sequence.
+
+The possible labels are in one finite shifted Weyl orbit by
+\cite[Result H08, PDF pp.~54--55]{mg-lie}. In a fixed coset write
+them in simple-root coordinates relative to any chosen weight of
+the coset and take the coordinatewise maximum of their finitely
+many integral differences. This gives a common \(\Lambda\).
+The weights of a finite-length object are the union of the
+weights of its simple factors, by exactness on weight spaces.
+Each \(L(\mu)\) has weights at most \(\mu\), so the common bound
+applies to the entire component.
+\end{proof}
+
+\section{Projective covers and reciprocity}
+
+\begin{lemma}[A truncated weight projective]
+\label{res:LO04}
+For \(\mu\le\Lambda\), let \(\mathcal O^{\le\Lambda}\) be the
+full subcategory of objects with all weights at most \(\Lambda\).
+It has a projective object \(P_\Lambda(\mu)\) representing the
+exact functor \(X\mapsto X_\mu\). This projective has a Verma
+filtration whose successive quotients, grouped by their distinct
+highest weights \(\nu\), are direct sums of \(M(\nu)\) with
+\(\mu\le\nu\le\Lambda\).
+\end{lemma}
+\begin{proof}
+Give \(U(\mathfrak n^+)\) a generator of weight \(\mu\): multiplication
+is the \(\mathfrak n^+\)-action and elements of degree \(\beta\in Q_+\)
+have weight \(\mu+\beta\). This defines an action of
+\(\mathfrak b\) because the adjoint action of \(\mathfrak h\) on
+the degree-\(\beta\) part is multiplication by \(\beta\).
+Kill the direct sum of spaces of weights \(\nu\not\le\Lambda\).
+This is a \(\mathfrak b\)-submodule because upward shifts keep a
+weight outside the down-set of \(\Lambda\). Write \(E_\Lambda(\mu)\)
+for the quotient. It is finite-dimensional: its allowed degrees
+have simple-root coordinates between \(0\) and those of
+\(\Lambda-\mu\), and each PBW-degree space for a fixed root-lattice
+degree is finite-dimensional.
+
+Define
+\[
+  P_\Lambda(\mu)=U(\mathfrak g)\otimes_{U(\mathfrak b)}E_\Lambda(\mu).
+\]
+The negative-root PBW basis gives the bound on its weights and
+finite-dimensional weight spaces. A vector can be raised only
+into finitely many weights at most \(\Lambda\); hence its
+\(U(\mathfrak n^+)\)-span is finite-dimensional. The induced
+module is cyclic and lies in \(\mathcal O^{\le\Lambda}\).
+A vector \(x\in X_\mu\) in this subcategory gives a unique
+\(\mathfrak b\)-map \(E_\Lambda(\mu)\to X\) taking the generator
+to \(x\), since all the removed degrees act by zero there.
+Induction extends it uniquely to a \(\mathfrak g\)-map. This
+represents the weight functor and proves projectivity.
+
+Order the distinct weights of \(E_\Lambda(\mu)\) with larger weights
+first. The subspaces spanned by the initial weight spaces form
+a \(\mathfrak b\)-stable filtration. Each quotient consists of
+copies of \(\mathbb C_\nu\) for its weight \(\nu\). Exact induction
+turns these quotients into copies of \(M(\nu)\), as asserted.
+\end{proof}
+
+\begin{theorem}[Projective covers have Verma filtrations]
+\label{res:LO05}
+For each \(\mu\) there is a projective cover
+\(P(\mu)\twoheadrightarrow L(\mu)\) in \(\mathcal O\).
+It has a finite filtration by Verma modules. In a filtration
+obtained from the truncated projective, the displayed highest
+weights can be arranged with larger weights first.
+\end{theorem}
+\begin{proof}
+Take the component for \((\chi_\mu,\mu+Q)\) in
+Proposition~\ref{res:LO03} and its bound \(\Lambda\).
+Apply its exact projector to \(P_\Lambda(\mu)\). Denote the
+result by \(P_0\). Any map from \(P_\Lambda(\mu)\) into an object
+of that component factors through \(P_0\), so its projectivity
+in the cutoff category gives projectivity there. The exact
+component decomposition then makes \(P_0\) projective in
+\(\mathcal O\). The map representing a nonzero vector of
+\(L(\mu)_\mu\) gives a surjection from \(P_0\).
+
+Decompose \(P_0\) as a finite direct sum of indecomposables by
+induction on its length, and take a summand \(P\) whose map
+\(p:P\to L(\mu)\) is nonzero. The map is surjective and its
+kernel is superfluous, meaning that adding it to a proper
+submodule never gives \(P\). In fact if a submodule \(J\) maps
+onto \(L(\mu)\), projectivity lifts \(p\) to a map into \(J\).
+Composing with the inclusion gives an endomorphism \(a\) of \(P\)
+with \(pa=p\). In a finite-length module the sequences of kernels
+and images of powers stabilize. For large \(n\) this gives
+\(P=\ker a^n\oplus\operatorname{im}a^n\): the intersection is
+zero by kernel stabilization, and for any \(x\) choose \(y\)
+with \(a^nx=a^{2n}y\) by image stabilization.
+Then \(x-a^ny\in\ker a^n\). Since \(P\) is indecomposable and \(pa^n=p\ne0\),
+\(a\) is invertible. Thus \(J=P\). This proves the cover property,
+and also uniqueness of the maximal submodule \(\ker p\).
+Two projective covers of the same simple lift their maps through
+one another. Each lift maps onto the target by superfluity,
+and the finite lengths force the lifts to be isomorphisms.
+
+It remains to transfer the Verma filtration to \(P\).
+In the filtration of \(P_\Lambda(\mu)\) constructed in
+Lemma~\ref{res:LO04}, the term indexed by the first \(i\) distinct
+weights \(\nu_1,\ldots,\nu_i\) is the submodule generated by the
+weight spaces at those weights in the full module. Indeed the
+term was induced from these weight spaces in \(E_\Lambda(\mu)\),
+and the remaining quotient has a Verma filtration with highest
+weights all after the first \(i\) in the chosen order.
+Its weights cannot equal any of \(\nu_1,\ldots,\nu_i\), since
+they are at most their respective later highest weights and
+the specified order places larger weights first. The generation
+description persists under the central-character projector on
+\(P_\Lambda(\mu)\), as it preserves weight spaces. Consequently
+every endomorphism of \(P_0\) preserves the induced filtration.
+
+Apply the projection onto \(P\). The \(i\)-th quotient of the
+resulting filtration is the image of an idempotent on a direct
+sum of copies of \(M(\nu_i)\), or zero. An endomorphism of one
+copy is scalar because the generating top weight space is
+one-dimensional. Thus idempotents on a sum of copies are
+ordinary complex idempotent matrices and their images are
+direct sums of the same Verma module. Refining these quotients
+gives a Verma filtration of \(P\) in the stated order.
+\end{proof}
+
+\begin{lemma}[Dual Vermas detect Verma factors]
+\label{res:LO06}
+There is an exact contravariant involution \(D\) on
+\(\mathcal O\) preserving each simple \(L(\lambda)\) up to
+isomorphism. Write \(\nabla(\lambda)=D M(\lambda)\). Then
+\[
+ \dim_{\mathbb C}\operatorname{Hom}\bigl(M(\nu),\nabla(\lambda)\bigr)
+   =\begin{cases}1&\nu=\lambda,\\0&\nu\ne\lambda,\end{cases}
+ \qquad
+ \operatorname{Ext}^1_{\mathcal O}\bigl(M(\nu),\nabla(\lambda)\bigr)=0 .
+\]
+\end{lemma}
+\begin{proof}
+The map fixing \(h_i\) and interchanging \(e_i\) and \(f_i\)
+extends to an algebra anti-involution \(\tau\) on \(U(\mathfrak g)\).
+For the Lie relations one reverses brackets on both sides:
+the Cartan relations then transform into one another,
+and \([e_i,f_j]=\delta_{ij}h_i\) becomes
+\([e_j,f_i]=\delta_{ij}h_i\). A Serre relation with nested
+positive brackets becomes the corresponding negative one
+times an overall sign. These relations present \(\mathfrak g\)
+by \cite[Results F01--F03, PDF pp.~36--38]{mg-lie}.
+For a finite-weight-space module define \(DX\) as the direct
+sum of the linear duals of its weight spaces, with action
+\((u\ell)(x)=\ell(\tau(u)x)\). A homogeneous \(u\) shifts
+the support of a functional by the weight of \(u\), so this
+action preserves finite support. It is exact and involutive
+on these weight modules by finite-dimensional duality and
+exactness on each weight.
+
+It sends a simple module to a simple one because applying
+the exact double dual to a subquotient recovers that subquotient.
+The maximal weight of \(DL(\lambda)\) is still \(\lambda\),
+so \(DL(\lambda)\cong L(\lambda)\). For any object of
+\(\mathcal O\), its dual has finite length by the dual of a
+composition series, hence is finitely generated. Its weight
+support is unchanged and finite-dimensional weight spaces
+remain finite-dimensional. The upper bounds thus imply local
+finiteness for \(\mathfrak n^+\), proving \(DX\in\mathcal O\).
+
+A highest vector in \(\nabla(\lambda)\) is a functional
+annihilating all the subspaces \(f_iM(\lambda)\).
+Their sum contains every weight space of \(M(\lambda)\) below
+the top: the \(f_i\) generate \(\mathfrak n^-\), and every
+nonempty word in them starts with some \(f_i\).
+A highest functional is therefore at the top weight \(\lambda\)
+and its space is one-dimensional. The Hom formula follows
+from the universal property of \(M(\nu)\).
+
+For the Ext assertion take a short exact sequence
+\(0\to\nabla(\lambda)\to X\to M(\nu)\to0\) in \(\mathcal O\).
+If \(\nu\not<\lambda\), lift the highest vector at weight
+\(\nu\). Raising this lift lands in \(\nabla(\lambda)\) at a
+weight \(\nu+\alpha_i\), which is impossible because it would
+imply \(\nu<\lambda\). Thus the lift is highest and furnishes
+a splitting by universality. If \(\nu<\lambda\), dualize
+to an extension of \(M(\lambda)\) by \(\nabla(\nu)\) and
+apply the first case. Dualizing its splitting gives the
+original splitting.
+\end{proof}
+
+\begin{theorem}[BGG reciprocity]
+\label{res:LO07}
+For a Verma filtration of \(P(\mu)\), the number of factors
+isomorphic to \(M(\lambda)\) is independent of the filtration
+and satisfies
+\[
+ [P(\mu):M(\lambda)]=[M(\lambda):L(\mu)] .
+\]
+The right-hand side is a composition multiplicity.
+\end{theorem}
+\begin{proof}
+The unique maximal submodule of the cover from
+Theorem~\ref{res:LO05} implies that every nonzero map to a
+simple module factors through the top \(L(\mu)\).
+Its endomorphism algebra is \(\mathbb C\), by the
+one-dimensional generating highest vector. Therefore
+\(\operatorname{Hom}(P(\mu),L(\eta))\) has dimension
+\(\delta_{\mu,\eta}\). Projectivity and a composition
+series then give
+\(\dim\operatorname{Hom}(P(\mu),\nabla(\lambda))
+=[\nabla(\lambda):L(\mu)]=[M(\lambda):L(\mu)]\),
+the last equality by restricted duality.
+
+Apply \(\operatorname{Hom}(-,\nabla(\lambda))\) to the successive
+short exact sequences of a Verma filtration of \(P(\mu)\).
+For a short exact sequence with Verma quotient, any map
+from its submodule to \(\nabla(\lambda)\) extends: push
+out along the map and split the resulting extension by
+Lemma~\ref{res:LO06}. Thus the dimensions add across the
+filtration. The Hom formula in the same lemma gives the
+multiplicity \([P(\mu):M(\lambda)]\).
+\end{proof}
+
+\begin{example}[The principal rank-one component]
+\label{res:LO08}
+For \(\mathfrak g=\mathfrak{sl}_2\) write
+\(\lambda=\lambda(h)\in\mathbb C\). The Verma module
+\(M(\lambda)\) is simple unless \(\lambda=m\in\mathbb Z_{\ge0}\).
+In that case its only nonzero proper submodule is the
+Verma module \(M(-m-2)\), generated by \(f^{m+1}v_m\).
+In the central-character component with labels \(0,-2\),
+the projectives are \(P(0)=M(0)\) up to isomorphism and a
+nonsplit extension \(0\to M(0)\to P(-2)\to M(-2)\to0\).
+\end{example}
+\begin{proof}
+PBW gives the vectors \(f^j v_\lambda\) as a basis, with
+weight \(\lambda-2j\) and \(j\ge0\). Commuting \(e\)
+through one additional \(f\), using \([e,f]=h\) and
+\([h,f]=-2f\), gives inductively
+\[
+  e f^j v_\lambda=j(\lambda-j+1) f^{j-1}v_\lambda .
+\]
+A nonzero proper submodule has a nonzero weight vector of
+least exponent \(j>0\); applying \(e\) forces \(j=\lambda+1\).
+Then every vector with exponent at least \(j\) is obtained
+by powers of \(f\), so these span the whole submodule.
+At \(m\ge0\) that span is a Verma module: its highest
+weight is \(m-2(m+1)=-m-2\), and the universal map is
+injective because the images of its PBW basis are distinct
+nonzero basis vectors.
+The Harish--Chandra theorem gives the labels \(0,-2\)
+in this component. Reciprocity gives one Verma factor
+for \(P(0)\), and both \(M(0)\) and \(M(-2)\) for \(P(-2)\).
+The ordering in Theorem~\ref{res:LO05} places \(M(0)\) in
+the submodule. A split extension would contradict the
+indecomposability of the projective cover constructed there.
+\end{proof}
+
+\section{The untwisted affine loop algebra}
+
+For the remainder of the chapter assume \(\mathfrak g\) is simple.
+Fix its invariant nondegenerate symmetric form \(B\) normalized so
+that long roots have squared length \(2\) for the induced form on
+\(\mathfrak h^*\) \cite[Results B06 and D02--D05, PDF pp.~15,
+23--25]{mg-lie}. Write \(x_m=x\otimes t^m\) for a loop vector.
+
+\begin{proposition}[The loop cocycle and the degree derivation]
+\label{res:LO09}
+The vector space
+\(\widehat{\mathfrak g}=
+(\mathfrak g\otimes\mathbb C[t,t^{-1}])\oplus\mathbb C K\oplus\mathbb C d\)
+is a Lie algebra for
+\[
+ [x_m,y_n]=[x,y]_{m+n}+m\,\delta_{m,-n}B(x,y)K,\qquad
+ [d,x_m]=m x_m,\qquad [K,\widehat{\mathfrak g}]=0 .
+\]
+Its subalgebra spanned by the loops and \(K\) is a nonsplit
+central extension of the loop algebra.
+\end{proposition}
+\begin{proof}
+The central term is alternating by \(m=-n\) on its support.
+In the cyclic sum of the three double brackets on \(x_m,y_n,z_s\),
+the loop terms cancel by Jacobi in \(\mathfrak g\). A central term
+occurs only for \(m+n+s=0\), and invariance of \(B\) identifies
+the three cyclic values \(B([x,y],z)\), \(B([y,z],x)\),
+and \(B([z,x],y)\). Their common coefficient is
+\((m+n)+(n+s)+(s+m)=0\). This proves Jacobi on the extension.
+The degree operator is a derivation: the bracket has loop
+degree \(m+n\) and a central component can occur only in
+degree zero. Adjoining \(d\) with this derivation proves
+Jacobi for the stated algebra.
+For \(h,h'\in\mathfrak h\) with \(B(h,h')\ne0\), the two
+commuting loops \(h_1,h'_{-1}\) have bracket \(B(h,h')K\)
+in the extension. Their lifts differ only by central
+vectors, so a Lie section cannot exist.
+\end{proof}
+
+\begin{proposition}[Triangular decomposition and simple triples]
+\label{res:LO10}
+Set
+\[
+ \widehat{\mathfrak h}=\mathfrak h\oplus\mathbb C K\oplus\mathbb C d,
+ \qquad
+ \widehat{\mathfrak n}^{\pm}
+ =\mathfrak n^\pm\otimes 1\ \oplus\
+    \bigoplus_{\pm m>0}\mathfrak g\otimes t^m .
+\]
+These subspaces give a triangular decomposition.
+Let \(\delta\) vanish on \(\mathfrak h,K\) and satisfy
+\(\delta(d)=1\), and extend all finite roots by zero on \(K,d\).
+The nonzero weights for the adjoint Cartan action are
+\(\alpha+m\delta\) for finite roots \(\alpha\), and
+\(m\delta\) for \(m\ne0\), with multiplicities respectively
+\(1\) and \(\dim\mathfrak h\).
+If \(\theta\) is the highest finite root, put
+\[
+ \alpha_0=\delta-\theta,\quad
+ e_0=(f_\theta)_1,\quad
+ f_0=(e_\theta)_{-1},\quad h_0=K-h_\theta .
+\]
+The finite simple-root triples and this extra triple satisfy
+the rank-one triple relations and
+\([e_i,f_j]=0\) for \(i\ne j\), including index \(0\).
+The respective \(e_i\) generate \(\widehat{\mathfrak n}^+\),
+and the \(f_i\) generate \(\widehat{\mathfrak n}^-\).
+\end{proposition}
+\begin{proof}
+The degrees and finite Cartan eigenspaces give the decomposition
+and the listed roots directly. The triangular summands are
+Lie subalgebras: same-sign nonzero degrees add and cannot give
+a central term, and degree zero uses the finite decomposition.
+The highest root \(\theta\) is dominant by the root-string formula
+and the absence of \(\theta+\alpha_i\).
+Take any long root and make it dominant, say \(\beta\),
+using the finite Weyl chamber result. Then
+\(\theta-\beta\in Q_+\) by the highest-root bound, and
+\((\theta-\beta,\theta+\beta)\ge0\) by dominance.
+Thus \(\theta\) is long
+\cite[Results D04, E03 and E09, PDF pp.~24--25, 30--31, 34--35]{mg-lie}.
+Its coroot triple can be chosen with \([e_\theta,f_\theta]=h_\theta\).
+Invariance gives
+\(B(h_\theta,h)=\theta(h)B(e_\theta,f_\theta)\).
+Since the root has squared length \(2\), its coroot \(h_\theta\)
+is \(B\)-dual to \(\theta\), giving \(B(e_\theta,f_\theta)=1\).
+The bracket from Proposition~\ref{res:LO09} now gives
+\([e_0,f_0]=K-h_\theta\), and the two Cartan relations
+follow from the \(\pm\theta\) weights. For a mixed pair
+\([e_j,f_0]\) or \([e_0,f_j]\), there is no central term.
+Its finite bracket vanishes because neither
+\(\theta+\alpha_j\) nor \(-\theta-\alpha_j\) is a root, by
+\cite[Result E09, PDF pp.~34--35]{mg-lie}.
+
+The finite \(\mathfrak n^+\) is generated by its simple root
+vectors by \cite[Results F01--F03, PDF pp.~36--38]{mg-lie}.
+The adjoint module is irreducible, since its submodules are
+ideals of the simple \(\mathfrak g\). Its lowest root vector
+\(f_\theta\) is killed by \(\mathfrak n^-\), so PBW in the
+reverse order shows that \(U(\mathfrak n^+)f_\theta=\mathfrak g\)
+under the adjoint action. In degree one the subalgebra
+generated by the \(e_i\) therefore contains
+\(\mathfrak g\otimes t\). Successive brackets with this space
+give all positive degrees, since \([\mathfrak g,\mathfrak g]
+=\mathfrak g\). The same argument with the highest vector
+gives the negative subalgebra.
+\end{proof}
+
+\section{Affine highest weights and level}
+
+\begin{proposition}[Affine Verma modules]
+\label{res:LO11}
+For \(\Lambda\in\widehat{\mathfrak h}^{\,*}\), induce the
+one-dimensional weight module from
+\(\widehat{\mathfrak h}\oplus\widehat{\mathfrak n}^+\), with
+positive root operators acting by zero. The resulting
+\(\widehat M(\Lambda)\) is universal for a highest vector
+of weight \(\Lambda\). It has finite-dimensional weight spaces,
+one-dimensional top, and a unique simple highest-weight quotient
+\(\widehat L(\Lambda)\). On both, \(K\) acts by
+\(\Lambda(K)\), called the level.
+\end{proposition}
+\begin{proof}
+Use PBW for the ordered basis of the affine Lie algebra,
+with negative roots first \cite[Result A05, PDF pp.~8--9]{mg-lie}.
+This identifies the induced module linearly with
+\(U(\widehat{\mathfrak n}^-)\) acting freely on the top
+vector, and its universal property follows by mapping that
+vector to any given highest vector.
+
+The roots \(\alpha_0,\alpha_1,\ldots,\alpha_r\) are linearly
+independent, as evaluation on \(d\) singles out \(\alpha_0\).
+Every positive root is a nonzero nonnegative combination
+of them. For a positive-degree real root use
+\(\alpha+m\delta=m\alpha_0+(m\theta+\alpha)\) and the
+highest-root bound on \(-\alpha\).
+For an imaginary root use \(m\delta=m\alpha_0+m\theta\).
+At degree zero use the ordinary positive roots. Among roots
+of bounded height there are finitely many: the coefficient
+of \(\alpha_0\) bounds the loop degree, and each degree
+has finite total root multiplicity. Thus a fixed height in
+the difference from \(\Lambda\) allows just finitely many
+negative-root PBW monomials. This proves the weight-space
+assertions. Every proper submodule misses the top, and
+the sum of all proper submodules still misses the top
+by the same weight-space interpolation as in
+Theorem~\ref{res:LO02}. Its quotient is simple.
+The level assertion follows from centrality and the value
+on the generating highest vector.
+\end{proof}
+
+\begin{theorem}[Integrability of simple affine highest weights]
+\label{res:LO12}
+Call a weight module integrable if every \(e_i,f_i\), for
+\(0\le i\le r\), acts locally nilpotently. The simple
+\(\widehat L(\Lambda)\) is integrable exactly when
+\(\Lambda(h_i)\in\mathbb Z_{\ge0}\) for all these indices.
+Its level is then a nonnegative integer. If
+\(h_\theta=\sum_{i=1}^{r}a_i^\vee h_i\), the level is
+\[
+   \Lambda(K)=\Lambda(h_0)+
+      \sum_{i=1}^{r}a_i^\vee\Lambda(h_i) .
+\]
+\end{theorem}
+\begin{proof}
+For a highest vector \(v\), the calculation in
+Example~\ref{res:LO08} applies to each simple triple.
+If \(f_i^N v=0\) with \(N\) minimal, applying \(e_i\)
+shows \(N(\Lambda(h_i)-N+1) f_i^{N-1}v=0\).
+Hence \(\Lambda(h_i)=N-1\), proving necessity.
+
+Conversely, write \(m_i=\Lambda(h_i)\ge0\) and take the highest vector
+\(v_\Lambda\) of \(\widehat M(\Lambda)\). The vector
+\(f_i^{m_i+1}v_\Lambda\) is killed by \(e_i\)
+by the same formula. It is killed by every other \(e_j\)
+because \([e_j,f_i]=0\). These \(e_j\) generate
+\(\widehat{\mathfrak n}^+\) by Proposition~\ref{res:LO10},
+so the vector is highest at weight strictly below
+\(\Lambda\). Its generated submodule stays below the original
+top by PBW. The vector therefore vanishes in the simple
+quotient.
+
+It remains to verify local nilpotence on every vector.
+The adjoint action of each \(e_i,f_i\) on the affine algebra
+is locally nilpotent. On loop vectors its finite Lie action
+is repeated bracketing with a fixed finite root vector,
+which shifts finite weights in one root direction and
+eventually gives zero. The loop degree changes uniformly
+for index \(0\), and any central term is killed at the
+next commutator. A bracket with \(d\) is a multiple
+of the acting vector, and a further bracket is zero.
+Adjoint local nilpotence passes to the enveloping algebra,
+since the operator is a derivation and a product involves
+only finitely many factors. For \(a=e_i\) or \(f_i\) the identity
+\[
+   a^N(uv)=
+   \sum_{j=0}^N {N\choose j}(\operatorname{ad}a)^j(u)a^{N-j}v
+\]
+follows by induction. Its terms vanish for large \(N\),
+since \(a\) is nilpotent on the top vector and
+\(\operatorname{ad}a\) is locally nilpotent on \(u\).
+Such vectors \(uv\) span \(\widehat L(\Lambda)\).
+Finally the coroot of the highest finite root is a positive root
+in the dual root system, so its simple-coroot coefficients \(a_i^\vee\)
+are nonnegative integers by
+\cite[Results E02 and E07, PDF pp.~29, 33--34]{mg-lie}.
+Substituting \(K=h_0+h_\theta\) proves the level formula.
+\end{proof}
+
+\begin{proposition}[Nonzero level and evaluation modules]
+\label{res:LO13}
+A nonzero finite-dimensional module on which \(K\) acts as a scalar
+has level zero. For \(a\in\mathbb C^\times\), substitution
+\(x_m\mapsto a^m x\), \(K\mapsto0\), gives evaluation modules
+of the affine algebra without \(d\). An evaluation module
+obtained from a nontrivial \(\mathfrak g\)-action has no action
+of \(d\) extending it to \(\widehat{\mathfrak g}\).
+\end{proposition}
+\begin{proof}
+Take \(h,h'\in\mathfrak h\) with \(B(h,h')\ne0\).
+On a module of dimension \(N>0\) the trace of
+\([h_1,h'_{-1}]=B(h,h')K\) is zero. If the level is
+\(\ell\), this gives \(N B(h,h')\ell=0\), so \(\ell=0\).
+Evaluation respects the loop brackets by multiplication
+of the powers of \(a\), and kills the central term.
+If an operator for \(d\) existed, its bracket with
+the action of \(x_0\) would vanish. Its bracket with
+the action of \(x_1=a x_0\) would then also vanish,
+but by \([d,x_1]=x_1\) that bracket equals \(a x_0\).
+Since \(a\ne0\), all \(x_0\) would act by zero,
+contrary to the nontrivial action.
+\end{proof}
+
+\begin{example}[The level-one basic highest weight]
+\label{res:LO14}
+Let \(\Lambda_0\) vanish on \(\mathfrak h,d\) and satisfy
+\(\Lambda_0(K)=1\). Then \(\widehat L(\Lambda_0)\) is
+integrable and infinite-dimensional. For a highest vector \(v\),
+and any \(h\in\mathfrak h\) with \(B(h,h)\ne0\),
+the vectors \(h_{-1}^{\,j}v\), \(j\ge0\), are nonzero
+and lie in distinct \(d\)-eigenspaces.
+\end{example}
+\begin{proof}
+The weight has value \(1\) on \(h_0=K-h_\theta\)
+and \(0\) on each finite \(h_i\), so
+Theorem~\ref{res:LO12} gives integrability.
+The commutator \([h_1,h_{-1}]\) acts by the nonzero
+scalar \(B(h,h)\) and \(h_1v=0\).
+Commuting \(h_1\) across \(j\) copies of \(h_{-1}\) gives
+\(h_1h_{-1}^{\,j}v=jB(h,h)h_{-1}^{\,j-1}v\).
+Induction gives nonvanishing. The bracket
+\([d,h_{-1}]=-h_{-1}\) gives eigenvalues \(-j\) on these
+vectors, proving independence and infinite dimension.
+\end{proof}
+
+For the finite category and reciprocity, compare
+\cite[Sections 15.1, 16.3 and 20.1--20.4]{etingof-lie} and
+\cite[Chapters 1 and 3]{humphreys-o}. For the untwisted affine
+model and integrable highest weights see
+\cite[Sections 3, 4.1--4.7]{hernandez-affine} and
+\cite[Chapters 6--7, 9 and 12]{kac}. Twisted affine algebras,
+the general Kac--Moody character formula, and Kazhdan--Lusztig
+polynomials are natural continuations of this chapter.
+\chapter{Geometric Representations and Satake}
+
+We prove geometric Satake for a complex split torus with rational
+coefficients. We also compute the convolution square of the
+minuscule intersection complex for \(\operatorname{GL}_2\).
+These computations use the classical topology on complex points.
+For the setting of general complex connected reductive groups, see
+Baumann--Riche~\cite[Sections 6--9 and 13--14]{baumannriche}
+and Achar~\cite[Chapter 9]{achar}.
+
+Put \(O=\mathbb C[[t]]\) and \(K=\mathbb C((t))\).
+For a complex algebraic group \(G\) the affine Grassmannian
+\(\operatorname{Gr}_G\) has complex points \(G(K)/G(O)\).
+Its bounded lattice models below are regarded with their reduced
+structures. A sheaf on their complex points uses the ordinary
+analytic topology. A sheaf on the union has finite support in the
+sense that it is carried by one finite-dimensional closed stage.
+We use the cohomological shift convention
+\(H^a(F[b])=H^{a+b}(F)\).
+
+\section{The affine Grassmannian of a torus}
+
+\begin{lemma}[The reduced lattice stages of a split torus]
+\label{res:GS01}
+For \(T=(\mathbb G_{m,\mathbb C})^r\), let
+\(\Lambda=X_*(T)=\mathbb Z^r\). The reduced affine Grassmannian
+of \(T\) is the union of the discrete finite sets
+\(\{-N,\ldots,N\}^r\), with the point labelled \(\lambda\)
+represented by \(t^\lambda=(t^{\lambda_1},\ldots,t^{\lambda_r})\).
+Every point is fixed by \(T(O)\).
+\end{lemma}
+
+\begin{proof}
+Every member of \(K^\times\) has the unique form \(t^a u\)
+with \(a\in\mathbb Z\) and \(u\in O^\times\).
+This identifies the quotient and the stabilizers on complex points.
+For one coordinate, the bounded lattice model consists of the
+\(t\)-invariant subspaces of \(t^{-N}O/t^NO\), in all dimensions.
+Invariance is a closed condition in each ordinary Grassmannian,
+since the composite of the subbundle, the operator \(t\), and the
+projection to the quotient bundle must vanish.
+The finite space \(t^{-N}O/t^NO\) is a cyclic \(\mathbb C[t]\)-module
+with relation \(t^{2N}=0\). A submodule lifts to an ideal of
+\(\mathbb C[t]\) containing \((t^{2N})\), so is itself the image
+of \((t^d)\) for one \(0\leq d\leq 2N\).
+Thus there is precisely one complex point in each allowed dimension.
+The product of these bounded models gives the torus stage.
+
+For the reduced structure, a reduced affine complex algebra of
+finite type is detected by its evaluations at complex points.
+This is Lemma 1.4 of \emph{Topics in Field and Galois Theory}
+\cite[\texttt{PV04}, PDF p.~5]{mg-fieldtopics}.
+When there are finitely many such points the evaluation map to a
+finite product of copies of \(\mathbb C\) is injective. For distinct
+points choose a function separating them, subtract its
+value at one point and normalize at the other. Products give
+functions taking value \(1\) at one point and \(0\) at all the
+others. On each affine chart the reduced scheme is therefore a
+finite union of reduced points. This gives the claimed discrete
+stages and their natural inclusions.
+\end{proof}
+
+The reduced qualification matters for functors evaluated on rings
+with nilpotents. For example, over
+\(\mathbb C[\epsilon]/(\epsilon^2)\), the unit
+\(1+\epsilon t^{-1}\) reduces to \(1\) and does not belong
+to the positive loop subgroup. Our sheaves use complex points
+with the indicated topology throughout.
+
+\begin{proposition}[The equivariant perverse category of a torus]
+\label{res:GS02}
+The category
+\(\operatorname{Perv}_{T(O)}(\operatorname{Gr}_T,\mathbb Q)\)
+of finite-support middle-perverse sheaves is equivalent to
+the category of \(\Lambda\)-graded, finite-dimensional
+\(\mathbb Q\)-vector spaces. A sheaf is sent to the family
+\((V_\lambda)_{\lambda\in\Lambda}\) of its stalks in degree zero.
+\end{proposition}
+
+\begin{proof}
+For a smooth stratum \(S\) of complex dimension \(d\), the
+middle-perversity conditions are
+\(H^a(i_S^*F)=0\) for \(a>-d\) and
+\(H^a(i_S^!F)=0\) for \(a<-d\), where \(i_S\) includes the
+stratum. For the disjoint points of Lemma~\ref{res:GS01}, both
+restrictions are the ordinary restriction and \(d=0\).
+This leaves a finite-dimensional vector space in degree zero
+at each point. The finite-stage support condition is exactly
+finite support of the family.
+
+Equivariance on the perverse heart means an isomorphism between
+pullbacks by the action and the projection, the identity at
+the group identity, compatible with multiplication. At a point
+fixed by \(T(O)\) both pullbacks are constant. At any finite jet
+level the parameter space for the group is
+\((\mathbb C^\times)^r\times \mathbb C^{r(N-1)}\) for truncation
+modulo \(t^N\), hence connected. An isomorphism between constant
+local systems on this parameter space is constant, and its
+normalization at the identity forces the identity everywhere.
+The unique isomorphisms are compatible under changing jet level.
+Equivalently the product coordinates of \(T(O)\) are path-connected,
+by paths in the nonzero constant terms and linear contractions of
+the other coefficients. All linear maps between stalks respect
+this equivariance. This computes the equivariant perverse heart,
+without any assertion about equivariant derived Ext groups.
+\end{proof}
+
+\begin{proposition}[Convolution and symmetry for the torus]
+\label{res:GS03}
+For finite-support sheaves \(V,W\) identified as in
+Proposition~\ref{res:GS02}, convolution has the formula
+\[
+ (V\star W)_\nu
+   =\bigoplus_{\lambda+\mu=\nu} V_\lambda\otimes_{\mathbb Q} W_\mu .
+\]
+Its unit is \(\mathbb Q\) at \(0\), and its associativity is
+the usual tensor rebracketing. Its geometric commutativity uses
+the ordinary tensor flip.
+\end{proposition}
+
+\begin{proof}
+The ordered convolution space is the twisted product
+\(T(K)\times^{T(O)}\operatorname{Gr}_T\).
+Use \((ga,x)\sim(g,ax)\) for \(a\in T(O)\).
+Since \(T(O)\) acts trivially on the second factor, the labels
+are precisely ordered pairs. The map to \(\operatorname{Gr}_T\)
+multiplies the two successive modifications, hence takes
+\((t^\lambda,t^\mu)\) to \(t^{\lambda+\mu}\).
+The descended exterior tensor product at the pair is
+\(V_\lambda\otimes W_\mu\) in degree zero by the explicit
+equivariance in Proposition~\ref{res:GS02}.
+Pushforward on the finite support is direct sum over a finite
+discrete fibre, with no higher cohomology. The same argument
+for triples proves the associativity and unit formulas.
+
+The two-point exchange can be computed over the affine line
+with coordinate \(z\). For marked points \(a,b\), in each line
+coordinate the ordered modifications are multiplication by
+\((z-a)^{\lambda_i}\), followed by
+\((z-b)^{\mu_i}\), in the punctured trivialization.
+If \(a\ne b\) the factors give the independent orders at the two
+points. If \(a=b\) they give the summed order in the resulting
+modification. The ordered intermediate modification still records
+the first exponent. Thus for fixed ordered labels these
+modifications form a section over the whole two-point parameter
+plane, with the constant coefficient space
+\(V_\lambda\otimes W_\mu\). There is no monodromy on that family.
+Exchanging the marked points and the labels interchanges the two
+coefficient factors by the ordinary flip, also at the collision
+point. Summing over labels gives the commutativity constraint
+from fusion. All fibre degrees here are zero.
+The symmetry identities are exactly the identities for flipping
+and rebracketing ordinary tensor products.
+\end{proof}
+
+\begin{theorem}[Geometric Satake for a split torus]
+\label{res:GS04}
+Let \(\check T=\operatorname{Spec}\mathbb Q[\Lambda]\), the
+split algebraic \(\mathbb Q\)-torus with character lattice
+\(\Lambda=X_*(T)\). There is a symmetric monoidal equivalence
+\[
+ \bigl(\operatorname{Perv}_{T(O)}(\operatorname{Gr}_T,\mathbb Q),
+          \star\bigr)
+  \simeq
+  \bigl(\operatorname{Rep}_{\mathbb Q}^{\mathrm{fd}}(\check T),
+          \otimes_{\mathbb Q}\bigr),
+\]
+where the right side is the category of finite-dimensional rational
+algebraic representations. The stalk at \(\lambda\) is sent
+to the \(\lambda\)-weight space. Global cohomology on the left
+is the forgetful fibre functor on the right and is concentrated
+in degree zero.
+\end{theorem}
+
+\begin{proof}
+Write \(e^\lambda\) for the basis element of the group algebra.
+Its comultiplication and counit are
+\(\Delta(e^\lambda)=e^\lambda\otimes e^\lambda\) and
+\(\varepsilon(e^\lambda)=1\). An algebraic representation is a
+finite-dimensional comodule for this group algebra. The coaction
+calculation in Proposition~\ref{res:IN03}, applied to the algebraic
+coaction over \(\mathbb Q\), identifies such a comodule with its
+direct sum of weight spaces.
+Conversely, a finite grading gives the coaction
+\(v\mapsto v\otimes e^\lambda\) on each homogeneous vector of
+weight \(\lambda\), and comodule maps are precisely the maps of
+graded vector spaces.
+Under tensor product the coaction multiplies the two basis
+elements, \(e^\lambda e^\mu=e^{\lambda+\mu}\).
+The category equivalence of Proposition~\ref{res:GS02} now
+identifies the two tensor rules and symmetries by
+Proposition~\ref{res:GS03}. Global sections on finitely many
+points are the direct sum of stalks and are exact.
+\end{proof}
+
+\begin{corollary}[Reconstruction of the dual torus]
+\label{res:GS05}
+For any commutative \(\mathbb Q\)-algebra \(A\), tensor
+automorphisms of the fibre functor of Theorem~\ref{res:GS04}
+after extension to \(A\) form the group
+\(\operatorname{Hom}(\Lambda,A^\times)=\check T(A)\),
+naturally in \(A\).
+\end{corollary}
+
+\begin{proof}
+The one-dimensional object supported at \(\lambda\) has
+base-extended fibre \(A\). Its tensor automorphism is given
+by some \(u_\lambda\in A^\times\). For an arbitrary object
+every rational vector of weight \(\lambda\) defines a map from
+the corresponding one-dimensional object. Naturality forces
+multiplication by \(u_\lambda\) on that whole extended weight
+space. The unit and convolution rule give
+\(u_0=1\) and \(u_{\lambda+\mu}=u_\lambda u_\mu\).
+Conversely these conditions define a natural tensor automorphism.
+An algebra map \(\mathbb Q[\Lambda]\to A\) is exactly the
+assignment \(e^\lambda\mapsto u_\lambda\) with these conditions.
+\end{proof}
+
+\section{Local sheaf calculations}
+
+We use the derived category, ordinary truncation, and triangle
+conventions of \emph{Advanced Homological Algebra}
+\cite[Results D03, D05 and D08, PDF pp.~24--27]{mg-ha}.
+The following lemma supplies the comparison of singular and sheaf
+cohomology needed for the explicit lattice charts.
+
+\begin{lemma}[Constant sheaves and small singular cochains]
+\label{res:GS06}
+On a second-countable locally compact Hausdorff space with
+a basis of contractible open sets at every point,
+cohomology of the constant rational sheaf agrees naturally,
+under restriction to open sets, with ordinary singular
+cohomology. For a closed subset \(Z\) of an open set \(U\),
+cohomology with support in \(Z\) is the singular cohomology
+of the pair \((U,U\setminus Z)\).
+\end{lemma}
+
+\begin{proof}
+Sheafify the presheaves of rational singular cochains
+\(C^q(U;\mathbb Q)\) to obtain sheaves \(\mathcal S^q\).
+Filtered direct limits of vector spaces are exact.
+At each stalk, a basis of contractible opens therefore
+gives an exact augmented complex
+\(\mathbb Q_X\longrightarrow\mathcal S^\bullet\).
+
+We verify that the cochain map to sections of each
+\(\mathcal S^q\) over any open \(U\) is onto.
+A section is represented locally by cochains \(c_i\) over
+opens \(V_i\). Choose a locally finite covering by smaller
+opens \(W_i\) with \(\overline{W_i}\subset V_i\), taking closures
+in \(U\). Such a refinement is obtained from a compact
+exhaustion of \(U\) whose terms lie in the interiors of
+the next terms. Cover each compact annulus by finitely many
+relatively compact opens inside representing opens,
+with each chosen open avoiding all but a bounded number
+of adjoining annuli.
+For a simplex with image in one or more \(W_i\), give it
+the value of one corresponding \(c_i\). Give all other
+simplices value zero. At any \(x\in U\), choose \(W_j\)
+containing \(x\). Local finiteness lets us shrink a
+neighborhood of \(x\) to meet only those \(W_i\) whose
+closures contain \(x\). There are finitely many. For these
+indices the germs of \(c_i\) and \(c_j\) agree at \(x\),
+so they agree after restriction to a still smaller
+neighborhood. On simplices in that neighborhood all
+choices give the same value. The constructed cochain thus
+represents the section. Extending a cochain by zero on
+simplices not wholly contained in its original open set
+proves that \(\mathcal S^q\) is flabby, meaning all open
+restriction maps are onto.
+
+We recall why flabby resolutions compute the derived
+sections used here. A sheaf of rational vector spaces embeds
+in the product over points of the skyscraper sheaves of
+its stalks. Each skyscraper of a vector space is injective,
+since maps into it are linear maps from a stalk and the
+stalk functor is exact. A product of these sheaves is
+injective and flabby. If \(F\) is flabby in a short exact
+sequence \(0\to F\to G\to H\to0\), every section of \(H\)
+on an open set lifts to \(G\) there. Indeed local lifts
+exist, and their differences on overlaps are sections of
+\(F\). Extend a difference using flabbiness to adjust each
+new lift so it agrees with an existing one. A maximal
+compatible lift exists by the sheaf axiom along chains
+of partial lifts, and this adjustment extends it at any
+missing point. It follows that an injective resolution of
+a flabby sheaf constructed by successive products of
+skyscrapers has flabby successive quotients and stays exact
+on sections. This proves the required acyclicity.
+
+The kernel of \(C^\bullet(U;\mathbb Q)\to
+\Gamma(U,\mathcal S^\bullet)\) consists of the cochains that
+vanish on all simplices in some open covering, each
+simplex required to lie in one member of the covering.
+For a fixed covering this is the dual of the quotient by
+its small chains. That quotient is acyclic by the
+small-chain comparison of \emph{Topology and Riemannian
+Geometry}~\cite[Theorem 3.8, PDF p.~19]{mg-topriem}.
+Dualizing vector spaces and taking the filtered union over
+covering refinements preserve acyclicity. This gives the
+absolute comparison on each open set. The flabby resolution
+has an onto restriction to \(U\setminus Z\) in every degree,
+and the kernel computes sections with support in \(Z\)
+by comparison with injective resolutions and the same
+restriction sequence. The singular cochain restriction is
+also onto, by extension by zero. Comparing the two kernels
+via their long exact sequences gives the relative comparison.
+\end{proof}
+
+\paragraph{Stalks and costalks.}
+For an open immersion \(j:U\hookrightarrow X\), the stalks
+of \(Rj_*\mathbb Q_U\) are the direct limits of cohomology of
+intersections of neighborhoods with \(U\). More generally,
+for \(m:Y\to X\), the stalks of \(Rm_*\mathbb Q_Y\) are the
+direct limits over neighborhoods \(B\) of the cohomology of
+\(m^{-1}(B)\). In each assertion one applies the direct image
+to an injective resolution, then takes the stalk, which is
+an exact filtered direct limit. The costalk of \(\mathbb Q_X\)
+at a closed point is computed by the corresponding direct
+limit with support at the point. Indeed the right adjoint
+to extension from a closed point selects sections supported
+there, and applying it to an injective resolution gives
+this formula. We use Lemma~\ref{res:GS06} in these expressions.
+
+\section{Two lattice steps for \texorpdfstring{\(\operatorname{GL}_2\)}{GL(2)}}
+
+Let \(V=\mathbb C^2\) and \(L_0=O^2\). A lattice in \(K^2\)
+is a free rank-two \(O\)-submodule spanning \(K^2\).
+A matrix in \(\operatorname{GL}_2(K)\) carries \(L_0\) to
+the lattice generated by its columns, and the stabilizer
+of \(L_0\) is \(\operatorname{GL}_2(O)\). Thus the quotient
+has these lattices as its points.
+
+\begin{proposition}[The minuscule orbit and the two-step Schubert variety]
+\label{res:GS07}
+The lattices \(L\subset L_0\) with
+\(\dim_{\mathbb C}(L_0/L)=1\) form the orbit
+\(X_{(1,0)}\simeq\mathbb P(V)\).
+Those with \(\dim_{\mathbb C}(L_0/L)=2\) form the closed
+Schubert variety \(X_{(2,0)}\), with one orbit of type
+\((2,0)\) and the closed orbit \(X_{(1,1)}=\{tL_0\}\).
+\end{proposition}
+
+\begin{proof}
+On each of these finite-dimensional quotients the
+operator \(t\) is nilpotent because a nonzero eigenvalue
+\(a\) would contradict invertibility of \(t-a\) in \(O\).
+For colength one this means \(tL_0\subset L\).
+The quotient \(L/tL_0\) is a line in \(V\), and every line
+gives its inverse-image lattice. This identifies the
+bounded algebraic model, and constant matrices act
+transitively.
+
+For colength two we have \(t^2L_0\subset L\).
+Modulo \(t^2L_0\) the lattices are the two-dimensional
+subspaces of \(W=L_0/t^2L_0=V\oplus tV\) stable under
+\(N(x,y)=(0,x)\). They form a closed subset of an ordinary
+Grassmannian by the same subbundle criterion as in
+Lemma~\ref{res:GS01}. If \(t\) induces zero on \(L_0/L\),
+then \(L=tL_0\). Otherwise a vector and its nonzero \(t\)-image
+give a complex basis of the quotient, making \(L_0/L\) cyclic
+over \(O/(t^2)\). The resulting
+surjection \(L_0\to O/(t^2)\) has a row of coefficients
+one of which is a unit modulo \(t^2\).
+After scaling the corresponding basis vector and subtracting
+its multiples from the other, the kernel is
+\(t^2O\oplus O\). Hence this locus is one orbit and is
+open because its complement is the single lattice \(tL_0\).
+To see that the orbit closure contains that lattice,
+fix a nonzero endomorphism \(B\) of \(V\) with \(B^2=0\).
+The graphs \(\{(sBy,y):y\in V\}\) are \(N\)-stable, give
+quotients of the nonzero-\(t\) type for \(s\ne0\), and tend
+to \(tV\) at \(s=0\).
+This proves the asserted closure and both orbit descriptions.
+\end{proof}
+
+\begin{proposition}[The convolution surface and its fibres]
+\label{res:GS08}
+The convolution of the two colength-one lattice stages has
+ordered space
+\[
+ \widetilde X=\{L_0\supset L_1\supset L_2:
+       \dim_{\mathbb C}(L_0/L_1)=\dim_{\mathbb C}(L_1/L_2)=1\}.
+\]
+It is the projective bundle of lines in
+\(\mathcal O(-1)\oplus\mathcal O(1)\) over \(\mathbb P^1\).
+The map \(m:\widetilde X\to X_{(2,0)}\) retaining \(L_2\)
+is an isomorphism over the orbit of type \((2,0)\).
+Its fibre over \(tL_0\) is a section isomorphic to
+\(\mathbb P^1\) with normal line bundle \(\mathcal O(-2)\).
+\end{proposition}
+
+\begin{proof}
+A point in the twisted convolution product specifies its
+first lattice \(L_1\) and a colength-one modification
+relative to \(L_1\), namely \(L_2\).
+Changing a basis of \(L_1\) gives exactly the
+\(\operatorname{GL}_2(O)\)-identification in the twisted
+product. A choice of the second lattice amounts to a line
+in \(L_1/tL_1\).
+Let \(\mathcal S\subset V\otimes\mathcal O\) be the
+tautological line on the first \(\mathbb P(V)\).
+In the truncated power-series coordinates one has
+\[
+ L_1/tL_1=\mathcal S\oplus t(V/\mathcal S).
+\]
+Indeed \(L_1\) has constant term in \(\mathcal S\) and
+arbitrary positive coefficients, while \(tL_1\) has
+first coefficient in \(\mathcal S\) and unrestricted
+coefficients of order two or higher. The quotient line
+\(V/\mathcal S\) is \(\mathcal S^\vee\) after fixing a
+volume form on \(V\), since its pairing with \(\mathcal S\)
+by wedge is perfect. This gives the projective bundle,
+which is smooth and projective. Equivalently the two
+lattice conditions are closed incidence conditions in
+finite flag varieties, so \(m\) is proper.
+
+If \(L_0/L_2\simeq O/(t^2)\), it has a unique length-one
+submodule, the image of multiplication by \(t\).
+Thus \(L_1=L_2+tL_0\). The sum is an algebraic function
+on this rank-constant open locus, since the image of a
+constant-rank matrix of bundle maps is locally a
+subbundle. This gives the inverse over the open orbit.
+Over \(L_2=tL_0\) any first line is permitted. The line
+in \(L_1/tL_1\) at this section is \(t(V/\mathcal S)\).
+Locally neighboring lines are graphs of maps to \(\mathcal S\),
+so the normal bundle is
+\(\operatorname{Hom}(t(V/\mathcal S),\mathcal S)=\mathcal O(-2)\).
+In particular the unique
+positive-dimensional fibre has twice its dimension equal
+to the codimension of its image stratum.
+\end{proof}
+
+\begin{lemma}[The transverse cone at the closed orbit]
+\label{res:GS09}
+A neighborhood of \(x=tL_0\) in \(X_{(2,0)}\) is the
+vertex neighborhood in the quadratic cone
+\(\{(u,v,w)\in\mathbb C^3:u^2+vw=0\}\).
+In the classical topology it is locally the cone on
+\(\mathbb{RP}^3\). The inverse image of the affine cone
+chart in \(\widetilde X\) is the total space of
+\(\mathcal O(-2)\) over \(\mathbb P^1\), with the zero
+section mapping to \(x\).
+\end{lemma}
+
+\begin{proof}
+Use the chart of the Grassmannian of two-planes in \(W\)
+where projection to the second copy of \(V\) is invertible.
+There a plane has the form \(\{(Ay,y):y\in V\}\) for
+\(A\in\operatorname{End}_{\mathbb C}(V)\). It is stable
+under \(N\) precisely when \(A^2=0\).
+Set-theoretically this is equivalent to zero trace and
+zero determinant. One direction follows from nilpotence,
+and the converse follows from the characteristic identity
+for a \(2\) by \(2\) matrix.
+Writing \(A=\left(\begin{smallmatrix}u&v\\w&-u\end{smallmatrix}\right)\)
+gives the displayed equation in the reduced chart.
+
+The map \((a,b)\mapsto(ab,-a^2,b^2)\) from \(\mathbb C^2\)
+is onto this cone. If \(v\ne0\), take \(a^2=-v\) and
+\(b=u/a\). If \(v=0\), then \(u=0\) and one takes \(a=0\).
+Each fibre is precisely an orbit of the simultaneous sign
+change, including the singleton fibre at \(0\).
+The equalities \(|a|^2=|v|\) and \(|b|^2=|w|\) show the
+map is proper. Hence the induced continuous bijection
+from the quotient is a homeomorphism. Quotienting radial
+coordinates identifies the link with \(S^3/\{\pm1\}
+=\mathbb{RP}^3\).
+
+On this chart a first lattice is specified by a line
+\(\ell\subset V\). The inclusion \(L_2\subset L_1\) is
+\(\operatorname{im}A\subset\ell\), and the inclusion
+\(tL_1\subset L_2\) is \(\ell\subset\ker A\).
+These are precisely the graphs described by a linear
+map \(V/\ell\to\ell\). They form the total space of the
+normal line bundle from Proposition~\ref{res:GS08}.
+For a small ball about \(A=0\) in the graph chart its
+inverse image retracts onto the zero section by
+\((\ell,A)\mapsto(\ell,sA)\), \(0\leq s\leq1\).
+\end{proof}
+
+\begin{theorem}[The intersection complex of the two-step orbit closure]
+\label{res:GS10}
+Over \(\mathbb Q\), the intersection complex of \(X=X_{(2,0)}\),
+normalized to be perverse, is \(\mathbb Q_X[2]\).
+At \(x=tL_0\) it has one-dimensional stalk in degree \(-2\)
+and one-dimensional costalk in degree \(2\), with the other
+stalk and costalk degrees zero.
+\end{theorem}
+
+\begin{proof}
+By Proposition~\ref{res:GS08}, the complement \(U=X\setminus\{x\}\)
+is a smooth complex surface. By Lemma~\ref{res:GS09}, sufficiently
+small contractible cone neighborhoods \(B\) of \(x\) have
+punctured neighborhoods retracting to \(\mathbb{RP}^3\).
+The rational cohomology of that link is \(\mathbb Q\) in
+degrees \(0,3\) only, by the projective-space calculation and
+universal coefficients in \emph{Topology and Riemannian Geometry}
+\cite[Proposition 4.3 and Theorem 4.13,
+PDF pp.~24 and 29]{mg-topriem}. The degree-zero restriction
+from \(B\) to its punctured neighborhood is an isomorphism.
+The relative cohomology of \((B,B\setminus\{x\})\) is therefore
+\(\mathbb Q\) in degree \(4\) only by the pair sequence
+\cite[Proposition 4.8, PDF p.~26]{mg-topriem}.
+These identifications are compatible on a nested radial basis
+by radial deformation. Lemma~\ref{res:GS06} computes the
+stalk and costalk of the shifted constant sheaf as asserted.
+On the open surface the only degree is \(-2\), and the
+closed point satisfies the degree-zero bounds. These are
+the two checks for perversity.
+
+For this single closed stratum, the middle-perversity
+intersection complex is constructed as
+\(\tau_{\leq-1}Rj_*\mathbb Q_U[2]\) with \(j:U\hookrightarrow X\)
+and ordinary truncation \(\tau\).
+Before the shift by \(2\), the middle-perversity cutoff in real
+codimension four is degree \(1\). These conventions are given by
+de Cataldo--Migliorini~\cite[Sections 2.1 and 2.7]{decataldomigliorini}.
+On \(U\) the natural map from \(\mathbb Q_X[2]\) to this
+truncation is an isomorphism. At \(x\), the untruncated
+target has degrees \(-2,1\) by the punctured-neighborhood
+calculation, and the map is an isomorphism in degree \(-2\)
+by connectedness. The truncated map is thus also a
+stalkwise quasi-isomorphism at \(x\).
+Adjunction computes morphisms from and to a sheaf supported
+at \(x\) using the costalk and stalk, respectively. The strict
+bounds make their degree-zero Hom groups vanish. This verifies
+the middle-extension property on the perverse heart.
+\end{proof}
+
+\begin{theorem}[The minuscule convolution square for \(\operatorname{GL}_2\)]
+\label{res:GS11}
+Write \(\operatorname{IC}_{(a,b)}\) for the
+rational middle-perversity intersection complex of the
+indicated orbit closure, extended by zero to the affine
+Grassmannian. For \(G=\operatorname{GL}_{2,\mathbb C}\),
+\[
+ \operatorname{IC}_{(1,0)}\star\operatorname{IC}_{(1,0)}
+       \simeq \operatorname{IC}_{(2,0)}
+                   \oplus\operatorname{IC}_{(1,1)}
+\]
+as \(G(O)\)-equivariant perverse sheaves.
+\end{theorem}
+
+\begin{proof}
+The minuscule factor is \(\mathbb Q_{\mathbb P^1}[1]\).
+In local bases of the first lattice both factors are constant
+with trivial actions on their coefficients. Thus the twisted
+exterior square is \(\mathbb Q_{\widetilde X}[2]\) and the convolution is
+\(Rm_*\mathbb Q_{\widetilde X}[2]\). By
+Proposition~\ref{res:GS08}, over \(U\) the unit of pullback
+and pushforward
+\[
+ \mathbb Q_X[2]\longrightarrow Rm_*\mathbb Q_{\widetilde X}[2]
+\]
+is an isomorphism. At \(x\), the inverse images of
+small radial neighborhoods retract to the zero section
+\(\mathbb P^1\) by Lemma~\ref{res:GS09}. The derived
+pushforward has stalk cohomology \(\mathbb Q\) in degrees
+\(-2,0\) and zero otherwise. Here we used
+Lemma~\ref{res:GS06} and the complex projective-space
+cohomology from \emph{Topology and Riemannian Geometry}
+\cite[Proposition 4.3 and Theorem 4.13,
+PDF pp.~24 and 29]{mg-topriem}. The unit identifies degree
+\(-2\) on the two sides. Its cone has just one cohomology
+sheaf, a degree-zero copy of \(i_*\mathbb Q\) for the
+inclusion \(i:\{x\}\hookrightarrow X\).
+
+The connecting morphism of this triangle belongs to
+\[
+ \operatorname{Hom}(i_*\mathbb Q,\mathbb Q_X[3])
+   = H^3(i^!\mathbb Q_X)=0
+\]
+by the costalk computation of Theorem~\ref{res:GS10}.
+Therefore the identity of the cone has a lift to a section
+of the quotient map, by applying \(\operatorname{Hom}(i_*\mathbb Q,-)\)
+to the triangle. The original map and that section together
+give an isomorphism, as they are an isomorphism on
+cohomology sheaves. The section is unique since
+\(\operatorname{Hom}(i_*\mathbb Q,\mathbb Q_X[2])=0\) as well.
+The two summands are perverse by Theorem~\ref{res:GS10}
+and the bound at a point, respectively.
+
+For equivariance the action on the finite lattice diagrams
+factors through the smooth group \(H=\operatorname{GL}_2(O/t^2O)\).
+The pullback of the displayed triangle under the projection
+from \(H\times X\) is the same triangle for
+\(\operatorname{id}_H\times m\). For the pushforward term
+the natural comparison is a stalkwise isomorphism because a
+small contractible neighborhood in \(H\) times \(m^{-1}(B)\)
+has the cohomology of \(m^{-1}(B)\).
+The action pullback has the same description after
+the isomorphism \((h,y)\mapsto(h,hy)\).
+These identifications give the normalized equivariance
+and preserve the unit. The cone has trivial coefficient
+action at \(x\), since each \(h\) preserves the complex
+orientation of the projective-line fibre and thus its
+top cohomology. Under pullback to \(H\times X\), the
+same uniqueness argument still applies. Indeed the
+costalk sheaf along \(H\times\{x\}\) has cohomology
+sheaves only in degree \(4\) before shifting. Locally a
+contractible neighborhood of \(h\) times
+the radial pair has the same relative cohomology
+as the radial pair itself, by Lemma~\ref{res:GS06}.
+Its hypercohomology therefore vanishes below degree \(4\),
+which gives both Hom vanishings used for uniqueness.
+The two pullbacks of the splitting agree with the
+equivariance isomorphism. This proves the asserted
+equivariant decomposition.
+\end{proof}
+
+\begin{corollary}[Central translates of the minuscule rule]
+\label{res:GS12}
+For integers \(a,b\) and a dominant pair \(\lambda_1\geq\lambda_2\),
+convolution with the intersection complex of the point \(t^aL_0\) sends
+\(\operatorname{IC}_{(\lambda_1,\lambda_2)}\) to
+\(\operatorname{IC}_{(\lambda_1+a,\lambda_2+a)}\).
+In particular,
+\[
+ \operatorname{IC}_{(a+1,a)}\star\operatorname{IC}_{(b+1,b)}
+ \simeq \operatorname{IC}_{(a+b+2,a+b)}
+             \oplus\operatorname{IC}_{(a+b+1,a+b+1)} .
+\]
+\end{corollary}
+
+\begin{proof}
+The scalar \(t^a\) is central in the loop group and commutes
+with the \(G(O)\)-action. The convolution map with that
+point in either position is the isomorphism of lattice
+spaces \(L\mapsto t^aL\). The twisted tensor factor at the
+point is \(\mathbb Q\) in degree zero, so the pushforward
+is just transport by that isomorphism, preserving the
+middle-perversity normalization and the orbit labels
+up to addition of \((a,a)\).
+For the last formula, translating the first lattice by
+\(t^a\) and the final lattice by \(t^{a+b}\) identifies
+the two translated steps with the ordered minuscule
+steps whose terminal lattice is translated by \(t^{a+b}\).
+Apply Theorem~\ref{res:GS11} and the first formula.
+\end{proof}
+\backmatter
+\begingroup
+\footnotesize
+\begin{thebibliography}{99}
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\renewcommand{\runningchapter}{Bibliography}
+\setlength{\itemsep}{2pt}
+
+\bibitem{achar}
+P.~N. Achar.
+\emph{Perverse Sheaves and Applications to Representation Theory}.
+Mathematical Surveys and Monographs 258, American Mathematical Society, 2021.
+
+\bibitem{assem}
+I. Assem, D. Simson, and A. Skowro\'nski.
+\emph{Elements of the Representation Theory of Associative Algebras}, Vol.~1.
+Cambridge University Press, 2006.
+
+\bibitem{baumannriche}
+P. Baumann and S. Riche.
+\emph{Notes on the Geometric Satake Equivalence}.
+arXiv:1703.07288v3, 2018.
+
+\bibitem{decataldomigliorini}
+M.~A.~A. de Cataldo and L. Migliorini.
+\emph{The Decomposition Theorem, Perverse Sheaves and the Topology of Algebraic Maps}.
+arXiv:0712.0349v2.
+
+\bibitem{derksen}
+H. Derksen and G. Kemper.
+\emph{Computational Invariant Theory}.
+Second enlarged edition, Springer, 2015.
+
+\bibitem{etingof-rep}
+P. Etingof, O. Golberg, S. Hensel, T. Liu, A. Schwendner,
+D. Vaintrob, and E. Yudovina.
+\emph{Introduction to Representation Theory}.
+MIT 18.712 course edition, 2011.
+
+\bibitem{etingof-lie}
+P. Etingof.
+\emph{Representations of Lie Groups}.
+MIT 18.757 course notes, Fall 2023.
+
+\bibitem{hernandez-affine}
+D. Hernandez.
+\emph{An Introduction to Affine Kac--Moody Algebras}.
+CTQM Master Class Series 2, 2006.
+
+\bibitem{humphreys-o}
+J.~E. Humphreys.
+\emph{Representations of Semisimple Lie Algebras in the BGG Category O}.
+Graduate Studies in Mathematics 94, American Mathematical Society, 2008.
+
+\bibitem{kac}
+V.~G. Kac.
+\emph{Infinite-Dimensional Lie Algebras}.
+Third edition, Cambridge University Press, 1990, corrected reprint, 1995.
+
+\bibitem{kraft-procesi}
+H. Kraft and C. Procesi.
+\emph{Classical Invariant Theory: A Primer}.
+Lecture notes, 1996.
+
+\bibitem{milneag}
+J.~S. Milne.
+\emph{Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field}.
+Cambridge University Press, corrected reprint, 2022.
+
+\bibitem{serre-finrep}
+J.-P. Serre.
+\emph{Linear Representations of Finite Groups}.
+Translated by L.~L. Scott, Graduate Texts in Mathematics 42, Springer, 1977.
+
+\bibitem{vdk}
+W. van der Kallen.
+\emph{Reductivity Properties over an Affine Base}.
+arXiv preprint, version 2.
+
+\bibitem{webb}
+P. Webb.
+\emph{A Course in Finite Group Representation Theory}.
+Author's prepublication manuscript, February 2016.
+
+\bibitem{mg-algebra-core}
+MathGenome.
+\emph{Algebra Core}. P1-03, revision in MathGenome v0.25.0.
+
+\bibitem{mg-alggroup}
+MathGenome.
+\emph{Linear Algebraic Groups}. ALG-09, 55-page revision, 2026.
+
+\bibitem{mg-d07}
+MathGenome.
+\emph{Abstract Algebra}. D07, revision in MathGenome v0.25.0.
+
+\bibitem{mg-fieldtopics}
+MathGenome.
+\emph{Topics in Field and Galois Theory}. ALG-04, 31-page revision, 2026.
+
+\bibitem{mg-ha}
+MathGenome.
+\emph{Advanced Homological Algebra}. ALG-10, 62-page revision in
+MathGenome v0.25.0.
+
+\bibitem{mg-lie}
+MathGenome.
+\emph{Lie Algebras and Finite-Dimensional Representations}.
+ALG-08, 74-page revision, 2026.
+
+\bibitem{mg-rm03}
+MathGenome.
+\emph{Rings, Modules, and Associative Algebras}. ALG-03, 19-page core notes, 2026.
+
+\bibitem{mg-rm03d}
+MathGenome.
+\emph{Topics in Rings, Modules, and Associative Algebras}.
+ALG-03, 38-page deepening notes, 2026.
+
+\bibitem{mg-topriem}
+MathGenome.
+\emph{Topology and Riemannian Geometry}. P2-02, revision in MathGenome v0.25.0.
+
+\end{thebibliography}
+\endgroup
+\end{document}

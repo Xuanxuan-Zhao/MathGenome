@@ -1,0 +1,23 @@
+import MathGenome.Internal.RepresentationTheoryDeepening.RepTheorySurvey.Geometric.NilpotentConeLatticeChart
+import MathGenome.Internal.RepresentationTheoryDeepening.RepTheorySurvey.Geometric.NilpotentConeRadialTopology
+
+namespace RepTheorySurvey.Geometric.NilpotentConeChart
+
+open NilpotentConeChartSpecs
+
+theorem reducedQuadraticChart : Expected.ReducedQuadraticChart :=
+  NilpotentConeLatticeChart.reducedQuadraticChart
+
+theorem analyticQuadraticChart : Expected.AnalyticQuadraticChart :=
+  NilpotentConeLatticeChart.analyticQuadraticChart
+
+theorem polynomialParametrization : Expected.PolynomialParametrization :=
+  NilpotentConeRadialTopology.polynomialParametrization
+
+theorem antipodalQuotientHomeomorphism : Expected.AntipodalQuotientHomeomorphism :=
+  NilpotentConeRadialTopology.antipodalQuotientHomeomorphism
+
+theorem radialNeighborhoods : Expected.RadialNeighborhoods :=
+  NilpotentConeRadialTopology.radialNeighborhoods
+
+end RepTheorySurvey.Geometric.NilpotentConeChart

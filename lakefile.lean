@@ -2,7 +2,7 @@ import Lake
 open Lake DSL
 
 package mathGenome where
-  version := v!"0.30.0"
+  version := v!"0.31.0"
   fixedToolchain := true
   enableArtifactCache := false
 

@@ -1,3 +1,9 @@
+# 0.31.0 — Topics in Representation Theory
+
+- Add the ALG-07 deepening development with 192 checked proof goals across 58 numbered lecture results.
+- Cover modular characters and blocks, finite-type quivers, invariant rings, category O and affine highest weights, and geometric Satake.
+- Add `MathGenome.RepresentationTheoryDeepening`, the 37-page PDF, LaTeX, and reviewed source links.
+
 # 0.30.0 — Topics in Field and Galois Theory
 
 - Add the ALG-04 deepening development with 106 checked proof goals across 52 numbered lecture results.

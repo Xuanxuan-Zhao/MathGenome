@@ -1,0 +1,9 @@
+import MathGenome.Internal.RepresentationTheoryDeepening.Specs.RepTheorySurvey.Geometric.NilpotentConeChart
+
+namespace RepTheorySurvey.Geometric.NilpotentConeRadialTopologySpecs.Expected
+
+def PolynomialParametrization : Prop := RepTheorySurvey.Geometric.NilpotentConeChartSpecs.Expected.PolynomialParametrization
+def AntipodalQuotientHomeomorphism : Prop := RepTheorySurvey.Geometric.NilpotentConeChartSpecs.Expected.AntipodalQuotientHomeomorphism
+def RadialNeighborhoods : Prop := RepTheorySurvey.Geometric.NilpotentConeChartSpecs.Expected.RadialNeighborhoods
+
+end RepTheorySurvey.Geometric.NilpotentConeRadialTopologySpecs.Expected

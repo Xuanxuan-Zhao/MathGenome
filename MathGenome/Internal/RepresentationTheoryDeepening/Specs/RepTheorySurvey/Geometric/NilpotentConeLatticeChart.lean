@@ -1,0 +1,8 @@
+import MathGenome.Internal.RepresentationTheoryDeepening.Specs.RepTheorySurvey.Geometric.NilpotentConeChart
+
+namespace RepTheorySurvey.Geometric.NilpotentConeLatticeChartSpecs.Expected
+
+def ReducedQuadraticChart : Prop := RepTheorySurvey.Geometric.NilpotentConeChartSpecs.Expected.ReducedQuadraticChart
+def AnalyticQuadraticChart : Prop := RepTheorySurvey.Geometric.NilpotentConeChartSpecs.Expected.AnalyticQuadraticChart
+
+end RepTheorySurvey.Geometric.NilpotentConeLatticeChartSpecs.Expected
